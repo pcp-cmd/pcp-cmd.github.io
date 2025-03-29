@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>好文荐读：关于ZFC集合论 | Aleksi Blog</title><meta name="keywords" content="Writing"><meta name="author" content="Aleksi"><meta name="copyright" content="Aleksi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="好文荐读：关于ZFC集合论"><meta name="application-name" content="好文荐读：关于ZFC集合论"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="好文荐读：关于ZFC集合论"><meta property="og:url" content="http://example.com/2025/03/27/theory/index.html"><meta property="og:site_name" content="Aleksi Blog"><meta property="og:description" content="集合是一门高级抽象的语言数学的研究源于我们对现实世界的抽象，就是我们从一般经验中提炼出的具有普遍性和高概括性的概念，通过基于抽象结构的符号、运算、形式推理、模型构建等来理解和表达现实世界中事物的性质、关系与规律。在我看来，这是一种映射的作用。数学对现实世界的抽象大体可以分为两类：1.对数量和数量关系"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="Aleksi"><meta property="article:tag" content="Writing"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="集合是一门高级抽象的语言数学的研究源于我们对现实世界的抽象，就是我们从一般经验中提炼出的具有普遍性和高概括性的概念，通过基于抽象结构的符号、运算、形式推理、模型构建等来理解和表达现实世界中事物的性质、关系与规律。在我看来，这是一种映射的作用。数学对现实世界的抽象大体可以分为两类：1.对数量和数量关系"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2025/03/27/theory/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Aleksi","link":"链接: ","source":"来源: Aleksi Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Aleksi Blog',
+  title: '好文荐读：关于ZFC集合论',
+  postAI: '',
+  pageFillDescription: '集合是一门高级抽象的语言, 第一阶段的抽象：从数量到数字, 第二阶段的抽象：从数字到字母, 第三阶段的抽象：从字母到集合, Personal Comment集合是一门高级抽象的语言数学的研究源于我们对现实世界的抽象就是我们从一般经验中提炼出的具有普遍性和高概括性的概念通过基于抽象结构的符号运算形式推理模型构建等来理解和表达现实世界中事物的性质关系与规律在我看来这是一种映射的作用数学对现实世界的抽象大体可以分为两类对数量和数量关系的抽象对图形与图形关系的抽象这就是人们通常所说的数学是研究数量关系与空间形式的科学虽然对于现代数学集合所包含的元素具有一般性但在本质上集合源于对数量与数量关系的抽象甚至可以认为集合概念的确立实现了数量与数量关系抽象的最高层次基于这个缘由集合成为现代数学的基本语言这些抽象理论的意义在于它不仅与产生它的具体问题有联系而且它对于另外一系列问题也有着应用集合论就是如此集合的想法与概念已经浸透到所有的数学分支并且改变了它们的面貌所以不熟悉集合论的原理就不可能对近代数学获得正确的理解下面我们简单回顾人们对数量和数量关系的抽象历程这个回顾是有意义的从中可以把握数学抽象过程的基本特征不仅可以更加深刻地理解集合语言的本质而且可以更加深刻地感悟人们是如何用数学的眼光观察现实世界的因此这样的回顾无论是对数学研究还是对数学教学研究都是重要的我想人们对数量和数量关系的抽象历程大体可以分为三个阶段第一阶段的抽象从数量到数字从远古时代开始由于日常生活和生产实践的需要人们创造出一些语言来表达事物事件与物体量的多少在这样的表达中出现了数字表达的形式是数字都有后缀名词表达的内涵是数字都有具体背景我们称这种有后缀名词的有实际背景的关于量的多少的表达为数量为了研究数量之间的关系和运算必须对数量进行进一步抽象对数量进一步抽象的结果就是十进制的自然数用十个符号和十进制的数位进行表达因此在本质上自然数是对数量的抽象对于人类的文明史十进制自然数的创造是一件非常了不起的成就后来数学家用后继数的概念创造了似乎与现实世界毫无关系的自然数公理体系但究其本源自然数公理体系依然是对现实世界的抽象在自然数的抽象过程中人们把数量之间的关系也一并抽象形成自然数之间的关系数量关系的本质是多和少与此对应自然数关系的本质是大和小事实上后继数的概念就是源于自然数的大小关系后来人们通过运算主要是通过逆运算对自然数进行扩充完成了对数量以及数量关系第一阶段的抽象第二阶段的抽象从数字到字母在形式上字母的表达比数字更为一般如果说数字符号实现了从感性具体到理性具体的抽象那么字母符号则实现了从理性具体到理性一般的抽象与数字符号一样人们可以对字母符号进行形式化的运算和推理使用字母符号的意义在于字母符号的数学表达具有一般性因此通过字母符号进行运算和推理得到的结论也具有一般性字母的使用可以追溯到古希腊数学家丟番图约公元年前后但第一个有意识使用字母表示抽象运算的是法国数学家韦达在韦达之前人们只解决带有数字系数的方程韦达用的形式统一表示元二次方程并且借助方程中的字母系数给出了表达方程根与系数之间关系的公式这就是著名的韦达定理在年出版的著作分析艺术引论中韦达划分了算术与代数的区别算术和数字系数的方程是与数打交道是关于数字的计算代数是作用于事物的类别或形式上的方法是关于类型的计算法国哲学家数学家笛卡儿完成了对字母符号的改进用拉丁字母序列的前几个字母表示已知量用后几个字母表示末知量这种表示方法沿用至今今天无论是自然科学还是社会科学用字母符号表达概念关系规律已经成为一种常识已经逐渐演变为一种符号语言第三阶段的抽象从字母到集合对于数量的刻画无论是用数字还是用字母这样的抽象还只是个案体现不了数学抽象的结构比如可以通过单调有界有理数数列必有极限这样的基本事实定义实数但是如果不同的单调有界有理数数列收敛到同一个实数那么应当如何用统一的语言表述这样的事实呢有了集合的语言就可以把一个单调有界有理数数列中的点归为一个集合通常称这样的集合为点集在收敛的意义下可以进一步规定如果两个集合收敛到同一个实数则称这两个集合等价现代意义集合概念是德国数学家康托给出的其初衷就是为了表述收敛数列的点集集合中的元素可以是非常抽象的东西如果说数字符号中有数量的影子字母符号有数字符号的影子那么集合中的元素只是符号可以没有任何含义正是因为这样集合的概念就舍去了事物的一切物理属性得到抽象的数学结构实现了数量与数量关系抽象的更高层次可以这样理解集合所表达的抽象结构比如研究整数把整数的全体看成一个集合在这个集合上定义加法运算并且通过单位元素得到加法的逆运算减法我们知道加法和减法运算对于整数集合是封闭的那么我们就可以利用集合所表述的抽象结构形式化地研究更为一般的问题比如可以进行下面的研究令是一个形式化的非空的集合令是定义在集合上的一个二元运算如果集合对这个二元运算满足下面四个条件封闭性对唯一确定的元素使得结合律对有单位元有逆元素人们通常称上述集合和运算构成一个群这样借助集合的语言与运算的法则就构建了一个实实在在的数学结构在现代数学中群已经成为一个重要的研究领域并且成为一种重要的数学语言虽然在上面所规定的运算中我们可以看到加法运算或者乘法运算的影子但是这样的研究并不顾及集合中的元素是什么也不顾及运算的结果是什么因此这样的研究完全是形式化的这样研究所得到的结果具有更为广泛的一般性生活的经验告诉我们具体的东西有局限性但具体的东西容易理解抽象的东西具有一般性但抽象的含义很难理解现在对于如此抽象的集合概念我们能抓住这个概念的本质吗更为现实的问题是我们能给出集合的定义吗集合的定义是形式化的最初康托给出了集合的基于内涵的定义我们的直觉或思想确定的相异对象的总体可是这样的定义是经不起推敲的这里所说的对象到底是什么呢应当如何通过直觉和思想确定对象的总体呢许多哲学家包括英国哲学家数理逻辑学家罗素提出了一些极具破坏力的悖论这样企图用揭示内涵的方法给出集合的定义是不可行的事实上对于数学研究所涉及的最为基本的概念只能采用名义定义的方法也就是通过符号表达的方法对研究对象赋予称谓现在人们使用的集合概念是德国数学家策梅罗最初于年给出的在他的著名论文关于集合论基础的研究中策梅罗指出康托定义的不合理性因此他采用了德国数学家希尔伯特定义几何学基本概念的策略形式化定义集合用表示集合用表示元素元素属于表示为这个定义完全是形式化的根本没有述说什么是集合也没有述说什么是元素这样的定义之所以是可行的是因为在这个定义的基础上策梅罗通过他所倡导的条公理限定了集合的性质和集合的运算因此不管研究的是什么东西只要满足这些公理得到的结论都是一样的后来德国数学家弗兰克尔进行了少量的修改现在人们称这样的一组公理为集合论公理体系如果用名义定义加公理体系的方法可以限定集合那么集合的本质又是什么呢集合是由元素唯一确定的既然只论及了元素和集合那么集合就是由元素唯一确定的这是集合的本质为了强化这个本质集合论公理体系的第条外延公理是这样述说的如果集合的元素都属于集合集合的元素也都属于集合那么这两个集合相等从表面看这一条公理似乎在说明什么是集合相等但在本质上是在说明集合中除了元素别无他物进一步基于同一律的要求这一条公理还蕴含着更为深刻的思想对于给定的集合可以清晰地判断一个元素是属于这个集合还是不属于这个集合这篇文章与我数学分析学习课程的理念十分贴合因此摘录至库中用作集合论篇章的序言数学分析主要研究欧氏空间之间映射的微积分性质要想建立映射的微积分理论需要极限理论作为准备而极限理论的基础是数列的极限为此我们需要构造数系我们将用集合语言构造自然数整数和有理数通过戴德金分割构造实数并证明实数具有微积分中最重要的性质完备性从本文看来集合语言的产生有其历史必然性在人类简化问题的历史之中自然而然的产生集合语言的发展是我们人类认知的进化本身对表象的认知不断被剥离其具体属性最终成为了超越现实的概念注本文转载自广雅中学蔡老师的微信公众号网站因为没有内置插件所以数学公式无法正常展现',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-03-28 23:23:46',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Aleksi Blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">三月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">好文荐读：关于ZFC集合论</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-03-27T05:55:43.477Z" title="发表于 2025-03-27 13:55:43">2025-03-27</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-03-28T15:23:46.981Z" title="更新于 2025-03-28 23:23:46">2025-03-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2025/03/27/theory/"><header><h1 id="CrawlerTitle" itemprop="name headline">好文荐读：关于ZFC集合论</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Aleksi</span><time itemprop="dateCreated datePublished" datetime="2025-03-27T05:55:43.477Z" title="发表于 2025-03-27 13:55:43">2025-03-27</time><time itemprop="dateCreated datePublished" datetime="2025-03-28T15:23:46.981Z" title="更新于 2025-03-28 23:23:46">2025-03-28</time></header><h3 id="集合是一门高级抽象的语言"><a href="#集合是一门高级抽象的语言" class="headerlink" title="集合是一门高级抽象的语言"></a>集合是一门高级抽象的语言</h3><p>数学的研究源于我们对现实世界的抽象，就是我们从一般经验中提炼出的具有普遍性和高概括性的概念，通过基于抽象结构的符号、运算、形式推理、模型构建等来理解和表达现实世界中事物的性质、关系与规律。在我看来，这是一种映射的作用。数学对现实世界的抽象大体可以分为两类：<br>1.对数量和数量关系的抽象<br>2.对图形与图形关系的抽象<br>这就是人们通常所说的：<em>数学是研究数量关系与空间形式的科学。</em><br>虽然对于现代数学，集合所包含的元素具有一般性，但在本质上，集合源于对数量与数量关系的抽象，甚至可以认为，集合概念的确立实现了数量与数量关系抽象的最高层次。基于这个缘由，集合成为现代数学的基本语言:<br>&#x3D;&#x3D;这些抽象理论的意义在于它不仅与产生它的具体问题有联系,而且它对于另外一系列问题也有着应用。集合论就是如此。集合的想法与概念已经浸透到所有的数学分支，并且改变了它们的面貌，所以不熟悉集合论的原理就不可能对近代数学获得正确的理解。&#x3D;&#x3D;<br>下面我们简单回顾人们对数量和数量关系的抽象历程。这个回顾是有意义的，从中可以把握数学抽象过程的基本特征，不仅可以更加深刻地理解集合语言的本质，而且可以更加深刻地感悟人们是如何“用数学的眼光观察现实世界”的，因此，这样的回顾无论是对数学研究还是对数学教学研究都是重要的。我想，人们对数量和数量关系的抽象历程大体可以分为三个阶段：</p>
+<h3 id="第一阶段的抽象：从数量到数字"><a href="#第一阶段的抽象：从数量到数字" class="headerlink" title="第一阶段的抽象：从数量到数字"></a>第一阶段的抽象：从数量到数字</h3><p>从远古时代开始，由于日常生活和生产实践的需要，人们创造出一些语言来表达事物(事件与物体)量的多少，在这样的表达中出现了数字。表达的形式是:数字都有后缀名词:表达的内涵是:数字都有具体背景。我们称这种有后缀名词的、有实际背景的、关于量的多少的表达为数量。<br>为了研究数量之间的关系和运算，必须对数量进行进一步抽象。对数量进一步抽象的结果就是十进制的自然数，用十个符号和十进制的数位进行表达，因此在本质上，自然数是对数量的抽象。对于人类的文明史，十进制自然数的创造是一件非常了不起的成就。后来，数学家用“后继数”的概念创造了似乎与现实世界毫无关系的自然数公理体系，但究其本源，自然数公理体系依然是对现实世界的抽象。<br>在自然数的抽象过程中，人们把数量之间的关系也一并抽象，形成自然数之间的关系：数量关系的本质是多和少，与此对应，自然数关系的本质是大和小。事实上，“后继数”的概念就是源于自然数的大小关系。后来，人们通过运算（主要是通过逆运算）对自然数进行扩充，完成了对数量以及数量关系第一阶段的抽象。</p>
+<h3 id="第二阶段的抽象：从数字到字母"><a href="#第二阶段的抽象：从数字到字母" class="headerlink" title="第二阶段的抽象：从数字到字母"></a>第二阶段的抽象：从数字到字母</h3><p>在形式上，字母的表达比数字更为一般，如果说数字符号实现了从感性具体到理性具体的抽象，那么，字母符号则实现了从理性具体到理性一般的抽象。与数字符号一样，人们可以对字母符号进行形式化的运算和推理，使用字母符号的意义在于:字母符号的数学表达具有一般性，因此，通过字母符号进行运算和推理得到的结论<br>也具有一般性。字母的使用可以追溯到古希腊数学家丟番图(Alexandria Diophantus，约公元 250 年前后),但第一个有意识使用字母表示抽象运算的是法国数学家韦达(Francois Viete,1540-1603)在韦达之前，人们只解决带有数字系数的方程，韦达用ax +bx+c&#x3D;0的形式统一表示-元二次方程，并且借助方程中的字母系数，给出了表达方程根与系数之间关系的公式，这就是著名的韦达定理。<br>在 1591 年出版的著作《分析艺术引论》中，韦达划分了算术与代数的区别:算术和数字系数的方程是与数打交道，是关于数字的计算;代数是作用于事物的类别或形式上的方法,是关于类型的计算。法国哲学家、数学家笛卡儿(ReneDescartes，1596-1650)完成了对字母符号的改进，用拉丁字母序列的前几个字母 a、b、c表示已知量，用后几个字母 x、y、z 表示末知量，这种表示方法沿用至今。今天，无论是自然科学还是社会科学，用字母符号表达概念、关系、规律已经成为一种常识，已经逐渐演变为一种符号语言。</p>
+<h3 id="第三阶段的抽象：从字母到集合"><a href="#第三阶段的抽象：从字母到集合" class="headerlink" title="第三阶段的抽象：从字母到集合"></a>第三阶段的抽象：从字母到集合</h3><p>对于数量的刻画，无论是用数字还是用字母，这样的抽象还只是个案，体现不了数学抽象的结构。比如，可以通过”单调有界有理数数列必有极限”这样的基本事实定义实数，但是，如果不同的”单调有界有理数数列”收敛到同一个实数，那么应当如何用统一的语言表述这样的事实呢?有了集合的语言，就可以把一个”单调有界有理数数列”中的点归为一个集合，通常称这样的集合为点集。在收敛的意义下可以进一步规定如果两个集合收敛到同一个实数,则称这两个集合等价。现代意义集合概念是德国数学家康托(GeorgCantor，1845-1918)给出的，其初衷就是为了表述收敛数列的点集,<br>集合中的元素可以是非常抽象的东西。如果说数字符号中有数量的影子,字母符号有数字符号的影子，那么集合中的元素只是符号，可以没有任何含义。正是因为这样，集合的概念就舍去了事物的一切物理属性,得到抽象的数学结构,实现了数量与数量关系抽象的更高层次。<br>可以这样理解集合所表达的抽象结构。比如研究整数，把整数的全体看成一个集合，在这个集合上定义加法运算，并且通过单位元素0得到加法的逆运算减法。我们知道，加法和减法运算对于整数集合是封闭的，那么，我们就可以利用集合所表述的抽象结构，形式化地研究更为一般的问题，比如，可以进行下面的研究。令<em>A</em>是一个形式化的非空的集合,令$\oplus$是定义在集合<em>A</em>上的一个二元运算。如果集合<em>A</em>对这个二元运算满足下面四个条件:<br>1.封闭性:对$\forall a、b \in A$,$\exists$唯一确定的元素 $c \in A$，使得 $a \oplus b &#x3D; c$.<br>2.结合律：对$\forall a、b、c \in A$，有$(a \oplus b)\oplus c &#x3D; a \oplus (b \oplus c)$.<br>3.单位元：$\exists \epsilon \in A$,$\forall a \in A$,有$a \oplus \epsilon &#x3D; \epsilon \oplus a &#x3D; a$.<br>4.逆元素：$\forall a \in A$, $\exists b \in A$, s.t. $a \oplus b &#x3D; b \oplus a &#x3D; \epsilon$.</p>
+<p>人们通常称上述集合<em>A</em>和运算$\oplus$构成一个“群”。这样,借助集合的语言与运算的法则就构建了一个实实在在的数学结构。在现代数学中，群已经成为一个重要的研究领域，并且成为一种重要的数学语言。虽然在上面所规定的运算中,我们可以看到加法运算或者乘法运算的影子，但是，这样的研究并不顾及集合中的元素是什么，也不顾及运算的结果是什么。因此，这样的研究完全是形式化的，这样研究所得到的结果具有更为广泛的一般性。<br>生活的经验告诉我们:具体的东西有局限性，但具体的东西容易理解;抽象的东西具有一般性，但抽象的含义很难理解。现在，对于如此抽象的集合概念，我们能抓住这个概念的本质吗?更为现实的问题是，我们能给出集合的定义吗?<br>集合的定义是形式化的。最初，康托给出了集合的基于内涵的定义:”我们的直觉或思想确定的相异对象的总体。”可是，这样的定义是经不起推敲的:这里所说的对象到底是什么呢?应当如何通过直觉和思想确定对象的总体呢?许多哲学家，包括英国哲学家、数理逻辑学家罗素(Bertrand Russel，1872-1970)提出了一些极具破坏力的悖论。这样，企图用揭示内涵的方法给出集合的定义是不可行的。事实上，对于数学研究所涉及的最为基本的概念，只能采用“名义定义”的方法，也就是通过符号表达的方法对研究对象赋予称谓。<br>现在，人们使用的集合概念是德国数学家策梅罗(Ernst Zermelo，1871-1953)最初于1908 年给出的。在他的著名论文《关于集合论基础的研究》中，策梅罗指出康托定义的不合理性，因此他采用了德国数学家希尔伯特(David Hilbert,1862-1943)定义几何学基本概念的策略，形式化定义集合：<br>用<em>A</em>表示集合，用<em>x</em>表示元素。元素<em>x</em>属于<em>A</em>，表示为$x \in A$.(1.1)<br>这个定义完全是形式化的，根本没有述说什么是集合，也没有述说什么是元素。这样的定义之所以是可行的，是因为在这个定义的基础上，策梅罗通过他所倡导的9条公理，限定了集合的性质和集合的运算。因此，不管研究的是什么东西，只要满足这些公理，得到的结论都是一样的。后来，德国数学家弗兰克尔(AbrahamFraenkel，1891-1965)进行了少量的修改，现在人们称这样的一组公理为ZF 集合论公理体系。<br>如果用“名义定义”加“公理体系”的方法可以限定集合，那么集合的本质又是什么呢?集合是由元素唯一确定的。既然(1.1)只论及了元素和集合，那么集合就是由元素唯一确定的，这是集合的本质。为了强化这个本质，ZF集合论公理体系的第1条外延公理是这样述说的:<br>如果集合<em>A</em>的元素都属于集合<em>B</em>，集合<em>B</em>的元素也都属于集合<em>A</em>，那么这两个集合相等。<br>从表面看，这一条公理似乎在说明什么是集合相等，但在本质上是在说明集合中除了元素别无他物。进一步，基于同一律的要求，这一条公理还蕴含着更为深刻的思想:对于给定的集合，可以清晰地判断一个元素是属于这个集合，还是不属于这个集合。</p>
+<h2 id="Personal-Comment"><a href="#Personal-Comment" class="headerlink" title="Personal Comment"></a>Personal Comment</h2><p>这篇文章与我《数学分析》学习课程的理念十分贴合，因此摘录至obsidian库中用作集合论篇章的序言。数学分析主要研究欧氏空间之间映射的微积分性质。要想建立映射的微积分理论，需要极限理论作为准备，而极限理论的基础是数列的极限，为此我们需要构造数系，我们将用集合语言构造自然数、整数和有理数，通过戴德金分割构造实数，并证明实数具有微积分中最重要的性质：完备性<br>从本文看来，集合语言的产生有其历史必然性：在人类简化问题的历史之中自然而然的产生。集合语言的发展是我们人类认知的进化本身，对表象的认知不断被剥离其具体属性，最终成为了超越现实的概念。<br><em>注：本文转载自广雅中学蔡老师的微信公众号，网站因为没有内置latex插件所以数学公式无法正常展现</em></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Aleksi</div><div class="post-copyright__author_desc">This is for daily learning</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2025/03/27/theory/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2025/03/27/theory/')">好文荐读：关于ZFC集合论</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2025/03/27/theory/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=好文荐读：关于ZFC集合论&amp;url=http://example.com/2025/03/27/theory/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Aleksi Blog</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/03/27/%E5%B0%8F%E7%BB%84%E4%BD%9C%E4%B8%9A/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">当算法成为枷锁：社交媒体广告精准推送的潜在逻辑与潜在问题</div></div></a></div><div class="next-post pull-right"><a href="/2025/03/28/%E6%88%91%E5%AF%B9%E5%86%99%E4%BD%9C%E7%9A%84%E7%9C%8B%E6%B3%95/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">我对写作的看法</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">About learn and life</div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E6%98%AF%E4%B8%80%E9%97%A8%E9%AB%98%E7%BA%A7%E6%8A%BD%E8%B1%A1%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">集合是一门高级抽象的语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%E7%9A%84%E6%8A%BD%E8%B1%A1%EF%BC%9A%E4%BB%8E%E6%95%B0%E9%87%8F%E5%88%B0%E6%95%B0%E5%AD%97"><span class="toc-number">2.</span> <span class="toc-text">第一阶段的抽象：从数量到数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%E7%9A%84%E6%8A%BD%E8%B1%A1%EF%BC%9A%E4%BB%8E%E6%95%B0%E5%AD%97%E5%88%B0%E5%AD%97%E6%AF%8D"><span class="toc-number">3.</span> <span class="toc-text">第二阶段的抽象：从数字到字母</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%E7%9A%84%E6%8A%BD%E8%B1%A1%EF%BC%9A%E4%BB%8E%E5%AD%97%E6%AF%8D%E5%88%B0%E9%9B%86%E5%90%88"><span class="toc-number">4.</span> <span class="toc-text">第三阶段的抽象：从字母到集合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Personal-Comment"><span class="toc-number"></span> <span class="toc-text">Personal Comment</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/28/%E6%88%91%E5%AF%B9%E5%86%99%E4%BD%9C%E7%9A%84%E7%9C%8B%E6%B3%95/" title="我对写作的看法">我对写作的看法</a><time datetime="2025-03-28T11:59:42.979Z" title="发表于 2025-03-28 19:59:42">2025-03-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/27/theory/" title="好文荐读：关于ZFC集合论">好文荐读：关于ZFC集合论</a><time datetime="2025-03-27T05:55:43.477Z" title="发表于 2025-03-27 13:55:43">2025-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/27/%E5%B0%8F%E7%BB%84%E4%BD%9C%E4%B8%9A/" title="当算法成为枷锁：社交媒体广告精准推送的潜在逻辑与潜在问题">当算法成为枷锁：社交媒体广告精准推送的潜在逻辑与潜在问题</a><time datetime="2025-03-27T03:36:39.764Z" title="发表于 2025-03-27 11:36:39">2025-03-27</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2025 By <a class="footer-bar-link" href="/" title="Aleksi" target="_blank">Aleksi</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">0</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><span class="sidebar-menu-item-title">标签</span></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Aleksi 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
