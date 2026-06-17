@@ -3,47 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lab Atlas｜Aleksi Lab</title>
-  <meta name="description" content="Aleksi Lab 的整体知识图谱。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Aleksi Lab / Lab Atlas</title>
+  <meta name="description" content="Lab Atlas is the whole-site knowledge graph for Aleksi Lab.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf9f5'/%3E%3Cpath d='M8 22C12 10 22 8 24 18' fill='none' stroke='%23141413' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='23' cy='18' r='3' fill='%23d97757'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./styles.css">
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script defer src="./content.js"></script>
   <script defer src="./graph-data.js"></script>
   <script defer src="./graph.js"></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.renderKnowledgeGraph(
+        document.querySelector('[data-lab-atlas]'),
+        window.ALEKSI_GRAPHS.labGraph
+      );
+    });
+  </script>
 </head>
 <body class="atlas-page">
-  <a class="skip-link" href="#main">Skip to content</a>
   <div class="paper-grain" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand-mark" href="./index.html" aria-label="Aleksi Lab home">
+    <a class="brand-mark" href="./index.html#home" aria-label="Aleksi Lab home">
       <span>Aleksi Lab</span>
-      <small>未完手稿</small>
+      <small>关系图谱</small>
     </a>
     <nav class="desktop-nav" aria-label="Primary navigation">
-      <a class="nav-link" href="./works.html">Works</a>
-      <a class="nav-link" href="./math.html">Math Lab</a>
-      <a class="nav-link" href="./manuscripts.html">Manuscripts</a>
-      <a class="nav-link" href="./protocol.html">Protocol</a>
-      <a class="nav-link" href="./atlas.html" aria-current="page">Atlas</a>
+      <a href="./works.html">Works</a>
+      <a href="./math.html">Math Lab</a>
+      <a href="./manuscripts.html">Manuscripts</a>
+      <a href="./protocol.html">Protocol</a>
+      <a href="./atlas.html">Lab Atlas</a>
     </nav>
   </header>
 
-  <main id="main" class="atlas-shell">
-    <section class="page-hero atlas-hero">
+  <main id="content">
+    <section class="page-hero">
       <div>
-        <p class="eyebrow">Lab Atlas / 全站图谱</p>
-        <h1 class="page-title">把作品、手稿、数学与协议放回同一个系统。</h1>
+        <p class="section-kicker">LAB ATLAS / RELATION GRAPH</p>
+        <h1 class="page-title">Lab Atlas</h1>
+        <p class="page-subtitle cn-serif">关系图谱</p>
       </div>
-      <p class="page-hero-copy">这个图谱不是装饰，而是 Aleksi Lab 的结构视图：哪些内容来自经验，哪些进入压缩，哪些已经变成可复用资产。</p>
+      <p class="page-hero-copy">这是全站知识关系的地图。节点代表作品、文章、数学笔记和方法资产；连线代表它们之间的修订、迁移和复用关系。</p>
     </section>
 
-    <section class="graph-section site-stage" aria-label="Aleksi Lab knowledge graph">
-      <div class="graph-toolbar" data-graph-toolbar></div>
-      <div class="graph-canvas" data-graph-canvas></div>
+    <section class="atlas-section paper-section">
+      <div class="graph-panel" data-lab-atlas aria-label="Lab Atlas graph"></div>
     </section>
   </main>
 </body>
