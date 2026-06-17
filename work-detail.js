@@ -1,4 +1,4 @@
-const works = window.ALEKSI_WORKS || [];
+let works = window.ALEKSI_WORKS || [];
 const handbookLabels = {
   curation: '策展说明',
   process: '修订过程'
@@ -30,6 +30,24 @@ function renderNavigation() {
       </a>
     `;
   }).join('');
+}
+
+function loadWorksDataPatch(callback) {
+  if (window.__ALEKSI_WORKS_PATCH_LOADED__) {
+    works = window.ALEKSI_WORKS || works;
+    callback();
+    return;
+  }
+  const script = document.createElement('script');
+  script.src = './works-data-v169-patch.js';
+  script.defer = true;
+  script.onload = () => {
+    window.__ALEKSI_WORKS_PATCH_LOADED__ = true;
+    works = window.ALEKSI_WORKS || works;
+    callback();
+  };
+  script.onerror = () => callback();
+  document.head.appendChild(script);
 }
 
 function articleHref(src) {
@@ -145,6 +163,8 @@ function initMotion() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderNavigation();
-  renderWork();
-  initMotion();
+  loadWorksDataPatch(() => {
+    renderWork();
+    initMotion();
+  });
 });
