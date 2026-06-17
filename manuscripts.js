@@ -86,17 +86,65 @@ function cnChain(chain = []) {
   return chain.map((item) => chainMap[item] || item).join(' → ');
 }
 
+function manuscriptId(item) {
+  return String(item.source || item.title || '')
+    .split('/')
+    .pop()
+    .replace(/\.md$/, '')
+    .replace(/[^a-zA-Z0-9_-]+/g, '-');
+}
+
+function setSelectedRow(row) {
+  document.querySelectorAll('.reading-row.is-selected')
+    .forEach((item) => item.classList.remove('is-selected'));
+
+  row.classList.add('is-selected');
+  if (row.dataset.manuscriptId) {
+    sessionStorage.setItem('selectedManuscriptId', row.dataset.manuscriptId);
+  }
+}
+
+function restoreSelectedRow() {
+  const selectedId = sessionStorage.getItem('selectedManuscriptId');
+  if (!selectedId) return;
+
+  const row = document.querySelector(`[data-manuscript-id="${selectedId}"]`);
+  if (row) row.classList.add('is-selected');
+}
+
+function bindReadingRows() {
+  const list = document.querySelector('[data-manuscript-list]');
+  if (!list) return;
+
+  list.addEventListener('pointerdown', (event) => {
+    const row = event.target.closest('.reading-row');
+    if (!row) return;
+    setSelectedRow(row);
+  });
+
+  list.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    const row = event.target.closest('.reading-row');
+    if (!row) return;
+    setSelectedRow(row);
+  });
+}
+
 function renderList(view = 'By Chain') {
   const list = document.querySelector('[data-manuscript-list]');
   if (!list) return;
   list.innerHTML = sortItems(view).map((item) => `
-    <a class="reading-row index-row" href="${articleHref(item.source)}" data-reveal>
+    <a class="reading-row index-row" href="${articleHref(item.source)}" data-manuscript-id="${manuscriptId(item)}" data-reveal>
       <span class="reading-row-meta">${item.updated} / ${cnArtifact(item.artifactType)}</span>
-      <strong class="index-row-title">${item.title}</strong>
-      <p class="index-row-copy">${item.judgment}</p>
+      <span class="reading-row-main">
+        <strong class="index-row-title">${item.title}</strong>
+        <p class="index-row-copy">${item.judgment}</p>
+      </span>
       <span class="reading-row-status">${cnStatus(item.status)} / ${cnRoom(item.room)} / ${cnChain(item.chain)}</span>
+      <em class="reading-row-action row-action">打开 →</em>
     </a>
   `).join('');
+  restoreSelectedRow();
 }
 
 function initMotion() {
@@ -114,5 +162,6 @@ function initMotion() {
 document.addEventListener('DOMContentLoaded', () => {
   renderTabs();
   renderList();
+  bindReadingRows();
   initMotion();
 });
