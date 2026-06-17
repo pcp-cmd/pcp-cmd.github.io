@@ -1,22 +1,28 @@
 const works = window.ALEKSI_WORKS || [];
 
-const cardPositions = [
-  [-460, -106, -7], [-304, -156, 5], [-148, -114, -3], [8, -160, 6],
-  [164, -102, -5], [320, -142, 4], [476, -92, -4], [-396, 148, 5],
-  [-240, 106, -6], [-84, 152, 3], [72, 114, -2], [228, 156, 6], [384, 112, -5]
-];
-
-const palettes = [
-  ['#191a15', '#f2f0e8', 'rgba(199,194,182,.68)'],
-  ['#202119', '#f2f0e8', 'rgba(199,194,182,.66)'],
-  ['#1b211d', '#f2f0e8', 'rgba(199,194,182,.64)'],
-  ['#211b18', '#f2f0e8', 'rgba(199,194,182,.66)'],
-  ['#191d21', '#f2f0e8', 'rgba(199,194,182,.64)']
+const compactLayout = [
+  { x: -460, y: -106, r: -7, s: 1 },
+  { x: -304, y: -156, r: 5, s: 1 },
+  { x: -148, y: -114, r: -3, s: 1 },
+  { x: 8, y: -160, r: 6, s: 1 },
+  { x: 164, y: -102, r: -5, s: 1 },
+  { x: 320, y: -142, r: 4, s: 1 },
+  { x: 476, y: -92, r: -4, s: 1 },
+  { x: -396, y: 148, r: 5, s: 1 },
+  { x: -240, y: 106, r: -6, s: 1 },
+  { x: -84, y: 152, r: 3, s: 1 },
+  { x: 72, y: 114, r: -2, s: 1 },
+  { x: 228, y: 156, r: 6, s: 1 },
+  { x: 384, y: 112, r: -5, s: 1 }
 ];
 
 function escapeHtml(value) {
   return String(value || '').replace(/[&<>"']/g, (char) => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
   }[char]));
 }
 
@@ -29,102 +35,224 @@ function renderNavigation() {
     const href = item.href || './index.html';
     const label = escapeHtml(item.label || '');
     const file = href.replace('./', '').split('#')[0].split('?')[0] || 'index.html';
-    const active = file === current;
-    return `<a class="nav-link${active ? ' is-active' : ''}" href="${href}"${active ? ' aria-current="page"' : ''}>${label}</a>`;
+    return `
+      <a class="nav-link letter-swap${file === current ? ' is-active' : ''}" href="${href}" data-text="${label}"${file === current ? ' aria-current="page"' : ''}>
+        <span>${label}</span>
+      </a>
+    `;
   }).join('');
 }
 
-function mediaMode(work) {
-  const value = work.mediaMode || work.detailMode || 'landscape';
-  if (['tiny-source', 'fragment'].includes(value)) return 'fragment';
-  if (['portrait', 'poster', 'tall'].includes(value)) return 'poster';
+function workTitleDisplay(work) {
+  return work.titleDisplay || work.shortTitle || work.title;
+}
+
+function cardPalette(work, index) {
+  const palettes = [
+    { bg: '#191a15', fg: '#f2f0e8', muted: 'rgba(199,194,182,.68)' },
+    { bg: '#202119', fg: '#f2f0e8', muted: 'rgba(199,194,182,.66)' },
+    { bg: '#1b211d', fg: '#f2f0e8', muted: 'rgba(199,194,182,.64)' },
+    { bg: '#211b18', fg: '#f2f0e8', muted: 'rgba(199,194,182,.66)' },
+    { bg: '#191d21', fg: '#f2f0e8', muted: 'rgba(199,194,182,.64)' }
+  ];
+  return palettes[index % palettes.length];
+}
+
+function normalizeMediaMode(value) {
+  if (value === 'tiny-source' || value === 'fragment') return 'fragment';
+  if (value === 'portrait' || value === 'poster' || value === 'tall') return 'poster';
   if (value === 'square') return 'square';
   return 'landscape';
 }
 
-function setVars(card, vars) {
-  Object.entries(vars).forEach(([key, value]) => card.style.setProperty(`--${key}`, value));
+function renderExhibitionWorks(items = works) {
+  const stage = document.querySelector('[data-exhibition-stage]');
+  if (!stage) return;
+
+  stage.innerHTML = items.map((work, index) => {
+    const titleDisplay = workTitleDisplay(work);
+    const isTwoLine = titleDisplay.includes('\n') || titleDisplay.length > 16;
+    const titleTopCompact = isTwoLine ? 208 : 238;
+    const descTopExpanded = isTwoLine ? 314 : 280;
+    const palette = cardPalette(work, index);
+    const mediaMode = normalizeMediaMode(work.mediaMode || work.detailMode);
+    const image = work.thumb || work.thumbnail || work.cover;
+    const href = work.detailUrl || work.href || `./work-detail.html?work=${encodeURIComponent(work.slug)}`;
+    const loading = index < 2 ? 'eager' : 'lazy';
+
+    return `
+      <article
+        class="exhibition-card is-${escapeHtml(mediaMode)}"
+        data-media-mode="${escapeHtml(mediaMode)}"
+        data-work-card
+        data-id="${escapeHtml(work.slug)}"
+        tabindex="0"
+        aria-expanded="false"
+        style="
+          --card-bg: ${palette.bg};
+          --card-fg: ${palette.fg};
+          --card-muted: ${palette.muted};
+          --title-top-compact: ${titleTopCompact}px;
+          --desc-top-expanded: ${descTopExpanded}px;
+        "
+      >
+        <div class="exhibition-card__image-window">
+          <div class="exhibition-card__image-inner">
+            <img src="${image}" alt="${escapeHtml(work.alt || work.title)}" loading="${loading}" decoding="async">
+          </div>
+        </div>
+        <h2 class="exhibition-card__title">${escapeHtml(titleDisplay)}</h2>
+        <div class="exhibition-card__desc">
+          <p>${escapeHtml(work.summary || work.intro || '')}</p>
+          <div class="exhibition-card__meta">
+            <span>${escapeHtml(work.source || '来源待复核')}</span>
+            <span>${escapeHtml(work.medium || work.category || '')}</span>
+          </div>
+          <a class="exhibition-card__link" href="${href}">进入作品</a>
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  layoutCompactCards(stage);
+  bindExhibitionInteractions(stage);
 }
 
-function isMobile() {
+function isMobileLayout() {
   return window.matchMedia('(max-width: 760px)').matches;
 }
 
-function layoutCards(activeId = null) {
-  const stage = document.querySelector('[data-exhibition-stage]');
-  if (!stage) return;
-  const cards = [...stage.querySelectorAll('[data-work-card]')];
-  stage.classList.toggle('has-active-card', Boolean(activeId));
-
-  if (isMobile()) {
-    cards.forEach((card) => card.removeAttribute('style'));
-    return;
-  }
-
-  const inactive = cards.filter((card) => card.dataset.id !== activeId);
-  const gap = Math.max(58, Math.min(76, Math.floor(stage.clientWidth / Math.max(inactive.length + 2, 1))));
-  const total = (inactive.length - 1) * gap;
-
-  cards.forEach((card, index) => {
-    const active = activeId && card.dataset.id === activeId;
-    card.classList.toggle('is-active', Boolean(active));
-    card.classList.toggle('is-inactive', Boolean(activeId && !active));
-    card.setAttribute('aria-expanded', String(Boolean(active)));
-
-    if (!activeId) {
-      const [x, y, r] = cardPositions[index % cardPositions.length];
-      setVars(card, { x: `${x}px`, y: `${y}px`, rot: `${r}deg`, scale: '1', opacity: '1', z: String(10 + index) });
-      return;
-    }
-
-    if (active) {
-      setVars(card, { x: '0px', y: '-76px', rot: '0deg', scale: '1', opacity: '1', z: '40' });
-      return;
-    }
-
-    const dockIndex = inactive.indexOf(card);
-    const dockX = -total / 2 + dockIndex * gap;
-    const dockRot = [-5, 3, -2, 5, -4, 2][dockIndex % 6];
-    setVars(card, { x: `${dockX}px`, y: '252px', rot: `${dockRot}deg`, scale: '.72', opacity: '.42', z: String(5 + index) });
+function setCardVars(card, vars) {
+  Object.entries(vars).forEach(([key, value]) => {
+    card.style.setProperty(`--${key}`, value);
   });
 }
 
-function renderExhibitionWorks() {
-  const stage = document.querySelector('[data-exhibition-stage]');
-  if (!stage) return;
+function clearMotionVars(card) {
+  ['x', 'y', 'rot', 'scale', 'opacity', 'z', 'hover-y'].forEach((key) => {
+    card.style.removeProperty(`--${key}`);
+  });
+}
 
-  stage.innerHTML = works.map((work, index) => {
-    const [bg, fg, muted] = palettes[index % palettes.length];
-    const title = work.titleDisplay || work.shortTitle || work.title;
-    const mode = mediaMode(work);
-    const image = work.thumb || work.thumbnail || work.cover;
-    const href = work.detailUrl || work.href || `./work-detail.html?work=${encodeURIComponent(work.slug)}`;
-    return `
-      <article class="exhibition-card is-${escapeHtml(mode)}" data-work-card data-id="${escapeHtml(work.slug)}" tabindex="0" aria-expanded="false" style="--card-bg:${bg};--card-fg:${fg};--card-muted:${muted};">
-        <div class="exhibition-card__image-window"><div class="exhibition-card__image-inner"><img src="${image}" alt="${escapeHtml(work.alt || work.title)}" loading="${index < 2 ? 'eager' : 'lazy'}" decoding="async"></div></div>
-        <h2 class="exhibition-card__title">${escapeHtml(title)}</h2>
-        <div class="exhibition-card__desc">
-          <p>${escapeHtml(work.summary || work.intro || '')}</p>
-          <div class="exhibition-card__meta"><span>${escapeHtml(work.source || '来源待复核')}</span><span>${escapeHtml(work.medium || work.category || '')}</span></div>
-          <a class="exhibition-card__link" href="${href}">进入作品</a>
-        </div>
-      </article>`;
-  }).join('');
+function layoutCompactCards(stage) {
+  const cards = Array.from(stage.querySelectorAll('[data-work-card]'));
+  cards.forEach((card, index) => {
+    const pos = compactLayout[index % compactLayout.length];
+    card.classList.remove('is-active', 'is-inactive');
+    card.setAttribute('aria-expanded', 'false');
+    card.style.removeProperty('left');
+    card.style.removeProperty('top');
+    card.style.removeProperty('margin-left');
+    card.style.removeProperty('transform');
+    card.style.removeProperty('z-index');
 
-  let activeId = null;
-  stage.addEventListener('click', (event) => {
-    const card = event.target.closest('[data-work-card]');
-    if (!card) {
-      activeId = null;
-      layoutCards(activeId);
+    if (isMobileLayout()) {
+      clearMotionVars(card);
       return;
     }
-    if (event.target.closest('a')) return;
-    activeId = activeId === card.dataset.id ? null : card.dataset.id;
-    layoutCards(activeId);
+
+    setCardVars(card, {
+      x: `${pos.x}px`,
+      y: `${pos.y}px`,
+      rot: `${pos.r}deg`,
+      scale: String(pos.s || 1),
+      opacity: '1',
+      z: String(10 + index),
+      'hover-y': '0px'
+    });
   });
-  window.addEventListener('resize', () => layoutCards(activeId));
-  layoutCards(activeId);
+}
+
+function bindExhibitionInteractions(stage) {
+  let activeId = null;
+  const cards = Array.from(stage.querySelectorAll('[data-work-card]'));
+
+  cards.forEach((card) => {
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      const id = card.dataset.id;
+      activeId = activeId === id ? null : id;
+      updateExhibitionState(stage, activeId);
+    });
+
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        const id = card.dataset.id;
+        activeId = activeId === id ? null : id;
+        updateExhibitionState(stage, activeId);
+      }
+    });
+  });
+
+  stage.addEventListener('click', (event) => {
+    if (!event.target.closest('[data-work-card]')) {
+      activeId = null;
+      updateExhibitionState(stage, activeId);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    updateExhibitionState(stage, activeId);
+  });
+}
+
+function updateExhibitionState(stage, activeId) {
+  const cards = Array.from(stage.querySelectorAll('[data-work-card]'));
+  stage.classList.toggle('has-active-card', Boolean(activeId));
+
+  if (!activeId) {
+    layoutCompactCards(stage);
+    return;
+  }
+
+  const inactiveCards = cards.filter((candidate) => candidate.dataset.id !== activeId);
+  const dockGap = Math.max(58, Math.min(76, Math.floor(stage.clientWidth / Math.max(inactiveCards.length + 2, 1))));
+  const dockTotal = (inactiveCards.length - 1) * dockGap;
+
+  cards.forEach((card, index) => {
+    const isActive = card.dataset.id === activeId;
+    const isInactive = Boolean(activeId && !isActive);
+    card.classList.toggle('is-active', isActive);
+    card.classList.toggle('is-inactive', isInactive);
+    card.setAttribute('aria-expanded', String(isActive));
+    card.style.removeProperty('left');
+    card.style.removeProperty('top');
+    card.style.removeProperty('margin-left');
+    card.style.removeProperty('transform');
+    card.style.removeProperty('z-index');
+
+    if (isMobileLayout()) {
+      clearMotionVars(card);
+      return;
+    }
+
+    if (isActive) {
+      setCardVars(card, {
+        x: '0px',
+        y: '-76px',
+        rot: '0deg',
+        scale: '1',
+        opacity: '1',
+        z: '40',
+        'hover-y': '0px'
+      });
+      return;
+    }
+
+    const dockIndex = inactiveCards.indexOf(card);
+    const dockX = -dockTotal / 2 + dockIndex * dockGap;
+    const dockRot = [-5, 3, -2, 5, -4, 2][dockIndex % 6];
+    setCardVars(card, {
+      x: `${dockX}px`,
+      y: '252px',
+      rot: `${dockRot}deg`,
+      scale: '.72',
+      opacity: '.42',
+      z: String(5 + index),
+      'hover-y': '0px'
+    });
+  });
 }
 
 function renderIndex() {
@@ -136,11 +264,26 @@ function renderIndex() {
       <strong class="index-row-title">${escapeHtml(work.title)}</strong>
       <p class="index-row-copy">${escapeHtml(work.source || '来源待复核')} / ${escapeHtml(work.medium || work.category)}</p>
       <em class="row-action">进入 →</em>
-    </a>`).join('');
+    </a>
+  `).join('');
+}
+
+function initMotion() {
+  if (!window.gsap) {
+    document.documentElement.classList.add('no-gsap');
+    return;
+  }
+  if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+
+  const mm = gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: reduce)', (context) => {
+    if (context.conditions) return;
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   renderNavigation();
   renderExhibitionWorks();
   renderIndex();
+  initMotion();
 });
