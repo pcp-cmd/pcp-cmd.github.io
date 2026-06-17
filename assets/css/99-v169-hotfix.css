@@ -1,0 +1,7 @@
+/* v1.6.9 final hotfix */
+.home-redesign .hero{min-height:calc(100svh - 72px)!important;align-items:center!important;padding-block:clamp(72px,10vh,128px) clamp(86px,12vh,148px)!important;}
+.home-redesign .home-guide,.home-redesign .selected-artifacts,.home-redesign .home-archive{margin-top:clamp(96px,16vh,180px)!important;}
+.desktop-nav a[aria-current="page"],.nav-link[aria-current="page"],.nav-link.is-active{color:var(--text-strong)!important;font-weight:700;}
+.guide-row:hover,.index-row:hover,.reading-row:hover,.reading-row.is-selected,.archive-link-item:hover{background:linear-gradient(90deg,rgba(217,119,87,.10),rgba(242,240,232,.035) 44%,transparent),rgba(242,240,232,.025)!important;}
+.row-action,.guide-row em,.reading-row-action{border-radius:999px;}
+.guide-row:hover em,.index-row:hover .row-action,.reading-row:hover .reading-row-action,.reading-row.is-selected .reading-row-action{color:var(--accent)!important;background:rgba(217,119,87,.10);border-color:rgba(217,119,87,.24);transform:translateX(3px);}
