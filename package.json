@@ -1,0 +1,16 @@
+{
+  "name": "aleksi-lab-site",
+  "version": "1.6.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "import:skill": "node scripts/import-skill.js",
+    "import:math": "node scripts/import-math-chapter.js",
+    "build:markdown": "node scripts/build-markdown.js",
+    "build:content": "node scripts/build-content-manifest.js && node scripts/build-content-bundle.js",
+    "build": "npm run build:markdown && npm run build:content",
+    "build:local": "npm run import:skill && npm run import:math && npm run build",
+    "qa": "node qa-check.js",
+    "build:bundle": "node scripts/build-content-bundle.js"
+  }
+}

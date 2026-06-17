@@ -1,0 +1,346 @@
+{
+  "contentEngine": "markdown",
+  "generatedAt": "2026-06-17T08:56:35.727Z",
+  "renderer": "marked",
+  "math": "katex",
+  "layout": "warm-manuscript",
+  "count": 56,
+  "files": [
+    {
+      "title": "未完手稿内容目录",
+      "source": "content/README.md",
+      "article": "article.html?src=content%2FREADME.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Glyph Assets / 视觉符号源文件",
+      "source": "content/assets/glyphs/README.md",
+      "article": "article.html?src=content%2Fassets%2Fglyphs%2FREADME.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Design Archive / 视觉档案",
+      "source": "content/design/README.md",
+      "article": "article.html?src=content%2Fdesign%2FREADME.md",
+      "status": "under revision"
+    },
+    {
+      "title": "项目标题",
+      "source": "content/design/project-template.md",
+      "article": "article.html?src=content%2Fdesign%2Fproject-template.md",
+      "status": "under revision"
+    },
+    {
+      "title": "山田杏奈 / 蓝色强排版方形海报",
+      "source": "content/design/works/anna-yamada-boku-no-kokoro-blue-poster.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fanna-yamada-boku-no-kokoro-blue-poster.md",
+      "status": "under revision"
+    },
+    {
+      "title": "绫濑桃 / 胆大党暖红色角色海报",
+      "source": "content/design/works/ayase-momo-dandadan.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fayase-momo-dandadan.md",
+      "status": "under revision"
+    },
+    {
+      "title": "电次与雷塞 / 蓝色单色关系拼贴海报",
+      "source": "content/design/works/chainsaw-man-denji-reze-blue-monochrome.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fchainsaw-man-denji-reze-blue-monochrome.md",
+      "status": "under revision"
+    },
+    {
+      "title": "电次与雷塞 / 蓝色拥抱场景海报",
+      "source": "content/design/works/chainsaw-man-denji-reze-embrace.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fchainsaw-man-denji-reze-embrace.md",
+      "status": "under revision"
+    },
+    {
+      "title": "露西亚 / 战双帕弥什黑白任务档案海报",
+      "source": "content/design/works/gravy-raven-starlight-fade-away.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fgravy-raven-starlight-fade-away.md",
+      "status": "under revision"
+    },
+    {
+      "title": "古见硝子 / 紫色单色出版物海报",
+      "source": "content/design/works/komi-purple-monochrome-spread.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fkomi-purple-monochrome-spread.md",
+      "status": "under revision"
+    },
+    {
+      "title": "无限进步不是向前冲，而是重新打开",
+      "source": "content/essays/001-open-loop-revision.md",
+      "article": "article.html?src=content%2Fessays%2F001-open-loop-revision.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Visual Essays / 视觉文章",
+      "source": "content/essays/README.md",
+      "article": "article.html?src=content%2Fessays%2FREADME.md",
+      "status": "under revision"
+    },
+    {
+      "title": "文章标题",
+      "source": "content/essays/essay-template.md",
+      "article": "article.html?src=content%2Fessays%2Fessay-template.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Revision Log / 版本修订库",
+      "source": "content/log/README.md",
+      "article": "article.html?src=content%2Flog%2FREADME.md",
+      "status": "under revision"
+    },
+    {
+      "title": "vX.X 修订记录",
+      "source": "content/log/revision-log-template.md",
+      "article": "article.html?src=content%2Flog%2Frevision-log-template.md",
+      "status": "under revision"
+    },
+    {
+      "title": "未完手稿网站 v0.3 原型记录",
+      "source": "content/log/v0.3-design-prototype.md",
+      "article": "article.html?src=content%2Flog%2Fv0.3-design-prototype.md",
+      "status": "under revision"
+    },
+    {
+      "title": "v0.4 — AI Coworker × Cognitive Revision Chain",
+      "source": "content/log/v0.4-cognitive-revision-chain.md",
+      "article": "article.html?src=content%2Flog%2Fv0.4-cognitive-revision-chain.md",
+      "status": "under revision"
+    },
+    {
+      "title": "v0.5 Visual Refinement",
+      "source": "content/log/v0.5-visual-refinement.md",
+      "article": "article.html?src=content%2Flog%2Fv0.5-visual-refinement.md",
+      "status": "under revision"
+    },
+    {
+      "title": "v0.6 Visual System Refinement",
+      "source": "content/log/v0.6-visual-system-refinement.md",
+      "article": "article.html?src=content%2Flog%2Fv0.6-visual-system-refinement.md",
+      "status": "under revision"
+    },
+    {
+      "title": "v0.7 Claude GSAP Hero Refinement",
+      "source": "content/log/v0.7-claude-gsap-hero.md",
+      "article": "article.html?src=content%2Flog%2Fv0.7-claude-gsap-hero.md",
+      "status": "under revision"
+    },
+    {
+      "title": "v0.8 Visual System Revision",
+      "source": "content/log/v0.8-visual-system-revision.md",
+      "article": "article.html?src=content%2Flog%2Fv0.8-visual-system-revision.md",
+      "status": "under revision"
+    },
+    {
+      "title": "v1.0 / System Integration",
+      "source": "content/log/v1.0-system-integration.md",
+      "article": "article.html?src=content%2Flog%2Fv1.0-system-integration.md",
+      "status": "under revision"
+    },
+    {
+      "title": "v1.1 markdown-first article system",
+      "source": "content/log/v1.1-markdown-first-article-system.md",
+      "article": "article.html?src=content%2Flog%2Fv1.1-markdown-first-article-system.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Math Lab / 数学实验室",
+      "source": "content/math/README.md",
+      "article": "article.html?src=content%2Fmath%2FREADME.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1.3 集合的势讲解",
+      "source": "content/math/analysis/chapter-01/cards/card-01-3-cardinality-learning.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fcards%2Fcard-01-3-cardinality-learning.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1 集合论复习卡片与闭卷测试",
+      "source": "content/math/analysis/chapter-01/cards/card-01-set-theory-cards-and-test.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fcards%2Fcard-01-set-theory-cards-and-test.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1 集合论复习卡片与闭卷测试",
+      "source": "content/math/analysis/chapter-01/cards/card-06-#U590d#U4e60#U5361#U7247#U4e0e#U95ed#U5377#U6d4b#U8bd5.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fcards%2Fcard-06-%23U590d%23U4e60%23U5361%23U7247%23U4e0e%23U95ed%23U5377%23U6d4b%23U8bd5.md",
+      "status": "under revision"
+    },
+    {
+      "title": "数学分析 / 第一章",
+      "source": "content/math/analysis/chapter-01/index.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Findex.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1.1 集合公理讲解",
+      "source": "content/math/analysis/chapter-01/notes/01-1-set-axioms-learning.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fnotes%2F01-1-set-axioms-learning.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1.2 集合上的序结构讲解",
+      "source": "content/math/analysis/chapter-01/notes/01-2-order-structures-learning.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fnotes%2F01-2-order-structures-learning.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1.3 集合的势讲解",
+      "source": "content/math/analysis/chapter-01/notes/01-3-cardinality-learning.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fnotes%2F01-3-cardinality-learning.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1 集合论复习卡片与闭卷测试",
+      "source": "content/math/analysis/chapter-01/notes/01-set-theory-cards-and-test.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fnotes%2F01-set-theory-cards-and-test.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1 集合论章节包索引",
+      "source": "content/math/analysis/chapter-01/notes/01-set-theory-index.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fnotes%2F01-set-theory-index.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1 集合论学习总览",
+      "source": "content/math/analysis/chapter-01/notes/01-set-theory-overview.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fnotes%2F01-set-theory-overview.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1 集合论题解",
+      "source": "content/math/analysis/chapter-01/notes/01-set-theory-solutions.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fnotes%2F01-set-theory-solutions.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1 集合论索引",
+      "source": "content/math/analysis/chapter-01/web-latex/web-01-#U96c6#U5408#U8bba#U7d22#U5f15.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-01-%23U96c6%23U5408%23U8bba%23U7d22%23U5f15.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1.1 集合公理",
+      "source": "content/math/analysis/chapter-01/web-latex/web-02-#U95c6#U55d7#U608e#U934f#Ue102#U608a.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-02-%23U95c6%23U55d7%23U608e%23U934f%23Ue102%23U608a.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1.1 集合公理",
+      "source": "content/math/analysis/chapter-01/web-latex/web-02-#U96c6#U5408#U516c#U7406.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-02-%23U96c6%23U5408%23U516c%23U7406.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1.2 集合上的序结构",
+      "source": "content/math/analysis/chapter-01/web-latex/web-03-#U5e8f#U7ed3#U6784.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-03-%23U5e8f%23U7ed3%23U6784.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1.3 集合的势",
+      "source": "content/math/analysis/chapter-01/web-latex/web-04-#U95c6#U55d7#U608e#U9428#U52eb#U5a0d.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-04-%23U95c6%23U55d7%23U608e%23U9428%23U52eb%23U5a0d.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1.3 集合的势",
+      "source": "content/math/analysis/chapter-01/web-latex/web-04-#U96c6#U5408#U7684#U52bf.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-04-%23U96c6%23U5408%23U7684%23U52bf.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1 集合论题解",
+      "source": "content/math/analysis/chapter-01/web-latex/web-05-#U96c6#U5408#U8bba#U9898#U89e3.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-05-%23U96c6%23U5408%23U8bba%23U9898%23U89e3.md",
+      "status": "under revision"
+    },
+    {
+      "title": "1.1 集合论复习卡片与闭卷测试",
+      "source": "content/math/analysis/chapter-01/web-latex/web-06-#U590d#U4e60#U5361#U7247#U4e0e#U95ed#U5377#U6d4b#U8bd5.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-06-%23U590d%23U4e60%23U5361%23U7247%23U4e0e%23U95ed%23U5377%23U6d4b%23U8bd5.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Obsidian LaTeX 版说明",
+      "source": "content/math/analysis/chapter-01/web-latex/web-README.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-README.md",
+      "status": "under revision"
+    },
+    {
+      "title": "定义笔记标题",
+      "source": "content/math/definition-template.md",
+      "article": "article.html?src=content%2Fmath%2Fdefinition-template.md",
+      "status": "under revision"
+    },
+    {
+      "title": "错题 / 证明训练标题",
+      "source": "content/math/problem-template.md",
+      "article": "article.html?src=content%2Fmath%2Fproblem-template.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Skill Library / Skill 资产库",
+      "source": "content/skills/README.md",
+      "article": "article.html?src=content%2Fskills%2FREADME.md",
+      "status": "under revision"
+    },
+    {
+      "title": "视觉符号卡片生产 Skill",
+      "source": "content/skills/glyph-system-v0.md",
+      "article": "article.html?src=content%2Fskills%2Fglyph-system-v0.md",
+      "status": "under revision"
+    },
+    {
+      "title": "可迭代学习诊断技能",
+      "source": "content/skills/learning-diagnosis-protocol/README.md",
+      "article": "article.html?src=content%2Fskills%2Flearning-diagnosis-protocol%2FREADME.md",
+      "status": "under revision"
+    },
+    {
+      "title": "可迭代学习诊断技能",
+      "source": "content/skills/learning-diagnosis-protocol/SKILL.md",
+      "article": "article.html?src=content%2Fskills%2Flearning-diagnosis-protocol%2FSKILL.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Skill Name",
+      "source": "content/skills/skill-template.md",
+      "article": "article.html?src=content%2Fskills%2Fskill-template.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Cognitive Revision Chain / 认知修订链",
+      "source": "content/system/cognitive-revision-chain.md",
+      "article": "article.html?src=content%2Fsystem%2Fcognitive-revision-chain.md",
+      "status": "under revision"
+    },
+    {
+      "title": "AI Coworker Contract",
+      "source": "content/system/coworker-contract.md",
+      "article": "article.html?src=content%2Fsystem%2Fcoworker-contract.md",
+      "status": "under revision"
+    },
+    {
+      "title": "可迭代修订协议",
+      "source": "content/system/revision-protocol/index.md",
+      "article": "article.html?src=content%2Fsystem%2Frevision-protocol%2Findex.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Workflows / 工作流库",
+      "source": "content/system/workflows/README.md",
+      "article": "article.html?src=content%2Fsystem%2Fworkflows%2FREADME.md",
+      "status": "under revision"
+    },
+    {
+      "title": "工作流标题",
+      "source": "content/system/workflows/workflow-template.md",
+      "article": "article.html?src=content%2Fsystem%2Fworkflows%2Fworkflow-template.md",
+      "status": "under revision"
+    }
+  ]
+}

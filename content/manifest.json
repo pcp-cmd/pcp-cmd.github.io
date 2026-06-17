@@ -1,0 +1,233 @@
+{
+  "site": "Aleksi Lab",
+  "version": "v1.1",
+  "generatedAt": "2026-06-17T08:56:36.158Z",
+  "staticUpload": true,
+  "localCompiler": false,
+  "contentEngine": "markdown",
+  "article": {
+    "renderer": "marked",
+    "math": "katex",
+    "layout": "warm-manuscript"
+  },
+  "chain": [
+    {
+      "title": "Raw Experience",
+      "order": 1,
+      "status": "available"
+    },
+    {
+      "title": "Prediction Error",
+      "order": 2,
+      "status": "active"
+    },
+    {
+      "title": "Personal Delta",
+      "order": 3,
+      "status": "available"
+    },
+    {
+      "title": "Connection",
+      "order": 4,
+      "status": "available"
+    },
+    {
+      "title": "Compression",
+      "order": 5,
+      "status": "available"
+    },
+    {
+      "title": "Skill",
+      "order": 6,
+      "status": "available"
+    },
+    {
+      "title": "Revision Loop",
+      "order": 7,
+      "status": "available"
+    }
+  ],
+  "manuscripts": [
+    {
+      "title": "Math Analysis / Chapter 01",
+      "room": "Math Lab",
+      "status": "under revision",
+      "chain": [
+        "Prediction Error",
+        "Compression"
+      ],
+      "source": "content/math/analysis/chapter-01/index.md"
+    },
+    {
+      "title": "Set Axioms Learning",
+      "room": "Math Lab",
+      "status": "working draft",
+      "chain": [
+        "Raw Experience",
+        "Prediction Error"
+      ],
+      "source": "content/math/analysis/chapter-01/notes/01-1-set-axioms-learning.md"
+    },
+    {
+      "title": "Revision Protocol",
+      "room": "Skill Library",
+      "status": "reusable artifact",
+      "chain": [
+        "Compression",
+        "Skill"
+      ],
+      "source": "content/system/revision-protocol/index.md"
+    },
+    {
+      "title": "v1.1 markdown-first article system",
+      "room": "System Log",
+      "status": "under revision",
+      "chain": [
+        "Skill",
+        "Revision Loop"
+      ],
+      "source": "content/log/v1.1-markdown-first-article-system.md"
+    }
+  ],
+  "systems": [
+    {
+      "title": "Revision Protocol",
+      "cn": "可迭代修订协议",
+      "source": "content/system/revision-protocol/index.md",
+      "status": "reusable artifact",
+      "chain": [
+        "Compression",
+        "Skill"
+      ]
+    }
+  ],
+  "math": [
+    {
+      "title": "Math Analysis / Chapter 01",
+      "cn": "数学分析第一章",
+      "status": "revision",
+      "sourceType": "local math analysis learning system",
+      "sourcePathRedacted": true,
+      "generatedAt": "2026-06-16T06:44:42.776Z",
+      "siteMode": "static upload",
+      "localCompiler": false,
+      "webMath": true,
+      "outputs": {
+        "index": "content/math/analysis/chapter-01/index.md",
+        "manifest": "content/math/analysis/chapter-01/manifest.json",
+        "pdf": null
+      },
+      "assetTypes": [
+        "Definition Card",
+        "Example / Counterexample",
+        "Proof Deconstruction",
+        "Prediction Error",
+        "Toolbox Card",
+        "Revision Log"
+      ],
+      "notes": [
+        {
+          "title": "1.1.1 集合公理讲解",
+          "file": "notes/01-1-set-axioms-learning.md",
+          "bytes": 3761
+        },
+        {
+          "title": "1.1.2 集合上的序结构讲解",
+          "file": "notes/01-2-order-structures-learning.md",
+          "bytes": 2101
+        },
+        {
+          "title": "1.1.3 集合的势讲解",
+          "file": "notes/01-3-cardinality-learning.md",
+          "bytes": 1879
+        },
+        {
+          "title": "1.1 集合论复习卡片与闭卷测试",
+          "file": "notes/01-set-theory-cards-and-test.md",
+          "bytes": 3782
+        },
+        {
+          "title": "1.1 集合论章节包索引",
+          "file": "notes/01-set-theory-index.md",
+          "bytes": 1913
+        },
+        {
+          "title": "1.1 集合论学习总览",
+          "file": "notes/01-set-theory-overview.md",
+          "bytes": 3358
+        },
+        {
+          "title": "1.1 集合论题解",
+          "file": "notes/01-set-theory-solutions.md",
+          "bytes": 10184
+        }
+      ],
+      "webLatex": [
+        {
+          "title": "1.1 集合论索引",
+          "file": "web-latex/web-01-#U96c6#U5408#U8bba#U7d22#U5f15.md",
+          "bytes": 1837
+        },
+        {
+          "title": "1.1.1 集合公理",
+          "file": "web-latex/web-02-#U96c6#U5408#U516c#U7406.md",
+          "bytes": 3258
+        },
+        {
+          "title": "1.1.2 集合上的序结构",
+          "file": "web-latex/web-03-#U5e8f#U7ed3#U6784.md",
+          "bytes": 2376
+        },
+        {
+          "title": "1.1.3 集合的势",
+          "file": "web-latex/web-04-#U96c6#U5408#U7684#U52bf.md",
+          "bytes": 2382
+        },
+        {
+          "title": "1.1 集合论题解",
+          "file": "web-latex/web-05-#U96c6#U5408#U8bba#U9898#U89e3.md",
+          "bytes": 5617
+        },
+        {
+          "title": "1.1 集合论复习卡片与闭卷测试",
+          "file": "web-latex/web-06-#U590d#U4e60#U5361#U7247#U4e0e#U95ed#U5377#U6d4b#U8bd5.md",
+          "bytes": 2704
+        },
+        {
+          "title": "Obsidian LaTeX 版说明",
+          "file": "web-latex/web-README.md",
+          "bytes": 808
+        }
+      ],
+      "cards": [
+        {
+          "title": "1.1.3 集合的势讲解",
+          "file": "cards/card-01-3-cardinality-learning.md",
+          "bytes": 1879
+        },
+        {
+          "title": "1.1 集合论复习卡片与闭卷测试",
+          "file": "cards/card-01-set-theory-cards-and-test.md",
+          "bytes": 3782
+        },
+        {
+          "title": "1.1 集合论复习卡片与闭卷测试",
+          "file": "cards/card-06-#U590d#U4e60#U5361#U7247#U4e0e#U95ed#U5377#U6d4b#U8bd5.md",
+          "bytes": 2704
+        }
+      ]
+    }
+  ],
+  "logs": [
+    "content/log/README.md",
+    "content/log/revision-log-template.md",
+    "content/log/v0.3-design-prototype.md",
+    "content/log/v0.4-cognitive-revision-chain.md",
+    "content/log/v0.5-visual-refinement.md",
+    "content/log/v0.6-visual-system-refinement.md",
+    "content/log/v0.7-claude-gsap-hero.md",
+    "content/log/v0.8-visual-system-revision.md",
+    "content/log/v1.0-system-integration.md",
+    "content/log/v1.1-markdown-first-article-system.md"
+  ]
+}

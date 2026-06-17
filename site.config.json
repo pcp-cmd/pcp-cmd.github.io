@@ -1,0 +1,14 @@
+{
+  "contentEngine": "markdown",
+  "sources": {
+    "revisionSkill": "[local-source-redacted]",
+    "mathAnalysisChapter01": "[local-source-redacted]"
+  },
+  "article": {
+    "renderer": "marked",
+    "math": "katex",
+    "layout": "warm-manuscript"
+  },
+  "staticUpload": true,
+  "localCompiler": false
+}

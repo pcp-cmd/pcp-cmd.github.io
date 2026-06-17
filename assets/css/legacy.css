@@ -1,0 +1,4910 @@
+/* Local font-face declarations removed for handoff; use system and CJK fallback stacks. */
+/* Aleksi Lab v1.1: local typography and warm editorial research system. */
+:root {
+  --background: oklch(0.9786 0.0027 106.45);
+  --foreground: oklch(0.3438 0.0269 95.7226);
+  --card: oklch(0.9818 0.0054 95.0986);
+  --card-foreground: oklch(0.1908 0.0020 106.5859);
+  --primary: oklch(0.6171 0.1375 39.0427);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.9484 0.0032 81.39);
+  --secondary-foreground: oklch(0.4334 0.0177 98.6048);
+  --muted-token: oklch(0.9341 0.0153 90.2390);
+  --muted-foreground: oklch(0.6059 0.0075 97.4233);
+  --accent: oklch(0.9245 0.0138 92.9892);
+  --accent-foreground: oklch(0.2671 0.0196 98.9390);
+  --border: oklch(0.8847 0.0069 97.3627);
+  --ring: oklch(0.6171 0.1375 39.0427);
+
+  --clr-bg: var(--background);
+  --clr-dark: var(--card-foreground);
+  --clr-mid: var(--border);
+  --clr-light: var(--secondary);
+  --clr-accent: var(--primary);
+  --clr-blue: oklch(0.612 0.074 245);
+  --clr-green: oklch(0.57 0.07 130);
+  --clr-white: #ffffff;
+
+  --page-bg: var(--background);
+  --surface: var(--card);
+  --surface-soft: var(--secondary);
+  --surface-muted: var(--muted-token);
+  --ink: var(--card-foreground);
+  --ink-body: var(--foreground);
+  --body: var(--ink-body);
+  --ink-muted: var(--muted-foreground);
+  --muted: var(--ink-muted);
+  --line: var(--border);
+  --clay: var(--primary);
+  --clay-wash: var(--accent);
+  --divider: color-mix(in oklch, var(--border) 74%, transparent);
+  --surface-card: var(--clr-bg);
+  --surface-card-soft: var(--surface-soft);
+  --surface-card-deep: var(--clr-light);
+  --hairline: var(--divider);
+  --accent-clay: var(--clay);
+  --accent-green: var(--clr-green);
+  --accent-blue: var(--clr-blue);
+  --accent-clay-soft: rgba(217, 119, 87, .12);
+  --accent-clay-line: rgba(217, 119, 87, .32);
+
+  --paper-000: #fffdf8;
+  --paper-025: #fcfbf7;
+  --paper-050: var(--clr-bg);
+  --paper-075: #f8f6f0;
+  --paper-100: var(--clr-bg);
+  --paper-150: var(--surface-soft);
+  --paper-200: var(--clr-light);
+  --paper-250: #dedcd1;
+  --paper-300: var(--clr-mid);
+
+  --graphite-600: var(--muted);
+  --graphite-700: var(--body);
+  --graphite-800: var(--body);
+  --graphite-900: #1d1b19;
+  --graphite-950: var(--clr-dark);
+
+  --oat-050: var(--clr-light);
+  --oat-100: var(--clr-light);
+  --oat-200: var(--clr-light);
+  --oat-300: #d8d5c9;
+
+  --cactus-050: rgba(120, 140, 93, .09);
+  --cactus-100: rgba(120, 140, 93, .14);
+  --cactus-200: rgba(120, 140, 93, .22);
+  --cactus-300: var(--clr-green);
+
+  --olive-050: rgba(120, 140, 93, .12);
+  --olive-100: rgba(120, 140, 93, .16);
+  --olive-200: rgba(120, 140, 93, .24);
+  --olive-300: var(--clr-green);
+
+  --clay-050: #f3ded3;
+  --clay-100: #efd0c1;
+  --clay-200: #e7b9a7;
+  --clay-300: #dc977c;
+  --clay-400: var(--clr-accent);
+  --clay-500: var(--clr-accent);
+
+  --slate-050: rgba(106, 155, 204, .12);
+  --slate-100: rgba(106, 155, 204, .18);
+  --slate-200: rgba(106, 155, 204, .28);
+  --slate-500: var(--clr-blue);
+
+  --swatch-gray-000: var(--clr-bg);
+  --swatch-gray-050: var(--clr-bg);
+  --swatch-gray-100: var(--clr-bg);
+  --swatch-gray-150: var(--surface-soft);
+  --swatch-gray-200: var(--clr-light);
+  --swatch-gray-250: #dedcd1;
+  --swatch-gray-300: var(--clr-mid);
+  --swatch-gray-600: var(--muted);
+  --swatch-gray-750: var(--body);
+  --swatch-gray-950: var(--clr-dark);
+  --swatch-oat: var(--clr-light);
+  --swatch-clay: var(--clr-accent);
+  --swatch-clay-interactive: var(--clr-accent);
+  --sage: var(--clr-green);
+  --blue-gray: var(--clr-blue);
+
+  --font-display: "Tiempos Headline Local", "Tiempos Text Local", "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+  --font-serif: "Tiempos Text Local", "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+  --font-sans: "Styrene B Local", "Styrene UI Local", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", "Cascadia Code", Consolas, monospace;
+  --font-heading: var(--font-serif);
+  --font-title: var(--font-serif);
+  --font-body: var(--font-sans);
+  --font-ui: var(--font-sans);
+
+  --radius: 8px;
+  --max: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  background: var(--page-bg);
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+p,
+blockquote {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+blockquote,
+.chain-node strong,
+.protocol-card strong,
+.room-card h3,
+.plog-card strong,
+.work-item strong,
+.log-card strong {
+  color: var(--ink);
+  font-family: var(--font-title);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: 124px;
+  line-height: .9;
+}
+
+h2 {
+  max-width: 960px;
+  margin-bottom: 0;
+  font-size: 62px;
+  line-height: 1.02;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 31px;
+  line-height: 1.06;
+}
+
+p {
+  color: var(--body);
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.desktop-nav,
+.menu-toggle,
+.hero-actions a,
+.menu-label,
+.eyebrow,
+.section-kicker,
+.card-index,
+.node-index,
+.stage-label,
+.log-type,
+.plog-meta,
+.work-meta,
+.hero-card-top,
+.brand-mark small {
+  font-family: var(--font-ui);
+}
+
+code,
+.work-item code {
+  font-family: var(--font-mono);
+}
+
+.skip-link {
+  position: fixed;
+  left: 18px;
+  top: 18px;
+  z-index: 100;
+  padding: 10px 12px;
+  background: var(--ink);
+  color: var(--paper-050);
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.paper-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .045;
+  background-image:
+    linear-gradient(0deg, rgba(20, 20, 19, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 20, 19, .028) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 18px 48px;
+  background: rgba(250, 249, 245, .96);
+  border-bottom: 1px solid rgba(20, 20, 19, .12);
+  backdrop-filter: none;
+}
+
+.brand-mark {
+  display: grid;
+  gap: 2px;
+  line-height: 1;
+  min-width: 0;
+}
+
+.brand-mark span {
+  color: var(--ink);
+  font-family: var(--font-title);
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.brand-mark small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: var(--body);
+  font-size: 14px;
+}
+
+.desktop-nav a {
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 4px;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible {
+  color: var(--accent-clay);
+  border-color: var(--accent-clay);
+}
+
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--page-bg);
+  padding: 9px 14px;
+  cursor: pointer;
+}
+
+.menu-toggle i {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--ink);
+  box-shadow: 0 6px 0 var(--ink), 0 -6px 0 var(--ink);
+}
+
+.site-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  display: grid;
+  grid-template-columns: minmax(280px, .9fr) minmax(320px, 1fr);
+  gap: 48px;
+  padding: 126px 72px 52px;
+  background: rgba(250, 249, 245, .985);
+  visibility: hidden;
+  transform: translateY(-110%);
+}
+
+.site-menu.is-open {
+  visibility: visible;
+}
+
+.menu-label,
+.eyebrow,
+.section-kicker,
+.card-index,
+.node-index,
+.stage-label,
+.log-type {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.menu-links {
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  font-family: var(--font-title);
+  font-size: 74px;
+  line-height: .92;
+}
+
+.menu-links a:hover,
+.menu-links a:focus-visible {
+  color: var(--accent-clay);
+}
+
+.menu-figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(20, 20, 19, .1);
+  border-radius: var(--radius);
+  background: var(--page-bg);
+}
+
+.menu-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.paper-section {
+  position: relative;
+  z-index: 1;
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 106px 0;
+}
+
+.hero {
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: minmax(440px, .86fr) minmax(520px, 1.14fr);
+  align-items: center;
+  gap: 58px;
+  padding-top: 148px;
+  padding-bottom: 70px;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero .eyebrow {
+  color: var(--accent-clay);
+}
+
+.hero-cn {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 29px;
+  line-height: 1.14;
+}
+
+.hero-lede {
+  max-width: 720px;
+  margin: 30px 0 0;
+  color: var(--body);
+  font-size: 24px;
+  line-height: 1.65;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.hero-actions a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--page-bg);
+  padding: 0 18px;
+  color: var(--body);
+  font-size: 14px;
+  transition: border-color .22s ease, transform .22s ease, background .22s ease;
+}
+
+.hero-actions a:first-child {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--page-bg);
+}
+
+.hero-actions a:hover,
+.hero-actions a:focus-visible {
+  border-color: var(--accent-clay);
+  transform: translateY(-2px);
+}
+
+.hero-card {
+  position: relative;
+  min-height: 604px;
+  overflow: hidden;
+  border: 1px solid rgba(20, 20, 19, .14);
+  border-radius: 6px;
+  background: var(--surface);
+  box-shadow: none;
+  padding: 24px;
+  will-change: transform, opacity;
+}
+
+.hero-card-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.hero-figure,
+.room-figure {
+  margin: 32px 0 28px;
+  overflow: hidden;
+  border: 1px solid rgba(20, 20, 19, .08);
+  border-radius: var(--radius);
+  background: var(--page-bg);
+}
+
+.room-figure {
+  margin: 0 0 24px;
+}
+
+.hero-illustration,
+.room-illustration {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  will-change: transform, opacity;
+}
+
+.hero-note {
+  max-width: 470px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.plog-section {
+  padding-top: 86px;
+}
+
+.plog-section h2 {
+  max-width: 980px;
+}
+
+.chain-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .55fr);
+  align-items: end;
+  gap: 44px;
+}
+
+.chain-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.chain-map {
+  position: relative;
+  min-height: 700px;
+  margin-top: 42px;
+}
+
+.chain-path {
+  position: absolute;
+  inset: 0;
+  top: 20px;
+  width: 100%;
+  height: 54%;
+}
+
+#cognitive-path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-dasharray: 13 17;
+  opacity: .48;
+}
+
+.chain-nodes {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  padding-top: 64px;
+}
+
+.chain-node,
+.protocol-card,
+.room-card,
+.asset-card,
+.plog-card,
+.work-item,
+.log-card {
+  --hover-mark: 0;
+  --card-bg: var(--clr-bg);
+  --card-border: rgba(20, 20, 19, .14);
+  --card-accent: var(--accent-clay);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  box-shadow: none;
+  will-change: transform;
+}
+
+.chain-node::after,
+.protocol-card::after,
+.room-card::after,
+.asset-card::after,
+.plog-card::after,
+.work-item::after,
+.log-card::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--card-accent, var(--accent-clay));
+  opacity: var(--hover-mark);
+  transform: scale(calc(.72 + var(--hover-mark) * .28));
+  transition: opacity .22s ease, transform .22s ease;
+  pointer-events: none;
+}
+
+.tone-paper {
+  --card-bg: var(--clr-bg);
+  --card-border: rgba(20, 20, 19, .14);
+  --card-accent: var(--accent-clay);
+}
+
+.tone-surface,
+.tone-oat {
+  --card-bg: var(--clr-light);
+  --card-border: rgba(20, 20, 19, .16);
+  --card-accent: var(--accent-clay);
+}
+
+.tone-clay {
+  --card-bg: #f3ded3;
+  --card-border: rgba(217, 119, 87, .35);
+  --card-accent: var(--accent-clay);
+}
+
+.tone-cactus,
+.tone-olive {
+  --card-bg: rgba(120, 140, 93, .12);
+  --card-border: rgba(120, 140, 93, .34);
+  --card-accent: var(--accent-green);
+}
+
+.tone-blue,
+.tone-slate {
+  --card-bg: rgba(106, 155, 204, .12);
+  --card-border: rgba(106, 155, 204, .3);
+  --card-accent: var(--accent-blue);
+}
+
+.tone-dark {
+  --card-bg: var(--clr-dark);
+  --card-border: rgba(250, 249, 245, .18);
+  --card-accent: var(--accent-clay);
+}
+
+.chain-node {
+  min-height: 238px;
+  padding: 18px;
+}
+
+.phase-error,
+.phase-delta,
+.phase-skill,
+.phase-revision,
+.status-delta,
+.status-toolbox,
+.status-skill,
+.status-revision {
+  border-color: var(--card-border);
+}
+
+.phase-error::before,
+.phase-delta::before,
+.phase-skill::before,
+.phase-revision::before,
+.status-delta::before,
+.status-toolbox::before,
+.status-skill::before,
+.status-revision::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--accent-clay);
+}
+
+.status-delta {
+  --card-bg: #f3ded3;
+  --card-border: rgba(217, 119, 87, .32);
+  --card-accent: var(--accent-clay);
+}
+
+.status-toolbox {
+  --card-bg: var(--clr-light);
+  --card-border: rgba(20, 20, 19, .16);
+  --card-accent: var(--accent-clay);
+}
+
+.status-skill {
+  --card-bg: rgba(120, 140, 93, .14);
+  --card-border: rgba(120, 140, 93, .34);
+  --card-accent: var(--accent-green);
+}
+
+.status-revision {
+  --card-bg: var(--clr-bg);
+  --card-border: rgba(217, 119, 87, .28);
+  --card-accent: var(--accent-clay);
+}
+
+.phase-skill::before,
+.status-skill::before {
+  background: var(--accent-green);
+}
+
+.phase-error::before,
+.phase-delta::before,
+.phase-revision::before,
+.status-delta::before,
+.status-toolbox::before,
+.status-revision::before {
+  background: var(--accent-clay);
+}
+
+.chain-node strong,
+.protocol-card strong,
+.asset-card strong,
+.plog-card strong,
+.work-item strong,
+.log-card strong {
+  display: block;
+  font-size: 24px;
+  line-height: 1.08;
+}
+
+.chain-node span,
+.protocol-card span,
+.room-card span,
+.asset-card span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.chain-node p {
+  margin: 18px 0 0;
+  font-size: 15px;
+}
+
+.chain-node em {
+  display: block;
+  margin-top: 16px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.protocol-grid,
+.room-grid,
+.plog-rail,
+.log-rail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.protocol-card {
+  min-height: 310px;
+  padding: 24px;
+}
+
+.protocol-card p {
+  font-size: 16px;
+}
+
+.protocol-card small {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 22px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.room-card {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+}
+
+.room-assets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.asset-card {
+  display: flex;
+  min-height: 270px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.asset-kicker {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.asset-card p:not(.asset-kicker) {
+  margin: 18px 0 0;
+  color: var(--body);
+  font-size: 16px;
+}
+
+.asset-card code {
+  display: block;
+  margin-top: 20px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 14px;
+  color: var(--accent-clay);
+  font-family: var(--font-mono);
+  white-space: normal;
+}
+
+.stage-label {
+  color: var(--accent-clay);
+}
+
+.coworker-section .section-kicker {
+  color: var(--accent-blue);
+}
+
+.plog-card {
+  min-height: 276px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.plog-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.plog-card p {
+  margin: 18px 0 0;
+  color: var(--body);
+  font-size: 16px;
+}
+
+.workbench {
+  display: grid;
+  grid-template-columns: minmax(0, .65fr) minmax(520px, 1fr);
+  align-items: start;
+  gap: 56px;
+}
+
+.workbench-copy {
+  position: sticky;
+  top: 120px;
+}
+
+.workbench-copy p {
+  max-width: 460px;
+  font-size: 18px;
+}
+
+.workbench-list {
+  display: grid;
+  gap: 16px;
+}
+
+.work-item {
+  padding: 24px;
+}
+
+.work-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.work-item code {
+  display: block;
+  margin-top: 18px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 14px;
+  color: var(--accent-clay);
+  white-space: normal;
+}
+
+.log-card {
+  min-height: 250px;
+  padding: 24px;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  border-top: 1px solid var(--hairline);
+  padding: 34px 48px;
+  color: var(--muted);
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.no-gsap [data-reveal],
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.hero-support {
+  max-width: 620px;
+  margin: -6px 0 24px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.atlas-network {
+  position: relative;
+  min-height: 480px;
+  margin-top: 34px;
+}
+
+.atlas-line {
+  fill: none;
+  stroke: rgba(20, 20, 19, .42);
+  stroke-width: 1.25;
+}
+
+.atlas-line-soft {
+  stroke: rgba(217, 119, 87, .38);
+}
+
+.atlas-nodes {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(130px, 1fr));
+  gap: 12px;
+  padding-top: 154px;
+}
+
+.atlas-node,
+.evolution-card,
+.manuscript-card,
+.math-note-card,
+.chain-asset-card {
+  --hover-mark: 0;
+  --card-bg: var(--clr-bg);
+  --card-border: rgba(20, 20, 19, .14);
+  --card-accent: var(--accent-clay);
+  position: relative;
+  display: block;
+  min-width: 0;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  color: var(--body);
+  box-shadow: none;
+}
+
+.atlas-node::after,
+.evolution-card::after,
+.manuscript-card::after,
+.math-note-card::after,
+.chain-asset-card::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 12px;
+  height: 1px;
+  background: var(--card-accent);
+  transform: scaleX(var(--hover-mark));
+  transform-origin: left center;
+  opacity: .86;
+}
+
+.atlas-node {
+  min-height: 272px;
+  padding: 18px 16px 26px;
+}
+
+.atlas-node.is-active {
+  border-color: rgba(217, 119, 87, .56);
+}
+
+.atlas-node-top,
+.manuscript-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.atlas-node h3,
+.evolution-card h3,
+.manuscript-card strong,
+.math-note-card strong,
+.chain-asset-card strong {
+  display: block;
+  margin: 20px 0 8px;
+  color: var(--ink);
+  font-family: var(--font-title);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+.node-cn {
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+.atlas-node p,
+.evolution-card dd,
+.manuscript-card p,
+.math-note-card p,
+.chain-asset-card p {
+  color: var(--body);
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+.atlas-node ul {
+  display: grid;
+  gap: 6px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.atlas-node li::before {
+  content: "trace / ";
+  color: var(--accent-clay);
+  font-family: var(--font-mono);
+}
+
+.evolution-grid,
+.manuscript-rail,
+.math-note-list,
+.manuscript-grid,
+.chain-node-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.evolution-card,
+.manuscript-card,
+.math-note-card,
+.chain-asset-card {
+  padding: 22px 20px 28px;
+}
+
+.evolution-card dl,
+.article-meta dl,
+.revision-rail dl {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+}
+
+.evolution-card dt,
+.article-meta dt,
+.revision-rail dt {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.evolution-card dd,
+.article-meta dd,
+.revision-rail dd {
+  margin: -8px 0 0;
+}
+
+.manuscripts-section h2,
+.evolutions h2 {
+  max-width: 820px;
+}
+
+.manuscript-chain,
+.manuscript-next,
+.math-note-card span,
+.math-note-card small,
+.chain-asset-card span,
+.chain-asset-card small {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.article-page .site-header,
+.math-page .site-header,
+.chain-page .site-header,
+.manuscripts-page .site-header,
+.protocol-page .site-header {
+  position: sticky;
+}
+
+.article-shell {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 760px) 220px;
+  gap: 34px;
+  width: min(100% - 56px, 1280px);
+  margin: 0 auto;
+  padding: 148px 0 86px;
+}
+
+.article-meta,
+.article-rail {
+  position: sticky;
+  top: 112px;
+  align-self: start;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.return-link,
+.text-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--accent-clay);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+.article-manuscript {
+  border: 1px solid rgba(20, 20, 19, .14);
+  border-radius: var(--radius);
+  background: var(--paper-025);
+  padding: clamp(28px, 5vw, 62px);
+}
+
+.article-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 240px);
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 48px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(20, 20, 19, .14);
+}
+
+.article-header h1 {
+  margin: 0;
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: .94;
+}
+
+.article-judgment {
+  max-width: 580px;
+  margin: 22px 0 0;
+  color: var(--body);
+  font-size: 21px;
+  line-height: 1.55;
+}
+
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.article-tags span,
+.math-filter button,
+.manuscript-view-tabs button {
+  border: 1px solid rgba(20, 20, 19, .16);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.article-tags span {
+  padding: 7px 9px;
+}
+
+.article-glyph {
+  position: relative;
+  min-height: 220px;
+  border: 1px solid rgba(20, 20, 19, .14);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  overflow: hidden;
+}
+
+.article-glyph span {
+  position: absolute;
+  display: block;
+  height: 1px;
+  background: var(--ink);
+}
+
+.glyph-line-a {
+  width: 74%;
+  left: 14%;
+  top: 32%;
+  transform: rotate(-18deg);
+}
+
+.glyph-line-b {
+  width: 58%;
+  left: 21%;
+  top: 54%;
+  transform: rotate(13deg);
+}
+
+.glyph-line-c {
+  width: 42%;
+  left: 34%;
+  top: 70%;
+  transform: rotate(-7deg);
+}
+
+.article-glyph .glyph-dot {
+  width: 16px;
+  height: 16px;
+  left: 66%;
+  top: 43%;
+  border-radius: 999px;
+  background: var(--accent-clay);
+}
+
+.article-glyph small {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.article-body {
+  color: var(--body);
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.article-body h1,
+.article-body h2,
+.article-body h3 {
+  margin-top: 1.6em;
+  font-size: clamp(30px, 4vw, 46px);
+}
+
+.article-body h3 {
+  font-size: 28px;
+}
+
+.article-body p,
+.article-body li {
+  max-width: 68ch;
+}
+
+.article-body code {
+  border-radius: 4px;
+  background: var(--surface-soft);
+  padding: 2px 5px;
+  font-family: var(--font-mono);
+  font-size: .85em;
+}
+
+.article-body pre {
+  overflow: auto;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--paper-050);
+  padding: 18px;
+}
+
+.article-body pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.article-toc {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.article-toc a {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.article-rail h2,
+.revision-rail h2 {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.revision-rail {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(20, 20, 19, .14);
+}
+
+.callout {
+  margin: 28px 0;
+  border: 1px solid rgba(20, 20, 19, .16);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  background: var(--paper-050);
+}
+
+.callout-label {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.callout-definition {
+  background: var(--surface-soft);
+}
+
+.callout-proof {
+  border-color: rgba(20, 20, 19, .28);
+}
+
+.callout-error {
+  border-left: 3px solid var(--accent-clay);
+}
+
+.callout-toolbox {
+  border-color: rgba(120, 140, 93, .42);
+}
+
+.callout-revision {
+  background: transparent;
+}
+
+.article-next {
+  margin-top: 44px;
+  border-top: 1px solid rgba(20, 20, 19, .14);
+  padding-top: 24px;
+}
+
+.math-hero {
+  display: grid;
+  grid-template-columns: minmax(240px, .9fr) minmax(320px, 1.4fr) minmax(220px, .8fr);
+  gap: 24px;
+  align-items: stretch;
+  padding-top: 148px;
+}
+
+.math-copy h1,
+.chain-atlas-full h1,
+.manuscript-hero h1,
+.protocol-hero h1 {
+  font-size: clamp(64px, 10vw, 118px);
+}
+
+.math-map {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.math-chain-node,
+.math-current {
+  border: 1px solid rgba(20, 20, 19, .14);
+  border-radius: var(--radius);
+  background: var(--paper-025);
+  padding: 18px;
+}
+
+.math-chain-node span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.math-chain-node strong {
+  display: block;
+  margin-top: 28px;
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.math-chain-node.is-active {
+  border-color: rgba(217, 119, 87, .52);
+}
+
+.math-filter,
+.manuscript-view-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.math-filter button,
+.manuscript-view-tabs button {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.math-filter button.is-active,
+.manuscript-view-tabs button.is-active {
+  border-color: var(--accent-clay);
+  color: var(--ink);
+}
+
+.chain-atlas-full {
+  padding-top: 148px;
+}
+
+.chain-node-section {
+  margin-top: 28px;
+  border-top: 1px solid rgba(20, 20, 19, .14);
+  padding-top: 28px;
+}
+
+.chain-node-header {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 320px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.chain-node-header span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.empty-note {
+  color: var(--muted);
+}
+
+.manuscript-hero,
+.protocol-hero {
+  padding-top: 148px;
+}
+
+.protocol-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 28px;
+}
+
+.protocol-summary,
+.protocol-chain,
+.protocol-roles,
+.protocol-source {
+  border-top: 1px solid rgba(20, 20, 19, .14);
+  padding-top: 24px;
+}
+
+.protocol-chain-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.protocol-chain-line span {
+  border: 1px solid rgba(20, 20, 19, .14);
+  border-radius: 999px;
+  padding: 8px 10px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.no-gsap .draw-path {
+  stroke-dasharray: none !important;
+  stroke-dashoffset: 0 !important;
+}
+
+@media (max-width: 1120px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hero,
+  .workbench,
+  .chain-heading,
+  .article-shell,
+  .math-hero,
+  .protocol-layout,
+  .chain-node-header {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 82px;
+  }
+
+  h2 {
+    font-size: 50px;
+  }
+
+  .chain-path {
+    display: none;
+  }
+
+  .chain-map {
+    min-height: 0;
+  }
+
+  .chain-nodes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-top: 24px;
+  }
+
+  .atlas-network {
+    min-height: 0;
+  }
+
+  .atlas-nodes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-top: 24px;
+  }
+
+  .article-shell {
+    padding-top: 126px;
+  }
+
+  .article-meta,
+  .article-rail {
+    position: relative;
+    top: auto;
+  }
+
+  .protocol-grid,
+  .room-grid,
+  .room-assets,
+  .plog-rail,
+  .log-rail,
+  .evolution-grid,
+  .manuscript-rail,
+  .math-note-list,
+  .manuscript-grid,
+  .chain-node-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workbench-copy {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 48px;
+    align-items: center;
+    padding: 16px 18px;
+    width: 100vw;
+    max-width: 100vw;
+    overflow: visible;
+  }
+
+  .brand-mark span {
+    font-size: 22px;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+    position: fixed;
+    top: 16px;
+    right: 18px;
+    z-index: 60;
+    grid-column: 2;
+    justify-self: end;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 42px;
+    border-color: var(--ink);
+    background: var(--ink);
+    opacity: 1 !important;
+    visibility: visible !important;
+    justify-content: center;
+    margin-left: auto;
+    padding: 0;
+  }
+
+  .menu-toggle i {
+    background: var(--paper-050);
+    box-shadow: 0 6px 0 var(--paper-050), 0 -6px 0 var(--paper-050);
+  }
+
+  .menu-toggle span {
+    display: none;
+  }
+
+  .paper-section {
+    width: min(100% - 28px, var(--max));
+    padding: 76px 0;
+  }
+
+  .site-menu {
+    grid-template-columns: 1fr;
+    padding: 110px 26px 42px;
+  }
+
+  .menu-glyph {
+    display: none;
+  }
+
+  .menu-links {
+    font-size: 44px;
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    overflow: hidden;
+    padding-top: 116px;
+  }
+
+  .hero-copy,
+  .hero-card,
+  .chain-heading,
+  .workbench-copy {
+    width: 100%;
+    max-width: 362px;
+    min-width: 0;
+  }
+
+  h1 {
+    font-size: 60px;
+    line-height: 1.02;
+  }
+
+  h2 {
+    font-size: 39px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  .eyebrow,
+  .section-kicker {
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+
+  .hero-cn {
+    font-size: 23px;
+  }
+
+  .hero-lede {
+    font-size: 18px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .hero-actions a {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-card,
+  .hero-illustration {
+    max-width: 100%;
+  }
+
+  .hero-figure {
+    margin: 22px 0 18px;
+  }
+
+  .hero-note {
+    font-size: 14px;
+  }
+
+  .chain-nodes,
+  .atlas-nodes,
+  .protocol-grid,
+  .room-grid,
+  .room-assets,
+  .plog-rail,
+  .log-rail,
+  .evolution-grid,
+  .manuscript-rail,
+  .math-note-list,
+  .manuscript-grid,
+  .chain-node-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-shell {
+    width: min(100% - 28px, var(--max));
+    padding-top: 116px;
+  }
+
+  .article-manuscript {
+    padding: 24px 18px;
+  }
+
+  .article-header {
+    grid-template-columns: 1fr;
+  }
+
+  .article-glyph {
+    min-height: 170px;
+  }
+
+  .math-hero,
+  .chain-atlas-full,
+  .manuscript-hero,
+  .protocol-hero {
+    padding-top: 116px;
+  }
+
+  .math-map {
+    grid-template-columns: 1fr;
+  }
+
+  .room-card {
+    min-height: auto;
+  }
+
+  .protocol-card small {
+    position: static;
+    display: block;
+    margin-top: 18px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    padding: 28px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+/* =========================================================
+   v1.1.4 — Article / Chain / Local-content visibility fixes
+   ========================================================= */
+
+/* Content should never disappear when GSAP/CDN/file loading is unavailable. */
+[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Article: prevent the glyph panel from covering long titles. */
+.article-header {
+  grid-template-columns: minmax(0, 1fr) clamp(150px, 18vw, 210px);
+  gap: clamp(22px, 3vw, 34px);
+}
+
+.article-header > div:first-child {
+  min-width: 0;
+}
+
+.article-header h1 {
+  max-width: 100%;
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5.1vw, 72px);
+  font-weight: 560;
+  line-height: .96;
+  letter-spacing: -0.045em;
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-wrap: balance;
+}
+
+.article-glyph {
+  min-height: 180px;
+}
+
+.article-body a {
+  border-bottom: 1px solid color-mix(in oklch, var(--accent-clay) 72%, transparent);
+  color: var(--ink);
+}
+
+.article-body a:hover {
+  color: var(--accent-clay);
+}
+
+/* Chain atlas: give seven cards enough room and make card serif stronger. */
+.chain-atlas-full.paper-section {
+  width: min(1440px, calc(100% - 44px));
+}
+
+.atlas-network {
+  min-height: 540px;
+}
+
+.atlas-nodes {
+  grid-template-columns: repeat(7, minmax(158px, 1fr));
+  gap: 16px;
+  padding-top: 160px;
+}
+
+.atlas-node {
+  min-height: 300px;
+  padding: 20px 18px 32px;
+}
+
+.atlas-node h3,
+.chain-asset-card strong {
+  font-family: var(--font-display);
+  font-size: clamp(25px, 1.65vw, 31px);
+  font-weight: 560;
+  line-height: .96;
+  letter-spacing: -0.038em;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;
+}
+
+.atlas-node p,
+.chain-asset-card p {
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+@media (max-width: 1320px) and (min-width: 1121px) {
+  .atlas-nodes {
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+  }
+
+  .atlas-network {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .article-header h1 {
+    font-size: clamp(40px, 13vw, 58px);
+  }
+
+  .article-glyph {
+    min-height: 150px;
+  }
+}
+
+/* =========================================================
+   v1.1.5 — Revision Chain atlas density fix
+   Desktop should read like an editorial atlas, not seven cramped cards.
+   ========================================================= */
+.chain-atlas-full {
+  width: min(100% - 48px, 1440px);
+}
+
+.chain-atlas-full > p,
+.chain-atlas-full > h1,
+.chain-atlas-full > .section-kicker {
+  max-width: 980px;
+}
+
+.atlas-network {
+  min-height: 0;
+  margin-top: 56px;
+}
+
+.atlas-network .chain-path {
+  opacity: .42;
+  pointer-events: none;
+}
+
+.atlas-nodes {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  padding-top: 94px;
+}
+
+.atlas-node {
+  min-height: 304px;
+  padding: 20px 20px 30px;
+  overflow: hidden;
+}
+
+.atlas-node-top {
+  gap: 16px;
+  font-size: 10px;
+  letter-spacing: .035em;
+}
+
+.atlas-node h3 {
+  max-width: 100%;
+  margin-top: 22px;
+  font-family: var(--font-display);
+  font-size: clamp(25px, 1.85vw, 31px);
+  font-weight: 560;
+  line-height: .98;
+  letter-spacing: -.03em;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+}
+
+.atlas-node p {
+  font-size: 14.5px;
+  line-height: 1.58;
+}
+
+.atlas-node ul {
+  margin-top: 16px;
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+@media (min-width: 1320px) {
+  .atlas-nodes {
+    grid-template-columns: repeat(4, minmax(230px, 1fr));
+  }
+}
+
+@media (max-width: 1180px) {
+  .atlas-network .chain-path {
+    display: none;
+  }
+  .atlas-nodes {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .chain-atlas-full {
+    width: min(100% - 28px, var(--max));
+  }
+  .atlas-nodes {
+    grid-template-columns: 1fr;
+  }
+  .atlas-node {
+    min-height: auto;
+  }
+}
+
+/* =========================================================
+   v1.1.6 — Anthropic color pass + chain readability + no unused menu
+   ========================================================= */
+:root {
+  /* Extend the Claude-like palette from the referenced theme instead of using only clay. */
+  --accent-ochre: oklch(0.8816 0.0276 93.1280);
+  --accent-violet: oklch(0.6898 0.1581 290.4107);
+  --accent-lavender: oklch(0.8822 0.0403 298.1792);
+  --accent-blue-soft: oklch(0.915 0.026 245);
+  --accent-sage-soft: oklch(0.905 0.030 130);
+  --accent-clay-warm: oklch(0.912 0.040 42.9956);
+  --accent-clay-strong: oklch(0.5583 0.1276 42.9956);
+}
+
+/* The overlay menu was not doing useful work; use the header nav everywhere. */
+.menu-toggle,
+.site-menu {
+  display: none !important;
+}
+
+.site-header .desktop-nav {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: min(760px, 64vw);
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .site-header .desktop-nav {
+    justify-content: flex-start;
+    max-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .site-header .desktop-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .desktop-nav a {
+    font-size: 12px;
+  }
+}
+
+/* Use Claude's broader warm palette as paper washes, not loud SaaS cards. */
+.tone-paper {
+  --card-bg: color-mix(in oklch, var(--card) 88%, var(--accent-ochre) 12%);
+  --card-border: color-mix(in oklch, var(--border) 84%, var(--accent-ochre) 16%);
+  --card-accent: var(--accent-clay);
+}
+
+.tone-surface,
+.tone-oat {
+  --card-bg: color-mix(in oklch, var(--secondary) 78%, var(--accent-ochre) 22%);
+  --card-border: color-mix(in oklch, var(--border) 78%, var(--accent-ochre) 22%);
+  --card-accent: var(--accent-ochre);
+}
+
+.tone-clay {
+  --card-bg: color-mix(in oklch, var(--card) 70%, var(--accent-clay-warm) 30%);
+  --card-border: color-mix(in oklch, var(--border) 58%, var(--primary) 42%);
+  --card-accent: var(--accent-clay-strong);
+}
+
+.tone-cactus,
+.tone-olive {
+  --card-bg: color-mix(in oklch, var(--card) 76%, var(--accent-sage-soft) 24%);
+  --card-border: color-mix(in oklch, var(--border) 64%, var(--accent-green) 36%);
+  --card-accent: var(--accent-green);
+}
+
+.tone-blue,
+.tone-slate {
+  --card-bg: color-mix(in oklch, var(--card) 76%, var(--accent-blue-soft) 24%);
+  --card-border: color-mix(in oklch, var(--border) 62%, var(--accent-blue) 38%);
+  --card-accent: var(--accent-blue);
+}
+
+/* Give major sections subtle material temperature shifts. */
+.chain-atlas-full,
+.math-lab-page .math-hero,
+.manuscripts-page .manuscript-hero {
+  background: color-mix(in oklch, var(--background) 88%, var(--accent-ochre) 12%);
+  border: 1px solid color-mix(in oklch, var(--border) 82%, var(--accent-ochre) 18%);
+}
+
+.protocol-page .protocol-hero,
+.article-page .article-shell {
+  background: color-mix(in oklch, var(--background) 92%, var(--accent-clay-warm) 8%);
+}
+
+/* Chain atlas: stop squeezing seven cards into a typographic accident. */
+.chain-atlas-full {
+  width: min(100% - 64px, 1380px);
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 14px;
+}
+
+.chain-atlas-full .atlas-network {
+  min-height: 0 !important;
+  margin-top: 54px;
+}
+
+.chain-atlas-full .chain-path,
+.chain-atlas-full .atlas-line {
+  display: none !important;
+}
+
+.chain-atlas-full .atlas-nodes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  padding-top: 0 !important;
+  align-items: stretch;
+}
+
+.chain-atlas-full .atlas-node {
+  min-height: 330px;
+  padding: 28px 28px 34px;
+  overflow: visible;
+}
+
+.chain-atlas-full .atlas-node h3 {
+  margin-top: 28px;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 2.1vw, 38px);
+  font-weight: 590;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.chain-atlas-full .atlas-node .node-cn {
+  margin-top: 10px;
+  font-size: 13px;
+  letter-spacing: .02em;
+}
+
+.chain-atlas-full .atlas-node p:not(.node-cn) {
+  font-size: 15.5px;
+  line-height: 1.72;
+  margin-top: 18px;
+}
+
+.chain-atlas-full .atlas-node ul {
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+@media (min-width: 1680px) {
+  .chain-atlas-full .atlas-nodes {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 1040px) {
+  .chain-atlas-full .atlas-nodes {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .chain-atlas-full {
+    width: min(100% - 28px, var(--max));
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .chain-atlas-full .atlas-nodes {
+    grid-template-columns: 1fr !important;
+  }
+
+  .chain-atlas-full .atlas-node {
+    min-height: auto;
+  }
+}
+
+/* =========================================================
+   v1.2.0 — Claude Dark Theme Pass
+   Dark mode becomes the default surface: warm black, ivory text,
+   clay primary, plus ochre / sage / blue / violet accents.
+   Also fixes Chain section headers so titles and summaries never overlap.
+   ========================================================= */
+:root {
+  color-scheme: dark;
+
+  /* Claude-like dark palette, adapted from the Claude-style theme token logic. */
+  --background: oklch(0.2388 0.002 106.55);
+  --foreground: oklch(0.8074 0.0142 93.0137);
+  --card: oklch(0.2679 0.0036 106.6427);
+  --card-foreground: oklch(0.9818 0.0054 95.0986);
+  --popover: oklch(0.3085 0.0035 106.6039);
+  --popover-foreground: oklch(0.9211 0.0040 106.4781);
+  --primary: oklch(0.6724 0.1308 38.7559);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.1822 0 89.88);
+  --secondary-foreground: oklch(0.8074 0.0142 93.0137);
+  --muted-token: oklch(0.2213 0.0038 106.7070);
+  --muted-foreground: oklch(0.7713 0.0169 99.0657);
+  --accent: oklch(0.2130 0.0078 95.4245);
+  --accent-foreground: oklch(0.9663 0.0080 98.8792);
+  --border: oklch(0.3618 0.0101 106.8928);
+  --input: oklch(0.4336 0.0113 100.2195);
+  --ring: oklch(0.6724 0.1308 38.7559);
+
+  /* Secondary Claude-like accents, used as restrained manuscript washes. */
+  --accent-ochre: oklch(0.765 0.056 82);
+  --accent-ochre-soft: oklch(0.334 0.024 82);
+  --accent-violet: oklch(0.6898 0.1581 290.4107);
+  --accent-lavender: oklch(0.382 0.060 298.1792);
+  --accent-blue: oklch(0.705 0.080 245);
+  --accent-blue-soft: oklch(0.325 0.034 245);
+  --accent-green: oklch(0.680 0.082 130);
+  --accent-sage-soft: oklch(0.318 0.030 130);
+  --accent-clay: var(--primary);
+  --accent-clay-soft: color-mix(in oklch, var(--primary) 20%, var(--card) 80%);
+  --accent-clay-line: color-mix(in oklch, var(--primary) 58%, transparent);
+  --accent-clay-warm: oklch(0.352 0.044 42.9956);
+  --accent-clay-strong: var(--primary);
+
+  --clr-bg: var(--background);
+  --clr-dark: var(--card-foreground);
+  --clr-mid: var(--border);
+  --clr-light: var(--card);
+  --clr-accent: var(--primary);
+  --clr-blue: var(--accent-blue);
+  --clr-green: var(--accent-green);
+  --clr-white: var(--card-foreground);
+
+  --page-bg: var(--background);
+  --surface: var(--card);
+  --surface-soft: var(--accent);
+  --surface-muted: var(--muted-token);
+  --surface-card: var(--card);
+  --surface-card-soft: var(--muted-token);
+  --surface-card-deep: var(--popover);
+
+  --ink: var(--card-foreground);
+  --ink-body: var(--foreground);
+  --body: var(--foreground);
+  --ink-muted: var(--muted-foreground);
+  --muted: var(--muted-foreground);
+  --line: var(--border);
+  --divider: color-mix(in oklch, var(--border) 82%, transparent);
+  --hairline: var(--divider);
+  --clay: var(--primary);
+  --clay-wash: var(--accent-clay-soft);
+
+  --paper-000: oklch(0.326 0.004 106.6);
+  --paper-025: var(--card);
+  --paper-050: var(--background);
+  --paper-075: oklch(0.253 0.003 106.6);
+  --paper-100: var(--background);
+  --paper-150: var(--muted-token);
+  --paper-200: var(--accent);
+  --paper-250: var(--border);
+  --paper-300: var(--input);
+
+  --graphite-600: var(--muted);
+  --graphite-700: var(--body);
+  --graphite-800: var(--foreground);
+  --graphite-900: var(--card-foreground);
+  --graphite-950: var(--card-foreground);
+
+  --oat-050: color-mix(in oklch, var(--card) 84%, var(--accent-ochre-soft) 16%);
+  --oat-100: color-mix(in oklch, var(--card) 76%, var(--accent-ochre-soft) 24%);
+  --oat-200: color-mix(in oklch, var(--card) 68%, var(--accent-ochre-soft) 32%);
+  --oat-300: var(--accent-ochre);
+
+  --cactus-050: color-mix(in oklch, var(--card) 82%, var(--accent-sage-soft) 18%);
+  --cactus-100: color-mix(in oklch, var(--card) 74%, var(--accent-sage-soft) 26%);
+  --cactus-200: color-mix(in oklch, var(--card) 62%, var(--accent-green) 16%);
+  --cactus-300: var(--accent-green);
+
+  --olive-050: var(--cactus-050);
+  --olive-100: var(--cactus-100);
+  --olive-200: var(--cactus-200);
+  --olive-300: var(--accent-green);
+
+  --clay-050: color-mix(in oklch, var(--card) 82%, var(--primary) 18%);
+  --clay-100: color-mix(in oklch, var(--card) 72%, var(--primary) 28%);
+  --clay-200: color-mix(in oklch, var(--card) 60%, var(--primary) 40%);
+  --clay-300: oklch(0.610 0.115 39.2);
+  --clay-400: var(--primary);
+  --clay-500: var(--primary);
+
+  --slate-050: color-mix(in oklch, var(--card) 84%, var(--accent-blue-soft) 16%);
+  --slate-100: color-mix(in oklch, var(--card) 74%, var(--accent-blue-soft) 26%);
+  --slate-200: color-mix(in oklch, var(--card) 62%, var(--accent-blue) 14%);
+  --slate-500: var(--accent-blue);
+
+  --sage: var(--accent-green);
+  --blue-gray: var(--accent-blue);
+}
+
+body {
+  color: var(--ink);
+  background: var(--page-bg);
+}
+
+::selection {
+  background: color-mix(in oklch, var(--accent-clay) 42%, transparent);
+  color: var(--ink);
+}
+
+.paper-grain {
+  opacity: .11;
+  background-image:
+    linear-gradient(0deg, rgba(250, 249, 245, .034) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(250, 249, 245, .022) 1px, transparent 1px);
+}
+
+.site-header {
+  background: color-mix(in oklch, var(--background) 88%, black 12%);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.brand-mark span,
+.brand-mark small,
+.desktop-nav a,
+h1,
+h2,
+h3,
+blockquote,
+.chain-node strong,
+.protocol-card strong,
+.room-card h3,
+.plog-card strong,
+.work-item strong,
+.log-card strong,
+.atlas-node h3,
+.chain-asset-card strong,
+.article-header h1,
+.article-body h1,
+.article-body h2,
+.article-body h3 {
+  color: var(--ink);
+}
+
+p,
+.article-body,
+.article-body p,
+.article-body li,
+.hero-lede,
+.chain-heading p,
+.chain-node-header p {
+  color: var(--body);
+}
+
+.return-link,
+.text-link {
+  color: var(--ink);
+  border-bottom-color: var(--accent-clay);
+}
+
+.hero-card,
+.chain-node,
+.protocol-card,
+.room-card,
+.asset-card,
+.plog-card,
+.work-item,
+.log-card,
+.atlas-node,
+.evolution-card,
+.manuscript-card,
+.math-note-card,
+.chain-asset-card,
+.article-manuscript,
+.article-glyph,
+.math-chain-node,
+.math-current,
+.callout {
+  border-color: var(--card-border, var(--hairline));
+  background: var(--card-bg, color-mix(in oklch, var(--card) 92%, var(--accent) 8%));
+  color: var(--body);
+}
+
+.hero-card,
+.article-manuscript {
+  background: color-mix(in oklch, var(--card) 88%, var(--accent-ochre-soft) 12%);
+}
+
+.hero-figure,
+.room-figure,
+.menu-figure {
+  border-color: var(--hairline);
+  background: var(--background);
+}
+
+.hero-actions a,
+.math-filter button,
+.manuscript-view-tabs button,
+.article-tags span {
+  border-color: var(--hairline);
+  background: color-mix(in oklch, var(--card) 76%, transparent);
+  color: var(--muted);
+}
+
+.hero-actions a:first-child {
+  border-color: color-mix(in oklch, var(--primary) 82%, white 18%);
+  background: var(--primary);
+  color: white;
+}
+
+.hero-actions a:hover,
+.hero-actions a:focus-visible,
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible {
+  color: var(--accent-clay);
+  border-color: var(--accent-clay);
+}
+
+.article-body code,
+.article-body pre,
+.work-item code,
+.asset-card code {
+  border-color: var(--hairline);
+}
+
+.article-body code {
+  background: color-mix(in oklch, var(--muted-token) 74%, var(--accent-clay) 6%);
+  color: var(--ink);
+}
+
+.article-body pre {
+  background: oklch(0.1680 0.0020 106.6177);
+  color: var(--card-foreground);
+}
+
+.article-header,
+.article-next,
+.revision-rail,
+.chain-node-section,
+.site-footer,
+.chain-node em {
+  border-color: var(--hairline);
+}
+
+/* Dark Claude tone cards: use the full palette as material temperature, not neon blocks. */
+.tone-paper {
+  --card-bg: color-mix(in oklch, var(--card) 88%, var(--accent-ochre-soft) 12%);
+  --card-border: color-mix(in oklch, var(--border) 84%, var(--accent-ochre) 16%);
+  --card-accent: var(--accent-clay);
+}
+
+.tone-surface,
+.tone-oat {
+  --card-bg: color-mix(in oklch, var(--card) 78%, var(--accent-ochre-soft) 22%);
+  --card-border: color-mix(in oklch, var(--border) 72%, var(--accent-ochre) 28%);
+  --card-accent: var(--accent-ochre);
+}
+
+.tone-clay,
+.status-delta,
+.status-revision,
+.phase-error,
+.phase-delta,
+.phase-revision {
+  --card-bg: color-mix(in oklch, var(--card) 70%, var(--accent-clay-warm) 30%);
+  --card-border: color-mix(in oklch, var(--border) 54%, var(--primary) 46%);
+  --card-accent: var(--primary);
+}
+
+.tone-cactus,
+.tone-olive,
+.status-skill,
+.phase-skill {
+  --card-bg: color-mix(in oklch, var(--card) 72%, var(--accent-sage-soft) 28%);
+  --card-border: color-mix(in oklch, var(--border) 56%, var(--accent-green) 44%);
+  --card-accent: var(--accent-green);
+}
+
+.tone-blue,
+.tone-slate {
+  --card-bg: color-mix(in oklch, var(--card) 72%, var(--accent-blue-soft) 28%);
+  --card-border: color-mix(in oklch, var(--border) 56%, var(--accent-blue) 44%);
+  --card-accent: var(--accent-blue);
+}
+
+.tone-violet,
+.tone-lavender {
+  --card-bg: color-mix(in oklch, var(--card) 76%, var(--accent-lavender) 24%);
+  --card-border: color-mix(in oklch, var(--border) 58%, var(--accent-violet) 42%);
+  --card-accent: var(--accent-violet);
+}
+
+.chain-atlas-full,
+.math-lab-page .math-hero,
+.manuscripts-page .manuscript-hero,
+.protocol-page .protocol-hero,
+.article-page .article-shell {
+  border-color: var(--hairline);
+  background: color-mix(in oklch, var(--background) 76%, var(--card) 24%);
+}
+
+/* Fix the remaining overlap: the Chain index stage header is now vertical editorial, not a cramped three-column layout. */
+.chain-node-section {
+  margin-top: clamp(42px, 6vw, 76px);
+  padding-top: clamp(28px, 4vw, 42px);
+}
+
+.chain-node-header {
+  display: block !important;
+  max-width: 980px;
+}
+
+.chain-node-header span {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.chain-node-header h2 {
+  max-width: min(100%, 760px);
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(58px, 8vw, 116px);
+  font-weight: 590;
+  line-height: .88;
+  letter-spacing: -.052em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.chain-node-header p {
+  max-width: 72ch;
+  margin: 18px 0 0;
+  font-size: clamp(16px, 1.18vw, 19px);
+  line-height: 1.72;
+}
+
+.chain-node-grid {
+  margin-top: 26px;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.chain-asset-card {
+  min-height: 190px;
+}
+
+.chain-atlas-full .atlas-node,
+.chain-asset-card {
+  box-shadow: 0 0 0 1px color-mix(in oklch, white 2%, transparent);
+}
+
+.atlas-node-top,
+.manuscript-meta,
+.chain-asset-card span,
+.chain-asset-card small,
+.article-meta,
+.article-rail,
+.menu-label,
+.eyebrow,
+.section-kicker,
+.card-index,
+.node-index,
+.stage-label,
+.log-type,
+.plog-meta,
+.work-meta,
+.hero-card-top,
+.brand-mark small {
+  color: var(--muted);
+}
+
+.stage-label,
+.hero .eyebrow,
+.asset-card code,
+.work-item code {
+  color: var(--accent-clay);
+}
+
+.callout-definition {
+  background: color-mix(in oklch, var(--card) 70%, var(--accent-blue-soft) 30%);
+}
+
+.callout-proof {
+  border-color: color-mix(in oklch, var(--border) 60%, var(--accent-ochre) 40%);
+}
+
+.callout-error {
+  border-left-color: var(--accent-clay);
+}
+
+.callout-toolbox {
+  border-color: color-mix(in oklch, var(--border) 48%, var(--accent-green) 52%);
+}
+
+@media (max-width: 860px) {
+  .chain-node-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chain-node-header h2 {
+    font-size: clamp(46px, 14vw, 72px);
+    letter-spacing: -.04em;
+  }
+}
+
+/* =========================================================
+   v1.2.1 — Dark Claude card material tuning
+   The previous dark pass used too much colored wash on cards.
+   This pass keeps Claude's full palette, but moves color to borders,
+   accent dots, subtle top glows, and section temperature instead of
+   saturated card bodies.
+   ========================================================= */
+:root {
+  --dark-card-base: color-mix(in oklch, var(--card) 88%, var(--background) 12%);
+  --dark-card-raised: color-mix(in oklch, var(--card) 92%, white 2%);
+  --dark-card-subtle: color-mix(in oklch, var(--card) 82%, var(--muted-token) 18%);
+  --dark-card-border: color-mix(in oklch, var(--border) 66%, transparent);
+  --dark-card-border-strong: color-mix(in oklch, var(--border) 86%, white 4%);
+  --dark-card-warm: color-mix(in oklch, var(--card) 94%, var(--accent-ochre-soft) 6%);
+  --dark-card-clay: color-mix(in oklch, var(--card) 93%, var(--primary) 7%);
+  --dark-card-sage: color-mix(in oklch, var(--card) 94%, var(--accent-sage-soft) 6%);
+  --dark-card-blue: color-mix(in oklch, var(--card) 94%, var(--accent-blue-soft) 6%);
+  --dark-card-violet: color-mix(in oklch, var(--card) 95%, var(--accent-lavender) 5%);
+}
+
+.hero-card,
+.chain-node,
+.protocol-card,
+.room-card,
+.asset-card,
+.plog-card,
+.work-item,
+.log-card,
+.atlas-node,
+.evolution-card,
+.manuscript-card,
+.math-note-card,
+.chain-asset-card,
+.article-manuscript,
+.article-glyph,
+.math-chain-node,
+.math-current,
+.callout {
+  --card-bg: var(--dark-card-base);
+  --card-border: var(--dark-card-border);
+  border-color: var(--card-border);
+  background:
+    linear-gradient(180deg, color-mix(in oklch, white 3%, transparent), transparent 34%),
+    var(--card-bg);
+  box-shadow: 0 0 0 1px color-mix(in oklch, white 1.8%, transparent);
+}
+
+/* Default card surfaces: mostly graphite, gently warm, never colorful blocks. */
+.tone-paper {
+  --card-bg: var(--dark-card-warm);
+  --card-border: color-mix(in oklch, var(--dark-card-border) 78%, var(--accent-ochre) 22%);
+  --card-accent: var(--accent-clay);
+}
+
+.tone-surface,
+.tone-oat {
+  --card-bg: color-mix(in oklch, var(--dark-card-warm) 94%, var(--accent-ochre) 6%);
+  --card-border: color-mix(in oklch, var(--dark-card-border) 76%, var(--accent-ochre) 24%);
+  --card-accent: var(--accent-ochre);
+}
+
+.tone-clay,
+.status-delta,
+.status-revision,
+.phase-error,
+.phase-delta,
+.phase-revision {
+  --card-bg: var(--dark-card-clay);
+  --card-border: color-mix(in oklch, var(--dark-card-border) 66%, var(--primary) 34%);
+  --card-accent: var(--primary);
+}
+
+.tone-cactus,
+.tone-olive,
+.status-skill,
+.phase-skill {
+  --card-bg: var(--dark-card-sage);
+  --card-border: color-mix(in oklch, var(--dark-card-border) 70%, var(--accent-green) 30%);
+  --card-accent: var(--accent-green);
+}
+
+.tone-blue,
+.tone-slate {
+  --card-bg: var(--dark-card-blue);
+  --card-border: color-mix(in oklch, var(--dark-card-border) 70%, var(--accent-blue) 30%);
+  --card-accent: var(--accent-blue);
+}
+
+.tone-violet,
+.tone-lavender {
+  --card-bg: var(--dark-card-violet);
+  --card-border: color-mix(in oklch, var(--dark-card-border) 72%, var(--accent-violet) 28%);
+  --card-accent: var(--accent-violet);
+}
+
+/* Make color visible as editorial accents, not as strange dark tinted cards. */
+.chain-node::after,
+.protocol-card::after,
+.room-card::after,
+.asset-card::after,
+.plog-card::after,
+.work-item::after,
+.log-card::after,
+.atlas-node::after,
+.evolution-card::after,
+.manuscript-card::after,
+.math-note-card::after,
+.chain-asset-card::after {
+  opacity: calc(.18 + var(--hover-mark) * .62);
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--card-accent) 11%, transparent);
+}
+
+/* Major containers should feel like warm dark paper, not colored panels. */
+.chain-atlas-full,
+.math-lab-page .math-hero,
+.manuscripts-page .manuscript-hero,
+.protocol-page .protocol-hero,
+.article-page .article-shell {
+  border-color: color-mix(in oklch, var(--border) 72%, var(--accent-ochre) 8%);
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--accent-ochre-soft) 10%, transparent), transparent 42%),
+    color-mix(in oklch, var(--background) 78%, var(--card) 22%);
+}
+
+.hero-card,
+.article-manuscript {
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--accent-clay-warm) 10%, transparent), transparent 38%),
+    var(--dark-card-warm);
+  border-color: color-mix(in oklch, var(--dark-card-border) 74%, var(--accent-ochre) 18%);
+}
+
+.article-glyph,
+.callout,
+.math-current {
+  background: var(--dark-card-subtle);
+}
+
+/* Callouts keep semantic color through borders only. */
+.callout-definition {
+  background: var(--dark-card-blue);
+  border-color: color-mix(in oklch, var(--dark-card-border) 72%, var(--accent-blue) 28%);
+}
+
+.callout-proof {
+  background: var(--dark-card-warm);
+  border-color: color-mix(in oklch, var(--dark-card-border) 70%, var(--accent-ochre) 30%);
+}
+
+.callout-toolbox {
+  background: var(--dark-card-sage);
+  border-color: color-mix(in oklch, var(--dark-card-border) 68%, var(--accent-green) 32%);
+}
+
+.callout-error {
+  background: var(--dark-card-clay);
+  border-left-color: var(--accent-clay);
+}
+
+/* Chain cards: reduce wash further because many cards appear together. */
+.chain-atlas-full .atlas-node,
+.chain-asset-card {
+  background:
+    linear-gradient(180deg, color-mix(in oklch, white 3%, transparent), transparent 30%),
+    color-mix(in oklch, var(--card-bg) 88%, var(--background) 12%);
+  border-color: color-mix(in oklch, var(--card-border) 74%, transparent);
+}
+
+.chain-atlas-full .atlas-node h3,
+.chain-asset-card strong,
+.manuscript-card strong,
+.math-note-card strong {
+  color: color-mix(in oklch, var(--ink) 94%, var(--card-accent) 6%);
+}
+
+/* Buttons and pills: darker, quieter, closer to Claude dark UI. */
+.hero-actions a,
+.math-filter button,
+.manuscript-view-tabs button,
+.article-tags span,
+.protocol-chain-line span {
+  background: color-mix(in oklch, var(--card) 70%, var(--background) 30%);
+  border-color: color-mix(in oklch, var(--border) 70%, transparent);
+}
+
+
+/* =========================================================
+   v1.2.2 — Dark Claude contrast + visible accent card system
+   Use ivory and terracotta for typography contrast, while giving
+   cards Claude-like secondary palettes through restrained material
+   surfaces, top rules, borders, and metadata.
+   ========================================================= */
+:root {
+  --ivory-text: oklch(0.9818 0.0054 95.0986);
+  --ivory-soft: oklch(0.9211 0.0040 106.4781);
+  --ivory-muted: oklch(0.8074 0.0142 93.0137);
+  --clay-text: oklch(0.735 0.125 39.2);
+  --clay-hot: oklch(0.6724 0.1308 38.7559);
+  --ochre-text: oklch(0.785 0.060 82);
+  --sage-text: oklch(0.705 0.084 130);
+  --blue-text: oklch(0.735 0.086 245);
+  --violet-text: oklch(0.735 0.115 290);
+
+  --card-paper-dark: oklch(0.262 0.004 106.6);
+  --card-paper-raised: oklch(0.292 0.005 106.6);
+  --card-border-quiet: color-mix(in oklch, var(--border) 64%, transparent);
+}
+
+/* Typography contrast: ivory carries meaning, clay carries orientation. */
+h1,
+h2,
+h3,
+blockquote,
+.hero-title,
+.page-title,
+.section-title,
+.article-header h1,
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.chain-node-header h2,
+.chain-atlas-full .atlas-node h3,
+.chain-asset-card strong,
+.manuscript-card strong,
+.math-note-card strong,
+.room-card h3,
+.plog-card strong,
+.asset-card strong,
+.protocol-card strong,
+.work-item strong,
+.log-card strong {
+  color: var(--ivory-text) !important;
+}
+
+p,
+li,
+.article-body,
+.article-body p,
+.article-body li,
+.hero-lede,
+.chain-heading p,
+.chain-node-header p,
+.chain-atlas-full .atlas-node p,
+.chain-asset-card p,
+.manuscript-card p,
+.math-note-card p,
+.room-card p,
+.plog-card p,
+.asset-card p,
+.protocol-card p,
+.work-item p,
+.log-card p {
+  color: var(--ivory-muted);
+}
+
+.eyebrow,
+.section-kicker,
+.stage-label,
+.hero-card-top,
+.card-index,
+.node-index,
+.log-type,
+.plog-meta,
+.work-meta,
+.article-meta,
+.article-rail,
+.chain-node-header span,
+.atlas-node-top span:first-child,
+.asset-kicker,
+.brand-mark small {
+  color: var(--clay-text) !important;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible,
+.return-link:hover,
+.text-link:hover,
+.article-body a,
+.chain-asset-card small,
+.math-note-card small,
+.manuscript-meta {
+  color: var(--clay-text);
+}
+
+/* Card material: all cards remain dark Claude surfaces, but tones are now visible and useful. */
+.tone-paper {
+  --card-bg: color-mix(in oklch, var(--card-paper-raised) 86%, var(--accent-ochre-soft) 14%);
+  --card-border: color-mix(in oklch, var(--card-border-quiet) 70%, var(--ochre-text) 30%);
+  --card-accent: var(--clay-text);
+}
+
+.tone-surface,
+.tone-oat {
+  --card-bg: color-mix(in oklch, var(--card-paper-raised) 78%, var(--accent-ochre-soft) 22%);
+  --card-border: color-mix(in oklch, var(--card-border-quiet) 62%, var(--ochre-text) 38%);
+  --card-accent: var(--ochre-text);
+}
+
+.tone-clay,
+.status-delta,
+.status-revision,
+.phase-error,
+.phase-delta,
+.phase-revision {
+  --card-bg: color-mix(in oklch, var(--card-paper-raised) 76%, var(--accent-clay-warm) 24%);
+  --card-border: color-mix(in oklch, var(--card-border-quiet) 56%, var(--clay-hot) 44%);
+  --card-accent: var(--clay-text);
+}
+
+.tone-cactus,
+.tone-olive,
+.status-skill,
+.phase-skill {
+  --card-bg: color-mix(in oklch, var(--card-paper-raised) 76%, var(--accent-sage-soft) 24%);
+  --card-border: color-mix(in oklch, var(--card-border-quiet) 58%, var(--sage-text) 42%);
+  --card-accent: var(--sage-text);
+}
+
+.tone-blue,
+.tone-slate {
+  --card-bg: color-mix(in oklch, var(--card-paper-raised) 76%, var(--accent-blue-soft) 24%);
+  --card-border: color-mix(in oklch, var(--card-border-quiet) 58%, var(--blue-text) 42%);
+  --card-accent: var(--blue-text);
+}
+
+.tone-violet,
+.tone-lavender {
+  --card-bg: color-mix(in oklch, var(--card-paper-raised) 78%, var(--accent-lavender) 22%);
+  --card-border: color-mix(in oklch, var(--card-border-quiet) 58%, var(--violet-text) 42%);
+  --card-accent: var(--violet-text);
+}
+
+.hero-card,
+.chain-node,
+.protocol-card,
+.room-card,
+.asset-card,
+.plog-card,
+.work-item,
+.log-card,
+.atlas-node,
+.evolution-card,
+.manuscript-card,
+.math-note-card,
+.chain-asset-card,
+.article-manuscript,
+.article-glyph,
+.math-chain-node,
+.math-current,
+.callout {
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--card-accent, var(--clay-text)) 12%, transparent), transparent 22%),
+    linear-gradient(180deg, color-mix(in oklch, white 4%, transparent), transparent 34%),
+    var(--card-bg, var(--card-paper-dark));
+  border-color: var(--card-border, var(--card-border-quiet));
+  box-shadow:
+    inset 0 2px 0 color-mix(in oklch, var(--card-accent, var(--clay-text)) 64%, transparent),
+    0 0 0 1px color-mix(in oklch, white 2%, transparent);
+}
+
+/* Metadata inside cards should inherit each card's tone, making the palette intentional. */
+.chain-node span,
+.protocol-card span,
+.room-card span,
+.asset-card span,
+.plog-card span,
+.work-item code,
+.log-card span,
+.atlas-node-top span,
+.manuscript-card span,
+.math-note-card span,
+.chain-asset-card span,
+.article-tags span,
+.callout strong:first-child {
+  color: var(--card-accent, var(--clay-text));
+}
+
+.chain-node::after,
+.protocol-card::after,
+.room-card::after,
+.asset-card::after,
+.plog-card::after,
+.work-item::after,
+.log-card::after,
+.atlas-node::after,
+.evolution-card::after,
+.manuscript-card::after,
+.math-note-card::after,
+.chain-asset-card::after {
+  opacity: calc(.40 + var(--hover-mark) * .46);
+  background: var(--card-accent, var(--clay-text));
+  box-shadow:
+    0 0 0 5px color-mix(in oklch, var(--card-accent, var(--clay-text)) 14%, transparent),
+    0 0 18px color-mix(in oklch, var(--card-accent, var(--clay-text)) 18%, transparent);
+}
+
+/* Hero and article surfaces use stronger clay + ivory contrast. */
+.hero-card,
+.article-manuscript {
+  --card-accent: var(--clay-text);
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--clay-hot) 16%, transparent), transparent 34%),
+    color-mix(in oklch, var(--card-paper-raised) 88%, var(--accent-ochre-soft) 12%);
+  border-color: color-mix(in oklch, var(--border) 56%, var(--clay-hot) 44%);
+}
+
+.hero-actions a:first-child,
+.article-next a:first-child,
+.math-filter button.is-active,
+.manuscript-view-tabs button.is-active {
+  background: var(--clay-hot);
+  border-color: color-mix(in oklch, var(--clay-hot) 82%, white 18%);
+  color: white;
+}
+
+/* Section shells can carry quiet Claude palette temperature. */
+.chain-atlas-full,
+.math-lab-page .math-hero,
+.manuscripts-page .manuscript-hero,
+.protocol-page .protocol-hero,
+.article-page .article-shell {
+  background:
+    linear-gradient(135deg, color-mix(in oklch, var(--clay-hot) 9%, transparent), transparent 34%),
+    linear-gradient(315deg, color-mix(in oklch, var(--accent-blue) 5%, transparent), transparent 38%),
+    color-mix(in oklch, var(--background) 76%, var(--card) 24%);
+  border-color: color-mix(in oklch, var(--border) 68%, var(--clay-hot) 14%);
+}
+
+/* Keep the Chain page readable: stage headers are contrast-rich, cards carry palette below. */
+.chain-node-header h2 {
+  color: var(--ivory-text) !important;
+  text-shadow: 0 1px 0 color-mix(in oklch, black 36%, transparent);
+}
+
+.chain-node-header p {
+  color: color-mix(in oklch, var(--ivory-muted) 90%, var(--clay-text) 10%);
+}
+
+@media (max-width: 720px) {
+  .hero-card,
+  .chain-node,
+  .protocol-card,
+  .room-card,
+  .asset-card,
+  .plog-card,
+  .work-item,
+  .log-card,
+  .atlas-node,
+  .manuscript-card,
+  .math-note-card,
+  .chain-asset-card {
+    box-shadow:
+      inset 0 1.5px 0 color-mix(in oklch, var(--card-accent, var(--clay-text)) 56%, transparent),
+      0 0 0 1px color-mix(in oklch, white 1.5%, transparent);
+  }
+}
+
+/* =========================================================
+   v1.2.3 — Dark Claude Restraint Pass
+   Goal: warm dark surfaces, ivory type, clay direction, no glow.
+   ========================================================= */
+:root {
+  /* Claude-like dark material stack */
+  --dark-00: oklch(0.140 0.004 95);   /* page */
+  --dark-01: oklch(0.170 0.005 95);   /* header / deep band */
+  --dark-02: oklch(0.205 0.006 95);   /* section */
+  --dark-03: oklch(0.245 0.007 95);   /* card */
+  --dark-04: oklch(0.300 0.008 95);   /* raised/input */
+
+  --ivory-strong: oklch(0.965 0.006 95);
+  --ivory: oklch(0.915 0.010 95);
+  --ivory-muted: oklch(0.735 0.014 95);
+  --ivory-faint: oklch(0.590 0.014 95);
+  --line-dark: oklch(0.375 0.010 95 / .68);
+  --line-dark-soft: oklch(0.330 0.010 95 / .55);
+
+  --claude-clay: oklch(0.665 0.128 39.5);
+  --claude-clay-soft: oklch(0.590 0.090 42);
+  --claude-ochre: oklch(0.710 0.070 75);
+  --claude-sage: oklch(0.650 0.052 132);
+  --claude-blue: oklch(0.675 0.052 245);
+  --claude-violet: oklch(0.690 0.060 300);
+
+  --background: var(--dark-00);
+  --foreground: var(--ivory);
+  --card: var(--dark-03);
+  --card-foreground: var(--ivory-strong);
+  --primary: var(--claude-clay);
+  --secondary: var(--dark-02);
+  --muted-token: var(--dark-04);
+  --muted-foreground: var(--ivory-faint);
+  --accent: var(--dark-04);
+  --border: var(--line-dark);
+
+  --page-bg: var(--dark-00);
+  --surface: var(--dark-02);
+  --surface-soft: var(--dark-03);
+  --surface-muted: var(--dark-04);
+  --ink: var(--ivory-strong);
+  --ink-body: var(--ivory);
+  --body: var(--ivory-muted);
+  --ink-muted: var(--ivory-faint);
+  --muted: var(--ivory-faint);
+  --line: var(--line-dark);
+  --hairline: var(--line-dark-soft);
+  --clay: var(--claude-clay);
+  --accent-clay: var(--claude-clay);
+  --accent-green: var(--claude-sage);
+  --accent-blue: var(--claude-blue);
+
+  --card-bg-restraint: var(--dark-03);
+  --card-border-restraint: var(--line-dark-soft);
+  --card-border-active: color-mix(in oklch, var(--ivory-faint) 36%, var(--line-dark) 64%);
+}
+
+html,
+body {
+  background: var(--page-bg);
+  color: var(--ink);
+}
+
+.paper-grain {
+  opacity: .026;
+  background-image:
+    linear-gradient(0deg, oklch(0.92 0.01 95 / .04) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.92 0.01 95 / .028) 1px, transparent 1px);
+}
+
+.site-header,
+.article-page .site-header,
+.math-page .site-header,
+.chain-page .site-header,
+.manuscripts-page .site-header,
+.protocol-page .site-header {
+  background: oklch(0.130 0.004 95 / .96);
+  border-bottom: 1px solid oklch(0.330 0.010 95 / .62);
+}
+
+.brand-mark span,
+h1,
+h2,
+h3,
+blockquote,
+.chain-node strong,
+.protocol-card strong,
+.room-card h3,
+.plog-card strong,
+.work-item strong,
+.log-card strong,
+.atlas-node h3,
+.evolution-card h3,
+.manuscript-card strong,
+.math-note-card strong,
+.chain-asset-card strong,
+.article-header h1,
+.article-body h1,
+.article-body h2,
+.article-body h3 {
+  color: var(--ivory-strong);
+}
+
+p,
+.hero-lede,
+.chain-heading p,
+.article-body,
+.article-body p,
+.article-body li,
+.atlas-node p,
+.evolution-card dd,
+.manuscript-card p,
+.math-note-card p,
+.chain-asset-card p {
+  color: var(--ivory-muted);
+}
+
+.brand-mark small,
+.desktop-nav,
+.hero-cn,
+.hero-support,
+.hero-card-top,
+.menu-label,
+.eyebrow,
+.section-kicker,
+.card-index,
+.node-index,
+.stage-label,
+.log-type,
+.plog-meta,
+.work-meta,
+.atlas-node-top,
+.manuscript-meta,
+.node-cn,
+.article-meta,
+.article-rail,
+.article-toc a,
+.chain-node-header span,
+.empty-note,
+.manuscript-chain,
+.manuscript-next,
+.math-note-card span,
+.math-note-card small,
+.chain-asset-card span,
+.chain-asset-card small {
+  color: var(--ivory-faint);
+}
+
+.hero .eyebrow,
+.stage-label,
+.asset-card code,
+.work-item code,
+.article-body a:hover,
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible,
+.menu-links a:hover,
+.menu-links a:focus-visible {
+  color: var(--claude-clay);
+}
+
+/* no unused menu; Claude-like header nav remains direct */
+.menu-toggle,
+.site-menu {
+  display: none !important;
+}
+
+/* Dark surfaces: section panels are quiet, not glowing. */
+.hero-card,
+.article-manuscript,
+.article-glyph,
+.math-chain-node,
+.math-current,
+.callout,
+.protocol-summary,
+.protocol-chain,
+.protocol-roles,
+.protocol-source,
+.chain-atlas-full,
+.math-lab-page .math-hero,
+.manuscripts-page .manuscript-hero,
+.protocol-page .protocol-hero,
+.article-page .article-shell {
+  background: var(--dark-02);
+  border-color: var(--line-dark-soft);
+  box-shadow: none !important;
+}
+
+.hero-figure,
+.room-figure {
+  background: var(--dark-01);
+  border-color: var(--line-dark-soft);
+}
+
+/* Card material system: unified warm graphite, tones only live on edges/dots. */
+.chain-node,
+.protocol-card,
+.room-card,
+.asset-card,
+.plog-card,
+.work-item,
+.log-card,
+.atlas-node,
+.evolution-card,
+.manuscript-card,
+.math-note-card,
+.chain-asset-card {
+  --hover-mark: 0;
+  --card-bg: var(--card-bg-restraint);
+  --card-border: var(--card-border-restraint);
+  --card-accent: var(--claude-clay);
+  background: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transition: border-color .22s ease, background .22s ease, transform .22s ease;
+}
+
+.tone-paper,
+.tone-surface,
+.tone-oat,
+.tone-clay,
+.tone-cactus,
+.tone-olive,
+.tone-blue,
+.tone-slate,
+.tone-dark,
+.status-delta,
+.status-toolbox,
+.status-skill,
+.status-revision {
+  --card-bg: var(--card-bg-restraint);
+  --card-border: var(--card-border-restraint);
+}
+
+.tone-paper,
+.tone-clay,
+.status-delta,
+.status-revision {
+  --card-accent: var(--claude-clay);
+}
+
+.tone-surface,
+.tone-oat,
+.status-toolbox {
+  --card-accent: var(--claude-ochre);
+}
+
+.tone-cactus,
+.tone-olive,
+.status-skill {
+  --card-accent: var(--claude-sage);
+}
+
+.tone-blue,
+.tone-slate {
+  --card-accent: var(--claude-blue);
+}
+
+.tone-violet {
+  --card-accent: var(--claude-violet);
+}
+
+/* Top hairline: visible Claude palette, but restrained. */
+.chain-node::before,
+.protocol-card::before,
+.room-card::before,
+.asset-card::before,
+.plog-card::before,
+.work-item::before,
+.log-card::before,
+.atlas-node::before,
+.evolution-card::before,
+.manuscript-card::before,
+.math-note-card::before,
+.chain-asset-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: color-mix(in oklch, var(--card-accent) 58%, transparent);
+  opacity: .72;
+  pointer-events: none;
+}
+
+/* Existing hover line/dot becomes a quiet annotation, not a flash. */
+.chain-node::after,
+.protocol-card::after,
+.room-card::after,
+.asset-card::after,
+.plog-card::after,
+.work-item::after,
+.log-card::after {
+  width: 5px;
+  height: 5px;
+  background: var(--card-accent);
+  opacity: calc(var(--hover-mark) * .76);
+  transform: scale(calc(.72 + var(--hover-mark) * .18));
+}
+
+.atlas-node::after,
+.evolution-card::after,
+.manuscript-card::after,
+.math-note-card::after,
+.chain-asset-card::after {
+  background: color-mix(in oklch, var(--card-accent) 64%, transparent);
+  opacity: calc(.24 + var(--hover-mark) * .38);
+  transform: scaleX(calc(.18 + var(--hover-mark) * .82));
+}
+
+.chain-node:hover,
+.protocol-card:hover,
+.room-card:hover,
+.asset-card:hover,
+.plog-card:hover,
+.work-item:hover,
+.log-card:hover,
+.atlas-node:hover,
+.evolution-card:hover,
+.manuscript-card:hover,
+.math-note-card:hover,
+.chain-asset-card:hover {
+  border-color: color-mix(in oklch, var(--card-accent) 32%, var(--line-dark) 68%) !important;
+  background: color-mix(in oklch, var(--card-bg-restraint) 92%, var(--dark-04) 8%) !important;
+}
+
+/* Chain stage headers: vertical editorial layout; no title/summary collision. */
+.chain-node-section {
+  border-top-color: var(--line-dark-soft);
+}
+
+.chain-node-header {
+  display: block !important;
+  max-width: 760px;
+}
+
+.chain-node-header span {
+  display: block;
+  margin-bottom: 16px;
+  color: color-mix(in oklch, var(--card-accent, var(--claude-clay)) 42%, var(--ivory-faint) 58%);
+}
+
+.chain-node-header h2 {
+  margin-bottom: 12px;
+  max-width: 620px;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: .9;
+  letter-spacing: -0.05em;
+}
+
+.chain-node-header p {
+  max-width: 64ch;
+  color: var(--ivory-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.chain-node-grid {
+  margin-top: 26px;
+}
+
+/* Prompt/input-like surfaces follow Claude dark product pages. */
+.hero-actions a,
+.math-filter button,
+.manuscript-view-tabs button,
+.article-tags span,
+.protocol-chain-line span {
+  background: var(--dark-04);
+  border-color: var(--line-dark-soft);
+  color: var(--ivory-muted);
+  box-shadow: none !important;
+}
+
+.hero-actions a:first-child,
+.math-filter button.is-active,
+.manuscript-view-tabs button.is-active {
+  background: var(--claude-clay);
+  border-color: var(--claude-clay);
+  color: oklch(0.985 0.004 95);
+}
+
+.return-link,
+.text-link,
+.article-body a {
+  color: var(--ivory-strong);
+  border-bottom-color: color-mix(in oklch, var(--claude-clay) 74%, transparent);
+}
+
+.article-body code,
+.article-body pre,
+.callout-definition,
+.callout-revision {
+  background: var(--dark-01);
+}
+
+.callout-error {
+  border-left-color: var(--claude-clay);
+}
+
+.callout-toolbox {
+  border-color: color-mix(in oklch, var(--claude-sage) 42%, var(--line-dark) 58%);
+}
+
+/* Stroke drawing should feel like ink, not scanning neon. */
+#cognitive-path,
+.atlas-line {
+  stroke: oklch(0.86 0.010 95 / .38);
+  opacity: .38;
+}
+
+.atlas-line-soft {
+  stroke: color-mix(in oklch, var(--claude-clay) 42%, transparent);
+  opacity: .32;
+}
+
+/* Disable visual pollution sources. */
+* {
+  text-shadow: none !important;
+}
+
+/* Reveal baseline: visible and quiet if JS is slow. */
+[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    grid-template-columns: 1fr;
+  }
+  .chain-node-header h2 {
+    font-size: clamp(42px, 12vw, 64px);
+  }
+}
+
+/* =========================================================
+   v1.2.4 — Dark Claude article field + card palette refinement
+   Goal: give the article reader a larger dark field and make cards
+   use Claude-adjacent color as material tint, not glow.
+   ========================================================= */
+:root {
+  /* Slightly richer Claude dark material stack. These are warm black,
+     not pure OLED black, so ivory and clay can carry contrast. */
+  --dark-00: oklch(0.128 0.004 95);
+  --dark-01: oklch(0.155 0.005 95);
+  --dark-02: oklch(0.190 0.006 95);
+  --dark-03: oklch(0.235 0.007 95);
+  --dark-04: oklch(0.292 0.008 95);
+
+  --ivory-strong: oklch(0.968 0.006 95);
+  --ivory: oklch(0.918 0.010 95);
+  --ivory-muted: oklch(0.750 0.014 95);
+  --ivory-faint: oklch(0.605 0.014 95);
+
+  --line-dark: oklch(0.385 0.010 95 / .58);
+  --line-dark-soft: oklch(0.330 0.010 95 / .44);
+
+  --card-bg-restraint: var(--dark-03);
+  --card-border-restraint: var(--line-dark-soft);
+  --card-field: color-mix(in oklch, var(--dark-02) 94%, var(--claude-ochre) 6%);
+  --card-field-border: oklch(0.345 0.010 95 / .48);
+}
+
+/* Article reader: the dark reading field should extend beyond the
+   side rails instead of touching the ROOM labels at the boundary. */
+.article-shell {
+  width: min(100% - 32px, 1510px);
+  grid-template-columns: 200px minmax(0, 820px) 260px;
+  gap: clamp(34px, 3.2vw, 54px);
+  padding: 148px clamp(34px, 4.4vw, 78px) 96px;
+  background:
+    linear-gradient(180deg,
+      color-mix(in oklch, var(--card-field) 96%, var(--claude-clay) 4%) 0%,
+      var(--card-field) 46%,
+      color-mix(in oklch, var(--card-field) 96%, black 4%) 100%);
+  border-left: 1px solid var(--card-field-border);
+  border-right: 1px solid var(--card-field-border);
+}
+
+.article-meta,
+.article-rail {
+  padding-top: 4px;
+}
+
+.article-manuscript {
+  background:
+    linear-gradient(180deg,
+      color-mix(in oklch, var(--dark-03) 96%, var(--claude-ochre) 4%) 0%,
+      var(--dark-03) 52%,
+      color-mix(in oklch, var(--dark-03) 96%, black 4%) 100%);
+  border-color: color-mix(in oklch, var(--line-dark) 76%, var(--ivory-faint) 24%);
+}
+
+.article-glyph {
+  background:
+    linear-gradient(180deg,
+      color-mix(in oklch, var(--dark-04) 92%, var(--claude-blue) 8%) 0%,
+      var(--dark-04) 100%);
+  border-color: color-mix(in oklch, var(--line-dark) 72%, var(--claude-blue) 28%);
+}
+
+/* Card palette: Claude colors become quiet material temperatures.
+   No glow, no bright blocks; just a tinted surface, a hairline, and a dot. */
+.chain-node,
+.protocol-card,
+.room-card,
+.asset-card,
+.plog-card,
+.work-item,
+.log-card,
+.atlas-node,
+.evolution-card,
+.manuscript-card,
+.math-note-card,
+.chain-asset-card {
+  --card-accent: var(--claude-clay);
+  --card-tint: var(--claude-clay);
+  --card-bg: color-mix(in oklch, var(--card-bg-restraint) 96%, var(--card-tint) 4%);
+  --card-border: color-mix(in oklch, var(--line-dark-soft) 78%, var(--card-tint) 22%);
+  background:
+    linear-gradient(180deg,
+      color-mix(in oklch, var(--card-bg) 94%, var(--card-tint) 6%) 0%,
+      var(--card-bg) 44%,
+      color-mix(in oklch, var(--card-bg) 96%, black 4%) 100%) !important;
+  border-color: var(--card-border) !important;
+}
+
+.tone-paper,
+.tone-clay,
+.status-delta,
+.status-revision {
+  --card-accent: var(--claude-clay);
+  --card-tint: var(--claude-clay);
+}
+
+.tone-surface,
+.tone-oat,
+.status-toolbox {
+  --card-accent: var(--claude-ochre);
+  --card-tint: var(--claude-ochre);
+}
+
+.tone-cactus,
+.tone-olive,
+.status-skill {
+  --card-accent: var(--claude-sage);
+  --card-tint: var(--claude-sage);
+}
+
+.tone-blue,
+.tone-slate {
+  --card-accent: var(--claude-blue);
+  --card-tint: var(--claude-blue);
+}
+
+.tone-violet {
+  --card-accent: var(--claude-violet);
+  --card-tint: var(--claude-violet);
+}
+
+.chain-node::before,
+.protocol-card::before,
+.room-card::before,
+.asset-card::before,
+.plog-card::before,
+.work-item::before,
+.log-card::before,
+.atlas-node::before,
+.evolution-card::before,
+.manuscript-card::before,
+.math-note-card::before,
+.chain-asset-card::before {
+  height: 1px;
+  background: color-mix(in oklch, var(--card-accent) 72%, var(--ivory-faint) 28%);
+  opacity: .62;
+}
+
+.chain-node:hover,
+.protocol-card:hover,
+.room-card:hover,
+.asset-card:hover,
+.plog-card:hover,
+.work-item:hover,
+.log-card:hover,
+.atlas-node:hover,
+.evolution-card:hover,
+.manuscript-card:hover,
+.math-note-card:hover,
+.chain-asset-card:hover {
+  border-color: color-mix(in oklch, var(--card-accent) 36%, var(--line-dark) 64%) !important;
+  background:
+    linear-gradient(180deg,
+      color-mix(in oklch, var(--card-bg) 92%, var(--card-tint) 8%) 0%,
+      color-mix(in oklch, var(--card-bg) 96%, var(--dark-04) 4%) 100%) !important;
+}
+
+/* Keep the article side annotations readable on the larger field. */
+.article-meta dt,
+.revision-rail dt,
+.article-rail h2,
+.revision-rail h2 {
+  color: color-mix(in oklch, var(--ivory) 78%, var(--claude-clay) 22%);
+}
+
+.article-meta dd,
+.revision-rail dd,
+.article-toc a {
+  color: var(--ivory-muted);
+}
+
+.article-meta dd a,
+.revision-rail dd a,
+.return-link,
+.text-link {
+  color: color-mix(in oklch, var(--ivory-strong) 82%, var(--claude-clay) 18%);
+}
+
+@media (max-width: 1120px) {
+  .article-shell {
+    width: min(100% - 24px, 920px);
+    padding-left: clamp(22px, 5vw, 44px);
+    padding-right: clamp(22px, 5vw, 44px);
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .article-shell {
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+/* =========================================================
+   v1.2.5 — Card Material Unification
+   Goal: make every card belong to the same Claude dark material
+   system. Claude palette is used as indexing color only: hairline,
+   tiny dot, metadata, and active border. No colored card bodies,
+   no glow, no tinted SaaS blocks.
+   ========================================================= */
+:root {
+  --claude-page: oklch(0.128 0.004 95);
+  --claude-band: oklch(0.155 0.005 95);
+  --claude-section: oklch(0.188 0.006 95);
+  --claude-card: oklch(0.228 0.007 95);
+  --claude-card-raised: oklch(0.258 0.008 95);
+  --claude-input: oklch(0.292 0.008 95);
+
+  --claude-ivory: oklch(0.968 0.006 95);
+  --claude-ivory-soft: oklch(0.895 0.010 95);
+  --claude-ivory-muted: oklch(0.735 0.014 95);
+  --claude-ivory-faint: oklch(0.575 0.014 95);
+
+  --claude-line: oklch(0.355 0.010 95 / .58);
+  --claude-line-soft: oklch(0.315 0.010 95 / .44);
+  --claude-line-faint: oklch(0.300 0.010 95 / .30);
+
+  --tone-clay: oklch(0.665 0.128 39.5);
+  --tone-ochre: oklch(0.710 0.070 75);
+  --tone-sage: oklch(0.650 0.052 132);
+  --tone-blue: oklch(0.675 0.052 245);
+  --tone-violet: oklch(0.690 0.060 300);
+
+  --background: var(--claude-page);
+  --page-bg: var(--claude-page);
+  --surface: var(--claude-section);
+  --surface-soft: var(--claude-card);
+  --surface-muted: var(--claude-card-raised);
+  --card: var(--claude-card);
+  --card-foreground: var(--claude-ivory);
+
+  --ink: var(--claude-ivory);
+  --ink-body: var(--claude-ivory-soft);
+  --body: var(--claude-ivory-muted);
+  --ink-muted: var(--claude-ivory-faint);
+  --muted: var(--claude-ivory-faint);
+  --line: var(--claude-line);
+  --hairline: var(--claude-line-soft);
+  --primary: var(--tone-clay);
+  --clay: var(--tone-clay);
+  --claude-clay: var(--tone-clay);
+  --claude-ochre: var(--tone-ochre);
+  --claude-sage: var(--tone-sage);
+  --claude-blue: var(--tone-blue);
+  --claude-violet: var(--tone-violet);
+
+  --card-bg-restraint: var(--claude-card);
+  --card-border-restraint: var(--claude-line-soft);
+  --card-bg-unified: var(--claude-card);
+  --card-bg-unified-hover: color-mix(in oklch, var(--claude-card) 88%, var(--claude-card-raised) 12%);
+  --card-border-unified: var(--claude-line-soft);
+}
+
+html,
+body {
+  background: var(--claude-page) !important;
+  color: var(--claude-ivory);
+}
+
+.site-header {
+  background: oklch(0.120 0.004 95 / .97) !important;
+  border-bottom-color: var(--claude-line-faint) !important;
+}
+
+/* Large page shells keep a subtle dark field, but never colored gradients. */
+.chain-atlas-full,
+.math-lab-page .math-hero,
+.manuscripts-page .manuscript-hero,
+.protocol-page .protocol-hero,
+.article-page .article-shell,
+.hero-card,
+.article-manuscript,
+.article-glyph,
+.math-chain-node,
+.math-current,
+.callout,
+.protocol-summary,
+.protocol-chain,
+.protocol-roles,
+.protocol-source {
+  background:
+    linear-gradient(180deg, oklch(1 0 0 / .018), transparent 34%),
+    var(--claude-section) !important;
+  border-color: var(--claude-line-soft) !important;
+  box-shadow: none !important;
+}
+
+.article-shell {
+  background:
+    linear-gradient(180deg, oklch(1 0 0 / .014), transparent 36%),
+    color-mix(in oklch, var(--claude-section) 94%, var(--claude-band) 6%) !important;
+}
+
+/* Unified cards: one graphite material. Tone never controls card body. */
+.chain-node,
+.protocol-card,
+.room-card,
+.asset-card,
+.plog-card,
+.work-item,
+.log-card,
+.atlas-node,
+.evolution-card,
+.manuscript-card,
+.math-note-card,
+.chain-asset-card {
+  --hover-mark: 0;
+  --card-accent: var(--tone-clay);
+  --card-bg: var(--card-bg-unified);
+  --card-border: var(--card-border-unified);
+  background:
+    linear-gradient(180deg, oklch(1 0 0 / .024), transparent 30%),
+    var(--card-bg-unified) !important;
+  border-color: var(--card-border-unified) !important;
+  box-shadow: none !important;
+  filter: none !important;
+  color: var(--claude-ivory-muted);
+  transition: border-color .22s ease, background-color .22s ease, transform .22s ease;
+}
+
+/* Tone = index color only. */
+.tone-paper,
+.tone-clay,
+.status-delta,
+.status-revision,
+.phase-error,
+.phase-delta,
+.phase-revision {
+  --card-accent: var(--tone-clay);
+}
+
+.tone-surface,
+.tone-oat,
+.status-toolbox {
+  --card-accent: var(--tone-ochre);
+}
+
+.tone-cactus,
+.tone-olive,
+.status-skill,
+.phase-skill {
+  --card-accent: var(--tone-sage);
+}
+
+.tone-blue,
+.tone-slate {
+  --card-accent: var(--tone-blue);
+}
+
+.tone-violet,
+.tone-lavender {
+  --card-accent: var(--tone-violet);
+}
+
+/* Hairline replaces colored card backgrounds. */
+.chain-node::before,
+.protocol-card::before,
+.room-card::before,
+.asset-card::before,
+.plog-card::before,
+.work-item::before,
+.log-card::before,
+.atlas-node::before,
+.evolution-card::before,
+.manuscript-card::before,
+.math-note-card::before,
+.chain-asset-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: color-mix(in oklch, var(--card-accent) 62%, var(--claude-ivory-faint) 38%);
+  opacity: .56;
+  pointer-events: none;
+}
+
+/* Annotation dot / underline: quiet, no glow. */
+.chain-node::after,
+.protocol-card::after,
+.room-card::after,
+.asset-card::after,
+.plog-card::after,
+.work-item::after,
+.log-card::after {
+  width: 5px !important;
+  height: 5px !important;
+  background: var(--card-accent) !important;
+  box-shadow: none !important;
+  opacity: calc(var(--hover-mark) * .68) !important;
+  transform: scale(calc(.68 + var(--hover-mark) * .20)) !important;
+}
+
+.atlas-node::after,
+.evolution-card::after,
+.manuscript-card::after,
+.math-note-card::after,
+.chain-asset-card::after {
+  background: color-mix(in oklch, var(--card-accent) 58%, transparent) !important;
+  box-shadow: none !important;
+  opacity: calc(.18 + var(--hover-mark) * .34) !important;
+  transform: scaleX(calc(.16 + var(--hover-mark) * .84)) !important;
+}
+
+.chain-node:hover,
+.protocol-card:hover,
+.room-card:hover,
+.asset-card:hover,
+.plog-card:hover,
+.work-item:hover,
+.log-card:hover,
+.atlas-node:hover,
+.evolution-card:hover,
+.manuscript-card:hover,
+.math-note-card:hover,
+.chain-asset-card:hover {
+  background:
+    linear-gradient(180deg, oklch(1 0 0 / .032), transparent 32%),
+    var(--card-bg-unified-hover) !important;
+  border-color: color-mix(in oklch, var(--card-accent) 24%, var(--claude-line) 76%) !important;
+}
+
+/* Card typography: ivory carries hierarchy; color is reserved for small labels. */
+.chain-node strong,
+.protocol-card strong,
+.room-card h3,
+.asset-card strong,
+.plog-card strong,
+.work-item strong,
+.log-card strong,
+.atlas-node h3,
+.evolution-card h3,
+.manuscript-card strong,
+.math-note-card strong,
+.chain-asset-card strong {
+  color: var(--claude-ivory) !important;
+}
+
+.chain-node p,
+.protocol-card p,
+.room-card p,
+.asset-card p,
+.plog-card p,
+.work-item p,
+.log-card p,
+.atlas-node p,
+.evolution-card dd,
+.manuscript-card p,
+.math-note-card p,
+.chain-asset-card p,
+.chain-node li,
+.atlas-node li {
+  color: var(--claude-ivory-muted) !important;
+}
+
+.chain-node span,
+.protocol-card span,
+.room-card span,
+.asset-card span,
+.plog-card span,
+.work-item span,
+.log-card span,
+.atlas-node-top span,
+.manuscript-card span,
+.math-note-card span,
+.chain-asset-card span,
+.article-tags span,
+.callout strong:first-child {
+  color: var(--claude-ivory-faint) !important;
+}
+
+.stage-label,
+.hero .eyebrow,
+.asset-card code,
+.work-item code,
+.article-meta dd a,
+.revision-rail dd a,
+.return-link:hover,
+.text-link:hover,
+.article-body a:hover {
+  color: var(--tone-clay) !important;
+}
+
+/* Pills and tags: graphite, not colorful chips. */
+.article-tags span,
+.hero-actions a,
+.math-filter button,
+.manuscript-view-tabs button,
+.protocol-chain-line span {
+  background: var(--claude-input) !important;
+  border-color: var(--claude-line-soft) !important;
+  color: var(--claude-ivory-muted) !important;
+  box-shadow: none !important;
+}
+
+.hero-actions a:first-child,
+.article-next a:first-child,
+.math-filter button.is-active,
+.manuscript-view-tabs button.is-active {
+  background: var(--tone-clay) !important;
+  border-color: var(--tone-clay) !important;
+  color: var(--claude-ivory) !important;
+}
+
+/* Callouts use semantic border/hairline only. */
+.callout-definition,
+.callout-proof,
+.callout-toolbox,
+.callout-error,
+.callout-revision {
+  background:
+    linear-gradient(180deg, oklch(1 0 0 / .018), transparent 32%),
+    var(--claude-card) !important;
+  border-color: var(--claude-line-soft) !important;
+}
+
+.callout-definition { --card-accent: var(--tone-blue); }
+.callout-proof { --card-accent: var(--tone-ochre); }
+.callout-toolbox { --card-accent: var(--tone-sage); }
+.callout-error { --card-accent: var(--tone-clay); border-left-color: var(--tone-clay) !important; }
+.callout-revision { --card-accent: var(--tone-violet); }
+
+/* Make figure/image boxes belong to the same dark surface stack. */
+.hero-figure,
+.room-figure,
+.menu-figure,
+.article-glyph {
+  background: var(--claude-band) !important;
+  border-color: var(--claude-line-soft) !important;
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   v1.3.0 Works carousel and manuscript-like work detail
+   ========================================================= */
+
+.works-page .site-header,
+.work-detail-page .site-header {
+  background: oklch(0.130 0.004 95 / .96);
+  border-bottom-color: var(--claude-line-soft);
+}
+
+.works-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(320px, .78fr);
+  align-items: end;
+  gap: 42px;
+  padding-top: 154px;
+  padding-bottom: 56px;
+}
+
+.works-hero h1 {
+  margin: 0;
+  font-size: clamp(84px, 13vw, 176px);
+  line-height: .86;
+  letter-spacing: 0;
+}
+
+.works-hero-copy {
+  max-width: 560px;
+  border-top: 1px solid var(--claude-line-soft);
+  padding-top: 22px;
+}
+
+.works-thesis {
+  margin-bottom: 12px;
+  color: var(--claude-ivory-strong) !important;
+  font-family: var(--font-title);
+  font-size: clamp(24px, 3vw, 42px);
+  line-height: 1.1;
+}
+
+.works-stage {
+  padding-top: 38px;
+  padding-bottom: 52px;
+}
+
+.works-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 18px;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-controls button {
+  min-width: 66px;
+  min-height: 38px;
+  border: 1px solid var(--claude-line-soft);
+  border-radius: 999px;
+  background: var(--claude-input);
+  color: var(--claude-ivory-muted);
+  cursor: pointer;
+}
+
+.carousel-controls button:hover,
+.carousel-controls button:focus-visible {
+  border-color: color-mix(in oklch, var(--tone-clay) 52%, var(--claude-line-soft) 48%);
+  color: var(--claude-ivory);
+}
+
+.carousel-controls button:disabled {
+  cursor: default;
+  opacity: .42;
+}
+
+.works-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(300px, 31vw, 392px);
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding: 2px;
+  scroll-snap-type: x mandatory;
+  padding: 6px 2px 22px;
+}
+
+.works-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.works-carousel::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--tone-clay) 36%, var(--claude-line) 64%);
+}
+
+.work-card {
+  --hover-mark: 0;
+  --card-bg: var(--claude-card);
+  --card-border: var(--claude-line-soft);
+  --card-accent: var(--tone-clay);
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(320px, 1fr) auto;
+  min-height: 588px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  box-shadow: none;
+}
+
+.work-card::before,
+.works-index-row::before,
+.review-item::before,
+.layout-note::before,
+.work-note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: color-mix(in oklch, var(--card-accent, var(--tone-clay)) 58%, transparent);
+  opacity: .74;
+  pointer-events: none;
+}
+
+.work-card::after,
+.works-index-row::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--card-accent, var(--tone-clay));
+  opacity: calc(.2 + var(--hover-mark) * .54);
+  transform: scale(calc(.72 + var(--hover-mark) * .2));
+  pointer-events: none;
+}
+
+.work-card.tone-blue,
+.works-index-row.tone-blue {
+  --card-accent: var(--tone-blue);
+}
+
+.work-card.tone-slate,
+.works-index-row.tone-slate {
+  --card-accent: var(--tone-blue);
+}
+
+.work-card.tone-cactus,
+.works-index-row.tone-cactus {
+  --card-accent: var(--tone-sage);
+}
+
+.work-card.tone-violet,
+.works-index-row.tone-violet {
+  --card-accent: var(--tone-violet);
+}
+
+.work-card-figure {
+  margin: 0;
+  overflow: hidden;
+  background: var(--claude-band);
+  border-bottom: 1px solid var(--claude-line-soft);
+}
+
+.work-card-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  filter: saturate(.92) contrast(.96);
+}
+
+.work-card-body {
+  display: grid;
+  gap: 12px;
+  padding: 18px 18px 22px;
+}
+
+.work-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--claude-ivory-faint);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.work-card h2 {
+  margin: 0;
+  color: var(--claude-ivory-strong);
+  font-family: var(--font-title);
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.work-card p {
+  margin: 0;
+  color: var(--claude-ivory-muted);
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.work-card small {
+  color: var(--claude-ivory-faint);
+  font-size: 12px;
+}
+
+.works-index-section {
+  padding-top: 58px;
+}
+
+.works-index {
+  display: grid;
+  border-top: 1px solid var(--claude-line-soft);
+}
+
+.works-index-row {
+  --hover-mark: 0;
+  --card-accent: var(--tone-clay);
+  position: relative;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) minmax(160px, .34fr) 84px;
+  gap: 18px;
+  align-items: center;
+  min-height: 72px;
+  border-bottom: 1px solid var(--claude-line-soft);
+  padding: 16px 28px 16px 0;
+}
+
+.works-index-row span,
+.works-index-row em,
+.works-index-row small {
+  color: var(--claude-ivory-faint);
+  font-size: 12px;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.works-index-row strong {
+  color: var(--claude-ivory-strong);
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.work-detail-shell {
+  display: grid;
+  grid-template-columns: minmax(190px, 250px) minmax(0, 900px);
+  gap: 52px;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 146px 0 96px;
+}
+
+.work-detail-meta {
+  position: sticky;
+  top: 112px;
+  align-self: start;
+  display: grid;
+  gap: 26px;
+  color: var(--claude-ivory-muted);
+}
+
+.work-detail-meta dl {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  border-top: 1px solid var(--claude-line-soft);
+  padding-top: 18px;
+}
+
+.work-detail-meta dt {
+  color: var(--claude-ivory-faint);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.work-detail-meta dd {
+  margin: -8px 0 4px;
+  color: var(--claude-ivory-muted);
+}
+
+.work-detail-main {
+  display: grid;
+  gap: 42px;
+  min-width: 0;
+}
+
+.work-detail-hero {
+  border-bottom: 1px solid var(--claude-line-soft);
+  padding-bottom: 26px;
+}
+
+.work-detail-hero h1 {
+  max-width: 900px;
+  margin-bottom: 18px;
+  font-size: clamp(58px, 8vw, 118px);
+  line-height: .9;
+  letter-spacing: 0;
+}
+
+.work-detail-summary {
+  max-width: 760px;
+  color: var(--claude-ivory-muted);
+  font-size: 20px;
+  line-height: 1.62;
+}
+
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.work-tags span {
+  border: 1px solid var(--claude-line-soft);
+  border-radius: 999px;
+  background: var(--claude-input);
+  padding: 7px 10px;
+  color: var(--claude-ivory-faint);
+  font-size: 12px;
+}
+
+.work-detail-figure {
+  margin: 0;
+  border: 1px solid var(--claude-line-soft);
+  border-radius: var(--radius);
+  background: var(--claude-band);
+  padding: 10px;
+}
+
+.work-detail-figure img {
+  display: block;
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.work-detail-section {
+  border-top: 1px solid var(--claude-line-soft);
+  padding-top: 28px;
+}
+
+.work-detail-section h2 {
+  margin-bottom: 18px;
+  font-size: clamp(34px, 4.5vw, 58px);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.work-detail-section > p:not(.section-kicker) {
+  max-width: 760px;
+  color: var(--claude-ivory-muted);
+  font-size: 18px;
+}
+
+.review-grid,
+.layout-notes-grid,
+.work-bullet-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.review-item,
+.layout-note,
+.work-note {
+  --card-accent: var(--tone-clay);
+  position: relative;
+  min-height: 144px;
+  border: 1px solid var(--claude-line-soft);
+  border-radius: var(--radius);
+  background: var(--claude-card);
+  padding: 18px;
+}
+
+.review-item span,
+.layout-note span,
+.work-note span {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--claude-ivory-faint);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.review-item p,
+.layout-note p,
+.work-note p {
+  margin: 0;
+  color: var(--claude-ivory-muted);
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+@media (max-width: 980px) {
+  .works-hero,
+  .work-detail-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .work-detail-meta {
+    position: static;
+    grid-template-columns: 1fr;
+  }
+
+  .review-grid,
+  .layout-notes-grid,
+  .work-bullet-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .works-hero {
+    gap: 28px;
+    padding-top: 174px;
+  }
+
+  .works-hero h1 {
+    font-size: clamp(72px, 22vw, 112px);
+  }
+
+  .works-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .works-carousel {
+    grid-auto-columns: min(84vw, 360px);
+    gap: 12px;
+  }
+
+  .work-card {
+    min-height: 520px;
+  }
+
+  .work-card h2 {
+    font-size: 28px;
+  }
+
+  .works-index-row {
+    grid-template-columns: 42px minmax(0, 1fr);
+    padding-right: 18px;
+  }
+
+  .works-index-row em,
+  .works-index-row small {
+    grid-column: 2;
+  }
+
+  .work-detail-shell {
+    width: min(100% - 28px, 680px);
+    padding-top: 168px;
+  }
+
+  .work-detail-hero h1 {
+    font-size: clamp(46px, 14vw, 72px);
+  }
+
+  .work-detail-summary {
+    font-size: 17px;
+  }
+
+  .review-grid,
+  .layout-notes-grid,
+  .work-bullet-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   v1.4 redesign: dark research entrance, guide rows, paper artifacts
+   ========================================================= */
+
+.home-redesign {
+  --site-bg: #141413;
+  --site-bg-soft: #24221f;
+  --site-title: #faf9f5;
+  --site-text: #e8e5dc;
+  --site-muted: #b8b3a8;
+  --site-paper: #e8e2d6;
+  --site-paper-strong: #d8cbbb;
+  --site-paper-light: #fbf7ef;
+  --site-accent: #d97757;
+  --site-accent-hover: #c96543;
+  --site-button-ink: #181715;
+  background: var(--site-bg);
+  color: var(--site-title);
+}
+
+.home-redesign .paper-grain {
+  opacity: .018;
+  background-image:
+    linear-gradient(0deg, oklch(0.92 0.01 95 / .03) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.92 0.01 95 / .02) 1px, transparent 1px);
+}
+
+.home-redesign .site-header {
+  background: color-mix(in oklch, var(--site-bg) 94%, black 6%);
+  border-bottom-color: color-mix(in oklch, var(--site-muted) 24%, transparent);
+}
+
+.home-redesign .brand-mark span,
+.home-redesign h1,
+.home-redesign h2,
+.home-redesign h3,
+.home-redesign .guide-row strong,
+.home-redesign .archive-link-item span {
+  color: var(--site-title);
+}
+
+.home-redesign .brand-mark small,
+.home-redesign .desktop-nav,
+.home-redesign .hero-support,
+.home-redesign p,
+.home-redesign .selected-artifact-card p {
+  color: var(--site-text);
+}
+
+.home-redesign .desktop-nav a:hover,
+.home-redesign .desktop-nav a:focus-visible,
+.home-redesign .section-kicker,
+.home-redesign .eyebrow {
+  color: var(--site-accent);
+}
+
+.home-redesign .hero {
+  min-height: 92vh;
+  grid-template-columns: minmax(0, 1.45fr) minmax(360px, .95fr);
+  gap: clamp(38px, 5vw, 76px);
+  padding-top: 152px;
+  padding-bottom: 108px;
+}
+
+.home-redesign .hero h1 {
+  max-width: 780px;
+  margin-bottom: 24px;
+  color: var(--site-title) !important;
+  font-size: clamp(92px, 13vw, 184px);
+  line-height: .84;
+  letter-spacing: 0;
+}
+
+.home-redesign .hero-cn {
+  margin: 0;
+  color: var(--site-title) !important;
+  font-family: var(--font-title);
+  font-size: clamp(30px, 4.2vw, 64px);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.home-redesign .hero-lede {
+  max-width: 560px;
+  margin-top: 24px;
+  color: var(--site-text) !important;
+  font-size: clamp(18px, 2vw, 25px);
+  line-height: 1.58;
+}
+
+.home-redesign .hero-support {
+  max-width: 520px;
+  margin-top: 10px;
+  color: var(--site-muted) !important;
+  font-size: 15px;
+}
+
+.home-redesign .hero-actions {
+  margin-top: 34px;
+}
+
+.home-redesign .hero-actions a {
+  border-radius: 999px;
+  border-color: color-mix(in oklch, var(--site-muted) 34%, transparent);
+  background: transparent;
+  color: var(--site-text) !important;
+}
+
+.home-redesign .hero-actions a:first-child {
+  background: var(--site-accent) !important;
+  border-color: var(--site-accent) !important;
+  color: var(--site-button-ink) !important;
+}
+
+.home-redesign .hero-actions a:first-child:hover,
+.home-redesign .hero-actions a:first-child:focus-visible {
+  background: var(--site-accent-hover) !important;
+  border-color: var(--site-accent-hover) !important;
+}
+
+.home-redesign .hero-card {
+  min-height: auto;
+  align-self: center;
+  border: 1px solid color-mix(in oklch, var(--site-paper) 22%, transparent);
+  background: var(--site-paper);
+  color: var(--swatch-gray-950);
+  box-shadow: 0 24px 70px rgb(0 0 0 / .28) !important;
+}
+
+.home-redesign .hero-card-top {
+  color: var(--swatch-gray-750);
+}
+
+.home-redesign .hero-figure {
+  background: var(--site-paper-strong) !important;
+  border-color: rgb(20 20 19 / .16) !important;
+}
+
+.home-redesign .hero-illustration {
+  filter: saturate(.94) contrast(.98);
+}
+
+.home-guide {
+  padding-top: 40px;
+  padding-bottom: 92px;
+}
+
+.guide-row-list {
+  display: grid;
+  border-top: 1px solid color-mix(in oklch, var(--site-muted) 24%, transparent);
+}
+
+.guide-row {
+  --hover-mark: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(110px, .18fr) minmax(190px, .32fr) minmax(260px, 1fr) auto;
+  gap: clamp(18px, 3vw, 42px);
+  align-items: center;
+  min-height: 132px;
+  border-bottom: 1px solid color-mix(in oklch, var(--site-muted) 24%, transparent);
+  padding: 28px 0;
+}
+
+.guide-row-no,
+.guide-row em,
+.archive-link-item em,
+.selected-artifact-meta {
+  color: var(--site-muted);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.guide-row strong {
+  font-family: var(--font-title);
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.guide-row p {
+  margin: 0;
+  max-width: 48ch;
+  color: var(--site-text);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.guide-row em {
+  transition: transform .22s ease, color .22s ease;
+}
+
+.guide-row:hover em,
+.guide-row:focus-visible em {
+  color: var(--site-accent);
+  transform: translateX(4px);
+}
+
+.selected-artifacts {
+  padding-top: 96px;
+  padding-bottom: 104px;
+}
+
+.section-intro {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1fr);
+  gap: 36px;
+  align-items: end;
+  margin-bottom: 32px;
+}
+
+.section-intro h2 {
+  color: var(--site-title);
+  font-size: clamp(42px, 6vw, 88px);
+  line-height: .94;
+  letter-spacing: 0;
+}
+
+.selected-artifact-grid {
+  display: grid;
+  grid-template-columns: 1.08fr .96fr .96fr;
+  gap: 16px;
+}
+
+.selected-artifact-card {
+  --hover-mark: 0;
+  --card-border: rgb(20 20 19 / .16);
+  --card-border-active: rgb(20 20 19 / .28);
+  display: grid;
+  align-content: start;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  background: var(--site-paper);
+  color: var(--swatch-gray-950);
+  box-shadow: 0 18px 48px rgb(0 0 0 / .2) !important;
+}
+
+.selected-artifact-card figure {
+  margin: 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgb(20 20 19 / .14);
+  background: var(--site-paper-strong);
+}
+
+.selected-artifact-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.selected-artifact-body {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.selected-artifact-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  color: var(--swatch-gray-750);
+}
+
+.selected-artifact-card h3 {
+  margin: 0;
+  color: var(--swatch-gray-950);
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1;
+}
+
+.selected-artifact-card p {
+  margin: 0;
+  color: var(--swatch-gray-750) !important;
+  font-size: 15px;
+}
+
+.home-archive {
+  padding-top: 44px;
+  padding-bottom: 112px;
+}
+
+.archive-link-list {
+  display: grid;
+  max-width: 720px;
+  border-top: 1px solid color-mix(in oklch, var(--site-muted) 24%, transparent);
+}
+
+.archive-link-item {
+  --hover-mark: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  border-bottom: 1px solid color-mix(in oklch, var(--site-muted) 24%, transparent);
+  padding: 20px 0;
+}
+
+.archive-link-item span {
+  font-family: var(--font-title);
+  font-size: 28px;
+  letter-spacing: 0;
+}
+
+.archive-link-item:hover em,
+.archive-link-item:focus-visible em {
+  color: var(--site-accent);
+  transform: translateX(4px);
+}
+
+@media (max-width: 980px) {
+  .home-redesign .hero,
+  .section-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .selected-artifact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-redesign .hero {
+    gap: 36px;
+    min-height: auto;
+    padding-top: 170px;
+    padding-bottom: 72px;
+  }
+
+  .home-redesign .hero h1 {
+    font-size: clamp(72px, 22vw, 112px);
+  }
+
+  .home-redesign .hero-card {
+    max-width: 100%;
+  }
+
+  .guide-row {
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    min-height: 0;
+    padding: 24px 0;
+  }
+
+  .guide-row strong,
+  .guide-row p {
+    grid-column: 1 / -1;
+  }
+
+  .guide-row strong {
+    font-size: clamp(34px, 13vw, 56px);
+  }
+
+  .home-guide,
+  .selected-artifacts,
+  .home-archive {
+    padding-top: 56px;
+    padding-bottom: 70px;
+  }
+
+  .section-intro h2 {
+    font-size: clamp(40px, 13vw, 62px);
+  }
+}

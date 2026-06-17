@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aleksi Lab</title>
+  <meta name="description" content="Aleksi Lab is a personal research lab for learning, making, AI collaboration, and revision.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf9f5'/%3E%3Cpath d='M8 22C12 10 22 8 24 18' fill='none' stroke='%23141413' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='23' cy='18' r='3' fill='%23c96442'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="./content.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body class="home-redesign">
+  <div class="paper-grain" aria-hidden="true"></div>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand-mark" href="#home" aria-label="Aleksi Lab home">
+      <span>Aleksi Lab</span>
+      <small>未完手稿</small>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation"></nav>
+  </header>
+
+  <main id="content">
+    <section class="hero paper-section" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">PERSONAL LAB / INDEX</p>
+        <h1 class="hero-title">Aleksi Lab</h1>
+        <p class="hero-cn">Learning, making, and revision.</p>
+        <p class="hero-lede zh-copy">学习、创作与 AI 协作的长期实验室。</p>
+        <p class="hero-support zh-note">把学习、创作与反馈，修订成可复用的结构。</p>
+        <div class="hero-actions" aria-label="Key entrances">
+          <a href="./works.html">进入作品档案 →</a>
+          <a href="./math.html">打开数学实验室</a>
+        </div>
+      </div>
+
+      <aside class="hero-card hero-illustration-card" aria-label="Infinite Progress featured artifact">
+        <div class="hero-card-top">
+          <span>核心视觉</span>
+          <span>无限进步</span>
+        </div>
+        <figure class="hero-figure">
+          <img class="hero-illustration" src="./assets/hero/infinite-progress-hero.webp" alt="Infinite Progress artifact for Aleksi Lab">
+        </figure>
+      </aside>
+    </section>
+
+    <section class="home-guide paper-section" id="guide" data-reveal>
+      <p class="section-kicker">Guide Rows / Entrances</p>
+      <div class="guide-row-list" data-guide-rows></div>
+    </section>
+
+    <section class="selected-artifacts paper-section" id="selected-artifacts" data-reveal>
+      <div class="section-intro">
+        <p class="section-kicker">Selected Artifacts</p>
+        <h2 class="section-title">精选档案</h2>
+      </div>
+      <div class="selected-artifact-grid" data-selected-artifacts></div>
+    </section>
+
+    <section class="home-archive paper-section" id="archive-links" data-reveal>
+      <p class="section-kicker">Archive Links</p>
+      <div class="archive-link-list" data-archive-links></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Aleksi Lab</p>
+    <p>未完手稿不是粗糙，而是始终保留下一次进入的位置。</p>
+  </footer>
+</body>
+</html>

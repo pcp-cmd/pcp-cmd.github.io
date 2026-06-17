@@ -1,0 +1,152 @@
+/* v1.6.7 Article meta + Chinese content polish
+   Keeps navigation English, but makes article metadata and body Chinese-first. */
+
+.article-page {
+  --article-left: 250px;
+  --article-main: minmax(600px, 740px);
+  --article-right: 260px;
+}
+
+.article-shell {
+  width: min(1460px, calc(100vw - 88px)) !important;
+  grid-template-columns: var(--article-left) var(--article-main) var(--article-right) !important;
+  gap: clamp(42px, 4vw, 58px) !important;
+  align-items: start !important;
+}
+
+.article-meta {
+  position: sticky !important;
+  top: 104px !important;
+  align-self: start !important;
+  min-height: 330px !important;
+  padding: 28px 28px 32px !important;
+  border: 1px solid var(--line-soft) !important;
+  border-radius: 22px !important;
+  background:
+    linear-gradient(180deg, rgba(250, 249, 245, 0.026), transparent 42%),
+    var(--panel-bg) !important;
+  overflow: hidden !important;
+}
+
+.article-meta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(250, 249, 245, 0.035);
+}
+
+.article-meta .return-link {
+  display: inline-flex !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  margin-bottom: 34px !important;
+  padding-bottom: 5px !important;
+  font-family: var(--font-cn-sans, "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", sans-serif) !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  color: var(--text-muted) !important;
+  border-bottom: 1px solid color-mix(in oklch, var(--text-muted) 48%, transparent) !important;
+}
+
+.article-meta dl {
+  display: grid !important;
+  gap: 18px !important;
+  margin: 0 !important;
+}
+
+.article-meta dt,
+.revision-rail dt {
+  font-family: var(--font-cn-sans, "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", sans-serif) !important;
+  font-size: 11px !important;
+  line-height: 1.45 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  color: var(--text-faint) !important;
+  text-transform: none !important;
+}
+
+.article-meta dd,
+.revision-rail dd {
+  margin: 4px 0 0 !important;
+  font-family: var(--font-cn-sans, "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", sans-serif) !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+  color: var(--text-body) !important;
+  overflow-wrap: anywhere !important;
+}
+
+.article-manuscript {
+  padding: clamp(42px, 4.8vw, 64px) !important;
+  border-radius: 24px !important;
+}
+
+.article-header h1[data-article-title] {
+  font-size: clamp(34px, 3vw, 50px) !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.article-body h2 {
+  font-size: clamp(21px, 1.8vw, 28px) !important;
+  line-height: 1.28 !important;
+  margin-top: 2.15em !important;
+}
+
+.article-body h3 {
+  font-size: clamp(17px, 1.25vw, 21px) !important;
+}
+
+.article-body p,
+.article-body li,
+.article-judgment,
+.article-next {
+  font-family: var(--font-cn-sans, "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", sans-serif) !important;
+  letter-spacing: 0.01em !important;
+}
+
+.article-rail {
+  position: sticky !important;
+  top: 104px !important;
+  padding: 28px 28px 32px !important;
+  border: 1px solid var(--line-soft) !important;
+  border-radius: 22px !important;
+  background:
+    linear-gradient(180deg, rgba(250, 249, 245, 0.022), transparent 42%),
+    var(--panel-bg) !important;
+}
+
+.article-rail h2,
+.revision-rail h2 {
+  font-size: clamp(18px, 1.25vw, 22px) !important;
+  margin: 0 0 16px !important;
+}
+
+.article-toc a {
+  font-family: var(--font-cn-sans, "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", sans-serif) !important;
+  font-size: 12.5px !important;
+  letter-spacing: 0.01em !important;
+}
+
+.article-tags span {
+  font-family: var(--font-cn-sans, "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", sans-serif) !important;
+  text-transform: none !important;
+}
+
+@media (max-width: 1180px) {
+  .article-shell {
+    width: min(900px, calc(100vw - 48px)) !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .article-meta,
+  .article-rail {
+    position: static !important;
+    min-height: auto !important;
+  }
+}

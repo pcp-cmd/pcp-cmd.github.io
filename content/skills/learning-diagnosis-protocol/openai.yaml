@@ -1,0 +1,7 @@
+interface:
+  display_name: "Renren Rulong"
+  short_description: "Learning diagnosis and reusable study assets"
+  default_prompt: "Use $renren-rulong to diagnose my current learning block and turn today's study into a reusable asset."
+
+policy:
+  allow_implicit_invocation: true

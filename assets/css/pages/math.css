@@ -1,0 +1,73 @@
+body.math-page {
+  background: var(--page-bg) !important;
+}
+
+.math-hero,
+.math-knowledge,
+.math-current-section,
+.math-browser {
+  width: min(var(--stage-max), calc(100vw - var(--stage-pad) * 2));
+  margin-inline: auto;
+}
+
+.math-hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.85fr) minmax(280px, 0.75fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: end;
+  padding-block: clamp(92px, 12vw, 152px) clamp(48px, 7vw, 86px);
+}
+
+.math-hero h1,
+.math-page .section-title {
+  color: var(--text-strong) !important;
+}
+
+.math-hero h1 {
+  margin: 0 0 20px;
+  font-size: clamp(56px, 8vw, 96px) !important;
+  line-height: 0.95 !important;
+}
+
+.math-copy p:not(.section-kicker),
+.math-hero-summary {
+  max-width: 680px;
+  color: var(--text-body) !important;
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.65;
+}
+
+.math-browser h2 {
+  max-width: 720px;
+}
+
+.math-filter {
+  margin: 28px 0;
+}
+
+.math-note-list {
+  display: grid !important;
+  border-top: 1px solid var(--line-soft);
+}
+
+.math-note-row {
+  border-top: 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.math-card p,
+.math-note-row p {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.math-note-row.is-hidden {
+  display: none !important;
+}
+
+@media (max-width: 980px) {
+  .math-hero {
+    grid-template-columns: 1fr;
+  }
+}

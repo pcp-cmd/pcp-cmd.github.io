@@ -1,0 +1,410 @@
+/* v1.6.3 Typography System Sweep
+   Typography is treated as the control layer for the whole site.
+   No font files are bundled here. Tiempos / Styrene are referenced only as local font-family names.
+   If these fonts are installed on the system, the browser will use them; otherwise it falls back safely. */
+
+:root {
+  /* Latin archive voice: the uploaded Tiempos collection is referenced by local names only. */
+  --font-latin-headline: "Test Tiempos Headline VF", "Tiempos Headline", "Tiempos", Georgia, "Times New Roman", serif;
+  --font-latin-text: "Test Tiempos Text VF", "Tiempos Text", Georgia, "Times New Roman", serif;
+  --font-latin-fine: "Test Tiempos Fine VF", "Tiempos Fine", Georgia, "Times New Roman", serif;
+  --font-ui-latin: "Styrene UI", "Styrene B", Inter, Aptos, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Chinese manuscript voice. */
+  --font-cn-display: "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, SimSun, serif;
+  --font-cn-body: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+
+  --font-title: var(--font-latin-headline);
+  --font-serif: var(--font-latin-text);
+  --font-sans: var(--font-cn-body);
+  --font-ui: var(--font-ui-latin), var(--font-cn-body);
+
+  /* Claude-like restrained scale: no billboard typography. */
+  --type-micro: 11px;
+  --type-ui: 12.5px;
+  --type-caption: 13px;
+  --type-body: clamp(14.5px, 0.9vw, 15.5px);
+  --type-body-large: clamp(15px, 1.05vw, 17px);
+  --type-small-title: clamp(17px, 1.15vw, 20px);
+  --type-card-title: clamp(18px, 1.45vw, 23px);
+  --type-section: clamp(23px, 2.05vw, 32px);
+  --type-subtitle-cn: clamp(20px, 2vw, 30px);
+  --type-guide: clamp(28px, 2.75vw, 40px);
+  --type-page: clamp(34px, 3.8vw, 56px);
+
+  --leading-tight: 1.08;
+  --leading-title-cn: 1.18;
+  --leading-body: 1.76;
+  --leading-loose: 1.86;
+  --tracking-ui: 0.055em;
+  --tracking-cn: 0.005em;
+}
+
+html {
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-cn-body) !important;
+  font-size: var(--type-body) !important;
+  line-height: var(--leading-body) !important;
+  letter-spacing: var(--tracking-cn) !important;
+  font-weight: 400 !important;
+  font-kerning: normal;
+}
+
+/* Latin display keeps the research-site / archive signature. */
+.page-title,
+.hero-title,
+.work-detail-hero h1,
+.article-header h1[data-article-title] {
+  font-family: var(--font-latin-headline) !important;
+  font-size: var(--type-page) !important;
+  line-height: var(--leading-tight) !important;
+  letter-spacing: -0.012em !important;
+  font-weight: 520 !important;
+  text-wrap: balance;
+}
+
+/* Chinese display stays smaller, calmer, and more book-like. */
+.page-subtitle,
+.hero-lede,
+.hero-support,
+.section-title,
+.index-section-title,
+.guide-row-title,
+.protocol-summary h2,
+.protocol-source h2,
+.work-detail-section h2,
+.article-rail h2,
+.revision-rail h2,
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.math-current-section .index-row-title,
+.asset-step strong,
+.ledger-name em,
+.diagnosis-cell strong {
+  font-family: var(--font-cn-display) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-wrap: balance;
+}
+
+.page-subtitle,
+.hero-lede {
+  font-size: var(--type-subtitle-cn) !important;
+  line-height: var(--leading-title-cn) !important;
+}
+
+.section-title,
+.index-section-title,
+.work-detail-section h2,
+.protocol-source h2,
+.article-rail h2,
+.revision-rail h2,
+.article-body h2 {
+  font-size: var(--type-section) !important;
+  line-height: var(--leading-title-cn) !important;
+}
+
+.guide-row-title,
+.guide-row strong,
+.protocol-guide-row .guide-row-title {
+  font-size: var(--type-guide) !important;
+  line-height: var(--leading-title-cn) !important;
+  font-weight: 500 !important;
+}
+
+.card-title,
+.work-card h2,
+.index-row-title,
+.ledger-name strong,
+.asset-step strong,
+.note-title,
+.math-note-title,
+.selected-artifact-card h3,
+.archive-link-card h3 {
+  font-size: var(--type-card-title) !important;
+  line-height: 1.18 !important;
+  font-weight: 560 !important;
+}
+
+/* Body copy: readable Chinese first, never oversized. */
+p,
+li,
+.zh-copy,
+.zh-note,
+.body-copy,
+.page-hero-copy,
+.works-hero-copy,
+.works-thesis,
+.work-detail-summary,
+.work-detail-section p,
+.article-body,
+.article-body p,
+.article-judgment,
+.index-row-copy,
+.work-card p,
+.review-card p,
+.layout-note p,
+.protocol-ledger-row p,
+.guide-row p,
+.diagnosis-cell p,
+.asset-step p,
+.protocol-source p,
+.math-hero-summary,
+.manuscript-hero p,
+.manuscripts-page .manuscripts-hero p {
+  font-family: var(--font-cn-body) !important;
+  font-size: var(--type-body) !important;
+  line-height: var(--leading-body) !important;
+  letter-spacing: var(--tracking-cn) !important;
+  font-weight: 400 !important;
+  text-wrap: pretty;
+}
+
+.hero-cn,
+.page-hero-copy,
+.works-thesis,
+.work-detail-summary,
+.article-judgment {
+  font-size: var(--type-body-large) !important;
+  line-height: var(--leading-loose) !important;
+}
+
+/* Labels and navigation: small, precise, no aggressive template feeling. */
+.eyebrow,
+.section-kicker,
+.brand-mark span,
+.brand-mark small,
+.desktop-nav,
+.nav-link,
+.return-link,
+.text-link,
+.work-tags span,
+.tag,
+.pill,
+.index-row-kicker,
+.row-action,
+.guide-row-no,
+.guide-row em,
+.ledger-no,
+.diagnosis-cell span,
+.asset-step span,
+.work-meta-label,
+.work-score-label,
+.article-tags span,
+.article-meta,
+.article-toc,
+button,
+a.button,
+.cta-link {
+  font-family: var(--font-ui) !important;
+  font-size: var(--type-ui) !important;
+  line-height: 1.35 !important;
+  letter-spacing: var(--tracking-ui) !important;
+  font-weight: 620 !important;
+}
+
+.section-kicker,
+.eyebrow,
+.index-row-kicker,
+.work-meta-label,
+.work-score-label,
+.guide-row-no,
+.ledger-no,
+.diagnosis-cell span,
+.asset-step span {
+  color: var(--accent) !important;
+  text-transform: uppercase;
+}
+
+/* Dense Latin words inside Chinese text should not look broken or spaced out. */
+.zh-copy,
+.zh-note,
+.guide-row p,
+.protocol-ledger-row p,
+.diagnosis-cell p,
+.asset-step p,
+.article-body p,
+.work-detail-section p {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono) !important;
+  font-size: 0.92em !important;
+  letter-spacing: 0 !important;
+}
+
+/* Layout consequences of the new scale. */
+.paper-section,
+.section {
+  padding-block: clamp(46px, 6.5vw, 88px) !important;
+}
+
+.site-header {
+  min-height: 68px !important;
+}
+
+.brand-mark span {
+  font-size: 12.5px !important;
+  letter-spacing: 0.06em !important;
+}
+
+.brand-mark small {
+  font-family: var(--font-cn-body) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.04em !important;
+  font-weight: 520 !important;
+}
+
+.desktop-nav {
+  gap: 4px 17px !important;
+}
+
+.protocol-hero,
+.manuscript-hero,
+.manuscripts-page .manuscripts-hero,
+.works-hero,
+.math-hero,
+.page-hero,
+.hero {
+  min-height: auto !important;
+}
+
+.protocol-hero,
+.manuscript-hero,
+.manuscripts-page .manuscripts-hero {
+  padding: clamp(66px, 7vw, 108px) clamp(32px, 6vw, 88px) clamp(42px, 5vw, 72px) !important;
+}
+
+.guide-row {
+  grid-template-columns: 112px minmax(190px, 310px) minmax(300px, 1fr) auto !important;
+  column-gap: clamp(24px, 3.4vw, 54px) !important;
+  padding-block: clamp(22px, 2.8vw, 36px) !important;
+}
+
+.protocol-ledger-row {
+  grid-template-columns: 52px minmax(168px, 250px) minmax(0, 1fr) !important;
+  padding: clamp(17px, 2.2vw, 26px) 0 !important;
+}
+
+.protocol-ledger-row.is-current::before,
+.protocol-ledger-row::before {
+  content: none !important;
+  display: none !important;
+}
+
+.ledger-name {
+  gap: 4px !important;
+}
+
+.ledger-name strong {
+  font-family: var(--font-latin-headline) !important;
+  letter-spacing: -0.006em !important;
+}
+
+.ledger-name em,
+.asset-step em,
+.diagnosis-cell strong {
+  font-size: clamp(14.5px, 1vw, 16px) !important;
+  line-height: 1.4 !important;
+}
+
+.diagnosis-cell {
+  min-height: 132px !important;
+  padding: 15px !important;
+}
+
+.asset-step {
+  padding: 18px 16px 20px !important;
+}
+
+.work-card-body {
+  padding: 16px !important;
+}
+
+.work-card-figure {
+  padding: 9px !important;
+}
+
+.work-card h2,
+.work-detail-hero h1 {
+  text-wrap: balance;
+}
+
+.work-detail-hero h1 {
+  max-width: 900px;
+}
+
+/* Restore / protect the horizontal work carousel after typography overrides. */
+.works-carousel {
+  display: grid !important;
+  grid-auto-flow: column !important;
+  grid-template-columns: none !important;
+  grid-auto-columns: minmax(310px, calc((100% - 40px) / 3)) !important;
+  gap: 20px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+  padding: 2px 2px 14px !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.work-card {
+  scroll-snap-align: start;
+}
+
+/* Article pages need calmer reading rhythm. */
+.article-body {
+  max-width: 760px;
+}
+
+.article-body p + p {
+  margin-top: 1.1em;
+}
+
+.article-body h2,
+.article-body h3 {
+  margin-top: 2.1em;
+  margin-bottom: 0.65em;
+}
+
+@media (max-width: 1180px) {
+  .works-carousel {
+    grid-auto-columns: minmax(292px, 44vw) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --type-page: clamp(32px, 10.5vw, 46px);
+    --type-section: clamp(22px, 6vw, 30px);
+    --type-guide: clamp(26px, 8.5vw, 36px);
+    --type-subtitle-cn: clamp(18px, 5vw, 24px);
+  }
+
+  .guide-row,
+  .protocol-ledger-row {
+    grid-template-columns: 1fr !important;
+    row-gap: 10px !important;
+  }
+
+  .works-carousel {
+    grid-auto-columns: minmax(276px, 86vw) !important;
+  }
+
+  .paper-section,
+  .section {
+    padding-block: 42px !important;
+  }
+}

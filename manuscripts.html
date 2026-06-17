@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aleksi Lab / Manuscripts</title>
+  <meta name="description" content="Manuscript index for Aleksi Lab.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf9f5'/%3E%3Cpath d='M8 22C12 10 22 8 24 18' fill='none' stroke='%23141413' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='23' cy='18' r='3' fill='%23d97757'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="./content.js"></script>
+  <script defer src="./manuscripts.js"></script>
+</head>
+<body class="manuscripts-page">
+  <div class="paper-grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand-mark" href="./index.html#home" aria-label="Aleksi Lab home">
+      <span>Aleksi Lab</span>
+      <small>未完手稿</small>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="./works.html">Works</a>
+      <a href="./math.html">Math Lab</a>
+      <a href="./manuscripts.html">Manuscripts</a>
+      <a href="./protocol.html">Protocol</a>
+      <a href="./atlas.html">Lab Atlas</a>
+    </nav>
+  </header>
+  <main id="content">
+    <section class="manuscript-hero paper-section" data-reveal>
+      <p class="section-kicker">MANUSCRIPTS / READING ROOM</p>
+      <h1 class="page-title">Manuscripts</h1>
+      <p class="page-subtitle cn-serif">未完手稿</p>
+      <p class="zh-copy">所有数学、设计、AI 共事和日志内容，都会进入同一个修订索引。它们不是按文件夹堆放，而是按问题、误差、连接和压缩关系重新组织。</p>
+    </section>
+    <section class="manuscript-browser paper-section" data-reveal>
+      <div class="manuscript-toolbar">
+        <div class="manuscript-view-tabs" data-manuscript-tabs></div>
+      </div>
+      <div class="reading-list" data-manuscript-list></div>
+    </section>
+  </main>
+</body>
+</html>

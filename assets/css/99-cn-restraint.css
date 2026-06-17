@@ -1,0 +1,214 @@
+
+/* v1.6.2: restrained Chinese manuscript scale + restored Works carousel
+   Reference spirit: anthropic-style-cn, adapted to dark archive. */
+
+:root {
+  --type-hero: clamp(40px, 5.2vw, 72px);
+  --type-page: clamp(38px, 4.8vw, 68px);
+  --type-section: clamp(25px, 2.7vw, 38px);
+  --type-guide: clamp(30px, 3vw, 42px);
+  --type-card-title: clamp(20px, 1.9vw, 28px);
+  --type-body-large: clamp(15.5px, 1.25vw, 18px);
+}
+
+body {
+  font-size: 15.5px !important;
+}
+
+.hero-title,
+.page-title,
+.article-header h1,
+.article-title,
+.note-title,
+.work-detail-hero h1,
+.works-page .works-hero h1,
+.protocol-hero h1,
+.manuscripts-page .manuscripts-hero h1,
+.math-page .math-hero h1,
+.home-redesign .hero-title {
+  font-size: var(--type-page) !important;
+  line-height: 1.04 !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.section-title,
+.protocol-summary h2,
+.protocol-source h2,
+.work-detail-section h2,
+.math-page .section-title,
+.home-redesign .section-title {
+  font-size: var(--type-section) !important;
+  line-height: 1.18 !important;
+  font-weight: 500 !important;
+}
+
+.page-subtitle,
+.home-redesign .hero-subtitle {
+  font-size: clamp(22px, 2.8vw, 40px) !important;
+  line-height: 1.18 !important;
+  font-weight: 500 !important;
+}
+
+.guide-row-title,
+.guide-row strong,
+.protocol-guide-row .guide-row-title {
+  font-size: var(--type-guide) !important;
+  line-height: 1.14 !important;
+  font-weight: 500 !important;
+}
+
+.card-title,
+.work-card h2,
+.index-row-title,
+.asset-step strong,
+.ledger-name strong {
+  font-size: var(--type-card-title) !important;
+  line-height: 1.16 !important;
+}
+
+.body-copy,
+.page-hero-copy,
+.works-hero-copy,
+.protocol-hero p:not(.section-kicker):not(.page-subtitle),
+.manuscripts-page .manuscripts-hero p:not(.section-kicker),
+.math-page .math-hero p,
+.article-body {
+  font-size: var(--type-body-large) !important;
+  line-height: 1.78 !important;
+}
+
+.zh-copy,
+.zh-note,
+.guide-row p,
+.protocol-ledger-row p,
+.diagnosis-cell p,
+.asset-step p,
+.work-card p,
+.work-card small,
+.index-row-copy {
+  font-size: 15px !important;
+  line-height: 1.78 !important;
+}
+
+.paper-section,
+.section {
+  padding-block: clamp(52px, 7vw, 96px) !important;
+}
+
+.protocol-hero,
+.manuscripts-page .manuscript-hero,
+.manuscripts-page .manuscripts-hero {
+  min-height: clamp(340px, 42vh, 520px) !important;
+}
+
+.protocol-hero {
+  padding: clamp(72px, 8vw, 120px) clamp(32px, 6vw, 96px) clamp(46px, 5vw, 76px) !important;
+}
+
+.guide-row {
+  grid-template-columns: 118px minmax(220px, 360px) minmax(260px, 1fr) auto !important;
+  column-gap: clamp(28px, 4vw, 64px) !important;
+  padding-block: clamp(24px, 3.2vw, 40px) !important;
+}
+
+.protocol-ledger-row {
+  grid-template-columns: 56px minmax(170px, 260px) minmax(0, 1fr) !important;
+  padding: clamp(18px, 2.6vw, 30px) 0 !important;
+}
+
+/* The current-dot marker felt like a rendering error in the ledger; remove it. */
+.protocol-ledger-row.is-current::before {
+  content: none !important;
+  display: none !important;
+}
+
+.diagnosis-cell {
+  min-height: 150px !important;
+  padding: 16px !important;
+}
+
+.diagnosis-cell strong,
+.asset-step em,
+.ledger-name em {
+  font-size: 16px !important;
+}
+
+.asset-step {
+  padding: 20px 18px 22px !important;
+}
+
+/* Restore Selected Works as a horizontal carousel track instead of a static grid. */
+.works-carousel {
+  display: grid !important;
+  grid-auto-flow: column !important;
+  grid-template-columns: none !important;
+  grid-auto-columns: minmax(320px, calc((100% - 40px) / 3)) !important;
+  gap: 20px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 2px;
+  padding: 2px 2px 14px !important;
+  width: 100% !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.works-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.works-carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.works-carousel::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(242, 240, 232, 0.16);
+}
+
+.work-card {
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+.work-card-body {
+  gap: 10px !important;
+  padding: 18px !important;
+}
+
+.work-card-figure {
+  padding: 10px !important;
+}
+
+.work-card-figure .card-media {
+  aspect-ratio: 4 / 3;
+}
+
+.work-card-figure .card-media.is-landscape {
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 1180px) {
+  .works-carousel {
+    grid-auto-columns: minmax(300px, 44vw) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --type-page: clamp(34px, 11vw, 48px);
+    --type-section: clamp(24px, 8vw, 34px);
+    --type-guide: clamp(28px, 10vw, 38px);
+  }
+
+  .guide-row,
+  .protocol-ledger-row {
+    grid-template-columns: 1fr !important;
+    row-gap: 12px !important;
+  }
+
+  .works-carousel {
+    grid-auto-columns: minmax(280px, 86vw) !important;
+  }
+}

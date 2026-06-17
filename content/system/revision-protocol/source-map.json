@@ -1,0 +1,14 @@
+{
+  "publicName": "Revision Protocol",
+  "cn": "可迭代修订协议",
+  "sourceType": "uploaded OpenAI skill",
+  "sourcePath": "content/skills/learning-diagnosis-protocol/SKILL.md",
+  "configPath": "content/skills/learning-diagnosis-protocol/openai.yaml",
+  "publicNaming": [
+    "Revision Protocol",
+    "Learning Diagnosis Protocol",
+    "可迭代修订协议",
+    "可迭代学习诊断协议"
+  ],
+  "updatedAt": "2026-06-17"
+}
