@@ -259,6 +259,46 @@ html:lang(zh-CN) h3,
   font-weight: 500;
 }
 
+.cn-sans {
+  font-family: var(--font-cn-sans);
+}
+
+[data-reveal] {
+  opacity: 1;
+}
+
+.no-gsap [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--line);
+  padding: 32px max(20px, calc((100vw - 1180px) / 2));
+  color: var(--text-muted);
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    align-items: flex-start;
+    min-height: 0;
+    padding: 14px 20px;
+  }
+
+  .desktop-nav {
+    max-width: 220px;
+  }
+
+  .site-footer {
+    display: grid;
+  }
+}
+
 
 /* v1.6.9 current-page navigation marker: text weight + restrained warm tick */
 .desktop-nav a,
