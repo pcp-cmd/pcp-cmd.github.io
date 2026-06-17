@@ -1013,3 +1013,122 @@ window.ALEKSI_WORKS = window.ALEKSI_WORKS.map((work) => {
   };
 });
 
+const exhibitionMeta = {
+  'gravy-raven-starlight-fade-away': {
+    source: 'Punishing: Gray Raven / 战双帕弥什',
+    characters: ['Lucia'],
+    titleDisplay: 'Lucia\nPGR',
+    bg: '#23221f',
+    fg: '#f4ead9',
+    muted: 'rgba(244,234,217,.68)'
+  },
+  'ayase-momo-dandadan': {
+    source: 'Dandadan / 胆大党',
+    characters: ['Momo Ayase'],
+    titleDisplay: 'Momo\nAyase',
+    bg: '#e9b5a4',
+    fg: '#33221c',
+    muted: 'rgba(51,34,28,.68)'
+  },
+  'yamada-anna-blue-poster': {
+    source: 'The Dangers in My Heart / 我心里危险的东西',
+    characters: ['Anna Yamada'],
+    titleDisplay: 'Anna\nYamada',
+    bg: '#c9d3df',
+    fg: '#1d2730',
+    muted: 'rgba(29,39,48,.68)'
+  },
+  'small-kid-sen-music-poster': {
+    source: 'Small Kid Sen music study',
+    titleDisplay: 'Small Kid\nSen',
+    bg: '#eee5d7',
+    fg: '#302822',
+    muted: 'rgba(48,40,34,.68)'
+  },
+  'dark-poster-system': {
+    source: 'Dont Shoot Me Down / 暗色文字系统研究',
+    titleDisplay: 'Dark Poster\nSystem',
+    bg: '#20201d',
+    fg: '#f0e6d7',
+    muted: 'rgba(240,230,215,.68)'
+  },
+  'owari-ni-shitai-spread': {
+    source: 'Owari ni Shitai cover study',
+    titleDisplay: 'Owari ni\nShitai',
+    bg: '#d7dfdc',
+    fg: '#202925',
+    muted: 'rgba(32,41,37,.68)'
+  },
+  'the-hills-typographic-study': {
+    source: 'The Hills lyric typography study',
+    titleDisplay: 'The Hills\nStudy',
+    bg: '#f3eddf',
+    fg: '#2d2922',
+    muted: 'rgba(45,41,34,.68)'
+  },
+  'chainsaw-raze-zine': {
+    source: 'Chainsaw Man / 电锯人',
+    characters: ['Denji', 'Reze'],
+    titleDisplay: 'Denji\n& Reze',
+    bg: '#1f2c35',
+    fg: '#edf2ef',
+    muted: 'rgba(237,242,239,.68)'
+  },
+  'blue-night-portrait': {
+    source: '原创视觉练习 / 蓝夜人物排版研究',
+    titleDisplay: 'Blue Night\nPortrait',
+    bg: '#d5dfdf',
+    fg: '#202a2e',
+    muted: 'rgba(32,42,46,.68)'
+  },
+  'city-glass-portrait': {
+    source: '原创视觉练习 / 城市玻璃人物研究',
+    titleDisplay: 'City Glass\nPortrait',
+    bg: '#d5ccc0',
+    fg: '#2b2520',
+    muted: 'rgba(43,37,32,.68)'
+  },
+  'summer-street-frame': {
+    source: '原创视觉练习 / 夏日街景构图研究',
+    titleDisplay: 'Summer\nStreet',
+    bg: '#edf0d7',
+    fg: '#262b1d',
+    muted: 'rgba(38,43,29,.68)'
+  },
+  'memento-mori-thumbnail': {
+    source: 'Komi Can’t Communicate / 古见同学有交流障碍症',
+    characters: ['Shouko Komi'],
+    titleDisplay: 'Komi\nPurple',
+    bg: '#d8d1dd',
+    fg: '#2e2632',
+    muted: 'rgba(46,38,50,.68)'
+  },
+  'astronaut-blue-stage': {
+    source: 'Chainsaw Man / 电锯人',
+    characters: ['Denji', 'Reze'],
+    titleDisplay: 'Chainsaw\nMan',
+    bg: '#213144',
+    fg: '#edf1e9',
+    muted: 'rgba(237,241,233,.68)'
+  }
+};
+
+window.ALEKSI_WORKS = window.ALEKSI_WORKS.map((work) => {
+  const meta = exhibitionMeta[work.slug] || {};
+  const source = meta.source || work.source || '来源待复核';
+  const medium = work.medium || `${work.category || 'Visual study'} / ${work.format || '规格待补全'}`;
+
+  return {
+    ...work,
+    ...meta,
+    source,
+    medium,
+    tools: work.tools || 'AI image / editorial layout study',
+    summary: work.summary || work.intro || '这是一条待继续补写的档案说明。',
+    detailUrl: work.detailUrl || work.href || `./work-detail.html?work=${work.slug}`,
+    titleDisplay: meta.titleDisplay || work.titleDisplay || work.shortTitle || work.title,
+    thumb: work.thumb || work.thumbnail || work.cover,
+    thumbnail: work.thumbnail || work.cover,
+    heroImage: work.heroImage || work.image || work.cover
+  };
+});

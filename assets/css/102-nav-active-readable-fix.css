@@ -1,0 +1,40 @@
+/* v1.7.1 nav readability fix
+   Do not reuse the active-current underline pseudo-element for text swapping.
+   Works/work-detail now render stable nav labels, and this fallback prevents older
+   letter-swap anchors from hiding their label when selected, focused, or clicked. */
+
+.desktop-nav .nav-link {
+  white-space: nowrap !important;
+  min-width: max-content;
+}
+
+.desktop-nav .nav-link[aria-current="page"],
+.desktop-nav .nav-link.is-active {
+  color: var(--text-strong) !important;
+  font-weight: 700 !important;
+}
+
+.desktop-nav .nav-link[aria-current="page"] span,
+.desktop-nav .nav-link.is-active span,
+.desktop-nav .nav-link:active span {
+  opacity: 1 !important;
+  transform: none !important;
+  color: currentColor !important;
+}
+
+.desktop-nav .nav-link.letter-swap[aria-current="page"]::after,
+.desktop-nav .nav-link.letter-swap.is-active::after {
+  content: "" !important;
+  left: 50% !important;
+  top: auto !important;
+  bottom: 2px !important;
+  width: 18px !important;
+  height: 2px !important;
+  opacity: 1 !important;
+  transform: translateX(-50%) scaleX(1) !important;
+  background: var(--accent) !important;
+}
+
+.desktop-nav .nav-link:not(.letter-swap)::after {
+  content: "" !important;
+}

@@ -408,3 +408,24 @@ samp {
     padding-block: 42px !important;
   }
 }
+
+
+/* v1.6.9 home cover fix: keep the opening screen clean after typography overrides. */
+.home-redesign .hero {
+  min-height: calc(100svh - 72px) !important;
+  align-items: center !important;
+  padding-block: clamp(72px, 10vh, 128px) clamp(86px, 12vh, 148px) !important;
+}
+
+.home-redesign .home-guide,
+.home-redesign .selected-artifacts,
+.home-redesign .home-archive {
+  margin-top: clamp(96px, 16vh, 180px) !important;
+}
+
+@media (max-width: 720px) {
+  .home-redesign .hero {
+    min-height: auto !important;
+    padding-top: 72px !important;
+  }
+}

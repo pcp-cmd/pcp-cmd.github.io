@@ -73,9 +73,11 @@ const baseCss = read('assets/css/01-base.css');
 const layoutCss = read('assets/css/02-layout.css');
 const componentsCss = read('assets/css/03-components.css');
 const graphCss = read('assets/css/04-graph.css');
+const homeCss = read('assets/css/pages/home.css');
+const worksCss = read('assets/css/pages/works.css');
 const pageCss = [
-  read('assets/css/pages/home.css'),
-  read('assets/css/pages/works.css'),
+  homeCss,
+  worksCss,
   read('assets/css/pages/math.css'),
   read('assets/css/pages/manuscripts.css'),
   read('assets/css/pages/protocol.css'),
@@ -174,11 +176,12 @@ for (const token of [
   'heroImage',
   'scores',
   'article',
-  'data-work-scores',
-  'data-related-article',
-  'renderScores',
+  'data-work-source',
+  'data-work-curation',
+  'data-work-process',
+  'data-work-meta-table',
   'heroImage || work.image',
-  'grid-template-columns: 260px minmax(0, 1fr)'
+  'class="work-detail"'
 ]) {
   assert([worksDataText(), workDetailHtml, workDetailJs, pageCss].join('\n').includes(token), `Work archive/detail requirement missing: ${token}`);
 }
@@ -271,6 +274,139 @@ for (const prohibited of [
 ]) {
   assert(!allNewCss.toLowerCase().includes(prohibited), `Prohibited motion/visual effect found: ${prohibited}`);
 }
+
+for (const token of [
+  'works-exhibition',
+  'data-works-exhibition',
+  'data-exhibition-stage',
+  'Works / 作品档案',
+  '一面可以被打开的展览墙。',
+  '视觉实验、排版练习、二创研究与未完成草稿'
+]) {
+  assert(worksHtml.includes(token), `Works exhibition wall markup missing: ${token}`);
+}
+assert(!worksHtml.includes('data-works-carousel'), 'Old Works carousel mount must be removed from works.html');
+
+for (const token of [
+  'renderExhibitionWorks',
+  'compactLayout',
+  'layoutCompactCards',
+  'bindExhibitionInteractions',
+  'updateExhibitionState',
+  'data-work-card',
+  'tabindex="0"',
+  "event.key === 'Enter'",
+  "event.key === ' '",
+  "class=\"exhibition-card is-${escapeHtml(mediaMode)}\"",
+  'has-active-card'
+]) {
+  assert(worksJs.includes(token), `Works exhibition state machine missing: ${token}`);
+}
+assert(!worksJs.includes('initWorksCarousel'), 'Old auto-advancing Works carousel script must be removed');
+
+for (const token of [
+  '--work-card-w',
+  '--work-card-expanded-w',
+  '.works-exhibition',
+  '.exhibition-stage',
+  '.exhibition-card',
+  '.exhibition-card__image-window',
+  '.exhibition-card.is-active .exhibition-card__image-window',
+  '.exhibition-card.is-poster .exhibition-card__image-inner img',
+  '.exhibition-stage.has-active-card .exhibition-card.is-inactive',
+  '.letter-swap',
+  '@keyframes pageIn',
+  '@media (prefers-reduced-motion: reduce)'
+]) {
+  assert(allNewCss.includes(token), `Exhibition/detail CSS rule missing: ${token}`);
+}
+
+for (const token of [
+  'class="work-detail"',
+  'data-work-source',
+  'data-work-curation',
+  'data-work-process',
+  'data-work-meta-table',
+  '返回作品档案',
+  '作品详情',
+  '策展说明',
+  '修订过程',
+  '档案信息',
+  '关联手稿',
+  '延伸阅读',
+  'href="./works.html"'
+]) {
+  assert(workDetailHtml.includes(token), `Work detail handbook markup missing: ${token}`);
+}
+
+for (const token of [
+  'renderMetaTable',
+  'source ||',
+  'Source pending review',
+  '策展说明',
+  '修订过程',
+  '打开文章',
+  'data-work-source',
+  'data-work-curation',
+  'data-work-process'
+]) {
+  assert(workDetailJs.includes(token), `Work detail handbook renderer missing: ${token}`);
+}
+
+for (const forbidden of [
+  ':root {\n  --paper:#f5f1e8',
+  '--paper:#f5f1e8',
+  '--paper-soft:#faf7ef',
+  '--ink:#2f2923',
+  'background: var(--paper) !important',
+  'color: var(--ink) !important',
+  '.works-carousel',
+  '.work-card-figure',
+  '.work-card-body',
+  '.works-selected',
+  '.works-stage'
+]) {
+  assert(!worksCss.includes(forbidden), `Works cleanup regression: ${forbidden}`);
+}
+
+for (const required of [
+  '--works-bg: var(--page-bg)',
+  '--works-ink: var(--text-strong)',
+  'min-height: calc(100svh - 72px)',
+  '.home-redesign .hero',
+  '.exhibition-stage.has-active-card .exhibition-card.is-inactive',
+  'filter: saturate(0.65) brightness(0.86)'
+]) {
+  assert([worksCss, homeCss].join('\n').includes(required), `Missing cleanup rule: ${required}`);
+}
+
+for (const forbiddenText of [
+  'Return to Works',
+  'Work Detail',
+  'Curatorial Note',
+  'Archive Metadata',
+  'Related Manuscript',
+  'Companion Reading',
+  'Enter work'
+]) {
+  assert(![worksHtml, worksJs, workDetailHtml, workDetailJs].join('\n').includes(forbiddenText), `English framework copy still present: ${forbiddenText}`);
+}
+
+for (const work of works) {
+  assert(work.source, `Work missing source for exhibition/detail: ${work.slug}`);
+  assert(work.medium, `Work missing medium for exhibition/detail: ${work.slug}`);
+  assert(work.summary, `Work missing summary for exhibition/detail: ${work.slug}`);
+  assert(work.detailUrl, `Work missing stable detailUrl: ${work.slug}`);
+  assert(work.titleDisplay, `Work missing titleDisplay: ${work.slug}`);
+  assert(work.thumb, `Work missing exhibition thumb: ${work.slug}`);
+  assert(exists(normalizeAsset(work.thumb)), `Work exhibition thumb does not exist: ${work.slug} -> ${work.thumb}`);
+}
+
+const legacyAstronautWork = works.find((work) => work.slug === 'astronaut-blue-stage');
+assert(
+  legacyAstronautWork && /Chainsaw Man|电锯人/.test(legacyAstronautWork.source),
+  'Former astronaut-blue-stage item must be source-corrected as Chainsaw Man / 电锯人'
+);
 
 assert(packageJson.version === '1.6.0', 'package.json version must be 1.6.0');
 

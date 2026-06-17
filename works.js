@@ -36,9 +36,7 @@ function renderNavigation() {
     const label = escapeHtml(item.label || '');
     const file = href.replace('./', '').split('#')[0].split('?')[0] || 'index.html';
     return `
-      <a class="nav-link letter-swap${file === current ? ' is-active' : ''}" href="${href}" data-text="${label}"${file === current ? ' aria-current="page"' : ''}>
-        <span>${label}</span>
-      </a>
+      <a class="nav-link${file === current ? ' is-active' : ''}" href="${href}"${file === current ? ' aria-current="page"' : ''}>${label}</a>
     `;
   }).join('');
 }
@@ -48,14 +46,22 @@ function workTitleDisplay(work) {
 }
 
 function cardPalette(work, index) {
+  // v1.7.0: keep the exhibition wall in one warm charcoal family.
+  // The previous green / blue tinted cards made the wall feel muddy and visually noisy.
   const palettes = [
-    { bg: '#191a15', fg: '#f2f0e8', muted: 'rgba(199,194,182,.68)' },
-    { bg: '#202119', fg: '#f2f0e8', muted: 'rgba(199,194,182,.66)' },
-    { bg: '#1b211d', fg: '#f2f0e8', muted: 'rgba(199,194,182,.64)' },
-    { bg: '#211b18', fg: '#f2f0e8', muted: 'rgba(199,194,182,.66)' },
-    { bg: '#191d21', fg: '#f2f0e8', muted: 'rgba(199,194,182,.64)' }
+    { bg: '#171711', fg: '#f2f0e8', muted: 'rgba(202,197,185,.72)' },
+    { bg: '#1a1913', fg: '#f2f0e8', muted: 'rgba(202,197,185,.70)' },
+    { bg: '#181812', fg: '#f2f0e8', muted: 'rgba(202,197,185,.68)' },
+    { bg: '#1c1a14', fg: '#f2f0e8', muted: 'rgba(202,197,185,.70)' },
+    { bg: '#161711', fg: '#f2f0e8', muted: 'rgba(202,197,185,.68)' }
   ];
   return palettes[index % palettes.length];
+}
+
+function clampCardCopy(value, max = 62) {
+  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (text.length <= max) return text;
+  return `${text.slice(0, max).trim()}…`;
 }
 
 function normalizeMediaMode(value) {
@@ -72,11 +78,14 @@ function renderExhibitionWorks(items = works) {
   stage.innerHTML = items.map((work, index) => {
     const titleDisplay = workTitleDisplay(work);
     const isTwoLine = titleDisplay.includes('\n') || titleDisplay.length > 16;
-    const titleTopCompact = isTwoLine ? 208 : 238;
-    const descTopExpanded = isTwoLine ? 314 : 280;
+    const titleTopCompact = isTwoLine ? 206 : 234;
     const palette = cardPalette(work, index);
     const mediaMode = normalizeMediaMode(work.mediaMode || work.detailMode);
+    const isPosterLike = mediaMode === 'poster' || mediaMode === 'fragment';
+    const titleTopExpanded = isPosterLike ? (isTwoLine ? 252 : 276) : (isTwoLine ? 232 : 250);
+    const descTopExpanded = isPosterLike ? (isTwoLine ? 342 : 326) : (isTwoLine ? 318 : 300);
     const image = work.thumb || work.thumbnail || work.cover;
+    const cardCopy = clampCardCopy(work.cardSummary || work.summary || work.intro || '');
     const href = work.detailUrl || work.href || `./work-detail.html?work=${encodeURIComponent(work.slug)}`;
     const loading = index < 2 ? 'eager' : 'lazy';
 
@@ -93,6 +102,7 @@ function renderExhibitionWorks(items = works) {
           --card-fg: ${palette.fg};
           --card-muted: ${palette.muted};
           --title-top-compact: ${titleTopCompact}px;
+          --title-top-expanded: ${titleTopExpanded}px;
           --desc-top-expanded: ${descTopExpanded}px;
         "
       >
@@ -103,7 +113,7 @@ function renderExhibitionWorks(items = works) {
         </div>
         <h2 class="exhibition-card__title">${escapeHtml(titleDisplay)}</h2>
         <div class="exhibition-card__desc">
-          <p>${escapeHtml(work.summary || work.intro || '')}</p>
+          <p>${escapeHtml(cardCopy)}</p>
           <div class="exhibition-card__meta">
             <span>${escapeHtml(work.source || '来源待复核')}</span>
             <span>${escapeHtml(work.medium || work.category || '')}</span>
@@ -129,7 +139,7 @@ function setCardVars(card, vars) {
 }
 
 function clearMotionVars(card) {
-  ['x', 'y', 'rot', 'scale', 'opacity', 'z', 'hover-y'].forEach((key) => {
+  ['x', 'y', 'rot', 'scale', 'opacity', 'z', 'hover-y', 'motion-delay'].forEach((key) => {
     card.style.removeProperty(`--${key}`);
   });
 }
@@ -158,7 +168,8 @@ function layoutCompactCards(stage) {
       scale: String(pos.s || 1),
       opacity: '1',
       z: String(10 + index),
-      'hover-y': '0px'
+      'hover-y': '0px',
+      'motion-delay': '0ms'
     });
   });
 }
@@ -172,7 +183,7 @@ function bindExhibitionInteractions(stage) {
       if (event.target.closest('a')) return;
       const id = card.dataset.id;
       activeId = activeId === id ? null : id;
-      updateExhibitionState(stage, activeId);
+      updateExhibitionState(stage, activeId, { animate: true });
     });
 
     card.addEventListener('keydown', (event) => {
@@ -180,7 +191,7 @@ function bindExhibitionInteractions(stage) {
         event.preventDefault();
         const id = card.dataset.id;
         activeId = activeId === id ? null : id;
-        updateExhibitionState(stage, activeId);
+        updateExhibitionState(stage, activeId, { animate: true });
       }
     });
   });
@@ -188,26 +199,88 @@ function bindExhibitionInteractions(stage) {
   stage.addEventListener('click', (event) => {
     if (!event.target.closest('[data-work-card]')) {
       activeId = null;
-      updateExhibitionState(stage, activeId);
+      updateExhibitionState(stage, activeId, { animate: true });
     }
   });
 
   window.addEventListener('resize', () => {
-    updateExhibitionState(stage, activeId);
+    updateExhibitionState(stage, activeId, { animate: false });
   });
 }
 
-function updateExhibitionState(stage, activeId) {
+function prefersReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function snapshotCardMotion(cards) {
+  const snapshot = new Map();
+  cards.forEach((card) => {
+    const style = window.getComputedStyle(card);
+    snapshot.set(card, {
+      transform: style.transform === 'none' ? 'none' : style.transform,
+      opacity: style.opacity || '1',
+      filter: style.filter === 'none' ? 'none' : style.filter
+    });
+  });
+  return snapshot;
+}
+
+function playInterfaceCraftSelectionMotion(stage, cards, before, activeId) {
+  if (!before || isMobileLayout() || prefersReducedMotion()) return;
+
+  const animations = [];
+  stage.classList.add('is-motion-running');
+
+  cards.forEach((card) => {
+    const prior = before.get(card);
+    if (!prior) return;
+
+    card.getAnimations().forEach((animation) => animation.cancel());
+
+    const current = window.getComputedStyle(card);
+    const isActive = card.dataset.id === activeId;
+    const duration = isActive ? 820 : 680;
+    const delay = isActive ? 0 : 40;
+    const easing = isActive ? 'cubic-bezier(.16, 1, .3, 1)' : 'cubic-bezier(.22, 1, .36, 1)';
+
+    const animation = card.animate([
+      {
+        transform: prior.transform,
+        opacity: prior.opacity,
+        filter: prior.filter
+      },
+      {
+        transform: current.transform === 'none' ? 'none' : current.transform,
+        opacity: current.opacity || '1',
+        filter: current.filter === 'none' ? 'none' : current.filter
+      }
+    ], {
+      duration,
+      delay,
+      easing,
+      fill: 'both'
+    });
+
+    animations.push(animation.finished.catch(() => {}));
+    animation.addEventListener('finish', () => animation.cancel(), { once: true });
+  });
+
+  Promise.all(animations).then(() => {
+    stage.classList.remove('is-motion-running');
+  });
+}
+
+function applyExhibitionState(stage, activeId) {
   const cards = Array.from(stage.querySelectorAll('[data-work-card]'));
   stage.classList.toggle('has-active-card', Boolean(activeId));
 
   if (!activeId) {
     layoutCompactCards(stage);
-    return;
+    return cards;
   }
 
   const inactiveCards = cards.filter((candidate) => candidate.dataset.id !== activeId);
-  const dockGap = Math.max(58, Math.min(76, Math.floor(stage.clientWidth / Math.max(inactiveCards.length + 2, 1))));
+  const dockGap = Math.max(64, Math.min(82, Math.floor(stage.clientWidth / Math.max(inactiveCards.length + 2, 1))));
   const dockTotal = (inactiveCards.length - 1) * dockGap;
 
   cards.forEach((card, index) => {
@@ -216,6 +289,7 @@ function updateExhibitionState(stage, activeId) {
     card.classList.toggle('is-active', isActive);
     card.classList.toggle('is-inactive', isInactive);
     card.setAttribute('aria-expanded', String(isActive));
+    card.setAttribute('aria-selected', String(isActive));
     card.style.removeProperty('left');
     card.style.removeProperty('top');
     card.style.removeProperty('margin-left');
@@ -230,29 +304,56 @@ function updateExhibitionState(stage, activeId) {
     if (isActive) {
       setCardVars(card, {
         x: '0px',
-        y: '-76px',
+        y: '-112px',
         rot: '0deg',
         scale: '1',
         opacity: '1',
-        z: '40',
-        'hover-y': '0px'
+        z: '60',
+        'hover-y': '0px',
+        'motion-delay': '0ms'
       });
       return;
     }
 
     const dockIndex = inactiveCards.indexOf(card);
     const dockX = -dockTotal / 2 + dockIndex * dockGap;
-    const dockRot = [-5, 3, -2, 5, -4, 2][dockIndex % 6];
+    const dockRot = [-6, 4, -3, 5, -5, 3, -2][dockIndex % 7];
+    const dockY = 322 + Math.abs(dockIndex - inactiveCards.length / 2) * 2;
     setCardVars(card, {
       x: `${dockX}px`,
-      y: '252px',
+      y: `${dockY}px`,
       rot: `${dockRot}deg`,
-      scale: '.72',
-      opacity: '.42',
+      scale: '.68',
+      opacity: '.30',
       z: String(5 + index),
-      'hover-y': '0px'
+      'hover-y': '0px',
+      'motion-delay': `${Math.min(170, dockIndex * 18)}ms`
     });
   });
+
+  return cards;
+}
+
+function updateExhibitionState(stage, activeId, options = {}) {
+  // v1.7.1: the card transform is declared in CSS with !important, so WAAPI cannot reliably
+  // override it. Let the CSS transform transition animate the custom-property state change
+  // directly. This is the actual Works exhibition card selected motion.
+  const shouldAnimate = options.animate !== false && !isMobileLayout() && !prefersReducedMotion();
+
+  if (shouldAnimate) {
+    stage.classList.add('is-motion-running');
+    window.clearTimeout(stage.__motionTimer);
+  }
+
+  applyExhibitionState(stage, activeId);
+
+  if (shouldAnimate) {
+    stage.__motionTimer = window.setTimeout(() => {
+      stage.classList.remove('is-motion-running');
+    }, 920);
+  } else {
+    stage.classList.remove('is-motion-running');
+  }
 }
 
 function renderIndex() {

@@ -1,4 +1,4 @@
-let works = window.ALEKSI_WORKS || [];
+const works = window.ALEKSI_WORKS || [];
 const handbookLabels = {
   curation: '策展说明',
   process: '修订过程'
@@ -25,29 +25,9 @@ function renderNavigation() {
     const file = href.replace('./', '').split('#')[0].split('?')[0] || 'index.html';
     const active = file === current || (current === 'work-detail.html' && file === 'works.html');
     return `
-      <a class="nav-link letter-swap${active ? ' is-active' : ''}" href="${href}" data-text="${label}"${active ? ' aria-current="page"' : ''}>
-        <span>${label}</span>
-      </a>
+      <a class="nav-link${active ? ' is-active' : ''}" href="${href}"${active ? ' aria-current="page"' : ''}>${label}</a>
     `;
   }).join('');
-}
-
-function loadWorksDataPatch(callback) {
-  if (window.__ALEKSI_WORKS_PATCH_LOADED__) {
-    works = window.ALEKSI_WORKS || works;
-    callback();
-    return;
-  }
-  const script = document.createElement('script');
-  script.src = './works-data-v169-patch.js';
-  script.defer = true;
-  script.onload = () => {
-    window.__ALEKSI_WORKS_PATCH_LOADED__ = true;
-    works = window.ALEKSI_WORKS || works;
-    callback();
-  };
-  script.onerror = () => callback();
-  document.head.appendChild(script);
 }
 
 function articleHref(src) {
@@ -163,8 +143,6 @@ function initMotion() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderNavigation();
-  loadWorksDataPatch(() => {
-    renderWork();
-    initMotion();
-  });
+  renderWork();
+  initMotion();
 });

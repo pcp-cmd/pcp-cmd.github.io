@@ -36,9 +36,10 @@ body.home-redesign {
   gap: clamp(40px, 6vw, 92px);
   align-items: center;
   width: min(var(--stage-max), calc(100vw - var(--stage-pad) * 2));
-  min-height: 78vh;
+  min-height: calc(100svh - 72px) !important;
+  min-height: calc(100svh - 64px) !important;
   margin-inline: auto;
-  padding-block: clamp(96px, 14vw, 180px);
+  padding-block: clamp(56px, 8vh, 104px) clamp(72px, 10vh, 132px);
 }
 
 .home-redesign .hero h1 {
@@ -250,6 +251,18 @@ body.home-redesign {
 
   .selected-artifact-grid {
     grid-auto-columns: minmax(280px, 84%);
+  }
+}
+
+@media (max-height: 780px) and (min-width: 980px) {
+  .home-redesign .hero {
+    min-height: calc(100svh - 72px) !important;
+    min-height: calc(100svh - 64px) !important;
+    padding-block: 48px 64px;
+  }
+
+  .home-redesign .hero h1 {
+    font-size: clamp(48px, 7vw, 82px) !important;
   }
 }
 
