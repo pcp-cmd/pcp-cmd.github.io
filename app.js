@@ -14,7 +14,7 @@ function linkList(items) {
     const href = item.href || './index.html';
     const file = href.replace('./', '').split('#')[0].split('?')[0] || 'index.html';
     const active = file === current || (current === '' && file === 'index.html');
-    return `<a class="nav-link${active ? ' is-active' : ''}" href="${href}">${item.label}</a>`;
+    return `<a class="nav-link${active ? ' is-active' : ''}" href="${href}"${active ? ' aria-current="page"' : ''}>${item.label}</a>`;
   }).join('');
 }
 
