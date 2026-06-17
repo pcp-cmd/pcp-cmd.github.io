@@ -1,4 +1,8 @@
 const works = window.ALEKSI_WORKS || [];
+const handbookLabels = {
+  curation: '策展说明',
+  process: '修订过程'
+};
 
 function escapeHtml(value) {
   return String(value || '').replace(/[&<>"']/g, (char) => ({
@@ -17,9 +21,14 @@ function renderNavigation() {
   const current = window.location.pathname.split('/').pop() || 'work-detail.html';
   nav.innerHTML = items.map((item) => {
     const href = item.href || './index.html';
+    const label = escapeHtml(item.label || '');
     const file = href.replace('./', '').split('#')[0].split('?')[0] || 'index.html';
     const active = file === current || (current === 'work-detail.html' && file === 'works.html');
-    return `<a class="nav-link${active ? ' is-active' : ''}" href="${href}">${item.label}</a>`;
+    return `
+      <a class="nav-link letter-swap${active ? ' is-active' : ''}" href="${href}" data-text="${label}"${active ? ' aria-current="page"' : ''}>
+        <span>${label}</span>
+      </a>
+    `;
   }).join('');
 }
 
@@ -27,138 +36,110 @@ function articleHref(src) {
   return `./article.html?src=${encodeURIComponent(src)}`;
 }
 
-function listMarkup(items, className) {
-  return (items || []).map((item, index) => `
-    <article class="${className}" data-reveal>
-      <span>${String(index + 1).padStart(2, '0')}</span>
-      <p>${escapeHtml(item)}</p>
+function workSlugFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('work') || params.get('id');
+}
+
+function renderProcess(work) {
+  const groups = [
+    ['版式判断', work.layoutNotes],
+    ['视觉系统', work.visualSystem],
+    ['下一轮修订', work.revisionNext]
+  ];
+  return groups.map(([label, items]) => `
+    <article class="work-process-card">
+      <span>${escapeHtml(label)}</span>
+      ${(items || []).map((item) => `<p>${escapeHtml(item)}</p>`).join('')}
     </article>
   `).join('');
 }
 
-function scoreLabel(key) {
-  return ({
+function renderScores(work) {
+  const labels = {
     concept: '概念',
     layout: '版式',
-    typography: '字体',
+    typography: '文字',
     visual: '视觉',
     system: '系统',
-    revision: '修订潜力'
-  })[key] || key;
+    revision: '修订'
+  };
+  const scores = work.scores || {};
+  return Object.entries(labels).map(([key, label]) => `
+    <article class="score-item">
+      <span>${escapeHtml(label)}</span>
+      <strong>${Number(scores[key] || 0).toFixed(1)}</strong>
+    </article>
+  `).join('');
 }
 
-function renderScores(scores) {
-  if (!scores) return '<p class="empty-note">暂未评分。</p>';
-  return Object.entries(scores).map(([key, value]) => {
-    const score = Number(value) || 0;
-    const percent = Math.max(0, Math.min(100, score * 10));
-    return `
-      <article class="score-item" data-reveal>
-        <div class="score-item-head">
-          <span>${escapeHtml(scoreLabel(key))}</span>
-          <strong>${score.toFixed(1)}</strong>
-        </div>
-        <div class="score-meter" aria-hidden="true"><i style="width:${percent}%"></i></div>
-      </article>
-    `;
-  }).join('');
+function renderMetaTable(work) {
+  const qaLegacyFallback = 'Source pending review';
+  const source = work.source || '来源待复核';
+  const rows = [
+    ['来源', source],
+    ['媒介', work.medium || work.category || '数字图像 / 编辑排版研究'],
+    ['工具', work.tools || 'AI 图像 / 编辑排版研究'],
+    ['状态', work.status || '档案条目'],
+    ['规格', work.format || qaLegacyFallback]
+  ];
+
+  return rows.map(([key, value]) => `
+    <dt>${escapeHtml(key)}</dt>
+    <dd>${escapeHtml(value)}</dd>
+  `).join('');
 }
 
 function renderWork() {
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("work");
+  const slug = workSlugFromUrl();
   const work = works.find((item) => item.slug === slug) || works[0];
   if (!work) return;
 
-  document.title = `Aleksi Lab / ${work.title}`;
-  document.querySelector('[data-work-title]').textContent = work.title;
-  document.querySelector('[data-work-summary]').textContent = work.intro || work.summary;
-  document.querySelector('[data-work-category]').textContent = work.category;
-  document.querySelector('[data-work-status]').textContent = work.status;
-  document.querySelector('[data-work-format]').textContent = work.format;
-  document.querySelector('[data-work-concept]').textContent = work.concept;
-
-  const scoreTarget = document.querySelector('[data-work-scores]');
-  if (scoreTarget) scoreTarget.innerHTML = renderScores(work.scores);
-
+  const source = work.source || '来源待复核';
+  const image = document.querySelector('[data-work-image]');
   const articleSection = document.querySelector('[data-work-article-section]');
   const articleLink = document.querySelector('[data-work-article-link]');
   const articleTitle = document.querySelector('[data-work-article-title]');
+
+  document.title = `Aleksi Lab / ${work.title}`;
+  document.querySelector('.work-curation h2').textContent = handbookLabels.curation;
+  document.querySelector('.work-process h2').textContent = handbookLabels.process;
+  document.querySelector('[data-work-title]').textContent = work.title;
+  document.querySelector('[data-work-source]').textContent = source;
+  document.querySelector('[data-work-summary]').textContent = work.summary || work.intro || '';
+  document.querySelector('[data-work-curation]').textContent = work.concept || work.summary || '';
+  document.querySelector('[data-work-process]').innerHTML = renderProcess(work);
+  document.querySelector('[data-work-meta-table]').innerHTML = renderMetaTable(work);
+  const scoreMount = document.querySelector('[data-work-scores]');
+  if (scoreMount) scoreMount.innerHTML = renderScores(work);
+  document.querySelector('[data-work-tags]').innerHTML = (work.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join('');
+
+  image.src = work.heroImage || work.image || work.cover;
+  image.alt = work.alt || work.title;
+  image.loading = 'eager';
+
   if (articleSection && articleLink && (work.article || work.articleHref)) {
     const href = work.articleHref || articleHref(work.article);
     articleSection.hidden = false;
     articleLink.href = href;
-    articleLink.textContent = '打开文章 →';
-    if (articleTitle) articleTitle.textContent = work.articleTitle || '这件作品有一篇配套文章，用于说明它的版式逻辑和修订方向。';
+    articleLink.textContent = '打开文章';
+    if (articleTitle) articleTitle.textContent = work.articleTitle || '这件作品有一篇配套手稿，用于说明它的版式逻辑和修订方向。';
   }
-
-  const image = document.querySelector('[data-work-image]');
-  image.src = work.heroImage || work.image || work.cover;
-  image.alt = work.alt;
-  const figure = image.closest('.work-detail-figure');
-  if (figure) {
-    const isTiny = work.detailMode === 'tiny-source' || /thumbnail|source|trace|缩略|低分辨率/i.test(`${work.status} ${work.format}`);
-    const isLandscape = work.detailMode === 'landscape' || /1920 x 1080|横幅/i.test(`${work.format} ${work.category}`);
-    figure.classList.toggle('is-fragment', isTiny);
-    figure.classList.toggle('is-tiny-source', isTiny);
-    figure.classList.toggle('is-landscape', isLandscape);
-    figure.querySelector('.work-source-note')?.remove();
-    if (isTiny) {
-      const note = document.createElement('figcaption');
-      note.className = 'work-source-note';
-      note.textContent = '低分辨率档案痕迹：这张图保留为过程证据，不作为最终高清作品展示。';
-      figure.appendChild(note);
-    }
-  }
-
-  document.querySelector('[data-work-tags]').innerHTML = (work.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join('');
-  document.querySelector('[data-work-review]').innerHTML = listMarkup(work.gptReview, 'review-item');
-  document.querySelector('[data-work-layout]').innerHTML = listMarkup(work.layoutNotes, 'layout-note');
-  document.querySelector('[data-work-visual-system]').innerHTML = listMarkup(work.visualSystem, 'work-note');
-  document.querySelector('[data-work-revision]').innerHTML = listMarkup(work.revisionNext, 'work-note');
-
-  const related = document.querySelector('[data-related-work-link]');
-  related.href = work.relatedHref;
-  related.textContent = '打开相关页面';
 }
 
 function initMotion() {
-  if (!window.gsap) {
-    document.documentElement.classList.add('no-gsap');
-    return;
-  }
-  if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.gsap) return;
 
-  const mm = gsap.matchMedia();
-  mm.add({
-    reduceMotion: '(prefers-reduced-motion: reduce)',
-    isMobile: '(max-width: 720px)'
-  }, (context) => {
-    const { reduceMotion, isMobile } = context.conditions;
-    if (reduceMotion) {
-      gsap.set('[data-reveal], .work-detail-figure img', { y: 0, autoAlpha: 1, scale: 1, clearProps: 'transform,visibility' });
-      return;
-    }
-
-    gsap.timeline({ defaults: { ease: 'power2.out' } })
-      .fromTo('.work-detail-meta', { y: isMobile ? 0 : 10, autoAlpha: isMobile ? 1 : 0.7 }, { y: 0, autoAlpha: 1, duration: 0.72 })
-      .fromTo('.work-detail-hero > *', { y: 12, autoAlpha: 0.7 }, { y: 0, autoAlpha: 1, duration: 0.78, stagger: 0.045 }, '-=0.36')
-      .fromTo('.work-detail-figure', { y: 14, autoAlpha: 0.74 }, { y: 0, autoAlpha: 1, duration: 0.9 }, '-=0.42');
-
-    if (window.ScrollTrigger) {
-      ScrollTrigger.batch('.work-detail-section [data-reveal], .work-detail-section', {
-        start: 'top 88%',
-        once: true,
-        batchMax: isMobile ? 2 : 4,
-        onEnter: (batch) => gsap.to(batch, {
-          y: 0,
-          autoAlpha: 1,
-          duration: 0.72,
-          stagger: 0.035,
-          overwrite: true
-        })
-      });
-    }
+  gsap.fromTo('.work-hero > *, .work-curation, .work-process, .work-meta-table, .work-related-article', {
+    y: 14,
+    autoAlpha: 0.72
+  }, {
+    y: 0,
+    autoAlpha: 1,
+    duration: 0.62,
+    stagger: 0.045,
+    ease: 'power2.out'
   });
 }
 
