@@ -1,28 +1,15 @@
 body.atlas-page {
-  background: var(--page-bg) !important;
-  color: var(--text-strong) !important;
+  background: var(--page-bg);
+  color: var(--text-strong);
 }
 
-.atlas-page .site-header {
-  border-bottom-color: var(--line-soft) !important;
-  background: rgba(15, 16, 13, 0.94) !important;
-}
-
-.atlas-page .brand-mark span,
 .atlas-page .page-title,
 .atlas-page .page-hero h1 {
-  color: var(--text-strong) !important;
+  color: var(--text-strong);
 }
 
-.atlas-page .brand-mark small,
-.atlas-page .desktop-nav,
 .atlas-page .page-hero-copy {
-  color: var(--text-body) !important;
-}
-
-.atlas-page .desktop-nav a:hover,
-.atlas-page .desktop-nav a:focus-visible {
-  color: var(--text-strong) !important;
+  color: var(--text-body);
 }
 
 .atlas-section {

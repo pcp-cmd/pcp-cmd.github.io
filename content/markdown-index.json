@@ -1,27 +1,15 @@
 {
   "contentEngine": "markdown",
-  "generatedAt": "2026-06-17T08:56:35.727Z",
+  "generatedAt": "2026-06-20T10:22:52.187Z",
   "renderer": "marked",
   "math": "katex",
   "layout": "warm-manuscript",
-  "count": 56,
+  "count": 52,
   "files": [
-    {
-      "title": "未完手稿内容目录",
-      "source": "content/README.md",
-      "article": "article.html?src=content%2FREADME.md",
-      "status": "under revision"
-    },
     {
       "title": "Glyph Assets / 视觉符号源文件",
       "source": "content/assets/glyphs/README.md",
       "article": "article.html?src=content%2Fassets%2Fglyphs%2FREADME.md",
-      "status": "under revision"
-    },
-    {
-      "title": "Design Archive / 视觉档案",
-      "source": "content/design/README.md",
-      "article": "article.html?src=content%2Fdesign%2FREADME.md",
       "status": "under revision"
     },
     {
@@ -31,39 +19,45 @@
       "status": "under revision"
     },
     {
+      "title": "Design Archive / 视觉档案",
+      "source": "content/design/README.md",
+      "article": "article.html?src=content%2Fdesign%2FREADME.md",
+      "status": "under revision"
+    },
+    {
       "title": "山田杏奈 / 蓝色强排版方形海报",
-      "source": "content/design/works/anna-yamada-boku-no-kokoro-blue-poster.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fanna-yamada-boku-no-kokoro-blue-poster.md",
+      "source": "content/design/works/anna-yamada-blue-poster/article.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fanna-yamada-blue-poster%2Farticle.md",
       "status": "under revision"
     },
     {
       "title": "绫濑桃 / 胆大党暖红色角色海报",
-      "source": "content/design/works/ayase-momo-dandadan.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fayase-momo-dandadan.md",
-      "status": "under revision"
-    },
-    {
-      "title": "电次与雷塞 / 蓝色单色关系拼贴海报",
-      "source": "content/design/works/chainsaw-man-denji-reze-blue-monochrome.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fchainsaw-man-denji-reze-blue-monochrome.md",
+      "source": "content/design/works/ayase-momo-dandadan/article.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fayase-momo-dandadan%2Farticle.md",
       "status": "under revision"
     },
     {
       "title": "电次与雷塞 / 蓝色拥抱场景海报",
-      "source": "content/design/works/chainsaw-man-denji-reze-embrace.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fchainsaw-man-denji-reze-embrace.md",
+      "source": "content/design/works/chainsaw-denji-reze-blue-embrace/article.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fchainsaw-denji-reze-blue-embrace%2Farticle.md",
       "status": "under revision"
     },
     {
-      "title": "露西亚 / 战双帕弥什黑白任务档案海报",
-      "source": "content/design/works/gravy-raven-starlight-fade-away.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fgravy-raven-starlight-fade-away.md",
+      "title": "电次与雷塞 / 蓝色单色关系拼贴海报",
+      "source": "content/design/works/chainsaw-denji-reze-blue-monochrome/article.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fchainsaw-denji-reze-blue-monochrome%2Farticle.md",
       "status": "under revision"
     },
     {
       "title": "古见硝子 / 紫色单色出版物海报",
-      "source": "content/design/works/komi-purple-monochrome-spread.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fkomi-purple-monochrome-spread.md",
+      "source": "content/design/works/komi-purple-monochrome-spread/article.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fkomi-purple-monochrome-spread%2Farticle.md",
+      "status": "under revision"
+    },
+    {
+      "title": "露西亚 / 战双帕弥什黑白任务档案海报",
+      "source": "content/design/works/lucia-punishing-gray-raven/article.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Flucia-punishing-gray-raven%2Farticle.md",
       "status": "under revision"
     },
     {
@@ -73,15 +67,15 @@
       "status": "under revision"
     },
     {
-      "title": "Visual Essays / 视觉文章",
-      "source": "content/essays/README.md",
-      "article": "article.html?src=content%2Fessays%2FREADME.md",
-      "status": "under revision"
-    },
-    {
       "title": "文章标题",
       "source": "content/essays/essay-template.md",
       "article": "article.html?src=content%2Fessays%2Fessay-template.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Visual Essays / 视觉文章",
+      "source": "content/essays/README.md",
+      "article": "article.html?src=content%2Fessays%2FREADME.md",
       "status": "under revision"
     },
     {
@@ -145,27 +139,9 @@
       "status": "under revision"
     },
     {
-      "title": "Math Lab / 数学实验室",
-      "source": "content/math/README.md",
-      "article": "article.html?src=content%2Fmath%2FREADME.md",
-      "status": "under revision"
-    },
-    {
-      "title": "1.1.3 集合的势讲解",
-      "source": "content/math/analysis/chapter-01/cards/card-01-3-cardinality-learning.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fcards%2Fcard-01-3-cardinality-learning.md",
-      "status": "under revision"
-    },
-    {
       "title": "1.1 集合论复习卡片与闭卷测试",
-      "source": "content/math/analysis/chapter-01/cards/card-01-set-theory-cards-and-test.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fcards%2Fcard-01-set-theory-cards-and-test.md",
-      "status": "under revision"
-    },
-    {
-      "title": "1.1 集合论复习卡片与闭卷测试",
-      "source": "content/math/analysis/chapter-01/cards/card-06-#U590d#U4e60#U5361#U7247#U4e0e#U95ed#U5377#U6d4b#U8bd5.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fcards%2Fcard-06-%23U590d%23U4e60%23U5361%23U7247%23U4e0e%23U95ed%23U5377%23U6d4b%23U8bd5.md",
+      "source": "content/math/analysis/chapter-01/cards/card-06-review-cards-and-test.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fcards%2Fcard-06-review-cards-and-test.md",
       "status": "under revision"
     },
     {
@@ -218,50 +194,38 @@
     },
     {
       "title": "1.1 集合论索引",
-      "source": "content/math/analysis/chapter-01/web-latex/web-01-#U96c6#U5408#U8bba#U7d22#U5f15.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-01-%23U96c6%23U5408%23U8bba%23U7d22%23U5f15.md",
+      "source": "content/math/analysis/chapter-01/web-latex/web-01-set-theory-index.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-01-set-theory-index.md",
       "status": "under revision"
     },
     {
       "title": "1.1.1 集合公理",
-      "source": "content/math/analysis/chapter-01/web-latex/web-02-#U95c6#U55d7#U608e#U934f#Ue102#U608a.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-02-%23U95c6%23U55d7%23U608e%23U934f%23Ue102%23U608a.md",
-      "status": "under revision"
-    },
-    {
-      "title": "1.1.1 集合公理",
-      "source": "content/math/analysis/chapter-01/web-latex/web-02-#U96c6#U5408#U516c#U7406.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-02-%23U96c6%23U5408%23U516c%23U7406.md",
+      "source": "content/math/analysis/chapter-01/web-latex/web-02-set-axioms.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-02-set-axioms.md",
       "status": "under revision"
     },
     {
       "title": "1.1.2 集合上的序结构",
-      "source": "content/math/analysis/chapter-01/web-latex/web-03-#U5e8f#U7ed3#U6784.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-03-%23U5e8f%23U7ed3%23U6784.md",
+      "source": "content/math/analysis/chapter-01/web-latex/web-03-order-structures.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-03-order-structures.md",
       "status": "under revision"
     },
     {
       "title": "1.1.3 集合的势",
-      "source": "content/math/analysis/chapter-01/web-latex/web-04-#U95c6#U55d7#U608e#U9428#U52eb#U5a0d.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-04-%23U95c6%23U55d7%23U608e%23U9428%23U52eb%23U5a0d.md",
-      "status": "under revision"
-    },
-    {
-      "title": "1.1.3 集合的势",
-      "source": "content/math/analysis/chapter-01/web-latex/web-04-#U96c6#U5408#U7684#U52bf.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-04-%23U96c6%23U5408%23U7684%23U52bf.md",
+      "source": "content/math/analysis/chapter-01/web-latex/web-04-cardinality.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-04-cardinality.md",
       "status": "under revision"
     },
     {
       "title": "1.1 集合论题解",
-      "source": "content/math/analysis/chapter-01/web-latex/web-05-#U96c6#U5408#U8bba#U9898#U89e3.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-05-%23U96c6%23U5408%23U8bba%23U9898%23U89e3.md",
+      "source": "content/math/analysis/chapter-01/web-latex/web-05-set-theory-solutions.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-05-set-theory-solutions.md",
       "status": "under revision"
     },
     {
       "title": "1.1 集合论复习卡片与闭卷测试",
-      "source": "content/math/analysis/chapter-01/web-latex/web-06-#U590d#U4e60#U5361#U7247#U4e0e#U95ed#U5377#U6d4b#U8bd5.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-06-%23U590d%23U4e60%23U5361%23U7247%23U4e0e%23U95ed%23U5377%23U6d4b%23U8bd5.md",
+      "source": "content/math/analysis/chapter-01/web-latex/web-06-review-cards-and-test.md",
+      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-06-review-cards-and-test.md",
       "status": "under revision"
     },
     {
@@ -283,9 +247,15 @@
       "status": "under revision"
     },
     {
-      "title": "Skill Library / Skill 资产库",
-      "source": "content/skills/README.md",
-      "article": "article.html?src=content%2Fskills%2FREADME.md",
+      "title": "Math Lab / 数学实验室",
+      "source": "content/math/README.md",
+      "article": "article.html?src=content%2Fmath%2FREADME.md",
+      "status": "under revision"
+    },
+    {
+      "title": "未完手稿内容目录",
+      "source": "content/README.md",
+      "article": "article.html?src=content%2FREADME.md",
       "status": "under revision"
     },
     {
@@ -304,6 +274,12 @@
       "title": "可迭代学习诊断技能",
       "source": "content/skills/learning-diagnosis-protocol/SKILL.md",
       "article": "article.html?src=content%2Fskills%2Flearning-diagnosis-protocol%2FSKILL.md",
+      "status": "under revision"
+    },
+    {
+      "title": "Skill Library / Skill 资产库",
+      "source": "content/skills/README.md",
+      "article": "article.html?src=content%2Fskills%2FREADME.md",
       "status": "under revision"
     },
     {

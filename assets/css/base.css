@@ -1,0 +1,418 @@
+/* Document foundation and global typography. */
+html {
+  min-height: 100%;
+  background: var(--page-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text-body);
+  font-family: var(--font-cn-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+body.home-redesign,
+body.works-page,
+body.work-detail-page,
+body.article-page,
+body.math-page,
+body.manuscripts-page,
+body.protocol-page,
+body.atlas-page {
+  background: var(--page-bg);
+  color: var(--text-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+.paper-grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.035;
+  background-image:
+    linear-gradient(0deg, rgba(242, 240, 232, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 240, 232, 0.025) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 30;
+  transform: translateY(-140%);
+  border: 1px solid var(--gray-300);
+  border-radius: 999px;
+  background: var(--gray-000);
+  color: var(--gray-950);
+  padding: 9px 14px;
+  transition: transform var(--motion-normal) var(--ease-out-soft);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-strong);
+  font-family: var(--font-title);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+html:lang(zh-CN) h2,
+html:lang(zh-CN) h3,
+.section-title,
+.guide-row-title {
+  font-family: var(--font-cn-serif);
+  font-weight: 500;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 18px;
+  color: var(--accent);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero-title,
+.page-title {
+  color: var(--text-strong);
+  font-size: clamp(52px, 7.4vw, 92px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.section-title {
+  margin: 0;
+  color: var(--text-strong);
+  font-size: clamp(30px, 3.8vw, 50px);
+  line-height: 1.12;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.guide-row-title {
+  color: var(--text-strong);
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.08;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.card-title {
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.12;
+  letter-spacing: 0;
+  font-weight: 650;
+}
+
+.body-copy {
+  font-family: var(--font-cn-sans);
+  font-size: clamp(17px, 1.6vw, 22px);
+  line-height: 1.72;
+}
+
+.zh-copy {
+  font-family: var(--font-cn-sans);
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.zh-note {
+  color: var(--text-muted);
+  font-family: var(--font-cn-sans);
+  font-size: 15px;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+}
+
+.cn-serif {
+  font-family: var(--font-cn-serif);
+  font-weight: 500;
+}
+
+.cn-sans {
+  font-family: var(--font-cn-sans);
+}
+
+[data-reveal] {
+  opacity: 1;
+}
+
+.no-gsap [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--line);
+  padding: 32px max(20px, calc((100vw - 1180px) / 2));
+  color: var(--text-muted);
+}
+
+@media (max-width: 720px) {
+  .site-footer {
+    display: grid;
+  }
+}
+
+
+
+html {
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-cn-body);
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-cn);
+  font-weight: 400;
+  font-kerning: normal;
+}
+
+/* Latin display keeps the research-site / archive signature. */
+.page-title,
+.hero-title,
+.article-header h1[data-article-title] {
+  font-family: var(--font-latin-headline);
+  font-size: var(--type-page);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.012em;
+  font-weight: 520;
+  text-wrap: balance;
+}
+
+/* Chinese display stays smaller, calmer, and more book-like. */
+.page-subtitle,
+.hero-lede,
+.hero-support,
+.section-title,
+.index-section-title,
+.guide-row-title,
+.protocol-summary h2,
+.protocol-source h2,
+.article-rail h2,
+.revision-rail h2,
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.math-current-section .index-row-title,
+.asset-step strong,
+.ledger-name em,
+.diagnosis-cell strong {
+  font-family: var(--font-cn-display);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.page-subtitle,
+.hero-lede {
+  font-size: var(--type-subtitle-cn);
+  line-height: var(--leading-title-cn);
+}
+
+.section-title,
+.index-section-title,
+.protocol-source h2,
+.article-rail h2,
+.revision-rail h2,
+.article-body h2 {
+  font-size: var(--type-section);
+  line-height: var(--leading-title-cn);
+}
+
+.guide-row-title,
+.guide-row strong,
+.protocol-guide-row .guide-row-title {
+  font-size: var(--type-guide);
+  line-height: var(--leading-title-cn);
+  font-weight: 500;
+}
+
+.card-title,
+.work-card h2,
+.index-row-title,
+.ledger-name strong,
+.asset-step strong,
+.note-title,
+.math-note-title,
+.selected-artifact-card h3,
+.archive-link-card h3 {
+  font-size: var(--type-card-title);
+  line-height: 1.18;
+  font-weight: 560;
+}
+
+/* Body copy: readable Chinese first, never oversized. */
+p,
+li,
+.zh-copy,
+.zh-note,
+.body-copy,
+.page-hero-copy,
+.works-hero-copy,
+.works-thesis,
+.work-detail-summary,
+.article-body,
+.article-body p,
+.article-judgment,
+.index-row-copy,
+.work-card p,
+.review-card p,
+.layout-note p,
+.protocol-ledger-row p,
+.guide-row p,
+.diagnosis-cell p,
+.asset-step p,
+.protocol-source p,
+.math-hero-summary,
+.manuscript-hero p,
+.manuscripts-page .manuscripts-hero p {
+  font-family: var(--font-cn-body);
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-cn);
+  font-weight: 400;
+  text-wrap: pretty;
+}
+
+.hero-cn,
+.page-hero-copy,
+.works-thesis,
+.work-detail-summary,
+.article-judgment {
+  font-size: var(--type-body-large);
+  line-height: var(--leading-loose);
+}
+
+/* Labels and navigation: small, precise, no aggressive template feeling. */
+.eyebrow,
+.section-kicker,
+.return-link,
+.text-link,
+.work-tags span,
+.tag,
+.pill,
+.index-row-kicker,
+.row-action,
+.guide-row-no,
+.guide-row em,
+.ledger-no,
+.diagnosis-cell span,
+.asset-step span,
+.work-meta-label,
+.work-score-label,
+.article-tags span,
+.article-meta,
+.article-toc,
+button,
+a.button,
+.cta-link {
+  font-family: var(--font-ui);
+  font-size: var(--type-ui);
+  line-height: 1.35;
+  letter-spacing: var(--tracking-ui);
+  font-weight: 620;
+}
+
+.section-kicker,
+.eyebrow,
+.index-row-kicker,
+.work-meta-label,
+.work-score-label,
+.guide-row-no,
+.ledger-no,
+.diagnosis-cell span,
+.asset-step span {
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+/* Dense Latin words inside Chinese text should not look broken or spaced out. */
+.zh-copy,
+.zh-note,
+.guide-row p,
+.protocol-ledger-row p,
+.diagnosis-cell p,
+.asset-step p,
+.article-body p {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  letter-spacing: 0;
+}
+
+
+/* Article pages need calmer reading rhythm. */
+.article-body {
+  max-width: 760px;
+}
+
+.article-body p + p {
+  margin-top: 1.1em;
+}
+
+.article-body h2,
+.article-body h3 {
+  margin-top: 2.1em;
+  margin-bottom: 0.65em;
+}

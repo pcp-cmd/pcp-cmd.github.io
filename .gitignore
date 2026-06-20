@@ -1,6 +1,8 @@
 node_modules/
+.superpowers/
 site.local.config.json
 qa-*.png
+qa-artifacts/
 *.log
 .DS_Store
 Thumbs.db

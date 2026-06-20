@@ -1,0 +1,136 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  min-height: 68px;
+  border-bottom: 1px solid var(--line-soft);
+  background: rgba(16, 16, 13, 0.94);
+  padding: 14px max(20px, calc((100vw - 1180px) / 2));
+  backdrop-filter: blur(18px);
+}
+
+.brand-mark {
+  display: grid;
+  gap: 2px;
+  min-width: max-content;
+  color: var(--text-strong);
+  text-decoration: none;
+}
+
+.brand-mark span {
+  color: var(--text-strong);
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.brand-mark small {
+  color: var(--text-muted);
+  font-family: var(--font-cn-body);
+  font-size: 12px;
+  font-weight: 520;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.desktop-nav,
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px 17px;
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-size: var(--type-ui);
+}
+
+.desktop-nav a,
+.desktop-nav a span,
+.site-nav a,
+.site-nav a span {
+  opacity: 1;
+  visibility: visible;
+  color: inherit;
+}
+
+.nav-link,
+.desktop-nav a {
+  position: relative;
+  min-width: max-content;
+  border-radius: 999px;
+  color: var(--text-muted);
+  padding: 8px 0;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible {
+  color: var(--text-strong);
+  outline: 0;
+}
+
+.nav-link::after,
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--clay-strong);
+  opacity: 0;
+  transform: translateX(-50%) scaleX(0.35);
+  transform-origin: center;
+  transition: opacity 220ms var(--ease-focus), transform 220ms var(--ease-focus);
+}
+
+.nav-link.is-active,
+.nav-link[aria-current="page"],
+body.works-page .desktop-nav a[href="./works.html"],
+body.work-detail-page .desktop-nav a[href="./works.html"],
+body.math-page .desktop-nav a[href="./math.html"],
+body.manuscripts-page .desktop-nav a[href="./manuscripts.html"],
+body.protocol-page .desktop-nav a[href="./protocol.html"],
+body.atlas-page .desktop-nav a[href="./atlas.html"] {
+  color: var(--text-strong);
+  font-weight: 650;
+}
+
+.nav-link.is-active::after,
+.nav-link[aria-current="page"]::after,
+body.works-page .desktop-nav a[href="./works.html"]::after,
+body.work-detail-page .desktop-nav a[href="./works.html"]::after,
+body.math-page .desktop-nav a[href="./math.html"]::after,
+body.manuscripts-page .desktop-nav a[href="./manuscripts.html"]::after,
+body.protocol-page .desktop-nav a[href="./protocol.html"]::after,
+body.atlas-page .desktop-nav a[href="./atlas.html"]::after {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    align-items: flex-start;
+    min-height: 0;
+    padding: 14px 20px;
+  }
+
+  .desktop-nav {
+    max-width: 220px;
+  }
+}

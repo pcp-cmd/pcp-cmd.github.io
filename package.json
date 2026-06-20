@@ -1,6 +1,6 @@
 {
   "name": "aleksi-lab-site",
-  "version": "1.6.0",
+  "version": "1.7.2",
   "private": true,
   "scripts": {
     "dev": "node server.js",
@@ -11,6 +11,8 @@
     "build": "npm run build:markdown && npm run build:content",
     "build:local": "npm run import:skill && npm run import:math && npm run build",
     "qa": "node qa-check.js",
+    "qa:browser": "node scripts/browser-qa.js",
+    "verify": "npm run qa && npm run build && npm run qa:browser",
     "build:bundle": "node scripts/build-content-bundle.js"
   }
 }

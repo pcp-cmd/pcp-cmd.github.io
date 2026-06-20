@@ -8,7 +8,7 @@ window.ALEKSI_CONTENT = {
   ],
 
   hero: {
-    eyebrow: 'Draft v1.1 / Personal Research Lab x Revision Protocol',
+    eyebrow: 'v1.7.2-clean-reset / Personal Research Lab × Revision Protocol',
     cn: 'Unfinished Manuscript / Cognitive Revision System / Reusable Knowledge Artifacts',
     lede: 'A personal research lab for turning learning, design, math, and AI coworking into revisable knowledge artifacts.',
     note: '一个把学习、设计、数学训练与 AI 共事持续修订成知识资产的个人研究站。'
@@ -393,7 +393,7 @@ window.ALEKSI_CONTENT = {
 
 Object.assign(window.ALEKSI_CONTENT, {
   hero: {
-    eyebrow: 'PERSONAL LAB / UNFINISHED MANUSCRIPT',
+    eyebrow: 'v1.7.2-clean-reset / Personal Research Lab × Revision Protocol',
     cn: '未完手稿 / 认知修订系统 / 可复用知识资产',
     lede: '这里不是作品展示柜，而是一个持续修订的个人研究站。',
     note: '学习、设计、数学和 AI 共事，都会被整理成可以再次打开的手稿。'

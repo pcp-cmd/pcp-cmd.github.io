@@ -61,54 +61,44 @@
   "webLatex": [
     {
       "title": "1.1 集合论索引",
-      "file": "web-latex/web-01-#U96c6#U5408#U8bba#U7d22#U5f15.md",
-      "bytes": 1837
+      "file": "web-latex/web-01-set-theory-index.md",
+      "bytes": 2167
     },
     {
       "title": "1.1.1 集合公理",
-      "file": "web-latex/web-02-#U96c6#U5408#U516c#U7406.md",
+      "file": "web-latex/web-02-set-axioms.md",
       "bytes": 3258
     },
     {
       "title": "1.1.2 集合上的序结构",
-      "file": "web-latex/web-03-#U5e8f#U7ed3#U6784.md",
+      "file": "web-latex/web-03-order-structures.md",
       "bytes": 2376
     },
     {
       "title": "1.1.3 集合的势",
-      "file": "web-latex/web-04-#U96c6#U5408#U7684#U52bf.md",
+      "file": "web-latex/web-04-cardinality.md",
       "bytes": 2382
     },
     {
       "title": "1.1 集合论题解",
-      "file": "web-latex/web-05-#U96c6#U5408#U8bba#U9898#U89e3.md",
+      "file": "web-latex/web-05-set-theory-solutions.md",
       "bytes": 5617
     },
     {
       "title": "1.1 集合论复习卡片与闭卷测试",
-      "file": "web-latex/web-06-#U590d#U4e60#U5361#U7247#U4e0e#U95ed#U5377#U6d4b#U8bd5.md",
-      "bytes": 2704
+      "file": "web-latex/web-06-review-cards-and-test.md",
+      "bytes": 3006
     },
     {
       "title": "Obsidian LaTeX 版说明",
       "file": "web-latex/web-README.md",
-      "bytes": 808
+      "bytes": 1102
     }
   ],
   "cards": [
     {
-      "title": "1.1.3 集合的势讲解",
-      "file": "cards/card-01-3-cardinality-learning.md",
-      "bytes": 1879
-    },
-    {
       "title": "1.1 集合论复习卡片与闭卷测试",
-      "file": "cards/card-01-set-theory-cards-and-test.md",
-      "bytes": 3782
-    },
-    {
-      "title": "1.1 集合论复习卡片与闭卷测试",
-      "file": "cards/card-06-#U590d#U4e60#U5361#U7247#U4e0e#U95ed#U5377#U6d4b#U8bd5.md",
+      "file": "cards/card-06-review-cards-and-test.md",
       "bytes": 2704
     }
   ]

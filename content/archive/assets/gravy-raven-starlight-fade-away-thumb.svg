@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-labelledby="title desc">
+  <title id="title">Gravy Raven thumbnail</title>
+  <desc id="desc">A monochrome zine-style thumbnail with a figure field, editorial bars, and a small red accent.</desc>
+  <rect width="720" height="540" fill="#11110f"/>
+  <rect x="40" y="34" width="640" height="472" rx="10" fill="#ece8dc"/>
+  <rect x="58" y="52" width="330" height="436" fill="#171714"/>
+  <path d="M170 94c54 16 98 58 120 116 25 67 8 147-50 208-42 44-100 63-151 50 44-38 61-85 52-142-8-52-42-88-58-134-14-40 14-82 87-98Z" fill="#d7d1c4"/>
+  <path d="M88 396c62-28 131-28 207 0l16 68H78l10-68Z" fill="#0b0b0a" opacity=".82"/>
+  <g fill="#171714">
+    <rect x="420" y="72" width="210" height="16"/>
+    <rect x="420" y="102" width="166" height="8"/>
+    <rect x="420" y="126" width="198" height="8"/>
+    <rect x="420" y="152" width="118" height="8"/>
+  </g>
+  <g stroke="#171714" stroke-width="5" fill="none">
+    <rect x="420" y="205" width="210" height="90"/>
+    <rect x="420" y="326" width="112" height="102"/>
+    <path d="M558 326h72v102h-72z"/>
+  </g>
+  <g fill="#171714" font-family="Arial, sans-serif" font-weight="700">
+    <text x="420" y="470" font-size="42">STARLIGHT</text>
+    <text x="421" y="502" font-size="24">FADE AWAY</text>
+  </g>
+  <text x="626" y="250" fill="#b54738" font-family="Arial, sans-serif" font-size="16" font-weight="700" transform="rotate(90 626 250)">RAVEN FILE</text>
+  <g opacity=".16" stroke="#171714" stroke-width="2">
+    <path d="M40 96h640M40 164h640M40 232h640M40 300h640M40 368h640M40 436h640"/>
+    <path d="M106 34v472M174 34v472M242 34v472M310 34v472M378 34v472M446 34v472M514 34v472M582 34v472M650 34v472"/>
+  </g>
+</svg>

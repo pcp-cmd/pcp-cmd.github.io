@@ -1,5 +1,15 @@
 const content = window.ALEKSI_CONTENT || {};
 
+function escapeHtml(value) {
+  return String(value || '').replace(/[&<>"']/g, (char) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[char]));
+}
+
 function articleHref(src) {
   return `./article.html?src=${encodeURIComponent(src)}`;
 }
@@ -12,9 +22,10 @@ function linkList(items) {
   const current = window.location.pathname.split('/').pop() || 'index.html';
   return items.map((item) => {
     const href = item.href || './index.html';
+    const label = escapeHtml(item.label || '');
     const file = href.replace('./', '').split('#')[0].split('?')[0] || 'index.html';
     const active = file === current || (current === '' && file === 'index.html');
-    return `<a class="nav-link${active ? ' is-active' : ''}" href="${href}"${active ? ' aria-current="page"' : ''}>${item.label}</a>`;
+    return `<a class="nav-link${active ? ' is-active' : ''}" href="${href}"${active ? ' aria-current="page"' : ''}>${label}</a>`;
   }).join('');
 }
 

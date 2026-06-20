@@ -1,5 +1,5 @@
 body.manuscripts-page {
-  background: var(--page-bg) !important;
+  background: var(--page-bg);
 }
 
 .manuscript-hero,
@@ -23,9 +23,9 @@ body.manuscripts-page {
 
 .manuscript-hero h1 {
   margin: 0;
-  color: var(--text-strong) !important;
-  font-size: clamp(54px, 8vw, 96px) !important;
-  line-height: 0.98 !important;
+  color: var(--text-strong);
+  font-size: clamp(54px, 8vw, 96px);
+  line-height: 0.98;
 }
 
 .manuscript-hero .page-subtitle {
@@ -34,7 +34,7 @@ body.manuscripts-page {
 
 .manuscript-hero p:not(.section-kicker):not(.page-subtitle) {
   max-width: 820px;
-  color: var(--text-body) !important;
+  color: var(--text-body);
   font-size: clamp(17px, 1.7vw, 22px);
   line-height: 1.75;
 }
@@ -56,7 +56,7 @@ body.manuscripts-page {
 }
 
 .reading-list {
-  display: grid !important;
+  display: grid;
 }
 
 .reading-row {
@@ -109,11 +109,11 @@ body.manuscripts-page {
 .reading-row.is-selected .reading-row-status,
 .reading-row:hover .reading-row-status,
 .reading-row:focus-visible .reading-row-status {
-  color: var(--text-body) !important;
+  color: var(--text-body);
 }
 
 .reading-row.is-selected .reading-row-action {
-  color: var(--accent) !important;
+  color: var(--accent);
   background: rgba(217, 119, 87, .12);
   border-color: rgba(217, 119, 87, .28);
 }
@@ -127,4 +127,9 @@ body.manuscripts-page {
   .reading-row-action {
     justify-self: start;
   }
+}
+
+.manuscript-hero h1 {
+  font-size: var(--type-page);
+  line-height: var(--leading-tight);
 }
