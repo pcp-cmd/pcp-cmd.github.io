@@ -441,7 +441,7 @@ Object.assign(window.ALEKSI_CONTENT, {
       status: '已归档',
       tone: 'slate',
       href: './work-detail.html?work=dark-poster-system',
-      image: './content/design/works/dont-shoot-me-down.webp',
+      image: './content/design/works/dont-shoot-me-down/thumb.webp',
       imageAlt: 'Dark editorial poster with serif fragments and a muted figure.',
       body: '一次黑暗海报系统实验：字体、颗粒和人物图像共同形成类似档案证据的版面。'
     },

@@ -46,6 +46,59 @@ function renderHeroCopy() {
   if (support) support.textContent = hero.note || '把学习、创作与反馈，修订成可复用的结构。';
 }
 
+function initHeroLottie() {
+  const container = document.getElementById('heroGlyphLottie');
+  if (!container || !window.lottie) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const figure = container.closest('.hero-lottie-figure');
+
+  const animation = window.lottie.loadAnimation({
+    container,
+    renderer: 'svg',
+    loop: !reduceMotion,
+    autoplay: false,
+    path: './assets/lottie/overview-dark.json',
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid meet',
+      progressiveLoad: true
+    }
+  });
+
+  animation.setSpeed(0.82);
+
+  animation.addEventListener('DOMLoaded', () => {
+    container.classList.add('is-ready');
+    if (figure) figure.classList.add('has-lottie');
+
+    if (reduceMotion) {
+      animation.goToAndStop(60, true);
+    }
+  });
+
+  let observer;
+  window.addEventListener('pagehide', () => {
+    if (observer) observer.disconnect();
+    animation.destroy();
+  }, { once: true });
+
+  if (reduceMotion) return;
+
+  if ('IntersectionObserver' in window) {
+    observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        animation.play();
+      } else {
+        animation.pause();
+      }
+    }, { threshold: 0.24 });
+
+    observer.observe(container);
+  } else {
+    animation.play();
+  }
+}
+
 function renderGuideRows() {
   const rows = document.querySelector('[data-guide-rows]');
   if (!rows) return;
@@ -186,6 +239,7 @@ function initMotion() {
 
 renderNavigation();
 renderHeroCopy();
+initHeroLottie();
 renderGuideRows();
 renderSelectedArtifacts();
 startSelectedCarousel();

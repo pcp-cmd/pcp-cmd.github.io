@@ -8,6 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf9f5'/%3E%3Cpath d='M8 22C12 10 22 8 24 18' fill='none' stroke='%23141413' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='23' cy='18' r='3' fill='%23c96442'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./styles.css">
   <script defer src="./content.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   <script defer src="./app.js"></script>
 </head>
 <body class="home-redesign">
@@ -36,13 +37,14 @@
         </div>
       </div>
 
-      <aside class="hero-card hero-illustration-card" aria-label="Infinite Progress featured artifact">
+      <aside class="hero-card hero-illustration-card hero-lottie-card" aria-label="Aleksi Lab living glyph">
         <div class="hero-card-top">
           <span>核心视觉</span>
           <span>无限进步</span>
         </div>
-        <figure class="hero-figure">
-          <img class="hero-illustration" src="./assets/hero/infinite-progress-hero.webp" alt="Infinite Progress artifact for Aleksi Lab">
+        <figure class="hero-figure hero-lottie-figure">
+          <div class="hero-glyph-lottie" id="heroGlyphLottie" aria-hidden="true"></div>
+          <img class="hero-illustration hero-lottie-fallback" src="./assets/hero/infinite-progress-hero.webp" alt="Infinite Progress artifact for Aleksi Lab">
         </figure>
       </aside>
     </section>

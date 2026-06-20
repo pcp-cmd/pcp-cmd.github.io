@@ -584,6 +584,9 @@ function renderNavigationWithLabel(file, pathname, label) {
   };
   const document = {
     documentElement: { classList: { add() {} } },
+    getElementById() {
+      return null;
+    },
     querySelector(selector) {
       return selector === '.desktop-nav' ? nav : null;
     },
@@ -701,6 +704,11 @@ const contentManifest = readJson('content/manifest.json');
 const markdownIndex = readJson('content/markdown-index.json');
 const mathChapterManifest = readJson('content/math/analysis/chapter-01/manifest.json');
 const content = loadContent();
+for (const artifact of content.selectedArtifacts || []) {
+  if (!artifact.image) continue;
+  const imagePath = artifact.image.replace(/^\.\//, '');
+  assert(exists(imagePath), `Homepage selected artifact image is missing: ${artifact.image}`);
+}
 const worksDataSource = read('works-data.js');
 const { works, aliases: workAliases } = loadWorks();
 const forbiddenRootNotes = fs.readdirSync(root).filter((name) => /^FIX_NOTES_.*\.md$/i.test(name));
@@ -1968,5 +1976,128 @@ for (const copy of [
 ]) {
   assert(workDetailRuntime.includes(copy), `work-detail.js missing repaired runtime copy: ${copy}`);
 }
+
+const homeHtml = read('index.html');
+const homeRuntime = read('app.js');
+const lottieOriginalPath = 'assets/lottie/overview.json';
+const lottieDarkPath = 'assets/lottie/overview-dark.json';
+const lottieFallbackPath = 'assets/hero/infinite-progress-hero.webp';
+
+assert(exists(lottieOriginalPath), `${lottieOriginalPath} missing`);
+assert(exists(lottieDarkPath), `${lottieDarkPath} missing`);
+assert(exists(lottieFallbackPath), `${lottieFallbackPath} missing`);
+
+if (exists(lottieOriginalPath) && exists(lottieDarkPath)) {
+  const originalLottieSource = read(lottieOriginalPath);
+  const darkLottieSource = read(lottieDarkPath);
+  const blackFill = '[0.074509803922,0.074509803922,0.078431372549,1]';
+  const warmWhiteFill = '[0.9098,0.8706,0.8157,1]';
+  const clayFill = '[0.85098,0.4667,0.3412,1]';
+  const accentFill = '[0.8627,0.5059,0.3216,1]';
+  const count = (source, value) => source.split(value).length - 1;
+  const restoredDarkSource = darkLottieSource
+    .split(warmWhiteFill).join(blackFill)
+    .split(accentFill).join(clayFill);
+
+  assertDoesNotThrow(() => JSON.parse(originalLottieSource), 'Original overview Lottie must be valid JSON');
+  assertDoesNotThrow(() => JSON.parse(darkLottieSource), 'Dark overview Lottie must be valid JSON');
+  assert(count(originalLottieSource, blackFill) > 0, 'Original overview Lottie must contain the expected black fills');
+  assert(count(darkLottieSource, blackFill) === 0, 'Dark overview Lottie must not retain the target black fill');
+  assert(
+    count(darkLottieSource, warmWhiteFill) === count(originalLottieSource, blackFill),
+    'Every target black fill must become the approved warm white'
+  );
+  assert(
+    restoredDarkSource === originalLottieSource,
+    'overview-dark.json may only change the approved fill colors'
+  );
+}
+
+const contentScriptIndex = homeHtml.indexOf('<script defer src="./content.js"></script>');
+const lottieScriptIndex = homeHtml.indexOf(
+  '<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>'
+);
+const appScriptIndex = homeHtml.indexOf('<script defer src="./app.js"></script>');
+assert(
+  contentScriptIndex >= 0 && lottieScriptIndex > contentScriptIndex && appScriptIndex > lottieScriptIndex,
+  'index.html must load lottie-web after content.js and before app.js'
+);
+assert(
+  /<aside class="hero-card hero-illustration-card hero-lottie-card" aria-label="Aleksi Lab living glyph">/.test(homeHtml),
+  'Homepage hero aside must use the isolated Lottie card class and label'
+);
+assert(
+  /<figure class="hero-figure hero-lottie-figure">[\s\S]*?<div class="hero-glyph-lottie" id="heroGlyphLottie" aria-hidden="true"><\/div>[\s\S]*?<img class="hero-illustration hero-lottie-fallback" src="\.\/assets\/hero\/infinite-progress-hero\.webp"/.test(homeHtml),
+  'Homepage hero must render the Lottie mount before the static fallback'
+);
+
+for (const selector of [
+  '.hero-lottie-card',
+  '.hero-lottie-card .hero-card-top',
+  '.hero-lottie-figure',
+  '.hero-lottie-figure::before',
+  '.hero-glyph-lottie',
+  '.hero-glyph-lottie.is-ready',
+  '.hero-lottie-card:hover .hero-glyph-lottie',
+  '.hero-lottie-fallback',
+  '.hero-lottie-figure.has-lottie .hero-lottie-fallback'
+]) {
+  assert(homeCss.includes(selector), `home.css missing Lottie selector: ${selector}`);
+}
+assert(
+  /@media\s*\(prefers-reduced-motion:\s*reduce\)[\s\S]*?\.hero-glyph-lottie\s*\{[^}]*transition:\s*none;[^}]*transform:\s*none;/s.test(homeCss),
+  'Homepage Lottie must disable its CSS transition and transform for reduced motion'
+);
+const lottieCardRule = homeCss.match(/\.home-redesign \.hero-card\.hero-lottie-card\s*\{([^}]*)\}/s)?.[1] || '';
+assert(
+  lottieCardRule.includes('var(--surface-raised)')
+    && lottieCardRule.includes('rgba(220, 129, 82, 0.15)'),
+  'Homepage Lottie card must use the dark raised surface and restrained clay atmosphere'
+);
+assert(
+  /\bborder\s*:\s*0\s*;/.test(lottieCardRule)
+    && /\bpadding\s*:\s*clamp\(26px,\s*2\.4vw,\s*34px\)\s*;/.test(lottieCardRule),
+  'Homepage Lottie card must remove its border and add the approved breathing room'
+);
+const lottieFigureRule = homeCss.match(/\.home-redesign \.hero-lottie-figure\s*\{([^}]*)\}/s)?.[1] || '';
+assert(
+  /\bborder\s*:\s*0\s*;/.test(lottieFigureRule)
+    && /\bborder-radius\s*:\s*0\s*;/.test(lottieFigureRule)
+    && /\bwidth\s*:\s*100%\s*;/.test(lottieFigureRule),
+  'Homepage Lottie figure must be frameless and establish a stable sizing context'
+);
+const lottieGlyphRule = homeCss.match(/\.hero-glyph-lottie\s*\{([^}]*)\}/s)?.[1] || '';
+assert(
+  /\bwidth\s*:\s*min\(82%,\s*460px\)\s*;/.test(lottieGlyphRule),
+  'Homepage Lottie glyph must use the approved smaller scale for more whitespace'
+);
+assert(
+  /@media\s*\(max-width:\s*640px\)[\s\S]*?\.hero-glyph-lottie\s*\{[^}]*width:\s*min\(82%,\s*300px\);/s.test(homeCss),
+  'Homepage Lottie glyph must retain proportional breathing room on mobile'
+);
+
+assert(/function initHeroLottie\(\)/.test(homeRuntime), 'app.js must define initHeroLottie');
+assert(
+  /window\.lottie\.loadAnimation\(\{[\s\S]*?renderer:\s*'svg'[\s\S]*?path:\s*'\.\/assets\/lottie\/overview-dark\.json'[\s\S]*?preserveAspectRatio:\s*'xMidYMid meet'[\s\S]*?progressiveLoad:\s*true/s.test(homeRuntime),
+  'initHeroLottie must load the dark overview JSON as a progressive SVG animation'
+);
+assert(/animation\.setSpeed\(0\.82\)/.test(homeRuntime), 'Homepage Lottie speed must be 0.82');
+assert(
+  /if\s*\(reduceMotion\)\s*\{[\s\S]*?animation\.goToAndStop\(60,\s*true\);[\s\S]*?\}/s.test(homeRuntime),
+  'Reduced motion must stop the Lottie at frame 60'
+);
+assert(
+  /new IntersectionObserver\([\s\S]*?animation\.play\(\)[\s\S]*?animation\.pause\(\)[\s\S]*?threshold:\s*0\.24/s.test(homeRuntime),
+  'Homepage Lottie must play only while meaningfully visible'
+);
+assert(
+  homeRuntime.indexOf("window.addEventListener('pagehide'") >= 0
+    && homeRuntime.indexOf("window.addEventListener('pagehide'") < homeRuntime.indexOf('if (reduceMotion) return;'),
+  'Homepage Lottie cleanup must be registered for reduced-motion sessions too'
+);
+assert(
+  /renderNavigation\(\);\s*renderHeroCopy\(\);\s*initHeroLottie\(\);\s*renderGuideRows\(\);/s.test(homeRuntime),
+  'initHeroLottie must run after hero copy and before the remaining homepage renderers'
+);
 
 console.log(`QA checks passed for Aleksi Lab v1.7.2-clean-reset: ${assertions}`);
