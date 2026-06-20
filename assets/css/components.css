@@ -1146,3 +1146,13 @@
   min-width: 0;
   max-width: 100%;
 }
+/* Code blocks */
+.article-body pre {
+  background: var(--code-bg, #0b0c0a);
+  border-color: var(--code-border, rgba(226, 216, 198, 0.16));
+}
+
+.article-body pre,
+.article-body pre code {
+  color: var(--code-text, var(--text-strong));
+}
