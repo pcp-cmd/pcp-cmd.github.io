@@ -4,6 +4,7 @@
 @import url("./assets/css/layout.css");
 @import url("./assets/css/navigation.css");
 @import url("./assets/css/components.css");
+@import url("./assets/css/pages/article.css");
 @import url("./assets/css/pages/home.css");
 @import url("./assets/css/pages/works.css");
 @import url("./assets/css/pages/work-detail.css");

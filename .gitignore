@@ -4,5 +4,8 @@ site.local.config.json
 qa-*.png
 qa-artifacts/
 *.log
+*.tmp
+*.bak
 .DS_Store
 Thumbs.db
+desktop.ini

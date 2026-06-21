@@ -77,11 +77,8 @@ function renderExhibitionWorks(items = works) {
     const summary = work.cardSummary || work.summary || work.intro || '';
     const source = work.source || '来源待复核';
     const image = work.thumb;
-    const ctaLabel = work.hasArticle ? '打开阅读' : '查看作品';
-    const ctaHref = safeLocalHref(
-      work.hasArticle ? work.articleHref : work.detailUrl,
-      './works.html'
-    );
+    const ctaLabel = '进入作品';
+    const ctaHref = safeLocalHref(work.detailUrl || work.href, './works.html');
     const loading = index < 2 ? 'eager' : 'lazy';
 
     return `
@@ -253,7 +250,7 @@ function renderIndex() {
       <span class="index-row-kicker">${String(itemIndex + 1).padStart(2, '0')} / ${escapeHtml(work.date)}</span>
       <strong class="index-row-title">${escapeHtml(work.title)}</strong>
       <p class="index-row-copy">${escapeHtml(work.source || '来源待复核')} / ${escapeHtml(work.medium || work.category)}</p>
-      <em class="row-action">进入 →</em>
+      <em class="row-action">进入作品 →</em>
     </a>
   `).join('');
 }

@@ -173,7 +173,7 @@ function renderWork() {
     if (href) {
       articleSection.hidden = false;
       articleLink.href = href;
-      articleLink.textContent = '打开文章';
+      articleLink.textContent = '打开阅读';
       if (articleTitle) articleTitle.textContent = work.articleTitle || '这件作品有一篇配套手稿，用于说明它的版式逻辑和修订方向。';
     }
   }

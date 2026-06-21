@@ -1020,6 +1020,33 @@ assert(
   ),
   'Markdown index must not retain replaced legacy Works paths'
 );
+const legacyWorksArticleNames = [
+  'anna-yamada-boku-no-kokoro-blue-poster.md',
+  'ayase-momo-dandadan.md',
+  'chainsaw-man-denji-reze-embrace.md',
+  'chainsaw-man-denji-reze-blue-monochrome.md',
+  'gravy-raven-starlight-fade-away.md',
+  'komi-purple-monochrome-spread.md'
+];
+const rootWorksMarkdown = fs.readdirSync(path.join(root, 'content', 'design', 'works'), {
+  withFileTypes: true
+})
+  .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith('.md'))
+  .map((entry) => entry.name);
+assert(
+  rootWorksMarkdown.length === 0,
+  `Legacy Works Markdown must leave the content build tree: ${rootWorksMarkdown.join(', ')}`
+);
+for (const legacyName of legacyWorksArticleNames) {
+  assert(
+    exists(`docs/archive/works-legacy/${legacyName}`),
+    `Archived legacy Works article is missing: ${legacyName}`
+  );
+  assert(
+    markdownIndex.files.every((entry) => entry.source !== `content/design/works/${legacyName}`),
+    `Markdown index must not include archived legacy Works article: ${legacyName}`
+  );
+}
 
 assert(works.length === 13, `Works data must contain exactly 13 records; found ${works.length}`);
 assert(new Set(works.map((work) => work.slug)).size === works.length, 'Works data slugs must be unique');
@@ -1149,6 +1176,10 @@ for (const [index, markup] of renderedCards.entries()) {
     /<a\s+class="exhibition-card__cta"\s+href="(?:\.\/|\/|\?|#)[^"]*">[^<]+<\/a>/i.test(markup),
     `${work.slug} CTA must be a local semantic link`
   );
+  assert(
+    markup.includes(`class="exhibition-card__cta" href="${work.detailUrl}">进入作品</a>`),
+    `${work.slug} exhibition CTA must enter the work detail page`
+  );
   assert(!hasNestedInteractiveControls(markup), `${work.slug} card must not nest interactive controls`);
 }
 semanticWorksRuntime.window.dispatch('pagehide');
@@ -1161,6 +1192,70 @@ assert(
 );
 assert(packageJson.scripts.qa === 'node qa-check.js', 'npm run qa must execute qa-check.js');
 assert(packageJson.scripts['qa:browser'] === 'node scripts/browser-qa.js', 'qa:browser script missing');
+assert(
+  packageJson.scripts.verify === 'npm run qa && npm run build && npm run qa',
+  'npm run verify must use the stable static QA/build/QA chain'
+);
+assert(
+  packageJson.scripts['verify:browser'] === 'npm run qa:browser',
+  'verify:browser must expose the optional browser QA separately'
+);
+assert(
+  packageJson.scripts['build:local'] === 'node scripts/build-local.js',
+  'build:local must use the cross-platform environment-variable wrapper'
+);
+assert(exists('scripts/build-local.js'), 'scripts/build-local.js missing');
+const buildLocalRuntime = read('scripts/build-local.js');
+for (const environmentVariable of ['ALEKSI_REVISION_SKILL', 'ALEKSI_MATH_CHAPTER_01']) {
+  assert(
+    buildLocalRuntime.includes(`name: '${environmentVariable}'`),
+    `build-local wrapper must declare ${environmentVariable}`
+  );
+}
+assert(
+  /process\.env\[name\]/.test(buildLocalRuntime),
+  'build-local wrapper must read its declared environment variables'
+);
+assert(
+  /spawnSync\(process\.execPath/.test(buildLocalRuntime),
+  'build-local wrapper must launch Node scripts without shell-specific syntax'
+);
+const readme = read('README.md');
+for (const setupCommand of ['npm install -D playwright', 'npx playwright install chromium']) {
+  assert(readme.includes(setupCommand), `README missing browser QA setup command: ${setupCommand}`);
+}
+for (const environmentVariable of ['ALEKSI_REVISION_SKILL', 'ALEKSI_MATH_CHAPTER_01']) {
+  assert(readme.includes(environmentVariable), `README missing build:local variable: ${environmentVariable}`);
+}
+assert(!exists('fix-aleksi-local.js'), 'One-off maintenance script must not remain in the project root');
+assert(
+  !exists('scripts/maintenance/fix-aleksi-local.js'),
+  'Obsolete one-off Lottie maintenance script must not remain executable'
+);
+for (const requiredRepositoryFile of ['.gitignore', '.nojekyll', 'README.md', 'package.json', 'package-lock.json']) {
+  assert(exists(requiredRepositoryFile), `GitHub repository file must be retained: ${requiredRepositoryFile}`);
+}
+for (const forbiddenRepositoryPath of [
+  'node_modules',
+  'qa-artifacts',
+  '.superpowers',
+  '.DS_Store',
+  'Thumbs.db',
+  'desktop.ini'
+]) {
+  assert(!exists(forbiddenRepositoryPath), `Repository contains transient path: ${forbiddenRepositoryPath}`);
+}
+const rootFiles = fs.readdirSync(root, { withFileTypes: true })
+  .filter((entry) => entry.isFile())
+  .map((entry) => entry.name);
+const transientRootFiles = rootFiles.filter((name) =>
+  /^(?:a-current|b-borderless-breathing|c-fully-frameless|qa-.+)\.(?:png|jpe?g|webp)$/i.test(name)
+    || /\.(?:zip|tmp|bak|log)$/i.test(name)
+);
+assert(
+  transientRootFiles.length === 0,
+  `Repository root contains transient delivery files: ${transientRootFiles.join(', ')}`
+);
 assert(
   content.hero.eyebrow === 'v1.7.2-clean-reset / Personal Research Lab × Revision Protocol',
   'Effective content hero eyebrow must match v1.7.2-clean-reset'
@@ -1197,6 +1292,7 @@ const formalCss = [
   'assets/css/layout.css',
   'assets/css/navigation.css',
   'assets/css/components.css',
+  'assets/css/pages/article.css',
   'assets/css/pages/home.css',
   'assets/css/pages/works.css',
   'assets/css/pages/work-detail.css',
@@ -1246,8 +1342,10 @@ const runtimeCssFiles = fs.readdirSync(path.join(root, 'assets/css'), { withFile
 assert(!runtimeCssFiles.some((name) => /^(?:\d\d-|99-|100-|101-|102-)|legacy|fix|patch/i.test(name)), 'Legacy CSS files remain in assets/css');
 
 const componentsCss = read('assets/css/components.css');
+const articleCss = read('assets/css/pages/article.css');
 const baseCss = read('assets/css/base.css');
 const homeCss = read('assets/css/pages/home.css');
+const designTokenReference = read('design-system/tokens.css');
 const worksCss = read('assets/css/pages/works.css');
 const workDetailCss = read('assets/css/pages/work-detail.css');
 const workDetailJs = read('work-detail.js');
@@ -1364,6 +1462,10 @@ assert(
   aliasDetailRuntime.nodes.articleLink.href === canonicalDetailRuntime.nodes.articleLink.href
     && canonicalDetailRuntime.nodes.articleLink.href === canonicalDetailWork.articleHref,
   'Canonical and legacy URLs must render the canonical article path'
+);
+assert(
+  canonicalDetailRuntime.nodes.articleLink.textContent === '打开阅读',
+  'Work detail article CTA must use the canonical reading label'
 );
 
 const unsafeDetailWork = {
@@ -1683,7 +1785,16 @@ assert(
   'Works active/muted state logic missing'
 );
 assert(/ResizeObserver|resize/.test(worksJs), 'Responsive Works layout recalculation missing');
-assert(/hasArticle/.test(worksJs), 'Works CTA does not use hasArticle');
+assert(!/work\.hasArticle\s*\?/.test(worksJs), 'Works cards must not branch around the article state');
+assert(
+  /const ctaLabel = '进入作品';/.test(worksJs)
+    && /const ctaHref = safeLocalHref\(\s*work\.detailUrl \|\| work\.href,\s*'\.\/works\.html'\s*\);/s.test(worksJs),
+  'Works cards must use one canonical detail-page CTA'
+);
+assert(
+  /<em class="row-action">进入作品 →<\/em>/.test(worksJs),
+  'Works index rows must use the canonical enter-work label'
+);
 for (const cardClass of [
   'exhibition-card__media',
   'exhibition-card__img',
@@ -1739,24 +1850,41 @@ assert(
   'works.css must have one authoritative top-level .exhibition-card.is-active rule'
 );
 assert(
-  countTopLevelRules(componentsCss, '.article-page') === 1,
-  'components.css must have one authoritative top-level .article-page rule'
+  collectCssRules(componentsCss).every((rule) => !rule.selector.includes('.article')),
+  'components.css must not own article page rules'
 );
 assert(
-  countTopLevelRules(componentsCss, '.article-shell') === 1,
-  'components.css must have one authoritative top-level .article-shell rule'
+  countTopLevelRules(articleCss, '.article-page') === 1,
+  'article.css must have one authoritative top-level .article-page rule'
+);
+assert(
+  countTopLevelRules(articleCss, '.article-shell') === 1,
+  'article.css must have one authoritative top-level .article-shell rule'
+);
+assert(
+  countTopLevelRules(articleCss, '.article-body') === 1,
+  'article.css must have one authoritative top-level .article-body rule'
+);
+assert(
+  countCssRules(articleCss, '.article-body h2') === 1
+    && countCssRules(articleCss, '.article-body h3') === 1,
+  'article.css must own the authoritative article heading rules'
+);
+assert(
+  designTokenReference.startsWith('/* Reference only. Runtime tokens live in assets/css/tokens.css. */'),
+  'design-system/tokens.css must clearly identify assets/css/tokens.css as the runtime source'
 );
 assert(
   countCssRules(worksCss, '.exhibition-card.is-active::before') === 1,
   'works.css must have one authoritative base active-card ::before rule'
 );
 assert(
-  countCssRules(componentsCss, '.article-manuscript') === 1,
-  'components.css must have one authoritative base .article-manuscript rule'
+  countCssRules(articleCss, '.article-manuscript') === 1,
+  'article.css must have one authoritative base .article-manuscript rule'
 );
 assert(
-  countCssRules(componentsCss, '.article-shell', '@media (max-width: 1180px)') === 1,
-  'components.css must have one .article-shell rule in the 1180px media scope'
+  countCssRules(articleCss, '.article-shell', '@media (max-width: 1180px)') === 1,
+  'article.css must have one .article-shell rule in the 1180px media scope'
 );
 assert(
   countCssRules(workDetailCss, '.work-hero__copy h1') === 1,
@@ -1784,7 +1912,7 @@ assert(
   'article.html must not contain a mojibake/non-ASCII article class'
 );
 assert(
-  countCssRules(componentsCss, '.article-manuscript') === 1,
+  countCssRules(articleCss, '.article-manuscript') === 1,
   'Formal CSS must target one canonical base .article-manuscript rule'
 );
 
@@ -1927,7 +2055,7 @@ const requiredWorkDetailCopy = [
   '档案信息',
   '关联手稿',
   '延伸阅读',
-  '打开文章'
+  '打开阅读'
 ];
 
 for (const copy of requiredWorksCopy) {
@@ -1951,7 +2079,7 @@ assert(
     .includes('./content/design/works/ayase-momo-dandadan.jpg'),
   'Runtime and browser QA must not retain or mask the deleted loose detail placeholder'
 );
-for (const copy of ['来源待复核', '打开阅读', '查看作品', '进入 →']) {
+for (const copy of ['来源待复核', '进入作品', '进入作品 →']) {
   assert(worksRuntime.includes(copy), `works.js missing repaired runtime copy: ${copy}`);
 }
 for (const copy of [
@@ -1972,7 +2100,7 @@ for (const copy of [
   '工具',
   '状态',
   '规格',
-  '打开文章'
+  '打开阅读'
 ]) {
   assert(workDetailRuntime.includes(copy), `work-detail.js missing repaired runtime copy: ${copy}`);
 }
@@ -2013,14 +2141,10 @@ if (exists(lottieOriginalPath) && exists(lottieDarkPath)) {
   );
 }
 
-const contentScriptIndex = homeHtml.indexOf('<script defer src="./content.js"></script>');
-const lottieScriptIndex = homeHtml.indexOf(
-  '<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>'
-);
 const appScriptIndex = homeHtml.indexOf('<script defer src="./app.js"></script>');
 assert(
-  contentScriptIndex >= 0 && lottieScriptIndex > contentScriptIndex && appScriptIndex > lottieScriptIndex,
-  'index.html must load lottie-web after content.js and before app.js'
+  appScriptIndex >= 0,
+  'index.html must load the homepage runtime'
 );
 assert(
   /<aside class="hero-card hero-illustration-card hero-lottie-card" aria-label="Aleksi Lab living glyph">/.test(homeHtml),
@@ -2040,7 +2164,8 @@ for (const selector of [
   '.hero-glyph-lottie.is-ready',
   '.hero-lottie-card:hover .hero-glyph-lottie',
   '.hero-lottie-fallback',
-  '.hero-lottie-figure.has-lottie .hero-lottie-fallback'
+  '.hero-lottie-figure.has-lottie .hero-lottie-fallback',
+  '.hero-lottie-figure.lottie-failed .hero-lottie-fallback'
 ]) {
   assert(homeCss.includes(selector), `home.css missing Lottie selector: ${selector}`);
 }
@@ -2050,45 +2175,73 @@ assert(
 );
 const lottieCardRule = homeCss.match(/\.home-redesign \.hero-card\.hero-lottie-card\s*\{([^}]*)\}/s)?.[1] || '';
 assert(
-  lottieCardRule.includes('var(--surface-raised)')
-    && lottieCardRule.includes('rgba(220, 129, 82, 0.15)'),
-  'Homepage Lottie card must use the dark raised surface and restrained clay atmosphere'
-);
-assert(
   /\bborder\s*:\s*0\s*;/.test(lottieCardRule)
-    && /\bpadding\s*:\s*clamp\(26px,\s*2\.4vw,\s*34px\)\s*;/.test(lottieCardRule),
-  'Homepage Lottie card must remove its border and add the approved breathing room'
+    && /\bpadding\s*:\s*0\s*;/.test(lottieCardRule)
+    && /\bbackground\s*:\s*transparent\s*;/.test(lottieCardRule)
+    && /\bbox-shadow\s*:\s*none\s*;/.test(lottieCardRule)
+    && /\boverflow\s*:\s*visible\s*;/.test(lottieCardRule),
+  'Homepage Lottie wrapper must be visually unboxed'
+);
+const lottieCardTopRule = homeCss.match(
+  /\.home-redesign \.hero-lottie-card \.hero-card-top\s*\{([^}]*)\}/s
+)?.[1] || '';
+assert(
+  /\bdisplay\s*:\s*none\s*;/.test(lottieCardTopRule),
+  'Homepage Lottie title strip must be hidden'
 );
 const lottieFigureRule = homeCss.match(/\.home-redesign \.hero-lottie-figure\s*\{([^}]*)\}/s)?.[1] || '';
 assert(
   /\bborder\s*:\s*0\s*;/.test(lottieFigureRule)
     && /\bborder-radius\s*:\s*0\s*;/.test(lottieFigureRule)
-    && /\bwidth\s*:\s*100%\s*;/.test(lottieFigureRule),
-  'Homepage Lottie figure must be frameless and establish a stable sizing context'
+    && /\bwidth\s*:\s*100%\s*;/.test(lottieFigureRule)
+    && /\bbackground\s*:\s*transparent\s*;/.test(lottieFigureRule)
+    && /\boverflow\s*:\s*visible\s*;/.test(lottieFigureRule),
+  'Homepage Lottie figure must be frameless, transparent, and free to breathe'
 );
 const lottieGlyphRule = homeCss.match(/\.hero-glyph-lottie\s*\{([^}]*)\}/s)?.[1] || '';
+const desktopGlyphSize = lottieGlyphRule.match(/\bwidth\s*:\s*min\(([\d.]+)%,\s*([\d.]+)px\)\s*;/);
 assert(
-  /\bwidth\s*:\s*min\(82%,\s*460px\)\s*;/.test(lottieGlyphRule),
-  'Homepage Lottie glyph must use the approved smaller scale for more whitespace'
+  desktopGlyphSize
+    && Number(desktopGlyphSize[1]) >= 100
+    && Number(desktopGlyphSize[2]) >= 600,
+  'Homepage Lottie glyph must be a large right-side visual rather than a small card illustration'
 );
+const mobileGlyphRule = collectCssRules(homeCss).find(
+  (rule) => rule.scope === '@media (max-width: 640px)' && rule.selector === '.hero-glyph-lottie'
+)?.body || '';
+const mobileGlyphSize = mobileGlyphRule.match(/\bwidth\s*:\s*min\(([\d.]+)%,\s*([\d.]+)px\)\s*;/);
 assert(
-  /@media\s*\(max-width:\s*640px\)[\s\S]*?\.hero-glyph-lottie\s*\{[^}]*width:\s*min\(82%,\s*300px\);/s.test(homeCss),
-  'Homepage Lottie glyph must retain proportional breathing room on mobile'
+  mobileGlyphSize
+    && Number(mobileGlyphSize[1]) <= 108
+    && Number(mobileGlyphSize[2]) <= 420,
+  'Homepage Lottie glyph must remain bounded on mobile'
+);
+const fallbackRule = homeCss.match(/\.hero-lottie-fallback\s*\{([^}]*)\}/s)?.[1] || '';
+const failedFallbackRule = homeCss.match(
+  /\.hero-lottie-figure\.lottie-failed \.hero-lottie-fallback\s*\{([^}]*)\}/s
+)?.[1] || '';
+assert(
+  /\bopacity\s*:\s*0\s*;/.test(fallbackRule)
+    && /\bopacity\s*:\s*0?\.[1-9]\d*\s*;/.test(failedFallbackRule),
+  'Homepage fallback must stay quiet during normal playback and become visible on failure'
 );
 
 assert(/function initHeroLottie\(\)/.test(homeRuntime), 'app.js must define initHeroLottie');
 assert(
-  /window\.lottie\.loadAnimation\(\{[\s\S]*?renderer:\s*'svg'[\s\S]*?path:\s*'\.\/assets\/lottie\/overview-dark\.json'[\s\S]*?preserveAspectRatio:\s*'xMidYMid meet'[\s\S]*?progressiveLoad:\s*true/s.test(homeRuntime),
-  'initHeroLottie must load the dark overview JSON as a progressive SVG animation'
-);
-assert(/animation\.setSpeed\(0\.82\)/.test(homeRuntime), 'Homepage Lottie speed must be 0.82');
-assert(
-  /if\s*\(reduceMotion\)\s*\{[\s\S]*?animation\.goToAndStop\(60,\s*true\);[\s\S]*?\}/s.test(homeRuntime),
-  'Reduced motion must stop the Lottie at frame 60'
+  /if\s*\(!window\.lottie\s*\|\|\s*typeof window\.lottie\.loadAnimation !== 'function'\)/.test(homeRuntime)
+    && /markFailed\(/.test(homeRuntime),
+  'initHeroLottie must preserve the fallback when lottie-web is unavailable'
 );
 assert(
-  /new IntersectionObserver\([\s\S]*?animation\.play\(\)[\s\S]*?animation\.pause\(\)[\s\S]*?threshold:\s*0\.24/s.test(homeRuntime),
-  'Homepage Lottie must play only while meaningfully visible'
+  /addEventListener\(['"]data_failed['"]/.test(homeRuntime)
+    && /lottie-failed/.test(homeRuntime),
+  'initHeroLottie must reveal its fallback when animation data fails'
+);
+assert(
+  /prefers-reduced-motion:\s*reduce/.test(homeRuntime)
+    && /loop:\s*!reduceMotion/.test(homeRuntime)
+    && /if\s*\(reduceMotion\)\s*\{[\s\S]*?goToAndStop\(/s.test(homeRuntime),
+  'Homepage Lottie must respect reduced-motion preferences'
 );
 assert(
   homeRuntime.indexOf("window.addEventListener('pagehide'") >= 0
