@@ -70,6 +70,8 @@ function loadPlaywright() {
 const { chromium } = loadPlaywright();
 
 const routes = [
+  '/',
+  '/article.html?src=content/system/revision-protocol/index.md',
   '/works.html',
   '/work-detail.html?work=lucia-punishing-gray-raven',
   '/math.html',
@@ -85,6 +87,8 @@ const viewports = [
 ];
 
 const routeNames = new Map([
+  ['/', 'home'],
+  ['/article.html?src=content/system/revision-protocol/index.md', 'article'],
   ['/works.html', 'works'],
   ['/work-detail.html?work=lucia-punishing-gray-raven', 'work-detail'],
   ['/math.html', 'math'],
@@ -263,12 +267,27 @@ async function assertNoOverflow(page, label) {
   const metrics = await page.evaluate(() => ({
     viewportWidth: window.innerWidth,
     documentWidth: document.documentElement.scrollWidth,
-    bodyWidth: document.body?.scrollWidth || 0
+    bodyWidth: document.body?.scrollWidth || 0,
+    offenders: [...document.querySelectorAll('body *')]
+      .map((element) => {
+        const rect = element.getBoundingClientRect();
+        return {
+          tag: element.tagName.toLowerCase(),
+          id: element.id,
+          className: typeof element.className === 'string' ? element.className : '',
+          left: Math.round(rect.left * 10) / 10,
+          right: Math.round(rect.right * 10) / 10,
+          width: Math.round(rect.width * 10) / 10
+        };
+      })
+      .filter((item) => item.left < -4 || item.right > window.innerWidth + 4)
+      .sort((a, b) => Math.max(b.right - window.innerWidth, -b.left) - Math.max(a.right - window.innerWidth, -a.left))
+      .slice(0, 8)
   }));
   const scrollWidth = Math.max(metrics.documentWidth, metrics.bodyWidth);
   assert(
     scrollWidth <= metrics.viewportWidth + 4,
-    `${label} has horizontal overflow: ${scrollWidth} > ${metrics.viewportWidth}`
+    `${label} has horizontal overflow: ${scrollWidth} > ${metrics.viewportWidth}; offenders: ${JSON.stringify(metrics.offenders)}`
   );
 }
 
@@ -310,6 +329,113 @@ async function assertActiveNavigation(page, label) {
   assert(
     activeNav.color !== 'transparent' && activeNav.alpha > 0,
     `${label} active navigation color is transparent: ${activeNav.color}`
+  );
+}
+
+async function assertHomeHero(page, viewport, label) {
+  const result = await page.evaluate(() => {
+    const hero = document.querySelector('.home-redesign .hero');
+    const card = document.querySelector('.hero-lottie-card');
+    const titleStrip = document.querySelector('.hero-lottie-card .hero-card-top');
+    const figure = document.querySelector('.hero-lottie-figure');
+    const glyph = document.querySelector('#heroGlyphLottie');
+    const fallback = document.querySelector('.hero-lottie-fallback');
+    if (!hero || !card || !titleStrip || !figure || !glyph || !fallback) return null;
+
+    const heroRect = hero.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    const glyphRect = glyph.getBoundingClientRect();
+    const cardStyle = getComputedStyle(card);
+    const titleStyle = getComputedStyle(titleStrip);
+    const figureStyle = getComputedStyle(figure);
+    const fallbackStyle = getComputedStyle(fallback);
+
+    return {
+      heroWidth: heroRect.width,
+      cardWidth: cardRect.width,
+      cardLeft: cardRect.left,
+      cardRight: cardRect.right,
+      glyphWidth: glyphRect.width,
+      cardBorder: cardStyle.borderTopWidth,
+      cardPadding: cardStyle.paddingTop,
+      cardBackgroundImage: cardStyle.backgroundImage,
+      cardBackgroundColor: cardStyle.backgroundColor,
+      cardShadow: cardStyle.boxShadow,
+      titleDisplay: titleStyle.display,
+      figureBackgroundImage: figureStyle.backgroundImage,
+      figureBackgroundColor: figureStyle.backgroundColor,
+      figureOverflow: figureStyle.overflow,
+      fallbackNaturalWidth: fallback.naturalWidth,
+      fallbackOpacity: Number(fallbackStyle.opacity),
+      failed: figure.classList.contains('lottie-failed')
+    };
+  });
+
+  assert(result !== null, `${label} is missing the Lottie hero structure`);
+  assert(result.cardBorder === '0px', `${label} Lottie wrapper still has a border`);
+  assert(result.cardPadding === '0px', `${label} Lottie wrapper still has card padding`);
+  assert(result.cardBackgroundImage === 'none', `${label} Lottie wrapper still has a background image`);
+  assert(
+    result.cardBackgroundColor === 'rgba(0, 0, 0, 0)',
+    `${label} Lottie wrapper still has a background color: ${result.cardBackgroundColor}`
+  );
+  assert(result.cardShadow === 'none', `${label} Lottie wrapper still has a card shadow`);
+  assert(result.titleDisplay === 'none', `${label} Lottie title strip is still visible`);
+  assert(
+    result.figureBackgroundImage === 'none'
+      && result.figureBackgroundColor === 'rgba(0, 0, 0, 0)'
+      && result.figureOverflow === 'visible',
+    `${label} Lottie figure is not a transparent, unboxed visual`
+  );
+  assert(result.fallbackNaturalWidth > 0, `${label} Lottie fallback image did not load`);
+  assert(
+    result.failed && result.fallbackOpacity > 0,
+    `${label} must reveal the fallback when the external Lottie runtime is unavailable`
+  );
+
+  if (viewport.width >= 980) {
+    const visualShare = result.cardWidth / result.heroWidth;
+    assert(
+      visualShare >= 0.38 && visualShare <= 0.55,
+      `${label} right visual share must be about 40%-50%; received ${visualShare.toFixed(3)}`
+    );
+    assert(
+      result.glyphWidth >= result.cardWidth * 0.95,
+      `${label} glyph is still too small for a hero visual`
+    );
+  } else {
+    assert(
+      result.cardLeft >= -4 && result.cardRight <= viewport.width + 4,
+      `${label} Lottie wrapper exceeds the mobile viewport`
+    );
+  }
+}
+
+async function assertArticleGeometry(page, viewport, label) {
+  const result = await page.evaluate(() => {
+    const body = document.querySelector('.article-body');
+    const manuscript = document.querySelector('.article-manuscript');
+    if (!body || !manuscript) return null;
+    const bodyRect = body.getBoundingClientRect();
+    const manuscriptRect = manuscript.getBoundingClientRect();
+    return {
+      bodyWidth: bodyRect.width,
+      manuscriptWidth: manuscriptRect.width,
+      textLength: body.textContent.trim().length,
+      bodyLeft: bodyRect.left,
+      bodyRight: bodyRect.right
+    };
+  });
+
+  assert(result !== null, `${label} is missing the article reader`);
+  assert(result.textLength > 100, `${label} did not render meaningful article content`);
+  assert(
+    result.bodyWidth <= Math.min(680, result.manuscriptWidth) + 2,
+    `${label} article body is wider than its 680px reading measure`
+  );
+  assert(
+    result.bodyLeft >= -4 && result.bodyRight <= viewport.width + 4,
+    `${label} article body exceeds the viewport`
   );
 }
 
@@ -506,8 +632,14 @@ async function runMatrix(browser, baseUrl) {
         );
         await waitForStablePage(page);
         await assertNoOverflow(page, label);
-        await assertActiveNavigation(page, label);
+        if (!['home', 'article'].includes(routeName)) await assertActiveNavigation(page, label);
 
+        if (routeName === 'home') {
+          await assertHomeHero(page, viewport, label);
+        }
+        if (routeName === 'article') {
+          await assertArticleGeometry(page, viewport, label);
+        }
         if (routeName === 'works') {
           await assertWorksSemanticsAndGeometry(page, label);
           await assertWorksInteraction(page, viewport, label);
@@ -633,6 +765,10 @@ async function main() {
 
     const screenshots = fs.readdirSync(outputDir).filter((file) => file.endsWith('.png'));
     const requiredScreenshots = [
+      'home-desktop-1440.png',
+      'home-mobile-390.png',
+      'article-desktop-1440.png',
+      'article-mobile-390.png',
       'works-desktop-1440.png',
       'works-desktop-1366.png',
       'works-tablet-1024.png',
@@ -647,7 +783,11 @@ async function main() {
     for (const filename of requiredScreenshots) {
       assert(screenshots.includes(filename), `Required QA screenshot is missing: ${filename}`);
     }
-    assert(screenshots.length === routes.length * viewports.length + 1, `Expected 21 screenshots; found ${screenshots.length}`);
+    const expectedScreenshotCount = routes.length * viewports.length + 1;
+    assert(
+      screenshots.length === expectedScreenshotCount,
+      `Expected ${expectedScreenshotCount} screenshots; found ${screenshots.length}`
+    );
 
     console.log(
       `Browser QA passed for Aleksi Lab v1.7.2-clean-reset: ${assertions} assertions, `

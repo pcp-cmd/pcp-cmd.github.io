@@ -1,6 +1,7 @@
 body.home-redesign {
   background: var(--page-bg);
   color: var(--text-strong);
+  overflow-x: clip;
 }
 
 .home-redesign .hero h1,
@@ -19,11 +20,10 @@ body.home-redesign {
 
 .home-redesign .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.78fr);
-  gap: clamp(40px, 6vw, 92px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+  gap: clamp(28px, 4.5vw, 72px);
   align-items: center;
   width: min(var(--stage-max), calc(100vw - var(--stage-pad) * 2));
-  min-height: calc(100svh - 72px);
   min-height: calc(100svh - 64px);
   margin-inline: auto;
   padding-block: clamp(56px, 8vh, 104px) clamp(72px, 10vh, 132px);
@@ -32,8 +32,8 @@ body.home-redesign {
 .home-redesign .hero h1 {
   max-width: 780px;
   margin-bottom: 20px;
-  font-size: clamp(56px, 8vw, 96px);
-  line-height: 0.95;
+  font-size: var(--type-page);
+  line-height: var(--leading-tight);
   letter-spacing: 0;
 }
 
@@ -119,20 +119,15 @@ body.home-redesign {
 
 .home-redesign .hero-card.hero-lottie-card {
   border: 0;
-  padding: clamp(26px, 2.4vw, 34px);
-  background:
-    radial-gradient(circle at 52% 42%, rgba(220, 129, 82, 0.15), transparent 42%),
-    radial-gradient(circle at 48% 58%, rgba(243, 240, 231, 0.08), transparent 56%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.018)),
-    var(--surface-raised);
+  padding: 0;
+  background: transparent;
   color: var(--text-strong);
-  box-shadow:
-    0 30px 84px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  box-shadow: none;
+  overflow: visible;
 }
 
 .home-redesign .hero-lottie-card .hero-card-top {
-  color: rgba(243, 240, 231, 0.58);
+  display: none;
 }
 
 .home-redesign .hero-lottie-figure {
@@ -140,35 +135,34 @@ body.home-redesign {
   display: grid;
   place-items: center;
   width: 100%;
+  min-width: 0;
   aspect-ratio: 1 / 1;
-  min-height: clamp(300px, 34vw, 560px);
+  min-height: clamp(420px, 40vw, 620px);
   border: 0;
   border-radius: 0;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(220, 129, 82, 0.09), transparent 42%),
-    radial-gradient(circle at 50% 50%, rgba(243, 240, 231, 0.035), transparent 65%),
-    transparent;
+  background: transparent;
+  overflow: visible;
 }
 
 .hero-lottie-figure::before {
   content: "";
   position: absolute;
-  inset: 16%;
+  inset: 4%;
   border-radius: 999px;
   background:
-    radial-gradient(circle, rgba(220, 129, 82, 0.12), transparent 58%);
-  filter: blur(18px);
-  opacity: 0.58;
+    radial-gradient(circle, rgba(220, 129, 82, 0.16), transparent 60%);
+  filter: blur(34px);
+  opacity: 0.72;
   pointer-events: none;
 }
 
 .hero-glyph-lottie {
   position: relative;
   z-index: 1;
-  width: min(82%, 460px);
+  width: min(112%, 680px);
   aspect-ratio: 1 / 1;
   opacity: 0;
-  transform: translateY(2px) scale(0.985);
+  transform: translateY(2px) scale(0.995);
   transition:
     opacity 520ms var(--ease-out-soft),
     transform 620ms var(--ease-out-soft),
@@ -177,13 +171,13 @@ body.home-redesign {
 }
 
 .hero-glyph-lottie.is-ready {
-  opacity: 0.94;
+  opacity: 0.96;
   transform: translateY(0) scale(1);
 }
 
 .hero-lottie-card:hover .hero-glyph-lottie {
   opacity: 1;
-  transform: translateY(-2px) scale(1.012);
+  transform: translateY(-2px) scale(1.018);
 }
 
 .hero-lottie-fallback {
@@ -193,12 +187,16 @@ body.home-redesign {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.72;
+  opacity: 0;
   transition: opacity 420ms var(--ease-out-soft);
 }
 
 .hero-lottie-figure.has-lottie .hero-lottie-fallback {
   opacity: 0;
+}
+
+.hero-lottie-figure.lottie-failed .hero-lottie-fallback {
+  opacity: 0.3;
 }
 
 .home-guide,
@@ -333,8 +331,17 @@ body.home-redesign {
     grid-template-columns: 1fr;
   }
 
+  .home-redesign .hero-lottie-card {
+    max-width: min(620px, 100%);
+    margin-inline: auto;
+  }
+
   .home-redesign .hero-lottie-figure {
-    min-height: clamp(280px, 58vw, 460px);
+    min-height: clamp(340px, 72vw, 560px);
+  }
+
+  .hero-glyph-lottie {
+    width: min(104%, 560px);
   }
 
   .selected-artifact-grid {
@@ -344,7 +351,6 @@ body.home-redesign {
 
 @media (max-height: 780px) and (min-width: 980px) {
   .home-redesign .hero {
-    min-height: calc(100svh - 72px);
     min-height: calc(100svh - 64px);
     padding-block: 48px 64px;
   }
@@ -361,23 +367,6 @@ body.home-redesign {
     padding-top: 72px;
   }
 
-  .home-redesign .hero-lottie-card {
-    max-width: 420px;
-    margin-inline: auto;
-  }
-
-  .home-redesign .hero-lottie-figure {
-    min-height: min(82vw, 340px);
-  }
-
-  .hero-glyph-lottie {
-    width: min(82%, 300px);
-  }
-}
-
-.home-redesign .hero h1 {
-  font-size: var(--type-page);
-  line-height: var(--leading-tight);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -388,5 +377,16 @@ body.home-redesign {
 
   .hero-lottie-card:hover .hero-glyph-lottie {
     transform: none;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .home-redesign .hero-lottie-figure {
+    min-height: min(92vw, 420px);
+  }
+
+  .hero-glyph-lottie {
+    width: min(108%, 420px);
   }
 }

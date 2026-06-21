@@ -1,10 +1,10 @@
 {
   "contentEngine": "markdown",
-  "generatedAt": "2026-06-20T10:22:52.187Z",
+  "generatedAt": "2026-06-21T06:02:00.707Z",
   "renderer": "marked",
   "math": "katex",
   "layout": "warm-manuscript",
-  "count": 52,
+  "count": 58,
   "files": [
     {
       "title": "Glyph Assets / 视觉符号源文件",
@@ -31,9 +31,21 @@
       "status": "under revision"
     },
     {
+      "title": "山田杏奈 / 蓝色强排版方形海报",
+      "source": "content/design/works/anna-yamada-boku-no-kokoro-blue-poster.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fanna-yamada-boku-no-kokoro-blue-poster.md",
+      "status": "under revision"
+    },
+    {
       "title": "绫濑桃 / 胆大党暖红色角色海报",
       "source": "content/design/works/ayase-momo-dandadan/article.md",
       "article": "article.html?src=content%2Fdesign%2Fworks%2Fayase-momo-dandadan%2Farticle.md",
+      "status": "under revision"
+    },
+    {
+      "title": "绫濑桃 / 胆大党暖红色角色海报",
+      "source": "content/design/works/ayase-momo-dandadan.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fayase-momo-dandadan.md",
       "status": "under revision"
     },
     {
@@ -49,9 +61,33 @@
       "status": "under revision"
     },
     {
+      "title": "电次与雷塞 / 蓝色单色关系拼贴海报",
+      "source": "content/design/works/chainsaw-man-denji-reze-blue-monochrome.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fchainsaw-man-denji-reze-blue-monochrome.md",
+      "status": "under revision"
+    },
+    {
+      "title": "电次与雷塞 / 蓝色拥抱场景海报",
+      "source": "content/design/works/chainsaw-man-denji-reze-embrace.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fchainsaw-man-denji-reze-embrace.md",
+      "status": "under revision"
+    },
+    {
+      "title": "露西亚 / 战双帕弥什黑白任务档案海报",
+      "source": "content/design/works/gravy-raven-starlight-fade-away.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fgravy-raven-starlight-fade-away.md",
+      "status": "under revision"
+    },
+    {
       "title": "古见硝子 / 紫色单色出版物海报",
       "source": "content/design/works/komi-purple-monochrome-spread/article.md",
       "article": "article.html?src=content%2Fdesign%2Fworks%2Fkomi-purple-monochrome-spread%2Farticle.md",
+      "status": "under revision"
+    },
+    {
+      "title": "古见硝子 / 紫色单色出版物海报",
+      "source": "content/design/works/komi-purple-monochrome-spread.md",
+      "article": "article.html?src=content%2Fdesign%2Fworks%2Fkomi-purple-monochrome-spread.md",
       "status": "under revision"
     },
     {

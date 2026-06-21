@@ -14,6 +14,39 @@ node server.js
 
 Open `http://127.0.0.1:4177/`.
 
+## Verification
+
+The default verification chain is dependency-free and suitable for a clean checkout:
+
+```bash
+npm run verify
+```
+
+Browser QA is intentionally separate:
+
+```bash
+npm install
+npx playwright install chromium
+npm run verify:browser
+```
+
+## Local source build
+
+The public repository does not contain private source paths. To refresh the local
+Revision Protocol and Math Analysis inputs, set both environment variables and run
+the cross-platform wrapper:
+
+```text
+ALEKSI_REVISION_SKILL=<path to the local revision skill directory>
+ALEKSI_MATH_CHAPTER_01=<path to the local chapter-01 directory>
+```
+
+```bash
+npm run build:local
+```
+
+The wrapper reports missing variables before changing generated content.
+
 ## Structure
 
 - `index.html` is the research entrance: hero artifact, guide rows, selected artifacts, and lightweight archive links.
@@ -24,6 +57,7 @@ Open `http://127.0.0.1:4177/`.
 - `assets/css/` contains tokens, shared components, graph styling, and page-level CSS.
 - `assets/` stores static WebP illustrations for the hero and four rooms.
 - `content/` stores manuscript notes, system records, logs, and plog source material.
+- `scripts/maintenance/` stores historical one-off maintenance tools that are not part of the normal build pipeline.
 
 ## Deployment
 

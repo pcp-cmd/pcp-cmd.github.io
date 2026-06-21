@@ -639,19 +639,6 @@
   letter-spacing: 0;
 }
 
-.article-body {
-  font-size: 17px;
-  line-height: 1.85;
-  color: var(--text-body);
-}
-
-.article-body pre {
-  max-width: 100%;
-  overflow-x: auto;
-  border: 1px solid var(--line-soft);
-  background: #090a08;
-}
-
 @media (max-width: 720px) {
   .hero-actions,
   .inline-actions,
@@ -850,9 +837,11 @@
 }
 
 .article-body {
+  min-width: 0;
   max-width: 680px;
   font-size: clamp(14.8px, 0.94vw, 16px);
   line-height: 1.86;
+  color: var(--text-body);
 }
 
 .article-body h1 {
@@ -862,13 +851,13 @@
 }
 
 .article-body h2 {
-  font-size: clamp(22px, 2.1vw, 30px);
-  line-height: 1.22;
-  margin: 2.05em 0 0.72em;
+  font-size: clamp(21px, 1.8vw, 28px);
+  line-height: 1.28;
+  margin: 2.15em 0 0.72em;
 }
 
 .article-body h3 {
-  font-size: clamp(18px, 1.45vw, 22px);
+  font-size: clamp(17px, 1.25vw, 21px);
   line-height: 1.28;
   margin: 1.75em 0 0.55em;
 }
@@ -888,6 +877,7 @@
 }
 
 .article-body pre {
+  max-width: 100%;
   margin: 1.35em 0;
   padding: 13px 15px;
   border-radius: 12px;
@@ -1079,16 +1069,6 @@
   letter-spacing: -0.01em;
 }
 
-.article-body h2 {
-  font-size: clamp(21px, 1.8vw, 28px);
-  line-height: 1.28;
-  margin-top: 2.15em;
-}
-
-.article-body h3 {
-  font-size: clamp(17px, 1.25vw, 21px);
-}
-
 .article-body p,
 .article-body li,
 .article-judgment,
@@ -1141,7 +1121,6 @@
 .article-shell > *,
 .article-meta dl,
 .article-header,
-.article-body,
 .article-rail {
   min-width: 0;
   max-width: 100%;

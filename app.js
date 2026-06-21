@@ -48,10 +48,25 @@ function renderHeroCopy() {
 
 function initHeroLottie() {
   const container = document.getElementById('heroGlyphLottie');
-  if (!container || !window.lottie) return;
+  if (!container) return;
+
+  const figure = container.closest('.hero-lottie-figure');
+  const markFailed = (reason) => {
+    if (figure) {
+      figure.classList.remove('has-lottie');
+      figure.classList.add('lottie-failed');
+    }
+    container.classList.remove('is-ready');
+    if (reason) console.warn(`[Aleksi Lab] Hero Lottie fallback: ${reason}`);
+  };
+
+  if (!window.lottie || typeof window.lottie.loadAnimation !== 'function') {
+    markFailed('lottie-web did not load.');
+    return;
+  }
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const figure = container.closest('.hero-lottie-figure');
+  const firstVisibleFrame = 12;
 
   const animation = window.lottie.loadAnimation({
     container,
@@ -59,6 +74,8 @@ function initHeroLottie() {
     loop: !reduceMotion,
     autoplay: false,
     path: './assets/lottie/overview-dark.json',
+    animationData: window.ALEKSI_HERO_LOTTIE_DATA || undefined,
+    initialSegment: [firstVisibleFrame, 239],
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid meet',
       progressiveLoad: true
@@ -67,30 +84,47 @@ function initHeroLottie() {
 
   animation.setSpeed(0.82);
 
-  animation.addEventListener('DOMLoaded', () => {
-    container.classList.add('is-ready');
-    if (figure) figure.classList.add('has-lottie');
-
-    if (reduceMotion) {
-      animation.goToAndStop(60, true);
-    }
-  });
-
   let observer;
+  let ready = false;
+
+  const revealLottie = () => {
+    if (ready) return;
+    ready = true;
+    container.classList.add('is-ready');
+    if (figure) {
+      figure.classList.add('has-lottie');
+      figure.classList.remove('lottie-failed');
+    }
+  };
+
   window.addEventListener('pagehide', () => {
     if (observer) observer.disconnect();
     animation.destroy();
   }, { once: true });
 
+  animation.addEventListener('DOMLoaded', () => {
+    if (reduceMotion) {
+      animation.goToAndStop(60, true);
+      revealLottie();
+      return;
+    }
+
+    animation.goToAndStop(firstVisibleFrame, true);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(revealLottie);
+    });
+  });
+
+  animation.addEventListener('data_failed', () => markFailed('animation data failed to load.'));
+  animation.addEventListener('configError', () => markFailed('animation config error.'));
+  animation.addEventListener('renderFrameError', () => markFailed('animation render error.'));
+
   if (reduceMotion) return;
 
   if ('IntersectionObserver' in window) {
     observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        animation.play();
-      } else {
-        animation.pause();
-      }
+      if (entry.isIntersecting) animation.play();
+      else animation.pause();
     }, { threshold: 0.24 });
 
     observer.observe(container);
