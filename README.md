@@ -25,21 +25,14 @@ npm run verify
 Browser QA is intentionally separate:
 
 ```bash
-<<<<<<< HEAD
 npm install -D playwright
-=======
-npm install
->>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
 npx playwright install chromium
 npm run verify:browser
 ```
 
-<<<<<<< HEAD
 Playwright is optional and is only required for `verify:browser`; it is not part of
 the dependency-free default `npm run verify` chain.
 
-=======
->>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
 ## Local source build
 
 The public repository does not contain private source paths. To refresh the local

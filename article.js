@@ -7,6 +7,23 @@ const calloutClasses = [
   'callout-revision'
 ];
 
+function escapeHtml(value) {
+  return String(value || '').replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[character]));
+}
+
+function renderMarkdownSafely(markdown) {
+  if (window.marked && window.DOMPurify) {
+    return window.DOMPurify.sanitize(window.marked.parse(markdown));
+  }
+  return `<pre>${escapeHtml(markdown)}</pre>`;
+}
+
 function articleHref(src) {
   return `./article.html?src=${encodeURIComponent(src)}`;
 }
@@ -456,9 +473,7 @@ async function renderArticle() {
 
     const readableBody = stripLeadingTitleHeading(parsed.body);
     const withCallouts = renderCallouts(rewriteMarkdownLinks(readableBody, src));
-    const html = window.marked ? marked.parse(withCallouts) : `<pre>${withCallouts}</pre>`;
-    const clean = window.DOMPurify ? DOMPurify.sanitize(html) : html;
-    document.querySelector('[data-article-body]').innerHTML = clean;
+    document.querySelector('[data-article-body]').innerHTML = renderMarkdownSafely(withCallouts);
     localizeArticleHeadings();
     renderToc();
     renderMath();
@@ -468,7 +483,7 @@ async function renderArticle() {
     document.querySelector('[data-article-body]').innerHTML = `
       <section class="callout callout-error article-missing">
         <p>这页手稿还没有接入阅读索引，可能是中文文件名、Unicode 转义文件名或离线缓存没有同步。</p>
-        <p class="dev-note">Dev note: ${error.message}。请检查 <code>content/markdown-index.json</code>、<code>content/content-bundle.js</code> 与文章链接里的 <code>src</code> 是否一致。</p>
+        <p class="dev-note">Dev note: ${escapeHtml(error.message)}。请检查 <code>content/markdown-index.json</code>、<code>content/content-bundle.js</code> 与文章链接里的 <code>src</code> 是否一致。</p>
       </section>`;
     renderToc();
   }

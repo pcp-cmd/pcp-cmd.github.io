@@ -1,7 +1,7 @@
 {
   "site": "Aleksi Lab",
   "version": "v1.7.2-clean-reset",
-  "generatedAt": "2026-06-20T10:22:52.719Z",
+  "generatedAt": "2026-06-21T15:08:20.333Z",
   "staticUpload": true,
   "localCompiler": false,
   "contentEngine": "markdown",
@@ -209,8 +209,6 @@
     }
   ],
   "logs": [
-    "content/log/README.md",
-    "content/log/revision-log-template.md",
     "content/log/v0.3-design-prototype.md",
     "content/log/v0.4-cognitive-revision-chain.md",
     "content/log/v0.5-visual-refinement.md",

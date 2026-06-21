@@ -123,7 +123,11 @@ function buildContentManifest() {
   const logDir = path.join(contentDir, 'log');
   if (fs.existsSync(logDir)) {
     payload.logs = fs.readdirSync(logDir)
-      .filter((name) => name.endsWith('.md'))
+      .filter((name) =>
+        name.endsWith('.md')
+          && !/^README\.md$/i.test(name)
+          && !/-template\.md$/i.test(name)
+      )
       .sort()
       .map((name) => `content/log/${name}`);
   }

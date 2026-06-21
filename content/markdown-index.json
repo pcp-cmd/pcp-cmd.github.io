@@ -1,33 +1,11 @@
 {
   "contentEngine": "markdown",
-<<<<<<< HEAD
-  "generatedAt": "2026-06-21T07:25:41.172Z",
-=======
-  "generatedAt": "2026-06-21T06:02:00.707Z",
->>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
+  "generatedAt": "2026-06-21T15:09:23.913Z",
   "renderer": "marked",
   "math": "katex",
   "layout": "warm-manuscript",
-  "count": 58,
+  "count": 35,
   "files": [
-    {
-      "title": "Glyph Assets / 视觉符号源文件",
-      "source": "content/assets/glyphs/README.md",
-      "article": "article.html?src=content%2Fassets%2Fglyphs%2FREADME.md",
-      "status": "under revision"
-    },
-    {
-      "title": "项目标题",
-      "source": "content/design/project-template.md",
-      "article": "article.html?src=content%2Fdesign%2Fproject-template.md",
-      "status": "under revision"
-    },
-    {
-      "title": "Design Archive / 视觉档案",
-      "source": "content/design/README.md",
-      "article": "article.html?src=content%2Fdesign%2FREADME.md",
-      "status": "under revision"
-    },
     {
       "title": "山田杏奈 / 蓝色强排版方形海报",
       "source": "content/design/works/anna-yamada-blue-poster/article.md",
@@ -35,21 +13,9 @@
       "status": "under revision"
     },
     {
-      "title": "山田杏奈 / 蓝色强排版方形海报",
-      "source": "content/design/works/anna-yamada-boku-no-kokoro-blue-poster.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fanna-yamada-boku-no-kokoro-blue-poster.md",
-      "status": "under revision"
-    },
-    {
       "title": "绫濑桃 / 胆大党暖红色角色海报",
       "source": "content/design/works/ayase-momo-dandadan/article.md",
       "article": "article.html?src=content%2Fdesign%2Fworks%2Fayase-momo-dandadan%2Farticle.md",
-      "status": "under revision"
-    },
-    {
-      "title": "绫濑桃 / 胆大党暖红色角色海报",
-      "source": "content/design/works/ayase-momo-dandadan.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fayase-momo-dandadan.md",
       "status": "under revision"
     },
     {
@@ -65,33 +31,9 @@
       "status": "under revision"
     },
     {
-      "title": "电次与雷塞 / 蓝色单色关系拼贴海报",
-      "source": "content/design/works/chainsaw-man-denji-reze-blue-monochrome.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fchainsaw-man-denji-reze-blue-monochrome.md",
-      "status": "under revision"
-    },
-    {
-      "title": "电次与雷塞 / 蓝色拥抱场景海报",
-      "source": "content/design/works/chainsaw-man-denji-reze-embrace.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fchainsaw-man-denji-reze-embrace.md",
-      "status": "under revision"
-    },
-    {
-      "title": "露西亚 / 战双帕弥什黑白任务档案海报",
-      "source": "content/design/works/gravy-raven-starlight-fade-away.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fgravy-raven-starlight-fade-away.md",
-      "status": "under revision"
-    },
-    {
       "title": "古见硝子 / 紫色单色出版物海报",
       "source": "content/design/works/komi-purple-monochrome-spread/article.md",
       "article": "article.html?src=content%2Fdesign%2Fworks%2Fkomi-purple-monochrome-spread%2Farticle.md",
-      "status": "under revision"
-    },
-    {
-      "title": "古见硝子 / 紫色单色出版物海报",
-      "source": "content/design/works/komi-purple-monochrome-spread.md",
-      "article": "article.html?src=content%2Fdesign%2Fworks%2Fkomi-purple-monochrome-spread.md",
       "status": "under revision"
     },
     {
@@ -104,30 +46,6 @@
       "title": "无限进步不是向前冲，而是重新打开",
       "source": "content/essays/001-open-loop-revision.md",
       "article": "article.html?src=content%2Fessays%2F001-open-loop-revision.md",
-      "status": "under revision"
-    },
-    {
-      "title": "文章标题",
-      "source": "content/essays/essay-template.md",
-      "article": "article.html?src=content%2Fessays%2Fessay-template.md",
-      "status": "under revision"
-    },
-    {
-      "title": "Visual Essays / 视觉文章",
-      "source": "content/essays/README.md",
-      "article": "article.html?src=content%2Fessays%2FREADME.md",
-      "status": "under revision"
-    },
-    {
-      "title": "Revision Log / 版本修订库",
-      "source": "content/log/README.md",
-      "article": "article.html?src=content%2Flog%2FREADME.md",
-      "status": "under revision"
-    },
-    {
-      "title": "vX.X 修订记录",
-      "source": "content/log/revision-log-template.md",
-      "article": "article.html?src=content%2Flog%2Frevision-log-template.md",
       "status": "under revision"
     },
     {
@@ -269,36 +187,6 @@
       "status": "under revision"
     },
     {
-      "title": "Obsidian LaTeX 版说明",
-      "source": "content/math/analysis/chapter-01/web-latex/web-README.md",
-      "article": "article.html?src=content%2Fmath%2Fanalysis%2Fchapter-01%2Fweb-latex%2Fweb-README.md",
-      "status": "under revision"
-    },
-    {
-      "title": "定义笔记标题",
-      "source": "content/math/definition-template.md",
-      "article": "article.html?src=content%2Fmath%2Fdefinition-template.md",
-      "status": "under revision"
-    },
-    {
-      "title": "错题 / 证明训练标题",
-      "source": "content/math/problem-template.md",
-      "article": "article.html?src=content%2Fmath%2Fproblem-template.md",
-      "status": "under revision"
-    },
-    {
-      "title": "Math Lab / 数学实验室",
-      "source": "content/math/README.md",
-      "article": "article.html?src=content%2Fmath%2FREADME.md",
-      "status": "under revision"
-    },
-    {
-      "title": "未完手稿内容目录",
-      "source": "content/README.md",
-      "article": "article.html?src=content%2FREADME.md",
-      "status": "under revision"
-    },
-    {
       "title": "视觉符号卡片生产 Skill",
       "source": "content/skills/glyph-system-v0.md",
       "article": "article.html?src=content%2Fskills%2Fglyph-system-v0.md",
@@ -306,26 +194,8 @@
     },
     {
       "title": "可迭代学习诊断技能",
-      "source": "content/skills/learning-diagnosis-protocol/README.md",
-      "article": "article.html?src=content%2Fskills%2Flearning-diagnosis-protocol%2FREADME.md",
-      "status": "under revision"
-    },
-    {
-      "title": "可迭代学习诊断技能",
       "source": "content/skills/learning-diagnosis-protocol/SKILL.md",
       "article": "article.html?src=content%2Fskills%2Flearning-diagnosis-protocol%2FSKILL.md",
-      "status": "under revision"
-    },
-    {
-      "title": "Skill Library / Skill 资产库",
-      "source": "content/skills/README.md",
-      "article": "article.html?src=content%2Fskills%2FREADME.md",
-      "status": "under revision"
-    },
-    {
-      "title": "Skill Name",
-      "source": "content/skills/skill-template.md",
-      "article": "article.html?src=content%2Fskills%2Fskill-template.md",
       "status": "under revision"
     },
     {
@@ -344,18 +214,6 @@
       "title": "可迭代修订协议",
       "source": "content/system/revision-protocol/index.md",
       "article": "article.html?src=content%2Fsystem%2Frevision-protocol%2Findex.md",
-      "status": "under revision"
-    },
-    {
-      "title": "Workflows / 工作流库",
-      "source": "content/system/workflows/README.md",
-      "article": "article.html?src=content%2Fsystem%2Fworkflows%2FREADME.md",
-      "status": "under revision"
-    },
-    {
-      "title": "工作流标题",
-      "source": "content/system/workflows/workflow-template.md",
-      "article": "article.html?src=content%2Fsystem%2Fworkflows%2Fworkflow-template.md",
       "status": "under revision"
     }
   ]

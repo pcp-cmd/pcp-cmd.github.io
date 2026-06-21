@@ -12,7 +12,8 @@
     "build:local": "node scripts/build-local.js",
     "qa": "node qa-check.js",
     "qa:browser": "node scripts/browser-qa.js",
-    "verify": "npm run qa && npm run build && npm run qa",
+    "verify:generated": "node scripts/verify-generated.js",
+    "verify": "npm run verify:generated && npm run qa",
     "verify:browser": "npm run qa:browser",
     "build:bundle": "node scripts/build-content-bundle.js"
   }

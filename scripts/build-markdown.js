@@ -101,11 +101,24 @@ function generatedAtForPayload(file, payload, nowIso = new Date().toISOString())
   return nowIso;
 }
 
+function isPublicMarkdownSource(source) {
+  return !(
+    /(?:^|\/)[^/]*README\.md$/i.test(source)
+    || /(?:^|\/)[^/]+-template\.md$/i.test(source)
+    || /(?:^|\/)archive(?:\/|$)/i.test(source)
+  );
+}
+
 function buildMarkdown() {
   const seenSources = new Set();
   const mathChapterHashes = new Map();
-  const files = listMarkdown(contentDir).map((file) => {
-    const source = path.relative(root, file).replace(/\\/g, '/');
+  const files = listMarkdown(contentDir)
+    .map((file) => ({
+      file,
+      source: path.relative(root, file).replace(/\\/g, '/')
+    }))
+    .filter(({ source }) => isPublicMarkdownSource(source))
+    .map(({ file, source }) => {
     assertSafeRelativePath(source);
 
     if (seenSources.has(source)) {
@@ -128,7 +141,7 @@ function buildMarkdown() {
       article: `article.html?src=${encodeURIComponent(source)}`,
       status: 'under revision'
     };
-  });
+    });
 
   const payload = {
     contentEngine: 'markdown',
@@ -158,6 +171,7 @@ module.exports = {
   assertContainedRealPath,
   buildMarkdown,
   generatedAtForPayload,
+  isPublicMarkdownSource,
   listMarkdown,
   stableStringify
 };

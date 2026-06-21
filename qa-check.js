@@ -980,10 +980,29 @@ for (const entry of markdownIndex.files) {
     `Indexed article URL must encode its canonical source: ${entry.source}`
   );
 }
+const nonPublicMarkdownSources = markdownIndex.files
+  .map((entry) => entry.source)
+  .filter((source) =>
+    /(?:^|\/)[^/]*README\.md$/i.test(source)
+      || /(?:^|\/)[^/]+-template\.md$/i.test(source)
+      || /(?:^|\/)archive(?:\/|$)/i.test(source)
+  );
+assert(
+  nonPublicMarkdownSources.length === 0,
+  `Markdown index must exclude README, template, and archive content: ${nonPublicMarkdownSources.join(', ')}`
+);
 assert(
   contentManifest.math.length === 1
     && JSON.stringify(contentManifest.math[0]) === JSON.stringify(mathChapterManifest),
   'Generated content manifest must embed the canonical chapter manifest'
+);
+assert(
+  contentManifest.logs.every((source) =>
+    !/(?:^|\/)[^/]*README\.md$/i.test(source)
+      && !/(?:^|\/)[^/]+-template\.md$/i.test(source)
+      && !/(?:^|\/)archive(?:\/|$)/i.test(source)
+  ),
+  'Generated content manifest logs must exclude README, template, and archive content'
 );
 
 const canonicalWorkAliases = {
@@ -1037,6 +1056,15 @@ assert(
   rootWorksMarkdown.length === 0,
   `Legacy Works Markdown must leave the content build tree: ${rootWorksMarkdown.join(', ')}`
 );
+const legacyRootWorkAssets = fs.readdirSync(path.join(root, 'content', 'design', 'works'), {
+  withFileTypes: true
+})
+  .filter((entry) => entry.isFile())
+  .map((entry) => entry.name);
+assert(
+  legacyRootWorkAssets.length === 0,
+  `Works assets must live only in canonical slug directories: ${legacyRootWorkAssets.join(', ')}`
+);
 for (const legacyName of legacyWorksArticleNames) {
   assert(
     exists(`docs/archive/works-legacy/${legacyName}`),
@@ -1062,6 +1090,32 @@ assert(
 assert(
   (worksDataSource.match(/window\.ALEKSI_WORKS\s*=/g) || []).length === 1,
   'works-data.js must contain exactly one window.ALEKSI_WORKS assignment'
+);
+assert(
+  /const workSources\s*=\s*\[/.test(worksDataSource)
+    && /window\.ALEKSI_WORKS\s*=\s*workSources\.map\(deriveWork\)/.test(worksDataSource),
+  'works-data.js must derive public Works records from compact canonical sources'
+);
+for (const derivedField of [
+  'href',
+  'image',
+  'articleHref',
+  'subtitle',
+  'thumbnail',
+  'heroImage',
+  'intro',
+  'mediaMode',
+  'detailUrl',
+  'hasArticle'
+]) {
+  assert(
+    !new RegExp(`"${derivedField}"\\s*:`).test(worksDataSource),
+    `works-data.js source records must derive ${derivedField} instead of storing it`
+  );
+}
+assert(
+  (worksDataSource.match(/"sourceWork"\s*:/g) || []).length === works.length,
+  'Each canonical Works source record must use sourceWork instead of ambiguous source'
 );
 assert(
   !/window\.ALEKSI_WORKS\s*=\s*window\.ALEKSI_WORKS\.map/.test(worksDataSource),
@@ -1116,6 +1170,10 @@ for (const work of works) {
   assert(work.heroImage === image, `${work.slug} heroImage must be ${image}`);
   assert(work.thumb === thumb, `${work.slug} thumb must be ${thumb}`);
   assert(work.thumbnail === thumb, `${work.slug} thumbnail must be ${thumb}`);
+  assert(work.source === work.sourceWork, `${work.slug} source must derive from sourceWork`);
+  assert(work.subtitle === work.category, `${work.slug} subtitle must derive from category`);
+  assert(work.intro === work.summary, `${work.slug} intro must derive from summary`);
+  assert(work.mediaMode === work.detailMode, `${work.slug} mediaMode must derive from detailMode`);
   assert(exists(image.slice(2)), `${work.slug} hero.webp is missing`);
   assert(exists(thumb.slice(2)), `${work.slug} thumb.webp is missing`);
   for (const [label, reference] of [
@@ -1193,12 +1251,33 @@ assert(
 assert(packageJson.scripts.qa === 'node qa-check.js', 'npm run qa must execute qa-check.js');
 assert(packageJson.scripts['qa:browser'] === 'node scripts/browser-qa.js', 'qa:browser script missing');
 assert(
-  packageJson.scripts.verify === 'npm run qa && npm run build && npm run qa',
-  'npm run verify must use the stable static QA/build/QA chain'
-);
-assert(
   packageJson.scripts['verify:browser'] === 'npm run qa:browser',
   'verify:browser must expose the optional browser QA separately'
+);
+assert(
+  packageJson.scripts['verify:generated'] === 'node scripts/verify-generated.js',
+  'verify:generated must check committed build artifacts for drift'
+);
+assert(
+  packageJson.scripts.verify === 'npm run verify:generated && npm run qa',
+  'verify must reject stale generated artifacts before static QA'
+);
+assert(exists('scripts/verify-generated.js'), 'scripts/verify-generated.js missing');
+const verifyGeneratedRuntime = read('scripts/verify-generated.js');
+for (const generatedFile of [
+  'content/markdown-index.json',
+  'content/content-bundle.js',
+  'content/manifest.json'
+]) {
+  assert(
+    verifyGeneratedRuntime.includes(generatedFile),
+    `Generated artifact verifier must track ${generatedFile}`
+  );
+}
+assert(
+  /spawnSync\(process\.execPath/.test(verifyGeneratedRuntime)
+    && /process\.env\.npm_execpath/.test(verifyGeneratedRuntime),
+  'Generated artifact verifier must run npm through the current cross-platform Node runtime'
 );
 assert(
   packageJson.scripts['build:local'] === 'node scripts/build-local.js',
@@ -1221,11 +1300,7 @@ assert(
   'build-local wrapper must launch Node scripts without shell-specific syntax'
 );
 const readme = read('README.md');
-<<<<<<< HEAD
 for (const setupCommand of ['npm install -D playwright', 'npx playwright install chromium']) {
-=======
-for (const setupCommand of ['npm install', 'npx playwright install chromium']) {
->>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
   assert(readme.includes(setupCommand), `README missing browser QA setup command: ${setupCommand}`);
 }
 for (const environmentVariable of ['ALEKSI_REVISION_SKILL', 'ALEKSI_MATH_CHAPTER_01']) {
@@ -1233,19 +1308,8 @@ for (const environmentVariable of ['ALEKSI_REVISION_SKILL', 'ALEKSI_MATH_CHAPTER
 }
 assert(!exists('fix-aleksi-local.js'), 'One-off maintenance script must not remain in the project root');
 assert(
-<<<<<<< HEAD
   !exists('scripts/maintenance/fix-aleksi-local.js'),
   'Obsolete one-off Lottie maintenance script must not remain executable'
-=======
-  exists('scripts/maintenance/fix-aleksi-local.js'),
-  'One-off maintenance script must live under scripts/maintenance'
-);
-assert(
-  /^(?:#![^\r\n]+\r?\n)?\/\/ One-off maintenance script\. Not part of normal build pipeline\./.test(
-    read('scripts/maintenance/fix-aleksi-local.js')
-  ),
-  'Maintenance script must declare that it is not part of the normal build pipeline'
->>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
 );
 for (const requiredRepositoryFile of ['.gitignore', '.nojekyll', 'README.md', 'package.json', 'package-lock.json']) {
   assert(exists(requiredRepositoryFile), `GitHub repository file must be retained: ${requiredRepositoryFile}`);
@@ -1338,6 +1402,34 @@ for (const htmlFile of ['index.html', 'works.html', 'work-detail.html', 'math.ht
   assert(html.includes('<link rel="stylesheet" href="./styles.css">'), `${htmlFile} does not load styles.css`);
 }
 
+const canonicalNavigationHrefs = [
+  './works.html',
+  './math.html',
+  './manuscripts.html',
+  './protocol.html',
+  './atlas.html'
+];
+for (const htmlFile of [
+  'index.html',
+  'article.html',
+  'chain.html',
+  'works.html',
+  'work-detail.html',
+  'math.html',
+  'manuscripts.html',
+  'protocol.html',
+  'atlas.html'
+]) {
+  const html = read(htmlFile);
+  const navigation = html.match(/<nav class="desktop-nav"[^>]*>([\s\S]*?)<\/nav>/);
+  assert(navigation, `${htmlFile} must contain a static desktop navigation fallback`);
+  const hrefs = Array.from(navigation[1].matchAll(/<a\b[^>]*href="([^"]+)"/g), (match) => match[1]);
+  assert(
+    JSON.stringify(hrefs) === JSON.stringify(canonicalNavigationHrefs),
+    `${htmlFile} navigation must use the canonical five-link order`
+  );
+}
+
 const allRuntimeText = [
   'package.json',
   'package-lock.json',
@@ -1365,9 +1457,47 @@ const worksCss = read('assets/css/pages/works.css');
 const workDetailCss = read('assets/css/pages/work-detail.css');
 const workDetailJs = read('work-detail.js');
 const articleHtml = read('article.html');
+const articleJs = read('article.js');
+const browserQaJs = read('scripts/browser-qa.js');
 const allFormalCss = formalCss.map(read).join('\n');
 const worksJs = read('works.js');
 const desktopSlot = loadDesktopSlot();
+
+assert(
+  /function renderMarkdownSafely\(/.test(articleJs)
+    && /window\.marked\s*&&\s*window\.DOMPurify/.test(articleJs),
+  'article.js must sanitize parsed Markdown and use a safe text fallback when dependencies are unavailable'
+);
+assert(
+  !/window\.DOMPurify\s*\?\s*DOMPurify\.sanitize\(html\)\s*:\s*html/.test(articleJs),
+  'article.js must never inject unsanitized marked output'
+);
+assert(
+  /escapeHtml\(error\.message\)/.test(articleJs),
+  'article.js must escape runtime error text before inserting it into the error panel'
+);
+for (const pinnedArticleDependency of [
+  'marked@12.0.2',
+  'dompurify@3.1.6',
+  'katex@0.16.11',
+  'gsap@3.12.5'
+]) {
+  assert(
+    articleHtml.includes(pinnedArticleDependency),
+    `article.html must pin ${pinnedArticleDependency}`
+  );
+}
+for (const htmlFile of ['article.html', 'chain.html', 'manuscripts.html', 'math.html', 'protocol.html']) {
+  assert(
+    !/cdn\.jsdelivr\.net\/npm\/gsap@3\//.test(read(htmlFile)),
+    `${htmlFile} must pin the exact GSAP version`
+  );
+}
+assert(
+  browserQaJs.includes('npm install -D playwright')
+    && browserQaJs.includes('npx playwright install chromium'),
+  'Browser QA must explain how to install its optional Playwright dependency'
+);
 
 assert(/ALEKSI_WORK_ALIASES/.test(workDetailJs), 'Detail page does not resolve window.ALEKSI_WORK_ALIASES');
 assert(!/works\[0\]/.test(workDetailJs), 'Unknown work silently falls back to first item');
@@ -1884,22 +2014,6 @@ assert(
   countCssRules(articleCss, '.article-body h2') === 1
     && countCssRules(articleCss, '.article-body h3') === 1,
   'article.css must own the authoritative article heading rules'
-);
-assert(
-  designTokenReference.startsWith('/* Reference only. Runtime tokens live in assets/css/tokens.css. */'),
-  'design-system/tokens.css must clearly identify assets/css/tokens.css as the runtime source'
-);
-assert(
-  countTopLevelRules(componentsCss, '.article-body') === 1,
-  'components.css must have one authoritative top-level .article-body rule'
-);
-assert(
-  countCssRules(componentsCss, '.article-body h2') === 1,
-  'components.css must have one authoritative top-level .article-body h2 rule'
-);
-assert(
-  countCssRules(componentsCss, '.article-body h3') === 1,
-  'components.css must have one authoritative top-level .article-body h3 rule'
 );
 assert(
   designTokenReference.startsWith('/* Reference only. Runtime tokens live in assets/css/tokens.css. */'),
