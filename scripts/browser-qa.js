@@ -72,7 +72,10 @@ const { chromium } = loadPlaywright();
 const routes = [
   '/',
   '/article.html?src=content/system/revision-protocol/index.md',
+<<<<<<< HEAD
   '/article.html?src=content%2Fdesign%2Fworks%2Flucia-punishing-gray-raven%2Farticle.md',
+=======
+>>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
   '/works.html',
   '/work-detail.html?work=lucia-punishing-gray-raven',
   '/work-detail.html?work=small-kid-sen-music-poster',
@@ -91,10 +94,13 @@ const viewports = [
 const routeNames = new Map([
   ['/', 'home'],
   ['/article.html?src=content/system/revision-protocol/index.md', 'article'],
+<<<<<<< HEAD
   [
     '/article.html?src=content%2Fdesign%2Fworks%2Flucia-punishing-gray-raven%2Farticle.md',
     'work-article'
   ],
+=======
+>>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
   ['/works.html', 'works'],
   ['/work-detail.html?work=lucia-punishing-gray-raven', 'work-detail'],
   ['/work-detail.html?work=small-kid-sen-music-poster', 'work-detail-no-article'],
@@ -664,14 +670,22 @@ async function runMatrix(browser, baseUrl) {
         );
         await waitForStablePage(page);
         await assertNoOverflow(page, label);
+<<<<<<< HEAD
         if (!['home', 'article', 'work-article'].includes(routeName)) {
           await assertActiveNavigation(page, label);
         }
+=======
+        if (!['home', 'article'].includes(routeName)) await assertActiveNavigation(page, label);
+>>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
 
         if (routeName === 'home') {
           await assertHomeHero(page, viewport, label);
         }
+<<<<<<< HEAD
         if (['article', 'work-article'].includes(routeName)) {
+=======
+        if (routeName === 'article') {
+>>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
           await assertArticleGeometry(page, viewport, label);
         }
         if (routeName === 'works') {
@@ -804,8 +818,11 @@ async function main() {
       'home-mobile-390.png',
       'article-desktop-1440.png',
       'article-mobile-390.png',
+<<<<<<< HEAD
       'work-article-desktop-1440.png',
       'work-article-mobile-390.png',
+=======
+>>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
       'works-desktop-1440.png',
       'works-desktop-1366.png',
       'works-tablet-1024.png',

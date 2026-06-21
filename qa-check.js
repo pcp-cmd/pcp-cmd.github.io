@@ -1221,7 +1221,11 @@ assert(
   'build-local wrapper must launch Node scripts without shell-specific syntax'
 );
 const readme = read('README.md');
+<<<<<<< HEAD
 for (const setupCommand of ['npm install -D playwright', 'npx playwright install chromium']) {
+=======
+for (const setupCommand of ['npm install', 'npx playwright install chromium']) {
+>>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
   assert(readme.includes(setupCommand), `README missing browser QA setup command: ${setupCommand}`);
 }
 for (const environmentVariable of ['ALEKSI_REVISION_SKILL', 'ALEKSI_MATH_CHAPTER_01']) {
@@ -1229,8 +1233,19 @@ for (const environmentVariable of ['ALEKSI_REVISION_SKILL', 'ALEKSI_MATH_CHAPTER
 }
 assert(!exists('fix-aleksi-local.js'), 'One-off maintenance script must not remain in the project root');
 assert(
+<<<<<<< HEAD
   !exists('scripts/maintenance/fix-aleksi-local.js'),
   'Obsolete one-off Lottie maintenance script must not remain executable'
+=======
+  exists('scripts/maintenance/fix-aleksi-local.js'),
+  'One-off maintenance script must live under scripts/maintenance'
+);
+assert(
+  /^(?:#![^\r\n]+\r?\n)?\/\/ One-off maintenance script\. Not part of normal build pipeline\./.test(
+    read('scripts/maintenance/fix-aleksi-local.js')
+  ),
+  'Maintenance script must declare that it is not part of the normal build pipeline'
+>>>>>>> 0be4133226caac148e9f8a33711fd97de3d764a4
 );
 for (const requiredRepositoryFile of ['.gitignore', '.nojekyll', 'README.md', 'package.json', 'package-lock.json']) {
   assert(exists(requiredRepositoryFile), `GitHub repository file must be retained: ${requiredRepositoryFile}`);
@@ -1869,6 +1884,22 @@ assert(
   countCssRules(articleCss, '.article-body h2') === 1
     && countCssRules(articleCss, '.article-body h3') === 1,
   'article.css must own the authoritative article heading rules'
+);
+assert(
+  designTokenReference.startsWith('/* Reference only. Runtime tokens live in assets/css/tokens.css. */'),
+  'design-system/tokens.css must clearly identify assets/css/tokens.css as the runtime source'
+);
+assert(
+  countTopLevelRules(componentsCss, '.article-body') === 1,
+  'components.css must have one authoritative top-level .article-body rule'
+);
+assert(
+  countCssRules(componentsCss, '.article-body h2') === 1,
+  'components.css must have one authoritative top-level .article-body h2 rule'
+);
+assert(
+  countCssRules(componentsCss, '.article-body h3') === 1,
+  'components.css must have one authoritative top-level .article-body h3 rule'
 );
 assert(
   designTokenReference.startsWith('/* Reference only. Runtime tokens live in assets/css/tokens.css. */'),
