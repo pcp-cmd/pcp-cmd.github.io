@@ -1,0 +1,25 @@
+## UGA-C117 — An Actual Nonconstant Graded Cartan Determinant Forces Ordinary Supported Tor in a Uniform Window
+
+**Status:** COMPLETE ANY-FIELD ORDINARY PROOF / NORMAL ADVERSARIAL SELF-AUDIT / WHOLE GRADED BRANCH CLOSED / NOT INDEPENDENTLY VERIFIED; NO NOVELTY CLAIM  
+**Source:** Run-Graded-Cartan-Ordinary-Tor-Bridge-and-Pure-Filtered-Transfer-2026-10-04.md Sections2–4,6–8; Graded-Cartan-Evidence. Primary mature interface: Bergh–Madsen Sections3–4; separate ordinary proof does not extend their characteristic-zero Hochschild theorem.
+
+Let A have an ACTUAL positive grading A0=k^N, J=sum positive degrees, highest internal degree w, over ANY field. Set C_yx(t)=sum_d dim(e_y A_d e_x)t^d and D=det C in Z[t]. Actual minimal graded LEFT resolutions P_n(L_y) have generator shifts n<=d<=nw; forgetting grading stays minimal ordinary. Coefficientwise finite ordinary Euler gives C(t)sum_n(-1)^n B_n(t)=I, where B_n,xy counts genuine graded Tor(Rx,Ly). INTEGER Jacobi identity
+
+\[
+D'/D=\sum_{n,x,y}(-1)^n C'_{yx}(t)B_{n,xy}(t)
+\]
+
+retains exactly the physical REVERSE support. Derivatives/dimensions are never reduced into k. If D!=1, u=deg D>=1 and its log coefficients have no u consecutive zeros, by the integer order-u recurrence and nonpolynomiality over Q. For EVERY b>=0, choose a nonzero coefficient above (b+1)w; actual degree bounds exclude all n<=b. Thus
+
+\[
+\boxed{\exists x,y,n:\ b<n\le(b+1)w+u-1,\quad
+e_yAe_x\ne0,\quad\operatorname{Tor}_n^A(R_x,L_y)\ne0.}
+\]
+
+This closes the ENTIRE actual-positive-graded nonconstant-determinant class. The window concerns SOME supported pair each time; only finite pigeonhole gives one fixed pair infinitely often, not a preselected pair in every window. Supported badness forces D=1 for every ACTUAL grading; D=1 alone is not closure.
+
+For positive-graded elementary selfinjective A, the highest component of each Ae_i is its ONE-dimensional simple socle L_nu(i), with nu a permutation. The unique top determinant term has coefficient sign(nu), so u=sum_i w_i>0 whenever A is nonsemisimple. Therefore ALL ACTUAL positive-graded nonsemisimple selfinjective algebras, at arbitrary finite size/Loewy length/field, have ordinary supported persistence with the displayed window. It may be off-diagonal; no EVERY-simple or nongraded selfinjective assertion. C108's stronger every-simple cube-zero scope retained. Actual Koszul gd infinity also forces D!=1 by purity and polynomial inverse; finite positive multigradings specialize through genuine compatible positive weights.
+
+Reused B14 has length-grading D=1 yet actual infinite diagonal, while compatible weights(1,1,1,2) give D=1-t2+t3,w6. Literal nonmonomial Frobenius cyclic cubic quantum complete intersections have arbitrary N/Loewy5; N5 dimension45 has D=(1+t5+t10)^2,w4,u20. Final shared exact96613 triples,28 actual covers,294 integral inverses, homogeneous degree/328 Euler/24 trace checks supplement the written all-degree proof, not independent/formal acceptance or persistence from a prefix. Constant-determinant/nonpure/nongradable and every global residual remain OPEN.
+
+---

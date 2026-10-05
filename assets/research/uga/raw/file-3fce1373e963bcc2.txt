@@ -1,0 +1,4641 @@
+{
+  "3": {
+    "m": 3,
+    "algebra_dimension": 14,
+    "radical_power_dimensions": [
+      10,
+      4,
+      0
+    ],
+    "individual_return_kernel_dimensions": [
+      0,
+      0,
+      0
+    ],
+    "central_resolution": {
+      "starting_simple": 0,
+      "syzygies": [
+        {
+          "degree": 0,
+          "module_dimensions": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "projective_cover_multiplicities": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "cover_dimensions": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "kernel_dimensions": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 1,
+          "module_dimensions": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "projective_cover_multiplicities": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              0,
+              1,
+              1,
+              1
+            ],
+            "cover_dimensions": [
+              3,
+              2,
+              2,
+              2
+            ],
+            "kernel_dimensions": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 2,
+          "module_dimensions": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "projective_cover_multiplicities": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "cover_dimensions": [
+              4,
+              2,
+              2,
+              2
+            ],
+            "kernel_dimensions": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 3,
+          "module_dimensions": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "projective_cover_multiplicities": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              0,
+              1,
+              1,
+              1
+            ],
+            "cover_dimensions": [
+              3,
+              2,
+              2,
+              2
+            ],
+            "kernel_dimensions": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 4,
+          "module_dimensions": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "projective_cover_multiplicities": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "cover_dimensions": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "kernel_dimensions": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 5,
+          "module_dimensions": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "projective_cover_multiplicities": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "cover_dimensions": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "kernel_dimensions": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 6,
+          "module_dimensions": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "projective_cover_multiplicities": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              0,
+              1,
+              1,
+              1
+            ],
+            "cover_dimensions": [
+              3,
+              2,
+              2,
+              2
+            ],
+            "kernel_dimensions": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 7,
+          "module_dimensions": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "projective_cover_multiplicities": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "split_self_return_certificates": [
+        {
+          "degree": 5,
+          "free_generators": 1
+        }
+      ],
+      "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+    },
+    "peripheral_resolutions": [
+      {
+        "starting_simple": 1,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                2,
+                0,
+                0
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                0,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                1,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                1,
+                1
+              ],
+              "cover_dimensions": [
+                2,
+                0,
+                2,
+                2
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                1,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                0,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                2,
+                0,
+                0
+              ],
+              "kernel_dimensions": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "split_self_return_certificates": [
+          {
+            "degree": 5,
+            "free_generators": 1
+          }
+        ],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      },
+      {
+        "starting_simple": 2,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                0,
+                2,
+                0
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                1,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                2,
+                2,
+                0,
+                2
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                0,
+                2,
+                0
+              ],
+              "kernel_dimensions": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              1,
+              0
+            ]
+          }
+        ],
+        "split_self_return_certificates": [
+          {
+            "degree": 5,
+            "free_generators": 1
+          }
+        ],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      },
+      {
+        "starting_simple": 3,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                1,
+                0,
+                0,
+                2
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                1,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                2,
+                2,
+                0
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                1,
+                0,
+                0,
+                2
+              ],
+              "kernel_dimensions": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "split_self_return_certificates": [
+          {
+            "degree": 5,
+            "free_generators": 1
+          }
+        ],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      }
+    ],
+    "structural_profiles_checked": true,
+    "central_betti_from_proved_recurrence_through_degree_12": [
+      1,
+      0,
+      2,
+      0,
+      1,
+      1,
+      0,
+      2,
+      0,
+      1,
+      1,
+      0,
+      2
+    ],
+    "aggregate_peripheral_centre_betti_from_proved_recurrence": [
+      0,
+      3,
+      0,
+      3,
+      0,
+      0,
+      3,
+      0,
+      3,
+      0,
+      0,
+      3,
+      0
+    ],
+    "degree_5_central_split_return": {
+      "simple_copies": 1,
+      "other_summand": "(m-3) copies of Omega(sum of peripheral simples)",
+      "polynomial_Yoneda_generator_degree": 5,
+      "growth_lower_bound_at_degree_5q": "m*(m-2)^q-m+1 for every q>=0"
+    },
+    "status": "finite exact audit of structural identities; no independent verifier"
+  },
+  "4": {
+    "m": 4,
+    "algebra_dimension": 22,
+    "radical_power_dimensions": [
+      17,
+      9,
+      0
+    ],
+    "individual_return_kernel_dimensions": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "central_resolution": {
+      "starting_simple": 0,
+      "syzygies": [
+        {
+          "degree": 0,
+          "module_dimensions": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "projective_cover_multiplicities": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "cover_dimensions": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "kernel_dimensions": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 1,
+          "module_dimensions": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "projective_cover_multiplicities": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cover_dimensions": [
+              4,
+              3,
+              3,
+              3,
+              3
+            ],
+            "kernel_dimensions": [
+              3,
+              2,
+              2,
+              2,
+              2
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 2,
+          "module_dimensions": [
+            3,
+            2,
+            2,
+            2,
+            2
+          ],
+          "projective_cover_multiplicities": [
+            3,
+            0,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              3,
+              0,
+              0,
+              0,
+              0
+            ],
+            "cover_dimensions": [
+              6,
+              3,
+              3,
+              3,
+              3
+            ],
+            "kernel_dimensions": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 3,
+          "module_dimensions": [
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "projective_cover_multiplicities": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cover_dimensions": [
+              4,
+              3,
+              3,
+              3,
+              3
+            ],
+            "kernel_dimensions": [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 4,
+          "module_dimensions": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "projective_cover_multiplicities": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cover_dimensions": [
+              6,
+              4,
+              4,
+              4,
+              4
+            ],
+            "kernel_dimensions": [
+              5,
+              2,
+              2,
+              2,
+              2
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 5,
+          "module_dimensions": [
+            5,
+            2,
+            2,
+            2,
+            2
+          ],
+          "projective_cover_multiplicities": [
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              5,
+              0,
+              0,
+              0,
+              0
+            ],
+            "cover_dimensions": [
+              10,
+              5,
+              5,
+              5,
+              5
+            ],
+            "kernel_dimensions": [
+              5,
+              3,
+              3,
+              3,
+              3
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 6,
+          "module_dimensions": [
+            5,
+            3,
+            3,
+            3,
+            3
+          ],
+          "projective_cover_multiplicities": [
+            0,
+            3,
+            3,
+            3,
+            3
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              0,
+              3,
+              3,
+              3,
+              3
+            ],
+            "cover_dimensions": [
+              12,
+              9,
+              9,
+              9,
+              9
+            ],
+            "kernel_dimensions": [
+              7,
+              6,
+              6,
+              6,
+              6
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 7,
+          "module_dimensions": [
+            7,
+            6,
+            6,
+            6,
+            6
+          ],
+          "projective_cover_multiplicities": [
+            7,
+            1,
+            1,
+            1,
+            1
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "split_self_return_certificates": [
+        {
+          "degree": 5,
+          "free_generators": 1
+        }
+      ],
+      "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+    },
+    "peripheral_resolutions": [
+      {
+        "starting_simple": 1,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                2,
+                1,
+                0,
+                0
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                1,
+                0,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                0,
+                1,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              1,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                0,
+                1,
+                1
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                0,
+                2,
+                3
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                0,
+                1,
+                2
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              1,
+              2
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                3,
+                2,
+                1,
+                1,
+                3
+              ],
+              "kernel_dimensions": [
+                2,
+                1,
+                1,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              2,
+              1,
+              1,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                1,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                3,
+                1,
+                3,
+                2,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                2,
+                2,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              1,
+              0,
+              2,
+              2,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              2,
+              2,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        ],
+        "split_self_return_certificates": [],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      },
+      {
+        "starting_simple": 2,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                0,
+                2,
+                1,
+                0
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                1,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                0,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                1,
+                0,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                2,
+                3,
+                1,
+                0,
+                2
+              ],
+              "kernel_dimensions": [
+                1,
+                2,
+                1,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              2,
+              1,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                3,
+                3,
+                2,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                2,
+                1,
+                1,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              2,
+              1,
+              1,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                3,
+                1,
+                1,
+                3,
+                2
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                0,
+                2,
+                2
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              2,
+              2
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              2,
+              2
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ],
+        "split_self_return_certificates": [],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      },
+      {
+        "starting_simple": 3,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                0,
+                0,
+                2,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                0,
+                1,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              1,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                1,
+                0,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                2,
+                3,
+                1,
+                0
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                2,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              1,
+              2,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                1,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                3,
+                1,
+                3,
+                2,
+                1
+              ],
+              "kernel_dimensions": [
+                2,
+                0,
+                1,
+                1,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              2,
+              0,
+              1,
+              1,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                3,
+                2,
+                1,
+                1,
+                3
+              ],
+              "kernel_dimensions": [
+                1,
+                2,
+                0,
+                0,
+                2
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              1,
+              2,
+              0,
+              0,
+              2
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              2,
+              0,
+              0,
+              2
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "split_self_return_certificates": [],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      },
+      {
+        "starting_simple": 4,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                0,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                1,
+                1,
+                0,
+                0,
+                2
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                0,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                1,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                0,
+                2,
+                3,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                1,
+                2,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                3,
+                1,
+                1,
+                3,
+                2
+              ],
+              "kernel_dimensions": [
+                2,
+                1,
+                0,
+                1,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              2,
+              1,
+              0,
+              1,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                3,
+                3,
+                2,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                2,
+                2,
+                0,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              1,
+              2,
+              2,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              2,
+              2,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "split_self_return_certificates": [],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      }
+    ],
+    "structural_profiles_checked": true,
+    "central_betti_from_proved_recurrence_through_degree_12": [
+      1,
+      0,
+      3,
+      0,
+      1,
+      5,
+      0,
+      7,
+      4,
+      1,
+      17,
+      4,
+      15
+    ],
+    "aggregate_peripheral_centre_betti_from_proved_recurrence": [
+      0,
+      4,
+      0,
+      4,
+      4,
+      0,
+      12,
+      4,
+      8,
+      20,
+      4,
+      32,
+      28
+    ],
+    "degree_5_central_split_return": {
+      "simple_copies": 1,
+      "other_summand": "(m-3) copies of Omega(sum of peripheral simples)",
+      "polynomial_Yoneda_generator_degree": 5,
+      "growth_lower_bound_at_degree_5q": "m*(m-2)^q-m+1 for every q>=0"
+    },
+    "status": "finite exact audit of structural identities; no independent verifier"
+  },
+  "5": {
+    "m": 5,
+    "algebra_dimension": 32,
+    "radical_power_dimensions": [
+      26,
+      16,
+      0
+    ],
+    "individual_return_kernel_dimensions": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "central_resolution": {
+      "starting_simple": 0,
+      "syzygies": [
+        {
+          "degree": 0,
+          "module_dimensions": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "projective_cover_multiplicities": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "cover_dimensions": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "kernel_dimensions": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 1,
+          "module_dimensions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "projective_cover_multiplicities": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cover_dimensions": [
+              5,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "kernel_dimensions": [
+              4,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 2,
+          "module_dimensions": [
+            4,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "projective_cover_multiplicities": [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              4,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "cover_dimensions": [
+              8,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "kernel_dimensions": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 3,
+          "module_dimensions": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "projective_cover_multiplicities": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cover_dimensions": [
+              5,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "kernel_dimensions": [
+              1,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 4,
+          "module_dimensions": [
+            1,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "projective_cover_multiplicities": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              1,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "cover_dimensions": [
+              12,
+              9,
+              9,
+              9,
+              9,
+              9
+            ],
+            "kernel_dimensions": [
+              11,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 5,
+          "module_dimensions": [
+            11,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "projective_cover_multiplicities": [
+            11,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "split_simple_summand_multiplicities": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              11,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "cover_dimensions": [
+              22,
+              11,
+              11,
+              11,
+              11,
+              11
+            ],
+            "kernel_dimensions": [
+              11,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 6,
+          "module_dimensions": [
+            11,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "projective_cover_multiplicities": [
+            0,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "next_cover_check": {
+            "cover_multiplicities": [
+              0,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "cover_dimensions": [
+              25,
+              20,
+              20,
+              20,
+              20,
+              20
+            ],
+            "kernel_dimensions": [
+              14,
+              15,
+              15,
+              15,
+              15,
+              15
+            ],
+            "surjective_A_linear_and_minimal": true
+          }
+        },
+        {
+          "degree": 7,
+          "module_dimensions": [
+            14,
+            15,
+            15,
+            15,
+            15,
+            15
+          ],
+          "projective_cover_multiplicities": [
+            14,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "split_simple_summand_multiplicities": [
+            0,
+            4,
+            4,
+            4,
+            4,
+            4
+          ]
+        }
+      ],
+      "split_self_return_certificates": [
+        {
+          "degree": 5,
+          "free_generators": 1
+        }
+      ],
+      "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+    },
+    "peripheral_resolutions": [
+      {
+        "starting_simple": 1,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                2,
+                1,
+                1,
+                0,
+                0
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                1,
+                1,
+                0,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                0,
+                0,
+                1,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                1
+              ],
+              "cover_dimensions": [
+                2,
+                2,
+                1,
+                0,
+                2,
+                3
+              ],
+              "kernel_dimensions": [
+                1,
+                2,
+                1,
+                0,
+                1,
+                2
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                4,
+                4,
+                3,
+                2,
+                1,
+                3
+              ],
+              "kernel_dimensions": [
+                3,
+                2,
+                2,
+                2,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              3,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                2,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                5,
+                2,
+                2,
+                4,
+                3,
+                3
+              ],
+              "kernel_dimensions": [
+                2,
+                0,
+                0,
+                2,
+                3,
+                2
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              2,
+              0,
+              0,
+              2,
+              3,
+              2
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              2,
+              3,
+              2
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "split_self_return_certificates": [
+          {
+            "degree": 3,
+            "free_generators": 1
+          }
+        ],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      },
+      {
+        "starting_simple": 2,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                0,
+                2,
+                1,
+                1,
+                0
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                1,
+                1,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                2,
+                3,
+                2,
+                1,
+                0,
+                2
+              ],
+              "kernel_dimensions": [
+                1,
+                2,
+                2,
+                1,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              2,
+              2,
+              1,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                4,
+                3,
+                4,
+                3,
+                2,
+                1
+              ],
+              "kernel_dimensions": [
+                3,
+                1,
+                2,
+                2,
+                2,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              3,
+              1,
+              2,
+              2,
+              2,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              2,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                2,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                5,
+                3,
+                2,
+                2,
+                4,
+                3
+              ],
+              "kernel_dimensions": [
+                2,
+                2,
+                0,
+                0,
+                2,
+                3
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              2,
+              2,
+              0,
+              0,
+              2,
+              3
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              2,
+              0,
+              0,
+              2,
+              3
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ],
+        "split_self_return_certificates": [
+          {
+            "degree": 3,
+            "free_generators": 1
+          }
+        ],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      },
+      {
+        "starting_simple": 3,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                0,
+                0,
+                2,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                0,
+                1,
+                1,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                2,
+                3,
+                2,
+                1,
+                0
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                2,
+                2,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              1,
+              2,
+              2,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                4,
+                1,
+                3,
+                4,
+                3,
+                2
+              ],
+              "kernel_dimensions": [
+                3,
+                0,
+                1,
+                2,
+                2,
+                2
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              3,
+              0,
+              1,
+              2,
+              2,
+              2
+            ],
+            "projective_cover_multiplicities": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                2,
+                0,
+                0,
+                0,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                5,
+                3,
+                3,
+                2,
+                2,
+                4
+              ],
+              "kernel_dimensions": [
+                2,
+                3,
+                2,
+                0,
+                0,
+                2
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              2,
+              3,
+              2,
+              0,
+              0,
+              2
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              3,
+              2,
+              0,
+              0,
+              2
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "split_self_return_certificates": [
+          {
+            "degree": 3,
+            "free_generators": 1
+          }
+        ],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      },
+      {
+        "starting_simple": 4,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                1,
+                1,
+                0,
+                0,
+                2,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                0,
+                0,
+                1,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              0,
+              1,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                0,
+                2,
+                3,
+                2,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                1,
+                2,
+                2,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              2,
+              2,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                1,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                4,
+                2,
+                1,
+                3,
+                4,
+                3
+              ],
+              "kernel_dimensions": [
+                3,
+                2,
+                0,
+                1,
+                2,
+                2
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              3,
+              2,
+              0,
+              1,
+              2,
+              2
+            ],
+            "projective_cover_multiplicities": [
+              2,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                2,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                5,
+                4,
+                3,
+                3,
+                2,
+                2
+              ],
+              "kernel_dimensions": [
+                2,
+                2,
+                3,
+                2,
+                0,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              2,
+              2,
+              3,
+              2,
+              0,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              2,
+              3,
+              2,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "split_self_return_certificates": [
+          {
+            "degree": 3,
+            "free_generators": 1
+          }
+        ],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      },
+      {
+        "starting_simple": 5,
+        "syzygies": [
+          {
+            "degree": 0,
+            "module_dimensions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+              ],
+              "cover_dimensions": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                2
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                1
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 1,
+            "module_dimensions": [
+              1,
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "kernel_dimensions": [
+                1,
+                0,
+                0,
+                1,
+                1,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 2,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                0,
+                0,
+                0,
+                1,
+                1,
+                0
+              ],
+              "cover_dimensions": [
+                2,
+                1,
+                0,
+                2,
+                3,
+                2
+              ],
+              "kernel_dimensions": [
+                1,
+                1,
+                0,
+                1,
+                2,
+                2
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 3,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              1,
+              2,
+              2
+            ],
+            "projective_cover_multiplicities": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                1,
+                0,
+                0,
+                0,
+                1,
+                1
+              ],
+              "cover_dimensions": [
+                4,
+                3,
+                2,
+                1,
+                3,
+                4
+              ],
+              "kernel_dimensions": [
+                3,
+                2,
+                2,
+                0,
+                1,
+                2
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 4,
+            "module_dimensions": [
+              3,
+              2,
+              2,
+              0,
+              1,
+              2
+            ],
+            "projective_cover_multiplicities": [
+              2,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "next_cover_check": {
+              "cover_multiplicities": [
+                2,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "cover_dimensions": [
+                5,
+                2,
+                4,
+                3,
+                3,
+                2
+              ],
+              "kernel_dimensions": [
+                2,
+                0,
+                2,
+                3,
+                2,
+                0
+              ],
+              "surjective_A_linear_and_minimal": true
+            }
+          },
+          {
+            "degree": 5,
+            "module_dimensions": [
+              2,
+              0,
+              2,
+              3,
+              2,
+              0
+            ],
+            "projective_cover_multiplicities": [
+              0,
+              0,
+              2,
+              3,
+              2,
+              0
+            ],
+            "split_simple_summand_multiplicities": [
+              0,
+              0,
+              1,
+              1,
+              1,
+              0
+            ]
+          }
+        ],
+        "split_self_return_certificates": [
+          {
+            "degree": 3,
+            "free_generators": 1
+          }
+        ],
+        "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"
+      }
+    ],
+    "structural_profiles_checked": true,
+    "central_betti_from_proved_recurrence_through_degree_12": [
+      1,
+      0,
+      4,
+      0,
+      1,
+      11,
+      0,
+      14,
+      20,
+      1,
+      61,
+      40,
+      44
+    ],
+    "aggregate_peripheral_centre_betti_from_proved_recurrence": [
+      0,
+      5,
+      0,
+      5,
+      10,
+      0,
+      25,
+      20,
+      15,
+      80,
+      40,
+      105,
+      220
+    ],
+    "degree_5_central_split_return": {
+      "simple_copies": 1,
+      "other_summand": "(m-3) copies of Omega(sum of peripheral simples)",
+      "polynomial_Yoneda_generator_degree": 5,
+      "growth_lower_bound_at_degree_5q": "m*(m-2)^q-m+1 for every q>=0"
+    },
+    "status": "finite exact audit of structural identities; no independent verifier"
+  }
+}

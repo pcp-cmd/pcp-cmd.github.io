@@ -1,0 +1,197 @@
+# Finite-pd whole cubic ideal: FULL cover and corner boundary
+
+2026-10-05. Bounded parallel contribution; pending material outside the formal
+project. No canonical files edited. Universal Gap A remains OPEN.
+
+Evidence: complete path/module proof below plus one targeted frozen-helper
+calibration of the final fixture. Normal self-audit, not independent/formal
+verification. The finite calibration does not establish the all-degree claims
+without the path identities below.
+
+## 1. Reused frontier and exact purpose
+
+Read CURRENT_STATE, relevant C088/C123--C128 claims, new C129--C131 Run,
+REGRESSION_GATES, and the actual finite-simple-error C109 and finite-subkernel
+quotient C111 material. C129 projective balanced ideals have closed support and
+inherit projectivity. C131 proves finite pd alone does not supply flat tensor
+multiplication or cover closure. This note strengthens the obstruction for the
+specific proposed FULL-cover repair: even a PROJECTIVE full kernel of finite-pd
+J3 can have infinite-pd radical and head, and cover closure can consume every
+label of an already infinite-gd connected algebra.
+
+No new unconditional positive quotient comparison is claimed. The eventual
+RIGHT quotient tail derived from finite LEFT pd J3 is a reused comparison input;
+it is not identified with an actual B-simple resolution.
+
+## 2. Explicit algebra and all FULL kernels
+
+Let A be the cyclic monomial Nakayama algebra on arrows x_i:i->i+1 modulo3,
+with LEFT Kupisch lengths c=(4,3,3). Ae_i has paths p_(i,l), 0<=l<c_i,
+starting at i and ending at i+l. Thus
+
+P0: (L0,L1,L2,L0),
+P1: (L1,L2,L0),
+P2: (L2,L0,L1).
+
+The quotient M(i,l) of Ae_i retaining lengths0,...,l-1 has literal FULL kernel
+
+    Omega M(i,l) = M(i+l,c_i-l),
+
+when l<c_i. This follows by right multiplication by the first retained-kernel
+path p_(i,l): all paths of lengths l,...,c_i-1 are obtained bijectively from the
+basis of M(i+l,c_i-l), and products with all radical basis paths agree. This is
+a full A-linear module isomorphism over any field, not a head/dimension guess.
+
+Apply it:
+
+    Omega L0 = P1;
+    Omega L1 = M(2,2),   Omega M(2,2) = L1;
+    Omega L2 = M(0,2),   Omega M(0,2) = M(2,2).
+
+All displayed maps are minimal covers; their entire kernels lie in the
+projective radical. Therefore
+
+    pd_A L0=1,   pd_A L1=pd_A L2=infinity.
+
+In particular Omega_A^(2r)L1=L1, and beta_11(2r)=1 for every r>=1. A has
+infinite global dimension and is already ordinary-positive: it is NOT bad and
+NOT a Universal Gap A counterexample.
+
+## 3. Whole J3 and its actual finite-pd kernel
+
+The unique length-three path w=p_(0,3) is a loop at0. Hence
+
+    I=J3=kw=L0 tensor_k R0,   JI=IJ=I2=0.
+
+Its actual minimal LEFT cover is exactly
+
+    0 -> K=P1 -> P0 -> I=L0 -> 0,
+
+where P1->P0 is right multiplication by x0. On full bases it maps lengths0,1,2
+of P1 bijectively onto lengths1,2,3 of P0. Therefore pd_LEFT I=1 and pd K=0.
+
+Yet
+
+    rad K=M(2,2),   K/rad K=L1
+
+both have infinite LEFT pd by Section2. The entire finite-pd K contains two
+infinite-pd simple factor labels1,2. Thus even the stronger condition h=1 with
+FULL K projective does not license replacing its components, radical, head,
+or individual composition factors by finite-pd errors. The cancellation making
+K projective is an actual extension, not factorwise finiteness.
+
+The concrete proposed deep-kernel quotient also fails to be finite:
+S=rad K=J2P0 has infinite pd, and
+
+    P0/S=M(0,2)
+
+has infinite pd. Its actual first kernel is M(2,2), which enters the period2
+cycle. This does not contradict C109/C111: their WHOLE error submodule must
+really have finite pd; here S does not.
+
+## 4. Cover enlargement cannot make a strict finite block
+
+The whole factor/head support of I is F={0}. P0 contains all three labels, so
+the smallest projective-cover-closed LEFT block containing F is {0,1,2}.
+
+More generally no nonempty proper block is LEFT cover-closed in A. If a block
+contains i and excludes i+1, the arrow x_i lies in gAe. A nonempty proper
+subset of a directed cycle has such a boundary. Therefore gAe !=0 for every
+nonempty proper e. In particular enlarging F to repair C088 closure consumes
+every label and admits infinite-pd labels1,2. It gives neither a strictly
+smaller block nor a finite-pd block.
+
+This is a boundary for automatic enlargement before using badness. It does
+not refute an enlargement theorem whose essential input is ALL-source
+supported-tail vanishing: A violates that input at beta_11(2r).
+
+## 5. Support corner does not inherit finite pd or ordinary witness lifting
+
+Take the physical support corner D=e0Ae0. It has basis e0,w and w2=0, hence
+is k[w]/(w2). The inherited actual ideal I_D=e0Ie0=kw is its radical simple.
+Its minimal D-cover D->I_D has full kernel kw again; iteration gives
+
+    pd_D I_D=infinity,   Tor^D_n(k,k)=k for every n>=0.
+
+Also J_D3=0 whereas e0J_A3e0=kw!=0. Thus the actual equality
+I_D=J_D3 used by C129 also fails when cover closure is absent: the ambient
+length-three loop becomes a single radical generator in the support corner.
+
+This contrasts with pd_A I=1 and Tor^A_n(R0,L0)=0 for n>1. Thus finite LEFT pd
+of I fails to inherit to the physical support corner; its ordinary diagonal
+cannot be lifted through the C129 literal-resolution argument. Closure gAe=0
+is exactly what is missing. No generic corner/A comparison is asserted.
+
+## 6. Finite ambient quotient pd does not repair simple alignment
+
+For the actual radical quotient B=A/I, the LEFT Kupisch lengths are (3,3,3).
+All labels and all arrows are retained. Literal kernels give
+
+    Omega_B L0=M_B(1,2),   Omega_B M_B(1,2)=L0.
+
+Consequently Tor^B_(2r)(R0,L0)=k for every r>=1, whereas the corresponding
+A pair is zero in every degree>1. The exact sequence0->I->A->B->0 and the
+actual nonprojective pd1 I give pd_LEFTA B=2. (If pd B<=1, its syzygy I would
+be projective, contradiction.) Thus even finite ambient pd of the WHOLE
+ordinary quotient does not give high ordinary SAME-SIMPLE comparison.
+
+This is compatible with the true finite-LEFT-pd quotient-tail observation:
+for a genuine RIGHT A-projective resolution Q of R_y, QI computes
+Tor^A(R_y,I), hence has zero homology above1. Q/QI is eventually an exact
+minimal B-projective complex. For y=0, a DIRECT RIGHT basis check gives
+Omega_RIGHT R0=e2A: the ending paths of e0A have lengths0,1,2,3, and left
+multiplication by x2 maps the entire length0,1,2 basis of e2A onto its radical.
+Hence pd_RIGHT R0=1, the A resolution terminates, and that quotient tail is zero.
+It is not the infinite B-resolution of the B-simple R0.
+The two kinds of starting objects must never be identified.
+
+## 7. Exact finite-error repair that remains valid, with its gate
+
+This is a reuse/general instance of C109/C111, not a new project claim. If
+X has actual minimal cover0->Omega X->P->X->0 and S is an ACTUAL submodule
+of Omega X with pd S=d<infinity, then the real quotient has the exact sequence
+
+    0 -> (Omega X)/S -> P/S -> X -> 0,
+    pd(P/S)<=d+1.
+
+For every RIGHT module R, the ordinary long exact Tor sequence of
+0->S->Omega X->(Omega X)/S->0 gives SAME-DEGREE isomorphisms
+
+    Tor_n(R,Omega X) = Tor_n(R,(Omega X)/S),   n>d+1.
+
+The quotient-cover exact sequence gives
+
+    Tor_n(R,X) = Tor_(n-1)(R,(Omega X)/S),   n>d+2.
+
+These preserve an actual infinite tail. A finite pd FULL kernel K of the
+unrelated finite-pd module I gives no bound on a chosen S inside K: Section3
+has pd K=0 but pd S=infinity. A strict C111 source descent additionally needs
+the semisimple actual quotient, genuine infinite source, actual late
+occurrences, and the diagonal cutoff that removes its own recurrent label.
+The full cover of I alone supplies none of those source-alignment hypotheses.
+
+## 8. Exact calibration and scope
+
+verify_cover_kernel_boundary.py imports the frozen Table, cover, projective,
+module-map and rational-basis helpers from the canonical Carrier-Lemma evidence
+and Imported-Outputs; it adds only the explicit path-table fixture and quotient
+modules. Final retained run passed:
+
+* 2737 associativity triples (A dim10 and its opposite, B dim9, D dim2);
+* 10 FULL actual minimal covers;
+* 87 integral basis inverses;
+* 9 complete actual kernel/module isomorphisms;
+* ZERO pruning comparisons.
+
+All-field/all-degree statements are the separate path arguments in Sections2--6.
+Shared helpers and parallel proof reading are self-audit, not independent
+verification. The calibration is small and already-positive; no new vertex
+classification, no global finite-type theorem, and no badness-specific
+counterexample are claimed.
+
+Root continuation: an ALL-source badness-specific repair must control the
+genuine whole subkernel S and align a new infinite simple/source before C111
+can become strict, or prove a separate supported witness/descent. Finite pd of
+the full I-cover kernel, finite ambient quotient pd, and support-corner infinity
+are individually insufficient. Do not abandon existing C125--C130 positive
+classes or infer global closure.

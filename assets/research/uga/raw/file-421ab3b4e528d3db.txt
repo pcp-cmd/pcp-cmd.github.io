@@ -1,0 +1,623 @@
+{
+  "construction": "KLS with T = O + sum O(E_s) + O(H) + O(2H)",
+  "vertices": {
+    "0": "O",
+    "1": "O(E_1)",
+    "2": "O(E_2)",
+    "3": "O(E_3)",
+    "4": "O(E_4)",
+    "5": "O(E_5)",
+    "6": "O(E_6)",
+    "7": "O(E_7)",
+    "8": "O(E_8)",
+    "9": "O(E_9)",
+    "10": "O(E_10)",
+    "11": "O(H)",
+    "12": "O(2H)"
+  },
+  "matrix_convention": "Peirce rows are source j, columns target i; beta_ij = Ext(L_j,L_i)",
+  "retained_Peirce_dimensions": [
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      6,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      0
+    ],
+    [
+      12,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      6,
+      2
+    ]
+  ],
+  "deleted_simple_pd_and_id_upper_bound": 5,
+  "simple_0_id": 1,
+  "constant_Betti_onset": 7,
+  "remaining_supported_query": [
+    {
+      "source_simple": 1,
+      "target_simple": 1,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 2,
+      "target_simple": 2,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 3,
+      "target_simple": 3,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 4,
+      "target_simple": 4,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 5,
+      "target_simple": 5,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 6,
+      "target_simple": 6,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 7,
+      "target_simple": 7,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 8,
+      "target_simple": 8,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 9,
+      "target_simple": 9,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 10,
+      "target_simple": 10,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 1,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 2,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 3,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 4,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 5,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 6,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 7,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 8,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 9,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 10,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 11,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 1,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 2,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 3,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 4,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 5,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 6,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 7,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 8,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 9,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 10,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 11,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 6
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 12,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    }
+  ],
+  "guaranteed_nonzero_candidates": [
+    {
+      "source_simple": 11,
+      "target_simple": 1,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 2,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 3,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 4,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 5,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 6,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 7,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 8,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 9,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 10,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 4
+    },
+    {
+      "source_simple": 11,
+      "target_simple": 11,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 1,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 2,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 3,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 4,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 5,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 6,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 7,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 8,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 9,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 10,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 10
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 11,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 6
+    },
+    {
+      "source_simple": 12,
+      "target_simple": 12,
+      "degree": 7,
+      "Ext_dimension": null,
+      "Peirce_weight": 2
+    }
+  ],
+  "aggregate_claim": {
+    "sum_of_23_Ext_dimensions_lower_bound": 1,
+    "weighted_sum_of_33_Ext_dimensions_lower_bound": 2,
+    "basis": "KLS-Supported-Tor-Detection.md, proof using explicit literature inputs",
+    "individual_values_computed": false,
+    "independently_verified": false
+  },
+  "scope": "This file records the proved query reduction and existence result, not a KLS resolution computation."
+}

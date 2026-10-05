@@ -1,0 +1,283 @@
+# 高阶 syzygy 返回：有限结构证书与一个辅助族
+
+状态：完整自审证明稿，未独立数学核验。当前主攻目标和未证明桥梁见 [N-Vertex-Main-Route.md](N-Vertex-Main-Route.md)。本稿的一般分裂返回引理不限制顶点数；后面的 \(A_m\) 是检验机制的特殊族，不能代替任意代数的 \(N\) 顶点结论。
+
+2026-09-11 补充：[ADR-Obstruction-and-Cyclic-Return.md 第 3–4 节](ADR-Obstruction-and-Cyclic-Return.md) 已将下面的自由自扩张结论推广到非半单的非投射模，并证明头部集中于一个顶点时的 supported Tor 检测。新证明显式处理投射限制边界；本稿保留半单情形的直接证明。
+
+## 1. 任意 N 的分裂返回引理
+
+设 \(A\) 为有限维 basic \(\mathbb C\)-代数，\(M\ne0\) 为 semisimple module，\(\Omega\) 使用最小投射覆盖。
+
+**定理 1。** 若
+\[
+\Omega^dM\simeq M^{\oplus g}\oplus T,\qquad d\ge1,\quad g\ge1,
+\tag{1}
+\]
+则有分次代数单射
+\[
+\boxed{\mathbb C\langle x_1,\ldots,x_g\rangle
+\hookrightarrow\operatorname{Ext}_A^*(M,M),\qquad |x_i|=d.}
+\tag{2}
+\]
+特别地，当 \(M=L_h\) 为 simple 时，
+\[
+\dim\operatorname{Tor}_{dq}^A(R_h,L_h)\ge g^q
+\quad(q\ge1).
+\tag{3}
+\]
+
+**证明。** 固定 (1) 的直和分解，并取到各个 \(M\)-copy 的 projections \(p_i:\Omega^dM\to M\)。由于最小覆盖可逐次对直和取直和，所有高次 syzygies 中也可使用与这些 projections 兼容的分解。
+
+对 \(q\ge1\)，迭代 (1) 得到 \(\Omega^{dq}M\) 中带 \(g^q\) 个 word 标签的 \(M\)-copies。沿与分解兼容的比较映射，Yoneda word
+\[
+[p_{i_1}]\cdots[p_{i_q}]
+\]
+由到相应 copy 的 projection 表示；它在该 copy 上是恒等，在其他 word copies 上为零。因此同长度的这些映射线性独立。
+
+这里没有把模块映射非零直接当成 Ext 非零。对于 semisimple 目标 \(M\)，任意从前一项投射模到 \(M\) 的映射都消灭该投射模的 radical，而 \(\Omega^{dq}M\) 包含在这个 radical 中。因此
+\[
+\operatorname{Ext}_A^{dq}(M,M)
+\simeq\operatorname{Hom}_A(\Omega^{dq}M,M),
+\]
+不存在来自前一投射项的非零限制映射可以消掉这些 projections。不同 word 长度又处于不同的正次数，单位也非零，故得到自由代数单射。simple 情形再用有限维 Tor–Ext 对偶得到 (3)。\(\square\)
+
+使用比较映射计算 Yoneda 乘积的标准约定，可核对 [Saorín，第 2 页](https://arxiv.org/pdf/math/0306043)。奇数 \(d\) 在这里也允许；一般 Yoneda self-Ext 不必 graded-commutative。
+
+对于计算得到的实际 syzygy \(K=\Omega^dL_h\)，可以直接通过
+\[
+g_h(K)=\dim e_h\operatorname{soc}K-
+\dim(e_h\operatorname{soc}K\cap e_hJK)
+\tag{4}
+\]
+找到最大可分裂的 \(L_h\)-copies 数。理由是：socle 中与 \(JK\) 相交为零的子空间嵌入 semisimple top \(K/JK\)，选择 top projection 后得到一个 \(A\)-linear retraction。因而 \(g_h(K)>0\) 是一个有限而严格的无限 Tor 证书。
+
+## 2. 一个全部单分支返回核为零的族
+
+取整数 \(m\ge3\)，顶点为 \(0,1,\ldots,m\)，令 \(s=(1\,2\,\cdots\,m)\)。以下乘法按右边因子先走的 convention。
+
+在每个外围顶点 \(i\) 与中心之间各放一条箭头
+\[
+a_i:0\to i,\qquad b_i:i\to0.
+\]
+定义
+\[
+E_j=\{s(j),s^2(j)\},\qquad S_j=\{1,\ldots,m\}\setminus E_j.
+\]
+长度二的非零乘积为
+\[
+b_i a_i=z\quad\text{对所有 }i,\qquad
+a_j b_i=c_{ji}\quad(i\in S_j).
+\tag{5}
+\]
+若 \(i\in E_j\)，则 \(a_jb_i=0\)。\(z\) 和所有 \(c_{ji}\) 为互相独立的基元素；所有含有它们的 radical 乘积为零，其他未列出的 radical 乘积也为零。
+
+这定义了结合代数 \(A_m\)：所有 radical 三重积为零，Peirce 标记相容。其维数为
+\[
+\dim A_m=m^2+m+2,\qquad
+\dim J= m^2+1,\qquad
+\dim J^2=(m-1)^2,\qquad J^3=0.
+\tag{6}
+\]
+这里 \(E_j\) 是一条 \(m\)-cycle 的边，随 \(j\) 恰好遍历该圈的全部边。
+
+记 \(P_i=A_me_i\)，\(X=\bigoplus_{i=1}^mL_i\)。有
+\[
+P_0=\langle e_0,a_1,\ldots,a_m,z\rangle,\quad \dim P_0=m+2,
+\]
+\[
+P_i=\langle e_i,b_i,c_{ji}:i\in S_j\rangle,\quad \dim P_i=m.
+\tag{7}
+\]
+每个外围指标恰好属于两个 \(E_j\)，所以后一组 \(c\) 恰有 \(m-2\) 个。
+
+对上一稿的中心单分支返回核，\(N_i=\mathbb Cb_i,\ M_i=\mathbb Ca_i\)，其非对角 \(J^2\) 部分均为零，而 \(b_i a_i=z\ne0\)。因此
+\[
+\boxed{\kappa_i=0\quad(1\le i\le m).}
+\tag{8}
+\]
+所以必须使用上一稿没有捕获的混合关系或高阶关系。
+
+## 3. 中心 simple 的精确五步返回
+
+**定理 2。** 对全部 \(m\ge3\)，
+\[
+\boxed{
+\Omega^4L_0\simeq P_0/\mathbb Cz\ \oplus\ X^{\oplus(m-3)},
+}
+\tag{9}
+\]
+从而
+\[
+\boxed{
+\Omega^5L_0\simeq L_0\ \oplus\
+(\Omega X)^{\oplus(m-3)}.
+}
+\tag{10}
+\]
+
+**证明。** 第一个覆盖
+\[
+\bigoplus_{i=1}^mP_i\twoheadrightarrow\Omega L_0=JP_0
+\]
+把第 \(i\) 个头送到 \(a_i\)。它在中心坐标把各个 \(b_i\) 都送到 \(z\)。因此其 kernel 的中心部分是
+\[
+W=\{(\lambda_1,\ldots,\lambda_m)\in\mathbb C^m:
+\textstyle\sum_i\lambda_i=0\},
+\]
+外围顶点 \(j\) 的部分为 \(\mathbb C^{S_j}\)，来自 \(c_{ji}\) 的独立 copies。作用 \(a_j\) 是坐标限制
+\[
+W\longrightarrow\mathbb C^{S_j}.
+\]
+因为 \(|S_j|=m-2<m\)，该限制满射；故 \(\Omega^2L_0\) 的 top 仅在中心，重数 \(m-1\)。
+
+下一个覆盖为 \(P_0\otimes_{\mathbb C}W\)。其 kernel \(\Omega^3L_0\) 在中心的部分为 \(z\otimes W\simeq W\)，在外围 \(j\) 的部分为
+\[
+U_j=\{\lambda\in W:\lambda_i=0\text{ 对所有 }i\in S_j\}
+=\mathbb C u_j,
+\]
+其中可取
+\[
+u_j=\epsilon_{s(j)}-\epsilon_{s^2(j)}.
+\tag{11}
+\]
+作用 \(b_j:U_j\to W\) 是包含映射。由于 (11) 是一个连通圈的有向 incidence vectors，它们张成 \(W\)，而唯一的线性关系为
+\[
+\sum_j u_j=0.
+\tag{12}
+\]
+所以 \(\Omega^3L_0\) 的 top 恰为 \(X\)。
+
+用 \(\bigoplus_jP_j\) 覆盖 \(\Omega^3L_0\)，把各头送到 \(u_j\)。由 (12)，kernel \(\Omega^4L_0\) 的中心部分是一维，由所有 \(b_j\)-coordinates 的和生成；外围 \(k\) 的部分是 \(\mathbb C^{S_k}\)，维数 \(m-2\)。
+
+在这个 kernel 上，所有 \(b\)-actions 和二次 radical actions 都为零；\(a_k\) 将中心生成元送到
+\[
+\sum_{i\in S_k}c_{ki}\ne0.
+\]
+因此中心生成的子模有一个中心头、每个外围各一个 radical coordinate，正好同构于 \(P_0/\mathbb Cz\)。每个外围还剩 \(m-3\) 个被 radical 消灭的补空间，构成 \(X^{\oplus(m-3)}\) 的直接和。这样得到 (9)。
+
+最后，\(\Omega(P_0/\mathbb Cz)=\mathbb Cz\simeq L_0\)，而最小 syzygy 保持有限直和，所以得到 (10)。每一步都使用实际 kernel；没有仅凭维数认定模块同构。\(\square\)
+
+定理 1 与 (10) 给出
+\[
+\mathbb C[t]\hookrightarrow\operatorname{Ext}_{A_m}^*(L_0,L_0),
+\qquad |t|=5.
+\tag{13}
+\]
+特别地，\(\operatorname{Tor}_{5q}^{A_m}(R_0,L_0)\ne0\) 对每个 \(q\ge1\) 成立。
+
+这个非幂零五次类不能属于由全部 simples 之间的 \(\operatorname{Ext}^1\) 生成的子代数：真正的箭头图是二部星图，任意奇数长度的 arrow word 都不能从中心回到中心。这里的“不能”仅针对次数一生成的子代数，没有额外断言该类在全 Yoneda algebra 中绝对不可分解。
+
+## 4. 外围总模块的递推与增长
+
+**定理 3。** 还有
+\[
+\boxed{\Omega^5X\simeq
+X^{\oplus(m-2)}\oplus(\Omega^2X)^{\oplus(m-3)}.}
+\tag{14}
+\]
+
+**证明。** 固定外围 \(i\)，定义
+\[
+U_i'=\{s^{-1}(i),s^{-2}(i)\},\qquad t_i=s^{-3}(i),
+\]
+\[
+D_i=\{k:E_k\cap U_i'=\varnothing\}.
+\]
+\(U_i'\) 是该 \(m\)-cycle 的一条边，故 \(|D_i|=m-3\)。
+
+覆盖 \(P_0\to JP_i\) 的 kernel 由 \(z\) 及 \(a_j\)（\(j\in U_i'\)）生成。继续用这两个外围 projectives 覆盖，得到 \(\Omega^3L_i\)：中心为一维，外围 \(k\) 的维数是 \(|U_i'\cap S_k|\)。中心在顶点 \(k\) 的 \(a_k\)-image 非零，当且仅当 \(k\ne t_i\)，其余 radical actions 为零。
+
+因此
+\[
+\Omega^3L_i\simeq
+P_0/A_ma_{t_i}\ \oplus\ \bigoplus_{k\in D_i}L_k.
+\]
+取一次 syzygy 得到
+\[
+\Omega^4L_i\simeq A_ma_{t_i}\ \oplus\
+\bigoplus_{k\in D_i}\Omega L_k.
+\]
+而 \(A_ma_{t_i}=\langle a_{t_i},z\rangle\)，覆盖 \(P_{t_i}\to A_ma_{t_i}\) 的 kernel 是 \(J^2P_{t_i}\)，故
+\[
+\Omega^5L_i\simeq
+\bigoplus_{\substack{j\\t_i\in S_j}}L_j
+\ \oplus\ \bigoplus_{k\in D_i}\Omega^2L_k.
+\tag{15}
+\]
+第一组有 \(m-2\) 个 simple。对 \(i\) 求和时，循环对称性使每个 \(L_j\) 出现 \(m-2\) 次、每个 \(\Omega^2L_k\) 出现 \(m-3\) 次，得到 (14)。\(\square\)
+
+反复使用 (10)、(14)，有
+\[
+\Omega^{5q}L_0\simeq L_0\oplus
+\bigoplus_{r=0}^{q-1}(\Omega^{5r+1}X)^{\oplus(m-3)},
+\]
+且 \(\Omega^{5r}X\) 含有 \(X^{\oplus(m-2)^r}\) 为直接和。由于 \(\operatorname{top}\Omega X=L_0^{\oplus m}\)，得到
+\[
+\boxed{
+\dim\operatorname{Tor}_{5q}^{A_m}(R_0,L_0)
+\ge m(m-2)^q-m+1\quad(q\ge0).
+}
+\tag{16}
+\]
+\(m=3\) 时右端为 1；\(m\ge4\) 时是指数下界。
+
+还可以写出精确的中心 Betti series。令
+\[
+x_n=\dim\operatorname{Ext}_{A_m}^n(X,L_0),\qquad
+y_n=\dim\operatorname{Ext}_{A_m}^n(L_0,L_0).
+\]
+由 (10)、(14)，对 \(n\ge5\)，
+\[
+x_n=(m-2)x_{n-5}+(m-3)x_{n-3},\qquad
+y_n=y_{n-5}+(m-3)x_{n-4}.
+\]
+前面计算给出
+\[
+(x_0,\ldots,x_4)=(0,m,0,m,m(m-3)),
+\]
+\[
+(y_0,\ldots,y_4)=(1,0,m-1,0,1).
+\]
+所以
+\[
+X(t)=\sum x_nt^n
+=\frac{mt(1+t^2)}{1-(m-3)t^3-(m-2)t^5},
+\]
+\[
+\boxed{
+Y(t)=\sum y_nt^n
+=\frac{1+(m-1)t^2+t^4+(m-3)t^4X(t)}{1-t^5}.
+}
+\tag{17}
+\]
+
+## 5. 五顶点模式与有限核算
+
+当 \(m=4\) 时，\(\dim A_4=22\)。将本稿外围标签 \(1,2,3,4\) 依次对应旧稿标签 \(1,3,2,4\)，其 Peirce 支撑就是
+\[
+C_{\rm cols}=[31,11,21,13,19].
+\]
+所有 \(\kappa_i=0\)，但
+\[
+\Omega^5L_0\simeq L_0\oplus\Omega X,\qquad
+\dim\operatorname{Tor}_{5q}(R_0,L_0)\ge4\cdot2^q-3.
+\]
+中心 Betti numbers 的开头为
+\[
+1,0,3,0,1,5,0,7,4,1,17,4,15,\ldots
+\]
+由此可见它不实现旧稿的 \(H\)：特别是其 \(H_{00}=1\)。这里只验证了残余 \(C\) 中一种真实乘法的高阶返回机制，并没有排除所有具有该 \(C\) 的代数。
+
+[syzygy_return_certificate.py](syzygy_return_certificate.py) 从实际乘法表计算最小 projective covers 和 kernels。每一步都检查覆盖满射、\(A\)-linearity、kernel 位于 projective radical 内，以及 kernel 对全部 radical actions 的稳定性。split simple multiplicities 用 (4) 计算，不凭维数猜测。
+
+本轮核算了 \(m=3,4,5\) 的实际代数：中心消解到次数七，全部外围 simples 到次数五；同时检查了用于 (9)、(15) 的完整作用形态。结果保存在 [syzygy-return-certificates.json](syzygy-return-certificates.json)，五顶点乘法表保存在 [five-vertex-hub-algebra.json](five-vertex-hub-algebra.json)。
+
+运行示例：
+
+~~~powershell
+python outputs/syzygy_return_certificate.py --demo --m 3 4 5 --output outputs/syzygy-return-certificates.json --quiet
+~~~
+
+这些有限核算支持实际构造及实现。对全部 \(m,q\) 的结论来自第 1–4 节的证明。该族满足 \(J^3=0\)，这一大类的 qualitative self-Ext 检测已有 [Saorín，Theorem 2](https://arxiv.org/pdf/math/0306043)；本稿不宣称首次证明该类具有 infinite \(+\)。
+
+主目标仍是 [任意 N 的 (FG) 桥梁](N-Vertex-Main-Route.md)。本稿的新工具作用是检测真实高阶 syzygy 中的分裂返回，辅助研究深层核商的生成与重复；其适用范围不能自动扩大到所有 finite-dimensional algebras。原 verified fact graph 未修改。

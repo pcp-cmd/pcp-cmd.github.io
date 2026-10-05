@@ -1,0 +1,22 @@
+## UGA-C072 — Nonsplit Square-Zero Ordinary Quotients Give Tor/Ext Isomorphism and Strict Descent
+**Status:** COMPLETE SELF-AUDITED ALL-DEGREE/ALL-SIZE PROOFS / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Nonsplit-Square-Zero-Quotients-and-Ordinary-Tor-2026-10-03.md, Sections 1--4 and 6.
+
+Let K be an actual radical ideal with K^2=0, and C=A/K. Its C-bimodule is canonical. Assume pd_{C^e} K<=D and actual K^{tensor_C^L ell}=0. Set W=ell-1, U=(ell-1)(D+1). Then every labelled pair has the natural ordinary Tor isomorphism
+
+\[
+\operatorname{Tor}^A_n(R_z,L_y)\xrightarrow{\cong}
+\operatorname{Tor}^C_n(R_z,L_y)\qquad(n>U+1).
+\]
+
+It is injective for n>U, and dual ordinary Ext inflation is an isomorphism in the same high degrees. Every quotient-edge death occurs by ordinary kernel-count page W. Both ambient quotient-module pd values are <=U. If gldim C=g is finite, gldim A<=g+U; if gldim A=h is finite, gldim C<=max(h,U+1). Thus global infinity is equivalent and a supported C tail lifts in high degrees.
+
+The actual ordinary bar filtration by at least p kernel letters has C-block derived tensor words shifted by p. Square-zero prevents count decreasing; a merely linear section's nonsplit multiplication error increases it. Perfect resolutions bound vertical degrees by pD, actual nilpotence kills all p>=ell, and finite convergence confines kernel homology to total degrees <=U. No ordinary/derived algebra section, negative-cohomology bound or one-sided projectivity is assumed.
+
+For nonzero K a bad A gives a bad C with strictly smaller dimension. Checked towers of these actual nonsplit reductions close at arbitrary finite size over any justified Gap-A base, and can join C069's split radical and existing eligible vertex moves. No automatic inheritance or universal reduction existence is asserted. Unlike C069, gldim C<=gldim A and a low-degree Tor retract are not claimed.
+
+If actual K is instead left C-projective, write Ke_j=sum_i(Ce_i)^{T(i,j)}. Without perfectness or nilpotence, actual ordinary projective-column Tor has series (I-tT)^(-1). Its first page has total degree p, whereas later maps increase p and lower total degree; it collapses despite nonsplit products. Cycles force supported ordinary return. Acyclic T on v vertices gives actual derived tensor nilpotence and pd_A C<=v-1. With additional C^e-perfectness the entire one-sided-projective square-zero extension class over Gap-A bases closes. The right-module version is direct and uses no opposite-+ transfer.
+
+For a checked perfect-nilpotent tower with terminal C061 all-vertex sections and initial all-supported vanishing n>=M, let M_*=max(M,max_i(U_i+2)); then gldim A<=(v-1)M_*+sum_i U_i. The cutoff increase and all-source/all-degree hypotheses are retained. The page bound is kernel-letter count, not local excursion or idempotent negative weight.
+
+---

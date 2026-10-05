@@ -1,0 +1,9 @@
+## UGA-C071 — Aperiodic Actual Projective-Column Cycles Need Not Give Ordinary Return
+**Status:** EXPLICIT ALL-DEGREE/ALL-CHARACTERISTIC PROOF / PRIOR ACTUAL EVIDENCE REUSED / NOT INDEPENDENTLY VERIFIED  
+**Source:** periodic-component Run, Section 5; actual A5 basis and resolutions from Run-Target-B-Primitive-Seed-Correction-2026-10-03.md, Section 2.
+
+The actual five-dimensional Auslander calibration has gldim two and retained formal model H=k<u>, |u|=-1, over C=k. Every actual M_d=k u^d is projective on both sides and perfect as a C-bimodule. Its actual one-vertex weighted graph has loops of all weights d+1>=2, so its closed-walk gcd is one. Nevertheless its retained ordinary Tor series is 1+t^2, proved by the old finite simple resolution and the explicit semifree H resolution d eta=u, |eta|=-2.
+
+The unrestricted weighted-word inverse would instead be (1-t)/(1-t-t^2), an infinite series. Actual binary multiplication u^a u^b=u^{a+b} produces the cancellations. Thus even an actual projective-column many-layer cycle, bimodule perfectness and augmented formality do not imply an ordinary tail at g=1. This is a finite-gldim calibration, not an infinite-pd anchor or Gap-A counterexample. C065, C066 and C070 are unaffected. Unchanged old computation was not rerun.
+
+---

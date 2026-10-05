@@ -1,0 +1,215 @@
+"""Literal minimal covers for the finite-pd quotient-deletion obstruction.
+
+Extends frozen project helpers. Finite integral checks support the written
+arbitrary-m proof; they are not independent verification or an infinity
+inference from a finite Betti prefix.
+"""
+from pathlib import Path
+import sys
+sys.stdout.reconfigure(encoding="utf-8")
+frozen = Path(sys.argv[sys.argv.index("--project-root")+1]) / (
+    "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py")
+exec(compile(frozen.read_text(encoding="utf-8").split(
+    "\nfor p in [3,5,8]:", 1)[0], str(frozen), "exec"), globals())
+
+def cyclic_table(m):
+    N = 5*m
+    lengths = [2 if i % 5 in (0,1) else 3 for i in range(N)]
+    paths = [(i,0) for i in range(N)]
+    paths += [(i,l) for i in range(N) for l in range(1,lengths[i])]
+    index = {p:b for b,p in enumerate(paths)}
+    basis = [(f"p{i}_{l}",(i+l)%N,i) for i,l in paths]
+    products = {}
+    for left in range(N,len(paths)):
+        j,t = paths[left]
+        for right in range(N,len(paths)):
+            i,l = paths[right]
+            if j == (i+l)%N and l+t < lengths[i]:
+                products[left,right] = index[i,l+t]
+    A = Table(N,basis,products)
+    A.path_lengths = {b:l for b,(i,l) in enumerate(paths)}
+    return A,lengths,paths
+
+def truncated_projective(A,v,length):
+    """Literal quotient of Ae_v by its paths of length >=length."""
+    P,local = projective(A,v)
+    kept = [[b for b in part if A.path_lengths[b] < length]
+            for part in local]
+    dims = list(map(len,kept))
+    pos = [{b:i for i,b in enumerate(part)} for part in kept]
+    actions = []
+    for r in A.radical:
+        _,target,source = A.basis[r]
+        columns = []
+        for b in kept[source]:
+            col = [F(0)]*dims[target]
+            out = A.mult(r,b)
+            if out in pos[target]:
+                col[pos[target][out]] = F(1)
+            columns.append(col)
+        actions.append(columns)
+    M = sr.Module(A.alg,dims,actions)
+    ss.parse_module(A.alg,ss.module_payload(M))
+    return M
+
+def uniserial_iso(M,N):
+    """Full A-linear integral isomorphism, using all basis actions."""
+    assert M.dimensions == N.dimensions
+    assert max(M.dimensions,default=0) <= 1
+    scalars = {}
+    equations = []
+    for r,b in enumerate(M.algebra.basis):
+        left,right = b["left"],b["right"]
+        if M.dimensions[left] and M.dimensions[right]:
+            a,beta = M.actions[r][0][0],N.actions[r][0][0]
+            assert bool(a) == bool(beta)
+            if a:
+                equations.append((right,left,beta/a))
+    for v,d in enumerate(M.dimensions):
+        if not d or v in scalars:
+            continue
+        scalars[v] = F(1)
+        changed = True
+        while changed:
+            changed = False
+            for source,target,ratio in equations:
+                if source in scalars and target not in scalars:
+                    scalars[target] = ratio*scalars[source]
+                    changed = True
+                if target in scalars and source not in scalars:
+                    scalars[source] = scalars[target]/ratio
+                    changed = True
+    assert all(a in (F(-1),F(1)) for a in scalars.values())
+    maps = [[[scalars[v]]] if d else [] for v,d in enumerate(M.dimensions)]
+    checked = ss.check_isomorphism(M,N,ss.encode(maps))
+    counts["actual_kernel_isomorphisms"] += 1
+    return {"map":maps,"check":checked,"unit_determinants":True}
+
+def quotient(A,deleted,paths):
+    """Actual Ae_deleted A quotient: kill every path visiting deleted."""
+    N = A.vertices
+    surviving = [b for b,(i,l) in enumerate(paths)
+                 if deleted not in {(i+t)%N for t in range(l+1)}]
+    vertex_map = {v:j for j,v in enumerate(v for v in range(N) if v != deleted)}
+    old_to_new = {b:j for j,b in enumerate(surviving)}
+    basis = [(A.basis[b][0],vertex_map[A.basis[b][1]],
+              vertex_map[A.basis[b][2]]) for b in surviving]
+    products = {(old_to_new[i],old_to_new[j]):old_to_new[k]
+                for (i,j),k in A.products.items()
+                if i in old_to_new and j in old_to_new and k in old_to_new}
+    B = Table(N-1,basis,products)
+    B.path_lengths = {old_to_new[b]:A.path_lengths[b] for b in surviving}
+    return B,vertex_map,[b for b in range(len(paths)) if b not in old_to_new]
+
+outputs = []
+for m in (1,2,3):
+    A,c,paths = cyclic_table(m)
+    N = A.vertices
+    op = A.opposite()
+    op.path_lengths = A.path_lengths
+    assert len(A.basis) == 13*m
+    assert len(A.alg.radical_powers[2]) == 0
+    d = [sum(r == i for _,_,r in op.basis) for i in range(N)]
+    assert d == [3,3,2,2,3]*m
+    states = []
+    M = sr.Module.simple(A.alg,0)
+    top,length = 0,1
+    for n in range(4*m):
+        K,info,cert = cover(M)
+        newtop,newlength = (top+length)%N,c[top]-length
+        assert newlength > 0
+        expected = truncated_projective(A,newtop,newlength)
+        iso = uniserial_iso(K,expected)
+        states.append({"n":n,"top":top,"length":length,
+                       "cover":cert,"expected_kernel":ss.module_payload(expected),
+                       "kernel_isomorphism":iso})
+        M,top,length = K,newtop,newlength
+    period_iso = uniserial_iso(M,sr.Module.simple(A.alg,0))
+    assert (top,length) == (0,1)
+
+    right_states = []
+    M = sr.Module.simple(op.alg,2)
+    top,length = 2,1
+    for n in range(4*m):
+        K,info,cert = cover(M)
+        newtop,newlength = (top-length)%N,d[top]-length
+        assert newlength > 0
+        expected = truncated_projective(op,newtop,newlength)
+        iso = uniserial_iso(K,expected)
+        right_states.append({"n":n,"top":top,"length":length,
+                             "cover":cert,
+                             "expected_kernel":ss.module_payload(expected),
+                             "kernel_isomorphism":iso})
+        M,top,length = K,newtop,newlength
+    right_period_iso = uniserial_iso(M,sr.Module.simple(op.alg,2))
+    assert (top,length) == (2,1)
+
+    finite = {}
+    for name,T,expected_vertex in (("left",A,5%N),("right",op,3)):
+        K,info,cert = cover(sr.Module.simple(T.alg,4))
+        P,_ = projective(T,expected_vertex)
+        iso = uniserial_iso(K,P)
+        zero,last,lastcert = cover(K)
+        assert sum(zero.dimensions) == 0
+        finite[name] = {"pd":1,"first_cover":cert,"projective_kernel":iso,
+                        "last_cover":lastcert}
+
+    I_left = [[b for b,(i,l) in enumerate(paths)
+               if 4 in {(i+t)%N for t in range(l+1)} and A.basis[b][1] == v]
+              for v in range(N)]
+    I_right = [[b for b,(i,l) in enumerate(paths)
+                if 4 in {(i+t)%N for t in range(l+1)} and op.basis[b][1] == v]
+               for v in range(N)]
+    # The two-column submodules are literally ideals of A, not a
+    # virtual Grothendieck-group identity.
+    left_cross = [[b for b in part if A.basis[b][2] == 3] for part in I_left]
+    right_cross = [[b for b in part if op.basis[b][2] == 5%N] for part in I_right]
+    U = supported_module(A,left_cross)
+    V = supported_module(op,right_cross)
+    assert sum(U.dimensions) == sum(V.dimensions) == 2
+    KU,_,certU = cover(U)
+    KV,_,certV = cover(V)
+    isoU = uniserial_iso(KU,sr.Module.simple(A.alg,6%N))
+    isoV = uniserial_iso(KV,sr.Module.simple(op.alg,2))
+
+    B,vmap,killed = quotient(A,4,paths)
+    assert len(killed) == 6
+    quotient_states = []
+    M = sr.Module.simple(B.alg,vmap[0])
+    for n in range(4):
+        K,info,cert = cover(M)
+        quotient_states.append({"n":n,"cover":cert})
+        if n < 3:
+            uniserial_iso(K,sr.Module.simple(B.alg,vmap[n+1]))
+        else:
+            assert sum(K.dimensions) == 0
+        M = K
+    outputs.append({
+        "m":m,"vertices":N,"dimension":len(A.basis),
+        "algebra":A.payload,"left_projective_lengths":c,
+        "right_projective_lengths":d,"actual_left_period":4*m,
+        "left_L0_periodic_covers":states,"period_isomorphism":period_iso,
+        "right_R2_periodic_covers":right_states,
+        "right_period_isomorphism":right_period_iso,
+        "deleted_vertex":4,"deleted_simple_pds":finite,
+        "left_kernel_direct_summand":certU,"left_kernel_syzygy_L6":isoU,
+        "right_kernel_direct_summand":certV,"right_kernel_syzygy_R2":isoV,
+        "quotient_algebra":B.payload,"killed_basis_indices":killed,
+        "actual_quotient_L0_covers":quotient_states,"quotient_L0_pd":3,
+        "claims_from_written_all_m_proof":{
+            "deleted_simple_left_and_right_pd":1,
+            "ambient_L0_periodic":True,
+            "ambient_supported_diagonal_degrees":f"positive multiples of {4*m}",
+            "quotient_global_dimension_upper_bound":N-2,
+            "ordinary_ideal_kernel_both_pds":"infinite",
+            "same_pair_high_ordinary_Tor_comparison":False,
+            "not_a_Gap_A_counterexample":True}
+    })
+
+result = {"status":"passed","python":sys.version,"parameters":[1,2,3],
+          "counts":counts,"families":outputs,"independent_verification":False,
+          "scope":"Finite integral actual full minimal covers; written arbitrary-m/all-field proof is separate. No new backend or default hashes."}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+"\n",
+                    encoding="utf-8")
+print(json.dumps({k:result[k] for k in (
+    "status","parameters","counts","independent_verification")}))

@@ -1,0 +1,153 @@
+# §0 Mathematical verdict
+
+**Not solved.** No verified fact, proof, or counterexample exists in this project; the central blocker is the full converse from eventual Hochschild-homology vanishing to finite global dimension.
+
+**Closed components.** None: the fact graph is empty.
+
+**Viable proof architecture.** Run two symmetric routes without assuming either outcome: derive homological smoothness from eventual vanishing, or construct a finite-dimensional complex algebra for which eventual vanishing coexists with a nonzero singularity category.
+
+**Main blocker.** There is no verified bridge from the Hochschild homology of the diagonal bimodule to the projective dimensions of all simple modules, and there is no verified counterexample satisfying every hypothesis.
+
+**Highest-priority unresolved bridge.** Decide, with a complete proof or a fully checked construction, whether a non-perfect diagonal/singularity category can be invisible to Hochschild homology in all sufficiently high degrees.
+
+**Method failure vs. proposition failure.** There is presently evidence for neither method failure nor proposition failure; both positive and negative routes remain UNKNOWN.
+
+**Calibration caveat.** Do not read UNKNOWN as evidence for either truth value; it records only the empty verified state.
+
+| Dashboard item | Current state |
+|---|---|
+| Fixed goal | UNCHANGED: determine whether every finite-dimensional complex algebra with \(HH_n(A)=0\) for all sufficiently large \(n\) has \(\operatorname{gldim}(A)<\infty\). |
+| Verified complete proof | NO |
+| Verified counterexample | NO |
+| Signed-closed sub-tasks | 0 |
+| Main blocker | No verified implication from eventual Hochschild-homology vanishing to perfection of the diagonal, and no verified construction separating them. |
+| Routes marked false/obsolete | NO |
+| Highest-priority unresolved task | P0: prove the implication or verify a finite-dimensional complex counterexample satisfying both required properties. |
+
+| Sub-task | Status | Closed facts | Conditional facts | Main missing interface |
+|---|---|---|---|---|
+| Exact statement and hypotheses | UNKNOWN | none | none | Check the standard separability/base-field formulation and all equivalent finiteness formulations. |
+| Positive implication | UNKNOWN | none | none | Turn eventual \(HH_n\)-vanishing into finite projective dimensions for every simple module. |
+| Counterexample construction | UNKNOWN | none | none | Produce an ordinary finite-dimensional complex algebra and verify both eventual vanishing and infinite global dimension. |
+| Adversarial validation | UNKNOWN | none | none | Test every proposed proof or construction without importing unverified assumptions. |
+
+**Current best proof skeleton.**
+
+1. Fix the standard finite-dimensional complex-algebra formulation and its quantifiers.
+2. Express finite global dimension through projective dimensions of simple modules and/or perfection of the diagonal.
+3. Express eventual Hochschild-homology vanishing through an appropriate Hochschild chain model.
+4. Identify the exact information lost when diagonal homology is passed to Hochschild homology.
+5. Either prove that this loss cannot hide a non-perfect diagonal in the finite-dimensional complex setting,
+6. or construct an algebra in which it does hide one.
+7. Verify all finiteness, field, grading, and degree hypotheses independently.
+8. Submit the resulting implication or counterexample through the independent verifier.
+
+**Central missing lemma.** For every finite-dimensional complex algebra \(A\), determine whether the condition that there exists \(N\) with \(HH_n(A)=0\) for every \(n\ge N\) forces every finite-dimensional simple right \(A\)-module to have finite projective dimension. This is non-trivial because Hochschild homology is an invariant of the diagonal bimodule after a trace-like operation and need not visibly retain every module-theoretic obstruction.
+
+# §1 Closed components and obsolete routes
+
+## Signed-closed components
+
+_(no signed-closed components yet)_
+
+## Failed or obsolete routes
+
+_(no failed or obsolete routes recorded; absence here does not mean the strategy is unique)_
+
+# §2 Interface contract table
+
+### Exact formulation → research target — make every hypothesis type-check
+
+**Input required.** An ordinary finite-dimensional associative unital algebra over \(\mathbb C\), standard Hochschild homology, and eventual vanishing in all degrees beyond one bound.
+
+**Output claimed.** A precise statement whose positive conclusion is finite left/right global dimension and whose negative resolution is one algebra satisfying all input hypotheses with infinite global dimension.
+
+**Available facts.** None.
+
+**Missing verification on the actual model.** (1) Fix conventions; (2) verify equivalence of the selected global-dimension formulations under these hypotheses; (3) distinguish ordinary from dg or topological variants.
+
+**Failure mode if ignored.** A construction outside the ordinary finite-dimensional complex setting, or a proof using a stronger vanishing hypothesis, would not decide the stated conjecture.
+
+**Status.** UNKNOWN
+
+### Eventual vanishing → module-theoretic finiteness — positive route
+
+**Input required.** A finite-dimensional complex algebra \(A\) and a bound \(N\) such that \(HH_n(A)=0\) for all \(n\ge N\).
+
+**Output claimed.** Every simple \(A\)-module has finite projective dimension, hence \(\operatorname{gldim}(A)<\infty\).
+
+**Available facts.** None.
+
+**Missing verification on the actual model.** (1) A bridge from trace-level homology to the diagonal resolution; (2) a bridge from the diagonal resolution to all simples; (3) uniform finiteness.
+
+**Failure mode if ignored.** Vanishing of a derived invariant may be mistaken for vanishing of the category or object from which it was computed.
+
+**Status.** UNKNOWN
+
+### Candidate algebra → verified counterexample — negative route
+
+**Input required.** An explicitly specified ordinary finite-dimensional complex algebra \(A\).
+
+**Output claimed.** A complete computation or theorem application proving \(HH_n(A)=0\) for all sufficiently large \(n\), together with a complete proof that \(\operatorname{gldim}(A)=\infty\).
+
+**Available facts.** None.
+
+**Missing verification on the actual model.** (1) Finite-dimensionality; (2) ordinary-algebra status; (3) the full required range of Hochschild vanishing; (4) an infinite-global-dimension witness; (5) compatibility of every imported theorem.
+
+**Failure mode if ignored.** A dg, infinite-dimensional, topological, or only partially vanishing example would be irrelevant; an unverified categorical equivalence would leave the construction incomplete.
+
+**Status.** UNKNOWN
+
+# §3 Dangerous heuristic lines and strategies not to pursue
+
+- “Eventual Hochschild-homology vanishing means the diagonal bimodule is perfect.” **Status: Not automatic.** This is precisely the unproved converse mechanism; no signed fact currently supports it.
+- “A nonzero singularity category must have nonzero Hochschild homology in arbitrarily high degrees.” **Status: Conditional only.** A trace-type invariant can in principle fail to detect a nonzero category; no detection theorem is verified here.
+- “Enough positive special cases prove the general conjecture.” **Status: Mathematically incorrect as stated.** Special families can guide a proof but cannot exclude a counterexample outside them.
+- “A plausible categorical construction is already a counterexample.” **Status: Method shortcut, not a proof step.** Every equivalence and every finiteness/vanishing property must be checked on the final ordinary algebra.
+
+**Strategies not to pursue.**
+
+- Do not infer the answer from the title or abstract of any paper: reproduce the proof through verifier-checkable claims.
+- Do not use dg or topological counterexamples without an explicit verified passage to an ordinary finite-dimensional complex algebra.
+- Do not confuse Hochschild cohomology counterexamples with the homology conjecture.
+- Do not accept finite total dimension, boundedness, and eventual vanishing as interchangeable without checking finite-dimensionality in each degree.
+- Do not reveal direct-resolution literature to Phase-I workers before their independent record is frozen.
+
+# §4 Missing bridge lemmas
+
+### Bridge 1 — trace detection or its failure
+
+**Target statement.** For finite-dimensional complex algebras, either prove that eventual vanishing of Hochschild homology detects perfection of the diagonal, or construct and verify a non-perfect diagonal whose Hochschild homology vanishes eventually.
+
+**Prerequisites.** Precise chain/categorical models and all finiteness hypotheses.
+
+**Existing facts to use.** None.
+
+**Missing checks.** (1) Identify a valid detection theorem, or (2) build an explicit failure and verify that it descends to the required algebraic setting.
+
+**Closure criterion.** A complete implication proof closes the positive route; a fully verified finite-dimensional ordinary algebra closes the negative route. This bridge is independent and parallelizable in its two directions.
+
+### Bridge 2 — infinite global dimension witness
+
+**Target statement.** For any candidate negative example \(A\), exhibit a simple module of infinite projective dimension or an equivalent fully verified obstruction to finite global dimension.
+
+**Prerequisites.** An explicit finite-dimensional complex algebra and a valid module/categorical model.
+
+**Existing facts to use.** None.
+
+**Missing checks.** Construct the witness and prove it survives every equivalence or quotient used in the candidate construction.
+
+**Closure criterion.** The bridge closes only when infinite global dimension follows by a complete argument on the final algebra. It depends on a candidate example but can be adversarially checked in parallel.
+
+### Bridge 3 — eventual vanishing computation
+
+**Target statement.** For any candidate negative example \(A\), prove that one bound \(N\) satisfies \(HH_n(A)=0\) for every \(n\ge N\).
+
+**Prerequisites.** A valid Hochschild complex or an applicable invariance/localization theorem with all hypotheses matched.
+
+**Existing facts to use.** None.
+
+**Missing checks.** Control all degrees beyond one bound and rule out a merely sparse vanishing pattern.
+
+**Closure criterion.** The bridge closes only with an all-high-degree computation or a theorem whose hypotheses are verified on the final algebra. It depends on a candidate example and is parallelizable with Bridge 2.
+

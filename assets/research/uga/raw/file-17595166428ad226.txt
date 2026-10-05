@@ -1,0 +1,142 @@
+"""Finite Peirce certificates for explicitly nonzero Tor in all cycle multiples.
+
+C_columns[s] has bit t set exactly when e_t A e_s != 0.
+A certificate checks a theorem hypothesis, never a finite Tor cutoff.
+No certificate does not mean finite global dimension or a counterexample.
+Uses only the Python standard library.
+"""
+import argparse
+import json
+from pathlib import Path
+
+
+def validate(columns):
+    if not isinstance(columns, list) or not columns:
+        raise ValueError("C_columns must be a nonempty list")
+    n = len(columns)
+    if any(type(x) is not int or x < 0 or x >= 1 << n for x in columns):
+        raise ValueError("Each column must be an n-bit nonnegative integer")
+    if any(not (columns[i] >> i & 1) for i in range(n)):
+        raise ValueError("Every diagonal entry must be 1")
+    return n
+
+
+def forced_arrows(columns):
+    """Return (source, target) pairs forced to meet J/J^2 nontrivially."""
+    n = validate(columns)
+    return [(s, t) for s in range(n) for t in range(n)
+            if s != t and columns[s] >> t & 1
+            and not any(columns[s] >> u & 1 and columns[u] >> t & 1
+                        for u in range(n) if u not in (s, t))]
+
+
+def find_cycle(columns):
+    """Find a directed cycle in the graph of allowed consecutive arrows."""
+    arrows = forced_arrows(columns)
+    outgoing = {}
+    for edge in arrows:
+        outgoing.setdefault(edge[0], []).append(edge)
+    adjacency = {edge: [nxt for nxt in outgoing.get(edge[1], [])
+                        if not (columns[edge[0]] >> nxt[1] & 1)]
+                 for edge in arrows}
+    color = {}
+    for root in arrows:
+        if color.get(root, 0):
+            continue
+        path = [root]
+        position = {root: 0}
+        stack = [iter(adjacency[root])]
+        color[root] = 1
+        while stack:
+            nxt = next(stack[-1], None)
+            if nxt is None:
+                old = path.pop()
+                position.pop(old)
+                color[old] = 2
+                stack.pop()
+            elif color.get(nxt, 0) == 0:
+                color[nxt] = 1
+                position[nxt] = len(path)
+                path.append(nxt)
+                stack.append(iter(adjacency[nxt]))
+            elif color[nxt] == 1:
+                edges = path[position[nxt]:]
+                return [edge[0] for edge in edges]
+    return None
+
+
+def check_cycle(columns, cycle):
+    """Check independently of the search, including the cyclic wraparound.
+
+    The cycle omits the repeated final starting vertex.
+    Repeated vertices are allowed; consecutive vertices must be distinct.
+    """
+    n = validate(columns)
+    if not isinstance(cycle, list) or len(cycle) < 3:
+        return {"valid": False, "reason": "Need at least three cyclic vertices"}
+    if any(type(v) is not int or not 0 <= v < n for v in cycle):
+        return {"valid": False, "reason": "Vertex outside the matrix"}
+    steps = []
+    for index, s in enumerate(cycle):
+        t = cycle[(index + 1) % len(cycle)]
+        u = cycle[(index + 2) % len(cycle)]
+        intermediates = [q for q in range(n) if q not in (s, t)
+                         and columns[s] >> q & 1 and columns[q] >> t & 1]
+        if s == t or not (columns[s] >> t & 1):
+            return {"valid": False, "reason": "Missing off-diagonal Peirce edge"}
+        if intermediates:
+            return {"valid": False, "reason": "Arrow primitivity not forced",
+                    "edge": [s, t], "possible_intermediates": intermediates}
+        if columns[s] >> u & 1:
+            return {"valid": False, "reason": "Consecutive product not forced zero",
+                    "triple": [s, t, u]}
+        steps.append({"arrow": [s, t], "possible_intermediates": [],
+                      "zero_product_triple": [s, t, u]})
+    return {"valid": True, "cycle": cycle, "length": len(cycle),
+            "diagonal_Tor_vertices": sorted(set(cycle)),
+            "Tor_nonzero_degrees": "all positive multiples of the cycle length",
+            "steps": steps}
+
+
+def analyze(columns, cycle=None):
+    validate(columns)
+    selected = cycle if cycle is not None else find_cycle(columns)
+    result = check_cycle(columns, selected) if selected is not None else {
+        "valid": False, "reason": "No cycle found by this sufficient criterion"}
+    return {"C_columns": columns,
+            "forced_arrows": [list(edge) for edge in forced_arrows(columns)],
+            "certificate": result}
+
+
+def demos():
+    return {name: analyze(columns) for name, columns in {
+        "five_vertex_hub_remaining": [31, 11, 21, 13, 19],
+        "five_vertex_bidirected_cycle_excluded": [25, 22, 14, 13, 19],
+        "five_vertex_mixed_pattern_excluded": [25, 14, 22, 13, 19],
+        "directed_triangle": [3, 6, 5],
+        "bidirected_path": [3, 7, 14, 12],
+        "full_support": [31] * 5,
+    }.items()}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path)
+    parser.add_argument("--demo", action="store_true")
+    parser.add_argument("--output", type=Path)
+    args = parser.parse_args()
+    if args.demo:
+        result = demos()
+    elif args.input:
+        payload = json.loads(args.input.read_text(encoding="utf-8"))
+        result = analyze(payload["C_columns"], payload.get("cycle"))
+    else:
+        parser.error("Supply --input or --demo")
+    encoded = json.dumps(result, indent=2)
+    if args.output:
+        args.output.write_text(encoded + "\n", encoding="utf-8")
+    print(encoded)
+
+
+if __name__ == "__main__":
+    main()

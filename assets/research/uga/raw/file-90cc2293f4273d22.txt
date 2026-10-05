@@ -1,0 +1,143 @@
+"""Check a finite hypothesis of the Peirce elimination theorem.
+
+C_columns[i] is a bit mask: bit k is 1 exactly when e_k A e_i != 0.
+This is not an algebra constructor or a computation of Tor.
+A complete valid elimination order certifies Gap A for every finite-dimensional
+basic complex algebra having the specified Peirce support.
+An incomplete order makes no assertion that a counterexample exists.
+
+Usage:
+    python peirce_elimination_certificate.py --input matrix.json
+    python peirce_elimination_certificate.py --demo
+"""
+import argparse
+import json
+from itertools import combinations
+from pathlib import Path
+
+
+def validate_matrix(columns):
+    n = len(columns)
+    full = (1 << n) - 1
+    if not n or any(not isinstance(x, int) or x < 0 or x & ~full
+                    or not (x >> i & 1) for i, x in enumerate(columns)):
+        raise ValueError('Expected a nonempty reflexive Boolean matrix as column masks')
+
+
+def neighbors(columns, vertex, remaining):
+    return [w for w in remaining if w != vertex
+            and (columns[vertex] >> w & 1 or columns[w] >> vertex & 1)]
+
+
+def obstruction(columns, adjacent):
+    for u, w in combinations(adjacent, 2):
+        if not (columns[u] >> w & 1 and columns[w] >> u & 1):
+            return [u, w]
+    return None
+
+
+def find_order(columns):
+    validate_matrix(columns)
+    remaining = list(range(len(columns)))
+    order = []
+    while remaining:
+        chosen = next((v for v in remaining
+                       if obstruction(columns, neighbors(columns, v, remaining)) is None), None)
+        if chosen is None:
+            break
+        order.append(chosen)
+        remaining.remove(chosen)
+    return order
+
+
+def check_order(columns, order):
+    """Independently check the given finite order, including all directed pairs."""
+    validate_matrix(columns)
+    remaining = set(range(len(columns)))
+    steps = []
+    for v in order:
+        if v not in remaining:
+            raise ValueError('Order has a duplicate or out-of-range vertex')
+        adjacent = sorted(w for w in remaining if w != v
+                          and ((columns[v] & (1 << w)) or (columns[w] & (1 << v))))
+        for u in adjacent:
+            for w in adjacent:
+                if u != w and not (columns[w] & (1 << u)):
+                    raise ValueError(f'Eliminating {v} fails: C[{u},{w}]=0')
+        steps.append({'vertex': v, 'remaining_neighbors': adjacent,
+                      'ordered_neighbor_pairs_checked': len(adjacent) * (len(adjacent) - 1)})
+        remaining.remove(v)
+    zero_count = len(columns) ** 2 - sum(column.bit_count() for column in columns)
+    quantitative = None
+    if not remaining:
+        quantitative = {
+            'zero_Peirce_ordered_pairs': zero_count,
+            'window_factor': {'base': 2, 'exponent': zero_count},
+            'finite_window_theorem':
+                'For N>=1, if every supported Tor vanishes in [N,2^z*N], '
+                'then gldim(A)<2^z*N.',
+            'infinite_recurrence_theorem':
+                'If gldim(A) is infinite, each [N,2^z*N] contains '
+                'a nonzero supported Tor. The pair may depend on N.',
+            'supported_height_bound':
+                'If all supported Tor vanish above b>=0, '
+                'then gldim(A)<=2^z*(b+1)-1.',
+            'tau_height_bound':
+                'If tau-HH_n(A)=0 for n>h>=0, '
+                'then gldim(A)<=2^z*(h+2)-1.',
+            'scope': 'A theorem for this support; no actual Tor values supplied',
+        }
+    return {'C_columns': list(columns), 'order': list(order),
+            'valid_prefix': True, 'complete': not remaining,
+            'certifies_Gap_A': not remaining, 'steps': steps,
+            'remaining_vertices': sorted(remaining),
+            'quantitative_recurrence': quantitative,
+            'meaning': 'Finite support hypothesis only; no Tor truncation or algebra realization asserted'}
+
+
+def bidirected(n, edges):
+    c = [1 << i for i in range(n)]
+    for u, w in edges:
+        c[u] |= 1 << w
+        c[w] |= 1 << u
+    return c
+
+
+def demo():
+    cases = {
+        'bidirected_path_40': bidirected(40, [(i, i+1) for i in range(39)]),
+        'branched_tree_19': bidirected(19, [(0 if k == 0 else 1+6*a+k-1, 1+6*a+k)
+                                          for a in range(3) for k in range(6)]),
+        'one_way_forest_6': [3, 2, 6, 28, 16, 48],
+        'symmetric_clique_chain_7': bidirected(7, sorted(set(
+            edge for clique in [(0, 1, 2), (2, 3, 4), (4, 5, 6)]
+            for edge in combinations(clique, 2)))),
+        'bidirected_cycle_5': bidirected(5, [(i, (i+1) % 5) for i in range(5)]),
+        'one_way_cycle_3': [3, 6, 5],
+    }
+    return {name: check_order(c, find_order(c)) for name, c in cases.items()}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('--input', type=Path)
+    group.add_argument('--demo', action='store_true')
+    parser.add_argument('--output', type=Path)
+    args = parser.parse_args()
+    if args.demo:
+        result = demo()
+    else:
+        data = json.loads(args.input.read_text(encoding='utf-8'))
+        c = data['C_columns'] if isinstance(data, dict) else data
+        order = data.get('order', find_order(c)) if isinstance(data, dict) else find_order(c)
+        result = check_order(c, order)
+    serialized = json.dumps(result, indent=2)
+    if args.output:
+        args.output.write_text(serialized + '\n', encoding='utf-8')
+    else:
+        print(serialized)
+
+
+if __name__ == '__main__':
+    main()

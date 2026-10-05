@@ -1,0 +1,208 @@
+# 任意 N 的乘法参数空间与泛点 Tor 证书
+
+日期：2026-09-23。状态：本文的参数化、秩公式、特化与等价归约有完整自审证明；**一般 supported 泛点非消失步骤 (GP) 仍未证明**。有限全局维数在固定维数下的一致有界性是已知机制，不主张新颖性。本文不是独立数学核验，也不更新原 verified fact graph。
+
+本稿落实两篇 Vault 方法笔记的可用部分：把全部代数约束写成多项式；只对闭条件使用稠密延拓。来源与适用范围见 [Vault-Method-Reuse-20260923.md](Vault-Method-Reuse-20260923.md)。它为任意 N 保留真实乘法，补充原来的 (FG)、(PC) 路线，没有解决 Universal Gap A。
+
+## 1. 固定 Peirce 向量空间，允许乘法变化
+
+固定 \(E=\mathbb C^N=\bigoplus_i\mathbb C e_i\)，有限维 E 双模
+\[
+J=\bigoplus_{i,j}e_iJe_j
+\]
+及各分量的一组基，再固定整数 \(L\ge2\)。令 X 为全部 E 双线性映射
+\(\mu:J\otimes_EJ\to J\) 中满足以下条件的点所组成的约化仿射代数簇：
+
+1. \(\mu(\mu(x,y),z)=\mu(x,\mu(y,z))\)；
+2. 任意 L 个基向量的迭代乘积为零。
+
+两类条件都是有限个结构常数的多项式方程。对 \(\mu\in X\)，在
+\(A_\mu=E\oplus J\) 上使用固定的 E 作用及乘法 \(\mu\)。这是结合有单位代数，J 是幂零理想且商为 E，所以
+\[
+\operatorname{rad}A_\mu=J.
+\]
+它是有 N 个 simple 的 basic 复代数。每个有限维 basic 复代数在选定 primitive idempotents、radical 基及足够大的 L 后均出现于某个这样的 X。这里没有限制 N、Peirce 支撑或 Loewy 长度；只是每一个参数空间先固定这些有限尺寸。
+
+写 \(L_j=A_\mu e_j/Je_j\)、\(R_i=e_iA_\mu/e_iJ\)，并设
+\[
+\beta_{ij}(n;\mu)=\dim_{\mathbb C}\operatorname{Tor}^{A_\mu}_n(R_i,L_j),
+\qquad
+\mathcal S=\{(i,j):\delta_{ij}+\dim e_jJe_i>0\}.
+\tag{1}
+\]
+\(\mathcal S\) 正是 supported pairs，在整个 X 上固定。注意 Tor 的下标顺序与支撑 \(e_jAe_i\) 的顺序相反。
+
+## 2. Tor 的多项式矩阵与正确的特化方向
+
+相对 E 的规范化 bar 分解是投射分解，因为 E 半单。对它左右张量 simple，得到固定向量空间上的复形
+\[
+C_n^{ij}=R_i\otimes_EJ^{\otimes_E n}\otimes_E L_j,
+\qquad \delta_n^{ij}(\mu):C_n^{ij}\longrightarrow C_{n-1}^{ij}.
+\tag{2}
+\]
+两端的 radical 作用为零，微分只剩相邻两个 J 因子的乘法。因此每个微分矩阵的元素都是结构常数的线性多项式。结合律保证 \(\delta_n\delta_{n+1}=0\)。记 \(c_n^{ij}=\dim C_n^{ij}\)，则
+\[
+\beta_{ij}(n;\mu)=c_n^{ij}-\operatorname{rank}\delta_n^{ij}(\mu)
+-\operatorname{rank}\delta_{n+1}^{ij}(\mu).
+\tag{3}
+\]
+
+对 \(n\ge1\) 置
+\[
+D_n^{ij}=\operatorname{diag}(\delta_n^{ij},\delta_{n+1}^{ij}).
+\]
+由复形条件，其秩不超过 \(c_n^{ij}\)。所以
+\[
+Z_{ij,n}:=\{\mu:\beta_{ij}(n;\mu)>0\}
+=V_X\bigl(\text{全部 }c_n^{ij}\text{ 阶 }D_n^{ij}\text{ 子式}\bigr).
+\tag{4}
+\]
+当 \(c_n^{ij}=0\) 时，约定零阶子式为 1，此零集为空。故固定次数的 Tor 非零是闭条件，Tor 为零是开条件；\(\beta\) 上半连续。
+
+若 Y 是 X 的不可约闭子簇，在函数域 \(K(Y)\) 上取微分矩阵的秩，并以 \(\eta\) 记泛点，则对每个 \(\mu\in Y\)
+\[
+\beta_{ij}(n;\mu)\ge\beta_{ij}(n;\eta).
+\tag{5}
+\]
+证明是泛点秩最大：一个非零子式在一个非空开集上非零，所有更高阶子式则在整个 Y 上为零。将两项秩代入 (3) 即得。
+
+**可用的延拓是：泛点 Tor 非零，推出 Y 上处处非零。泛点 Tor 为零，不推出 Y 上处处为零。** 不能把一般连续性论述直接用于 Tor 消失。
+
+## 3. 固定参数空间的无限全局维数闭集
+
+令
+\[
+G_d=\{\mu\in X:\beta_{ij}(d+1;\mu)=0\text{ 对所有 }i,j\}.
+\]
+最小投射分解说明 \(G_d=\{\operatorname{gldim}A_\mu\le d\}\)：一个非零最小投射项总会被某个右 simple 张量检测到；某一项为零以后，整个尾端终止。
+
+每个 \(G_d\) 开，且 \(G_d\subseteq G_{d+1}\)。X 是 Noetherian 空间，递增开集链稳定，因而存在某个 D，使
+\[
+\bigcup_{d\ge0}G_d=G_D,
+\qquad X_\infty:=\{\mu:\operatorname{gldim}A_\mu=\infty\}=X\setminus G_D
+\tag{6}
+\]
+为闭集。它只有有限多个不可约分支。
+
+这里的 D 依赖所固定的有限维向量空间等数据，**没有得到仅依赖顶点数 N 的界，也没有给出计算 D 的算法**。固定代数维数下有限全局维数的一致有界性是 Schofield 的已知结果；可核对 Happel–Zacharia 的作者综述 [Theorem 4.1](https://arxiv.org/pdf/1209.2093)。以上给出了本稿固定分裂族所需的直接证明，不宣称为新结果。
+
+## 4. 一个复点同时实现所有泛点 Betti 数
+
+**引理。** 设 Y 为非空不可约复仿射代数簇。给定可数多个在 Y 上不恒为零的多项式 \(f_1,f_2,\ldots\)，存在 \(\mu\in Y(\mathbb C)\)，使所有 \(f_s(\mu)\ne0\)。特别地，Y 不是可数多个真闭子集之并。
+
+证明：取 Y 的素理想的一组有限生成元，以及各 \(f_s\) 的系数。它们生成一个可数子域 \(K\subseteq\mathbb C\)。令
+\(R=K[x_1,\ldots,x_m]/(g_1,\ldots,g_t)\)。标量扩张后得到 \(\mathbb C[Y]\)，域扩张忠实平坦，故 R 嵌入该整环，R 也是整环，且每个 \(f_s\) 在 R 中非零。
+
+\(\operatorname{Frac}R\) 是 K 的有限生成域扩张。可选有限个对 K 代数独立的复数作为超越基的像：可数域生成的代数闭包仍可数，逐个选择即可。余下有限代数扩张可以嵌入代数闭域 \(\mathbb C\)。所得单射 \(R\hookrightarrow\mathbb C\) 给出一个满足全部 \(g_l\) 的点，并保持每个非零 \(f_s\) 非零。若 Y 为单点，结论也直接成立。证毕。
+
+应用于可数多个 bar 微分矩阵：对每个泛点秩非零的矩阵选一个泛点非零的最大子式。引理给出一个复点 \(\mu_*\in Y\)，在所有次数、所有 pair 上同时实现全部泛点秩，因而
+\[
+\beta_{ij}(n;\mu_*)=\beta_{ij}(n;\eta)
+\quad\text{对所有 }i,j,n\ge1.
+\tag{7}
+\]
+这是存在性结论，不是有效寻找 \(\mu_*\) 的数值算法；通常也不是要求有限个非零条件便能确定的单个开集。
+
+## 5. Universal Gap A 的泛点证书等价式
+
+**定理（固定族中的等价归约）。** 对上述 X，以下三项等价：
+
+1. X 中每个无限全局维数代数都满足 (U)：存在一个固定 supported pair，在无穷多个次数上有非零 Tor。
+2. 对 \(X_\infty\) 的每个不可约分支 Y，存在固定 \((i,j)\in\mathcal S\) 和无界集合 \(S_Y\subseteq\mathbb N_{>0}\)，使 \(\beta_{ij}(n;\eta)\ge1\) 对所有 \(n\in S_Y\) 成立。
+3. 对每个这样的 Y，可以选固定 \((i,j)\in\mathcal S\) 和同一个无界集合 \(S_Y\)，使
+\[
+\beta_{ij}(n;\mu)\ge1
+\quad\text{对所有 }\mu\in Y,\ n\in S_Y.
+\tag{8}
+\]
+
+证明：1⇒2。由 (7) 取同时实现所有泛点 Betti 数的复点 \(\mu_*\)。因 \(\mu_*\in X_\infty\)，对该点应用 1，取得固定 supported pair 和无界非零次数集；(7) 将其传给泛点。2⇒3 直接由 (5)。3⇒1 因每个 \(X_\infty\) 的点属于某个不可约分支。若 \(X_\infty\) 为空，三项均按空条件成立。证毕。
+
+因此，对所有有限数据 \((N,J,L)\) 的这些参数空间证明 (U)，等价于以下步骤：
+\[
+\boxed{Y\subseteq X_\infty\text{ 为不可约分支}
+\Longrightarrow\exists(i,j)\in\mathcal S:
+\beta_{ij}(n;\eta)>0\text{ 无穷多次}.}
+\tag{GP}
+\]
+**(GP) 尚未证明。** 它是针对完整乘法参数的路线，不能把此前抽象 Boolean 模式的排除或保留当成其证明。
+
+**条件性推论（固定族中的有限检测表）。** 若上述等价条件成立，取任意 \(M>D\)。设 \(X_\infty\) 有 s 个不可约分支；可从每个分支选择一个 supported pair \((i_l,j_l)\) 和次数 \(n_l\ge M\)，使
+\[
+X_\infty=\bigcup_{l=1}^{s}Z_{i_lj_l,n_l}.
+\tag{8a}
+\]
+这是因为 (8) 在每个分支上给出无界的可选次数，因而右侧覆盖每个分支；而 \(n_l>D\) 保证有限全局维数的点不在右侧。于是对该固定族，一个至多 s 项的 Tor 表即可区分有限与无限全局维数。
+
+该推论不提供这些次数的有效上界。对任意 M 都有此类检测表才与持续非消失相容；只构造某一个有限检测表，不能自动证明 (U)。
+
+一个必要的区别：若去掉 “supported”，每个 Y 都已经有固定 pair 在无穷多个次数上、所有点处非零。事实上，对每个 n，所有点的全局维数为无穷，故 Y 被有限个 \(Z_{ij,n}\) 覆盖；不可约性迫使其中一个包含整个 Y。再对有限个 pair 用抽屉原理即可。**没有证明这些 pair 中能选到 \(\mathcal S\) 内的 pair；这恰是核心缺口。**
+
+## 6. 证书必须保留哪些多项式
+
+令 \(I(Y)\) 为分支 Y 的素理想。对给定 pair 与次数 n，(4) 给出精确等价：
+\[
+\beta_{ij}(n;\eta)>0
+\Longleftrightarrow
+\text{每一个 }c_n^{ij}\text{ 阶 }D_n^{ij}\text{ 子式属于 }I(Y).
+\tag{9}
+\]
+这使待证结论成为关于实际乘法的多项式恒等式。若已知的是一个未必根的方程理想 I，证明多项式在其零集上为零所需的是 \(f\in\sqrt I\)，不能误换成 \(f\in I\)。例如可用某个 \(f^m\in I\) 的理想表示作为证书，或用 \(1\in I+(1-zf)\)；这里使用复数域上的 [Hilbert Nullstellensatz](https://stacks.math.columbia.edu/tag/00FS)。
+
+有限个次数上的理想成员证书仍只是有限检查。证明 (GP) 还需要对无界次数集有效的结构，例如可证明的矩阵递推、兼容的 bar 同调类、或已有返回核/比较核定理所给的全次数机制。本稿没有产生这种一般机制，也没有有效给出全部分支的定义方程。
+
+## 7. 五维族：泛点消失不能向特殊点延拓
+
+取两个顶点，radical 基为
+\[
+a:0\to1,\qquad b:1\to0,\qquad z:0\to0,
+\qquad ba=t z,
+\tag{10}
+\]
+其余 radical 乘积全部为零，\(t\in\mathbb C\)。所有三重 radical 乘积为零，所以结合律及 \(J^3=0\) 对所有 t 成立。Peirce 维数矩阵恒为
+\[
+\begin{pmatrix}2&1\\1&1\end{pmatrix}.
+\]
+
+当 \(t\ne0\) 时，\(JP_0=\langle a,z\rangle\simeq P_1\)：同构由 \(e_1\mapsto a\)、\(b\mapsto tz\) 给出。同时 \(JP_1=\mathbb C b\simeq L_0\)。因此
+\[
+\operatorname{pd}L_0=1,\quad\operatorname{pd}L_1=2,
+\quad\operatorname{gldim}A_t=2.
+\tag{11}
+\]
+当 t=0 时，radical 平方为零，
+\[
+\Omega L_0=L_0\oplus L_1,\qquad \Omega L_1=L_0.
+\]
+故全部次数的 Betti 矩阵为
+\[
+\bigl(\beta_{ij}(n;0)\bigr)=
+\begin{pmatrix}1&1\\1&0\end{pmatrix}^{n},
+\tag{12}
+\]
+两个 simple 都有无限投射维数，且 \(\beta_{00}(n;0)>0\) 对所有 n 成立。这里的无穷性来自实际 syzygy 分解，不来自有限计算。
+
+在 bar 复形中只有乘法 ba 带参数，所以直接由微分定义，对所有 n 有
+\[
+\delta_n(t)=t\delta_n(1).
+\tag{13}
+\]
+pair (0,0) 的 \(c_2,c_3,c_4\) 分别为 2,3,5。按计算证书列出的 word 顺序，在 \(D_3\) 中选从零开始的行 (0,2,3)、列 (1,4,7)，得到子矩阵
+\[
+\begin{pmatrix}t&0&0\\0&-t&0\\0&0&-t\end{pmatrix},
+\qquad\det=t^3.
+\tag{14}
+\]
+由秩上界 3 以及该子式，得到全部参数上的精确式
+\[
+\beta_{00}(3;t)=
+\begin{cases}0,&t\ne0,\\3,&t=0.\end{cases}
+\tag{15}
+\]
+所以即使 Peirce 维数固定、结合律恒成立，稠密开集上的高次 Tor 消失仍不能传到特殊点。反之，(5) 的非零延拓没有被该例否定。
+
+## 8. 有限审计与下一步
+
+[audit_polynomial_family_tor.py](../work/audit_polynomial_family_tor.py) 在 t=0,1,−2,1/2 上，用有理数精确运算比较 bar 同调与最小投射消解，核对次数 1 至 5 的全部 pair，共 80 项。微分平方为零核对至次数 6，且保存了 (14) 的实际子式。结果见 [polynomial_family_tor_audit.json](../work/polynomial_family_tor_audit.json)；可复现记录见 [polynomial-family-computation-record.json](../work/polynomial-family-computation-record.json)。两种计算共享底层乘法及线性代数代码，不能称为独立数学核验。
+
+本稿把主路线推进到一个带全部乘法约束的泛点问题。下一步需要从完整 supported 消失条件推出泛点上的某个微分秩缺陷，在无界次数集上给出证明。应优先尝试把已有 (PC) 的指定前缀及其 Tor 正交一起写入参数族，而不是仅检查 Peirce 的 0/1 支撑，也不能用若干次数的 Gröbner 计算代替所缺的全次数论证。

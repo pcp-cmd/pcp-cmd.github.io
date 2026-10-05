@@ -1,0 +1,50 @@
+# 从实际循环移位到提升障碍
+
+状态：下面的方程和次数检查是项目推导引理；“非零障碍迫使 supported 返回或严格下降”仍是探索性候选。未证明一般初始移位存在，也未证明提升后有限生成。
+
+## 初始对象必须是映射
+
+在 [[Rees-HPL-Screening|bar 约定]] 下，令 $\operatorname{End}^{L,\ell}(B)$ 表示保持两端顶点标签、把 $B_{n,p}$ 映到 $B_{n+L,p+\ell}$ 的分次线性映射。这是 bar 向量空间的 End 复形，不能自动称为 Hochschild 上同调或 $C^e$-线性算子。
+
+若已经给出第一页同调上有意义的双分次映射 $\sigma$，可选保持过滤的收缩 $i,p$，置 $U_0=i\sigma p$ 得到 $b_2$-链映射。图中的单位圈或反复出现的秩一标签并不提供这个 $\sigma$。
+
+## 提升方程及障碍群
+
+对同调次数为 $L$ 的映射定义
+
+$$
+\partial_iU=b_iU-(-1)^L U b_i\quad(i=2,3).
+$$
+
+求辅助位移固定为 $\ell$ 的算子
+
+$$
+U(t)=\sum_{m\ge0}t^mU_m,\qquad
+U_m\in\operatorname{End}^{L,\ell+m}(B).
+$$
+
+链映射方程逐项恰为
+
+$$
+\partial_2U_0=0,\qquad
+\partial_2U_{m+1}=-\partial_3U_m.
+$$
+
+先前方程成立时，下一步障碍是
+
+$$
+[\partial_3U_m]\in
+H_{L-1}\bigl(\operatorname{End}^{*,\ell+m+1}(B),\partial_2\bigr).
+$$
+
+它是 cycle，因为 $\partial_2\partial_3=-\partial_3\partial_2$ 且 $\partial_3^2=0$。其消失等价于存在下一校正项；具体障碍可以依赖较早选择。
+
+若所有方程均解出，对于固定输入 $B_{n,p}$，只要 $p+\ell+m>\lfloor(n+L)/2\rfloor$，该项就为零。因此总和逐个输入都是多项式，确实定义 $k[t]$-线性链算子，不必借助形式完备化。
+
+## 不能跳过的两步
+
+提升成功不等于整个同调尾部由这些算子有限生成；可能仍有尚未覆盖的新类。若要使用 [[Rees-Noetherian-Screening-Collapse|Noetherian 条件定理]]，需另证实际算子环及其生成性。
+
+提升失败也尚未给出 Peirce 返回或严格下降。[[Rank-One-Does-Not-Imply-Periodicity|秩一误推]] 给出一个精确的失败机制：挠阶增长时，原始生成元之间的单位传递不可能来自 $k[t]$-线性算子。怎样利用这个障碍约束实际有限维删点，是下一步的问题。
+
+正式记录：a723a9e2-658a-4dff-b3d8-fa49d164d601；e777cef9-1934-422b-8431-75e61e300fe9。来源原稿、字节身份及审核报告见 [[Universal-Gap-A-MRS-Map|证据地图]]。

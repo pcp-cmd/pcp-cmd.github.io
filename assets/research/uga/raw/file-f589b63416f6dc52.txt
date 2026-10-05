@@ -1,0 +1,50 @@
+"""Targeted actual uniserial-kernel formula search; not a UGA search.
+C124's FULL path-module formula is the structural input. A found cycle
+requires literal actual-cover replay before it becomes formal evidence.
+"""
+from itertools import product
+from pathlib import Path
+import json,sys,time
+sys.stdout.reconfigure(encoding="utf-8")
+started=time.monotonic()
+N=7
+tested=0
+raw=0
+hit=None
+for c in product(range(2,8),repeat=N):
+    raw+=1
+    if max(c)<6 or any(c[(i+1)%N]<c[i]-1 for i in range(N)):continue
+    tested+=1
+    memo={}
+    def pd(state):
+        history=[];seen={}
+        while state not in memo:
+            i,l=state
+            assert 1<=l<=c[i]
+            if l==c[i]:
+                memo[state]=0
+                break
+            if state in seen:
+                for q in history[seen[state]:]:memo[q]=None
+                break
+            seen[state]=len(history);history.append(state)
+            # ACTUAL path-module full kernel, not support-graph inference.
+            state=((i+l)%N,c[i]-l)
+        value=memo[state]
+        for q in reversed(history):
+            value=None if value is None else value+1
+            memo[q]=value
+        return memo[history[0]] if history else memo[state]
+    def whole(r):
+        return [pd(((i+r)%N,c[i]-r)) for i in range(N) if c[i]>r]
+    i3=whole(3);i5=whole(5)
+    if i3 and all(x is not None for x in i3) and any(x is None for x in i5):
+        hit={"Kupisch":c,"whole_LEFT_pd_J3":max(i3),"J3_column_pds":i3,"J5_column_pds":i5}
+        break
+result={"status":"candidate" if hit else "bounded_no_hit","N":N,"length_interval":[2,7],
+        "raw_vectors_inspected":raw,"admissible_vectors_tested":tested,"hit":hit,
+        "formula_source":"C124 actual Omega M(i,l)=M(i+l,c_i-l)",
+        "literal_cover_replay":False,"UGA_search":False,"seconds":time.monotonic()-started}
+Path(sys.argv[1]).write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8")
+print(json.dumps(result))
+

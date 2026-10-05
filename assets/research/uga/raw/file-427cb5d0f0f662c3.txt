@@ -1,0 +1,187 @@
+# 有限精确 syzygy 系统：非对角 Tor、有限窗口与任意 N 的条件定理
+
+2026-09-27。延续任意 N 的主路线。有完整自审证明和有理数精确证书；尚未独立数学核验，未确认文献新颖性。**一般 Universal Gap A (U) 仍未证明。** 原始归档和 Vault 笔记未改动。
+
+本稿有两项作用。第一，纠正上一稿留下的普遍性问题：即使允许任意长度，同一个 simple 的 bar 返回证书也不能普遍存在。第二，保留实际模块而不要求 simple 自返回，给出持续 simple-pair Tor 的有限判据。对封闭系统中循环模块的头部集中于一个顶点的情形，进一步得到任意 N 的 (U) 充分定理。
+
+始终令 A 为有限维 basic 复代数，J 为其 radical，顶点为 0,…,N−1；左 simple 为 L_j，右 simple 为 R_i。记
+\[
+\beta_{ij}(n)=\dim\operatorname{Tor}_n^A(R_i,L_j)
+=\dim\operatorname{Ext}_A^n(L_j,L_i),
+\quad C_{ji}=\dim e_jAe_i.
+\]
+这里 supported 的方向是 **C_{ji}>0**，不能改成 C_{ij}>0。所有 Ω 都由最小投射覆盖定义，允许 ΩP=0。
+
+## 1. 必须放弃同一个 simple 返回的普遍性
+
+这是项目已经使用的 Saorín 七维例子，见 [On semiprimary rings of finite global dimension，Example 1](https://arxiv.org/pdf/math/0306043)。以下用实际消解完整核对所需结论。
+
+箭头为 a:0→1、b:1→0，关系为 aba=0。乘法从右向左复合。设
+\[
+p=ba,\quad q=ab,\quad r=bab.
+\]
+A 的基为 e_0,e_1,a,b,p,q,r。非零 radical 乘积恰为 ba=p、ab=q、bq=r、pb=r。因此
+\[
+P_0=Ae_0=\langle e_0,a,p\rangle,
+\qquad P_1=Ae_1=\langle e_1,b,q,r\rangle.
+\]
+令 M=JP_0=⟨a,p⟩。它的头部是 L_1，radical 是 L_0，且 b·a=p。覆盖 P_1→M 将 e_1 映到 a，其核为 ⟨q,r⟩；映射 a↦q、p↦r 是 M 到此核的 A-模同构。另一方面，x↦xb 给出 P_0≅JP_1。于是
+\[
+\Omega L_0=M,\qquad \Omega M\simeq M,
+\qquad \Omega L_1\simeq P_0,\qquad \Omega P_0=0.
+\tag{1}
+\]
+这些是实际模块同构，故对全部 n≥1，
+\[
+\beta_{10}(n)=1,\quad
+\beta_{01}(n)=\begin{cases}1,&n=1,\\0,&n\ge2,\end{cases}
+\qquad \beta_{00}(n)=\beta_{11}(n)=0.
+\tag{2}
+\]
+其全局维数无限；(1,0) 是 supported pair，因为 e_0Ae_1 含有 b、r。所有正次数 Yoneda 类都位于两个非对角块；可复合的两个类相乘必落在为零的正次数对角块。因此
+\[
+\mathcal E_+^2=0,\qquad \dim\mathcal E=\infty.
+\tag{3}
+\]
+
+**结论。** 这不是 (U) 的反例，却否定以下两条普遍推断：
+
+1. 无限全局维数必有某个 simple 的任意长度自由自返回证书；
+2. simple Yoneda 正次数理想幂零必迫使全局维数有限。
+
+[任意长度 bar 证书](Bar-Cycle-Pairing-Theorem.md) 一旦成立就给出正次数 self-Tor，与 (2) 矛盾。因此它的普遍性已被否定，不能继续标作仅仅“尚未证明”。原定理及其各项应用仍然有效。
+
+同样，不能靠泛点绕过这个例子：在固定 Peirce 链空间的任一不可约乘法族中，只要该点属于此族，每个固定正次数的 self-Tor 在该点为零，就迫使该次数在泛点也为零。这里使用的是既已证明的 Tor 维数特化方向；非对角的 (GP) 不受此反例否定。所需方法与边界记录在 [Vault 方法复用说明](Vault-Method-Reuse-20260923.md)，没有把笔记本身当作新的代数定理。
+
+**同一障碍存在于任意 N。** 无需另外构造新族，项目 [ADR 文稿第 2 节](ADR-Obstruction-and-Cyclic-Return.md) 已有每个 N≥3 的连通 2N+3 维代数：在上述两顶点图上加入箭头 c_t:1→t，规定 c_t a=0（本稿使用从右向左的乘法记号）。令 D=⊕_{t=2}^{N−1}L_t，其中各 L_t 都是投射模。原稿的实际覆盖给出
+\[
+\Omega L_0=M,\quad \Omega M\simeq M\oplus D,\quad
+\Omega L_1\simeq P_0\oplus D,\quad \Omega L_t=0.
+\]
+仍有 top(M)=L_1、top(P_0)=L_0。所以**对每个 N≥3，全部正次数 simple self-Ext 都为零，而 β_{10}(n)=1 对所有 n≥1 成立**。这是已有族的全次数推论，并非仅两顶点障碍或新的 (U) 反例。状态 M、P_0、D 组成三个模块的封闭系统；D 虽有多个头部顶点，却是无圈的投射状态，不影响第 4 节的充分条件。
+
+## 2. 有限系统必须包含哪些实际证据
+
+给定非零有限维 A-模 M_1,…,M_m（m≥1），以及非负整数矩阵 T，要求具有实际同构
+\[
+\Omega M_\alpha\simeq\bigoplus_{\gamma=1}^m
+M_\gamma^{\oplus T_{\gamma\alpha}}.
+\tag{4}
+\]
+T 的列是 source，行是 target。项目状态不必两两不同，也不必不可分解；允许投射模块，其对应列为零；禁止用零模块充当带圈状态。
+
+对所讨论的 simple L_j，另给出 q_j≥0、非负整数向量 v_j 和实际同构
+\[
+\Omega^{q_j}L_j\simeq\bigoplus_\alpha
+M_\alpha^{\oplus(v_j)_\alpha}.
+\tag{5}
+\]
+允许 v_j=0，表示该次 syzygy 已终止。不同 simple 可用不同 q_j。只有在每个 simple 都提供 (5) 后，才可以由整个图无圈断言 A 有限全局维数。
+
+“实际”指必须核对模块的全部 radical 作用、乘法关系和可逆 A-线性矩阵。维数向量相等、若干 Betti 数相等或数值样本中出现周期均不够。不能从有界 syzygy 维数推出有限同构类型。
+
+## 3. 全次数公式与最小有限窗口
+
+令 H_{i\alpha}=[\operatorname{top}M_\alpha:L_i]。定向图有边 α→γ 当且仅当 T_{γα}>0。
+
+**定理 1。** 在 (4)、(5) 下，对所有 n≥0，
+\[
+\boxed{\beta_{ij}(q_j+n)=(HT^n v_j)_i.}
+\tag{6}
+\]
+因此每个此类 pair 的 Poincaré 级数是有理函数：
+\[
+\sum_{n\ge0}\beta_{ij}(n)z^n
+=\sum_{n<q_j}\beta_{ij}(n)z^n
++z^{q_j}\bigl(H(I-zT)^{-1}v_j\bigr)_i.
+\tag{7}
+\]
+这是形式幂级数恒等式，没有解析收敛假设，也不意味着 Yoneda 代数有限生成。
+
+下列条件等价：
+
+1. β_{ij}(n) 在无穷多个次数非零；
+2. 从 supp(v_j) 出发可到达一个有向圈，而且该圈可到达某个 H_{iα}>0 的状态；
+3. 在连续 m 个次数 **q_j+m,…,q_j+2m−1** 中，至少一个 β_{ij} 非零。
+
+若这些条件不成立，则 β_{ij}(n)=0 对所有 n≥q_j+m 成立。若成立，可由有限路径取得整数 d,c,w,s，满足
+\[
+1\le d\le m,\quad c,w\ge1,\quad
+q_j\le s\le q_j+2m-2,
+\qquad
+\boxed{\beta_{ij}(s+rd)\ge c\,w^r\quad(r\ge0).}
+\tag{8}
+\]
+式 (8) 是定量全次数证书；w=1 时也保证持续非零。
+
+**证明。** 最小 syzygy 保持有限直和，按 (4) 归纳即得
+\(\Omega^{q_j+n}L_j\simeq\bigoplus_\alpha M_\alpha^{(T^n v_j)_\alpha}\)。最小消解第 q_j+n 项的 Ae_i 重数等于该 syzygy 的 L_i 头部重数，得到 (6) 和 (7)。
+
+非负整数矩阵 T 的幂计算带重数路径，没有符号抵消。若有初始状态到终端头部状态的长度 n≥m 路径，它在 m 个状态中重复某个状态，因此包含可到达且可离开的有向圈。反过来，设初始状态到圈上基点的简单路径长 a≤m−1，圈长 d≤m，基点到终端头部的简单路径长 b≤m−1。重复此圈 r 次给出长 a+b+rd 的路径。取 c 为初始重数、进出路径权重和终端头部重数之积，w 为圈上边重数之积，得到 (8)，其中 s=q_j+a+b。
+
+令 L=a+b≤2m−2。若 L≥m，已有一次落在 [m,2m−1]；若 L<m，取最小 r 使 L+rd≥m，则 L+rd≤m+d−1≤2m−1。这证明有限窗口与圈条件等价。没有这种圈时任何有效路径长都小于 m，于是从 q_j+m 起恒为零。证毕。
+
+**窗口右端不能统一提前。** 取 m 顶点的平方零有向圈，q_j=0，状态为全部 simples。对于 j=0、i=m−1，β_{ij}(n)=1 恰在 n≡m−1 (mod m) 时发生。它是 supported pair；在 [m,2m−2] 全为零，到 2m−1 才非零。因此一般不能把定理的这段窗口少看最后一次。这里的 m 是模块状态数，**没有给出只依赖顶点数 N 的窗口**。
+
+**全局维数。** 图中任意圈的非零模块都具有无限 pd：若有限 pd，每取一次非零 syzygy，pd 下降一，而沿圈得到该模块自身的非零直接和，矛盾。因此有圈就有 gldim A=∞，无需预先给所有 simple 的入口。若图无圈，且全部 simples 都有 (5)，则
+\[
+\operatorname{pd}L_j\le q_j+m-1,\qquad
+\operatorname{gldim}A\le\max_j(q_j+m-1).
+\tag{9}
+\]
+不涉及全部 simple 的部分入口只能判定它们各自的 pd，不能由无圈推出整个代数有限全局维数。
+
+## 4. 从模块圈到 supported pair 的任意 N 充分定理
+
+**定理 2。** 假设系统中有一个圈经过 M_α，长度为 d，边重数之积为 w≥1。若某个 i 满足
+\[
+h=[\operatorname{top}M_\alpha:L_i]>0,
+\qquad [M_\alpha:L_j]>0\Longrightarrow C_{ji}>0,
+\tag{10}
+\]
+则对每个 r≥1，
+\[
+\boxed{\sum_j[M_\alpha:L_j]\,\beta_{ij}(rd)\ge h\,w^r.}
+\tag{11}
+\]
+因此至少一个固定 supported pair (i,j) 在无穷多个次数非零。特别地，若 top(M_α)=L_i^{\oplus h}，条件 (10) 自动成立。
+
+**证明。** 圈和 (4) 给出 Ω^{rd}M_α 含有 M_α^{\oplus w^r} 为直接和。向 simple L_i 的最小消解 Hom 复形微分为零，故
+\[
+\dim\operatorname{Ext}^{rd}_A(M_\alpha,L_i)
+=[\operatorname{top}\Omega^{rd}M_\alpha:L_i]\ge h w^r.
+\]
+对 M_α 的组成列逐次使用 Ext 长正合列，在每个固定次数 n 有
+\[
+\dim\operatorname{Ext}^{n}_A(M_\alpha,L_i)
+\le\sum_j[M_\alpha:L_j]\dim\operatorname{Ext}^{n}_A(L_j,L_i).
+\]
+得到 (11)。求和只有有限项，故有一个固定 j 在无穷多个 rd 非零；由 (10) 它 supported。若头部集中在 i，最小投射覆盖是 (Ae_i)^h→M_α，所以每个组成因子 L_j 都满足 C_{ji}>0。证毕。
+
+**任意 N 的条件性结论。** 若所有 simples 都进入一个有限精确系统，而且每个圈上的模块的头部都集中于单个顶点，则 A 满足 (U)。证明是：无限全局维数由定理 1 迫使图有圈，再用定理 2。更一般地，只需某个圈上的一个模块满足 (10)。全部入口已知时，定理 1 还允许用有限窗口找到具体 pair 及其等差数列证书。
+
+此结论把原 [非简单模块分裂返回定理](ADR-Obstruction-and-Cyclic-Return.md) 接到一个可逐项核验的有限系统，不是对所有代数都存在这种系统的断言。Saorín 的 M 虽非 simple，却恰有单顶点头部；(11) 在这个例子中迫使非对角 β_{10} 存活，同 simple 的自由 Yoneda 路线则完全失效。
+
+## 5. 精确实现、校准与剩余缺口
+
+[syzygy_system_certificate.py](syzygy_system_certificate.py) 接收实际乘法表、各状态的全部作用矩阵、T、过渡同构和 simple 入口同构。使用标准库 Fraction 核对：结合律、radical 幂零性、模块乘法关系、实际最小投射覆盖、同构的 A-线性与双边逆矩阵。然后输出 (6) 的有限窗口及 (8) 的明确进路、圈、出路和重数；另检查 (10)。它不把有限期观察当作过渡同构。
+
+[syzygy_system_audit.json](../work/syzygy_system_audit.json) 保存 12 个完整系统及各自证书：
+
+- Saorín 七维代数：状态 M、P_0；唯一持续 pair 为 supported 的 (1,0)，两条对角线的正次数 Tor 全零。
+- 项目原有 2N+3 维分支族，N=3、5、8：使用 M、P_0、D 三个状态核对任意 N 的上述障碍，全部 simple 入口均已验证。
+- N=3、5、8 的平方零圈：完整 simple 系统，并验证窗口最后一次确有必要。
+- 五维 ba=z 代数：三个无圈状态，精确恢复 gldim=2。
+- 前稿 A_{N,g,t} 的三个成员：两个状态 L_0、ΩL_0，T 的圈权重为 g，输出全部偶数的 g^r 下界；这些是部分入口。
+- 四维“带环顶点加单向 source”：所给 source 的持续 pair 不 supported；程序保留这个区别，不能据此宣称 (U) 反例。另一个 simple 的 supported 自返回确实存在。
+
+共通过 38 个实际 syzygy 过渡同构、40 个入口同构、2290 项直接最小消解 Betti 比较和 51 项 bar 比较。故意错误的五个输入均被拒绝：假递推、奇异映射、可逆但不 A-线性的映射、非法模块作用、零模块伪造的圈。运行方式：
+
+```text
+python -B work/audit_syzygy_system.py
+python -B outputs/syzygy_system_certificate.py --input work/saorin_syzygy_system_input.json --output work/saorin_syzygy_system_checked.json
+```
+
+[可复现计算记录](../work/syzygy-system-computation-record.json) 保留代码、输入、结果与证明的哈希。有限线性代数核验与本稿的归纳证明共同组成证据；它们使用共享实现，不是独立验证。
+
+**尚未闭合的地方。** 一般代数未必有有限 syzygy 同构类型；即使提供有限封闭系统，圈上的模块也可能有多个头部顶点而不满足 (10)。本稿没有证明完整 Peirce 消失会排除这两种障碍。一般 (FG)、(PC)、(GP) 保持未证，普通 HH survival 也没有从这里推出。下一步需要保留实际模块映射来处理多头部或无限同构类型的尾端；不能回到已被 Saorín 否定的普遍 simple 自返回假设。

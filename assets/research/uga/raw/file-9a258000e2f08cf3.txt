@@ -1,0 +1,14 @@
+# Cycle 3 master guidance (self-authored; consult transport off)
+
+The bounded research phase is complete. Do not launch another worker round.
+
+The final operator-facing conclusion must separate four layers:
+
+1. **Independent derivation:** the literature-blind Phase I facts and dead ends, frozen before the paper was read.
+2. **Literature source audit:** arXiv:2608.00177v1 claims an ordinary finite-dimensional counterexample and supplies a concrete geometric/dg construction chain.
+3. **Literature reproduction:** verifier-accepted facts establish the ordinary finite-dimensional algebra realization, the formal tensor-acyclicity and degree-shift implications, and survival of a nonzero class under Laurent periodization.
+4. **Integrated status:** the paper is strong current evidence that Han's conjecture is false, but Danus did not certify the full counterexample as one integrated fact because the phantom, dg Morita/enhancement, Künneth, and Wang–Arunachalam–Keller hypotheses remain externally dependent.
+
+Deliver two artifacts: a clean mathematical report and a chronological process/failure report. The process report must include the pre-freeze exposure incident, the immutable freeze and late-verifier addendum, the initial sandbox/SQLite failures, the official-stop orphan-process defect and exact cleanup, verifier acceptance/rejection nodes, source hashes, the zero paid-API cost, and the final zero-worker-process observation.
+
+No external publication, push, or additional paid/API-backed work is authorized.

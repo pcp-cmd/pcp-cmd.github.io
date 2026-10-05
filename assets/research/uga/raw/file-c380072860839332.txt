@@ -1,0 +1,507 @@
+# STATUS B — STRONGER THEOREMS FOUND
+
+最新进展：[Peirce-Cycle-Theorem.md](Peirce-Cycle-Theorem.md) 证明无三角形 Peirce 支撑的任意顶点数结论，并排除了本稿五顶点候选中的两个。五顶点整体结论仍未完成。
+
+后续进展（2026-09-10）：`Peirce-Elimination-Theorem.md` 进一步证明了任意顶点数的 Peirce forest theorem，以及更一般的消去序定理。本稿保留完整的四顶点证明和 persistent Tor 结构结果。
+
+**Persistent Tor 的结构定理、无返回 corner 的提升，以及 Four-Vertex Gap A**
+
+2026-09-09。本稿接续 `Three-Vertex-Gap-A-Proof.md`，但重新给出本稿主要结论所需的证明，因此可以单独审阅。证明由本轮 solo 推导并自审；没有运行独立数学 verifier 或形式化证明器，没有写入原项目的 verified fact graph，也没有确认文献新颖性。
+
+本轮得到的主要结论是：
+
+1. 对任意顶点数，persistent Tor 图中只要有一条 bisimplicial edge，就有 infinite \(+\)。因此，只要无限投射维数的左 simples 至多两个，或无限投射维数的右 simples 至多两个，Gap A 就成立。
+   若左右两侧的 infinite-pd 标签集相同，上界可提高到三个；特别适用于至多三个 infinite-pd simples 的 Iwanaga–Gorenstein algebras。
+2. 不成立 Gap A 的代数，其 persistent Tor 图的每个非平凡连通分支都必须含有长度至少六的诱导圈。六个图顶点分属左右两个副本，不能直接解释成六个代数顶点。
+3. 对至多四个 simples 的有限维 basic \(\mathbb C\)-algebra，Gap A 成立。下面给出不依赖枚举的完整证明。
+4. 对任意顶点数，证明了两个 corner 接口：真实 recurrent tail 可以限制为 corner 的无限最小消解；若 corner 的经外部返回乘积为零，则其 simple Ext 可以逐次注入原代数。
+
+**Universal Gap A 尚未证明。** 本稿也没有推出普通 Hochschild homology 的无限性；infinite \(+\) 到普通 HH 的 survival 是另一个问题。这里的 Beyond-Han 指独立的 persistence 结构结论。
+
+## 1. 模块方向与两个支撑矩阵
+
+设 \(A\) 为有限维 basic associative unital \(\mathbb C\)-algebra，\(J=\operatorname{rad}A\)，\(1=\sum_{i=1}^r e_i\) 为 primitive orthogonal idempotents 的分解。设
+
+\[
+P_i=Ae_i,\qquad L_i=Ae_i/Je_i,\qquad R_i=e_iA/e_iJ.
+\]
+
+\(L_i\) 是左 simple，\(R_i\) 是右 simple。本稿要检测的是
+
+\[
+e_jAe_i\ne0,\qquad
+\operatorname{Tor}_n^A(R_i,L_j)\ne0
+\quad\text{对无穷多个 }n.
+\tag{+}
+\]
+
+此方向与 [CLMS, Definition 5.4](https://arxiv.org/html/2509.05135v2#S5) 一致；其 Theorem 5.5 将这一性质与 \(\tau\)-Hochschild homology 的无限性联系起来。本稿的证明直接使用 (\(+\))。
+
+定义零一矩阵
+
+\[
+C_{ki}=1\iff e_kAe_i\ne0,\qquad
+D_{ki}=1\iff e_kJe_i\ne0,
+\]
+
+\[
+H_{ij}=1\iff \operatorname{Tor}_n^A(R_i,L_j)\ne0
+\text{ 对无穷多个 }n.
+\tag{1}
+\]
+
+这里 \(C\) 是 **Peirce 非零支撑矩阵**，不是带维数的 Cartan 矩阵。\(C\) 的第 \(i\) 列是 \(P_i\) 的组成因子支撑；\(H\) 的第 \(j\) 列是 \(L_j\) 的 recurrent projective labels。矩阵乘积若用于零一矩阵，均指 Boolean product，即乘法为“且”，加法为“或”。
+
+记
+
+\[
+T_j=\{i:H_{ij}=1\},\qquad W_i=\{j:H_{ij}=1\},
+\]
+
+\[
+\mathcal P=\{j:T_j\ne\varnothing\},\qquad
+\mathcal I=\{i:W_i\ne\varnothing\}.
+\tag{2}
+\]
+
+\(\mathcal P\) 是 infinite-pd 左 simples 的标签集，\(\mathcal I\) 是 infinite-pd 右 simples 的标签集。后一集合也对应 infinite-id 左 simples，但下面不需要以此替换模块方向。
+
+理由如下。若 \(Q_\bullet\to X\) 是有限维左模块的最小投射消解，
+
+\[
+Q_n=\bigoplus_i P_i^{\beta_{n,i}(X)},
+\quad
+\beta_{n,i}(X)=\dim\operatorname{Tor}_n^A(R_i,X)
+=\dim\operatorname{Ext}_A^n(X,L_i).
+\tag{3}
+\]
+
+最小性使 tensor 或 Hom 后的 differential 为零，且 \(R_i\otimes_A P_q\cong\delta_{iq}\mathbb C\)。非终止的最小消解每项非零；标签只有有限个，因此至少一个标签出现无穷多次。对右模块用同样论证得到 \(\mathcal I\) 的解释。
+
+有限维代数还满足 \(\operatorname{gldim}A=\max_j\operatorname{pd}L_j\)。所需方向可直接证明：若所有 simples 的 pd 至多 \(d\)，其任意直和也有长度至多 \(d\) 的投射消解；任意模块的有限 radical filtration 有 semisimple layers，逐层用 horseshoe lemma，得到同一个上界。于是
+
+\[
+\operatorname{gldim}A=\infty\iff H\ne0.
+\tag{4}
+\]
+
+若 \(A\) 不是 infinite \(+\)，则
+
+\[
+H_{ij}=1\Longrightarrow C_{ji}=0,
+\quad\text{特别地 }H_{ii}=0.
+\tag{5}
+\]
+
+## 2. 固定 simple 的有限长度检测
+
+**引理 2.1。** 对有限维左模块 \(X\)、固定右 simple \(R_i\) 及任意 \(n\geq0\)，
+
+\[
+\dim\operatorname{Tor}_n^A(R_i,X)
+\leq\sum_k[X:L_k]\dim\operatorname{Tor}_n^A(R_i,L_k).
+\tag{6}
+\]
+
+**证明。** 对短正合列 \(0\to X'\to X\to X''\to0\)，固定次数的 Tor 长正合片段给出中间项维数不超过两侧之和。沿有限组成列归纳。\(\square\)
+
+因此，若固定 \(R_i\) 在 \(X\) 上有无限多次非零 Tor，则 \(X\) 的某个固定组成因子 \(L_k\) 满足 \(H_{ik}=1\)。有限个组成因子的非零次数集合若均有限，其并仍然有限，所以这里得到的是一个固定标签，而非随次数变化的标签。对固定左 simple 和有限维右模块也有完全相同的不等式。
+
+**推论 2.2（一个投射支撑覆盖某次 syzygy）。** 若 \(\operatorname{Tor}_n^A(R_i,M)\) 无限多次非零，且
+
+\[
+\operatorname{supp}\Omega^sM\subseteq\operatorname{supp}P_i,
+\]
+
+则 \(A\) 是 infinite \(+\)。
+
+**证明。** Dimension shifting 保留固定 \(R_i\) 的无限多次非零性。由引理 2.1 选择 \(L_k\)；支撑包含给出 \(e_kAe_i\ne0\)，故 \((R_i,L_k)\) 是 supported pair。\(\square\)
+
+特别地，若最小消解在充分高次数只有非零的 \(P_a\) 直和，则取一个高次 syzygy 作为 \(P_a\) 直和的子模块，应用推论 2.2。这给出对任意顶点数、任意有限维模块成立的 singleton-tail theorem。
+
+## 3. 三个 Boolean 约束与完整邻接矩形
+
+**定理 3.1（persistent Tor 的支撑约束）。** 对任意 \(A\)，有
+
+\[
+\boxed{H\leq HD,\qquad H\leq DH,\qquad H\leq HCH.}
+\tag{7}
+\]
+
+**证明。** 若 \(H_{ij}=1\)，则 \(\operatorname{Tor}_n(R_i,\Omega L_j)\) 无限多次非零。由于 \(\Omega L_j=Je_j\)，引理 2.1 给出某个 \(k\)，使 \(H_{ik}=D_{kj}=1\)。故 \(H\leq HD\)。
+
+同理，先对右变量作 dimension shifting，\(\Omega R_i=e_iJ\)，其右组成因子 \(R_q\) 的重数为 \(\dim e_iJe_q\)。右模块版本的引理给出 \(D_{iq}=H_{qj}=1\)，故 \(H\leq DH\)。
+
+为证明第三式，取 \(L_j\) 的最小消解 \(Q_\bullet\)，并取充分大的 \(s\)，使 \(Q_s,Q_{s+1},\ldots\) 只使用 \(T_j\) 中的标签。令
+
+\[
+X=\Omega^{s+1}L_j\subseteq Q_s.
+\]
+
+固定 \(R_i\) 在 \(X\) 上的 Tor 仍无限多次非零，故存在组成因子 \(L_k\)，使 \(H_{ik}=1\)。因为 \(X\subseteq Q_s\)，存在 \(q\in T_j\)，使 \(C_{kq}=1\)。于是
+
+\[
+H_{ik}=C_{kq}=H_{qj}=1,
+\]
+
+这正是 \((HCH)_{ij}=1\)。\(\square\)
+
+第三式还有逐项版本：对任意这样的高次 \(s\)，上面的 \(q\) 可以选择为实际出现在 \(Q_s\) 中的标签。不能把这句话弱化成“某个位置可能出现”。
+
+定义二部图 \(G_A\)：左侧为右 simples 的标签副本 \(i_R\)，右侧为左 simples 的标签副本 \(j_L\)，以 \(H_{ij}=1\) 为边。一条边 \(i_Rj_L\) 称为 **bisimplicial**，若
+
+\[
+H_{qk}=1\quad\text{对所有 }q\in T_j,\ k\in W_i.
+\tag{8}
+\]
+
+也就是两端的邻居之间构成完整二部图。
+
+**定理 3.2（完整邻接矩形检测定理）。** 若 \(G_A\) 有 bisimplicial edge，则 \(A\) 是 infinite \(+\)。
+
+**证明。** 对这条边用定理 3.1 第三式的证明，得到 \(k\in W_i\)、\(q\in T_j\)，使 \(C_{kq}=1\)。条件 (8) 同时给出 \(H_{qk}=1\)。因此
+
+\[
+e_kAe_q\ne0,\qquad
+\operatorname{Tor}_n^A(R_q,L_k)\ne0
+\text{ 对无穷多个 }n,
+\]
+
+即为所需固定 supported pair。\(\square\)
+
+**反面形式。** 若 \(A\) 无限全局维数且不是 infinite \(+\)，那么对每条 \(H_{ij}=1\)，都有 \(q,k\) 满足
+
+\[
+\begin{array}{c|cc}
+ &j&k\\\hline
+i&1&1\\
+q&1&0
+\end{array}
+\qquad\text{且 }C_{kq}=1.
+\tag{9}
+\]
+
+其中右下角必须为零，否则已经出现 supported pair。由矩阵中的不同取值可知 \(i\ne q\)、\(j\ne k\)。因此每条边都是某条诱导四顶点路径的中间边，特别地，\(G_A\) 没有 bisimplicial edge。
+
+## 4. 对任意顶点数成立的推论
+
+**推论 4.1。** 若 \(A\) 无限全局维数且不是 infinite \(+\)，则 \(G_A\) 的每个非孤立顶点度数至少为二，而且
+
+\[
+\boxed{|\mathcal P|\geq3,\qquad |\mathcal I|\geq3.}
+\tag{10}
+\]
+
+**证明。** 度数一的顶点所连的边一定 bisimplicial，故被定理 3.2 排除。假如 \(0<|\mathcal P|\leq2\)，每个非零行至少有两个非零元，所以只能有 \(|\mathcal P|=2\)，且每个非零行在这两个列上都为一。任意边于是 bisimplicial，再次矛盾。对另一侧相同。\(\square\)
+
+换言之，对任意有限顶点数，以下条件中的任意一个都足以证明 Gap A：
+
+- infinite-pd 左 simples 至多两个；
+- infinite-pd 右 simples 至多两个。
+
+这里包含任意多的 finite-pd simples，不是在另一种记号下重述两顶点结论。
+
+**推论 4.2（图论形式）。** 若 \(G_A\) 的某个有边连通分支是 chordal bipartite，则 \(A\) 是 infinite \(+\)。因此任何 Gap-A failure 的每个有边连通分支都包含长度至少六的诱导圈。
+
+**证明及外部输入。** Chordal bipartite 指不含长度至少六的诱导圈。使用经典图论结果：每个有边的 chordal bipartite graph 都有 bisimplicial edge；然后用定理 3.2。图论输入来自 [Golumbic–Goss, 1978](https://doi.org/10.1002/jgt.3190020209)，亦可在 [Bakonyi–Bono, Theorem 2.2](https://www.dml.cz/bitstream/handle/10338.dmlcz/127379/CzechMathJ_47-1997-4_1.pdf) 的完整边消去刻画中直接核对。这个图论结果是文献输入；定理 3.2 的 Tor 桥接证明在本稿完整给出。\(\square\)
+
+**推论 4.3（真实 tail 的逐项限制）。** 在 Gap-A failure 中，若 \(L_j\) 的 recurrent labels 恰为 \(\{a,b\}\)，则充分高的每一项都同时含有 \(P_a\) 和 \(P_b\)。
+
+**证明。** 高次项只能使用这两个标签。若某一高次项只含 \(P_a\)，其下一 syzygy 支撑包含于 \(\operatorname{supp}P_a\)，而 \(a\) recurrent，推论 2.2 产生 infinite \(+\)；只含 \(P_b\) 同理。\(\square\)
+
+进一步，(7) 的逐项证明与 (5) 给出
+
+\[
+W_a\cap\operatorname{supp}P_b\ne\varnothing,
+\qquad
+W_b\cap\operatorname{supp}P_a\ne\varnothing.
+\tag{11}
+\]
+
+每个交集中的标签都不在同一行自身的投射支撑中。若两个 Peirce 分量 \(e_aAe_b,e_bAe_a\) 都非零，则 \(H_{ab}=H_{ba}=0\)。这时 (11) 提供两个不同的额外标签：一个在 \(\operatorname{supp}P_b\setminus\operatorname{supp}P_a\)，另一个在相反的差集中，均不属于 \(\{a,b,j\}\)。所以这种双向两标签 tail 本身已要求至少五个代数顶点。
+
+## 5. Opposite symmetry 与严格成立的 corner 接口
+
+**引理 5.1（opposite invariance）。** \(A\) 是 infinite \(+\) 当且仅当 \(A^{op}\) 是 infinite \(+\)。
+
+**证明。** 取 \(R_i\) 的右 \(A\)-projective resolution \(Q_\bullet\)。把它视为 \(A^{op}\) 的左投射消解，则交换 tensor 因子的链同构给出
+
+\[
+\operatorname{Tor}^{A^{op}}_n(R_j^{op},L_i^{op})
+\cong\operatorname{Tor}^A_n(R_i,L_j),
+\]
+
+其中 \(R_j^{op}=L_j\)、\(L_i^{op}=R_i\) 按对应的 module side 理解。同时
+
+\[
+e_iA^{op}e_j=e_jAe_i.
+\]
+
+因此同一个非零 Peirce 分量与翻转后的 Tor pair 正好匹配。\(\square\)
+
+**引理 5.2（限制真实 tail）。** 设有限维模块 \(M\) 的无限最小投射消解在充分高次数只含 \(P_i\)、\(i\in T\)，其中 \(T\ne\varnothing\)。置 \(e=\sum_{i\in T}e_i\)、\(B=eAe\)。则 \(B\) 具有无限全局维数。
+
+**证明。** 取高次增广 tail
+
+\[
+\cdots\longrightarrow Q_{s+1}\longrightarrow Q_s
+\longrightarrow X=\Omega^sM\longrightarrow0.
+\]
+
+应用 exact functor \(Y\mapsto eY\)。逐项核对如下。
+
+| 接口 | 理由 |
+|---|---|
+| 正合性 | 乘以幂等元是 exact functor。 |
+| 投射性 | \(eP_i=eAe_i=Be_i\)，因为 \(i\in T\)。 |
+| 最小性 | 原 differential entries 属于 \(e_iJe_q\)，保留后属于 \(eJe=\operatorname{rad}B\)。 |
+| 每项非零 | 每个 \(Be_i\) 含非零幂等元 \(e_i\)。 |
+| 增广模块非零 | \(\ker(eQ_s\to eX)\subseteq\operatorname{rad}(B)eQ_s\)，所以若 \(eX=0\)，Nakayama lemma 会推出 \(eQ_s=0\)，矛盾。 |
+
+这里 \(\operatorname{rad}B=eJe\)：右侧 nilpotent，商为 \(e(A/J)e\)，后者 semisimple。因此得到 \(eX\) 的非终止最小 \(B\)-projective resolution，故其 pd 无限。\(\square\)
+
+注意不要求 \(eX=X\)，也没有断言任意 \(B\)-simple 的消解可沿此步骤提升。
+
+**定理 5.3（无外部返回乘积的 Ext 提升）。** 设 \(e\ne0\) 为若干顶点幂等元之和，\(f=1-e\)、\(B=eAe\)，并假设
+
+\[
+eAfAe=0.
+\tag{12}
+\]
+
+则对 \(e\) 中的任意标签 \(i,j\)，每个次数都有单射
+
+\[
+\operatorname{Ext}_B^n(L_j^B,L_i^B)
+\hookrightarrow\operatorname{Ext}_A^n(L_j^A,L_i^A).
+\tag{13}
+\]
+
+特别地，\(B\) infinite \(+\) 蕴含 \(A\) infinite \(+\)。
+
+**证明。** 条件 (12) 使
+
+\[
+\pi:A\longrightarrow B,\qquad x\longmapsto exe
+\]
+
+成为保持单位的代数同态，\(B\) 的单位为 \(e\)。任选 \(B\) 的一个 simple character \(\chi:B\to\mathbb C\)，定义
+
+\[
+\iota:B\longrightarrow A,\qquad b\longmapsto b+\chi(b)f.
+\tag{14}
+\]
+
+因为 \(bf=fb=0\)，\(\iota\) 是保持单位的代数同态，且 \(\pi\iota=\mathrm{id}_B\)。这样的 \(\chi\) 存在，因为 \(B\) 仍为 basic \(\mathbb C\)-algebra。
+
+沿 \(\pi\) 与 \(\iota\) 的 restriction of scalars 都是 exact functors，且其在 \(B\)-modules 上的复合为恒等函子。对 Yoneda extensions 施加这两个 functors，得到互相组成恒等映射的 Ext 映射。因此沿 \(\pi\) 的映射为单射。经 \(\pi\) inflation 的 \(L_i^B\) 就是 \(L_i^A\)，故得 (13)。再用 (3) 把 Ext 维数转回正确方向的 simple Tor，并使用 \(e_jBe_i=e_jAe_i\)，得到最后断言。\(\square\)
+
+这个证明依靠代数 retract 和 Yoneda Ext，而非假设 restriction 把所有 \(A\)-projectives 变成 \(B\)-projectives。
+
+**推论 5.4（primitive corner）。** 若 \(e=e_i\)、\(e_iA(1-e_i)Ae_i=0\)，且 \(\Gamma=e_iAe_i\ne\mathbb C\)，则
+
+\[
+\operatorname{Tor}_n^A(R_i,L_i)\ne0\qquad(n\geq0).
+\tag{15}
+\]
+
+**证明。** \(\Gamma\) 为有限维 local algebra，其唯一 simple \(\mathbb C\) 不可能有有限 pd：否则有限的最小 free resolution 的 Euler 维数等式为
+
+\[
+1=\dim\Gamma\sum_n(-1)^n b_n,
+\]
+
+而 \(\dim\Gamma>1\)，不可能。故其最小 free resolution 每项非零，\(\operatorname{Ext}_\Gamma^n(\mathbb C,\mathbb C)\ne0\) 对所有 \(n\) 成立。应用定理 5.3 和 (3)。\(\square\)
+
+因此在非 infinite-\(+\) 代数中，若顶点 \(i\) 没有任何外部的双向非零 Peirce 邻居，则必有 \(e_iAe_i=\mathbb C\)。原因为每个 \(e_iAe_qAe_i\) 都已是零，从而满足 (12)。这个 primitive 结论与 [Armenta 的 protected-corner 研究](https://arxiv.org/html/2607.20849) 有重叠；本稿提供的是明确的 retract 证明，不声称首次发现这个背景机制。
+
+## 6. 互相 Hom-orthogonal 的 tail
+
+**引理 6.1。** 若某个无限最小左投射消解的高次项只使用非空集合 \(T\) 的标签，且
+
+\[
+e_iAe_q=0\quad(i,q\in T,\ i\ne q),
+\tag{16}
+\]
+
+则 \(A\) 是 infinite \(+\)。
+
+**证明。** 由于
+
+\[
+\operatorname{Hom}_A(Ae_i,Ae_q)\cong e_iAe_q,
+\]
+
+高次 differential 按标签分块对角化。对每个标签 \(a\)，由 \(P_a\) 直和组成的块因此是一个子复形，而且尾部的正合性也逐块成立。取某个 recurrent 的 \(a\)，选择充分大的次数 \(s\)，使该块 \(Q_s^a\ne0\)。以 \(\operatorname{coker}(Q_{s+1}^a\to Q_s^a)\) 增广此块，得到最小投射消解。
+
+增广模块非零，因为像包含于 \(JQ_s^a\)，不能等于 \(Q_s^a\)。因 \(a\) recurrent，此最小消解有无限多项非零，从而不终止。其各项都是 \(P_a\) 的直和，所以 singleton-tail theorem 给出 infinite \(+\)。\(\square\)
+
+这里使用的是原 \(A\)-projectives 的分块正合性，不是从一个任意 corner 的无限性反推原代数。
+
+**推论 6.2（两侧标签相同时的三 simple 定理）。** 对任意顶点数，若 \(\mathcal P=\mathcal I\) 且 \(|\mathcal P|\leq3\)，则 \(\operatorname{gldim}A=\infty\) 蕴含 infinite \(+\)。
+
+**证明。** 假设非 \(+\)。推论 4.1 迫使两集合恰为同一个三元集 \(S\)。\(H\) 在 \(S\times S\) 之外为零，内部对角线为零，而每个非零行、列度数至少二，所以内部所有非对角元都是一。由 (5)，\(e_iAe_q=0\) 对 \(S\) 内不同的 \(i,q\) 成立。任取 \(j\in S\)，其真实高次 tail 使用 \(T_j=S\setminus\{j\}\)，于是引理 6.1 给出矛盾。\(\square\)
+
+**推论 6.3（一个任意顶点数的代数类）。** 若 \(A\) 为有限维 Iwanaga–Gorenstein algebra，即左、右 regular modules 的 injective dimension 都有限，并且 infinite-pd 左 simples 至多三个，则 Gap A 成立。
+
+**证明。** 先说明这里 \(\mathcal P=\mathcal I\)。由于 \({}_AA\) 有有限 id，每个有限维 projective 都有有限 id；有限 projective resolution 因而使一个 finite-pd 模块也有有限 id。另一方面，对 \(A_A\) 的有限 injective resolution 作 \(\mathbb C\)-dual，得到 \(D(A_A)\) 的有限左 projective resolution。每个有限维左 injective 是 \(D(A_A)\) 的某个有限直和的直和因子，故有有限 pd。有限 injective resolution 因而使一个 finite-id 模块也有有限 pd。
+
+所以左 simples 的 finite-pd 与 finite-id 标签集一致。再由对偶，\(\operatorname{id}_A L_i=\operatorname{pd}_{A^{op}}R_i\)，得到 \(\mathcal P=\mathcal I\)。应用推论 6.2。\(\square\)
+
+## 7. 最小反例的强连通性
+
+**引理 7.1。** 若存在 Gap-A failure，则在它的由顶点幂等元之和给出的 bad corners 中，取顶点数最少者 \(B\)。\(B\) 的 Peirce 有向图必强连通；图中把 \(e_kBe_i\ne0\)、\(i\ne k\) 记作 \(i\to k\)。
+
+**证明。** 若非强连通，可取一个真非空的终端顶点集，其幂等元之和记作 \(e\)，\(f=1_B-e\)。于是 \(fBe=0\)，且
+
+\[
+B=\begin{pmatrix}\Gamma&M\\0&\Delta\end{pmatrix},
+\quad \Gamma=eBe,\quad\Delta=fBf,\quad M=eBf.
+\]
+
+两个 diagonal corners 都满足定理 5.3 的返回乘积为零条件，所以其中任何一个 infinite \(+\) 都会使 \(B\) infinite \(+\)。根据 \(B\) 的 corner 最小性，两者只能都有有限全局维数。
+
+说明这将使 \(B\) 也有有限全局维数。由于 \(fBe=0\)，\(\Gamma e_i=Be_i\)，所以有限维 \(\Gamma\)-modules 经 inflation 后具有有限 \(B\)-pd。特别地，\(M=eBf\) 如此。短正合列
+
+\[
+0\longrightarrow eBf\longrightarrow Bf\longrightarrow\Delta\longrightarrow0
+\]
+
+给出 \(\operatorname{pd}_B\Delta<\infty\)。每个有限维 \(\Delta\)-projective 经 inflation 后也是 finite-pd \(B\)-module。一个 \(\Delta\)-simple 的有限 \(\Delta\)-projective resolution 因而给出它的有限 \(B\)-pd；可以逐次利用短正合列的 pd 不等式验证。\(\Gamma\)-simples 也已经有有限 \(B\)-pd。所有 \(B\)-simples 的 pd 都有限，与 \(B\) 是 bad corner 矛盾。\(\square\)
+
+对于至少两个顶点的强连通图，每个 \(C\) 的行、列除对角线外至少有一个非零元。这是下一节唯一使用强连通性的组合性质。
+
+## 8. Four-Vertex Gap-A Theorem：不依赖枚举的证明
+
+**定理 8.1。** 对有限维 basic \(\mathbb C\)-algebra \(A\)，
+
+\[
+\boxed{r\leq4,\quad\operatorname{gldim}A=\infty
+\Longrightarrow A\text{ is infinite }+.}
+\tag{17}
+\]
+
+**证明。** 假设反之，选择引理 7.1 的最小 bad corner \(B\)，其顶点数仍至多四。\(B\) 的 \(H\ne0\)。由推论 4.1，每个非零行、列都有至少两个一，且两侧各至少有三个非孤立顶点，因此 \(B\) 至少有三个顶点。
+
+由于 \(B\) 强连通，\(C\) 每行、列至少有两个非零元。条件 (5) 使 \(H\) 的每行、列至多有 \(r-2\) 个一。若 \(r\leq3\)，这与非零行度数至少二矛盾。因此 \(r=4\)，且 \(H\) 的每个非零行、列**恰好**有两个一。
+
+令 \(p=|\mathcal P|\)、\(q=|\mathcal I|\)。两种方式数 \(H\) 的非零元，得 \(2p=2q\)。因此只剩
+
+\[
+p=q=3\quad\text{或}\quad p=q=4.
+\]
+
+**情形一：\(p=q=3\)。** 在 \(\mathcal I\times\mathcal P\) 的 \(3\times3\) 子矩阵中，每行每列恰有两个一。因此零元构成一个 perfect matching。
+
+- 若 \(\mathcal I=\mathcal P=\{a,b,c\}\)，由 \(H_{ii}=0\)，这些 matching 零元就是对角线。因此 \(H_{ab}=H_{ba}=1\)，进而 \(e_bBe_a=e_aBe_b=0\)。而 \(T_c=\{a,b\}\)，故 \(L_c\) 的高次最小消解满足引理 6.1，矛盾。
+- 若 \(\mathcal I\ne\mathcal P\)，它们在四顶点集合中的交集恰有两个元素。记 \(\mathcal I=\{a,c,u\}\)、\(\mathcal P=\{a,c,v\}\)。Matching 的两个零元已经是 \((a,a),(c,c)\)，第三个必为 \((u,v)\)。所以 \(T_v=\{a,c\}\)，且 \(H_{ac}=H_{ca}=1\)。于是 \(e_cBe_a=e_aBe_c=0\)，再次由引理 6.1 得到矛盾。
+
+**情形二：\(p=q=4\)。** 每一行 \(H\) 有两个一，因 (5)，对应的 \(C\) 列至多只剩对角线和一个外部非零位置；强连通性迫使那个外部位置存在。按列作相同计数可知，\(C\) 每一行也恰有一个外部非零位置。
+
+因此 \(C\) 的外部支撑是一组不交有向圈。强连通性使它只能是一个四圈。重命名顶点为 \(0,1,2,3\)，可写作
+
+\[
+\operatorname{supp}(Be_i)=\{i,i+1\},\qquad i\pmod4.
+\tag{18}
+\]
+
+这里没有双向 Peirce 邻居，推论 5.4 和 \(B\) 非 infinite \(+\) 迫使所有 local corners 都是 \(\mathbb C\)。因此 \(J_B\) 只有四圈相邻的外部 Peirce 分量，而两个连续外部分量的乘积落在 \(e_{i+2}Be_i=0\) 中。故
+
+\[
+J_B^2=0.
+\]
+
+记 \(m_i=\dim e_{i+1}Be_i>0\)。最小 syzygy 于是显式满足
+
+\[
+\Omega L_i\cong L_{i+1}^{m_i},\qquad
+\Omega^{4t}L_i\cong L_i^{(m_0m_1m_2m_3)^t}
+\quad(t\geq1).
+\]
+
+从而 \(\operatorname{Tor}_{4t}^B(R_i,L_i)\ne0\) 对每个 \(t\geq1\) 成立，且 \(e_iBe_i\ne0\)。这与 \(B\) 非 infinite \(+\) 矛盾。
+
+所有情形均被排除，定理得证。\(\square\)
+
+本证明不需要假设 Peirce 返回自动制造 recurrence；最后的无限 recurrence 来自已证明的 \(J_B^2=0\) 和明确的 syzygy 公式。
+
+## 9. 任意顶点数下的最小反例必须满足什么
+
+假设 \(B\) 是一个按 corner 顶点数最小的 Gap-A failure。对任意 \(j\in\mathcal P\)，记
+
+\[
+V_j=\bigcup_{i\in T_j}\operatorname{supp}(Be_i),
+\quad e_T=\sum_{i\in T_j}e_i,\quad f_T=1_B-e_T.
+\]
+
+则本稿与前稿给出以下同时成立的必要条件：
+
+\[
+|B_0|\geq5,\qquad |\mathcal P|,|\mathcal I|\geq3,
+\]
+
+\[
+2\leq|T_j|<|V_j|\leq|B_0|-1,
+\tag{19}
+\]
+
+\[
+\operatorname{gldim}(e_TBe_T)=\infty,
+\qquad
+e_TBf_TBe_T\ne0.
+\tag{20}
+\]
+
+并且 \(T_j\) 中没有一个投射支撑覆盖整个 \(V_j\)。
+
+**补足 (19)–(20) 的证明。** 非 \(+\) 给出 \(j\notin V_j\)，且每个 recurrent 标签属于自己的投射支撑。Singleton-tail theorem 给出 \(|T_j|\geq2\)。覆盖整个 \(V_j\) 的一个 recurrent 投射会由推论 2.2 产生 \(+\)，所以不存在。
+
+引理 5.2 给出 \(e_TBe_T\) 的无限全局维数。它是严格更小的 corner，因为 \(j\notin T_j\)。\(B\) 的最小性于是迫使它为 infinite \(+\)。若 \(e_TBf_TBe_T=0\)，定理 5.3 会将这个性质提升回 \(B\)，矛盾，故得 (20)。若 \(V_j=T_j\)，则 \(f_TBe_T=0\)，特别地返回乘积为零，与刚证明的 (20) 矛盾。因此 \(T_j\subsetneq V_j\)，得 (19)。\(\square\)
+
+另外，作为**文献推论**，任何 Gap-A failure 必须有 \(J^3\ne0\)，且 Yoneda algebra 不能在有限次数内生成：因为非 \(+\) 使所有 simple self-Ext 最终为零，而 [Saorín, Theorems 1–2](https://arxiv.org/pdf/math/0306043) 在上述两种额外条件下分别推出有限全局维数。此处不能删除论文的额外条件；该论文 Example 1 本身就给出了一个无限全局维数、但所有 simple self-Ext 最终消失的二顶点单项式代数。
+
+## 10. 五顶点探查的准确边界
+
+本轮写了零一支撑枚举，用途是检查下一步不能被现有必要条件立即排除的结构。它枚举的是 \((C,H)\)，**不枚举乘法表，不构造代数，不从有限 Tor 次数推断无限 Tor**。
+
+主要筛选包括：\(H\) 与 \(C^T\) 不相交、没有 bisimplicial edge、强连通性、(19)、投射支撑不可被一个 recurrent 列覆盖、引理 6.1、(7) 的尾部支撑约束，以及 protected primitive corners 和 \(H\leq DH\) 的兼容性。对 opposite 的对应条件也作检查。对于无法由支撑确定是否为零的 local radical，程序允许其非零，因此筛选保持必要性。
+
+在五顶点上，程序枚举了 42,076 个初始 \(H\) 模式，归并为 440 个重命名轨道；在这些代表上检查了 39,848 个 \(C\) 候选，最后保留三个联合重命名轨道。这些数字是探索性程序的运行结果，未用作定理 8.1 的证明。
+
+三个代表如下。集合按列列出，顶点编号为 \(0,1,2,3,4\)。
+
+| 代表 | \(\operatorname{supp}Be_0,\ldots,\operatorname{supp}Be_4\) | \(T_0,\ldots,T_4\) |
+|---|---|---|
+| 1 | \(\{0,1,2,3,4\};\{0,1,3\};\{0,2,4\};\{0,2,3\};\{0,1,4\}\) | \(\varnothing;\{2,3\};\{1,4\};\{2,4\};\{1,3\}\) |
+| 2 | \(\{0,3,4\};\{1,2,4\};\{1,2,3\};\{0,2,3\};\{0,1,4\}\) | \(\{1,2\};\{0,3\};\{0,4\};\{1,4\};\{2,3\}\) |
+| 3 | \(\{0,3,4\};\{1,2,3\};\{1,2,4\};\{0,2,3\};\{0,1,4\}\) | \(\{1,2\};\{0,3\};\{0,4\};\{2,4\};\{1,3\}\) |
+
+第二个代表特别透明。把编号改为五圈的循环编号，写成
+
+\[
+C_{ki}=1\iff k\in\{i-1,i,i+1\}\pmod5,
+\]
+
+\[
+H_{ij}=1\iff i-j\equiv\pm2\pmod5.
+\tag{21}
+\]
+
+它具有双向五圈 Peirce 支撑，persistent Tor 二部图是一个十圈；每个 \(T_j\) 有两个相邻顶点，两列支撑并集是除 \(j\) 外的四个顶点。每个顶点都有双向 Peirce 邻居，因而不能用“没有双向邻居”直接保护 local corner。这说明已有矩阵约束本身还不足以证明 Universal Gap A。
+
+**尚未解决的具体问题。** 能否排除 (21) 或另外两个代表被某个真实有限维结合代数的乘法及最小消解同时实现？若 \(T_j=\{a,b\}\)，真实 tail 必须在每个高次同时含有两个 projectives，其限制 corner 无限全局维数，而且经外部的返回乘积必须非零。下一步必须分析这些返回乘积如何作用于 differential 的核与像；仅有两个 Peirce 分量非零或一个有限次数 Betti 表，不能回答这个问题。
+
+## 11. Provenance 与自审记录
+
+| 类别 | 本轮使用或得到的内容 |
+|---|---|
+| 项目原有 verified facts | 前稿已经列出 2026-08-11 归档的 15 个 fact ID 及校准用途；本稿没有把新定理写入该 fact graph。 |
+| 前稿已推导 | 有限长度 Tor 不等式、singleton tail、投射支撑覆盖判据、三顶点结论和原始严格支撑扩张。 |
+| 本轮完整推导 | 三个 Boolean 支撑约束；bisimplicial-edge 检测；至多两个 infinite-pd simples 的任意顶点数结论；两侧标签相同的三 simple 定理及其 Gorenstein 推论；opposite invariance；实际 tail 的 corner 限制；代数 retract 的 Ext 注入；四顶点证明；非零外部返回乘积必要条件。 |
+| 明确的文献输入 | CLMS 的定义及框架；chordal bipartite 的经典 bisimplicial-edge 定理；Saorín 的两个带假设结论。 |
+| 计算 | 五顶点零一支撑模式筛选；只提供下一步候选，不提供代数存在性或无限 Tor 认证。 |
+| 未证明 | Universal Gap A；五顶点剩余模式的代数不可实现性；任何新的普通 HH survival 定理。 |
+
+自审特别检查了：固定右 simple 的量词；\(C\)、\(H\) 的转置方向；\(\Omega^{s+1}L_j\subseteq Q_s\) 的次数；opposite 的两侧 simple 交换；corner 的 exactness/projectivity/minimality/非零性；retract section 是否保持单位；四顶点所有 \((p,q)\) 情形是否覆盖。主要数学结论没有依赖有限枚举。
+
+最需要后续独立审阅的接口是定理 3.2 的组成因子选择、定理 5.3 的 Yoneda Ext retract，以及定理 8.1 的两个三标签分支。以上已给出逐步证明，但“自审完成”不等于独立 verifier 已接受。

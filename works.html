@@ -3,45 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aleksi Lab / Works</title>
-  <meta name="description" content="Works and portfolio archive for Aleksi Lab.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf9f5'/%3E%3Cpath d='M8 22C12 10 22 8 24 18' fill='none' stroke='%23141413' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='23' cy='18' r='3' fill='%23d97757'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./styles.css">
-  <script defer src="./content.js"></script>
-  <script defer src="./works-data.js"></script>
-  <script defer src="./works.js"></script>
+  <title>Works · Aleksi</title>
+  <meta name="description" content="Aleksi 的视觉作品展览：角色海报、文字排版与图像研究。悬停查看，点击放大与阅读作品说明。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/gallery.css">
+  <link rel="stylesheet" href="./assets/css/site-theme.css">
+  <script defer src="./site-data.js"></script>
+  <script defer src="./works-catalog.js"></script>
+  <script defer src="./assets/vendor/niku-home.js"></script>
+  <script defer src="./site-backdrop.js"></script>
+  <script defer src="./reading.js"></script>
+  <script defer src="./gallery.js"></script>
 </head>
-<body class="works-page">
-  <div class="paper-grain" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="brand-mark" href="./index.html#home" aria-label="Aleksi Lab home">
-      <span>Aleksi Lab</span>
-      <small>作品档案</small>
-    </a>
-    <nav class="desktop-nav" aria-label="Primary navigation">
+<body class="gallery-page site-page" data-section="works">
+  <canvas class="site-backdrop" data-site-backdrop aria-hidden="true"></canvas>
+  <a class="gallery-skip site-skip" href="#content">跳到图片</a>
+  <header class="gallery-header site-header">
+    <a class="brand-mark site-brand" href="./index.html"><span>Aleksi</span><small>← 首页</small></a>
+    <nav class="desktop-nav site-navigation" aria-label="栏目">
+      <a href="./writing.html">Writing</a>
+      <a href="./project.html">Project</a>
+      <a href="./research.html">Research</a>
+      <a href="./about.html">About</a>
       <a href="./works.html" aria-current="page">Works</a>
-      <a href="./math.html">Math Lab</a>
-      <a href="./manuscripts.html">Manuscripts</a>
-      <a href="./protocol.html">Protocol</a>
-      <a href="./atlas.html">Lab Atlas</a>
+      <a href="./room.html">Room</a>
     </nav>
+    <button class="gallery-menu-toggle site-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-navigation">栏目 <span aria-hidden="true">⌄</span></button>
+    <div id="mobile-navigation" data-mobile-navigation hidden>
+      <nav aria-label="栏目">
+        <a href="./writing.html">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html" aria-current="page">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
+    </div>
   </header>
-
-  <main id="content" data-page>
-    <section class="works-exhibition" data-works-exhibition>
-      <header class="works-exhibition__header">
-        <p class="eyebrow">Works / 作品档案</p>
-        <h1>一面可以被打开的展览墙。</h1>
-        <p class="section-intro zh-note">视觉实验、排版练习、二创研究与未完成手稿，按作品关系重新陈列。</p>
-      </header>
-      <div class="exhibition-stage" data-exhibition-stage aria-label="Selected works exhibition wall"></div>
-    </section>
-
-    <section class="works-index-section paper-section" data-reveal>
-      <p class="section-kicker">Archive Index</p>
-      <h2 class="section-title index-section-title">档案索引</h2>
-      <div class="works-index" data-works-index></div>
-    </section>
+  <main id="content" class="gallery-main">
+    <header class="gallery-heading">
+      <h1>Works</h1>
+      <p>海报、排版与图像研究。悬停查看，点击放大与阅读作品说明。</p>
+    </header>
+    <div class="exhibition-stage" data-exhibition-stage aria-label="作品展览墙"></div>
+    <p class="gallery-footnote">13 件作品。打开后可使用左右方向键切换，按 Esc 返回展览。</p>
   </main>
+  <dialog class="gallery-viewer" data-gallery-viewer aria-labelledby="viewer-caption">
+    <header class="gallery-viewer-header">
+      <p id="viewer-caption" data-viewer-caption aria-live="polite"></p>
+      <button type="button" data-viewer-close autofocus>关闭</button>
+    </header>
+    <div class="gallery-viewer-content">
+      <div class="gallery-viewer-stage" data-viewer-stage><img data-viewer-image alt=""></div>
+      <aside class="gallery-viewer-details" data-viewer-details aria-label="作品说明" tabindex="0"></aside>
+    </div>
+    <footer class="gallery-viewer-footer">
+      <button type="button" data-viewer-previous>上一张</button>
+      <div class="gallery-viewer-state"><p data-viewer-counter></p><button type="button" data-viewer-original aria-pressed="false" hidden>原图</button></div>
+      <button type="button" data-viewer-next>下一张</button>
+    </footer>
+  </dialog>
 </body>
 </html>

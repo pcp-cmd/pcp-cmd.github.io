@@ -17,7 +17,7 @@ function escapeHtml(value) {
 
 function renderNavigation() {
   const nav = document.querySelector('.desktop-nav');
-  const items = window.ALEKSI_CONTENT && window.ALEKSI_CONTENT.nav;
+  const items = window.ALEKSI_SITE?.navigation || (window.ALEKSI_CONTENT && window.ALEKSI_CONTENT.nav);
   if (!nav || !Array.isArray(items)) return;
   const current = window.location.pathname.split('/').pop() || 'work-detail.html';
   nav.innerHTML = items.map((item) => {

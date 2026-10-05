@@ -1,0 +1,242 @@
+# T31 — Infinite actual states, finite carrier types, ordinary termination
+
+Date: 2026-10-04. Continue canonical T30.
+
+Status: complete ordinary proof and normal adversarial self-audit;
+drifting actual-resolution calibration PASSED on first execution. NOT independently verified.
+Universal Gap A remains OPEN.
+
+## 1. C106 — Remove the finite module-family requirement
+
+Let A be elementary finite-dimensional over arbitrary k. Let {X_i} be
+an arbitrary, possibly INFINITE, indexed family of actual nonzero finite
+LEFT modules. For EVERY i have an actual envelope sequence
+
+\[
+0\to\bigoplus_j X_j^{a_{ij}}\to H_i\to X_i^{b_i}\to0,
+\quad b_i\ge1,\quad\operatorname{pd}_A H_i\le h<\infty.
+\tag{1.1}
+\]
+
+Each local kernel sum is FINITE, as its actual middle/quotient are finite.
+There is ONE uniform h. No periodicity, finite isomorphism types,
+constant module dimensions or split syzygy is assumed.
+
+Use the ACTUAL C105 composition carriers C_L(X_i),C_R(X_i), with
+independent infinite LEFT/RIGHT simple labels. Require for EACH i
+
+\[
+e_jAe_k\ne0\qquad(j\in C_L(X_i),\ k\in C_R(X_i)).
+\tag{V}
+\]
+
+There are only finitely many different ordered carrier pairs among
+these actual states. Write tau for their number. Automatically
+
+\[
+1\le\tau\le2^{|I_L|+|I_R|}\le4^N.
+\tag{1.2}
+\]
+
+This is the ordinary composition support already used in C105, not
+a new derived invariant. We do NOT equate states with the same carrier.
+
+### Theorem 1.1 — Uniform ordinary stopping independent of state count
+
+If ambient supported simple Tor vanishes for n>M, let d_L,d_R be
+finite LEFT/RIGHT simple-pd bounds for labels occurring in this family
+(the algebra has finitely many labels, so these bounds exist; empty
+finite-side sets permit0). Set B=max(M,d_L,d_R). Then EVERY state has
+
+\[
+\operatorname{pd}_A X_i\le h+\tau(B+1)-1.
+\tag{1.3}
+\]
+
+Consequently ANY infinite-pd state in an actual family satisfying(1.1)
+and(V) forces a FIXED persistent ordinary supported simple Tor pair.
+The family may contain infinitely many nonisomorphic drifting states.
+No finite-state reduction, singular return or graph-return inference.
+
+Actual finite-pd subkernel repairs are allowed if their pd bounds and
+the middle Q_i pds are UNIFORM; the genuine quotient Q_i/K_i gives
+a uniform h=max(sup pd Q_i,1+sup pd K_i). Infinite-family finite-pd
+TYPE elimination requires its OWN uniform bound d0, not merely pointwise
+finiteness; with that bound actual kernel-copy quotients repair h to
+max(h,d0+1). The finite-family C105 case has such a bound automatically.
+No unproved finitistic-dimension assertion is used.
+
+## 2. Actual ordinary cross-Ext replaces module repetition
+
+Two different states X_i,X_j with the SAME ordered carrier pair satisfy
+
+\[
+\operatorname{Ext}^n_A(X_i,X_j)=0\quad(n>B).
+\tag{2.1}
+\]
+
+Indeed infinite LEFT factors of X_i and infinite RIGHT factors of X_j
+form the SAME physically visible rectangle. Other simple tests vanish
+by ordinary finite-side pd/id. Double exact composition devissage gives
+(2.1) with the SAME B, independent of lengths/ranks/parameters. This
+is an explicit ordinary COMPARISON theorem for two actual states;
+same carrier alone is not assumed to produce a class or an isomorphism.
+
+For ANY finite target Z, the actual envelope sequences give SURJECTIVE
+ordinary degree-one connecting products in ALL degrees n>=h, as in
+C105. After K steps every class in degree n+K is a finite sum of
+actual composable length-K Yoneda words between states, times degree-n
+classes. The potentially infinite indexing causes no problem: each
+actual connecting matrix has finitely many entries and K is finite.
+
+Set K=tau(B+1). A NONZERO actual length-K positive word has K+1
+endpoint states, so some carrier type occurs at least B+2 times.
+Its first-to-last subproduct is a NONZERO ordinary Ext class of degree
+at least B+1 between two states of the same carrier type. This
+contradicts the actual cross-Ext vanishing(2.1). Thus all these real
+words are zero. This is NOT support-cycle-to-return reasoning:
+nonzero subproducts come from actual ordinary Yoneda associativity,
+and repetition is used only with the proved cross-Ext vanishing.
+
+Every Ext_A^n(X_i,Z) vanishes for n>=h+K, for ALL finite targets Z.
+Their actual minimal resolutions terminate at h+K-1, proving(1.3).
+If some X_i is infinite-pd, supported ambient cutoff cannot exist.
+Finitely many simple ordered pairs select a fixed persistent supported
+ordinary Tor pair. Endpoint ordering remains Tor(R_k,L_j),D(j,k)>0.
+The direct RIGHT proof uses e_yAe_z for RIGHT-infinite z/LEFT-infinite y,
+and returns Tor(R_z,L_y), without opposite-infinite-plus transfer.
+
+## 3. Arbitrary actual minimal tails: infinitely many aligned states suffice
+
+Take X_n=Omega_A^n L_y along an actual infinite minimal LEFT resolution.
+Every projective cover gives(1.1) with h=0,b_n=1 and kernel X_(n+1).
+For any a<b its REAL spliced minimal-cover sequence determines a NONZERO
+
+\[
+\epsilon_{a,b}\in\operatorname{Ext}^{b-a}_A(X_a,X_b).
+\tag{3.1}
+\]
+
+Proof: ordinary first-variable dimension shifting by the intervening
+PROJECTIVE terms identifies this class with the last cover extension
+0->X_b->P_(b-1)->X_(b-1)->0. Its connecting image of id_(X_b) is nonzero:
+otherwise the actual inclusion X_b->P_(b-1) has a retraction, making the
+sequence split and X_(b-1) projective. This contradicts the infinite
+minimal tail. No singular equality or support-graph inference is used.
+
+An aligned state is an actual X_n satisfying(V). Under an ambient
+supported cutoff M, any two aligned states of the SAME ordered carrier
+type must have b-a<=B by(2.1) and(3.1). All integer indices of that type
+therefore fit in an interval of length B, containing at most B+1 states.
+There are tau types among the aligned states (tau=0 if none). Hence an
+infinite actual tail in a bad algebra has at most tau(B+1) aligned states.
+In particular INFINITELY MANY aligned syzygies, even with arbitrary
+misaligned gaps, force a fixed persistent SUPPORTED ordinary simple Tor.
+This removes the earlier EVERY-late-state requirement. It is a genuine
+ordinary comparison and uniform bound, not merely recurrence of labels.
+
+If every syzygy after index s is aligned, the full family argument gives
+
+\[
+\operatorname{pd}_A L_y\le s+\tau(B+1)-1
+\tag{3.2}
+\]
+
+under supported cutoff, contradicting the actual infinite tail. Carrier
+types may vary and actual modules may drift through infinitely many
+isomorphism types; no constant carrier or strict carrier descent needed.
+
+This does not prove infinitely many aligned states for arbitrary tails.
+The frozen square-zero cycle is treated by its simple states (aligned),
+while a coarse sum of all states fails(V). Earlier map-image pruning
+counterexamples remain valid; no term/image is removed from a resolution.
+C090's carrier-dominating block bridge is separately retained, not claimed
+weaker or stronger without its exact hypotheses.
+
+## 4. Drifting-resolution boundary and calibration
+
+Over k=Q, take the local four-dimensional quantum exterior algebra
+Gamma with basis1,x,y,z and only nonzero radical products xy=z,
+yx=-2z. For lambda nonzero let M_lambda have basis u,v with
+xu=v,yu=lambda v and radical actions on v zero. The actual cover
+Gamma->M_lambda has kernel span(y-lambda x,z), isomorphic to M_(2lambda):
+
+\[
+x(y-\lambda x)=z,\qquad
+y(y-\lambda x)=2\lambda z.
+\tag{4.1}
+\]
+
+Thus X_n=M_(2^n),H_n=Gamma supply an actual INFINITE-state envelope
+family, h=0. The modules are pairwise nonisomorphic: the scalar ratio
+of y and x acting from top to socle is exactly lambda and is invariant
+under every module isomorphism. All covers/kernels are nonzero and
+minimal, so the family has infinite pd, not sampled infinity.
+
+The minimal differential d_n is right multiplication by
+y-2^(n-1)lambda x. Adjacent products are zero, and each kernel equals
+the next two-dimensional image by(4.1). With target M_mu, the ordinary
+Hom cochain differential in degree n has scalar
+
+\[
+\mu-2^n\lambda
+\tag{4.2}
+\]
+
+from u to v, with v killed. Consequently Ext^n(M_lambda,M_lambda)=0
+for EVERY n>=2, yet Ext^n(M_lambda,M_(2^n lambda)) is nonzero for
+EVERY n>=1 (kernel dimension2,preceding image dimension1). This explicitly
+breaks the INVALID infinite-family extension of C105 using only bounded
+INDIVIDUAL self-Ext. What C106 needs is the uniform actual CROSS-Ext
+bound(2.1), which supported ambient vanishing would provide.
+
+Gamma has one simple S. If this LEFT simple had finite pd, ordinary
+composition devissage would give the same finite bound for every finite
+LEFT module, contradicting the actual infinite resolution of M_lambda.
+Thus LEFT S has infinite pd. Its actual minimal resolution has nonzero
+Gamma-sums in EVERY degree, and tensor with RIGHT S kills each radical
+differential. Consequently ordinary Tor(R_S,L_S) is nonzero in EVERY
+degree, forcing infinite RIGHT pd too. This proves both labels directly.
+
+Every M_lambda has both carrier sets{S}, the physical diagonal is
+nonzero, so tau=1 and(V) holds. C106 therefore returns persistent
+ordinary Tor(R_S,L_S) even though every drifting state's self-Ext is
+eventually zero. This is a genuine ordinary SIMPLE bridge across the
+finite-state failure. No assertion that module self-return persists.
+
+For general q unit replace-2 by-q and2lambda by qlambda. Infinite
+nonisomorphic drift needs q of infinite multiplicative order, not all
+characteristics/parameters. The theorem itself is over arbitrary k;
+the q=2 drift calibration is over Q. The example is already infinite-plus
+and does not disprove the full global alternative. Actual envelope/kernel
+maps and cochain ranks passed:64 full associativity triples,5 actual
+minimal covers,15 integral basis inverses,4 actual kernel isomorphisms,
+8 differential segments and16 ordinary Hom-cochain Ext ranks. Four
+frozen helper hashes recorded; computation record validated. The infinite
+parameter identities are separately written proofs, not finite samples.
+
+## 5. Audit and whole-objective frontier
+
+Load-bearing: actual closed envelope family, UNIFORM finite h, locally
+finite kernel sums, actual state composition carriers, independent
+LEFT/RIGHT label sets, EVERY state rectangle(V); same-type CROSS-Ext
+vanishing, not self-Ext alone; real degree-one connecting classes;
+repeat CARRIER TYPE only inside a proven nonzero ordinary product;
+tau finite from finite simple labels, not finite exact module states;
+correct h+tau(B+1)-1 index; ordinary all-target minimal termination;
+nonzero actual long syzygy extensions by last nonsplit cover, ordinary
+projective dimension shifting and a retraction test; only INFINITELY MANY
+aligned syzygies needed, with at most tau(B+1) such states under bad cutoff;
+finite-type quotient repair only with uniform d0; no unproved global
+finitistic-dimension bound; direct RIGHT support ordering. Shared
+helpers/self-audit are NOT independent proof verification.
+
+C106 removes a genuine finite-state bottleneck from the C105 route.
+The remaining issue is ordinary rectangle alignment or another return/
+strict reduction when actual tail carrier pairs are not aligned. Finite
+image pd and smaller image carrier still do not supply those hypotheses.
+General strongly connected bad cores, deep-radical errors, C102 unit
+visibility, singular F Yoneda, no-factor/all-infinite, C076 physical
+transfer and ALL original Target-A/bounded-screening/local-trivial/
+Primitive/Binary/higher-output/supported-weight branches remain OPEN.
+Universal Gap A remains OPEN.

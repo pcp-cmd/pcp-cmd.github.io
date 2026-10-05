@@ -1,0 +1,400 @@
+# STATUS B — 有限区间检测与定量 Peirce recurrence
+
+2026-09-10。接续 Peirce 消去定理及无三角形定理。本稿给出一个比“存在无限多次非零 Tor”更强的定量结论：在满足消去条件的支撑上，supported Tor 不可能留下任意大的倍数尺度空档。相反，一段足够宽的有限消失区间，就能给出全局维数的明确上界。
+
+证明为本轮 solo 推导和自审，未经过独立数学 verifier 或形式化认证，新颖性未确认。Universal Gap A 和五顶点中心模式仍未解决；第 8 节另记录中心模式的新必要条件。
+
+后续进展见 [Return-Kernel-Tor-Theorem.md](Return-Kernel-Tor-Theorem.md)：返回乘法核可替代逐箭头零乘积，给出全部正偶数 self-Tor、自由 Yoneda 子代数，以及第 8 节中心模式的进一步满秩约束。本稿的有限区间检测定理保持原样。
+
+## 1. 精确结论
+
+设 \(A\) 是有限维 basic \(\mathbb C\)-algebra，\(J=\operatorname{rad}A\)，并固定 primitive orthogonal idempotents \(e_1,\ldots,e_r\)。记
+\[
+L_j=Ae_j/Je_j,\qquad R_i=e_iA/e_iJ,\qquad
+C_{ki}=1\Longleftrightarrow e_kAe_i\ne0.
+\]
+以不同顶点之间任一方向的 Peirce 非零性定义无向图 \(G(C)\)。假设 \(C\) 有一个消去排序，使每次删除顶点 \(v\) 时，它的任意两个不同剩余邻居 \(u,w\) 都满足
+\[
+C_{uw}=C_{wu}=1.
+\tag{E}
+\]
+森林总满足这一条件；对称的 chordal Peirce 支撑也满足它。
+
+令
+\[
+z(C)=\#\{(i,j):C_{ji}=0\},\qquad K(C)=2^{z(C)}.
+\tag{1}
+\]
+这是一个只依赖有限零一支撑的常数，不使用 \(\dim A\)、Loewy 长度或 Tor multiplicities。该常数是明确的上界，未声称最优。
+
+**定理 1（有限区间检测）。** 对任意整数 \(N\ge1\)，若
+\[
+\operatorname{gldim}A\ge K(C)N,
+\]
+则存在整数 \(n\) 和固定于该次检测的顶点 \(i,j\)，使
+\[
+\boxed{
+N\le n\le K(C)N,\qquad
+e_jAe_i\ne0,\qquad
+\operatorname{Tor}_n^A(R_i,L_j)\ne0.
+}
+\tag{2}
+\]
+等价地，若所有 supported ordered pairs 的 Tor 在整个有限区间
+\([N,K(C)N]\) 内都为零，则
+\[
+\boxed{\operatorname{gldim}A<K(C)N.}
+\tag{3}
+\]
+没有假设区间之后的 Tor 消失。(3) 的无限范围结论来自下面的一般证明。
+
+**推论 1.1。** 若 \(\operatorname{gldim}A=\infty\)，每个区间
+\([N,K(C)N]\) 都包含一次 supported Tor 非消失。因此得到比 infinite \(+\) 更强的统一时间范围控制。这里每个区间检测到的 pair 可以不同；有限 pair 的抽屉原理进一步给出一个固定 pair 在无穷多个次数非零，但没有证明同一个 pair 命中每个区间。
+
+**推论 1.2（维数上界）。** 若 \(b\ge0\) 且
+\[
+C_{ji}=1\Longrightarrow
+\operatorname{Tor}_n^A(R_i,L_j)=0\quad(n>b),
+\]
+则
+\[
+\boxed{\operatorname{gldim}A\le 2^{z(C)}(b+1)-1.}
+\tag{4}
+\]
+
+## 2. 有限长度检测与全局维数的输入
+
+对任意有限维左模块 \(X\)，沿组成列使用 Tor 长正合列，可得
+\[
+\dim\operatorname{Tor}_d^A(R_i,X)
+\le\sum_k[X:L_k]\dim\operatorname{Tor}_d^A(R_i,L_k).
+\tag{5}
+\]
+所以左侧非零时，存在一个实际组成因子 \(L_k\)，在**同一次数 \(d\)** 给出非零 Tor。右模块版本同样成立。
+
+最小投射消解
+\[
+Q_n(L_j)=\bigoplus_i(Ae_i)^{\beta_{n,i}(L_j)}
+\]
+满足
+\[
+\beta_{n,i}(L_j)=\dim\operatorname{Tor}_n^A(R_i,L_j).
+\tag{6}
+\]
+此外，\(\operatorname{gldim}A\) 等于有限个 left simples 的 pd 的最大值，包括允许值 \(\infty\) 的情况。因此当 \(\operatorname{gldim}A\ge M\) 时，某个 simple 的最小消解第 \(M\) 项非零。若一个最小消解在某次数终止，之后不可能再出现非零项。
+
+这个全局维数事实也适用于任意大小的模块：有限个 simples 的 pd 若有统一上界，其任意直和保留上界；再沿任意模块的有限 radical filtration，用 horseshoe lemma 推广即可。
+
+## 3. 关键新引理：只截取有限消解片段
+
+对整数 \(1\le a\le M\)，定义零一矩阵
+\[
+U[a,M]_{ij}=1
+\Longleftrightarrow
+\exists\,n\in[a,M]:
+\operatorname{Tor}_n^A(R_i,L_j)\ne0.
+\tag{7}
+\]
+它只记录一个有限区间内出现过的标签，不要求任何标签无限 recurrence。
+
+**引理 2（有限片段中的分块检测）。** 假设 \(2a\le M\) 且
+\[
+U[a,M]=U[2a,M]=U.
+\tag{8}
+\]
+记 \(T_j=\{i:U_{ij}=1\}\)、\(W_i=\{j:U_{ij}=1\}\)。对每条 \(U_{ij}=1\)，令 \(S\) 为 \(G(C)[T_j]\) 中包含 \(i\) 的连通分支，则
+\[
+\exists\,q\in S,\ k\in W_i:\quad C_{kq}=1.
+\tag{L}
+\]
+同样，若 \(T\) 为 \(G(C)[W_i]\) 中包含 \(j\) 的连通分支，则
+\[
+\exists\,k\in T,\ q\in T_j:\quad C_{kq}=1.
+\tag{R}
+\]
+
+**证明。** 由 (8)，可选 \(n\in[2a,M]\) 使 \(Ae_i\) 出现在
+\(Q_n(L_j)\) 中。所有次数 \(a,\ldots,M\) 的消解项只含 \(T_j\) 的标签。不同 \(G(C)[T_j]\) 分支之间的所有 projective Hom 都为零，因为
+\[
+\operatorname{Hom}_A(Ae_u,Ae_w)\cong e_uAe_w.
+\]
+所以在这个有限区间内部，differential 按分支分块。取 \(S\) 块，得到
+\[
+Q_M^S\longrightarrow\cdots\longrightarrow Q_{a+1}^S
+\longrightarrow Q_a^S\longrightarrow X_S\longrightarrow0,
+\qquad
+X_S=\operatorname{coker}(Q_{a+1}^S\to Q_a^S).
+\tag{9}
+\]
+它在所有非最左端的位置正合，且所有已给出的 differential 都是 minimal。还必须证明：最左端可以接上一个最小 projective resolution，而不会改变 (9) 中已有的项。
+
+原消解的最小性与正合性给出
+\[
+\ker(d_M:Q_M\to Q_{M-1})
+=\operatorname{im}d_{M+1}\subseteq JQ_M.
+\]
+由于 \(d_M\) 已按分支分块，
+\[
+\ker(d_M|_{Q_M^S})
+=\ker d_M\cap Q_M^S
+\subseteq JQ_M\cap Q_M^S=JQ_M^S.
+\tag{10}
+\]
+因此取这个 kernel 的 projective cover，并继续最小消解，即得到 (9) 的最小延长。即使第 \(M+1\) 项含有区间之外的新标签，(10) 仍然成立；我们并没有假设原消解在 \(M\) 之后继续分块。
+
+于是 (6) 给出
+\[
+\operatorname{Tor}_{n-a}^A(R_i,X_S)\ne0.
+\]
+由 (5)，某个组成因子 \(L_k\) 满足
+\[
+\operatorname{Tor}_{n-a}^A(R_i,L_k)\ne0.
+\]
+且
+\[
+a\le n-a\le M-a\le M,
+\]
+所以 \(k\in W_i\)。另一方面 \(X_S\) 是 \(Q_a^S\) 的商，其组成因子必在某个 \(Ae_q\)、\(q\in S\) 中出现，故 \(C_{kq}=1\)。这证明 (L)。
+
+对右 simple 的最小右投射消解重复同一证明，即得 (R)。等价地，可以同时转置 \(C,U\)，利用
+\[
+\operatorname{Tor}_n^{A^{op}}(R_j^{op},L_i^{op})
+\cong\operatorname{Tor}_n^A(R_i,L_j).
+\]
+转置之后的检测条件恰好仍为 \(C_{kq}=1\)，方向没有改变。\(\square\)
+
+**审计重点。** 本引理的关键是 (10)。不证明最左端 kernel 位于 radical 内，就不能声称有限片段在延长后保留第 \(M\) 项的 Tor 检测。
+
+## 4. 使用的是纯矩阵消去，不是 corner 提升
+
+以下是 [Peirce-Elimination-Theorem.md](Peirce-Elimination-Theorem.md) 第 4 节的纯矩阵引理。它适用于任意零一矩阵 \(U\)，不要求 \(U\) 真的是 persistent Tor。
+
+若 \(U\ne0\) 同时满足
+\[
+U_{ij}=1\Longrightarrow C_{ji}=0,
+\tag{Z}
+\]
+以及上面的 (L)、(R)，则不能在 \(C\) 上完成条件 (E) 的消去排序。
+
+这里简要重述证明，完整删点核对见前稿。由 (Z)、(L)、(R)，每条 \(U\)-边的相应行、列图分支都不能是单点：否则检测者直接给出 \(U_{ik}=C_{ki}=1\) 或 \(U_{qj}=C_{jq}=1\)。
+
+删除满足 (E) 的顶点 \(v\) 时，邻居之间的双向连接保证任何剩余分支不会被拆开。原 (L) 的检测者 \(q,k\) 若碰到 \(v\)，则用同分支中 \(v\) 的邻居替代；若两个检测者都为 \(v\)，两边各选一个邻居，再用 (E) 连接。转置给出 (R) 的保留。若所有原 \(U\)-边都碰到 \(v\)，行、列分支非单点又给出一条避开 \(v\) 的边，故删除后矩阵仍非零。重复消去不可能最终得到零阶非零矩阵。
+
+以上只删除 \(C,U\) 的相同行列，没有把任何新矩阵解释成一个 corner 的真实 Tor。
+
+## 5. 定理 1 的证明
+
+令 \(z=z(C)\)、\(M=2^zN\)。反设 \(\operatorname{gldim}A\ge M\)，但所有 supported Tor 在 \([N,M]\) 中都消失。
+
+若 \(z=0\)，每个 ordered pair 都 supported，而第 \(M=N\) 项必有某个非零 Tor，立即矛盾。
+
+现设 \(z\ge1\)。考虑嵌套的 \(z+1\) 个矩阵
+\[
+U_k=U[2^kN,M],\qquad k=0,1,\ldots,z.
+\]
+它们均非零，因为第 \(M\) 次有非零 simple Tor。又
+\[
+U_0\supseteq U_1\supseteq\cdots\supseteq U_z,
+\]
+每个矩阵都满足 (Z)，所以每个非零位置都属于至多 \(z\) 个 Peirce 零位置。
+
+从一个至多含 \(z\) 个位置的非空集合开始，不能经过 \(z\) 次严格缩小后仍非空。因此存在 \(k<z\) 使
+\[
+U_k=U_{k+1}.
+\]
+取 \(a=2^kN\)，有 \(2a\le M\)。引理 2 保证这个非零矩阵满足 (L)、(R)，而它已经满足 (Z)。这与第 4 节的纯矩阵消去引理矛盾。定理 1 得证。\(\square\)
+
+推论 1.1 直接取无限全局维数。推论 1.2 取 \(N=b+1\)，再用全局维数为整数得到 (4)。
+
+**进一步的一般形式。** 条件 (E) 可以替换成：对于给定 \(C\)，不存在非零零一矩阵同时满足 (Z)、(L)、(R)。上述证明完全不变。因此“有限支撑阻碍系统无解”本身就能提升成定量 recurrence；消去排序只是一个容易检查的充分证书。
+
+## 6. 对 \(\tau\)-Hochschild homology 的定量推论
+
+这一节唯一额外文献输入是最小 bimodule resolution 给出的链空间与 cycles 的识别：
+\[
+B_n(A)\cong
+\bigoplus_{i,j}e_jAe_i\otimes_{\mathbb C}
+\operatorname{Tor}_n^A(R_i,L_j),
+\qquad
+\mathrm{HH}_n^\tau(A)\cong\ker(\partial_n:B_n\to B_{n-1})
+\quad(n\ge1).
+\tag{11}
+\]
+参见 [Cibils–Lanzilotta–Marcos–Solotar, Happel’s question, Han’s conjecture and \(\tau\)-Hochschild (co)homology, Theorem 2.12 与 §4–5](https://arxiv.org/html/2509.05135v2)。这里使用 (11) 本身，次数平移由下述链复形论证明确给出。
+
+对 \(n\ge2\)，如果 \(\mathrm{HH}_{n}^\tau(A)=\mathrm{HH}_{n-1}^\tau(A)=0\)，则 \(\partial_n\) 单射，而
+\[
+\operatorname{im}\partial_n\subseteq\ker\partial_{n-1}=0,
+\]
+所以 \(B_n=0\)。反过来，\(B_n\ne0\) 保证这两个相邻次数中至少一个 \(\tau\)-HH 非零。
+
+由定理 1，对 \(N\ge2\)，
+\[
+\boxed{
+\mathrm{HH}_t^\tau(A)=0\quad(N-1\le t\le K(C)N)
+\Longrightarrow
+\operatorname{gldim}A<K(C)N.
+}
+\tag{12}
+\]
+如果 \(\operatorname{gldim}A=\infty\)，则每个 \([N-1,K(C)N]\)、\(N\ge2\)，都有一个非零 \(\tau\)-HH group。
+
+再设 \(h\ge0\) 且 \(\mathrm{HH}_n^\tau(A)=0\) 对所有 \(n>h\) 成立。由上述相邻次数论证，\(B_n=0\) 对 \(n\ge h+2\) 成立，因此
+\[
+\boxed{\operatorname{gldim}A\le 2^{z(C)}(h+2)-1.}
+\tag{13}
+\]
+本节的有限区间与维数估计是由 (11) 和本轮定理推导的。没有把 cycles 的非零自动解释为普通 HH 的非零；普通 HH 还要商去 boundaries。
+
+## 7. 常数、证书与适用范围
+
+现有检查器 [peirce_elimination_certificate.py](peirce_elimination_certificate.py) 检查 (E)。完成消去后，附带报告 \(z(C)\) 及窗口常数 \(2^{z(C)}\)；这是本定理的有限假设证书。
+
+例如，对三个顶点的双向 Peirce 路径，只有两个 ordered Peirce 分量为零，因此 \(z=2,K=4\)。在这个类中，若全局维数无限，则每个 \([N,4N]\) 都有 supported Tor 非零。若所有 supported Tor 在次数 \(>b\) 消失，则全局维数至多 \(4b+3\)。
+
+常数可能很粗。这里先证明一个维数、multiplicity 和 Loewy 长度均不参与的有效上界，再考虑改进它；没有声称 \(2^z\) 是必要或最小值。
+
+无三角形支撑的无限全局维数情形也有一个明确窗口：
+
+- 若存在前稿的长度 \(m\) 箭头闭路证书，固定闭路顶点在每个 \([N,N+m-1]\) 中都有非零 diagonal Tor。
+- 若没有长度至少三的 Peirce 有向简单圈，所有 strongly connected component corners 都是森林。选一个无限全局维数的 component，应用本定理并利用前稿已经证明的 component 内 Tor 同构，即可得到窗口系数 \(2^{z(C_S)}\)。不知道哪个 component 无限时，可用这些系数的最大值。
+
+这没有把本定理的有限全局维数估计未经证明地推广到一般 corner 或任意三角分块代数。
+
+## 8. 五顶点中心模式：四个返回乘积都必须非零
+
+本节保留前稿原始编号 \(0,1,2,3,4\)，并设
+\[
+C_{\rm cols}=[31,11,21,13,19],\qquad
+H_{\rm cols}=[0,12,18,20,10],
+\]
+其中 \(H_{ij}=1\) 表示 \(\operatorname{Tor}_n(R_i,L_j)\) 在无穷多个次数非零。令 \(s\) 为外围四圈的后继置换：
+\[
+1\mapsto3\mapsto2\mapsto4\mapsto1.
+\]
+则对外围顶点 \(j\)，其 recurrent projective labels 正好为
+\[
+T_j=\{s(j),s^2(j)\}.
+\]
+
+**命题 3。** 若存在实现这对 \(C,H\) 的实际代数，则对每个外围顶点 \(i\)，
+\[
+\Gamma_i=e_iAe_i\ne\mathbb C,\qquad
+\boxed{e_iAe_0Ae_i\ne0.}
+\tag{14}
+\]
+
+**证明第一步。** 给定 \(i=s(j)\)，充分高次的 \(L_j\) 消解只含 \(Ae_i,Ae_{s(i)}\)。由于
+\[
+e_iAe_{s(i)}=0,
+\]
+乘以 \(e_i\) 后，只剩 \(\Gamma_i\)-free 项，且来自对角块的 differential entries 均在 \(e_iJe_i\) 中。该高次复形 exact，并且因 \(H_{ij}=1\)，有无穷多个非零项。若 \(\Gamma_i=\mathbb C\)，所有这些 differential 都为零，与 exactness 矛盾。所以 \(\Gamma_i\ne\mathbb C\)。
+
+**证明第二步。** 除中心外，没有其他顶点与 \(i\) 双向 Peirce 非零。因此如果 (14) 的乘积为零，就有
+\[
+e_iA(1-e_i)Ae_i=0.
+\]
+这时 \(\pi:A\to\Gamma_i,\ a\mapsto e_i a e_i\) 是 unital algebra map（目标的单位为 \(e_i\)）。取唯一 simple character \(\chi:\Gamma_i\to\mathbb C\)，有 unital section
+\[
+\iota(b)=b+\chi(b)(1-e_i),\qquad \pi\iota=\operatorname{id}.
+\]
+沿这两个代数映射的 restriction functors 都 exact，复合为恒等，因而 Yoneda Ext 给出
+\[
+\operatorname{Ext}_{\Gamma_i}^n(\mathbb C,\mathbb C)
+\hookrightarrow
+\operatorname{Ext}_A^n(L_i,L_i).
+\]
+非平凡有限维 local algebra 的 simple 具有无限 pd：若存在有限 free resolution，维数的 Euler 等式将迫使 \(\dim\Gamma_i\) 整除 1。因此其最小消解每一项都非零，所有上述 local self-Ext 都非零。由注入得到 diagonal Tor 无限非零，与给定 \(H_{ii}=0\) 矛盾。故 (14) 对全部外围顶点成立。\(\square\)
+
+**引理 4（唯一非零外部返回强制箭头）。** 对任意有限顶点数，若不同顶点 \(i,h\) 满足
+\[
+e_iAe_hAe_i\ne0,\qquad
+e_iAe_kAe_i=0\quad(k\notin\{i,h\}),
+\tag{15}
+\]
+则两个方向都有真正的箭头：
+\[
+e_hJe_i/e_hJ^2e_i\ne0,\qquad
+e_iJe_h/e_iJ^2e_h\ne0.
+\tag{16}
+\]
+
+**证明。** 记 \(N=e_hAe_i\)、\(M=e_iAe_h\)，以及
+\[
+V=\sum_{k\notin\{i,h\}}e_hAe_kAe_i.
+\]
+它是一个 \((e_hAe_h,e_iAe_i)\)-subbimodule。如果第一个箭头商为零，则
+\[
+N=(e_hJe_h)N+N(e_iJe_i)+V.
+\]
+对 \(N/V\) 迭代左右 radical 的幂零性，得到 \(N=V\)。可是
+\[
+MV\subseteq\sum_{k\notin\{i,h\}}e_iAe_kAe_i=0,
+\]
+从而 \(MN=0\)，与 (15) 矛盾。第二个方向同理：若 \(M=e_iJ^2e_h\)，则模掉
+\(\sum_{k\notin\{i,h\}}e_iAe_kAe_h\) 后用同一幂零论证，再右乘 \(N\)，也得到 \(MN=0\)。\(\square\)
+
+这个引理只要求其他返回乘积为零，比“没有其他双向 Peirce 邻居”更弱。它没有断言任意非零 Peirce 返回都会强制箭头。例如取有向三圈的 path algebra 模掉所有长度四路径，绕圈的非零返回可以经一个长度二分量完成，该方向并没有箭头；这时 (15) 的其他返回消失条件恰好不成立。
+
+引理 4 本身只保证箭头存在。原归档的五维、全局维数为 2 的校准代数也满足一个这样的唯一返回条件，所以不能仅凭 (16) 就宣布 infinite \(+\)。后面的 Tor 构造还会逐项使用额外的零乘积条件。
+
+应用 (14) 和引理 4，中心模式的**八个中心—外围方向在 \(J/J^2\) 中全部非零**。
+
+**推论 4.1（中心也必须非平凡）。** 记
+\[
+I_i=e_0Ae_iAe_0\subseteq e_0Je_0,\qquad i=1,2,3,4.
+\]
+任何实现当前 \(C,H\) 的代数还必须满足
+\[
+\boxed{I_1+I_2\ne0,\qquad I_3+I_4\ne0.}
+\tag{17}
+\]
+特别地，\(e_0Ae_0\ne\mathbb C\)，并且至少两个外围顶点给出非零的中心返回乘积。
+
+**证明。** 外围的相反顶点对分别为 \(\{1,2\}\)、\(\{3,4\}\)，它们之间两个 Peirce 方向都为零。如果对某个这样的 pair \(i,k\) 有 \(I_i=I_k=0\)，从 (16) 选取四个非零箭头类的 lifts，就得到闭路
+\[
+0\longrightarrow i\longrightarrow0\longrightarrow k\longrightarrow0.
+\]
+两次在中心的返回乘积由 \(I_i=I_k=0\) 消失；另外两次跨外围顶点的乘积由对应 Peirce 分量为零而消失。因此所有循环相邻乘积都为零。按前稿已经给出的 bar-cycle 证明，闭路重复 \(q\) 次得到
+\[
+\operatorname{Tor}_{4q}^A(R_0,L_0)\ne0\qquad(q\ge1),
+\]
+与 \(H_{00}=0\) 矛盾。所以 (17) 成立。\(\square\)
+
+**任意顶点数的返回—Tor 推论。** 同一证明不依赖五顶点。若不同顶点 \(i,k,h\) 满足
+\[
+e_iAe_k=e_kAe_i=0,
+\]
+且对 \(v=i,k\) 都有
+\[
+e_vAe_hAe_v\ne0,\qquad
+e_vAe_uAe_v=0\ (u\notin\{v,h\}),\qquad
+e_hAe_vAe_h=0,
+\]
+则
+\[
+\boxed{\operatorname{Tor}_{4q}^A(R_h,L_h)\ne0\quad(q\ge1).}
+\tag{18}
+\]
+引理 4 保证所需四条真正箭头；上述乘法条件保证四个循环相邻乘积为零，再应用 bar-cycle 证明即可。这是一个仅用返回乘法条件就产生固定 diagonal pair 及完整无限次数序列的充分定理，无需预先假设无限全局维数。
+
+加上前稿已经证明的必要条件，一个实际 failure 必须同时满足：
+
+1. 中心 \(L_0\) 的 projective dimension 和 injective dimension 都有限。
+2. 四个外围 local corners 都非平凡，并且四个经过中心的外围返回乘积全非零。
+3. 至少一条外围边 \(i\to s(i)\) 完全经中心生成：
+   \[
+   e_{s(i)}Ae_i=e_{s(i)}Ae_0Ae_i\ne0.
+   \]
+4. 外围 simples 的充分高次最小消解只使用指定的两个外围投射标签，不能含 \(Ae_0\)。
+5. 八个中心—外围方向都包含真正的箭头；中心 local corner 也非平凡，且满足 (17)。
+
+这些是有证明的必要条件，尚不是矛盾。本轮定量定理不能直接用于这个中心 \(C\)，因为它不满足 (E)，而给定 \(H\) 仍满足纯支撑阻碍条件。剩余接口仍需真实乘法、kernels 和 images 的新信息；不能通过把中心删除后暗用 corner Tor lifting 来跳过。
+
+## 9. 核验状态
+
+本稿新增的一般输入包括有限片段引理 2 与唯一返回引理 4。定量主证明使用嵌套有限集合计数及前稿已给出完整证明的纯矩阵消去。第 6 节明确标出了文献识别式，其定量推论为本轮推导。第 8 节还给出任意顶点数的返回—Tor 推论，但尚未关闭五顶点 residual。
+
+最需要独立审阅的是 (9)–(10) 的最小延长，以及把实际 Tor 次数 \(n\) 变成 \(n-a\) 后仍留在同一检测区间的量词。没有用任何有限次 Tor 实验代替这两步。
+
+原项目 verified fact graph 未修改；没有调用独立数学 verifier，也没有把本稿登记为 verifier-approved fact。

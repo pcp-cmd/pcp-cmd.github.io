@@ -1,0 +1,387 @@
+# 任意 N 的返回补角：把无限尾端定位到有限前缀中的边界模块
+
+2026-09-16。接续 [任意 N 主路线](N-Vertex-Main-Route.md) 和 [删点比较定理](Idempotent-Deletion-and-Ext-Comparison.md)。
+
+**状态：一般 N 的 Universal Gap A 仍未证明。** 本稿给出适用于任意 N 的实际消解约化、有限前缀充分条件和反例必须满足的边界模块障碍。均有自审证明，尚无独立数学核验，文献新颖性未确认。
+
+## 1. 每个 source 对应一个规范的较小角
+
+沿用左 simple \(L_j=Ae_j/Je_j\) 及
+\[
+\beta_{ij}(n)=\dim\operatorname{Ext}_A^n(L_j,L_i).
+\]
+固定 source \(j\)，定义
+\[
+F_j=\{i:e_jAe_i\ne0\},\qquad
+U_j=\{i:e_jAe_i=0\},\qquad
+u_j=\sum_{i\in U_j}e_i,\qquad B_j=u_jAu_j.
+\tag{1}
+\]
+称 \(B_j\) 为 source j 的返回补角。这只是本稿对 (1) 的简称。因为 \(j\in F_j\)，它至多有 \(N-1\) 个顶点。
+
+假设对于这个 source，有
+\[
+\beta_{ij}(n)=0\quad(i\in F_j,\ n>b).
+\tag{2}
+\]
+主路线的 \((Z_b)\) 保证 (2) 对每个 j 都成立。
+
+若 \(P_\bullet^{(j)}\to L_j\) 是实际最小投射消解，则 (2) 等价于
+\[
+P_n^{(j)}\in\operatorname{add}(Au_j)\quad(n>b).
+\tag{3}
+\]
+注意 \(u_jL_j=0\)，但低次限制项 \(u_jP_r^{(j)}\) 通常非零，也未必是 \(B_j\)-投射模。
+
+## 2. 实际尾端与较小角上的一个指定模块完全一致
+
+**定理 1。** 在 (2) 下，令 \(m=b+1\)，\(T_j=u_j\Omega_A^mL_j\)。则
+\[
+\cdots\longrightarrow u_jP_{m+1}^{(j)}
+\longrightarrow u_jP_m^{(j)}\longrightarrow T_j\longrightarrow0
+\tag{4}
+\]
+是 \(T_j\) 的最小 \(B_j\)-投射消解。对 \(r\ge0\)，
+\[
+\Omega_{B_j}^rT_j\simeq u_j\Omega_A^{m+r}L_j,
+\tag{5}
+\]
+以及
+\[
+\beta_{ij}^A(m+r)=
+\dim\operatorname{Ext}_{B_j}^r(T_j,\overline L_i)
+\quad(i\in U_j).
+\tag{6}
+\]
+因此
+\[
+\operatorname{pd}_A L_j=\infty
+\quad\Longleftrightarrow\quad
+\operatorname{pd}_{B_j}T_j=\infty.
+\tag{7}
+\]
+若 \(\Omega_A^mL_j\ne0\) 且右侧维数有限，则还有精确等式
+\[
+\operatorname{pd}_A L_j=m+\operatorname{pd}_{B_j}T_j.
+\tag{8}
+\]
+
+**证明。** 限制 \(u_j(-)\) 正合。由 (3)，(4) 的所有投射项确实为 \(B_j\)-投射模，而非任意限制投射模。
+
+对 \(P\in\operatorname{add}(Au_j)\)，有
+\[
+u_jJP=(u_jJu_j)u_jP=(\operatorname{rad}B_j)u_jP.
+\tag{9}
+\]
+所以限制后的覆盖和微分仍最小，得到 (4)–(6)。此外，对每个 \(s\ge m\)，\(\Omega_A^sL_j\) 是 \(\operatorname{add}(Au_j)\) 中投射模的商。如果其 \(u_j\)-限制为零，则该商本身为零。因此 (5) 两边同时终止；这证明 (7)–(8)。\(\square\)
+
+**零角情形。** 若 \(U_j=\varnothing\)，则 (3) 直接给出 \(P_n^{(j)}=0\)（\(n>b\)），所以 \(\operatorname{pd}_A L_j\le b\)。无需讨论零环上的非零模。
+
+这个约化没有假设被删 simple 的全局内射维数有限，也没有假设 \(\operatorname{pd}_{B_j}u_jA<\infty\)。它只使用 source j 的实际尾端消失条件。
+
+## 3. 一个有限前缀判据及定量上界
+
+记
+\[
+Q_{j,r}=u_jP_r^{(j)}\quad(0\le r\le b).
+\tag{10}
+\]
+由 \(u_jL_j=0\)，限制后的前缀是正合列
+\[
+0\longrightarrow T_j\longrightarrow Q_{j,b}
+\longrightarrow\cdots\longrightarrow Q_{j,0}\longrightarrow0.
+\tag{11}
+\]
+
+**定理 2。** 若 (2) 成立，且 (10) 中每个非零模都有有限 \(B_j\)-投射维数 \(c_{j,r}\)，则
+\[
+\boxed{
+\operatorname{pd}_A L_j\le
+d_j:=\max\bigl(\{b\}\cup
+\{r+c_{j,r}+1:0\le r\le b,\ Q_{j,r}\ne0\}\bigr).
+}
+\tag{12}
+\]
+特别地，如果 \(\operatorname{pd}_{B_j}u_jA\le c_j<\infty\)，则
+\[
+\operatorname{pd}_A L_j\le b+c_j+1.
+\tag{13}
+\]
+
+**证明。** 暂用 \(\operatorname{pd}0=-\infty\) 的记号。短正合列 \(0\to K\to V\to W\to0\) 满足
+\[
+\operatorname{pd}K\le\max\{\operatorname{pd}V,\operatorname{pd}W-1\}.
+\]
+从 (11) 右端开始反复使用，得到
+\[
+\operatorname{pd}_{B_j}T_j
+\le\max_{0\le r\le b}(c_{j,r}-(b-r)).
+\tag{14}
+\]
+若 \(T_j\ne0\)，将此代入 (8)，得到 (12)。若 \(T_j=0\)，由定理 1 的零性反映得到 \(\Omega_A^{b+1}L_j=0\)，即 \(\operatorname{pd}_A L_j\le b\)。
+
+最后，每个 \(Q_{j,r}\) 都属于 \(\operatorname{add}(u_jA)\)，故统一有限维数条件给出 (13)。\(\square\)
+
+**任意 N 推论。** 在全套 \((Z_b)\) 下，若每个 source j 的非零前缀模 (10) 都具有有限投射维数，则
+\[
+\operatorname{gldim}A\le\max_jd_j<\infty.
+\tag{15}
+\]
+这是直接使用完整 Peirce 条件的统一充分条件，不要求所有返回补角具有有限全局维数。第 7 节会说明：不能期待从 \((Z_b)\) 自动推出这些前缀项逐项有限 pd；一般路线必须使用第 8 节的整个前缀复形。
+
+## 4. 任意反例必须在低次 supported 项中留下什么
+
+**推论 3。** 假设 \((Z_b)\) 成立，且 \(\operatorname{pd}_A L_j=\infty\)。那么 \(U_j\ne\varnothing\)，且存在
+\[
+0\le r\le b,\qquad i\in F_j
+\]
+满足
+\[
+\boxed{
+\beta_{ij}(r)>0,\qquad
+e_jAe_i\ne0,\qquad
+\operatorname{pd}_{B_j}(u_jAe_i)=\infty.
+}
+\tag{16}
+\]
+
+**证明。** 定理 2 的逆否命题保证某个 \(Q_{j,r}\) 具有无限 pd。其直接和分解为
+\[
+Q_{j,r}=\bigoplus_i(u_jAe_i)^{\beta_{ij}(r)}.
+\]
+有限直接和具有无限 pd，当且仅当至少一个实际出现的 summand 具有无限 pd。如果 \(i\in U_j\)，则 \(u_jAe_i=B_je_i\) 是投射模。因此坏 summand 只能来自 \(i\in F_j\)，得到 (16)。\(\square\)
+
+这比“某个较小角还有无限全局维数”记录了更多实际信息：无限性必须由原消解中不晚于第 b 次、具有 supported 标签的一个投射 summand 限制后承担。标签 i 本身不在该角内，所以不能把 \(u_jAe_i\) 擅自替换成一个角代数 simple。
+
+**N 归纳中的限制。** (16) 是反例的必要条件，但也可能出现在有限全局维数的代数中，见第 7 节。因此不能以从 \((Z_b)\) 排除所有无限边界模块作为普遍桥梁。需要控制它们在整个前缀复形中的组合及抵消；第 8 节给出精确的 perfectness 版本。较小角上的 infinite supported Tor 目前也未被证明必然传回 A。
+
+## 5. 为什么不能把条件加强为所有角都有限，或对每个 source 单独断言成功
+
+### 5.1 有限全局维数的 A 也可以有无限的返回补角
+
+取顶点 \(0,1,2\)，箭头 \(a:0\to1,p:1\to0,c:1\to2\)，关系为
+\[
+ap=0,\qquad ca=0.
+\]
+从右向左乘，记 \(x=pa\)，radical 基为 \(a,p,c,x\)，唯一非零 radical 基乘积是 \(pa=x\)。代数维数为 7，Cartan 矩阵为
+\[
+C=\begin{pmatrix}2&1&0\\1&1&0\\0&1&1\end{pmatrix}.
+\tag{17}
+\]
+有
+\[
+\Omega^2L_0\simeq L_2,\qquad
+\Omega L_1\simeq L_0\oplus L_2,\qquad P_2=L_2.
+\]
+因此三个 simple 的投射维数是 \(2,3,0\)，全局维数为 3。
+
+对 source 2，返回补角由顶点 0 构成，是 \(\Delta\)。\(u_2Ae_1=\mathbb Cp\) 是 \(\Delta\) 的非投射 simple，所以 \(\operatorname{pd}_{B_2}u_2A=\infty\)。但是 source 2 的实际前缀只有 \(P_0^{(2)}=P_2\)，其限制为零；定理 2 正确给出 \(\operatorname{pd}L_2=0\)。
+
+另外两个 source 的最小可用 b 分别为 1 和 2，返回补角都为 \(\mathbb C e_2\)。公式 (12) 分别得到精确上界 2 和 3。由此可见，只检查实际前缀比要求整个 \(u_jA\) 有限 pd 更灵活。
+
+这也说明：不能从 A 的 \((Z_b)\) 自动推断每个返回补角满足同样的高次 supported 消失条件。
+
+### 5.2 单个 source 的消失条件本身不能排除无限边界
+
+取四维代数，有顶点 \(0,1\)，radical 基 \(x:0\to0,u:1\to0\)，所有 radical 二次乘积为零。则
+\[
+\Omega L_1\simeq L_0,\qquad \Omega L_0\simeq L_0.
+\tag{18}
+\]
+source 1 只有对角 supported 位置，且全部正次数 self-Ext 为零。因此它满足 (2)，甚至可取 \(b=0\)，但 \(\operatorname{pd}L_1=\infty\)。
+
+其返回补角为顶点 0 上的 \(\Delta\)，唯一前缀模 \(u_1P_0^{(1)}=\mathbb Cu\) 是无限 pd 的 \(\Delta\)-simple，恰好实现 (16)。整个 A 仍有 source 0 的 self-Tor 每阶非零，故不满足全套 \((Z_b)\)，也不是 (U) 的反例。
+
+因此后续必须同时使用全部 source 的条件，不能把 (2) 对一个 j 的局部结论直接提升为一般 (U)。
+
+## 6. 有限窗口定理：只需要连续 c+2 个次数
+
+以下定理不以已经知道的最终消失 (2) 为假设。
+
+**定理 4。** 固定 j，设 \(U_j\ne\varnothing\)，且
+\[
+c=\operatorname{pd}_{B_j}(u_jA)<\infty.
+\tag{19}
+\]
+任取整数 \(M\ge1\)。若
+\[
+\beta_{ij}(n)=0\quad
+(i\in F_j,\ M\le n\le M+c+1),
+\tag{20}
+\]
+则
+\[
+\boxed{\operatorname{pd}_A L_j\le M+c.}
+\tag{21}
+\]
+因此若 \(\operatorname{pd}_A L_j=\infty\)，则每个连续 \(c+2\) 个正整数的区间内，都有一个 supported Tor 非零次数。
+
+**证明。** 无论 (20) 是否成立，正合限制 \(u_j(-)\) 都把前 M 项给成
+\[
+0\to u_j\Omega_A^M L_j\to u_jP_{M-1}^{(j)}
+\to\cdots\to u_jP_0^{(j)}\to0.
+\]
+各中间项投射维数均不超过 c。从右向左使用短正合列的 kernel 维数不等式，得到
+\[
+\operatorname{pd}_{B_j}(u_j\Omega_A^M L_j)\le c.
+\tag{22}
+\]
+条件 (20) 恰好保证 \(P_M^{(j)},\ldots,P_{M+c+1}^{(j)}\) 全属于 \(\operatorname{add}(Au_j)\)。其中前 \(c+1\) 个项限制后，是 \(u_j\Omega_A^M L_j\) 的最小投射消解的前 \(c+1\) 个覆盖。由 (22)，
+\[
+u_j\Omega_A^{M+c+1}L_j=0.
+\]
+还需使用窗口的最后一项：\(\Omega_A^{M+c+1}L_j\) 由 \(P_{M+c+1}^{(j)}\in\operatorname{add}(Au_j)\) 生成，故它本身为零。于是得到 (21)。\(\square\)
+
+**两个关键区别。** 此处只在窗口内限制实际投射项，没有假设整个消解已经进入永久尾端；最后一个覆盖用于反映 kernel 的零性，不能省略。
+
+**任意 N 的推论。** 假设每个非零返回补角都满足 (19)，令 C 为这些 c 的最大值（若全为空，取 C=0）。若全部 supported Tor 在
+\[
+[M,M+C+1]
+\]
+内为零，则 \(\operatorname{gldim}A\le M+C\)。因此这整个代数类满足 (U)，而且有一个有限消失窗口判据。
+
+特别地，若 A 无限全局维数，而每个非零真角 \(vAv\) 都具有有限全局维数，则 A 满足 (U)。事实上，每个无限 pd 的 simple 都在自己的 supported 位置上有非零的无限尾端。这里是条件性代数类结论，不是对任意 A 都满足 (19) 的证明。
+
+### 窗口长度对每个 c 都不能缩短
+
+取 \(N=c+3\) 个顶点的有向圈，并令所有长度二的路径为零：
+\[
+A=\mathbb C(0\to1\to\cdots\to N-1\to0)/J^2.
+\tag{23}
+\]
+对 source 0，\(F_0=\{0,N-1\}\)、\(U_0=\{1,\ldots,N-2\}\)。返回补角是长度 c 的 radical-square-zero 有向链。因此
+\[
+\operatorname{gldim}B_0=\operatorname{pd}_{B_0}(u_0A)=c.
+\tag{24}
+\]
+最后一个等号也可直接看出：\(u_0Ae_0=L_1^{B_0}\) 具有 pd=c，其余非零限制 summands 是 B 投射模。
+
+在 A 上，\(\Omega_A^nL_0=L_{n\bmod N}\)，所以
+\[
+\beta_{i0}(n)=\begin{cases}1&i\equiv n\pmod N,\\0&\text{其他}.
+\end{cases}
+\tag{25}
+\]
+于是全部 source 0 的 supported Tor 在 \(1,\ldots,c+1\) 连续为零，但 \(\operatorname{pd}L_0=\infty\)；第 \(c+2=N-1\) 次重新非零。因此定理 4 的窗口长度 \(c+2\) 对每个 \(c\ge0\) 都是最佳的一般长度。
+
+这是用已知 radical-square-zero 族校准本定理的次数界，没有把该族的 (U) 本身称为新结果。
+
+## 7. 十一维反例：完整 Peirce 消失不保证前缀逐项有限 pd
+
+取顶点 \(0,1,2\) 和箭头
+\[
+a:0\to1,\quad p:1\to0,\quad c:1\to2,\quad d:2\to1,
+\]
+关系为
+\[
+ap=dc,\qquad ca=0,\qquad cd=0.
+\tag{26}
+\]
+仍从右向左乘。radical 基及全部非零 radical 基乘积为
+\[
+a,p,c,d,x=pa,y=ap=dc,z=pd,w=pdc;
+\]
+\[
+pa=x,\quad ap=y,\quad dc=y,\quad pd=z,
+\quad xp=w,\quad py=w,\quad zc=w.
+\tag{27}
+\]
+这些关系给出十一维代数。投射基为
+\[
+P_0=(e_0,a,x),\quad P_1=(e_1,p,c,y,w),\quad
+P_2=(e_2,d,z).
+\]
+
+\(JP_0\) 的覆盖 \(P_1\to JP_0\) 把 \(e_1\) 映到 a，其核 \(\langle c,y,w\rangle\simeq P_2\)。\(JP_2\) 的覆盖 \(P_1\to JP_2\) 把 \(e_1\) 映到 d，核是同一个 \(P_2\)。
+
+\(JP_1\) 的覆盖 \(P_0\oplus P_2\to JP_1\) 把 \(e_0,e_2\) 分别映到 \(p,c\)。其核由 \((a,-d),(x,-z)\) 张成，作为模同构于 \(JP_2\)。故
+\[
+\operatorname{pd}_A L_0=2,\qquad
+\operatorname{pd}_A L_1=3,\qquad
+\operatorname{pd}_A L_2=2.
+\tag{28}
+\]
+特别地，\(\operatorname{gldim}A=3\)，全套 \((Z_3)\) 成立。
+
+然而 Cartan 矩阵是
+\[
+C=\begin{pmatrix}2&2&1\\1&2&1\\0&1&1\end{pmatrix},
+\]
+所以对 source 2，\(u_2=e_0\)、\(B_2\simeq\Delta\)。\(L_2\) 的有限消解为
+\[
+0\to P_2\to P_1\to P_2\to L_2\to0.
+\]
+限制后成为
+\[
+0\longrightarrow\mathbb C
+\xrightarrow{\,1\mapsto\epsilon\,}\Delta
+\longrightarrow\mathbb C\longrightarrow0.
+\tag{29}
+\]
+首尾两个前缀项都是无限 pd 的 \(\Delta\)-simple，但整个复形正合。这里不是直接和中的删除，而是由实际微分完成抵消。
+
+所以断言
+\[
+(Z_b)\Longrightarrow
+\operatorname{pd}_{B_j}(u_jP_r^{(j)})<\infty\text{ 对所有 }j,r\le b
+\]
+**是假的**。定理 2 的充分条件及定理 4 的有限窗口结论均不受影响；不能把该充分条件冒充一般 N 的待证必然性质。
+
+## 8. 修正后的普遍桥梁：整个有限前缀复形的 perfectness
+
+在 (2) 下，定义有限复形
+\[
+\mathcal K_j^{(b)}=
+\bigl[u_jP_b^{(j)}\to\cdots\to u_jP_0^{(j)}\bigr],
+\tag{30}
+\]
+最右项放在上同调次数 0。由 (11)，它只有一个可能非零的上同调，因此
+\[
+\mathcal K_j^{(b)}\simeq T_j[b]\quad\text{在 }D^b(B_j\text{-mod})\text{ 中}.
+\tag{31}
+\]
+
+**命题 5。** 对 \(U_j\ne\varnothing\)，有精确等价
+\[
+\boxed{
+\operatorname{pd}_A L_j<\infty
+\quad\Longleftrightarrow\quad
+\mathcal K_j^{(b)}\in\operatorname{perf}B_j.
+}
+\tag{32}
+\]
+而且，若 \(b'\ge b\)，两个复形在 \(D_{\rm sg}(B_j)\) 中的像同构。
+
+**证明。** (31) 加上定理 1 的同时终止性，直接给出 (32)。令 \(s=b'-b\)，则由实际尾端
+\[
+T'_j\simeq\Omega_{B_j}^{s}T_j.
+\]
+在奇点范畴中，每次 syzygy 同构于向左移位一次，所以
+\[
+T'_j[b']\simeq T_j[-s+b']\simeq T_j[b].
+\]
+这也可以通过两个前缀之间相差一个有界投射复形直接证明。\(\square\)
+
+于是任意 N 的主目标 (U) 等价于以下桥梁：
+\[
+\boxed{
+\text{全套 }(Z_b)
+\Longrightarrow
+\mathcal K_j^{(b)}\in\operatorname{perf}B_j
+\quad\text{对每个非零返回补角 }B_j.
+}
+\tag{PC}
+\]
+这是关于较少顶点上的 **指定有限复形** 的命题。它保留了所有实际微分，允许 (29) 那样的抵消；既不要求整个角 regular，也不要求每个前缀项 perfect。
+
+在 \(D_{\rm sg}(B_j)\) 中，\(\mathcal K_j^{(b)}\) 由有限多个 \(q(u_jAe_i)\) 生成，其中 \(i\in F_j\)、\(\beta_{ij}(r)>0\) 且 \(r\le b\)。这是由有限复形的截断三角得到的；其余 \(i\in U_j\) 的项投射，像为零。这个有限生成描述本身不证明 \(\mathcal K_j^{(b)}\) 为零。
+
+十一维例子的复形为零，而四维例子的 source 1 复形为非零的 \(\Delta\)-simple。后者不满足全套 \((Z_b)\)。这说明后续必须使用不同 source 之间来自同一个 A 的兼容性。
+
+**尚未闭合的真正问题。** (PC) 目前是等价约化，不是证明。任意 N 的主路线仍需证明这些兼容性迫使整个前缀复形 perfect，或者在相反方向构造一个满足全套条件而仍非 perfect 的实际代数。Yoneda 路线的 (FG) 同样仍未证明。
+
+## 9. 本轮审计范围
+
+上述七维及四维代数均加入 [audit_idempotent_deletion.py](../work/audit_idempotent_deletion.py)，结果见 [idempotent_deletion_audit.json](../work/idempotent_deletion_audit.json) 的 `source_corner_cases`。
+
+七维例子逐项检查三个返回补角、实际前缀及 (12) 的数值上界；四维例子检查真实一周期同构及 source 1 的有限次数尾矩阵。`sharp_window_cases` 检查 \(c=0,1,2,3\) 时 (23)–(25) 的角维数、实际周期和最大零窗口。`prefix_cancellation_case` 检查十一维例子的完整有限消解、真实 syzygy 同构及无限 pd 的前缀项。无穷性及所有 N 的定理依靠正文证明；(PC) 仍是待证桥梁。

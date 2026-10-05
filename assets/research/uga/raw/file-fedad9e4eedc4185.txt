@@ -1,0 +1,12 @@
+# NODE INDEX
+
+- **KLS/Han node:** origin of the project; Han conjecture externally refuted.
+- **Convention-correction node:** separates \(+\), co\(+\), \(A\), and \(A^{op}\).
+- **Visibility node:** stable/singular/derived recurrence must become ordinary simple-pair visibility.
+- **Deletion node:** ordinary quotient failure is recorded by derived deletion defects.
+- **Rees node:** page deaths / lift failures are encoded by torsion and primitive births.
+- **FORK node:** minimal finite-hub laboratory for screening/coupling.
+- **Long01 node:** primitive births versus finite projective-resolution screening capacity.
+- **U6 node:** three-role mismatch (source, detector, Peirce carrier) plus corner cross-module leakage.
+- **U7 node:** incidence + cross-module return + adversarial coupler.
+- **U8 node:** derived two-sided alignment; current open frontier.

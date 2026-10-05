@@ -1,0 +1,11 @@
+# Universal Gap A 研究入口
+
+当前问题仍未解决。这里继续研究任意顶点数的有限维 basic 复代数，不把特殊例子或有限次数计算写成一般结论。
+
+先读 [[Universal-Gap-A|研究状态]]，再沿 [[Screening-Corridor|消去范围]]、[[Rees-HPL-Screening|Rees 对应]]、[[Rees-Noetherian-Screening-Collapse|条件定理]] 查看本次论证。当前未闭合的步骤在 [[Cycle-Shift-Obstruction-Tower|算子障碍]]；[[Vertical-Pure-Bimodule-Singularity|双模障碍]] 是另一分支。
+
+正式 MRS 库位于本目录的“研究数据”。[[Universal-Gap-A-MRS-Map|正式研究地图]] 列出记录、证据原件、依赖和审核报告。对目标、候选和失败记录，“审核接受”仅表示表述及来源被保留，不表示猜想已证明。带证明的新结果目前有完整自审，正式独立证明审核仍待进行。
+
+本次首次建库保存了主目标、12 条研究记录和 10 项去重证据。旧文稿索引也已归档；这不是全部历史材料的迁移。原始压缩包和旧 verified fact graph 保持原样。
+
+下一步从实际 bar 同调上的循环移位开始：先构造映射，再检查提升障碍与生成性。已排除的推理见 [[Rank-One-Does-Not-Imply-Periodicity|秩一误推]]。

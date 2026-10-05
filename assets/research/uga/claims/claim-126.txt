@@ -1,0 +1,21 @@
+## UGA-C126 — Balanced Finite-Pd Loewy-Two Ideals Force Factor Termination and Close the Whole J5zero Cubic-Radical Class
+
+**Status:** COMPLETE WRITTEN ORDINARY PROOF / ARBITRARY-SIZE CLASS CLOSURE / NORMAL ADVERSARIAL SELF-AUDIT / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Eventual-Short-Projective-Tails-and-One-Sided-Finite-Cubic-Radical-Closure-2026-10-05.md appended Sections9–11; C104 ordinary connecting products/C125 actual tail stopping reused.
+
+For an ACTUAL LEFT finite-pd H of pd h with semisimple kernel U/quotient V, let T contain all U factor labels and EVERY T simple occur in V. Ordinary Ext^n(U,Z)->Ext^(n+1)(V,Z) is SURJECTIVE for ALL Z,n>=h; projecting to a simple quotient coordinate gives actual degree-one Yoneda generators for that simple's high all-target tails. A mixed V is allowed; no finite-pd claim about simple-coordinate pullback middles. Under T diagonal cutoff M, positive-word nilpotence gives pd L_t<=h+|T|(M+1)-1 for EVERY t.
+
+Let I nonzero be a WHOLE actual two-sided ideal with JI=IJ,J2I=0,pd_LEFT I=h finite. For T={t:e_tI nonzero},m=|T|, every T label occurs in V=I/JI: e_tV0 implies e_tI=(e_tI)J, hence e_tI0 by RIGHT Nakayama. U=JI and V are semisimple LEFT modules with all U factors in T. Thus under T diagonal cutoff, ALL LEFT T simple pds<=h+m(M+1)-1. If any T factor remains LEFT-infinite, the real envelope forces ONE ordinary diagonal persistent pair. This does not assert that arbitrary finite-pd nonsemisimple modules have finite-pd factors.
+
+For I=J3 and J5=0, balance is JI=IJ=J4 and J2I0 is automatic. Under GLOBAL diagonal cutoff M, all whole J3 factor labels become LEFT-finite by the previous lemma, giving C125's RIGHT actual short tails. Hence
+
+\[
+\boxed{\operatorname{gd}A\le
+N\bigl(h+(m+N)(M+1)+1\bigr)-1.}
+\]
+
+The ENTIRE ANY-field/arbitrary-size J5zero/finite LEFT pd WHOLE J3 class closes with ONE FIXED supported ORDINARY DIAGONAL tail when gd is infinite. The direct RIGHT envelope/Nakayama plus direct LEFT short-cover proof gives the right finite-pd version. Nonsemisimple J3 allowed; J3zero uses C110/C125 sharper bound separately.
+
+This strengthens C125's J4zero whole-module corollary and unifies two terminal alternatives: infinite factors in a real finite-pd balanced Loewy2 ideal force ordinary degree-one return; finite factors force OTHER-side high projective exclusion and actual kernel-core stopping. No module/map image is pruned; no graph/singular/opposite transfer, finite Yoneda generation, automatic pullback pd or independent certification. J6zero/J5nonzero may have NONSEMISIMPLE J4, so the elementary envelope generation no longer follows. General whole finite-pd J3 at arbitrary Loewy length, persistent deep ordinary off-diagonal bridge and every global residual/UGA remain OPEN.
+
+---

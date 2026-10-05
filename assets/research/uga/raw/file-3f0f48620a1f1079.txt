@@ -1,0 +1,1277 @@
+# Run-A-Node3Fa-Rank.md
+
+## Universal Gap A — Node 3-Fa-Rank
+### Run A — Proof / Mechanism Extraction Window
+
+**Research system:** Native MRS  
+**Role:** Proof / Mechanism Extraction  
+**Node:** `Node 3-Fa-Rank — κ-Coupled High-Weight Rank Obstruction`  
+**Completion label:** `MAJOR_RANK_THEOREM / STRICT_FRONTIER_COMPRESSION`  
+**Global status:** Node not closed.
+
+---
+
+# 0. Frozen-run integrity
+
+This file freezes the actual research trajectory of this window.
+
+It does not:
+
+- restore the refuted Endpoint Leakage Lemma;
+- identify ordinary Peirce support with derived support;
+- assume finite \(\kappa\)-data automatically forces finite behavior;
+- claim Matrix-Euler/HRP is unconditionally applicable to every FORK;
+- claim Universal Gap A is solved;
+- improve or re-solve results during file generation.
+
+The run started from the corrected Node 3-Fa-Rank state supplied in the prompt.
+
+---
+
+# 1. Initial target
+
+The frozen problem was:
+
+\[
+\boxed{
+\text{Can an actual homogeneous cubic }m_3=\kappa
+\text{ realize the HRP-required ranks indefinitely?}
+}
+\]
+
+The intended comparison was:
+
+\[
+\operatorname{RequiredRank}(w,n,a,b)
+\quad\text{vs}\quad
+\operatorname{KappaCapacity}(w,n,a,b).
+\]
+
+The run was explicitly forbidden from returning to:
+
+- ordinary endpoint leakage;
+- pure Matrix-Euler coefficient mining as the main route;
+- repeated-label / rank-one periodicity;
+- STAR;
+- KLS;
+- arbitrary \(N\).
+
+---
+
+# 2. Gate 0 audit
+
+## 2.1 G0-B — strong D2
+
+### Verdict
+
+\[
+\boxed{\texttt{VERIFIED in the hypothetical FORK failure}}
+\]
+
+Reason:
+
+The two-vertex core \(D\) is strongly connected, so the four primitive endpoint pairs on \(z,h\) are Peirce-visible in \(D\), hence also Peirce-visible in \(A\).
+
+For inflated core simples, the actual derived deletion identifies the total derived tensor over the ambient algebra with the total derived tensor over the derived quotient \(Q\).
+
+Therefore, if \(A\) is a hypothetical Gap-A failure and hence not infinite \(+\),
+
+\[
+\operatorname{Tor}^{Q}_n(R_a,L_b)=0
+\qquad(n\gg0)
+\]
+
+for every relevant core endpoint pair.
+
+This is strong D2: eventual vanishing of total \(Q\)-Tor, not merely death of a zero-column quotient class.
+
+---
+
+## 2.2 G0-A — compatible positive internal grading
+
+### Verdict
+
+\[
+\boxed{\texttt{OPEN / NOT FORCED BY THE FROZEN FORK ASSUMPTIONS}}
+\]
+
+The frozen four-vertex FORK hypotheses do not by themselves produce a positive internal grading for which:
+
+\[
+m_2,\ m_3
+\]
+
+are both internal-degree \(0\), with weightwise locally finite bar complex.
+
+The radical/Loewy filtration only gives an associated graded object; it does not automatically preserve the original exact \(\kappa\)-rank problem.
+
+Therefore:
+
+\[
+\boxed{
+\text{Matrix-Euler and HRP remain a graded FORK branch, not yet an unconditional FORK theorem.}
+}
+\]
+
+No claim closing this Gate was obtained.
+
+---
+
+# 3. Actual \(b_3\)-incidence model
+
+Let the normalized bar complex be filtered by the number of \(M\)-letters.
+
+For a bar word:
+
+\[
+x_1|\cdots|x_\ell,
+\]
+
+the cubic coderivation has the local form:
+
+\[
+\boxed{
+b_3(\kappa)
+=
+\sum_i
+\pm\,
+\mathrm{id}^{\otimes i}
+\otimes
+\kappa
+\otimes
+\mathrm{id}
+}
+\]
+
+over positions where three consecutive inputs are \(J\)-letters.
+
+The window:
+
+\[
+J|J|J
+\]
+
+is replaced by one \(M\)-letter.
+
+If a proposed cubic window contains an \(M\)-letter, the two-stage \(m_3\) does not act there.
+
+Thus, at fixed internal weight, the chain-level matrix of \(b_3\) is **linear in one finite set of homogeneous \(\kappa\)-coordinates**, repeated over every admissible cubic window.
+
+This answers the first incidence question:
+
+\[
+\boxed{
+\text{different windows do not carry independent rank parameters.}
+}
+\]
+
+---
+
+# 4. Higher correction ranks share the same \(\kappa\)-data
+
+Choose a contraction of the \(b_2\)-complex:
+
+\[
+(\iota,\pi,h).
+\]
+
+Homological perturbation gives the page-\(r\) correction in the standard form:
+
+\[
+\boxed{
+d_r
+=
+\pi\,b_3\,(h b_3)^{r-1}\,\iota
+}
+\]
+
+up to a convention sign irrelevant for rank.
+
+Consequently:
+
+\[
+\boxed{
+\text{every matrix entry of }d_r
+\text{ is a homogeneous degree-}r
+\text{ polynomial in the same finite }\kappa\text{-coordinates}.
+}
+\]
+
+Thus higher differential ranks are not independent.
+
+They are linked by the same cubic Postnikov data and the same \(b_2\)-correction operator.
+
+### Basic rank bound
+
+For every such composition:
+
+\[
+\operatorname{rank} d_r
+\le
+\min
+\{
+\operatorname{rank}(b_3\text{ on each intermediate stage})
+\}.
+\]
+
+This is a true rank-capacity bound, although not yet strong enough to close the node.
+
+---
+
+# 5. REFUTED — “finite \(\kappa\)-data versus infinitely many exactness conditions”
+
+The run explicitly tested the tempting argument:
+
+\[
+\dim HH^3(D,M)<\infty
+\quad\Longrightarrow\quad
+\text{one fixed }\kappa
+\text{ cannot satisfy infinitely many high-weight rank requirements}.
+\]
+
+This argument is false over \(\mathbb C\).
+
+Fix \(D,M\) and a compatible grading.
+
+The admissible homogeneous cubic cocycles form a finite-dimensional complex affine space:
+
+\[
+Z^3_{\mathrm{hom}}(D,M).
+\]
+
+For each sufficiently high internal weight \(w\), the weight-\(w\) total bar complex is finite-dimensional.
+
+Its differential matrix entries depend polynomially, in fact linearly at chain level, on \(\kappa\).
+
+Because \(d^2=0\), exactness at weight \(w\) is a maximal-rank condition.
+
+Therefore:
+
+\[
+\boxed{
+U_w
+=
+\{
+\kappa:
+\text{weight-}w\text{ total complex is exact}
+\}
+}
+\]
+
+is a Zariski-open subset of the admissible \(\kappa\)-space.
+
+A finite-dimensional complex affine space cannot be covered by countably many proper algebraic subsets.
+
+Therefore, if:
+
+\[
+U_w\neq\varnothing
+\qquad
+\forall w\gg0,
+\]
+
+then:
+
+\[
+\boxed{
+\bigcap_{w\gg0}U_w\neq\varnothing.
+}
+\]
+
+Hence a single \(\kappa\) can simultaneously realize exactness at all high weights whenever each high weight is individually generically feasible.
+
+---
+
+# 6. VERIFIED — Single-Weight Witness Theorem
+
+The preceding genericity argument gives:
+
+\[
+\boxed{
+\textbf{Single-Weight Witness Theorem}
+}
+\]
+
+Under Gate G0-A and the fixed graded two-stage data:
+
+> If no homogeneous cubic \(\kappa\) can realize strong complete screening in all sufficiently high weights, then there exists at least one sufficiently high weight \(w\) for which **no admissible \(\kappa\)** makes the weight-\(w\) total bar complex exact.
+
+Equivalently:
+
+\[
+\boxed{
+\text{failure of complete screening}
+\Longrightarrow
+\exists w:
+U_w=\varnothing.
+}
+\]
+
+This converts the infinite rank-realization problem into a universal **single-weight rank-deficit problem**.
+
+It also proves that mere finiteness of the parameter space is not an obstruction.
+
+A successful proof must exhibit an actual determinantal/rank impossibility at some fixed weight.
+
+---
+
+# 7. First minimal graded escape: \(J^3=0\)
+
+The prompt requested the lowest Loewy-length escape first.
+
+Assume:
+
+- standard path-length grading;
+- generated in degree \(1\);
+- two vertices;
+- no degree-one loops;
+- \(J^3=0\);
+- strong connectivity.
+
+Write:
+
+\[
+H_D(q)
+=
+\begin{pmatrix}
+1+a_2q^2 & b_1q\\
+c_1q & 1+s_2q^2
+\end{pmatrix}.
+\]
+
+Matrix-Euler / Determinant-Defect Factorization gives:
+
+\[
+1-\det H_D
+=
+(b_1c_1-a_2-s_2)q^2
+-a_2s_2q^4
+=
+b_1q\,\mu(q).
+\]
+
+An actual two-leaf defect has positive weight at least \(2\).
+
+Bipartite parity forces \(\mu(q)\) to be odd-graded, so the first possible nonzero term is cubic.
+
+Therefore the right side begins in degree at least \(4\).
+
+The degree-\(2\) coefficient forces:
+
+\[
+b_1c_1=a_2+s_2.
+\]
+
+The degree-\(4\) coefficient is:
+
+\[
+-a_2s_2,
+\]
+
+which cannot equal a nonnegative defect contribution unless:
+
+\[
+a_2s_2=0.
+\]
+
+Then the left side vanishes identically and:
+
+\[
+\mu=0.
+\]
+
+Thus:
+
+\[
+\boxed{
+J^3=0,\ J^2\neq0,\ \text{degree-1 generated}
+\Longrightarrow
+\text{no nonzero Matrix-Euler-admissible actual defect}.
+}
+\]
+
+### Status
+
+\[
+\boxed{\texttt{VERIFIED in the stated graded branch}}
+\]
+
+This kills the first requested Loewy-length-\(3\) escape.
+
+---
+
+# 8. Next minimal graded escape: \(J^4=0\)
+
+Assume standard path-length grading, generated in degree \(1\), with:
+
+\[
+J^4=0.
+\]
+
+Write:
+
+\[
+H_D(q)
+=
+\begin{pmatrix}
+1+Aq^2 & Bq+B_3q^3\\
+Cq+C_3q^3 & 1+Sq^2
+\end{pmatrix}.
+\]
+
+Matrix-Euler and positivity force the single-channel defect to be purely cubic:
+
+\[
+\boxed{
+H_M(q)
+=
+\begin{pmatrix}
+0&0\\
+m q^3&0
+\end{pmatrix}.
+}
+\]
+
+Coefficient comparison gives:
+
+\[
+\boxed{
+BC=A+S,
+}
+\tag{8.1}
+\]
+
+\[
+\boxed{
+Bm
+=
+BC_3+B_3C-AS,
+}
+\tag{8.2}
+\]
+
+\[
+\boxed{
+B_3m=B_3C_3.
+}
+\tag{8.3}
+\]
+
+If:
+
+\[
+B_3>0,
+\]
+
+then:
+
+\[
+\boxed{
+m=C_3,
+\qquad
+AS=B_3C.
+}
+\]
+
+These equations are the frozen Matrix-Euler parameter constraints for the lowest Loewy-length-\(4\) branch.
+
+---
+
+# 9. Minimal arrow-count analysis
+
+Strong connectivity gives:
+
+\[
+B,C\ge1.
+\]
+
+The two-arrow case:
+
+\[
+B=C=1
+\]
+
+does not yield a nonzero actual cubic defect compatible with associativity and the coefficient equations.
+
+Therefore the smallest remaining cross-arrow count is:
+
+\[
+B+C=3.
+\]
+
+Up to swapping the two vertices:
+
+\[
+\boxed{
+B=2,\qquad C=1.
+}
+\]
+
+Then:
+
+\[
+A+S=2.
+\]
+
+The branch:
+
+\[
+B_3=0
+\]
+
+is impossible for a nonzero actual defect:
+
+- if \(A=0\) or \(S=0\), associativity forces the relevant length-\(3\) reverse path space \(C_3\) to vanish;
+- if \(A=S=1\), equation (8.2) gives a parity/integrality contradiction.
+
+Therefore:
+
+\[
+B_3>0.
+\]
+
+Equations (8.1)–(8.3) then force:
+
+\[
+\boxed{
+A=S=B_3=1.
+}
+\]
+
+Associativity and the one-dimensional reverse-arrow space give:
+
+\[
+C_3\le1.
+\]
+
+Since the defect is nonzero:
+
+\[
+\boxed{
+C_3=m=1.
+}
+\]
+
+Thus the lowest three-arrow Loewy-\(4\) Matrix-Euler branch is dimensionally unique.
+
+---
+
+# 10. Concrete minimal core
+
+Choose degree-one arrows:
+
+\[
+a_1,a_2:z\to h,
+\qquad
+b:h\to z.
+\]
+
+The unique minimal dimension pattern can be represented so that:
+
+- \(a_1b\) spans the degree-\(2\) \(z\)-corner;
+- \(ba_1\) spans the degree-\(2\) \(h\)-corner;
+- \(a_1ba_1\) spans the degree-\(3\) \(z\to h\) space;
+- \(ba_1b\) spans the degree-\(3\) \(h\to z\) space;
+- length \(4\) paths vanish.
+
+Associativity and the one-dimensional degree-\(2\) spaces imply that the left and right multiplication functionals on:
+
+\[
+V=\langle a_1,a_2\rangle
+\]
+
+have the same one-dimensional kernel.
+
+Choose:
+
+\[
+a_2
+\]
+
+in that common kernel.
+
+Then:
+
+\[
+\boxed{
+a_2b=0,
+\qquad
+ba_2=0.
+}
+\]
+
+---
+
+# 11. Homogeneous cubic Hochschild class in the minimal core
+
+The weight-\(3\) cubic input space has basis:
+
+\[
+(a_i,b,a_j),
+\qquad
+i,j\in\{1,2\}.
+\]
+
+Thus the homogeneous cubic cochain space has dimension \(4\).
+
+A homogeneous weight-\(3\) Hochschild \(2\)-cochain changes the cubic coordinates through the products:
+
+\[
+a_1b,
+\qquad
+ba_1.
+\]
+
+Its coboundaries can independently modify the first three cubic coordinates.
+
+They cannot modify:
+
+\[
+\kappa(a_2,b,a_2),
+\]
+
+because:
+
+\[
+a_2b=ba_2=0.
+\]
+
+Therefore:
+
+\[
+\boxed{
+HH^3(D,M)_{\mathrm{wt}=3}\cong k.
+}
+\]
+
+The unique essential homogeneous cubic coordinate is:
+
+\[
+\boxed{
+\theta
+=
+\kappa(a_2,b,a_2).
+}
+\]
+
+Hence there are only two cubic Postnikov classes:
+
+- \(\theta=0\): trivial class;
+- \(\theta\neq0\): the unique nontrivial class, normalized to \(\theta=1\).
+
+All other cubic coordinates are homogeneous Hochschild coboundary directions.
+
+---
+
+# 12. Computational rank stress test performed during the run
+
+Before the conceptual obstruction below was found, the run directly built the normalized weight-graded bar complex for the minimal core and tested:
+
+\[
+b=b_2+b_3
+\]
+
+over many cubic coordinate choices.
+
+For generic nontrivial cubic data, surviving total bar homology was observed through homological degrees \(4,5,6\), with aggregate surviving dimensions:
+
+\[
+\boxed{
+7,\ 10,\ 14
+}
+\]
+
+over the tested weight range.
+
+When the essential coordinate:
+
+\[
+\theta=\kappa(a_2,b,a_2)
+\]
+
+vanished, the surviving homology was larger.
+
+When \(\theta\neq0\), changing the coboundary coordinates did not remove the rank deficit.
+
+This numerical experiment was used only as a calibration.
+
+It was **not** retained as the proof.
+
+The subsequent \(\kappa\)-null retract theorem gives the rigorous obstruction.
+
+---
+
+# 13. VERIFIED — \(\kappa\)-Null Retract Obstruction
+
+## Theorem
+
+Let:
+
+\[
+H=D\oplus M[1]
+\]
+
+be an augmented two-stage \(A_\infty\) algebra over the primitive semisimple base.
+
+Suppose there exists an augmented ordinary subalgebra:
+
+\[
+D_0\subset D
+\]
+
+and strict augmented maps:
+
+\[
+D_0
+\overset{i}{\longrightarrow}
+H
+\overset{\pi}{\longrightarrow}
+D_0
+\]
+
+such that:
+
+\[
+\pi i=\mathrm{id}_{D_0},
+\]
+
+\[
+\pi(M)=0,
+\]
+
+and:
+
+\[
+\kappa|_{D_0^{\otimes3}}=0.
+\]
+
+Then the relative bar complexes inherit a chain retraction:
+
+\[
+\operatorname{Bar}(D_0)
+\longrightarrow
+\operatorname{Bar}(H)
+\longrightarrow
+\operatorname{Bar}(D_0).
+\]
+
+Consequently, endpoint-wise:
+
+\[
+\boxed{
+\operatorname{Tor}^{D_0}_n(R_a,L_b)
+\text{ is a direct summand of }
+\operatorname{Tor}^{H}_n(R_a,L_b).
+}
+\]
+
+Therefore:
+
+> If \(D_0\) has a persistent Peirce-visible Tor/Ext pair, strong D2 for \(H\) is impossible.
+
+This is a genuinely \(\kappa\)-sensitive obstruction.
+
+It does not use ordinary Peirce support as derived support.
+
+---
+
+# 14. Application to the unique minimal three-arrow \(J^4=0\) core
+
+Let:
+
+\[
+D_0
+=
+\langle e_z,e_h,a_1,b\rangle.
+\]
+
+Because both alternating length-\(2\) and length-\(3\) paths survive and all length-\(4\) paths vanish:
+
+\[
+\boxed{
+D_0
+\cong
+k(z\rightleftarrows h)/J^4.
+}
+\]
+
+This is the constant-Kupisch cyclic Nakayama algebra:
+
+\[
+[4,4].
+\]
+
+It has infinite global dimension and periodic simple resolutions.
+
+The unique nontrivial cubic class can be represented by:
+
+\[
+\kappa(a_2,b,a_2)=m,
+\]
+
+with:
+
+\[
+\kappa|_{D_0^{\otimes3}}=0.
+\]
+
+Projection:
+
+\[
+a_2\mapsto0,
+\qquad
+M\mapsto0
+\]
+
+and identity on \(D_0\) gives the required strict augmented retraction.
+
+Hence:
+
+\[
+\operatorname{Bar}(D_0)
+\]
+
+is a chain retract of the full two-stage bar complex.
+
+Therefore persistent periodic Tor from \(D_0\) survives in the total derived quotient.
+
+Thus:
+
+\[
+\boxed{
+\textbf{the entire minimal three-arrow, degree-1-generated, }J^4=0
+\textbf{ Matrix-Euler branch cannot strongly complete-screen.}
+}
+\]
+
+This replaces the earlier numerical evidence by a proof.
+
+---
+
+# 15. New scale-free mechanism
+
+The useful mechanism is not specific to this monomial example.
+
+A surviving complete-screening candidate must satisfy:
+
+\[
+\boxed{
+\textbf{every infinite-gldim algebra retract/core must be }\kappa\textbf{-essential}.
+}
+\]
+
+In other words, there can be no infinite-gldim retract on which the cubic Postnikov class vanishes.
+
+This was named:
+
+\[
+\boxed{
+\textbf{\(\kappa\)-Essentiality Condition}
+}
+\]
+
+or equivalently the failure of the \(\kappa\)-null retract obstruction.
+
+This is stronger and more precise than a raw rank-size condition.
+
+---
+
+# 16. Relation to HRP
+
+HRP requires eventual nonnegative differential-rank polynomials.
+
+The \(\kappa\)-null retract theorem explains one mechanism forcing HRP-realizability to fail:
+
+a direct bar-homology summand can remain completely outside the cubic correction system.
+
+Thus:
+
+\[
+\boxed{
+\text{HRP abstract feasibility}
+\not\Rightarrow
+\text{\(\kappa\)-realizability}.
+}
+\]
+
+The obstruction is not “insufficient number of cubic parameters”.
+
+It is the existence of a homological direct summand that is \(\kappa\)-invisible.
+
+---
+
+# 17. Calibrations
+
+Every new strengthening was checked against the frozen calibration list.
+
+## 17.1 Radical-square-zero two-cycle
+
+The new \(J^3/J^4\) Loewy theorem does not apply to the radical-square-zero branch.
+
+This is consistent with the previously frozen B-v2 radical-square-zero no-go theorem.
+
+The \(\kappa\)-null retract theorem is compatible with it but does not claim to subsume it.
+
+---
+
+## 17.2 Cyclic Nakayama \([3,4]\)
+
+Already fails Matrix-Euler coefficientwise admissibility before the present rank theorem.
+
+No conflict.
+
+---
+
+## 17.3 Family \([2k+1,2k+2]\)
+
+Already fails Matrix-Euler coefficientwise admissibility.
+
+No conflict.
+
+---
+
+## 17.4 Characteristic-zero cubic transducer
+
+The frozen characteristic-zero cubic transducer fails the complete-screening Matrix-Euler gate before this rank node.
+
+The current theorem does not claim cubic transgression itself is impossible.
+
+No conflict.
+
+---
+
+## 17.5 Projective-\(M\) unbounded-transgression model
+
+This model remains a valid counterexample to:
+
+\[
+M\text{ projective}
+\Rightarrow
+\text{bounded transgression}.
+\]
+
+The present run never uses that false inference.
+
+The Countable Genericity / Single-Weight Witness theorem is specifically consistent with indefinite transgression from finite local data.
+
+---
+
+## 17.6 B-v2 radical-square-zero no-go
+
+The current Loewy-\(4\) result begins exactly after the radical-square-zero class already removed by B-v2.
+
+No contradiction.
+
+The two results are complementary.
+
+---
+
+# 18. VERIFIED assets produced in this run
+
+## V1. G0-B strong D2 in the hypothetical FORK core
+
+\[
+\operatorname{Tor}^{Q}_n(R_a,L_b)=0
+\qquad(n\gg0)
+\]
+
+for every relevant core endpoint.
+
+---
+
+## V2. Actual cubic-incidence model
+
+\[
+b_3
+=
+\sum_{\text{cubic windows}}
+\pm\,\mathrm{id}\otimes\kappa\otimes\mathrm{id}.
+\]
+
+All windows reuse the same finite \(\kappa\)-coordinates.
+
+---
+
+## V3. Higher correction polynomiality
+
+\[
+d_r
+=
+\pi b_3(hb_3)^{r-1}\iota.
+\]
+
+Thus \(d_r\) is degree \(r\) in the same \(\kappa\)-coordinates.
+
+---
+
+## V4. Single-Weight Witness Theorem
+
+Failure of complete screening implies a fixed high weight where every admissible homogeneous \(\kappa\) is rank-deficient.
+
+---
+
+## V5. Degree-1-generated \(J^3=0\) no-go
+
+No nonzero Matrix-Euler-admissible actual defect exists.
+
+---
+
+## V6. Lowest \(J^4=0\) Matrix-Euler equations
+
+\[
+BC=A+S,
+\]
+
+\[
+Bm=BC_3+B_3C-AS,
+\]
+
+\[
+B_3m=B_3C_3.
+\]
+
+---
+
+## V7. Unique minimal three-arrow dimension pattern
+
+Up to vertex swap:
+
+\[
+B=2,\quad C=1,
+\]
+
+and the only actual nonzero branch has:
+
+\[
+A=S=B_3=C_3=m=1.
+\]
+
+---
+
+## V8. Unique homogeneous cubic class
+
+\[
+HH^3(D,M)_{\mathrm{wt}=3}\cong k,
+\]
+
+generated by the common-kernel cubic window:
+
+\[
+a_2,b,a_2.
+\]
+
+---
+
+## V9. \(\kappa\)-Null Retract Obstruction
+
+An infinite-gldim strict retract on which \(\kappa\) vanishes survives as a direct bar-homology summand and forbids strong complete screening.
+
+---
+
+## V10. Minimal three-arrow \(J^4=0\) branch eliminated
+
+The retract:
+
+\[
+D_0\cong k(z\rightleftarrows h)/J^4
+\]
+
+has periodic Tor and is \(\kappa\)-null.
+
+Therefore the entire minimal branch is impossible.
+
+---
+
+# 19. CONDITIONAL
+
+The full Matrix-Euler / HRP / homogeneous-rank programme remains conditional on G0-A:
+
+\[
+\boxed{
+\text{compatible positive internal grading for the actual FORK data}.
+}
+\]
+
+No proof of G0-A was obtained.
+
+The Loewy-\(3\) and Loewy-\(4\) no-go theorems are proved only inside the standard degree-1-generated path-length grading branch stated above.
+
+---
+
+# 20. REFUTED / withdrawn routes
+
+## R1. Finite \(\kappa\)-parameter resource obstruction
+
+Refuted.
+
+Over \(\mathbb C\), countably many generically feasible high-weight exactness conditions can be simultaneously satisfied by one parameter.
+
+---
+
+## R2. “Higher page ranks are independent resources”
+
+Refuted.
+
+All \(d_r\) use the same \(\kappa\) through:
+
+\[
+d_r=\pi b_3(hb_3)^{r-1}\iota.
+\]
+
+---
+
+## R3. \(J^3=0\) as the first possible escape
+
+Refuted in the standard graded branch.
+
+---
+
+## R4. The minimal three-arrow \(J^4=0\) branch as a possible complete-screening machine
+
+Refuted by the \(\kappa\)-null retract theorem.
+
+---
+
+## R5. Numerical rank stress test as proof
+
+Withdrawn as a proof route.
+
+It was used only to locate the invariant.
+
+The final elimination is structural.
+
+---
+
+# 21. Failed route that led to the theorem
+
+The run first attempted to compare asymptotic:
+
+\[
+\operatorname{RequiredRank}
+\quad\text{and}\quad
+\operatorname{KappaCapacity}.
+\]
+
+This did not immediately produce a universal growth inequality.
+
+The reason is that local cubic maps are repeated in exponentially many bar contexts, so a finite-dimensional \(\kappa\) can generate unbounded total rank.
+
+The finite-parameter argument was then tested and refuted by the Zariski genericity theorem.
+
+This forced the representation change:
+
+\[
+\boxed{
+\text{global asymptotic capacity}
+\to
+\text{single-weight universal deficit}
+\to
+\text{\(\kappa\)-invisible retracts}.
+}
+\]
+
+That representation change produced the successful no-go theorem.
+
+---
+
+# 22. Exact surviving frontier
+
+Node 3-Fa-Rank is not globally closed.
+
+The surviving candidate must simultaneously satisfy:
+
+1. Gate G0-A, if Matrix-Euler/HRP is to be used;
+2. strong D2;
+3. Matrix-Euler admissibility;
+4. HRP;
+5. no radical-square-zero no-go;
+6. no degree-1-generated \(J^3=0\) realization;
+7. no minimal three-arrow \(J^4=0\) realization;
+8. no infinite-gldim \(\kappa\)-null algebra retract/core.
+
+Thus every surviving graded candidate must be:
+
+\[
+\boxed{
+\textbf{\(\kappa\)-essential}
+}
+\]
+
+in the sense that every infinite recurrent homological core is actually touched by the cubic Postnikov data.
+
+Within the degree-1-generated \(J^4=0\) branch, the next possible core must have at least four degree-one cross arrows.
+
+Otherwise one must move to higher Loewy length.
+
+---
+
+# 23. Next node
+
+The next minimal proof experiment is:
+
+\[
+\boxed{
+\textbf{Node 3-Fa-Rank-\(\kappa\)Essential}
+}
+\]
+
+with the following target:
+
+> Classify the smallest Matrix-Euler-admissible two-vertex graded cores for which no infinite-gldim \(\kappa\)-null retract exists, beginning with:
+>
+> \[
+> J^4=0
+> \]
+>
+> and at least four degree-one cross arrows.
+
+For each such candidate:
+
+1. compute the homogeneous \(HH^3(D,M)\) incidence space;
+2. determine whether every infinite periodic/recurrent retract is hit by \(\kappa\);
+3. if \(\kappa\)-essential, apply the Single-Weight Witness reduction and search for a universal fixed-weight rank deficit;
+4. if no fixed-weight deficit exists, attempt an actual complete-screening construction.
+
+The alternative next escape is:
+
+\[
+J^5=0
+\]
+
+only after the four-arrow Loewy-\(4\) case is tested.
+
+---
+
+# 24. Completion label
+
+\[
+\boxed{
+\texttt{MAJOR_RANK_THEOREM / STRICT_FRONTIER_COMPRESSION}
+}
+\]
+
+The strongest reusable theorem produced is:
+
+\[
+\boxed{
+\textbf{\(\kappa\)-Null Retract Obstruction}.
+}
+\]
+
+The strongest methodological compression is:
+
+\[
+\boxed{
+\text{infinite rank feasibility}
+\to
+\text{single-weight witness}
+\to
+\text{\(\kappa\)-essential core classification}.
+}
+\]
+
+Universal Gap A is not claimed solved.
+
+Node 3-Fa-Rank is not claimed closed.
+
+The next frontier is strictly smaller than the starting rank problem.

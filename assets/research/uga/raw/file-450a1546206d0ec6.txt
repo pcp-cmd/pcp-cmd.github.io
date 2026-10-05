@@ -1,0 +1,28 @@
+# Eventual actual short projectives / one-sided finite cubic radical
+
+Research goal: test a closure mechanism using actual minimal resolutions, not
+deletion of finite-pd map images. Written proof is in the adjacent
+Run-Eventual-Short-Projective-Tails-and-One-Sided-Finite-Cubic-Radical-Closure-2026-10-05.md.
+
+The exact run uses the existing frozen Python/Fraction cover, kernel-isomorphism
+and ordinary Yoneda-lift implementations. No new CAS or verification engine.
+One literal connected triangular example has N=5 old vertices, r=2, dimension23,
+J4=0, J3 nonzero, LEFT pd J3=2, RIGHT pd J3 infinite, LEFT pd J2 infinite.
+Complete finite covers and actual old period relations are retained.
+
+The material run was one direct Python invocation after a live interpreter/
+Fraction check. Run output passed; no material execution failure or repeated
+full-range run. Result/script copies equal the actually executed bytes.
+
+Evidence level: exact bounded-check supplement to a separate complete written
+all-field/all-size/all-degree proof. Shared helpers and main-researcher audit
+are not independent/formal verification. No routine checksums/schema-hash claim.
+
+Reproduce with Python3.14.3:
+
+python -B verify_eventual_short_tail.py --project-root PROJECT_ROOT --out RESULT_PATH
+
+The script references unchanged General-Cube-Zero-Evidence definitions and its
+Carrier-Lemma-Evidence/Imported-Outputs dependencies. No large search cache is
+required. This monomial calibration is already ordinary-positive; it does not
+reopen a vertex classification or constitute a UGA counterexample.

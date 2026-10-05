@@ -1,0 +1,161 @@
+# Cycle 11 elaboration — paired errors and complement Tor
+
+## §0 Mathematical verdict
+
+**Not solved.** The fifth comparison branch now lands canonically in the complement quotient, but neither a recurring quotient-simple nor a uniformly finite ambient-projective-dimension error family forces the complement to be singular.
+
+**Closed components.** Positive right errors are modules over \(\bar A=A/AfA\cong gAg/gAfAg\) (d4a3e718f3710d59), and the fifth branch has a finite/infinite ambient-pd dichotomy (8007df3565058041). Persistent \(\operatorname{Tor}^{gAg}_n(fAg,gAf)\) would give a proper singular complement (226ea3c2e6713085). In the mutual dumbbell, both end comparisons force the same hub simple into their fifth families (1d4bb209ecdd52c5).
+
+**Viable proof architecture.** Replace one-sided recurrence by paired canonical right/left or \(A/A^{op}\) error complexes and prove that exact-zero transfer through \(f\) forces persistent complement-crossing Tor.
+
+**Main blocker.** Unbounded \(\operatorname{Tor}^{fAf}_q(R_a^{fAf},fA)\) with quotient-supported homology does not imply unbounded \(\operatorname{Tor}^{gAg}_n(fAg,gAf)\). The triangular example 31c4037065600009 blocks every theorem using only recurrence and uniform finite ambient pd.
+
+**Highest-priority unresolved bridge.** A paired-error transfer theorem for the actual canonical bimodule complexes, with hypotheses absent from 31c4037065600009 but present in the dead-zone and dumbbell states.
+
+**Method failure vs. proposition failure.** This is method failure, not verified proposition failure. The zero-product bilateral calibration has a singular complement (b4f467013c4ed631).
+
+**Calibration caveat.** SUBSTANTIAL means the target is precisely typed, not that its hypotheses hold on the actual construction.
+
+| Dashboard item | Current state |
+|---|---|
+| Fixed goal | UNCHANGED: determine Han's conjecture and build a theory stronger than it without presupposing truth or falsity. |
+| Verified complete proof | NO |
+| Verified counterexample | NO |
+| Signed-closed sub-tasks | Tagged comparison; pd fork; complement quotient; nonzero-product closure; complement-Tor criterion; shared-hub dumbbell reduction. |
+| Main blocker | Paired canonical errors to persistent \(gAg\)-Tor. |
+| Routes marked false/obsolete | YES: one recurring factor, uniform finite ambient pd, support-only bilateral data, radical-depth recycling. |
+| Highest-priority unresolved task | P0: derive persistent \(\operatorname{Tor}^{gAg}(fAg,gAf)\) from the paired dead-zone state. |
+
+| Sub-task | Status | Closed facts | Conditional facts | Main missing interface |
+|---|---|---|---|---|
+| Canonical Gap A comparison | SUBSTANTIAL | 6eafbbe6a6361a9c, c88d9846c49d9028, 8007df3565058041 | 613b7566a73a1ade | Exact-zero paired transfer. |
+| Complement descent | SUBSTANTIAL | d4a3e718f3710d59 | 226ea3c2e6713085 | Persistent complement Tor. |
+| Mutual dumbbell | SUBSTANTIAL | 26b9f8d619693127, 1d4bb209ecdd52c5 | 226ea3c2e6713085 | Pair shared-hub errors with a left/opposite family. |
+| Universal Gap A | PARTIAL | 59a12876ab799b9e, 073459eead09a970 | Current complement package | Paired transfer and terminal cases. |
+| Ordinary Hochschild/Han | UNKNOWN | None | Infinite-plus framework | Universal Gap A and ordinary-Hochschild bridge. |
+
+**Current best proof skeleton**
+
+1. Produce a vertex-minimal dead-zone corner with persistent simple Tor (59a12876ab799b9e, 073459eead09a970).
+2. Apply 6eafbbe6a6361a9c and c88d9846c49d9028.
+3. Close every nonzero ordered product by 613b7566a73a1ade.
+4. Pass the fifth branch to \(\bar A=A/AfA\) via d4a3e718f3710d59 and split by 8007df3565058041.
+5. Reject the one-sided finite-pd shortcut using 31c4037065600009.
+6. Construct paired right/left or \(A/A^{op}\) errors; in the dumbbell use 1d4bb209ecdd52c5.
+7. Prove the Central missing lemma.
+8. Apply 226ea3c2e6713085, iterate to low vertices, then integrate ordinary Hochschild homology.
+
+**Central missing lemma.** Let \(A\) be finite-dimensional basic, \(f\) a nonzero proper sum of primitive idempotents, \(g=1-f\), and \(B=fAf\). Assume the vertex-minimal dead-zone comparison supplies a persistent corner-simple pair, exact vanishing of every correctly ordered product through \(f\), and canonically matched right and left higher-error complexes (or matched \(A\) and \(A^{op}\) complexes) with unbounded homology annihilated by \(f\). If their complement pairing is given by an explicit chain map or derived tensor comparison, then \(\operatorname{Tor}^{gAg}_n(fAg,gAf)\ne0\) for infinitely many \(n\).
+
+The chain-level pairing is essential: support matching fails by 9110d8cc8257b511 and one-sided recurrence fails by 31c4037065600009.
+
+## §1 Closed components and obsolete routes
+
+**Signed-closed components**
+
+- Complement quotient support — d4a3e718f3710d59.
+- Fifth quotient/infinite-pd dichotomy — 8007df3565058041.
+- Complement-crossing Tor implies a proper singular corner — 226ea3c2e6713085.
+- Nonzero transfer-product subspace gives infinite-plus — 613b7566a73a1ade.
+- Dumbbell factors are singular and share the hub fifth simple — 26b9f8d619693127, 1d4bb209ecdd52c5.
+
+**Failed or obsolete routes**
+
+| Route | Status | Reason |
+|---|---|---|
+| Recurring fifth simple forces ambient Tor | FALSE AS STATED | It can be projective, 31c4037065600009. |
+| Uniform finite \(A\)-pd forces complement singularity | FALSE AS STATED | 31c4037065600009 has projective high errors. |
+| Quotient support gives a homological epimorphism | FALSE AS STATED | d4a3e718f3710d59 proves action factorization only. |
+| Bilateral support forces a product | FALSE AS STATED | Both products can vanish, 9110d8cc8257b511. |
+| Increase radical depth | OBSOLETE | Any nonzero product closes, 613b7566a73a1ade. |
+
+## §2 Interface contract table
+
+### Fifth error to complement quotient
+**Input required.** A positive canonical error \(E_q=\operatorname{Tor}^{fAf}_q(R_a^{fAf},fA)\).
+**Output claimed.** \(E_q\) is a right \(\bar A=A/AfA\cong gAg/gAfAg\)-module.
+**Available facts.** 39d5bd8b2d2d4b6a, d4a3e718f3710d59.
+**Missing verification on the actual model.** None for action factorization.
+**Failure mode if ignored.** Complement support would be nonfunctorial.
+**Status.** CLOSED
+
+### Quotient errors to complement-crossing Tor
+**Input required.** Paired right/left error complexes with compatible chain data.
+**Output claimed.** Persistent \(\operatorname{Tor}^{gAg}(fAg,gAf)\).
+**Available facts.** d4a3e718f3710d59 types the errors; 226ea3c2e6713085 consumes the output.
+**Missing verification on the actual model.** Construct the bicomplex; prove a survivor; show 31c4037065600009 lacks a hypothesis.
+**Failure mode if ignored.** Projective quotient modules may recur over a semisimple complement.
+**Status.** UNKNOWN
+
+### Dumbbell double error to hub Tor
+**Input required.** Two end fifth families sharing \(R_u\), plus a left/opposite counterpart.
+**Output claimed.** Persistent hub-corner Tor or a nonzero ambient product.
+**Available facts.** 1d4bb209ecdd52c5, 26b9f8d619693127, 226ea3c2e6713085.
+**Missing verification on the actual model.** A common factor is not a chain pairing.
+**Failure mode if ignored.** Two one-sided examples may mimic the support.
+**Status.** SUBSTANTIAL
+
+### Singular complement to iterative Gap A
+**Input required.** Proper \(g\) with \(gAg\) singular and retained labels.
+**Output claimed.** A strictly smaller comparison instance.
+**Available facts.** 226ea3c2e6713085, 59a12876ab799b9e.
+**Missing verification on the actual model.** Select the next primitive Tor witness and prove strict decrease.
+**Failure mode if ignored.** Singularity may lose ordered provenance.
+**Status.** SUBSTANTIAL
+
+### Universal Gap A to Han
+**Input required.** Universal termination and the ordinary-Hochschild implication.
+**Output claimed.** Eventual \(HH_n(A)\)-vanishing implies finite global dimension.
+**Available facts.** None closes this interface.
+**Missing verification on the actual model.** Complete descent and ordinary-Hochschild integration.
+**Failure mode if ignored.** A corner theorem is not Han's conjecture.
+**Status.** UNKNOWN
+
+## §3 Dangerous heuristic lines and strategies not to pursue
+
+**Dangerous heuristic lines**
+
+- “Uniform finite pd makes the errors harmless.” **Status: Mathematically incorrect as stated.** 31c4037065600009 has projective high errors.
+- “An \(A/AfA\)-module family is a derived complement family.” **Status: Not automatic.** d4a3e718f3710d59 does not prove homological epimorphism.
+- “Two recurring hub simples pair nontrivially.” **Status: Conditional only.** 1d4bb209ecdd52c5 gives two right families, not a right-left pairing.
+- “Opposite symmetry removes cancellation.” **Status: Mathematically incorrect as stated.** 9110d8cc8257b511 blocks support-only symmetry.
+- “A singular complement immediately iterates.” **Status: Conflated with a stronger claim.** Strict descent and the next primitive witness remain.
+
+**Strategies not to pursue**
+
+- Do not prove more uniform-pd bounds as a terminal argument.
+- Do not assume \(A\to A/AfA\) is homological.
+- Do not pair two right errors by common composition factor alone.
+- Do not infer singularity from infinitely many quotient modules.
+- Do not return to radical-depth recycling.
+- Do not claim Han before universal and ordinary-Hochschild closure.
+
+## §4 Missing bridge lemmas
+
+### Bridge 1 — paired canonical error transfer
+**Target statement.** Matched unbounded right and left/opposite errors annihilated by \(f\) yield persistent complement-crossing Tor, unless a nonzero ambient product gives infinite-plus.
+**Prerequisites.** Canonical maps, explicit chains, exact-zero products, and matching stronger than support.
+**Existing facts to use.** 39d5bd8b2d2d4b6a, d4a3e718f3710d59, 613b7566a73a1ade, 226ea3c2e6713085.
+**Missing checks.** Write the bicomplex; identify edge terms; prove a survivor; audit 31c4037065600009 and 9110d8cc8257b511.
+**Closure criterion.** A signed theorem concluding exactly the premise of 226ea3c2e6713085. Independent and highest leverage.
+
+### Bridge 2 — dumbbell opposite synchronization
+**Target statement.** The two right families of 1d4bb209ecdd52c5 and the \(A^{op}\) construction satisfy Bridge 1 or give a nonzero ambient product.
+**Prerequisites.** Split tails, opposite invariance, through-hub maps.
+**Existing facts to use.** 1d4bb209ecdd52c5, 26b9f8d619693127, 932a22f86dc2b944, 613b7566a73a1ade.
+**Missing checks.** Construct left families; synchronize chains; retain labels.
+**Closure criterion.** A signed application of Bridge 1 or ambient infinite-plus. Dependent but parallelizable.
+
+### Bridge 3 — complement iteration
+**Target statement.** A proper singular complement admits the next primitive persistent Tor witness with strictly smaller support.
+**Prerequisites.** Singular complement with labels.
+**Existing facts to use.** 226ea3c2e6713085, 59a12876ab799b9e, a40c4e49fb587d56.
+**Missing checks.** Select an infinite-pd simple; extract Tor; preserve order; prove decrease.
+**Closure criterion.** A signed reusable transition. Dependent on Bridge 1.
+
+### Bridge 4 — ordinary Hochschild closure
+**Target statement.** Universal complement descent implies ordinary \(HH_n(A)\) is nonzero arbitrarily high whenever \(\operatorname{gldim}(A)=\infty\).
+**Prerequisites.** Bridges 1–3 and an exact ordinary-Hochschild theorem.
+**Existing facts to use.** No current signed fact supplies the complete bridge.
+**Missing checks.** State and verify all hypotheses.
+**Closure criterion.** A signed integrated implication and contrapositive. Fully dependent.

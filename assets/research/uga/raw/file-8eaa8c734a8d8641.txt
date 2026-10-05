@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "date": "2026-10-05",
+  "kind": "targeted exact research execution record",
+  "actual_executed_script": "C:/Users/pcp/AppData/Local/Temp/UGA-20261005-short-tail/verify_eventual_short_tail.py",
+  "retained_script": "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03/runs/2026-10-05/Eventual-Short-Tail-Evidence/verify_eventual_short_tail.py",
+  "retained_result": "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03/runs/2026-10-05/Eventual-Short-Tail-Evidence/eventual-short-tail-result.json",
+  "proof": "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03/runs/2026-10-05/Run-Eventual-Short-Projective-Tails-and-One-Sided-Finite-Cubic-Radical-Closure-2026-10-05.md",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "parameters": {"N": 5, "r": 2},
+  "counts": {
+    "associativity": 24334,
+    "actual_minimal_covers": 26,
+    "integer_basis_inverses": 624,
+    "actual_kernel_isomorphisms": 16,
+    "pruned_homology_isomorphisms": 0
+  },
+  "invocation": {
+    "launcher": "C:/Users/pcp/.agent-reach-venv/Scripts/python.exe",
+    "wrapper": null,
+    "arguments": [
+      "-B",
+      "C:/Users/pcp/AppData/Local/Temp/UGA-20261005-short-tail/verify_eventual_short_tail.py",
+      "--project-root",
+      "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03",
+      "--out",
+      "C:/Users/pcp/AppData/Local/Temp/UGA-20261005-short-tail/eventual-short-tail-result.json"
+    ]
+  },
+  "profile": "reproducible, existing project execution-record convention; routine checksum schema deliberately not used",
+  "evidence_level": "bounded-check",
+  "coefficient_domain": "Exact rational/integral module matrices with unit integral basis inverses; separate arbitrary-field proof",
+  "shared_dependencies": [
+    "runs/2026-10-04/General-Cube-Zero-Evidence/verify_general_cubezero_linear_core.py (definitions before N=5 top-level examples)",
+    "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py (definitions before p-loop)",
+    "toolbox/Imported-Outputs/return_kernel_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_return_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_system_certificate.py",
+    "toolbox/Imported-Outputs/yoneda_generation_certificate.py"
+  ],
+  "backend_selection": "Frozen-certificate extension/replay through the original Python/Fraction implementation. Cached inventory recorded no local Mathematica/Sage executable. Selected Python3.14.3/Fraction capability was live-checked immediately before the material run.",
+  "fallback_reason": "not-required: original exact helper route completed",
+  "retained_bytes_equal_executed_bytes": true,
+  "independent_verification": false,
+  "formal_verifier_acceptance": false,
+  "default_checksums_computed": false,
+  "execution_history": "First material invocation passed. Pre-execution inspection corrected radical-power basis access; no failed material invocation or repeated full-range run.",
+  "mathematical_scope": "One connected dimension23 calibration, actual full left/right finite simple covers, cubic module identifications, all old right two-step period kernels, sharp high-projective exclusion threshold, infinite LEFT J2 extension, ordinary Ext-one comparison ranks through degree4. Global uniform stopping, class closure and all N/r/field/degree claims use the separate written proof.",
+  "UGA": "OPEN"
+}

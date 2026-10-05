@@ -1,0 +1,3789 @@
+{
+  "status": "passed",
+  "field": "Q",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "independent_verification": false,
+  "counts": {
+    "associativity": 35152,
+    "actual_minimal_covers": 7,
+    "integer_basis_inverses": 168,
+    "actual_kernel_isomorphisms": 9,
+    "pruned_homology_isomorphisms": 0
+  },
+  "dimension": 26,
+  "algebra": {
+    "vertices": 6,
+    "base_vertex": 0,
+    "radical_basis": [
+      {
+        "name": "D_a",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "D_b",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "D_c",
+        "left": 1,
+        "right": 2
+      },
+      {
+        "name": "D_s",
+        "left": 2,
+        "right": 2
+      },
+      {
+        "name": "D_d",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "name": "D_t",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "D_v",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "name": "D_w",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "B_a",
+        "left": 4,
+        "right": 3
+      },
+      {
+        "name": "B_b",
+        "left": 3,
+        "right": 4
+      },
+      {
+        "name": "B_c",
+        "left": 5,
+        "right": 4
+      },
+      {
+        "name": "B_s",
+        "left": 5,
+        "right": 5
+      },
+      {
+        "name": "B_d",
+        "left": 3,
+        "right": 5
+      },
+      {
+        "name": "B_t",
+        "left": 4,
+        "right": 4
+      },
+      {
+        "name": "B_v",
+        "left": 3,
+        "right": 5
+      },
+      {
+        "name": "B_w",
+        "left": 3,
+        "right": 4
+      },
+      {
+        "name": "z0",
+        "left": 4,
+        "right": 1
+      },
+      {
+        "name": "zb",
+        "left": 4,
+        "right": 0
+      },
+      {
+        "name": "zc",
+        "left": 4,
+        "right": 2
+      },
+      {
+        "name": "zt",
+        "left": 4,
+        "right": 1
+      }
+    ],
+    "radical_products": [
+      {
+        "left": "B_a",
+        "right": "B_b",
+        "value": {
+          "B_t": 1
+        }
+      },
+      {
+        "left": "D_b",
+        "right": "D_a",
+        "value": {
+          "D_t": 1
+        }
+      },
+      {
+        "left": "B_d",
+        "right": "B_s",
+        "value": {
+          "B_v": 1
+        }
+      },
+      {
+        "left": "D_s",
+        "right": "D_d",
+        "value": {
+          "D_v": 1
+        }
+      },
+      {
+        "left": "B_d",
+        "right": "B_c",
+        "value": {
+          "B_w": 1
+        }
+      },
+      {
+        "left": "D_c",
+        "right": "D_d",
+        "value": {
+          "D_w": 1
+        }
+      },
+      {
+        "left": "z0",
+        "right": "D_b",
+        "value": {
+          "zb": 1
+        }
+      },
+      {
+        "left": "z0",
+        "right": "D_c",
+        "value": {
+          "zc": 1
+        }
+      },
+      {
+        "left": "z0",
+        "right": "D_t",
+        "value": {
+          "zt": 1
+        }
+      },
+      {
+        "left": "zb",
+        "right": "D_a",
+        "value": {
+          "zt": 1
+        }
+      }
+    ]
+  },
+  "physical_matrix": [
+    [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      2,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      2,
+      2
+    ],
+    [
+      1,
+      2,
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      2
+    ]
+  ],
+  "J4_zero": true,
+  "whole_cubic_band_basis": [
+    "zt"
+  ],
+  "whole_LEFT_band_factor_set": [
+    4
+  ],
+  "whole_RIGHT_band_factor_set": [
+    1
+  ],
+  "whole_LEFT_band_pd": "infinity by actual LEFT_B period",
+  "whole_RIGHT_band_pd": "infinity by actual RIGHT_D period",
+  "deep_simple_isomorphisms": [
+    {
+      "forward": [
+        [],
+        [],
+        [],
+        [],
+        [
+          [
+            "1"
+          ]
+        ],
+        []
+      ],
+      "inverse": [
+        [],
+        [],
+        [],
+        [],
+        [
+          [
+            "1"
+          ]
+        ],
+        []
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    },
+    {
+      "forward": [
+        [],
+        [
+          [
+            "1"
+          ]
+        ],
+        [],
+        [],
+        [],
+        []
+      ],
+      "inverse": [
+        [],
+        [
+          [
+            "1"
+          ]
+        ],
+        [],
+        [],
+        [],
+        []
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    }
+  ],
+  "actual_states": {
+    "LEFT_B": {
+      "U": {
+        "dimensions": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "actions": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            []
+          ],
+          [],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      },
+      "V": {
+        "dimensions": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "actions": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            []
+          ],
+          [],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "RIGHT_D": {
+      "U": {
+        "dimensions": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "actions": [
+          [
+            []
+          ],
+          [],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      },
+      "V": {
+        "dimensions": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "actions": [
+          [
+            []
+          ],
+          [],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      }
+    }
+  },
+  "FULL_period_and_source_kernels": {
+    "LEFT_B": [
+      {
+        "label": "LEFT_B: FULL Omega simple2 = P1 direct_sum V",
+        "actual_cover": {
+          "module": {
+            "dimensions": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "actions": [
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [
+                []
+              ],
+              [
+                []
+              ],
+              [],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [],
+              [
+                []
+              ],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "kernel": {
+            "dimensions": [
+              0,
+              0,
+              0,
+              2,
+              1,
+              1
+            ],
+            "actions": [
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [
+                [
+                  "1"
+                ],
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0",
+                  "1"
+                ]
+              ],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0",
+                  "0"
+                ]
+              ],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "cover_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "cover_dimensions": [
+            0,
+            0,
+            0,
+            2,
+            2,
+            1
+          ],
+          "cover_images": [
+            [],
+            [],
+            [],
+            [
+              [],
+              []
+            ],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [
+              []
+            ]
+          ],
+          "kernel_inclusion": [
+            [],
+            [],
+            [],
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ]
+          ],
+          "projective_actions": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            []
+          ],
+          "top_basis_certificates": [
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            {
+              "basis": [],
+              "inverse": []
+            }
+          ],
+          "exact_sequence_basis_certificates": [
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "1",
+                    "0"
+                  ],
+                  [
+                    "0",
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1",
+                    "0"
+                  ],
+                  [
+                    "0",
+                    "1"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              }
+            }
+          ],
+          "A_linear_surjective_minimal": true
+        },
+        "target": {
+          "dimensions": [
+            0,
+            0,
+            0,
+            2,
+            1,
+            1
+          ],
+          "actions": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        "isomorphism": {
+          "forward": [
+            [],
+            [],
+            [],
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ]
+          ],
+          "inverse": [
+            [],
+            [],
+            [],
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ]
+          ],
+          "A_linear_two_sided_inverse_checked": true
+        }
+      },
+      {
+        "label": "LEFT_B: FULL Omega V=U",
+        "actual_cover": {
+          "module": {
+            "dimensions": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "actions": [
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [
+                []
+              ],
+              [],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1"
+                ]
+              ],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "kernel": {
+            "dimensions": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "actions": [
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [
+                []
+              ],
+              [],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1"
+                ]
+              ],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "cover_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "cover_dimensions": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            2
+          ],
+          "cover_images": [
+            [],
+            [],
+            [],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ]
+          ],
+          "kernel_inclusion": [
+            [],
+            [],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ]
+          ],
+          "projective_actions": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+              [],
+              []
+            ],
+            [],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "top_basis_certificates": [
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          ],
+          "exact_sequence_basis_certificates": [
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ]
+              }
+            }
+          ],
+          "A_linear_surjective_minimal": true
+        },
+        "target": {
+          "dimensions": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "actions": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+              []
+            ],
+            [],
+            [],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        "isomorphism": {
+          "forward": [
+            [],
+            [],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ]
+            ]
+          ],
+          "inverse": [
+            [],
+            [],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ]
+            ]
+          ],
+          "A_linear_two_sided_inverse_checked": true
+        }
+      },
+      {
+        "label": "LEFT_B: FULL actual period-one Omega U=U",
+        "actual_cover": {
+          "module": {
+            "dimensions": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "actions": [
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [
+                []
+              ],
+              [],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1"
+                ]
+              ],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "kernel": {
+            "dimensions": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "actions": [
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [
+                []
+              ],
+              [],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1"
+                ]
+              ],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "cover_multiplicities": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "cover_dimensions": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            2
+          ],
+          "cover_images": [
+            [],
+            [],
+            [],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ]
+          ],
+          "kernel_inclusion": [
+            [],
+            [],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ]
+          ],
+          "projective_actions": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+              [],
+              []
+            ],
+            [],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "top_basis_certificates": [
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          ],
+          "exact_sequence_basis_certificates": [
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ]
+              }
+            }
+          ],
+          "A_linear_surjective_minimal": true
+        },
+        "target": {
+          "dimensions": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "actions": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+              []
+            ],
+            [],
+            [],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        "isomorphism": {
+          "forward": [
+            [],
+            [],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ]
+            ]
+          ],
+          "inverse": [
+            [],
+            [],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ]
+            ]
+          ],
+          "A_linear_two_sided_inverse_checked": true
+        }
+      }
+    ],
+    "RIGHT_D": [
+      {
+        "label": "RIGHT_D: FULL Omega simple2 = P1 direct_sum V",
+        "actual_cover": {
+          "module": {
+            "dimensions": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "actions": [
+              [],
+              [
+                []
+              ],
+              [
+                []
+              ],
+              [],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [],
+              [
+                []
+              ],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "kernel": {
+            "dimensions": [
+              2,
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "actions": [
+              [
+                [
+                  "1"
+                ],
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0",
+                  "1"
+                ]
+              ],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "0",
+                  "0"
+                ]
+              ],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "cover_multiplicities": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "cover_dimensions": [
+            2,
+            2,
+            1,
+            0,
+            0,
+            0
+          ],
+          "cover_images": [
+            [
+              [],
+              []
+            ],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [
+              []
+            ],
+            [],
+            [],
+            []
+          ],
+          "kernel_inclusion": [
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "projective_actions": [
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "top_basis_certificates": [
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            }
+          ],
+          "exact_sequence_basis_certificates": [
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "1",
+                    "0"
+                  ],
+                  [
+                    "0",
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1",
+                    "0"
+                  ],
+                  [
+                    "0",
+                    "1"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            }
+          ],
+          "A_linear_surjective_minimal": true
+        },
+        "target": {
+          "dimensions": [
+            2,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        "isomorphism": {
+          "forward": [
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "inverse": [
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "A_linear_two_sided_inverse_checked": true
+        }
+      },
+      {
+        "label": "RIGHT_D: FULL Omega V=U",
+        "actual_cover": {
+          "module": {
+            "dimensions": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "actions": [
+              [
+                []
+              ],
+              [],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1"
+                ]
+              ],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "kernel": {
+            "dimensions": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "actions": [
+              [
+                []
+              ],
+              [],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1"
+                ]
+              ],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "cover_multiplicities": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "cover_dimensions": [
+            2,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "cover_images": [
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "kernel_inclusion": [
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "projective_actions": [
+            [
+              [],
+              []
+            ],
+            [],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "top_basis_certificates": [
+            {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            }
+          ],
+          "exact_sequence_basis_certificates": [
+            {
+              "image": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            }
+          ],
+          "A_linear_surjective_minimal": true
+        },
+        "target": {
+          "dimensions": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            [
+              []
+            ],
+            [],
+            [],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        "isomorphism": {
+          "forward": [
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "inverse": [
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "A_linear_two_sided_inverse_checked": true
+        }
+      },
+      {
+        "label": "RIGHT_D: FULL actual period-one Omega U=U",
+        "actual_cover": {
+          "module": {
+            "dimensions": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "actions": [
+              [
+                []
+              ],
+              [],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1"
+                ]
+              ],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "kernel": {
+            "dimensions": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "actions": [
+              [
+                []
+              ],
+              [],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1"
+                ]
+              ],
+              [],
+              [
+                [
+                  "0"
+                ]
+              ],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              [],
+              []
+            ]
+          },
+          "cover_multiplicities": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "cover_dimensions": [
+            2,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "cover_images": [
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ],
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "kernel_inclusion": [
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "projective_actions": [
+            [
+              [],
+              []
+            ],
+            [],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "top_basis_certificates": [
+            {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            },
+            {
+              "basis": [],
+              "inverse": []
+            }
+          ],
+          "exact_sequence_basis_certificates": [
+            {
+              "image": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [
+                  [
+                    "1"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "1"
+                  ]
+                ]
+              },
+              "kernel_and_complement": {
+                "basis": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ],
+                "inverse": [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "0"
+                  ]
+                ]
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            },
+            {
+              "image": {
+                "basis": [],
+                "inverse": []
+              },
+              "kernel_and_complement": {
+                "basis": [],
+                "inverse": []
+              }
+            }
+          ],
+          "A_linear_surjective_minimal": true
+        },
+        "target": {
+          "dimensions": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            [
+              []
+            ],
+            [],
+            [],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        "isomorphism": {
+          "forward": [
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "inverse": [
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [],
+            [],
+            []
+          ],
+          "A_linear_two_sided_inverse_checked": true
+        }
+      }
+    ]
+  },
+  "global_return_kernel": {
+    "label": "FULL Omega LEFT L_B3=U_B direct_sum L_B1",
+    "actual_cover": {
+      "module": {
+        "dimensions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "actions": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            []
+          ],
+          [],
+          [
+            []
+          ],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      },
+      "kernel": {
+        "dimensions": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1
+        ],
+        "actions": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [
+            [],
+            []
+          ],
+          [],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      },
+      "cover_multiplicities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "cover_dimensions": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        2
+      ],
+      "cover_images": [
+        [],
+        [],
+        [],
+        [
+          [],
+          []
+        ],
+        [],
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ]
+      ],
+      "kernel_inclusion": [
+        [],
+        [],
+        [],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [],
+        [
+          [
+            "0",
+            "1"
+          ]
+        ]
+      ],
+      "projective_actions": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          [],
+          []
+        ],
+        [],
+        [],
+        [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [],
+        [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "top_basis_certificates": [
+        {
+          "basis": [],
+          "inverse": []
+        },
+        {
+          "basis": [],
+          "inverse": []
+        },
+        {
+          "basis": [],
+          "inverse": []
+        },
+        {
+          "basis": [],
+          "inverse": []
+        },
+        {
+          "basis": [],
+          "inverse": []
+        },
+        {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        }
+      ],
+      "exact_sequence_basis_certificates": [
+        {
+          "image": {
+            "basis": [],
+            "inverse": []
+          },
+          "kernel_and_complement": {
+            "basis": [],
+            "inverse": []
+          }
+        },
+        {
+          "image": {
+            "basis": [],
+            "inverse": []
+          },
+          "kernel_and_complement": {
+            "basis": [],
+            "inverse": []
+          }
+        },
+        {
+          "image": {
+            "basis": [],
+            "inverse": []
+          },
+          "kernel_and_complement": {
+            "basis": [],
+            "inverse": []
+          }
+        },
+        {
+          "image": {
+            "basis": [],
+            "inverse": []
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "image": {
+            "basis": [],
+            "inverse": []
+          },
+          "kernel_and_complement": {
+            "basis": [],
+            "inverse": []
+          }
+        },
+        {
+          "image": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0"
+              ]
+            ],
+            "inverse": [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0"
+              ]
+            ]
+          }
+        }
+      ],
+      "A_linear_surjective_minimal": true
+    },
+    "target": {
+      "dimensions": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      "actions": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          [],
+          []
+        ],
+        [],
+        [],
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ]
+        ],
+        [],
+        [
+          [
+            "0",
+            "0"
+          ]
+        ],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "isomorphism": {
+      "forward": [
+        [],
+        [],
+        [],
+        [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ],
+        [],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "inverse": [
+        [],
+        [],
+        [],
+        [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ],
+        [],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    }
+  },
+  "all_degree_statements_from_actual_kernel_iteration": {
+    "LEFT_source_B2": "Tor_n(R_x,L_B2)=1 exactly at x=B3 for EVERY n>=2",
+    "RIGHT_source_D2": "Tor_n(R_D2,L_y)=1 exactly at y=D3 for EVERY n>=2",
+    "ALL_visible_pairs_with_LEFT_source_B2_or_RIGHT_source_D2": "zero for EVERY n>=2",
+    "global_ordinary_pair": "Tor_n(R_B3,L_B3)>=1 EVERY n>=1; outside both band label sets",
+    "band_locality_false": true,
+    "UGA_counterexample": false,
+    "badness_specific_alternative_refuted": false
+  },
+  "scope": "One new actual dimension26 triangular algebra. Unchanged C119 witness supplies the structural construction; new full kernel checks establish both selected source tails and the global return. Normal self-audit/shared code, not independent/formal verification."
+}

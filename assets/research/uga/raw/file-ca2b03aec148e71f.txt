@@ -1,0 +1,162 @@
+"""Localize a returning module to Peirce support using an actual quotient.
+
+The quotient need not have finite projective dimension. Its Ext to the selected
+simple must eventually vanish, certified by an exact finite syzygy system.
+Persistent quotient Ext produces 'not_certified', never a false conclusion.
+"""
+import argparse
+from fractions import Fraction as F
+import json
+from pathlib import Path
+import sys
+
+sys.dont_write_bytecode = True
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+import yoneda_generation_certificate as yg
+import radical_head_certificate as rh
+import syzygy_system_certificate as sc
+
+
+def socle_dimensions(module):
+    result = []
+    for v, d in enumerate(module.dimensions):
+        outgoing = [(b, matrix) for b, matrix in zip(module.algebra.basis, module.actions)
+                    if b["right"] == v]
+        columns = [[c for _, matrix in outgoing for c in matrix[k]] for k in range(d)]
+        height = sum(module.dimensions[b["left"]] for b, _ in outgoing)
+        result.append(len(rk.nullspace(columns, height)))
+    return result
+
+
+def localize(module, target):
+    """Largest submodule with composition factors in supp(A e_target)."""
+    algebra = module.algebra
+    allowed = {j for j in range(algebra.vertices)
+               if j == target or algebra.component(j, target)}
+    bases = []
+    for v, d in enumerate(module.dimensions):
+        if v not in allowed:
+            bases.append([])
+            continue
+        forbidden = [(b, matrix) for b, matrix in zip(algebra.basis, module.actions)
+                     if b["right"] == v and b["left"] not in allowed]
+        columns = [[c for _, matrix in forbidden for c in matrix[k]] for k in range(d)]
+        height = sum(module.dimensions[b["left"]] for b, _ in forbidden)
+        bases.append(rk.nullspace(columns, height))
+    readers = [sr.coordinates_reader(basis, d) for basis, d in zip(bases, module.dimensions)]
+    actions = [[readers[b["left"]](rk.combine(matrix, vector, module.dimensions[b["left"]]))
+                for vector in bases[b["right"]]]
+               for b, matrix in zip(algebra.basis, module.actions)]
+    submodule = sr.Module(algebra, list(map(len, bases)), actions)
+    quotient, _, project = rh.quotient(module, bases)
+    projection = [[project(v, rk.unit_vector(d, k)) for k in range(d)]
+                  for v, d in enumerate(module.dimensions)]
+    yg.check_module_map(submodule, module, bases)
+    yg.check_module_map(module, quotient, projection)
+    sc.parse_module(algebra, sc.module_payload(submodule))
+    sc.parse_module(algebra, sc.module_payload(quotient))
+    for v, d in enumerate(module.dimensions):
+        sc.require(rk.rank(bases[v]) == submodule.dimensions[v], "Submodule inclusion not injective")
+        sc.require(rk.rank(projection[v]) == quotient.dimensions[v], "Quotient map not onto")
+        sc.require(submodule.dimensions[v] + quotient.dimensions[v] == d, "Sequence dimensions not exact")
+        sc.require(all(not any(rk.combine(projection[v], col, quotient.dimensions[v]))
+                       for col in bases[v]), "Projection does not kill the submodule")
+    socle = socle_dimensions(quotient)
+    sc.require(all(not socle[j] for j in allowed), "Canonical quotient has an allowed socle factor")
+    sc.require(quotient.dimensions[target] == 0, "Selected vertex was not removed")
+    evidence = {"allowed_vertices": sorted(allowed), "submodule": sc.module_payload(submodule),
+                "quotient": sc.module_payload(quotient), "inclusion": sc.encode(bases),
+                "projection": sc.encode(projection), "quotient_socle_dimensions": socle,
+                "short_exact_sequence_checked": True, "selected_vertex_removed": True,
+                "construction": "Intersection of kernels of all radical basis actions into excluded vertices; idempotent components outside support set to zero"}
+    return submodule, quotient, bases, evidence
+
+
+def residue_profile(system, algebra, states, quotient, target, entry):
+    m, transition = len(states), system["transition"]
+    q = sc.integer(entry["shift"], "Quotient entry shift")
+    vector = entry["multiplicities"]
+    sc.require(len(vector) == m, "Wrong quotient entry-vector length")
+    for value in vector:
+        sc.integer(value, "Quotient entry multiplicity")
+    current, prefix = quotient, []
+    for _ in range(q):
+        prefix.append(list(map(len, current.top_lifts())))
+        current, _ = current.syzygy()
+    expected = sc.direct_sum(algebra, states, vector)
+    iso = sc.check_isomorphism(current, expected, entry["isomorphism"])
+    heads = [[len(module.top_lifts()[i]) for module in states] for i in range(algebra.vertices)]
+    witness = sc.persistence_witness(transition, heads[target], vector, q)
+    tail, iterate = [], list(vector)
+    for _ in range(2 * m):
+        tail.append(sc.matvec(heads, iterate))
+        iterate = sc.matvec(transition, iterate)
+    has_infinite_pd = any(sc.persistence_witness(transition, row, vector, q) for row in heads)
+    pd = "infinite" if has_infinite_pd else max(
+        [n for n, column in enumerate(prefix + tail) if any(column)], default=-1)
+    if witness is None:
+        # The graph proof rules out every nonzero target value after q+m-1.
+        nonzero = [n for n, column in enumerate(prefix + tail[:m]) if column[target]]
+        cutoff = max(nonzero, default=-1) + 1
+    else:
+        cutoff = None
+    return {"shift": q, "entry_isomorphism": iso, "prefix_top_multiplicities": prefix,
+            "tail_top_multiplicities": tail, "projective_dimension": pd,
+            "target_Ext_persistent": witness is not None,
+            "target_Ext_persistence_witness": witness,
+            "target_Ext_vanishes_in_all_degrees_at_least": cutoff}
+
+
+def check(data):
+    system = data["system"]
+    checked = sc.check(system)
+    algebra = rk.Algebra(system["algebra"])
+    states = [sc.parse_module(algebra, item) for item in system["states"]]
+    transition, m = system["transition"], len(states)
+    adjacency = [[b for b in range(m) if transition[b][a]] for a in range(m)]
+    queries = []
+    for query in data["queries"]:
+        a = sc.integer(query["state"], "Return state")
+        i = sc.integer(query["target"], "Target simple")
+        sc.require(a < m and i < algebra.vertices, "Return state or target out of range")
+        module = states[a]
+        head = len(module.top_lifts()[i])
+        sc.require(head > 0, "Chosen simple is absent from the returning module head")
+        cycle = sc.cycle_at(adjacency, a)
+        sc.require(cycle is not None, "Chosen state does not lie on a return cycle")
+        period, weight = len(cycle) - 1, sc.path_weight(transition, cycle)
+        submodule, quotient, _, exact = localize(module, i)
+        profile = residue_profile(system, algebra, states, quotient, i, query["quotient_entry"])
+        certified = not profile["target_Ext_persistent"]
+        cutoff = profile["target_Ext_vanishes_in_all_degrees_at_least"]
+        lower = None if not certified else {
+            "period": period, "head_multiplicity": head, "cycle_weight": weight,
+            "minimum_power": max(1, (cutoff + period - 1) // period),
+            "supported_composition_weights": submodule.dimensions,
+            "claim": "sum_j [K:L_j]*beta_ij(r*period) >= head_multiplicity*cycle_weight**r for every r >= minimum_power; at least one fixed supported pair persists"}
+        queries.append({"state": a, "target": i, "return_cycle": cycle,
+                        "old_whole_module_support_test_passes": all(
+                            not d or j in exact["allowed_vertices"] for j, d in enumerate(module.dimensions)),
+                        "localization": exact, "quotient_profile": profile,
+                        "status": "certified" if certified else "not_certified_targeted_quotient_Ext_persists",
+                        "supported_lower_bound": lower})
+    return {"status": "passed", "system_certificate": checked, "queries": queries,
+            "certified_queries": sum(q["status"] == "certified" for q in queries),
+            "inconclusive_queries": sum(q["status"] != "certified" for q in queries),
+            "proof": "Supported-Submodule-Localization.md",
+            "scope": "Actual submodule, quotient, inverse maps and exact syzygy graph; the all-degree claim is a conditional theorem. An inconclusive quotient is not a counterexample to U."}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    result = check(json.loads(args.input.read_text(encoding="utf-8")))
+    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({key: result[key] for key in ["status", "certified_queries", "inconclusive_queries"]}))
+
+
+if __name__ == "__main__":
+    main()

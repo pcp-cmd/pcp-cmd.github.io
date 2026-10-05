@@ -1,0 +1,207 @@
+# T34 — Actual simple summands give strict recurrent-projective-type descent
+
+Date: 2026-10-04. Continue T33. C107 four-vertex closure and C108 all-size
+selfinjective cube-zero closure REUSED. No vertex-count case split.
+Status: complete ordinary proof, normal adversarial self-audit;
+no new computation needed. NOT independently verified, no novelty claim.
+Universal Gap A remains OPEN.
+
+## 1. C109 — A strict measure on ACTUAL ordinary simple resolutions
+
+For every LEFT simple L_y define T_y as the set of labels q whose
+projective Ae_q occurs in INFINITELY MANY degrees of the ACTUAL minimal
+resolution of L_y. This is the familiar recurrent projective-type set,
+not an image carrier or new derived invariant. Equivalently
+q in T_y iff ordinary Tor_n(R_q,L_y) nonzero infinitely often.
+T_y nonempty iff pd LEFT L_y infinite. Its labels lie in I_R directly
+from ordinary Tor; LEFT/RIGHT sets are NOT equated.
+
+### Local strict-descent lemma
+
+Assume L_y,L_j both have infinite LEFT pd. Suppose
+1. L_j is an ACTUAL DIRECT SUMMAND of Omega^n L_y for infinitely many n;
+2. ordinary Tor_n(R_j,L_j) vanishes in sufficiently high degrees.
+Then
+
+\[
+\varnothing\ne T_j\subsetneq T_y.
+\tag{1.1}
+\]
+
+Proof: for ONE actual occurrence Omega^n L_y=L_j direct-sum V, minimal
+projective covers and all their subsequent kernels split as direct sums.
+Thus for EVERY r>=0 and EVERY q,
+
+\[
+\beta_{q,y}(n+r)\ge\beta_{q,j}(r).
+\tag{1.2}
+\]
+
+This is an actual ordinary Betti inequality from minimal resolutions,
+not graph recurrence. In particular T_j subset T_y. The infinitely
+late occurrences in assumption1 make Ae_j occur in infinitely many
+projective terms, so j in T_y. Assumption2 makes j notin T_j. Both
+infinite pds make T_j nonempty, proving STRICT inclusion. No image is
+removed and no singular comparison is used.
+
+Under ambient BADNESS, assumption2 follows from the supported diagonal
+D(j,j)>0. Switching the source from y to j preserves ambient badness
+(A is unchanged), infinite LEFT pd and ACTUAL recurrent tail, while its
+integer size |T| decreases strictly. This is source/tail descent, NOT an
+algebra quotient or a claim that the algebra's infinite-simple count falls.
+Any eligible chain has at most |T_y|-1 moves. A singleton recurrent set
+already contradicts badness by the exact C090 one-projective bridge.
+
+## 2. Entire arbitrary-size late-simple-summand branch closes
+
+Suppose every infinite-LEFT simple has an infinite-LEFT SIMPLE direct
+summand in arbitrarily late actual syzygies (the label may vary).
+Finitely many simple labels select a fixed j with infinitely many actual
+occurrences. If A were bad, Section1 permits another infinite simple
+source with strictly smaller recurrent projective-type set. The same
+hypothesis applies again. A finite nonempty type set cannot strictly
+shrink indefinitely; singleton tails are excluded by C090. Therefore
+A has a FIXED persistent ordinary supported Tor pair.
+
+This branch theorem is arbitrary size and does NOT assume a uniform
+syzygy depth, semisimple WHOLE syzygy, finite module states or finite-pd
+cross-map image elimination. It is not graph-cycle-to-return: only the
+actual split minimal-cover inequality and ordinary diagonal cutoff enter.
+The conclusion follows by contradiction with ambient supported cutoff;
+finitely many simple ordered pairs select one fixed ordinary witness.
+
+The assumption is not automatic. C108's literal selfinjective cube-zero
+simple tails have NO simple direct summands in ANY positive syzygy,
+although their ordinary returns are proved by the different head method.
+No claim that the current branch covers those tails is made.
+
+## 3. A minimal recurrent source really leaves only finite-pd simple errors
+
+For an arbitrary hypothetical BAD A, select an infinite-LEFT simple
+whose NONEMPTY T_y has minimum cardinality among infinite-LEFT simples.
+If some infinite-LEFT L_j were an actual direct summand in infinitely
+many of its syzygies, Section1 would strictly decrease the minimum.
+Contradiction. For EACH infinite label such occurrences are finite;
+finitely many labels give an index s beyond ALL these occurrences.
+Hence every SIMPLE direct summand of every X_n=Omega^(s+n)L_y has finite
+LEFT pd. Let d be the maximum pd of finite LEFT simple labels (empty set
+permits d=0). This is finite from finite labels, not a finitistic-dimension
+assertion for arbitrary finite-pd modules.
+
+This is the TERMINAL object of a genuine well-founded source descent,
+not an assumed carrier purification. It does not say every finite-pd
+MODULE factor has finite-pd simple factors. It does not remove an image
+from a differential. All original exact resolutions are retained.
+
+## 4. Actual finite-simple error removal preserves ALL high ordinary Tor
+
+For n>=0 choose the real decomposition
+
+\[
+X_n=Y_n\oplus S_n,
+\tag{4.1}
+\]
+
+where S_n is the direct sum of ALL simple indecomposable summands.
+By Section3,pd S_n<=d uniformly; Y_n has no simple direct summand and
+has infinite LEFT pd, since X_n does. Direct sums immediately give,
+for EVERY RIGHT module R and EVERY r>d, SAME-DEGREE ordinary isomorphisms
+
+\[
+\operatorname{Tor}_r^A(R,Y_n)
+\cong\operatorname{Tor}_r^A(R,X_n).
+\tag{4.2}
+\]
+
+To keep a genuine CLOSED exact envelope family rather than deleting
+terms from an infinite complex, start its ACTUAL minimal cover
+0->X_(n+1)->Q_n->X_n->0. The real kernel summand S_(n+1) is a submodule
+of Q_n. Form H_n=Q_n/S_(n+1), so
+pd H_n<=d+1 via0->S_(n+1)->Q_n->H_n->0. Its kernel over X_n is the
+ACTUAL quotient X_(n+1)/S_(n+1)=Y_(n+1). Let H'_n be the ACTUAL inverse
+image of Y_n subset X_n under H_n->X_n. Then
+
+\[
+0\to H'_n\to H_n\to S_n\to0,\qquad
+0\to Y_{n+1}\to H'_n\to Y_n\to0,
+\quad\operatorname{pd}_A H'_n\le d+1.
+\tag{4.3}
+\]
+
+These are real module quotient/preimage sequences; no splitting of H'_n
+is asserted. Every exactness claim is supplied by those sequences.
+For r>d+2 the ordinary long exact Tor sequence of(4.3) also gives
+Tor_r(R,Y_n)=Tor_(r-1)(R,Y_(n+1)); the displayed conservative cutoff
+requires only pd H'_n<=d+1. Thus sufficiently high ordinary Tor and
+infinite pd persist, while the resulting middle modules have ONE uniform
+finite pd bound and form an ACTUAL envelope system for all Y_n.
+If S_n=0 throughout, the middles are the actual projective Q_n and bound0.
+
+This is a proven finite-pd SIMPLE-DIRECT-SUM error elimination, not the
+refuted arbitrary finite-pd differential-IMAGE pruning of C091/C092.
+It generalizes the exact quotient repair used in C104/C105 to a uniformly
+bounded infinite tail family; no assumption on finitistic dimension.
+
+## 5. Concrete interface for general radical-cube-zero research
+
+If J^3=0, each actual X_n at positive syzygy depth lies in JQ_(n-1),
+so J^2X_n=0. Therefore the terminal Y_n above has Loewy length at most2
+and NO simple direct summands. The elementary split-socle argument of
+C108 (which uses only J^2Y=0 here, not selfinjectivity) gives soc Y_n=JY_n.
+Its actual finite-pd envelopes H'_n have uniform h<=d+1. This supplies a
+real family to the C105/C106 ordinary all-target connecting-product
+mechanism, without literal differential pruning.
+
+At an actual cover of a radical-square-annihilated X_n, J^2Q_n is a
+semisimple SUBMODULE of X_(n+1), and JX_(n+1) subset J^2Q_n. A complement
+to JX_(n+1) in J^2Q_n is semisimple, disjoint from the radical, and thus
+is an ACTUAL simple direct summand of X_(n+1). This claim is restricted
+to J^3=0. For general J, the frozen B=k[x]/(x^4),K=(x^2) counterexample
+in N-Vertex-Main-Route.md Section6 forbids inferring split simples from
+a deep semisimple QUOTIENT. The exact radical-cube-zero submodule/socle
+hypotheses are essential and the old counterexample remains preserved.
+
+These finite-simple-error repairs do NOT make the bi-singular rectangles
+visible or provide C108's normal-matrix recurrence for nonselfinjective
+A. They do not solve the full nonselfinjective cube-zero branch. The
+uniform exact family is an ordinary comparison input, not a new residue
+invariant. C108's permanently misaligned examples warn against assuming
+visibility solely from the no-simple-summand shape.
+
+## 6. Normal adversarial audit and exact limits
+
+- inequality(1.2) uses TRUE direct sums in an ACTUAL syzygy, not a
+  composition factor, quotient, socle inclusion or stable summand;
+- one occurrence yields ONLY containment; infinitely many occurrences
+  yield j in the original recurrent set, needed for STRICTNESS;
+- j must have infinite LEFT pd, otherwise T_j is empty and the infinite
+  tail could be lost; finite-pd simple copies treated only in Section4;
+- ordinary self-Tor cutoff is essential: frozen radical-square-zero
+  p-cycle has recurring simple copies but all T_j are the same whole
+  cycle and diagonal returns at multiples of p. It refutes unqualified
+  strict descent, while it confirms the ordinary return branch;
+- T sets are PROJECTIVE recurrence, unlike C091's smaller image carrier
+  which expands at the next actual cover;
+- ambient A and its label counts stay unchanged; strict integer is source
+  recurrent-type count, no smaller-algebra claim;
+- minimum is chosen among finitely many actual infinite simple sources;
+  finite simple label pd bound exists without arbitrary finitistic bound;
+- full S_n simple split summands/preimages give actual(4.3) exactness;
+  no deletion of any finite differential image is assumed exact;
+- (4.2) for ALL right modules in same degree r>d, (4.3) conservative
+  shift cutoff r>d+2, distinct statements and proven pd bounds;
+- J^3=0 is needed for deep radical SUBMODULE splitting, not a generic
+  semisimple quotient. Existing x^4 counterexample retained;
+- no automatic rectangle, matrix normality, selfinjectivity or opposite
+  infinite-plus transfer; no graph-to-homology inference;
+- written ordinary proof is normal self-audit, not independent verifier
+  acceptance. No new computation/checksums/HTML or old Run rewriting.
+
+C109 is a genuine finite source-carrier descent and closes the whole
+actual late-simple-summand branch. It also gives a correct uniformly
+finite-pd exact tail repair preserving all sufficiently high ordinary
+Tor, with explicitly limited hypotheses. General cross-map images are
+still not covered. Remaining non-simple/nonaligned cores, general cube
+zero/higher-radical, unit/corner physical transfer and ALL original
+bounded-screening/local-trivial/Target-A/Primitive/Binary/higher-output/
+supported-weight residuals remain OPEN. Universal Gap A remains OPEN.

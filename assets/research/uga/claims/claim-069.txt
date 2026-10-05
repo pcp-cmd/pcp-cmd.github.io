@@ -1,0 +1,19 @@
+## UGA-C069 — Split Radical Quotients Give Ordinary Tail Retraction and Strict Dimension Descent
+**Status:** COMPLETE ELEMENTARY SELF-AUDITED ALL-SIZE PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Split-Radical-Quotient-and-Dimension-Descent-2026-10-03.md, Sections 1--5.
+
+Let K be an ideal contained in J(A), and suppose the ordinary quotient A -> B=A/K has a unital k-algebra section. Conjugation with u=sum_i e_i s(bar e_i), a unit in 1+K, aligns any section with the vertices. The augmented relative-bar retract makes every ordinary B simple-pair Tor a split summand of the corresponding A-Tor; reverse Peirce support lifts.
+
+If actual K has finite ambient pd d on either one stated side, finite gldim B=g implies gldim A<=g+d+1. All A simples are B simples; a finite B-projective simple resolution has ambient term pd<=d+1. The bar retract gives gldim B<=gldim A, hence global infinity is preserved. No finite pd on the other side, K^2=0, enveloping perfectness or tensor nilpotence is required.
+
+For nonzero K a hypothetical bad A therefore gives a bad B with strictly smaller positive integer dim_k B. Gap A passes through any checked finite tower of these actual quotients, closing an all-size extension class over any justified base, including C061's erasure-stable class. Existing ordinary-section or C067 infinite-pd vertex deletions can use the same dimension-decreasing chain when their exact hypotheses hold at that step; no automatic inheritance is asserted.
+
+For A=A_0 -> ... -> A_r=B with v vertices, chosen ambient kernel pd d_i, terminal all-vertex C061 sections and all supported A-Tor vanishing in every n>=M,
+
+\[
+\operatorname{gldim}A\le(v-1)M+\sum_{i=0}^{r-1}(d_i+1).
+\]
+
+An explicit ten-dimensional five-vertex calibration has a right-projective kernel, infinite left kernel pd and nonzero kernel square; its supported quotient tail survives. It is infinite +, not a counterexample. The proof concerns global dimension and Gap A, not a new finitistic theorem. Universal existence of such a reduction in every remaining bad algebra is unproved.
+
+---

@@ -1,0 +1,1667 @@
+# Run-A-U4-AugmentationBridge.md
+
+## Universal Gap A — Universal Layer U4
+### Run A — Augmentation Alignment / Comparison-Map Bridge
+
+**Role:** Main Researcher / Augmentation Bridge  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Completion label:** `AUGMENTATION_TRANSFER_DESCENT / SERRE_TAIL_LOCALIZATION / ROUTE_INSUFFICIENT`  
+**Global status:** Universal Gap A remains OPEN.  
+**U4 status:** The comparison-map/augmentation mechanism is now understood sharply. It gives a strict transfer-or-descent theorem, but it does not by itself solve visibility. The true remaining bridge is Detector–Carrier Alignment.
+
+---
+
+# 0. Frozen input
+
+Let \(D\) be an arbitrary finite-dimensional basic algebra.
+
+Work under the hypothetical failure of Universal Gap A.
+
+U2/U3 have already reduced the visibility obstruction to a strongly connected recurrent carrier
+
+\[
+\mathcal C.
+\]
+
+Fix a detector
+
+\[
+i\in\mathcal C.
+\]
+
+There is a finite-dimensional module \(N\) with
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,N)\neq0
+\quad\text{for infinitely many }n.
+}
+\]
+
+The frozen Detector-Purification theorem is used without reproving it.
+
+If
+
+\[
+P(N)=P_i^a\oplus P',
+\qquad
+K=\Omega N,
+\qquad
+A=K\cap P_i^a,
+\]
+
+then under hypothetical Gap-A failure:
+
+\[
+\operatorname{Tor}^D_{\gg0}(R_i,A)=0,
+\]
+
+while
+
+\[
+\operatorname{Tor}^D_n(R_i,K/A)\neq0
+\quad\text{infinitely often},
+\]
+
+and
+
+\[
+K/A\hookrightarrow JP'.
+\]
+
+Thus the persistent detector has already been purified away from its own protected projective sector.
+
+The present run does not reprove U1–U3.
+
+---
+
+# 1. Vault method map
+
+The run explicitly retrieved and applied the required Vault methods.
+
+## 1.1 Bridge
+
+The actual bridge object is not a graph edge.
+
+Choose an augmentation
+
+\[
+\pi:N\twoheadrightarrow L_z.
+\]
+
+Let
+
+\[
+P_\bullet(N),
+\qquad
+P_\bullet(L_z)
+\]
+
+be minimal projective resolutions.
+
+The comparison theorem gives a chain map
+
+\[
+\boxed{
+F_\bullet:
+P_\bullet(N)\longrightarrow P_\bullet(L_z)
+}
+\]
+
+lifting \(\pi\).
+
+The bridge question is whether detector homology crosses this map in unbounded degree.
+
+---
+
+## 1.2 Local-to-global
+
+The local datum is the degree-\(n\) map
+
+\[
+R_i\otimes_DF_n.
+\]
+
+The global question is whether these maps are nonzero in infinitely many detector degrees.
+
+The run therefore replaces vague “augmentation compatibility” by an explicit rank sequence.
+
+---
+
+## 1.3 Infinite descent / minimal counterexample
+
+The well-founded complexity that actually works is the composition length
+
+\[
+\boxed{
+\Xi_{\rm aug}(N)=\ell(N).
+}
+\]
+
+If an augmentation fails to transfer detector recurrence, the kernel has strictly smaller length.
+
+This produces a genuine transfer-or-descent theorem.
+
+However the descent terminates at an invisible persistent simple, so it does not close Universal Gap A.
+
+---
+
+## 1.4 Standard form
+
+The standard augmentation object is the triple
+
+\[
+\boxed{
+(N,\pi,F_\bullet)
+}
+\]
+
+where
+
+- \(\pi:N\twoheadrightarrow L_z\) is a simple quotient;
+- both resolutions are minimal;
+- \(F_\bullet\) is any comparison lift.
+
+The induced detector map is independent of the comparison-lift choice.
+
+---
+
+## 1.5 Bootstrap
+
+The augmentation step can be repeated along a composition series:
+
+\[
+0=N_0\subset N_1\subset\cdots\subset N_m=N.
+\]
+
+At each step one either transfers to the simple quotient or descends to the kernel.
+
+This bootstrap terminates after at most \(\ell(N)-1\) strict descents.
+
+It produces a persistent simple factor.
+
+It does not automatically produce a Peirce-visible persistent simple.
+
+---
+
+## 1.6 Representation change
+
+The run begins with
+
+\[
+\text{module + augmentation + comparison map}
+\]
+
+but ultimately discovers the more natural representation:
+
+\[
+\boxed{
+\text{detector tail modulo the protected Serre sector}.
+}
+\]
+
+Visible objects become asymptotically invisible to the detector under the hypothetical failure.
+
+This explains structurally why exact-sequence/augmentation arguments cannot on their own force visible recurrence.
+
+---
+
+## 1.7 Multiplicative / coordinate projection
+
+The frozen purified embedding
+
+\[
+N\hookrightarrow JP'
+\]
+
+is projected to individual projective summands.
+
+The resulting transfer either:
+
+- lands in a submodule of some \(P_j\), yielding the old detector/carrier mismatch;
+- or fails and pushes recurrence into a cokernel with no guaranteed complexity decrease.
+
+Thus projective coordinate projection does not align the detector.
+
+---
+
+## 1.8 Exact sequence / kernel-image transfer
+
+The exact sequence
+
+\[
+0\to\ker\pi\to N\to L_z\to0
+\]
+
+and its long exact Tor sequence are used degree-by-degree.
+
+The mapping cone of \(F_\bullet\) gives the precise kernel/cokernel absorption formula proved below.
+
+---
+
+## 1.9 Extreme examples / counterexamples
+
+The run tests:
+
+1. finite quantum orbit
+   \[
+   M_\lambda\leftrightarrow M_{-\lambda};
+   \]
+2. infinite-order moduli drift
+   \[
+   M_{\lambda q^{-n}};
+   \]
+3. the two-vertex moduli version;
+4. the frozen invisible-return calibration with a recurrent visible core.
+
+All calibrations survive the new theorems and kill stronger false upgrades.
+
+---
+
+# 2. Comparison-map audit
+
+Let
+
+\[
+\pi:N\twoheadrightarrow L_z.
+\]
+
+Choose minimal projective resolutions
+
+\[
+P_\bullet(N)\to N,
+\qquad
+P_\bullet(L_z)\to L_z.
+\]
+
+By the comparison theorem there exists
+
+\[
+F_\bullet:
+P_\bullet(N)\to P_\bullet(L_z)
+\]
+
+lifting \(\pi\).
+
+It is unique up to chain homotopy.
+
+---
+
+# 3. Orientation after detector tensor
+
+The detector \(R_i\) is a right simple.
+
+For an indecomposable left projective
+
+\[
+P_j=De_j,
+\]
+
+one has
+
+\[
+R_i\otimes_DP_j=0
+\]
+
+unless \(j=i\), and in the split-basic case
+
+\[
+R_i\otimes_DP_i\cong k.
+\]
+
+Thus detector tensor extracts the \(P_i\)-multiplicity row of a minimal resolution.
+
+Because the resolutions are minimal,
+
+\[
+\operatorname{im}d_n
+\subset JP_{n-1}.
+\]
+
+Since
+
+\[
+R_iJ=0,
+\]
+
+all differentials vanish after tensoring with \(R_i\):
+
+\[
+d(R_i\otimes_DP_\bullet)=0.
+\]
+
+Therefore
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,N)
+\cong
+R_i\otimes_DP_n(N).
+}
+\]
+
+The same holds for \(L_z\).
+
+---
+
+# 4. VERIFIED — Comparison-Rank Rigidity
+
+Because both tensorized minimal differentials are zero,
+
+\[
+H_n(R_i\otimes_DF_\bullet)
+=
+R_i\otimes_DF_n.
+\]
+
+Hence the Tor map induced by \(\pi\) is exactly
+
+\[
+\boxed{
+f_n(\pi;i)
+=
+R_i\otimes_DF_n.
+}
+\]
+
+Define the comparison-rank profile
+
+\[
+\boxed{
+\rho_n(\pi;i)
+=
+\operatorname{rank}_k(R_i\otimes_DF_n).
+}
+\]
+
+This profile is independent of the chosen comparison lift.
+
+Indeed if \(F_\bullet-G_\bullet\) is null-homotopic,
+
+\[
+F-G=dh+hd.
+\]
+
+After tensoring with \(R_i\), the minimal differentials become zero, hence
+
+\[
+R_i\otimes(F-G)=0.
+\]
+
+Therefore:
+
+\[
+\boxed{
+\rho_n(\pi;i)
+\text{ is an invariant of the augmentation }\pi.
+}
+\]
+
+This gives an exact replacement for vague “augmentation compatibility”.
+
+---
+
+# 5. Cone / kernel absorption
+
+Let
+
+\[
+K=\ker\pi.
+\]
+
+The short exact sequence
+
+\[
+0\to K\to N\xrightarrow{\pi}L_z\to0
+\]
+
+gives the long exact sequence
+
+\[
+\cdots
+\to
+T_{n+1}(N)
+\xrightarrow{f_{n+1}}
+T_{n+1}(L_z)
+\to
+T_n(K)
+\to
+T_n(N)
+\xrightarrow{f_n}
+T_n(L_z)
+\to\cdots
+\]
+
+where
+
+\[
+T_n(-)=\operatorname{Tor}^D_n(R_i,-).
+\]
+
+Exactness gives the canonical short exact sequence
+
+\[
+\boxed{
+0
+\to
+\operatorname{coker}f_{n+1}
+\to
+T_n(K)
+\to
+\ker f_n
+\to
+0.
+}
+\tag{CA}
+\]
+
+This is the exact comparison-cone absorption formula.
+
+No detector information disappears when the augmentation map fails.
+
+It is absorbed into:
+
+- the kernel of the current comparison map;
+- the missed target of the next-degree comparison map.
+
+---
+
+# 6. VERIFIED — Augmentation Transfer-or-Descent Theorem
+
+Assume
+
+\[
+T_n(N)\neq0
+\]
+
+for infinitely many \(n\).
+
+Let
+
+\[
+\pi:N\twoheadrightarrow L_z
+\]
+
+be a simple quotient.
+
+Then exactly one of the following useful alternatives occurs.
+
+## Transfer branch
+
+If
+
+\[
+f_n\neq0
+\]
+
+for infinitely many \(n\), then
+
+\[
+\boxed{
+T_n(L_z)\neq0
+\quad\text{for infinitely many }n.
+}
+\]
+
+Thus recurrence transfers to the simple quotient.
+
+## Descent branch
+
+If
+
+\[
+f_n=0
+\qquad(n\gg0),
+\]
+
+then exactness gives a surjection
+
+\[
+T_n(K)\twoheadrightarrow T_n(N)
+\]
+
+for all sufficiently high \(n\).
+
+Hence
+
+\[
+\boxed{
+T_n(K)\neq0
+\quad\text{for infinitely many }n.
+}
+\]
+
+Since
+
+\[
+\ell(K)=\ell(N)-1,
+\]
+
+this is strict well-founded descent.
+
+Therefore:
+
+\[
+\boxed{
+\text{persistent augmentation}
+\Longrightarrow
+\text{simple transfer OR strict composition-length descent}.
+}
+\tag{ATD}
+\]
+
+This is the strongest general positive theorem of the run.
+
+---
+
+# 7. Composition-series bootstrap
+
+Take a composition series
+
+\[
+0=N_0\subset N_1\subset\cdots\subset N_m=N
+\]
+
+with
+
+\[
+N_j/N_{j-1}\cong L_{z_j}.
+\]
+
+Starting at persistent \(N\), repeatedly apply (ATD).
+
+Each failed transfer reduces composition length by one.
+
+Thus after finitely many steps one obtains a simple module \(L_z\) with
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,L_z)\neq0
+\quad\text{for infinitely many }n.
+}
+\]
+
+This recovers ordinary dévissage, but now with an explicit comparison-map/cone mechanism at every step.
+
+The new information is **where failed transfer goes**.
+
+---
+
+# 8. Why ordinary dévissage is still insufficient
+
+The simple \(L_z\) reached by the bootstrap need not satisfy
+
+\[
+e_zDe_i\neq0.
+\]
+
+Under hypothetical Universal Gap-A failure, if
+
+\[
+e_zDe_i\neq0,
+\]
+
+then the fixed pair \((R_i,L_z)\) must be eventually Tor-zero.
+
+Therefore every persistent simple produced at the terminal stage is necessarily Peirce-invisible to the detector:
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,L_z)\neq0\text{ i.o.}
+\quad\Longrightarrow\quad
+e_zDe_i=0
+}
+\]
+
+inside the hypothetical failure.
+
+Thus augmentation solves **simple-seed extraction** but not **detector visibility alignment**.
+
+---
+
+# 9. Protected Serre sector
+
+Define
+
+\[
+V(i)
+=
+\{z:e_zDe_i\neq0\}.
+\]
+
+Let
+
+\[
+\mathcal S_i
+=
+\langle L_z:z\in V(i)\rangle
+\]
+
+be the Serre subcategory generated by the visible simples.
+
+Under hypothetical failure:
+
+\[
+\boxed{
+U\in\mathcal S_i
+\Longrightarrow
+\operatorname{Tor}^D_{\gg0}(R_i,U)=0.
+}
+\tag{SV}
+\]
+
+This is frozen from U3 and used throughout.
+
+---
+
+# 10. Visible augmentation is forced into the kernel branch
+
+Suppose
+
+\[
+\pi:N\twoheadrightarrow L_z
+\]
+
+with
+
+\[
+z\in V(i).
+\]
+
+Then
+
+\[
+T_n(L_z)=0
+\qquad(n\gg0).
+\]
+
+Hence
+
+\[
+f_n=0
+\qquad(n\gg0).
+\]
+
+By (ATD):
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,\ker\pi)\neq0
+\quad\text{i.o.}
+}
+\]
+
+Thus:
+
+\[
+\boxed{
+\text{visible simple quotients are peeled off rather than receiving recurrence}.
+}
+\tag{VP}
+\]
+
+This is the opposite of the hoped-for direct augmentation alignment.
+
+---
+
+# 11. Canonical maximal visible quotient
+
+For a finite-length module \(N\), there exists a maximal quotient
+
+\[
+q_i(N)
+\]
+
+lying in \(\mathcal S_i\).
+
+Choose
+
+\[
+0\to N^{\rm vh}\to N\to q_i(N)\to0.
+\]
+
+If
+
+\[
+q_i(N)\neq0,
+\]
+
+then
+
+\[
+\ell(N^{\rm vh})<\ell(N).
+\]
+
+Since the quotient is detector-tail dead,
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,N^{\rm vh})
+\cong
+\operatorname{Tor}^D_n(R_i,N)
+\qquad(n\gg0).
+}
+\]
+
+So \(N^{\rm vh}\) remains persistent.
+
+Moreover \(N^{\rm vh}\) has no nonzero quotient lying in \(\mathcal S_i\).
+
+Otherwise a visible quotient of \(N^{\rm vh}\) could be pushed out against
+
+\[
+0\to N^{\rm vh}\to N\to q_i(N)\to0,
+\]
+
+producing a strictly larger quotient of \(N\) in the Serre subcategory, contradicting maximality.
+
+Therefore:
+
+\[
+\boxed{
+\operatorname{top}N^{\rm vh}
+\text{ contains only Peirce-invisible simples for detector }i.
+}
+\]
+
+This is the **Visible-Head Purification Theorem**.
+
+---
+
+# 12. Visible-socle purification
+
+Let
+
+\[
+t_i(N)
+\]
+
+be the maximal submodule of \(N\) lying in \(\mathcal S_i\).
+
+Then
+
+\[
+0\to t_i(N)\to N\to N/t_i(N)\to0.
+\]
+
+Since the visible submodule is detector-tail dead,
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,N)
+\cong
+\operatorname{Tor}^D_n(R_i,N/t_i(N))
+\qquad(n\gg0).
+}
+\]
+
+If \(t_i(N)\neq0\), this strictly decreases composition length.
+
+The quotient has no nonzero \(\mathcal S_i\)-submodule.
+
+Hence its socle consists entirely of detector-invisible simples.
+
+---
+
+# 13. Serre-reduced anchored core
+
+Alternate visible-head and visible-socle purification.
+
+Every nontrivial step strictly lowers composition length, so the process terminates.
+
+Thus every persistent module can be replaced by a persistent module
+
+\[
+\boxed{
+N_{\rm core}
+}
+\]
+
+such that:
+
+1. \(N_{\rm core}\) has no nonzero quotient in \(\mathcal S_i\);
+2. \(N_{\rm core}\) has no nonzero submodule in \(\mathcal S_i\);
+3. all simple top factors are \(i\)-invisible;
+4. all simple socle factors are \(i\)-invisible.
+
+Visible composition factors may still occur in internal extension layers.
+
+Therefore composition-length descent is real but not sufficient for visibility.
+
+---
+
+# 14. Boundary-crossing extension audit
+
+Consider
+
+\[
+0\to U\to E\to V\to0.
+\]
+
+## Case A — visible submodule
+
+Assume
+
+\[
+U\in\mathcal S_i.
+\]
+
+Then
+
+\[
+T_n(U)=T_{n-1}(U)=0
+\qquad(n\gg0).
+\]
+
+The long exact sequence gives
+
+\[
+\boxed{
+T_n(E)
+\cong
+T_n(V)
+\qquad(n\gg0).
+}
+\tag{B1}
+\]
+
+## Case B — visible quotient
+
+Assume
+
+\[
+V\in\mathcal S_i.
+\]
+
+Then
+
+\[
+T_n(V)=T_{n+1}(V)=0
+\qquad(n\gg0),
+\]
+
+and therefore
+
+\[
+\boxed{
+T_n(U)
+\cong
+T_n(E)
+\qquad(n\gg0).
+}
+\tag{B2}
+\]
+
+Thus a boundary extension class
+
+\[
+\xi\in\operatorname{Ext}^1_D(V,U)
+\]
+
+with one visible side is asymptotically transparent to detector \(R_i\).
+
+---
+
+# 15. REFUTED — generic Boundary Return Lemma
+
+The hoped-for statement
+
+\[
+\text{persistent detector}
++
+\text{minimal visible/invisible boundary extension}
+\Rightarrow
+\text{visible simple recurrence}
+\]
+
+is false as a general exact-sequence mechanism.
+
+Equations (B1)–(B2) show the opposite:
+
+\[
+\boxed{
+\text{the high detector tail simply passes through the boundary while the visible side disappears}.
+}
+\]
+
+Thus the extension class \(\xi\) alone cannot be the universal bridge.
+
+Any successful boundary theorem must use additional structure not visible in the short exact sequence alone.
+
+---
+
+# 16. Detector-tail Serre localization
+
+Call a module morphism
+
+\[
+g:M\to N
+\]
+
+an \(\mathcal S_i\)-isomorphism if
+
+\[
+\ker g,\ \operatorname{coker}g\in\mathcal S_i.
+\]
+
+Using two short exact sequences and (SV), one obtains:
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,g):
+T_n(M)\xrightarrow{\sim}T_n(N)
+\qquad(n\gg0).
+}
+\tag{SL}
+\]
+
+Thus the sufficiently high detector tail is insensitive to all \(\mathcal S_i\)-isomorphisms.
+
+Conceptually:
+
+\[
+\boxed{
+\text{high detector Tor only sees the module modulo the protected visible Serre sector}.
+}
+\]
+
+This is the main representation change of U4.
+
+The visible sector is zero in the detector-tail localization.
+
+Therefore an argument using only:
+
+- augmentations;
+- kernels;
+- cokernels;
+- short exact sequences;
+- comparison maps of module morphisms;
+
+cannot recover a visible persistent simple unless it also uses extra structure that is destroyed by this localization.
+
+---
+
+# 17. Derived version
+
+The same statement can be expressed triangulatedly.
+
+Consider
+
+\[
+\Phi_i(N)
+=
+R_i\otimes_D^{\mathbf L}N.
+\]
+
+For
+
+\[
+U\in\mathcal S_i,
+\]
+the homology of \(\Phi_i(U)\) is bounded.
+
+Thus after passing to the detector-tail quotient
+
+\[
+D(k)/D^b(k),
+\]
+
+all visible-sector objects become zero.
+
+Every triangle
+
+\[
+U\to E\to V\to U[1]
+\]
+
+with \(U\in\mathcal S_i\) identifies \(E\) and \(V\) in the detector-tail quotient.
+
+Likewise if \(V\in\mathcal S_i\), then \(E\) and \(U\) become identified.
+
+This derived representation explains the exact-sequence calculations uniformly.
+
+---
+
+# 18. Multiplication / projective-coordinate projection audit
+
+The purified context satisfies
+
+\[
+N\hookrightarrow JP',
+\qquad
+P'
+=
+\bigoplus_{j\neq i}P_j^{a_j}.
+\]
+
+For each \(j\), project to the \(j\)-summand and define
+
+\[
+I_j
+=
+\operatorname{im}
+\left(
+N\to JP_j^{a_j}
+\right).
+\]
+
+The coordinate maps give
+
+\[
+N\longrightarrow\bigoplus_j I_j.
+\]
+
+Since the original map into \(JP'\) is injective, this combined map is injective.
+
+---
+
+# 19. Projection transfer branch
+
+Suppose for some \(j\)
+
+\[
+T_n(N)\to T_n(I_j)
+\]
+
+is nonzero for infinitely many \(n\).
+
+Then
+
+\[
+T_n(I_j)\neq0
+\]
+
+infinitely often.
+
+Because
+
+\[
+I_j\subset P_j^{a_j},
+\]
+
+all composition factors \(L_z\) of \(I_j\) satisfy
+
+\[
+e_zDe_j\neq0.
+\]
+
+Dévissage therefore produces some simple \(L_z\) with
+
+\[
+\operatorname{Tor}^D_n(R_i,L_z)\neq0
+\quad\text{i.o.},
+\]
+
+and
+
+\[
+e_zDe_j\neq0.
+\]
+
+But purification gives
+
+\[
+j\neq i.
+\]
+
+Hence the result is exactly a detector/carrier mismatch:
+
+\[
+\boxed{
+i
+\rightsquigarrow
+L_z
+\longrightarrow
+j,
+\qquad
+j\neq i.
+}
+\]
+
+The multiplication projection route therefore returns to the U2 carrier-mismatch architecture.
+
+---
+
+# 20. Projection failure branch
+
+If every coordinate map is eventually zero on detector Tor, use
+
+\[
+0\to
+N
+\to
+\bigoplus_jI_j
+\to
+C
+\to0.
+\]
+
+The long exact sequence forces high detector recurrence into
+
+\[
+T_{n+1}(C).
+\]
+
+Thus \(C\) is persistent up to a fixed degree shift.
+
+However
+
+\[
+C
+\]
+
+is a quotient of a submodule of \(P'\), and there is no general inequality
+
+\[
+\ell(C)<\ell(N)
+\]
+
+or strict support decrease.
+
+Hence no well-founded descent is obtained.
+
+The two exits of multiplication projection are therefore:
+
+\[
+\boxed{
+\text{carrier mismatch}
+\quad/\quad
+\text{nondecreasing cokernel absorption}.
+}
+\]
+
+---
+
+# 21. Anchored complexity verdict
+
+The composition length
+
+\[
+\Xi_{\rm aug}(N)=\ell(N)
+\]
+
+does satisfy:
+
+\[
+\boxed{
+\text{failure of one simple augmentation transfer}
+\Rightarrow
+\Xi_{\rm aug}\text{ strictly decreases}.
+}
+\]
+
+This is a real well-founded descent.
+
+But it cannot satisfy the stronger desired statement
+
+\[
+\text{failure of visibility}
+\Rightarrow
+\Xi_{\rm aug}\text{ strictly decreases}
+\]
+
+universally.
+
+Once the process reaches a persistent simple \(L_z\) with
+
+\[
+e_zDe_i=0,
+\]
+
+one has
+
+\[
+\ell(L_z)=1
+\]
+
+and no further augmentation kernel exists.
+
+Thus the well-founded augmentation descent terminates exactly at the original invisible simple-pair obstruction.
+
+---
+
+# 22. Countermodel calibration — finite quantum orbit
+
+Use the frozen quantum family with
+
+\[
+\Omega M_\lambda
+\cong
+M_{-\lambda},
+\qquad
+\Omega^2M_\lambda
+\cong
+M_\lambda.
+\]
+
+This gives exact recurrent/periodic module context.
+
+However the periodic module orbit is not itself the minimal-resolution orbit of the simple quotient.
+
+Therefore the run does **not** infer
+
+\[
+\text{periodic module}
+\Rightarrow
+\text{simple restart}.
+\]
+
+The augmentation comparison map and its rank profile are extra data.
+
+Calibration passed.
+
+---
+
+# 23. Countermodel calibration — infinite moduli drift
+
+For the infinite-order quantum family
+
+\[
+\Omega^nM_\lambda
+\cong
+M_{\lambda q^{-n}}
+\]
+
+with \(q\) not a root of unity, the simple anchor can remain of the same coarse type while the exact context parameter changes forever.
+
+Thus:
+
+\[
+\boxed{
+\text{augmentation anchor}
+\not\Rightarrow
+\text{context-state control}.
+}
+\]
+
+The composition-length descent theorem is unaffected, because it does not claim that augmentation controls the syzygy orbit.
+
+Calibration passed.
+
+---
+
+# 24. Countermodel calibration — two-vertex moduli drift
+
+In the two-vertex version,
+
+\[
+\Omega M_i(\lambda)
+\cong
+M_{1-i}(\lambda/q).
+\]
+
+The carrier labels alternate periodically while the moduli parameter drifts.
+
+Therefore:
+
+- repeated carrier label;
+- bounded support;
+- fixed Loewy profile;
+- repeated simple anchor type
+
+do not determine the comparison-rank profile.
+
+Again the run does not use any such inference.
+
+Calibration passed.
+
+---
+
+# 25. Invisible-return calibration
+
+The frozen calibration with an invisible returned pair but a visible recurrent core confirms the U4 conclusion.
+
+The detector/source pair can remain Peirce-invisible while visibility lives on a different carrier pair.
+
+The correct mechanism is not:
+
+\[
+\text{force the original invisible pair to become visible}.
+\]
+
+Instead one must change detector/carrier.
+
+This is exactly what the multiplication-projection audit rediscovers.
+
+---
+
+# 26. Strongest theorem package
+
+## T1 — Comparison-Rank Rigidity
+
+For minimal resolutions, the induced detector-Tor map is exactly
+
+\[
+R_i\otimes F_n
+\]
+
+and is independent of comparison lift.
+
+## T2 — Cone Absorption Formula
+
+\[
+0
+\to
+\operatorname{coker}f_{n+1}
+\to
+T_n(\ker\pi)
+\to
+\ker f_n
+\to0.
+\]
+
+## T3 — Augmentation Transfer-or-Descent
+
+For a simple quotient,
+
+\[
+\text{persistent }N
+\Rightarrow
+\text{persistent simple transfer OR strict composition-length descent}.
+\]
+
+## T4 — Visible-Head Purification
+
+A persistent module can be strictly reduced past its maximal visible quotient until all simple top factors are detector-invisible.
+
+## T5 — Visible-Socle Purification
+
+Visible detector-tail-dead submodules can be quotiented away without losing persistent recurrence.
+
+## T6 — Serre-Reduced Anchored Core
+
+Every persistent module admits a finite reduction to a persistent core with no nonzero visible submodule or visible quotient.
+
+## T7 — Boundary Transparency
+
+Any extension with one side in \(\mathcal S_i\) is asymptotically equivalent, for detector Tor, to the other side.
+
+## T8 — Detector-Tail Serre Localization
+
+Every morphism with visible-sector kernel and cokernel induces an isomorphism on sufficiently high detector Tor.
+
+## T9 — Multiplication Projection Mismatch
+
+Successful projection from the purified context reaches a Peirce-visible carrier \(j\neq i\), recreating detector/carrier mismatch rather than detector alignment.
+
+---
+
+# 27. REFUTED / route-insufficient statements
+
+The run rejects or downgrades:
+
+\[
+\text{periodic exact state}
+\Rightarrow
+\text{simple augmentation alignment};
+\]
+
+\[
+\text{visible/invisible boundary extension}
+\Rightarrow
+\text{visible detector return};
+\]
+
+\[
+\text{comparison map failure}
+\Rightarrow
+\text{visibility};
+\]
+
+\[
+\text{projective coordinate projection}
+\Rightarrow
+\text{detector alignment}.
+\]
+
+The first two are structurally false as general mechanisms.
+
+The latter two only give descent or carrier mismatch.
+
+---
+
+# 28. Status of Target A
+
+Target A asked for:
+
+\[
+\operatorname{Tor}^\infty(R_i,N)
+\Longrightarrow
+\exists L_z\text{ visible to }i
+\text{ with }
+\operatorname{Tor}^\infty(R_i,L_z).
+\]
+
+This was **not proved**.
+
+The present run does not claim the theorem itself is false under every special origin hypothesis.
+
+What is proved is that the following toolkit is structurally insufficient on its own:
+
+- simple augmentations;
+- comparison maps;
+- mapping cones;
+- composition-series bootstrap;
+- protected Serre exact sequences.
+
+Under hypothetical failure, these operations localize away the visible sector.
+
+Therefore any proof of Target A must use additional structure from the purified syzygy embedding / carrier dynamics that is not preserved by Serre localization.
+
+---
+
+# 29. Status of Target B
+
+A precise form of Target B **is proved**:
+
+If a chosen simple augmentation has eventually zero induced detector map, then recurrence descends to its kernel and
+
+\[
+\ell(\ker\pi)<\ell(N).
+\]
+
+Thus:
+
+\[
+\boxed{
+\text{augmentation transfer failure}
+\Rightarrow
+\text{strict anchored composition-length descent}.
+}
+\]
+
+But this descent terminates at a persistent invisible simple.
+
+So Target B alone does not close visibility.
+
+---
+
+# 30. Exact remaining gap
+
+The run shows that the phrase
+
+\[
+\text{“simple-seed transfer”}
+\]
+
+was slightly misdiagnosed.
+
+Simple-seed transfer is already available by transfer-or-descent plus finite composition length.
+
+The true remaining gap is:
+
+\[
+\boxed{
+\textbf{Detector–Carrier Alignment / Change-of-Detector Bridge}.
+}
+\]
+
+At the terminal stage one has:
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,L_z)\neq0
+\quad\text{i.o.},
+}
+\]
+
+but
+
+\[
+\boxed{
+e_zDe_i=0.
+}
+\]
+
+From the purified/projective carrier geometry one often has some
+
+\[
+j\neq i
+\]
+
+with
+
+\[
+\boxed{
+e_zDe_j\neq0.
+}
+\]
+
+The missing theorem is therefore of the form
+
+\[
+\boxed{
+\operatorname{Tor}^\infty(R_i,L_z)
++
+e_zDe_j\neq0
+\Longrightarrow
+\operatorname{Tor}^\infty(R_j,L_z)
+\text{ OR strict descent}.
+}
+\]
+
+This is no longer an augmentation theorem.
+
+It is a detector-switch theorem.
+
+---
+
+# 31. Universal impact
+
+U4 does not close Universal Gap A.
+
+It does produce a substantial correction to the proof architecture.
+
+Before U4, the bottleneck was described as:
+
+\[
+\text{high syzygy tail}
+\to
+\text{endpoint simple restart}.
+\]
+
+After U4:
+
+\[
+\boxed{
+\text{persistent module}
+\to
+\text{persistent simple}
+}
+\]
+
+is no longer the hard part.
+
+The hard part is:
+
+\[
+\boxed{
+\text{persistent detector }i
++
+\text{Peirce-visible carrier }j
+\neq i
+\to
+\text{detector alignment}.
+}
+\]
+
+Moreover the protected visible sector is asymptotically zero for detector \(i\), so pure exact-sequence arguments cannot solve that alignment.
+
+This strictly narrows the Universal frontier.
+
+---
+
+# 32. Recommended next node
+
+The natural next node is:
+
+\[
+\boxed{
+\textbf{Universal Layer U5 — Detector Switch / Carrier Alignment}.
+}
+\]
+
+Primary target:
+
+Given
+
+\[
+\operatorname{Tor}^D_n(R_i,L_z)\neq0
+\quad\text{i.o.}
+\]
+
+and
+
+\[
+e_zDe_j\neq0,
+\qquad
+j\neq i,
+\]
+
+prove one of:
+
+1. detector recurrence transfers:
+   \[
+   \operatorname{Tor}^D_n(R_j,L_z)\neq0
+   \quad\text{i.o.};
+   \]
+2. a strictly smaller recurrent carrier appears;
+3. a new module with strictly smaller detector/carrier mismatch complexity appears.
+
+The representation should involve actual projective-cover transitions or natural maps between detector functors, not merely module augmentation.
+
+---
+
+# 33. Completion label
+
+\[
+\boxed{
+\texttt{AUGMENTATION_TRANSFER_DESCENT / SERRE_TAIL_LOCALIZATION / ROUTE_INSUFFICIENT}
+}
+\]
+
+The strongest positive result is:
+
+\[
+\boxed{
+\text{simple augmentation failure}
+\Rightarrow
+\text{strict composition-length descent}.
+}
+\]
+
+The strongest negative result is:
+
+\[
+\boxed{
+\text{visible-sector boundary extensions are asymptotically transparent to the detector}.
+}
+\]
+
+The exact surviving frontier is:
+
+\[
+\boxed{
+\textbf{Detector–Carrier Alignment}.
+}
+\]

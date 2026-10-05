@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Writing · Aleksi</title>
+  <meta name="description" content="Aleksi 与 AI 一起工作、学习和创作的记录。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/reading.css">
+  <link rel="stylesheet" href="./assets/css/site-theme.css">
+  <link rel="stylesheet" href="./assets/css/pages/writing.css">
+  <script defer src="./site-data.js"></script>
+  <script defer src="./assets/vendor/niku-home.js"></script>
+  <script defer src="./site-backdrop.js"></script>
+  <script defer src="./reading.js"></script>
+  <script defer src="./assets/js/writing-overview.js"></script>
+</head>
+<body class="reading-page site-page" data-section="writing">
+  <canvas class="site-backdrop" data-site-backdrop aria-hidden="true"></canvas>
+  <a class="reading-skip site-skip" href="#content">跳到正文</a>
+  <header class="reading-mobile-header site-header">
+    <div class="reading-mobile-top">
+      <a class="site-brand" href="./index.html"><span>Aleksi</span><small>← 首页</small></a>
+      <nav class="site-navigation" aria-label="栏目">
+        <a href="./writing.html" aria-current="page">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
+      <button class="site-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-navigation">栏目 <span aria-hidden="true">⌄</span></button>
+    </div>
+    <div id="mobile-navigation" data-mobile-navigation hidden><nav class="reading-navigation" aria-label="栏目">
+        <a href="./writing.html" aria-current="page">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav></div>
+  </header>
+  <div class="reading-layout">
+    <aside class="reading-left">
+      <a class="reading-home" href="./index.html">← 首页</a>
+      <a class="reading-brand" href="./index.html">Aleksi</a>
+      <nav class="reading-navigation" aria-label="栏目">
+        <a href="./writing.html" aria-current="page">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
+    </aside>
+    <main id="content" class="reading-main">
+      <header class="reading-page-heading writing-intro">
+        <div class="writing-intro-copy">
+          <h1>Writing</h1>
+          <p class="reading-muted">与 AI 一起工作、学习和创作的记录。</p>
+          <a class="writing-room-link" href="./magic-cabin/index.html?view=shelf">进入书房 <span aria-hidden="true">↗</span></a>
+        </div>
+        <figure class="writing-overview" data-writing-overview data-state="loading" aria-label="Writing 动态标记">
+          <div class="writing-overview-art" data-overview-art aria-hidden="true"></div>
+          <span class="writing-overview-fallback" data-overview-fallback aria-hidden="true">Writing</span>
+          <button class="writing-overview-toggle" type="button" data-overview-toggle aria-label="暂停动画" hidden>暂停</button>
+        </figure>
+      </header>
+      <div class="writing-mobile-filters" data-writing-filters>
+        <button type="button" data-filter="all" aria-pressed="true">全部</button>
+        <button type="button" data-filter="long" aria-pressed="false">长文</button>
+        <button type="button" data-filter="note" aria-pressed="false">短记</button>
+      </div>
+      <div class="writing-list" data-writing-list>
+        <!-- writing:list:start -->
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F01.md">“好看一点”，到底是什么意思？</a></h2><p>我把网站的审美要求拆成字号、板块比例和必须保留的条件，让修改可以讨论，也可以核对。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F02.md">我为什么开始先看图，再让AI写前端</a></h2><p>我想先用参考页面和生成图讨论视觉关系，再把已经决定的部分交给AI写前端。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F03.md">圈一下图片，能比写一段话多传递什么？</a></h2><p>我把无限画布上的圈选、箭头和批注看成定位问题的手段，再用文字补足动作与保留条件。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F04.md">同一个修改要求，为什么还要导出JSON？</a></h2><p>我想用JSON保留修改字段、保留条件、坐标和版本，让一份要求经过转交后仍然可以核对。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F05.md">我只想换背景，AI却把我的脸换了</a></h2><p>证件照修改中脸被改变的失败，让我更重视保留边界、结果比较和不确定时的停止条件。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F06.md">ChatGPT听懂了，交给Codex为什么又走样？</a></h2><p>我把ChatGPT到Codex的交接看成一次需求转交，重点检查限制和取舍是否随任务一起传递。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F07.md">提示词越长，真的越好吗？</a></h2><p>旧AGENTS.md和重复SHA256检查让我反思，提示词应按条件、范围与当前目标组织，而不是不断累积。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F08.md">我为什么想借用ASD-STE100跟AI说话</a></h2><p>我想借鉴术语一致、动作明确和步骤清楚的表达原则，让中文AI协作要求更容易执行与检查。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F09.md">审查了很多轮，为什么项目还是不干净？</a></h2><p>7月3日的反复补丁让我重新看待审查范围、交付标准和能够解释的项目状态。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F10.md">给朋友用一次，才知道什么叫交付</a></h2><p>解压即用和无个人资料的要求，让我从接收者的入口、操作和信息边界重新理解交付。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F11.md">安装包做好了，打开却一直让我重试</a></h2><p>7月17日的本地服务报错让我把安装、准备、进入操作和失败恢复分别纳入验证。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F12.md">按钮能点，不代表一件事能做完</a></h2><p>我想按完整使用目标检查进入、返回和状态更新，而不再只凭局部点击反馈判断完成。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F13.md">每次改好一点，为什么整个项目反而更乱？</a></h2><p>CSS覆盖和重复路径让我同时关注局部效果与实现关系，并按当前任务决定必要的整理范围。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F14.md">个人自用的软件，需要把技术债清零吗？</a></h2><p>我按实际使用影响、处理成本和关键结果的可靠性，决定个人软件中的问题何时处理或暂留。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F15.md">一份大Markdown，就让我的工具撑不住了</a></h2><p>从大Markdown导入受阻的经历，思考输入范围、分批处理与结果核对如何影响工具的实际可用性。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F16.md">只多了一层文件夹，整套课程就不能导入</a></h2><p>从课程导入和Vault未初始化的经历，讨论目录入口、准备状态与可执行提示应如何表达。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F17.md">同一个项目，换个窗口为什么像重新开始？</a></h2><p>从项目换窗口后的接续成本，说明共享记忆需要保留当前状态、有效限制和决策依据。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F18.md">AI研究最让我疲惫的，是做了又忘</a></h2><p>从重复研究的疲惫，讨论如何让问题、证据、失败和未解决缺口参与下一次研究。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F19.md">交接文件里，为什么必须写失败路线？</a></h2><p>以重复研究为背景，讨论失败路线的条件、停止原因和证据如何帮助接手者避免无意重做。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F20.md">我把研究资料分成了工具箱和历史箱</a></h2><p>区分面向方法调用的工具箱与保留来源过程的历史箱，并说明二者需要通过证据关系连接。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F21.md">我为什么停用了更复杂的多Agent系统？</a></h2><p>说明从Danus转向MRS与Vault的个人成本取舍，并提出未来比较研究安排时应检查的实际成本。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F22.md">一次失败，怎样变成以后还能用的资产？</a></h2><p>我把保存失败记录与实际复用分开，并说明研究记录需要怎样的条件、入口和核对才能帮助下一次行动。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F23.md">我的数学飞轮，最初什么都没有</a></h2><p>我以UGA为起点讨论工具与研究资产积累，并保留一般问题尚未解决、积累效果尚需使用检验的边界。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F24.md">做研究，也要允许自己的猜想是错的</a></h2><p>我把找反例和攻击前提作为研究方向，讨论怎样检查条件、区分候选反例与已确认反例。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F25.md">AI给了我一整套课程，我还是看不懂</a></h2><p>我从9月11日至13日干涩且仍为半成品的课程材料出发，说明课程覆盖范围与可学习程度之间的距离。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F26.md">材料越来越多，我却不知道从哪里开始学</a></h2><p>我从9月15日资料库与学习路径的问题出发，讨论怎样根据学习目标、起点和知识依赖找到一个可进入的入口。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F27.md">让AI整理资料时，我最怕它把什么删掉？</a></h2><p>我讨论资料整理中应保留的例外、失败和判断状态，并把删减标准放在是否会改变后续判断上。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F28.md">看懂了答案，和自己做出来差在哪里？</a></h2><p>我围绕Workbench提出主动回忆与复习设计，区分看懂参考答案、独立尝试和已经验证的学习效果。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F29.md">让AI和我学同一门课，会发生什么？</a></h2><p>从进入Workbench的学习实验出发，我区分共同学习的安排、双方的可观察表现和仍待核实的学习结果。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F30.md">测试通过了，究竟证明谁学会了？</a></h2><p>参考答案通过测试只能支持答案层面的判断，我需要把测试对象、独立作答和知识迁移分开。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F31.md">为了不浪费额度，我开始反过来找事情做</a></h2><p>当额度反过来决定任务时，我需要重新用真实需求、后续维护和可保留成果判断工作价值。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F32.md">“看起来很未来”的项目，为什么后来被我放下？</a></h2><p>H5角色与修图工作台的取舍让我把项目的新鲜感，与它在实际工作中承担的用途分开。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F33.md">只看前端截图，能判断一个AI好不好吗？</a></h2><p>前端截图能支持视觉判断，长期任务还需要检查交接、状态保持和出错后的恢复过程。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F34.md">会用很多AI工具，我就有解决问题的能力了吗？</a></h2><p>工具名单不能代替解决问题的能力，我需要用目标、任务边界、结果核对和持续接续连接实际工作。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F35.md">一个项目值得做，应该先回答哪些问题？</a></h2><p>我用真实痛点、投入范围、易用程度和工作环节来判断项目，先找到值得验证的小问题。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F36.md">我的个人网站，为什么越改越想做减法？</a></h2><p>我把个人网站的取舍重新放回文章阅读，保留有用途的现有功能，减少入口、展示和维护带来的负担。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F37.md">同一篇文章，为什么要有两种读法？</a></h2><p>我希望同一份正文支持Writing连续阅读和Room书内翻页，并把真实稿件导入与长文一致性验收留作下一步。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F38.md">我为什么想做自己的Dream-RSI？</a></h2><p>我把Dream-RSI写成围绕记忆、失败复用和后续验证的个人探索，并明确持续改进与跨任务稳定提升尚未成立。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F39.md">复现论文时，我为什么改回了熟悉的Codex对话？</a></h2><p>CLI启动问题促使我改用熟悉的Codex对话驱动runner，示例已跑通，但完整复现和实验条件仍需核验。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F40.md">两次实验都没触发“Dream”，这个结果有价值吗？</a></h2><p>我保留9月28日两次未触发Dream的负结果，用它检查观察标准与实验设计，避免泛化为Dream无用。</p></article>
+        <article class="writing-entry"><p class="writing-entry-meta">长文 · 2026-10-06</p><h2><a href="./article.html?src=content%2Fwriting%2F41.md">我开始用benchmark，检查AI到底有没有帮上忙</a></h2><p>我提出以统一标准、基线、同预算和留出任务比较MRS与Dream-MRS，并把课程一致性、未触发Dream、成本和返工纳入核验。</p></article>
+        <!-- writing:list:end -->
+      </div>
+      <p class="writing-filter-status reading-muted" role="status" data-filter-status></p>
+    </main>
+    <aside class="reading-right" aria-label="文章类型">
+      <p class="reading-rail-label">浏览</p>
+      <div class="writing-filters" data-writing-filters>
+        <button type="button" data-filter="all" aria-pressed="true">全部</button>
+        <button type="button" data-filter="long" aria-pressed="false">长文</button>
+        <button type="button" data-filter="note" aria-pressed="false">短记</button>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>

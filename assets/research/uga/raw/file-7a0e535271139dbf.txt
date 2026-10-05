@@ -1,0 +1,434 @@
+# FAILURE INDEX
+
+See also `DO_NOT_REINVENT.md`.
+
+Historical failures preserved here include:
+
+- opposite-side \(+\) symmetry misuse;
+- naked graph-cycle return;
+- periodic-module to simple-periodicity jump;
+- singular/Tate to ordinary Ext jump;
+- automatic quotient/corner lift;
+- naive first-defect renewal;
+- ordinary support = derived support;
+- finite-parameter screening-budget argument;
+- associated-graded survivor automatically lifts;
+- one-sided corner reasoning that discards a cross module;
+- U7 source/detector/carrier collision without a genuine coupling theorem.
+
+These failures are assets: they prevent route rediscovery.
+
+
+## Added 2026-10-02
+
+- direct local mixed-linker Tor \(\Rightarrow\) ambient visible witness;
+- repeated killer vertex \(\Rightarrow\) return;
+- minimal derived necklace cycle \(\Rightarrow\) automatically non-boundary;
+- decomposable edge treated as a single higher-product output;
+- finite vertex alphabet \(\Rightarrow\) bounded screening depth;
+- radical nilpotence \(\Rightarrow\) bounded higher Massey excess.
+
+
+## Added 2026-10-02
+
+- direct local mixed-linker Tor \(\Rightarrow\) ambient visible witness;
+- repeated killer vertex \(\Rightarrow\) return;
+- minimal derived necklace cycle \(\Rightarrow\) automatically non-boundary;
+- decomposable edge treated as a single higher-product output;
+- finite vertex alphabet \(\Rightarrow\) bounded screening depth;
+- radical nilpotence \(\Rightarrow\) bounded higher Massey excess.
+
+## Added 2026-10-03
+
+- one primitive edge substituted for the every-edge hypothesis in primitive-necklace survival;
+- eventual primitive vanishing substituted for vanishing in all negative degrees;
+- negative primitive leaf weights omitted from the rooted-tree degree formula;
+- one low-degree non-boundary necklace treated as a persistent ordinary Tor tail.
+
+The new Run supplies explicit calibrations. The formal derived quotient has bounded excursion-one screening and does not meet the infinite-pd anchor of a Gap-A counterexample.
+
+## Added 2026-10-03 — binary-indecomposable checkpoint
+
+- finite-dimensionality of the ambient algebra substituted for finite homogeneous associative generation of derived-quotient cohomology;
+- zero-column finite-generation exclusion substituted for collapse of all excursion columns;
+- higher-output membership modulo binary products substituted for a complete bar-boundary or late-screening certificate.
+
+The new square-zero calibration has an infinite-pd deleted simple and infinitely generated formal cohomology; its ordinary diagonal tails survive, so it is infinite + rather than a counterexample.
+
+## Added 2026-10-03 — actual-tail comparison checkpoint
+
+- direct tensor of the full deletion defect with the real return-complement tail used as a hoped-for nonzero detector; it is identically zero;
+- restricted ordinary-quotient comparison on that tail extrapolated to arbitrary simple pairs or Peirce-visible survival;
+- a single source's eventual return vanishing substituted for the all-source non-infinite-+ hypothesis;
+- annihilation of the deleted projective substituted for annihilation of its simple top's derived localisation.
+
+The actual eight-dimensional calibration has all simples of infinite pd and a singular deleted corner. It realizes an orthogonal infinite tail and bounded local screening, while another vertex provides the global supported witness.
+
+## Added 2026-10-03 — ordinary retraction and vertex descent
+
+- non-formality, higher-output membership or bounded arity substituted for an actual A_infinity section;
+- ordinary path-length grading substituted for preservation of the ideal under vertex erasure;
+- failure of an ordinary corner section substituted for failure of every derived section;
+- the class-specific gldim bound extrapolated to arbitrary algebras, page bounds or finite-window certificates.
+
+The six-dimensional calibration is length graded and has no ordinary corner section at the indicated deletion, while its derived quotient is equivalent to the ordinary quotient. The bridge and the terminating class theorem retain their exact hypotheses.
+
+## Added 2026-10-03 — even ordinary bridge and non-formal screening
+
+- aggregate supported even recurrence extrapolated to every fixed pair or diagonal simple Tor;
+- degeneration of the positive-weight bar kernel extrapolated to the whole screening spectral sequence;
+- C^e-projectivity weakened to separate left/right projectivity or finite positive bimodule pd;
+- death of every high quotient-edge class substituted for disappearance of all ambient ordinary Tor.
+
+The actual nine-dimensional calibration is non-formal and has separately free coupler and an infinite-pd deleted source. Quotient-edge screening is complete, while an explicit four-periodic retained simple gives a new supported ordinary even tail. It is infinite + and bounded-screening.
+
+## Added 2026-10-03 — finite section obstruction cutoff
+
+- finite coefficient pd alone substituted for a finite regular enveloping injective bound;
+- raw pure m_n tested instead of the actual compatible section equations after earlier corrections;
+- a bound on section obstruction arity extrapolated to all operation arities or late screening pages;
+- a degree-zero section substituted for formality of every negative or mixed operation;
+- ordinary-section inheritance extrapolated to newly constructed derived sections.
+
+The coefficient theorem supplies an actual all-degree ordinary Tor bridge at its exact hypotheses. It does not force those hypotheses on an arbitrary counterexample.
+
+## Added 2026-10-03 — projective-column ordinary recurrence
+
+- projective multiplicities of actual M confused with the terms of a resolution of nonprojective M;
+- the new ordinary Tor matrix formula replaced by naked support recurrence;
+- a persistent test-module return treated as an automatic diagonal simple return;
+- the negative-weight page bound transferred to the local-singular excursion filtration;
+- finite separate-sided pd substituted for C^e-pd in the degree corridor;
+- the single-layer strict kernel triangle extrapolated to many negative layers with mixed operations.
+
+The new Run proves the homological formula and finite-length support detection before using the matrix cycle. Actual tensor nilpotence supplies the uniform complementary bound; the nonperfect acyclic bounded branch is still unresolved.
+
+The T7 continuation also retains the distinction between bounded tensor-word length and bounded weight: unbounded odd letter degrees prevent transferring the single-layer page bound to an acyclic many-layer model. Its even concentration is for C-projective test modules, not all quotient-simple screening columns.
+
+## Added 2026-10-03 — actual tensor-nilpotence ordinary bridge
+
+- binary negative-product nilpotence, radical nilpotence or resolution-term cycles substituted for actual vanishing of a derived tensor power;
+- the auxiliary negative-letter count used as a filtration of arbitrary higher operations;
+- bounded tensor-word length substituted for a finite negative-degree ceiling;
+- zero bar-kernel homology above U used to claim comparison isomorphism already at U+1;
+- a class-specific ordinary comparison extrapolated to inherited sections or nilpotence after further deletion.
+
+C068 gives an actual neither-sided-projective, nonformal tensor-square-zero deletion with a sharp degree-five comparison failure, and a separate finite-gldim-four algebra whose coefficient-resolution graph cycles while all repeated tensor homology vanishes. The latter strengthens the prior warning with an actual counterexample; it does not withdraw the valid implication from actual persistent tensor homology to a term cycle.
+
+## Added 2026-10-03 — ordinary strict dimension descent
+
+- radical containment omitted in the same-simple finite-resolution argument;
+- a nonsplit quotient or hypothetical derived section substituted for an actual ordinary bar retract;
+- quotient-side finite pd substituted for actual ambient kernel pd;
+- the global-dimension proof extrapolated to a new finitistic theorem;
+- a decreasing measure substituted for existence of an eligible move at every remaining bad algebra.
+
+C069 supplies the exact ordinary quotient closure and strictly decreasing dimension. The general reduction-existence problem is still open.
+
+## Added 2026-10-03 — actual periodic versus aperiodic weighted columns
+
+- one selected cycle substituted for gcd>=2 of all weighted closed walks;
+- gcd of individual edge weights substituted for the component period;
+- the component formula applied to arbitrary retained endpoints;
+- the binary auxiliary count used as a filtration of full higher operations;
+- actual projectivity or augmented formality used to pump an aperiodic many-layer cycle;
+- the five-cycle's nonprimitive block deletion relabelled as a primitive calibration.
+
+C070 proves an ordinary return formula before graph repetition, then finite-length support detection. C071 reuses the actual A5 finite-gldim certificate to refute the unrestricted formula, even with projective perfect homology. The general aperiodic closure problem is still open.
+
+## Added 2026-10-03 — nonsplit ordinary square-zero and nonperfect supported bridge
+
+- a vector-space section treated as an ordinary algebra section;
+- K^2=0 confused with an actually vanishing derived tensor power;
+- ambient finite kernel pd substituted for canonical quotient C^e-perfectness;
+- the perfect cutoff n>U+1 weakened at its sharp endpoint;
+- C069's low-degree retract or gldim C<=gldim A inequality imported into a nonsplit quotient;
+- the initial supported threshold M propagated unchanged through high-only comparisons;
+- nonperfect tensor-square-zero supported transfer promoted to full all-pair Tor/Ext isomorphism;
+- actual ordinary ideal Peirce support replaced by negative deletion cohomology;
+- a higher-index acyclic nonperfect kernel treated as a zero tensor square.
+
+C072/C074 supply precise ordinary closure and strict dimension descent without sections. C073 gives connected sharp and distinct nonperfect calibrations. The old A5 quotient by kt also shows finite ambient kernel pd alone cannot transfer quotient infinity. General eligibility at the next step remains unproved.
+
+## Added 2026-10-03 — stable projective-type sink peeling
+
+- a left/right projective decomposition treated as stable under the other action;
+- raw Peirce rows substituted for stable projective-type bimodule summands;
+- a zero isolated component peeled instead of a nonzero sink with incoming edges;
+- terminal C-projectivity assumed to inherit over the next quotient without proving Be_i=Ce_i;
+- the small kernel's tensor computed over C instead of the actual current quotient;
+- row/column removal and a decreasing count substituted for actual ideal stability.
+
+C075 constructs every eligible step and terminates. The explicit twelve-dimensional nonsplit calibration shows that acyclic actual projective columns do not imply stable type summands. It is not a bad or irreducible example: a different ordinary retract gives a supported tail. General nonsplit kernels without an eligible decomposition remain unresolved.
+
+## Added 2026-10-03 — finite ordinary migration and first-kernel obstruction
+
+- replacing full higher-index ordinary comparison-kernel homology by shifted Tor of the first ordinary F-module;
+- supplying only physical reverse-supported vanishing where the height induction requires the entire reachable carrier;
+- treating support of a kernel tensor power as support of a physical product in square-zero K;
+- equating global-infinity equivalence with preservation of non-infinite-+;
+- treating changing-degree Tor spaces as one fixed finite space for rank stabilization.
+
+C076 provides a genuine finite ordinary migration, but its final detector may be invisible. C077's connected nonsplit nonperfect family falsifies the first-module representation at unbounded degree separation and already has an ordinary supported loop tail. This is an obstruction to that attempted shortcut, not to Gap A itself.
+
+## Added 2026-10-03 — canonical bimodule-syzygy tensor pumping
+
+- nonzero actual tensor powers of canonical bimodule syzygies treated as nonzero high ordinary Tor;
+- a tensor-induced ordinary resolution assumed minimal because the original bimodule resolution was minimal;
+- actual projective summands silently removed without an ordinary comparison;
+- an N=1 finite-gldim counterexample overstated to refute additional genuinely late all-source hypotheses.
+
+C078's unchanged A5 has tensor matrix D-I, actual powers nonzero for every exponent, and finite global dimension two. Its ordinary F iterates at the loop simple are nonzero projectives. The radical-compatible case is an existing semisimple-syzygy mechanism, not a new general solution.
+
+## Added 2026-10-03 — singleton-infinite-simple branch closure
+
+- using finite pd of a module to claim finite pd of all its composition factors;
+- identifying a composition return with a diagonal simple self-Ext return;
+- identifying left/right sets of infinite-pd simples or invoking opposite-+ to obtain the right theorem;
+- replacing every-degree supported vanishing and the finite bound d by a short window or vertex-only bound;
+- treating a terminal singleton-count closure as proof that a general eligible count descent exists.
+
+C079 proves the whole branch by the valid forward finite-composition-factor pd bound and actual ordinary cover sequences. Saorin has a supported off-diagonal pair, not diagonal self-Ext. The remaining multiple-infinite-simple case stays open.
+
+## Added 2026-10-03 — multiple-infinite-simple count audit
+
+- treating a heterogeneous composition-cover aggregate as a same-pair Tor witness before proving detector alignment;
+- treating acyclic projective square-zero radical reduction as strict decrease of its chosen-side infinite-simple count;
+- claiming deletion of an infinite-pd LEFT vertex cannot create quotient-infinite retained simples;
+- identifying the deleted label's left and right pds, or the two infinite-simple sets;
+- treating the already-infinite-+ A22 countercalibration as a refutation of the full global return OR eligible badness-preserving descent alternative;
+- discarding the repeatedly reappearing projective e3A summand in Omega_right Rv=e3A direct sum Rv;
+- promoting exact shared-code module checks or record validation into independent verification.
+
+C080 proves alignment for the complete at-most-two branch. C081 proves count invariance on the precisely stated kernel side; C082 actually increases counts under infinite-left-vertex deletion. The general global alternative remains open.
+
+## Added 2026-10-04 — eventual-even count descent and inheritance audit
+
+- using supported-pair even comparison as though it controlled every finite-pd simple label;
+- treating every preselected infinite supported pair as recurrent in even degrees;
+- inferring surjectivity of the first map from surjectivity of a composite, instead of the valid second-map inference;
+- assuming primitive coefficient hypotheses imply the all-block ordinary comparison property or inherit after deletion;
+- dropping the all-block cutoff N or every-pair/every-degree hypothesis from the (v-1)M_* bound;
+- claiming general availability of the eligible C083 deletion from finite dimension or an infinite-pd anchor alone.
+
+C083 proves actual ordinary eligibility under the complete even-comparison hypothesis. C084 proves all-block map inheritance, not coefficient inheritance. A22 and C073 are unchanged countercalibrations to the automatic/all-supported-only shortcuts; they already have visible ordinary Tor. General Universal Gap A remains open.
+
+## Added 2026-10-04 — actual primitive-comparison inheritance obstruction
+
+- replacing original block comparisons by initial primitive comparisons, even eventual full isomorphisms;
+- treating deletion of a still-infinite simple as sufficient to prevent new infinite labels;
+- asserting the actual A42 comparison inherits to C19->C10 despite the persistent degree-4r zero->k failure;
+- calling the source a bad algebra or using it to refute the full global OR alternative; its diagonal v Tor is visible in every degree;
+- requiring the positive count descent to continue after its already closed count-two terminal case;
+- equating chosen left infinity of the deleted frames with right infinity;
+- calling a finite rational-rank sample an all-field or all-degree proof without actual integral inverse/module-iteration arguments.
+
+C085 retains exactly the original infinite-source blocks needed before termination. C086 supplies the actual missing-block obstruction and a nonsection eligible first move. The general bad-algebra alternative is neither proved nor refuted.
+
+## Added 2026-10-04 — socle separation and actual ordinary block audit
+
+- discarding a finite-factor cross-map merely because its image has bounded pd or is zero after a stable quotient;
+- replacing the precise no-F-only-submodule condition by exclusion of every finite-pd submodule;
+- imposing the LEFT socle condition only at LEFT infinite labels instead of persistent RIGHT detector labels;
+- allowing an empty physical infinite-factor carrier despite the nonzero socle condition;
+- treating triangular or stable blocks as exact ordinary block diagonal resolutions;
+- equating infinite left/right labels without the common-label corollary's explicit equality hypothesis;
+- declaring the socle condition automatic from exactly three infinite sources;
+- extending singleton physical carriers to four or more infinite sources using only the two-detector row bound.
+
+C087 proves actual images zero under its exact socle condition, then ordinary same-pair return. The connected loop/chain calibration is already infinite + and shows nonautomaticity. Bounded ambient pd alone does not remove the remaining actual cross-map coupling.
+
+## Added 2026-10-04 — actual closed finite-block deletion
+
+- finite pd of simples or cross-map images does not imply their covers have only finite factors;
+- retained ordinary Tor tests alone do not prove source infinity equivalence without the finite ambient quotient-pd bound;
+- a finite-LEFT block need not lower LEFT infinite count; C088 keeps it and lowers only removed RIGHT infinite labels;
+- the idempotent-containing deletion ideal is not automatically a radical-kernel input;
+- exact closed-block inheritance does not repair arbitrary primitive comparison inheritance;
+- C089 permits a larger opposite infinite set and does not silently replace containment by equality;
+- existence of the required blocks remains a separate global obligation.
+
+## Added 2026-10-04 — arbitrary carrier and finite-factor cross-map counterfamilies
+
+- replacing a strict image-composition carrier drop by strict recurrent minimal projective-tail descent (C_p);
+- assuming bi-singular finite-simple purification helps when ALL simples already have infinite pd on both sides;
+- erasing projective cross images in an exact minimal tail: D_p leaves projective homology in every degree and loses supported Tor;
+- making infinitely many uniformly finite-pd local errors into a bounded perfect global error;
+- inferring finite cover factors from finite pd of its head simple: E_p's finite L_f has a cover containing infinite L_v;
+- inferring an eligible block from finite-FACTOR cross-map images: E_p has none on either side;
+- calling E_p's lost f/v Tor pairs supported (they are invisible; its w diagonal is supported);
+- claiming these already-visible families refute a BADNESS-specific universal alternative;
+- applying the dominating-carrier bridge to an eventual constant union or graph recurrence without a real exact minimal block.
+
+## Added 2026-10-04 — finite-complement perfect CORNER bridge
+
+- confusing retained CORNER eAe with quotient A/AfA or inventing an algebra projection;
+- reversing the natural Tor map: C093 Tor is B->A, dual to exact Ext restriction;
+- assigning finite RIGHT B pd to Ae from finite LEFT pd of the deleted simples;
+- treating projective tensor terms as an exact/minimal A resolution without repairing their actual homology;
+- replacing bounded global cone amplitude by bounded pd of infinitely repeated local errors;
+- using n>=d+t+1 instead of STRICT n>d+t+1 (the actual degree-two mismatch is sharp);
+- calling C093 a strict infinite-count move (both counts are exactly preserved);
+- inferring arbitrary corner global-dimension monotonicity or later perfection inheritance;
+- upgrading shared-helper calibration/integrity validation to independent verification.
+
+C093 supplies ordinary all-module high comparison and strict dimension descent under the exact two finite-pd hypotheses; it is not a singular comparison or universal perfection theorem.
+
+## Added 2026-10-04 — weighted shallow corners and genuine pd-two screening
+
+- declaring an unbounded counit cone perfect because every cohomology module has pd one;
+- erasing finite-pd images rather than retaining their real cone homology;
+- missing the SAME-DEGREE cancellation between cone Hom and Ext-one (cutoff loss is ZERO);
+- replacing the actual injective first kernel by a noninjective differential from a longer resolution;
+- claiming fixed-pair Tor isomorphism or opposite-side infinite-label invariance for C094;
+- inferring mixed-side future eligibility from the proved same-side pd monotonicity;
+- extending shallow weights to pd two despite the old A5 Ext-two screen;
+- repairing the pointwise pd-two bridge merely by anchoring an infinite original source or deleting its whole finite-LEFT complement (S10);
+- calling S10 a bad example when its w diagonal persists;
+- transferring ordinary counit nontrivial screening into a nonformal idempotent quotient assertion;
+- presenting convergence-forced d2 ranks as independently computed chain matrices or independent verification.
+
+C094 is a proved automatic whole-class ordinary descent. C095 limits its pointwise extension; it leaves full-badness-specific higher-pd descent unrefuted.
+
+## Added 2026-10-04 — ordinary tensor factors and unbounded finite-simple pd
+
+- assuming any finite-pd simple supplies pd zero/one on one of the two sides;
+- using a finite chosen-side label as proof of finite pd of its cover factors or its opposite label;
+- calling the already-visible N^(tensor r) family a badness-specific counterexample;
+- inferring an ACTUAL tensor algebra from a Peirce dimension matrix or carrier graph;
+- omitting tensor-resolution signs, exactness or minimality in ordinary Kunneth;
+- inferring bad-factor descent from global infinity without also controlling supported Tor;
+- calling a k factor a strict dimension decrease;
+- claiming a finite product Betti prefix proves infinity, or a product recurrent-kernel check was performed.
+
+C096 supplies a full actual tensor branch closure and merges the existing terminal classes. C097 limits shallow-vertex availability; the general badness-specific finite-pd/no-factor core remains open.
+
+## Added 2026-10-04 — automatic corner perfection and ordinary F Ext window
+
+- assuming two-sided finite pd alone proves corner-module perfection (old A5);
+- requiring only Ext^2 of deleted pairs to vanish when finite LEFT pd exceeds two;
+- confusing C098's F-target window with C094's arbitrary-target pd-one window;
+- ignoring the OPPOSITE pd bound needed to kill all-source Ext to F targets;
+- declaring the cone bounded before proving every high finite cohomology head vanishes;
+- testing only retained simples when proving corner-module pd (ALL B modules must be reached);
+- losing the actual [-r,0] bound and its strict n>d+r comparison, especially r=0;
+- claiming eligibility/window inheritance or cutoff-2s sharpness from the sharp corner-pd calibration;
+- calling a frozen written all-parameter tensor consequence newly computed or independently verified.
+
+C098 proves a uniform termination/ordinary comparison/strict dimension descent for its entire higher-finite-pd class. Actual higher F Ext screening remains a separate open global branch.
+
+## Added 2026-10-04 — directed ordinary Ext termination and the nilpotence trap
+
+- substituting quiver/physical support order or Ext-one acyclicity for ALL-positive ordinary F Ext order;
+- converting vanished Hom heads into absent composition factors without the degree-one incoming-edge argument;
+- omitting the screen degree loss ell-1 or the finite strip p<=min(d,r);
+- calling high-comparison supported cutoff zero-loss (C099 uses max(M,N));
+- assuming primitive-map inheritance rather than proving remaining-source singleton counits acyclic;
+- claiming both numeric pd profiles stay equal when the ordered LEFT proof only fixes LEFT pds;
+- using nilpotence/finite dimensionality of restricted E_F to bound genuine screens in different cohomology slots;
+- interpreting the old A5 nilpotent Ext-two counterexample as a full badness counterexample or as nonformal derived quotient;
+- transferring C100 to finite generation of the WHOLE ordinary Yoneda algebra or derived-quotient cohomology;
+- treating the actual invisible degree-four mismatch as a supported witness or the general bound10 as sharp;
+- presenting terminating finite F resolutions and shared helpers as independent verification.
+
+C099 has a complete ordinary strict descent/uniform-bound mechanism and proved repeated eligibility. C100 leaves the full-badness cyclic-F/source-migration alternative open.
+
+## Added 2026-10-04 — finite global ordinary Yoneda termination guards
+
+- treating finite/nilpotent restricted E_F as finite GLOBAL DIMENSION;
+- excluding a genuine positive F Ext cycle without calculating the actual E-projective kernels;
+- counting g covers instead of g+1 to kill G(M), or omitting the shift sigma-i;
+- applying the whole uniform construction without BOTH finite F pds;
+- declaring the terminal retained complex an ordinary resolution without actual minimality and exact e(-);
+- failing to identify the realized map with the actual counit;
+- claiming zero cutoff loss, infinite-count descent, arbitrary primitive inheritance or automatic smooth-block availability;
+- confusing the40-dimensional Ae with the20-dimensional corner in the six-vertex65-dimensional calibration (corrected failure preserved);
+- conflating this65-dimensional algebra with T26's nine-vertex chain tensor;
+- promoting same-author integer/product/corner checks or source citations to independent proof acceptance.
+
+C101 gives a real ordinary bridge and strict dimension descent. C100's singleton dual-number Yoneda algebra has infinite gd and remains an obstruction; full badness-specific global closure stays OPEN.
+
+## Added 2026-10-04 — one-sided actual unit and whole-block carrier guards
+
+- confusing Ext FROM S (RIGHT ordinary E) with Ext TO S (LEFT E), or using a cone to realize a kernel without the actual fiber shift;
+- claiming perfect Ae/right-label invariance or ALL-module same-pair comparison from finite-left/smooth E;
+- inferring unit-error visibility from image finite pd or merely its factors; every ACTUAL generator carrier must be checked;
+- treating(R) failure as(U) failure: sparse whole tensor E generators absorb the finite intermediate head;
+- assuming the ENTIRE finite-left block repairs every expansion: connected14 cover has INFINITE q head, D(u,q)=2,D(u,f)=0, no finite enlargement;
+- forgetting the retained nonzero product a c=d, which excludes a quotient projection in that example;
+- interpreting this already infinite-plus obstruction as a counterexample to badness-specific global descent or Universal Gap A;
+- deleting finite-pd images and assuming exactness; C102 retains all actual F quotients and their repairs;
+- missing STRICT cutoff n>M+t, opposite endpoint change, or conditional later eligibility;
+- unchanged helper kernel_iso expects explicitly bound global A; first new caller omitted it, repaired A=T and preserved failed execution;
+- treating written all-r factor/injective proofs or shared exact helpers as independent verification.
+
+C102 is a real ordinary supported bridge/strict dimension reduction under stated conditions. C103 breaks unconditional whole-block eligibility. Full Universal Gap A remains OPEN.
+
+## Added 2026-10-04 — finite-pd envelope ordinary-generation guards
+
+- assuming finite-pd H or an infinite head alone provides a semisimple T kernel;
+- supplying an envelope for one label while other reachable infinite T labels lack it;
+- claiming actual Ext connecting maps injective at n=h, or missing the nonzero quotient multiplicity;
+- treating a rectangular connecting matrix as a scalar self-map;
+- replacing real Yoneda products/subproducts with bare graph paths;
+- applying nilpotence before proving high ALL-target degree-one generation;
+- pruning a nonsplit finite kernel in a resolution; only ACTUAL module quotient/exact sequences are used;
+- claiming high Tor invariance of A/J^2 or automatic finite pd J^2 under badness;
+- dropping semisimple kernel/finite-pd repair for higher Loewy envelopes; frozen N7 disproves universal diagonal return;
+- missing pd boundh+m(M+1)-1 or zero-J^2 h=0 case;
+- new action-check nested one matrix dimension too deeply (TypeError), corrected flattening/full rerun and failure preserved;
+- treating literal finite calibration, all-p written proofs or integrity/schema as independent verification.
+
+C104 supplies an ordinary return/uniform termination mechanism for its exact class. General badness-specific automatic availability and Universal Gap A stay OPEN.
+
+## Added 2026-10-04 — nonsimple module ordinary bridge guards
+
+- treating actual module-envelope kernels as mere composition-factor sums or stable equalities;
+- equating module Yoneda degree-one generation with generation of the SIMPLE Yoneda algebra;
+- assuming module projection idempotents primitive or E0 semisimple (unnecessary), or using graph recurrence in place of actual products;
+- checking only HEADS or equating infinite LEFT/RIGHT labels; source and target composition sets differ (N7 CL={v},CR={f});
+- dropping visible physical rectangle or returning the wrong ordered pair; RIGHT version e_yAe_z,Tor(Rz,Ly);
+- promising simple DIAGONAL return despite N7's genuine OFF-DIAGONAL witness;
+- pruning finite module TYPE copies/subkernels from an infinite complex; only ACTUAL Hi/Q kernel quotients with pd bound are used;
+- assuming finite family/rectangle availability from finite vertices or Loewy/rank data; coarse p-cycle one-state rectangle fails;
+- claiming arbitrary nonsplit state refinement or inclusion of the older single-head theorem without rectangle;
+- claiming already-proved SCC reduction as a new theorem;
+- promoting actual finite exact checks/schema to independent proof acceptance.
+
+C105 provides a real ordinary supported bridge/uniform termination for aligned actual module families. Full Universal Gap A remains OPEN.
+
+## Added 2026-10-04 — infinite states and ordinary cross-Ext guard
+
+- claiming finite module states from finite vertices or equating modules with the same carrier;
+- replacing uniform SAME-type CROSS-Ext with individual state SELF-Ext in an infinite family (Q Gamma drift disproves this);
+- using repeated support types as a source of homology: ONLY actual nonzero Yoneda products/long spliced minimal extensions are used;
+- dropping uniform envelope/error pd in an infinite family or invoking an unproved finitistic-dimension bound;
+- asserting every tail aligned or that infinitely many aligned syzygies exist automatically;
+- replacing actual last-cover retraction/dimension shift with a singular identity;
+- pruning finite differential images instead of actual middle-module kernel quotient repairs;
+- transferring q2 nonisomorphic parameter drift to arbitrary fields/parameters;
+- confusing bounded exact calibration/schema with independent general proof verification.
+
+C106 gives state-count-independent ordinary termination and closes tails with infinitely many aligned states; full Universal Gap A remains OPEN.
+
+## Added 2026-10-04 — four-vertex handoff audit guards
+
+The supplied proof passes after explicit repairs. Do not quote an unspecified protected theorem, omit zero-zone termination/nonempty C090 carrier, reverse LEFT projective Hom, replace full mutual Hom zero by finite-pd images, equate LEFT/RIGHT labels, or confuse four TOTAL vertices with four infinite simples at larger size. Actual four-cycle countermodels already have ordinary return and violate badness. Project audit VERIFIED AFTER REPAIR is not external independent proof certification. Closed cases must be reused; universal work remains OPEN.
+
+## Added 2026-10-04 — permanently misaligned actual tails and cube-zero head recurrence
+
+- automatic infinitely-many aligned simple syzygies: actual strongly connected5/7-vertex selfinjective examples defeat it, while already having ordinary return;
+- E symmetric without Nakayama hypothesis: actual twisted P=C^2 must remain in t_next=Et-Pt_prev;
+- iterating across simple visits: kC5/J^3 formalF2=0 conflicts with actual simple headL_i+3;
+- obtaining ordinary Tor from graph/spectrum before exact cover/head identification;
+- cancelling a positive Perron double pole by only simple poles or omitting joint eigenrelation;
+- requiring an embedding k->C: integer dimension matrix spectral argument is separate;
+- assigning2N window to periodic-simple alternative or losing degree during the ordinary projective/injective self-Ext transfer;
+- assuming selfinjectivity globally, discarding nonselfinjective radical errors, or using stable Ext without comparison;
+- calling exact shared checks/schema an independent proof verifier.
+
+C108 closes the entire stated class; general UGA remains OPEN.
+
+## Added 2026-10-04 — actual simple-summand source descent
+
+Do not replace direct summand with composition factor/socle/quotient/stable summand. One occurrence gives no strictness; infinitely many actual late heads and self-Tor cutoff are both required. The source must have infinite LEFT pd. p-cycle shows cutoff is essential; C108 examples show late simple restarts are not automatic. Decreasing source recurrent-type cardinality is not decreasing algebra infinite-simple count. Only finite SIMPLE label pd yields uniform d; arbitrary finite modules may have infinite factors/unbounded finite pds. Exact Y-family uses true Q/S_next and inverse image, not deleting images. SAME-degree r>d and shifted r>d+2 comparisons distinct. Cube-zero semisimple SUBMODULE differs from generic deep QUOTIENT; old x^4 counterexample retained. No independent proof acceptance from written self-audit. Full UGA OPEN.

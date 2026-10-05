@@ -1,0 +1,188 @@
+"""Actual projective balanced-ideal calibration through frozen minimal-cover helpers."""
+from pathlib import Path
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=root/'runs/2026-10-04/General-Cube-Zero-Evidence/verify_general_cubezero_linear_core.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nN=5;f=N;g=N+1',1)[0],str(frozen),'exec'),globals())
+from math import gcd
+
+N=5
+ell=8
+f=lambda j:N+j
+basis=[(f'e{i}',i,i) for i in range(N+ell+1)]
+for i in range(N):
+    basis.extend([(f'x{i}',(i+1)%N,i),(f'z{i}',(i+2)%N,i)])
+for i in range(ell+1):
+    for j in range(i+1,ell+1):
+        basis.append((f'p{i}_{j}',f(j),f(i)))
+basis.extend([('c0',f(ell),0),('c1',f(ell),N-1),('c2',f(ell),N-2)])
+ix={name:i for i,(name,_,_) in enumerate(basis)}
+products={(ix[f'x{(i+1)%N}'],ix[f'x{i}']):ix[f'z{i}'] for i in range(N)}
+for i in range(ell+1):
+    for j in range(i+1,ell+1):
+        for k in range(j+1,ell+1):
+            products[ix[f'p{j}_{k}'],ix[f'p{i}_{j}']]=ix[f'p{i}_{k}']
+products.update({(ix['c0'],ix[f'x{N-1}']):ix['c1'],
+                 (ix['c1'],ix[f'x{N-2}']):ix['c2'],
+                 (ix['c0'],ix[f'z{N-2}']):ix['c2']})
+A=Table(N+ell+1,basis,products)
+O=A.opposite()
+assert len(A.basis)==3*N+(ell+1)*(ell+2)//2+3==63
+
+def power_indices(T,k):
+    columns=T.alg.radical_powers[k-1] if k-1<len(T.alg.radical_powers) else []
+    selected=[]
+    for col in columns:
+        support=[i for i,x in enumerate(col) if x]
+        assert len(support)==1 and col[support[0]]==1
+        selected.append(T.vertices+support[0])
+    return selected
+
+def local_indices(T,indices):
+    return [[b for b in indices if T.basis[b][1]==v] for v in range(T.vertices)]
+
+def top_matrix(T,k):
+    gens=sorted(set(power_indices(T,k))-set(power_indices(T,k+1)))
+    matrix=[[0]*T.vertices for _ in range(T.vertices)]
+    for b in gens:
+        _,y,z=T.basis[b]
+        matrix[y][z]+=1
+    return gens,matrix
+
+def matmul(X,Y):
+    n=len(X)
+    return [[sum(X[i][k]*Y[k][j] for k in range(n)) for j in range(n)] for i in range(n)]
+
+def literal_corner(T,labels):
+    names=list(labels)
+    ren={v:j for j,v in enumerate(names)}
+    keep=names+[b for b in T.radical if T.basis[b][1] in ren and T.basis[b][2] in ren]
+    remap={b:j for j,b in enumerate(keep)}
+    bs=[(T.basis[b][0],ren[T.basis[b][1]],ren[T.basis[b][2]]) for b in keep]
+    mul={(remap[i],remap[j]):remap[k] for (i,j),k in T.products.items()
+         if i in remap and j in remap}
+    return Table(len(labels),bs,mul),keep
+
+def projective_ideal(T,k):
+    inds=power_indices(T,k)
+    M=supported_module(T,local_indices(T,inds))
+    K,info,cert=cover(M)
+    assert not any(K.dimensions)
+    gens,top=top_matrix(T,k)
+    assert [sum(row) for row in top]==info['cover_multiplicities']
+    # The full cover is an isomorphism; all chosen projective images are retained.
+    for v in range(T.vertices):
+        unit_basis(info['linear_data']['images'][v],M.dimensions[v])
+    return inds,gens,top,cert
+
+I3,g3,T,I3_cert=projective_ideal(A,3)
+I6,g6,T6,I6_cert=projective_ideal(A,6)
+assert len(I3)==22 and len(I6)==6
+assert power_indices(A,8) and not power_indices(A,9)
+T2=matmul(T,T);T3=matmul(T2,T)
+assert T2==T6 and not any(any(row) for row in T3)
+
+# Tensor bases follow the checked actual projective cover of the SECOND I.
+# Multiplication on each column is checked, without quotienting differential images.
+tensor_checks=[]
+for r,prev,output in [(2,I3,I6),(3,I6,[])]:
+    cells=[]
+    for g in g3:
+        y,z=A.basis[g][1:]
+        for u in prev:
+            if A.basis[u][2]==y:
+                value=A.mult(u,g)
+                assert value is not None and value in output
+                cells.append((u,g,value,z))
+    values=[v for _,_,v,_ in cells]
+    assert len(set(values))==len(values) and set(values)==set(output)
+    tensor_checks.append({'r':r,'actual_tensor_basis_products':cells,
+                          'product_isomorphism_checked':True})
+
+# Support must be inferred from the WHOLE ideal, and cover closure checked physically.
+chain=[]
+current=A
+original=list(range(A.vertices))
+while True:
+    inds,gens,mat,cert=projective_ideal(current,3)
+    labels=[v for v,part in enumerate(local_indices(current,inds)) if part]
+    stage={'vertices':current.vertices,'dimension':len(current.basis),
+           'original_labels':original,'J3_dimension':len(inds),
+           'factor_support':labels,'T':mat,'FULL_projective_cover':cert}
+    chain.append(stage)
+    if not labels:break
+    assert 0<len(labels)<current.vertices
+    assert not any(r in labels and l not in labels for _,l,r in current.basis)
+    assert labels==[i for i,row in enumerate(mat) if any(row)]
+    next_table,keep=literal_corner(current,labels)
+    # Literal inherited radical powers, and full actual projectives, not just tops.
+    retained={b:j for j,b in enumerate(keep)}
+    assert {retained[b] for b in inds if current.basis[b][2] in labels}==set(power_indices(next_table,3))
+    for v in labels:
+        assert [current.basis[b][0] for b in range(len(current.basis)) if current.basis[b][2]==v]==[
+            name for name,l,r in next_table.basis if r==labels.index(v)]
+    original=[original[v] for v in labels]
+    current=next_table
+assert [c['vertices'] for c in chain]==[14,6,3]
+assert [c['dimension'] for c in chain]==[63,21,6]
+
+Flabels=chain[0]['factor_support']
+retained=[i for i in range(A.vertices) if i not in Flabels]
+B,Bkeep=literal_corner(A,retained)
+# gAe=0 ensures A/AeA is literally this surviving corner, with no new relations.
+assert not any(r in Flabels and l not in Flabels for _,l,r in A.basis)
+assert not power_indices(B,3)
+assert B.vertices==8 and len(B.basis)==21
+assert all(b in Bkeep for b in range(len(A.basis)) if A.basis[b][1] not in Flabels)
+
+def identity_iso(M,K,label):
+    assert M.dimensions==K.dimensions
+    checked=ss.check_isomorphism(M,K,ss.encode(
+        [[rk.unit_vector(d,j) for j in range(d)] for d in M.dimensions]))
+    counts['actual_kernel_isomorphisms']+=1
+    return {'label':label,'isomorphism':checked}
+
+old_steps=[]
+for i in range(N):
+    K,_,c0=cover(sr.Module.simple(O.alg,i))
+    K2,_,c1=cover(K)
+    iso=identity_iso(K2,sr.Module.simple(O.alg,(i-3)%N),
+                     f'actual RIGHT Omega2 R{i}=R{(i-3)%N}')
+    old_steps.append({'label':i,'covers':[c0,c1],'kernel_isomorphism':iso})
+right_deep=supported_module(O,[[ix['c2']] if v==N-2 else [] for v in range(O.vertices)])
+right_iso=identity_iso(right_deep,sr.Module.simple(O.alg,N-2),
+                       'RIGHT row f_ell of J3 is infinite old R_(N-2)')
+right_rest_local=local_indices(O,[b for b in I3 if b!=ix['c2']])
+right_rest=supported_module(O,right_rest_local)
+right_whole_local=local_indices(O,I3)
+right_whole=supported_module(O,right_whole_local)
+right_sum=ss.direct_sum(O.alg,[right_deep,right_rest],[1,1])
+split_maps=[]
+for v in range(O.vertices):
+    order=([ix['c2']] if v==N-2 else [])+right_rest_local[v]
+    split_maps.append([rk.unit_vector(len(right_whole_local[v]),right_whole_local[v].index(b)) for b in order])
+right_split=ss.check_isomorphism(right_sum,right_whole,ss.encode(split_maps))
+counts['actual_kernel_isomorphisms']+=1
+period=2*N//gcd(N,3)
+result={'status':'passed','field':'Q','python':sys.version,'independent_verification':False,
+        'counts':counts,'parameters':{'N':N,'ell':ell},
+        'algebra':A.payload,'dimension':len(A.basis),'Loewy_length':ell+1,
+        'radical_power_dimensions':[len(power_indices(A,k)) for k in range(1,ell+2)],
+        'whole_LEFT_J3_pd':0,'whole_LEFT_J6_pd':0,
+        'whole_RIGHT_J3_pd':'infinity by actual old-simple direct summand',
+        'LEFT_J3_FULL_cover':I3_cert,'LEFT_J6_FULL_cover':I6_cert,
+        'top_matrix':T,'top_matrix_square':T2,'top_matrix_cube':T3,
+        'tensor_multiplication_checks':tensor_checks,'actual_inherited_corner_chain':chain,
+        'closed_finite_block_quotient':{'algebra':B.payload,'vertices':B.vertices,
+                                      'dimension':len(B.basis),'J3_zero':True},
+        'all_old_RIGHT_actual_two_step_kernels':old_steps,
+        'RIGHT_J3_infinite_direct_summand':right_iso,'RIGHT_J3_whole_split_isomorphism':right_split,
+        'all_degree_ordinary_diagonal_period_from_actual_kernel_iteration':period,
+        'scope':'One literal calibration of actual projective ideal powers and strict closed-support corners. Complete arbitrary-field/all-size/all-degree proof is separate; frozen-helper exact checks are not independent or formal verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','dimension':len(A.basis),'Loewy_length':ell+1,
+                  'LEFT_J3_pd':0,'RIGHT_J3_pd':'infinity',
+                  'actual_corner_vertices':[c['vertices'] for c in chain],
+                  'counts':counts,'actual_old_diagonal_period':period}))
+

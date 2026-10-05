@@ -1,0 +1,27 @@
+# Computation task and evidence boundary
+
+Profile: reproducible, targeted exact research calibration.
+
+Check the literal filtered A16 algebra with xi squared equal to the
+complementary cubic monomial, its associated quadratic graded algebra,
+FULL minimal covers through P2, and the cubic coefficient used in the
+written nongradability argument. Check the N7 graded multiplication while
+reusing its unchanged complete periodic kernel proof.
+
+Selected backend: live Python3.14.3, standard-library Fraction, existing
+project actual-cover helpers. Cached local inventory was read; no backend
+was installed. Expected computation is finite16-cubed multiplication and
+linear algebra with covers of ranks1,4,10; no unbounded bar enumeration.
+
+First execution passed:8535 associativity triples,3 full actual minimal
+covers,9 integral basis inverses,256 filtered products,528 cubic-lift
+coefficient checks. Code/results retained byte-identically from actual
+execution. No checksum ceremony, formal verifier or independent review.
+
+The Run's separate tensor-resolution/ordinary-filtered proof supplies
+all-degree purity and Tor. The finite Betti prefix does not prove it.
+The nongradability argument is limited to characteristic different from2;
+literal multiplication/Frobenius/filter comparison holds in every field.
+
+Universal Gap A OPEN; this is a whole eligible-branch closure, not the
+universal comparison/separation availability theorem.

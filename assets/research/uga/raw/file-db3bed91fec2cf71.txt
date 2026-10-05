@@ -1,0 +1,42 @@
+# Cycle 2 master guidance — literature reproduction
+
+Transport remains explicitly `off`; this is Main-Codex-authored operational
+guidance with zero consult cost, not independent mathematical evidence.
+
+## Source under audit
+
+- Bochao Kong, Yeqin Liu, Yu Shen, *A counterexample to Han's conjecture*,
+  arXiv:2608.00177v1, submitted 2026-07-31.
+- The abstract claims an ordinary finite-dimensional complex algebra \(A\) with
+  \(\operatorname{gldim}(A)=\infty\) and \(HH_n(A)=0\) for all \(n\ge1\).
+- Treat every sentence above as source metadata/claim until reproduced and
+  verifier-accepted.
+
+## Required provenance discipline
+
+All Cycle-2 findings are **literature reproduction**, **literature-inspired**, or
+**source audit**. Do not label them independent. Cite exact arXiv version and
+page/theorem identifiers in `external_refs` when submitting facts.
+
+## Branches
+
+1. **Source and dependency audit.** Establish exact version, theorem statement,
+   construction chain, load-bearing cited results, and any corrections or later
+   discussion. Separate source assertions from checked statements.
+2. **Ordinary construction and non-smoothness reproduction.** Reconstruct the
+   final algebra and the equivalence/nonzero-singularity argument proving finite
+   dimensionality, ordinary status, and infinite global dimension.
+3. **Hochschild-vanishing reproduction and adversarial audit.** Verify the
+   singularity-category Hochschild comparison, phantom/periodization
+   acyclicity, degree shifts, and every positive degree; search actively for a
+   broken enhancement, quotient, or low-degree interface.
+
+## Verification standard
+
+- Prefer small facts whose hypotheses and conclusions type-check independently.
+- A cited theorem may be used only with a precise source and matched hypotheses.
+- The final counterexample theorem is not accepted until the ordinary-algebra,
+  infinite-global-dimension, and Hochschild-vanishing chains are all closed.
+- Any inability to reconstruct an explicit algebra or a load-bearing theorem is
+  a reportable gap, not permission to trust the paper.
+

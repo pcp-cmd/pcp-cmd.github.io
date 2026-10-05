@@ -1,0 +1,51 @@
+{
+  "schema": "research-execution-record-without-routine-digests",
+  "recorded_utc": "2026-10-04T09:10:29.272763+00:00",
+  "status": "passed",
+  "project_state": "T35",
+  "claim": "UGA-C110",
+  "script": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\General-Cube-Zero-Evidence\\verify_general_cubezero_linear_core.py",
+  "result": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\General-Cube-Zero-Evidence\\general-cubezero-result.json",
+  "proof": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Run-General-Radical-Cube-Zero-Ordinary-Return-and-Uniform-Actual-Simple-Restarts-2026-10-04.md",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "invocation": {
+    "wrapper": "C:/Users/pcp/.codex/skills/math-science-computation/scripts/observer_run.py",
+    "catalog": "C:/Users/pcp/.codex/skills/math-science-computation/references/observer-phases.json",
+    "phase": "math-science-computation.script.run",
+    "python_executable": "C:\\Users\\pcp\\.agent-reach-venv\\Scripts\\python.exe",
+    "arguments": [
+      "-B",
+      "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\General-Cube-Zero-Evidence\\verify_general_cubezero_linear_core.py",
+      "--project-root",
+      "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03",
+      "--out",
+      "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\General-Cube-Zero-Evidence\\general-cubezero-result.json"
+    ]
+  },
+  "counts": {
+    "associativity": 25452,
+    "actual_minimal_covers": 17,
+    "integer_basis_inverses": 291,
+    "actual_kernel_isomorphisms": 1,
+    "pruned_homology_isomorphisms": 0
+  },
+  "bar_Yoneda_cell_checks": 312,
+  "ordinary_Ext_one_comparison_lifts": 99,
+  "nonexact_core_stages": 6,
+  "actual_N7_period_one_isomorphisms": 1,
+  "dependencies": [
+    "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py",
+    "toolbox/Imported-Outputs/return_kernel_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_return_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_system_certificate.py",
+    "toolbox/Imported-Outputs/yoneda_generation_certificate.py"
+  ],
+  "execution_history": "Initial targeted checks passed; followed by actual N7 deep-kernel/period-one checks and an augmented-complex metadata clarification. Final extended run passed. No failing mathematical check.",
+  "mathematical_proof": "Complete separate written ordinary proof; normal same-author adversarial audit passed. Arbitrary k/all-degree theorem does not follow from finite numerical samples.",
+  "independent_verification": false,
+  "formal_verifier_acceptance": false,
+  "core_complex_exact": false,
+  "default_checksums_computed": false,
+  "legacy_hash_schema_validated": false,
+  "scope": "Ordinary Ext-one/bar bridge, actual linear-head injections and intentionally nonexact finite-pd core calibration; full UGA remains open."
+}

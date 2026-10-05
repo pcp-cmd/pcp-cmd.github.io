@@ -1,0 +1,9 @@
+## UGA-C100 — Finite and Nilpotent Ordinary F Yoneda Algebra Does Not Bound Genuine Counit Screening
+**Status:** COMPLETE SELF-AUDITED EXACT ORDINARY OBSTRUCTION / FROZEN ACTUAL MINIMAL RESOLUTIONS AND GENUINE D2 REUSED / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Directed-Ordinary-Ext-Block-Termination-Inherited-Peeling-and-Nilpotence-Obstruction-2026-10-04.md, Sections 6–9; C095 actual calibrations reused unchanged.
+
+For a LEFT-finite simple block F of maximum pd d, its restricted ordinary Yoneda algebra E_F is automatically finite-dimensional in degrees0 through d, with positive ideal power(E_F^+)^(d+1)=0. Nevertheless these properties do NOT force global counit amplitude or late screening to be bounded. Old A5,F={v},has BOTH simple pds2 and E_F=k+k xi, |xi|=2,xi^2=0; its actual L_f counit has L_v cohomology in EVERY negative degree and genuine ordinary hyper-Ext d2:(0,q)->(2,q-1) is an isomorphism for all q>=2. Repeated screens occupy different cohomology slots and are NOT repeated nonzero Yoneda products. A nilpotent xi can therefore screen indefinitely. An acyclic Ext-ONE graph/internal semisimple F likewise does not suffice; all positive Ext groups matter.
+
+C095's connected S10 has the same nilpotent E_F, an INFINITE original LEFT source and ENTIRE finite-LEFT complement {v} deleted, yet screens that source's supported corner diagonal forever. Another ambient w diagonal returns. These calibrations refute UNQUALIFIED finite-Ext/nilpotence bounds and the fixed-source repair, NOT a FULL badness-specific global return/descent alternative. No claim about finite generation of the WHOLE ordinary Yoneda algebra or derived-quotient cohomology is made. Primitive-Seed Correction's formal old A5 quotient stays unchanged: the screened object is a different ordinary counit complex. Complete same-author proof and frozen dependent arithmetic, NOT independent verification.
+
+---

@@ -1,0 +1,13 @@
+# PROJECT FILE REFERENCES NOT RAW-MATERIALIZED IN THIS CONSOLIDATION
+
+The following Project/Library Markdown files were retrievable through indexed Project access but did not expose authorized raw-byte materialization during this packaging run. They remain part of project provenance and should be read from the Project when available.
+
+- `Run-U8-Alignment-01.md` — Project file id `file_00000000c338820880a8c40318a99955`.
+- `Run-U8-Alignment-01-Continuation.md` — Project file id `file_00000000fa348211b320137a59728750`.
+- `Run-U8-Alignment-05-Checkpoint.md` — Project file id `file_0000000090608207a887c18baa43433c`.
+- `Run-U8-Forensic-UT-NP-Falsification-2026-10-02.md` — Project file id `file_00000000ca948211b55a1ea166a2de8f`.
+- `Universal-Gap-A-Three-Vertex-Proof-Handoff-2026-10-02(1).md` — Project/Library file id `file_0000000054088211807b81b7d5013ec6`.
+
+Important forensic corrections from the U8 file include: the bounded/unbounded behavior should be stated as a subsequence alternative rather than a globally exclusive dichotomy; a coupling ideal cannot universally be promoted from radical containment to radical-square containment; and one Rees exact-torsion bookkeeping proof required the missing \(t^{Q-1}c_0\) term.
+
+The three-vertex handoff is a project-derived theorem draft requiring independent verification; it is a prior-stage asset and not the current universal frontier.

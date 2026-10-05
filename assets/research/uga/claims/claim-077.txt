@@ -1,0 +1,11 @@
+## UGA-C077 — Actual First-Kernel-Module Replacement Fails at Unbounded Degree Separation
+**Status:** EXPLICIT ALL-SIZE / ALL-CHARACTERISTIC SELF-AUDITED COUNTEREXAMPLE FAMILY; BOUNDED EXACT Q SELF-CHECK / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Ordinary-Tor-Migration-and-First-Kernel-Obstruction-2026-10-03.md, Sections 4--5; Ordinary-Migration-Evidence.
+
+For r>=1 truncate the oriented line on m=4r+3 vertices at length four, add a square-zero loop at an extra source star and c:star->0, and kill every radical product involving c. The actual radical ideal K spanned by line lengths two and three has K^2=0. The connected A has dimension 16r+9, C=A/K has dimension 8r+8 and K has dimension 8r+1. Its actual left columns are Ke_j=Ce_{j+2}; its derived tensor index is 2r+2. Right e_2K=R_0 has infinite pd through the actual source loop, so K is nonperfect. Unique adjacent lifts forbid an ordinary section; actual right actions between distinct left projective columns forbid stable type splitting.
+
+For z=4r+2 and y=0, Tor^A_n(R_z,L_0)=0 in EVERY degree, while Tor^C_n(R_z,L_0)=k exactly in degree 4r+2. Thus the actual bar-projection kernel N has H_n(N)=k exactly in degree 4r+1. But F(R_z)=R_{4r} has ordinary A-Tor exactly in degree 2r. Hence the attempted identity H_n(N)=Tor^A_{n-1}(F(R_z),L_y) is false, with nonzero-degree separation 2r unbounded in r.
+
+All-degree/all-field assertions follow from literal length-one/length-three alternating A resolutions and consecutive-arrow C resolutions. Exact rational ordinary bars at r=1,2, including incoming differentials, confirm H_5(N)=H_9(N)=k while the proposed first-module values there are zero. The family has a genuine infinite-pd source and a supported loop Tor tail, so it is already infinite +; it is not a Gap-A failure or irreducibility example. It falsifies that single-module representation, not C076, C074's actual tensor-square-zero bridge, or a possible eventual supported bridge.
+
+---

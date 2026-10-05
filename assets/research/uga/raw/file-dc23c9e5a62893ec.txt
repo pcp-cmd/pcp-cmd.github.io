@@ -1,0 +1,919 @@
+# Universal Gap A — U7 Run C Progress Checkpoint
+
+## Run C — Adversarial Incidence / Matrix Postnikov Coupler
+
+**Purpose:** freeze the current real research state before continuing U7.  
+**Status:** checkpoint only — not a final U7 result.  
+**Important:** this file records only work actually completed so far. It does **not** promote unfinished constructions to results.
+
+---
+
+# 0. Current overall status
+
+U7 Run C has **not** yet produced a new decisive actual counterexample or bounded complete screener.
+
+The work completed so far is mostly:
+
+1. auditing the corrected U6/U7 target so that old counterexamples are not misapplied;
+2. freezing the exact bi-singular source/fork structure that A now uses;
+3. auditing mandatory V/K calibrations;
+4. eliminating several naive descent invariants;
+5. reducing the K-line to the real \(2\times2\) Postnikov-coupler equations.
+
+The still-missing items are the important ones:
+
+- no actual U7-C1 bi-singular incidence-core counterexample yet;
+- no infinite-gldim cross-module lift counterexample yet;
+- no actual \(2\times2\) matrix algebra yet;
+- no actual nonzero Postnikov generator yet;
+- no bounded complete screener yet.
+
+So the correct label is:
+
+\[
+\boxed{
+\texttt{U7 IN PROGRESS — STRUCTURAL AUDIT ADVANCED, ACTUAL NEW CONSTRUCTION PENDING}
+}
+\]
+
+---
+
+# 1. Corrected U7-A target
+
+The first major correction was to stop attacking the obsolete statement
+
+\[
+\Sigma_x\cap I_\infty\neq\varnothing.
+\]
+
+Run A U6 already refuted that naive successor relation.
+
+The real surviving object is the **Bi-Singular Source Fork**.
+
+For a corrected source edge
+
+\[
+x\Rightarrow_{\rm bs} b,
+\]
+
+there is a witness configuration
+
+\[
+\boxed{
+x
+\Rightarrow_{\rm bs}
+b
+\overset{\operatorname{Tor}^{\infty}}{\longrightarrow}
+r,
+\qquad
+b\overset{\rm Peirce}{\longrightarrow} y,
+}
+\]
+
+with
+
+\[
+x,b,y\in I_\infty,
+\]
+
+while the recurrent detector \(r\) may have finite projective dimension.
+
+Under hypothetical Gap-A failure:
+
+\[
+e_bDe_r=0,
+\qquad
+e_bDe_y\neq0.
+\]
+
+Thus the three roles are genuinely distinct:
+
+\[
+\boxed{
+\text{source }b
+\neq
+\text{persistent detector }r
+\neq
+\text{visible infinite-pd carrier }y.
+}
+\]
+
+This is the actual U7-A object that Run C must destroy.
+
+---
+
+# 2. Why old fixed-detector counterexamples are insufficient
+
+The U5 cyclic Nakayama example already refuted:
+
+\[
+\text{Peirce-visible }j
+\Rightarrow
+\text{detector switch }i\to j.
+\]
+
+However A's U6 correction explicitly avoids this false step.
+
+It no longer requires the detector to become the next source.
+
+Instead it extracts a new infinite-pd composition source \(b\), then separately finds an infinite-pd Peirce-visible carrier \(y\).
+
+Therefore:
+
+\[
+\boxed{
+\text{U5 fixed-source detector-switch counterexamples do not by themselves refute U7-A.}
+}
+\]
+
+The U7 counterexample must realize the **full corrected fork data**.
+
+---
+
+# 3. Current U7-A adversarial target
+
+Run C is now trying to build an actual finite-dimensional algebra where a terminal finite bi-singular source core exists but the two incidence structures remain permanently misaligned.
+
+The desired pattern is:
+
+\[
+\mathcal C_{\rm bs}\subseteq I_\infty
+\]
+
+with, for each active source \(b\),
+
+- persistent detector set:
+  \[
+  \Sigma_b;
+  \]
+- visible eligible carrier set:
+  \[
+  V_\infty(b)
+  =
+  \{t\in I_\infty:e_bDe_t\neq0\}.
+  \]
+
+The target failure is:
+
+\[
+\boxed{
+\Sigma_b\cap V_\infty(b)=\varnothing
+}
+\]
+
+for every active row of the core.
+
+At the same time:
+
+- every source still has a corrected source successor;
+- the alternating source/detector/carrier pattern is finite;
+- the core is recurrent;
+- no recurrent-visible collision occurs.
+
+Ideally another mechanism outside this incidence core supplies a visible Gap-A witness, showing that the incidence core itself is not a universal closure mechanism.
+
+---
+
+# 4. Actual status of the incidence-core construction
+
+This construction is **not yet complete**.
+
+What has been confirmed:
+
+- cyclic Nakayama gives finite exact recurrent source behavior;
+- peeling examples show finite-pd contamination and immediate return;
+- raw-Yoneda examples show nonzero algebraic transport can act trivially on the high tail;
+- quantum exterior examples show bounded local labels do not control exact state;
+- U1 invisible-return examples show a source-relative recurrent pair may be invisible while another source produces the visible witness.
+
+These examples strongly support the possibility of permanent incidence mismatch.
+
+But no single actual finite-dimensional algebra has yet been verified to satisfy the full corrected Bi-Singular Source Fork definition row-by-row while maintaining
+
+\[
+\Sigma_b\cap V_\infty(b)=\varnothing
+\]
+
+through an entire terminal source core.
+
+Therefore:
+
+\[
+\boxed{
+\texttt{C1 NOT YET ACHIEVED.}
+}
+\]
+
+---
+
+# 5. Mandatory source calibration status
+
+## C-V1 — peeling algebra
+
+Used.
+
+Main lesson:
+
+a finite-pd quotient can be peeled while preserving the sufficiently high detector tail, but the recurrent support need not decrease.
+
+In the calibration:
+
+\[
+K\subset M,
+\qquad
+\ell(K)<\ell(M),
+\]
+
+yet
+
+\[
+\boxed{
+\Omega K\cong M.
+}
+\]
+
+So a complexity can decrease once and immediately recover after one syzygy.
+
+---
+
+## C-V2 — cyclic Nakayama invisible source cycle
+
+Used.
+
+The self-injective cyclic Nakayama model gives exact finite periodic source dynamics and Peirce-invisible active source edges.
+
+However it also possesses visible persistent pairs elsewhere.
+
+Therefore it proves:
+
+\[
+\boxed{
+\text{source cycle}
+\not\Rightarrow
+\text{visible return on the source edge},
+}
+\]
+
+but it is not itself a Universal Gap-A counterexample.
+
+---
+
+## C-V3 — Auslander corner-lift failure
+
+Used as baseline.
+
+There is an idempotent corner
+
+\[
+fDf\cong k[t]/(t^2)
+\]
+
+which is singular and infinite \(+\), while the ambient Auslander algebra can have finite global dimension.
+
+Hence:
+
+\[
+\boxed{
+fDf\text{ infinite }+
+\not\Rightarrow
+D\text{ infinite }+.
+}
+\]
+
+This proves that corner witnesses do not lift automatically.
+
+But U7 asks for a stronger analogue with ambient
+
+\[
+\operatorname{gldim}D=\infty.
+\]
+
+That stronger counterexample is not yet constructed.
+
+---
+
+## C-V4 — raw-Yoneda high-tail annihilation
+
+Used as a negative calibration.
+
+A nonzero Yoneda class can act as zero on an entire recurrent high tail.
+
+Therefore:
+
+\[
+\eta\neq0
+\]
+
+does not imply useful tail transport.
+
+---
+
+## C-V5 — quantum moduli drift
+
+Used.
+
+Finite source labels, bounded Loewy data, and bounded local matrix sizes do not imply exact state repetition.
+
+So no U7 finite-core argument may silently upgrade finite combinatorics to module restartability.
+
+---
+
+# 6. Descent-invariant audit
+
+This is one of the parts already substantially completed.
+
+Any proposed U7-A complexity built only from:
+
+- source count;
+- detector count;
+- support size;
+- degree sequence;
+- mismatch count;
+- row deficiency;
+- SCC/component size;
+- current top multiplicity;
+- current module length;
+
+must survive the peeling calibration.
+
+But the peeling algebra exhibits:
+
+\[
+\ell(K)<\ell(M)
+\]
+
+followed by
+
+\[
+\Omega K\cong M.
+\]
+
+Therefore a one-step decrease in the current module state is not necessarily a decrease of the recurrent tail state.
+
+The main conclusion is:
+
+\[
+\boxed{
+\text{a valid well-founded descent invariant must be defined on a tail-equivalence / recurrent-state quotient.}
+}
+\]
+
+A complexity that can decrease and then recover after one syzygy is not a legitimate universal descent invariant.
+
+This part is already strong enough to include in the final U7 audit.
+
+---
+
+# 7. U7-B cross-module return — current status
+
+The old corner frontier is:
+
+\[
+fDf=\Gamma
+\]
+
+may have a visible persistent pair, but induction/restriction through \(D\) may fail because of cross modules such as
+
+\[
+fD(1-f)
+\]
+
+or
+
+\[
+(1-f)Df.
+\]
+
+The baseline Auslander example proves bare corner lifting false.
+
+U7 requests a stronger counterexample:
+
+\[
+\operatorname{gldim}D=\infty,
+\]
+
+with the corner still carrying a visible persistent pair and with as many of the proposed extra cross-module hypotheses as possible, but the witness still failing to lift.
+
+This has **not** yet been found.
+
+Current status:
+
+\[
+\boxed{
+\texttt{C2 NOT YET ACHIEVED.}
+}
+\]
+
+The main design constraint is that a trivial direct product is not useful: the extra ambient infinite-global-dimension component can itself immediately produce a visible witness, which does not attack the intended cross-module mechanism.
+
+The target therefore requires a genuinely coupled triangular / one-point / Morita-type ambient algebra.
+
+---
+
+# 8. Finite cross-pd branch
+
+The proposed positive route is roughly:
+
+\[
+\operatorname{pd}_\Gamma(eDf)<\infty
+\]
+
+followed by corner reduction and witness lifting.
+
+Run C has not yet produced an actual finite-cross-pd counterexample satisfying all intended hypotheses.
+
+What is already clear from previous audits is:
+
+\[
+\text{finite cross pd}
+\]
+
+alone cannot be silently replaced by:
+
+\[
+\text{ordinary simple-pair visibility lifts}.
+\]
+
+One still needs an actual comparison theorem for the simple pair.
+
+So this branch remains:
+
+\[
+\boxed{\texttt{OPEN IN U7 RUN C}.}
+\]
+
+---
+
+# 9. Infinite cross-pd bootstrap branch
+
+The proposed bootstrap is:
+
+\[
+\operatorname{pd}_\Gamma(eDf)=\infty
+\]
+
+and then use the singular cross module itself to generate a smaller visible witness / strict descent.
+
+Run C has not yet constructed the requested stable cross-module cycle where:
+
+- the cross module has infinite pd;
+- HLM purification is legal;
+- no smaller carrier appears;
+- no visible pair appears;
+- the same cross singularity repeats.
+
+Thus:
+
+\[
+\boxed{
+\texttt{C3 NOT YET ACHIEVED.}
+}
+\]
+
+---
+
+# 10. K-line frozen frontier
+
+U6 already established that the sign relation itself is not the remaining problem.
+
+There are actual finite-dimensional algebras with:
+
+\[
+S=k[t]/(t^2),
+\]
+
+and bounded amplitude-two self-intersection:
+
+\[
+H_*(K)
+=
+S
+\oplus
+{}_1S_{\sigma_{-1}}[2].
+\]
+
+So:
+
+\[
+tm=-mt
+\]
+
+can be realized.
+
+The remaining obstruction is the actual Postnikov class:
+
+\[
+\alpha
+\in
+\operatorname{Ext}^3_{S^e}
+(S,{}_1S_{\sigma_{-1}}).
+\]
+
+At the known bounded sign-twist example:
+
+\[
+\boxed{
+\alpha=0
+\text{ or at least noninvertible on the singular tail}.
+}
+\]
+
+Therefore U7 must activate the actual Postnikov coupler, not merely reproduce the sign twist.
+
+---
+
+# 11. K calibrations frozen
+
+The following are being treated as mandatory fixed points.
+
+## K1 — 7-dimensional one-sided near-miss
+
+Bounded \(K\), but terminal defect is not the required bilateral invertible object.
+
+## K2 — bilateral regular Nakayama-gap family
+
+Bounded, bilateral-free terminal defect:
+
+\[
+H_2(K)\cong{}_SS_S,
+\]
+
+but no complete screening.
+
+## K3 — actual bounded sign-twist \(D_{-1}\)
+
+Correct terminal bimodule type:
+
+\[
+H_2(K)\cong{}_1S_{\sigma_{-1}},
+\]
+
+but actual Postnikov activation fails.
+
+## K4 — semisimple deleted-corner obstruction
+
+Too small a deleted sector forces recurrence/unboundedness in the relevant rank-one setup.
+
+## K5 — serial deleted-loop sign obstruction
+
+Associativity collapses the attempted sign architecture back to the wrong scalar or destroys exactness.
+
+## K6 — old permanent screener
+
+Complete screening exists, but:
+
+\[
+K
+\]
+
+is unbounded.
+
+Thus the only missing quadrant is still:
+
+\[
+\boxed{
+K\text{ bounded}
++
+\text{complete screening}.
+}
+\]
+
+---
+
+# 12. Current \(2\times2\) matrix architecture
+
+The current minimal nonserial target uses:
+
+\[
+P=f_1D\oplus f_2D.
+\]
+
+Write:
+
+\[
+A=(a_1\ a_2),
+\]
+
+\[
+B=
+\begin{pmatrix}
+b_1\\
+b_2
+\end{pmatrix},
+\]
+
+and let the deleted-sector action be encoded by
+
+\[
+Y=
+\begin{pmatrix}
+y_{11}&y_{12}\\
+y_{21}&y_{22}
+\end{pmatrix}.
+\]
+
+The actual algebra must realize all of:
+
+\[
+\boxed{AB=0,}
+\]
+
+\[
+\boxed{xA=AY,}
+\]
+
+\[
+\boxed{YB=-Bx.}
+\]
+
+These are only the sign / chain-lift conditions.
+
+The genuinely new requirement is a second-order coherence:
+
+\[
+\boxed{
+Y^2
+=
+BH_1+H_0A,
+}
+\]
+
+where \(Y^2\) is not strictly zero as a chain map but becomes null-homotopic through the displayed homotopy.
+
+At the same time:
+
+\[
+\boxed{
+B\text{ injective},
+}
+\]
+
+and
+
+\[
+\boxed{
+\ker A=\operatorname{im}B.
+}
+\]
+
+These conditions are intended to produce the exact resolution
+
+\[
+0
+\to
+eD
+\xrightarrow{B}
+P
+\xrightarrow{A}
+eD
+\to
+S
+\to0.
+\]
+
+---
+
+# 13. Current matrix-design status
+
+The matrix problem has been reached, but not solved.
+
+What is already understood:
+
+1. simply imposing
+   \[
+   YB=-Bx
+   \]
+   only realizes the sign twist;
+2. U6 already proved that sign twist alone does not imply screening;
+3. the new information must live in the chain-homotopy class of
+   \[
+   Y^2;
+   \]
+4. this homotopy must survive as the nonzero generator
+   \[
+   \alpha
+   \in
+   \operatorname{Ext}^3_{S^e}
+   (S,{}_1S_{\sigma_{-1}});
+   \]
+5. the same relations must remain associative and finite-dimensional.
+
+No actual quiver-and-relations algebra satisfying the full set has yet been verified.
+
+Therefore:
+
+\[
+\boxed{
+\texttt{C4 NOT YET ACHIEVED.}
+}
+\]
+
+---
+
+# 14. What is currently causing the slowdown
+
+The main slowdown is not computation time.
+
+It is that every easy architecture has already been eliminated by U3–U6.
+
+For the source line:
+
+- fixed detector switch is false;
+- raw Yoneda switch is false;
+- finite SCC does not imply restart;
+- detector can be finite pd;
+- source, detector, carrier are now separated.
+
+So a valid C1 counterexample must defeat the **corrected** bi-singular fork, not an older weaker theorem.
+
+For the K line:
+
+- sign twist is already realizable;
+- bilateral freeness is already known insufficient;
+- scalar two-vertex architectures are exhausted;
+- serial deleted-loop architectures are obstructed.
+
+Therefore the remaining candidate needs a genuinely nonserial deleted sector with enough internal homotopy to make
+
+\[
+Y^2
+\]
+
+nontrivial but null-homotopic in the required way.
+
+This is a materially harder construction problem.
+
+---
+
+# 15. Current success-label table
+
+| Label | Target | Current status |
+|---|---|---|
+| C1 | actual bi-singular incidence collision counterexample | **not yet achieved** |
+| C2 | infinite-gldim cross-module return counterexample | **not yet achieved** |
+| C3 | stable singular cross-module cycle / no strict descent | **not yet achieved** |
+| C4 | actual \(2\times2\) nonzero-Postnikov sign realization | **not yet achieved** |
+| C5 | actual bounded complete screener | **not yet achieved** |
+| C6 | two-state matrix-level no-go | **not yet proved** |
+
+What **is** achieved so far:
+
+- corrected U7 target audit;
+- mandatory calibration integration;
+- invalid-descent-invariant audit;
+- exact matrix frontier reduction;
+- exact identification of the missing K datum as second-order Postnikov coherence.
+
+---
+
+# 16. Strongest safe conclusions at this checkpoint
+
+The following can already be frozen without overclaiming.
+
+## S1
+
+\[
+\boxed{
+\text{finite corrected source core}
+\not\Rightarrow
+\text{restartability / visibility by pure combinatorics}.
+}
+\]
+
+This is already consistent with A's own U6 audit.
+
+## S2
+
+\[
+\boxed{
+\text{a legal U7 descent invariant must survive syzygy return.}
+}
+\]
+
+Peeling examples rule out naive current-module support/length invariants.
+
+## S3
+
+\[
+\boxed{
+\text{corner infinite }+
+\not\Rightarrow
+\text{ambient infinite }+
+}
+\]
+
+without genuine cross-module lifting hypotheses.
+
+## S4
+
+\[
+\boxed{
+H_2(K)\cong{}_1S_{\sigma_{-1}}
+\not\Rightarrow
+\alpha\neq0.
+}
+\]
+
+U6 already supplies an actual bounded sign-twist near-miss.
+
+## S5
+
+The K-line missing datum is now:
+
+\[
+\boxed{
+\text{actual second-order Postnikov coupling}
+}
+\]
+
+rather than sign, freeness, or boundedness separately.
+
+---
+
+# 17. Immediate next work
+
+The next research steps are intentionally narrow.
+
+## A-line
+
+Try to realize a finite alternating corrected source core with permanent row mismatch:
+
+\[
+\Sigma_b\cap V_\infty(b)=\varnothing.
+\]
+
+The first candidates should be built by gluing:
+
+- a periodic Nakayama source core;
+- a finite-pd detector layer;
+- an independent infinite-pd visible carrier layer;
+
+while preserving the actual HLM/bi-singular extraction hypotheses.
+
+## B-line
+
+Search for an infinite-global-dimension analogue of the Auslander corner-lift failure using a coupled triangular / one-point extension rather than a direct product.
+
+## K-line
+
+Solve the matrix equations first at the module/endomorphism level:
+
+\[
+AB=0,\quad
+xA=AY,\quad
+YB=-Bx,
+\]
+
+\[
+Y^2=BH_1+H_0A,
+\]
+
+\[
+B\text{ injective},\quad
+\ker A=\operatorname{im}B.
+\]
+
+Only after a consistent matrix solution is found should it be converted into a quiver/relations algebra and tested for:
+
+- finite-dimensionality;
+- associativity;
+- exactness;
+- actual Postnikov class;
+- left/right singular reductions;
+- diagonal screening.
+
+---
+
+# 18. Checkpoint conclusion
+
+U7 is **not finished**.
+
+The work has reached the correct hard frontier, but the decisive actual construction has not yet landed.
+
+The most accurate summary is:
+
+\[
+\boxed{
+\textbf{the old weak routes are exhausted; U7 now genuinely depends on either}
+}
+\]
+
+\[
+\boxed{
+\textbf{an actual bi-singular incidence mismatch core}
+}
+\]
+
+or
+
+\[
+\boxed{
+\textbf{an actual nonserial \(2\times2\) Postnikov coupler}.
+}
+\]
+
+Until one of those is constructed or ruled out, the final file
+
+`Run-C-U7-AdversarialMatrixCoupler.md`
+
+should not be frozen as complete.

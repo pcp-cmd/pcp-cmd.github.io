@@ -1,0 +1,11 @@
+# INFORMATION-LOSS AUDIT
+
+The packaging objective was preservation, not simplification.
+
+- Raw historical ZIPs are retained byte-for-byte in the History archive.
+- Two previously generated research-history/timeline files are retained as stitched text snapshots.
+- U2–U7 and Long01/Node3Fa snapshots available on the Project/Library surface are retained in both navigation/tooling form and history snapshots as appropriate.
+- Failed routes and corrections are indexed, not deleted.
+- The Obsidian vault is referenced, not copied, to avoid duplicating a 213 MB independent knowledge asset.
+- The “Dangerous Message” source is explicitly recorded as unavailable for byte-level inclusion in this runtime; no substitute content was fabricated.
+- No mathematical conclusion was recomputed during packaging.

@@ -1,0 +1,218 @@
+# Authoritative Run Pointer
+
+For the newest ordinary closure mechanism, the authoritative research Run is:
+
+Run-Actual-Simple-Summand-Recurrent-Type-Strict-Descent-and-Finite-Error-Tail-Repair-2026-10-04.md in runs/2026-10-04/.
+
+C109 actual simple-summand recurrent-type strict source descent and correct finite-simple exact tail repair; C107/C108 closed classes reused. Full UGA OPEN; not independently certified.
+
+Previous mechanisms remain reusable:
+
+
+Run-Selfinjective-Radical-Cube-Zero-Ordinary-Return-and-Eventual-Carrier-Misalignment-2026-10-04.md in runs/2026-10-04/.
+
+C108 closes arbitrary-size selfinjective J^3=0 by actual minimal-head recurrence, including permanent carrier misalignment; C107 four-vertex closure reused. UGA OPEN; not independently certified.
+
+Previous mechanisms remain reusable:
+
+
+Run-Four-Vertex-Handoff-Audit-and-Ordinary-Protected-Corner-Repair-2026-10-04.md in runs/2026-10-04/.
+
+C107 integrates user four-vertex closure after exact ordinary audit/repair. It remains project self-audited, not independently certified; full UGA OPEN.
+
+Previous mechanisms remain reusable:
+
+
+Run-Infinite-State-Ordinary-Carrier-Type-Termination-and-Drifting-Resolution-2026-10-04.md in runs/2026-10-04/.
+
+C106 removes finite actual state types through ordinary same-carrier CROSS-Ext and uniform termination. Infinitely MANY aligned actual syzygies return supported ordinary Tor; Q drift breaks individual self-cutoffs, not the global bridge. Full Universal Gap A OPEN; not independently verified.
+
+Previous checkpoints remain reusable:
+
+
+Run-Bi-Singular-Module-Envelopes-Ordinary-Supported-Return-and-Uniform-Termination-2026-10-04.md in runs/2026-10-04/.
+
+C105 actual NONSEMISIMPLE finite-pd module envelopes give uniform all-target ordinary termination and a supported SIMPLE Tor bridge through independent infinite LEFT/RIGHT factor rectangles. OFF-DIAGONAL permitted; high-Loewy/nonprojective corrections and nonsplit finite repairs verified. Same-author proof/self-audit, NOT independently verified. Automatic aligned-family availability and Universal Gap A OPEN; SCC reduction is existing material reused.
+
+The T29 simple-envelope/radical-square class remains valid:
+
+
+Run-Finite-Pd-Semisimple-Envelopes-Ordinary-Yoneda-Tail-Termination-2026-10-04.md in runs/2026-10-04/.
+
+C104 actual finite-pd semisimple-envelope ordinary Yoneda generation gives uniform tail termination or a supported ordinary diagonal at arbitrary source count. Closes finite-one-side-pd J^2 and an expanding-head class; permits nonsplit finite kernel repairs through actual exact quotients. NOT independently verified. General automatic envelopes and Universal Gap A remain OPEN.
+
+The T28 one-sided ordinary UNIT deletion bridge/whole-block obstruction remain valid:
+
+
+Run-One-Sided-Higher-Pd-Carrier-Preserving-Ordinary-Return-and-Descent-2026-10-04.md in runs/2026-10-04/.
+
+C102 actual one-sided higher-pd UNIT supported Tor return with strict badness DIMENSION descent under actual E-generator physical visibility. LEFT labels exact, RIGHT labels/detector can change; arbitrary source count. C103 connected14 breaks automatic eligibility even for the whole smooth finite-LEFT block, but already has ordinary supported return. Same-author proof/self-audit, NOT independently verified. All global branches and Universal Gap A remain OPEN.
+
+The T27 two-sided ALL-module comparison remains valid:
+
+
+Run-Finite-Global-Yoneda-Ordinary-Counit-Termination-and-Cyclic-Block-Descent-2026-10-04.md in runs/2026-10-04/.
+
+C101 realizes finite ordinary F Yoneda projective resolutions into a bounded actual counit and a genuine ordinary corner resolution. Uniform ALL-module comparison, both exact infinite labels and strict DIMENSION descent, even with positive F Ext cycles. Actual six-vertex65->four-vertex20 calibration and normal same-author proof, NOT independently verified. No primitive inheritance/automatic block availability; Universal Gap A remains OPEN.
+
+The T26 directed-Ext proof and its stronger ordered peeling remain valid:
+
+
+Run-Directed-Ordinary-Ext-Block-Termination-Inherited-Peeling-and-Nilpotence-Obstruction-2026-10-04.md in runs/2026-10-04/.
+
+C099 permits nonzero higher ordinary F Ext in a strict positive-Ext order, proves uniform actual cohomology termination/ALL-module comparison, and PROVES ordered singleton peeling inherits ALL-degree F Ext and chosen LEFT numeric pds. C100 blocks the nilpotent restricted-Yoneda shortcut with unchanged A5/S10 genuine screens. Actual65->51->33->20 integral calibration/normal same-author proofs, NOT independent verification. Cyclic-F/full-badness/no-deletion cores remain OPEN.
+
+The T25 automatic no-higher-F-Ext corner mechanism remains valid:
+
+
+Run-Automatic-Corner-Perfection-from-Two-Sided-Finite-Blocks-and-Ordinary-Ext-Window-2026-10-04.md in runs/2026-10-04/.
+
+C098 PROVES corner perfection for two-sided finite blocks whose ordinary deleted-pair Ext vanishes in ALL degrees>=2. Real counit amplitude is [-r,0], ALL-module ordinary comparison holds above d+r, both infinite labels are exact and badness strictly lowers dimension. The corner-pd bound is sharp at arbitrarily high finite pd. Frozen actual resolutions reused; complete same-author proof, NOT independent verification. Higher-F-Ext and one-sided/no-deletion/no-factor cores remain OPEN.
+
+The T24 tensor-factor descent and unbounded shallow-existence obstruction remain valid:
+
+
+Run-Ordinary-Tensor-Factor-Descent-and-Unbounded-Finite-Pd-Obstruction-2026-10-04.md in runs/2026-10-04/.
+
+C096 proves actual ordinary tensor-factor badness/dimension descent, supported cutoff/gd addition and closure of all known terminal classes under tensor products. C097 refutes automatic shallow-vertex availability uniformly: both-side sole finite pd is r in connected tensor powers, which already have visible ordinary return. Actual tensor decomposition is required. Complete same-author proof/shared integral audit, NOT independent verification. Global higher-pd/no-deletion/no-factor cores remain OPEN.
+
+The T23 automatic shallow corner bridge and pd-two obstruction remain valid:
+
+
+Run-Shallow-Finite-Complement-Weighted-Ordinary-Return-and-Depth-Two-Obstruction-2026-10-04.md in runs/2026-10-04/.
+
+C094 automatically deletes arbitrary chosen-side pd<=1 finite complements without cover closure or corner perfection. SAME-DEGREE Peirce-weighted ordinary return permits an endpoint switch, inherits supported cutoff M with ZERO loss, keeps only chosen-side labels exact and strictly lowers dimension. C095 gives actual pd-two screening, including connected S10 with infinite original source and whole finite complement; it already has a different visible return. Complete same-author proof and integral shared-helper audit, not independent verification. Higher-pd badness-specific descent and the full global problem remain OPEN.
+
+The T22 perfect-corner all-module comparison remains valid:
+
+
+Run-Finite-Complement-Perfect-Corner-Ordinary-Bridge-and-Dimension-Descent-2026-10-04.md in runs/2026-10-04/.
+
+C093 gives ALL-module ordinary Ext restriction and dual Tor isomorphism above d+t+1 for finite-complement perfect CORNERS, exact infinite labels and badness-preserving strict dimension descent. A physically nonclosed regular-coupler calibration makes cutoff two sharp. Tor direction is B->A; both infinite counts are preserved. The nonperfect core remains OPEN. Complete self-audited proof and exact shared-helper certificates are not independent verification.
+
+The T21 arbitrary-carrier audit and finite-factor obstruction remain valid:
+
+
+Run-Arbitrary-Carrier-Audit-Finite-Factor-Obstruction-and-Ordinary-Return-2026-10-04.md in runs/2026-10-04/.
+
+C090 gives an arbitrary-size dominating-carrier ordinary bridge. C091/C092 refute unqualified carrier descent, finite-pd pruning and finite-factor-to-closed-block availability in actual minimal tails. All counterfamilies already have visible return; the badness-specific alternative remains OPEN. Exact shared-helper certificates and complete written proofs are self-audited, not independently verified.
+
+The T20 closed-block comparison and containment results remain valid:
+
+
+Run-Closed-Finite-Block-Ordinary-Comparison-and-Three-Source-Containment-2026-10-04.md in runs/2026-10-04/.
+
+C088 gives all-degree ordinary comparison, exact retained infinite labels and eligible closed-block count descent at arbitrary finite source count. C089 strengthens three-label equality to one-sided containment and closes the eligible mismatch-carrier class. Block availability remains unproved. Complete self-audited proofs, unchanged evidence reused, not independently verified.
+
+The T19 socle and ordinary block-return results remain valid:
+
+
+Run-Three-Infinite-Sources-Socle-and-Ordinary-Block-Return-2026-10-04.md in runs/2026-10-04/.
+
+It closes three-source socle-separated classes by an actual ordinary supported block return and closes the three-common-label class without that socle hypothesis. Arbitrarily many finite-pd vertices are allowed. The actual finite-factor cross-map boundary, exact side roles and nonautomaticity are audited; the full global alternative remains open. No new computation or independent verification.
+
+The T18 infinite-source block closure and actual comparison-inheritance obstruction remain valid:
+
+
+Run-Infinite-Source-Block-Closure-and-Primitive-Comparison-Obstruction-2026-10-04.md in runs/2026-10-04/.
+
+It narrows the original comparison blocks needed for strict infinite-count descent, closes count three from one eligible move, and gives an actual primitive-map inheritance obstruction at a remaining infinite source. The first actual move is eligible without an augmented ordinary corner section. Its source already has ordinary visible Tor; the global bad-algebra alternative remains open. Integral finite certificates and written ordinary proofs are self-audited, not independently verified.
+
+The T17 complete even-comparison bridge and all-block conditional bound remain valid:
+
+
+Run-Even-Tor-Comparison-and-Strict-Infinite-Count-Descent-2026-10-04.md in runs/2026-10-04/.
+
+It gives high-even ordinary no-new-label control and supported return, an eligible strict count deletion, proved all-block ordinary-map inheritance and all-size class closure with the explicit conditional (v-1)M_* bound. General map existence is open; primitive coefficient inheritance is not asserted.
+
+The T16 full two-infinite-simple branch and actual count-obstruction audit remain valid:
+
+
+Run-Two-Infinite-Simple-Closure-and-Count-Descent-Audit-2026-10-03.md in runs/2026-10-03/.
+
+It closes the entire at-most-two-infinite-pd-simple branch on either chosen side by actual ordinary detector alignment. It proves chosen-side count invariance for principal ordinary radical moves and gives an actual connected infinite-left-vertex deletion with count increase. That calibration is already infinite + and does not refute the global return OR eligible-descent alternative.
+
+The T15 singleton theorem remains valid, with its stronger matched every-degree aggregate and bound:
+
+
+Run-Unique-Infinite-Simple-Ordinary-Closure-2026-10-03.md in runs/2026-10-03/.
+
+It closes both singleton-infinite-simple branches at arbitrary finite size by ordinary composition return, a fixed supported Tor pair and the finite-complement bound M+d. Its right proof is direct; no opposite-+ transfer. No general multiple-infinite-simple descent is asserted.
+
+The T13 ordinary migration frontier remains valid:
+
+Run-Ordinary-Tor-Migration-and-First-Kernel-Obstruction-2026-10-03.md in runs/2026-10-03/.
+
+Sections 1--3 give finite ordinary-Tor migration, all-reachable carrier requirements, nonperfect global-infinity equivalence and the precise missing physical reverse-support transfer. Sections 4--5 give the connected actual nonsplit nonperfect first-kernel-module obstruction family and exact same-author evidence. The final detector need not retain support, so general Gap A remains open.
+
+The subsequent T14 global-route audit is:
+
+Run-Canonical-Bimodule-Syzygy-Tensor-Audit-2026-10-03.md in runs/2026-10-03/.
+
+It gives actual canonical-syzygy tensor nontermination with only projective ordinary iterates in the unchanged finite-gldim A5. Bare tensor pumping is excluded; additional genuinely late all-source hypotheses are not refuted. C076 remains the positive frontier and the supported gap is still open.
+
+The T12 eligible type-sink closure remains valid:
+
+Run-Projective-Type-Sink-Peeling-and-Nonsplit-Descent-2026-10-03.md in runs/2026-10-03/.
+
+Use Sections 1--3 for actual stable projective-type bimodule summands, sink ideals projective over the current next quotient, and a terminating tower of eligible C074 moves. This closes higher-index nonperfect ordinary extensions over Gap-A bases, with the conditional numerical bound. Section 4 gives positive and negative all-field calibrations; Section 5 is the normal audit. Acyclic actual columns alone do not supply a stable decomposition, and universal ideal existence remains open.
+
+The T11 nonsplit ordinary bridge remains valid:
+
+Run-Nonsplit-Square-Zero-Quotients-and-Ordinary-Tor-2026-10-03.md in runs/2026-10-03/.
+
+Use Sections 1--3 for ordinary radical square-zero kernels, perfect actual tensor nilpotence, high ordinary Tor/Ext isomorphism and strict dimension descent without sections. Section 4 gives actual projective-column cycles and the nonperfect tensor-square-zero supported bridge through ordinary T_z/U_y with physical ideal visibility. Section 5 gives connected sharp and distinct nonperfect nonsplit calibrations; Sections 6--7 give exact bounded evidence, normal self-audit and the unresolved global remainder. These are ordinary ideal quotients, not automatically conditions on idempotent deletion cohomology.
+
+The T10 periodic-component derived bridge remains valid:
+
+Run-Periodic-Weighted-Components-and-Ordinary-Tor-2026-10-03.md in runs/2026-10-03/.
+
+Use Sections 1--3 for mixed-parity actual one-sided-projective layers on a weighted SCC of closed-walk gcd>=2: ordinary projective-column Tor, repeated returns and finite-length Peirce detection. Section 4 gives the actual five-cycle nonprimitive block calibration; Section 5 reuses A5 to refute the unrestricted aperiodic formula. Sections 6--8 record exact bounded evidence, normal self-audit and the open global remainder. Cyclic C065--C066 classes are unified; no quotient-simple collapse or general page bound is asserted.
+
+The T9 strict ordinary dimension-descent mechanism remains valid:
+
+Run-Split-Radical-Quotient-and-Dimension-Descent-2026-10-03.md in runs/2026-10-03/.
+
+Use Sections 1--2 for an ordinary radical-quotient bar retract and global infinity transfer with one actual ambient finite-pd kernel side; Section 3 for strict descent in dim_k A, all-size extension-tower closure and the numerical bound. Sections 4--5 give the exact calibration and normal self-audit. Existing vertex bridges can join checked mixed chains; universal reduction existence and automatic inheritance remain unproved.
+
+The T8 tensor-nilpotence bridge remains valid:
+
+Run-Tensor-Nilpotence-and-Eventual-Ordinary-Tor-2026-10-03.md in runs/2026-10-03/.
+
+Use Sections 1--3 for bounded perfect negative homology with actual derived tensor nilpotence: ordinary Tor/Ext isomorphism for n>(ell-1)(a+1+D)+1 and the uniform negative-weight page bound a(ell-1). Section 4 gives an actual nonformal sharp-cutoff calibration with a neither-sided-projective coupler and a genuine infinite-pd anchor. Section 5 gives a finite-global-dimension counterexample to pumping from coefficient-resolution cycles. Sections 6--8 record exact bounded evidence, the normal self-audit and the still-open global routes. No general tensor nilpotence or deletion inheritance is claimed.
+
+The T7 actual column mechanism remains valid:
+
+Run-Coupler-Projective-Columns-and-Uniform-Screening-Bound-2026-10-03.md in runs/2026-10-03/.
+
+Use Sections 1--2 for the strict module triangle and actual ordinary Tor recurrence; Section 3 for tensor nilpotence and the uniform negative-weight page bound; Section 4 for eventual ordinary Tor surjectivity with finite C^e-pd. Sections 5--8 give the direct right-module proof, single-layer extension, evidence reuse and normal self-audit. The nonperfect cyclic class closes, while acyclic nonperfect bounded screening and general many-layer cases remain open.
+
+Appended Section 10 gives the many-layer weighted ordinary Tor formula under odd negative cohomology and projectivity of all actual layers on the same one side. Its weighted-cycle class closes even with nonperfect bimodules and mixed operations. The single-layer page bound is not extended to unbounded negative letter weights.
+
+The T6 section-forcing mechanism remains valid:
+
+Run-Hochschild-Obstruction-Cutoff-and-Ordinary-Tor-2026-10-03.md in runs/2026-10-03/.
+
+Use Section 2 for the actual section obstruction and all-degree ordinary Tor bridge; Sections 3--4 for the finite obstruction cutoff and one-Gorenstein perfect-coefficient branch exclusion. Section 5 audits the hypotheses, index and absence of a derived-section inheritance claim. General nonperfect coefficients and arbitrary quotients remain open.
+
+The T5 parity bridge and actual calibration remain valid:
+
+Run-Even-Tor-Survival-and-Nonformal-Screening-2026-10-03.md in runs/2026-10-03/.
+
+Use Sections 1--3 for the supported even-recurrence lemma, even-Tor surjectivity without a section under odd negative C^e-projective homology, and minimal-counterexample exclusions. Sections 4--6 give the actual non-formal nine-dimensional calibration, new positive-weight ordinary returns, exact bounded evidence and normal self-audit. General nonprojective and mixed-parity screening remains open.
+
+The preceding authoritative closure Run remains valid:
+
+`runs/2026-10-03/Run-Ordinary-Tor-Retraction-and-Vertex-Descent-2026-10-03.md`
+
+Use Section 2 for the split ordinary supported-Tor bridge and global formal-deletion exclusion, Sections 3--5 for ordinary sections and the terminating all-size class theorem, and Sections 6--8 for calibration, audit and the unresolved general case.
+
+Section 10 strengthens the class closure to ordinary sections at every infinite-pd vertex and proves strict descent in the number of infinite-pd simples. The bound keeps the stronger all-vertex section condition.
+
+`Run-Actual-Tail-Defect-Annihilation-2026-10-03.md` remains authoritative for actual-tail defect annihilation, restricted ordinary-quotient comparison and the actual finite-prefix interface. None is withdrawn.
+
+`Run-Target-B-Binary-Indecomposable-Frontier-2026-10-03.md` retains the exact zero-column second-page description, finite-generation exclusion, and necessary higher-output residue. Those results remain unchanged; the direct tail-tensor bridge is now excluded.
+
+The preceding `Run-Target-B-Primitive-Seed-Correction-2026-10-03.md` remains the authority for the primitive-seed correction and the passage/formality theorem. The exhaustive arrow-only alternative from the older freeze is withdrawn; its exact all-edge criterion and all-negative-primitive-vanishing generation lemma remain reusable.
+
+Other 2026-10-02 Runs are parallel/reusable assets and do not automatically supersede this frontier.

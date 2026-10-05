@@ -1,0 +1,1377 @@
+{
+  "finite_five": {
+    "algebra_dimension": 5,
+    "vertices": [
+      {
+        "vertex": 0,
+        "projective_composition_multiplicities": [
+          1,
+          1
+        ],
+        "projective_Loewy_length": 2,
+        "radical_layer_multiplicities": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              1,
+              0
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {},
+        "aggregate_head_Ext_dimensions": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weighted_supported_Ext_dimensions": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "exact_identity_checked_through_degree": 5
+      },
+      {
+        "vertex": 1,
+        "projective_composition_multiplicities": [
+          1,
+          2
+        ],
+        "projective_Loewy_length": 3,
+        "radical_layer_multiplicities": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              0,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              1,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weighted_supported_Ext_dimensions": [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "exact_identity_checked_through_degree": 5
+      }
+    ],
+    "status": "finite exact checks only; no eventual-vanishing conclusion"
+  },
+  "periodic_six": {
+    "algebra_dimension": 6,
+    "vertices": [
+      {
+        "vertex": 0,
+        "projective_composition_multiplicities": [
+          2,
+          1
+        ],
+        "projective_Loewy_length": 3,
+        "radical_layer_multiplicities": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              1,
+              0
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              1,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "weighted_supported_Ext_dimensions": [
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1
+        ],
+        "exact_identity_checked_through_degree": 5
+      },
+      {
+        "vertex": 1,
+        "projective_composition_multiplicities": [
+          1,
+          2
+        ],
+        "projective_Loewy_length": 3,
+        "radical_layer_multiplicities": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              0,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              1,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "weighted_supported_Ext_dimensions": [
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1
+        ],
+        "exact_identity_checked_through_degree": 5
+      }
+    ],
+    "status": "finite exact checks only; no eventual-vanishing conclusion"
+  },
+  "saorin_seven": {
+    "algebra_dimension": 7,
+    "vertices": [
+      {
+        "vertex": 0,
+        "projective_composition_multiplicities": [
+          2,
+          1
+        ],
+        "projective_Loewy_length": 3,
+        "radical_layer_multiplicities": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              1,
+              0
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              1,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weighted_supported_Ext_dimensions": [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "exact_identity_checked_through_degree": 5
+      },
+      {
+        "vertex": 1,
+        "projective_composition_multiplicities": [
+          2,
+          2
+        ],
+        "projective_Loewy_length": 4,
+        "radical_layer_multiplicities": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              0,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              1,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "radical_exponent": 3,
+            "module_dimensions": [
+              1,
+              2
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "2": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          3,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "weighted_supported_Ext_dimensions": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "exact_identity_checked_through_degree": 5
+      }
+    ],
+    "status": "finite exact checks only; no eventual-vanishing conclusion"
+  },
+  "truncated_polynomial_four": {
+    "algebra_dimension": 4,
+    "vertices": [
+      {
+        "vertex": 0,
+        "projective_composition_multiplicities": [
+          4
+        ],
+        "projective_Loewy_length": 4,
+        "radical_layer_multiplicities": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              2
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "radical_exponent": 3,
+            "module_dimensions": [
+              3
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "2": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          3,
+          1,
+          3,
+          1,
+          3,
+          1
+        ],
+        "weighted_supported_Ext_dimensions": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "exact_identity_checked_through_degree": 5
+      }
+    ],
+    "status": "finite exact checks only; no eventual-vanishing conclusion"
+  },
+  "hub_twenty_two": {
+    "algebra_dimension": 22,
+    "vertices": [
+      {
+        "vertex": 0,
+        "projective_composition_multiplicities": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "projective_Loewy_length": 3,
+        "radical_layer_multiplicities": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              3,
+              0,
+              1,
+              5,
+              0
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              0,
+              3,
+              0,
+              1,
+              5
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          2,
+          1,
+          3,
+          3,
+          1,
+          6,
+          5
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          1,
+          3,
+          3,
+          1,
+          5,
+          5
+        ],
+        "weighted_supported_Ext_dimensions": [
+          2,
+          4,
+          6,
+          4,
+          6,
+          10,
+          12
+        ],
+        "exact_identity_checked_through_degree": 5
+      },
+      {
+        "vertex": 1,
+        "projective_composition_multiplicities": [
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        "projective_Loewy_length": 3,
+        "radical_layer_multiplicities": [
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          2,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "weighted_supported_Ext_dimensions": [
+          2,
+          1,
+          1,
+          2,
+          1,
+          0,
+          3
+        ],
+        "exact_identity_checked_through_degree": 5
+      },
+      {
+        "vertex": 2,
+        "projective_composition_multiplicities": [
+          1,
+          0,
+          2,
+          1,
+          0
+        ],
+        "projective_Loewy_length": 3,
+        "radical_layer_multiplicities": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          2,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "weighted_supported_Ext_dimensions": [
+          2,
+          1,
+          1,
+          2,
+          1,
+          0,
+          3
+        ],
+        "exact_identity_checked_through_degree": 5
+      },
+      {
+        "vertex": 3,
+        "projective_composition_multiplicities": [
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        "projective_Loewy_length": 3,
+        "radical_layer_multiplicities": [
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          2,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "weighted_supported_Ext_dimensions": [
+          2,
+          1,
+          1,
+          2,
+          1,
+          0,
+          3
+        ],
+        "exact_identity_checked_through_degree": 5
+      },
+      {
+        "vertex": 4,
+        "projective_composition_multiplicities": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "projective_Loewy_length": 3,
+        "radical_layer_multiplicities": [
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          2,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "weighted_supported_Ext_dimensions": [
+          2,
+          1,
+          1,
+          2,
+          1,
+          0,
+          3
+        ],
+        "exact_identity_checked_through_degree": 5
+      }
+    ],
+    "status": "finite exact checks only; no eventual-vanishing conclusion"
+  },
+  "quantum_exterior_four": {
+    "algebra_dimension": 4,
+    "vertices": [
+      {
+        "vertex": 0,
+        "projective_composition_multiplicities": [
+          4
+        ],
+        "projective_Loewy_length": 3,
+        "radical_layer_multiplicities": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            1
+          ]
+        ],
+        "proper_truncations": [
+          {
+            "radical_exponent": 1,
+            "module_dimensions": [
+              1
+            ],
+            "head_Ext_dimensions": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          {
+            "radical_exponent": 2,
+            "module_dimensions": [
+              3
+            ],
+            "head_Ext_dimensions": [
+              1,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          }
+        ],
+        "pullback_ranks_from_exponent_r_to_r_plus_1": {
+          "1": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "aggregate_head_Ext_dimensions": [
+          2,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13
+        ],
+        "nilpotent_transition_kernel_dimensions": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13
+        ],
+        "weighted_supported_Ext_dimensions": [
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28
+        ],
+        "exact_identity_checked_through_degree": 5
+      }
+    ],
+    "status": "finite exact checks only; no eventual-vanishing conclusion"
+  }
+}

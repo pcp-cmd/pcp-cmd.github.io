@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-03T04:24:51.299508+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "3e16fca101b3600fb7e24344ddbb7337d1e97b54dd342973958fe7a5bfedd770",
+    "object": "Exact finite bar-complex checks for A=(1 <-> 2)/(ba), deletion of vertex 2",
+    "deliverables": [
+      "verify_auslander_seed.py",
+      "auslander-seed-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "Algebraic multiplication order: ab=t, ba=0.",
+      "Basis e1,e2,a,b,t; all other radical products vanish.",
+      "Quotient bound 8; incoming degree 9. Ambient Tor bound 12; incoming degree 13."
+    ],
+    "domain": "Finite-dimensional split algebra over Q; unnormalized idempotent-derived quotient and relative ambient bar complexes",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Backend inventory on 2026-10-03 reports no Mathematica installations or wolframscript. Current tool discovery exposes a remote connector but no local Windows Wolfram MCP."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Backend inventory on 2026-10-03 reports native sage unavailable; no WSL distribution was requested or scanned."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Sparse rational Gaussian elimination using fractions.Fraction"
+      ],
+      "existence_evidence": "Frozen verify_auslander_seed.py supplies the algorithm using only the standard library.",
+      "local_availability": "available",
+      "availability_evidence": "Python 3.14.3 version and Fraction identity checked live; material execution completed with all assertions passing."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3",
+    "selection_reason": "Small exact sparse chain complexes admit standard-library rational elimination; actual execution is under one second.",
+    "fallback_reason": "No callable local Mathematica or native Sage was available. Remote Wolfram services were not substituted for the local backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python process",
+    "command_or_input": "python -B verify_auslander_seed.py --out auslander-seed-result.json",
+    "code_artifact": "verify_auslander_seed.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_auslander_seed.py",
+      "sha256": "7b8f7eb38c033fbf102122583fc552087a2cdd53eedea859b407ecae4fc3a4a5"
+    },
+    {
+      "role": "result",
+      "path": "auslander-seed-result.json",
+      "sha256": "b78609ad078c228c083b7841aec932fae54d6b755591bc5b3bfa881ca84ec377"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "summary": "Passed 125 associativity triples, quotient homology degrees -1..-8, all four ambient Tor pairs in degrees 0..12, 3089 differential-square checks, 233 passage chain identifications and local degree 1..8 excursion-one fillers.",
+    "result_artifact": "auslander-seed-result.json"
+  },
+  "verification": {
+    "methods": [
+      "Exhaustive multiplication associativity on the five basis elements",
+      "Exact rational ranks of outgoing and incoming differential spaces",
+      "Exact span-membership rejection for each u-power cycle",
+      "Differential-square and normalized coefficient-functional checks",
+      "Passage/bar differential comparison and explicit filler checks"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact arithmetic; no numerical residual.",
+    "limitations": [
+      "Finite ranges do not prove infinite-degree statements.",
+      "The program and proof are self-audited, not independently verified.",
+      "The finite-global-dimension calibration is not a Gap-A counterexample.",
+      "Schema and hash validation do not prove mathematics."
+    ]
+  }
+}

@@ -1,0 +1,386 @@
+"""Exact bounded self-audit of two actual tensor-nilpotence calibrations."""
+from __future__ import annotations
+import argparse
+from collections import defaultdict
+from fractions import Fraction
+from functools import lru_cache
+from itertools import product
+import json
+from pathlib import Path
+import platform
+
+
+def clean(v):
+    return {r: Fraction(c) for r, c in v.items() if c}
+
+
+def linear(v, fn):
+    out = defaultdict(Fraction)
+    for col, c in v.items():
+        for row, z in fn(col).items():
+            out[row] += c * z
+    return clean(out)
+
+
+def reduce_vector(v, pivots):
+    v = clean(v)
+    while v:
+        lead = min(v)
+        if lead not in pivots:
+            break
+        factor = v[lead]
+        for row, c in pivots[lead].items():
+            v[row] = v.get(row, Fraction(0)) - factor * c
+            if not v[row]:
+                del v[row]
+    return v
+
+
+def echelon(columns):
+    pivots = {}
+    for col in columns:
+        v = reduce_vector(col, pivots)
+        if v:
+            lead = min(v)
+            pivots[lead] = {r: c / v[lead] for r, c in v.items()}
+    return pivots
+
+
+class Algebra:
+    def __init__(self, vertices, ep_rad, products):
+        self.vertices = tuple(vertices)
+        self.ep = {f"e{v}": (v, v) for v in self.vertices} | dict(ep_rad)
+        self.basis = tuple(self.ep)
+        self.rad = tuple(ep_rad)
+        self.products = dict(products)
+        for (l, r), out in self.products.items():
+            assert self.ep[l][0] == self.ep[r][1]
+            assert self.ep[out] == (self.ep[r][0], self.ep[l][1])
+
+    def mul(self, l, r):
+        if l is None or r is None or self.ep[l][0] != self.ep[r][1]:
+            return None
+        if l.startswith("e"):
+            return r
+        if r.startswith("e"):
+            return l
+        return self.products.get((l, r))
+
+    def assoc(self):
+        for l, m, r in product(self.basis, repeat=3):
+            assert self.mul(self.mul(l, m), r) == self.mul(l, self.mul(m, r)), (l, m, r)
+        return len(self.basis) ** 3
+
+    def pbasis(self, vertices):
+        return [(j, b) for j, v in enumerate(vertices) for b in self.basis if self.ep[b][0] == v]
+
+    def maps(self, images):
+        def fn(col):
+            j, b = col
+            out = defaultdict(Fraction)
+            for (block, image), c in images[j].items():
+                target = self.mul(b, image)
+                if target:
+                    out[(block, target)] += c
+            return clean(out)
+        return fn
+
+
+def construct():
+    ep24 = {"c": ("y", "y")} | {f"t{i}": (str(i), str(i + 1)) for i in range(5)}
+    ep24 |= {"iyy": ("y", "y"), "iy1": ("1", "y"), "i3y": ("y", "3"),
+             "i31": ("1", "3"), "i4y": ("y", "4"),
+             "by": ("x", "y"), "b3": ("x", "3"), "h": ("x", "4"),
+             "ay": ("y", "x"), "a1": ("1", "x")}
+    prod24 = {("c", "c"): "iyy", ("t2", "t1"): "i31", ("t3", "b3"): "h",
+              ("by", "ay"): "iyy", ("by", "a1"): "iy1",
+              ("b3", "ay"): "i3y", ("b3", "a1"): "i31",
+              ("h", "ay"): "i4y", ("t3", "i3y"): "i4y"}
+    a24 = Algebra(("x", "y", "0", "1", "2", "3", "4", "5"), ep24, prod24)
+    c24 = Algebra(("y", "0", "1", "2", "3", "4", "5"),
+                  {b: ep24[b] for b in ("c", "t0", "t1", "t2", "t3", "t4")}, {})
+    ep9 = {"alpha": ("0", "1"), "beta": ("1", "2"), "gamma": ("0", "2"),
+           "a": ("2", "x"), "b": ("x", "0")}
+    a9 = Algebra(("x", "0", "1", "2"), ep9, {("beta", "alpha"): "gamma"})
+    c9 = Algebra(("0", "1", "2"), {b: ep9[b] for b in ("alpha", "beta", "gamma")},
+                 {("beta", "alpha"): "gamma"})
+    return a24, c24, a9, c9
+
+
+def check_linker(a, c, ub, vb, expected_kernel):
+    pairs = list(product(ub, vb))
+    mu = lambda p: ({a.mul(*p): 1} if a.mul(*p) else {})
+    rank = len(echelon(mu(p) for p in pairs))
+    assert len(pairs) - rank == 1 and mu(expected_kernel) == {}
+    # The exact multiplication kernel is the indicated basis vector.
+    nonzero = [a.mul(*p) for p in pairs if mu(p)]
+    assert len(set(nonzero)) == len(nonzero)
+    b, v = expected_kernel
+    for r in c.rad:
+        bl = a.mul(r, b)
+        vr = a.mul(v, r)
+        assert bl is None and vr is None
+    return {"domain_dimension": len(pairs), "rank": rank, "kernel_dimension": 1,
+            "kernel_generator": list(expected_kernel), "radical_actions_zero": True}
+
+
+def check_bimodule_resolution(c, p, r, lp1, rp1, left_arrow, right_arrow):
+    lp = (p, lp1)
+    rp = (r, rp1)
+    pb = {}
+    for n in range(3):
+        pb[n] = [(i, j, a, b) for i in range(2) for j in range(2) if i+j == n
+                 for a in c.basis if c.ep[a][0] == lp[i]
+                 for b in c.basis if c.ep[b][1] == rp[j]]
+
+    def d(col):
+        i, j, a, b = col
+        out = {}
+        if i:
+            v = c.mul(a, left_arrow)
+            if v:
+                out[(0, j, v, b)] = 1
+        if j:
+            v = c.mul(right_arrow, b)
+            if v:
+                out[(i, 0, a, v)] = (-1) ** i
+        return clean(out)
+
+    for col in pb[2]:
+        assert linear(d(col), d) == {}
+    ranks = {n: len(echelon(d(col) for col in pb[n])) for n in (1, 2)}
+    assert len(pb[0]) - ranks[1] == 1
+    assert len(pb[1]) == ranks[1] + ranks[2]
+    assert len(pb[2]) == ranks[2]
+    assert left_arrow in c.rad and right_arrow in c.rad and pb[2]
+    # Augmentation P0 -> Lp tensor Rr.
+    aug = lambda col: ({0: 1} if col[2] == f"e{p}" and col[3] == f"e{r}" else {})
+    for col in pb[1]:
+        assert linear(d(col), aug) == {}
+
+    # Verify both one-sided minimal resolutions explicitly.
+    l0 = [b for b in c.basis if c.ep[b][0] == p]
+    l1 = [b for b in c.basis if c.ep[b][0] == lp1]
+    r0 = [b for b in c.basis if c.ep[b][1] == r]
+    r1 = [b for b in c.basis if c.ep[b][1] == rp1]
+    lm = lambda b: ({c.mul(b, left_arrow): 1} if c.mul(b, left_arrow) else {})
+    rm = lambda b: ({c.mul(right_arrow, b): 1} if c.mul(right_arrow, b) else {})
+    lr = len(echelon(lm(b) for b in l1))
+    rr = len(echelon(rm(b) for b in r1))
+    assert lr == len(l1) == len(l0)-1 > 0
+    assert rr == len(r1) == len(r0)-1 > 0
+    # Rr tensor_C (Ce_lp1 -> Ce_p) is literally zero in each degree.
+    derived_middle = [int(r == p), int(r == lp1)]
+    assert derived_middle == [0, 0]
+    self_loop = [b for b in c.basis if c.ep[b] == (p, r)]
+    return {"left_pd": 1, "right_pd": 1, "bimodule_pd": 2,
+            "bimodule_resolution_dimensions": [len(pb[n]) for n in range(3)],
+            "differential_ranks": [ranks[1], ranks[2]],
+            "derived_middle_complex_dimensions": derived_middle,
+            "derived_tensor_square_zero": True,
+            "resolution_P0_self_loop_basis": self_loop}
+
+
+class Bar:
+    def __init__(self, algebra, negative=None, m3=None):
+        self.algebra = algebra
+        self.ep = algebra.ep | ({"v": negative} if negative else {})
+        self.letters = algebra.rad + (("v",) if negative else ())
+        self.deg = {b: (2 if b == "v" else 1) for b in self.letters}
+        self.m3 = m3
+
+    @lru_cache(maxsize=None)
+    def words(self, degree, source, target):
+        if degree == 0:
+            return ((),) if source == target else ()
+        out = []
+        for b in self.letters:
+            if self.ep[b][1] == target and self.deg[b] <= degree:
+                out.extend((b,) + tail for tail in self.words(
+                    degree-self.deg[b], source, self.ep[b][0]))
+        return tuple(out)
+
+    @lru_cache(maxsize=None)
+    def d(self, word):
+        out = defaultdict(Fraction)
+        prefix = 0
+        for j, b in enumerate(word):
+            if j+1 < len(word) and b != "v" and word[j+1] != "v":
+                v = self.algebra.mul(b, word[j+1])
+                if v:
+                    out[word[:j] + (v,) + word[j+2:]] += (-1) ** prefix
+            if self.m3 and tuple(word[j:j+3]) == self.m3:
+                out[word[:j] + ("v",) + word[j+3:]] += (-1) ** prefix
+            prefix += self.deg[b]
+        return clean(out)
+
+
+def bar_result(bar, quotient, bound):
+    rows = []
+    d2 = 0
+    chainmap = 0
+    qletters = set(quotient.letters)
+    for source, target in product(bar.algebra.vertices, repeat=2):
+        retained = source in quotient.algebra.vertices and target in quotient.algebra.vertices
+        pi = lambda w: ({w: 1} if retained and all(b in qletters for b in w) else {})
+        out_rank = {}
+        q_rank = {}
+        stacked_rank = {}
+        for n in range(bound+2):
+            words = bar.words(n, source, target)
+            qwords = quotient.words(n, source, target) if source in quotient.algebra.vertices and target in quotient.algebra.vertices else ()
+            out_rank[n] = len(echelon(bar.d(w) for w in words))
+            q_rank[n] = len(echelon(quotient.d(w) for w in qwords))
+            def stack(w):
+                out = {(0, r): z for r, z in bar.d(w).items()}
+                out.update({(1, r): z for r, z in pi(w).items()})
+                return out
+            stacked_rank[n] = len(echelon(stack(w) for w in words))
+            for w in words:
+                assert linear(bar.d(w), bar.d) == {}, (source, target, n, w)
+                d2 += 1
+                assert linear(bar.d(w), pi) == linear(pi(w), quotient.d)
+                chainmap += 1
+        for n in range(bound+1):
+            bdim = len(bar.words(n, source, target))
+            qdim = len(quotient.words(n, source, target)) if source in quotient.algebra.vertices and target in quotient.algebra.vertices else 0
+            tor = bdim-out_rank[n]-out_rank[n+1]
+            qtor = qdim-q_rank[n]-q_rank[n+1]
+            # Quotient map is surjective on chains; quotient boundaries are
+            # contained in pi(ker d). This computes the induced homology rank.
+            image = stacked_rank[n]-out_rank[n]-q_rank[n+1]
+            assert 0 <= image <= min(tor, qtor), (source, target, n, image, tor, qtor)
+            # A word is a path from left-simple y to right-simple z.
+            rows.append({"right_simple": target, "left_simple": source, "degree": n,
+                         "chain_dimension": bdim, "Tor": tor,
+                         "quotient_Tor": qtor, "projection_rank": image})
+    return {"bound": bound, "incoming_degree": bound+1, "rows": rows,
+            "differential_square_checks": d2, "projection_chainmap_checks": chainmap}
+
+
+def certify_finite_resolutions(a):
+    # Each list is an exact left-projective resolution of a simple.
+    # Entries are projective vertices; map generator images lie in preceding
+    # projective column. All maps and augmentations are checked on actual A.
+    data = {
+        "0": (("0", "1"), ("alpha",)),
+        "x": (("x", "0", "1"), ("b", "alpha")),
+        "2": (("2", "x", "0", "1"), ("a", "b", "alpha")),
+        "1": (("1", "2", "x", "0", "1"), ("beta", "a", "b", "alpha")),
+    }
+    result = {}
+    alinearity = 0
+    for simple, (vertices, images) in data.items():
+        bases = [a.pbasis((v,)) for v in vertices]
+        maps = [None] + [a.maps(({(0, image): 1},)) for image in images]
+        ranks = [None] + [len(echelon(maps[n](b) for b in bases[n])) for n in range(1, len(bases))]
+        for n in range(1, len(bases)):
+            fn = maps[n]
+            for col in bases[n]:
+                assert set(fn(col)).issubset(bases[n-1])
+                for l in a.basis:
+                    b = a.mul(l, col[1])
+                    before = fn((0, b)) if b else {}
+                    after = linear(fn(col), lambda p: ({(p[0], a.mul(l, p[1])): 1} if a.mul(l, p[1]) else {}))
+                    assert before == after
+                    alinearity += 1
+                if n > 1:
+                    assert linear(fn(col), maps[n-1]) == {}
+            next_rank = ranks[n+1] if n+1 < len(bases) else 0
+            assert len(bases[n]) == ranks[n] + next_rank
+        assert len(bases[0])-ranks[1] == 1
+        assert all(image in a.rad for image in images)
+        result[simple] = {"pd": len(vertices)-1, "vertices": vertices,
+                          "dimensions": [len(b) for b in bases], "ranks": ranks[1:]}
+    return {"global_dimension": max(v["pd"] for v in result.values()),
+            "simple_resolutions": result, "A_linearity_checks": alinearity}
+
+
+def check_a6_retraction(a):
+    kept = ("ex", "ey", "c", "iyy", "ay", "by") + tuple(f"e{i}" for i in range(6))
+    for l, r in product(kept, repeat=2):
+        assert a.mul(l, r) is None or a.mul(l, r) in kept
+    for l, r in product(a.basis, repeat=2):
+        image = a.mul(l, r)
+        pi_image = image if image in kept else None
+        assert pi_image == a.mul(l if l in kept else None, r if r in kept else None)
+    # K0 obstruction for finite pd of Lx in the six-dimensional component:
+    # 3u+v=0, u+v=1 forces 2u=-1, impossible over the integers.
+    return {"unital_algebra_retraction_checks": len(a.basis)**2,
+            "six_dimensional_component_Cartan": [[3, 1], [1, 1]],
+            "finite_pd_Lx_integer_obstruction": "2u=-1",
+            "infinite_pd_deleted_source": "proof via ordinary bar retract, not bounded numerical inference"}
+
+
+def indexed(rows):
+    return {(v["right_simple"], v["left_simple"], v["degree"]): v for v in rows}
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", type=Path, required=True)
+    args = parser.parse_args()
+    a24, c24, a9, c9 = construct()
+    assert len(a24.basis) == 24 and len(a9.basis) == 9
+    result = {"status": "passed", "arithmetic": "exact rational",
+              "python_version": platform.python_version(), "evidence_level": "bounded-check",
+              "verification": "same-author self-audit; not independent"}
+    for name, a, c, u, v, ker, parms, m3 in (
+        ("A24_nonformal", a24, c24, ("by", "b3", "h"), ("ay", "a1"), ("h", "a1"),
+         ("4", "1", "5", "0", "t4", "t0"), ("t3", "t2", "t1")),
+        ("A9_four_vertex_formal", a9, c9, ("b",), ("a",), ("b", "a"),
+         ("0", "2", "1", "1", "alpha", "beta"), None),
+    ):
+        qbar = Bar(c)
+        hbar = Bar(c, (parms[1], parms[0]), m3)
+        ambient = bar_result(Bar(a), qbar, 5)
+        model = bar_result(hbar, qbar, 7)
+        aa, hh = indexed(ambient["rows"]), indexed(model["rows"])
+        comparisons = 0
+        for source, target in product(c.vertices, repeat=2):
+            for n in range(6):
+                key = (source, target, n)
+                assert aa[key]["Tor"] == hh[key]["Tor"], (name, key)
+                assert aa[key]["projection_rank"] == hh[key]["projection_rank"], (name, key)
+                comparisons += 1
+        record = {"dimension": len(a.basis), "vertices": a.vertices,
+                  "associativity_checks": a.assoc(), "quotient_associativity_checks": c.assoc(),
+                  "linker": check_linker(a, c, u, v, ker),
+                  "coupler_resolution": check_bimodule_resolution(c, *parms),
+                  "ambient_bar": ambient, "retained_model_bar": model,
+                  "ambient_model_homology_and_map_comparisons": comparisons}
+        if name.startswith("A24"):
+            expected = {("4", "1", 3), ("4", "0", 4), ("5", "1", 4), ("5", "0", 5)}
+            deaths = {key for key, row in hh.items() if row["projection_rank"] < row["quotient_Tor"]}
+            assert deaths == expected, deaths
+            for key in expected:
+                assert aa[key]["quotient_Tor"] == 1 and aa[key]["projection_rank"] == 0
+            for source, target in product(c.vertices, repeat=2):
+                for n in (6, 7):
+                    row = hh[(source, target, n)]
+                    assert row["Tor"] == row["projection_rank"] == row["quotient_Tor"]
+            for n in range(8):
+                row = hh[("y", "y", n)]
+                assert row["Tor"] == row["projection_rank"] == row["quotient_Tor"] == 1
+            record["four_first_page_deaths"] = [list(k) for k in sorted(expected)]
+            record["sharp_cutoff"] = "projection is zero at n=5 for (R5,L0); isomorphism for n>5"
+            record["ordinary_retraction"] = check_a6_retraction(a)
+        else:
+            record["finite_resolution_certificate"] = certify_finite_resolutions(a)
+            assert record["coupler_resolution"]["resolution_P0_self_loop_basis"] == ["gamma"]
+            res = record["finite_resolution_certificate"]["simple_resolutions"]
+            for key, row in aa.items():
+                source, target, n = key
+                seq = res[target]["vertices"]
+                predicted = int(n < len(seq) and seq[n] == source)
+                assert row["Tor"] == predicted, key
+            assert all(row["Tor"] == 0 for row in hh.values() if row["degree"] >= 5)
+        result[name] = record
+    args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+    concise = {name: {k: v for k, v in record.items() if k not in ("ambient_bar", "retained_model_bar")}
+               for name, record in result.items() if isinstance(record, dict)}
+    print(json.dumps({"status": "passed", "calibrations": concise}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

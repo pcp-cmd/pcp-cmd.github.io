@@ -1,0 +1,162 @@
+"""Certify regular-target Ext tails and transfer recurrent self-extensions.
+
+Actual finite syzygy systems are mandatory. Ext into the regular module is
+computed modulo projective restrictions, not identified with a Hom space.
+The all-degree deductions use Regular-Ext-and-Self-Extension-Transfer.md.
+"""
+import argparse
+import json
+from pathlib import Path
+import sys
+
+sys.dont_write_bytecode = True
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+import yoneda_generation_certificate as yg
+import radical_head_certificate as rh
+import module_ext_certificate as me
+import syzygy_system_certificate as sc
+
+
+def regular_module(algebra):
+    projects = []
+    for j in range(algebra.vertices):
+        cover = yg.Cover(sr.Module.simple(algebra, j))
+        projects.append(sr.Module(algebra, cover.dimensions,
+                                  cover.data["projective_actions"]))
+    return sc.direct_sum(algebra, projects, [1] * len(projects))
+
+
+def ext_evidence(resolution, target, degree):
+    space = me.ExtSpace(resolution, target, degree)
+    return {"degree": degree, "Hom_dimension": len(space.boundaries) + space.dimension,
+            "restriction_rank": len(space.boundaries), "Ext_dimension": space.dimension,
+            "boundary_basis": sc.encode(space.boundaries),
+            "quotient_representatives": sc.encode(space.representatives)}
+
+
+def source_queries(data):
+    if "queries" in data:
+        return data["queries"]
+    return [{"label": f"L{entry['simple']}", "simple": entry["simple"],
+             "entry": {key: value for key, value in entry.items() if key != "simple"}}
+            for entry in data["system"]["entries"]]
+
+
+def check(data):
+    raw_system = data["system"]
+    system = sc.check(raw_system)
+    algebra = rk.Algebra(raw_system["algebra"])
+    states = [sc.parse_module(algebra, raw) for raw in raw_system["states"]]
+    transition, m = raw_system["transition"], len(states)
+    regular = regular_module(algebra)
+    state_evidence = [ext_evidence(rh.resolution(module, 1), regular, 1)
+                      for module in states]
+    labels = [item["Ext_dimension"] for item in state_evidence]
+    reports = []
+    for query in source_queries(data):
+        sc.require(("simple" in query) != ("module" in query),
+                   "Specify exactly one simple vertex or explicit source module")
+        j = query.get("simple")
+        if j is not None:
+            sc.integer(j, "Source vertex")
+            sc.require(j < algebra.vertices, "Invalid source vertex")
+            source = sr.Module.simple(algebra, j)
+        else:
+            source = sc.parse_module(algebra, query["module"])
+        sc.require(sum(source.dimensions) > 0, "Source must be nonzero")
+        entry = query["entry"]
+        q = sc.integer(entry["shift"], "Entry shift")
+        vector = entry["multiplicities"]
+        sc.require(len(vector) == m, "Wrong entry-vector length")
+        for value in vector:
+            sc.integer(value, "Entry multiplicity")
+        resolution = rh.resolution(source, q)
+        entry_iso = sc.check_isomorphism(resolution["modules"][q],
+            sc.direct_sum(algebra, states, vector), entry["isomorphism"])
+        prefix = [ext_evidence(resolution, regular, n) for n in range(1, q + 1)]
+        tail, current = [], list(vector)
+        for _ in range(2 * m):
+            tail.append(sum(a * b for a, b in zip(labels, current)))
+            current = sc.matvec(transition, current)
+        regular_witness = sc.persistence_witness(transition, labels, vector, q + 1)
+        sc.require(bool(regular_witness) == any(tail[m:]),
+                   "Regular Ext graph and finite window disagree")
+        if regular_witness:
+            regular_witness["all_degree_claim"] = (
+                "dim Ext^(offset+r*period)(X,A) >= coefficient*cycle_weight**r for r>=0")
+            cutoff = None
+        else:
+            nonzero = [item["degree"] for item in prefix if item["Ext_dimension"]]
+            nonzero += [q + 1 + n for n, value in enumerate(tail[:m]) if value]
+            cutoff = max(nonzero, default=0)
+        if "regular_vanishing_after" in query:
+            claimed = sc.integer(query["regular_vanishing_after"], "Vanishing cutoff")
+            sc.require(cutoff is not None and claimed >= cutoff,
+                       "Claimed regular-target Ext vanishing is false")
+        cycle = sc.persistence_witness(transition, [1] * m, vector, q)
+        pd = "infinite" if cycle else None
+        if cycle is None:
+            degrees = [n for n, module in enumerate(resolution["modules"][:q])
+                       if sum(module.dimensions)]
+            current = list(vector)
+            for n in range(m):
+                if any(current):
+                    degrees.append(q + n)
+                current = sc.matvec(transition, current)
+            sc.require(not any(current), "Acyclic source did not terminate")
+            pd = max(degrees)
+        transfer = None
+        if cycle and cutoff is not None:
+            d, g = cycle["period"], cycle["cycle_weight"]
+            ell = q + len(cycle["entry_path"]) - 1
+            first_multiple = cutoff // d + 1
+            transfer = {"state": cycle["cycle"][0], "entry_path": cycle["entry_path"],
+                        "syzygy_shift_to_summand": ell, "cycle": cycle["cycle"],
+                        "period": d, "return_multiplicity": g,
+                        "minimum_multiplier": first_multiple,
+                        "first_certified_degree": d * first_multiple,
+                        "self_Ext_window": [cutoff + 1, cutoff + m],
+                        "all_degree_claim": "dim Ext^(r*period)(X,X) >= return_multiplicity**r whenever r*period > regular_vanishing_cutoff",
+                        "supported_diagonal_pair": [j, j] if j is not None else None}
+            sc.require(cutoff < d * first_multiple <= cutoff + m,
+                       "Self-extension window bound failed")
+        reports.append({"label": query.get("label", "source"), "simple": j,
+                        "entry_shift": q, "entry_isomorphism": entry_iso,
+                        "regular_Ext_prefix": prefix,
+                        "regular_Ext_tail_start": q + 1,
+                        "regular_Ext_tail_values": tail,
+                        "regular_Ext_persistence_window": [q + m + 1, q + 2 * m],
+                        "regular_Ext_persistence_witness": regular_witness,
+                        "regular_vanishing_cutoff": cutoff,
+                        "projective_dimension": pd,
+                        "transfer_status": ("certified_persistent_self_Ext" if transfer else
+                            "source_has_finite_pd" if not cycle else
+                            "not_certified_regular_Ext_persists"),
+                        "self_Ext_transfer": transfer,
+                        "finite_pd_test_window": [q + m + 1, q + 2 * m],
+                        "finite_pd_test_claim": "If Ext^n(X,X+A) vanishes throughout this whole window, pd(X) <= q+m-1; the self-Ext premise is not automatically checked."})
+    return {"status": "passed", "number_of_vertices": algebra.vertices,
+            "number_of_states": m, "system_verification": system,
+            "regular_module": sc.module_payload(regular),
+            "state_regular_Ext1": state_evidence, "regular_Ext1_labels": labels,
+            "queries": reports, "proof": "Regular-Ext-and-Self-Extension-Transfer.md",
+            "scope": "Exact finite input checks plus written all-degree proof; self-audit, not independent verification. A persistent regular Ext tail makes this transfer test inconclusive, not the supported-Tor conjecture false."}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    result = check(json.loads(args.input.read_text(encoding="utf-8")))
+    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+                           encoding="utf-8")
+    print(json.dumps({"status": result["status"], "labels": result["regular_Ext1_labels"],
+                      "queries": [{"label": row["label"], "status": row["transfer_status"],
+                                   "cutoff": row["regular_vanishing_cutoff"]}
+                                  for row in result["queries"]]}))
+
+
+if __name__ == "__main__":
+    main()

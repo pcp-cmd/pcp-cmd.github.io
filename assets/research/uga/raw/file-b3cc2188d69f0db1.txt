@@ -1,0 +1,318 @@
+"""Exact actual-module audit of the 22-dimensional vertex-deletion calibration.
+
+Same-author bounded Q computation. All-field/all-degree claims use the
+separate written module proofs; this is not independent verification.
+"""
+import argparse
+from fractions import Fraction as F
+from hashlib import sha256
+from itertools import product
+import json
+from pathlib import Path
+import sys
+
+sys.dont_write_bytecode = True
+parser = argparse.ArgumentParser()
+parser.add_argument('--project-root', type=Path, required=True)
+parser.add_argument('--out', type=Path, required=True)
+args = parser.parse_args()
+helpers = args.project_root / 'toolbox/Imported-Outputs'
+sys.path.insert(0, str(helpers))
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+import syzygy_system_certificate as ss
+
+counts = {'full_basis_associativity': 0, 'cover_steps': 0,
+          'actual_module_isomorphisms': 0, 'module_action_certificates': 0,
+          'ideal_closure_checks': 0, 'quotient_products': 0}
+
+
+def name_h(i, j, s):
+    return f'h{i+1}{j+1}_{s}'
+
+
+class Table:
+    def __init__(self, vertices, basis, multiplication):
+        self.vertices = vertices
+        self.basis = basis  # name, left endpoint, right endpoint
+        self.names = [x[0] for x in basis]
+        self.index = {name: i for i, name in enumerate(self.names)}
+        self.mult = multiplication  # basis indices -> index, or None
+        self.radical = list(range(vertices, len(basis)))
+        for i, j, k in product(range(len(basis)), repeat=3):
+            ij, jk = self.mult(i, j), self.mult(j, k)
+            lhs = None if ij is None else self.mult(ij, k)
+            rhs = None if jk is None else self.mult(i, jk)
+            assert lhs == rhs, (self.names[i], self.names[j], self.names[k])
+            counts['full_basis_associativity'] += 1
+        payload = {'vertices': vertices, 'base_vertex': 0,
+                   'radical_basis': [{'name': n, 'left': l, 'right': r}
+                                      for n, l, r in basis[vertices:]],
+                   'radical_products': []}
+        for i, j in product(self.radical, repeat=2):
+            out = self.mult(i, j)
+            if out is not None:
+                assert out >= vertices
+                payload['radical_products'].append({
+                    'left': self.names[i], 'right': self.names[j],
+                    'value': {self.names[out]: 1}})
+        self.payload = payload
+        self.alg = rk.Algebra(payload)
+
+    def opposite(self):
+        return Table(self.vertices, [(n, r, l) for n, l, r in self.basis],
+                     lambda i, j: self.mult(j, i))
+
+
+def make_B():
+    homs = [(i, j, s) for i, j in product(range(3), repeat=2)
+            for s in range(max(0, j-i), j+1)]
+    units = [(i, i, 0) for i in range(3)]
+    triples = units + [h for h in homs if h not in units]
+    index = {h: k for k, h in enumerate(triples)}
+    basis = [(name_h(*h), h[0], h[1]) for h in triples]
+
+    def multiply(x, y):
+        i, j, s = triples[x]
+        q, l, u = triples[y]
+        if j != q or s+u >= l+1:
+            return None
+        return index[i, l, s+u]
+
+    return Table(3, basis, multiply), triples
+
+
+def make_A(B, triples):
+    B_to_A = {i: i for i in range(3)}
+    basis = B.basis[:3] + [('ev', 3, 3)] + B.basis[3:]
+    B_to_A.update({i: i+1 for i in range(3, len(B.basis))})
+    A_to_B = {v: k for k, v in B_to_A.items()}
+    tv = len(basis)
+    basis.append(('tv', 3, 3))
+    V_to_B, B_to_V = {}, {}
+    for b, (i, j, s) in enumerate(triples):
+        if i == 2:
+            V_to_B[len(basis)] = b
+            B_to_V[b] = len(basis)
+            basis.append(('v_' + B.names[b], 3, j))
+
+    def multiply(x, y):
+        if x in A_to_B and y in A_to_B:
+            out = B.mult(A_to_B[x], A_to_B[y])
+            return None if out is None else B_to_A[out]
+        if x == 3:
+            return y if y == 3 or y == tv or y in V_to_B else None
+        if x == tv:
+            return tv if y == 3 else None
+        if x in V_to_B and y in A_to_B:
+            out = B.mult(V_to_B[x], A_to_B[y])
+            return None if out is None else B_to_V[out]
+        return None
+
+    return Table(4, basis, multiply), B_to_A, B_to_V
+
+
+def quotient_at(A, vertex):
+    ideal = {vertex}
+    old_size = -1
+    while len(ideal) != old_size:
+        old_size = len(ideal)
+        for k in list(ideal):
+            for b in range(len(A.basis)):
+                for out in [A.mult(k, b), A.mult(b, k)]:
+                    counts['ideal_closure_checks'] += 1
+                    if out is not None:
+                        ideal.add(out)
+    kept = [i for i in range(len(A.basis)) if i not in ideal]
+    vertices = [i for i in range(A.vertices) if i != vertex]
+    remap_v = {i: j for j, i in enumerate(vertices)}
+    inverse = {i: j for j, i in enumerate(kept)}
+    basis = [(A.names[i], remap_v[A.basis[i][1]], remap_v[A.basis[i][2]])
+             for i in kept]
+
+    def multiply(i, j):
+        out = A.mult(kept[i], kept[j])
+        return inverse.get(out)
+
+    C = Table(len(vertices), basis, multiply)
+    for i, j in product(range(len(A.basis)), repeat=2):
+        out = A.mult(i, j)
+        if i in ideal or j in ideal:
+            assert out is None or out in ideal
+        else:
+            assert C.mult(inverse[i], inverse[j]) == inverse.get(out)
+        counts['quotient_products'] += 1
+    return C, sorted(ideal), vertices
+
+
+def standard_projective(table, vertex):
+    alg = table.alg
+    local = [[i for i, (_, l, r) in enumerate(table.basis)
+              if l == v and r == vertex] for v in range(table.vertices)]
+    locations = [{b: j for j, b in enumerate(part)} for part in local]
+    dimensions = list(map(len, local))
+    actions = []
+    for full in table.radical:
+        _, target, source = table.basis[full]
+        columns = []
+        for b in local[source]:
+            column = [F(0)] * dimensions[target]
+            out = table.mult(full, b)
+            if out is not None:
+                column[locations[target][out]] = F(1)
+            columns.append(column)
+        actions.append(columns)
+    module = sr.Module(alg, dimensions, actions)
+    ss.parse_module(alg, ss.module_payload(module))
+    counts['module_action_certificates'] += 1
+    return module, local
+
+
+def checked_iso(source, target, columns, label):
+    checked = ss.check_isomorphism(source, target, ss.encode(columns))
+    counts['actual_module_isomorphisms'] += 1
+    return {'label': label, **checked}
+
+
+def embed_into_first_kernel(table, simple, target, embedded_columns, label):
+    original = sr.Module.simple(table.alg, simple)
+    kernel, info = original.syzygy(retain_maps=True)
+    counts['cover_steps'] += 1
+    lin = info['linear_data']
+    maps = []
+    for v, part in enumerate(embedded_columns):
+        # First simple cover has exactly one projective copy.
+        positions = {simple if radical is None else table.vertices+radical: j
+                     for j, (copy, radical) in enumerate(lin['bases'][v])}
+        columns = []
+        for basis_index in part:
+            vector = rk.unit_vector(len(positions), positions[basis_index])
+            columns.append(lin['readers'][v](vector))
+        maps.append(columns)
+    return checked_iso(target, kernel, maps, label)
+
+
+def certify_finite(table, vertex, expected_pd, projective_at_last):
+    current = sr.Module.simple(table.alg, vertex)
+    rows = []
+    for n in range(expected_pd):
+        rows.append(list(map(len, current.top_lifts())))
+        current, _ = current.syzygy()
+        counts['cover_steps'] += 1
+    rows.append(list(map(len, current.top_lifts())))
+    standard, _ = standard_projective(table, projective_at_last)
+    zero, info = current.syzygy(retain_maps=True)
+    counts['cover_steps'] += 1
+    assert sum(zero.dimensions) == 0
+    assert info['cover_multiplicities'] == [int(v == projective_at_last)
+                                          for v in range(table.vertices)]
+    iso = checked_iso(standard, current, info['linear_data']['images'],
+                      f'last syzygy of vertex {vertex} is actual P{projective_at_last}')
+    return {'simple': vertex, 'pd': expected_pd, 'Betti_prefix': rows,
+            'terminal_projective_isomorphism': iso}
+
+
+def get_prefix(table, vertex, degrees):
+    current = sr.Module.simple(table.alg, vertex)
+    result = []
+    for n in range(degrees+1):
+        result.append(list(map(len, current.top_lifts())))
+        if n < degrees:
+            current, _ = current.syzygy()
+            counts['cover_steps'] += 1
+    return result
+
+
+B, triples = make_B()
+A, B_to_A, B_to_V = make_A(B, triples)
+C, killed, retained = quotient_at(A, 2)
+assert len(B.basis) == 14 and len(A.basis) == 22 and len(C.basis) == 6
+assert len(killed) == 16 and retained == [0, 1, 3]
+assert len(C.alg.radical_powers[1]) == 0
+
+base_finite = [certify_finite(B, 0, 2, 0), certify_finite(B, 1, 2, 1),
+               certify_finite(B, 2, 1, 1)]
+A_finite = [certify_finite(A, 0, 2, 0), certify_finite(A, 1, 2, 1)]
+P2, P2_basis = standard_projective(A, 1)
+Lv = sr.Module.simple(A.alg, 3)
+target = ss.direct_sum(A.alg, [P2, Lv], [1, 1])
+injection = A.index[name_h(1, 2, 1)]
+embedded = [[A.mult(injection_base, injection) for injection_base in part]
+            for part in P2_basis]
+assert all(x is not None for part in embedded for x in part)
+embedded[3].append(B_to_V[B.index[name_h(2, 2, 0)]])
+left_L3_iso = embed_into_first_kernel(A, 2, target, embedded,
+                                     'Omega_A L3 = A e2 direct sum Lv')
+left_Lv_iso = embed_into_first_kernel(A, 3, Lv,
+                                     [[], [], [], [A.index['tv']]],
+                                     'Omega_A Lv = Lv')
+
+Aop = A.opposite()
+right_finite = [certify_finite(Aop, 0, 2, 0),
+                certify_finite(Aop, 1, 2, 1),
+                certify_finite(Aop, 2, 1, 1)]
+P3_right, P3_basis = standard_projective(Aop, 2)
+Rv = sr.Module.simple(Aop.alg, 3)
+right_target = ss.direct_sum(Aop.alg, [P3_right, Rv], [1, 1])
+A_to_B = {v: k for k, v in B_to_A.items()}
+right_embedded = [[B_to_V[A_to_B[b]] for b in part] for part in P3_basis]
+right_embedded[3].append(A.index['tv'])
+right_Lv_iso = embed_into_first_kernel(Aop, 3, right_target, right_embedded,
+                                      'Omega_right Rv = e3 A direct sum Rv')
+
+quotient_isos = []
+for side, table in [('left', C), ('right', C.opposite())]:
+    for source, next_vertex in [(0, 1), (1, 0), (2, 2)]:
+        kernel, _ = sr.Module.simple(table.alg, source).syzygy()
+        counts['cover_steps'] += 1
+        next_simple = sr.Module.simple(table.alg, next_vertex)
+        identity = [[rk.unit_vector(d, j) for j in range(d)]
+                    for d in next_simple.dimensions]
+        quotient_isos.append(checked_iso(kernel, next_simple, identity,
+                             f'{side} quotient Omega L{source} = L{next_vertex}'))
+
+left_prefix = {str(v): get_prefix(A, v, 6) for v in range(4)}
+right_prefix = {str(v): get_prefix(Aop, v, 6) for v in range(4)}
+assert left_prefix['2'][1] == [0, 1, 0, 1]
+assert all(row == [0, 0, 0, 1] for row in left_prefix['2'][2:])
+assert all(row == [0, 0, 0, 1] for row in left_prefix['3'])
+assert all(row == [0, 0, 1, 1] for row in right_prefix['3'][1:])
+assert all(row == [0, 0, 0, 0] for v in ['0', '1']
+           for row in left_prefix[v][3:])
+assert all(row == [0, 0, 0, 0] for v in ['0', '1', '2']
+           for row in right_prefix[v][3:])
+
+dependencies = ['return_kernel_certificate.py', 'syzygy_return_certificate.py',
+                'syzygy_system_certificate.py', 'yoneda_generation_certificate.py']
+result = {
+    'status': 'passed', 'arithmetic': 'exact rational', 'python': sys.version,
+    'independent_verification': False,
+    'dependencies': {f'toolbox/Imported-Outputs/{p}':
+                     sha256((helpers/p).read_bytes()).hexdigest() for p in dependencies},
+    'counts': counts, 'dimensions': {'B': 14, 'A': 22, 'C': 6, 'ideal': 16},
+    'physical_quotient_killed_basis': [A.names[i] for i in killed],
+    'retained_original_vertex_indices': retained,
+    'base_finite_simple_certificates': base_finite,
+    'A_finite_left_simple_certificates': A_finite,
+    'A_finite_right_simple_certificates': right_finite,
+    'actual_infinite_module_certificates': [left_L3_iso, left_Lv_iso, right_Lv_iso],
+    'quotient_simple_syzygy_isomorphisms': quotient_isos,
+    'A_left_Betti_through_degree_6': left_prefix,
+    'A_right_Betti_through_degree_6': right_prefix,
+    'all_degree_conclusions_from_actual_module_identities': {
+        'A_infinite_left_simples': [2, 3], 'A_infinite_right_simples': [3],
+        'C_infinite_left_simples_original_labels': [0, 1, 3],
+        'C_infinite_right_simples_original_labels': [0, 1, 3],
+        'deleted_simple_has_infinite_left_pd': True,
+        'left_infinite_count': [2, 3], 'right_infinite_count': [1, 3],
+        'already_infinite_plus': True,
+        'ordinary_supported_pair': {'right': 3, 'left': 3,
+                                    'Tor_dimension_every_degree': 1},
+        'not_a_Gap_A_counterexample': True,
+        'global_return_or_badness_count_descent_not_refuted': True},
+    'algebra_payloads': {'B': B.payload, 'A': A.payload, 'C': C.payload},
+    'scope': 'Finite Q arithmetic and actual module isomorphisms; all-field proofs in the Run.'}
+args.out.write_text(json.dumps(ss.encode(result), ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+print(json.dumps({'status': result['status'], 'dimensions': result['dimensions'],
+                  'counts': counts, 'left_count': [2, 3], 'right_count': [1, 3],
+                  'independent_verification': False}))

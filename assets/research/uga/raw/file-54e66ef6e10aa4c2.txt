@@ -1,0 +1,177 @@
+# 泛点返回核的特化定理：原判据失效后仍保留全部偶数 Tor
+
+2026-09-24。接续 [乘法参数空间](Polynomial-Family-Tor-Certificates.md) 与 [返回核定理](Return-Kernel-Tor-Theorem.md)。
+
+**状态：任意 N 的条件定理与下述任意 N,g 参数族均有完整自审证明；Universal Gap A 仍未证明。** 本稿将泛点秩方法用于一个能给出全部次数结论的有限证书，而非只重述未证的 (GP)。尚未独立数学核验，未确认文献新颖性。
+
+## 1. 泛点上的有限返回证书控制整个参数族
+
+令 Y 为不可约复仿射代数簇，\(\{A_y=E\oplus J\}_{y\in Y}\) 是前稿意义下的多项式乘法族：E 与 J 的各 Peirce 向量空间固定，结合律及统一幂零界处处成立。设 \(K=\mathbb C(Y)\)，\(A_\eta\) 为泛点的 K 代数。这里不预先要求 Y 包含于无限全局维数 locus。
+
+固定顶点 h，在 \(A_\eta\) 中，对 \(v\ne h\) 定义
+\[
+N_v=e_hJe_v,\quad M_v=e_vJe_h,\quad
+N_v^{(2)}=e_hJ^2e_v,\quad M_v^{(2)}=e_vJ^2e_h,
+\]
+\[
+I_v=N_vM_v,\quad W_v=N_v^{(2)}M_v+N_vM_v^{(2)},
+\]
+\[
+\kappa_v=(\dim N_v-\dim N_v^{(2)})(\dim M_v-\dim M_v^{(2)})
+-\dim I_v+\dim W_v.
+\tag{1}
+\]
+所有维数均取在 K 上，\(J^2\) 必须在整个代数中计算。在 \(\kappa_v>0\) 的标签上，令 \(v\to w\) 表示实际乘法 \(M_vN_w=0\)。定义
+\[
+b_r=\sum_{v_1\to\cdots\to v_r}\prod_{l=1}^{r}\kappa_{v_l},
+\qquad r\ge1,
+\tag{2}
+\]
+长度一的序列没有接缝要求。
+
+**定理 1（泛点返回核的特化）。** 对所有 \(y\in Y(\mathbb C)\) 及 \(r\ge1\)，
+\[
+\boxed{\dim\operatorname{Tor}_{2r}^{A_y}(R_h,L_h)\ge b_r.}
+\tag{3}
+\]
+若泛点的有向图有圈，则 Y 的每个代数均满足 (U)，而且同一个 diagonal pair 在每个正偶数次数都非零。若某圈长为 m、沿圈权重的积为 g，则
+\[
+\dim\operatorname{Tor}_{2mq}^{A_y}(R_h,L_h)\ge g^q
+\quad(y\in Y,\ q\ge1).
+\tag{4}
+\]
+
+证明：原返回核证明只用域上的线性代数、严格零乘积和 relative bar 分解，对函数域 K 同样成立。因此泛点的 Tor 维数至少为 \(b_r\)。固定各 r 后，bar 链空间维数不变，微分为多项式矩阵；特殊点的微分秩至多为泛点秩，故特殊点的 Tor 维数不小于泛点维数。这给出 (3)，无需对不同次数选择同一个开集。
+
+若有圈，可沿圈走任意长度，故每个 \(b_r>0\)。重复一个长度 m 的圈 q 次的块选择有 \(g^q\) 种，给出 (4)。diagonal pair 自动 supported，证毕。
+
+注意：结论不要求各特殊点仍满足 (1) 的正核维数条件。\(\kappa_v\) 本身不一定在特化时增加，下一节族在特殊点全部变成零。以上证明传递的是 Tor 维数；不能仅凭上半连续性进一步断言泛点的自由 Yoneda 子代数以相同乘法结构延拓到每个特殊点。
+
+## 2. 这如何成为有限多项式证书
+
+给定 Y 的素理想 \(I(Y)\)，泛点的 J²、\(N_v^{(2)}\)、\(I_v\)、\(W_v\) 都是有限乘法矩阵的列空间。某矩阵泛点秩恰为 r，可以由一个不属于 \(I(Y)\) 的 r 阶子式，以及全部属于 \(I(Y)\) 的 r+1 阶子式证实。也可用在函数域上验证过的消元恒等式表示这些秩。
+
+接缝 \(M_vN_w=0\) 则要求相应结构常数坐标在 \(I(Y)\) 中为零。于是一个有限证书由以下数据组成：基点、若干分支的正整数 \(\kappa_v\) 及秩证据、各接缝的零乘积证据、一个有向圈。无需逐次计算 \(\operatorname{Tor}_{2r}\)，由定理 1 一次得到全部次数的结论。
+
+这里有一个实际优点：只要在某个不可约族上取得该证书，即可直接证明该族全部属于无限全局维数 locus 并满足 (U)，无需先计算该 locus 的所有分支或前稿的非显式界 D。
+
+**这种二步证书不具有普遍性。** 缺少它只说明这个充分判据未决定该分支，不能推出其存在 (U) 反例。
+
+2026-09-24 续接修正：这种二步证书的普遍存在性现已被平方零有向 N 圈（N≥3）明确否定，见 [Bar-Cycle-Pairing-Theorem.md](Bar-Cycle-Pairing-Theorem.md) 第 1 节。它们具有无限全局维数，但全部 diagonal 二阶 Tor 为零，且其固定 Peirce 乘法空间只有一个点。本稿的条件性定理保持成立；一般 (GP) 没有被否定。
+
+## 3. 任意 N≥3、g≥1 的连接参数族
+
+给定 \(N\ge3\)、\(g\ge1\)、\(t\in\mathbb C\)，取顶点 \(0,\ldots,N-1\)。以下符号指定 radical 基向量的起终点，不预先宣称它们都是真正的 Gabriel 箭头：
+\[
+a:0\to1,\quad d:1\to2,\quad f:0\to2,
+\]
+\[
+b_s,n_s:1\to0,\quad c_s:2\to0,\quad z_s:0\to0
+\quad(1\le s\le g),
+\]
+以及 \(p_v:v\to v-1\)（\(3\le v<N\)）。只保留下列非零 radical 乘法：
+\[
+b_sa=z_s,\qquad c_sd=n_s+t b_s,\qquad da=f,\qquad c_sf=t z_s.
+\tag{5}
+\]
+其余全部为零。记所得代数为 \(A_{N,g,t}\)。
+
+唯一可能非零的三重 radical 乘积形状为 \(c_sda\)，两种括号均为 \(t z_s\)。所有其他三重乘积两侧均为零，且四重乘积全零，所以定义结合并满足 J⁴=0。其 radical 维数为 \(4g+N\)，从而
+\[
+\boxed{\dim A_{N,g,t}=2N+4g.}
+\tag{6}
+\]
+新增的 \(p_v\) 不进入任何非零 radical 乘积，也没有从旧顶点到新顶点的路径。radical 平方为
+\[
+J^2=\langle f,z_s,n_s+t b_s:1\le s\le g\rangle,
+\]
+维数恒为 \(2g+1\)；当 \(t\ne0\) 时 \(J^3=\langle z_s\rangle\)，当 t=0 时 \(J^3=0\)。Gabriel 图中的 a、d、各 \(c_s\) 以及 \(p_v\) 连接所有顶点，故代数连通。
+
+### 泛点有 g 维返回核，特殊点全部返回核为零
+
+固定 h=0。在分支 v=1 上，
+\[
+N_1=\langle b_s,n_s\rangle,quad N_1^{(2)}=\langle n_s+t b_s\rangle,
+\quad M_1=\mathbb C a,\quad M_1^{(2)}=0.
+\]
+箭头商维数为 g、1；\(I_1=\langle z_s\rangle\)，而
+\[
+W_1=\langle t z_s\rangle.
+\]
+故
+\[
+\kappa_1(t)=\begin{cases}g,&t\ne0,\\0,&t=0.\end{cases}
+\tag{7}
+\]
+严格返回关系为 \(n_s\otimes a\)，其箭头商投影为
+\(-t[b_s]\otimes[a]\)。当 \(t\ne0\) 时这些投影独立。又因
+\(a b_s=a n_s=0\)，分支 1 有零接缝自环。
+
+分支 v=2 的 \(M_2=\mathbb C f\subseteq J^2\)，所以 \(\kappa_2=0\)；其他分支没有返回对，也全为零。因此在 t=0，原有返回核程序在基点 0 上不给出任何正核或圈。尽管如此，定理 1 已经推出
+\[
+\dim\operatorname{Tor}_{2r}^{A_{N,g,t}}(R_0,L_0)\ge g^r
+\quad(t\in\mathbb C,\ r\ge1).
+\tag{8}
+\]
+
+### 实际最小消解给出等号与完整 self-Ext algebra
+
+\(P_0=Ae_0\) 的基为 \(e_0,a,f,z_1,\ldots,z_g\)，且 \(JP_0\) 由 a 生成，因为 \(da=f\)、\(b_sa=z_s\)。因此 \(P_1\to JP_0\)、\(x\mapsto xa\) 是最小投射覆盖。
+
+\(P_1\) 的基为 \(e_1,d,b_1,n_1,\ldots,b_g,n_g\)，其像分别由 a、f、各 \(z_s\) 构成，核恰为 \(\langle n_1,\ldots,n_g\rangle\)。radical 杀死这些核向量，它们都位于顶点 0。故对所有复参数，
+\[
+\boxed{\Omega^2_{A_{N,g,t}}L_0\simeq L_0^{\oplus g}.}
+\tag{9}
+\]
+由最小消解及迭代，
+\[
+\beta_{i0}(2r)=\begin{cases}g^r,&i=0,\\0,&i\ne0,\end{cases}
+\qquad
+\beta_{i0}(2r+1)=\begin{cases}g^r,&i=1,\\0,&i\ne1.\end{cases}
+\tag{10}
+\]
+该式包含 r=0。因 \(\Omega^{2r}L_0\ne0\)，L0 的投射维数无穷。
+
+进一步，[高阶返回定理](Higher-Syzygy-Return-Theorem.md) 的投影拼接证明，在 self-Ext 中有 g 个二次生成元的自由结合子代数。其 2r 次维数已经为 \(g^r\)，而 (10) 给出整个 self-Ext 在该次数恰有同样维数、奇数次数为零。因此
+\[
+\boxed{\operatorname{Ext}_{A_{N,g,t}}^*(L_0,L_0)
+\simeq\mathbb C\langle x_1,\ldots,x_g\rangle,
+\qquad |x_s|=2.}
+\tag{11}
+\]
+也可直接用 (9) 各投影的迭代得到各次数的一组 Yoneda 单词基。这一族的全部次数结论有实际消解作第二条证明，并非从有限样本猜测。
+
+它说明泛点特化方法确实可以越过原返回核判据在单点的失败。并未声称 t=0 逃过项目中所有其他判据；其二步 syzygy 返回本身就能证明 (8)。
+
+## 4. 单纯把乘法缩放到零为何不够
+
+对任意固定代数 \(A=E\oplus J\)，将 radical 乘法改为 \(t\mu\)。t≠0 的各纤维与 A 同构，t=0 的 radical 平方为零。该族的 bar 微分为 \(t\delta\)。
+
+对固定 pair，写 \(B_n=\operatorname{im}\delta_{n+1}\)，在向量空间上选分解
+\[
+C_n=B_n\oplus H_n\oplus U_n,
+\quad\ker\delta_n=B_n\oplus H_n,
+\quad\delta_n:U_n\xrightarrow{\sim}B_{n-1}.
+\]
+令 \(R=\mathbb C[t]\)。由于 t 不是 R 的零因子，直接计算得到
+\[
+\boxed{H_n(C_\bullet\otimes R,t\delta)
+\simeq (H_n\otimes R)\oplus(B_n\otimes R/(t)).}
+\tag{12}
+\]
+第一部分的秩正是原代数的 Tor 维数；第二部分完全是仅在 t=0 出现的挠部分。还存在通用系数正合列
+\[
+0\to H_n(C_R)\otimes_R R/(t)
+\to H_n(C_R\otimes_RR/(t))
+\to\operatorname{Tor}_1^R(H_{n-1}(C_R),R/(t))\to0.
+\tag{13}
+\]
+它逐维给出 \(c_n=\beta_n+\dim B_n+\dim B_{n-1}\)。式 (12) 的分解一般非典范，但自由秩与挠部分维数不依赖分解。
+
+因此，极限平方零代数的大量 bar 类可以全部由挠部分及 (13) 的右项解释；极限的高次非零不能单独保证一般位置有非零自由部分。前稿五维 ba=t*z 的例子已经实际发生这种现象。这里给出了对任意 N 的准确障碍公式，没有把缩放退化当成 (GP) 的证明。
+
+## 5. 计算审计与一般 N 的剩余步骤
+
+[audit_generic_return_specialization.py](../work/audit_generic_return_specialization.py) 精确检查了 11 个参数成员，覆盖 N=3,4,5、g=1,2,3，以及 t=0,1,−2,1/2 的所列组合。g≤2 的成员检查至次数 6，g=3 的成员至次数 4；另外在四个三顶点成员上作了 36 项 bar 同调与最小消解的交叉比较。全部通过，见 [generic_return_specialization_audit.json](../work/generic_return_specialization_audit.json)。[可复现记录](../work/generic-return-computation-record.json) 保存代码、结果及证明稿哈希。
+
+接下来可以在无限全局维数分支的泛点测试这一有限返回证书。一旦成功，该分支的全部特殊代数随之得到统一 Tor 下界。对没有泛点返回圈的分支，仍须使用指定前缀 (PC) 或其他全次数机制；不能把本定理的充分条件默认为普遍成立。因此一般步骤 (FG)、(PC)、(GP) 继续保持未证状态。

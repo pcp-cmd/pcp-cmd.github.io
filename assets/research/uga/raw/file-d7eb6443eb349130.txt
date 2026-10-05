@@ -1,0 +1,7 @@
+# Global route audit exact calibration task
+
+Calibrate four precise proposed bridges using existing exact project helpers: fixed-pair persistence to reverse visibility; monomial initial Tor persistence to original Tor; bare finite-pd hub trace contradiction; finite relative control to ordinary pd/Tor.
+
+Retain literal finite multiplication, real minimal-cover/kernel maps, complete Gröbner overlap checks, and a small Betti prefix. All-degree/any-field statements have separate written proofs in the parent Run; a prefix is not a proof. Do not prune complexes, infer return from a graph, or claim independent/formal verification.
+
+The final executed script/result were retained without changing their bytes from the temporary execution directory. The script reuses the frozen Carrier-Lemma-Evidence definitions and their existing ordinary-module helpers. See execution-record.json for exact scope and repaired initial caller failure.

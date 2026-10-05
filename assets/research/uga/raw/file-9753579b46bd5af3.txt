@@ -1,0 +1,2500 @@
+{
+  "status": "passed",
+  "backend": {
+    "name": "python",
+    "version": "3.14.3"
+  },
+  "arithmetic": "exact integers",
+  "evidence_level": "bounded-check; same-author; not independently verified",
+  "ambient": {
+    "dimension": 10,
+    "vertices": [
+      "0",
+      "1",
+      "x",
+      "a",
+      "b"
+    ],
+    "arrows_source_target": [
+      [
+        "p",
+        "1",
+        "x"
+      ],
+      [
+        "c",
+        "x",
+        "0"
+      ],
+      [
+        "q",
+        "0",
+        "a"
+      ],
+      [
+        "g",
+        "a",
+        "b"
+      ],
+      [
+        "d",
+        "b",
+        "1"
+      ]
+    ],
+    "all_radical_products_zero": true
+  },
+  "deletion": {
+    "kind": "nonprimitive block",
+    "deleted_vertices": [
+      "a",
+      "b",
+      "x"
+    ],
+    "retained_vertices": [
+      "0",
+      "1"
+    ],
+    "negative_normalized_passages": [
+      {
+        "negative_degree": -1,
+        "normalized_passages": [
+          [
+            "c",
+            "p"
+          ]
+        ]
+      },
+      {
+        "negative_degree": -2,
+        "normalized_passages": [
+          [
+            "d",
+            "g",
+            "q"
+          ]
+        ]
+      },
+      {
+        "negative_degree": -3,
+        "normalized_passages": []
+      },
+      {
+        "negative_degree": -4,
+        "normalized_passages": []
+      },
+      {
+        "negative_degree": -5,
+        "normalized_passages": []
+      },
+      {
+        "negative_degree": -6,
+        "normalized_passages": []
+      }
+    ]
+  },
+  "period": {
+    "individual_edge_weight_gcd": 1,
+    "closed_walk_gcd": 5
+  },
+  "bounds": {
+    "recorded_ordinary_tor_degrees": [
+      0,
+      12
+    ],
+    "incoming_complex_degree_included": 13
+  },
+  "checks": {
+    "ambient_associativity_triples": 1000,
+    "ambient_complex_degrees": 350,
+    "ambient_tor_records": 325,
+    "ambient_zero_differential_word_checks": 70,
+    "negative_passage_join_products": 4,
+    "normalized_passage_degrees": 6,
+    "primitive_idempotents": 5,
+    "radical_square_zero_products": 25,
+    "retained_model_matches_including_incoming": 56,
+    "retained_model_records": 52
+  },
+  "ambient_tor": [
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 0,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 5,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 10,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 2,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 7,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 12,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 1,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 6,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 11,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "x",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 4,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 9,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "a",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 3,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 8,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "b",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 3,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 8,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 0,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 5,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 10,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 4,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 9,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "x",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 2,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 7,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "a",
+      "degree": 12,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 1,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 6,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 11,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "b",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 4,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 9,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "0",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 1,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 6,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 11,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "1",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 0,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 5,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 10,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "x",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 3,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 8,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "a",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 2,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 7,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "x",
+      "left_simple": "b",
+      "degree": 12,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 1,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 6,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 11,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "0",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 3,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 8,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "1",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 2,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 7,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "x",
+      "degree": 12,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 0,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 5,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 10,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "a",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 4,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 9,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "a",
+      "left_simple": "b",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 2,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 7,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "0",
+      "degree": 12,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 4,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 9,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "1",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 3,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 8,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "x",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 0,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 1,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 5,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 6,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 10,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 11,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "a",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 0,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 1,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 2,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 3,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 4,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 5,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 6,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 7,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 8,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 9,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 10,
+      "ordinary_tor_dimension": 1
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 11,
+      "ordinary_tor_dimension": 0
+    },
+    {
+      "right_simple": "b",
+      "left_simple": "b",
+      "degree": 12,
+      "ordinary_tor_dimension": 0
+    }
+  ],
+  "retained_model_tor": [
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 0,
+      "tor_dimension": 1,
+      "weighted_words": [
+        []
+      ]
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 1,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 2,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 3,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 4,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 5,
+      "tor_dimension": 1,
+      "weighted_words": [
+        [
+          "u",
+          "v"
+        ]
+      ]
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 6,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 7,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 8,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 9,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 10,
+      "tor_dimension": 1,
+      "weighted_words": [
+        [
+          "u",
+          "v",
+          "u",
+          "v"
+        ]
+      ]
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 11,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "0",
+      "degree": 12,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 0,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 1,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 2,
+      "tor_dimension": 1,
+      "weighted_words": [
+        [
+          "u"
+        ]
+      ]
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 3,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 4,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 5,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 6,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 7,
+      "tor_dimension": 1,
+      "weighted_words": [
+        [
+          "u",
+          "v",
+          "u"
+        ]
+      ]
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 8,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 9,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 10,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 11,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "0",
+      "left_simple": "1",
+      "degree": 12,
+      "tor_dimension": 1,
+      "weighted_words": [
+        [
+          "u",
+          "v",
+          "u",
+          "v",
+          "u"
+        ]
+      ]
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 0,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 1,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 2,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 3,
+      "tor_dimension": 1,
+      "weighted_words": [
+        [
+          "v"
+        ]
+      ]
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 4,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 5,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 6,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 7,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 8,
+      "tor_dimension": 1,
+      "weighted_words": [
+        [
+          "v",
+          "u",
+          "v"
+        ]
+      ]
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 9,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 10,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 11,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "0",
+      "degree": 12,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 0,
+      "tor_dimension": 1,
+      "weighted_words": [
+        []
+      ]
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 1,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 2,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 3,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 4,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 5,
+      "tor_dimension": 1,
+      "weighted_words": [
+        [
+          "v",
+          "u"
+        ]
+      ]
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 6,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 7,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 8,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 9,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 10,
+      "tor_dimension": 1,
+      "weighted_words": [
+        [
+          "v",
+          "u",
+          "v",
+          "u"
+        ]
+      ]
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 11,
+      "tor_dimension": 0,
+      "weighted_words": []
+    },
+    {
+      "right_simple": "1",
+      "left_simple": "1",
+      "degree": 12,
+      "tor_dimension": 0,
+      "weighted_words": []
+    }
+  ],
+  "limitations": [
+    "The generic mixed-periodicity proof is separate from this finite calibration.",
+    "This example deletes a block of three vertices, not one primitive vertex.",
+    "All-degree and all-characteristic claims use the finite path proof in the Run.",
+    "A5's aperiodic finite-gldim certificate is reused from the Primitive-Seed Run; it is not rerun here.",
+    "No comparison-map rank, independent verification, or general cycle return is asserted."
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "date": "2026-10-05",
+  "kind": "targeted exact research execution record",
+  "proof": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-05\\Run-Projective-Balanced-Ideal-Strict-Ordinary-Descent-and-Finite-Pd-Boundary-2026-10-05.md",
+  "profile": "reproducible; existing project execution-record convention",
+  "executions": [
+    {
+      "status": "passed",
+      "actual_executed_script": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261005-projective-ideal\\verify_projective_ideal.py",
+      "retained_script": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-05\\Projective-Ideal-Evidence\\verify_projective_ideal.py",
+      "retained_result": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-05\\Projective-Ideal-Evidence\\projective-ideal-result.json",
+      "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+      "counts": {
+        "associativity": 518832,
+        "actual_minimal_covers": 15,
+        "integer_basis_inverses": 624,
+        "actual_kernel_isomorphisms": 7,
+        "pruned_homology_isomorphisms": 0
+      },
+      "invocation": {
+        "launcher": "C:\\Users\\pcp\\.agent-reach-venv\\Scripts\\python.exe",
+        "wrapper": null,
+        "arguments": [
+          "-B",
+          "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261005-projective-ideal\\verify_projective_ideal.py",
+          "--project-root",
+          "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03",
+          "--out",
+          "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261005-projective-ideal\\projective-ideal-result.json"
+        ]
+      },
+      "retained_bytes_equal_executed_bytes": true,
+      "execution_history": "First material invocation passed; no failed material invocation or repeated full-range run.",
+      "mathematical_scope": "Actual projective ideal/tensor-power/strict inherited-corner calibration at 14 vertices, dimension63, Loewy9."
+    },
+    {
+      "status": "passed",
+      "actual_executed_script": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261005-projective-ideal\\verify_finite_pd_boundary.py",
+      "retained_script": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-05\\Projective-Ideal-Evidence\\verify_finite_pd_boundary.py",
+      "retained_result": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-05\\Projective-Ideal-Evidence\\finite-pd-boundary-result.json",
+      "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+      "counts": {
+        "associativity": 729,
+        "actual_minimal_covers": 5,
+        "integer_basis_inverses": 51,
+        "actual_kernel_isomorphisms": 4,
+        "pruned_homology_isomorphisms": 0
+      },
+      "invocation": {
+        "launcher": "C:\\Users\\pcp\\.agent-reach-venv\\Scripts\\python.exe",
+        "wrapper": null,
+        "arguments": [
+          "-B",
+          "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261005-projective-ideal\\verify_finite_pd_boundary.py",
+          "--project-root",
+          "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03",
+          "--out",
+          "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261005-projective-ideal\\finite-pd-boundary-result.json"
+        ]
+      },
+      "retained_bytes_equal_executed_bytes": true,
+      "execution_history": "First material invocation passed; no failed material invocation or repeated full-range run.",
+      "mathematical_scope": "Actual dimension9 finite-pd1 cubic-ideal boundary: nonnilpotent top T, nonclosed support and failed ordinary tensor multiplication."
+    },
+    {
+      "status": "passed",
+      "actual_executed_script": "C:\\Users\\pcp\\AppData\\Local\\Temp\\uga-cover-descent-20261005\\verify_cover_kernel_boundary.py",
+      "retained_script": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-05\\Projective-Ideal-Evidence\\verify_cover_kernel_boundary.py",
+      "retained_result": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-05\\Projective-Ideal-Evidence\\cover-kernel-boundary-result.json",
+      "python": "Selected original Python3.14.3/Fraction helper route",
+      "counts": {
+        "associativity": 2737,
+        "actual_minimal_covers": 10,
+        "integer_basis_inverses": 87,
+        "actual_kernel_isomorphisms": 9,
+        "pruned_homology_isomorphisms": 0
+      },
+      "invocation": {
+        "launcher": "C:\\Users\\pcp\\.agent-reach-venv\\Scripts\\python.exe",
+        "wrapper": null,
+        "arguments": [
+          "-B",
+          "C:\\Users\\pcp\\AppData\\Local\\Temp\\uga-cover-descent-20261005\\verify_cover_kernel_boundary.py",
+          "--project-root",
+          "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03",
+          "--out",
+          "C:\\Users\\pcp\\AppData\\Local\\Temp\\uga-cover-descent-20261005\\cover-kernel-boundary-result.json"
+        ]
+      },
+      "retained_bytes_equal_executed_bytes": true,
+      "execution_history": "Three successful additive material calibrations; no failed material run. Initial1729/8/72/7, then1737/9/75/8, final2737/10/87/9. Final source unchanged after final execution.",
+      "mathematical_scope": "Dimension10 infinite-gd but ordinary-positive cyclic actual FULL-cover/kernel/corner/quotient alignment obstruction.",
+      "contribution": "finite_pd_cover_descent bounded branch; root actual-path adversarial review; not independent."
+    }
+  ],
+  "evidence_level": "bounded-check",
+  "coefficient_domain": "Exact Fraction/integral actual module matrices and unit basis inverses; separate arbitrary-field proofs.",
+  "shared_dependencies": [
+    "runs/2026-10-04/General-Cube-Zero-Evidence/verify_general_cubezero_linear_core.py (definitions only)",
+    "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py (definitions only)",
+    "toolbox/Imported-Outputs/return_kernel_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_return_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_system_certificate.py"
+  ],
+  "backend_selection": "Original frozen Python3.14.3/Fraction helper implementation, cache inventory and immediate live Fraction check before each material run.",
+  "fallback_reason": "not-required: selected exact route completed",
+  "independent_verification": false,
+  "formal_verifier_acceptance": false,
+  "default_checksums_computed": false,
+  "UGA": "OPEN"
+}

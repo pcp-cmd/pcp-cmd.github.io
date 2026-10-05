@@ -1,0 +1,9 @@
+## UGA-C080 — At Most Two Infinite-Pd Simples Force Ordinary Visible Return at Arbitrary Size
+**Status:** COMPLETE SELF-AUDITED ALL-SIZE ORDINARY PROOFS / REUSED SINGLETON-TAIL BRIDGE / NOT INDEPENDENTLY VERIFIED; NO NOVELTY CLAIM  
+**Source:** Run-Two-Infinite-Simple-Closure-and-Count-Descent-Audit-2026-10-03.md, Sections 1--3 and 7.
+
+Every elementary finite-dimensional algebra over any field with at most two infinite-pd LEFT simples satisfies Universal Gap A, regardless of total vertex number. An ordinary persistent right-detector row W_z lies in the left infinite-pd set. If W_z is a singleton, its actual high right resolution consists of one projective type and composition devissage gives a supported ordinary Tor pair. Otherwise every nonempty W_z detects both infinite left simples. Every actual infinite syzygy contains an infinite-pd composition factor, so its cover aggregate sum_z(sum_{y in I_L}dim e_yAe_z) Tor_n(R_z,L_x)>=2 in every degree. Finite labels select a persistent z physically supporting some y in I_L, and the full row then proves Tor(R_z,L_y) persists for exactly that supported pair.
+
+The direct RIGHT theorem holds with at most two infinite-pd right simples, using the right composition aggregate and ordinary persistent columns, with the physical same-pair e_yAe_z. No opposite-+ transfer or equality of the left/right infinite-pd sets is used. The mixed aggregate alone is not a same-pair witness; the two-source detector equality is essential. No diagonal, fixed-every-degree, new uniform degree bound or finite-window claim is made. General three-or-more-infinite-simple alignment remains open. This deletes an entire multiple-simple branch; C079's stronger singleton aggregate and M+d bound remain valid.
+
+---

@@ -1,0 +1,15 @@
+## UGA-C074 — Nonperfect Tensor-Square-Zero Ordinary Kernels Preserve Supported Infinity and Descent
+**Status:** COMPLETE SELF-AUDITED ALL-DEGREE/ALL-SIZE PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** nonsplit square-zero Run, Theorem 4.2, quantitative continuation and normal audit.
+
+Let K be an actual nonzero radical square-zero ideal, C=A/K. Assume K is projective over C on one stated side and actual K tensor_C K=0. Then C infinite + implies A infinite +, and a bad A gives a strictly smaller bad C. No C^e-perfectness or ordinary/derived section is required.
+
+For left-projective K, T_z=R_z tensor_C K is an ordinary right C module. Actual derived tensor square zero kills all kernel-bar counts p>=2, giving H_n(N(R_z,L_y))=Tor^C_{n-1}(T_z,L_y). Also T_z tensor_C^L K=0 makes its natural ordinary comparison Tor^A(T_z,L_y)=Tor^C(T_z,L_y) an isomorphism in every degree.
+
+For a C-supported pair e_yCe_z!=0, every factor R_j of T_z has positive Ce_z multiplicity in actual Ke_j; hence e_yKe_j!=0 and the pair (R_j,L_y) is A-visible. The bar exact sequence forces either the original ordinary A tail or a persistent T_z ordinary tail. Finite composition factors supply a fixed supported A pair. Complete quotient-edge screening therefore need not remove all supported ordinary homology; the right simple may change.
+
+All supported A-Tor vanishing for every n>=M implies supported C-Tor vanishing for every n>=M+2. The actual projective-column formula gives pd_A C<=1, so finite gldim C=g gives gldim A<=g+1; thus infinite global dimension of a bad A passes to C and dimension strictly decreases. The direct right-projective proof uses U_y=K tensor_C L_y, actual e_iKe_z visibility, and the right quotient-pd bound, without opposite transfer.
+
+Checked towers of these ordinary kernels close over justified Gap-A bases. For r moves over a terminal C061 all-vertex-section algebra with v vertices and initial supported vanishing n>=M, gldim A<=(v-1)(M+2r)+r. No full eventual same-pair Tor/Ext comparison, perfectness inference, higher-index nonperfect bridge or automatic inheritance is asserted. Physical ideal K support is essential and cannot be substituted by negative idempotent-quotient cohomology. C073's triangular calibration rejects the stronger all-pair comparison.
+
+---

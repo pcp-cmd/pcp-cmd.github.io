@@ -1,0 +1,25 @@
+# Arbitrary carrier and finite-factor cross-map audit
+
+Continue T19/T20 with actual ordinary minimal resolutions, at arbitrary
+finite infinite-source count. Prove or break strict recurrent-carrier
+reduction and finite-pd cross-image elimination; then test whether images
+with only finite-pd simple factors provide a closed finite-side block.
+
+Use complete literal all-parameter module proofs. Finite computation
+certifies actual algebra tables, covers, kernels, isomorphisms and repeated
+differentials with integral basis inverses, rather than inferring infinity
+from a finite Betti prefix. Keep ordinary physical support explicit.
+
+Deliverables: verify_carrier_lemma.py, carrier-lemma-result.json,
+verify_finite_factor_carrier.py, finite-factor-carrier-result.json,
+computation-record.json and the separate T21 proof Run. Finite instances
+are p=3,5,8 in each uniform family; all-p/all-degree claims require the Run.
+
+The first code provides local exact helper definitions to the second;
+the second loads that prefix without rerunning the first computations.
+Existing project helper hashes are recorded in both results. Arithmetic
+is same-author shared-helper self-audit, NOT independent verification.
+
+Every counterfamily already has supported ordinary return. These tests
+can refute unqualified intermediate lemmas but not Universal Gap A or
+a stronger badness-specific global alternative. C088/C089 stay valid.

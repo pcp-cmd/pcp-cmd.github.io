@@ -1,0 +1,24 @@
+## UGA-C125 — Eventual Actual Short Projectives Force Uniform Ordinary Stopping and Close the One-Sided Finite Cubic-Radical Class
+
+**Status:** COMPLETE WRITTEN ORDINARY PROOF / ARBITRARY-SIZE CLASS CLOSURE / NORMAL ADVERSARIAL SELF-AUDIT / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Eventual-Short-Projective-Tails-and-One-Sided-Finite-Cubic-Radical-Closure-2026-10-05.md Sections1–8; Eventual-Short-Tail-Evidence; C110/C109 actual core/split assets reused.
+
+For ANY elementary finite-dimensional A/field with N labels, assume EVERY ACTUAL minimal RIGHT simple resolution has Q_n J3=0 for ALL n>=a, with the SAME a>=0. If every ordinary simple diagonal vanishes for n>M, set K=N(M+1),B=a+K+1. Then
+
+\[
+\boxed{\operatorname{gd}A\le NB-1.}
+\]
+
+For a GENERAL A, literal V-tensor cycles T_n use FULL ACTUAL multiplication V tensor V->J2, not J2/J3. Incoming ordinary bar boundaries project to zero on V tensors, so T_n injects into ordinary Tor; ordinary Ext-one words detect it. Only word-vanishing implies T_n0 is claimed, not full degree-one-image equality. Diagonal cutoff kills length-K words and T_K.
+
+Every actual Omega_RIGHT^(a+1) R_y is Loewy2. Recursively split ALL genuine simple summands S_j from real full kernels, retaining nonsimple Y_j and actual covers P_j which are summands of original high Q terms. Short P gives Y_j intersect P_prev J2=Y_j J, hence injective linear head coefficients. Real d2=0 and vanishing mixed products land head P_K inside head P0 tensor T_K=0. The augmented core is NOT assumed exact. Thus Y_K0 and actual Omega_RIGHT^B R_y=sum_(j0..K) Omega_RIGHT^(K-j) S_j. Each S_j occurs as a TRUE simple split at depth a+1+j<=B.
+
+The actual simple-split graph is acyclic under diagonal cutoff: a directed cycle first yields R_i as a true summand of Omega_RIGHT^D R_i and hence ordinary Tor_(mD)(R_i,L_i)>=1 ALL m. Its finite height and the displayed REAL decomposition give pd R_y<=NB-1, then ALL-pair ordinary Tor gives the same LEFT gd bound. This is not graph-only return or opposite-infinite-plus transfer. Infinite gd in the whole eventual-short class forces ONE FIXED ordinary diagonal tail.
+
+Concrete automatic condition: F={f:e_f J3 nonzero} is the LEFT composition support of WHOLE J3 and every LEFT L_f has finite pd. With d=max pd L_f (d=-1 if F empty), actual Tor(R_y,L_f)=0 for n>d excludes RIGHT e_fA types, so a=d+1. Under diagonal cutoff, gd A<=N(d+N(M+1)+2)-1. Direct LEFT proof for finite RIGHT factors of WHOLE J3 gives the right-side version. If J4=0 then J3 is semisimple, so finite LEFT OR finite RIGHT pd of WHOLE J3 suffices; this ENTIRE arbitrary-size class closes with the stronger existential supported DIAGONAL conclusion, without finite pd J2 or selfinjectivity.
+
+All-N/r connected triangular calibration has J3=LEFT Lf0 pd r but RIGHT R_(N-2) infinite, and WHOLE LEFT J2 infinite through actual0->Lf0->H->L0->0. Old RIGHT Omega2 R_i=R_(i-3) gives exact diagonal period2N/gcd(N,3). Degree-r cover of R_fr uses deep e_f0A, so exclusion n>d is sharp. First N5,r2 dimension23 exact run passed24334 triples,26 full covers,624 integral inverses,16 unit module/kernel isomorphisms and11 actual Ext-one comparison lifts; word length3 nonzero/4 zero. Separate full proofs and shared helpers are NOT independent/formal verification; monomial calibration already ordinary-positive.
+
+At arbitrary Loewy length, WHOLE nonsemisimple finite-pd J3 does NOT automatically supply finite-pd factors. C126 subsequently supplies the balanced-envelope extension when J5=0. Checking only J3 e_t for LEFT-infinite t is insufficient for this diagonal theorem: frozen N7 has J3 e_0=0 yet ALL positive simple diagonals zero; WHOLE J3=LEFT L0 is infinite-pd. Its supported OFF-DIAGONAL remains. General persistent deep tails, global safe quotient/finite-type return, bounded-screening/local-trivial/higher-output branches and Universal Gap A remain OPEN.
+
+---

@@ -1,0 +1,417 @@
+# Run — Projective Balanced Ideals, Strict Ordinary Closed-Support Descent, and the Finite-Pd Boundary
+
+**Date:** 2026-10-05
+**Canonical starting point:** C127–C128 and the 2026-10-05 arbitrary-Loewy radical-band Run; D-011 global ALL-source ordinary route.
+**Results:** C129–C131.
+**Status:** complete written proofs and normal adversarial self-audit, supplemented by a separate-agent substantive bounded proof review and targeted exact actual-kernel calibrations. NOT independent/formal verification. Universal Gap A remains OPEN.
+
+## 1. Exact target and reused assets
+
+The target is a genuine terminating ordinary reduction, rather than another necessary condition on a hypothetical counterexample. We use:
+
+- C088: finite chosen-side simple pds plus actual projective-cover closure give ALL-degree ordinary retained-simple comparison under WHOLE-block deletion, with exact retained infinite labels.
+- C110: every elementary radical-cube-zero algebra has an existential persistent ordinary DIAGONAL when its global dimension is infinite.
+- C125: finite LEFT factor pds of WHOLE J3 exclude the OTHER-side actual projective types and force uniform ordinary stopping under a simple-diagonal cutoff.
+- C127–C128: whole finite-pd radical bands already close a class, but bilateral infinite bands do not localize a global witness to their sources.
+- C074–C076: do not confuse higher derived tensor powers of a square-zero kernel with physical ideal powers; flatness must be established in the actual ambient ring.
+
+A is an elementary finite-dimensional algebra over any field k, J its radical, and N its number of simple labels. LEFT simples are L_y, RIGHT simples R_x. Write
+
+\[
+\beta_{xy}(n)=\dim_k\operatorname{Tor}^A_n(R_x,L_y)
+ =\dim_k\operatorname{Ext}^n_A(L_y,L_x),
+\qquad C_{yx}=\dim_k e_yAe_x.
+\]
+
+A bad algebra has infinite global dimension and one common M such that beta_xy(n)=0 for n>M whenever C_yx>0. The common cutoff exists if every supported pair has a finite tail, since there are finitely many pairs. The diagonal closure below only needs a common cutoff on beta_xx.
+
+## 2. Actual projective ideal powers
+
+Let I be a NONZERO two-sided ideal with
+
+\[
+I\subset J,\qquad JI=IJ,\qquad {}_AI\text{ projective}.
+\tag{2.1}
+\]
+
+Put
+
+\[
+T_{ij}=\dim_k e_i(I/JI)e_j,\qquad F=\{i:e_iI\ne0\}.
+\]
+
+For each j, right multiplication by e_j splits the LEFT module I. Hence
+
+\[
+Ie_j\cong\bigoplus_i(Ae_i)^{T_{ij}}.
+\tag{2.2}
+\]
+
+This is a decomposition of the FULL actual projective module, not an inference from its composition factors.
+
+### Lemma 2.1 — Tensor multiplication is an actual isomorphism
+
+For r>=2, tensor the actual RIGHT exact sequence
+
+\[
+0\longrightarrow I^{r-1}\longrightarrow A\longrightarrow A/I^{r-1}\longrightarrow0
+\]
+
+with the LEFT-flat SECOND factor I. The resulting injection into A tensor_A I=I is actual multiplication, whose image is I^r. Thus
+
+\[
+I^{r-1}\otimes_A I\xrightarrow[\text{multiplication}]{\cong}I^r.
+\tag{2.3}
+\]
+
+These are bimodule isomorphisms. No vanishing is assigned to a tensor product merely because the physical product is zero.
+
+Using (2.2) for the second factor, induction gives
+
+\[
+I^re_j\cong\bigoplus_i(Ae_i)^{(T^r)_{ij}}.
+\tag{2.4}
+\]
+
+Indeed the next tensor term is a direct sum of I^(r-1)e_i with multiplicities T_ij. In particular EVERY I^r is LEFT-projective.
+
+Since I is radical, its physical powers eventually vanish. Equation (2.4) therefore makes the nonnegative integer matrix T nilpotent. A nilpotent N by N matrix satisfies T^N=0, so
+
+\[
+I^N=0.
+\tag{2.5}
+\]
+
+For I=J^s this also gives the uniform radical bound J^(sN)=0. This matrix nilpotence comes from real flat tensor multiplication and physical radical nilpotence, not from graph recurrence or ordinary-return assumptions.
+
+## 3. Automatic strictly smaller closed support
+
+Balance and RIGHT nilpotent Nakayama give
+
+\[
+e_i(I/JI)=0
+\Longrightarrow e_iI=e_iJI=e_iIJ=(e_iI)J
+\Longrightarrow e_iI=0.
+\tag{3.1}
+\]
+
+Thus F is precisely the set of nonzero ROWS of T. It is nonempty because I is nonzero.
+
+A finite nonnegative nilpotent matrix cannot have every row nonzero: choosing a nonzero entry from each row and following its column labels would produce a directed cycle; the product along that cycle would give nonzero entries of arbitrarily high matrix powers. Therefore
+
+\[
+0<|F|<N.
+\tag{3.2}
+\]
+
+Every i in F is a real LEFT projective summand type of I by (2.2). All LEFT composition factors of I lie in F. Hence all factors of Ae_i lie in F, and with e=sum_(i in F)e_i and g=1-e,
+
+\[
+gAe=0.
+\tag{3.3}
+\]
+
+This is the actual cover-closure condition required by C088. The descent quantity is TOTAL simple-label count, with algebra dimension also strictly decreasing; it is not an asserted decrease of an infinite-source count.
+
+## 4. Actual inherited corner and ordinary comparison
+
+Let D=eAe and J_D=eJe. By (3.3),
+
+\[
+Ae_i=De_i\quad(i\in F),\qquad Je=eJe.
+\tag{4.1}
+\]
+
+For every LEFT D-module inflated to A, all actual covers, FULL kernels, and successive covers remain in F and are identical over A and D. In particular
+
+\[
+\operatorname{pd}_A L_i=\operatorname{pd}_D L_i\quad(i\in F),
+\]
+\[
+\operatorname{Tor}^A_n(R_x,L_y)
+ \cong\operatorname{Tor}^D_n(R_x,L_y)
+\quad(x,y\in F,\ n\ge0).
+\tag{4.2}
+\]
+
+The Tor comparison is computed using these literal LEFT resolutions and the same simple RIGHT test. Physical reverse support is identical inside D. There is no claim of a comparison for arbitrary labels outside F.
+
+The actual inherited ideal is
+
+\[
+I_D=Ie=eIe\subset J_D.
+\]
+
+It may be ZERO, which is an allowed terminal case. Otherwise it is a balanced LEFT-projective radical ideal. To see projectivity, take the actual LEFT-projective summand decomposition of Ie; all its summand labels belong to F and Ae_i=De_i. For balance use Je=eJe, I=eI, and JI=IJ:
+
+\[
+J_DI_D=JIe=IJe=I_DJ_D.
+\tag{4.3}
+\]
+
+For a radical power,
+
+\[
+I=J^s\Longrightarrow I_D=J^se=(eJe)^s=J_D^s.
+\tag{4.4}
+\]
+
+Equality here follows from Je=eJe: all paths ending in the retained LEFT-cover block remain there.
+
+## 5. C129 — Badness-preserving strict descent
+
+Suppose A is bad and satisfies (2.1).
+
+If gd D is infinite, (4.2) and unchanged physical support make D bad. D has fewer total labels and smaller dimension; its ideal I_D retains the actual balance/projectivity structure, or is zero.
+
+If gd D=d is finite, every F LEFT simple has finite A-pd by (4.2), and (3.3) supplies cover closure. C088 therefore applies to the WHOLE deletion
+
+\[
+B=A/AeA\cong gAg.
+\tag{5.1}
+\]
+
+For EVERY retained simple pair and EVERY degree it preserves ordinary Tor and physical support; both retained infinite-pd label sets are exact. Its finite ambient quotient pd also supplies the LEFT infinity implication, not just a missing-detector Tor comparison. Because deleted LEFT simples all have finite pd, infinite gd A implies infinite gd B. Thus B is bad, with strictly fewer labels and smaller dimension.
+
+The deletion kills I: I=eI lies in eA=AeA under gAe=0. For I=J^s,
+
+\[
+J_B^s=0.
+\tag{5.2}
+\]
+
+These two alternatives give a genuine strict reduction for every nonzero ideal satisfying (2.1). For an arbitrary balanced ideal, a zero inherited ideal is not by itself a global contradiction; a terminal ordinary closure is still required. For radical powers with s<=3, (5.2) or (4.4) supplies that closure.
+
+## 6. Direct RIGHT version
+
+Suppose instead I is RIGHT-projective. Tensor the LEFT injection I^(r-1) into A with the RIGHT-flat FIRST factor I. Actual multiplication
+
+\[
+I\otimes_AI^{r-1}\cong I^r
+\]
+
+follows directly. Let U_ij=dim e_i(I/IJ)e_j. The actual RIGHT row decomposition e_iI=sum_j(e_jA)^(U_ij) yields multiplicity matrices U^r and U^N=0.
+
+LEFT nilpotent Nakayama, using IJ=JI, identifies the whole RIGHT factor support F with the nonzero COLUMNS of U. At least one column is zero, so F is nonempty and proper. Actual RIGHT projective summands give eAg=0.
+
+The F RIGHT simple resolutions then remain literally in D=eAe; the inherited ideal eI is RIGHT-projective and balanced, including the zero case. Finite gd D allows the directly proved RIGHT C088 deletion. For I=J^s its inherited ideal is J_D^s and the quotient has J_B^s=0. This argument never assumes an opposite-side infinite-plus transfer.
+
+## 7. C130 — Whole projective radical-cubic class closes
+
+Assume for SOME s in {1,2,3} the WHOLE actual J^s is LEFT-projective, or RIGHT-projective. There is no imposed Loewy-length bound.
+
+We prove by induction on total N that infinite gd A forces ONE fixed ordinary diagonal pair with arbitrarily high nonzero Tor. If J^s=0, A is cube-zero, so use C110.
+
+Otherwise take the proper closed block F above. If gd D is infinite, the inherited J_D^s is projective; it is either zero or belongs to the same class at fewer labels. The inductive persistent DIAGONAL lifts in ALL degrees through the actual inside comparison (4.2).
+
+If gd D is finite, C088 gives the smaller infinite B with J_B^s=0. C110 supplies a persistent ordinary DIAGONAL in B, and the ALL-degree retained comparison lifts that SAME diagonal to A.
+
+Both alternatives terminate in finitely many total-label moves. No supported off-diagonal pair is silently upgraded to a diagonal: the terminal and inductive witnesses are already diagonal, and each ordinary lift preserves their two labels.
+
+This closes the entire single-sided PROJECTIVE J3 class at arbitrary finite size, field and Loewy length. It is not a theorem about merely finite-pd J3, and it does not solve global UGA.
+
+### An explicit uniform stopping bound
+
+Suppose beta_xx(n)=0 for EVERY x and n>M, M>=0. Define numerical bounds
+
+\[
+g_0=-1,\qquad
+g_n=n\bigl[g_{n-1}+n(M+1)+2\bigr]-1\quad(n\ge1).
+\tag{7.1}
+\]
+
+The sequence is increasing; g_0 is only a recursion initializer, not a claim about the global dimension of a zero algebra.
+
+Induction gives gd D<=g_m for m=|F|<N. By the identical LEFT resolutions, EVERY F LEFT factor has A-pd at most d=gd D<=g_(N-1). Since s<=3, the WHOLE J3 factor labels lie in F. C125 therefore excludes the OTHER side's actual high projective types, with short-tail threshold a=d+1, and gives
+
+\[
+\operatorname{gd}A
+ \le N\bigl[d+N(M+1)+2\bigr]-1
+ \le g_N.
+\tag{7.2}
+\]
+
+For J^s=0 use the C125 a=0 terminal bound N[N(M+1)+1]-1, which is no larger than g_N. The direct RIGHT proof reverses the tensor/cover roles in this same ordinary argument.
+
+This bound is uniform in all actual resolution states and Loewy length at fixed N,M. It is a finite stopping mechanism, not a new derived invariant.
+
+## 8. Actual unbounded-Loewy family calibration
+
+For N>=3 and ell>=6, let B be the directed N-cycle algebra with J_B^3=0, and C the path algebra of the line f_0 to ... to f_ell. Take
+
+\[
+W={}_CL_{f_\ell}\otimes_k e_0B,\qquad
+A=\begin{pmatrix}B&0\\W&C\end{pmatrix}.
+\]
+
+The sink LEFT simple L_fell is projective. Thus
+
+\[
+J_A^3=J_C^3\oplus WJ_B^2
+\]
+
+is WHOLE LEFT-projective. Its RIGHT WJ_B^2 summand is the infinite RIGHT B simple R_(N-2); no second-side projectivity is inferred. For t>=4, J_A^t=J_C^t. Actual old RIGHT projectives are unchanged, with full kernel identity Omega_R^2 R_i=R_(i-3). Iteration supplies the ordinary diagonal at positive multiples 2N/gcd(N,3), independent of a finite prefix.
+
+At N=5,ell=8:
+
+- dimension63, fourteen labels, J8 nonzero/J9zero, Loewy length9;
+- WHOLE LEFT J3 and J6 pds0; WHOLE RIGHT J3 infinite by a checked actual direct-sum isomorphism;
+- actual tensor multiplication I tensor I -> I2 and I2 tensor I -> I3 checked on the full tensor bases from the SECOND I's projective cover;
+- T2 is exactly the J6 top matrix; T3zero;
+- WHOLE support/covers and inherited radical powers give the strict corner chain 14->6->3 labels, dimensions63->21->6;
+- first F finite, and its literal C088 quotient has eight labels, dimension21 and J3zero;
+- exact check counts:518832 associativity triples,15 FULL minimal covers,624 integral basis inverses,7 actual kernel/module isomorphisms, ZERO image-pruning comparisons.
+
+See Projective-Ideal-Evidence. The original frozen Python/Fraction helper route is reused. Exact unit inverses check this instance's full covers; separate path and ordinary proofs cover every N,ell,field and degree. This is an already-positive connected monomial calibration, not a global counterexample or vertex-count classification.
+
+## 9. C131 — Finite pd does not supply this deletion mechanism
+
+Consider the directed three-cycle with LEFT Kupisch lengths (4,3,2). Let x_i:i->i+1, labels modulo3; Ae_i has the actual path basis of lengths below its Kupisch length. Its FULL layers are
+
+\[
+P_0:(0,1,2,0),\quad P_1:(1,2,0),\quad P_2:(2,0).
+\]
+
+Right multiplication by x_0 gives an actual bijective LEFT map P_1 onto rad P_0. Right multiplication by x_1 gives P_2 onto rad P_1. The full path bases establish zero kernels, and rad P_2=L_0. Consequently
+
+\[
+(\operatorname{pd}_A L_0,\operatorname{pd}_A L_1,\operatorname{pd}_A L_2)=(1,1,2),
+\qquad\operatorname{gd}A=2.
+\tag{9.1}
+\]
+
+The unique length-three path w=x_2x_1x_0 has both endpoints0:
+
+\[
+I=J^3=kw=L_0\otimes_k R_0,\quad
+JI=IJ=I^2=0,\quad\operatorname{pd}_{\rm LEFT}I=1.
+\tag{9.2}
+\]
+
+Nevertheless T_00=1 is NOT nilpotent. Its factor support F={0} is proper, but NOT cover-closed: Ae_0 contains LEFT factors1 and2.
+
+Both radical actions on I are zero, so the actual ordinary tensor has basis w tensor w:
+
+\[
+I\otimes_AI\cong k,\qquad I^2=0.
+\tag{9.3}
+\]
+
+Multiplication is the ZERO map. Tensoring the actual RIGHT exact sequence 0->I->A->A/I->0 with LEFT I gives
+
+\[
+\operatorname{Tor}_1^A(A/I,I)
+ \cong\ker(I\otimes_AI\longrightarrow I)=k.
+\tag{9.4}
+\]
+
+Thus ordinary Tor measures exactly the missing injectivity in Lemma2.1 when projectivity is weakened to finite pd.
+
+The balance-based head/support equality still holds; this example does NOT refute properness of F. It refutes automatic T nilpotence, cover closure and flat multiplication under the finite-pd replacement. It has finite global dimension2 and is not a finite-pd cubic ordinary-closure or UGA counterexample.
+
+A separate exact run passed729 associativity triples,5 FULL minimal covers,51 integral basis inverses and4 actual kernel/module isomorphisms. The ordinary tensor/Tor computation has the actual exact-sequence proof above, not just a recorded dimension.
+
+## 10. Adversarial audit and exact scope
+
+The main researcher supplied complete proofs. A separate agent reviewed the actual multiplication direction, projective-column matrix induction, balance/Nakayama, proper and closed support, literal corner inheritance INCLUDING zero ideals, C088 finite ambient quotient pd, diagonal witness lifts and g_n cutoff indices. No load-bearing defect was found. The reviewer separately checked every path kernel and ordinary tensor/Tor direction in Section9. It did not rerun numerical evidence, supply independent external certification, or edit files.
+
+Audit gates:
+
+1. LEFT flatness is the SECOND tensor factor; RIGHT flatness is the FIRST. Mere pd h>0 fails by C131.
+2. Nilpotent T comes from actual ideal multiplication, never a support graph returning ordinary homology.
+3. F is WHOLE support; actual projective summands force cover closure. A head label alone does not force it for a nonprojective ideal.
+4. Infinite D uses literal F-simple resolutions; finite D uses ALL C088 hypotheses, including the finite ambient quotient bound.
+5. Both direct side proofs preserve ordinary pair degrees and physical support, with no unresolved opposite transfer.
+6. Generic balanced projective ideals supply strict reduction, not a universal terminal theorem. Radical powers s<=3 supply the cube-zero terminal; s>=4 has no blanket diagonal upgrade (retain N7).
+7. C131 rejects the mechanism's finite-pd shortcut only. C127 finite-band and C126 Loewy-two finite-pd closures remain valid.
+8. Shared exact helpers and a separate-agent proof review are not independent/formal acceptance.
+
+## 11. Continued research frontier
+
+The projective part of WHOLE one-sided finite-pd J3 is now closed by finite total-support descent. The remaining h>0 case has a concrete ordinary defect, Tor1(A/I^(r-1),I), already nonzero in C131. Physical nilpotence cannot erase this defect.
+
+The next mathematical issue is whether GLOBAL supported-tail vanishing forces those defects to terminate, to admit a genuinely finite ordinary error envelope, or to give a supported persistent ordinary witness elsewhere. Unqualified band-source locality is already false by C128; any such theorem must allow outside-band source switching. No arbitrary map-image deletion, finite-factor inference from whole finite pd, or stable/derived replacement is licensed.
+
+D-011 global existential route remains the main direction. The general finite-type bridge, arbitrary-Loewy finite-pd J3 with h>0, BOTH-infinite cubic bands, safe global quotient lifting, nonseparated ordinary tails and all Primitive/Binary/higher-output, bounded-screening, local-trivial and supported-weight residuals remain OPEN.
+
+## 12. Continued parallel checkpoint — C132: the FULL finite-pd cover does not supply finite errors
+
+This subsection is appended after the C129–C131 checkpoint, using the user's explicit multiple-agent authorization. The bounded cover-repair branch supplied a complete actual path proof; the root adversarially checked its orientations, kernels, both ordinary comparisons and precise scope. No global class is refuted.
+
+### The actual infinite-gd example
+
+Take the directed three-cycle with LEFT Kupisch(4,3,3), dimension10:
+
+\[
+P_0:(0,1,2,0),\quad P_1:(1,2,0),\quad P_2:(2,0,1).
+\]
+
+For M(i,l), the actual uniserial quotient of P_i with l retained layers, right multiplication by the first kernel path gives the FULL ordinary minimal kernel
+
+\[
+\Omega M(i,l)=M(i+l,c_i-l)
+\quad(l<c_i),
+\]
+
+with indices modulo3. All path basis images and radical actions agree. In particular
+
+\[
+\Omega L_0=P_1,\quad
+\Omega L_1=M(2,2),\quad\Omega M(2,2)=L_1,
+\]
+\[
+\Omega L_2=M(0,2),\quad\Omega M(0,2)=M(2,2).
+\tag{12.1}
+\]
+
+Thus L0 has LEFT pd1, L1 and L2 have infinite LEFT pd, and the actual period gives beta_11(2r)=1 for every r>=1. The algebra is infinite-gd but ALREADY ordinary-positive, not bad.
+
+The WHOLE cubic ideal is again I=J3=kw=LEFT L0 tensor RIGHT R0, with JI=IJ=I2=0. Its complete finite-pd resolution is
+
+\[
+0\longrightarrow K=P_1
+ \xrightarrow[\text{right multiplication}]{x_0}P_0
+ \longrightarrow I\longrightarrow0.
+\tag{12.2}
+\]
+
+The whole K is projective, yet rad K=M(2,2) and top K=L1 have INFINITE pd. The deeper chosen subkernel S=rad K=J2P0 has infinite pd, and P0/S=M(0,2) also enters the real infinite period. Therefore a finite-pd WHOLE I-cover kernel does not justify factorwise, head, radical or subkernel finite-pd error elimination. The valid C109/C111 repair requires the actual chosen whole submodule to have finite pd; this condition fails here.
+
+### Cover saturation, inherited corner and same-simple quotient also fail
+
+F={0} is the whole I support. Ae0 contains every label, so its cover-closed saturation is ALL three labels. In fact every nonempty proper block has an outgoing cycle arrow, hence gAe is nonzero. Saturation gives no strictly smaller finite block.
+
+The physical support corner is
+
+\[
+D=e_0Ae_0=k[w]/(w^2),\qquad
+I_D=kw,\qquad \operatorname{pd}_D I_D=\infty.
+\]
+
+Its full radical-simple kernel repeats, while pd_A I=1. Moreover
+
+\[
+J_D^3=0\ne e_0J_A^3e_0=kw.
+\tag{12.3}
+\]
+
+Without cover closure, an ambient three-step path becomes a one-step corner radical generator. The ordinary corner diagonal persists in every degree but the same A diagonal vanishes above1. Both C129 inheritance and its ordinary lift used actual cover closure, not mere support or ambient finite pd.
+
+The actual quotient B=A/I has LEFT Kupisch(3,3,3), with Omega_B^2 L0=L0. It has the diagonal in every even positive degree, while A has pd_A L0=1. Yet the exact actual ideal sequence gives
+
+\[
+\operatorname{pd}_A B=2.
+\tag{12.4}
+\]
+
+A direct RIGHT path check also gives Omega_RIGHT R0=e2A and pd_RIGHT R0=1 over A. Thus Q/QI for the actual A-simple resolution can terminate, even though the B-simple resolution is infinite. The eventual exact minimal B-projective quotient complex is not automatically the same B-simple's tail.
+
+This counterexample simultaneously excludes unconditional finite-kernel factor repair, strictly smaller cover saturation, finite-pd support-corner inheritance, radical-power corner equality and same-simple high comparison from finite ambient quotient pd. It does NOT exclude ALL-source badness-specific repair, general finite-pd cubic closure, C125–C130 or UGA. The new ordinary source L1 is already visibly recurrent.
+
+### Evidence and review provenance
+
+The branch used the frozen Carrier-Lemma actual table/cover helpers. Three successful material runs added successively the literal corner and direct RIGHT kernel checks; no material run failed. The final retained source/result passed2737 associativity triples,10 FULL covers,87 integral basis inverses,9 actual complete kernel/module isomorphisms and ZERO pruning. Earlier successful partial calibrations were1729/8/72/7 and1737/9/75/8 respectively.
+
+The final executed bytes are retained unchanged in Projective-Ideal-Evidence. The root reviewed the complete path proof and selected result/source fields without an unnecessary full-range rerun. This is a same-team normal adversarial mathematical audit, NOT independent/formal verification. The bounded branch proof is retained as a contribution for reopening the route.
+
+The active mathematical issue is therefore a genuine whole-error and source-alignment theorem under global badness; converting a finite-pd full cover into factorwise finite errors or a small support corner is not an available mechanism.

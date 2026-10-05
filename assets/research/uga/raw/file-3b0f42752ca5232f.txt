@@ -1,0 +1,149 @@
+"""Actual cyclic F Yoneda algebra and literal ordinary corner calibration.
+
+All-degree finiteness uses actually terminating minimal resolutions.
+The general realization/amplitude theorem has a separate written proof.
+Shared frozen helpers do not constitute independent verification.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Directed-Ext-Evidence/verify_directed_ext.py'
+__file__=str(frozen)
+exec(compile(frozen.read_text(encoding='utf-8').split('\nE=perfect_family(2)',1)[0],str(frozen),'exec'),globals())
+import yoneda_generation_certificate as yg
+counts.update({'actual_F_Yoneda_product_checks':0,'graded_Yoneda_covers':0})
+
+def restricted_ext_products(A,Flabels):
+    # These F resolutions terminate in degree at most three. The only
+    # possible positive products are degree-one times degree-one.
+    res={j:yg.Resolution(A.alg,j,3) for j in Flabels}
+    output=[]
+    for j in Flabels:
+        for t in Flabels:
+            morphisms=list(yg.cochain_maps(res[j].modules[1],t))
+            for morphism in morphisms:
+                lifted=yg.syzygy_map(res[j].covers[1],res[t].covers[0],morphism)
+                for z in Flabels:
+                    lifts,_=yg.top_reader(res[j].modules[2])
+                    target_lifts,read=yg.top_reader(res[t].modules[1])
+                    cols=[]
+                    for lift in lifts[z]:
+                        value=rk.combine(lifted[z],lift,res[t].modules[1].dimensions[z])
+                        cols.append(read(z,value))
+                    rank=rk.rank(cols)
+                    expected=int(j==1 and t==0 and z==1)
+                    assert rank==expected,(j,t,z,rank,expected)
+                    output.append({'source':j,'middle':t,'target':z,'rank':rank,'comparison_values':cols})
+                    counts['actual_F_Yoneda_product_checks']+=1
+    return output
+
+def graded_resolution(Y,source,expected):
+    M=sr.Module.simple(Y.alg,source)
+    degrees=[[0]*dim for dim in M.dimensions]
+    algebra_degrees=[0,0,1,1,2]
+    out=[]
+    for n,expected_term in enumerate(expected):
+        K,info,cert=cover(M);lin=info['linear_data'];head_degrees=[]
+        for v,lift in lin['copies']:
+            seen={degrees[v][i] for i,c in enumerate(lift) if c}
+            assert len(seen)==1
+            head_degrees.append(next(iter(seen)))
+        terms=[(v,degree) for (v,_),degree in zip(lin['copies'],head_degrees)]
+        assert terms==[expected_term],(source,n,terms,expected_term)
+        domain_degrees=[[head_degrees[c]+(0 if b is None else algebra_degrees[Y.vertices+b])
+                         for c,b in part] for part in lin['bases']]
+        kernel_degrees=[]
+        for v,columns in enumerate(lin['kernels']):
+            local=[]
+            for col in columns:
+                seen={domain_degrees[v][i] for i,c in enumerate(col) if c}
+                assert len(seen)==1
+                local.append(next(iter(seen)))
+            kernel_degrees.append(local)
+        out.append({'degree':n,'projective_label_and_generator_degree':terms,
+                    'kernel_coordinate_degrees':kernel_degrees,'actual_cover':cert})
+        counts['graded_Yoneda_covers']+=1
+        M,degrees=K,kernel_degrees
+    assert not any(M.dimensions)
+    return out
+
+C=nakayama_five()
+factor_left=[finite_resolution(C,j,[1,2][j]) for j in range(2)]
+factor_right=[finite_resolution(C.opposite(),j,[1,2][j]) for j in range(2)]
+factor_products=restricted_ext_products(C,[0,1])
+# Matrix row=Ext target, column=Ext source, product=postcomposition.
+# The actual nonzero product is Ext(1,0)^1 followed by Ext(0,1)^1.
+Y=Table(2,[('e0',0,0),('e1',1,1),('alpha',1,0),('beta',0,1),('xi',1,1)],{(2,3):4})
+Yres=[graded_resolution(Y,0,[(0,0),(1,1),(0,2)]),
+      graded_resolution(Y,1,[(1,0),(0,1)])]
+assert all(not any(row['actual_cover']['kernel']['dimensions']) for row in [Yres[0][-1],Yres[1][-1]])
+E=perfect_family(2)
+original,tensor_certificate=tensor_table(E,C)
+assert len(original.basis)==65 and original.vertices==6
+Flabels=[0,1];retained=[2,3,4,5]
+left_F=[];right_F=[]
+for j in Flabels:
+    left=finite_resolution(original,j,[2,3][j])
+    right=finite_resolution(original.opposite(),j,[2,3][j])
+    for item in left:
+        n=item['degree'];mult=item['actual_cover']['cover_multiplicities']
+        expect=[int(n==0 and j==0 or n==1 and j==1),
+                int(n==0 and j==1 or n==1 and j==0 or n==2 and j==1)]
+        assert mult[:2]==expect,(j,n,mult,expect)
+    left_F.append(left);right_F.append(right)
+products=restricted_ext_products(original,Flabels)
+assert any(row['rank']==1 for row in products)
+assert all(any(l==2+j and r==j for _,l,r in original.basis) for j in Flabels)
+assert all(any(l==j and r==2+j for _,l,r in original.basis) for j in Flabels)
+B,labelmap,selected=actual_corner(original,retained)
+assert len(B.basis)==20
+pair_to_original={tuple(pair):i for i,pair in enumerate(tensor_certificate['tensor_basis_pairs'])}
+images1=list(selected);images2=[]
+for b in selected:
+    eb,cb=tensor_certificate['tensor_basis_pairs'][b]
+    row=E.basis[eb][1]
+    generator=E.index['a'] if row==1 else E.index['m2']
+    value=E.mult(generator,eb)
+    assert value is not None
+    images2.append(pair_to_original[value,cb])
+Ae_basis=[b for b in range(len(original.basis)) if original.basis[b][2] in retained]
+assert len(Ae_basis)==40 and len(set(images1+images2))==40
+assert set(images1+images2)==set(Ae_basis)
+for bidx,b in enumerate(selected):
+    for cidx,c in enumerate(selected):
+        bc=B.mult(bidx,cidx)
+        for images in [images1,images2]:
+            assert original.mult(images[bidx],c)==(None if bc is None else images[bc])
+counts['actual_corner_projectivity_isomorphisms']+=1
+counts['integer_basis_inverses']+=1
+iso={'target_basis_original':Ae_basis,'two_regular_basis_images_original':[images1,images2],
+     'permutation':[Ae_basis.index(i) for i in images1+images2],
+     'inverse_permutation':[(images1+images2).index(i) for i in Ae_basis],
+     'all_basis_right_linearity_checks':2*len(selected)**2,'actual_right_corner_pd_Ae':0}
+dependencies={f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest() for n in
+ ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']}
+for directory,names in [('Carrier-Lemma-Evidence',['verify_carrier_lemma.py','verify_finite_factor_carrier.py']),
+ ('Shallow-Corner-Evidence',['verify_shallow_corner.py']),('Tensor-Factor-Evidence',['verify_tensor_factor.py']),
+ ('Perfect-Corner-Evidence',['verify_perfect_corner.py']),('Directed-Ext-Evidence',['verify_directed_ext.py'])]:
+    for n in names:
+        rel=f'runs/2026-10-04/{directory}/{n}';dependencies[rel]=sha256((project_root/rel).read_bytes()).hexdigest()
+result={'status':'passed','python':sys.version,'independent_verification':False,'counts':counts,
+ 'finite_A5':{'algebra':C.payload,'left_finite_resolutions':factor_left,'right_finite_resolutions':factor_right,
+               'actual_Yoneda_products':factor_products},
+ 'actual_restricted_Yoneda_algebra':{'algebra':Y.payload,'basis_Ext_degrees':[0,0,1,1,2],
+    'graded_simple_resolutions':Yres,'global_dimension':2,'all_positive_Ext_graph_has_two_cycle_and_degree_two_self_loop':True},
+ 'cyclic_F_calibration':{'algebra':original.payload,'dimension':65,'vertices':6,'tensor_certificate':tensor_certificate,
+    'F_labels':Flabels,'LEFT_F_pds':[2,3],'RIGHT_F_pds':[2,3],
+    'LEFT_F_actual_minimal_resolutions':left_F,'RIGHT_F_actual_minimal_resolutions':right_F,
+    'F_Yoneda_products_from_actual_comparison_maps':products,
+    'no_directed_all_positive_F_Ext_order':True,'no_finite_side_cover_closed_block':True,
+    'E_max_positive_degree':2,'E_global_dimension':2,'new_uniform_counit_amplitude_bound':5,
+    'new_uniform_ALL_module_comparison_cutoff':8,'conservative_cutoff_using_min_d_r':10,
+    'already_infinite_plus_by_frozen_tensor_and_E13_proofs':True,'not_a_Gap_A_counterexample':True},
+ 'literal_corner':{'algebra':B.payload,'dimension':20,'vertices':4,'retained_original_labels':retained,
+                   'selected_original_basis':selected,'actual_right_corner_projectivity':iso,
+                   'C093_actual_comparison_bound':4},
+ 'dependencies':dependencies,
+ 'scope':'Exact terminating finite F/Yoneda minimal resolutions, actual Yoneda products, and literal corner module. General realization, amplitude and ordinary comparison are separately proved. No independent verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','dimensions':[65,20],'E_global_dimension':2,'counts':counts,'independent_verification':False}))

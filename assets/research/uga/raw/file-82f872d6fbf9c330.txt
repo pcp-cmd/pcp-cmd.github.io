@@ -1,0 +1,242 @@
+# 真实尾端的 Tor 正交性与对侧检测
+
+2026-09-16。接续 [返回补角路线](N-Vertex-Return-Complement.md)。
+
+**状态：任意 N 的主目标 (U) 仍未证明。** 本稿补入实际尾端必须满足的双侧条件，并得到一种可在左边界无限 pd 时继续使用的右侧检测定理。正文为自审证明，有限精确算例已通过；尚未独立核验，未确认文献新颖性。
+
+## 1. 两个边界模块不能混淆
+
+令 \(e\) 为 idempotent，\(B=eAe\)。区分
+\[
+{}_B(eA),\qquad (Ae)_B.
+\tag{1}
+\]
+前稿的有限窗口条件使用左 \(B\)-模 \(eA\) 的 pd。本稿主要使用右 \(B\)-模
+\[
+W=Ae.
+\]
+它总包含右正则模 B 作为直接和因子。
+
+定义
+\[
+\mathcal T_e=\{T\in B\text{-mod}:\operatorname{Tor}_n^B(W,T)=0\ (n>0)\},
+\]
+\[
+\mathcal R_e=\{X\in A\text{-mod}:X\text{ 的全部最小投射项属于 }\operatorname{add}(Ae)\}.
+\tag{2}
+\]
+
+**定理 1。** 诱导与限制给出互逆的 exact equivalences
+\[
+Ae\otimes_B-:\mathcal T_e\longleftrightarrow\mathcal R_e:e(-).
+\tag{3}
+\]
+其中短正合列均取各自模范畴中的短正合列。对 \(T\in\mathcal T_e\)，令 \(X=Ae\otimes_BT\)，则
+\[
+\operatorname{pd}_A X=\operatorname{pd}_B T,
+\tag{4}
+\]
+且对任意左 \(A\)-模 Y、右 \(A\)-模 V 和 \(n\ge0\)，
+\[
+\operatorname{Ext}_A^n(X,Y)\simeq\operatorname{Ext}_B^n(T,eY),
+\qquad
+\operatorname{Tor}_n^A(V,X)\simeq\operatorname{Tor}_n^B(Ve,T).
+\tag{5}
+\]
+
+**证明。** 若 \(T\in\mathcal T_e\)，诱导其最小 B 投射消解得到正合的 A 投射消解。原微分的系数在 \(\operatorname{rad}B=eJe\)，诱导后仍在 J，因此消解仍最小。其所有项属于 \(\operatorname{add}(Ae)\)，且限制后回到原消解。于是 (4) 成立；逐项使用 Hom–tensor adjunction 或 tensor associativity 得到 (5)。
+
+反过来，设 \(X\in\mathcal R_e\)。限制其最小消解得到最小 B 投射消解，因为对 \(P\in\operatorname{add}(Ae)\) 有 \(eJP=(eJe)eP\)。由前两个投射项及 tensor 的右正合性，counit
+\[
+Ae\otimes_B eX\longrightarrow X
+\]
+是同构。诱导整个限制消解正好恢复原消解，所以 \(\operatorname{Tor}_{>0}^B(Ae,eX)=0\)。由 adjunction 得到 Hom 上的全忠实性。
+
+\(\mathcal T_e\) 对 extensions 和满射的 kernels 封闭，直接来自 Tor 长正合列。对该类中的短正合列，由 quotient 的 Tor_1 消失，诱导保持正合；限制本来正合。这完成 exact equivalence 的证明。\(\square\)
+
+这里没有假设 \(Ae\) 在 B 上平坦。它只对 \(\mathcal T_e\) 中的指定模块产生 exact induction。
+
+## 2. 任意 N 的前缀复形带有额外的右侧约束
+
+对每个 source j，沿用
+\[
+F_j=\{i:e_jAe_i\ne0\},\quad
+u_j=\sum_{i\notin F_j}e_i,\quad B_j=u_jAu_j.
+\]
+在该列的消失条件 \(\beta_{ij}(n)=0\)（\(i\in F_j,n>b\)）下，令
+\[
+X_j=\Omega_A^{b+1}L_j,\qquad T_j=u_jX_j.
+\]
+由实际尾端及定理 1，有
+\[
+\boxed{
+T_j\in\mathcal T_{u_j},\qquad
+Au_j\otimes_{B_j}T_j\simeq X_j.
+}
+\tag{6}
+\]
+因此，前稿有限前缀复形
+\[
+\mathcal K_j^{(b)}\simeq T_j[b]
+\]
+只有在其唯一上同调满足 (6) 时，才可能是真实的永久尾端。非 perfect 的任意前缀项本身没有这个保证。
+
+十一维有限全局维数反例正好说明这种区别。其 source 2 的 \(B_j=\Delta=\mathbb C[\epsilon]/(\epsilon^2)\)，而
+\[
+(Au_j)_{B_j}\simeq\Delta\oplus\mathbb C.
+\]
+前缀首尾项都是 \(\mathbb C\)，但
+\[
+\operatorname{Tor}_n^\Delta(\Delta\oplus\mathbb C,\mathbb C)
+\simeq\mathbb C\quad(n>0).
+\tag{7}
+\]
+所以这些无限项单独都不能作为 (6) 中的永久尾端。它们通过前缀微分抵消后，真实 \(T_j=0\)，符合 (6)。
+
+## 3. 右侧有限分解检测：无需左边界有限 pd
+
+设 B 的每个右 simple S 都有长度不超过 r 的正合列
+\[
+0\to W_r\to\cdots\to W_0\to S\to0,
+\qquad W_t\in\operatorname{add}(W),\quad W=Ae.
+\tag{8}
+\]
+允许在左端补零，使所有长度使用同一个 \(r\ge0\)。这里只要求实际正合列，不额外要求 \(\operatorname{Hom}_B(W,-)\) 保持它的正合性。
+
+**定理 2。** 在 (8) 下，所有 \(T\in\mathcal T_e\) 都满足
+\[
+\boxed{\operatorname{pd}_B T\le r.}
+\tag{9}
+\]
+因此，如果 e 是 source j 的返回补角 idempotent，并满足最终 supported 消失，则
+\[
+\operatorname{pd}_A L_j\le b+1+r.
+\tag{10}
+\]
+
+**证明。** 在 (8) 的 successive kernels 上使用 Tor 长正合列。因为各 \(W_t\) 与 T 的正次数 Tor 全为零，得到 \(\operatorname{Tor}_n^B(S,T)=0\)（\(n>r\)）。对所有右 simple 同时成立，说明 T 的最小 B 投射消解在 r 次后终止。再用定理 1 及 source 的尾端移位即得 (10)。\(\square\)
+
+特别地，如果 W 已含有所有右 B simples 作为直接和因子，可以取 r=0，此时 \(\mathcal T_e\) 只含 B 投射模。
+
+**定性版本。** 甚至可以只假设
+\[
+D^b(\text{mod-}B)=\operatorname{thick}(W).
+\tag{11}
+\]
+对 \(T\in\mathcal T_e\)，导出 tensor 把 W 送到一个集中在次数 0 的有限维向量空间。所有被送到有界复形的对象构成 thick 子范畴。由 (11)，每个右 simple 与 T 的导出 tensor 都有界，故 T 有限 pd。这个版本没有 (9) 的数值上界；也没有把 (11) 自动等同于指定长度的正合列 (8)。
+
+## 4. 真正新增的双侧必要条件
+
+若 \(\operatorname{pd}_A L_j=\infty\) 且该列最终 supported 消失，则 \(T_j\) 非 perfect，并且由 (6) 与定性版本，
+\[
+\boxed{
+D^b(\text{mod-}B_j)/\operatorname{thick}(Au_j)\ne0.
+}
+\tag{12}
+\]
+这是右模范畴中的相对商；前稿 \(\mathcal K_j^{(b)}\) 则是左 B_j 复形。两侧同时受到原代数实际消解的约束。
+
+具体地，函子
+\[
+-\otimes_{B_j}^{L}T_j:
+D^b(\text{mod-}B_j)\longrightarrow D^-(\mathbb C\text{-vect})
+\]
+把 \(Au_j\) 送到有界对象，因而在进一步商掉目标的有界复形后，经由 (12) 左侧的商范畴分解。因为非 perfect 的 \(T_j\) 与至少一个右 simple 有无界 Tor，该分解函子非零。这给出了 (12) 的实际检测者，而非只比较 Grothendieck 群。
+
+**不能反过来宣称普遍生成。** 取四维代数，箭头为 \(u:1\to0\) 和 \(x:0\to0\)，并令所有 radical 二次乘积为零。其 source 1 给出 \(B_j=\Delta\)、\(Au_j=\Delta\)、非 perfect 的 \(T_j=\mathbb C\)。它确实满足所有正次数 Tor 正交，但 \(\operatorname{thick}(\Delta)\ne D^b(\text{mod-}\Delta)\)。它在另一个 source 有 self-Tor，故不是 (U) 反例。
+
+因此一般路线仍需使用 **全部 source** 的消失条件，排除这种左右同时存活的情形；(12) 目前是必要条件，不能当成矛盾。
+
+## 5. 有限窗口：右侧检测给出 r+3 个次数
+
+**定理 3。** 固定 source j 的非零返回补角 \(B_j\)，令 \(W=Au_j\)，假设 (8) 成立。若对某个 \(M\ge1\)，
+\[
+\beta_{ij}(n)=0\quad
+(i\in F_j,\ M\le n\le M+r+2),
+\tag{13}
+\]
+则
+\[
+\boxed{\operatorname{pd}_A L_j\le M+r.}
+\tag{14}
+\]
+
+**证明。** 设 \(T=u_j\Omega_A^M L_j\)。由 (13)，\(P_M^{(j)},\ldots,P_{M+r+2}^{(j)}\) 都属于 \(\operatorname{add}(Au_j)\)。限制后得到 T 的最小 B_j 消解的前 \(r+3\) 个投射项。
+
+将这段 B_j 消解与 W tensor，恢复原 A 消解的对应片段：每个投射项上有 \(Au_j\otimes_{B_j}u_jP\simeq P\)。所以
+\[
+\operatorname{Tor}_n^{B_j}(W,T)=0\quad(1\le n\le r+1).
+\tag{15}
+\]
+这里没有假设窗口之后的任何投射项仍属于该角。
+
+对任意右 simple S 使用 (8)。长正合列给出如下归纳：\(\operatorname{Tor}_{r+1}(S,T)\) 的消失依次由 \(\operatorname{Tor}_{r+1}(W_0,T)\)、\(\operatorname{Tor}_{r}(W_1,T)\)、直到 \(\operatorname{Tor}_1(W_r,T)\) 的消失保证。故
+\[
+\operatorname{Tor}_{r+1}^{B_j}(S,T)=0
+\]
+对所有右 simple 成立。T 的最小 B_j 消解的第 \(r+1\) 项因此为零；这正是 \(u_jP_{M+r+1}^{(j)}\)。由于原项本来属于 \(\operatorname{add}(Au_j)\)，它本身也为零，得到 (14)。\(\square\)
+
+这里的 r+3 与前稿的 c+2 使用不同假设：前者来自 **右** \(Au_j\) 对 simples 的分解，后者来自 **左** \(u_jA\) 的有限 pd。两种证书可以择一使用。
+
+## 6. r=0 时三次窗口不可缩短
+
+取顶点 \(0,1,2\)，箭头 \(a:0\to1,b:1\to2,c:2\to0\) 及 loop \(x:1\to1\)。关系为
+\[
+x^2=0,\quad bx=0,\quad xa=0,\quad cb=0.
+\tag{16}
+\]
+radical 基为 \(a,b,c,x,t=ba,q=ac,s=bac\)，非零 radical 基乘积恰为
+\[
+ba=t,\quad ac=q,\quad bq=s,\quad tc=s.
+\]
+这是十维代数，Cartan 矩阵为
+\[
+C=\begin{pmatrix}1&0&1\\1&2&1\\1&1&2\end{pmatrix}.
+\tag{17}
+\]
+对 source 0，\(F_0=\{0,2\}\)、\(u_0=e_1\)、\(B_0=\Delta\)。作为右 B_0 模，
+\[
+Au_0=\langle e_1,x,b\rangle\simeq\Delta\oplus\mathbb C,
+\]
+所以 (8) 成立且 r=0。作为左 B_0 模，\(u_0A\simeq\Delta\oplus\mathbb C^2\)，故前稿的 \(\operatorname{pd}_{B_0}u_0A<\infty\) 条件失败。
+
+实际消解给出
+\[
+\Omega^2L_0\simeq L_1,\qquad
+\Omega L_1\simeq L_1\oplus L_2.
+\tag{18}
+\]
+因此 \(L_0\) 具有无限 pd，但它的全部 supported Tor 在次数 1、2 都为零，在次数 3 首次重新非零。三次窗口不能统一降成两次。
+
+此例还说明有限窗口证明为何需要检查 (15)：在第一步的角上候选 T 为 \(\mathbb C\)，\(\operatorname{Tor}_1^\Delta(Au_0,T)\ne0\)，所以它不能成为永久尾端；第三个投射项随即出现角外标签。例子的 infinite Gap A 本身不是新情形，这里校准的是新的次数界。
+
+2026-09-23 后续：[Sharp-Right-Boundary-Windows.md](Sharp-Right-Boundary-Windows.md) 已给出每个 r≥0 的统一代数族及完整证明，说明 r+3 次窗口对所有 r 都不能缩短；有限核算覆盖 r=0,…,5。本节保留 r=0 的原始校准例。
+
+## 7. 正交不等于投射，以及任意 N 的未闭合接口
+
+令 \(B=\Gamma\otimes\Delta\)，\(\Gamma=\mathbb C(0\to1)\)，取右模
+\[
+W=B\oplus(\Gamma\otimes\mathbb C).
+\]
+两个右 B simples 分别有长度 0、1 的 add(W) 分解，因此可取 r=1。左模 \(T=L_0^\Gamma\otimes\Delta\) 满足
+\[
+\operatorname{Tor}_{>0}^B(W,T)=0,\qquad \operatorname{pd}_B T=1.
+\tag{19}
+\]
+这由 tensor 分解直接算出，也已作精确有限核验。它阻止把定理 2 误写成所有正交模块都投射。
+
+该 W 可以由实际角实现：取前稿的十一维代数 \(A_0\)，令 \(A=A_0\otimes\Gamma\)、\(e=e_0^{A_0}\otimes1\)。则 \(eAe=\Delta\otimes\Gamma\)，而 \((Ae)_{eAe}\) 正是上述 W（交换 tensor 因子识别）。
+
+对任意有限全局维数为 d 的 A 和任何 e，B 的每个右 simple 都存在长度至多 d 的 add(Ae) 分解：把该 simple S 提升为右 A 模 \(S\otimes_BeA\)，取其有限 A 投射消解，再正合限制到 B 即得。因此，对于所有 source 的返回补角，(8) 的有限性不会排除任何有限全局维数代数。
+
+在完整 \((Z_b)\) 下，如果每个非零返回补角都满足 (8)，定理 2 立即给出 A 有限全局维数。也可以按 source 混用本稿右侧证书与前稿左侧有限 pd 证书。
+
+**仍未证明的普遍步骤。** 没有证明完整 \((Z_b)\) 必然给出这些有限分解，或给出 (11)。真实的潜在反例必须同时保留非 perfect 的左尾端、对右边界的全部正次数 Tor 正交，以及非零的右相对商 (12)。这是比只检查前缀各项更精确的兼容性要求，但尚未排除其普遍存在。
+
+## 8. 审计
+
+运行 `python work/audit_tor_orthogonality.py`，结果写入 [tor_orthogonality_audit.json](../work/tor_orthogonality_audit.json)。
+
+程序检查新十维代数的结合律、幂零性、实际 syzygy 同构、三次窗口；核对十一维反例的假尾端与四维例子的真尾端；核对 r=1 的非投射正交模块。共计算 16 个 Tor 维数，使用 \(D\operatorname{Tor}(W,T)=\operatorname{Ext}(T,DW)\) 并除去实际投射限制边界，所有计算均为有理数精确运算。
+
+所有次数的正交性及任意 N 结论依靠正文证明；有限次数计算不证明一般 (U)。原归档 verified fact graph 未修改。

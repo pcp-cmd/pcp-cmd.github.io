@@ -1,0 +1,45 @@
+# Initial master guidance — literature-blind cycle
+
+Transport is explicitly `off`; this is Main-Codex-authored operational guidance,
+not an independent strategy-model reply and not mathematical evidence.
+
+## Shared objective
+
+Determine, without assuming either truth value, whether eventual vanishing of
+Hochschild homology for a finite-dimensional complex algebra forces finite
+global dimension. A positive resolution requires a complete general proof. A
+negative resolution requires an ordinary finite-dimensional complex algebra for
+which both eventual vanishing and infinite global dimension are independently
+verified.
+
+## Hard Phase-I boundary
+
+- Do not browse, search, cite, or open literature.
+- Do not ask Main Codex for hints about known results.
+- Do not rely on a remembered named claim unless its full hypotheses and proof
+  are reconstructed; label remembered background explicitly.
+- Publish substantive attempts, obstructions, candidate examples, and dead ends
+  to shared memory.
+- Submit only complete, self-contained mathematical claims to the independent
+  verifier.
+
+## Distinct branches
+
+1. **Positive mechanism.** Formalize the exact statement and try to derive
+   perfection/finite projective dimensions from eventual Hochschild-homology
+   vanishing. Identify the first genuinely missing implication rather than
+   hiding it behind a slogan.
+2. **Negative construction.** Search independently for an ordinary
+   finite-dimensional complex algebra separating eventual Hochschild-homology
+   vanishing from finite global dimension. Track all candidate properties as
+   separate proof obligations.
+3. **Adversarial structural analysis.** Stress-test both directions, seek
+   invariant-theoretic blind spots, and audit any shared proposal for field,
+   dimension, grading, vanishing-range, and global-dimension errors.
+
+## Cycle stopping condition
+
+Complete one substantive literature-blind round per worker, persist findings and
+dead ends, and then stop for Freeze 001. No worker proceeds to literature until
+Main Codex has written and re-read the independent-progress snapshot.
+

@@ -1,0 +1,29 @@
+# AGENTS.md — Universal Gap A
+
+This repository is the durable project memory for the Universal Gap A research programme.
+
+## Research environment
+- Use the Codex environment's existing built-in MRS.
+- Use the already-installed Obsidian Vault Skill when mathematical-method retrieval is useful.
+- Do not copy or rebuild the Vault inside this repository.
+- The Vault is a general mathematical-method asset, not authority for project-specific facts.
+
+## Before substantive research
+1. Read `CURRENT_STATE.md`.
+2. Read the relevant entries in `claims/CLAIMS.md`.
+3. Search `toolbox/`, `REGRESSION_GATES.md`, and prior `runs/` before opening a new route.
+4. Treat `CURRENT_STATE.md` as the current-state authority. File modification time is not authority.
+
+## Research governance
+- One main researcher continues the active route unless a genuine mathematical reason requires a branch.
+- Reuse stable assets; do not re-prove them without a verification reason.
+- Preserve negative results and corrections.
+- Do not infer homological return from graph/support recurrence alone.
+- Do not replace ordinary Tor/Ext with singular/Tate/stable information without an explicit comparison theorem.
+- Do not promote a candidate into `claims/` until a complete proof and normal adversarial audit exist.
+- Runs are append-only research records. Do not rewrite old Runs to make history look cleaner.
+- Update project memory only after substantive progress: a load-bearing lemma, counterexample, major correction, strict frontier compression, or route change.
+- After such a checkpoint: append a Run; update Claims/Toolbox/History only if needed; update `CURRENT_STATE.md` last; then continue research.
+
+## Presentation
+Do not spend research budget generating HTML, dashboards, or presentation artifacts. ChatGPT handles the human-facing visualization layer separately.

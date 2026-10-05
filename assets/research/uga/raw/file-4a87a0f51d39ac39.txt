@@ -1,0 +1,142 @@
+# Pending test: ALL-source finite states do not imply composition-carrier source containment
+
+2026-10-05. Subagent `global_ordinary_switch`. PENDING ordinary proof and same-author audit; no new computation run, Claim, or canonical checkpoint. This is a small already-positive calibration, not a reopened small-vertex classification or a refutation of the badness-specific global return theorem.
+
+This strengthens and supersedes the budget purpose of the nearby dimension23 projective-carrier draft: even switching from recurrent projective types T to the full recurrent composition carrier K=C T does not repair automatic factor-source containment.
+
+## 1. Actual algebra and source
+
+Over any field let B be the radical-square-zero line
+
+\[
+r\xrightarrow{a}j\xrightarrow{b}k,\qquad ba=0.
+\]
+
+Its five basis elements are e_r,e_j,e_k,a,b. Its actual LEFT projectives are P_r=(r,j), P_j=(j,k), P_k=k. Their actual simple resolutions give gd B=2:
+
+\[
+0\to P_k\overset{b}{\longrightarrow}P_j\overset{a}{\longrightarrow}P_r\to L_r^B\to0,
+\]
+
+\[
+0\to P_k\overset{b}{\longrightarrow}P_j\to L_j^B\to0.
+\]
+
+The map named a is right multiplication by a; its FULL kernel is the b image. The b map is injective on the displayed path bases.
+
+Let D=k[x]/x^2, Lambda=B tensor D, and X=P_r^B tensor k_D. The actual minimal map P_r^Lambda -> X has FULL kernel xP_r^Lambda, which is isomorphic to X. Hence
+
+\[
+\Omega_\Lambda X\cong X,\qquad\operatorname{top}X=L_r,
+\quad[X]=(1,1,0),\quad T(X)=\{r\},\quad K(X)=\{r,j\}.
+\tag{1.1}
+\]
+
+Here K(U) is the set of labels occurring as composition factors in arbitrarily late ACTUAL syzygies of U. Equivalently K(U) is the union of physical composition supports of its recurrent projective types, using the FULL cover identity. It is different from T(U).
+
+Form the one-point extension A with old corner Lambda and new LEFT projective P_q=ke_q+X, radical X. The only new radical Peirce column is X, with its already specified Lambda actions. This is associative by the module law; old projectives and resolutions are unchanged. A has four labels, dimension13, and J_A^3=0. Thus
+
+\[
+\Omega_A L_q=X,\qquad\Omega_A X=X,\qquad K(L_q)=\{r,j\}.
+\tag{1.2}
+\]
+
+## 2. ALL original simples have explicit finite actual state tails
+
+Tensor the displayed finite B resolutions with the genuine minimal D resolution ... x->D x->D->k. Over a field the ordinary total complexes are exact and minimal.
+
+At source k, Omega L_k=L_k. At source j, let V=Omega L_j=rad P_j^Lambda. Its dimension vector is (0,1,2,0), its head is L_j+L_k, and Omega V=V by the complete two-term total-kernel projection proof already used in C114.
+
+For source r, put Z=Omega L_r=rad P_r^Lambda, dimensions (1,2,0,0). The total resolution is
+
+\[
+C_0=P_r^\Lambda,\quad C_1=P_r^\Lambda\oplus P_j^\Lambda,
+\quad C_n=P_r^\Lambda\oplus P_j^\Lambda\oplus P_k^\Lambda\quad(n\ge2).
+\]
+
+Its first two maps and stationary later map are
+
+\[
+d_1=(x,a),\qquad
+d_2=\begin{pmatrix}x&a&0\\0&-x&b\end{pmatrix},\qquad
+\Delta=\begin{pmatrix}x&a&0\\0&-x&b\\0&0&x\end{pmatrix}\quad(n\ge3).
+\tag{2.1}
+\]
+
+The zero product ba, centrality of x, and x^2=0 give Delta^2=0. Exactness is the tensor-total exactness, not inferred from this equation.
+
+Let K=Omega^2 L_r=ker d_1. Projection onto the first two coordinates gives a FULL actual module isomorphism ker d_2 -> K. If (p,z,w) lies in ker d_2, then xp+az=0 and -xz+bw=0. Projection lies in K; its kernel is zero because the actual b map is injective. Conversely for (p,z) in K, reduction modulo x gives az_bar=0, so z lies in b(P_k^Lambda)+x(P_j^Lambda). Therefore xz lies in b(P_k^Lambda), and the uniquely determined w with bw=xz supplies a preimage. All operations commute with the algebra action.
+
+Thus Omega K=K. Its dimension vector is (1,2,2,0), and its actual minimal cover in degree2 has head L_r+L_j+L_k. No finite-prefix repetition is used to certify the period.
+
+Consequently the ALL-source state family
+
+\[
+\{X,V,L_k,K,Z\}
+\]
+
+has four identity transitions and the one transient transition Omega Z=K. Simple entries are Omega L_q=X, Omega L_j=V, Omega L_k=L_k, Omega L_r=Z.
+
+## 3. Actual composition identity, and the false containment
+
+In label order (r,j,k,q), the actual Cartan matrix is
+
+\[
+C=\begin{pmatrix}
+2&0&0&1\\2&2&0&1\\0&2&2&0\\0&0&0&1
+\end{pmatrix}.
+\]
+
+The states have heads/composition vectors:
+
+| State | Head | Composition vector |
+|---|---|---|
+| X | r | (1,1,0,0) |
+| V | j+k | (0,1,2,0) |
+| L_k | k | (0,0,1,0) |
+| K | r+j+k | (1,2,2,0) |
+| Z | r+j | (1,2,0,0) |
+
+The FULL exact cover identity CH=D(I+M) holds on every state: CH=2D on the four periodic states, and CH_Z=D_Z+D_K on Z. All-source entries and transitions are actual modules and kernels.
+
+But L_j is a composition factor of the recurrent state X while its own actual periodic state V yields
+
+\[
+K(L_j)=\{j,k\}\not\subseteq K(X)=\{r,j\},\qquad
+T(L_j)=\{j,k\}\not\subseteq T(X)=\{r\}.
+\tag{3.1}
+\]
+
+Therefore the actual original simple source L_q has a period-one tail whose factor source L_j leaves BOTH the recurrent projective carrier and the full recurrent composition carrier. Global finite state availability and the exact composition identity do not supply that missing containment.
+
+## 4. Scope and ordinary positivity
+
+Every old simple already has a supported diagonal in all sufficiently high degrees: L_j has top j in V, L_k is period-one simple, and L_r has top r in K. A is already in the closed C110 cube-zero class. For source q, all positive-degree detector labels are r, and e_qAe_r=0; it illustrates sourcewise disappearance together with another global source's actual return.
+
+The refuted candidate is automatic factor-source containment from ALL-source finite actual states, even using K rather than T. The badness-specific global finite-state return/descent alternative remains OPEN; this positive example does not decide it. No new general finite-type theorem, independent/formal assurance, or canonical state update is asserted.
+
+Same-author audit: tensor exactness is ordinary over k; each B kernel is full; all maps are radical/minimal; the terminal b map is actually injective; the projection inverse exists because ker a=im b modulo x; signs work in characteristic2; old resolutions stay actual A resolutions; every original source and every finite state transition is specified; K and T are not confused.
+
+## 5. A valid conditional ALL-source switch, without a cyclic-head requirement
+
+The strengthened carrier also gives a correct strict switch once its actual containment is established. This is a frontier formulation, not an automatic eligibility theorem.
+
+Let A be hypothetical bad, and let L_y have infinite LEFT pd. Since there are finitely many composition labels, all sufficiently late actual syzygies of L_y have composition support contained in K(L_y). Let X be an actual infinite-pd direct summand of one such sufficiently late syzygy (the entire syzygy is allowed). Suppose an infinite-pd composition factor L_j of X satisfies
+
+\[
+K(L_j)\subseteq K(X).
+\tag{5.1}
+\]
+
+A single real summand occurrence and all subsequent actual syzygies give K(X) subseteq K(L_y). The late composition support gives j in K(L_y). Full ALL-source badness, using Run11's actual full-cover identity, gives j notin K(L_j). Therefore
+
+\[
+\varnothing\ne K(L_j)\subsetneq K(L_y).
+\tag{5.2}
+\]
+
+This switches between original infinite-pd LEFT SIMPLE sources and strictly decreases |K|, with no selected-head recurrence, primitive-cyclic condition, finite module-state assumption, semisimple kernel, equality of side labels, singular-category comparison, or pruned differential complex.
+
+If **every infinite LEFT simple** has arbitrarily late actual syzygies with a summand/factor satisfying (5.1), the whole arbitrary-size class satisfies UGA: choose an infinite simple minimizing the positive integer |K|, and (5.2) is impossible. An iterative formulation permits at most N-1 strict source switches. A finite actual state family supplies explicit K sets but does not automatically supply (5.1), as Sections1–4 demonstrate.
+
+The infinite factor is guaranteed to exist for an infinite-pd X by ordinary composition devissage. Its containment is the remaining load-bearing hypothesis. The argument needs FULL reverse-supported cutoff; a simple-diagonal cutoff alone does not imply j notin K(L_j), and N7 remains the regression against that weakening.

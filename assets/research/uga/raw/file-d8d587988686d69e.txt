@@ -1,0 +1,15 @@
+# Exact return-tail calibration
+
+Check the eight-dimensional triangular extension of the previous Auslander
+calibration by a dual-number vertex and a one-dimensional bridge module.
+The algebraic product is ab=t; all other radical products vanish.
+
+Use exact rational arithmetic. Check associativity, the minimal-projective
+decompositions, the deleted-vertex ideal's zero column at vertex 3, all nine
+simple-pair ordinary bar complexes through degree 10 with incoming degree
+11, retained passage/chain identification through degree 8, and explicit
+excursion-one fillers of local negative magnitudes 2 through 8.
+
+Deliver verify_return_tail.py, return-tail-result.json and computation-record.json.
+These are bounded self-checks. They do not solve Universal Gap A or prove
+the all-degree tail formulas; the separate analytic Run proves those formulas.

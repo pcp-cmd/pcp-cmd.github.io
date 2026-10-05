@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-03T17:05:26.768730+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "bab239d2a5e6ced81955c3f7049f49e283a4ed541483c01fca6097ee3849dbb4",
+    "object": "Actual initial primitive Tor isomorphisms fail to inherit at a remaining infinite-left-pd source: a 42->19->10 dimensional quotient chain",
+    "deliverables": [
+      "verify_primitive_comparison.py",
+      "primitive-comparison-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "B is the literal opposite endomorphism table of the six uniserial modules of the two-vertex cycle with radical cube zero.",
+      "Gamma is the dual-number algebra, G its simple, and V=G tensor (e4B direct sum e5B) is an actual right-projective bimodule.",
+      "All quotients use full physical two-sided ideal closure, not retained corners.",
+      "Actual integral minimal covers and A-linear isomorphisms identify the stated finite pds and infinite syzygy states.",
+      "Integer basis changes with integer inverses certify cover exactness and minimality after base change to every field.",
+      "All-degree initial comparison is proved separately by literal triangular right-resolution base change, not bounded comparison samples.",
+      "Both deleted frames are actually infinite-pd LEFT sources when deleted; initial primitive comparisons are eventually full Tor isomorphisms.",
+      "The initial algebra already has ordinary supported diagonal Tor in every degree and is not a Gap-A counterexample."
+    ],
+    "domain": "Finite-dimensional elementary integral algebra tables, actual ordinary minimal covers and unimodular integral certificates",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Exact Fraction table and minimal-cover calculations with integral unimodular basis certificates"
+      ],
+      "existence_evidence": "verify_primitive_comparison.py exports actual cover actions, images, kernel inclusions, integer bases and inverse checks.",
+      "local_availability": "available",
+      "availability_evidence": "Actual local run passed under Python 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "selection_reason": "Finite literal Hom tables and actual cover maps admit exact local calculations with unimodular all-field certificates.",
+    "fallback_reason": "Reused same-session inventory: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python process through math-science-computation observer_run.py",
+    "command_or_input": "python -B verify_primitive_comparison.py --project-root PROJECT_ROOT --out primitive-comparison-result.json",
+    "code_artifact": "verify_primitive_comparison.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_primitive_comparison.py",
+      "sha256": "21f83bcaf855b5fde9f8e5f9d2a3ee3118ee23214c0662848293435405acda84"
+    },
+    {
+      "role": "result",
+      "path": "primitive-comparison-result.json",
+      "sha256": "41c6a351324b68692b38d73d0d186e3f3a4d425d6e80838ea345899eb6a95183"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "result_artifact": "primitive-comparison-result.json",
+    "summary": "Passed 326,699 full-basis associativity triples, 25,284 quotient products, 145 integral minimal covers, 2,497 unimodular basis certificates and ten actual syzygy isomorphisms. Dimensions are 28/42/19/10; left infinite counts are 3->2->5."
+  },
+  "verification": {
+    "methods": [
+      "Full-basis associativity and radical nilpotence for actual algebra tables",
+      "Full physical ideal closure and quotient multiplication, including primitive triangular normal forms",
+      "Complete terminating actual minimal cover sequences for finite simple pds",
+      "Integer radical/top and exact-sequence basis changes with integer inverses",
+      "Actual A-linear syzygy isomorphisms with two-sided inverses",
+      "Separate written all-field base-change lemma and all-degree triangular ordinary comparison argument"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact Fraction/integer arithmetic; no numerical residual.",
+    "limitations": [
+      "Same researcher and shared project helpers; no independent verifier acceptance.",
+      "Executed arithmetic uses Fraction; arbitrary-field validity also requires the written integral-unimodular base-change lemma.",
+      "Natural comparison ranks were not sampled computationally; their all-degree conclusion is proved by the separate literal right-resolution argument.",
+      "Infinite tails use actual syzygy identities and written iteration, not a finite Betti prefix.",
+      "The source is already infinite +; this falsifies automatic primitive-comparison inheritance, not the bad-algebra global alternative.",
+      "The first quotient has chosen count two and already reaches the known terminal class; the failing second move is not needed by the positive theorem.",
+      "Left and right infinite-pd labels are distinct and neither is inferred from the other.",
+      "This finite certificate computation does not prove Universal Gap A or automatic eventual comparison.",
+      "Shared imported helper relative paths and SHA256 hashes are recorded in the result.",
+      "Schema and hash validation verifies integrity, not independent mathematical semantics.",
+      "Backend inventory was reused from this session."
+    ]
+  }
+}

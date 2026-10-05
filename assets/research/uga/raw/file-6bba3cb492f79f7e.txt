@@ -1,0 +1,122 @@
+"""Actual filtered algebra and no-cancellation boundary calibration.
+
+Shared exact helpers; bounded check, not independent mathematical verification.
+All-degree purity and ordinary persistence are proved separately in the Run.
+"""
+from pathlib import Path
+from itertools import combinations
+import sys
+sys.stdout.reconfigure(encoding="utf-8")
+root = Path(sys.argv[sys.argv.index("--project-root") + 1])
+frozen = root / "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py"
+exec(compile(frozen.read_text(encoding="utf-8").split("\nfor p in [3,5,8]:", 1)[0],
+             str(frozen), "exec"), globals())
+
+# Squarefree basis. The only product changed from the quadratic graded
+# complete intersection is xi*xi = product of the other three generators.
+masks = [0] + sorted(range(1, 16), key=lambda m: (m.bit_count(), m))
+pos = {m: i for i, m in enumerate(masks)}
+name = lambda m: "1" if m == 0 else "".join("x"+str(i+1) for i in range(4) if m >> i & 1)
+basis = [("e", 0, 0)] + [(name(m), 0, 0) for m in masks[1:]]
+def product_mask(a, b, filtered):
+    if a & b == 0:
+        return a | b
+    if filtered and a == b and a.bit_count() == 1:
+        return 15 ^ a
+    return None
+def table(filtered):
+    products = {}
+    for a in masks[1:]:
+        for b in masks[1:]:
+            c = product_mask(a, b, filtered)
+            if c is not None:
+                products[pos[a], pos[b]] = pos[c]
+    return Table(1, basis, products)
+A, G = table(True), table(False)
+weights = [m.bit_count() for m in masks]
+assert [len(p) for p in A.alg.radical_powers[:5]] == [15, 11, 5, 1, 0]
+assert [len(p) for p in G.alg.radical_powers[:5]] == [15, 11, 5, 1, 0]
+
+filtered_pairs = 0
+for a in masks:
+    for b in masks:
+        c = A.mult(pos[a], pos[b])
+        g = G.mult(pos[a], pos[b])
+        if c is not None:
+            assert weights[c] >= a.bit_count() + b.bit_count()
+        equal_weight = c is not None and weights[c] == a.bit_count() + b.bit_count()
+        assert (c if equal_weight else None) == g
+        filtered_pairs += 1
+
+# Real covers, including all radical actions and the FULL kernels.
+actual_covers = []
+M = sr.Module.simple(A.alg, 0)
+for n, expected in enumerate([1, 4, 10]):
+    K, info, cert = cover(M)
+    assert info["cover_multiplicities"] == [expected]
+    actual_covers.append(cert)
+    M = K
+
+# Frobenius pairing is the actual complement permutation matrix.
+pairing = [[int(A.mult(pos[a], pos[b]) == pos[15]) for b in masks] for a in masks]
+assert all(sum(row) == 1 for row in pairing)
+assert all(sum(pairing[i][j] for i in range(16)) == 1 for j in range(16))
+complements = [pos[15 ^ a] for a in masks]
+assert all(pairing[i][complements[i]] == 1 for i in range(16))
+
+# The cubic coefficient in a lift (xi+u)^2, u in J^2, is unaffected
+# by the cross terms 2xi*u or u^2. This is the exact local obstruction
+# used in the separate no-positive-grading proof in characteristic != 2.
+lift_cubic_checks = 0
+for i in range(4):
+    a = 1 << i
+    missing = pos[15 ^ a]
+    assert A.mult(pos[a], pos[a]) == missing
+    for u in masks:
+        if u.bit_count() >= 2:
+            assert A.mult(pos[a], pos[u]) != missing
+            lift_cubic_checks += 1
+    for u in masks:
+        for v in masks:
+            if min(u.bit_count(), v.bit_count()) >= 2:
+                assert A.mult(pos[u], pos[v]) != missing
+                lift_cubic_checks += 1
+
+# Reuse, without replay, the frozen graded N7 / mixed-parity B14 evidence.
+# N7 illustrates strict weights WITHOUT finite Yoneda generation or
+# simple diagonal return. B14 illustrates genuine alternating cancellation.
+N7_basis = [("e0",0,0),("e1",1,1),("a",1,0),("b",0,1),
+            ("p",0,0),("q",1,1),("r",0,1)]
+ni = {n:i for i,(n,_,_) in enumerate(N7_basis)}
+N7 = Table(2, N7_basis, {
+    (ni["b"],ni["a"]):ni["p"], (ni["a"],ni["b"]):ni["q"],
+    (ni["b"],ni["q"]):ni["r"], (ni["p"],ni["b"]):ni["r"]})
+degrees = [0,0,1,1,2,2,3]
+for (i,j),k in N7.products.items():
+    assert degrees[k] == degrees[i]+degrees[j]
+
+result = {
+    "status":"passed", "independent_verification":False, "formal_acceptance":False,
+    "counts": counts, "filtered_product_pairs":filtered_pairs,
+    "cubic_lift_coefficient_checks":lift_cubic_checks,
+    "A16":{"algebra":A.payload, "basis":basis, "radical_weights":weights,
+           "ordinary_cover_certificates":actual_covers,
+           "Frobenius_pairing":pairing, "complement_permutation":complements,
+           "associated_graded":G.payload,
+           "all_degree_facts_from_written_proof":{
+              "gr_J_A":"tensor of four quadratic truncated polynomial algebras",
+              "W_n":[ "n" ], "ordinary_Betti_n":"binomial(n+3,3)",
+              "D_G":"(1+t)^4", "not_positive_gradable":"characteristic != 2"}},
+    "N7":{"algebra":N7.payload,"degrees":degrees,
+          "all_degree_facts_from_reused_actual_kernel_proof":{
+              "W_0":[0], "W_1":[1], "W_n_for_n_ge_2":"{2n-1}",
+              "D":"1+t^2", "E_positive_squared":0,
+              "all_positive_simple_diagonals":0,
+              "persistent_supported_pair":"(R1,L0) in every positive degree"}},
+    "scope":"bounded shared exact computation; written all-degree proof supplies closure"
+}
+args.out.parent.mkdir(parents=True, exist_ok=True)
+args.out.write_text(json.dumps(result, default=ss.encode, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+print(json.dumps({"status":"passed","counts":counts,
+                  "filtered_product_pairs":filtered_pairs,
+                  "cubic_lift_coefficient_checks":lift_cubic_checks}, ensure_ascii=False))

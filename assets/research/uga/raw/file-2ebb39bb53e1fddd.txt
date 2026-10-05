@@ -1,0 +1,2065 @@
+# Run-A-U6-SourceSwitchCore.md
+
+## Universal Gap A — Universal Layer U6
+### Run A — Bi-Singular Source Switch / Minimal Recurrent Source Core
+
+**Role:** Main Researcher / Source-Switch Route  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Completion label:** `A1_REFUTED / UNIVERSAL_BI_SINGULAR_PURIFICATION / SOURCE_EXTRACTION_CORE / CROSS_MODULE_FRONTIER`  
+**Global status:** Universal Gap A remains OPEN.  
+**U6 status:** The naive infinite-pd-successor relation is false. Finite-pd top peeling and bi-singular purification are VERIFIED in the arbitrary Artin-algebra setting. A corrected source-extraction dynamics on \(I_\infty\) is constructed, with a terminal source SCC. The remaining obstruction is a three-way source/detector/Peirce-carrier mismatch plus corner cross-module leakage.
+
+---
+
+# 0. Frozen U1–U5 input
+
+Let \(D\) be a finite-dimensional basic algebra.
+
+For every simple source \(L_x\), define
+
+\[
+\Sigma_x
+=
+\left\{
+v:
+\operatorname{Tor}^D_n(R_v,L_x)\neq0
+\text{ for arbitrarily high }n
+\right\}.
+\]
+
+U5 verified that \(\Sigma_x\) is exactly the recurrent Betti support of \(L_x\).
+
+If
+
+\[
+e_xDe_{\Sigma_x}\neq0,
+\]
+
+then there exists a Peirce-visible fixed pair with persistent higher Tor.
+
+Therefore a hypothetical Gap-A failure forces
+
+\[
+\boxed{
+\Sigma_x\neq\varnothing,
+\qquad
+e_xDe_{\Sigma_x}=0
+}
+\]
+
+for every infinite-pd simple source \(x\).
+
+U5 also refuted fixed-source detector switching as a universal mechanism.
+
+The present run does not reopen that route.
+
+---
+
+# 1. MRS / Vault method retrieval and mapping
+
+The run explicitly retrieved the following assets and mapped them to the actual U6 objects.
+
+---
+
+## 1.1 Finite-pd / infinite-pd layer separation
+
+**Actual objects:**
+
+\[
+M=\Omega^N L_x,
+\qquad
+S(M),
+\qquad
+Q(M),
+\qquad
+H(M)=Q(S(M)).
+\]
+
+The finite-pd simple set and infinite-pd simple set are
+
+\[
+\mathcal S_{<\infty},
+\qquad
+\mathcal S_\infty.
+\]
+
+The method is used to remove finite-pd quotient/submodule contamination while preserving the high homological tail.
+
+---
+
+## 1.2 \(S(M),Q(M),H(M)\) / bi-singular root
+
+**Actual module:**
+
+\[
+H(M)=Q(S(M)).
+\]
+
+The U6 purpose is:
+
+- top \(H(M)\) supported only on \(I_\infty\);
+- socle \(H(M)\) supported only on \(I_\infty\);
+- \(H(M)\) remains infinite-pd;
+- high syzygies agree with those of \(M\).
+
+This is audited in Sections 3–5.
+
+---
+
+## 1.3 Infinite descent / minimal counterexample
+
+The first intended well-founded set was
+
+\[
+I_\infty
+=
+\{x:\operatorname{pd}L_x=\infty\}.
+\]
+
+The naive successor relation is refuted below.
+
+A corrected source-extraction graph on \(I_\infty\) is then constructed.
+
+Because \(I_\infty\) is finite, terminal SCC / minimal forward-invariant source cores exist.
+
+The run does **not** infer homological periodicity from such finite source cycles.
+
+---
+
+## 1.4 Set problem \(\to\) function / action problem
+
+The initially proposed matrix
+
+\[
+T_\infty(x,y)
+=
+\mathbf1_{\{y\in\Sigma_x\cap I_\infty\}}
+\]
+
+is shown not to have nonzero rows in general.
+
+It is replaced by a source-extraction relation
+
+\[
+\boxed{
+x\Rightarrow_{\mathrm{bs}} b
+}
+\]
+
+on \(I_\infty\), defined using a bi-singular root, a recurrent detector, and composition-series source extraction.
+
+This corrected relation has nonzero outdegree at every infinite-pd source.
+
+---
+
+## 1.5 Standard form
+
+The final standard object is not a naked source graph.
+
+Each corrected source-switch edge carries a witness triple
+
+\[
+\boxed{
+(x;b,r,y)
+}
+\]
+
+with:
+
+- \(x\in I_\infty\): old source;
+- \(b\in I_\infty\): extracted persistent source;
+- \(r\): recurrent detector from the old tail;
+- \(y\in I_\infty\): Peirce-visible top carrier for \(b\).
+
+The edge data satisfy
+
+\[
+\operatorname{Tor}^\infty(R_r,L_b)\neq0,
+\]
+
+\[
+e_bDe_r=0
+\quad\text{under Gap-A failure},
+\]
+
+and
+
+\[
+e_bDe_y\neq0.
+\]
+
+This is the **Bi-Singular Source Fork** normal form.
+
+---
+
+## 1.6 Local-to-global
+
+Local operations:
+
+- peel one finite-pd quotient;
+- take \(S(M)\);
+- take \(Q(S(M))\);
+- extract one persistent simple factor by dévissage.
+
+Global result:
+
+the whole sufficiently high detector tail is preserved.
+
+---
+
+## 1.7 SCC / minimal invariant subset
+
+The corrected source graph
+
+\[
+(I_\infty,\Rightarrow_{\mathrm{bs}})
+\]
+
+is finite and every vertex has at least one outgoing edge.
+
+Therefore it has a terminal SCC
+
+\[
+\boxed{
+\mathcal C_{\mathrm{bs}}
+\subseteq
+I_\infty.
+}
+\]
+
+This is the **minimal recurrent source core** produced in this run.
+
+---
+
+## 1.8 Bootstrap
+
+Bootstrap is used only at the level of finite source extraction:
+
+\[
+x_0
+\Rightarrow_{\mathrm{bs}}
+x_1
+\Rightarrow_{\mathrm{bs}}
+x_2
+\Rightarrow_{\mathrm{bs}}
+\cdots.
+\]
+
+Finiteness forces a source-cycle / terminal SCC.
+
+The run explicitly does **not** infer:
+
+- periodic modules;
+- restartability;
+- Yoneda multiplication;
+- visible recurrence
+
+from this finite cycle.
+
+---
+
+## 1.9 Double counting
+
+Inside a terminal SCC, source-extraction edges are counted by indegree/outdegree.
+
+The minimum-edge case is permutation-like.
+
+The overloaded case has branching.
+
+Neither case forces a visible fixed pair.
+
+A second color of edges — Peirce-visible source-carrier edges — is needed.
+
+---
+
+## 1.10 Extreme examples / counterexamples
+
+The run tests:
+
+- cyclic Nakayama \([3,4]\), which refutes naive A1;
+- cyclic Nakayama \(kC_6/J^3\);
+- quantum exterior families;
+- the U1/U5 invisible-return radical-square-zero model;
+- the project’s raw Yoneda/source-edge negative knowledge.
+
+No finite graph cycle is promoted to a homological operator.
+
+---
+
+## 1.11 Quotient / corner / localization
+
+For a source core \(\mathcal C\), let
+
+\[
+f=\sum_{x\in\mathcal C}e_x,
+\qquad
+\Delta=fDf.
+\]
+
+The run audits:
+
+- whether high tails restrict to \(\Delta\);
+- cross modules \(fD(1-f)\) and \((1-f)Df\);
+- singular-completeness of the all-infinite idempotent;
+- lifting of an infinite+ witness from a corner.
+
+No unconditional corner descent is claimed.
+
+---
+
+# 2. Source eligibility gate
+
+Define
+
+\[
+I_\infty
+=
+\{x:\operatorname{pd}_D L_x=\infty\}.
+\]
+
+The proposed A1 gate was
+
+\[
+\boxed{
+x\in I_\infty
+\Longrightarrow
+\Sigma_x\cap I_\infty\neq\varnothing.
+}
+\tag{A1}
+\]
+
+This statement is false.
+
+The key conceptual reason is:
+
+\[
+y\in\Sigma_x
+\]
+
+means that \(P_y\) appears recurrently in the resolution of \(L_x\), equivalently a high-degree Ext/Tor phenomenon with \(L_y\) in the **target/detector slot**.
+
+By contrast,
+
+\[
+y\in I_\infty
+\]
+
+asks about projective dimension of \(L_y\), i.e. the **source slot**.
+
+There is no formal symmetry between these two conditions.
+
+---
+
+# 3. HLM audit — definitions
+
+Let
+
+\[
+\mathcal S_{<\infty}
+=
+\{L_x:\operatorname{pd}L_x<\infty\},
+\]
+
+and
+
+\[
+\mathcal S_\infty
+=
+\{L_x:\operatorname{pd}L_x=\infty\}.
+\]
+
+Since \(D\) has finitely many simples, the number
+
+\[
+\boxed{
+\alpha
+=
+\max\{
+\operatorname{pd}L_x:
+L_x\in\mathcal S_{<\infty}
+\}
+}
+\]
+
+is finite.
+
+This does **not** require eventual periodicity.
+
+For a module \(M\):
+
+- \(K(M)\) is the maximal submodule filtered by finite-pd simples;
+- \(Q(M)=M/K(M)\);
+- \(C(M)\) is the maximal quotient filtered by finite-pd simples;
+- \(S(M)=\ker(M\twoheadrightarrow C(M))\).
+
+Huard–Lanzilotta–Mendoza prove for arbitrary Artin algebras:
+
+\[
+\operatorname{pd}M<\infty
+\iff
+\operatorname{pd}Q(M)<\infty,
+\]
+
+\[
+\operatorname{pd}M<\infty
+\iff
+\operatorname{pd}S(M)<\infty,
+\]
+
+and, when the relevant infinite-pd factors are present,
+
+\[
+\operatorname{soc}Q(M)\in\operatorname{add}\mathcal S_\infty,
+\]
+
+\[
+\operatorname{top}S(M)\in\operatorname{add}\mathcal S_\infty.
+\]
+
+They also prove the stable high-syzygy relations
+
+\[
+\Omega^{\alpha+1}M\oplus P
+\cong
+\Omega^{\alpha+1}Q(M)\oplus P',
+\]
+
+and
+
+\[
+\Omega^\alpha M\oplus Q
+\cong
+\Omega^\alpha S(M)\oplus Q'.
+\]
+
+These are the only HLM inputs used below.
+
+---
+
+# 4. VERIFIED — Universal Bi-Singular Root Theorem
+
+Let
+
+\[
+\operatorname{pd}M=\infty.
+\]
+
+Define
+
+\[
+\boxed{
+H(M)
+=
+Q(S(M)).
+}
+\]
+
+Then:
+
+## 4.1 Infinite projective dimension
+
+Since \(S\) and \(Q\) preserve finite-vs-infinite projective dimension,
+
+\[
+\boxed{
+\operatorname{pd}H(M)=\infty.
+}
+\]
+
+## 4.2 Infinite-pd top
+
+The module \(S(M)\) has top in
+
+\[
+\operatorname{add}\mathcal S_\infty.
+\]
+
+Since \(H(M)\) is a quotient of \(S(M)\), its top is a semisimple quotient of \(\operatorname{top}S(M)\).
+
+Hence
+
+\[
+\boxed{
+\operatorname{top}H(M)
+\in
+\operatorname{add}\mathcal S_\infty.
+}
+\]
+
+## 4.3 Infinite-pd socle
+
+By the defining property of \(Q\),
+
+\[
+\boxed{
+\operatorname{soc}H(M)
+\in
+\operatorname{add}\mathcal S_\infty.
+}
+\]
+
+## 4.4 High-syzygy alignment
+
+From HLM:
+
+\[
+\Omega^\alpha M\oplus P
+\cong
+\Omega^\alpha S(M)\oplus P'.
+\]
+
+Taking further syzygies kills projective summands, giving
+
+\[
+\Omega^{\alpha+2}M
+\cong
+\Omega^{\alpha+2}S(M).
+\]
+
+Applying the \(Q\)-relation to \(S(M)\),
+
+\[
+\Omega^{\alpha+1}S(M)\oplus Q
+\cong
+\Omega^{\alpha+1}H(M)\oplus Q'.
+\]
+
+Taking one more syzygy gives
+
+\[
+\Omega^{\alpha+2}S(M)
+\cong
+\Omega^{\alpha+2}H(M).
+\]
+
+Therefore
+
+\[
+\boxed{
+\Omega^{\alpha+2}H(M)
+\cong
+\Omega^{\alpha+2}M.
+}
+\tag{BS}
+\]
+
+Thus the project-level “bi-singular root” theorem is valid in the arbitrary Artin-algebra setting.
+
+The earlier project summary’s eventual-periodicity context was only needed for extra bounds on \(\alpha\), not for the existence of \(H(M)\).
+
+---
+
+# 5. VERIFIED — detector-tail equivalence of \(H(M)\)
+
+The exact sequence
+
+\[
+0
+\to
+S(M)
+\to
+M
+\to
+C(M)
+\to0
+\]
+
+has
+
+\[
+\operatorname{pd}C(M)\le\alpha.
+\]
+
+Hence for every fixed right \(D\)-module \(R\),
+
+\[
+\operatorname{Tor}^D_n(R,S(M))
+\cong
+\operatorname{Tor}^D_n(R,M)
+\qquad(n\gg0).
+\]
+
+Likewise,
+
+\[
+0
+\to
+K(S(M))
+\to
+S(M)
+\to
+H(M)
+\to0
+\]
+
+has
+
+\[
+\operatorname{pd}K(S(M))\le\alpha.
+\]
+
+Therefore
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R,H(M))
+\cong
+\operatorname{Tor}^D_n(R,M)
+\qquad(n\gg0).
+}
+\tag{TAIL}
+\]
+
+Consequently \(M\) and \(H(M)\) have the same recurrent detector support.
+
+In particular, if
+
+\[
+M=\Omega^N L_x,
+\]
+
+then
+
+\[
+\boxed{
+\Sigma(H(M))
+=
+\Sigma_x.
+}
+\]
+
+---
+
+# 6. Idempotence of the bi-singular root
+
+Because
+
+\[
+\operatorname{top}H(M)
+\in
+\operatorname{add}\mathcal S_\infty,
+\]
+
+HLM gives
+
+\[
+S(H(M))=H(M).
+\]
+
+Because
+
+\[
+\operatorname{soc}H(M)
+\in
+\operatorname{add}\mathcal S_\infty,
+\]
+
+one has
+
+\[
+Q(H(M))=H(M).
+\]
+
+Therefore
+
+\[
+\boxed{
+H(H(M))=H(M).
+}
+\]
+
+So \(H(M)\) is a genuine standard form, not a one-time transformation.
+
+---
+
+# 7. VERIFIED — finite-pd top peeling
+
+Let
+
+\[
+0\to K\to M\to L_y\to0
+\]
+
+with
+
+\[
+\operatorname{pd}L_y=d<\infty.
+\]
+
+For every fixed right detector \(R\), the long exact Tor sequence gives
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R,K)
+\cong
+\operatorname{Tor}^D_n(R,M)
+\qquad(n>d+1).
+}
+\]
+
+Thus a finite-pd simple quotient can be peeled without changing the detector tail.
+
+Repeating finitely many times removes any finite-pd semisimple quotient.
+
+The canonical simultaneous version is exactly
+
+\[
+S(M)\subseteq M.
+\]
+
+Hence:
+
+\[
+\boxed{
+\textbf{finite-pd head peeling is universally valid.}
+}
+\]
+
+This verifies A2 in the tail-equivalence sense.
+
+---
+
+# 8. Important limitation of peeling
+
+Although
+
+\[
+\operatorname{top}S(M)
+\]
+
+contains only infinite-pd simples, this does **not** imply that the recurrent Betti support of \(M\) contains an infinite-pd vertex.
+
+The operation changes the degree-zero presentation while preserving only the sufficiently high tail.
+
+Therefore:
+
+\[
+\boxed{
+\text{pure infinite-pd top of a tail-equivalent module}
+\not\Rightarrow
+\Sigma_x\cap I_\infty\neq\varnothing.
+}
+\]
+
+This distinction is exactly what the A1 counterexample exploits.
+
+---
+
+# 9. REFUTED — Infinite-Pd Successor Theorem A1
+
+Consider the two-simple cyclic Nakayama algebra with Kupisch series
+
+\[
+\boxed{
+[3,4].
+}
+\]
+
+Use standard uniserial notation \(M(i,\ell)\), where \(i\) is the top vertex and \(\ell\) the length.
+
+For a cyclic Nakayama algebra,
+
+\[
+\Omega M(i,\ell)
+\cong
+M(i+\ell,c_i-\ell)
+\]
+
+with indices modulo the number of simples.
+
+Let the simples be
+
+\[
+L_0=M(0,1),
+\qquad
+L_1=M(1,1).
+\]
+
+Then
+
+\[
+\Omega L_0
+\cong
+M(1,2).
+\]
+
+Since \(c_1=4\),
+
+\[
+\Omega M(1,2)
+\cong
+M(1,2).
+\]
+
+Thus \(L_0\) has infinite projective dimension and its resolution is
+
+\[
+P_0,
+P_1,
+P_1,
+P_1,
+\ldots
+\]
+
+after degree \(0\).
+
+Therefore
+
+\[
+\boxed{
+\Sigma_0=\{1\}.
+}
+\]
+
+On the other hand,
+
+\[
+\Omega L_1
+\cong
+M(0,3)
+=
+P_0.
+\]
+
+Hence
+
+\[
+\boxed{
+\operatorname{pd}L_1=1.
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+I_\infty=\{0\},
+\qquad
+\Sigma_0\cap I_\infty=\varnothing.
+}
+\]
+
+So:
+
+\[
+\boxed{
+x\in I_\infty
+\centernot\Rightarrow
+\Sigma_x\cap I_\infty\neq\varnothing.
+}
+\]
+
+Target A1 is **REFUTED as stated**.
+
+This does not make the Nakayama algebra a Universal Gap-A counterexample; it only shows that recurrent detectors need not themselves be eligible infinite-pd sources.
+
+---
+
+# 10. Consequence — the naive source relation is unusable
+
+The proposed relation
+
+\[
+x\leadsto_\infty y
+\iff
+x,y\in I_\infty
+\text{ and }
+y\in\Sigma_x
+\]
+
+can have a zero row.
+
+The \([3,4]\) Nakayama example has
+
+\[
+0\in I_\infty
+\]
+
+but no \(y\in I_\infty\cap\Sigma_0\).
+
+Therefore one cannot build the Universal source dynamics from
+
+\[
+T_\infty(x,y)
+=
+\mathbf1_{\{y\in\Sigma_x\cap I_\infty\}}.
+\]
+
+That representation is withdrawn.
+
+---
+
+# 11. Corrected source extraction
+
+Fix
+
+\[
+x\in I_\infty.
+\]
+
+Choose any sufficiently high syzygy
+
+\[
+M_0=\Omega^N L_x.
+\]
+
+Replace it by the bi-singular root
+
+\[
+M=H(M_0).
+\]
+
+Then:
+
+- \(M\) has infinite projective dimension;
+- \(\operatorname{top}M\) consists only of infinite-pd simples;
+- \(\operatorname{soc}M\) consists only of infinite-pd simples;
+- \(M\) has the same recurrent detector support as \(L_x\).
+
+Choose a recurrent detector
+
+\[
+r
+\]
+
+for \(M\).
+
+Then
+
+\[
+\operatorname{Tor}^D_n(R_r,M)\neq0
+\]
+
+for arbitrarily high \(n\).
+
+Take a composition series of \(M\).
+
+Finite dévissage gives a simple composition factor
+
+\[
+L_b
+\]
+
+such that
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_r,L_b)\neq0
+\quad\text{for arbitrarily high }n.
+}
+\tag{SRC}
+\]
+
+Since \(L_b\) occurs in the **source slot** of arbitrarily high Tor,
+
+\[
+\boxed{
+b\in I_\infty.
+}
+\]
+
+This gives a universal source-to-source extraction.
+
+---
+
+# 12. Corrected source relation
+
+Define
+
+\[
+\boxed{
+x\Rightarrow_{\mathrm{bs}} b
+}
+\]
+
+when there exist:
+
+- \(N\ge0\);
+- \(M=H(\Omega^N L_x)\);
+- a recurrent detector \(r\in\Sigma_x\);
+
+such that \(L_b\) is a composition factor of \(M\) and
+
+\[
+\operatorname{Tor}^D_n(R_r,L_b)\neq0
+\]
+
+for arbitrarily high \(n\).
+
+Then:
+
+\[
+\boxed{
+x\Rightarrow_{\mathrm{bs}} b
+\Longrightarrow
+x,b\in I_\infty.
+}
+\]
+
+Most importantly:
+\[
+\boxed{
+\forall x\in I_\infty,\ 
+\exists b\in I_\infty:
+x\Rightarrow_{\mathrm{bs}} b.
+}
+\tag{OUT}
+\]
+
+Thus the corrected source graph has no zero rows.
+
+---
+
+# 13. Bi-Singular Source Fork Theorem
+
+Continue with a witness
+
+\[
+x\Rightarrow_{\mathrm{bs}} b
+\]
+
+and detector \(r\).
+
+Since \(L_b\) is a composition factor of \(M\), and \(M\) is generated by its top, there exists a top vertex
+
+\[
+y\in\operatorname{supp}\operatorname{top}M
+\]
+
+such that
+
+\[
+\boxed{
+e_bDe_y\neq0.
+}
+\tag{VIS-CARRIER}
+\]
+
+But
+
+\[
+\operatorname{top}M
+\in
+\operatorname{add}\mathcal S_\infty,
+\]
+
+so
+
+\[
+\boxed{
+y\in I_\infty.
+}
+\]
+
+Under hypothetical Gap-A failure, the persistent pair \((R_r,L_b)\) cannot be Peirce-visible:
+
+\[
+\boxed{
+e_bDe_r=0.
+}
+\tag{DEAD}
+\]
+
+Therefore every corrected source-switch edge comes with a triple
+
+\[
+\boxed{
+x
+\Rightarrow_{\mathrm{bs}}
+b
+\overset{\operatorname{Tor}^{\infty}}{\longrightarrow}
+r,
+\qquad
+b\overset{\rm Peirce}{\longrightarrow}y,
+}
+\]
+
+where
+
+\[
+x,b,y\in I_\infty,
+\qquad
+r\in\Sigma_x,
+\]
+
+and
+
+\[
+e_bDe_r=0,
+\qquad
+e_bDe_y\neq0.
+\]
+
+This is the:
+
+\[
+\boxed{
+\textbf{Bi-Singular Source Fork}.
+}
+\]
+
+It is the strongest universal source-switch structure obtained in U6.
+
+---
+
+# 14. Relation to the old recurrent-top derangement
+
+The old asset said:
+
+- a recurrent detector/top \(r\) gives a persistent simple source \(b\);
+- failure forces
+  \[
+  e_bDe_r=0;
+  \]
+- since \(b\) is a composition factor of a module generated by its top, some alternate top \(y\) satisfies
+  \[
+  e_bDe_y\neq0.
+  \]
+
+The new U6 theorem upgrades only the **alternate carrier**:
+
+by first replacing the module by a bi-singular root, the top carrier \(y\) is guaranteed to lie in
+
+\[
+I_\infty.
+\]
+
+However one must be careful:
+
+the recurrent detector \(r\) need not be a top vertex of the bi-singular root.
+
+Therefore the old recurrent-top lemma cannot simply be rewritten with
+
+\[
+r,y,b\in I_\infty.
+\]
+
+The valid U6 upgrade is the Bi-Singular Source Fork, not a three-infinite-vertex recurrent-top theorem.
+
+---
+
+# 15. Minimal recurrent source core
+
+The corrected directed graph
+
+\[
+(I_\infty,\Rightarrow_{\mathrm{bs}})
+\]
+
+is finite.
+
+By (OUT), every vertex has at least one outgoing edge.
+
+Therefore the graph contains a terminal strongly connected component
+
+\[
+\boxed{
+\mathcal C_{\mathrm{bs}}
+\subseteq
+I_\infty.
+}
+\]
+
+This is the U6 **Minimal Recurrent Source Core**.
+
+For
+
+\[
+x\in\mathcal C_{\mathrm{bs}},
+\]
+
+every corrected source successor \(b\) lying on an edge in the full source graph remains inside the terminal SCC.
+
+Thus the extracted persistent sources are internally recurrent at the source level.
+
+No module periodicity is inferred.
+
+---
+
+# 16. Double-counting audit
+
+Let \(E_{\mathrm{bs}}\) be the set of corrected source edges inside
+
+\[
+\mathcal C_{\mathrm{bs}}.
+\]
+
+Because the component is strongly connected,
+
+\[
+\deg^+(x)\ge1,
+\qquad
+\deg^-(x)\ge1
+\]
+
+for every source vertex \(x\in\mathcal C_{\mathrm{bs}}\).
+
+Hence
+
+\[
+|E_{\mathrm{bs}}|
+\ge
+|\mathcal C_{\mathrm{bs}}|.
+\]
+
+## Permutation-like case
+
+If
+
+\[
+|E_{\mathrm{bs}}|
+=
+|\mathcal C_{\mathrm{bs}}|,
+\]
+
+then every source has exactly one incoming and one outgoing edge.
+
+The source graph is a directed cycle / derangement-type permutation component.
+
+## Branching case
+
+If
+
+\[
+|E_{\mathrm{bs}}|
+>
+|\mathcal C_{\mathrm{bs}}|,
+\]
+
+some source has branching or overload.
+
+Neither case implies:
+
+- periodic modules;
+- restartability;
+- Yoneda composition;
+- visible fixed-pair recurrence.
+
+This preserves the U3–U5 negative knowledge.
+
+---
+
+# 17. Two-color core geometry
+
+Every black source-extraction edge
+
+\[
+x\Rightarrow_{\mathrm{bs}}b
+\]
+
+comes with a red Peirce edge
+
+\[
+b\to_{\rm P} y
+\]
+
+where
+
+\[
+y\in I_\infty.
+\]
+
+Thus U6 naturally produces a two-color finite structure on \(I_\infty\):
+
+### black edge
+
+\[
+x\Rightarrow_{\mathrm{bs}}b
+\]
+
+means persistent source extraction through a recurrent detector;
+
+### red edge
+
+\[
+b\to_{\rm P} y
+\]
+
+means
+
+\[
+e_bDe_y\neq0
+\]
+
+with \(y\) an infinite-pd top carrier of the bi-singular root.
+
+Under failure the black edge also carries a dead detector
+
+\[
+r
+\]
+
+with
+
+\[
+e_bDe_r=0.
+\]
+
+A finite cycle in the black or red graph is only a standard form.
+
+It is not a homological cycle-lift theorem.
+
+---
+
+# 18. Source-core Peirce leakage
+
+The red carrier \(y\) associated with an internal source edge
+
+\[
+x\Rightarrow_{\mathrm{bs}}b
+\]
+
+need not lie in the terminal black SCC
+
+\[
+\mathcal C_{\mathrm{bs}}.
+\]
+
+Therefore the source core has two possibilities.
+
+## Internal red branch
+
+Some witness can be chosen with
+
+\[
+y\in\mathcal C_{\mathrm{bs}}.
+\]
+
+Then the minimal source core contains an internal Peirce edge between infinite-pd sources.
+
+No persistent Tor on that red edge is automatic.
+
+## Red leakage branch
+
+The witness carrier satisfies
+
+\[
+y\notin\mathcal C_{\mathrm{bs}}.
+\]
+
+Then
+
+\[
+e_bDe_y\neq0
+\]
+
+is an actual Peirce cross-edge leaving the source core.
+
+This is a new cross-source leakage datum.
+
+Neither branch closes Gap A.
+
+---
+
+# 19. Why A1 was the wrong gate
+
+The \([3,4]\) Nakayama example shows that a recurrent detector can have finite projective dimension as a simple source.
+
+The Bi-Singular Source Fork shows that one can still extract:
+
+- a new infinite-pd source \(b\);
+- an infinite-pd Peirce-visible carrier \(y\);
+
+without requiring the detector \(r\) to belong to \(I_\infty\).
+
+Therefore:
+
+\[
+\boxed{
+\text{source switching should act on persistent source factors, not on recurrent detector labels}.
+}
+\]
+
+This is the central representation change of U6.
+
+---
+
+# 20. Cyclic Nakayama calibration \(kC_6/J^3\)
+
+For
+
+\[
+D=kC_6/J^3,
+\]
+
+the algebra is a cyclic self-injective Nakayama algebra.
+
+Hence every nonprojective simple has infinite projective dimension:
+
+\[
+I_\infty=Q_0.
+\]
+
+Therefore the naive eligibility gate happens to hold trivially in this model.
+
+This does **not** rescue A1 universally.
+
+The model remains a calibration against fixed-source detector switching: its finite source graph / periodicity cannot be upgraded automatically into a prescribed detector switch.
+
+The corrected U6 source-extraction relation makes no such inference.
+
+---
+
+# 21. Cyclic Nakayama \([3,4]\) calibration
+
+This is the decisive A1 counterexample.
+
+It has:
+
+\[
+I_\infty=\{0\},
+\qquad
+\Sigma_0=\{1\},
+\qquad
+\operatorname{pd}L_1=1.
+\]
+
+So recurrent detector eligibility fails.
+
+The bi-singular root corrects the source description:
+
+for the periodic module
+
+\[
+M(1,2)=\Omega L_0,
+\]
+
+finite-pd head peeling extracts an infinite-pd source component whose high syzygy tail agrees with the original periodic tail.
+
+Thus the corrected source-extraction mechanism survives the calibration.
+
+---
+
+# 22. Quantum exterior calibrations
+
+In the quantum exterior families, finite source labels and finite projective types do not force exact-state periodicity when the parameter has infinite multiplicative order.
+
+The U6 source graph is used only to obtain a finite source-core standard form.
+
+The run does not infer:
+
+\[
+\text{source cycle}
+\Rightarrow
+\text{periodic module}.
+\]
+
+Thus the quantum moduli-drift counterarchitecture does not conflict with U6.
+
+---
+
+# 23. U1 invisible-return calibration
+
+In the radical-square-zero invisible-return model, a side source enters a recurrent core.
+
+The source-relative fixed pair can be invisible, while another source in the recurrent core gives the visible witness.
+
+The corrected U6 extraction follows this behavior:
+
+high syzygies inside the recurrent core yield persistent simple sources belonging to the recurrent source component, rather than forcing the original source’s visible detector to become recurrent.
+
+Thus the source-relocation mechanism is correctly represented.
+
+---
+
+# 24. U5-B / raw Yoneda-source-edge calibration
+
+The exact indexed artifact labelled “U5-B 10-dimensional Yoneda countermodel” was not recoverable from the available project search in this run.
+
+No model-specific theorem is therefore attributed to it.
+
+The intended calibration principle is nevertheless respected:
+
+\[
+\boxed{
+\text{raw Ext / Yoneda source edge}
+\not\Rightarrow
+\text{corrected source-switch edge}.
+}
+\]
+
+The relation
+
+\[
+x\Rightarrow_{\mathrm{bs}}b
+\]
+
+requires an actual bi-singular root, a recurrent detector, and arbitrarily-high Tor after composition-series extraction.
+
+It is strictly stronger than a raw low-degree Yoneda edge.
+
+No unsupported detail of the missing 10-dimensional model is used.
+
+---
+
+# 25. Corner / quotient setup
+
+Let
+
+\[
+\mathcal C
+\subseteq I_\infty
+\]
+
+be a source core and set
+
+\[
+f
+=
+\sum_{x\in\mathcal C}e_x,
+\qquad
+\Delta=fDf.
+\]
+
+A tempting descent is:
+
+\[
+D
+\rightsquigarrow
+\Delta.
+\]
+
+This is not automatic.
+
+---
+
+# 26. First corner obstruction — top/socle purity is not full support purity
+
+For a bi-singular root
+
+\[
+H(M),
+\]
+
+we know:
+
+\[
+\operatorname{top}H(M),
+\operatorname{soc}H(M)
+\in
+\operatorname{add}\mathcal S_\infty.
+\]
+
+But internal composition layers may still contain finite-pd simples.
+
+Indeed \(H\) is already fixed by \(S\) and \(Q\), yet HLM does not say that **all** composition factors are infinite-pd.
+
+Therefore:
+
+\[
+\boxed{
+\text{bi-singular}
+\not\Rightarrow
+\text{supported entirely on the all-infinite idempotent}.
+}
+\]
+
+So even the all-infinite source idempotent does not automatically contain the whole module.
+
+---
+
+# 27. Second corner obstruction — projective-tail escape
+
+Let
+
+\[
+e
+=
+\sum_{x\in I_\infty}e_x,
+\qquad
+g=1-e.
+\]
+
+A module with infinite-pd top has projective cover in
+
+\[
+\operatorname{add}(De).
+\]
+
+But
+
+\[
+\operatorname{rad}(De)
+\]
+
+can have components at finite-pd vertices through the cross term
+
+\[
+gDe.
+\]
+
+Thus the first syzygy can immediately leave the infinite-source corner.
+
+Dually, restriction/induction through the corner involves
+
+\[
+eDg.
+\]
+
+These cross modules are genuine homological data.
+
+---
+
+# 28. Singular-core audit
+
+The old project asset already identified the all-infinite idempotent as a possible singularly complete idempotent.
+
+If the relevant cross-module projective-dimension condition holds, one may hope for a singular equivalence involving
+
+\[
+eDe.
+\]
+
+But the project also identified the exact obstruction:
+
+\[
+\boxed{
+eD(1-e)
+}
+\]
+
+may have infinite projective dimension over the corner.
+
+This is the finite-hub / cross-module obstruction.
+
+U6 does not assume it away.
+
+---
+
+# 29. No automatic infinite+ lift from a corner
+
+Even if one obtains
+
+\[
+D_{\rm sg}(D)
+\simeq
+D_{\rm sg}(\Delta),
+\]
+
+Universal Gap A is an **ordinary simple-pair Tor/Peirce** statement.
+
+A singular equivalence alone does not identify the needed ordinary simple Tor pairs.
+
+Therefore a corner proof needs an additional eventual comparison / induction-restriction theorem to lift an infinite+ witness from \(\Delta\) to \(D\).
+
+No such universal theorem is proved here.
+
+---
+
+# 30. Conditional strict corner descent
+
+A strict corner descent would be legal under stronger hypotheses ensuring:
+
+1. high projective resolutions of the relevant source modules remain in \(\operatorname{add}(Df)\);
+2. restriction to \(\Delta=fDf\) preserves the high minimal tail;
+3. induction back to \(D\) has no high Tor defect;
+4. a Peirce-visible persistent simple pair in \(\Delta\) lifts to the same pair in \(D\).
+
+Under these hypotheses, a proper source core
+
+\[
+\mathcal C\subsetneq Q_0
+\]
+
+would give a genuine smaller-algebra descent.
+
+The U6 frozen hypotheses do not imply these conditions.
+
+Therefore A4 remains CONDITIONAL.
+
+---
+
+# 31. Multi-top derangement reuse — exact legal form
+
+The old recurrent-top asset remains valid:
+
+for a high syzygy \(M\), a recurrent detector \(r\) gives a simple source \(b\) with persistent high Ext/Tor, and failure forces
+
+\[
+e_bDe_r=0.
+\]
+
+Because \(b\) is a composition factor of \(M\), some top carrier \(y\) satisfies
+
+\[
+e_bDe_y\neq0.
+\]
+
+U6 improves this by first taking a bi-singular root.
+
+Then the chosen visible top carrier satisfies
+
+\[
+\boxed{
+y\in I_\infty.
+}
+\]
+
+What U6 does **not** prove is:
+
+\[
+r\in I_\infty.
+\]
+
+Thus the legal upgraded derangement is:
+
+\[
+\boxed{
+b\in I_\infty,
+\quad
+y\in I_\infty,
+\quad
+e_bDe_r=0,
+\quad
+e_bDe_y\neq0,
+}
+\]
+
+with \(r\) an arbitrary recurrent detector.
+
+This is exactly the Bi-Singular Source Fork.
+
+---
+
+# 32. Strongest theorem package
+
+## T1 — Universal Bi-Singular Root
+
+For every infinite-pd module \(M\),
+
+\[
+H(M)=Q(S(M))
+\]
+
+is infinite-pd,
+
+\[
+\operatorname{top}H(M),
+\operatorname{soc}H(M)
+\in
+\operatorname{add}\mathcal S_\infty,
+\]
+
+and
+
+\[
+\boxed{
+\Omega^{\alpha+2}H(M)
+\cong
+\Omega^{\alpha+2}M.
+}
+\]
+
+## T2 — Detector-Tail Preservation
+
+For every fixed right module \(R\),
+
+\[
+\operatorname{Tor}^D_n(R,H(M))
+\cong
+\operatorname{Tor}^D_n(R,M)
+\qquad(n\gg0).
+\]
+
+## T3 — Finite-Pd Top Peeling
+
+Finite-pd simple quotients may be peeled while preserving every fixed detector tail.
+
+## T4 — A1 Counterexample
+
+The cyclic Nakayama algebra with Kupisch series \([3,4]\) satisfies
+
+\[
+0\in I_\infty,
+\qquad
+\Sigma_0=\{1\},
+\qquad
+1\notin I_\infty.
+\]
+
+Hence the naive infinite-pd successor theorem is false.
+
+## T5 — Corrected Source Extraction
+
+The relation
+
+\[
+\Rightarrow_{\mathrm{bs}}
+\]
+
+is defined on \(I_\infty\) and every vertex has at least one outgoing edge.
+
+## T6 — Bi-Singular Source Fork
+
+Every corrected source edge admits witness data
+
+\[
+(x;b,r,y)
+\]
+
+with
+
+\[
+x,b,y\in I_\infty,
+\]
+
+\[
+r\in\Sigma_x,
+\]
+
+\[
+\operatorname{Tor}^{\infty}(R_r,L_b)\neq0,
+\]
+
+\[
+e_bDe_r=0
+\]
+
+under failure, and
+
+\[
+e_bDe_y\neq0.
+\]
+
+## T7 — Minimal Recurrent Source Core
+
+The corrected source graph has a terminal SCC
+
+\[
+\mathcal C_{\mathrm{bs}}\subseteq I_\infty.
+\]
+
+No module periodicity follows from this SCC alone.
+
+---
+
+# 33. Status of requested success labels
+
+## A1 — Infinite-pd source successor
+
+\[
+\boxed{\texttt{REFUTED AS STATED}.}
+\]
+
+Counterexample: cyclic Nakayama \([3,4]\).
+
+## A2 — finite-pd recurrent top peeling
+
+\[
+\boxed{\texttt{VERIFIED IN TAIL-EQUIVALENCE FORM}.}
+\]
+
+Canonical version: \(S(M)\), and stronger bi-singular version \(H(M)=Q(S(M))\).
+
+## A3 — minimal Peirce-dead source core impossible
+
+\[
+\boxed{\texttt{NOT PROVED}.}
+\]
+
+The corrected source core is finite and strongly connected, but a source-cycle is only a standard form.
+
+## A4 — strict corner/source descent
+
+\[
+\boxed{\texttt{CONDITIONAL ONLY}.}
+\]
+
+Cross modules and lifting of ordinary infinite+ witnesses remain uncontrolled.
+
+## A5 — actual counterexample / stronger normal form
+
+\[
+\boxed{\texttt{ACHIEVED}.}
+\]
+
+The actual A1 counterexample forces replacement of the naive source relation by the Bi-Singular Source Fork / corrected source-extraction dynamics.
+
+---
+
+# 34. Exact failure point of the naive source-core plan
+
+The original plan assumed the recurrent detector itself could become the next source:
+
+\[
+x
+\leadsto_\infty
+y,
+\qquad
+y\in\Sigma_x\cap I_\infty.
+\]
+
+The \([3,4]\) Nakayama example shows this is false.
+
+The correct source comes from a **composition factor carrying the persistent detector tail**, not from the detector label.
+
+Thus the source and detector are intrinsically different roles.
+
+This role separation survives all previous U1–U5 audits.
+
+---
+
+# 35. Exact frontier
+
+A hypothetical Universal Gap-A failure must now support a finite source dynamics with the following structure.
+
+There is a finite set
+
+\[
+I_\infty
+\]
+
+of infinite-pd simple sources.
+
+For every source in the terminal corrected source core
+
+\[
+x\in\mathcal C_{\mathrm{bs}},
+\]
+
+there exists a witness fork
+
+\[
+\boxed{
+x
+\Rightarrow_{\mathrm{bs}}
+b
+\overset{\operatorname{Tor}^{\infty}}{\longrightarrow}
+r,
+\qquad
+b\overset{\rm Peirce}{\longrightarrow}y,
+}
+\]
+
+with
+
+\[
+b\in\mathcal C_{\mathrm{bs}},
+\qquad
+y\in I_\infty,
+\qquad
+r\in\Sigma_x,
+\]
+
+and
+
+\[
+e_bDe_r=0,
+\qquad
+e_bDe_y\neq0.
+\]
+
+The detector \(r\) may have finite projective dimension as a simple.
+
+The visible carrier \(y\) is always an eligible infinite-pd source.
+
+The remaining obstruction is therefore:
+
+\[
+\boxed{
+\textbf{persistent detector and visible infinite source remain misaligned inside a finite bi-singular source dynamics.}
+}
+\]
+
+---
+
+# 36. Next node
+
+The next universal node should not restore the false relation
+
+\[
+\Sigma_x\cap I_\infty.
+\]
+
+The natural next node is:
+
+\[
+\boxed{
+\textbf{Universal Layer U7 — Bi-Singular Fork Alignment / Cross-Module Descent}.
+}
+\]
+
+Primary target:
+
+Given a terminal corrected source core and repeated forks
+
+\[
+b
+\overset{\Tor^\infty}{\longrightarrow}
+r,
+\qquad
+b
+\overset{\rm Peirce}{\longrightarrow}
+y\in I_\infty,
+\]
+
+prove one of:
+
+1. some visible carrier \(y\) can be converted into an active detector;
+2. source-core Peirce leakage gives a strict source/corner descent;
+3. finite-pd detector layers can be eliminated from the recurrent mechanism;
+4. cross-module infinite projective dimension itself yields a visible persistent pair.
+
+A particularly high-value route is the old singular-core dichotomy:
+
+\[
+\boxed{
+\text{cross module finite pd}
+\Rightarrow
+\text{corner reduction},
+}
+\]
+
+versus
+
+\[
+\boxed{
+\text{cross module infinite pd}
+\Rightarrow
+\text{new infinite+ witness?}
+}
+\]
+
+The second implication remains open and should be audited adversarially.
+
+---
+
+# 37. Completion label
+
+\[
+\boxed{
+\texttt{
+A1_REFUTED
+/
+UNIVERSAL_BI_SINGULAR_PURIFICATION
+/
+SOURCE_EXTRACTION_CORE
+/
+CROSS_MODULE_FRONTIER
+}
+}
+\]
+
+The main correction is:
+
+\[
+\boxed{
+\text{recurrent detector}
+\neq
+\text{next source}.
+}
+\]
+
+The main positive replacement is:
+
+\[
+\boxed{
+\text{persistent detector}
+\to
+\text{persistent infinite-pd composition source}
+\to
+\text{Peirce-visible infinite-pd top carrier}.
+}
+\]
+
+The exact remaining frontier is the alignment of these three roles, together with the cross-module obstruction to corner descent.

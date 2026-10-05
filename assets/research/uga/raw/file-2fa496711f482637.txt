@@ -1,0 +1,38 @@
+# CORRECTIONS / WITHDRAWALS
+
+This file is intentionally conservative.
+
+- Corrected: \(\Lambda\) infinite co\(+\) iff \(\Lambda^{op}\) infinite \(+\); do not substitute \(+\leftrightarrow+\).
+- Withdrawn: unconditional “loopless Gap-A failure” reduction.
+- Withdrawn/refuted: naked graph cycle as homological return.
+- Withdrawn/refuted: periodic module automatically yields simple self-periodicity.
+- Blocked: singular/Tate self-map as ordinary Ext without comparison.
+- Blocked: automatic homological-epimorphism behavior for deletion quotients.
+- Refuted in U3: first positive defect must generate a later positive defect.
+- Corrected in 3-Fa/3-Fb/3-Fc: ordinary endpoint accessibility and associated-graded accessibility are not enough.
+- Corrected in U6/U7: corner/singularity data is too coarse unless source/detector/carrier and cross-module transport are controlled.
+- Current: U8 remains an alignment frontier, not a theorem.
+
+When a raw historical file contains an older statement, preserve it as history and consult its later correction before reuse.
+
+
+## 2026-10-02 corrections
+
+- **Quarantined conflict:** a new project-derived chain-space calculation claims \(A\) infinite \(+\iff A^{op}\) infinite \(+\), while the older project guard keeps \(+\) and co\(+\) distinct following Armenta v1. Do not resolve this by assertion; independent audit is required.
+- **Screening dichotomy wording:** bounded and unbounded behavior is safely used after passing to subsequences; do not state an unjustified globally exclusive dichotomy.
+- **Coupling-ideal radical power:** do not universally strengthen radical containment to radical-square containment.
+- **Rees exact-torsion bookkeeping:** preserve the corrected primitive including the missing \(t^{Q-1}c_0\) term in the audited proof.
+- **Necklace boundary generation:** \(\eta\in D_\infty\) means a finite linear combination of higher-product outputs, not one chosen output. Section 15 of the final Derived-Necklace Run repairs this via subspaces and Nakayama.
+- **Withdrawn shortcut:** radical nilpotence plus degree descent does not automatically bound higher \(A_\infty\)-tree/Massey complexity.
+- **Filtration distinction:** excursion filtration and negative-weight filtration are different representations and must not be identified.
+
+
+## 2026-10-02 corrections
+
+- **Quarantined conflict:** a new project-derived chain-space calculation claims \(A\) infinite \(+\iff A^{op}\) infinite \(+\), while the older project guard keeps \(+\) and co\(+\) distinct following Armenta v1. Do not resolve this by assertion; independent audit is required.
+- **Screening dichotomy wording:** bounded and unbounded behavior is safely used after passing to subsequences; do not state an unjustified globally exclusive dichotomy.
+- **Coupling-ideal radical power:** do not universally strengthen radical containment to radical-square containment.
+- **Rees exact-torsion bookkeeping:** preserve the corrected primitive including the missing \(t^{Q-1}c_0\) term in the audited proof.
+- **Necklace boundary generation:** \(\eta\in D_\infty\) means a finite linear combination of higher-product outputs, not one chosen output. Section 15 of the final Derived-Necklace Run repairs this via subspaces and Nakayama.
+- **Withdrawn shortcut:** radical nilpotence plus degree descent does not automatically bound higher \(A_\infty\)-tree/Massey complexity.
+- **Filtration distinction:** excursion filtration and negative-weight filtration are different representations and must not be identified.

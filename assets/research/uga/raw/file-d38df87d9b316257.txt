@@ -1,0 +1,33 @@
+# Cycle 5 master guidance — defect recycling beyond Han
+
+Transport is explicitly `off`; this guidance is authored by Main Codex from elaboration `10ebcdf410d44c85` with zero external-call cost. It is strategy, not proof authority.
+
+The long-range target is not merely a five-vertex theorem. Build a reusable recurrence–visibility / corner–defect theory whose central engine is:
+
+\[
+\text{recurrence}\to\text{dead-zone descent}\to\text{corner witness}\to
+\text{ambient witness or named defect}\to\text{strict defect recycling}.
+\]
+
+The verified counterexample `6bd89784ef94bef3` changes the strategy: generic cross-Tor plus two cross pieces does not force a nonzero return product. Every positive theorem must use structure absent from that example—vertex minimality, origin from a syzygy dead zone, comparison provenance, bilateral recurrence, or a well-founded defect invariant.
+
+## Branch A — close the finite frontier and exact external interfaces
+
+Freshly verify the exact CLMS/Armenta input with ordered module conventions. Complete the two- and three-primitive-idempotent infinite-(+) theorem, using `b8a38ee00b9da7b0` as the one-vertex base and `073459eead09a970` as the five-vertex payoff. Decompose the proof so protected-corner or concentration hypotheses are explicit. Also verifier-close opposite-invariance if it is needed. The deliverable is a fact-DAG theorem, not an imported handoff assertion.
+
+## Branch B — canonical dead-zone comparison and defect atlas
+
+Starting from an actual infinite-(+) witness in (B=fAf), construct the canonical ambient induction/coinduction comparison. Use `78ea06837fb5f0cb`, `901a9f0f7822a9fe`, and `7d0a95b907de372f` only after matching their hypotheses. Every possible failure must be given a named persistent object: direct ambient simple pair, kernel/cokernel simple pair, or higher Tor-acyclicity defect. Track the primitive-idempotent support of every composition factor. The deliverable is a total comparison diagram in which no error term is left informal.
+
+## Branch C — well-founded/bilateral defect recycling
+
+Use `6bd89784ef94bef3` as the mandatory adversarial test. Identify which extra hypothesis of a vertex-minimal Gap-A dead zone fails there. Define a defect state that includes the recurrence pair, its Peirce-zero position, dead-zone idempotent, support provenance, and possibly radical depth. Prove either strict decrease to a smaller recurrent corner or formation of a compatible ambient witness. If strict decrease can cycle, combine the corresponding state for (A^{op}) and show bilateral recurrence forces a nonzero relation-level return. A support cycle without multiplication control is not enough.
+
+## Theory-building discipline
+
+- Promote reusable theorems, not only case classifications.
+- Separate direct visibility, error visibility, and second-order visibility as distinct interfaces.
+- Treat failure of a comparison hypothesis as mathematical data that enters the next recurrence layer.
+- Test every proposed defect-recycling axiom against `6bd89784ef94bef3` and the KLS Gap-B model.
+- Preserve the distinction between Gap A (Peirce visibility) and Gap B (ordinary Hochschild survival); the unified theory must explain both layers without conflating them.
+- Do not declare the ultimate theory complete until the fact graph proves the central recycling theorem and its interfaces, and an isolated human-summary/paper artifact is generated from the verified closure.

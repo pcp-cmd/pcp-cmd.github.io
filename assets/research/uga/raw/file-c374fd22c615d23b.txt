@@ -1,0 +1,458 @@
+# T20 — Closed finite-pd blocks give exact ordinary comparison and genuine count descent
+
+Date: 2026-10-04.
+
+Status: complete ordinary proofs, normal adversarial self-audit;
+unchanged T18 exact certificates and T19 literal module calibration
+reused; no new computation, no novelty claim; not independently verified.
+Universal Gap A remains OPEN for arbitrary algebras.
+
+This continues T19's actual finite-factor cross-map problem. Bounded
+pd of an image does not erase an ordinary differential. The present
+step instead constructs a legitimate ordinary deletion when finite-pd
+vertices form an actual projective-cover-closed block. It proves the
+same-pair Tor comparison, global-infinity transfer, exact retained
+infinite labels, and the precise strictly decreasing count. It also
+strengthens T19's common-three-label closure to one-sided containment.
+
+The latest inheritance counterexample admits this alternative block
+deletion: its whole right-finite old block can be removed at once,
+avoiding newly infinite retained labels and lowering the left count
+3->1. This is not a proof that such a block always exists in a bad A.
+
+## 1. Conventions and ordinary inputs
+
+A is finite-dimensional elementary over an arbitrary field k.
+I_L and I_R are the separately defined left/right infinite-pd simple
+label sets. H_zy records ordinary Tor persistence; W_z and T_y are
+its persistent rows and columns. Physical reverse support is
+D(y,z)=dim e_yAe_z for Tor(R_z,L_y).
+
+Reuse only complete ordinary interfaces: C080's singleton-detector
+and two-source closure, actual Peirce-block resolutions, finite-length
+Tor detection, and finite-factor pd bounds. No singular/Tate/stable
+information, graph-cycle return, or opposite-infinite-+ theorem enters.
+
+## 2. Containment suffices at three sources
+
+### Theorem 2.1 — Three left infinite labels contained in the right set force visible ordinary Tor
+
+If
+
+\[
+|I_L(A)|=3,\qquad I_L(A)\subseteq I_R(A),
+\tag{2.1}
+\]
+
+then A is infinite +, regardless of total vertex number, socle
+separation, or how many EXTRA right infinite labels exist.
+
+#### Proof
+
+Assume A bad and write I=I_L. For each z in I, containment makes
+R_z infinite-pd, so W_z is nonempty. The ordinary singleton-detector
+bridge would already give visible Tor; under badness |W_z|>=2.
+Every W_z lies in I, and misses z since D(z,z)>0. Thus
+
+\[
+W_z=I\setminus\{z\}\quad(z\in I).
+\tag{2.2}
+\]
+
+No visible persistent Tor then forces
+
+\[
+e_jAe_z=0\quad\text{for distinct }j,z\in I.
+\tag{2.3}
+\]
+
+Take ANY infinite-pd right simple R_t. Its sufficiently high actual
+minimal right resolution uses only projectives e_jA, j in W_t,
+and W_t is contained in I. By (2.3) all different projective types
+have Hom zero in BOTH directions. Therefore its actual high tail
+is block diagonal, exact component by component, and minimal.
+
+Choose a recurrent label j and augment its genuine one-type block
+by the actual right module X=coker(Q_{s+1}^{j}->Q_s^{j}). Ordinary
+Tor_n(X,L_j) is nonzero infinitely often. Since X is a quotient
+of a sum of e_jA, every right composition factor R_q of X has
+e_jAe_q nonzero. Ordinary finite-length detection gives
+
+\[
+\dim\operatorname{Tor}_n(X,L_j)
+\le\sum_q[X:R_q]\dim\operatorname{Tor}_n(R_q,L_j).
+\tag{2.4}
+\]
+
+Some fixed q therefore has persistent Tor(R_q,L_j) and its physical
+support e_jAe_q!=0. This contradicts badness. Recurrence came from
+the actual minimal right block, not from (2.3) or a graph cycle. QED.
+
+### Theorem 2.2 — Direct right containment version
+
+If |I_R|=3 and I_R is contained in I_L, then A is infinite +.
+
+For y in I_R, containment gives an infinite LEFT L_y. Its persistent
+column T_y lies in I_R, has at least two labels under badness, and
+misses y by diagonal support. It is I_R minus {y}; physical
+off-diagonal entries among I_R are zero. Every actual high LEFT
+resolution therefore splits by projective type Ae_z, z in I_R.
+In a recurrent block its real left module X has Tor(R_z,X) persistent;
+all factors L_q have e_qAe_z!=0. Direct LEFT factor detection gives
+the fixed supported pair (R_z,L_q). This is a direct proof, not
+opposite-infinite-+ transfer. QED.
+
+These theorems strictly weaken the equality hypothesis of C087's
+common-three-label corollary. They do not identify the two sets:
+extra infinite labels on the larger side are expressly allowed.
+They supply a class exclusion, not a new necessary-condition target.
+
+## 3. An actual closed finite-LEFT block
+
+Let F be a NONEMPTY PROPER vertex set, f=sum_{u in F}e_u, g=1-f.
+Assume
+
+\[
+\operatorname{pd}_A L_u<\infty\ (u\in F),\qquad
+gAf=0.
+\tag{3.1}
+\]
+
+Set d=max_{u in F}pd_A L_u. The second condition says exactly that
+each actual LEFT projective cover Ae_u, u in F, has composition
+factors only in F. It is not inferred from finite pd of those
+simples or from projectivity of their covers.
+
+Put
+
+\[
+B=A/AfA\cong gAg,\qquad D=fAf.
+\tag{3.2}
+\]
+
+The physical algebra has the literal triangular form
+
+\[
+A=\begin{pmatrix}B&0\\fAg&D\end{pmatrix}.
+\tag{3.3}
+\]
+
+AfA=fA has only F LEFT composition factors, including the deleted
+identities. It need not be radical, square-zero or projective.
+C069/C074 are not applied to this kernel: the ordinary comparison
+and infinity transfer are proved directly below. Simple right/left
+B labels are the retained labels outside F.
+
+### Theorem 3.1 — All-degree ordinary Tor comparison and exact retained labels
+
+Under (3.1), for EVERY retained pair and EVERY n>=0 the natural
+ordinary comparison is an isomorphism
+
+\[
+\operatorname{Tor}^A_n(R_z,L_y)
+\xrightarrow{\sim}\operatorname{Tor}^B_n(R_z,L_y),
+\qquad y,z\notin F.
+\tag{3.4}
+\]
+
+The retained physical spaces are exactly unchanged:
+
+\[
+e_yBe_z=e_yAe_z\quad(y,z\notin F).
+\tag{3.5}
+\]
+
+On retained labels,
+
+\[
+I_L(B)=I_L(A)\setminus F=I_L(A),\qquad
+I_R(B)=I_R(A)\setminus F.
+\tag{3.6}
+\]
+
+More precisely the retained RIGHT pds are identical, and if a
+retained LEFT simple has finite b=pd_B L_y, then
+
+\[
+b\le\operatorname{pd}_A L_y\le b+d+1.
+\tag{3.7}
+\]
+
+#### Proof: actual right resolutions and the natural ordinary map
+
+For retained z, the actual right projective e_zA equals e_zB:
+e_zAf=0 by gAf=0. Its entire right-module support stays outside F.
+A kernel inside sums of these modules also has only retained right
+factors, so its projective cover again uses only retained labels.
+Induction constructs the SAME exact minimal right simple resolution
+over A and B, with literally identical terms, differential matrices,
+and augmentation. In particular its right pd is exactly the same.
+
+Tensoring that actual A-projective resolution with B leaves it
+unchanged and yields the B-projective resolution. The natural
+change-of-rings map is represented by this literal base change,
+so on every retained simple test it gives (3.4), not merely an
+abstract equality of dimensions. No bounded Betti sampling is used.
+Also gAfA g=0; hence the gAg block survives exactly and (3.5) holds.
+
+#### Proof: the controlling finite side must be checked separately
+
+K=AfA=fA has only F left simple factors, whose pds are at most d.
+The valid finite-factor implication gives pd_A K<=d. Thus
+
+\[
+\operatorname{pd}_A B\le d+1.
+\tag{3.8}
+\]
+
+If b=pd_B L_y is finite, inflating a length-b B-projective resolution
+to A gives terms of pd at most d+1, and hence the upper bound in
+(3.7). Conversely a finite A pd a makes all retained A-Tor tests
+zero above a; (3.4) makes the ENTIRE minimal B term zero there,
+so pd_B L_y<=a. This proves (3.7) and equivalence of finite/infinite
+LEFT pd on retained labels. Since all deleted LEFT simples are
+finite-pd by (3.1), I_L(A) loses none of its infinite labels.
+The exact right resolution proof gives the right equality in (3.6).
+
+Retained-pair comparison alone would not justify infinity preservation
+of the LEFT source: deleted right detector tests are absent. The
+finite ambient bound (3.8) supplies that missing direction explicitly.
+QED.
+
+The LEFT finite pd of the block also equals its finite D-simple
+pd: modules supported in F have covers only Ae_u=De_u, so their
+actual minimal left resolutions stay there. Thus gd D=d. This
+fact is optional; it is not used as an unproved corner transfer.
+
+### Corollary 3.2 — Genuine eligible count/dimension descent
+
+Global infinity is equivalent for A and B. If gd B=b_0 is finite,
+all retained A simple pds are at most b_0+d+1 and deleted pds at
+most d, so
+
+\[
+\operatorname{gd}B\le\operatorname{gd}A\le b_0+d+1.
+\tag{3.9}
+\]
+
+Any supported ordinary B tail is the SAME supported A tail by
+(3.4)--(3.5). Therefore a bad A gives a bad B. This does not depend
+on a derived or ordinary global-unit section.
+
+The algebra dimension strictly decreases because F is nonempty.
+The LEFT infinite count is unchanged, while the RIGHT infinite count
+decreases EXACTLY by
+
+\[
+|F\cap I_R(A)|.
+\tag{3.10}
+\]
+
+If this number is positive, it is a proved strict finite-count move,
+and the sum of the two infinite counts also strictly decreases.
+If it is zero, only the dimension/vertex count decreases; the theorem
+does not call it a strict infinite-count move.
+
+## 4. Direct closed finite-RIGHT block version
+
+Assume instead pd_right,A R_u finite for u in F and fAg=0: each
+actual RIGHT projective e_uA has only F right factors. Put
+d_R=max_{u in F}pd_right,A R_u and B=gAg=A/AfA.
+
+Now the retained actual LEFT projectives Ae_y equal Be_y and their
+entire minimal left resolutions are unchanged. Thus the SAME natural
+ordinary Tor isomorphism (3.4) holds in every retained pair/degree,
+and the physical spaces (3.5) remain identical. The kernel AfA=Af
+has only finite F RIGHT factors and pd_right,A K<=d_R, so
+pd_right,A B<=d_R+1. Inflating a finite right B resolution and testing
+all retained LEFT detectors proves exact retained RIGHT finite/infinite
+labels. Retained LEFT pds are equal by the actual left resolution.
+
+Hence global infinity and badness are preserved directly. The RIGHT
+infinite count is unchanged, and the LEFT infinite count drops EXACTLY
+by |F intersect I_L(A)|. Positive intersection gives a strict eligible
+LEFT-count reduction; otherwise dimension still decreases. No use of
+opposite-infinite-+ or equality of the two sets is made.
+
+## 5. Inheritance of this actual block move
+
+If one such eligible block F is deleted, every retained physical
+Peirce space is identical by (3.5), and both infinite sets are the
+restrictions of the original sets by (3.6) and its right analogue.
+For another ORIGINAL eligible finite-side closed block G, the
+remaining G minus F therefore still consists of finite-pd simples
+on its controlling side, and the original physical zero condition
+remains true on its retained matrix. If G minus F is nonempty proper,
+the actual corresponding theorem applies again.
+
+This proves eligibility inheritance for a CHECKED family of these
+ordinary closed blocks, even mixing left- and right-finite blocks.
+Every nonempty deletion lowers vertex count and dimension. A move
+meeting an infinite label on its other side strictly lowers that
+infinite count; no automatic block existence or generic coefficient
+inheritance is asserted.
+
+## 6. Arbitrary-size three-source closure from closed mismatch carriers
+
+### Theorem 6.1
+
+Let |I_L(A)|=3. Suppose every right-only infinite label
+
+\[
+z\in I_R(A)\setminus I_L(A)
+\tag{6.1}
+\]
+
+belongs to some closed finite-LEFT block satisfying (3.1).
+Then A is infinite +. Blocks need not include ALL finite-left
+labels; their finite pds need not be zero; their dimensions and
+number of vertices are unrestricted.
+
+#### Proof
+
+If I_L is contained in I_R, Theorem 2.1 already gives ordinary
+visible return. Otherwise |I_L intersect I_R|<=2. If A were bad,
+C080 gives |I_R|>=3, so the right-only mismatch set is nonempty.
+
+Take the union F of the finitely many supplied left-finite closed
+blocks. It is still left-finite, nonempty and proper because it
+does not meet I_L. It is closed: each column belonging to one of
+the blocks has zero entries outside that block, hence outside
+their union. It contains every right-only infinite label.
+
+The actual quotient B in Theorem 3.1 is therefore bad if A is bad,
+but I_R(B)=I_R(A) minus F is contained in I_L(A) intersect I_R(A),
+so has size at most two. Its RIGHT count strictly decreased by a
+positive integer. C080 contradicts badness of B. QED.
+
+In particular it suffices that the ENTIRE finite-left complement
+F_L be projective-cover-closed (gAf=0). No projectivity of its
+simples or socle condition is needed. A direct right theorem holds
+for |I_R|=3 with left-only infinite labels carried by closed finite-RIGHT
+blocks, using Theorem 2.2 and Section 4.
+
+For arbitrary larger source counts, Sections 3--5 still provide a
+genuine ordinary count move whenever such a block contains an
+infinite label on its other side. They do not assert termination at
+two from automatic availability of more blocks.
+
+## 7. The actual obstruction examples admit a better block deletion
+
+### T18's A42: delete the entire right-finite old block
+
+Reuse C086's unchanged actual A42=[[B28,0],[V,Gamma]], with
+I_L={4,5,v}, I_R={v}. ALL old RIGHT simples have finite pd<=2,
+and their old rows have no v-column. Thus the old six-label block
+F={0,1,2,3,4,5} satisfies Section 4's finite-RIGHT condition fAg=0.
+Delete that WHOLE actual block. The quotient is Gamma of dimension
+two; the retained left Av and its t_v minimal resolution are literally
+unchanged. All-degree Tor(Rv,Lv) comparison is the identity.
+
+The actual infinite counts are LEFT 3->1 and RIGHT 1->1. No new
+infinite labels are created. This replaces the problematic partial
+chain A42->C19->C10, where leaving formerly finite old labels behind
+created ordinary periodic simples. The whole finite-side closed
+block removes those labels along with the two infinite LEFT frames.
+This repairs that example's reduction choice, not a false claim
+that its partial maps inherit. A42 already has visible Tor; it is
+not a bad counterexample. No new computation of its unchanged
+certificates was needed.
+
+### T19's loop/chain calibration: remove the left-finite carrier
+
+The connected dimension-fourteen radical-square-zero example has
+I_L={x1,x2,x3}, all six labels in I_R, and F={f1,f2,f3} of LEFT
+pds 2,1,0. Its projective covers Ae_f have only F factors; no
+x-row occurs in an F-column. Section 3 deletes this entire finite-pd
+block and yields the product of three dual-number algebras,
+dimension six. Counts are LEFT 3->3, RIGHT 6->3. The actual
+ordinary comparison on retained pairs is an isomorphism in EVERY
+degree. The quotient's two infinite sets are the common three
+labels, so C087 or Theorem 2.1 closes it.
+
+This handles the very calibration that fails T19's left socle
+condition, with finite complement pd two rather than only zero.
+Its actual right simple loops already give visible Tor, but the
+new block theorem explains a valid strict right-count descent
+without discarding finite-factor images in a stable category.
+
+### Closed finite carriers are not automatic
+
+In unchanged A42 the LEFT finite labels are 0,1,2,3. For every one
+of them e_vAe_u is nonzero: the V row includes Hom from one of
+the two projective R modules to that uniserial module. Since v is
+LEFT infinite, no finite-LEFT projective-cover-closed block can
+contain u. Thus finite pd of a simple alone does not put it in
+an eligible same-side closed carrier. A42 has a valid RIGHT finite
+closed carrier, a separate fact; no universal existence on either
+side is concluded.
+
+## 8. Normal adversarial self-audit
+
+1. **Finite pd mistaken for physical closure?** (3.1) keeps BOTH
+   hypotheses. A42 explicitly fails same-side closure for its
+   left-finite simples. Finite projective-cover pd is not factor pd.
+2. **Kernel incorrectly fed to C069/C074?** AfA contains f and
+   need not be radical/square-zero. The comparison and ambient
+   finite pd are proved directly; those radical theorems are not
+   invoked for this kernel.
+3. **Corner mistaken for quotient?** gAf=0 gives AfA=fA and
+   gAfAg=0, so quotient and gAg are literally isomorphic. The
+   retained Peirce spaces are IDENTICAL, not merely abstractly
+   derived-related. The right case uses fAg=0 and AfA=Af.
+4. **Natural map or just Betti dimensions?** A retained right
+   projective is literally its B projective and the complete
+   minimal resolution is unchanged. Tensor base change gives the
+   canonical ordinary comparison, in every degree. The right
+   version proves this through retained LEFT resolutions instead.
+5. **Both infinity partitions inferred from missing tests?** No.
+   Direct retained right resolutions give the right partition.
+   The left direction from finite B to finite A needs pd_A B<=d+1;
+   it is explicitly proved using the finite-factor kernel. This
+   checks the deleted-detector gap rather than ignoring it.
+6. **Count actually strict?** Only if the deleted finite-LEFT block
+   meets I_R (or finite-RIGHT block meets I_L). Otherwise only
+   dimension/vertex count is strict. The chosen finite-side count
+   stays unchanged; exact removed opposite-side labels are stated.
+7. **Badness preserved?** Global infinity follows from retained
+   labelled pd equivalence and finiteness of every deleted chosen-side
+   simple. Supported ordinary Tor lifts in the SAME physical pair.
+   These two separate facts give badness, not support recurrence.
+8. **Comparison inheritance automatic?** Only this checked ordinary
+   block condition inherits: retained physical entries and label
+   partitions are unchanged. T18's partial primitive maps do not.
+9. **Containment silently strengthened to equality?** No. Theorem
+   2.1 allows arbitrarily many extra I_R labels; its high RIGHT
+   projective sources lie in the three-element I_L. The direct
+   left counterpart separately allows extra I_L labels.
+10. **Three-source terminal step real?** If containment fails, the
+    right-only set is nonempty for a bad A by C080, and deletion
+    leaves at most two RIGHT infinite labels. No argument about
+    smaller hypothetical structures replaces that contradiction.
+11. **Coefficient perfectness or operation bounds assumed?** No.
+    Everything here is actual ordinary modules and quotient maps.
+12. **Arbitrary field and verification status?** All module actions,
+    exact projective resolutions, finite-length bounds and map
+    factorizations are field-independent proofs. Reused finite
+    certificates/calibrations remain same-author self-audits;
+    no independent verifier approval or novelty claim is made.
+13. **Goal narrowed to this class?** No. General mismatched three
+    sources without a closed finite carrier, larger infinite sets,
+    C076 physical support transfer, bounded-screening Target A,
+    local-trivial nonperfect, supported-weight and higher-output
+    Target B remain OPEN.
+
+## 9. Remaining closure issue
+
+The actual finite-factor problem now has a valid ordinary reduction
+in every projective-cover-closed finite-side carrier, with proved
+count decrease when that carrier contains an opposite-side infinite
+label. The whole three-source mismatch-carrier class closes, and
+the larger-side containment class closes directly by ordinary return.
+
+Outside those classes a finite-pd simple's projective cover can
+contain infinite-pd factors and mix the carrier types; its finite
+pd does not imply a closed block. A further global theorem must
+produce a different eligible ordinary carrier/reduction or force
+supported ordinary Tor from that interaction. This has not been
+proved. Universal Gap A remains OPEN; the full goal stays active.

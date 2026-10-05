@@ -1,0 +1,23 @@
+# Exact finite calibration for the Target-B primitive-seed correction
+
+Object: A over Q has basis e1,e2,a,b,t with a:1->2, b:2->1,
+ba=0 and ab=t. Its radical products other than ab vanish. Delete e2.
+
+Check its multiplication, unnormalized derived-quotient differentials and
+homology in degrees -1 through -8 (including the incoming degree -9),
+all four ambient simple-pair bar complexes in degrees 0 through 12
+(including incoming degree 13), the cycle/non-boundary representatives,
+the exact passage/bar chain identification on the retained vertex,
+and local excursion-one fillers in degrees 1 through 8.
+
+Deliverables: verify_auslander_seed.py, auslander-seed-result.json and
+a computation record. The program's coefficient arithmetic is exact rational
+arithmetic using Python's standard-library fractions.Fraction. No float,
+random sample, CAS service or third-party library is used.
+
+Acceptance: all asserted identities pass; each retained quotient homology
+space has dimension one; ambient Tor is as in the written minimal resolutions;
+the differential-square, passage-chain and boundary assertions pass.
+
+Evidence label: bounded-check. The finite check neither proves an infinite
+family nor independently verifies the accompanying mathematical proof.

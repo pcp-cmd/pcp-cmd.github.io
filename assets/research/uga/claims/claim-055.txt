@@ -1,0 +1,9 @@
+## UGA-C055 — Augmented Formality Excludes Unbounded Excursion Screening
+**Status:** COMPLETE SELF-AUDITED PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** correction Run, Section 8 and Theorem 8.2.
+
+Expansion of normalized derived-quotient passages identifies the ambient excursion filtration with reduced-bar length minus one. If the retained derived quotient is formal as an augmented algebra over the vertex algebra, its excursion spectral sequence collapses at \(E^2\). Every killed zero-excursion class is then hit by \(d_1\).
+
+Consequently Target B requires augmented non-formality. This does not assert that finite-dimensional algebras are formal, that bounded higher arity bounds all screening pages, or that the negative-weight spectral sequence also collapses.
+
+---

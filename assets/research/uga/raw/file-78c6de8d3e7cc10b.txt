@@ -1,0 +1,249 @@
+"""Exact self-check of an actual non-formal two-stage calibration."""
+from __future__ import annotations
+import argparse
+from collections import defaultdict
+from fractions import Fraction
+from itertools import product
+import json
+from pathlib import Path
+import platform
+
+BASIS = ('e0','e1','u','u2','u3','a','au','b','ub')
+RAD = BASIS[2:]
+EP = {'e0':(0,0),'e1':(1,1),'u':(0,0),'u2':(0,0),'u3':(0,0),
+      'a':(0,1),'au':(0,1),'b':(1,0),'ub':(1,0)}
+PRODUCTS = {('u','u'):'u2',('u','u2'):'u3',('u2','u'):'u3',
+            ('u','b'):'ub',('a','u'):'au',('b','a'):'u2',
+            ('ub','a'):'u3',('b','au'):'u3'}
+COH = {'u':0,'v':-1,'w':-1}
+
+def clean(v):
+    return {k:Fraction(c) for k,c in v.items() if c}
+
+def reduce_vector(v,pivots):
+    v=clean(v)
+    while v:
+        lead=min(v)
+        if lead not in pivots:
+            return v
+        factor=v[lead]
+        for row,value in pivots[lead].items():
+            v[row]=v.get(row,Fraction(0))-factor*value
+            if not v[row]: del v[row]
+    return v
+
+def echelon(columns):
+    pivots={}
+    for column in columns:
+        v=reduce_vector(column,pivots)
+        if v:
+            lead=min(v)
+            pivots[lead]={row:c/v[lead] for row,c in v.items()}
+    return pivots
+
+def linear(v,fn):
+    out=defaultdict(Fraction)
+    for col,c in v.items():
+        for row,z in fn(col).items(): out[row]+=c*z
+    return clean(out)
+
+def mul(left,right):
+    if left is None or right is None: return None
+    if EP[left][0]!=EP[right][1]: return None
+    if left.startswith('e'): return right
+    if right.startswith('e'): return left
+    return PRODUCTS.get((left,right))
+
+def left_action(a,v):
+    out=defaultdict(Fraction)
+    for (block,b),c in v.items():
+        target=mul(a,b)
+        if target: out[(block,target)]+=c
+    return clean(out)
+
+def projective_basis(vertices):
+    return [(j,b) for j,vertex in enumerate(vertices)
+            for b in BASIS if EP[b][0]==vertex]
+
+def map_by_images(vertices,images):
+    def fn(col):
+        block,b=col
+        assert EP[b][0]==vertices[block]
+        return left_action(b,images[block])
+    return fn
+
+def audit_modules():
+    # Source y: P0=Py, P1=Py+Px, P2=Py, P3=Px, P4=Py.
+    specs=[
+        ('dy1',(0,1),(0,),[{(0,'u'):1},{(0,'a'):1}]),
+        ('dy2',(0,),(0,1),[{(0,'u'):1,(1,'b'):-1}]),
+        ('dy3',(1,),(0,),[{(0,'au'):1}]),
+        ('dy4',(0,),(1,),[{(0,'ub'):1}]),
+        ('dx1',(0,),(1,),[{(0,'b'):1}]),
+        ('dx2',(1,1),(0,),[{(0,'a'):1},{(0,'au'):1}]),
+        ('dx3',(0,),(1,1),[{(0,'ub'):1,(1,'b'):-1}])
+    ]
+    maps={}
+    data=[]
+    a_linear=0
+    for name,domain,codomain,images in specs:
+        fn=map_by_images(domain,[clean(x) for x in images])
+        cols=projective_basis(domain)
+        cod=set(projective_basis(codomain))
+        for col in cols:
+            assert set(fn(col))<=cod
+            for a in BASIS:
+                lhs=linear(left_action(a,{col:1}),fn)
+                rhs=left_action(a,fn(col))
+                assert lhs==rhs,(name,a,col,lhs,rhs)
+                a_linear+=1
+        rank=len(echelon(fn(col) for col in cols))
+        maps[name]=(fn,domain,codomain,rank)
+        data.append({'map':name,'domain_dimension':len(cols),'rank':rank})
+        assert all(b in RAD for image in images for _,b in image)
+    assert [x['rank'] for x in data]==[5,4,2,1,2,4,2]
+    exact_pairs=[('dy1','dy2'),('dy2','dy3'),('dy3','dy4'),
+                 ('dy4','dy1'),('dx1','dx2'),('dx2','dx3'),('dx3','dx2')]
+    for outer,inner in exact_pairs:
+        f,dom,_,r=maps[outer]
+        g,gdom,gcod,gr=maps[inner]
+        assert tuple(dom)==tuple(gcod),(outer,inner)
+        assert all(not linear(g(c),f) for c in projective_basis(gdom))
+        assert len(projective_basis(dom))-r==gr,(outer,inner)
+    # Explicit two-dimensional kernel of the linker multiplication.
+    tensor=[('b','a'),('b','au'),('ub','a'),('ub','au')]
+    def mu(col):
+        p=mul(*col)
+        return {p:Fraction(1)} if p else {}
+    v={('ub','a'):Fraction(1),('b','au'):Fraction(-1)}
+    w={('ub','au'):Fraction(1)}
+    assert len(echelon(mu(c) for c in tensor))==2
+    assert not linear(v,mu) and not linear(w,mu)
+    def bimod_left(col):
+        z=mul('u',col[0])
+        return {(z,col[1]):1} if z else {}
+    def bimod_right(col):
+        z=mul(col[1],'u')
+        return {(col[0],z):1} if z else {}
+    assert linear(v,bimod_left)=={k:-c for k,c in w.items()}
+    assert linear(v,bimod_right)==w
+    assert not linear(w,bimod_left) and not linear(w,bimod_right)
+    return {'maps':data,'a_linearity_checks':a_linear,
+            'exact_periodic_pairs':len(exact_pairs),'linker_kernel_dimension':2}
+
+def a_words(n,source,target):
+    state=[((),target)]
+    for _ in range(n):
+        state=[(word+(b,),EP[b][0]) for word,at in state
+               for b in RAD if EP[b][1]==at]
+    return [word for word,at in state if at==source]
+
+def a_d(word):
+    out=defaultdict(Fraction)
+    for j in range(len(word)-1):
+        p=mul(word[j],word[j+1])
+        if p: out[word[:j]+(p,)+word[j+2:]]+=(-1)**j
+    return clean(out)
+
+def expected(n,source,target):
+    if source==0:
+        return int(target==0 and n%4 in (0,1,2)) + int(target==1 and n%4 in (1,3))
+    if n==0: return int(target==1)
+    return int(target==0 and n%2==1) + 2*int(target==1 and n%2==0)
+
+def h_words(n):
+    if n==0: return [()]
+    if n<0: return []
+    return [(a,)+w for a in COH for w in h_words(n-(1-COH[a]))]
+
+def h_d(word,arity=None):
+    out=defaultdict(Fraction)
+    prefix=0
+    for j,a in enumerate(word):
+        if j+1<len(word) and arity in (None,2):
+            b=word[j+1]
+            coeff = -1 if (a,b)==('u','v') else 1 if (a,b)==('v','u') else 0
+            if coeff:
+                out[word[:j]+('w',)+word[j+2:]]+=(-1)**(prefix+COH[a])*coeff
+        if j+2<len(word) and word[j:j+3]==('u','u','u') and arity in (None,3):
+            out[word[:j]+('v',)+word[j+3:]]+=(-1)**prefix
+        prefix+=1-COH[a]
+    return clean(out)
+
+def projection_rank(columns,d,n):
+    rank=len(echelon(d(c) for c in columns))
+    def augmented(c):
+        v=d(c).copy()
+        if c==('u',)*n: v[('~projection',)]=Fraction(1)
+        return v
+    return len(echelon(augmented(c) for c in columns))-rank
+
+def run(a_bound,h_bound):
+    assoc=0
+    for a,b,c in product(BASIS,repeat=3):
+        assert mul(mul(a,b),c)==mul(a,mul(b,c)),(a,b,c)
+        assoc+=1
+    module=audit_modules()
+    rows=[]
+    d2=0
+    for source,target in product((0,1),repeat=2):
+        bases={n:a_words(n,source,target) for n in range(a_bound+2)}
+        ranks={}
+        for n,words in bases.items():
+            ranks[n]=len(echelon(a_d(w) for w in words))
+            for w in words:
+                assert not linear(a_d(w),a_d),(source,target,n,w)
+                d2+=1
+        for n in range(a_bound+1):
+            betti=len(bases[n])-ranks[n]-ranks[n+1]
+            assert betti==expected(n,source,target),(n,source,target,betti)
+            row={'source':source,'target':target,'degree':n,'bar_dimension':len(bases[n]),'tor_dimension':betti}
+            if source==target==0:
+                epsilon=projection_rank(bases[n],a_d,n)
+                assert epsilon==int(n<=2),(n,epsilon)
+                row['ordinary_quotient_projection_rank']=epsilon
+            rows.append(row)
+    hbases={n:h_words(n) for n in range(h_bound+2)}
+    hranks={}
+    hrows=[]
+    hd2=0
+    for n,words in hbases.items():
+        hranks[n]=len(echelon(h_d(w) for w in words))
+        for w in words:
+            assert not linear(h_d(w),h_d),(n,w)
+            hd2+=1
+    for n in range(h_bound+1):
+        betti=len(hbases[n])-hranks[n]-hranks[n+1]
+        assert betti==expected(n,0,0),(n,betti)
+        epsilon=projection_rank(hbases[n],h_d,n)
+        assert epsilon==int(n<=2),(n,epsilon)
+        hrows.append({'degree':n,'bar_dimension':len(hbases[n]),'tor_dimension':betti,'projection_rank':epsilon})
+    screening=[]
+    for n in range(3,h_bound+1):
+        image=h_d(('u',)*n,arity=3)
+        assert image and not linear(image,lambda w:h_d(w,arity=2))
+        assert any('v' in w for w in image)
+        for w in hbases[n]:
+            if sum(-COH[a] for a in w)==1:
+                assert all('v' not in v for v in h_d(w,arity=2))
+        screening.append({'degree':n,'v_slot_terms':len(image),'first_weight_page_nonzero':True})
+    return {'status':'passed','backend':'python','version':platform.python_version(),
+            'field':'Q','evidence_level':'bounded-check','associativity_triples':assoc,
+            'module_certificates':module,'ambient_bound':a_bound,'ambient_incoming_degree':a_bound+1,
+            'ambient_d_square_checks':d2,'ambient_tor':rows,'minimal_model_bound':h_bound,
+            'minimal_model_incoming_degree':h_bound+1,'minimal_model_d_square_checks':hd2,
+            'minimal_model_tor':hrows,'actual_screening':screening,
+            'limitations':['Same author for proof and code; not independent verification.',
+             'Finite bar bounds do not prove the generic parity theorem.',
+             'The calibration is infinite +, not a Gap-A counterexample.',
+             'The all-degree periods use the separately explained finite exact module certificates.']}
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--ambient-bound',type=int,default=4)
+    parser.add_argument('--model-bound',type=int,default=8)
+    parser.add_argument('--out',type=Path,default=Path('even-tor-result.json'))
+    args=parser.parse_args()
+    result=run(args.ambient_bound,args.model_bound)
+    args.out.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:result[k] for k in ('status','version','associativity_triples','ambient_d_square_checks','minimal_model_d_square_checks')}))

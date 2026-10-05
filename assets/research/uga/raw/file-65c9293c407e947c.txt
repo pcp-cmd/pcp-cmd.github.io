@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "date": "2026-10-04",
+  "kind": "targeted exact research execution record",
+  "actual_executed_script": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-cyclic-head-relations\\verify_mixed_carrier_expansion.py",
+  "retained_script": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Mixed-Carrier-Expansion-Evidence\\verify_mixed_carrier_expansion.py",
+  "retained_result": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Mixed-Carrier-Expansion-Evidence\\mixed-carrier-expansion-result.json",
+  "proof": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Run-Mixed-Actual-Head-Relations-Recurrent-Carrier-Expansion-and-Radical-Tor-Cancellation-2026-10-04.md",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "counts": {
+    "associativity": 85184,
+    "actual_minimal_covers": 21,
+    "integer_basis_inverses": 378,
+    "actual_kernel_isomorphisms": 3,
+    "pruned_homology_isomorphisms": 0
+  },
+  "invocation": {
+    "wrapper": "C:/Users/pcp/.codex/skills/math-science-computation/scripts/observer_run.py",
+    "catalog": "C:/Users/pcp/.codex/skills/math-science-computation/references/observer-phases.json",
+    "phase": "math-science-computation.script.run",
+    "arguments": [
+      "-B",
+      "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-cyclic-head-relations\\verify_mixed_carrier_expansion.py",
+      "--project-root",
+      "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03",
+      "--out",
+      "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-cyclic-head-relations\\mixed-carrier-expansion-result.json"
+    ]
+  },
+  "execution_history": "Initial API caller failure retained separately. Repaired run passed; actual period-one/cyclic-kernel isomorphisms and then Loewy checks added. Final extended execution passed.",
+  "mathematical_proof": "Complete written ordinary all-degree/arbitrary-field/arbitrary-size proof and normal main-researcher audit; bounded shared arithmetic supplements it.",
+  "independent_verification": false,
+  "formal_verifier_acceptance": false,
+  "default_checksums_computed": false,
+  "legacy_hash_schema_validated": false,
+  "arbitrary_head_choice_containment": false,
+  "existential_badness_specific_selection": "OPEN",
+  "not_a_Universal_Gap_A_counterexample": true,
+  "UGA": "OPEN"
+}

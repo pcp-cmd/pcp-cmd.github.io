@@ -1,0 +1,124 @@
+# Beyond-Han 研究交付目录
+
+当前状态：**主攻任意 N，Universal Gap A 仍未证明。** 下列已完成引理和条件性定理具有完整自审证明；尚未独立数学核验，未确认文献新颖性。普通 HH survival 不是这些 Tor 结论的推论。
+
+2026-09-28 已按用户要求建立正式 [MRS 项目与 Vault 入口](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/00-项目入口.md>)。先读入口中的研究状态、定理与候选，再按正式地图检索精确证据。保存了既有主目标、当前结果、失败路线及审读更正历史；这次是有界初始归档，不是全部旧材料迁移。九篇笔记经两轮独立语义审读后写入，实际 Vault 的公式、链接检查通过。**笔记审读不等于对全部原始证明和计算资产的独立数学认证。**
+
+当前证明稿是 [Rees-Torsion-Screening-and-Cycle-Lifts.md](Rees-Torsion-Screening-and-Cycle-Lifts.md)。若 \(d=\operatorname{pd}_{C^e}M<\infty\)，零列次数 \(n\) 的死亡页满足 \(\lceil(n-1)/(d+2)\rceil\le r\le\lfloor(n-1)/2\rfloor\)，并产生 \(H_{n-1}(B[t],b_2+tb_3)\) 中阶数恰为 \(r\) 的挠元。由此证明：**统一挠界迫使高次商 Tor 全部传回；真实 Noetherian 算子环上的尾部有限生成性足以给出该界。** 一般算子存在性、有限生成性，以及障碍产生返回或下降的步骤仍未证明。代码 [audit_rees_screening.py](../work/audit_rees_screening.py) 精确核对源次数六、目标次数五、挠阶二的例子，并拒绝错误符号。初稿把正过滤的 cycle 提升误称“永久存活”，已根据独立审读收紧为“其 outgoing differential 为零”；定理结论不变，MRS 保留原稿及更正。
+
+此前 [Derived-Deletion-Screening-Normal-Form.md](Derived-Deletion-Screening-Normal-Form.md) 给出 two-stage derived quotient 的真实 bar 谱序列，\(E_1^{p,q}=H_q(R\otimes_C^{\mathbf L}M^{\otimes_C^{\mathbf L}p}\otimes_C^{\mathbf L}L)\)、\(d_r:(p,q)\mapsto(p+r,q-2r-1)\)，并证明商类损失恰为全部 outgoing differential 的秩之和。审定了最小反例必须有非零 \(\kappa\in HH^3(C,\operatorname{Tor}_2^A(C,C))\) 及方向明确的二次—三次碰撞。一个实际八维删点例子具有非零 \(d_2\)，并用有限 dg 多项式恒等式证明所有 \(n\ge5\) 的 quotient 类均被消去，而原代数仍有新的持续 Tor。**仅追踪商类不能关闭一般分支；固定页的无限消去、闭合返回与严格支撑下降仍为 candidate。** 1681 个 bar words、实际消解比较及两个拒绝检查通过。
+
+同轮 [KLS / opposite 方向审计](../work/kls-orientation-audit-20260927.md) 确认指定 KLS 原 (A) 的直接证明方向。另纠正新交接的一项关键前提：按项目和 CLMS 定义，全局 infinite (+) 性质满足 (+(A^{op})\iff +(A))，见证 pair 同时转置；固定 source 不必保持。故 not (+) 已能在两侧应用 one-way law，新稿给出**无需另加 not co(+)** 的任意 (N) persistent mixed-collision 证明。一般 (U) 没有因此完成，正式 verified fact graph 未改动。
+
+2026-09-27 最新续接的 [Projective-Prefix-Ext-Transfer.md](Projective-Prefix-Ext-Transfer.md) 把 regular-target 条件收紧到实际所需的位置：若 K=Ω^ℓX，则 self-Ext 比较映射的余核维数至多为 Σ_{t<ℓ}dim Ext^{n+t+1}(X,P_t)。只需前缀 projectives 的相关 Ext 消失，就能传回循环类，A 的其他投射项可以有持续 Ext。每个 N≥4 都给出 4N−4 维连通校准族；19 项查询在旧 regular 条件失效时由新条件检出，新 source 的损失则恰好吃掉全部返回类。真实 Ext¹ 标签还把联合有限 pd 窗口提前为 **q+m,…,q+2m−1**。六系统、28 个源、113 项实际比较及损失检查通过。**一般反例仍可能让实际前缀承受持续损失，这一情形尚未排除；有限系统的普遍存在也未证明。** 另给出该族 Tor_n(DA,DA) 对全部 n≥2 非零，用于校准文献中不能无条件借用的 Serre 平方有界性；这不是普通 HH 结论。
+
+2026-09-27 最新的 [Regular-Ext-and-Self-Extension-Transfer.md](Regular-Ext-and-Self-Extension-Transfer.md) 去掉有限系统路线中的单顶点头部限制：若 Ext^n(X,A) 在 n>c 消失，m 状态系统中的无限 pd 源必有 c<n≤c+m 的 self-Ext，并在等差次数上持续。对 simple 给出 supported diagonal Tor。进一步，若 Ω^qX 进入该系统，则 **pd(X)<∞ 等价于 Ext^n(X,X⊕A) 在 q+m+1,…,q+2m 全零**，成立时 pd≤q+m−1。正则目标的消失由实际 Ext^1 状态标签及有限图核验，不能用 Hom 代替 Ext。12 个系统、52 个查询及 161 个实际 Ext 比较映射通过；Saorín 与量子外代数分别校准两项假设不可省略。**m 不是已知的 N-only 界；一般有限系统存在性、regular Ext 持续时的 supported 检测仍未证明。** Auslander–Reiten 机制已有文献，不宣称其本身新颖。
+
+全项目的历史归约与状态见 [N-Vertex-Main-Route.md](N-Vertex-Main-Route.md)，本轮优先执行上述 derived-deletion 路线。主目标没有附加特殊 Peirce 图形或 Loewy 长度条件：假设全部 supported Ext 在次数 \(b\) 以后消失，已证明 Yoneda 正次数理想幂零；若再证明 Yoneda algebra 由不超过 \(d\) 次的类生成，则得到 \(\operatorname{gldim}A\le Nb+(N-1)d\)。**在完整 Peirce 消失假设下证明有限生成，仍是未证明的等价桥梁。**
+
+2026-09-27 多头部续接的 [Supported-Submodule-Localization.md](Supported-Submodule-Localization.md) 放宽整模块支撑要求：取只含允许组成因子的子模 K，若商 Q=M/K 对指定 simple 的高次 Ext 消失，返回模块就给出持续 supported Tor；Q 本身可以无限 pd。规范商是较小角 coinduction 自然映射的像，确实去掉目标顶点，但不能据此直接归纳。每个 N≥3 都给出不可分解、头部含全部 N 个顶点的一步周期模块，旧整模块判据在它上面全部失败，新条件在 N−1 个头部成功。3 个成员的 13 项成功、3 项正确未判定、112 项实际 Ext 映射检查及一个九维 coinduction 校准通过。**未判定头部的限制映射可在两端 Ext 同为一维时恒为零；一般商的目标消失仍未证明。** 此校准族的 (U) 已由既有 J³=0 理论覆盖，不作为新代数类宣称。
+
+2026-09-27 的 [Finite-Syzygy-System-Theorem.md](Finite-Syzygy-System-Theorem.md) 补正更强的边界：项目已有 Saorín 七维例子的全部正次数 simple self-Ext 都为零，但 supported 的非对角 Tor 在每个正次数非零，故**任意长度的同 simple 自返回证书也不能普遍存在**。项目原有 2N+3 维连通族使此障碍对每个 N≥3 都成立；它只需三个实际模块状态。新的有限封闭 syzygy 系统定理给出连续 m 次的精确持续性检测窗口，以及一个等差数列上的全次数下界。若全部 simples 进入系统、循环模块均有单顶点头部，则证明任意 N 的 (U) 条件定理。12 个系统、38 个过渡同构、40 个入口同构、2290 项 Betti 比较、51 项 bar 比较及五个拒绝检查通过。**一般系统的存在性与多头部障碍没有解决；(U) 仍未证明。**
+
+2026-09-24 续接的 [Bar-Cycle-Pairing-Theorem.md](Bar-Cycle-Pairing-Theorem.md) 明确否定“二步泛点返回证书普遍存在”：平方零有向 N 圈（N≥3）已经构成障碍，但它们满足 (U)。任意长度有限证书用实际 cycle、对偶 cocycle、单位配对和零接缝，推出 \(\dim\operatorname{Tor}_{rd}(R_h,L_h)\ge g^r\) 及自由 Yoneda 子代数。它直接覆盖 N 步返回和箭头商投影为零的类，并为上一轮参数族提供参数无关的乘法证据。12 个完整证书及两个拒绝检查通过。**此充分定理保持成立，但任意长度证书的普遍性现已被否定，见最新稿；(GP) 与一般目标仍未证明。**
+
+2026-09-24 的 [Generic-Return-and-Specialization.md](Generic-Return-and-Specialization.md) 将泛点方法用于实际的全次数证书：只要泛点存在正返回核与零接缝圈，整个不可约参数族都继承相同的全部偶数 Tor 下界，即使特殊点的原返回核判据已经失效。对每个 N≥3、g≥1，给出连通的 2N+4g 维参数族，严格证明 \(\Omega^2L_0=L_0^{\oplus g}\)、\(\dim\operatorname{Tor}_{2r}(R_0,L_0)=g^r\)，且 self-Ext 恰为 g 个二次生成元的自由结合代数。11 个成员及 36 项 bar 比较通过。**上述二步证书不是普遍机制，明确障碍见最新稿。**
+
+2026-09-23 的 [Polynomial-Family-Tor-Certificates.md](Polynomial-Family-Tor-Certificates.md) 使用 Vault 中的多项式约束与稠密延拓方法，建立任意 N 的真实乘法参数空间。已自审证明：族内 Universal Gap A 等价于每个无限全局维数不可约分支的泛点存在持续 supported Tor；泛点非零会传到整个分支，且可选相同 pair、相同无界次数集。**泛点步骤 (GP) 仍未证明。** 五维退化族明确说明消失不能反向延拓，80 项精确 Tor 比较通过。来源与采用范围见 [Vault-Method-Reuse-20260923.md](Vault-Method-Reuse-20260923.md)，未修改 Vault。
+
+同日的 [Critical-Poset-Support-Obstruction.md](Critical-Poset-Support-Obstruction.md) 给出每个 m≥8 的抽象关键支撑模式，证明既有左右支撑规则加关键偏序仍不足以消去全部 persistent Tor。这些是矩阵模式，**不是代数族或 (U) 反例**；它们说明后续必须保留真实乘法及额外结构。
+
+2026-09-16 的 [N-Vertex-Return-Complement.md](N-Vertex-Return-Complement.md) 把每个 source 的实际尾端送到少于 N 个顶点的规范角上，并保留有限前缀的全部微分。由此得到新的等价桥梁 (PC)：完整 Peirce 消失是否迫使这些指定前缀复形 perfect。已证明的条件性定理有最佳有限窗口：若相应边界模块的投射维数为 c，则 supported Tor 连续 c+2 次消失就迫使该 simple 的消解终止。**(PC) 仍未证明**；一个十一维、全局维数三的反例说明，不能用“前缀逐项有限 pd”代替整个复形的 perfectness。
+
+[Tor-Orthogonality-and-Corner-Tests.md](Tor-Orthogonality-and-Corner-Tests.md) 补入同一尾端必须满足的对侧条件：\(\operatorname{Tor}_{>0}^{uAu}(Au,T)=0\)。若右 simples 有长度至多 r 的 add(Au) 正合分解，则这些真实尾端的 pd≤r，并得到 r+3 次消失窗口。[Sharp-Right-Boundary-Windows.md](Sharp-Right-Boundary-Windows.md) 已给出任意 r≥0 的统一证明与 r+3 顶点代数族，表明窗口对每个 r 都不能缩短。这种检测可以用于左边界 uA 无限 pd 的情形。一般反例还必须保留非零的右相对商，尚未证明全套 Peirce 消失排除这种情况。
+
+配套的 [Idempotent-Deletion-and-Ext-Comparison.md](Idempotent-Deletion-and-Ext-Comparison.md) 给出一般删点比较的完整证明：被删 simple 的 id 至多 a、角上的 eA 的 pd 至多 c 时，所有模的 Ext 在 n≥a+c+2 同构。一般机制已有文献；十维例子明确否定仅凭被删 simple 同时有限 pd/id 就直接删除它的推断。通常必须保留相对商 \(D^b(eAe)/\operatorname{thick}(eA)\)。全部新增精确审计已通过，原归档事实图未改动。
+
+[KLS-Supported-Tor-Detection.md](KLS-Supported-Tor-Detection.md) 以明确的文献输入完成自审判定：采用 Krah 显式 strong tilting bundle 的 KLS 构造属于 Gap A，而且有一个固定 supported pair 在每个 \(n\ge7\) 都非零。它从二十三个候选中证明至少一个存在，尚未确定具体 pair 或精确维数。证明的关键是：两个关键 simple 若都具有有限投射维数，则非零 phantom 将落入半单导出范畴，产生矛盾。这是指定构造的结论，**一般 \(N\) 的主目标仍未证明**。
+
+作为其代数输入，[Corner-Tail-Periodicity.md](Corner-Tail-Periodicity.md) 证明任意 \(N\) 的条件性尾端传递定理：若删去 simple 的内射维数至多 \(a\)，留下的角是 \(\Gamma\otimes\mathbb C[\epsilon]/(\epsilon^2)\)、\(\operatorname{gldim}\Gamma\le g\)，则所有 simple Betti 数在 \(R=a+g+2\) 后逐次恒定；若 \({}_\Gamma eA\) 投射，可取 \(R=\max\{a+1,g\}+1\)。因此 infinite supported Tor 可由第 \(R\) 次的一个有限矩阵判定；指定 KLS 选择可取 \(R=7\)。四个 endomorphism 模型和一个严格二周期模块已完成精确有限核算。
+
+[ADR-Obstruction-and-Cyclic-Return.md](ADR-Obstruction-and-Cyclic-Return.md) 构造每个 \(N\ge3\) 的连通 \(2N+3\) 维代数：ADR endomorphism algebra 的全局维数至多四，但加入全部 radical 截断商后，Ext algebra 每个二次以上次数仍有新生成元。这排除了无条件 ADR 有限生成推断。该稿同时将自由自扩张的分裂返回定理推广到非半单的非投射模；若返回模块的头部集中于一个顶点，则推出 infinite supported Tor 及维数下界。返回的普遍存在性没有证明，主目标仍未完成。
+
+[Radical-Head-Detection.md](Radical-Head-Detection.md) 将完整 Peirce 消失条件等价转为有限个 radical 截断商到各自简单头部的 Ext 消失，适用于任意 \(N\)。它给出实际幂零比较映射及精确核维数恒等式，并保持检测高度和指数增长率。六个代数、27 个截断商已完成有限核算；与 opposite algebra 的对角 cosyzygies 作了 78 个比较。一个已知量子外代数反例同时排除了“头部 Ext 自动提升为自扩张”和“有界维数 syzygy 必定重复”两条捷径。一般 \(N\) 的主结论仍缺新的证明步骤。
+
+[Yoneda-Comparison-Kernel.md](Yoneda-Comparison-Kernel.md) 给出任意 \(N\) 的完整生成元核公式：实际 syzygy 比较映射的共同核，对偶于全部正次数乘积未能生成的 Ext 类。这比只检测一次 Ext 乘积的深层核商更精确。相应程序完成五个代数到次数五的实际乘积核算，并在四个小代数上用 bar complex 交叉检查。有限次数核算尚不能证明核最终消失。
+
+[Higher-Syzygy-Return-Theorem.md](Higher-Syzygy-Return-Theorem.md) 证明一般的 split syzygy 返回引理：若 \(\Omega^dL_h\) 含有 \(g\) 个 \(L_h\) 直接和，则 self-Ext 含有 \(g\) 个次数 \(d\) 生成元的自由结合子代数。一个辅助的 \(m+1\) 顶点族满足 \(\Omega^5L_0\simeq L_0\oplus(\Omega X)^{m-3}\)，并有精确 Betti 递推；五顶点成员实现旧残余 \(C\)，但不实现残余 \(H\)。它用于校准高阶机制，不能代替一般 \(N\) 的主结论。
+
+[Return-Kernel-Tor-Theorem.md](Return-Kernel-Tor-Theorem.md) 从实际返回乘法的核出发，在有限秩条件及零接缝条件下，构造同一个 simple 的全部正偶数 self-Tor，并给出维数下界和自由 Yoneda 子代数。47 维非单项式例子得到 \(\dim\operatorname{Tor}_{2r}(R_0,L_0)\ge2^{r+1}\)，同时没有逐箭头的 2-truncated cycle。
+
+[Quantitative-Peirce-Recurrence.md](Quantitative-Peirce-Recurrence.md) 在满足消去条件的支撑上给出另一种定量定理：记 \(z\) 为零 Peirce 分量个数，对任意正整数 \(M\)，若 supported Tor 在 \([M,2^zM]\) 内全消失，则 \(\operatorname{gldim}A<2^zM\)。它还证明唯一返回强制箭头的任意顶点数引理。
+
+[Peirce-Cycle-Theorem.md](Peirce-Cycle-Theorem.md) 将森林结论推广到任意无三角形 Peirce 支撑，并给出闭路 Tor 证书。三个五顶点候选模式中的两个已被排除；一个中心模式仍未解决。后续稿证明剩余模式中五个 local corners 都必须非平凡，八条中心—外围连接都必须包含真正箭头。本轮又得到 \(\kappa_1\kappa_2=\kappa_3\kappa_4=0\)：每对相反外围顶点至少有一个分支的原始返回乘法必须满秩。
+
+[Peirce-Elimination-Theorem.md](Peirce-Elimination-Theorem.md) 给出另一类任意顶点数结果：满足双向邻居消去条件的支撑均满足 Gap A，包括森林及对称 chordal Peirce 支撑。它也是最新无三角形定理的一个证明输入。
+
+| 文件 | 内容 |
+|---|---|
+| [Rees-Torsion-Screening-and-Cycle-Lifts.md](Rees-Torsion-Screening-and-Cycle-Lifts.md) | 消去范围、精确 page–torsion 次数对应、Noetherian 条件定理及实际循环移位的障碍群。 |
+| [rees_screening_audit.json](../work/rees_screening_audit.json) | 七项精确校准、20 个候选边界列的非成员判定、28 个循环挠模传递检查。 |
+| [N-Vertex-Main-Route.md](N-Vertex-Main-Route.md) | 任意 N 主目标、幂零引理、有限生成时的定量上界、深层核商公式及明确未证明的桥梁。 |
+| [Derived-Deletion-Screening-Normal-Form.md](Derived-Deletion-Screening-Normal-Form.md) | Two-stage bar 的精确微分与消去秩；2–3 最小反例条件；实际删点的永久商类消去与非零第二页；opposite 修正及两侧 mixed collision。 |
+| [two_stage_screening_audit.json](../work/two_stage_screening_audit.json) | 完整八维代数、dg 收缩、三次运算、1681 个 bar words、实际消解比较及全次数证明所用的有限多项式恒等式。 |
+| [kls-orientation-audit-20260927.md](../work/kls-orientation-audit-20260927.md) | 指定 KLS 原 A 的方向审读、折叠归属引理的简化，以及 CLMS / Armenta 的 opposite 指标核对。 |
+| [Projective-Prefix-Ext-Transfer.md](Projective-Prefix-Ext-Transfer.md) | 实际前缀的损失上界、满射传递、regular Ext 持续时的任意 N 校准、提前一次的联合窗口及无界 Serre 平方。 |
+| [prefix_ext_transfer_certificate.py](prefix_ext_transfer_certificate.py) | 分别计算到每个 projective 的实际 Ext 商，保存损失递推及前缀边界，严格区分检出与未判定。 |
+| [prefix_ext_transfer_audit.json](../work/prefix_ext_transfer_audit.json) | 19 项越过旧 regular 条件、五项正确未判定、113 个实际比较映射、673 个目标维数及三个强化窗口校准。 |
+| [Regular-Ext-and-Self-Extension-Transfer.md](Regular-Ext-and-Self-Extension-Transfer.md) | 正则目标 Ext 的有限标签、任意头部的 self-Ext 传递、长度 m 的联合有限 pd 判据及必要假设反例。 |
+| [regular_ext_transfer_certificate.py](regular_ext_transfer_certificate.py) | 验证 actual Ext 商、系统及入口，认证正则目标的最终消失并输出 self-Ext 窗口；条件失败时明确未判定。 |
+| [regular_ext_transfer_audit.json](../work/regular_ext_transfer_audit.json) | 12 个系统、52 个源、258 项正则 Ext 递推、161 个实际比较映射及两个错误证书拒绝检查。 |
+| [Supported-Submodule-Localization.md](Supported-Submodule-Localization.md) | 多头部返回的亏损不等式、规范支撑子模与 coinduction、任意 N 的不可分解周期模块及零限制映射。 |
+| [supported_localization_certificate.py](supported_localization_certificate.py) | 从全部实际作用构造子模与商，验证商的目标 Ext 消失；余商持续时明确返回未判定。 |
+| [supported_localization_audit.json](../work/supported_localization_audit.json) | 13 项检测成功、3 项未判定、51 个系统或入口同构、112 项 Ext 映射检查、686 项 Betti 及 27 项 bar 比较。 |
+| [Finite-Syzygy-System-Theorem.md](Finite-Syzygy-System-Theorem.md) | Saorín 对任意长度 simple 自返回的障碍；实际有限 syzygy 系统的有理级数、最佳窗口和单顶点头部条件下的任意 N 定理。 |
+| [syzygy_system_certificate.py](syzygy_system_certificate.py) | 验证全部模块作用与实际同构，输出持续 Tor 的路径、圈及重数；严格区分 supported 方向与部分入口。 |
+| [syzygy_system_audit.json](../work/syzygy_system_audit.json) | 12 个完整输入、78 个实际同构、2290 项 Betti 比较、51 项 bar 比较及五个错误证书的拒绝检查。 |
+| [Bar-Cycle-Pairing-Theorem.md](Bar-Cycle-Pairing-Theorem.md) | 二步证书普遍性的反例；任意长度链与对偶配对产生自由 Yoneda 代数；参数无关的显式证书。 |
+| [bar_cycle_pairing_certificate.py](bar_cycle_pairing_certificate.py) | 精确检验 cycles、cocycles、单位配对及全部接缝，并调用全次数定理。 |
+| [bar_cycle_pairing_audit.json](../work/bar_cycle_pairing_audit.json) | 12 个完整输入与证书，384 个边界 word、26 个接缝及两个错误证书的拒绝检查。 |
+| [Generic-Return-and-Specialization.md](Generic-Return-and-Specialization.md) | 泛点返回核的全次数特化定理；原判据失效仍保留 Tor 的任意 N,g 连通族；缩放退化的挠部分障碍。 |
+| [generic_return_specialization_audit.json](../work/generic_return_specialization_audit.json) | 11 个实际代数成员、二步 syzygy 返回、返回核失效核对及 36 项 bar 比较。 |
+| [Polynomial-Family-Tor-Certificates.md](Polynomial-Family-Tor-Certificates.md) | 真实乘法的多项式参数空间、Tor 特化方向、泛点等价归约 (GP)、条件性有限检测表与五维退化校准。 |
+| [Vault-Method-Reuse-20260923.md](Vault-Method-Reuse-20260923.md) | 两篇 Vault 笔记的实际复用、适用范围修正及有界检索来源记录。 |
+| [polynomial_family_tor_audit.json](../work/polynomial_family_tor_audit.json) | 四个精确参数、次数一至五的 80 项 Tor 比较及实际子式 t³；不替代全次数证明。 |
+| [Critical-Poset-Support-Obstruction.md](Critical-Poset-Support-Obstruction.md) | 每个 m≥8 的抽象关键支撑障碍；仅否定指定 Boolean 规则的充分性，没有构造代数反例。 |
+| [critical_poset_pattern_audit.json](../work/critical_poset_pattern_audit.json) | 八标签模式的完整见证、删点核对及 p,q=2,…,5 的 16 个模式核算。 |
+| [N-Vertex-Return-Complement.md](N-Vertex-Return-Complement.md) | 任意 N 的实际尾端及有限前缀复形；最佳 c+2 消失窗口；十一维逐项有限性反例；待证 perfectness 桥梁 (PC)。 |
+| [Tor-Orthogonality-and-Corner-Tests.md](Tor-Orthogonality-and-Corner-Tests.md) | 真实尾端的 Tor 正交与 exact induction；对侧 finite-resolution 检测；r+3 窗口；左右相对商兼容性。 |
+| [Sharp-Right-Boundary-Windows.md](Sharp-Right-Boundary-Windows.md) | 每个 r≥0 的统一最优性证明：r+3 顶点代数可有 r+2 次 supported 消失而消解不终止。 |
+| [sharp_right_windows_audit.json](../work/sharp_right_windows_audit.json) | r=0,…,5 的实际代数、角、syzygy 与 33 项边界 Tor 核对。 |
+| [tor_orthogonality_audit.json](../work/tor_orthogonality_audit.json) | 十维三次窗口、十一维假尾端、四维真尾端及 r=1 非投射正交模块的精确审计。 |
+| [Idempotent-Deletion-and-Ext-Comparison.md](Idempotent-Deletion-and-Ext-Comparison.md) | 一般删点比较的精确条件、a+c+2 起始界、十维反例及正确的相对奇点商。 |
+| [idempotent_deletion_audit.json](../work/idempotent_deletion_audit.json) | 新增代数的实际消解与同构、有限窗口及前缀抵消的精确核算；不充当无穷性证明。 |
+| [KLS-Supported-Tor-Detection.md](KLS-Supported-Tor-Detection.md) | 指定 KLS 构造的 Gap A 自审证明；二十三个候选 pair 中至少一个在每个 n≥7 非零；文献输入与一般 N 的边界。 |
+| [kls-degree-seven-query.json](kls-degree-seven-query.json) | 保留 Peirce 矩阵与有限查询清单；各项 Ext 值未计算，存在性由证明给出。 |
+| [Corner-Tail-Periodicity.md](Corner-Tail-Periodicity.md) | 双数角的实际尾端传递、恒定 Betti 数、单次数 supported Tor 判定；指定 KLS 构造的第七次接口。 |
+| [ADR-Obstruction-and-Cyclic-Return.md](ADR-Obstruction-and-Cyclic-Return.md) | 任意 N 的 ADR 有限生成反例族；非半单返回的自由 Ext 定理；单顶点头部的 supported Tor 检测。 |
+| [Radical-Head-Detection.md](Radical-Head-Detection.md) | 固定 radical 截断族的等价头部检测；幂零比较映射与对角 cosyzygy 恒等式；增长率；两条推断的反例。 |
+| [Yoneda-Comparison-Kernel.md](Yoneda-Comparison-Kernel.md) | 全部正次数 Yoneda 乘积的精确比较核公式；任意 N 的可计算接口；有限交叉检查及其边界。 |
+| [Higher-Syzygy-Return-Theorem.md](Higher-Syzygy-Return-Theorem.md) | 一般 split syzygy 返回引理；辅助族的五步分解、指数下界和精确 Betti series。 |
+| [Return-Kernel-Tor-Theorem.md](Return-Kernel-Tor-Theorem.md) | 返回核的严格提升；全偶数 self-Tor 与增长下界；自由 Yoneda 子代数；五顶点中心模式的秩约束；五个校准例。 |
+| [Quantitative-Peirce-Recurrence.md](Quantitative-Peirce-Recurrence.md) | 有限消失区间推出全局维数上界；\(\tau\)-HH 定量推论；返回强制箭头及固定 Tor 对；中心模式的新必要条件。 |
+| [Peirce-Cycle-Theorem.md](Peirce-Cycle-Theorem.md) | 无三角形定理、所有周期倍数次数的 Tor 非消失证明、三顶点推论，以及五顶点中心模式。 |
+| [Peirce-Elimination-Theorem.md](Peirce-Elimination-Theorem.md) | 任意顶点数的消去定理、完整证明和有限证书说明。 |
+| [Beyond-Han-Persistent-Tor-Theorems.md](Beyond-Han-Persistent-Tor-Theorems.md) | 四顶点 Gap A；persistent Tor 矩形检测；至多两个 infinite-pd simples 的任意顶点数结果；Gorenstein 三 simple 推论；corner 接口；五顶点剩余模式。 |
+| [Three-Vertex-Gap-A-Proof.md](Three-Vertex-Gap-A-Proof.md) | 最初的 singleton-tail bridge、三顶点证明和用户原归档的 provenance 核对。 |
+| [peirce_elimination_certificate.py](peirce_elimination_certificate.py) | 检查 Peirce 消去条件并报告定量窗口常数。只依赖 Python 标准库。 |
+| [peirce-elimination-certificates.json](peirce-elimination-certificates.json) | 六个支撑模式的检查结果和逐步邻居列表。 |
+| [peirce_zero_turn_certificate.py](peirce_zero_turn_certificate.py) | 检查强制箭头及循环零乘积条件，给出所有倍数次数的 Tor 非消失证书。 |
+| [peirce-zero-turn-certificates.json](peirce-zero-turn-certificates.json) | 两个五顶点模式的排除证书、单向三圈及三个未被该判据决定的校准例。 |
+| [return_kernel_certificate.py](return_kernel_certificate.py) | 精确检查有限乘法表、返回核、零接缝有向圈与增长证书。只依赖 Python 标准库。 |
+| [return-kernel-certificates.json](return-kernel-certificates.json) | 五个实际代数的返回核维数、严格关系张量、拼接图和证书。 |
+| [return-kernel-demo-algebras.json](return-kernel-demo-algebras.json) | 五个示例的完整 radical 基与稀疏乘法表；idempotent actions 由 Peirce 标记确定。 |
+| [syzygy_return_certificate.py](syzygy_return_certificate.py) | 从实际乘法计算最小投射覆盖、syzygies 和可分裂 simple copies。 |
+| [syzygy-return-certificates.json](syzygy-return-certificates.json) | 辅助族 m=3,4,5 的实际 kernel 与作用形态核算。 |
+| [five-vertex-hub-algebra.json](five-vertex-hub-algebra.json) | 二十二维五顶点中心模型的完整乘法表。 |
+| [yoneda_generation_certificate.py](yoneda_generation_certificate.py) | 精确构造比较映射，计算全部正次数乘积的秩及真正的新生成元商。 |
+| [yoneda-generation-certificates.json](yoneda-generation-certificates.json) | 五个实际代数到次数五的乘积和生成元数据。 |
+| [radical_head_certificate.py](radical_head_certificate.py) | 构造 radical 截断商、头部 Ext 及相邻投影诱导的幂零映射，核对精确检测恒等式。 |
+| [radical-head-certificates.json](radical-head-certificates.json) | 六个代数、27 个截断商的有限头部 Ext 与比较核数据。 |
+| [module_ext_certificate.py](module_ext_certificate.py) | 任意模块目标的 Ext 商与混合 Yoneda 乘积；包含实际投射限制边界。 |
+| [adr-obstruction-certificates.json](adr-obstruction-certificates.json) | 九维 ADR 反例的完整乘法表、八个截断商和次数一至五的乘积数据。 |
+
+原归档的 verified fact graph 保持原样。计算用于有限支撑条件、实际乘法、显式有限 bar cycles、程序证书与纯矩阵引理的审计，没有把有限阶检查当成无穷性的证明。

@@ -1,0 +1,11 @@
+## UGA-C078 — Actual Canonical Bimodule-Syzygy Tensor Nontermination Can Be Entirely Projective
+**Status:** COMPLETE SELF-AUDITED ACTUAL COUNTEREXAMPLE / UNCHANGED ALL-FIELD CALIBRATION REUSED / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Canonical-Bimodule-Syzygy-Tensor-Audit-2026-10-03.md, Sections 2--5.
+
+For any elementary finite-dimensional A, let M be the kernel of its actual minimal bimodule cover sum_i Ae_i tensor_k e_iA->A. Both ordinary side sequences split, so M is projective on each side. Its actual left projective-column matrix is T=D-I with D(i,j)=dim e_iAe_j, and M^{tensor_A p} has actual columns T^p, concentrated in derived degree zero.
+
+In the unchanged A5 algebra, name the dual-number vertex u and the other w. Then D=((2,1),(1,1)), T=((1,1),(1,0)), and M has actual tensor dimensions 8,13,21,..., nonzero for every p>=1. Nevertheless gldim A5=2 and every ordinary simple-pair Tor vanishes for n>=3. In particular F(L_u)=Omega L_u=Ae_w but F^2(L_u)=Ae_u!=0 while Omega^2 L_u=0; all these nonterminating F iterates are projective and give no positive ordinary Tor.
+
+Thus actual canonical-syzygy tensor nontermination, even with both side projectivities and finite bimodule pd, does not imply an ordinary supported tail. Repeated tensoring need not preserve minimality. This refutes the bare shortcut, not an additional genuinely late all-source non-infinite-+ theorem: for this finite-gldim algebra its canonical syzygies vanish for s>=3. These modules are not negative cohomology of the derived quotient, so C065/C067/C070's actual-model results are unaffected. Radical compatibility in that canonical setting gives the existing semisimple right-syzygy mechanism; its automatic general existence is not asserted. C076's support gap remains open.
+
+---

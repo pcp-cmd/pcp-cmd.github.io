@@ -1,0 +1,82 @@
+"""Full finite-LEFT block can be smooth yet expand actual cover carriers.
+
+Only the small factor is executed; the all-r sparse tensor is proved
+with frozen ordinary tensor resolution/physical-factor identities.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Yoneda-Termination-Evidence/verify_yoneda_termination.py'
+__file__=str(frozen)
+exec(compile(frozen.read_text(encoding='utf-8').split('\nC=nakayama_five()',1)[0],str(frozen),'exec'),globals())
+C=Table(3,[('e0',0,0),('e1',1,1),('e2',2,2),('a',1,0),('b',2,1)],{})
+actual=[finite_resolution(C,j,[2,1,0][j]) for j in range(3)]
+yoneda=yg.compute(C.payload,2)
+assert yoneda['degrees'][1]['by_source'][0]['Ext_dimensions_by_target']==[0,0,1]
+assert yoneda['degrees'][1]['by_source'][0]['all_positive_product_rank_by_target']==[0,0,1]
+Y=Table(3,[('e0',0,0),('e1',1,1),('e2',2,2),('alpha',1,0),('beta',2,1),('xi',2,0)],{(4,3):5})
+Yactual=[finite_resolution(Y,j,[1,1,0][j]) for j in range(3)]
+# A connected nonsection one-sided smooth WHOLE finite-LEFT block whose expanding
+# cover head is itself infinite: no enlargement by finite labels fixes it.
+T=Table(4,[('e0',0,0),('e1',1,1),('e2',2,2),('e3',3,3),
+ ('tu',0,0),('tq',1,1),('tw',3,3),('m',0,1),('n',0,1),
+ ('a',1,2),('b',1,2),('c',2,3),('d',1,3),('e',1,3)],
+ {(4,7):8,(5,9):10,(9,11):12,(10,11):13,(5,12):13})
+A=T # Frozen kernel_iso uses the explicitly bound current literal table.
+u,q,f,w=0,1,2,3
+Pu,lu=projective(T,u)
+Lu,Lq,Lf,Lw=[sr.Module.simple(T.alg,j) for j in range(4)]
+Hlocal=local_names(T,['a','b']);H=supported_module(T,Hlocal)
+certs=[kernel_simple(T,u,u,'Omega LEFT Lu=Lu; ordinary diagonal persists')]
+target,embedded=combined(T,[(Pu,lu,lambda b:(q,T.mult(b,T.index['m']))),
+ (Lq,local_simple(T,q),lambda b:(q,T.index['tq']))])
+certs.append(kernel_iso(Lq,target,embedded,'Omega LEFT Lq=P_u plus Lq'))
+certs.append(kernel_iso(Lf,H,[[(f,b) for b in part] for part in Hlocal],'Omega LEFT Lf=H(a,b)'))
+target,embedded=combined(T,[(Pu,lu,lambda b:(q,T.mult(b,T.index['m'])))])
+certs.append(kernel_iso(H,target,embedded,'Omega LEFT H=P_u; H pd1'))
+Pf,lf=projective(T,f)
+target,embedded=combined(T,[(Pf,lf,lambda b:(w,T.mult(b,T.index['c']))),
+ (Lw,local_simple(T,w),lambda b:(w,T.index['tw']))])
+certs.append(kernel_iso(Lw,target,embedded,'Omega LEFT Lw=P_f plus Lw'))
+Top=T.opposite()
+right=[kernel_simple(Top,f,w,'Omega RIGHT Rf=Rw'),kernel_simple(Top,w,w,'Omega RIGHT Rw=Rw')]
+finite_f=finite_resolution(T,f,2)
+assert [x['actual_cover']['cover_multiplicities'] for x in finite_f]==[[0,0,1,0],[0,1,0,0],[1,0,0,0]]
+Tphysical=[[sum(l==y and r==z for _,l,r in T.basis) for z in range(4)] for y in range(4)]
+assert Tphysical[u][q]==2 and Tphysical[u][f]==0
+assert all(x['actual_cover']['cover_multiplicities'][f]==int(x['degree']==0) for x in finite_f)
+dependencies={f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest() for n in
+ ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']}
+for directory,names in [('Carrier-Lemma-Evidence',['verify_carrier_lemma.py','verify_finite_factor_carrier.py']),
+ ('Shallow-Corner-Evidence',['verify_shallow_corner.py']),('Tensor-Factor-Evidence',['verify_tensor_factor.py']),
+ ('Perfect-Corner-Evidence',['verify_perfect_corner.py']),('Directed-Ext-Evidence',['verify_directed_ext.py']),
+ ('Yoneda-Termination-Evidence',['verify_yoneda_termination.py'])]:
+    for n in names:
+        rel=f'runs/2026-10-04/{directory}/{n}';dependencies[rel]=sha256((project_root/rel).read_bytes()).hexdigest()
+result={'status':'passed','independent_verification':False,'counts':counts,
+ 'factor':{'algebra':C.payload,'all_LEFT_finite_actual_resolutions':actual,'LEFT_pds':[2,1,0],
+ 'actual_Yoneda_comparison_products':yoneda,'Yoneda_algebra':Y.payload,
+ 'actual_Yoneda_simple_resolutions':Yactual,'E_global_dimension':1,'highest_Ext_degree':2},
+ 'written_full_finite_block_tensor_conclusion':{
+ 'family':'N7 tensor power r, tensor C, for r>=2',
+ 'ENTIRE_LEFT_finite_block':'(all-f,0),(all-f,1),(all-f,2)',
+ 'LEFT_pds':'r+2,r+1,r','RIGHT_F_pds':'all infinity','E_F':'the executed hereditary Y, gd1/topdegree2',
+ 'R_fails_even_for_ENTIRE_finite_block':True,'no_shallow_finite_labels_either_side':True,
+ 'full_large_tensor_table_executed':False,'not_a_Gap_A_counterexample':True},
+ 'connected14_whole_finite_block_obstruction':{'algebra':T.payload,'dimension':14,
+ 'LEFT_actual_kernel_isomorphisms':certs,'RIGHT_actual_kernel_isomorphisms':right,
+ 'LEFT_f_actual_finite_resolution':finite_f,'physical_matrix':Tphysical,
+ 'ENTIRE_LEFT_finite_block':[f],'LEFT_f_pd':2,'RIGHT_f_pd':'infinity from actual Rw return',
+ 'E_F':'k, global dimension0','LEFT_infinite_labels':[u,q,w],
+ 'RIGHT_infinite_labels_from_written_ordinary_diagonals_and_Rf_return':[u,q,f,w],
+ 'no_shallow_finite_simple_either_side':True,'original_f_carrier':[q,f],
+ 'expanding_cover_head_q_is_INFINITE':True,'expanded_projective_carrier':[u,q],
+ 'retained_target_q_ordinary_E_cover_generator':{'F_label':f,'generator_degree':1},
+ 'U_fails_at_retained_source_u_target_q':True,'no_finite_label_enlargement_available':True,
+ 'NO_retained_quotient_projection_because_a_c_is_retained_d':True,
+ 'already_infinite_plus_by_actual_diagonal_returns':True,'not_a_Gap_A_counterexample':True},
+ 'dependencies':dependencies,
+ 'scope':'Exact finite C resolutions, lifted Yoneda product and terminating Y resolutions. All-r whole-block conclusion is separately proved from ordinary tensor factors; no independent verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','factor_E_global_dimension':1,'whole_F_counter':'written all-r factor proof',
+ 'counts':counts,'independent_verification':False}))

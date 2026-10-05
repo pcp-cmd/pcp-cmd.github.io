@@ -1,0 +1,15 @@
+{
+  "status": "bounded_no_hit",
+  "N": 7,
+  "length_interval": [
+    2,
+    7
+  ],
+  "raw_vectors_inspected": 279936,
+  "admissible_vectors_tested": 3348,
+  "hit": null,
+  "formula_source": "C124 actual Omega M(i,l)=M(i+l,c_i-l)",
+  "literal_cover_replay": false,
+  "UGA_search": false,
+  "seconds": 0.15726339999991978
+}

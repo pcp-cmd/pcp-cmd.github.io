@@ -1,0 +1,13 @@
+## UGA-C086 — Primitive Eventual Ordinary Isomorphisms Can Fail to Inherit at a Still-Infinite Source
+**Status:** ACTUAL ALL-FIELD COUNTEREXAMPLE TO AUTOMATIC INHERITANCE / COMPLETE INTEGRAL MINIMAL-COVER CERTIFICATES / SELF-AUDITED ALL-DEGREE MAP PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** same T18 Run, Sections 3--7; runs/2026-10-04/Primitive-Comparison-Evidence/.
+
+B28 is the opposite endomorphism algebra of the six uniserial modules of the two-vertex radical-cube-zero cycle. Its actual simple resolutions give gd B=2. Every physical primitive quotient has gd<=4, but deleting the two projective-module vertices gives D8, the radical-square-zero four-cycle. Complete integral cover certificates prove the finite pds and actual simple syzygies 0->2->1->3->0 prove Tor^D_{4r}(R0,L0)=k for all r>=1. Thus primitive eventual comparison is not automatically inherited even from a finite-gd source.
+
+Set Gamma=k[t_v]/t_v^2, G=Gamma/(t_v), V=G tensor (e4B direct sum e5B), and A42=[[B,0],[V,Gamma]]. Actual Omega L4=Ae3+Lv, Omega L5=Ae2+Lv, Omega Lv=Lv give I_L(A)={4,5,v}; actual right Omega Rv=e4A+e5A+Rv and old finite right covers give I_R(A)={v}. ALL original primitive quotient comparisons are natural ordinary SAME-PAIR Tor isomorphisms on ALL retained pairs in EVERY n>=5: the infinite Rv resolution base-changes literally to each triangular quotient resolution, and all old rows vanish above degree four. This is a written actual ordinary comparison proof, not bounded bar-rank sampling.
+
+Deleting infinite LEFT source 4 gives C19 with I_L={5,v}, I_R={v}; pd_C L0=4 while pd_A L0=2 excludes an augmented ordinary corner section despite E_5. Deleting STILL infinite LEFT source 5 gives C10=D8 times Gamma, all five retained labels infinite on BOTH sides. LEFT counts are 3->2->5, RIGHT 1->1->5. For all r>=2, Tor^C19_{4r}(R0,L0)=0 and Tor^C10_{4r}(R0,L0)=k, so the second comparison fails EVERY high-even cutoff. Joint deletion creates ordinary periodic labels from formerly finite labels; original primitive maps cannot control that block. A42 has supported Tor(Rv,Lv)=k in every degree and is already infinite +, so this refutes automatic comparison inheritance/count monotonicity, not Universal Gap A or the bad-algebra global alternative.
+
+The finite exact run passed 326,699 full-basis associativity triples, 25,284 physical quotient products, 145 actual covers, 2,497 unimodular integer basis checks and ten module isomorphisms. Integer inverses plus the written base-change lemma prove all-field exactness/minimality; actual module iteration proves infinite tails. Shared-helper hashes and record integrity are frozen. Same-author proof/certificates and schema validation are not independent mathematical verification.
+
+---

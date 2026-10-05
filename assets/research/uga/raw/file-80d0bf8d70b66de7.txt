@@ -1,0 +1,40 @@
+{
+  "record_kind": "research-exact-execution",
+  "created_on": "2026-10-04",
+  "task": "task.md",
+  "backend": "Local Python3.14.3 Fraction arithmetic via math-science-computation observer_run.py",
+  "command": "python -B verify_cubezero_selfinjective.py --project-root PROJECT_ROOT --out cubezero-result.json",
+  "code": "verify_cubezero_selfinjective.py",
+  "result": "cubezero-result.json",
+  "status": "passed",
+  "field_of_calibration": "Q",
+  "counts": {
+    "associativity": 37952,
+    "actual_minimal_covers": 27,
+    "integer_basis_inverses": 462,
+    "actual_kernel_isomorphisms": 0,
+    "pruned_homology_isomorphisms": 0
+  },
+  "actual_minimal_covers": 27,
+  "recurrence_degrees": 303,
+  "projective_socle_checks": 17,
+  "Frobenius_certificates": 3,
+  "artifacts": [
+    "task.md",
+    "verify_cubezero_selfinjective.py",
+    "cubezero-result.json",
+    "initial-caller-failure.log"
+  ],
+  "failure_and_repair": "Initial nonexistent Algebra.radical caller attribute, fixed new caller to Module.radical_bases and fully rerun; later expanded actual nontrivial P benchmark, full successful run recorded.",
+  "metadata_policy": "No default checksums; helper names retained. Metadata digest removal after passed computation changed no mathematics. Legacy hash-based schema not claimed validated.",
+  "evidence_level": "bounded-check",
+  "independent_verification": false,
+  "general_proof": "Separate complete all-size arbitrary-field ordinary proof for EVERY nonprojective simple, using existing ordinary self-Ext comparison to transfer return/window without depth loss.",
+  "limits": [
+    "No simple-visit recurrence iteration",
+    "No general selfinjectivity assumption",
+    "No automatic carrier alignment",
+    "No external proof acceptance",
+    "Universal Gap A OPEN"
+  ]
+}

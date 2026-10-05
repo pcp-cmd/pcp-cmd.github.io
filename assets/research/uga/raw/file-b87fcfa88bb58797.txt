@@ -1,0 +1,303 @@
+"""Exact minimal syzygies and certificates for split simple summands.
+
+All ranks use rational arithmetic, then extend to C.
+Finite nonzero Betti numbers alone are never labelled an infinity certificate.
+The certificate is a split return of the starting simple inside an actual
+minimal syzygy. See Higher-Syzygy-Return-Theorem.md for the infinite proof.
+"""
+import argparse
+from fractions import Fraction as F
+from itertools import product
+import json
+from pathlib import Path
+import sys
+sys.dont_write_bytecode = True
+import return_kernel_certificate as rk
+
+
+def coordinates_reader(basis, ambient):
+    pivots = {}
+    width = len(basis)
+    for index, vector in enumerate(basis):
+        value = list(vector)
+        coefficients = rk.unit_vector(width, index)
+        for pivot, (row, tracked) in sorted(pivots.items()):
+            c = value[pivot]
+            if c:
+                value = [x - c * y for x, y in zip(value, row)]
+                coefficients = [x - c * y for x, y in zip(coefficients, tracked)]
+        pivot = next((i for i, x in enumerate(value) if x), None)
+        if pivot is None:
+            raise AssertionError("Dependent coordinate basis")
+        divisor = value[pivot]
+        pivots[pivot] = ([x / divisor for x in value],
+                         [x / divisor for x in coefficients])
+
+    def read(vector):
+        if len(vector) != ambient:
+            raise AssertionError("Wrong coordinate ambient dimension")
+        value, coefficients = list(vector), [F(0)] * width
+        for pivot, (row, tracked) in sorted(pivots.items()):
+            c = value[pivot]
+            if c:
+                value = [x - c * y for x, y in zip(value, row)]
+                coefficients = [x + c * y for x, y in zip(coefficients, tracked)]
+        if any(value):
+            raise AssertionError("Action does not preserve the kernel")
+        return coefficients
+
+    return read
+
+
+class Module:
+    def __init__(self, algebra, dimensions, actions):
+        self.algebra, self.dimensions, self.actions = algebra, dimensions, actions
+
+    @classmethod
+    def simple(cls, algebra, vertex):
+        dimensions = [int(i == vertex) for i in range(algebra.vertices)]
+        actions = [[[F(0)] * dimensions[b["left"]]
+                    for _ in range(dimensions[b["right"]])] for b in algebra.basis]
+        return cls(algebra, dimensions, actions)
+
+    def radical_bases(self):
+        incoming = [[] for _ in self.dimensions]
+        for b, columns in zip(self.algebra.basis, self.actions):
+            incoming[b["left"]].extend(columns)
+        result = []
+        for columns in incoming:
+            selected, _ = rk.independent(columns)
+            result.append([columns[i] for i in selected])
+        return result
+
+    def top_lifts(self):
+        radicals = self.radical_bases()
+        answer = []
+        for v, dimension in enumerate(self.dimensions):
+            units = [rk.unit_vector(dimension, i) for i in range(dimension)]
+            selected, _ = rk.independent(radicals[v] + units)
+            answer.append([units[i - len(radicals[v])] for i in selected
+                           if i >= len(radicals[v])])
+        return answer
+
+    def simple_summand_counts(self):
+        radicals = self.radical_bases()
+        counts = []
+        for v, dimension in enumerate(self.dimensions):
+            outgoing = [(b, cols) for b, cols in zip(self.algebra.basis, self.actions)
+                        if b["right"] == v and any(any(c) for c in cols)]
+            height = sum(self.dimensions[b["left"]] for b, _ in outgoing)
+            stacked = [[x for _, cols in outgoing for x in cols[i]]
+                       for i in range(dimension)]
+            socle = rk.nullspace(stacked, height)
+            counts.append(rk.rank(radicals[v] + socle) - len(radicals[v]))
+        return counts
+
+    def syzygy(self, retain_maps=False):
+        a = self.algebra
+        lifts = self.top_lifts()
+        copies = [(v, lift) for v, local in enumerate(lifts) for lift in local]
+        bases = [[] for _ in self.dimensions]
+        for copy, (v, _) in enumerate(copies):
+            bases[v].append((copy, None))
+            for r, b in enumerate(a.basis):
+                if b["right"] == v:
+                    bases[b["left"]].append((copy, r))
+        locations = [{key: i for i, key in enumerate(local)} for local in bases]
+        cover_dimensions = list(map(len, bases))
+        images = [[] for _ in bases]
+        for v, local in enumerate(bases):
+            for copy, radical_index in local:
+                source, lift = copies[copy]
+                image = (list(lift) if radical_index is None else
+                         rk.combine(self.actions[radical_index], lift, self.dimensions[v]))
+                images[v].append(image)
+        kernels = [rk.nullspace(images[v], self.dimensions[v]) for v in range(a.vertices)]
+        for v in range(a.vertices):
+            if rk.rank(images[v]) != self.dimensions[v]:
+                raise AssertionError("Projective cover is not onto")
+            if any(vector[i] for vector in kernels[v] for i, (_, r) in enumerate(bases[v])
+                   if r is None):
+                raise AssertionError("Kernel is not contained in the projective radical")
+        readers = [coordinates_reader(kernels[v], cover_dimensions[v])
+                   for v in range(a.vertices)]
+        kernel_actions, projective_actions = [], []
+        for r, b in enumerate(a.basis):
+            source, target = b["right"], b["left"]
+            projective_columns = []
+            for copy, radical_index in bases[source]:
+                column = [F(0)] * cover_dimensions[target]
+                if radical_index is None:
+                    column[locations[target][copy, r]] = F(1)
+                else:
+                    for out, coefficient in enumerate(a.pair(r, radical_index)):
+                        if coefficient:
+                            column[locations[target][copy, out]] += coefficient
+                projective_columns.append(column)
+            if retain_maps:
+                projective_actions.append(projective_columns)
+            # Verify A-linearity of the cover, before using its kernel.
+            for i, column in enumerate(projective_columns):
+                left = rk.combine(images[target], column, self.dimensions[target])
+                right = rk.combine(self.actions[r], images[source][i], self.dimensions[target])
+                if left != right:
+                    raise AssertionError("Cover is not A-linear")
+            kernel_actions.append([
+                readers[target](rk.combine(projective_columns, vector, cover_dimensions[target]))
+                for vector in kernels[source]])
+        result = Module(a, list(map(len, kernels)), kernel_actions)
+        details = {"cover_multiplicities": list(map(len, lifts)),
+                   "cover_dimensions": cover_dimensions,
+                   "kernel_dimensions": result.dimensions,
+                   "surjective_A_linear_and_minimal": True}
+        if retain_maps:
+            # Runtime linear data for comparison maps; not part of JSON reports.
+            details["linear_data"] = {
+                "lifts": lifts, "copies": copies, "bases": bases,
+                "images": images, "kernels": kernels, "readers": readers,
+                "projective_actions": projective_actions,
+            }
+        return result, details
+
+
+def family(m):
+    if type(m) is not int or m < 3:
+        raise ValueError("Family parameter m must be at least 3")
+
+    def successor(i, power=1):
+        return 1 + (i - 1 + power) % m
+
+    basis = [(f"a{i}", i, 0) for i in range(1, m + 1)]
+    basis += [(f"b{i}", 0, i) for i in range(1, m + 1)]
+    basis += [("z", 0, 0)]
+    products = [(f"b{i}", f"a{i}", {"z": 1}) for i in range(1, m + 1)]
+    for j in range(1, m + 1):
+        missing = {successor(j), successor(j, 2)}
+        for i in range(1, m + 1):
+            if i not in missing:
+                name = f"c{j}_{i}"
+                basis.append((name, j, i))
+                products.append((f"a{j}", f"b{i}", {name: 1}))
+    return rk.payload(m + 1, 0, basis, products)
+
+
+def resolve(algebra, simple_vertex, degrees):
+    current = Module.simple(algebra, simple_vertex)
+    modules, rows = [current], []
+    for degree in range(degrees + 1):
+        top = list(map(len, current.top_lifts()))
+        summands = current.simple_summand_counts()
+        row = {"degree": degree, "module_dimensions": current.dimensions,
+               "projective_cover_multiplicities": top,
+               "split_simple_summand_multiplicities": summands}
+        if degree < degrees:
+            current, details = current.syzygy()
+            row["next_cover_check"] = details
+            modules.append(current)
+        rows.append(row)
+    returns = [{"degree": row["degree"],
+                "free_generators": row["split_simple_summand_multiplicities"][simple_vertex]}
+               for row in rows if row["degree"] > 0 and
+               row["split_simple_summand_multiplicities"][simple_vertex] > 0]
+    return modules, {"starting_simple": simple_vertex, "syzygies": rows,
+                     "split_self_return_certificates": returns,
+                     "certificate_scope": "actual split syzygy return, not a finite Tor cutoff"}
+
+
+def central_head_profile(module, expected_outer):
+    a = module.algebra
+    if module.dimensions != [1] + expected_outer:
+        return False
+    for b, columns in zip(a.basis, module.actions):
+        nonzero = any(any(column) for column in columns)
+        if b["name"].startswith("a"):
+            if nonzero != (expected_outer[b["left"] - 1] > 0):
+                return False
+        elif nonzero:
+            return False
+    return True
+
+
+def family_demo(m, centre_degrees=7):
+    value = family(m)
+    algebra = rk.Algebra(value)
+    centre, centre_report = resolve(algebra, 0, centre_degrees)
+    assert central_head_profile(centre[4], [m - 2] * m)
+    assert centre[5].simple_summand_counts() == [1] + [0] * m
+    peripheral_reports = []
+    aggregate_centre_betti = [0] * 6
+    for i in range(1, m + 1):
+        modules, report = resolve(algebra, i, 5)
+        missing = {1 + (i - 2) % m, 1 + (i - 3) % m}
+        expected_outer = [sum(v not in {1 + j % m, 1 + (j + 1) % m}
+                              for v in missing) for j in range(1, m + 1)]
+        assert central_head_profile(modules[3], expected_outer)
+        excluded = {1 + (i - 5) % m, 1 + (i - 6) % m}
+        expected_summands = [0] + [int(j not in excluded) for j in range(1, m + 1)]
+        assert modules[5].simple_summand_counts() == expected_summands
+        for n, row in enumerate(report["syzygies"]):
+            aggregate_centre_betti[n] += row["projective_cover_multiplicities"][0]
+        peripheral_reports.append(report)
+    x = [0, m, 0, m, m * (m - 3)]
+    y = [1, 0, m - 1, 0, 1]
+    for n in range(5, max(centre_degrees, 12) + 1):
+        x.append((m - 2) * x[n - 5] + (m - 3) * x[n - 3])
+        y.append(y[n - 5] + (m - 3) * x[n - 4])
+    assert aggregate_centre_betti == x[:6]
+    assert [row["projective_cover_multiplicities"][0]
+            for row in centre_report["syzygies"]] == y[:centre_degrees + 1]
+    return {
+        "m": m, "algebra_dimension": algebra.vertices + algebra.d,
+        "radical_power_dimensions": list(map(len, algebra.radical_powers)),
+        "individual_return_kernel_dimensions": [
+            rk.branch(algebra, 0, v)["primitive_return_kernel_dimension"]
+            for v in range(1, m + 1)],
+        "central_resolution": centre_report,
+        "peripheral_resolutions": peripheral_reports,
+        "structural_profiles_checked": True,
+        "central_betti_from_proved_recurrence_through_degree_12": y,
+        "aggregate_peripheral_centre_betti_from_proved_recurrence": x,
+        "degree_5_central_split_return": {
+            "simple_copies": 1, "other_summand": "(m-3) copies of Omega(sum of peripheral simples)",
+            "polynomial_Yoneda_generator_degree": 5,
+            "growth_lower_bound_at_degree_5q": "m*(m-2)^q-m+1 for every q>=0",
+        },
+        "status": "finite exact audit of structural identities; no independent verifier",
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path)
+    parser.add_argument("--simple", type=int, default=0)
+    parser.add_argument("--degrees", type=int, default=5)
+    parser.add_argument("--demo", action="store_true")
+    parser.add_argument("--m", type=int, nargs="+", default=[3, 4, 5])
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--quiet", action="store_true")
+    parser.add_argument("--write-hub-input", type=Path)
+    args = parser.parse_args()
+    if args.quiet and not args.output:
+        parser.error("--quiet requires --output")
+    if args.write_hub_input:
+        args.write_hub_input.write_text(json.dumps(family(4), indent=2) + "\n", encoding="utf-8")
+    if args.demo:
+        result = {str(m): family_demo(m) for m in args.m}
+    elif args.input:
+        algebra = rk.Algebra(json.loads(args.input.read_text(encoding="utf-8")))
+        if not 0 <= args.simple < algebra.vertices or args.degrees < 1:
+            parser.error("Invalid simple vertex or degree limit")
+        _, result = resolve(algebra, args.simple, args.degrees)
+    else:
+        parser.error("Supply --input or --demo")
+    encoded = json.dumps(result, indent=2)
+    if args.output:
+        args.output.write_text(encoded + "\n", encoding="utf-8")
+    if args.quiet:
+        print(json.dumps({"output": str(args.output), "finite_audit": "passed"}))
+    else:
+        print(encoded)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,13 @@
+## UGA-C068 — An Actual Sharp Nonformal Cutoff and a Resolution-Cycle Counterexample
+**Status:** EXPLICIT ALL-DEGREE/ALL-CHARACTERISTIC PROOFS / BOUNDED EXACT SELF-CHECK / NOT INDEPENDENTLY VERIFIED  
+**Source:** tensor-nilpotence Run, Sections 4--6; reproducible files in Tensor-Nilpotence-Evidence/.
+
+The actual 24-dimensional eight-vertex algebra of Run Table (4.1), deleted at x with e_xAe_x=k, has quotient C equal to dual numbers at y times the radical-square-zero chain 0->1->...->5. Its coupler M=L_4 tensor R_1 is nonprojective on both sides, has C^e-pd exactly two and zero derived tensor square. The nonzero Hochschild class m_3(t_3,t_2,t_1)=v makes the retained model nonformal and prevents an identity-linear section.
+
+Exactly four quotient classes die on weight page one, at (R_4,L_1) in degree 3, (R_4,L_0) and (R_5,L_1) in degree 4, and (R_5,L_0) in degree 5. The last has Tor^C_5=k and zero comparison image. The C067 parameter values a=1,D=2,ell=2 give U=4 and ordinary isomorphism for n>5, so its strict cutoff is sharp for these parameters. A unital ordinary retract to A_6 times six isolated vertices proves pd_A L_x=infinity by the integral Cartan obstruction. Nevertheless the retained y diagonal has ordinary Tor k in every degree. This is infinite + and bounded screening, not a counterexample.
+
+A distinct nine-dimensional **four-vertex** algebra, with quotient the hereditary three-vertex line and coupler L_0 tensor R_2, also has C^e-pd two and zero derived tensor square. Its minimal bimodule resolution has the elementary P_0 type (0,2), whose correspondence graph has a self-loop because e_2Ce_0=k gamma. Explicit finite simple resolutions give gldim A=4 over every field. Thus a cycle in coefficient-resolution types does not imply persistent actual derived tensor homology or an infinite ordinary Tor pair. The valid Long01 implication in the other direction is unchanged.
+
+Exact rational multiplication, module, bar and comparison-map checks passed at the recorded finite bounds. The all-degree and all-characteristic assertions use the explicit basis proofs and finite module certificates, not extrapolation from those bounds. This four-vertex algebra is distinct from C063's two-vertex nine-dimensional nonformal calibration.
+
+---

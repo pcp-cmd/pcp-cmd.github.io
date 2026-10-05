@@ -1,0 +1,15 @@
+## UGA-C051 — Primitive-or-Massey Generation Dichotomy
+**Status:** CONDITIONAL GENERATION THEOREM RETAINED / EXHAUSTIVE DICHOTOMY WITHDRAWN / NOT INDEPENDENTLY VERIFIED  
+**Source:** final Derived-Necklace Run, Theorem 16.1 and Sections 17–18
+
+If the **entire** negative primitive quotient vanishes in **every** negative degree while negative homology remains unbounded, Theorem 16.1 gives generation by rooted \(A_\infty\)-trees with leaves in the finite arrow layer
+\[
+(P_\infty)^0\cong R/R^2
+\]
+and with unbounded Massey excess.
+
+**Correction (2026-10-03):** this is not an exhaustive Target-B alternative. High-degree primitive vanishing does not remove low-degree negative primitive seeds, and one primitive edge on a necklace does not satisfy UGA-C049's all-edge hypothesis. See the correction Run, Sections 1–3.
+
+**Depends on:** UGA-C049, UGA-C050.
+
+---

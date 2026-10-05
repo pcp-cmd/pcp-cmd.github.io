@@ -1,0 +1,10 @@
+# START HERE
+
+1. Read `AGENTS.md`.
+2. Read `CURRENT_STATE.md`.
+3. Follow the active frontier named there.
+4. Open only the Claims and Runs relevant to that frontier.
+5. Search `toolbox/`, `REGRESSION_GATES.md`, and history before inventing a new route.
+6. Use the existing built-in MRS and the installed Obsidian Vault Skill as needed.
+7. Continue the mathematics; do not stop merely because an intermediate lemma is proved.
+8. Persist only substantive checkpoints, then continue.

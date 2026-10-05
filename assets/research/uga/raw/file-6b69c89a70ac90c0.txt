@@ -1,0 +1,184 @@
+"""Radical-quotient head Ext and its nilpotent transition operator.
+
+All computations are finite and exact over Q. No finite cutoff is interpreted
+as eventual vanishing. See Radical-Head-Detection.md for the general theorem.
+"""
+import argparse
+from fractions import Fraction as F
+import json
+from pathlib import Path
+import sys
+sys.dont_write_bytecode = True
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+import yoneda_generation_certificate as yg
+
+
+def radical_filtration(module):
+    a = module.algebra
+    powers = [[[rk.unit_vector(d, k) for k in range(d)]
+               for d in module.dimensions]]
+    while any(powers[-1]):
+        incoming = [[] for _ in range(a.vertices)]
+        for b, action in zip(a.basis, module.actions):
+            incoming[b["left"]].extend(
+                rk.combine(action, vector, module.dimensions[b["left"]])
+                for vector in powers[-1][b["right"]])
+        next_power = [[vectors[i] for i in rk.independent(vectors)[0]]
+                      for vectors in incoming]
+        assert sum(map(len, next_power)) < sum(map(len, powers[-1]))
+        powers.append(next_power)
+    return powers
+
+
+def quotient(module, submodule):
+    complements, readers = [], []
+    for v, d in enumerate(module.dimensions):
+        units = [rk.unit_vector(d, k) for k in range(d)]
+        chosen, _ = rk.independent(submodule[v] + units)
+        complement = [units[k - len(submodule[v])] for k in chosen
+                      if k >= len(submodule[v])]
+        complements.append(complement)
+        readers.append(sr.coordinates_reader(submodule[v] + complement, d))
+
+    def project(v, vector):
+        return readers[v](vector)[len(submodule[v]):]
+
+    actions = []
+    for b, action in zip(module.algebra.basis, module.actions):
+        source, target = b["right"], b["left"]
+        assert all(not any(project(target, rk.combine(action, vector,
+                                                     module.dimensions[target])))
+                   for vector in submodule[source])
+        actions.append([project(target, rk.combine(action, vector,
+                                                    module.dimensions[target]))
+                        for vector in complements[source]])
+    return sr.Module(module.algebra, list(map(len, complements)), actions), complements, project
+
+
+def resolution(module, degree):
+    modules, covers = [module], []
+    for _ in range(degree):
+        cover = yg.Cover(modules[-1])
+        covers.append(cover)
+        modules.append(cover.kernel)
+    tops = [yg.top_reader(m) for m in modules]
+    return {"modules": modules, "covers": covers, "tops": tops}
+
+
+def transition_ranks(source, target, morphism, vertex, degree):
+    yg.check_module_map(source["modules"][0], target["modules"][0], morphism)
+    ranks = []
+    for n in range(degree + 1):
+        source_lifts, _ = source["tops"][n]
+        _, target_reader = target["tops"][n]
+        columns = [target_reader(vertex, rk.combine(
+            morphism[vertex], lift, target["modules"][n].dimensions[vertex]))
+            for lift in source_lifts[vertex]]
+        ranks.append(rk.rank(columns))
+        if n < degree:
+            morphism = yg.syzygy_map(source["covers"][n], target["covers"][n], morphism)
+    return ranks
+
+
+def analyze(value, degrees=5):
+    a = rk.Algebra(value)
+    simple_resolutions = [
+        resolution(sr.Module.simple(a, j), degrees + 1) for j in range(a.vertices)]
+    vertex_reports = []
+    for i in range(a.vertices):
+        first_cover = simple_resolutions[i]["covers"][0]
+        projective = sr.Module(a, first_cover.dimensions, first_cover.data["projective_actions"])
+        powers = radical_filtration(projective)
+        length = len(powers) - 1
+        truncations = {}
+        for r in range(1, length):
+            module, lifts, projection = quotient(projective, powers[r])
+            res = resolution(module, degrees + 1)
+            truncations[r] = {"module": module, "lifts": lifts, "projection": projection,
+                              "resolution": res,
+                              "head_Ext_dimensions": [
+                                  len(top[0][i]) for top in res["tops"]]}
+            assert list(map(len, module.top_lifts())) == [
+                int(v == i) for v in range(a.vertices)]
+        transitions = {}
+        for r in range(1, length - 1):
+            source, target = truncations[r + 1], truncations[r]
+            morphism = [[target["projection"](v, vector) for vector in source["lifts"][v]]
+                        for v in range(a.vertices)]
+            transitions[r] = transition_ranks(
+                source["resolution"], target["resolution"], morphism, i, degrees + 1)
+        heads = [sum(t["head_Ext_dimensions"][n] for t in truncations.values())
+                 for n in range(degrees + 2)]
+        kernels = [heads[n] - sum(row[n] for row in transitions.values())
+                   for n in range(degrees + 2)]
+        supported = [
+            sum(projective.dimensions[j] *
+                len(simple_resolutions[j]["tops"][n][0][i]) for j in range(a.vertices))
+            for n in range(degrees + 2)]
+        assert kernels[1] == projective.dimensions[i] - 1
+        for n in range(1, degrees + 1):
+            assert supported[n] == kernels[n] + kernels[n + 1]
+            assert kernels[n] <= heads[n] <= max(length - 1, 0) * kernels[n]
+            assert heads[n] <= max(length - 1, 0) * supported[n]
+        vertex_reports.append({
+            "vertex": i, "projective_composition_multiplicities": projective.dimensions,
+            "projective_Loewy_length": length,
+            "radical_layer_multiplicities": [
+                [len(powers[r][v]) - len(powers[r + 1][v]) for v in range(a.vertices)]
+                for r in range(length)],
+            "proper_truncations": [
+                {"radical_exponent": r, "module_dimensions": item["module"].dimensions,
+                 "head_Ext_dimensions": item["head_Ext_dimensions"]}
+                for r, item in truncations.items()],
+            "pullback_ranks_from_exponent_r_to_r_plus_1": transitions,
+            "aggregate_head_Ext_dimensions": heads,
+            "nilpotent_transition_kernel_dimensions": kernels,
+            "weighted_supported_Ext_dimensions": supported,
+            "exact_identity_checked_through_degree": degrees,
+        })
+    return {
+        "algebra_dimension": a.vertices + a.d, "vertices": vertex_reports,
+        "status": "finite exact checks only; no eventual-vanishing conclusion",
+    }
+
+
+def quantum_exterior(q=2):
+    return rk.payload(1, 0, [("x", 0, 0), ("y", 0, 0), ("z", 0, 0)],
+                      [("y", "x", {"z": 1}), ("x", "y", {"z": -q})])
+
+
+def demos():
+    old = rk.demos()
+    return {
+        "finite_five": old["archive_five_dimensional_finite_gldim"],
+        "periodic_six": old["radical_cube_zero_two_cycle_inconclusive"],
+        "saorin_seven": yg.saorin_seven(),
+        "truncated_polynomial_four": yg.truncated_polynomial(4),
+        "hub_twenty_two": sr.family(4),
+        "quantum_exterior_four": quantum_exterior(),
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--demo", action="store_true")
+    parser.add_argument("--input", type=Path)
+    parser.add_argument("--degrees", type=int, default=5)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    if args.degrees < 1:
+        parser.error("--degrees must be positive")
+    if args.demo:
+        result = {name: analyze(value, args.degrees) for name, value in demos().items()}
+    elif args.input:
+        result = analyze(json.loads(args.input.read_text(encoding="utf-8")), args.degrees)
+    else:
+        parser.error("Supply --input or --demo")
+    args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"output": str(args.output), "finite_exact_audit": "passed"}))
+
+
+if __name__ == "__main__":
+    main()
+

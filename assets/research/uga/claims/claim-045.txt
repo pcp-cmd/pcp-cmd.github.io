@@ -1,0 +1,14 @@
+## UGA-C045 — Zero-Excursion Identification
+**Status:** PROJECT-DERIVED / SELF-AUDITED / NOT INDEPENDENTLY VERIFIED  
+**Source:** final Derived-Necklace Run, Theorem 3.1
+
+For the \(x\)-excursion filtration of the ambient relative bar complex,
+\[
+E^1_{0,m+2}\cong
+\operatorname{Tor}^{e_xAe_x}_m(e_zAe_x,e_xAe_y)
+\qquad(m\ge1).
+\]
+
+**Depends on:** UGA-C041.
+
+---

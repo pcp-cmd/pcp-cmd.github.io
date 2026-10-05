@@ -1,0 +1,18 @@
+## UGA-C066 — Odd One-Sided-Projective Layers Force Weighted Ordinary Returns
+**Status:** COMPLETE SELF-AUDITED ALL-DEGREE PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** projective-column Run, appended Section 10, Theorem 10.1 and Corollary 10.2 with continuation audit.
+
+Let the retained model have only odd negative cohomology M_d, and assume all M_d are projective on the same one side over C. For the left-projective version write M_d e_j as the sum of (Ce_i)^{K_d(i,j)}. The formal matrix series of actual ordinary projective-column Tor is
+
+\[
+\left(\sum_{n\ge0}\dim\operatorname{Tor}^A_n(R_z,Ce_j)t^n\right)_{zj}
+=\left(I-\sum_{d\ {\rm odd}}t^{d+1}K_d\right)^{-1}.
+\]
+
+The binary multibar homology with these C-projective test modules is the ordinary tensor of actual homology columns, shifted by sums of even d+1. Its entire first page has only even total degrees, so all later differentials vanish and degreewise finite convergence gives the formula. Unbounded negative degrees, infinite homogeneous generation, nonperfect bimodule layers and arbitrary pure or mixed higher operations are allowed.
+
+If the finite graph of the actual K_d columns has a cycle, select an actual odd degree for each edge. Repetition gives ordinary Tor with Ce_j in every multiple of their total shifted degree. Finite composition-factor detection supplies a fixed reverse-supported simple pair, making A infinite +. The right-projective proof uses the actual right-module bar complex and no opposite transfer.
+
+This closes the weighted-cycle class in the many-layer/unbounded-cohomology frontier, without a section or C infinite +. Projectivity must hold for every actual layer on the same stated side; finite pd alone does not give the formula. Only these test-module spectral sequences collapse, not the quotient-simple screening sequences. Acyclic weighted graphs, nonprojective layers and mixed negative parities remain unresolved. The single-layer page bound from C065 is not extended when negative degrees are unbounded.
+
+---

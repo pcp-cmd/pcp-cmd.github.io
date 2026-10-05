@@ -1,0 +1,90 @@
+"""Literal infinite relation kernel despite projective images and zero pairs.
+General closure proof is separate; these shared checks are not independent.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfor p in [3,5,8]:',1)[0],str(frozen),'exec'),globals())
+p=4;N=p+1;v=p
+basis=[(f'a{i}',v,i) for i in range(p)]+[(f'c{i}',i,v) for i in range(p)]+[('d0',v,v),('d1',v,v)]
+vectors=[(1,0),(0,1),(1,1),(1,2)]
+payload={'vertices':N,'base_vertex':v,
+         'radical_basis':[{'name':name,'left':l,'right':r} for name,l,r in basis],
+         'radical_products':[{'left':f'a{i}','right':f'c{i}',
+                              'value':{f'd{j}':c for j,c in enumerate(vector) if c}}
+                             for i,vector in enumerate(vectors)]}
+A=rk.Algebra(payload)
+assert len(A.radical_powers[1])==2 and len(A.radical_powers[2])==0
+# Full literal multiplication including idempotents, over Q.
+full_basis=[(f'e{i}',i,i) for i in range(N)]+basis;dimension=len(full_basis)
+def mult(i,j):
+    if i<N:return rk.unit_vector(dimension,j) if i==full_basis[j][1] else [F(0)]*dimension
+    if j<N:return rk.unit_vector(dimension,i) if j==full_basis[i][2] else [F(0)]*dimension
+    return [F(0)]*N+A.pair(i-N,j-N)
+for i,j,k in product(range(dimension),repeat=3):
+    lhs=rk.combine([mult(t,k) for t in range(dimension)],mult(i,j),dimension)
+    rhs=rk.combine([mult(i,t) for t in range(dimension)],mult(j,k),dimension)
+    assert lhs==rhs
+    counts['associativity']+=1
+Lv=sr.Module.simple(A,v)
+Y,info,ycert=cover(Lv)
+assert Y.dimensions==[1]*p+[2]
+Fk,finfo,fcert=cover(Y)
+assert Fk.dimensions==[0]*p+[p-2]
+assert all(not any(col) for act in Fk.actions for col in act)
+iso=ss.check_isomorphism(Fk,ss.direct_sum(A,[Lv],[p-2]),ss.encode(
+    [[rk.unit_vector(d,j) for j in range(d)] for d in Fk.dimensions]))
+counts['actual_kernel_isomorphisms']+=1
+head_images=[]
+for i,vector in enumerate(vectors):
+    dims=[int(j==i or j==v) for j in range(N)]
+    acts=[]
+    for b in A.basis:
+        acts.append([[F(int(b['name']==f'a{i}'))]] if b['right']==i and b['left']==v
+                    else [[F(0)]*dims[b['left']] for _ in range(dims[b['right']])])
+    C=sr.Module(A,dims,acts)
+    ss.parse_module(A,ss.module_payload(C))
+    KC,ci,ccert=cover(C)
+    assert not any(KC.dimensions) and ci['cover_multiplicities']==[int(j==i) for j in range(N)]
+    # Concrete embedded projective image A c_i in the REAL first kernel Y.
+    emb=[[] for _ in range(N)]
+    emb[i]=[rk.unit_vector(1,0)];emb[v]=[list(map(F,vector))]
+    from yoneda_generation_certificate import check_module_map
+    check_module_map(C,Y,emb)
+    head_images.append({'primitive_head':i,'actual_projective_image':ss.module_payload(C),
+                        'pd':0,'actual_minimal_cover':ccert,'inclusion_in_Y':emb})
+pairs=[]
+for i in range(p):
+    for j in range(i+1,p):
+        rank=rk.rank([list(map(F,vectors[i])),list(map(F,vectors[j]))])
+        assert rank==2
+        pairs.append({'pair':[i,j],'actual_intersection_dimension':0,'zero_intersection_pd':0})
+# The actual minimal cover sum P_i->Y IS the cyclic-image sum map.
+# Every P_i->A c_i is an isomorphism; retained fcert is its full relation kernel.
+tails=[];X=Lv
+for n in range(6):
+    K,ci,cert=cover(X)
+    scale=(p-2)**(n//2)
+    expect=[0]*p+[scale] if n%2==0 else [scale]*p+[0]
+    assert ci['cover_multiplicities']==expect
+    tails.append({'degree':n,'actual_state':ss.module_payload(X),'actual_cover':cert,
+                  'ordinary_diagonal_Tor_Rv_Lv':ci['cover_multiplicities'][v]})
+    X=K
+result={'status':'passed','independent_verification':False,'field':'Q','counts':counts,
+        'algebra':payload,'dimension':dimension,'actual_first_kernel_Y':ycert,
+        'cyclic_head_images_projective':head_images,'pairwise_intersections':pairs,
+        'full_cyclic_sum_relation_kernel':{'actual_cover_map':fcert,
+            'actual_kernel_isomorphism':iso,'kernel':'Lv^(p-2)','kernel_pd':'infinite by actual Omega2 Lv=Lv^(p-2)'},
+        'actual_minimal_simple_tail':tails,
+        'written_all_degree_proof':{'Omega_Lv':'Y','Omega_Y':'Lv^(p-2)',
+            'ordinary_diagonal_Tor':'dimension (p-2)^m at degree2m, EVERY m>=1',
+            'pairwise_finite_pd_is_NOT_full_relation_finite_pd':True,
+            'all_images_pd0_and_all_pair_intersections_zero':True,
+            'not_a_Universal_Gap_A_counterexample':True},
+        'dependencies':['runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py']+
+            [f'toolbox/Imported-Outputs/{s}.py' for s in ['return_kernel_certificate','syzygy_return_certificate','syzygy_system_certificate','yoneda_generation_certificate']],
+        'scope':'Actual5-vertex calibration of ONE arbitrary-p relation mechanism; not a next vertex case. Whole true carrier-reduction theorem has a separate ordinary proof. No default digests or independent verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','counts':counts,'projective_images':p,'zero_pair_intersections':len(pairs),
+                  'full_relation_kernel_infinite_pd':True,'independent_verification':False}))

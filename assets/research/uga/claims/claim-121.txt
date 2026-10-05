@@ -1,0 +1,27 @@
+## UGA-C121 — Eventual Tor Weight Separation Closes the Whole Filtered Branch Without Yoneda Finite Generation
+
+**Status:** COMPLETE HIGH ORDINARY COMPARISON / WHOLE-BRANCH CLOSURE AND UNIFORM BOUNDS / NORMAL ADVERSARIAL SELF-AUDIT / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Eventual-Tor-Weight-Separation-No-Cancellation-and-Ordinary-Branch-Closure-2026-10-04.md Sections3–8; Separated-Filtration-Evidence; C118 bar/C120 stopping reused.
+
+ANY-field elementary A has REAL finite multiplicative descending IDEALS F0=A,F1=J,F^(h+1)=0, G=gr_F A, highest degree w. Suppose q>=0 makes actual ordinary weights satisfy max W_n<min W_(n+1) for EVERY n>=q with both adjacent groups nonzero. The prefix may overlap. For EVERY pair and EVERY n>=q+1,
+
+\[
+\operatorname{gr}_F\operatorname{Tor}^A_n(R_x,L_y)
+\cong\operatorname{Tor}^G_n(R_x,L_y).
+\]
+
+BOTH directions of bar d_r:(n,d)->(n-1,d+r) are excluded, with finite degreewise convergence. This is associated-graded equality, not canonical splitting/G->A map. Physical supports agree; ALL high ordinary Betti dimensions, both infinite-pd label sets and global infinity transfer. No low-prefix comparison.
+
+The actual S resolution has no degree gaps, so high W_n are disjoint. Earlier n<q generators have degree<=(q-1)w. C120 applies with d0=max{0,(q-1)w}. Thus
+
+\[
+\boxed{\operatorname{gd}A=\infty\iff\operatorname{gd}G=\infty\iff D_G\ne1.}
+\]
+
+For D_G1,w>=1, gd A<=max{q,(q-1)w,(N-1)w}; w0 gives both semisimple. For infinite gd, u=deg D_G>=1<=Nw, B=max{b,q}, EVERY b has SOME ordinary reverse-supported pair at b<n<=(B+1)w+u-1, hence ONE fixed pair persists. The ENTIRE eventually separated finite-filtration class closes at arbitrary size/Loewy/field without associative generation or finite states. q0 closes ALL C118 separated cores with finite-gd bound(N-1)w. Every ACTUAL d-Koszul gr_J A,d>=2, qualifies via pure delta(2r)=rd,delta(2r+1)=rd+1. C118's stronger Koszul diagonal conclusion retained; no diagonal theorem in general.
+
+Literal associative/Frobenius A16 has squarefree basis, disjoint-union products and ONLY extra overlapping products xi^2=product_(j!=i)xj. J5zero and actual gr_J A is the tensor of four quadratic dual-number algebras. Tensor minimal resolutions prove ALL W_n={n}/Betti binomial(n+3,3); ordinary comparison gives the same A dimensions. In characteristic!=2 A16 admits NO positive grading with degree-zero k: formal torus action fixes the four square-zero axes mod J3, and homogeneous lifts force2wi=sum_(j!=i)wj, contradicting positive weights. Nongradability NOT asserted in characteristic2. Tensor with a directed N-line gives an arbitrary-size nongradable radical-Koszul calibration, N5 dimension240/Loewy9; old C096 already closes that family.
+
+First shared exact run passed8535 triples,3 FULL actual covers,9 integral inverses,256 filtered products,528 cubic coefficient checks. Full written proofs, not prefix1,4,10 or independent/formal acceptance, supply all degrees. N7 excludes finite-generation/diagonal strengthening; B14/A14 cancellation/screening gates remain. Finite-type-only, persistent mixed/nonpure/opposite-parity cores and EVERY universal residual OPEN.
+
+---

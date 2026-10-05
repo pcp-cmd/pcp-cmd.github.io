@@ -1,0 +1,214 @@
+# T32 — Four-vertex handoff: audit passed after explicit ordinary repair
+
+Date: 2026-10-04. Continue T31. User supplied the separate four-vertex
+closure handoff; this Run audits/registers that contribution and does not
+restart four-vertex research. Full Universal Gap A remains OPEN.
+
+**Audit verdict: VERIFIED AFTER REPAIR**, meaning the written project
+argument below passes the main researcher's normal adversarial audit.
+Inputs remain PROJECT-DERIVED / SELF-AUDITED. This is NOT external
+independent proof certification and does not upgrade the input provenance.
+No novelty claim. C107 is a complete ordinary proof with these labels.
+
+## 1. Exact sources, domain and orientation
+
+Source handoff: UGA-Four-Vertex-Closure-Handoff-2026-10-04.md, supplied by
+user from Desktop, preserved verbatim in Four-Vertex-Handoff-Evidence.
+Its original candidate label and audit warnings are preserved.
+
+A is elementary finite-dimensional over arbitrary k (in particular basic
+over C). LEFT simples L_y and RIGHT simples R_z. Use
+D(y,z)=dim e_yAe_z, beta_zy(n)=dim Tor_A^n(R_z,L_y)
+=dim Ext_A^n(L_y,L_z). Arrow u->x means
+ e_xJe_u/e_xJ^2e_u nonzero. LEFT projective Hom(Ae_r,Ae_s)=e_rAe_s.
+No equality of LEFT/RIGHT infinite sets is assumed.
+
+Reused exact inputs, not re-proved as new findings:
+- C080 closes either chosen side with at most two infinite-pd simples,
+  at ARBITRARY total size.
+- C090 applies to a REAL high exact minimal LEFT block, with carrier
+  C_z={j in I_L:D(j,z)>0}, union S; a recurrent q with C_q=S gives
+  persistent ordinary Tor(R_q,L_j) for a fixed j in C_q.
+- Peirce-Cycle-Theorem.md Section5: some SCC corner has infinite gd
+  when A does, and ALL simple Tor in the SAME SCC is the exact same
+  ordinary bar complex in corner and A. This is not arbitrary-corner
+  comparison. SCC size<=3 closure is already in that asset.
+- Beyond-Han-Persistent-Tor-Theorems.md Theorem5.3/Corollary5.4,
+  quoted exactly in Section4 below, supplies the protected ordinary
+  retract. No unverified opposite-infinite-plus theorem is used.
+
+The C-field spelling of the last imported proof extends directly to
+arbitrary k for ELEMENTARY algebras: the simple character is to k and
+primitive local quotient is k. No non-elementary division-corner claim.
+
+## 2. Actual tail rigidity for four vertices
+
+Assume a strongly connected four-vertex BAD A: gd infinite, ALL physical
+supported simple Tor zero above one finite M. Let x in I_L.
+Minimality makes beta_zy(n) the multiplicity of Ae_z in the real minimal
+LEFT resolution of L_x. Thus for n>M all projective heads lie in
+Z(x)={z:D(x,z)=0}. Strong connectivity gives an external incoming arrow
+u->x, hence D(x,u)>0. Also D(x,x)>0. Therefore |Z(x)|<=2.
+
+The omitted zero-zone case is explicit: Z(x) empty would terminate the
+actual resolution, contradicting infinite pd. If |Z(x)|=1, the actual
+high exact tail has just one projective type. Its augmented tail module
+has infinite pd; its infinite-factor carrier cannot be empty, since all
+finite LEFT simple factors have a common finite pd bound. Its one
+recurrent projective carrier is the whole union, so C090 contradicts
+badness. Thus |Z(x)|=2 and BOTH types recur infinitely. If either occurred
+only finitely, remove a finite PREFIX and apply the same genuine one-type
+tail argument. No individual differential image is pruned.
+
+Consequently W(x)=complement Z(x)={x,u_x}, with exactly one external
+physically visible predecessor. All assertions here retain BADNESS.
+
+## 3. Case A: all four LEFT simples infinite
+
+Every vertex v has an external outgoing quiver edge v->x. The unique
+predecessor of x is therefore v. Hence x->u_x is a surjection of four
+labels and thus a fixed-point-free permutation. Every external quiver
+arrow has this form. Two disjoint two-cycles would disconnect the quiver;
+strong connectivity forces a single four-cycle. Relabel so
+
+\[
+W(i)=\{i,i-1\},\qquad Z(i)=\{i+1,i+2\}
+\tag{3.1}
+\]
+
+(indices mod4). This is FULL Peirce support, not merely arrow support.
+In the high resolution of L_(i-1), only Ae_i and Ae_(i+1) occur, both
+recurrently. If e_iAe_i=k, minimality makes every Ae_i->Ae_i entry zero.
+The other outgoing entry is
+Hom(Ae_i,Ae_(i+1))=e_iAe_(i+1)=0 by(3.1).
+Thus a recurrent Ae_i direct summand lies wholly in ker d_n. Exactness
+would put it in im d_(n+1), but that image is inside J P_n and cannot
+contain a whole nonzero projective direct summand. Contradiction.
+Hence e_iAe_i is nontrivial for EVERY i.
+
+For each i and q!=i, at least one of e_iAe_q,e_qAe_i is zero: its visible
+row has only i-1 and its visible column only i+1. Consequently
+
+\[
+e_iA(1-e_i)Ae_i=0.
+\tag{3.2}
+\]
+
+The exact ordinary protected-corner theorem now gives diagonal Tor in
+EVERY degree, contradicting badness. This completes Case A.
+
+## 4. Protected-corner repair: precise theorem and complete interface
+
+The exact imported statement (Beyond-Han Section5, Corollary5.4) is:
+
+> 若 e=e_i、e_iA(1-e_i)Ae_i=0，且 Gamma=e_iAe_i != C，则
+> Tor_n^A(R_i,L_i) !=0 (n>=0).
+
+For elementary A replace C by k. This is ALL-degree ORDINARY Tor,
+not a Tate/singular class, nor an inference from a graph cycle.
+The source's proof is explicit: the external product vanishing makes
+pi:A->Gamma,a->e_i a e_i a unital algebra homomorphism to Gamma with
+unit e_i. Its section is iota(g)=g+chi(g)(1-e_i), where chi:Gamma->k
+is the simple character. pi iota=id. Exact restriction functors retract
+ordinary Yoneda Ext. Inflation of the corner simple is the ambient L_i.
+For nontrivial finite local Gamma, a finite minimal free resolution of k
+would give 1=dim(Gamma) sum_n (-1)^n b_n, impossible. Thus its ordinary
+minimal free resolution is nonzero every degree and the Ext retract
+lifts that ALL-degree diagonal Tor. No projective restriction assumption.
+
+This replaces the handoff's unspecified external protected version and
+settles its orientation audit. No new literature premise is necessary.
+
+## 5. Case B: precisely three LEFT simples infinite
+
+Write I_L={x,r,s}, with f the unique finite-LEFT label. If u_x=f, then
+Z(x)={r,s}, both projective types recurrent. Their LEFT infinite-factor
+carriers satisfy C_r,C_s subset{r,s}; diagonals give r in C_r,s in C_s.
+If s in C_r, C_r={r,s}=the entire union and C090 gives a supported
+persistent ordinary Tor, contradiction. Similarly r notin C_s.
+Therefore C_r={r},C_s={s}, and BOTH full Peirce spaces
+
+\[
+e_rAe_s=e_sAe_r=0
+\tag{5.1}
+\]
+
+vanish. These are literal full projective Hom zero in both directions;
+there are no hidden maps with finite-factor images. The REAL high exact
+tail decomposes as r/s diagonal complexes, and exactness splits blockwise.
+An infinite recurrent block has one projective type, so C090 applies to
+its actual augmentation again. Thus u_x cannot equal f for ANY infinite x.
+
+Strong connectivity supplies a path starting f and leaving it into I_L;
+its first external exit is f->x, since f is the ONLY finite label. That
+arrow gives D(x,f)>0 and so u_x=f, the contradiction just established.
+The RIGHT pd of f is irrelevant. No opposite-set identification.
+
+## 6. Twelve-point adversarial audit and attempted countermodels
+
+1. SCC: same-component bar complexes and triangular gd interface only;
+   arbitrary corner invariance is never used. PASS.
+2. One-way orientation: row D(x,z), left source L_x/right detector R_z.
+   It follows directly from actual minimal heads and supported cutoff.
+3. C080: at-most-two chosen-side infinite simples, all-size; no diagonal
+   promise needed. PASS.
+4. C090: actual exact block, nonempty infinite-factor union and recurrent
+   dominant column; every application checks these. PASS.
+5. Single type: removes only a finite prefix; not finite images. Empty
+   carrier would make the augmented module finite-pd. PASS AFTER EXPLICIT
+   zero-zone/nonempty-carrier repair.
+6. Permutation: each label is an actual external predecessor of some
+   vertex; only Case A uses all four infinite. PASS.
+7. Minimality: outgoing Hom(P_i,P_(i+1)) is D(i,i+1), not reversed;
+   exactness contradicts radical containment of a whole summand. PASS.
+8. Protected theorem: replaced vague external version by EXACT existing
+   ordinary retract theorem. PASS AFTER REPAIR.
+9. Protected orientation: both-direction physical row/column intersection
+   contains only i, so every external product is zero. PASS.
+10. Case B cross Hom: BOTH e_rAe_s and e_sAe_r zero as full spaces;
+    actual exactness splits. PASS, no image-elimination assumption.
+11. First entry: only one finite label, so edge leaving f really enters
+    an infinite vertex. PASS.
+12. Countermodel attempts: instantiate frozen C091 radical-square-zero
+    four-cycle with trivial corners. It has actual Omega L_i=L_(i+1)
+    and ordinary diagonal return in degrees4m, so fails BADNESS and the
+    handoff's required two recurrent dead-zone types; it cannot refute
+    Section3. Add loops to that four-cycle: protected nontrivial local
+    corners immediately give the actual ALL-degree retract return.
+    Frozen finite-pd cross-image counterfamilies C091/C092 do not have
+    the full mutual Hom zeros required by(5.1). A quiver-only version
+    allowing longer Peirce paths would violate the proved full W rows.
+    No counterexample satisfying the exact intermediate hypotheses found.
+
+This is normal mathematical adversarial self-audit, not an independent
+verifier's acceptance. No unchanged four-vertex computation was rerun.
+
+## 7. C107 and universal continuation
+
+C080 eliminates <=2 LEFT-infinite labels; Sections3/5 eliminate3/4 when
+there are four vertices. SCC reduction and the frozen <=3-vertex closure
+therefore prove, for elementary finite-dimensional A over arbitrary k,
+
+\[
+|Q_0|\le4,\quad\operatorname{gldim}A=\infty
+\Longrightarrow\exists y,z:\ e_yAe_z\ne0,
+\ \operatorname{Tor}_n^A(R_z,L_y)\ne0\text{ infinitely often}.
+\tag{7.1}
+\]
+
+Any UGA counterexample consequently has AT LEAST FIVE total vertices.
+This does NOT bound the number of infinite simples for algebras with more
+vertices. The four-vertex branch is closed at project self-audited status
+and will be REUSED, not repeatedly reopened. Universal Gap A remains OPEN.
+
+User's latest no-default-checksum instruction is followed: no new digest
+or routine legacy-manifest refresh. Source handoff archived as text/bytes;
+mathematical audit is recorded explicitly. Legacy T31 checksums are an
+older snapshot and not a current-state certificate.
+
+The ongoing next route is genuinely ALL-SIZE selfinjective J^3=0 closure
+via actual minimal-head recurrence, including nontrivial Nakayama
+permutations and permanently misaligned tails. Five/seven-vertex tables
+are calibration of that arbitrary-size mechanism, not case classification.
+ALL bounded-screening/local-trivial/Target-A/Primitive/Binary/higher-output/
+supported-weight and other ordinary reduction residuals remain on the map.

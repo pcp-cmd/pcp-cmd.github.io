@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "date": "2026-10-04",
+  "kind": "targeted exact research execution record",
+  "actual_executed_script": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-cyclic-head-relations\\verify_cyclic_head_relations.py",
+  "retained_script": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Cyclic-Head-Relations-Evidence\\verify_cyclic_head_relations.py",
+  "retained_result": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Cyclic-Head-Relations-Evidence\\cyclic-head-relations-result.json",
+  "proof": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Run-Cyclic-Head-Relation-Kernels-Ordinary-Tor-and-Strict-Carrier-Descent-2026-10-04.md",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "counts": {
+    "associativity": 3375,
+    "actual_minimal_covers": 12,
+    "integer_basis_inverses": 180,
+    "actual_kernel_isomorphisms": 1,
+    "pruned_homology_isomorphisms": 0
+  },
+  "actual_projective_images": 4,
+  "actual_zero_pairwise_intersections": 6,
+  "full_relation_kernel": "L_v^2; actual Omega^2 L_v=L_v^2 proves infinite pd",
+  "dependencies": [
+    "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py",
+    "toolbox/Imported-Outputs/return_kernel_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_return_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_system_certificate.py",
+    "toolbox/Imported-Outputs/yoneda_generation_certificate.py"
+  ],
+  "execution_history": "Initial targeted execution passed; identical script/result retained without an unnecessary rerun.",
+  "mathematical_proof": "Separate complete ordinary proof and normal adversarial main-researcher audit; finite computation does not prove arbitrary-p/all-degree assertions.",
+  "independent_verification": false,
+  "formal_verifier_acceptance": false,
+  "default_checksums_computed": false,
+  "legacy_hash_schema_validated": false,
+  "UGA": "OPEN"
+}

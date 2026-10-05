@@ -1,0 +1,1459 @@
+{
+  "status": "passed",
+  "field": "Q",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "counts": {
+    "associativity": 729,
+    "actual_minimal_covers": 5,
+    "integer_basis_inverses": 51,
+    "actual_kernel_isomorphisms": 4,
+    "pruned_homology_isomorphisms": 0
+  },
+  "algebra": {
+    "vertices": 3,
+    "base_vertex": 0,
+    "radical_basis": [
+      {
+        "name": "p0_1",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "p0_2",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "name": "p0_3",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "p1_1",
+        "left": 2,
+        "right": 1
+      },
+      {
+        "name": "p1_2",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "p2_1",
+        "left": 0,
+        "right": 2
+      }
+    ],
+    "radical_products": [
+      {
+        "left": "p1_1",
+        "right": "p0_1",
+        "value": {
+          "p0_2": 1
+        }
+      },
+      {
+        "left": "p1_2",
+        "right": "p0_1",
+        "value": {
+          "p0_3": 1
+        }
+      },
+      {
+        "left": "p2_1",
+        "right": "p0_2",
+        "value": {
+          "p0_3": 1
+        }
+      },
+      {
+        "left": "p2_1",
+        "right": "p1_1",
+        "value": {
+          "p1_2": 1
+        }
+      }
+    ]
+  },
+  "LEFT_Kupisch": [
+    4,
+    3,
+    2
+  ],
+  "dimension": 9,
+  "gd": 2,
+  "WHOLE_LEFT_J3_pd": 1,
+  "J4_zero": true,
+  "balance_JI_IJ_zero": true,
+  "WHOLE_LEFT_J3_module": {
+    "dimensions": [
+      1,
+      0,
+      0
+    ],
+    "actions": [
+      [
+        []
+      ],
+      [
+        []
+      ],
+      [
+        [
+          "0"
+        ]
+      ],
+      [],
+      [],
+      []
+    ]
+  },
+  "WHOLE_LEFT_J3_resolution": {
+    "first_cover": {
+      "module": {
+        "dimensions": [
+          1,
+          0,
+          0
+        ],
+        "actions": [
+          [
+            []
+          ],
+          [
+            []
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [],
+          [],
+          []
+        ]
+      },
+      "kernel": {
+        "dimensions": [
+          1,
+          1,
+          1
+        ],
+        "actions": [
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ]
+      },
+      "cover_multiplicities": [
+        1,
+        0,
+        0
+      ],
+      "cover_dimensions": [
+        2,
+        1,
+        1
+      ],
+      "cover_images": [
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          []
+        ],
+        [
+          []
+        ]
+      ],
+      "kernel_inclusion": [
+        [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "projective_actions": [
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "1"
+          ]
+        ]
+      ],
+      "top_basis_certificates": [
+        {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        },
+        {
+          "basis": [],
+          "inverse": []
+        },
+        {
+          "basis": [],
+          "inverse": []
+        }
+      ],
+      "exact_sequence_basis_certificates": [
+        {
+          "image": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0"
+              ]
+            ],
+            "inverse": [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0"
+              ]
+            ]
+          }
+        },
+        {
+          "image": {
+            "basis": [],
+            "inverse": []
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "image": {
+            "basis": [],
+            "inverse": []
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        }
+      ],
+      "A_linear_surjective_minimal": true
+    },
+    "FULL_kernel_P1_isomorphism": {
+      "forward": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "inverse": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    },
+    "kernel_projective_cover": {
+      "module": {
+        "dimensions": [
+          1,
+          1,
+          1
+        ],
+        "actions": [
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ]
+      },
+      "kernel": {
+        "dimensions": [
+          0,
+          0,
+          0
+        ],
+        "actions": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      },
+      "cover_multiplicities": [
+        0,
+        1,
+        0
+      ],
+      "cover_dimensions": [
+        1,
+        1,
+        1
+      ],
+      "cover_images": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "kernel_inclusion": [
+        [],
+        [],
+        []
+      ],
+      "projective_actions": [
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "top_basis_certificates": [
+        {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        },
+        {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        },
+        {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        }
+      ],
+      "exact_sequence_basis_certificates": [
+        {
+          "image": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "image": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "image": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        }
+      ],
+      "A_linear_surjective_minimal": true
+    }
+  },
+  "all_LEFT_simple_FULL_kernel_isomorphisms": [
+    {
+      "label": "FULL LEFT Omega L0=P1",
+      "cover": {
+        "module": {
+          "dimensions": [
+            1,
+            0,
+            0
+          ],
+          "actions": [
+            [
+              []
+            ],
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            []
+          ]
+        },
+        "kernel": {
+          "dimensions": [
+            1,
+            1,
+            1
+          ],
+          "actions": [
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              [
+                "1"
+              ]
+            ]
+          ]
+        },
+        "cover_multiplicities": [
+          1,
+          0,
+          0
+        ],
+        "cover_dimensions": [
+          2,
+          1,
+          1
+        ],
+        "cover_images": [
+          [
+            [
+              "1"
+            ],
+            [
+              "0"
+            ]
+          ],
+          [
+            []
+          ],
+          [
+            []
+          ]
+        ],
+        "kernel_inclusion": [
+          [
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "projective_actions": [
+          [
+            [
+              "1"
+            ],
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ],
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1"
+            ]
+          ]
+        ],
+        "top_basis_certificates": [
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          {
+            "basis": [],
+            "inverse": []
+          },
+          {
+            "basis": [],
+            "inverse": []
+          }
+        ],
+        "exact_sequence_basis_certificates": [
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "1",
+                  "0"
+                ]
+              ],
+              "inverse": [
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "1",
+                  "0"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          }
+        ],
+        "A_linear_surjective_minimal": true
+      },
+      "target": {
+        "dimensions": [
+          1,
+          1,
+          1
+        ],
+        "actions": [
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ]
+      },
+      "isomorphism": {
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    },
+    {
+      "label": "FULL LEFT Omega L1=P2",
+      "cover": {
+        "module": {
+          "dimensions": [
+            0,
+            1,
+            0
+          ],
+          "actions": [
+            [],
+            [],
+            [],
+            [
+              []
+            ],
+            [
+              []
+            ],
+            []
+          ]
+        },
+        "kernel": {
+          "dimensions": [
+            1,
+            0,
+            1
+          ],
+          "actions": [
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [
+              [
+                "1"
+              ]
+            ]
+          ]
+        },
+        "cover_multiplicities": [
+          0,
+          1,
+          0
+        ],
+        "cover_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "cover_images": [
+          [
+            []
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            []
+          ]
+        ],
+        "kernel_inclusion": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "projective_actions": [
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "top_basis_certificates": [
+          {
+            "basis": [],
+            "inverse": []
+          },
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          {
+            "basis": [],
+            "inverse": []
+          }
+        ],
+        "exact_sequence_basis_certificates": [
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          }
+        ],
+        "A_linear_surjective_minimal": true
+      },
+      "target": {
+        "dimensions": [
+          1,
+          0,
+          1
+        ],
+        "actions": [
+          [
+            []
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ]
+      },
+      "isomorphism": {
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    },
+    {
+      "label": "FULL LEFT Omega L2=L0",
+      "cover": {
+        "module": {
+          "dimensions": [
+            0,
+            0,
+            1
+          ],
+          "actions": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+              []
+            ]
+          ]
+        },
+        "kernel": {
+          "dimensions": [
+            1,
+            0,
+            0
+          ],
+          "actions": [
+            [
+              []
+            ],
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            []
+          ]
+        },
+        "cover_multiplicities": [
+          0,
+          0,
+          1
+        ],
+        "cover_dimensions": [
+          1,
+          0,
+          1
+        ],
+        "cover_images": [
+          [
+            []
+          ],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "kernel_inclusion": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          []
+        ],
+        "projective_actions": [
+          [
+            []
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "top_basis_certificates": [
+          {
+            "basis": [],
+            "inverse": []
+          },
+          {
+            "basis": [],
+            "inverse": []
+          },
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        ],
+        "exact_sequence_basis_certificates": [
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [],
+              "inverse": []
+            }
+          },
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          }
+        ],
+        "A_linear_surjective_minimal": true
+      },
+      "isomorphism": {
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          []
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          []
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    }
+  ],
+  "factor_support": [
+    0
+  ],
+  "head_matrix": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "factor_support_not_LEFT_cover_closed": true,
+  "actual_tensor_dimension": 1,
+  "actual_I_squared_dimension": 0,
+  "ordinary_Tor1_of_RIGHT_A_over_I_and_LEFT_I_dimension": 1,
+  "independent_verification": false,
+  "scope": "Refutes only replacing projectivity by finite pd in the automatic closed-support/tensor-power descent lemma. Finite gd2 already-positive algebra; no finite-pd cubic ordinary-closure or UGA counterexample. Tensor/Tor claims have the separate exact sequence proof."
+}

@@ -1,0 +1,33 @@
+# Actual primitive-comparison noninheritance at an infinite-pd source
+
+Date: 2026-10-04. Exact local computation; no independent verifier.
+
+Construct the 28-dimensional opposite endomorphism algebra B of the
+six uniserial modules of the two-vertex radical-cube-zero cycle.
+Check complete terminating minimal resolutions for B and every
+physical primitive quotient, and the joint projective-vertex quotient.
+Construct A=[[B,0],[G tensor (e4B+e5B),k[t_v]/t_v^2]], of dimension 42.
+
+Certify actual Omega L4=Ae3+Lv, Omega L5=Ae2+Lv, Omega Lv=Lv and
+Omega_right Rv=e4A+e5A+Rv; audit all finite simple resolutions.
+Verify full physical primitive quotient normal forms. Audit the first
+quotient A/Ae4A of dimension 19 and joint quotient of dimension 10.
+Certify actual simple syzygies 0->2->1->3->0 and v->v in the joint
+quotient. The corresponding left infinite counts are 3->2->5.
+
+For each actual cover export integral action matrices and unimodular
+radical/top, image, and kernel/complement bases with integer inverse.
+The separate written integral-base-change lemma then makes the finite
+cover certificates valid in every field. Infinite conclusions require
+the displayed actual module identities and their written iteration.
+
+The all-degree natural comparison proof is a separate literal right
+triangular-resolution base-change argument in the T18 Run. Do not infer
+it from a bounded Tor sample. All initial primitive comparisons are
+isomorphisms in degrees at least five; the second infinite-source
+deletion comparison fails in arbitrarily high degrees 4r.
+
+A already has Tor_n(Rv,Lv)=k in every degree. This is a counterexample
+to automatic comparison inheritance, not a Gap-A counterexample and
+not a refutation of the general bad-algebra alternative. Use frozen
+project helper hashes and preserve all older evidence and Runs.

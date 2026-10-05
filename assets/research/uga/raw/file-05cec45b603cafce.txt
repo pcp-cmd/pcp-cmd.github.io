@@ -1,0 +1,275 @@
+"""Exact finite-degree Yoneda products from minimal-resolution comparison maps.
+
+This computes generator quotients, not an automatic proof of eventual vanishing.
+The retained module maps are checked for A-linearity and cover commutativity.
+"""
+import argparse
+from fractions import Fraction as F
+import json
+from pathlib import Path
+import sys
+sys.dont_write_bytecode = True
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+
+
+def check_module_map(source, target, morphism):
+    assert len(morphism) == source.algebra.vertices
+    for v, columns in enumerate(morphism):
+        assert len(columns) == source.dimensions[v]
+        assert all(len(c) == target.dimensions[v] for c in columns)
+    for b, source_action, target_action in zip(
+            source.algebra.basis, source.actions, target.actions):
+        left, right = b["left"], b["right"]
+        for k in range(source.dimensions[right]):
+            lhs = rk.combine(morphism[left], source_action[k], target.dimensions[left])
+            rhs = rk.combine(target_action, morphism[right][k], target.dimensions[left])
+            if lhs != rhs:
+                raise AssertionError("Comparison map is not A-linear")
+
+
+class Cover:
+    def __init__(self, source):
+        self.source = source
+        self.kernel, details = source.syzygy(retain_maps=True)
+        self.dimensions = details["cover_dimensions"]
+        self.data = details["linear_data"]
+        self.sections = []
+        for v, images in enumerate(self.data["images"]):
+            selected, _ = rk.independent(images)
+            reader = sr.coordinates_reader([images[i] for i in selected],
+                                            source.dimensions[v])
+            self.sections.append((selected, reader))
+
+    def preimage(self, vertex, vector):
+        selected, reader = self.sections[vertex]
+        coefficients = reader(vector)
+        answer = [F(0)] * self.dimensions[vertex]
+        for index, coefficient in zip(selected, coefficients):
+            answer[index] = coefficient
+        if rk.combine(self.data["images"][vertex], answer,
+                      self.source.dimensions[vertex]) != vector:
+            raise AssertionError("Cover section is not a section")
+        return answer
+
+
+class Resolution:
+    def __init__(self, algebra, vertex, degree):
+        self.modules = [sr.Module.simple(algebra, vertex)]
+        self.covers = []
+        for _ in range(degree):
+            cover = Cover(self.modules[-1])
+            self.covers.append(cover)
+            self.modules.append(cover.kernel)
+
+
+def top_reader(module):
+    radicals, lifts = module.radical_bases(), module.top_lifts()
+    readers = [sr.coordinates_reader(radicals[v] + lifts[v], dimension)
+               for v, dimension in enumerate(module.dimensions)]
+
+    def read(vertex, vector):
+        return readers[vertex](vector)[len(radicals[vertex]):]
+
+    return lifts, read
+
+
+def cochain_maps(module, target_vertex):
+    lifts, reader = top_reader(module)
+    for index in range(len(lifts[target_vertex])):
+        morphism = []
+        for v, dimension in enumerate(module.dimensions):
+            columns = []
+            for k in range(dimension):
+                columns.append(
+                    [reader(v, rk.unit_vector(dimension, k))[index]]
+                    if v == target_vertex else [])
+            morphism.append(columns)
+        check_module_map(module, sr.Module.simple(module.algebra, target_vertex), morphism)
+        yield morphism
+
+
+def syzygy_map(source_cover, target_cover, morphism):
+    source, target = source_cover.source, target_cover.source
+    check_module_map(source, target, morphism)
+    images_of_heads = []
+    for vertex, lift in source_cover.data["copies"]:
+        image = rk.combine(morphism[vertex], lift, target.dimensions[vertex])
+        images_of_heads.append(target_cover.preimage(vertex, image))
+    projective_map = [[] for _ in source.dimensions]
+    for v, basis in enumerate(source_cover.data["bases"]):
+        for copy, radical_index in basis:
+            if radical_index is None:
+                image = images_of_heads[copy]
+            else:
+                image = rk.combine(
+                    target_cover.data["projective_actions"][radical_index],
+                    images_of_heads[copy], target_cover.dimensions[v])
+            projective_map[v].append(image)
+        for index, column in enumerate(projective_map[v]):
+            lhs = rk.combine(target_cover.data["images"][v], column, target.dimensions[v])
+            rhs = rk.combine(morphism[v], source_cover.data["images"][v][index],
+                             target.dimensions[v])
+            if lhs != rhs:
+                raise AssertionError("Projective comparison square does not commute")
+    result = [
+        [target_cover.data["readers"][v](rk.combine(
+            projective_map[v], vector, target_cover.dimensions[v]))
+         for vector in source_cover.data["kernels"][v]]
+        for v in range(source.algebra.vertices)]
+    check_module_map(source_cover.kernel, target_cover.kernel, result)
+    return result
+
+
+def radical_square_bases(cover):
+    a = cover.source.algebra
+    answer = [[] for _ in range(a.vertices)]
+    # Apply each radical action to all radical basis vectors of this projective.
+    for r, b in enumerate(a.basis):
+        for index, (_, radical_index) in enumerate(cover.data["bases"][b["right"]]):
+            if radical_index is not None:
+                answer[b["left"]].append(cover.data["projective_actions"][r][index])
+    return [[vectors[i] for i in rk.independent(vectors)[0]] for vectors in answer]
+
+
+def deep_kernel_dimensions(cover):
+    j2 = radical_square_bases(cover)
+    jk = cover.kernel.radical_bases()
+    dimensions = []
+    for v, kernel in enumerate(cover.data["kernels"]):
+        intersection = len(kernel) + len(j2[v]) - rk.rank(kernel + j2[v])
+        dimensions.append(intersection - len(jk[v]))
+    assert all(d >= 0 for d in dimensions)
+    return dimensions
+
+
+def compute(value, max_degree=5):
+    algebra = rk.Algebra(value)
+    resolutions = [Resolution(algebra, j, max_degree) for j in range(algebra.vertices)]
+    tops = [[top_reader(module) for module in res.modules] for res in resolutions]
+    rows, comparisons = [], 0
+    for n in range(1, max_degree + 1):
+        by_source = []
+        for j, source_resolution in enumerate(resolutions):
+            source_module = source_resolution.modules[n]
+            source_lifts, _ = tops[j][n]
+            multiplicities = list(map(len, source_lifts))
+            blocks = {r: [[] for _ in range(algebra.vertices)] for r in range(1, n)}
+            for p in range(1, n):
+                r = n - p
+                for t, target_resolution in enumerate(resolutions):
+                    for morphism in cochain_maps(source_resolution.modules[p], t):
+                        for k in range(r):
+                            morphism = syzygy_map(source_resolution.covers[p + k],
+                                                  target_resolution.covers[k], morphism)
+                            comparisons += 1
+                        target_module = target_resolution.modules[r]
+                        target_lifts, target_reader = tops[t][r]
+                        for i in range(algebra.vertices):
+                            values = []
+                            for lift in source_lifts[i]:
+                                value_at_lift = rk.combine(
+                                    morphism[i], lift, target_module.dimensions[i])
+                                values.append(target_reader(i, value_at_lift))
+                            for coordinate in range(len(target_lifts[i])):
+                                blocks[r][i].append([v[coordinate] for v in values])
+            ranks = {r: [rk.rank(blocks[r][i]) for i in range(algebra.vertices)]
+                     for r in range(1, n)}
+            whole = [[column for r in range(1, n) for column in blocks[r][i]]
+                     for i in range(algebra.vertices)]
+            decomposable = list(map(rk.rank, whole))
+            new_generators = [multiplicities[i] - decomposable[i]
+                              for i in range(algebra.vertices)]
+            deep = deep_kernel_dimensions(source_resolution.covers[n - 1]) if n >= 2 else None
+            if n >= 2:
+                if [multiplicities[i] - ranks[1][i]
+                    for i in range(algebra.vertices)] != deep:
+                    raise AssertionError("Deep-kernel quotient disagrees with Ext^1 products")
+            by_source.append({
+                "source": j, "Ext_dimensions_by_target": multiplicities,
+                "product_rank_by_left_degree": ranks,
+                "all_positive_product_rank_by_target": decomposable,
+                "indecomposable_generator_dimensions_by_target": new_generators,
+                "deep_kernel_dimensions_by_target": deep,
+            })
+        rows.append({"degree": n, "by_source": by_source})
+    return {
+        "algebra_dimension": algebra.vertices + algebra.d,
+        "max_degree": max_degree, "comparison_maps_checked": comparisons,
+        "degrees": rows,
+        "scope": "exact finite-degree products; no inference of eventual generator vanishing",
+    }
+
+
+def truncated_polynomial(power):
+    basis = [(f"x{i}", 0, 0) for i in range(1, power)]
+    products = [(f"x{i}", f"x{j}", {f"x{i+j}": 1})
+                for i in range(1, power) for j in range(1, power) if i + j < power]
+    return rk.payload(1, 0, basis, products)
+
+
+def saorin_seven():
+    # Paths are stored in traversal order. The forbidden path is a,b,a.
+    endpoints = {"a": (0, 1), "b": (1, 0)}
+    words = [("a",), ("b",), ("a", "b"), ("b", "a"), ("b", "a", "b")]
+    names = {word: "".join(word) for word in words}
+    basis = [(names[word], endpoints[word[-1]][1], endpoints[word[0]][0])
+             for word in words]
+    products = [(names[x], names[y], {names[y+x]: 1})
+                for x in words for y in words if y + x in names]
+    return rk.payload(2, 0, basis, products)
+
+
+def demo():
+    old = rk.demos()
+    inputs = {
+        "archive_five_dimensional_finite_gldim":
+            old["archive_five_dimensional_finite_gldim"],
+        "truncated_two_cycle_radical_cube":
+            old["radical_cube_zero_two_cycle_inconclusive"],
+        "truncated_polynomial_x4": truncated_polynomial(4),
+        "saorin_seven_infinite_generators": saorin_seven(),
+        "five_vertex_hub": sr.family(4),
+    }
+    result = {name: compute(value, 5) for name, value in inputs.items()}
+    # Calibrations distinguish a persistent deep quotient from a new generator.
+    for nrow in result["truncated_polynomial_x4"]["degrees"]:
+        n = nrow["degree"]
+        row = nrow["by_source"][0]
+        assert row["indecomposable_generator_dimensions_by_target"] == [int(n <= 2)]
+        if n >= 2:
+            assert row["deep_kernel_dimensions_by_target"] == [int(n % 2 == 0)]
+    finite = result["archive_five_dimensional_finite_gldim"]
+    assert all(not any(row["Ext_dimensions_by_target"])
+               for degree in finite["degrees"] if degree["degree"] >= 3
+               for row in degree["by_source"])
+    for degree in result["saorin_seven_infinite_generators"]["degrees"]:
+        for row in degree["by_source"]:
+            assert not any(row["all_positive_product_rank_by_target"])
+        if degree["degree"] >= 2:
+            assert degree["by_source"][0]["indecomposable_generator_dimensions_by_target"] == [0, 1]
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path)
+    parser.add_argument("--degrees", type=int, default=5)
+    parser.add_argument("--demo", action="store_true")
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    if args.demo:
+        result = demo()
+    elif args.input:
+        if args.degrees < 1:
+            parser.error("--degrees must be positive")
+        result = compute(json.loads(args.input.read_text(encoding="utf-8")), args.degrees)
+    else:
+        parser.error("Supply --input or --demo")
+    args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"output": str(args.output), "finite_comparison_map_audit": "passed"}))
+
+
+if __name__ == "__main__":
+    main()
+

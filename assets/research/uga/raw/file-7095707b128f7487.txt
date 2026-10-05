@@ -1,0 +1,547 @@
+# Run — Ordinary Tor retraction and a terminating vertex descent
+
+**Date:** 2026-10-03  
+**Researcher:** one main Codex researcher  
+**Evidence:** complete proofs with a normal adversarial self-audit; not independently verified  
+**Global status:** Universal Gap A remains OPEN. No novelty claim is made.
+
+This continuation follows the user's closure priority. A positive ordinary
+homology bridge unifies the formal deletion cases across the screening
+branches. An explicit condition on the defining relations supplies the
+bridge at every deletion, giving a genuine terminating descent and an
+all-degree theorem for that class, with no vertex-number bound.
+
+The mixed/non-split general case is not closed. The binary-indecomposable
+Target-B frontier from T2 remains valid and open.
+
+## 1. Reused inputs and conventions
+
+Let A be elementary finite-dimensional over a field k, with radical J,
+left simples L_y and right simples R_z. An infinite-+ witness is a fixed pair
+
+\[
+e_yAe_z\ne0,\qquad
+\operatorname{Tor}^A_n(R_z,L_y)\ne0
+\quad\text{for infinitely many }n.
+\tag{1.1}
+\]
+
+This is the reverse Peirce condition, not the other path direction.
+
+For deletion of e=e_x, put f=1-e, C=A/AeA. Let q be the connective
+retained derived quotient, augmented over S=sum_{i!=x}ke_i.
+Reuse the derived-localisation comparison audited in T1:
+
+\[
+\operatorname{Tor}^q_n(R_z,L_y)
+\cong\operatorname{Tor}^A_n(R_z,L_y)\quad(y,z\ne x).
+\tag{1.2}
+\]
+
+This does not assert that A -> C is a homological epimorphism.
+Its literature input is
+[Braun--Chuang--Lazarev, Corollary 4.29 and Section 9](https://arxiv.org/pdf/1505.01146).
+
+Also reuse UGA-C058: if the entire minimal resolution of X uses columns
+Au for e_xAu=0, the same complex is its minimal C-projective resolution,
+and pd_A X=pd_C X.
+
+Consequently, if A is non-infinite-+ and pd_A L_x is infinite, then
+gldim C is infinite. High resolution terms of L_x use only Ae_i with
+e_xAe_i=0; a sufficiently high nonzero syzygy X has infinite pd over both
+A and C. This left-sided proof does not use opposite transfer.
+
+## 2. A section gives an ordinary, visible Tor bridge
+
+Choose a strictly unital, augmented minimal S-relative A_infinity model
+H of q, with H^0=C and |m_r|=2-r. Connectivity makes the projection
+p:H -> C a strict A_infinity morphism: m_2 preserves degree, whereas
+every m_r with r>=3 has negative output, including on degree-zero inputs.
+
+### Theorem 2.1 — Split Tor bridge
+
+Suppose there is a strictly unital, S-augmented A_infinity morphism
+
+\[
+s:C\longrightarrow H,\qquad s_1:C\longrightarrow H^0=C
+\text{ equal to the identity}.
+\tag{2.1}
+\]
+
+For every retained pair y,z and n>=0,
+
+\[
+\boxed{\operatorname{Tor}^C_n(R_z,L_y)
+\text{ is a split summand of }\operatorname{Tor}^A_n(R_z,L_y).}
+\tag{2.2}
+\]
+
+Every reverse-supported infinite Tor witness of C therefore lifts to A.
+
+#### Proof
+
+On degree-zero inputs, |s_r|=1-r forces negative output for r>=2.
+Thus p s is strictly the identity: the linear term is the identity and
+all other Taylor coefficients vanish. The maps retain Peirce endpoints.
+
+The direct-sum reduced relative bar construction gives chain maps
+
+\[
+B(p)B(s)=1_{B(C)}.
+\tag{2.3}
+\]
+
+Their evaluation on one finite word involves only finitely many
+partitions, so no completion or convergence assumption is hidden.
+Taking the (z,y) Peirce summand and homology gives the split injection
+from Tor_C to Tor_H. The minimal-model equivalence and (1.2) identify
+the latter with ordinary Tor_A.
+
+Finally e_yCe_z is a quotient of e_yAe_z. A nonzero reverse Peirce
+component in C gives the required component in A. This separately
+checks visibility as well as survival. QED.
+
+The local-trivial two-stage asset already proves this mechanism when
+kappa=0. Theorem 2.1 removes its amplitude restriction: H may have
+unbounded negative cohomology and mixed higher operations.
+It does not assert that every derived quotient admits a section.
+
+### Proposition 2.2 — Pure degree-zero criterion, mixed operations allowed
+
+Let R=rad C. A sufficient condition for (2.1), in one strictly augmented
+minimal model, is
+
+\[
+m_r(R^{\otimes_S r})=0\quad\text{for every }r\ge3.
+\tag{2.4}
+\]
+
+Operations with negative inputs need not vanish. More precisely, (2.1)
+is equivalent to the existence of an adapted minimal model satisfying
+(2.4), related to H by an augmented change of coordinates whose linear
+term is the identity.
+
+#### Proof
+
+Under (2.4), the ordinary inclusion C -> H is a strict A_infinity
+morphism, so Theorem 2.1 applies.
+
+Conversely, given s, extend its reduced higher Taylor coefficients to
+bar H by making them zero on any word with a negative-degree input,
+and put G_1=1_H. This defines an invertible cofree bar-coalgebra map G:
+the higher components strictly lower length, so its inverse is a finite
+triangular calculation on each word. Augmentation and Peirce labels are
+preserved; degree also gives B(p)G=B(p).
+
+For the coderivation b of H set b'=G^{-1}bG. On bar C, G is B(s).
+The section equation therefore gives
+
+\[
+b'B(\mathrm{incl})=B(\mathrm{incl})b_C.
+\]
+
+C is a strict A_infinity subalgebra for b', and its pure higher
+operations vanish. Minimality and m_2 are unchanged by G_1=1.
+No model-invariance claim about primitive or higher-output quotients
+is being made. QED.
+
+This is an actual chain retraction, not a bounded-arity page argument.
+
+### Corollary 2.3 — Global formal-deletion exclusion
+
+In a vertex-minimal counterexample to Universal Gap A, the retained
+derived quotient at any vertex x with pd_A L_x infinite cannot admit
+(2.1). In particular it cannot be formal as an augmented algebra over S,
+or have only mixed higher operations in an adapted model.
+
+#### Proof
+
+Section 1 gives gldim C infinite, without opposite transfer.
+Vertex minimality makes C infinite +. Theorem 2.1 would make A
+infinite +, a contradiction. Augmented formality provides a model
+with only m_2, which satisfies (2.4). QED.
+
+This excludes formal deletions from the global minimal-deletion problem,
+including bounded and local-trivial screening. It strengthens the scope
+of T1's formal exclusion from Branch U. It does not exclude arbitrary
+non-formal quotients or close all of Target A or Target B.
+
+## 3. A section in the ordinary multiplication table
+
+### Proposition 3.1 — Ordinary corner section
+
+If B=fAf -> C=B/(fAeAf) has a unital algebra section sigma fixing the
+retained idempotents, the split ordinary Tor comparison (2.2) holds
+independently of formality.
+
+#### Proof
+
+Let chi_x:A -> k be the simple character at x and D=C x k. The maps
+
+\[
+\pi:A\longrightarrow D,\qquad a\longmapsto(a\bmod AeA,\chi_x(a)),
+\]
+
+\[
+\iota:D\longrightarrow A,\qquad(c,\lambda)\longmapsto
+\sigma(c)+\lambda e_x
+\tag{3.1}
+\]
+
+are unital algebra maps preserving the full vertex algebra S_A, and
+pi iota=1_D. The two image summands are orthogonal. Elements of rad C
+have nilpotent images, hence zero image in the product of fields A/J;
+augmentation is also preserved.
+
+The ordinary S_A-relative bar complexes are chain retracts. For retained
+endpoints the D bar complex equals the C bar complex, since the extra
+k factor has zero radical and cannot occur in a positive-length retained
+word. This proves (2.2) using ordinary bar homology. QED.
+
+Alternatively sigma followed by B -> q is a strict dg section.
+This is the actual B inclusion, not the generally nonmultiplicative
+projection a -> faf from A.
+
+## 4. A presentation condition supplies sections at every deletion
+
+Write A=kQ/I with I admissible. For each vertex x, let rho_x be the
+path-algebra endomorphism killing e_x and every path visiting x and
+fixing every path avoiding x. Its image is the full-subquiver path
+algebra after deleting x; it is nonunital as a map to kQ.
+
+Assume
+
+\[
+\rho_x(I)\subseteq I\quad\text{for every vertex }x.
+\tag{4.1}
+\]
+
+This concerns actual relations, not the support graph. It suffices to
+check the erasures of an ideal generating set, since rho_x is
+multiplicative.
+
+A sufficient condition is that each defining relation is a linear
+combination of parallel paths with the same set of visited vertices.
+Common left/right multiplication preserves equality of those sets.
+Every monomial presentation satisfies (4.1). Nonmonomial relations
+such as ell_{i+1}a_i-a_i ell_i^{d_i} also satisfy this sufficient
+condition: both paths visit {i,i+1}, regardless of their lengths.
+
+### Lemma 4.1 — Strict section and closure under further deletion
+
+Each rho_x descends to an idempotent endomorphism delta_x of A with
+
+\[
+\ker\delta_x=Ae_xA,\qquad\delta_x(1)=1-e_x.
+\tag{4.2}
+\]
+
+Its image lies in fAf and is isomorphic to C, providing the ordinary
+section of Proposition 3.1. The smaller quotient C again satisfies (4.1).
+
+#### Proof
+
+In kQ the kernel of rho_x is exactly the ideal generated by e_x:
+a path visits x exactly when it factors through e_x.
+Stability of I makes the map descend. If delta_x(a)=0, represent a by
+p in kQ. Then rho_x(p) belongs to I; hence modulo I, a is represented
+by p-rho_x(p), a member of the ideal generated by e_x.
+The converse inclusion is immediate. Idempotence gives the
+image/quotient isomorphism and section.
+
+The erasures commute on paths. For y!=x, rho_y preserves I and
+the ideal of paths visiting x, so descends to C as its vertex erasure.
+This proves closure. QED.
+
+## 5. A genuine terminating descent
+
+### Theorem 5.1 — Arbitrary-size Gap A under (4.1)
+
+Every elementary finite-dimensional algebra with an admissible
+presentation satisfying (4.1) satisfies
+
+\[
+\boxed{\operatorname{gldim}A=\infty
+\ \Longrightarrow\ A\text{ is infinite }+.}
+\tag{5.1}
+\]
+
+#### Proof
+
+Suppose a counterexample in this class exists and choose one with the
+fewest vertices. Choose x with pd_A L_x infinite.
+UGA-C058 gives gldim C infinite. Lemma 4.1 keeps C in the same class
+and removes exactly one vertex. Minimality makes C infinite +.
+Proposition 3.1 lifts its visible ordinary witness to A, a contradiction.
+
+Equivalently a bad A gives a bad C: the split Tor comparison passes
+non-infinite-+ to C, while the actual-tail comparison passes infinite
+global dimension to C. The number of vertices strictly decreases.
+A one-vertex endpoint cannot be bad: a nonsemisimple finite-dimensional
+local algebra has a nonterminating minimal free resolution of its simple,
+and nonzero diagonal Tor in every degree. Thus no infinite descent
+is possible. QED.
+
+This closes the whole class, irrespective of its local screening case.
+The monomial case is already known and is used as a calibration, not
+claimed as a new algebra class; see
+[Armenta, Sections 1 and 8](https://arxiv.org/html/2607.20849v1).
+The same-section mechanism beyond monomial presentations is proved here,
+but its novelty has not been independently checked.
+
+### Theorem 5.2 — Quantitative termination bound
+
+Let A satisfy (4.1), with v>=1 vertices. If M>=1 and
+
+\[
+\operatorname{Tor}^A_n(R_z,L_y)=0
+\quad(e_yAe_z\ne0,\ n\ge M),
+\tag{5.2}
+\]
+
+then
+
+\[
+\boxed{\operatorname{gldim}A\le(v-1)M.}
+\tag{5.3}
+\]
+
+#### Proof
+
+Induct on v. For v=1, (5.2) forces the local algebra to be semisimple,
+so its global dimension is zero.
+
+For v>=2, fix any source x. Proposition 3.1 passes (5.2), with the
+same M, to C=A/Ae_xA: reverse support in C implies reverse support
+in A, and every C Tor is a summand of the corresponding A Tor.
+Induction gives gldim C <= (v-2)M.
+
+In the minimal resolution P of L_x, (5.2) gives e_xP_n=0 for all n>=M.
+These terms use only Ae_i with e_xAe_i=0. For X=Omega_A^M L_x,
+UGA-C058 identifies its entire tail with a minimal C-resolution, giving
+pd_A X=pd_C X. If X!=0,
+
+\[
+\operatorname{pd}_A L_x
+\le M+\operatorname{pd}_C X
+\le M+(v-2)M.
+\]
+
+If X=0 the bound holds as well. This applies to every source x,
+and bounds gldim A. QED.
+
+The bound is uniform within this class for fixed v and the all-source
+disappearance threshold M. It is not a screening-page bound, not a
+finite-window test, and not applicable to arbitrary presentations.
+
+## 6. Calibration: path-length grading is insufficient
+
+Take arrows a:1->2, b:2->1 and a loop c at 1. Kill all length-three
+paths and impose, among quadratic paths,
+
+\[
+ba=c^2,\qquad ab=ac=cb=0.
+\]
+
+The basis is e1,e2,a,b,c,t, with t=ba=c^2!=0. These are consistent
+bound-quiver relations, and A has a path-length grading.
+
+Erasing vertex 2 sends ba-c^2 to -c^2, nonzero in A, so (4.1) fails.
+For this deletion,
+
+\[
+fAf=k[c]/(c^3),\qquad C=k[c]/(c^2).
+\]
+
+There is no ordinary algebra section: every lift c+alpha c^2 has square
+c^2!=0. This calculation works in every characteristic.
+
+This does not contradict Gap A or Theorem 2.1. Here e_2Ae_2=k,
+and Ae_2 tensor_k e_2A -> A is injective: its four tensor basis
+elements map to e2,a,b,t. The reused derived-quotient cohomology
+formula therefore gives q equivalent to C. A derived A_infinity
+section exists and the Tor bridge applies.
+An ordinary corner section is sufficient, not necessary, for the bridge.
+
+Thus an arbitrary admissible presentation, a length grading, or an
+unverified choice of path representatives cannot replace (4.1).
+
+## 7. Normal adversarial self-audit
+
+1. T1's seed correction and T2's binary quotient are reused unchanged.
+   T3 supplies quotient infinity; the old exhaustive arrow-only route
+   is not restored.
+2. The bridge is a bar chain retraction and a derived-quotient comparison
+   to ordinary Tor_A. No singular/Tate/stable substitution occurs.
+3. Reverse Peirce visibility e_yCe_z!=0 is checked separately and
+   lifts to e_yAe_z!=0. Sections retain labels and augmentation.
+4. Proposition 2.2 allows mixed operations, infinite generation and
+   unbounded negative degrees. It does not identify operation arity
+   with screening page.
+5. Every bar map and triangular inverse is finite on each word.
+   No completed-bar or unproved convergence claim is used.
+6. Corollary 2.3 uses global vertex minimality. Theorem 5.1 uses
+   minimality within a class explicitly closed under deletion.
+7. Quotient infinity uses the actual infinite-pd anchor. Formal
+   finite-global-dimension examples are not counterexamples to it.
+8. No opposite transfer or quarantined two-sided input is used.
+9. The quotient has exactly v-1 vertices because I is admissible.
+   Its badness and preservation of (4.1) are proved. This is strict
+   descent, not graph recurrence.
+10. Bound (5.3) retains (4.1), every source, and every n>=M.
+    No universal page bound or finite consecutive-degree certificate
+    is asserted.
+11. Erasure stability concerns the full ideal or a verified generating
+    set. Path-length grading is insufficient, as Section 6 proves.
+12. Monomial algebras are a known calibration. Novelty is unconfirmed.
+    These arguments are self-audited, not independently verified.
+    No finite computation substitutes for an all-degree proof.
+
+### Presentation-only note on earlier bytes
+
+The T3 corner display contains the transport shadow 'k,quad F_2'.
+Read 'quad' there as spacing, not a changed hypothesis. The old Run
+has not been rewritten.
+
+## 8. Continued research and the remaining closure problem
+
+A full section is sufficient. Lifting a fixed visible quotient tail's
+cycles in arbitrarily high degrees would already suffice. Neither is
+implied by non-formality, binary indecomposability, higher-output
+membership, or an actual late filler alone.
+
+Class (4.1) is closed by ordinary Tor and strict vertex descent.
+Formal and section-admitting deletion models are excluded globally
+from minimal counterexamples, across the screening branches.
+The unresolved general task is to force a visible lift or another
+terminating mechanism when relations genuinely mix paths visiting
+the deleted vertex with paths avoiding it.
+
+Do not merely classify the section obstruction. Use actual multiplication
+or prefix maps and simultaneous all-source conditions to force ordinary
+survival or a strict decrease; otherwise choose another closure mechanism.
+
+Bounded-screening, local-trivial and supported-weight branches remain
+on the research map. No general closure of the frozen Target-B residue
+or Universal Gap A is claimed.
+
+## 9. Method provenance
+
+The existing MRS continuation workflow was used without creating a
+replacement research store. The Vault Skill recovered live method notes
+from the user's separate Vault:
+C:\Users\pcp\Documents\Aleksi-Knowledge\笔记共享vault.
+
+The bounded live package contained Rees-Noetherian-Screening-Collapse,
+Screening-Corridor and the historical Universal-Gap-A state note.
+Their uniform screening theorem still requires the stated finite
+bimodule projective dimension and a uniform Rees-torsion bound.
+No universal operator-ring finite-generation theorem was supplied.
+These notes informed prioritizing the ordinary section bridge; they
+do not override this project's current state. No Vault note or global
+configuration was modified.
+
+## 10. Continued advance — ordinary sections descend without a chosen presentation
+
+The presentation condition in Section 4 is sufficient, but is not needed
+for the following structural closure theorem.
+
+### Lemma 10.1 — Sections pass to other primitive deletion quotients
+
+Suppose the ordinary corner quotient at y has a label-preserving unital
+section. It gives an idempotent, generally nonunital endomorphism
+
+\[
+\delta_y:A\longrightarrow A,\qquad
+\ker\delta_y=Ae_yA,\quad
+\delta_y(e_i)=e_i\ (i\ne y),\quad\delta_y(e_y)=0.
+\]
+
+For x!=y, delta_y preserves Ae_xA and induces an idempotent endomorphism
+on C_x=A/Ae_xA with kernel C_x e_y C_x. Hence the ordinary corner
+quotient at y in C_x also has a label-preserving section.
+No commutation of the original sections is assumed.
+
+#### Proof
+
+Because delta_y fixes e_x, it sends Ae_xA into Ae_xA, so the induced map
+is defined. If delta_y(a) belongs to Ae_xA, then
+
+\[
+a=(a-\delta_y(a))+\delta_y(a)\in Ae_yA+Ae_xA,
+\]
+
+since a-delta_y(a) belongs to the kernel of delta_y.
+The reverse inclusion in the induced kernel follows because the y
+idempotent is killed. Idempotence and the other fixed labels give
+the image/quotient section, with image in the retained corner. QED.
+
+### Theorem 10.2 — Closure when ordinary sections exist at all infinite-pd vertices
+
+If every vertex y with pd_A L_y infinite has a label-preserving
+ordinary corner section
+
+\[
+A/Ae_yA\longrightarrow (1-e_y)A(1-e_y),
+\tag{10.1}
+\]
+
+then A satisfies Universal Gap A. No condition is imposed at
+finite-pd vertices, and no path-presentation hypothesis is required.
+
+#### Proof
+
+Suppose A is a counterexample with (10.1). Choose x of infinite pd.
+The real-tail comparison gives gldim C_x infinite. The section at x
+and Proposition 3.1 give a split Tor comparison for every retained
+simple pair, so C_x is also non-infinite-+.
+
+If a retained L_y has infinite pd over C_x, its nonterminating minimal
+resolution has some right simple Tor nonzero in infinitely many degrees.
+The split comparison implies pd_A L_y infinite. Thus y was already
+an infinite-pd vertex of A and has a section there. Lemma 10.1 passes
+that section to C_x. The structural hypothesis is therefore inherited.
+
+Define p(B) to be the number of left simple B-modules of infinite pd.
+The same Tor comparison shows
+
+\[
+1\le p(C_x)\le p(A)-1.
+\tag{10.2}
+\]
+
+Iterating would give an infinite strictly decreasing sequence of positive
+integers. This is impossible. When p=1, the next quotient has p=0,
+contradicting its already proved infinite global dimension.
+This proves the theorem. QED.
+
+This is a well-founded descent in the number of infinite-pd simples,
+not a claim that arbitrary deletion preserves or reduces that number.
+The split ordinary Tor comparison is essential at each step.
+Sections need not commute, and finite-pd sources need no sections.
+
+### Corollary 10.3 — The earlier bound applies beyond erasure presentations
+
+If every primitive corner quotient of A has an ordinary label-preserving
+section, Lemma 10.1 makes this condition deletion-closed. The proof of
+Theorem 5.2 then applies verbatim and yields gldim A <= (v-1)M under
+all reverse-supported vanishing for every n>=M.
+
+For this quantitative assertion sections at every vertex remain required;
+the weaker infinite-pd-only hypothesis of Theorem 10.2 does not by itself
+justify this numerical bound. If A has finite global dimension, that
+weaker hypothesis is vacuous.
+
+### Additional adversarial audit
+
+- The induced endomorphism's kernel is proved using the actual difference
+  a-delta_y(a); neither commutation nor graph data is used.
+- Infinite pd in C_x implies infinite pd in A by the split simple Tor
+  comparison. This is not an unrestricted fact about ordinary quotients.
+- The count p strictly drops because x is removed and no new infinite-pd
+  simple can appear under this comparison.
+- Sections at finite-pd vertices are omitted only in Theorem 10.2,
+  not in Corollary 10.3's bound.
+- Theorems 10.2 and 10.3 are self-audited structural class results;
+  they do not force (10.1) in an arbitrary hypothetical counterexample.
+  The genuine non-split general case remains open.

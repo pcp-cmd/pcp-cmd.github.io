@@ -1,0 +1,192 @@
+"""Certify self-Ext return using only the actual projective prefix targets.
+
+All Ext groups include the actual projective restriction boundaries. Finite
+exact syzygy identities certify tails; finitely many observed zeros do not.
+See Projective-Prefix-Ext-Transfer.md for the loss inequality and all-degree
+implications. A persistent loss is inconclusive, not a counterexample.
+"""
+import argparse
+import json
+from pathlib import Path
+import sys
+
+sys.dont_write_bytecode = True
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+import yoneda_generation_certificate as yg
+import radical_head_certificate as rh
+import module_ext_certificate as me
+import syzygy_system_certificate as sc
+import regular_ext_transfer_certificate as rt
+
+
+def projectives(algebra):
+    result = []
+    for j in range(algebra.vertices):
+        cover = yg.Cover(sr.Module.simple(algebra, j))
+        result.append(sr.Module(algebra, cover.dimensions, cover.data["projective_actions"]))
+    return result
+
+
+def row_times_matrix(row, matrix):
+    return [sum(row[b] * matrix[b][a] for b in range(len(row))) for a in range(len(row))]
+
+
+def advance(transition, initial, exponent):
+    vector = list(initial)
+    for _ in range(exponent):
+        vector = sc.matvec(transition, vector)
+    return vector
+
+
+def check(data):
+    raw_system = data["system"]
+    system = sc.check(raw_system)
+    algebra = rk.Algebra(raw_system["algebra"])
+    states = [sc.parse_module(algebra, raw) for raw in raw_system["states"]]
+    m, transition = len(states), raw_system["transition"]
+    targets = projectives(algebra)
+    state_resolutions = [rh.resolution(module, 1) for module in states]
+    evidence = [[rt.ext_evidence(resolution, target, 1) for resolution in state_resolutions]
+                for target in targets]
+    labels = [[item["Ext_dimension"] for item in row] for row in evidence]
+    for a in range(m):
+        sc.require(not any(row[a] for row in labels) or any(row[a] for row in transition),
+                   "A projective state cannot have nonzero Ext1 output")
+    reports = []
+    for query in rt.source_queries(data):
+        sc.require(("simple" in query) != ("module" in query), "Specify one source type")
+        j = query.get("simple")
+        if j is None:
+            source = sc.parse_module(algebra, query["module"])
+        else:
+            sc.integer(j, "Simple vertex")
+            sc.require(j < algebra.vertices, "Invalid source vertex")
+            source = sr.Module.simple(algebra, j)
+        sc.require(sum(source.dimensions) > 0, "Nonzero source required")
+        entry = query["entry"]
+        q = sc.integer(entry["shift"], "Entry shift")
+        initial = entry["multiplicities"]
+        sc.require(len(initial) == m, "Wrong entry-vector length")
+        for value in initial:
+            sc.integer(value, "Entry multiplicity")
+        minimum = sc.integer(query.get("minimum_transfer_shift", 0), "Minimum transfer shift")
+        start = max(q, minimum)
+        start_vector = advance(transition, initial, start - q)
+        witness = sc.persistence_witness(transition, [1] * m, start_vector, start)
+        ell = start + len(witness["entry_path"]) - 1 if witness else q
+        resolution = rh.resolution(source, max(q, ell))
+        entry_iso = sc.check_isomorphism(resolution["modules"][q],
+            sc.direct_sum(algebra, states, initial), entry["isomorphism"])
+        projective_reports = []
+        for i, target in enumerate(targets):
+            prefix = [me.ExtSpace(resolution, target, n).dimension for n in range(1, q + 1)]
+            tail, vector = [], list(initial)
+            for _ in range(2 * m):
+                tail.append(sum(a * b for a, b in zip(labels[i], vector)))
+                vector = sc.matvec(transition, vector)
+            persistent = sc.persistence_witness(transition, labels[i], initial, q + 1)
+            sc.require(bool(persistent) == any(tail[m:]), "Projective Ext window mismatch")
+            sc.require(bool(persistent) == any(tail[m - 1:2 * m - 1]),
+                       "Refined Ext window mismatch")
+            if persistent:
+                persistent["all_degree_claim"] = "dim Ext^(offset+r*period)(X,P_i) >= coefficient*cycle_weight**r for all r>=0"
+                cutoff = None
+            else:
+                degrees = [n + 1 for n, value in enumerate(prefix) if value]
+                degrees += [q + 1 + n for n, value in enumerate(tail[:m]) if value]
+                cutoff = max(degrees, default=0)
+                sc.require(not any(tail[m - 1:]), "An acyclic Ext output survived its last possible degree")
+            projective_reports.append({"target": i, "prefix_degrees_start": 1,
+                "prefix_values": prefix, "tail_start": q + 1, "tail_values": tail,
+                "refined_persistence_window": [q + m, q + 2 * m - 1],
+                "persistent": persistent is not None, "persistence_witness": persistent,
+                "vanishing_after": cutoff})
+        prefix_terms, loss_row = [], [0] * m
+        threshold, obstruction_targets = 1, set()
+        for t in range(ell):
+            multiplicities = [len(row) for row in source_top(resolution, t)]
+            term_row = [sum(multiplicities[i] * labels[i][a] for i in range(algebra.vertices))
+                        for a in range(m)]
+            shifted_row = list(term_row)
+            for _ in range(t):
+                shifted_row = row_times_matrix(shifted_row, transition)
+            loss_row = [x + y for x, y in zip(loss_row, shifted_row)]
+            for i, value in enumerate(multiplicities):
+                if value:
+                    cutoff = projective_reports[i]["vanishing_after"]
+                    if cutoff is None:
+                        obstruction_targets.add(i)
+                    else:
+                        threshold = max(threshold, cutoff - t)
+            prefix_terms.append({"resolution_degree": t, "projective_multiplicities": multiplicities,
+                                 "Ext1_output_row": term_row})
+        if obstruction_targets:
+            threshold = None
+        if "prefix_loss_vanishes_from" in query:
+            claimed = sc.integer(query["prefix_loss_vanishes_from"], "Loss vanishing threshold")
+            sc.require(claimed >= 1 and threshold is not None and claimed >= threshold,
+                       "Claimed projective-prefix loss vanishing is false")
+        transfer = None
+        if witness and threshold is not None:
+            state, d = witness["cycle"][0], witness["period"]
+            at_ell = advance(transition, initial, ell - q)
+            copies = at_ell[state]
+            unit = [int(a == state) for a in range(m)]
+            g = advance(transition, unit, d)[state]
+            sc.require(copies > 0 and g > 0, "Missing actual returning summand")
+            r0 = (threshold + d - 1) // d
+            transfer = {"state": state, "cycle": witness["cycle"], "period": d,
+                        "source_syzygy_shift": ell, "copies_in_source_syzygy": copies,
+                        "return_multiplicity": g, "threshold": threshold,
+                        "first_multiplier": r0, "first_certified_degree": r0 * d,
+                        "self_Ext_window": [threshold, threshold + d - 1],
+                        "supported_diagonal_pair": [j, j] if j is not None else None,
+                        "claim": "dim Ext^(r*period)(X,X) >= copies**2 * return_multiplicity**r whenever r*period >= threshold"}
+        loss_witness = sc.persistence_witness(transition, loss_row, initial, q)
+        if loss_witness:
+            loss_witness["all_degree_claim"] = "prefix loss at offset+r*period is at least coefficient*cycle_weight**r when the degree is >=max(q,1)"
+        if witness:
+            sc.require(bool(loss_witness) == bool(obstruction_targets),
+                       "Prefix loss and projective-target persistence disagree")
+        reports.append({"label": query.get("label", "source"), "simple": j,
+            "entry_shift": q, "entry_isomorphism": entry_iso,
+            "projective_target_Ext": projective_reports,
+            "regular_Ext_persistent": any(row["persistent"] for row in projective_reports),
+            "return_reachable": witness is not None, "transfer_syzygy_shift": ell,
+            "prefix_terms": prefix_terms, "persistent_prefix_targets": sorted(obstruction_targets),
+            "loss_row": loss_row, "loss_recurrence_start": max(q, 1),
+            "loss_recurrence": "loss(n) = loss_row * T**(n-q) * entry_vector",
+            "loss_persistence_witness": loss_witness, "prefix_loss_vanishes_from": threshold,
+            "refined_joint_finite_pd_window": [q + m, q + 2 * m - 1],
+            "refined_joint_finite_pd_claim": "pd(X)<infinity iff Ext^n(X,X+A)=0 throughout this window; if finite, pd(X)<=q+m-1. The self-Ext premise is not automatically checked.",
+            "status": "certified_persistent_self_Ext" if transfer else
+                      "finite_pd_source" if not witness else "not_certified_prefix_loss_persists",
+            "self_Ext_transfer": transfer})
+    return {"status": "passed", "number_of_vertices": algebra.vertices,
+            "number_of_states": m, "system_verification": system,
+            "projective_target_Ext1_labels": labels, "state_projective_Ext1_evidence": evidence,
+            "queries": reports, "proof": "Projective-Prefix-Ext-Transfer.md",
+            "scope": "Finite exact certificates plus a written all-degree theorem; self-audit only. The implemented sufficient test uses eventual loss vanishing, not general recurrence-difference positivity."}
+
+
+def source_top(resolution, degree):
+    return resolution["tops"][degree][0]
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    result = check(json.loads(args.input.read_text(encoding="utf-8")))
+    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"status": result["status"], "queries": [
+        {"label": row["label"], "status": row["status"],
+         "regular_Ext_persistent": row["regular_Ext_persistent"],
+         "prefix_loss_vanishes_from": row["prefix_loss_vanishes_from"]}
+        for row in result["queries"]]}))
+
+
+if __name__ == "__main__":
+    main()

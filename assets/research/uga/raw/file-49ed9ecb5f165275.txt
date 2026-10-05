@@ -1,0 +1,170 @@
+"""Exact bounded self-check of the triangular nonsplit nonperfect kernel.
+
+Reuses only exact matrix helpers from the other calibration code.
+Importing them does not rerun the fourteen-dimensional calibration.
+"""
+from argparse import ArgumentParser
+from collections import Counter
+from hashlib import sha256
+from itertools import product
+from pathlib import Path
+import json
+import platform
+from verify_squarezero_quotient import rank, nullspace
+
+
+class Triangular:
+    def __init__(self, quotient=False):
+        self.basis = ("e0", "e1", "t", "a") + (() if quotient else ("b",))
+        self.endpoints = {"e0": (0, 0), "e1": (1, 1), "t": (0, 0),
+                          "a": (1, 0), "b": (1, 0)}
+        self.rad = tuple(s for s in self.basis if s[0] != "e")
+        self.quotient = quotient
+
+    def mul(self, x, y):
+        if x is None or y is None:
+            return None
+        if self.endpoints[x][1] != self.endpoints[y][0]:
+            return None
+        if x[0] == "e":
+            return y
+        if y[0] == "e":
+            return x
+        return "b" if (x, y) == ("a", "t") and not self.quotient else None
+
+    def words(self, n, z, y):
+        if n == 0:
+            return [()] if z == y else []
+        out = []
+        for b in self.rad:
+            left, right = self.endpoints[b]
+            if right == y:
+                out.extend(w+(b,) for w in self.words(n-1, z, left))
+        return out
+
+    def dword(self, w):
+        out = Counter()
+        for i in range(len(w)-1):
+            term = self.mul(w[i], w[i+1])
+            if term is not None:
+                out[w[:i]+(term,)+w[i+2:]] += (-1)**i
+        return {v: c for v, c in out.items() if c}
+
+
+def differential(alg, current, lower):
+    idx = {w: i for i, w in enumerate(lower)}
+    return [{idx[v]: c for v, c in alg.dword(w).items()} for w in current]
+
+
+def main(out_path):
+    aa, cc = Triangular(), Triangular(True)
+    counts = Counter()
+    for label, alg in (("A_tri", aa), ("C_tri", cc)):
+        for x, y, z in product(alg.basis, repeat=3):
+            assert alg.mul(alg.mul(x, y), z) == alg.mul(x, alg.mul(y, z))
+            counts[label+"_associativity_triples"] += 1
+    assert aa.mul("b", "b") is None
+    assert all(aa.mul("b", a) in (None, "b") and aa.mul(a, "b") in (None, "b")
+               for a in aa.basis)
+    # Ce1=k e1 is left projective. K's right vertex is 0, so K tensor K=0.
+    assert [a for a in cc.basis if cc.endpoints[a][1] == 1] == ["e1"]
+    assert cc.endpoints["b"] == (1, 0)
+    assert cc.mul("e0", "e1") is None
+    counts["actual_tensor_square_zero_middle"] = 1
+    # Right R0 is nonprojective and periodic over C: e0C={e0,t}.
+    e0c = [a for a in cc.basis if cc.endpoints[a][0] == 0]
+    assert e0c == ["e0", "t"]
+    assert [cc.mul("t", a) for a in e0c] == ["t", None]
+    counts["infinite_right_pd_periodic_certificate"] = 1
+    # Actual A-left periodic submodule At, and its complementary projective ka.
+    ae0 = [a for a in aa.basis if aa.endpoints[a][1] == 0]
+    targets = [aa.mul(a, "t") for a in ae0]
+    assert {v for v in targets if v is not None} == {"t", "b"}
+    assert {a for a, v in zip(ae0, targets) if v is None} == {"t", "b"}
+    assert set(aa.rad) == {"t", "b", "a"}
+    counts["actual_left_periodic_submodule_certificate"] = 1
+    # C's two radical simple summands t and a.
+    assert all(cc.mul(r, "t") is None and cc.mul(r, "a") is None for r in cc.rad)
+    counts["quotient_left_simple_split_certificate"] = 1
+
+    records = []
+    for z, y in product(range(2), repeat=2):
+        wa = [aa.words(n, z, y) for n in range(10)]
+        wc = [cc.words(n, z, y) for n in range(10)]
+        da = [differential(aa, wa[n], wa[n-1] if n else []) for n in range(10)]
+        dc = [differential(cc, wc[n], wc[n-1] if n else []) for n in range(10)]
+        for label, ds in (("A_tri", da), ("C_tri", dc)):
+            for n in range(2, 10):
+                for col in ds[n]:
+                    twice = Counter()
+                    for i, val in col.items():
+                        for j, val2 in ds[n-1][i].items():
+                            twice[j] += val*val2
+                    assert all(v == 0 for v in twice.values())
+                counts[label+"_differential_square_degrees"] += 1
+        for n in range(1, 10):
+            for w in wa[n]:
+                pw = None if "b" in w else w
+                lhs = cc.dword(pw) if pw is not None else {}
+                rhs = {v: val for v, val in aa.dword(w).items() if "b" not in v}
+                assert rhs == lhs
+            counts["projection_chain_map_degrees"] += 1
+        for n in range(9):
+            ha = len(wa[n]) - rank(da[n], len(wa[n-1]) if n else 0) - rank(da[n+1], len(wa[n]))
+            hc = len(wc[n]) - rank(dc[n], len(wc[n-1]) if n else 0) - rank(dc[n+1], len(wc[n]))
+            expected_a = int(z == y) if n == 0 else int((z, y) == (0, 0) or (n == 1 and (z, y) == (1, 0)))
+            expected_c = int(z == y) if n == 0 else int((z, y) in ((0, 0), (1, 0)))
+            assert ha == expected_a and hc == expected_c
+            cycles = nullspace(da[n], len(wa[n-1]) if n else 0)
+            cidx = {w: i for i, w in enumerate(wc[n])}
+            projected = []
+            for cycle in cycles:
+                vector = Counter()
+                for i, val in cycle.items():
+                    if "b" not in wa[n][i]:
+                        vector[cidx[wa[n][i]]] += val
+                projected.append({i: val for i, val in vector.items() if val})
+            imrank = rank(dc[n+1]+projected, len(wc[n])) - rank(dc[n+1], len(wc[n]))
+            assert imrank == ha
+            reverse_visible = aa.endpoints.get(f"e{y}") is not None and any(
+                aa.endpoints[a] == (y, z) for a in aa.basis)
+            if (z, y) == (1, 0):
+                assert not reverse_visible
+                if n >= 2:
+                    assert (ha, hc, imrank) == (0, 1, 0)
+            counts["ambient_tor_records"] += 1
+            counts["quotient_tor_records"] += 1
+            counts["induced_ordinary_comparison_ranks"] += 1
+            records.append({"right_simple": z, "left_simple": y, "degree": n,
+                            "ambient_tor_dimension": ha, "quotient_tor_dimension": hc,
+                            "ordinary_comparison_rank": imrank,
+                            "reverse_A_Peirce_visible": reverse_visible})
+    result = {
+        "status": "passed", "backend": {"name": "python", "version": platform.python_version()},
+        "arithmetic": "exact rational ranks and literal finite module certificates",
+        "evidence_level": "bounded-check; same-author; not independently verified",
+        "actual_dimensions": {"A_triangular": 5, "C_triangular": 4, "K": 1},
+        "kernel_properties": {"square_zero": True, "left_C_projective": True,
+                              "actual_derived_tensor_square_zero": True,
+                              "infinite_right_C_pd": "separate explicit periodic proof",
+                              "no_ordinary_section": "separate unique-lift proof",
+                              "not_A5_Auslander": True},
+        "bounds": {"recorded_ordinary_tor_degrees": [0, 8], "incoming_complex_degree_included": 9},
+        "checks": dict(sorted(counts.items())), "tor_comparison_records": records,
+        "limitations": [
+            "Matrix helpers are reused from the same author's other script; no independent check is claimed.",
+            "This algebra is distinct from the five-dimensional Auslander primitive-seed calibration.",
+            "All-degree nonperfectness, nonsplitting and infinite-pd assertions use the written finite/periodic certificates.",
+            "The general supported bridge uses actual ideal Peirce support and tensor square zero; no full high comparison or higher-index theorem is inferred.",
+            "This is infinite + and not a Gap-A counterexample."
+        ]
+    }
+    out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+    print(json.dumps({"status": "passed", "checks": result["checks"],
+                      "result_sha256": sha256(out_path.read_bytes()).hexdigest()}))
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser()
+    parser.add_argument("--out", type=Path, required=True)
+    main(parser.parse_args().out)

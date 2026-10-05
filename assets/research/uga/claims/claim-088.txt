@@ -1,0 +1,11 @@
+## UGA-C088 — Closed Finite-Pd Blocks: All-Degree Ordinary Comparison and Exact Count Descent
+**Status:** COMPLETE SELF-AUDITED ORDINARY PROOF / ACTUAL ENTIRE MINIMAL RESOLUTIONS / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Closed-Finite-Block-Ordinary-Comparison-and-Three-Source-Containment-2026-10-04.md, Sections 3–5 and 7–8.
+
+For any elementary finite-dimensional A and a nonempty proper LEFT-finite-pd block F, require gAf=0 with f=sum_F e_u and g=1-f. Then B=A/AfA=gAg retains every physical Peirce space on remaining labels, and every retained RIGHT simple has the LITERAL SAME complete minimal projective resolution. The natural ordinary Tor^A_n(R_z,L_y)->Tor^B_n(R_z,L_y) is an isomorphism for every retained pair and n>=0. Let d=max_F pd_A L_u; AfA=fA has only F left factors, so pd_A B<=d+1. For retained finite left pd b over B, b<=pd_A L_y<=b+d+1; finite/infinite equivalence holds. Hence I_L(B)=I_L(A) and I_R(B)=I_R(A) minus F, with retained RIGHT pds equal. Global infinity is equivalent; supported B ordinary tails lift in the SAME physical pair, so badness is preserved.
+
+The RIGHT count drops exactly |F intersect I_R|, strictly only when positive; dimension and vertex number always strictly decrease. The direct finite-RIGHT version requires fAg=0, preserves retained LEFT resolutions/pds, keeps I_R and decreases I_L exactly by |F intersect I_L|. Neither side is inferred from the other. Arbitrary finite pds are allowed, not only projective simples. The kernel contains f and need not be radical/square-zero, so C069/C074 are not invoked for it. Original checked closed blocks inherit after other such deletions, even mixing sides: physical retained entries and both finite/infinite partitions are restricted exactly. Availability in every bad algebra is NOT proved.
+
+T18 A42's whole RIGHT-finite old block is eligible and gives Gamma, LEFT counts 3->1 and RIGHT 1->1; the old partial deletion/inheritance obstruction remains valid. T19's whole LEFT-finite acyclic block is also eligible with pd bound two. Both calibrations already have visible Tor. A42's finite-LEFT covers contain an infinite-LEFT factor, so finite pd alone does not yield physical cover closure. Existing certificates are reused unchanged; complete same-author proof and normal self-audit, not independent verification.
+
+---

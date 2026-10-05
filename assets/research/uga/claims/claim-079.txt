@@ -1,0 +1,15 @@
+## UGA-C079 — Both Singleton-Infinite-Simple Branches Close by Ordinary Composition Return
+**Status:** COMPLETE SELF-AUDITED ALL-SIZE ORDINARY PROOF / EXISTING ALL-DEGREE CALIBRATION REUSED / NOT INDEPENDENTLY VERIFIED; NO NOVELTY CLAIM  
+**Source:** Run-Unique-Infinite-Simple-Ordinary-Closure-2026-10-03.md, Sections 2--7.
+
+For an elementary finite-dimensional A over any field, suppose L_x is the only infinite-pd LEFT simple. Every actual Omega^n L_x has infinite pd and contains L_x as a composition factor; all other simple factors have a finite common pd bound, so omitting x would make that syzygy finite-pd. Thus in every n>=0,
+sum_z dim(e_xAe_z) dim Tor^A_n(R_z,L_x)=dim e_x Omega^n L_x+dim e_x Omega^{n+1}L_x>=2.
+Finite labels give one fixed reverse-supported ordinary pair with a persistent tail. The pair need not be diagonal or nonzero in every degree. The entire at-most-one-infinite-pd-left-simple class therefore satisfies Gap A at arbitrary finite size.
+
+If R_x is the only infinite-pd RIGHT simple, its actual right resolution directly gives sum_y dim(e_yAe_x) dim Tor^A_n(R_x,L_y)>=2 in every n>=0 and the same ordinary supported-tail conclusion. No identification of the left/right infinite-pd sets and no opposite-+ transfer is used. The unique infinite-pd vertex has dim e_xAe_x>=2 on either stated side.
+
+If every other LEFT simple has pd<=d, and all supported ordinary pairs from L_x vanish for EVERY n>=M>=1, then pd L_x<=M+d and gldim A<=M+d. The direct right version retains the analogous right-side hypotheses and bound. This is not a vertex-only bound or finite checking window.
+
+The unchanged Saorin example has one infinite-pd left simple, composition return in every syzygy, zero positive simple self-Ext and a supported off-diagonal tail realizing the aggregate. Its existing connected extension family calibrates arbitrary vertex number. The finite-composition-factor pd implication is used only in its valid direction; finite-pd modules can have infinite-pd composition factors. A general remaining bad algebra must have at least two infinite-pd simples on each side, but no generally eligible descent to this terminal branch is asserted. C076's physical migration gap and the general global branches remain open.
+
+---

@@ -1,0 +1,20 @@
+# Exact audit of the nine-dimensional screening calibration
+
+Work over Q using fractions.Fraction. A has vertices 0=y, 1=x,
+basis e0,e1,u,u2,u3,a,au,b,ub, arrows a:0->1 and b:1->0,
+and relations ba=u^2, ab=aub=0. The local y corner is k[u]/u^4.
+
+Check all 729 associativity triples, actual A-linear minimal resolution
+maps for both simples, their finite exact periodic certificates, all
+four simple-pair ordinary bar complexes in degrees 0..4 with incoming
+degree 5, and the induced projection to C=k[u]/u^2 at pair (0,0).
+
+Check the retained minimal A_infinity model H=C+M[1], M having basis
+v,w with u v=-w and v u=w, negative products zero, m3(u,u,u)=v.
+Check its differential square, Tor and projection through degree 8
+with incoming degree 9. These are bounded self-checks, not independent
+verification or a substitute for the generic all-degree parity proof.
+
+The all-degree source-y period is four; source-x is period two after
+the first syzygy. Both give ordinary visible Tor. This algebra is
+infinite +, not a Universal Gap A counterexample.

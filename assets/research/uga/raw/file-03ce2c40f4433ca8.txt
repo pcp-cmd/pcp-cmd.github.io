@@ -1,0 +1,108 @@
+# Bounded h=1 ordinary tensor-envelope review
+
+2026-10-05. Pending bounded proof review for audit_radical_band/root;
+no canonical edits, no extra search or new computation. Not independent/formal
+verification. Universal Gap A and the whole J6zero/pd_LEFTJ3<=1 closure remain
+unsettled by this review.
+
+## 1. Validity and exact side conventions
+
+Let I be an actual two-sided ideal with pd_LEFT I<=1. For EVERY right ideal
+U contained in A, the actual right sequence0->U->A->A/U->0 gives
+
+    Tor_n^A(U,I) = Tor_(n+1)^A(A/U,I) = 0,   n>=1.
+
+No finiteness assumption on the RIGHT pd of U is needed. This follows solely
+from the LEFT projective resolution length of the SECOND tensor factor I.
+
+For the additional LEFT pd claim U must actually be a two-sided ideal or
+an A-bimodule with the stated right ideal inclusion: an arbitrary right ideal
+need not have an inherited LEFT A-module structure. Suppose pd_LEFT U=d is
+finite. Tensor the genuine length-one LEFT resolution0->P1->P0->I->0 by U.
+Tor1(U,I)=0 makes
+
+    0 -> U tensor P1 -> U tensor P0 -> U tensor I -> 0
+
+an ACTUAL exact sequence of LEFT modules. Each U tensor Pj is a finite direct
+sum of Ue_f, each a genuine LEFT direct summand of U. Therefore
+
+    pd_LEFT(U tensor I) <= d+1.
+
+Applying U=I gives T=I tensor I with pd_LEFT T<=2.
+
+## 2. Actual multiplication defect and strict ordinary cutoff
+
+Let D=ker(T->I2)=Tor1(A/I,I) and E=I/I2. All maps and kernels are actual, so
+
+    0 -> D -> T -> I -> E -> 0
+
+is exact. Put Q=I2 and split it into0->D->T->Q->0 and0->Q->I->E->0.
+Ordinary Tor, for every RIGHT test R, gives
+
+    Tor_n(R,E) = Tor_(n-1)(R,Q) = Tor_(n-2)(R,D),   n>4.
+
+The same LEFT first-variable Ext comparison holds for every LEFT target Z:
+
+    Ext^n(E,Z) = Ext^(n-1)(Q,Z) = Ext^(n-2)(D,Z),   n>4.
+
+The strict n>4 is justified: the second shift uses vanishing of degrees n-1
+and n-2 of T, whose supplied pd bound is2. At n=4, Ext2(T,Z)/Tor2(R,T)
+may be nonzero. No lower uniform cutoff is claimed from these hypotheses.
+
+## 3. What J6zero actually adds, and what this envelope does not encode
+
+For I=J3 with J6=0, Q=I2=0, E=I and D=T. The four-term sequence becomes
+
+    0 -> T --id--> T --0--> I --id--> I -> 0.
+
+Thus both objects in the high comparison already have finite LEFT pd. The
+associated degree-two Yoneda class is zero (also Ext2(I,T)=0 by pd I<=1).
+There is no nonzero infinite module endpoint or long ordinary Yoneda word in
+this particular envelope to which C105's stopping contradiction applies.
+It gives no finite-pd estimate for JI=J4, J2I=J5, or the actual band I/J2I.
+
+This is an exact description of this proof input, not a statement that no
+other use of the tensor defect can close the class.
+
+## 4. Actual module examples locating C105/C111 gates
+
+First use the fully checked c=(4,3,3) cyclic Nakayama fixture from
+finite-pd-full-cover-boundary.md. Here
+
+    I=J3=E=T=D=L0,  pd_LEFT L0=1,  support={0}.
+
+All four displayed modules lack infinite LEFT composition-factor sources.
+The genuine infinite simples1,2 and period2 ordinary witness at1 lie outside
+their factor set. C105 does not automatically extract that outside source
+from the degenerate finite envelope. The actual FULL I-cover kernel K=P1
+has radical M(2,2) and head L1, both infinite pd; hence C111's required
+finite-pd whole subkernel cannot be inferred from pd K=0. This algebra is
+already-positive and lies in older proved closure classes; it is not a
+badness-specific obstruction or counterexample to the proposed whole class.
+
+Second REUSE C125's canonical Run, Section6, at parameter r=1 and any N>=3.
+For B=kC_N/J_B3, C=k(f0->f1), W=L_f0^C tensor e0B, and
+
+    A = [[B,0],[W,C]],
+
+the actual whole J_A3=WJ_B2 is LEFT L_f0 of pd1 but RIGHT R_(N-2) of
+infinite pd. Moreover J_A4=0 (therefore J6=0). This is the written all-r
+family theorem, NOT a new r=1 execution. Its actual old RIGHT kernel identity
+Omega_R2 R_i=R_(i-3) proves ordinary return/infinite right pd in all degrees.
+
+Finite LEFT pd I makes Qbullet I high-exact for actual RIGHT resolutions;
+it does not make a RIGHT module Q_n I into a finite-RIGHT-pd error. C111
+on a RIGHT tail requires that RIGHT ordinary pd of the WHOLE selected
+subkernel. This actual r=1 example rules out the side-switched inference.
+The example is already closed by C125/C127 because its LEFT I is semisimple;
+it does not rule out a different high-tail repair in the larger class.
+
+## 5. Remaining proof obligation
+
+The supplied h1/T/D/E estimates are valid ordinary results. To close the
+entire J6zero/h1 class through existing C105/C111, an additional genuine
+ordinary theorem must supply an infinite actual tail object and its required
+visible bi-singular rectangle, or a WHOLE finite-pd actual subkernel on the
+correct module side with the semisimple quotient/recurrent-source strictness
+conditions. The finite degenerate tensor envelope alone supplies neither.
+This review does not prove either automatic availability or impossibility.

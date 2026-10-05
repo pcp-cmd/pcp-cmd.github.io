@@ -1,0 +1,197 @@
+# Rees torsion, the screening corridor, and cycle-lift obstructions
+
+2026-09-27. Project-derived results, with full proofs below. The statements have been self-audited; their precise independent review scope is recorded separately in MRS. No novelty claim is made. Universal Gap A remains open.
+
+## 1. Fixed setup and the question
+
+The primary project concerns arbitrary finite-dimensional basic complex algebras, with no bound on the number of vertices. This note uses the two-stage setup established in [Derived deletion, Sections 2–4](Derived-Deletion-Screening-Normal-Form.md). The arguments here also work over a field whenever the indicated split relative bar model exists.
+
+Let \(C\) be finite-dimensional and elementary, \(S=\bigoplus_i ke_i\), \(J=\operatorname{rad}C\), and let \(M\) be a finite-dimensional \(C\)-bimodule. Fix a strictly unital augmented minimal model
+\[
+H=C\oplus M[1],\qquad m_2,\quad m_3=\kappa,\qquad m_{\ge4}=0.
+\]
+For fixed simples \(R_a,L_b\), write its relative bar complex as \(B=\bigoplus_{n,p}B_{n,p}\), where a \(J\)-letter contributes homological degree one, an \(M\)-letter contributes degree two, and \(p\) counts \(M\)-letters. Thus
+\[
+0\le p\le\lfloor n/2\rfloor,\quad
+b_2:B_{n,p}\to B_{n-1,p},\quad
+b_3:B_{n,p}\to B_{n-1,p+1}.
+\]
+All spaces in a fixed homological degree are finite-dimensional. The identities are \(b_2^2=b_3^2=b_2b_3+b_3b_2=0\).
+
+With \(q=n-2p\), the decreasing filtration by \(p\) gives
+\[
+E_1^{p,q}=H_q(W_p),\qquad
+W_p=R_a\otimes_C^{\mathbf L}M^{\otimes_C^{\mathbf L}p}\otimes_C^{\mathbf L}L_b,
+\quad
+d_r:(p,q)\longmapsto(p+r,q-2r-1).
+\tag{1}
+\]
+For \(p=0\), \(W_0=R_a\otimes_C^{\mathbf L}L_b\). There are no incoming differentials into that column. The limiting edge is the image of
+\[
+\epsilon_n:H_n(B,b_2+b_3)\longrightarrow\operatorname{Tor}^C_n(R_a,L_b).
+\tag{2}
+\]
+In a derived deletion with \(eAe=k\), the source of (2) is \(\operatorname{Tor}^A_n(R_a,L_b)\). We never identify ordinary \(A\to C\) with a homological epimorphism.
+
+## 2. The screening corridor
+
+**Theorem 1.** Suppose \(M\) has a finite \(C^e\)-projective resolution of length \(d\). For \(p\ge1\),
+\[
+E_1^{p,q}=0\quad\text{unless}\quad 0\le q\le pd.
+\tag{3}
+\]
+Consequently a nonzero outgoing differential from \(E_r^{0,n}\) must satisfy
+\[
+\boxed{\left\lceil\frac{n-1}{d+2}\right\rceil
+\le r\le \left\lfloor\frac{n-1}{2}\right\rfloor.}
+\tag{4}
+\]
+
+**Proof.** Choose a projective bimodule resolution \(P\to M\), supported in degrees \(0,\ldots,d\). Its terms are summands of finite sums of \(Ce_u\otimes_k e_vC\). Each term of \(P^{\otimes_Cp}\) is \(C^e\)-projective: the tensor of two displayed elementary bimodules is
+\[
+Ce_u\otimes_k(e_vCe_w)\otimes_k e_zC.
+\]
+The complex lies in degrees \(0,\ldots,pd\). It computes the derived tensor power because the factors are bounded complexes of left and right projectives. After tensoring on the left by \(R_a\), its terms remain right \(C\)-projective; the final tensor with \(L_b\) therefore computes \(W_p\). Its homology has exactly the amplitude claimed in (3). The target of a differential leaving \((0,n)\) on page \(r\) has coordinates \((r,n-2r-1)\). Nonzero terms on later pages are subquotients of their first-page positions, so \(0\le n-2r-1\le rd\), equivalent to (4). \(\square\)
+
+Finite projective dimension on each of the two sides separately is not the bimodule hypothesis of this theorem.
+
+## 3. Which class is Rees torsion?
+
+Use a central variable \(t\), of homological degree zero, and set
+\[
+\mathcal B=(B\otimes_k k[t],D=b_2+t b_3),\qquad
+\mathcal H_h=H_h(\mathcal B).
+\tag{5}
+\]
+Assign auxiliary weight \(p-j\) to \(t^jB_{n,p}\). The differential preserves this weight. Modulo \(t\), the differential is \(b_2\); its Bockstein spectral sequence, with the auxiliary weight retained, is (1). Equivalently, the same correction equations compute both spectral sequences.
+
+**Theorem 2 (page equals exponent, target degree).** A nonzero \(d_r\) leaving total degree \(n\) yields an element of exact \(t\)-torsion order \(r\) in \(\mathcal H_{n-1}\). In particular, the torsion element is in the target degree; the disappearing source class need not itself lift to Rees homology.
+
+**Proof.** A page-\(r\) representative consists of \(z_s\in B_{n,p+s}\), \(0\le s<r\), satisfying
+\[
+b_2z_0=0,\qquad b_2z_s=-b_3z_{s-1}\quad(1\le s<r).
+\]
+Put \(Z=\sum_{s=0}^{r-1}t^sz_s\) and \(w=b_3z_{r-1}\). The two anticommutation identities give \(Dw=0\), and direct expansion gives
+\[
+DZ=t^rw.
+\tag{6}
+\]
+Thus \(t^r[w]=0\) in \(\mathcal H_{n-1}\). If \(t^{r-1}[w]=0\), write \(DY=t^{r-1}w\). Then \(D(Z-tY)=0\) is a polynomial lift of the original \(z_0\), forcing the outgoing \(d_r\) of its page-\(r\) class to vanish. This contradicts the chosen nonzero \(d_r\). For the filtration interpretation one takes the auxiliary-homogeneous component of \(Y\); this gives exactly the required filtration shifts. When \(p>0\), this argument does not exclude a later incoming differential and does not claim permanent survival. Therefore the order is exactly \(r\). \(\square\)
+
+There is also a useful count interpretation. Localize at \((t)\), a discrete valuation ring. A complex of finite free modules bounded below splits degree by degree into one-term free blocks and two-term elementary blocks
+\[
+k[t]_{(t)}z\xrightarrow{\,t^r\,}k[t]_{(t)}w.
+\tag{7}
+\]
+To see this, diagonalize a differential by Smith reduction. Nonzero diagonal entries force the adjacent differentials to vanish on those summands by \(D^2=0\) and torsion-freeness, so those blocks split off; proceed upwards in degree. Each positive \(r\) block contributes one page-\(r\) differential and one target-degree torsion summand of length \(r\). This counts torsion summands, not arbitrary named representatives on earlier pages.
+
+Define \(\tau(h)\) as the largest exact \(t\)-torsion order in \(\mathcal H_h\), or zero if there is no such torsion. Combining Theorems 1 and 2 gives, whenever a zero-column class of degree \(n\) dies,
+\[
+\tau(n-1)\ \ge\ r\ \ge\
+\left\lceil\frac{n-1}{d+2}\right\rceil.
+\tag{8}
+\]
+Each individual \(\mathcal H_h\) is finitely generated over \(k[t]\). This alone gives no uniform bound as \(h\) grows.
+
+## 4. Uniform torsion kills high-degree screening
+
+**Theorem 3.** Retain \(M\in\operatorname{perf}(C^e)\) with projective dimension \(d\). Suppose there are \(h_0,N\ge0\) such that
+\[
+t^N T_t\mathcal H_h=0\quad(h\ge h_0),
+\qquad
+T_tV=\{v:t^rv=0\text{ for some }r\}.
+\tag{9}
+\]
+Then the edge map (2) is surjective whenever
+\[
+n-1\ge h_0,\qquad n>(d+2)N+1.
+\tag{10}
+\]
+
+**Proof.** A dying zero-column class in such a degree would have death page \(r\le N\) by Theorem 2 and (9), but \(r\ge\lceil(n-1)/(d+2)\rceil>N\) by (4). Thus no zero-column class can die. The filtration is finite in each total degree, so its limiting edge equals the entire zero column. This proves surjectivity. \(\square\)
+
+**Noetherian criterion.** Condition (9) follows if the actual tail \(\bigoplus_{h\ge h_0}\mathcal H_h\) is a finitely generated module over a left Noetherian operator ring containing central \(t\), with the given \(t\)-action. Its \(t\)-power torsion is a submodule by centrality, hence has finitely many generators. The maximum of their annihilating exponents gives \(N\).
+
+The Noetherian property and finite generation concern the whole tail and its actual operators. They have not been proved for general derived deletions. A formal cycle in a resolution graph does not supply them. This is a conditional theorem, not a proof of Universal Gap A.
+
+**Supported-return consequence.** If \(C\) has a persistent pair with \(e_bCe_a\ne0\), conditions of Theorem 3 force persistent \(\operatorname{Tor}^A_n(R_a,L_b)\). The quotient map ensures \(e_bAe_a\ne0\). Thus a minimal vertex counterexample in this perfect-bimodule branch cannot also satisfy (9).
+
+## 5. The precise cycle-lift complex
+
+Work either at a fixed pair or in the direct sum of all pairs, with maps preserving both endpoint labels. Let \(\operatorname{End}^{L,\ell}(B)\) consist of graded \(k\)-linear maps taking \(B_{n,p}\) to \(B_{n+L,p+\ell}\). These are maps of the relative bar vector spaces; no unproved \(C^e\)-linearity is implied. Define
+\[
+\partial_iU=b_iU-(-1)^L U b_i\quad(i=2,3).
+\]
+Then \(\partial_2\) has bidegree \((-1,0)\), \(\partial_3\) has bidegree \((-1,1)\), and their squares and anticommutator vanish.
+
+For a homogeneous candidate of auxiliary shift \(\ell\),
+\[
+U(t)=\sum_{m\ge0}t^mU_m,\qquad
+U_m\in\operatorname{End}^{L,\ell+m}(B),
+\]
+the chain-map equations are exactly
+\[
+\partial_2U_0=0,\qquad
+\partial_2U_{m+1}=-\partial_3U_m.
+\tag{11}
+\]
+If the equations through \(U_m\) hold, the next obstruction is
+\[
+[\partial_3U_m]\in
+H_{L-1}\bigl(\operatorname{End}^{*,\ell+m+1}(B),\partial_2\bigr).
+\tag{12}
+\]
+It is a cycle because \(\partial_2\partial_3=-\partial_3\partial_2\) and \(\partial_3^2=0\). Its vanishing is exactly the existence of the next lift. The obstruction may depend on the preceding choices.
+
+A prescribed bigraded map on \(H(B,b_2)\) can be lifted to \(U_0=i\sigma p\) using a filtration-preserving vector-space contraction. Existence of that prescribed map with meaningful return/generation properties is an additional step. A finite graph cycle or an infinite subsequence with matching labels is not such a map.
+
+If all equations are solved, the expression \(U(t)\) is locally polynomial: for a fixed input in \(B_{n,p}\), its \(m\)-term vanishes when \(p+\ell+m>\lfloor(n+L)/2\rfloor\). Thus it defines an actual \(k[t]\)-linear chain operator without passing to formal power series. This rectification does not prove finite generation of its homology module.
+
+## 6. A concrete obstruction to primitive rank-one transport
+
+**Theorem 4.** For positive integers \(r<s\), every \(k[t]\)-linear map
+\[
+f:k[t]/(t^r)\longrightarrow k[t]/(t^s)
+\]
+has image in \(t^{s-r}k[t]/(t^s)\). In particular its reduction to the target modulo \(t\) is zero.
+
+**Proof.** Write \(f(1)=a(t)\bmod t^s\). The relation \(t^rf(1)=0\) says \(t^s\mid t^ra(t)\); hence \(t^{s-r}\mid a(t)\). \(\square\)
+
+For isolated cyclic target channels of elementary Rees blocks (7), a proposed operator transporting a primitive generator to a primitive generator while the exponent strictly grows is therefore impossible. In a pair of blocks of exponents \(r,r+\ell\), \(\ell>0\), the chain-map equation on coefficients reads \(b=\pm t^\ell a\). Thus the target transport vanishes modulo \(t\).
+
+The hypothesis is about actual cyclic homology channels and their induced map. Rank-one numerical probes or a resolution graph do not supply isolated summands or this primitive transport. This theorem locates a genuine obstruction under explicit hypotheses; it does not show that a nonzero obstruction creates supported return or strict descent.
+
+## 7. Exact calibration in the existing eight-dimensional deletion
+
+Use the already audited example with \(C=k[u]/(u^3)\), \(M=k\), and \(\kappa(u,u,u^2)=\kappa(u,u^2,u)=1\). Write \(x=su\), \(y=su^2\), \(m=sM[1]\). Their homological degrees are \(1,1,2\), and internal weights \(1,2,4\).
+
+Set
+\[
+\begin{aligned}
+z_0&=xyxyxy,\\
+z_1&=-xymxx-mxxxy-mxyxx,\\
+w&=mxm-mmx.
+\end{aligned}
+\tag{13}
+\]
+The tensor words in (13) are not commutative monomials. Exact bar expansion gives
+\[
+b_2z_0=0,\quad b_2z_1=-b_3z_0,\quad
+b_3z_1=w,\quad Dw=0,\quad
+D(z_0+tz_1)=t^2w.
+\tag{14}
+\]
+Here \(z_0,z_1\) have total degree six; \(w\) has degree five. The calculation independently checks \(tw\) is not a boundary: in auxiliary weight one and internal weight nine, a possible preimage is in \(B_{6,1}\); the exact simultaneous linear equations \(b_2v=0,\ b_3v=w\) are inconsistent. There are no higher \(p\) terms in this degree and weight. Consequently \([w]\in\mathcal H_5\) has exact order two.
+
+The computation is over \(\mathbb Q\), with exact rational elimination; it extends to \(\mathbb C\). It checks the calibration and signs, not the general theorems. Code: [audit_rees_screening.py](../work/audit_rees_screening.py); output: [rees_screening_audit.json](../work/rees_screening_audit.json).
+
+## 8. What remains
+
+The central remaining question is whether a finite-dimensional derived deletion can sustain the linearly growing torsion required by (8) without supported return or strict descent. The following are separate missing steps:
+
+- construct a meaningful actual cycle shift on first-page homology;
+- solve or interpret its successive obstructions;
+- prove that actual operators generate the whole relevant homology tail;
+- handle bimodules with infinite \(C^e\)-projective dimension, including finite projective dimension on each side separately.
+
+The present results neither exclude those vertical cases nor convert the first nonzero End-complex obstruction into a returning Peirce class. The earlier finite-generation, prefix-perfectness and generic-point bridges remain open.

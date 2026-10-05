@@ -87,7 +87,7 @@ body.manuscripts-page {
   }
 }
 
-/* v1.6.9 manuscripts reading-row selected state */
+/* Manuscript reading-row selected state */
 .reading-row.index-row {
   grid-template-columns: minmax(130px, 180px) minmax(260px, 1fr) minmax(220px, .72fr) auto;
   align-items: center;

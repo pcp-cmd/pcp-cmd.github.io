@@ -1,0 +1,18 @@
+## UGA-C129 — Actual Balanced Projective Radical Ideals Force Strict Ordinary Closed-Support Descent
+
+**Status:** PROVED / NORMAL ADVERSARIAL SELF-AUDIT / SEPARATE-AGENT SUBSTANTIVE PROOF REVIEW / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Projective-Balanced-Ideal-Strict-Ordinary-Descent-and-Finite-Pd-Boundary-2026-10-05.md Sections2–6,10; Projective-Ideal-Evidence.
+
+For ANY elementary finite-dimensional A/field/finite N, a NONZERO actual two-sided I contained in J with JI=IJ and WHOLE LEFT I PROJECTIVE has
+
+\[
+I^{r-1}\otimes_A I\cong I^r,\qquad
+I^re_j\cong\bigoplus_i(Ae_i)^{(T^r)_{ij}},
+\quad T_{ij}=\dim e_i(I/JI)e_j.
+\]
+
+The SECOND factor's LEFT flatness proves the actual multiplication isomorphism. Physical nilpotence gives T nilpotent and I^N=0. Balance/right Nakayama identifies WHOLE LEFT factor support F with the nonzero ROWS of T. Therefore 0<|F|<N; actual Ae_i summands force gAe_F=0.
+
+The corner D=e_FAe_F has literally identical FULL LEFT simple resolutions for all F labels, so ALL-degree inside ordinary Tor/Ext and physical support are unchanged. Ie_F is an inherited balanced LEFT-projective ideal, ALLOWED TO BE ZERO. If D is infinite, a bad A gives a strictly smaller bad D. If D is finite, C088 applies to the WHOLE closed finite-LEFT block: B=A/Ae_FA preserves ALL-degree retained ordinary Tor and exact BOTH-side retained infinite labels, is infinite and bad when A is, and kills I. TOTAL labels and algebra dimension strictly decrease in either alternative; no infinite-source-count decrease is asserted.
+
+A direct RIGHT proof uses the FIRST factor's RIGHT flatness, nonzero COLUMNS, e_FA g=0, actual RIGHT corner resolutions and direct RIGHT C088. No opposite infinite-plus transfer. For an arbitrary balanced ideal this is a strict reduction theorem, not a terminal/global UGA theorem. Finite pd h>0 cannot replace projectivity here (C131).

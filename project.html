@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects · Aleksi</title>
+  <meta name="description" content="Aleksi 的公开项目：本地学习工作台、前端视觉调参工具和 Android 待办应用。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/reading.css">
+  <link rel="stylesheet" href="./assets/css/site-theme.css">
+  <link rel="stylesheet" href="./assets/css/projects.css">
+  <script defer src="./site-data.js"></script>
+  <script defer src="./assets/vendor/niku-home.js"></script>
+  <script defer src="./site-backdrop.js"></script>
+  <script defer src="./reading.js"></script>
+</head>
+<body class="reading-page site-page" data-section="project">
+  <canvas class="site-backdrop" data-site-backdrop aria-hidden="true"></canvas>
+  <a class="reading-skip site-skip" href="#content">跳到正文</a>
+  <header class="reading-mobile-header site-header">
+    <div class="reading-mobile-top">
+      <a class="site-brand" href="./index.html"><span>Aleksi</span><small>← 首页</small></a>
+      <nav class="site-navigation" aria-label="栏目">
+        <a href="./writing.html">Writing</a>
+        <a href="./project.html" aria-current="page">Project</a>
+        <a href="./research.html">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
+      <button class="site-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-navigation">栏目 <span aria-hidden="true">⌄</span></button>
+    </div>
+    <div id="mobile-navigation" data-mobile-navigation hidden><nav class="reading-navigation" aria-label="栏目">
+        <a href="./writing.html">Writing</a>
+        <a href="./project.html" aria-current="page">Project</a>
+        <a href="./research.html">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav></div>
+  </header>
+  <div class="reading-layout">
+    <aside class="reading-left">
+      <a class="reading-home" href="./index.html">← 首页</a>
+      <a class="reading-brand" href="./index.html">Aleksi</a>
+      <nav class="reading-navigation" aria-label="栏目">
+        <a href="./writing.html">Writing</a>
+        <a href="./project.html" aria-current="page">Project</a>
+        <a href="./research.html">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
+    </aside>
+    <main id="content" class="reading-main">
+      <header class="reading-page-heading">
+        <p class="reading-kicker">Project</p>
+        <h1 class="latin-title" id="project-overview" data-toc-heading data-toc-label="项目概览">Projects</h1>
+        <p>学习、界面与日常任务。三个可以继续打开源码、了解实现的工具项目。</p>
+      </header>
+      <div class="reading-mobile-directory" data-directory hidden>
+        <button type="button" data-directory-toggle aria-expanded="false" aria-controls="mobile-directory"><span>本页目录</span><span aria-hidden="true">⌄</span></button>
+        <nav id="mobile-directory" data-mobile-toc aria-label="本页目录" hidden></nav>
+      </div>
+      <div class="reading-prose page-sections project-list">
+        <section class="project-record" aria-labelledby="workbench">
+          <p class="project-meta"><span>01 / LEARNING</span><span>Windows · 本地学习库</span></p>
+          <h2 id="workbench" data-toc-heading data-toc-label="Aleksi Workbench">Aleksi Workbench</h2>
+          <p class="project-purpose">把精读、摘录、卡片和复习接在一起，让学习记录留在自己的 Markdown 文件里。</p>
+          <p>以本地学习库为中心，沿着“今日学习 → 精读 → 卡片 → 主题飞轮 → 复习”组织工作。Markdown 保存原始记录，索引和缓存可以重新生成。</p>
+          <ul>
+            <li>精读材料、整理摘录与卡片，回到主题飞轮和今日复习。</li>
+            <li>保留学习诊断和证据验证入口。</li>
+            <li>创建、选择、迁移与备份自己的本地学习库。</li>
+          </ul>
+          <p class="project-status"><span>当前状态</span> 源码版本 0.1.5-rc.1，为 Windows 10/11 x64 的未签名预览；公开 Release 中保留 0.1.4 预发布版。</p>
+          <div class="project-actions">
+            <a href="https://github.com/pcp-cmd/aleksi-learning-workbench">查看源码 <span aria-hidden="true">↗</span><span class="project-link-context"> · Aleksi Workbench</span></a>
+            <a href="https://github.com/pcp-cmd/aleksi-learning-workbench/blob/main/README.md">使用说明 <span aria-hidden="true">↗</span><span class="project-link-context"> · Aleksi Workbench</span></a>
+          </div>
+        </section>
+        <section class="project-record" aria-labelledby="visual-tuner">
+          <p class="project-meta"><span>02 / INTERFACE</span><span>浏览器 · 单文件 HTML</span></p>
+          <h2 id="visual-tuner" data-toc-heading data-toc-label="Vibe Front-End Tuner">Vibe Front-End Tuner</h2>
+          <p class="project-purpose">把“间距舒服一点”“卡片轻一点”变成可以调节、复制和复用的视觉参数。</p>
+          <p>拖动滑杆，同时观察产品页、仪表盘和表单。选好效果后，把 CSS Token 或提示词参数交给前端开发工具，让下一次修改有具体依据。</p>
+          <ul>
+            <li>调整页面宽度、区块与卡片间距、字号和行高。</li>
+            <li>调整圆角、阴影、描边和颜色温度。</li>
+            <li>切换三种界面预览，复制 CSS 和提示词参数。</li>
+          </ul>
+          <p class="project-status"><span>当前状态</span> 单文件工具；下载仓库后打开 index.html 即可使用，无需安装依赖。</p>
+          <div class="project-actions">
+            <a href="https://github.com/pcp-cmd/vibe-front-end-tuner">查看源码 <span aria-hidden="true">↗</span><span class="project-link-context"> · Vibe Front-End Tuner</span></a>
+            <a href="https://github.com/pcp-cmd/vibe-front-end-tuner/blob/main/README.md">使用说明 <span aria-hidden="true">↗</span><span class="project-link-context"> · Vibe Front-End Tuner</span></a>
+          </div>
+        </section>
+        <section class="project-record" aria-labelledby="coolcat">
+          <p class="project-meta"><span>03 / EVERYDAY</span><span>Android · Jetpack Compose</span></p>
+          <h2 id="coolcat" data-toc-heading data-toc-label="CoolCat">CoolCat — TodoApp</h2>
+          <p class="project-purpose">把待办、重复计划、关联任务和系统日历放在同一个任务工具里。</p>
+          <p>用分类和时间线查看任务，给任务设置优先级、截止日期与提醒，也能把有联系的任务连在一起。</p>
+          <ul>
+            <li>管理任务与一级子任务，使用两级分类和标签。</li>
+            <li>按日、周、月或年重复；完成后创建下一次任务。</li>
+            <li>关联任务、同步系统日历，并以 JSON 备份和恢复数据。</li>
+          </ul>
+          <p class="project-status"><span>当前状态</span> Android 8.0 及以上的源码项目；构建与运行步骤见仓库说明，尚无 GitHub Release。</p>
+          <div class="project-actions">
+            <a href="https://github.com/pcp-cmd/Todoapp">查看源码 <span aria-hidden="true">↗</span><span class="project-link-context"> · CoolCat</span></a>
+            <a href="https://github.com/pcp-cmd/Todoapp/blob/master/README.md">构建说明 <span aria-hidden="true">↗</span><span class="project-link-context"> · CoolCat</span></a>
+          </div>
+        </section>
+        <section class="project-record project-other" aria-labelledby="more-projects">
+          <h2 id="more-projects" data-toc-heading>继续探索</h2>
+          <p><a href="./research.html">Universal Gap A → Research</a><br>有限维代数同调研究的当前问题、进展和材料入口。</p>
+          <p><a href="https://github.com/pcp-cmd/pcp-cmd.github.io">这个网站的源码 ↗</a><br>Aleksi 的个人网站、作品展览与内容组织。</p>
+          <p class="project-source-note">项目内容依据公开仓库 README 与版本资料整理，核对日期为 2026-10-05。具体安装与最新状态请以对应仓库为准。</p>
+        </section>
+      </div>
+    </main>
+    <aside class="reading-right" aria-label="本页目录">
+      <p class="reading-rail-label">本页目录</p>
+      <nav data-reading-toc aria-label="本页目录"></nav>
+    </aside>
+  </div>
+</body>
+</html>

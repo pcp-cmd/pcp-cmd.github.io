@@ -1,0 +1,632 @@
+# Run — Projective columns give actual returns or a uniform screening bound
+
+**Date:** 2026-10-03  
+**Researcher:** one main Codex researcher  
+**Evidence:** complete all-degree proofs and normal adversarial self-audit; not independently verified  
+**Global status:** Universal Gap A remains OPEN. No novelty claim is made.
+
+This continuation starts from T6. It changes the test module from an
+individual quotient simple to an ordinary projective column of C.
+An exact module triangle then computes its actual ordinary A-Tor.
+For a one-sided projective two-stage coupler, a finite matrix of
+actual projective multiplicities determines all these groups.
+
+A cycle in this matrix produces a supported ordinary Tor tail,
+even for a nonperfect C-bimodule. If the matrix is acyclic, the
+derived tensor powers really vanish, bounding the screening page
+uniformly in homological degree. Combined with finite C^e-pd,
+this gives eventual surjectivity from A-Tor to C-Tor without
+any regular injective bound. These are two complementary
+closure mechanisms, not additional counterexample invariants.
+
+## 1. Two-stage model and the ordinary test modules
+
+For the actual local-trivial deletion e_xAe_x=k, reuse the
+strictly augmented minimal retained model
+
+\[
+H=C\oplus M[1],\qquad C=A/Ae_xA,\quad M=H^{-1}(q).
+\]
+
+The only higher operation is the possible pure-input m_3=kappa;
+negative products and mixed higher operations vanish by degree.
+No assumption on kappa is made. Let q_0 be the number of retained
+vertices. It is finite; all matrix sizes below are q_0.
+
+Assume first that M is projective as a **left C-module**.
+For each retained j, decompose the actual module column
+
+\[
+M e_j\cong\bigoplus_i(Ce_i)^{K_{ij}},
+\qquad K_{ij}\in\mathbb Z_{\ge0}.
+\tag{1.1}
+\]
+
+These are multiplicities of M itself, not of the terms in a
+projective resolution of a nonprojective coefficient.
+M e_j is a direct summand of the left-projective M, so (1.1)
+is available. There is no right-projectivity or C^e-perfectness
+assumption at this stage.
+
+View Ce_j and M e_j as left H-modules through p:H -> C.
+Degree forces the regular module's kernel M[1] to have exactly
+this induced ordinary C action: m_2 is the C action, and every
+higher action with a negative last argument has zero output.
+Inclusion and projection therefore give a strict short exact
+sequence of augmented A_infinity H-modules
+
+\[
+0\longrightarrow(M e_j)[1]\longrightarrow H e_j
+\longrightarrow C e_j\longrightarrow0.
+\tag{1.2}
+\]
+
+Its underlying graded sequence is split. It gives the actual
+derived module triangle
+
+\[
+(M e_j)[1]\longrightarrow H e_j\longrightarrow C e_j
+\longrightarrow(M e_j)[2].
+\tag{1.3}
+\]
+
+The nonzero kappa is included in the regular H action and in
+this extension. No algebra section or formality is being
+substituted for the sequence. The standard strict-module
+triangle conventions are those of
+[Keller, Sections 4.2 and 8](https://arxiv.org/pdf/math/9910179).
+
+For retained R_z, the established localisation comparison gives
+
+\[
+\operatorname{Tor}^H_n(R_z,Ce_j)
+\cong\operatorname{Tor}^A_n(R_z,Ce_j),
+\tag{1.4}
+\]
+
+where Ce_j on the right is inflated through the ordinary
+quotient. This is ordinary Tor with an actual finite module.
+Ce_j is not asserted to be A-projective.
+
+## 2. Exact ordinary Tor recurrence
+
+### Theorem 2.1 — Matrix powers compute the projective-column Tor
+
+For all r>=0 and all retained z,j,
+
+\[
+\boxed{
+\dim\operatorname{Tor}^A_{2r}(R_z,Ce_j)=(K^r)_{zj},\qquad
+\operatorname{Tor}^A_{2r+1}(R_z,Ce_j)=0.
+}
+\tag{2.1}
+\]
+
+#### Proof
+
+Tensor (1.3) with R_z over H. The term
+R_z tensor_H^L H e_j is R_z e_j in degree zero.
+Connectivity gives Tor_0(R_z,Ce_j)=k when z=j and zero otherwise,
+and the long exact sequence gives Tor_1(R_z,Ce_j)=0.
+For every n>=2 its remaining part is an actual isomorphism
+
+\[
+\operatorname{Tor}^H_n(R_z,Ce_j)
+\cong\operatorname{Tor}^H_{n-2}(R_z,M e_j).
+\tag{2.2}
+\]
+
+Use the ordinary C-linear isomorphism (1.1), which is also an
+H-module isomorphism through p. Thus the matrices T_n of these
+dimensions satisfy T_0=I, T_1=0, T_n=T_{n-2}K. Induction and
+(1.4) prove (2.1). QED.
+
+### Theorem 2.2 — A cycle gives a supported ordinary tail
+
+If the directed graph of K has a directed cycle, A is infinite +,
+without requiring C infinite + or an infinite-pd deleted source.
+
+#### Proof
+
+Choose a vertex j on a cycle of length ell. Then
+(K^{r ell})_{jj}>0 for every r>=1. By the already proved
+ordinary Tor formula, Tor^A_{2r ell}(R_j,Ce_j) is nonzero.
+
+The finite composition factors of Ce_j have multiplicities
+[Ce_j:L_y]=dim e_yCe_j. The ordinary finite-length Tor inequality
+therefore gives
+
+\[
+0<(K^{r\ell})_{jj}
+\le\sum_y\dim(e_yCe_j)\,
+\dim\operatorname{Tor}^A_{2r\ell}(R_j,L_y).
+\tag{2.3}
+\]
+
+There are finitely many y. One fixed y occurs in infinitely
+many of these degrees, with e_yCe_j!=0. This also gives
+e_yAe_j!=0. Hence (R_j,L_y) is an ordinary supported
+persistent pair. QED.
+
+The graph is used only after the chain-level triangle has
+computed the actual Tor groups. A support cycle for an
+arbitrary nonprojective coupler does not satisfy this proof.
+
+### Corollary 2.3 — Invertible couplers cannot hide all ordinary returns
+
+If M is a Morita self-equivalence C-bimodule, its action permutes
+the indecomposable projectives. K is a permutation matrix.
+Theorem 2.2 makes A infinite +, independent of kappa and
+regardless of whether M has finite C^e-pd.
+
+This closes a nonperfect-coupler class as well. It includes
+twisted regular bimodules; freeness on each side was insufficient
+for restoring the quotient-edge image in T5, but the new
+ordinary projective-column returns are present.
+
+## 3. The complementary case: actual tensor nilpotence
+
+If A is not infinite + and M is left-projective, Theorem 2.2
+forces K to be acyclic. A q_0-vertex acyclic graph has no
+length-q_0 path, so K^{q_0}=0.
+
+### Lemma 3.1 — Matrix nilpotence is actual derived tensor nilpotence here
+
+For every p>=1, the ordinary tensor power satisfies
+
+\[
+(M^{\otimes_C p})e_j
+\cong\bigoplus_i(Ce_i)^{(K^p)_{ij}}.
+\tag{3.1}
+\]
+
+It remains left-projective, and it also represents the derived
+tensor power. In particular
+
+\[
+\boxed{M^{\otimes_C^{\mathbf L}q_0}=0\quad\text{if }K\text{ is acyclic}.}
+\tag{3.2}
+\]
+
+#### Proof
+
+Tensor (1.1) on the left with M. Since
+M tensor_C Ce_i=M e_i, the resulting projective multiplicities
+are K^2. Iterate to get (3.1). At each step the factor on the
+right is left C-projective, so no higher tensor homology
+appears. This proves the derived assertion and (3.2). QED.
+
+This is not a nilpotence claim based on the correspondence
+types in a finite resolution. One-sided projectivity of the
+actual coupler is essential for the exact recurrence.
+
+### Theorem 3.2 — The screening page is uniformly bounded
+
+If K is acyclic, every ordinary quotient-edge Tor class which
+dies in the existing negative-weight spectral sequence dies
+by a page r<=q_0-1, in its convention where m_3 raises weight
+by one.
+
+#### Proof
+
+For the binary bar differential b_2, the weight-p column has
+homology given by
+
+\[
+R_z\otimes_C^{\mathbf L}
+M^{\otimes_C^{\mathbf L}p}
+\otimes_C^{\mathbf L}L_y,
+\tag{3.3}
+\]
+
+shifted by 2p. This is the existing two-stage multibar
+description, with p the number of negative letters.
+Lemma 3.1 makes every first-page column p>=q_0 zero.
+All subsequent pages retain those zeros. A page-r
+differential from weight zero has target weight r, so it
+vanishes when r>=q_0. QED.
+
+The bound is uniform in total homological degree for this
+finite algebra. It is a **negative-weight** page bound; no
+excursion bound for the local-singular Target-B filtration
+is inferred.
+
+Consequently the entire unbounded-weight supported-screening
+subbranch is excluded for one-sided projective two-stage
+couplers: cycles give actual ordinary returns, and the
+acyclic case has the uniform bound above. The nonperfect
+acyclic bounded-weight case is still open.
+
+## 4. Combining the bound with the existing screening corridor
+
+Assume additionally D=pd_{C^e} M<infinity.
+
+### Lemma 4.1 — Positive columns have a finite degree corridor
+
+For p>=1, the homology in (3.3) is concentrated in degrees
+0<=h<=pD before its 2p shift.
+
+#### Proof
+
+Take a length-D projective C-bimodule resolution P of M.
+Each tensor product of elementary projective bimodules is
+again projective, by the elementary factorisation used in T5.
+The bounded complex P^{tensor_C p} therefore represents the
+derived tensor power, with projective length at most pD.
+Lemma 3.1 identifies it with the ordinary M^p.
+
+Tensor its terms with R_z: they become right C-projective.
+Tensoring finally with L_y is computed by that same length-pD
+complex, giving the asserted range. QED.
+
+This reuses and checks the finite-C^e-pd Screening-Corridor
+asset. Finite pd on the two separate sides is not substituted.
+
+### Theorem 4.2 — Eventual ordinary surjectivity in the acyclic case
+
+If K is acyclic, then for every retained pair the natural map
+
+\[
+\boxed{\operatorname{Tor}^A_n(R_z,L_y)\longrightarrow
+\operatorname{Tor}^C_n(R_z,L_y)\text{ is surjective for }
+n>(D+2)(q_0-1)+1.}
+\tag{4.1}
+\]
+
+#### Proof
+
+A nonzero page-r death from a weight-zero class of degree n
+needs a positive-weight target of total degree n-1=2r+h.
+By Theorem 3.2, 1<=r<=q_0-1, and by Lemma 4.1,
+0<=h<=rD. Hence every possible death satisfies
+
+\[
+n\le(D+2)r+1\le(D+2)(q_0-1)+1.
+\]
+
+Above this bound every zero-weight class survives. There
+are no incoming differentials to weight zero. Degreewise
+finite convergence identifies that edge survival with the
+image of the actual bar projection, yielding (4.1).
+The localisation comparison is ordinary A-Tor. QED.
+
+### Corollary 4.3 — A complete one-sided-projective perfect branch closes
+
+If M is projective on one side and has finite C^e-pd, then
+C infinite + implies A infinite +. No regular injective
+dimension bound on C is needed.
+
+For a left-projective M, if K has a cycle use Theorem 2.2.
+Otherwise use (4.1) to lift C's fixed supported infinite tail.
+Reverse support lifts separately through C.
+
+Thus a globally vertex-minimal counterexample cannot have
+such a local-trivial deletion at an infinite-pd vertex,
+by C058 and global minimality. This extends the projective
+case of C062 and covers perfect couplers outside T6's
+one-Gorenstein quotient class.
+
+The assertion for a right-projective M is proved directly
+in the next section, without opposite-side transfer.
+
+## 5. Explicit right-module version
+
+If M is right C-projective, write
+
+\[
+e_iM\cong\bigoplus_j(e_jC)^{B_{ij}}.
+\]
+
+The strict right H-module sequence
+
+\[
+0\longrightarrow(e_iM)[1]\longrightarrow e_iH
+\longrightarrow e_iC\longrightarrow0
+\]
+
+gives, after tensoring with L_y,
+
+\[
+\dim\operatorname{Tor}^A_{2r}(e_iC,L_y)=(B^r)_{iy},
+\qquad\operatorname{Tor}^A_{2r+1}(e_iC,L_y)=0.
+\tag{5.1}
+\]
+
+Here T_n=B T_{n-2}, with T_0=I. A diagonal cycle term tests
+the actual right module e_iC against L_i. Its right composition
+factors R_z have multiplicities dim e_iCe_z. Thus the same
+finite-length inequality selects a fixed pair (R_z,L_i)
+with e_iCe_z!=0 and infinitely many ordinary Tor groups.
+
+If B is acyclic, all right-projective tensor columns of
+M^p have multiplicities B^p. The factor on the left is
+right-projective at each tensor step, so M^{tensor^L q_0}=0.
+The same multibar argument gives the page bound q_0-1,
+and finite C^e-pd gives (4.1).
+
+This calculation uses actual right modules and ordinary Tor.
+It does not assume or invoke infinite-+ invariance under
+opposite passage.
+
+## 6. Single-negative-layer extension
+
+The triangle argument also applies if the retained model has
+exactly C and a single negative layer M[a], a>=1, and no
+other negative cohomology. Degree forces all negative
+products and mixed higher operations to vanish; the only
+possible pure operation is m_{a+2}.
+
+The module triangle is M e_j[a] -> H e_j -> Ce_j
+-> M e_j[a+1]. For left-projective M it gives
+
+\[
+\dim\operatorname{Tor}^A_{(a+1)r}(R_z,Ce_j)=(K^r)_{zj},
+\]
+
+with all other nonnegative degrees zero. Cycles still
+give supported ordinary tails.
+
+For acyclic K, the first page has at most q_0-1 negative
+letters. In the original negative-weight convention
+wt=a times this count, a death page has weight shift
+at most a(q_0-1). If D=pd_{C^e} M is finite, its positive
+target has total degree (a+1)p+h with h<=pD. Thus the
+ordinary comparison is surjective for
+
+\[
+n>(a+1+D)(q_0-1)+1.
+\]
+
+This retains the single-layer hypothesis. A general
+many-layer model has mixed operations and no such strict
+kernel module of one degree; the same recurrence is not
+asserted for it.
+
+## 7. Actual nonperfect calibration and evidence reuse
+
+In C063's actual nine-dimensional deletion,
+C=k[u]/u^2 and M is the twisted regular bimodule with
+uv=-w and vu=w. It is left-free rank one, so K=(1).
+Theorem 2.1 predicts
+
+\[
+\operatorname{Tor}^A_{2r}(R_y,C)=k,\qquad
+\operatorname{Tor}^A_{2r+1}(R_y,C)=0.
+\]
+
+There is an explicit ordinary certificate. The projection
+P_y -> C has kernel Z=span(a,au,u2,u3). Its minimal
+resolution then repeats the two maps in C063 Section 4.1:
+
+\[
+P_x^{\oplus2}\to P_y,\quad(s,t)\mapsto sa+t(au),
+\]
+
+\[
+P_y\to P_x^{\oplus2},\quad r\mapsto(r(ub),-rb).
+\]
+
+The same basis kernels and ranks give exactness over every
+field. The resolution terms for C are P_y in every even
+degree and P_x^{oplus2} in every odd degree, exactly as
+the new formula predicts for R_y.
+
+These are new returns after the high quotient-edge image
+has vanished. M has infinite C^e-pd, so the calibration
+lies in the cycle mechanism, not the finite-pd corridor.
+The already checked finite maps in Even-Tor-Evidence are
+reused. No unchanged computation was rerun, and no new
+numerical computation or independent acceptance is claimed.
+
+## 8. Normal adversarial audit
+
+1. The matrix describes actual one-sided projective columns
+   of M, not support types in a finite resolution. Its cycle
+   is used only through the proved ordinary Tor recurrence.
+2. The strict kernel-module sequence retains kappa in the
+   regular action. No section or formality is assumed.
+3. The shift in the two-stage triangle is two, giving even
+   Tor with C-projective test modules. It does not assert
+   a diagonal simple Tor class in every even degree.
+4. Composition-factor detection supplies a fixed simple
+   pair and its reverse Peirce support. Survival and support
+   are checked separately.
+5. Ce_j is projective over C and is not declared projective
+   over A. Its ordinary A-Tor is computed using localisation.
+6. Projectivity on one side is enough for the actual
+   tensor-power recurrence. It is not replaced by finite
+   pd on that side without a new proof.
+7. Tensor nilpotence is proved from the module decomposition.
+   It is not inferred for general couplers from acyclic
+   support or resolution-term graphs.
+8. The page bound concerns the negative-weight filtration.
+   No local-singular excursion page is bounded by this proof.
+9. Perfectness is unnecessary for the cycle return or page
+   bound. It is required for the positive-column degree
+   corridor and eventual quotient Tor surjectivity.
+10. The bounded nonperfect acyclic case remains open.
+    No infinite-gldim quotient witness is assumed without
+    minimality or an already established C infinite +.
+11. The right-projective proof uses right-module triangles
+    explicitly and does not use the quarantined opposite
+    invariance claim.
+12. The single-layer extension keeps its degree restriction;
+    many-layer mixed higher operations are not covered.
+13. The calibration is an actual infinite-+ algebra. Its
+    old quotient-edge screening results are unchanged.
+14. The proof and evidence reuse are self-audited. No
+    independently verified or novelty label is attached.
+
+## 9. Remaining global frontier
+
+The new ordinary mechanism closes all cyclic one-sided
+projective single-layer couplers, including nonperfect
+Morita self-equivalences. In the complementary case it
+gives actual tensor nilpotence and a uniform weight-page
+bound. Finite C^e-pd then lifts the entire high quotient
+Tor tail, with no regular injective hypothesis.
+
+This excludes one-sided-projective perfect local-trivial
+deletions in a global vertex-minimal counterexample and
+the unbounded-weight local-trivial branch for one-sided
+projective couplers. It leaves nonperfect acyclic bounded
+screening, couplers projective on neither side, and general
+many-layer local-singular screening open.
+
+Target B's frozen higher-output question, Target A and the
+other supported-weight branches remain on the research map.
+Further work should extend the actual triangle recurrence
+or force a well-founded reduction for those remaining
+cases, rather than treating support recurrence alone
+as a proof.
+
+## 10. Continuation: an ordinary bridge for unbounded odd negative layers
+
+The cycle mechanism extends to an actual many-layer case. This
+extension does not inherit the preceding single-layer page bound.
+
+Assume every positive even negative-cohomology group is zero,
+and every M_d=H^{-d}(q) for odd d is left C-projective. There
+is no bound on d, homogeneous generation, operation arity or
+the mixed higher operations. Write the actual columns as
+
+\[
+M_d e_j\cong\bigoplus_i(Ce_i)^{K_d(i,j)}
+\qquad(d\text{ odd}).
+\]
+
+### Theorem 10.1 — Full ordinary Tor formula with projective test columns
+
+For every retained z,j, the formal matrix Poincare series is
+
+\[
+\boxed{
+\left(\sum_{n\ge0}
+\dim\operatorname{Tor}^A_n(R_z,Ce_j)t^n\right)_{zj}
+=\left(I-\sum_{\substack{d\ge1\\d\ {\rm odd}}}
+t^{d+1}K_d\right)^{-1}.}
+\tag{10.1}
+\]
+
+All odd-degree groups in this formula are zero. The inverse
+is interpreted coefficientwise as sum of matrix powers;
+only finitely many factors and degrees contribute to any
+fixed coefficient. No rationality assertion is made.
+
+#### Proof
+
+Use the existing negative-weight filtration on the actual
+bar module computing R_z tensor_H^L Ce_j. Its left test
+module Ce_j is pulled back through the strict projection
+p and has no higher module actions. Its binary first page
+decomposes by the sequence d_1,...,d_p of negative letters.
+Negative-negative binary products vanish by the odd-only
+cohomology hypothesis. The associated complex is
+
+\[
+R_z\otimes_C^{\mathbf L}M_{d_1}
+\otimes_C^{\mathbf L}\cdots
+\otimes_C^{\mathbf L}M_{d_p}
+\otimes_C^{\mathbf L}Ce_j,
+\tag{10.2}
+\]
+
+shifted by sum(d_i+1). The weight-zero term is simply
+R_z e_j in degree zero.
+
+Every factor M_d on the right at the next tensor step
+is left-projective, as is the final Ce_j. Thus (10.2)
+is its ordinary tensor in degree zero. Decomposing the
+actual projective columns shows its dimension is
+
+\[
+(K_{d_1}\cdots K_{d_p})_{zj}.
+\]
+
+Every shift sum(d_i+1) is even. The entire first page
+for this projective-column test complex therefore has
+only even total degrees. Each later differential lowers
+total degree by one, so every such differential is zero.
+The negative-weight filtration is finite in every total
+degree, giving actual homology rather than a merely formal
+associated-graded claim.
+
+Summing the dimensions over all finite sequences and
+using the established ordinary localisation comparison
+proves (10.1). QED.
+
+Only the bar complexes with these C-projective test
+modules degenerate here. The quotient-simple screening
+spectral sequence need not degenerate. This distinction
+permits the non-formal mixed operations in the hypothesis.
+
+### Corollary 10.2 — Weighted cycles force ordinary supported returns
+
+Make a finite graph whose edge j -> i is present if
+K_d(i,j)>0 for at least one odd d. If it has a directed
+cycle, A is infinite +.
+
+#### Proof
+
+For each edge on a fixed cycle choose one actual odd
+degree d. Repeating that cycle supplies a positive
+diagonal term in (10.1) at every positive multiple of
+the fixed even degree L=sum(d+1) along the cycle.
+Hence Tor^A_{rL}(R_j,Ce_j) is nonzero for all r>=1.
+Apply the ordinary finite-length inequality (2.3) to
+select a fixed composition factor L_y with e_yCe_j!=0
+and a persistent ordinary pair (R_j,L_y). QED.
+
+This closes a stated **many-layer, unbounded-cohomology**
+class, including nonperfect C-bimodule layers. Pure and
+mixed higher operations cannot screen its projective-column
+returns because the first-page concentration was proved
+for the actual complex.
+
+### Direct right-projective version
+
+If instead every odd M_d is right C-projective, decompose
+e_iM_d as sums of e_jC with matrices B_d. Apply the same
+binary multibar argument to e_iC tensor_H^L L_y. At each
+step the factor on the left is right-projective. Its
+formal series is (I-sum t^{d+1}B_d)^{-1}, with zero odd
+Tor and the same weighted-cycle ordinary supported return.
+This is a right-module calculation, not opposite transfer.
+
+### Continuation audit
+
+1. The matrix coefficients are actual one-sided projective
+   homology columns in each degree. Replacing them with
+   terms in a finite resolution invalidates the degree-zero
+   tensor concentration.
+2. Every negative cohomology degree is odd; otherwise
+   negative binary products and odd total shifts can appear.
+3. All layers must be projective on the same stated side.
+   Separate finite pd, or an arbitrary mixture of sides,
+   is not the hypothesis.
+4. Mixed operations need not vanish. Their higher-page
+   maps vanish on these test complexes by total-degree
+   parity and degreewise finite convergence.
+5. The result gives actual ordinary Tor with Ce_j or e_iC;
+   finite-length detection separately supplies the visible
+   simple pair. No diagonal simple assertion is made.
+6. In the acyclic many-layer case, tensor sequences have
+   bounded length but their negative degrees can still be
+   unbounded. The single-layer negative-weight page bound
+   is not extended to that case.
+7. These many-layer results close only the weighted-cycle
+   class. They do not force a cycle in the general Target-B
+   higher-output residue, or close its acyclic or
+   nonprojective-coefficient remainder.
+8. The argument is a complete self-audited proof. No
+   independent verification or unnecessary finite
+   computation is claimed.
+
+The attempt to replace actual one-sided projectivity by
+finite one-sided pd returns to nontrivial differentials
+between projective resolution terms. The finite-term graph
+then no longer computes homology powers, as the earlier
+negative-knowledge gate records. No extension based on
+that graph is asserted. The general finite-pd and mixed
+negative-parity cases still require a new ordinary bridge
+or a terminating reduction.

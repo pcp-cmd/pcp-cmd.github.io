@@ -1,0 +1,10 @@
+## UGA-C113 — All Head Images Can Be Projective and Every Pairwise Intersection Zero While the Full Actual Relation Kernel Has Infinite Pd
+
+**Status:** COMPLETE ACTUAL ARBITRARY-p COUNTEREXAMPLE / NORMAL SELF-AUDIT / EXACT BOUNDED CALIBRATION / NOT A UNIVERSAL GAP A COUNTEREXAMPLE / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Cyclic-Head-Relation-Kernels-Ordinary-Tor-and-Strict-Carrier-Descent-2026-10-04.md Sections5–7; Cyclic-Head-Relations-Evidence.
+
+For ANY p>=3 over Q, use vertices v,r_i, arrows c_i:v->r_i,a_i:r_i->v and two independent radical-square loops d0,d1 at v. Only radical products a_i c_i=w_i0 d0+w_i1 d1 are nonzero, with pairwise nonparallel w_i spanning Q2, e.g.(1,0),(0,1),(1,j). A has dimension3p+3 and J3=0. Actual Y=Omega L_v=JP_v has primitive head sum L_ri and radical L_v^2. Every C_i=A c_i is isomorphic to projective P_ri, and every C_i intersect C_j is zero. Nevertheless the FULL actual sum/min-cover relation kernel F(Y)=L_v^(p-2). Real covers give Omega^2 L_v=L_v^(p-2), hence infinite pd of L_v/F, and ordinary diagonal Tor_(2m)(R_v,L_v) has dimension(p-2)^m for EVERY m>=1.
+
+The third image meets the SUM of the first two in infinite-pd L_v, invisible to the pairwise tests. The obstruction repeats in actual odd syzygy stages; deleting projective images erases an infinite ordinary tail. Keeping the true relation kernel instead gives C112's correctly shifted ordinary Tor and local Loewy2->1 descent. This refutes individual finite-pd image and pairwise finite-pd intersection criteria for full-relation elimination; the algebra already has ordinary supported diagonal return. It is NOT a badness-specific global counterexample. Q pairwise rank proof is not extended blindly to small fields. The p4 dimension15 calibration passed3375 literal associativity triples,12 retained minimal covers,180 integral basis inverses,1 actual kernel isomorphism,4 projective image inclusions and6 zero intersections. Separate all-degree/arbitrary-p written proof, shared helpers/self-audit, no independent/formal certification or mechanical five-vertex classification. Full UGA OPEN.
+
+---

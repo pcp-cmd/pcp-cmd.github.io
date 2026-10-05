@@ -1,0 +1,30 @@
+# Exact task — infinite-state ordinary carrier-type termination
+
+Continue canonical T30 and retain the whole Universal Gap A objective.
+Remove the finite module-family requirement from C105 by actual ordinary
+cross-Ext comparison between two states of the SAME bi-singular carrier
+type. Uniform finite-pd envelopes, each real finite kernel sum, and own
+visible rectangles give bound h+tau(B+1)-1, tau <= 4^N, independent of the
+number of nonisomorphic states. No graph-to-return or singular comparison.
+
+For actual infinite minimal projective tails prove every long spliced
+syzygy extension nonzero by last nonsplit cover/retraction and ordinary
+projective dimension shifting. Infinitely MANY aligned syzygies suffice;
+under supported cutoff at most tau(B+1) such states, even with arbitrary
+unaligned gaps. Actual syzygy carriers and both label sets remain distinct.
+
+Calibrate over Q the local quantum exterior algebra xy=z,yx=-2z. Actual
+M_lambda covers have kernel M_(2lambda), yielding infinitely many pairwise
+nonisomorphic modules. Verify four parameters, eight actual differential
+segments and sixteen self/future Ext cochain ranks. Written ALL-degree
+formulas: self-Ext vanishes for n>=2, but Ext^n(M_lambda,M_(2^n lambda))
+has dimension1. This refutes replacing uniform CROSS-Ext by pointwise
+SELF-Ext in an infinite-state family. Both infinite simple labels and
+ordinary diagonal Tor are proved from actual minimal resolutions.
+
+Uniform envelope/subkernel error bounds are mandatory. Removing finite
+module types in an infinite family needs its own uniform pd bound; no
+unproved finitistic-dimension assertion. No literal differential pruning.
+Frozen helpers/exact finite calibration are NOT independent proof
+verification. Infinite formulas and general theorem are separate written
+ordinary proofs. Rectangle availability and full Universal Gap A OPEN.

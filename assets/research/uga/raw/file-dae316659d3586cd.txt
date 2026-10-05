@@ -1,0 +1,198 @@
+# T14 — Canonical bimodule syzygy tensor powers do not give ordinary returns
+
+Date: 2026-10-03.
+
+Status: complete self-audited algebra/module counterexample; reuse of the
+unchanged actual A5 calibration; no new bounded computation needed;
+not independently verified. No novelty claim.
+Universal Gap A remains OPEN.
+
+## 1. Why this audit was needed
+
+After T13, a global route was examined through the canonical ordinary
+bimodule syzygy M=Omega^1_{A^e}(A). This is available for every elementary
+finite-dimensional algebra, unlike a specially chosen radical ideal.
+It is projective on both ordinary A sides.
+
+The tempting shortcut was to tensor this actual module repeatedly,
+use a positive finite matrix to prove nontermination, and identify
+those powers with actual minimal ordinary syzygies. That identification
+is false. Projective summands can be introduced on tensoring.
+The counterexample below uses actual nonzero tensor powers, not a
+mere graph cycle or singular-category assertion.
+
+## 2. Actual first-syzygy columns
+
+Let D(i,j)=dim e_iAe_j and choose the usual minimal bimodule cover
+
+\[
+P_0=\bigoplus_i Ae_i\otimes_k e_iA
+\overset{\mu}{\longrightarrow}A,\qquad M=\ker\mu.
+\tag{2.1}
+\]
+
+The map mu is multiplication. It is a projective cover over A^e:
+the semisimple bimodule top of A is exactly the diagonal vertex algebra.
+Thus M is the actual first minimal bimodule syzygy.
+
+The exact sequence 0->M->P_0->A->0 splits as a left A-module sequence
+and as a right A-module sequence, since the respective target A is
+projective. Hence M is projective on each side.
+
+For each right column j,
+
+\[
+P_0e_j\simeq\bigoplus_i(Ae_i)^{D(i,j)}.
+\tag{2.2}
+\]
+
+The surjection onto Ae_j splits as a left A-module map. Krull--Schmidt
+cancellation gives
+
+\[
+Me_j\simeq\bigoplus_i(Ae_i)^{T(i,j)},\qquad T=D-I.
+\tag{2.3}
+\]
+
+Here T has nonnegative entries. Inductively, the actual ordinary
+tensor powers, not a support approximation, satisfy
+
+\[
+M^{\otimes_A p}e_j
+\simeq\bigoplus_i(Ae_i)^{(T^p)(i,j)}.
+\tag{2.4}
+\]
+
+Indeed tensoring M with a column Ae_i gives the actual module Me_i.
+One-sided projectivity also identifies these ordinary tensor powers
+with the derived powers, concentrated in degree zero.
+
+Thus a cycle of T does show that these actual modules do not vanish.
+It still does not show an ordinary Tor tail for the original A.
+
+## 3. The unchanged A5 calibration gives an actual counterexample
+
+Rename the old A5 vertices u (the dual-number corner) and w (the
+other vertex). Use alpha:u->w and beta:w->u, and basis
+e_u,e_w,alpha,beta,t with sole nonzero radical product beta alpha=t.
+The other length-two product alpha beta is zero and all products
+with t and a radical element are zero.
+
+This is the same actual algebra as C071 / the Primitive-Seed
+Correction, with labels renamed. Its global dimension is two.
+For calibration only, the literal module identities are
+
+\[
+J(Ae_u)\simeq Ae_w,\qquad J(Ae_w)\simeq L_u.
+\tag{3.1}
+\]
+
+The first isomorphism sends e_w to alpha and beta to t; the second
+radical is k beta. Thus pd L_u=1 and pd L_w=2 over every field.
+This reuses the existing all-degree proof, not a new computation.
+
+In order (u,w),
+
+\[
+D=\begin{pmatrix}2&1\\1&1\end{pmatrix},\qquad
+T=\begin{pmatrix}1&1\\1&0\end{pmatrix}.
+\tag{3.2}
+\]
+
+Consequently dim M=8 and the first three actual tensor dimensions
+are 8,13,21. Equation (2.4), in particular the actual u-loop,
+proves M^{tensor_A p}!=0 for EVERY p>=1. M is projective on both
+sides and even has finite A^e-pd, since the regular bimodule has
+the existing length-two minimal resolution.
+
+Yet ordinary Tor_n^A(R_z,L_y)=0 for EVERY n>=3 and every simple
+pair. This already falsifies a bare inference from actual infinite
+canonical-syzygy tensor powers to supported ordinary Tor.
+
+The failure is visible after just two tensors. Put F=M tensor_A -.
+Tensor the split-on-the-right sequence (2.1) with L_u. The resulting
+ordinary projective cover is Ae_u->L_u, so
+
+\[
+F(L_u)\simeq\Omega_A L_u\simeq Ae_w.
+\tag{3.3}
+\]
+
+Then (2.3) gives
+
+\[
+F^2(L_u)\simeq Me_w\simeq Ae_u\ne0,
+\quad\text{whereas}\quad \Omega_A^2L_u=0.
+\tag{3.4}
+\]
+
+All further F iterates of this nonzero projective remain nonzero
+projective. They have no positive ordinary Tor with any right
+simple. The nontermination is therefore carried by actual
+projective summands, not by a missed ordinary tail.
+
+## 4. Exact boundary of the audit
+
+For a general late canonical syzygy M_s=Omega^s_{A^e}(A), tensoring
+the minimal bimodule resolution with a simple gives its actual
+minimal ordinary resolution: the radical coefficients on the
+simple side vanish, and those on the other side remain radical.
+In particular M_s tensor_A L_y=Omega_A^s L_y.
+
+Repeating the tensor functor need not preserve minimality. A radical
+coefficient on the right can act on M_s with a nonradical matrix
+entry between its left projective summands, causing cancellations.
+The explicit (3.4) shows that this issue is real.
+
+If M_s J is contained in J M_s, tensoring does preserve radical
+maps of left projectives. In the canonical situation this is
+equivalent to every ordinary right syzygy Omega^s_{A^{op}} R_i
+being semisimple: quotient M_s by its left radical and use the
+actual right-simple resolution. This is an existing finite exact
+syzygy-system mechanism, not a new general solution. Its general
+automatic existence is false, as the unchanged Saorin example
+has no positive simple self-Ext but has an infinite supported
+off-diagonal tail.
+
+The calibration DOES NOT refute a theorem with additional genuinely
+late, all-source, non-infinite-+ hypotheses. In this finite-gldim
+example M_s=0 for s>=3. It refutes the shortcut that drops control
+of projective summands/minimality, not every possible late-syzygy
+argument.
+
+Nor is M a negative layer of the derived quotient of A; none of
+C065, C067 or C070's actual-model comparison theorems is contradicted.
+The ordinary supported-migration gap in C076 remains unchanged.
+
+## 5. Normal adversarial self-audit
+
+1. M is the kernel of the actual minimal bimodule projective cover,
+   not an invented derived residue.
+2. Both side projectivities use split ordinary sequences with target A.
+3. T=D-I is proved by actual column splittings; (2.4) is an actual
+   tensor equality, so nontermination is stronger than graph evidence.
+4. The A5 multiplication, simple resolutions and gldim two are reused
+   with explicit vertex renaming; no old Run or computation is rerun.
+5. The nonzero module in (3.4) is projective, whereas the actual
+   second ordinary minimal syzygy is zero.
+6. Ordinary Tor conclusions use these actual projective/finite
+   resolutions, not stable, singular or Tate information.
+7. The semisimple-syzygy criterion is identified with existing assets,
+   not promoted as an independent new closure theorem.
+8. Extra late all-source hypotheses are not claimed false.
+9. The audit is same-author, not independent verification.
+
+## 6. Effect on current research
+
+The current goal is Universal Gap A for arbitrary finite size.
+This audit prevents a false global shortcut from canonical
+bimodule-syzygy tensor nontermination to ordinary supported returns.
+Any continuation of that representation must prove that its
+projective summands are controlled in ordinary homology.
+
+The accepted positive frontier stays C076: finite ordinary migration
+and global-infinity equivalence, with the physical reverse-support
+step still missing. Existing Target A, local-trivial, supported-weight
+and general higher-output branches are retained. Further conditions
+without a support-preserving bridge, a proved terminating reduction
+or a contradiction remain low priority.

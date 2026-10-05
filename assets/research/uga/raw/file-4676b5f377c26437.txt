@@ -1,0 +1,2014 @@
+# 韩猜想 → Universal Gap A：数学研究全过程历史档案
+
+**时间范围：2026-08-08 — 2026-10-01**  
+**项目：有限维代数 / Han 猜想 / Gap A–Gap B / Universal Gap A**  
+**文档类型：研究过程史（不是最终论文，也不是只列定理的结果表）**
+
+> 本文件按时间记录：当时遇到什么问题 → 为什么原路线不够 → 产生什么新想法 → 引入什么数学工具 → 哪些结论后来被修正/推翻 → 如何进入下一阶段。
+
+---
+
+## 0. 总主线
+
+整个项目最初从 Han 猜想反例出发，逐渐演化成对 Universal Gap A 的长期研究。
+
+最早的问题是：
+
+\[
+\text{KLS 的 Han 反例为什么能让 }HH_{n>0}\text{ 全部消失？}
+\]
+
+随后用 CLMS / Armenta 的语言把 Han 猜想拆成：
+
+\[
+\operatorname{gldim}A=\infty
+\overset{\mathrm{Gap\ A}}{\Longrightarrow}
+A\text{ infinite }+
+\overset{\mathrm{Gap\ B}}{\Longrightarrow}
+HH_*(A)\text{ infinite}.
+\]
+
+于是研究逐步变成：
+
+\[
+\boxed{
+\text{Universal Gap A: }
+\operatorname{gldim}A=\infty
+\Longrightarrow
+A\text{ infinite }+ \; ?
+}
+\]
+
+主路线的历史演化大致是：
+
+\[
+\boxed{
+\text{KLS}
+\to
+\text{Gap A/B 分类}
+\to
+\text{Serre–Probe}
+\to
+\text{有限顶点实验}
+\to
+\text{eventual periodicity}
+\to
+\text{vertex deletion}
+\to
+\text{derived deletion}
+\to
+\text{Rees torsion}
+\to
+\text{four-vertex FORK}
+\to
+\text{U1--U8 universal layer}.
+}
+\]
+
+研究过程中越来越清楚的一件事是：
+
+> 真正困难的不是制造“无限同调复杂度”，而是证明这种复杂度一定能被压缩成一个固定的、ordinary、simple-to-simple、Peirce-visible 的无限 Tor/Ext 通道。
+
+后来的绝大多数工具，实际上都在解决这个 **visibility / alignment problem**。
+
+---
+
+# 1. 2026-08-08 起：从 Han 猜想反例开始
+
+Kong–Liu–Shen 构造了有限维代数 \(A_{\mathrm{KLS}}\)，满足
+
+\[
+\operatorname{gldim}A_{\mathrm{KLS}}=\infty,
+\qquad
+HH_n(A_{\mathrm{KLS}})=0
+\quad(n\ge1).
+\]
+
+因此 Han 猜想本身已经出现反例。
+
+项目没有停在“知道反例”这一层，而是提出更细的问题：
+
+- 这个反例是在哪一道机制上失败？
+- infinite global dimension 本身是否仍会强迫某种可见的 recurrent simple homology？
+- Hochschild homology 为什么没有捕获它？
+
+这促使项目接受 CLMS / Armenta 的 Gap A / Gap B 分解。
+
+---
+
+# 2. 8 月中旬：KLS opposite algebra 与 terminal detector
+
+最初的重要对象之一是
+
+\[
+B=A_{\mathrm{KLS}}^{op}.
+\]
+
+利用 KLS 的 partial resolution、stable Hom、eventual periodicity 等结构，项目发展出一套内部候选机制：
+
+\[
+\text{stable / singular detector}
+\to
+\text{infinite projective tail}
+\to
+\text{simple return}.
+\]
+
+这一时期形成的重要工具包括：
+
+- Stable-Hom periodic detector；
+- stable-to-actual syzygy transfer；
+- partial-resolution / terminal detector；
+- infinite-pd simple argument；
+- periodic simple-return criterion。
+
+阶段性内部判断曾是：
+
+\[
+B=A_{\mathrm{KLS}}^{op}
+\text{ is infinite }+.
+\]
+
+这使项目一度倾向于把 KLS 看作 Gap B failure。
+
+但这个判断后来必须被重新解释，因为左右模和 opposite algebra 的方向不能混用。
+
+---
+
+# 3. 8 月 15–18 日：Serre–Probe / Nakayama–Serre 统一框架
+
+研究开始从 KLS 特例抽象出去。
+
+取最小 \(A^e\)-projective resolution
+
+\[
+P_\bullet\to A
+\]
+
+并考虑 Nakayama-twisted complex
+
+\[
+K_\bullet=\nu_{A^e}(P_\bullet).
+\]
+
+利用已有文献结果：
+
+\[
+H_n(K_\bullet)
+\cong
+\operatorname{Tor}_n^A(DA,DA)
+\cong
+D\operatorname{Ext}_{A^e}^n(A,A^e),
+\]
+
+同时
+
+\[
+Z_n(K_\bullet)=\tau_nA.
+\]
+
+项目又得到链级关系：
+
+\[
+\operatorname{Hom}_{A^e}(DA,K_\bullet)
+\cong
+A\otimes_{A^e}P_\bullet.
+\]
+
+由此形成统一解释：
+
+- Gap A：singular / Nakayama tail 是否能被 probe 看见；
+- Gap B：已经被看见的 \(\tau\)-cycle 是否能在 ordinary Hochschild homology 中存活。
+
+这一步把 Han 猜想从“一个同调消失问题”改写成：
+
+\[
+\boxed{\text{visibility problem}.}
+\]
+
+这成为整个后续研究的理论背景。
+
+---
+
+# 4. 同期：有限顶点实验室出现
+
+项目开始测试：
+
+\[
+|Q_0|=1,2,3,4,\dots
+\]
+
+目的是不直接硬攻 arbitrary \(N\)，而是在最小规模上找出真正障碍。
+
+阶段状态逐渐变为：
+
+- \(1\)、\(2\) 顶点：高置信度闭合；
+- \(3\) 顶点：形成 candidate theorem；
+- \(4\) 顶点：出现 finite-hub / multi-top obstruction。
+
+四顶点暴露出一个以后反复出现的结构：
+
+> persistent homological source、recurrent detector、Peirce-visible carrier 不一定是同一个顶点。
+
+这就是后来 U6/U7 “三角色错位”的早期形式。
+
+---
+
+# 5. 8 月 18–23 日：重大纠错——\(A^{op}\) 的 infinite+ 不能偷换成 \(A\) 的 infinite+
+
+这是整个项目第一次非常关键的方向修正。
+
+正确的 opposite-side relation 是：
+
+\[
+\Lambda\text{ infinite co}+
+\iff
+\Lambda^{op}\text{ infinite }+.
+\]
+
+并不是：
+
+\[
+\Lambda\text{ infinite }+
+\iff
+\Lambda^{op}\text{ infinite }+.
+\]
+
+因此即使证明了
+
+\[
+A_{\mathrm{KLS}}^{op}\text{ infinite }+,
+\]
+
+最多只能推出
+
+\[
+A_{\mathrm{KLS}}\text{ infinite co}+.
+\]
+
+不能推出原代数
+
+\[
+A_{\mathrm{KLS}}\text{ infinite }+.
+\]
+
+于是 KLS 的 Gap A / Gap B 分类被正式重新打开。
+
+从此 KLS original-\(A\) 成为一个必须单独审计的问题：
+
+\[
+\boxed{
+A_{\mathrm{KLS}}\text{ infinite }+\;?
+}
+\]
+
+这一步也建立了长期规则：
+
+- 必须区分 left / right；
+- 必须区分 \(A\) 与 \(A^{op}\)；
+- 必须区分 \(+\) 与 co\(+\)。
+
+---
+
+# 6. Eventual periodicity 路线
+
+若
+
+\[
+\Omega_{A^e}^{N+p}A
+\cong
+\Omega_{A^e}^{N}A,
+\]
+
+则高阶 module syzygies受到 period 控制。
+
+这一度给人很强的希望：
+
+\[
+\text{periodic}
+\Rightarrow
+\text{recurrent}
+\Rightarrow
+\text{infinite }+.
+\]
+
+但项目很快发现真正缺口：
+
+\[
+\boxed{
+\text{singular/Tate recurrence}
+\not\Rightarrow
+\text{ordinary simple Ext recurrence}.
+}
+\]
+
+尤其 non-Gorenstein 情形，不能把 singular category 或 Tate Ext 中的周期类直接当成 ordinary Yoneda algebra 中的 simple class。
+
+因此形成长期禁令：
+
+> 不把 singular/Tate recurrence 偷换成 ordinary Ext/Tor。
+
+---
+
+# 7. Periodic module self-extension
+
+一个稳定资产是：
+
+若 nonprojective module \(M\) 满足
+
+\[
+\Omega^pM\cong M,
+\]
+
+则存在
+
+\[
+\vartheta\in\operatorname{Ext}_A^p(M,M)
+\]
+
+且
+
+\[
+\vartheta^k\neq0
+\in
+\operatorname{Ext}_A^{kp}(M,M).
+\]
+
+这个工具证明 periodic module 确实带有永久 self-extension。
+
+但项目也发现：
+
+\[
+\text{periodic module}
+\not\Rightarrow
+\text{periodic simple quotient}.
+\]
+
+把 module-level recurrence 降到 simple-level recurrence 时，会受到：
+
+- multi-top；
+- composition factors；
+- \(A_\infty\) correction；
+- comparison-map cancellation；
+
+的阻碍。
+
+---
+
+# 8. Vertex-Deletion Descent
+
+为处理“某个顶点高阶从不 return”，项目引入：
+
+\[
+C_x=A/Ae_xA.
+\]
+
+在 hypothetical Gap-A failure 中，如果
+
+\[
+\operatorname{pd}S_x=\infty,
+\]
+
+则得到重要工具：
+
+\[
+\boxed{
+\operatorname{gldim}C_x=\infty.
+}
+\]
+
+思想是：
+
+> 如果顶点 \(x\) 自己永远不可见，就删除它，逼迫无限同调复杂度进入更小代数。
+
+这是项目第一次真正获得“最小反例 / 无穷递降”式 universal 工具。
+
+但马上出现新的问题：
+
+\[
+A\to A/AeA
+\]
+
+通常不是 homological epimorphism。
+
+因此 quotient 中的 infinite+ witness 不能无条件 lift 回原代数。
+
+这直接导致后来的 derived deletion。
+
+---
+
+# 9. Idempotent quotient 的第一层刚性
+
+对于
+
+\[
+C=A/AeA
+\]
+
+以及任意 \(C\)-module \(M\)，项目确认：
+
+\[
+\boxed{
+\operatorname{Tor}_1^A(C,M)=0.
+}
+\]
+
+因此 deletion-created defect 只能从
+
+\[
+q\ge2
+\]
+
+开始。
+
+这成为后来 spectral sequence / derived quotient 分析中的固定输入。
+
+---
+
+# 10. Bounded Deletion-Defect Forcing
+
+项目进一步得到：
+
+若 \(M,N\) 是 \(C\)-modules，且
+
+\[
+\operatorname{pd}_A M=d<\infty,
+\]
+
+同时 quotient 上有 arbitrarily-high Ext，则存在某个有限层
+
+\[
+2\le q\le d
+\]
+
+使
+
+\[
+\operatorname{Tor}_q^A(C,M)
+\]
+
+本身承载 persistent / infinite-pd defect。
+
+因此形成一种非常重要的研究模板：
+
+\[
+\boxed{
+\text{transfer 失败}
+\Rightarrow
+\text{失败本身产生新的 homological defect}.
+}
+\]
+
+这以后反复出现在：
+
+- deletion；
+- quotient comparison；
+- kernel absorption；
+- Postnikov obstruction；
+- Rees torsion。
+
+---
+
+# 11. 三顶点实验：singleton-tail / third-vertex return
+
+三顶点 hypothetical failure 被压缩成非常具体的结构。
+
+高阶 projective tail 可能最终集中为：
+
+\[
+P_n\cong (Ae_a)^{m_n}.
+\]
+
+同时存在：
+
+\[
+e_bAe_a=0,
+\]
+
+而第三顶点 \(h\) 提供绕行：
+
+\[
+e_aAe_hAe_a\neq0.
+\]
+
+于是核心问题变成：
+
+> 第三个顶点的 through-path 是否会强迫真正的 supported homological return？
+
+这里项目得到一个重要负面认识：
+
+\[
+\boxed{
+\text{graph cycle}
+\not\Rightarrow
+\text{homological return}.
+}
+\]
+
+从此明确禁止“裸 graph cycle ⇒ Yoneda/Tor return”。
+
+这条禁令后来一直保留到 U7/U8。
+
+---
+
+# 12. 四顶点 finite-hub：multi-top derangement
+
+四顶点出现新的有限 hub：
+
+- infinite-pd source；
+- recurrent top；
+- finite-pd hub；
+- Peirce carrier；
+
+可以分散在不同位置。
+
+一个 recurrent detector \(r\) 可以给出 persistent simple source \(b\)，但 hypothetical failure 强迫：
+
+\[
+e_bDe_r=0.
+\]
+
+另一方面，因为 \(b\) 是某个 module 的 composition factor，又会存在另一个 top carrier \(y\) 满足：
+
+\[
+e_bDe_y\neq0.
+\]
+
+于是产生：
+
+\[
+\boxed{
+\text{detector 与 visible carrier 错位}.
+}
+\]
+
+这后来演化成 U6 的 Bi-Singular Source Fork。
+
+---
+
+# 13. 9 月下旬：从固定小顶点向 arbitrary \(N\) 推进
+
+项目开始明确意识到：
+
+继续机械增加 5 顶点、6 顶点并不是理想路线。
+
+真正应该做的是：
+
+1. 在最小未知模型中解决；
+2. 找出证明实际需要的精度；
+3. 抽取与规模无关的机制；
+4. 再推广到 arbitrary \(N\)。
+
+这个研究哲学后来被写成：
+
+\[
+\boxed{
+\text{最小未知实验室}
+\to
+\text{真正解决}
+\to
+\text{测量证明精度}
+\to
+\text{提炼机制}
+\to
+\text{arbitrary }N.
+}
+\]
+
+---
+
+# 14. Radical-square-zero 成为 calibration
+
+在
+
+\[
+J^2=0
+\]
+
+情形，syzygy / path combinatorics 没有高阶乘法 cancellation。
+
+项目在这一类中能完成 arbitrary-\(N\) 型机制。
+
+这说明：
+
+> 一般情形真正的敌人不是“顶点太多”，而是 multiplication differential 可以杀掉 combinatorial recurrence。
+
+于是核心障碍被重新定位为：
+
+\[
+\boxed{
+\mu:J\otimes J\to J
+\text{ 引起的 cancellation}.
+}
+\]
+
+---
+
+# 15. Derived deletion：从 ordinary quotient 升级
+
+为避免 ordinary quotient 不保同调的问题，引入：
+
+\[
+S=D/D(1-e)D
+\]
+
+以及 derived self-intersection：
+
+\[
+K=S\otimes_D^{\mathbf L}S.
+\]
+
+\(K\) 记录 ordinary quotient 看不到的 deletion defect。
+
+此后一个关键策略是：
+
+> 不再要求 quotient witness 直接 lift，而是完整记录 deletion 所产生的 derived correction。
+
+---
+
+# 16. Two-stage bar model
+
+在局部模型中，相对 bar differential 被拆成：
+
+\[
+b=b_2+b_3,
+\]
+
+并满足：
+
+\[
+b_2^2=b_3^2=b_2b_3+b_3b_2=0.
+\]
+
+这里：
+
+- \(b_2\) 是较基础的 differential；
+- \(b_3\) 记录 cubic / derived correction。
+
+问题变成：
+
+> zero-column recurrence 会不会一直被越来越高 page 的 \(b_3\)-correction 杀死？
+
+---
+
+# 17. Rees deformation 与 Page–Torsion correspondence
+
+引入：
+
+\[
+\mathcal B=(B[t],D=b_2+t b_3).
+\]
+
+得到关键思想：
+
+> page-\(r\) differential 对应 Rees homology 中 exact \(t\)-torsion order \(r\)。
+
+即：
+
+\[
+\boxed{
+\text{high-page screening}
+\Longleftrightarrow
+\text{high-order }t\text{-torsion}.
+}
+\]
+
+这样 spectral-sequence 问题被转换成 module-theoretic torsion growth 问题。
+
+---
+
+# 18. Uniform torsion bound
+
+如果 high-degree Rees homology 的 \(t\)-torsion exponent 有统一上界，那么 sufficiently high zero-column classes 必须 survive。
+
+因此 hypothetical failure 必须制造：
+
+\[
+\boxed{
+\text{arbitrarily large exact torsion orders}.
+}
+\]
+
+这把 Universal Gap A 的一部分前沿压缩成：
+
+> 一个有限维 ordinary algebra 是否能无限地产生越来越高阶的 derived torsion，同时永远不产生 visible return？
+
+---
+
+# 19. Cycle-lift obstruction tower
+
+尝试构造：
+
+\[
+U(t)=\sum_{m\ge0}t^mU_m
+\]
+
+满足：
+
+\[
+\partial_2U_0=0,
+\qquad
+\partial_2U_{m+1}=-\partial_3U_m.
+\]
+
+第 \(m\) 步 obstruction：
+
+\[
+[\partial_3U_m]
+\in
+H(\operatorname{End}(B),\partial_2).
+\]
+
+由此形成：
+
+\[
+\boxed{\text{Cycle-Lift Obstruction Tower}.}
+\]
+
+这一步的价值是：
+
+不再模糊地问“cycle 能不能一直 survive”，而是逐层记录它为什么不能被 lift。
+
+---
+
+# 20. Primitive high-order torsion quotient
+
+为了分离真正的新高阶 torsion block，项目定义类似：
+
+\[
+F_NT=\{x:t^Nx=0\},
+\]
+
+以及 primitive quotient
+
+\[
+\Pi_{>N}(T)=T/(tT+F_NT).
+\]
+
+对于
+
+\[
+T\cong\bigoplus_i k[t]_{(t)}/(t^{e_i}),
+\]
+
+有：
+
+\[
+\dim_k\Pi_{>N}(T)
+=
+\#\{i:e_i>N\}.
+\]
+
+因此持续 high-page death 不只是“同一个 torsion 被重复使用”，而是强迫不断产生新的高阶 primitive torsion blocks。
+
+---
+
+# 21. Four-vertex FORK：最小未知实验室
+
+随后项目建立 four-vertex FORK。
+
+目标不是证明一个特殊四顶点结论，而是精确测量：
+
+> 一个真正 hypothetical Gap-A failure 最少需要怎样的 cubic coupling / rank / torsion / cancellation 才能维持？
+
+---
+
+## 21.1 Node 3-Fa / 3-Fa-Rank
+
+核心对象是：
+
+\[
+m_3=\kappa.
+\]
+
+问题被转成：
+
+\[
+\operatorname{RequiredRank}
+\quad\text{vs}\quad
+\operatorname{KappaCapacity}.
+\]
+
+也就是：
+
+> 要杀掉所有 high-weight visible classes，实际 cubic map \(\kappa\) 的 rank capacity 是否足够？
+
+这一阶段得到重要 rank obstruction。
+
+但同时发现：
+
+Matrix-Euler / HRP 一类方法需要 compatible positive internal grading。
+
+因此：
+
+\[
+\boxed{
+\text{graded FORK theorem}
+\neq
+\text{unconditional FORK theorem}.
+}
+\]
+
+---
+
+## 21.2 Node 3-Fb：filtered / Rees bridge
+
+3-Fb 的目标是取消对严格 grading 的依赖。
+
+工具包括：
+
+- radical filtration；
+- Loewy filtration；
+- Rees deformation；
+- filtered-to-graded comparison；
+- torsion order；
+- obstruction lifting。
+
+它试图把 3-Fa 的 rank picture 转化成一般 filtered algebra 中仍然稳定的 invariant。
+
+---
+
+## 21.3 Node 3-Fc：Radical-Degeneration / correction
+
+3-Fc 处理的问题是：
+
+> associated graded 中出现的 return，会不会在原 algebra 中被 higher correction 消掉？
+
+因此重点进入：
+
+- radical degeneration；
+- actual-vs-graded comparison；
+- torsion correction；
+- derived support vs ordinary Peirce support。
+
+这一阶段进一步确认：
+
+\[
+\boxed{
+\text{derived support}
+\neq
+\text{ordinary Peirce support}.
+}
+\]
+
+---
+
+# 22. Native MRS + Obsidian Vault 成为默认研究机制
+
+到 9 月底，研究治理发生明显变化。
+
+默认系统变成：
+
+\[
+\boxed{
+\text{Native MRS + Obsidian Method Vault}.
+}
+\]
+
+核心规则：
+
+1. 每轮先检索已有资产；
+2. 不重新证明已稳定 lemma；
+3. 保留失败路线；
+4. 区分 VERIFIED / CONDITIONAL / CANDIDATE / REFUTED；
+5. 单一主研究者保持连续性；
+6. 不使用裸 graph cycle；
+7. 不混 singular/Tate 与 ordinary Ext；
+8. Vault 方法必须具体映射到当前数学对象。
+
+反复使用的方法包括：
+
+- minimal counterexample；
+- infinite descent；
+- bootstrap；
+- local-to-global；
+- standard form；
+- representation change；
+- set-to-function / matrix / action；
+- double counting；
+- quotient / localization；
+- extreme example；
+- counterexample；
+- bridge construction；
+- finite-pd / infinite-pd layer separation。
+
+这不是单纯管理方式变化，而是直接改变了数学路线选择。
+
+---
+
+# 23. U1：Derived Projection / Finite-Row Return
+
+核心仍是：
+
+\[
+K=S\otimes_D^{\mathbf L}S.
+\]
+
+U1 研究：
+
+> 假如 visible diagonal return 长期不存在，那么 \(K\) 必须满足怎样的有限 amplitude / perfectness 结构？
+
+结果把“no return”转化成非常强的 derived structural restriction。
+
+这是从 combinatorial recurrence 向 derived geometry 的第一次 universal abstraction。
+
+---
+
+# 24. U2：Bounded Derived Self-Intersection
+
+研究最小正 amplitude：
+
+\[
+a=2.
+\]
+
+设：
+
+\[
+H_q(K)=0
+\quad(q\neq0,2),
+\]
+
+\[
+M=H_2(K).
+\]
+
+则 multiplication map：
+
+\[
+\mu:K\to S
+\]
+
+给出 triangle：
+
+\[
+M[2]\to K\to S\xrightarrow{\alpha}M[3],
+\]
+
+其中
+
+\[
+\alpha\in\operatorname{Ext}_{S^e}^3(S,M).
+\]
+
+于是整个 amplitude-2 问题被压缩成一个 Postnikov datum：
+
+\[
+\boxed{\alpha}.
+\]
+
+新的问题是：
+
+> \(\alpha\) 能否真正充当 singular shift / screening operator？
+
+---
+
+# 25. U3：First-Defect Bootstrap 被反例推翻
+
+最初尝试证明：
+
+如果 first positive defect
+
+\[
+H_r(K)\neq0,
+\]
+
+那么必然有 later defect：
+
+\[
+H_q(K)\neq0
+\quad(q>r).
+\]
+
+结果：
+
+\[
+\boxed{
+H_r(K)\neq0
+\not\Rightarrow
+\exists q>r,\ H_q(K)\neq0.
+}
+\]
+
+而且对每个 \(r\ge2\) 都可以有 actual finite-dimensional example。
+
+因此 naive bootstrap 被彻底撤回。
+
+U3 的真正结论是：
+
+> 非零 defect 本身不够；必须使用 bilateral no-return、perfectness、actual coring coupling 等额外结构。
+这是一次非常重要的“负结果推动路线前进”。
+
+---
+
+# 26. U4：Stable Anchor / Singularity-Category Transfer
+
+固定 detector \(R_i\)。
+
+已有 module \(N\) 满足：
+
+\[
+\operatorname{Tor}_n^D(R_i,N)\neq0
+\]
+
+在 arbitrarily high degree 成立。
+
+目标是得到 simple \(L_z\)，满足：
+
+\[
+e_zDe_i\neq0
+\]
+
+以及：
+
+\[
+\operatorname{Tor}_n^D(R_i,L_z)\neq0
+\]
+
+无限多次。
+
+---
+
+## 26.1 Tail representation
+
+构造思想：
+
+\[
+D_{\rm sg}(D)
+\xrightarrow{\mathfrak T_i}
+\mathsf{Tail}(k).
+\]
+
+把“arbitrarily-high Tor”变成一个 tail object。
+
+这是 U4 的重要 representation change。
+
+---
+
+## 26.2 Comparison-map / kernel descent
+
+取 quotient：
+
+\[
+0\to K\to N\to L_z\to0.
+\]
+
+长正合列显示：
+
+- recurrence 要么传到 quotient；
+- 要么被 kernel 吸收。
+
+如果 quotient comparison tail-zero，则：
+
+\[
+\ell(K)=\ell(N)-1.
+\]
+
+因此可以做 finite length descent。
+
+得到核心机制：
+
+\[
+\boxed{
+\text{transfer-or-kernel-absorption}.
+}
+\]
+
+---
+
+# 27. U4 adversarial audit：bare stable anchor 不够
+
+Run C 主动攻击过强命题。
+
+被推翻：
+
+- direct augmentation transfer；
+- singularly nonzero map 自动被 detector 看见；
+- bilateral-free terminal defect + coring 自动 screening。
+
+核心区分变为：
+
+\[
+[f]\neq0\text{ in }D_{\rm sg}
+\]
+
+并不意味着：
+
+\[
+\overline{\mathfrak T}_i(f)\neq0.
+\]
+
+即：
+
+\[
+\boxed{
+\text{singular nonzero}
+\neq
+\text{detector-tail nonzero}.
+}
+\]
+
+因此以后任何“stable anchor”必须绑定到具体 detector。
+
+---
+
+# 28. U5：Detector-Localized Visibility
+
+对 simple source \(L_x\)，定义 recurrent detector set：
+
+\[
+\Sigma_x
+=
+\left\{
+v:
+\operatorname{Tor}_n^D(R_v,L_x)\neq0
+\text{ for arbitrarily high }n
+\right\}.
+\]
+
+U5 识别：
+
+\[
+\Sigma_x
+\]
+
+就是 \(L_x\) 的 recurrent Betti support。
+
+若
+
+\[
+e_xDe_{\Sigma_x}\neq0,
+\]
+
+则已经得到 Peirce-visible persistent fixed pair。
+
+所以 hypothetical Gap-A failure 强迫：
+
+\[
+\boxed{
+\Sigma_x\neq\varnothing,
+\qquad
+e_xDe_{\Sigma_x}=0
+}
+\]
+
+对每个 infinite-pd source \(x\) 成立。
+
+这把 failure 的结构压缩得非常具体：
+
+> 每个无限 pd source 都有 recurrent detector，但所有 recurrent detector 都必须对 source Peirce-invisible。
+
+同时 U5 否定了 naive fixed-source detector switching 作为 universal mechanism。
+
+---
+
+# 29. U6：finite/infinite-pd layer separation 与 Bi-Singular Root
+
+U6 试图把所有 finite-pd contamination 从 module 中清掉。
+
+对 infinite-pd module \(M\)，引入：
+
+- \(S(M)\)：剥除 finite-pd simple quotient contamination；
+- \(Q(M)\)：处理相反方向 contamination；
+- 最终
+  \[
+  H(M)=Q(S(M)).
+  \]
+
+得到 **Bi-Singular Root**：
+
+\[
+H(M)
+\]
+
+满足：
+
+- top 只由 infinite-pd simples 构成；
+- socle 只由 infinite-pd simples 构成；
+- \(H(M)\) 仍 infinite-pd；
+- 高 syzygy tail 与原 \(M\) 一致；
+- 对固定 detector \(R\)，高阶 Tor tail 保持。
+
+这是一个非常强的 purification 工具。
+
+---
+
+# 30. U6 的重要反例：recurrent detector 不一定是下一 source
+
+原计划曾假设：
+
+\[
+y\in\Sigma_x
+\]
+
+可以直接成为下一 infinite-pd source。
+
+cyclic Nakayama \([3,4]\) 给出反例：
+
+某个 source \(x\in I_\infty\)，其 recurrent detector \(r\in\Sigma_x\)，但
+
+\[
+r\notin I_\infty.
+\]
+
+于是：
+
+\[
+\boxed{
+\text{recurrent detector}
+\neq
+\text{next infinite-pd source}.
+}
+\]
+
+这推翻了 naive source-successor dynamics。
+
+---
+
+# 31. U6：Corrected Source Extraction
+
+正确做法不是把 detector 当 source。
+
+而是：
+
+1. 从 persistent detector tail 出发；
+2. 在 bi-singular root 的 composition series 中找真正承载这条 tail 的 simple \(L_b\)；
+3. 该 \(b\) 必须是 infinite-pd source；
+4. 再利用 top generation 找到 Peirce-visible infinite-pd carrier \(y\)。
+
+于是定义 corrected source relation：
+
+\[
+x\Rightarrow_{\mathrm{bs}}b.
+\]
+
+并证明每个
+
+\[
+x\in I_\infty
+\]
+
+都有至少一个 outgoing corrected source edge。
+
+---
+
+# 32. Bi-Singular Source Fork
+
+每个 corrected source edge 带有数据：
+
+\[
+(x;b,r,y)
+\]
+
+满足：
+
+\[
+x,b,y\in I_\infty,
+\]
+
+\[
+r\in\Sigma_x,
+\]
+
+\[
+\operatorname{Tor}^{\infty}(R_r,L_b)\neq0,
+\]
+
+在 hypothetical failure 下：
+
+\[
+e_bDe_r=0,
+\]
+
+但存在 visible carrier：
+
+\[
+e_bDe_y\neq0.
+\]
+
+形成标准图形：
+
+\[
+\boxed{
+x
+\Rightarrow_{\mathrm{bs}}
+b
+\overset{\operatorname{Tor}^{\infty}}{\longrightarrow}
+r,
+\qquad
+b\overset{\rm Peirce}{\longrightarrow}y.
+}
+\]
+
+这就是：
+
+\[
+\boxed{\text{Bi-Singular Source Fork}.}
+\]
+
+这是 U6 最重要的标准型。
+
+---
+
+# 33. Minimal Recurrent Source Core
+
+由于 \(I_\infty\) 有限，而 corrected source graph 每个顶点出度至少 1，因此存在 terminal SCC：
+
+\[
+\mathcal C_{\mathrm{bs}}
+\subseteq
+I_\infty.
+\]
+
+这称为：
+
+\[
+\boxed{\text{Minimal Recurrent Source Core}.}
+\]
+
+这里必须特别强调：
+
+> source graph 中有 cycle / SCC，只说明 source extraction recurrence；  
+> **不能**推出 module periodicity、Yoneda composition 或 ordinary homological return。
+
+项目保留了此前所有“禁止裸 cycle”的负知识。
+
+---
+
+# 34. U6 后真正剩下的问题：三角色错位
+
+到 U6 结束时，问题已经被压缩成：
+
+1. **source** \(b\)：infinite-pd；
+2. **detector** \(r\)：persistent Tor，但可能 finite-pd；
+3. **carrier** \(y\)：Peirce-visible 且 infinite-pd。
+
+hypothetical failure 允许：
+
+\[
+r\neq y.
+\]
+
+也允许 detector 永远落在 Peirce-dead sector。
+
+因此真正 obstruction 成为：
+
+\[
+\boxed{
+\text{source / detector / Peirce carrier alignment}.
+}
+\]
+
+这是从 8 月 multi-top derangement 一路演化来的最终抽象形式。
+
+---
+
+# 35. U7：Bi-Singular Fork Alignment / Cross-Module Descent
+
+U7 的任务不再是“再找 recurrence”。
+
+而是处理 U6 留下的 fork：
+
+\[
+b\overset{\operatorname{Tor}^{\infty}}{\longrightarrow}r,
+\qquad
+b\overset{\rm Peirce}{\longrightarrow}y.
+\]
+
+主要目标是证明以下至少一件：
+
+1. visible carrier \(y\) 能转换成 active detector；
+2. Peirce leakage 导致严格 corner/source descent；
+3. finite-pd detector layer 可以从 recurrent mechanism 中消除；
+4. cross module 的 infinite pd 本身产生 visible persistent pair。
+
+这一阶段重新启用早期 singular-core 思想：
+
+\[
+eAe,
+\qquad
+eA(1-e),
+\qquad
+(1-e)Ae.
+\]
+
+希望形成 dichotomy：
+
+\[
+\text{cross module finite pd}
+\Rightarrow
+\text{corner reduction},
+\]
+
+或者：
+
+\[
+\text{cross module infinite pd}
+\Rightarrow
+\text{new visible witness}.
+\]
+
+第二个 implication 是最困难部分。
+
+---
+
+# 36. U7 的 incidence / matrix / Postnikov coupler 尝试
+
+为了避免再次把 graph cycle 当 homological return，U7 开始把 fork family 转换为：
+
+- incidence data；
+- matrix action；
+- two-color dynamics；
+- Postnikov coupling；
+- cross-module maps。
+
+也就是说，从：
+
+\[
+\text{集合上反复出现的 fork}
+\]
+
+转换成：
+
+\[
+\text{一个有限维函数 / 矩阵 / operator system}.
+\]
+
+这是 Obsidian Vault 中“集合 → 函数 / action / matrix”方法的具体落地。
+
+目标是：
+
+> 如果 source/detector/carrier 永久错位，那么错位本身是否会形成一个有限维 operator obstruction，从而无法无限维持？
+
+U7 仍未完成 Universal Gap A。
+
+---
+
+# 37. U8：进一步的 alignment / coupling 层
+
+9 月 30 日之后，研究继续沿 U7 的三角色错位推进。
+
+U8 的总体方向是：
+
+- 不再回到旧的 naive recurrence；
+- 把 source fork、Peirce incidence、cross-module coupling、derived/Postnikov data 放在同一个传输结构里；
+- 寻找真正能把 persistent detector 信息强制传到 visible carrier 的 comparison / coupling theorem。
+
+U8 的意义不是“新增一个完全独立的路线”，而是继续压缩 U7：
+
+\[
+\boxed{
+\text{persistent homology}
++
+\text{finite incidence structure}
++
+\text{actual transport map}
+\Rightarrow ?
+\text{visible fixed pair}.
+}
+\]
+
+截至 2026-10-01，Universal Gap A 仍未解决。
+
+---
+
+# 38. 贯穿全项目的核心数学工具
+
+下面不是按时间，而是按最终保留下来的“工具家族”整理。
+
+## 38.1 Visibility tools
+
+- infinite \(+\) / co\(+\)；
+- Armenta simple-return criterion；
+- recurrent Betti support；
+- Peirce visibility；
+- detector-tail functor；
+- Stable-Hom detector；
+- Serre–Probe framework。
+
+## 38.2 Reduction / descent tools
+
+- Vertex-Deletion Descent；
+- minimal counterexample；
+- finite length kernel descent；
+- finite-pd top peeling；
+- Bi-Singular Root；
+- corrected source extraction；
+- terminal SCC / minimal recurrent source core。
+
+## 38.3 Periodicity tools
+
+- eventual bimodule periodicity；
+- periodic module self-extension；
+- periodic-support core；
+- Ext adjunction；
+- Tor-rigidity；
+- periodic orbit support closure。
+
+## 38.4 Derived deletion tools
+
+- \(S\otimes_D^{\mathbf L}S\)；
+- finite amplitude；
+- Postnikov class；
+- two-stage bar model；
+- \(b_2+b_3\) decomposition；
+- spectral-sequence screening；
+- Rees deformation；
+- page–torsion correspondence；
+- cycle-lift obstruction tower。
+
+## 38.5 Representation-change tools
+
+- singularity category；
+- dg / derived quotient；
+- Tail category；
+- matrix/incidence conversion；
+- operator action；
+- filtered-to-graded / Rees；
+- radical degeneration。
+
+## 38.6 Adversarial tools
+
+- extreme example；
+- counterexample；
+- delete-one-hypothesis；
+- local/global mismatch；
+- moduli drift；
+- Nakayama calibration；
+- quantum exterior calibration；
+- actual finite-dimensional realization tests。
+
+---
+
+# 39. 重要失败路线与禁止重新使用的推理
+
+这些负结果是项目非常重要的资产。
+
+## 39.1 Opposite-side 偷换
+
+错误：
+
+\[
+A^{op}\text{ infinite }+
+\Rightarrow
+A\text{ infinite }+.
+\]
+
+**撤回。**
+
+---
+
+## 39.2 裸 graph cycle
+
+错误：
+
+\[
+\text{graph cycle}
+\Rightarrow
+\text{homological return}.
+\]
+
+**撤回。**
+
+---
+
+## 39.3 periodic module 自动给 simple recurrence
+
+错误：
+
+\[
+M\text{ periodic}
+\Rightarrow
+\text{某 simple quotient periodic / recurrent}.
+\]
+
+**撤回。**
+
+---
+
+## 39.4 singular/Tate 自动等于 ordinary Ext
+
+错误：
+
+\[
+\text{singular recurrence}
+\Rightarrow
+\text{ordinary simple Yoneda recurrence}.
+\]
+
+**撤回。**
+
+---
+
+## 39.5 quotient witness 自动 lift
+
+错误：
+
+\[
+A/AeA\text{ infinite }+
+\Rightarrow
+A\text{ infinite }+
+\]
+
+无额外 Tor / stratifying / comparison 条件时不成立。
+
+---
+
+## 39.6 first defect 自动 bootstrap
+
+错误：
+
+\[
+H_r(K)\neq0
+\Rightarrow
+\exists q>r,\ H_q(K)\neq0.
+\]
+
+**被 actual family 反例推翻。**
+
+---
+
+## 39.7 singular nonzero 自动被固定 detector 看见
+
+错误：
+
+\[
+[f]\neq0\text{ in }D_{\rm sg}
+\Rightarrow
+\operatorname{Tor}^{\infty}(R_i,f)\neq0.
+\]
+
+**被反例推翻。**
+
+---
+
+## 39.8 recurrent detector 自动成为下一 infinite-pd source
+
+错误：
+
+\[
+r\in\Sigma_x
+\Rightarrow
+r\in I_\infty.
+\]
+
+**被 cyclic Nakayama \([3,4]\) 推翻。**
+
+---
+
+# 40. 为什么路线看起来换了很多次，但实际上是一脉相承的
+
+从历史上看，项目像是不断换语言：
+
+- stable Hom；
+- Ext；
+- Tor；
+- graph；
+- periodicity；
+- quotient；
+- derived quotient；
+- spectral sequence；
+- Rees torsion；
+- Postnikov；
+- incidence matrix；
+- source fork。
+
+但真正的问题一直没变：
+
+\[
+\boxed{
+\text{无限同调复杂度}
+\stackrel{?}{\Longrightarrow}
+\text{固定、可见的 simple-to-simple recurrent channel}.
+}
+\]
+
+每一次换工具，几乎都发生在同一个逻辑位置：
+
+### 第一阶段
+发现有无限复杂度。
+
+### 第二阶段
+尝试把它固定到 simple。
+
+### 第三阶段
+发现信息可能转移、漂移、被 cancellation、被 finite layer 吸收。
+
+### 第四阶段
+把“信息为什么丢失”本身编码成新对象：
+
+- deletion defect；
+- kernel；
+- Postnikov class；
+- Rees torsion；
+- source fork；
+- cross module。
+
+### 第五阶段
+再尝试证明这些 correction 不可能无限逃逸。
+
+因此研究不是随机游走，而是不断把“失败的地方”本身对象化。
+
+---
+
+# 41. 项目方法论上最大的进化
+
+早期思路更像：
+
+> 找一个漂亮 lemma，直接推出 arbitrary \(N\)。
+
+后期逐渐变成：
+
+\[
+\boxed{
+\text{反例校准}
+\to
+\text{最小模型}
+\to
+\text{标准型}
+\to
+\text{表示转换}
+\to
+\text{严格 frontier compression}.
+}
+\]
+
+其中最关键的转变有四个。
+
+## 41.1 不再把有限顶点当最终目标
+
+三顶点、四顶点只是实验室。
+
+目标是提炼 scale-free mechanism。
+
+## 41.2 不再把失败路线丢掉
+
+例如：
+
+- naive bootstrap false；
+- detector ≠ source；
+- singular nonzero ≠ detector nonzero；
+
+这些负结果直接定义了后面的正确命题形状。
+
+## 41.3 从“状态重复”转为“transport map”
+
+有限状态重复、标签重复、SCC 都不够。
+
+真正需要保存的是：
+
+\[
+\boxed{\text{actual map / operator / comparison data}.}
+\]
+
+## 41.4 MRS / Vault 防止历史断裂
+
+后期明确要求：
+
+- 每轮先查旧资产；
+- 保存 REFUTED；
+- 不重证；
+- Run 文件冻结；
+- 用方法库而不是只记结果。
+
+这是解决长期聊天上下文丢失的直接回应。
+
+---
+
+# 42. 截至 2026-10-01 的冻结状态
+
+## 已较稳定的资产
+
+- Gap A / Gap B taxonomy；
+- opposite-side \(+\)/co\(+\) 区分；
+- Vertex-Deletion Descent；
+- \(\operatorname{Tor}_1\) idempotent quotient vanishing；
+- Bounded Deletion-Defect Forcing；
+- periodic module nonnilpotent self-extension；
+- periodic-support core / Ext adjunction；
+- derived deletion \(S\otimes_D^{\mathbf L}S\) framework；
+- two-stage / Postnikov normal form；
+- Page–Torsion correspondence；
+- cycle-lift obstruction tower；
+- transfer-or-kernel-absorption；
+- finite-pd top peeling；
+- Universal Bi-Singular Root；
+- recurrent Betti support \(\Sigma_x\)；
+- Corrected Source Extraction；
+- Bi-Singular Source Fork；
+- Minimal Recurrent Source Core。
+
+## 已明确撤回/反驳
+
+- \(A^{op}\) infinite+ ⇒ \(A\) infinite+；
+- 裸 graph cycle ⇒ homological return；
+- periodic module ⇒ simple periodicity；
+- singular recurrence ⇒ ordinary Ext recurrence；
+- naive first-defect bootstrap；
+- singularly nonzero anchor ⇒ fixed detector sees it；
+- recurrent detector ⇒ next infinite-pd source；
+- whole-algebra triangular deduction；
+- unrestricted direct quotient lifting。
+
+## 当前主 frontier
+
+\[
+\boxed{
+\text{source / detector / Peirce carrier alignment}
+}
+\]
+
+以及与之绑定的：
+
+\[
+\boxed{
+\text{cross-module descent / coupling problem}.
+}
+\]
+
+更具体地：
+
+已知有 persistent detector：
+
+\[
+b\overset{\operatorname{Tor}^{\infty}}{\longrightarrow}r,
+\]
+
+也有 visible carrier：
+
+\[
+b\overset{\rm Peirce}{\longrightarrow}y,
+\]
+
+但 hypothetical failure 允许：
+
+\[
+r\neq y,
+\qquad
+e_bDe_r=0,
+\qquad
+e_bDe_y\neq0.
+\]
+
+现在必须证明：
+
+> 这种错位不可能在有限维代数中永久持续；
+
+或者真正构造一个能永久维持这种错位的反例 architecture。
+
+Universal Gap A 截至本文件冻结时仍：
+
+\[
+\boxed{\text{OPEN}.}
+\]
+
+---
+
+# 43. 这段研究史最值得保留的几条“因果链”
+
+## 因果链 A：KLS → opposite-side 纠错
+
+\[
+\text{terminal detector}
+\to
+A^{op}\text{ infinite }+
+\to
+\text{发现 }+\neq co+
+\to
+\text{KLS 分类重新开放}.
+\]
+
+---
+
+## 因果链 B：有限顶点 → derangement
+
+\[
+\text{三顶点 return}
+\to
+\text{四顶点 finite hub}
+\to
+\text{multi-top derangement}
+\to
+\text{source/detector/carrier separation}.
+\]
+
+---
+
+## 因果链 C：ordinary deletion → derived deletion
+
+\[
+A/AeA
+\text{ 不能自动 lift}
+\to
+\text{deletion defect}
+\to
+S\otimes_D^{\mathbf L}S
+\to
+\text{Postnikov / Rees}.
+\]
+
+---
+
+## 因果链 D：spectral sequence → Rees torsion
+
+\[
+\text{高页 differential}
+\to
+\text{screening}
+\to
+\text{Rees }t\text{-torsion}
+\to
+\text{unbounded torsion obstruction}.
+\]
+
+---
+
+## 因果链 E：naive source graph → Bi-Singular Fork
+
+\[
+\Sigma_x
+\to
+\text{误以为 detector 是下一 source}
+\to
+[3,4]\text{ Nakayama 反例}
+\to
+\text{composition-factor source extraction}
+\to
+\text{Bi-Singular Source Fork}.
+\]
+
+---
+
+# 44. 最后的整体评价
+
+这个项目真正积累下来的，并不是一堆互不相关的 lemma。
+
+它逐渐形成了一种统一的研究语言：
+
+\[
+\boxed{
+\text{复杂度}
+\to
+\text{recurrence}
+\to
+\text{detector}
+\to
+\text{transport}
+\to
+\text{visibility}
+\to
+\text{alignment}.
+}
+\]
+
+早期主要问：
+
+> 有没有 recurrence？
+
+现在的问题已经变成：
+
+> recurrence 在 source、detector、carrier、derived correction 之间传输时，是否可能永远错位？
+
+这说明研究前沿实际上已经比最初精确很多。
+
+即使 Universal Gap A 尚未解决，当前项目已经把一个非常模糊的“任意 \(N\)”问题，压缩成了几个明确的、可被反例审计的桥：
+
+1. detector–carrier alignment；
+2. cross-module finite/infinite-pd dichotomy；
+3. derived/Postnikov transport；
+4. ordinary visibility recovery；
+5. failure architecture 是否能无限维持。
+
+---
+
+# 45. 后续维护建议
+
+今后每次实质研究进展，都建议在本历史档案后追加一条：
+
+```text
+日期：
+节点：
+旧 frontier：
+本轮尝试：
+使用的方法：
+得到的新结果：
+被推翻的旧命题：
+新 frontier：
+对应 Run 文件：
+```
+这样可以避免项目再次出现“结果还在，但为什么得到它已经丢失”的情况。
+
+---
+
+**冻结日期：2026-10-01**
+
+**当前总状态：**
+
+\[
+\boxed{
+\text{Han counterexample 已知；
+KLS Gap A/B original-side 分类历史上曾重开；
+Universal Gap A 仍 OPEN；
+当前核心是 alignment + cross-module / derived coupling frontier。}
+}
+\]

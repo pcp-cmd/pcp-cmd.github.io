@@ -1,0 +1,624 @@
+# Run — Actual tensor nilpotence restores high ordinary Tor
+
+**Date:** 2026-10-03  
+**Researcher:** one main Codex researcher  
+**Evidence:** complete all-degree proof and normal adversarial self-audit;
+exact rational bounded calibration checks; not independently verified  
+**Global status:** Universal Gap A remains OPEN. No novelty claim is made.
+
+This continuation starts from T7/C066. It reuses the binary multibar and
+finite-bimodule-resolution corridor from the older Screening-Corridor and
+Long01 assets. It proves an explicit eventual **isomorphism** of ordinary
+simple-pair Tor, rather than only an additional counterexample condition.
+
+The hypothesis is actual derived tensor nilpotence of the graded negative
+cohomology bimodule, together with bounded negative degrees and perfectness
+over C^e. One-sided projectivity and odd parity are removed. Pure and mixed
+higher operations and binary negative products are allowed. The resulting
+ordinary bridge excludes this whole deletion class in a global
+vertex-minimal counterexample.
+
+An actual nonformal, eight-vertex algebra has a coupler projective on neither
+side and a genuine infinite-pd deleted source. It shows the explicit Tor
+cutoff is sharp. A second actual algebra has finite global dimension four
+despite a cycle in its coefficient-resolution correspondence graph. These
+calibrations keep actual tensor nilpotence separate from resolution-term
+support recurrence.
+
+## 1. Setup and exact hypotheses
+
+Use the retained connective derived quotient q of the actual finite-dimensional
+elementary algebra A at x. Let
+
+\[
+C=H^0(q)=A/Ae_xA,\qquad
+H=C\oplus\bigoplus_{d\ge1}M_d[d],\qquad M_d=H^{-d}(q),
+\]
+
+with the existing strictly unital, vertex-augmented minimal model. The
+projection p:H -> C is strict. For retained right/left simples R_z,L_y,
+the established derived-localisation comparison identifies ordinary A-Tor
+with the H bar homology. This does not assert that the ordinary A -> C
+quotient is a homological epimorphism.
+
+Assume integers a>=1, D>=0, ell>=1 with:
+
+1. M_d=0 for d>a;
+2. pd_{C^e} M_d<=D for every nonzero layer;
+3. the graded C-bimodule
+   \[
+   \mathcal M=\bigoplus_{1\le d\le a}M_d[d]
+   \quad\hbox{satisfies}\quad
+   \mathcal M^{\otimes_C^{\mathbf L}\ell}=0.
+   \tag{1.1}
+   \]
+
+The tensor in (1.1) uses the ordinary C-bimodule actions on the graded
+cohomology, with zero differential. It does not include its A_infinity
+operations. It is an equality in D(C^e), not nilpotence of the binary
+negative ideal or of the ordinary radical.
+
+Finite a makes the direct sum finite. Expansion of a derived tensor power
+therefore shows that (1.1) is equivalent to vanishing of every ell-letter
+derived tensor word in the M_d. Every word with p>=ell is zero by
+associativity. No actual layer is assumed projective on either side.
+
+Set
+
+\[
+W=a(\ell-1),\qquad U=(\ell-1)(a+1+D).
+\tag{1.2}
+\]
+
+If all layers vanish, the bar comparison is an isomorphism in every degree.
+The displayed bounds also hold with ell=1 and U=W=0, though they are not
+optimal in that degenerate case.
+
+## 2. A bounded homology kernel
+
+For a retained pair let
+
+\[
+N=\ker\bigl(B_H(R_z,L_y)\longrightarrow B_C(R_z,L_y)\bigr).
+\tag{2.1}
+\]
+
+Thus N consists of bar words containing at least one negative letter.
+Every operation preserves this property: m_2 preserves total negative
+weight; m_r, r>=3, raises it by r-2. In particular (2.1) is a short exact
+sequence of actual chain complexes. Use the existing negative-weight
+filtration, with an M_d letter of weight d and homological bar degree d+1.
+
+### Lemma 2.1 — The binary first page has a finite degree and weight range
+
+For the binary differential b_2 on N, its homology is zero in negative
+weight >W and in total homological degree >U.
+
+#### Proof
+
+There can be nonzero binary products of two negative letters. To compute
+this first page, filter the **binary complex only** by the number p>=1 of
+negative letters. Binary C products and C-actions preserve p, whereas
+negative-negative products lower it by one. This is a valid finite
+filtration in each total chain degree and in each fixed weight.
+
+For an ordered list d_1,...,d_p, its associated multibar homology is
+
+\[
+R_z\otimes_C^{\mathbf L}M_{d_1}\otimes_C^{\mathbf L}\cdots
+\otimes_C^{\mathbf L}M_{d_p}\otimes_C^{\mathbf L}L_y,
+\tag{2.2}
+\]
+
+with homological shift sum_i(d_i+1), and weight sum_i d_i. This is the
+existing multibar computation of the C blocks between the negative
+letters. It is a homological statement, not a support-path count.
+
+Take a length-at-most-D projective C-bimodule resolution of each M_d.
+The tensor of elementary terms has the form
+
+\[
+(Ce_i\otimes e_jC)\otimes_C(Ce_k\otimes e_lC)
+\cong Ce_i\otimes(e_jCe_k)\otimes e_lC.
+\tag{2.3}
+\]
+
+It is again C^e-projective. The bounded tensor complex represents the
+derived tensor word and has length <=pD. Tensoring its terms first with
+R_z yields right C-projectives; tensoring finally with L_y computes
+(2.2). Its unshifted homology lies in degrees 0,...,pD.
+
+All p>=ell associated terms are zero by (1.1). Every remaining term has
+
+\[
+\sum_i d_i\le ap\le W,\qquad
+\sum_i(d_i+1)+pD\le p(a+1+D)\le U.
+\tag{2.4}
+\]
+
+Finite, degreewise convergence of this auxiliary filtration proves both
+bounds for the actual b_2 homology of N, including its negative-negative
+products. QED.
+
+The auxiliary letter-count filtration is only a computation of b_2.
+It is not claimed to filter all higher operations: those can change the
+number of negative letters differently. Return now to negative weight.
+
+### Lemma 2.2 — Higher operations cannot restore unbounded kernel homology
+
+For the full actual A_infinity bar differential,
+
+\[
+H_n(N)=0\quad\hbox{for every }n>U.
+\tag{2.5}
+\]
+
+#### Proof
+
+The first page of N's negative-weight spectral sequence is the binary
+homology from Lemma 2.1. All its groups of total degree >U vanish.
+Subsequent pages are subquotients, so the same holds on every page.
+
+In total chain degree n there are finitely many bar letters, finitely
+many weights, and finitely many basis words. The filtration is finite
+degreewise, hence converges to the homology of N without a completion
+or inverse-limit assumption. The associated graded of H_n(N) is zero
+when n>U, proving (2.5). QED.
+
+No parity, formality, operator finite generation or regular injective
+dimension enters this argument.
+
+## 3. Ordinary Tor/Ext bridge and a uniform screening bound
+
+### Theorem 3.1 — Eventual ordinary Tor isomorphism
+
+For every retained pair,
+
+\[
+\boxed{
+\varepsilon_n:\operatorname{Tor}^A_n(R_z,L_y)
+\ \xrightarrow{\;\cong\;}\
+\operatorname{Tor}^C_n(R_z,L_y)
+\quad\hbox{for }n>U+1.}
+\tag{3.1}
+\]
+
+The ordinary comparison is also injective for every n>U.
+
+#### Proof
+
+The exact sequence (2.1) gives
+
+\[
+H_n(N)\longrightarrow\operatorname{Tor}^H_n(R_z,L_y)
+\xrightarrow{\varepsilon_n}\operatorname{Tor}^C_n(R_z,L_y)
+\longrightarrow H_{n-1}(N).
+\tag{3.2}
+\]
+
+For n>U+1 both outer terms vanish by Lemma 2.2, giving the isomorphism.
+For n>U the first outer term vanishes, giving injectivity.
+Use the already established ordinary A/H comparison. The projection is
+the natural comparison induced by the actual A -> C quotient. QED.
+
+Dualising finite-dimensional simple-pair complexes identifies
+D Tor^A_n(R_z,L_y) with Ext^n_A(L_y,L_z). Thus the natural inflation
+
+\[
+\operatorname{Ext}^n_C(L_y,L_z)\longrightarrow
+\operatorname{Ext}^n_A(L_y,L_z)
+\tag{3.3}
+\]
+
+is an isomorphism in the same degrees. These are ordinary groups on both
+sides. No singular, stable or Tate comparison is being used.
+
+### Theorem 3.2 — Uniform negative-weight screening-page bound
+
+Every quotient-edge class which dies in the existing negative-weight
+spectral sequence dies by a page r<=W, in the convention that m_3 raises
+weight by one.
+
+#### Proof
+
+Lemma 2.1 makes every positive-weight first-page column above W zero.
+All later pages retain those zero columns. A page-r differential from
+weight zero has target weight r, so it is zero for r>W. QED.
+
+This concerns negative weight, not the local-singular excursion filtration.
+No excursion bound is inferred.
+
+### Corollary 3.3 — An entire minimal-counterexample deletion class closes
+
+If C is infinite + under the hypotheses of Section 1, A is infinite +.
+Indeed a fixed pair with e_yCe_z!=0 and infinitely many nonzero quotient
+Tor degrees survives (3.1) after deletion of finitely many degrees.
+The same reverse Peirce support is nonzero in A.
+
+Consequently a globally vertex-minimal bad algebra cannot have this
+deletion at an infinite-pd vertex. The established actual-tail argument
+C058 gives gldim C=infinity under the global non-+ assumption. Vertex
+minimality then supplies C infinite +, contradicting (3.1).
+
+This excludes bounded perfect, actually tensor-nilpotent negative
+cohomology, including nonprojective layers on both sides, mixed
+negative parities and nonzero higher operations. It does not prove
+tensor nilpotence for a general counterexample.
+
+### Relation to the T7 bound
+
+For one layer M[a], tensor nilpotence of index ell gives W=a(ell-1)
+and ordinary isomorphism above (a+1+D)(ell-1)+1. When an actual
+one-sided-projective multiplicity matrix is acyclic, C065 supplies
+ell<=q_0. Thus its perfect acyclic case has eventual isomorphism,
+strengthening the earlier surjectivity conclusion without changing
+that earlier proof. Section 2 also handles many layers and nonzero
+binary negative products; the one-layer strict module triangle is
+not extrapolated to them.
+
+## 4. Actual 24-dimensional nonformal calibration
+
+Work over any field. There are eight vertices x,y,0,1,2,3,4,5.
+We use path notation: a basis element with source s and target t
+belongs to e_t A e_s, and the product l r follows r then l.
+
+The radical basis consists of:
+
+- c:y->y and t_i:i->i+1 for i=0,...,4;
+- i_yy:y->y, i_y1:1->y, i_3y:y->3,
+  i_31:1->3 and i_4y:y->4;
+- b_y:x->y, b_3:x->3, h:x->4;
+- a_y:y->x and a_1:1->x.
+
+Together with the eight idempotents these give dimension 24.
+The entire nonzero radical-product table is
+
+\[
+\begin{array}{lll}
+c^2=i_{yy},&t_2t_1=i_{31},&t_3b_3=h,\\
+b_ya_y=i_{yy},&b_ya_1=i_{y1},&b_3a_y=i_{3y},\\
+b_3a_1=i_{31},&ha_y=i_{4y},&t_3i_{3y}=i_{4y}.
+\end{array}
+\tag{4.1}
+\]
+
+Every other radical product is zero. Associativity holds in every
+characteristic: the only nonzero triple of radical basis elements is
+(t_3,b_3,a_y), and both parenthesisations give i_4y. All other triples
+have both products zero; idempotent triples follow the displayed
+Peirce endpoints. In particular this is an actual algebra, not
+merely a hypothetical A_infinity model.
+
+Delete x. Its local corner is k. The quotient C is the direct product
+of dual numbers at y and the radical-square-zero chain 0->1->...->5.
+The coupling ideal has the five i-basis elements. The linker map
+
+\[
+U\otimes_k V\longrightarrow fAf,\qquad
+U=\langle b_y,b_3,h\rangle,\quad V=\langle a_y,a_1\rangle
+\tag{4.2}
+\]
+
+has rank five and kernel generated by h tensor a_1. The normalized
+derived quotient has only degrees 0 and -1. Its negative homology is
+
+\[
+M=k v\cong L_4\otimes_k R_1.
+\tag{4.3}
+\]
+
+Every radical-C action on M is zero.
+
+### 4.1 Neither-sided projectivity, perfectness and actual tensor nilpotence
+
+The left/right minimal C-resolutions are
+
+\[
+0\longrightarrow Ce_5\xrightarrow{\,e_5\mapsto t_4\,}Ce_4
+\longrightarrow L_4\longrightarrow0,
+\]
+\[
+0\longrightarrow e_0C\xrightarrow{\,e_0\mapsto t_0\,}e_1C
+\longrightarrow R_1\longrightarrow0.
+\tag{4.4}
+\]
+
+Both have a nonzero radical map. Thus M is nonprojective on both sides.
+Their tensor product over k is the minimal C^e-resolution of M:
+
+\[
+\begin{split}
+P_0&=Ce_4\otimes e_1C,\\
+P_1&=(Ce_5\otimes e_1C)\oplus(Ce_4\otimes e_0C),\\
+P_2&=Ce_5\otimes e_0C.
+\end{split}
+\tag{4.5}
+\]
+
+Its dimensions are (4,4,1) and differential ranks (3,1).
+Exactness follows from tensoring the two exact resolutions over a field;
+both tensor differentials lie in the C^e radical. Hence pd_{C^e} M=2
+over every field.
+
+Tensoring the left resolution in (4.4) with R_1 gives the zero complex,
+since R_1 e_4=R_1 e_5=0. Therefore
+
+\[
+M\otimes_C^{\mathbf L}M
+\cong L_4\otimes_k
+(R_1\otimes_C^{\mathbf L}L_4)\otimes_k R_1=0.
+\tag{4.6}
+\]
+
+This proves the actual derived condition, not just an ordinary tensor
+or support assertion.
+
+### 4.2 Nonzero higher operation and sharp screening cutoff
+
+Choose lifts of the C radical in A and the contraction of the five
+i-elements through (4.2). Since t_2t_1=b_3a_1, its null homotopy is
+b_3 h_x a_1. Multiplication by t_3 gives
+h h_x a_1, the kernel generator v. Degree leaves only pure m_3 as a
+possible higher operation. Choosing the sign of v in the usual suspended
+bar convention gives
+
+\[
+m_3(t_3,t_2,t_1)=v.
+\tag{4.7}
+\]
+
+All other pure radical triples have zero transferred output: the only
+other nonzero lifted radical product is c^2=b_ya_y, and c b_y=a_y c=0;
+t_3 applied to the homotopy of t_2t_1 is the sole surviving kernel
+term. Every mixed higher output has degree <=-2 and vanishes.
+
+The normalized relative Hochschild differential into M is zero,
+because C has square-zero radical and both radical actions on M
+are zero. The nonzero cochain (4.7) is therefore not a coboundary.
+The model is augmented nonformal over every field and admits no
+identity-linear section C -> H.
+
+The existing bar kernel has exactly the four negative-letter words
+
+\[
+v,\qquad v|t_0,\qquad t_4|v,\qquad t_4|v|t_0
+\tag{4.8}
+\]
+
+in degrees 2,3,3,4. Its differential is zero. Each is killed in the
+whole bar complex by the corresponding pure-C word containing
+t_3|t_2|t_1. The quotient classes die on the first weight page:
+
+| Ordinary pair | Quotient degree | Kernel target |
+| --- | ---: | --- |
+| (R_4,L_1) | 3 | v |
+| (R_4,L_0) | 4 | v\|t_0 |
+| (R_5,L_1) | 4 | t_4\|v |
+| (R_5,L_0) | 5 | t_4\|v\|t_0 |
+
+Signs are units +/-1 and do not affect these conclusions in any
+characteristic. In particular
+
+\[
+\operatorname{Tor}^C_5(R_5,L_0)=k,\qquad
+\operatorname{im}\varepsilon_5(R_5,L_0)=0.
+\tag{4.9}
+\]
+
+Here a=1, D=2, ell=2, so W=1 and U=4. Theorem 3.1 says
+epsilon_n is an isomorphism for n>5. Formula (4.9) shows that the
+strict cutoff cannot be lowered to n>=5 for these same parameter
+values. The table describes finite low-degree screening, not an
+unbounded excursion example.
+
+### 4.3 A genuine infinite-pd anchor, and ordinary supported survival
+
+There is an actual unital ordinary algebra retract
+
+\[
+A\longrightarrow D=A_6\times k^6\longrightarrow A,
+\tag{4.10}
+\]
+
+retaining the eight idempotents and c,i_yy,a_y,b_y, and sending every
+other radical basis element to zero. Table (4.1) verifies both
+multiplicativity and the identity composite. The six-dimensional
+component A_6 has Cartan matrix
+
+\[
+\begin{pmatrix}3&1\\1&1\end{pmatrix}
+\quad\hbox{in the order }(y,x).
+\tag{4.11}
+\]
+
+If L_x had finite pd over A_6, its K_0 class would be an integer
+linear combination u[P_y]+v[P_x], giving
+3u+v=0 and u+v=1. These force 2u=-1, impossible in the integer
+Grothendieck group. Thus pd_D L_x=infinity. The vertex-preserving
+ordinary bar retract (4.10) injects its ordinary simple-pair Tor
+into A-Tor, proving pd_A L_x=infinity.
+
+At the retained y pair every pure c word survives:
+
+\[
+\operatorname{Tor}^A_n(R_y,L_y)\cong
+\operatorname{Tor}^C_n(R_y,L_y)=k\quad(n\ge0).
+\tag{4.12}
+\]
+
+No t- or v-word can join y back to y; the only transferred higher
+operation is (4.7) on the chain. This is a supported ordinary tail.
+A is infinite +, with a genuine deleted infinite-pd source; it is
+not a counterexample. Nonformality and nonprojectivity do not prevent
+the tensor-nilpotence bridge.
+
+## 5. Actual resolution-graph cycle with zero derived tensor square
+
+This is a **different** nine-dimensional algebra from C063's
+two-vertex nonformal example. It has four vertices x,0,1,2.
+Take radical basis
+
+\[
+\alpha:0\to1,\quad\beta:1\to2,\quad
+\gamma:0\to2,\quad a:2\to x,\quad b:x\to0
+\]
+
+with sole nonzero radical product beta alpha=gamma. All radical
+triples vanish, so associativity holds over any field.
+
+Deleting x gives the hereditary three-vertex line algebra C, and
+the zero linker multiplication gives the formal retained model
+
+\[
+H=C\oplus M[1],\qquad M=L_0\otimes_k R_2.
+\tag{5.1}
+\]
+
+The left/right minimal resolutions use respectively
+Ce_1 -> Ce_0 by alpha and e_1C -> e_2C by beta. Their tensor
+product is a minimal C^e-resolution with dimensions (9,12,4)
+and ranks (8,4). In particular M is nonprojective on both sides
+and pd_{C^e} M=2.
+
+But R_2 tensor_C (Ce_1 -> Ce_0) is the zero complex, so
+M tensor_C^L M=0. Its resolution's elementary term
+P_0=Ce_0 tensor e_2C has a self-loop in the Long01 correspondence
+graph, because
+
+\[
+e_2Ce_0=k\gamma\ne0.
+\tag{5.2}
+\]
+
+The tensor square of the *term* is nonzero while the tensor square
+of the resolved *object* is zero. Differentials remove that term
+recurrence. This is an actual counterexample to inferring derived
+tensor persistence or an ordinary Tor tail from that graph cycle.
+It does not contradict Long01's valid implication from actual
+unbounded tensor homology to a resolution-term cycle.
+
+### Finite all-degree certificate
+
+The actual simple minimal resolutions have the projective-vertex lists
+
+\[
+\begin{array}{c|c|c}
+\text{simple}&(P_0,P_1,\ldots)&\text{successive generator images}\\
+L_0&(0,1)&(\alpha)\\
+L_x&(x,0,1)&(b,\alpha)\\
+L_2&(2,x,0,1)&(a,b,\alpha)\\
+L_1&(1,2,x,0,1)&(\beta,a,b,\alpha).
+\end{array}
+\tag{5.3}
+\]
+
+For example rad(P_0) is P_1 via alpha, while rad(P_1)=L_2,
+rad(P_2)=L_x and rad(P_x)=L_0. These basis identifications verify
+all exactness assertions in (5.3); every map has radical image.
+Thus the algebra has global dimension exactly four over every
+field. It has no infinite ordinary Tor pair despite the graph
+cycle (5.2). Its deleted source has finite pd two, explicitly
+separating it from an infinite-pd-anchored counterexample.
+
+## 6. Reproducible bounded evidence
+
+Frozen files are in Tensor-Nilpotence-Evidence/:
+task.md, verify_tensor_nilpotence.py, tensor-nilpotence-result.json,
+computation-record.json.
+
+The final exact local Python 3.14.3 execution passed:
+
+- 13,824 A24 and 729 four-vertex A9 associativity triples;
+  2,197 and 216 quotient triples;
+- linker-kernel and actual one-sided/bimodule resolution checks,
+  including literal zero middle derived tensor complexes;
+- all 64 A24 and 16 A9 ordinary simple pairs through degree 5,
+  with incoming degree 6: 480 Tor records;
+- all 49 and 9 retained-model pairs through degree 7, with incoming
+  degree 8: 464 records;
+- 2,200 differential-square checks and 2,200 projection-chain-map
+  checks across the four bar computations;
+- 348 ambient/model homology and quotient-map rank comparisons;
+- all four displayed first-page deaths and the sharp degree-5 failure;
+- 207 A-linearity checks, exact ranks and minimality for the finite
+  four-vertex simple resolutions, matching every computed ambient
+  Tor value;
+- 576 actual multiplication checks of the ordinary retract (4.10).
+
+Projection ranks are computed on cycles modulo quotient boundaries,
+using the chain-surjectivity of the actual quotient map; they are
+not inferred merely from total Tor dimensions. Right-simple and
+left-simple labels are explicit in the JSON.
+
+Two initial implementation assertions exposed and corrected
+projection of the deleted vertex's degree-zero empty word, and
+reversed endpoint/simple labels. The final code, full output and
+hashes refer only to the corrected execution. Neither repair was
+treated as a mathematical verdict.
+
+Code SHA-256:
+2f7e6e82296204e55598230f9acb6adf719e005274627e4337c875ad8b63eb36.
+Result SHA-256:
+6c32983804ab88435be008142bb70ca1c81e62f37989c6660c1408724d2db457.
+
+The computation-record schema/artifact validator passed. That validates
+record structure and reproducibility, not mathematical semantics.
+The generic theorem and the all-degree/all-characteristic calibrations
+use Sections 2--5's proofs. The rational bar checks are bounded,
+same-author self-audits, not independent verification.
+
+## 7. Normal adversarial audit
+
+1. **Actual nilpotence:** (1.1) concerns cohomology bimodules in D(C^e).
+   Radical nilpotence, zero binary negative products, finite algebra
+   dimension and cycles/noncycles of arbitrary resolution terms do
+   not substitute for it. Section 5 supplies an actual graph counterexample.
+2. **All layers and a finite ceiling:** every nonzero negative layer
+   is included. Bounded tensor-word length with unbounded letter
+   degrees does not yield W or U. C066's general unbounded-cohomology
+   remainder is not closed by this theorem.
+3. **Bimodule perfectness:** the endpoint corridor uses actual
+   C^e-projective resolutions. Separate finite pd is not substituted.
+4. **Binary products and filtration:** negative-negative products
+   can lower the auxiliary count. This auxiliary filtration is used
+   only for b_2; the full comparison uses the existing negative
+   weight. No unsupported count filtration of mixed operations is used.
+5. **Strong convergence:** positive bar degrees bound length and
+   weight in each degree. No completed bar construction, inverse
+   limit or uniform finite global dimension of C is assumed.
+6. **Index and sharpness:** N vanishes above U, so isomorphism needs
+   n>U+1. The actual A24 failure at U+1=5 prevents dropping the extra
+   one or changing the strict inequality.
+7. **Ordinary and supported:** localisation supplies ordinary A-Tor;
+   (3.2) compares it to ordinary C-Tor. A fixed reverse-supported
+   C pair keeps the same support in A. No naked cycle, stable group
+   or opposite transfer appears in this bridge.
+8. **Section and descent:** the theorem does not construct an algebra
+   section, assert formality or prove inheritance under another
+   deletion. A24 has a nonzero section obstruction. The stated
+   global exclusion uses vertex minimality, not an unproved new
+   class-wide descent.
+9. **Calibration scope:** A24 is infinite + and its screening is
+   bounded; A9_four has finite gldim and finite-pd source. Neither
+   is a universal counterexample or an unbounded-excursion model.
+10. **Prior assets and verification:** the multibar/corridor input is
+    reused, not presented as a new universal Noetherian theorem.
+    All conclusions here remain self-audited.
+
+## 8. Continuing the global task
+
+This closes an ordinary supported-weight/local-trivial deletion class
+beyond one-sided-projective couplers. It also strengthens C065's
+perfect acyclic conclusion to an eventual all-pair isomorphism.
+
+The remaining question is a closure implication for the actual
+non-nilpotent/nonperfect residue, or a global descent which forces
+the hypotheses above. Merely replacing (1.1) by another support
+graph does not help: Section 5 proves the failure concretely.
+
+The general nonprojective local-trivial coupler, nonperfect acyclic
+bounded screening, mixed-parity many-layer case, unbounded higher-output
+Target-B frontier and local-singular bounded-excursion Target A remain
+open. No general tensor nilpotence, finite negative ceiling or
+ordinary-section inheritance for these newly treated deletions
+has been established. They remain on the global research map.

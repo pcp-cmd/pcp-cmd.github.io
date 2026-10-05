@@ -1,0 +1,22 @@
+# Finite-complement perfect-corner ordinary bridge
+
+After T21 disproved literal pruning of recurrent finite-pd/finite-factor
+images, test a global bounded-defect condition. Let deleted LEFT simples
+have pd at most d and require the actual corner bimodule Ae to have
+RIGHT B=eAe pd t finite. Prove ordinary ALL-module Ext restriction and
+dual Tor isomorphism for n>d+t+1, exact retained infinite labels and
+badness-preserving strict dimension descent. Prove the RIGHT version
+directly. Do not substitute a quotient map or singular/Tate comparison.
+
+Certify a literal arbitrary-p triangular/Nakayama calibration with
+regular right couplers: finite pd d=1, actual Ae right corner pd t=0,
+cutoff N=2 sharp at the mixed degree-two Tor pair. It need not satisfy
+projective-cover closure on either side. Use actual minimal resolutions
+on both sides and integral all-field basis inverses.
+
+Deliverables: verify_perfect_corner.py, perfect-corner-result.json,
+computation-record.json and separate T22 proof Run. Finite p=3,5,8
+instances supplement the all-p/all-module written proof. The code reuses
+frozen helper definitions from T21 without executing their old main
+computations; all dependencies are hashed. Same-author evidence, NOT
+independent verification. Universal Gap A stays OPEN.

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-04T03:02:08.445762+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "6d4eca7250eb588175b67bebc42542dd4c9a7f56a0c244645037da3de9c38514",
+    "object": "Actual ordinary tensor-factor descent and arbitrarily high finite-pd complements",
+    "deliverables": [
+      "verify_tensor_factor.py",
+      "tensor-factor-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "Factors are elementary over the SAME field; the tensor semisimple quotient is split.",
+      "The tensor of actual minimal resolutions is an exact ordinary resolution with radical differential, hence minimal.",
+      "Ordinary field Kunneth and literal Peirce tensor factorisation prove the supported tail formula.",
+      "A bad product has a bad strictly smaller factor only for an ACTUAL decomposition with nontrivial factor dimensions.",
+      "Supported cutoff is inherited without loss; gd and supported cutoff are separate quantities.",
+      "Tensor powers of the frozen seven-dimensional factor have exactly one finite-pd label of pd r on each separately stated side.",
+      "Those factors have no shallow simple and no eligible closed/perfect finite-complement block, but are already infinite +.",
+      "Dimension-49 actual finite resolutions terminate at pd two; selected other minimal terms test the tensor formula.",
+      "Dimension-42 sparse tensor has genuine physical zero entries and a supported three-periodic diagonal by the frozen factor simple syzygies.",
+      "Infinite conclusions come from written exact minimal tensor resolutions and frozen factor kernel returns, never a bounded Betti prefix.",
+      "Same author and shared helpers are not independent verification."
+    ],
+    "domain": "Elementary finite-dimensional actual tensor algebras over one field, sided minimal projective resolutions and physically supported ordinary Tor",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Exact literal multiplication tables and Fraction minimal-cover kernels with integral basis inverses"
+      ],
+      "existence_evidence": "verify_tensor_factor.py checks actual tensor tables, physical factorisation and sided minimal covers.",
+      "local_availability": "available",
+      "availability_evidence": "Actual local successful execution under 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "selection_reason": "Actual integral covers verify the high-finite-pd calibration; the arbitrary-factor supported theorem is a separate ordinary proof.",
+    "fallback_reason": "Reused same-session inventory: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python through math-science-computation observer_run.py",
+    "command_or_input": "python -B verify_tensor_factor.py --project-root PROJECT_ROOT --out tensor-factor-result.json",
+    "code_artifact": "verify_tensor_factor.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_tensor_factor.py",
+      "sha256": "f950e52c5d8bf91c892ebdd08a5a3f6142d528eb5e245aa76326a84ac63a50ca"
+    },
+    {
+      "role": "result",
+      "path": "tensor-factor-result.json",
+      "sha256": "30f89b21dd387390bcc031d997d7fdfd41f884e37cf6470c788a7835a067b2eb"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "result_artifact": "tensor-factor-result.json",
+    "summary": "Dimension-49 and sparse dimension-42 actual tensor tables passed 310288 associativity triples, 13 actual minimal covers and 156 integral basis inverses. Finite LEFT/RIGHT tensor-square simple resolutions terminate at pd two; all-r/all-degree claims have a separate actual ordinary tensor proof."
+  },
+  "verification": {
+    "methods": [
+      "Full basis associativity, actual tensor basis and literal Peirce product dimensions",
+      "Actual LEFT/RIGHT minimal covers, terminating pd-two terms and tensor Betti multiplicities",
+      "Integral top/radical and exact-sequence bases with integer inverses",
+      "Separate ordinary exact minimal tensor resolution, Kunneth and sided pd proofs",
+      "Normal mathematical adversarial self-audit and frozen dependency hash checks",
+      "Computation record schema/artifact integrity validation"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact rational/integer arithmetic; no numerical residual.",
+    "limitations": [
+      "Same author and seven frozen shared dependencies, NOT independent verification.",
+      "Finite actual minimal Betti prefixes never certify infinity; the written ordinary tensor proof and frozen actual factor returns do.",
+      "No product-module recurrent kernel isomorphism was checked or claimed.",
+      "Arbitrary r and all-field conclusions require the separate tensor resolution and integral base-change arguments.",
+      "The tensor-power examples are already infinite +; they do not refute a full-badness-specific shallow-vertex or deletion alternative.",
+      "A tensor decomposition is not inferred from a Peirce matrix or singular information.",
+      "Initial staging prefix-selection syntax failure was corrected before the successful execution; no canonical asset was affected.",
+      "Record validation certifies schema/hashes, not independent mathematical semantics.",
+      "Backend inventory reused from the same session; no remote or paid backend."
+    ]
+  }
+}

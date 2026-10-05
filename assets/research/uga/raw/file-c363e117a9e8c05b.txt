@@ -1,0 +1,94 @@
+import argparse
+from fractions import Fraction as F
+from itertools import product
+from hashlib import sha256
+import json
+from pathlib import Path
+import sys
+sys.dont_write_bytecode = True
+parser=argparse.ArgumentParser()
+parser.add_argument('--project-root',type=Path,required=True)
+parser.add_argument('--out',type=Path,required=True)
+args=parser.parse_args()
+helpers=args.project_root/'toolbox/Imported-Outputs'
+sys.path.insert(0,str(helpers))
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+import syzygy_system_certificate as ss
+
+modules=[(s,l) for l in [1,2,3] for s in [0,1]]
+units=[(i,i,0) for i in range(6)]
+homs=[(i,j,p) for i,(s,l) in enumerate(modules)
+      for j,(t,m) in enumerate(modules)
+      for p in range(max(0,m-l),m) if (t+p)%2==s]
+basis=units+[h for h in homs if h not in units]
+loc={h:i for i,h in enumerate(basis)}
+names=[f'h{i}_{j}_{p}' for i,j,p in basis]
+def mul(i,j):
+    a,b,p=basis[i]
+    c,d,q=basis[j]
+    return None if b!=c or p+q>=modules[d][1] else loc[a,d,p+q]
+checks=0
+for i,j,k in product(range(len(basis)),repeat=3):
+    ij,jk=mul(i,j),mul(j,k)
+    assert (None if ij is None else mul(ij,k))==(None if jk is None else mul(i,jk))
+    checks+=1
+
+def payload(kept):
+    verts=[i for i in range(6) if i in kept]
+    vi={v:i for i,v in enumerate(verts)}
+    radical=[i for i in kept if i>=6]
+    table={'vertices':len(verts),'base_vertex':0,
+      'radical_basis':[{'name':names[i],'left':vi[basis[i][0]],'right':vi[basis[i][1]]} for i in radical],
+      'radical_products':[]}
+    for i,j in product(radical,repeat=2):
+        out=mul(i,j)
+        if out is not None and out in kept:
+            table['radical_products'].append({'left':names[i],'right':names[j],'value':{names[out]:1}})
+    return table,verts
+
+def quotient(deleted):
+    killed=set(deleted)
+    old=-1
+    while len(killed)!=old:
+        old=len(killed)
+        for i in list(killed):
+            for j in range(len(basis)):
+                for out in [mul(i,j),mul(j,i)]:
+                    if out is not None:killed.add(out)
+    kept=[i for i in range(len(basis)) if i not in killed]
+    table,verts=payload(kept)
+    return rk.Algebra(table),verts,kept,table
+
+def audit(a,v,max_degree=12):
+    current=sr.Module.simple(a,v)
+    rows=[]
+    verdict='unresolved'
+    cert=None
+    for n in range(max_degree+1):
+        top=list(map(len,current.top_lifts()))
+        if not any(top):
+            verdict='finite';cert={'pd':n-1};break
+        if sum(current.dimensions)>200:break
+        split=current.simple_summand_counts()
+        rows.append({'degree':n,'dimensions':current.dimensions,'top':top,'split':split})
+        if n>0 and split[v]>0:
+            verdict='infinite_actual_split_return'
+            cert={'return_degree':n,'simple_summand_count':split[v]};break
+        current,_=current.syzygy()
+    return {'simple':v,'verdict':verdict,'certificate':cert,'rows':rows}
+
+reports=[]
+for deleted in [[],[0],[1],[2],[3],[4],[5],[4,5]]:
+    a,verts,kept,table=quotient(deleted)
+    entries=[audit(a,v) for v in range(a.vertices)]
+    reports.append({'deleted_original_labels':deleted,'retained_original_labels':verts,
+       'dimension':len(kept),'entries':entries,'algebra_payload':table})
+    print(json.dumps({'deleted':deleted,'dimension':len(kept),
+       'verdicts':[(verts[e['simple']],e['verdict'],e['certificate']) for e in entries]}),flush=True)
+result={'status':'exploratory-complete','independent_verification':False,
+  'full_basis_associativity_triples':checks,'modules':modules,
+  'dependencies':{f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest() for n in
+    ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']},
+  'reports':reports,'scope':'exact Q minimal covers, finite termination or actual split return; no cutoff-infinity inference'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

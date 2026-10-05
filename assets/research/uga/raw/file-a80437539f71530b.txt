@@ -1,0 +1,25 @@
+# Exact calibration — ordinary graded Cartan and filtered transfer
+
+Reuse the frozen project actual-cover helpers and C116 normal words. Check actual
+homogeneous minimal covers, integer Euler/Jacobi orientation, a legitimate
+weighted B14 grading, and a literal nonmonomial Loewy-five Frobenius calibration.
+The final extension checks all actual A14 filtered products and the explicit
+bar cancellation used to delimit associated-graded transfer.
+
+The final script/result are byte-identical copies of the successful temporary
+execution. Reproduce with the selected Python and:
+
+    python -B verify_graded_cartan.py --project-root PROJECT_ROOT --out RESULT.json
+
+Shared dependencies: Carrier-Lemma-Evidence/verify_carrier_lemma.py definitions
+before its p-loop; toolbox/Imported-Outputs/return_kernel_certificate.py,
+syzygy_return_certificate.py and syzygy_system_certificate.py; the frozen
+Global-Route-Audit-Evidence/result.json normal-word input.
+
+The result keeps actual graded cover/kernel maps and coordinate degrees, integer
+polynomials/trace coefficients, actual automorphism/product checks, and the
+weighted A14 filtration. The finite Betti prefix establishes neither Koszulity
+nor persistence. The separate Run gives the all-degree ordinary proof, strict
+spectral comparison assumptions, and any-field argument. No independence,
+formal MRS acceptance, Hochschild persistence in positive characteristic,
+routine checksums or legacy hash-schema validation.

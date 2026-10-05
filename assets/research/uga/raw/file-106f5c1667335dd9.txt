@@ -1,0 +1,1302 @@
+# Run A Continuation — Actual-Operator Generation Frontier
+## Universal Gap A / Perfect-Bimodule Derived-Deletion Branch
+
+**Research system:** Native MRS  
+**Continuation basis:** frozen `Run-A-Long01.md` + T0 packet only  
+**Web / external papers / non-T0 Vault / other Run / extra Agent:** not used  
+**Completion status:** `MAJOR_FRONTIER_COMPRESSION`
+
+---
+
+# 0. Scope of this continuation
+
+This continuation does **not** reprove the previously VERIFIED localized finite-state torsion theorem.
+
+That theorem is used as a frozen asset:
+
+> For \(V=k[t]_{(t)}\), if a graded localized Rees-homology tail is generated from finitely many homogeneous seeds by finitely many homogeneous actual \(V\)-linear operators, and all sufficiently high graded pieces are \(V\)-torsion, then their \(t\)-torsion exponents are uniformly bounded.
+
+Combined with the T0 screening theorem, such a uniform bound closes the relevant minimal-counterexample branch.
+
+The present continuation studies only the missing step:
+
+\[
+\boxed{
+\text{Does the actual bar / tensor-power structure force finite actual-operator generation?}
+}
+\]
+
+If not, what is the exact obstruction?
+
+---
+
+# 1. Fixed setting
+
+Let
+
+\[
+H=C\oplus M[1],
+\qquad
+m_2,\quad m_3=\kappa,\quad m_{\ge4}=0,
+\]
+
+be the actual two-stage \(A_\infty\) model coming from the single-vertex derived deletion, with
+
+\[
+M\in\operatorname{perf}(C^e),
+\qquad
+d=\operatorname{pd}_{C^e}M<\infty.
+\]
+
+For endpoint simples \(R_a,L_b\), let
+
+\[
+B_{ab}
+=
+R_a\otimes_S
+T^c_S(sJ\oplus sM[1])
+\otimes_S L_b
+\]
+
+with
+
+\[
+D=b_2+t b_3.
+\]
+
+After localizing at \((t)\),
+
+\[
+V=k[t]_{(t)},
+\qquad
+\mathcal C^{ab}_\bullet
+=
+B_{ab}\otimes_k V,
+\]
+
+and
+
+\[
+G_h^{ab}
+=
+H_h(\mathcal C^{ab},D).
+\]
+
+We remain in the branch where a quotient-supported pair has nonzero quotient Tor in arbitrarily high degrees, while the ambient \(A\)-Tor for that pair is eventually zero.
+
+By the already VERIFIED T0 screening corridor plus page–torsion correspondence, this forces exact \(t\)-torsion orders in the corresponding \(G_h^{ab}\) to become unbounded.
+
+---
+
+# 2. VERIFIED
+
+## 2.1 Dual Rees dg-category theorem
+
+Take all endpoint blocks simultaneously.
+
+Because each fixed homological degree of \(B\) is finite-dimensional over \(k\), define the degreewise \(V\)-dual
+
+\[
+\mathscr E^n(b,a)
+=
+\operatorname{Hom}_V
+\bigl(
+\mathcal C^{ab}_n,
+V
+\bigr).
+\]
+
+The bar deconcatenation maps
+
+\[
+\Delta:
+\mathcal C^{ab}
+\longrightarrow
+\bigoplus_c
+\mathcal C^{ac}\otimes_V\mathcal C^{cb}
+\]
+
+dualize to composition maps in \(\mathscr E\).
+
+The Rees differential \(D=b_2+t b_3\) is a coderivation for deconcatenation. Therefore its dual differential \(d=D^\vee\) satisfies the graded Leibniz rule:
+
+\[
+d(xy)=d(x)y+(-1)^{|x|}x\,d(y).
+\]
+
+Hence:
+
+\[
+\boxed{
+\mathscr E
+=
+\operatorname{Hom}_V(\mathcal C,V)
+}
+\]
+
+is an actual nonnegatively graded dg category over \(V\), with one object for each surviving vertex.
+
+This is not a graph or a numerical recurrence. Its composition is an actual chain-level operation.
+
+---
+
+## 2.2 Universal-coefficient torsion transfer
+
+Let \(\mathcal C_\bullet\) be any chain complex of finite free \(V\)-modules and put
+
+\[
+E^\bullet=\operatorname{Hom}_V(\mathcal C_\bullet,V).
+\]
+
+Since \(V=k[t]_{(t)}\) is a PID, submodules of finite free modules are free. The usual cycle/boundary short exact sequences therefore give a natural short exact sequence
+
+\[
+0
+\longrightarrow
+\operatorname{Ext}^1_V
+\bigl(
+H_{n-1}(\mathcal C),
+V
+\bigr)
+\longrightarrow
+H^n(E)
+\longrightarrow
+\operatorname{Hom}_V
+\bigl(
+H_n(\mathcal C),
+V
+\bigr)
+\longrightarrow0.
+\tag{UCT}
+\]
+
+For a finite torsion \(V\)-module
+
+\[
+T\cong\bigoplus_iV/(t^{r_i}),
+\]
+
+the length-one free resolution
+
+\[
+0\to V\xrightarrow{t^{r_i}}V\to V/(t^{r_i})\to0
+\]
+
+gives
+
+\[
+\operatorname{Ext}^1_V(V/(t^{r_i}),V)
+\cong
+V/(t^{r_i}).
+\]
+
+Therefore
+
+\[
+\operatorname{Ext}^1_V(T,V)
+\]
+
+has exactly the same elementary divisors, in particular the same maximal exact \(t\)-torsion order, as \(T\).
+
+In the minimal-counterexample branch, the \(t=1\) specialization is eventually zero, so the already VERIFIED specialization lemma makes \(G_h^{ab}\) eventually \(V\)-torsion.
+
+Thus for all sufficiently high \(n\),
+
+\[
+\boxed{
+H^{n+1}(\mathscr E)(b,a)
+\cong
+\operatorname{Ext}^1_V(G_n^{ab},V).
+}
+\]
+
+Consequently,
+
+\[
+\boxed{
+\text{unbounded Rees torsion in }G_n^{ab}
+\iff
+\text{unbounded }t\text{-torsion orders in the shifted dual dg cohomology}.
+}
+\]
+
+No torsion information is lost by this representation change.
+
+---
+
+## 2.3 Canonical bar-coalgebra operators have the wrong direction
+
+Let
+
+\[
+u\in Z^q\mathscr E(c,c),
+\qquad q\ge0.
+\]
+
+Using deconcatenation and evaluation by \(u\), one obtains the usual cap-type map on the primal bar complex
+
+\[
+u\frown -:
+\mathcal C^{ab}_n
+\longrightarrow
+\mathcal C^{ab}_{n-q}
+\]
+
+when endpoint compatibility is satisfied.
+
+Because \(D\) is a coderivation and \(u\) is a cocycle, this is an actual \(V\)-linear chain map of homological shift
+
+\[
+-q\le0.
+\]
+
+The same is true for finite compositions of such canonical deconcatenation/evaluation operations.
+
+Therefore:
+
+\[
+\boxed{
+\text{the canonical coalgebra operations alone cannot generate an unbounded high-degree homology tail from finitely many seeds.}
+}
+\]
+
+This is a genuine route refutation.
+
+The bar coalgebra does provide actual operators, but their natural direction on Tor/Rees homology is downward.
+
+Any primal proof of eventual spanning must therefore add a genuine **raising/insertion operator**; it cannot come merely from deconcatenation.
+
+---
+
+## 2.4 Primitive-cohomology obstruction theorem
+
+Let
+
+\[
+\mathscr H=H^*(\mathscr E)
+\]
+
+be the localized dual Rees cohomology category.
+
+Let
+
+\[
+\mathscr I
+=
+\bigoplus_{n>0}\mathscr H^n
+\]
+
+be its positive-degree ideal, and define its graded indecomposable quotient
+
+\[
+\boxed{
+\mathfrak Q
+=
+\mathscr I/\mathscr I^2.
+}
+\]
+
+Thus, endpointwise,
+
+\[
+\mathfrak Q^n(b,a)
+=
+\frac{
+\mathscr H^n(b,a)
+}{
+\displaystyle
+\sum_c
+\sum_{\substack{i+j=n\\i,j>0}}
+\mathscr H^i(b,c)\,
+\mathscr H^j(c,a)
+}.
+\tag{Q}
+\]
+
+### Theorem
+
+Assume the high localized Rees homology is \(V\)-torsion.
+
+If there exists \(N\) such that
+
+\[
+\mathfrak Q^n=0
+\qquad
+(n>N),
+\]
+
+then the exact \(t\)-torsion orders in the high Rees-homology tail are uniformly bounded.
+
+### Proof
+
+If \(\mathfrak Q^n=0\) for \(n>N\), every positive-degree cohomology class of degree \(n>N\) is a finite sum of compositions of strictly lower positive degrees.
+
+Induction on degree shows that the full cohomology category \(\mathscr H\) is generated, over \(\mathscr H^0\), by
+
+\[
+\bigoplus_{1\le n\le N}\mathscr H^n.
+\]
+
+There are finitely many objects, and each \(\mathscr H^n(b,a)\) is a finitely generated \(V\)-module, since it is the cohomology of a finite free \(V\)-module in that degree.
+
+Choose finite homogeneous \(V\)-generating sets for all degrees \(0,\ldots,N\) and all endpoint pairs.
+
+Composition by these finitely many actual cohomology classes gives finitely many homogeneous actual \(V\)-linear operators on
+
+\[
+\bigoplus_{a,b,n}\mathscr H^n(b,a).
+\]
+
+The identity morphisms supply finitely many seeds.
+
+Thus the dual cohomology tail satisfies the already VERIFIED localized finite-state theorem.
+
+Since the high \(\mathscr H^n\) are \(V\)-torsion, their \(t\)-orders are uniformly bounded.
+
+The universal-coefficient torsion transfer then gives the same uniform bound, up to the fixed one-degree shift, for the original localized Rees homology \(G_h^{ab}\).
+
+\(\square\)
+
+### Minimal-counterexample consequence
+
+The assumed quotient witness plus ambient eventual vanishing forces unbounded screening torsion.
+
+Therefore a surviving minimal counterexample must satisfy
+
+\[
+\boxed{
+\mathfrak Q^n\neq0
+\quad
+\text{for infinitely many }n.
+}
+\tag{P}
+\]
+
+This is strictly stronger than saying merely that the cohomology is infinite-dimensional.
+
+It says that arbitrarily high degrees contain genuinely new **composition-indecomposable actual cohomology classes**.
+
+---
+
+## 2.5 Fixed primitive channel
+
+There are only finitely many endpoint pairs.
+
+From (P), after passing to an infinite subsequence, there is a fixed ordered pair \((u,v)\) such that
+
+\[
+\boxed{
+\mathfrak Q^{n_j}(v,u)\neq0
+\qquad
+n_j\to\infty.
+}
+\]
+
+So failure of finite operator generation cannot remain a purely moving-label phenomenon.
+
+It produces an actual fixed endpoint channel carrying arbitrarily high primitive cohomology.
+
+This is not the forbidden rank-one inference: the objects here are genuine cohomology classes in an actual dg category.
+
+---
+
+## 2.6 Nonzero reduction mod \(t\)
+
+Each high \(\mathfrak Q^{n_j}(v,u)\) is a finite torsion \(V\)-module.
+
+For a nonzero finite module over the local ring \(V\),
+
+\[
+Q=tQ
+\]
+
+would imply \(Q=0\) by the elementary Nakayama argument. Hence one may choose
+
+\[
+0\neq\bar x_j
+\in
+\mathfrak Q^{n_j}(v,u)
+\]
+
+with
+
+\[
+\bar x_j\notin t\,\mathfrak Q^{n_j}(v,u).
+\]
+
+Lift it to
+
+\[
+x_j\in\mathscr H^{n_j}(v,u).
+\]
+
+Then \(x_j\notin t\mathscr H^{n_j}\).
+
+From the short exact sequence of cochain complexes
+
+\[
+0\to\mathscr E
+\xrightarrow{\,t\,}
+\mathscr E
+\to
+\mathscr E/t\mathscr E
+\to0,
+\]
+
+exactness gives
+
+\[
+\ker\left(
+\mathscr H^{n_j}
+\to
+H^{n_j}(\mathscr E/t\mathscr E)
+\right)
+=
+t\mathscr H^{n_j}.
+\]
+
+Hence the image of \(x_j\) modulo \(t\) is nonzero.
+
+But
+
+\[
+\mathscr E/t\mathscr E
+\]
+
+is the degreewise dual of the \(b_2\)-complex.
+
+Over the field \(k\),
+
+\[
+H^{n}(\mathscr E/t\mathscr E)
+\cong
+H_n(B,b_2)^*.
+\]
+
+Thus every sufficiently high primitive Rees class above yields a nonzero first-page class after reduction modulo \(t\).
+
+---
+
+## 2.7 Primitive tensor-power tower
+
+The \(b_2\)-homology decomposes by the number \(p\) of \(M\)-letters:
+
+\[
+H_n(B,b_2)
+=
+\bigoplus_p
+H_{n-2p}
+\left(
+R\otimes_C^{\mathbf L}
+M^{\otimes_C^{\mathbf L}p}
+\otimes_C^{\mathbf L}L
+\right).
+\]
+
+Therefore for each \(n_j\) above, some component
+
+\[
+H_{q_j}
+\left(
+R_u\otimes_C^{\mathbf L}
+M^{\otimes_C^{\mathbf L}p_j}
+\otimes_C^{\mathbf L}L_v
+\right)
+\]
+
+is nonzero, where
+
+\[
+n_j=q_j+2p_j.
+\]
+
+Because \(M\in\operatorname{perf}(C^e)\) has bimodule projective dimension \(d\), the T0 amplitude theorem gives
+
+\[
+0\le q_j\le p_jd.
+\]
+
+Hence
+
+\[
+n_j
+=
+q_j+2p_j
+\le
+p_j(d+2),
+\]
+
+so
+
+\[
+\boxed{
+p_j
+\ge
+\left\lceil\frac{n_j}{d+2}\right\rceil
+\longrightarrow\infty.
+}
+\]
+
+Therefore any surviving minimal counterexample in the perfect-bimodule branch must contain:
+
+\[
+\boxed{
+\text{arbitrarily high tensor powers }M^{\otimes_C^{\mathbf L}p}
+\text{ carrying first-page classes arising from genuinely new primitive Rees cohomology.}
+}
+\]
+
+This is the **primitive tensor-power tower**.
+
+---
+
+## 2.8 Finite correspondence graph and forced recurrent SCC
+
+Choose a finite \(C^e\)-projective resolution
+
+\[
+P\to M
+\]
+
+supported in degrees \(0,\ldots,d\).
+
+Decompose each term into indecomposable elementary \(C^e\)-projectives
+
+\[
+Ce_u\otimes_k e_vC.
+\]
+
+There are only finitely many such summand types occurring in \(P\).
+
+Define the finite correspondence graph \(\Gamma(P)\):
+
+- a vertex is one occurring elementary projective type;
+- there is a directed edge
+  \[
+  (u,v)\to(u',v')
+  \]
+  whenever
+  \[
+  e_vCe_{u'}\neq0.
+  \]
+
+Indeed,
+
+\[
+(Ce_u\otimes e_vC)
+\otimes_C
+(Ce_{u'}\otimes e_{v'}C)
+\cong
+Ce_u
+\otimes
+(e_vCe_{u'})
+\otimes
+e_{v'}C.
+\]
+
+Thus a nonzero elementary term in \(P^{\otimes_Cp}\) determines a directed path of length \(p-1\) in \(\Gamma(P)\).
+
+The primitive tensor-power tower gives nonzero homology in arbitrarily high \(p\), hence the corresponding tensor complexes have nonzero terms for arbitrarily high \(p\).
+
+Therefore \(\Gamma(P)\) contains arbitrarily long directed paths.
+
+A finite directed graph with arbitrarily long paths contains a directed cycle. More precisely, some strongly connected component is recurrent in arbitrarily long contributing paths.
+
+Hence:
+
+\[
+\boxed{
+\text{a support-minimal recurrent SCC of finite correspondence types is forced.}
+}
+\]
+
+This is a genuine consequence of perfectness plus the surviving primitive tower.
+
+---
+
+# 3. CONDITIONAL
+
+## 3.1 Bounded Primitive Degree Lemma would close the branch
+
+The following statement is sufficient to finish the perfect-bimodule branch:
+
+> **BPD.** For the actual localized dual Rees dg category arising from a finite-dimensional derived deletion with
+> \[
+> M\in\operatorname{perf}(C^e),
+> \]
+> the indecomposable quotient
+> \[
+> \mathfrak Q^n
+> \]
+> vanishes for all sufficiently large \(n\).
+
+If BPD holds, the Primitive-Cohomology Obstruction Theorem gives finite actual cohomology-operator generation and hence a uniform \(t\)-torsion bound.
+
+The T0 screening theorem then forces persistent quotient survival, contradicting the ambient eventual vanishing assumption.
+
+Therefore:
+
+\[
+\boxed{
+\text{BPD } \Longrightarrow \text{ closure of the perfect-bimodule minimal-counterexample branch.}
+}
+\]
+
+No global Noetherian operator ring is needed.
+
+---
+
+## 3.2 Tensor-stationary insertion criterion
+
+A natural way to obtain a genuine raising operator on the first page is a derived bimodule class
+
+\[
+\eta:
+C
+\longrightarrow
+M^{\otimes_C^{\mathbf L}s}[q].
+\]
+
+Equivalently,
+
+\[
+\eta
+\in
+\operatorname{Hom}_{D(C^e)}
+\left(
+C,
+M^{\otimes_C^{\mathbf L}s}[q]
+\right)
+=
+HH^q
+\left(
+C,
+M^{\otimes_C^{\mathbf L}s}
+\right).
+\]
+
+Such an \(\eta\) induces, by tensoring,
+
+\[
+M^{\otimes p}
+\cong
+M^{\otimes p}\otimes_C C
+\xrightarrow{\mathrm{id}\otimes\eta}
+M^{\otimes(p+s)}[q],
+\]
+
+and hence endpointwise maps
+
+\[
+R_a\otimes_C^{\mathbf L}M^{\otimes p}\otimes_C^{\mathbf L}L_b
+\longrightarrow
+R_a\otimes_C^{\mathbf L}M^{\otimes(p+s)}\otimes_C^{\mathbf L}L_b[q].
+\]
+
+Thus \(\eta\) supplies an actual stationary first-page operator.
+
+But this is only Gate 1.
+
+To become a Rees-chain operator it must still solve the already known \(\kappa\)-dependent lift equations
+
+\[
+\partial_2U_{m+1}=-\partial_3U_m.
+\]
+
+And even a successful lift must still satisfy eventual spanning.
+
+Therefore the sufficient chain of implications is:
+
+\[
+\boxed{
+\text{finite stationary }\eta_i
++
+\kappa\text{-integrability}
++
+\text{eventual spanning}
+\Longrightarrow
+\text{branch closure}.
+}
+\]
+
+---
+
+# 4. CANDIDATE
+
+## 4.1 Recurrent-SCC pumping candidate
+
+The forced recurrent SCC suggests trying to pump a repeated tensor block into a stationary class
+
+\[
+C\to M^{\otimes s}[q].
+\]
+
+This remains a candidate only.
+
+A repeated elementary projective pattern in \(P^{\otimes p}\) is a nonzero **term-level** object.
+
+It does not imply that the corresponding element is a cycle in
+
+\[
+\operatorname{RHom}_{C^e}
+\left(
+C,
+M^{\otimes s}
+\right),
+\]
+
+and it does not imply a nonzero Hochschild class.
+
+Hence
+
+\[
+\boxed{
+\text{SCC cycle}
+\not\Rightarrow
+\text{derived tensor-pump operator}
+}
+\]
+
+without an additional lemma.
+
+---
+
+## 4.2 Primitive-to-descent candidate
+
+If BPD fails, the VERIFIED theorem gives a fixed endpoint channel with primitive classes in arbitrarily high degrees.
+
+A possible route is:
+
+\[
+\boxed{
+\text{unbounded primitive channel}
+\Longrightarrow
+\text{strict support / complexity descent}.
+}
+\]
+
+No proof has been obtained.
+
+The main obstruction is that a homology/cohomology class does not carry a naïvely well-defined minimal vertex support: the bar differential may delete internal vertex labels.
+
+Thus one cannot simply take “the vertices appearing in a representative” as a homological descent invariant.
+
+A genuine support-separation theorem would be required.
+
+---
+
+# 5. REFUTED
+
+## 5.1 Canonical deconcatenation alone gives A1
+
+Refuted.
+
+Canonical cap/deconcatenation operators on the primal Rees bar complex have homological shift \(\le0\).
+
+They cannot generate an unbounded high-degree tail from finitely many seeds.
+
+Thus A1 cannot be proved merely by saying “the bar coalgebra has composition/deconcatenation.”
+
+A genuine raising/insertion operation is required.
+
+---
+
+## 5.2 Finite resolution types automatically give actual operators
+
+Refuted as an inference.
+
+Perfectness gives:
+
+- a finite resolution length;
+- finitely many elementary projective types;
+- a finite correspondence graph;
+- recurrent SCCs once tensor powers remain nonzero arbitrarily far.
+
+It does **not** turn a repeated term pattern into a chain map.
+
+The missing condition is homological closure/naturality, concretely detected by an actual derived map such as
+
+\[
+C\to M^{\otimes s}[q]
+\]
+
+or a more general endpoint-preserving \(b_2\)-chain map.
+
+A graph cycle is therefore not an operator.
+
+This preserves the T0 prohibition against rank-one / repeated-label periodicity.
+
+---
+
+## 5.3 Lift existence automatically gives tail generation
+
+Still refuted / unavailable exactly as at T0.
+
+Solving
+
+\[
+\partial_2U_{m+1}=-\partial_3U_m
+\]
+
+produces an actual Rees chain operator but does not imply that finitely many such operators span the localized homology tail.
+
+The new indecomposable quotient \(\mathfrak Q\) measures this missing generation step directly.
+
+---
+
+# 6. OPEN
+
+The full perfect-bimodule branch is not closed.
+
+The remaining problem is now substantially narrower.
+
+## Open Problem A — Bounded Primitive Degree
+
+Prove
+
+\[
+\boxed{
+\mathfrak Q^n=0
+\qquad(n\gg0)
+}
+\]
+
+for the actual localized dual Rees dg category of a finite-dimensional derived deletion with \(M\in\operatorname{perf}(C^e)\), at least after restricting to a support-minimal recurrent correspondence component.
+
+This immediately closes the branch.
+
+---
+
+## Open Problem B — Primitive-to-descent
+
+If
+
+\[
+\mathfrak Q^{n_j}\neq0
+\qquad
+n_j\to\infty,
+\]
+
+prove that these actual primitive classes force a strictly smaller derived-deletion support/complexity problem or an ambient supported return.
+
+This would give the desired return-or-descent dichotomy.
+
+---
+
+## Open Problem C — SCC-to-operator realization
+
+Given a recurrent SCC in the finite projective-correspondence graph, determine conditions forcing a nonzero derived tensor-pump class
+
+\[
+\eta
+\in
+HH^q
+\left(
+C,
+M^{\otimes s}
+\right),
+\]
+
+and then determine when \(\eta\) is \(\kappa\)-integrable through the Rees cycle-lift tower.
+
+This is the precise chain-level gap between finite local correspondence types and actual operators.
+
+---
+
+# 7. Three-Gate Operator Decomposition
+
+The operator problem is now separated into three logically independent gates.
+
+## Gate 1 — Tensor / first-page realization
+
+Produce an actual positive-shift \(b_2\)-homology operator.
+
+A stationary sufficient source is
+
+\[
+\eta
+\in
+HH^q(C,M^{\otimes s}).
+\]
+
+Perfectness alone does not supply \(\eta\).
+
+## Gate 2 — Rees / \(\kappa\)-integrability
+
+Lift the \(b_2\)-operator to
+
+\[
+U(t)=\sum_{m\ge0}t^mU_m
+\]
+
+by solving
+
+\[
+\partial_2U_{m+1}
+=
+-\partial_3U_m.
+\]
+
+The obstruction classes are the T0 End-complex obstructions.
+
+## Gate 3 — Eventual spanning
+
+Even successful lifts must generate the high localized tail.
+
+The exact failure detector is
+
+\[
+\mathfrak Q
+=
+H^{>0}(\mathscr E)/(H^{>0}(\mathscr E))^2.
+\]
+
+If \(\mathfrak Q\) has bounded degree, Gate 3 is solved and the branch closes.
+
+If \(\mathfrak Q\) persists in unbounded degree, those primitive classes are the exact remaining obstruction.
+
+---
+
+# 8. Why perfectness is not yet enough
+
+Perfectness of \(M\) gives a finite projective bimodule resolution
+
+\[
+P\to M
+\]
+
+and therefore:
+
+1. the amplitude bound
+   \[
+   0\le q\le pd;
+   \]
+2. finitely many elementary projective correspondence types;
+3. a finite recurrence graph for the terms of \(P^{\otimes p}\);
+4. a recurrent SCC whenever nonzero tensor-power classes persist for unbounded \(p\).
+
+But perfectness does **not** by itself prove:
+
+\[
+H^*
+\operatorname{RHom}_{C^e}
+(C,M^{\otimes s})
+\neq0
+\]
+
+in a degree useful for pumping;
+
+nor does it make a term-level SCC cycle into a \(b_2\)-chain map;
+
+nor does it kill the \(\kappa\)-lift obstruction;
+
+nor does it force
+
+\[
+\mathfrak Q^n=0
+\quad(n\gg0).
+\]
+
+Thus the remaining failure is not “we have not used the finite resolution carefully enough.”
+It is specifically a passage from
+
+\[
+\boxed{\text{finite local chain types}}
+\]
+
+to
+
+\[
+\boxed{\text{bounded-degree actual cohomology generators}}.
+\]
+
+That is the missing theorem.
+
+---
+
+# 9. Strongest New Asset
+
+## Primitive Tensor-Power Obstruction Theorem
+
+Under the current perfect-bimodule minimal-counterexample assumptions:
+
+- quotient Tor is nonzero in arbitrarily high degrees;
+- ambient Tor for the supported pair is eventually zero;
+- therefore Rees \(t\)-torsion orders are unbounded.
+
+Then the localized dual Rees dg category necessarily has:
+
+\[
+\boxed{
+\mathfrak Q^{n_j}(v,u)\neq0
+\quad
+\text{for one fixed endpoint pair }(u,v)
+\text{ and }n_j\to\infty.
+}
+\]
+
+Moreover these primitive classes have nonzero reductions modulo \(t\), and those reductions occur in first-page tensor-power groups
+
+\[
+H_{q_j}
+\left(
+R_u\otimes_C^{\mathbf L}
+M^{\otimes_C^{\mathbf L}p_j}
+\otimes_C^{\mathbf L}L_v
+\right)^*
+\]
+
+with
+
+\[
+\boxed{
+p_j
+\ge
+\left\lceil
+\frac{n_j}{d+2}
+\right\rceil
+\to\infty.
+}
+\]
+
+Consequently the finite projective-resolution correspondence graph has a recurrent strongly connected component.
+
+So any surviving counterexample must simultaneously exhibit:
+
+\[
+\boxed{
+\text{finite local correspondence types}
++
+\text{arbitrarily long tensor powers}
++
+\text{arbitrarily high globally primitive actual cohomology classes}.
+}
+\]
+
+This is the strongest new verified restriction of this continuation.
+
+---
+
+# 10. Exact Remaining Bottleneck
+
+The previous Run A ended with:
+
+> construct finite \(t\)-local actual-operator generation, or derive return/descent from its failure.
+
+This continuation sharpens that to:
+
+\[
+\boxed{
+\textbf{Bounded Primitive Degree / Primitive Descent Bottleneck}
+}
+\]
+
+namely prove one of:
+
+### BPD
+
+\[
+\exists N:
+\mathfrak Q^n=0
+\quad(n>N),
+\]
+
+which closes the branch immediately;
+
+or
+
+### Primitive Descent
+
+\[
+\mathfrak Q^{n_j}\neq0
+\text{ for }n_j\to\infty
+\Longrightarrow
+\text{supported ambient return or strict smaller support/complexity}.
+\]
+
+Equivalently, at the chain/operator level, one must bridge:
+
+\[
+\boxed{
+\text{recurrent correspondence SCC}
+\Longrightarrow
+\text{actual positive-shift operator}
+}
+\]
+
+or prove that failure of this bridge is itself a descent invariant.
+
+The first unresolved chain-level object is not a graph cycle.
+
+It is an actual class/map such as
+
+\[
+\eta:
+C\to M^{\otimes s}[q]
+\]
+
+or an endpoint-specific positive-shift \(b_2\)-chain map whose \(\kappa\)-obstruction tower can then be tested.
+
+---
+
+# 11. Main-Goal Impact
+
+## What was removed from the frontier
+
+The problem is no longer:
+
+> somehow find finitely many actual operators.
+
+It is now known that if finite operator generation fails in a genuine minimal counterexample, that failure must be witnessed by a very specific structure:
+
+\[
+\boxed{
+\text{composition-indecomposable actual Rees cohomology in arbitrarily high degrees}.
+}
+\]
+
+These primitives survive reduction modulo \(t\) and force unbounded tensor powers inside a finite recurrent correspondence SCC.
+
+Thus several T0-possible behaviours are excluded:
+
+1. eventual finite cohomology generation;
+2. eventual decomposition of every high class into lower actual classes;
+3. a purely transient tensor-power tail without recurrent correspondence support;
+4. closure using only canonical downward cap/deconcatenation operators.
+
+## What remains
+
+The only high-value routes left by the present representation are:
+
+1. prove bounded primitive degree from actual derived-deletion constraints;
+2. turn unbounded primitive degree into strict support/complexity descent;
+3. prove an SCC-to-\(\eta\) realization theorem and then solve the \(\kappa\)-lift/spanning gates.
+
+---
+
+# 12. Research Saturation Check
+
+A saturation check was performed before stopping.
+
+## Immediate stronger corollaries
+
+Executed:
+
+- dual dg-category representation;
+- UCT torsion equivalence;
+- primitive-cohomology obstruction;
+- fixed endpoint primitive channel;
+- nonzero mod-\(t\) reduction;
+- primitive tensor-power tower;
+- recurrent correspondence SCC.
+
+## Obvious open high-leverage route
+
+Tested:
+
+> use bar deconcatenation/composition itself as the finite operator system.
+
+Result: rigorously insufficient on the primal homology side because all canonical cap shifts are nonpositive.
+
+## SCC pumping
+
+Tested to the next genuine gate.
+
+Result: a recurrent term-level SCC does not supply a chain map. The missing object is a derived/Hochschild tensor-pump class or other actual \(b_2\)-operator, followed by the existing \(\kappa\)-lift obstruction.
+
+## Direct support descent
+
+Tested conceptually.
+
+The naïve “minimal vertex set appearing in a representative” is not a valid homological invariant because \(b_2,b_3\) can delete internal labels and boundaries may involve larger support.
+
+A new support-separation lemma is required.
+
+Therefore no already-open route is merely one routine calculation away from closure.
+
+Further progress requires a genuinely new theorem about:
+
+- bounded primitive degree;
+- primitive support separation;
+- or SCC-to-chain-operator realization.
+
+The campaign therefore stops at a new major frontier compression rather than at branch closure.
+
+---
+
+# 13. Final State
+
+## VERIFIED
+
+- previous localized finite-state torsion theorem, reused;
+- dual Rees dg-category construction;
+- universal-coefficient preservation of \(t\)-torsion orders;
+- canonical cap-operator orientation theorem;
+- primitive-cohomology obstruction theorem;
+- fixed endpoint primitive channel;
+- nonzero mod-\(t\) reduction;
+- primitive tensor-power tower;
+- forced recurrent correspondence SCC.
+
+## CONDITIONAL
+
+- Bounded Primitive Degree \(\Rightarrow\) branch closure;
+- finite stationary tensor-pump classes + \(\kappa\)-integrability + eventual spanning \(\Rightarrow\) branch closure.
+
+## CANDIDATE
+
+- recurrent SCC may force a useful tensor-pump class;
+- unbounded primitive classes may force strict support/complexity descent.
+
+## REFUTED
+
+- canonical deconcatenation alone can give upward eventual spanning;
+- finite resolution / repeated correspondence types automatically produce actual operators;
+- graph cycle \(\Rightarrow\) chain operator;
+- successful lift \(\Rightarrow\) tail generation;
+- the older rank-one/repeated-label periodicity inference remains refuted.
+
+## OPEN
+
+- Bounded Primitive Degree theorem;
+- Primitive-to-descent theorem;
+- SCC-to-operator realization;
+- \(\kappa\)-integrability and eventual spanning for any resulting positive-shift operators.
+
+---
+
+# 14. Completion Status
+
+\[
+\boxed{\texttt{MAJOR\_FRONTIER\_COMPRESSION}}
+\]
+
+The branch is not closed and no strict descent has yet been proved.
+
+The frontier is nevertheless strictly narrower than in the previous Run A state because a surviving counterexample is now forced to exhibit an explicit new pathology:
+
+\[
+\boxed{
+\text{arbitrarily high composition-indecomposable Rees cohomology}
+}
+\]
+
+whose mod-\(t\) shadows lie in arbitrarily high derived tensor powers of \(M\) inside a finite recurrent correspondence system.
+
+That restriction was not present in the preceding state.
+
+---
+
+# 15. Run Integrity
+
+This continuation used only:
+
+- the frozen T0 packet;
+- the previously frozen VERIFIED `Run-A-Long01` assets;
+- mathematics derived during this continuation.
+
+It did not read another Benchmark Run, external papers, web sources, post-T0 project results, or non-T0 Vault material.
+
+No candidate was upgraded merely because it fit the desired bridge.
+
+The recurrent-SCC route was stopped exactly at the point where term recurrence ceased to provide an actual chain/homology operator.

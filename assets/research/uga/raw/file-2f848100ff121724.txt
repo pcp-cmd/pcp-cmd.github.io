@@ -1,0 +1,1871 @@
+# Universal Gap A 正式记录地图
+
+研究地图：先看目标和状态，再沿记录、来源、前提、更正及原始资产查看完整证据。地图没有重新证明任何数学结论。
+
+[目标](#goals) · [概览](#overview) · [发展路线](#routes) · [动作与反馈索引](#attempts) · [完整记录](#records) · [资产](#assets) · [审核](#reviews) · [来源](#sources)
+
+<a id="goals"></a>
+## 研究目标
+
+### 当前项目主目标：[Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65)
+
+For every finite-dimensional basic complex algebra $A$, infinite global dimension implies a fixed pair $i,j$ with $e_jAe_i\ne0$ and $\operatorname{Tor}^A_n(R_i,L_j)\ne0$ for infinitely many $n$.
+
+**适用范围：** All finite-dimensional basic algebras over the complex numbers, with an arbitrary finite number of simple isomorphism classes.
+
+**状态：** 研究目标（不据此判断是否完成）；审核接受；当前所选；当前可用=true；可交付=true
+
+**主目标身份：** complete；首次主目标锚点保持固定，选择其他问题不会替换它。
+
+- **命题：** For every finite-dimensional basic complex algebra $A$, infinite global dimension implies a fixed pair $i,j$ with $e_jAe_i\ne0$ and $\operatorname{Tor}^A_n(R_i,L_j)\ne0$ for infinitely many $n$.
+- **定义域：** All finite-dimensional basic algebras over the complex numbers, with an arbitrary finite number of simple isomorphism classes.
+- **量词次序：** For every algebra A in the stated domain, if gldim(A) is infinite, there exists one fixed ordered pair (i,j), then infinitely many natural numbers n satisfying the stated support and Tor conditions.
+- **假设：** $1=\sum_{i=1}^N e_i$ is a complete primitive orthogonal idempotent decomposition.；$L_j=Ae_j/(\operatorname{rad}A)e_j$ and $R_i=e_iA/e_i(\operatorname{rad}A)$.；No restriction on vertex number, Peirce support, Loewy length or representation type.
+- **证据标准：** A complete mathematical proof or a fully specified algebraic counterexample with a rigorous all-degree argument. Finite computations are calibration evidence only; independent review provenance must be explicit.
+- **完成标准：** Resolve the universal statement by a proof under exactly these assumptions, or by a rigorous counterexample. Conditional theorems, finite checks and special families are progress, not completion.
+
+<a id="routes"></a>
+## 研究发展路线
+
+按已保存的修订、扩展和数学依赖查看前驱与后继。分支和汇合并列保留；背景相关不用于推断先后。关系存在不等于已经审核，也不证明历史上的实际承接。
+
+| 记录 | 前驱及关系 | 本项反馈或进展（原文） | 后继 | 状态 |
+| --- | --- | --- | --- | --- |
+| [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01) | 未保存前驱 | Full written argument available; review status is separate from the author's mathematical claim. [全文](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01) | 未保存后继 | 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false |
+| [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532) | 未保存前驱 | Full written argument available; review status is separate from the author's mathematical claim. [全文](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532) | [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)；[Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)；[Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)；[Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1) | 定义；审核接受；当前所选；当前可用=true；可交付=true |
+| [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013) | [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)（术语或定义） | Full written argument available; review status is separate from the author's mathematical claim. [全文](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013) | [Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85) | 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false |
+| [Vertical pure bimodule singularity remains outside the corridor · 7b118517cb](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0) | 未保存前驱 | Full written argument available; review status is separate from the author's mathematical claim. [全文](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0) | 未保存后继 | 观察；审核接受；当前所选；当前可用=true；可交付=true |
+| [Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd) | 未保存前驱 | Full written argument available; review status is separate from the author's mathematical claim. [全文](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd) | [Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a) | 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false |
+| [Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece) | 未保存前驱 | Full written argument available; review status is separate from the author's mathematical claim. [全文](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece) | 未保存后继 | 观察；审核接受；当前所选；当前可用=true；可交付=true |
+| [Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879) | [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)（术语或定义） | Full written argument available; review status is separate from the author's mathematical claim. [全文](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879) | [Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)；[Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)；[Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca) | 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false |
+| [Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a) | [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)（术语或定义）；[Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)（修订） | The proof uses vanishing of the outgoing differential, which suffices for the contradiction. Positive filtration may still admit later incoming differentials. The theorem is… [全文](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a) | 未保存后继 | 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false |
+| [Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85) | [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)（前提）；[Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)（前提） | Full written argument available; review status is separate from the author's mathematical claim. [全文](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85) | [Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) | 记录声称的证明结论；审核未定；待复核 / 受影响；当前可用=false；可交付=false |
+| [Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca) | [Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)（更正） | The contradiction requires outgoing vanishing only, so no theorem assumption or conclusion changes. [全文](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca) | 未保存后继 | 更正；审核接受；当前所选；当前可用=true；可交付=true |
+| [Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1) | [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)（术语或定义） | Full written argument available; review status is separate from the author's mathematical claim. [全文](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1) | [Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)；[Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) | 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false |
+| [Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a) | [Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)（前提）；[Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)（输入） | Withdraw the unproved implication rank one implies periodicity; retain the obstruction route. [全文](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a) | [Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) | 失败经验；审核接受；待复核 / 受影响；当前可用=false；可交付=true |
+| [Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) | [Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)（输入）；[Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)（输入） | Full written argument available; review status is separate from the author's mathematical claim. [全文](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) | 未保存后继 | 未证明猜想；审核接受；待复核 / 受影响；当前可用=false；可交付=true |
+| [Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65) | 未保存前驱 | Open. Initial formal MRS library created at the user's explicit request; previous manuscripts remain source evidence. [全文](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65) | 未保存后继 | 研究目标（不据此判断是否完成）；审核接受；当前所选；当前可用=true；可交付=true |
+| [Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) | [Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)（输入） | The user explicitly requested creating the missing formal MRS project and research map on 2026-09-27. [全文](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) | 未保存后继 | 观察；审核接受；待复核 / 受影响；当前可用=false；可交付=true |
+
+<a id="overview"></a>
+## 概览
+
+共 15 个完整记录修订、15 个审核记录、14 个证据或报告资产。
+
+结论类型、审核状态、依赖影响分别统计。记录声称的证明结论须与审核及可用状态一起读；已审猜想仍未证明。历史记录可交付不等于可作当前前提。
+
+| 分类 | 状态 | 记录数 |
+| --- | --- | ---: |
+| 结论类型 | 记录声称的证明结论 / `proved` | 7 |
+| 结论类型 | 未证明猜想 / `conjecture` | 1 |
+| 结论类型 | 观察 / `observation` | 3 |
+| 结论类型 | 失败经验 / `failure` | 1 |
+| 结论类型 | 定义 / `definition` | 1 |
+| 结论类型 | 更正 / `correction` | 1 |
+| 审核状态 | 审核接受 / `accepted` | 8 |
+| 审核状态 | 审核未定 / `inconclusive` | 7 |
+| 依赖影响 | 当前所选 / `current` | 5 |
+| 依赖影响 | 待审核或待复核（见记录依据） / `needs_review` | 10 |
+
+当前可用：5；已审可交付：8；仅有排除定位、没有正文：0。
+
+### 研究进展
+
+以下为记录原文节选，不增加新的总结判断。数值、失败反馈须连同审核、条件和限制阅读；全文链接保留完整上下文。目标记录不计入数学结论类型统计。
+
+
+#### [Derived deletion normal form and screening rank](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)
+
+记录声称的证明结论；审核未定；待复核。
+
+When $eAe=k$, the derived quotient has $H^0=C$, $H^{-1}=M=\operatorname{Tor}_2^A(C,C)$ and a sole possible higher product $\kappa\in HH^3(C,M)$. The quotient edge loss is the sum of all outgoing spectral-sequence ranks. A vertex-minimal… [全文](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)
+
+**条件：** $A$ is finite-dimensional basic over $\mathbb C$; $eAe=\mathbb C$; minimal-counterexample assertions additionally require vertex minimality and infinite projective dimension of the… [全文](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)
+
+**限制：** Prior complete self-audit only; no inherited independent acceptance.；The genuine eight-dimensional example kills all high quotient classes while A still has persistent supported Tor. [全文](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)
+
+#### [Uniform Rees torsion forces eventual quotient-edge surjectivity](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)
+
+记录声称的证明结论；审核未定；待复核 / 受影响。
+
+If $t^N T_tH_h(\mathcal B)=0$ for $h\ge h_0$ and $\operatorname{pd}_{C^e}M=d<\infty$, the edge is surjective for $n-1\ge h_0$ and $n>(d+2)N+1$. A finitely generated tail module over a left Noetherian ring containing central $t$ supplies the… [全文](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)
+
+**条件：** The two-stage setup, finite bimodule projective dimension, and the actual uniform torsion bound or the stated Noetherian finite-generation hypothesis. [全文](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)
+
+**限制：** Conditional theorem: the required operator action and finite generation have not been established in general. [全文](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)
+
+#### [Rees death page and exact target torsion order](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)
+
+记录声称的证明结论；审核未定；待复核。
+
+For $\mathcal B=(B[t],b_2+t b_3)$, a nonzero page-$r$ differential from total degree $n$ yields exact $t$-torsion order $r$ in $H_{n-1}(\mathcal B)$. The source class need not be a Rees homology class. [全文](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)
+
+**条件：** The two-stage setup; retain the auxiliary grading p minus t-degree. [全文](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)
+
+**限制：** Target homological degree is n minus one; the torsion class is not the disappearing quotient source. [全文](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)
+
+#### [Rees death page and exact target torsion order](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)
+
+记录声称的证明结论；审核未定；待复核。
+
+For $\mathcal B=(B[t],b_2+t b_3)$, a nonzero page-$r$ differential from total degree $n$ yields exact $t$-torsion order $r$ in $H_{n-1}(\mathcal B)$. The source class need not be a Rees homology class. [全文](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)
+
+**条件：** The two-stage setup; retain the auxiliary grading p minus t-degree. [全文](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)
+
+**限制：** Target homological degree is n minus one; the torsion class is not the disappearing quotient source. [全文](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)
+
+#### [Primitive torsion cannot be transported to a longer cyclic channel](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)
+
+记录声称的证明结论；审核未定；待复核。
+
+For $0<r<s$, every $k[t]$-linear map $k[t]/(t^r)\to k[t]/(t^s)$ has image in $t^{s-r}k[t]/(t^s)$. It cannot send a primitive generator to a primitive generator modulo $t$. [全文](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)
+
+**条件：** Actual cyclic Rees homology channels and an induced linear map over k[t]. [全文](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)
+
+**限制：** Rank-one dimension data do not produce such channels or an operator.；No return-or-descent conclusion is drawn from this obstruction. [全文](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)
+
+#### [Cycle-shift obstruction equations and local polynomiality](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)
+
+记录声称的证明结论；审核未定；待复核。
+
+For $U_m\in\operatorname{End}^{L,\ell+m}(B)$, a lift obeys $\partial_2U_{m+1}=-\partial_3U_m$. The obstruction lies in $H_{L-1}(\operatorname{End}^{*,\ell+m+1}(B),\partial_2)$. A complete lift is locally polynomial by the finite filtration… [全文](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)
+
+**条件：** Endpoint-preserving graded linear maps of the bar complex; a specified initial chain map U0. [全文](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)
+
+**限制：** These End groups are not identified with Hochschild groups.；A complete lift alone does not imply finite generation. [全文](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)
+
+#### [Screening corridor](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)
+
+记录声称的证明结论；审核未定；待复核。
+
+If $d=\operatorname{pd}_{C^e}M<\infty$, then $E_1^{p,q}=0$ outside $0\le q\le pd$ for $p\ge1$. A zero-column class of degree $n$ can die only at $\lceil(n-1)/(d+2)\rceil\le r\le\lfloor(n-1)/2\rfloor$. [全文](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)
+
+**条件：** The two-stage setup and finite bimodule projective dimension $d$. [全文](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)
+
+**限制：** Finite projective dimension on the two sides separately does not imply the hypothesis. [全文](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)
+
+#### [Cycle-shift obstruction tower: return or descent remains open](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35)
+
+未证明猜想；审核接受；待复核 / 受影响。
+
+For finite-dimensional derived deletions, investigate whether failure of coherent meaningful cycle shifts forces a persistent supported return or a strict reduction. No universal implication is presently proved. [全文](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35)
+
+**条件：** Actual derived-deletion models; not arbitrary filtered complexes. [全文](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35)
+
+**限制：** Exploratory candidate, not a theorem.；Neither the initial shift with the desired properties nor the return/descent interpretation of its first obstruction is proved. [全文](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35)
+
+#### [Exact second-page Rees calibration](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)
+
+观察；审核接受；当前所选。
+
+In the existing cubic example, $D(z_0+t z_1)=t^2w$, $Dw=0$, and $tw$ is not a boundary. Thus $[w]\in H_5$ has exact order two, for a source in degree six. [全文](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)
+
+**条件：** Exact rational arithmetic and the explicit two-stage cubic model. [全文](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)
+
+**限制：** Finite self-audit sharing project libraries; not independent proof verification or a universal assertion. [全文](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)
+
+#### [Vertical pure bimodule singularity remains outside the corridor](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)
+
+观察；审核接受；当前所选。
+
+The corridor theorem requires $M\in\operatorname{perf}(C^e)$. If $\operatorname{pd}_{C^e}M=\infty$, the present argument gives no linear upper amplitude bound, even if both one-sided projective dimensions are finite. [全文](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)
+
+**条件：** Keep bimodule and one-sided projective dimensions separate. [全文](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)
+
+**限制：** No general vertical-branch exclusion is claimed.；This is a boundary record, not a claimed counterexample to Universal Gap A. [全文](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)
+
+#### [Universal Gap A current research state and source map](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9)
+
+观察；审核接受；待复核 / 受影响。
+
+Universal Gap A remains open. The current perfect-bimodule branch forces linearly growing Rees torsion if persistent quotient classes all disappear. Earlier FG, PC and GP bridges remain open, while finite syzygy systems and explicit return… [全文](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9)
+
+**条件：** Preserve the original unrestricted arbitrary-N primary objective. [全文](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9)
+
+**限制：** This is a bounded initial intake, not a full historical migration or independent review of all old manuscripts.；The unchanged original ZIP and legacy verified fact graph remain separate source evidence. [全文](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9)
+
+#### [Rank-one probes do not establish periodicity or finite generation](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)
+
+失败经验；审核接受；待复核 / 受影响。
+
+A rank-one numerical probe, graph cycle, or matching infinite subsequence does not construct an actual map on $H(B,b_2)$, a coherent Rees operator, or a finite generating set for its full homology tail. [全文](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)
+
+**条件：** Distinguish numerical resolution labels from actual module and chain maps. [全文](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)
+
+**限制：** This closes the inference, not every more structured cycle-shift strategy. [全文](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)
+
+#### [Two-stage filtered relative bar setup](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)
+
+定义；审核接受；当前所选。
+
+$B=\bigoplus_{n,p}B_{n,p}$, $0\le p\le\lfloor n/2\rfloor$, with $b_2$ of bidegree $(-1,0)$ and $b_3$ of bidegree $(-1,1)$. The two squares and anticommutator vanish. … [全文](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)
+
+**条件：** Finite-dimensional split elementary C, finite-dimensional C-bimodule M, augmented minimal two-stage model with the indicated relative bar complex. [全文](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)
+
+**限制：** A conditional mathematical setup; existence for arbitrary deleted corners is not asserted. [全文](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)
+
+#### [Correct the positive-filtration cycle-lift proof wording](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca)
+
+更正；审核接受；当前所选。
+
+A polynomial cycle lift forces the outgoing spectral-sequence differential of that class to vanish. In positive filtration it does not exclude a later incoming differential. The exact Rees torsion-order theorem remains unchanged. [全文](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca)
+
+**条件：** The filtered bar setup and correction equations of the target record. [全文](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca)
+
+**限制：** This is a proof-presentation correction, not a proof of Universal Gap A or a grant of independent MRS acceptance. [全文](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca)
+
+
+| 记录类型 | 查看记录（完整修订） |
+| --- | --- |
+| 研究目标 | [Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65) |
+| 结论记录 | [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)；[Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)；[Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)；[Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)；[Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)；[Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)；[Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013) |
+| 未证明猜想 | [Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) |
+| 计算或事实观察 | [Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)；[Vertical pure bimodule singularity remains outside the corridor · 7b118517cb](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)；[Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) |
+| 失败经验 | [Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a) |
+| 定义 | [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532) |
+| 更正 | [Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca) |
+
+<a id="attempts"></a>
+## 动作与反馈索引
+
+索引覆盖所有记录过动作或反馈的研究条目，直接展示原文节选并链接完整内容。
+
+| 记录 | 动作 | 反馈 | 审核与影响 |
+| --- | --- | --- | --- |
+| [Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65) |  [全文](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65) | Open. Initial formal MRS library created at the user's explicit request; previous manuscripts remain source evidence. [全文](#feedback-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65) | 审核接受；当前所选 |
+| [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01) | Full written argument available; review status is separate from the author's mathematical claim. [全文](#feedback-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01) | 审核未定；待复核 |
+| [Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85) | Full written argument available; review status is separate from the author's mathematical claim. [全文](#feedback-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85) | 审核未定；待复核 / 受影响 |
+| [Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a) | Revise the proof sentence identified by an independent note reviewer; preserve the exact theorem statement and target-degree indexing. [全文](#action-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a) | The proof uses vanishing of the outgoing differential, which suffices for the contradiction. Positive filtration may still admit later incoming differentials. The theorem is… [全文](#feedback-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a) | 审核未定；待复核 |
+| [Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879) | Full written argument available; review status is separate from the author's mathematical claim. [全文](#feedback-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879) | 审核未定；待复核 |
+| [Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd) | Full written argument available; review status is separate from the author's mathematical claim. [全文](#feedback-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd) | 审核未定；待复核 |
+| [Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1) | Full written argument available; review status is separate from the author's mathematical claim. [全文](#feedback-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1) | 审核未定；待复核 |
+| [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013) | Full written argument available; review status is separate from the author's mathematical claim. [全文](#feedback-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013) | 审核未定；待复核 |
+| [Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) | Full written argument available; review status is separate from the author's mathematical claim. [全文](#feedback-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) | 审核接受；待复核 / 受影响 |
+| [Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece) | Full written argument available; review status is separate from the author's mathematical claim. [全文](#feedback-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece) | 审核接受；当前所选 |
+| [Vertical pure bimodule singularity remains outside the corridor · 7b118517cb](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0) | Full written argument available; review status is separate from the author's mathematical claim. [全文](#feedback-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0) | 审核接受；当前所选 |
+| [Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) | The user explicitly requested creating the missing formal MRS project and research map on 2026-09-27. [全文](#feedback-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) | 审核接受；待复核 / 受影响 |
+| [Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a) | Withdraw the unproved implication rank one implies periodicity; retain the obstruction route. [全文](#feedback-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a) | 审核接受；待复核 / 受影响 |
+| [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532) | Preserve the stated research item with exact evidence and explicit proof boundaries. [全文](#action-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532) | Full written argument available; review status is separate from the author's mathematical claim. [全文](#feedback-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532) | 审核接受；当前所选 |
+| [Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca) | Keep the original record and source bytes; register a same-identity successor with the corrected proof. [全文](#action-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca) | The contradiction requires outgoing vanishing only, so no theorem assumption or conclusion changes. [全文](#feedback-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca) | 审核接受；当前所选 |
+
+<a id="records"></a>
+## 完整研究记录
+
+<a id="record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65"></a>
+### Universal Gap A
+
+**类型：** 研究目标 / `objective`
+
+**状态：** 研究目标（不据此判断是否完成）；审核接受；当前所选；当前可用=true；可交付=true
+
+**记录原始结论类型：** `conjecture`；**考虑依赖后的结论类型：** `conjecture`。
+
+**研究身份：** `a2b1b4b0-b590-4be4-820e-6f9a404305cb`；**修订：** `d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/d5/eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65>) · [返回概览](#overview)
+
+**陈述：**
+
+For every finite-dimensional basic complex algebra $A$, infinite global dimension implies a fixed pair $i,j$ with $e_jAe_i\ne0$ and $\operatorname{Tor}^A_n(R_i,L_j)\ne0$ for infinitely many $n$.
+
+**适用范围：**
+
+All finite-dimensional basic algebras over the complex numbers, with an arbitrary finite number of simple isomorphism classes.
+
+<a id="feedback-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65"></a>
+**反馈：**
+
+Open. Initial formal MRS library created at the user's explicit request; previous manuscripts remain source evidence.
+
+**假设：**
+
+- $1=\sum_{i=1}^N e_i$ is a complete primitive orthogonal idempotent decomposition.
+- $L_j=Ae_j/(\operatorname{rad}A)e_j$ and $R_i=e_iA/e_i(\operatorname{rad}A)$.
+- No restriction on vertex number, Peirce support, Loewy length or representation type.
+
+**引用本记录的后续、修订与更正：**
+
+- [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01) → 背景 / background：Gives necessary conditions on a minimal counterexample.
+- [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532) → 背景 / background：Defines the current conditional derived-deletion branch.
+- [Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) → 背景 / background：Reports progress against the unchanged primary question.
+
+**来源：**
+
+- [outputs/N-Vertex-Main-Route.md, Section 1, current workspace; initial objective adopted without strengthening its complex base field.](#source-308d6971102b49bef123871dfe78df1da646395f73bb5f49522794046a6e07bb)
+
+**相关审核：** [24707762-80ac-46b7-aa8e-82ce7f10450d](#review-72835b71f48592d0f690790feca00355597afb8d0c8d9691014d81d299721137)
+
+<a id="record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01"></a>
+### Derived deletion normal form and screening rank
+
+**类型：** 结论记录 / `result`
+
+**状态：** 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false
+
+**记录原始结论类型：** `proved`；**考虑依赖后的结论类型：** `proved`。
+
+**研究身份：** `21296a65-62ff-40bf-a3a0-d26b6fb10c6e`；**修订：** `09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/09/c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01>) · [返回概览](#overview)
+
+**陈述：**
+
+When $eAe=k$, the derived quotient has $H^0=C$, $H^{-1}=M=\operatorname{Tor}_2^A(C,C)$ and a sole possible higher product $\kappa\in HH^3(C,M)$. The quotient edge loss is the sum of all outgoing spectral-sequence ranks. A vertex-minimal counterexample with the specified infinite-projective-dimension simple has $\kappa\ne0$.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01"></a>
+**反馈：**
+
+Full written argument available; review status is separate from the author's mathematical claim.
+
+**假设：**
+
+- $A$ is finite-dimensional basic over $\mathbb C$; $eAe=\mathbb C$; minimal-counterexample assertions additionally require vertex minimality and infinite projective dimension of the deleted simple.
+
+**限制：**
+
+- Prior complete self-audit only; no inherited independent acceptance.
+- The genuine eight-dimensional example kills all high quotient classes while A still has persistent supported Tor.
+
+**状态依据（原始诊断标记）：**
+
+- `review_inconclusive`
+
+**本记录依赖或指向：**
+
+- 背景 / background → [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)：Supplies the concrete deletion realization of the abstract setup.
+- 背景 / background → [Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65)：Gives necessary conditions on a minimal counterexample.
+
+**引用本记录的后续、修订与更正：**
+
+- [Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) → 背景 / background：Restricts attention to genuine deletion models.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [Derived-Deletion-Screening-Normal-Form.md](#asset-479cc7f039544943f4bffbe3c880bc3e57b5faca6fae448e75a6a20e038fe550)：`proof`，20238 字节；SHA-256 `479cc7f039544943f4bffbe3c880bc3e57b5faca6fae448e75a6a20e038fe550`。
+  - 摘要：Self-audited derived deletion normal form, actual bar differential, opposite orientation, and eight-dimensional all-degree screening example.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Derived-Deletion-Screening-Normal-Form.md
+- [two_stage_screening_audit.json](#asset-d6f7861f06f250afa64ce2ff7e1523508a34d6de8da5223f2fdbc11746dfcb7f)：`bounded-computation`，7921 字节；SHA-256 `d6f7861f06f250afa64ce2ff7e1523508a34d6de8da5223f2fdbc11746dfcb7f`。
+  - 摘要：Exact finite audit of the actual example, with proof-linked polynomial identities.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\two_stage_screening_audit.json
+
+**相关审核：** [af8a3fd7-f907-4675-8ac1-2937779f029e](#review-ed21a90e3afeb573a54faa21432a594a51372d90a54d87aea0e7a18902c82ad4)
+
+<a id="record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85"></a>
+### Uniform Rees torsion forces eventual quotient-edge surjectivity
+
+**类型：** 结论记录 / `result`
+
+**状态：** 记录声称的证明结论；审核未定；待复核 / 受影响；当前可用=false；可交付=false
+
+**记录原始结论类型：** `proved`；**考虑依赖后的结论类型：** `proved`。
+
+**研究身份：** `26bca341-c414-444e-874c-19d6ad0fa214`；**修订：** `951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/95/1de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85>) · [返回概览](#overview)
+
+**陈述：**
+
+If $t^N T_tH_h(\mathcal B)=0$ for $h\ge h_0$ and $\operatorname{pd}_{C^e}M=d<\infty$, the edge is surjective for $n-1\ge h_0$ and $n>(d+2)N+1$. A finitely generated tail module over a left Noetherian ring containing central $t$ supplies the uniform torsion bound.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85"></a>
+**反馈：**
+
+Full written argument available; review status is separate from the author's mathematical claim.
+
+**假设：**
+
+- The two-stage setup, finite bimodule projective dimension, and the actual uniform torsion bound or the stated Noetherian finite-generation hypothesis.
+
+**限制：**
+
+- Conditional theorem: the required operator action and finite generation have not been established in general.
+
+**状态依据（原始诊断标记）：**
+
+- `dependency_not_usable:14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013`
+- `dependency_not_usable:bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879`
+- `review_inconclusive`
+
+**本记录依赖或指向：**
+
+- 前提 / premise → [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)：Excludes all bounded death pages in high degree.
+- 前提 / premise → [Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)：A larger death page requires a larger actual torsion exponent.
+
+**引用本记录的后续、修订与更正：**
+
+- [Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) → 背景 / background：Explains why true Noetherian control would close the perfect-bimodule branch.
+- [Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) → 输入 / input：Current conditional closing theorem.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [ce7a2128-4fe0-4bd0-97fd-3c449b5e67d5](#review-7e68b45c2d82ff3d94bf2cc6b557c0e7c15d2082f9b9f6beedcfdfb177292ba8)
+
+<a id="record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a"></a>
+### Rees death page and exact target torsion order
+
+**类型：** 结论记录 / `result`
+
+**状态：** 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false
+
+**记录原始结论类型：** `proved`；**考虑依赖后的结论类型：** `proved`。
+
+**研究身份：** `6f7ee922-7560-4d3d-bb0c-b1fe2b77bf63`；**修订：** `6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/6b/4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a>) · [返回概览](#overview)
+
+**陈述：**
+
+For $\mathcal B=(B[t],b_2+t b_3)$, a nonzero page-$r$ differential from total degree $n$ yields exact $t$-torsion order $r$ in $H_{n-1}(\mathcal B)$. The source class need not be a Rees homology class.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a"></a>
+**动作：**
+
+Revise the proof sentence identified by an independent note reviewer; preserve the exact theorem statement and target-degree indexing.
+
+<a id="feedback-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a"></a>
+**反馈：**
+
+The proof uses vanishing of the outgoing differential, which suffices for the contradiction. Positive filtration may still admit later incoming differentials. The theorem is unchanged.
+
+**假设：**
+
+- The two-stage setup; retain the auxiliary grading p minus t-degree.
+
+**限制：**
+
+- Target homological degree is n minus one; the torsion class is not the disappearing quotient source.
+
+**状态依据（原始诊断标记）：**
+
+- `review_inconclusive`
+
+**本记录依赖或指向：**
+
+- 术语或定义 / term → [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)：Fixes differential conventions and finite filtration.
+- 前一修订 / previous → [Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)：同一研究身份的显式修订链。
+
+**引用本记录的后续、修订与更正：**
+
+- [Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca) → 更正指定的替代记录：替代记录需凭自身审核取得适用资格。
+
+**来源：**
+
+- [Independent note review, round 1, identified this exact proof wording; this is not independent MRS proof acceptance.](#source-b15d808b238e1ed337d41600a43bb35eb086062ecf9d57825728c622a2fd2a30)
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-rees-proof-correction-20260928](#source-12ed20ae4e24b100e7ad70f37b4abc60e321c81296b4b9a9cf20d76e8ecd8122)
+
+**证据资产：**
+
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-0529d3a037fda9c7a483bff58b701e6e4125e443af964ec2c560ad4572142457)：`proof`，12873 字节；SHA-256 `0529d3a037fda9c7a483bff58b701e6e4125e443af964ec2c560ad4572142457`。
+  - 摘要：Corrected complete manuscript: in positive filtration a cycle lift forces its outgoing differential to vanish, without asserting permanent survival.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [47bc7732-45a0-4a72-bc50-bddabfdc82a6](#review-f6049bece04081e7f72d53ecb64cc9aed5d25c0823d348ed0410a5e99e7d7c9b)
+
+<a id="record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879"></a>
+### Rees death page and exact target torsion order
+
+**类型：** 结论记录 / `result`
+
+**状态：** 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false
+
+**记录原始结论类型：** `proved`；**考虑依赖后的结论类型：** `proved`。
+
+**研究身份：** `6f7ee922-7560-4d3d-bb0c-b1fe2b77bf63`；**修订：** `bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/bc/d566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879>) · [返回概览](#overview)
+
+**陈述：**
+
+For $\mathcal B=(B[t],b_2+t b_3)$, a nonzero page-$r$ differential from total degree $n$ yields exact $t$-torsion order $r$ in $H_{n-1}(\mathcal B)$. The source class need not be a Rees homology class.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879"></a>
+**反馈：**
+
+Full written argument available; review status is separate from the author's mathematical claim.
+
+**假设：**
+
+- The two-stage setup; retain the auxiliary grading p minus t-degree.
+
+**限制：**
+
+- Target homological degree is n minus one; the torsion class is not the disappearing quotient source.
+
+**状态依据（原始诊断标记）：**
+
+- `presentation_correction:a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca`
+- `review_inconclusive`
+
+**本记录依赖或指向：**
+
+- 术语或定义 / term → [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)：Fixes differential conventions and finite filtration.
+
+**引用本记录的后续、修订与更正：**
+
+- [Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a) → 前一修订 / previous：同一研究身份的显式修订链。
+- [Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece) → 背景 / background：Calibrates the exponent and target-degree statement.
+- [Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85) → 前提 / premise：A larger death page requires a larger actual torsion exponent.
+- [Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca) → 更正目标 / presentation：The old proof sentence overstated permanent survival in positive filtration; replace it by the outgoing-differential vanishing which is sufficient.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [2dea7774-b72e-4bc2-b39c-c7473496a85c](#review-8a1fe77fa191d80e1654760fe909080d19c328b66a4586752970dfa0fd826150)
+
+<a id="record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd"></a>
+### Primitive torsion cannot be transported to a longer cyclic channel
+
+**类型：** 结论记录 / `result`
+
+**状态：** 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false
+
+**记录原始结论类型：** `proved`；**考虑依赖后的结论类型：** `proved`。
+
+**研究身份：** `76219bb0-1f4e-496a-a1f9-7b54e303bd55`；**修订：** `7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/7d/88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd>) · [返回概览](#overview)
+
+**陈述：**
+
+For $0<r<s$, every $k[t]$-linear map $k[t]/(t^r)\to k[t]/(t^s)$ has image in $t^{s-r}k[t]/(t^s)$. It cannot send a primitive generator to a primitive generator modulo $t$.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd"></a>
+**反馈：**
+
+Full written argument available; review status is separate from the author's mathematical claim.
+
+**假设：**
+
+- Actual cyclic Rees homology channels and an induced linear map over k[t].
+
+**限制：**
+
+- Rank-one dimension data do not produce such channels or an operator.
+- No return-or-descent conclusion is drawn from this obstruction.
+
+**状态依据（原始诊断标记）：**
+
+- `review_inconclusive`
+
+**本记录依赖或指向：**
+
+- 背景 / background → [Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)：Restricts which candidate cycle shifts can lift.
+
+**引用本记录的后续、修订与更正：**
+
+- [Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a) → 前提 / premise：Actual primitive transport is impossible when cyclic exponents grow.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [4ec0d78d-1cfd-410d-b584-716ef329f67f](#review-d49b9ed098baaaee4742c7e21ffb546acf895b68df40806518b79988865238b9)
+
+<a id="record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1"></a>
+### Cycle-shift obstruction equations and local polynomiality
+
+**类型：** 结论记录 / `result`
+
+**状态：** 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false
+
+**记录原始结论类型：** `proved`；**考虑依赖后的结论类型：** `proved`。
+
+**研究身份：** `a723a9e2-658a-4dff-b3d8-fa49d164d601`；**修订：** `c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/c0/715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1>) · [返回概览](#overview)
+
+**陈述：**
+
+For $U_m\in\operatorname{End}^{L,\ell+m}(B)$, a lift obeys $\partial_2U_{m+1}=-\partial_3U_m$. The obstruction lies in $H_{L-1}(\operatorname{End}^{*,\ell+m+1}(B),\partial_2)$. A complete lift is locally polynomial by the finite filtration in each input degree.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1"></a>
+**反馈：**
+
+Full written argument available; review status is separate from the author's mathematical claim.
+
+**假设：**
+
+- Endpoint-preserving graded linear maps of the bar complex; a specified initial chain map U0.
+
+**限制：**
+
+- These End groups are not identified with Hochschild groups.
+- A complete lift alone does not imply finite generation.
+
+**状态依据（原始诊断标记）：**
+
+- `review_inconclusive`
+
+**本记录依赖或指向：**
+
+- 术语或定义 / term → [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)：Defines the bar differential and grading.
+
+**引用本记录的后续、修订与更正：**
+
+- [Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a) → 输入 / input：Lists the missing chain equations.
+- [Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd) → 背景 / background：Restricts which candidate cycle shifts can lift.
+- [Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) → 输入 / input：Gives the exact obstruction groups.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [89ad3678-a775-4e41-bc06-84e30fcb0068](#review-2c3f2ff8833b72165bf48c88e1fa866ec89a720f10fae8709b83fb390c743c4e)
+
+<a id="record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013"></a>
+### Screening corridor
+
+**类型：** 结论记录 / `result`
+
+**状态：** 记录声称的证明结论；审核未定；待复核；当前可用=false；可交付=false
+
+**记录原始结论类型：** `proved`；**考虑依赖后的结论类型：** `proved`。
+
+**研究身份：** `b08741b2-32a9-43c1-bf1d-48ca79934903`；**修订：** `14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/14/453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013>) · [返回概览](#overview)
+
+**陈述：**
+
+If $d=\operatorname{pd}_{C^e}M<\infty$, then $E_1^{p,q}=0$ outside $0\le q\le pd$ for $p\ge1$. A zero-column class of degree $n$ can die only at $\lceil(n-1)/(d+2)\rceil\le r\le\lfloor(n-1)/2\rfloor$.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013"></a>
+**反馈：**
+
+Full written argument available; review status is separate from the author's mathematical claim.
+
+**假设：**
+
+- The two-stage setup and finite bimodule projective dimension $d$.
+
+**限制：**
+
+- Finite projective dimension on the two sides separately does not imply the hypothesis.
+
+**状态依据（原始诊断标记）：**
+
+- `review_inconclusive`
+
+**本记录依赖或指向：**
+
+- 术语或定义 / term → [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)：Uses the explicitly defined filtered bar complex and page indexing.
+
+**引用本记录的后续、修订与更正：**
+
+- [Vertical pure bimodule singularity remains outside the corridor · 7b118517cb](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0) → 背景 / background：Records its exact hypothesis boundary.
+- [Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85) → 前提 / premise：Excludes all bounded death pages in high degree.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [7a6eae08-cec2-4d61-8682-b17466054612](#review-ba324e5cf710437ac6652e661ca3f63dc326b7aea4e9a0d23fb2314624a6a0e0)
+
+<a id="record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35"></a>
+### Cycle-shift obstruction tower: return or descent remains open
+
+**类型：** 未证明猜想 / `conjecture`
+
+**状态：** 未证明猜想；审核接受；待复核 / 受影响；当前可用=false；可交付=true
+
+**记录原始结论类型：** `conjecture`；**考虑依赖后的结论类型：** `conjecture`。
+
+**研究身份：** `e777cef9-1934-422b-8431-75e61e300fe9`；**修订：** `cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/cd/c2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35>) · [返回概览](#overview)
+
+**陈述：**
+
+For finite-dimensional derived deletions, investigate whether failure of coherent meaningful cycle shifts forces a persistent supported return or a strict reduction. No universal implication is presently proved.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35"></a>
+**反馈：**
+
+Full written argument available; review status is separate from the author's mathematical claim.
+
+**假设：**
+
+- Actual derived-deletion models; not arbitrary filtered complexes.
+
+**限制：**
+
+- Exploratory candidate, not a theorem.
+- Neither the initial shift with the desired properties nor the return/descent interpretation of its first obstruction is proved.
+
+**状态依据（原始诊断标记）：**
+
+- `dependency_not_usable:733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a`
+- `dependency_not_usable:c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1`
+
+**本记录依赖或指向：**
+
+- 背景 / background → [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)：Restricts attention to genuine deletion models.
+- 输入 / input → [Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)：Removes the invalid rank-one shortcut.
+- 背景 / background → [Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)：Explains why true Noetherian control would close the perfect-bimodule branch.
+- 输入 / input → [Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)：Gives the exact obstruction groups.
+
+**引用本记录的后续、修订与更正：**
+
+- [Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) → 背景 / background：Current unresolved next step.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [aadc9820-15aa-4578-9226-012180ba49d0](#review-d6ed7d4e7e591981c20fe59deb7a5677c30afaf255613bb6ec3c12c0a01efcb0)
+
+<a id="record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece"></a>
+### Exact second-page Rees calibration
+
+**类型：** 计算或事实观察 / `observation`
+
+**状态：** 观察；审核接受；当前所选；当前可用=true；可交付=true
+
+**记录原始结论类型：** `observation`；**考虑依赖后的结论类型：** `observation`。
+
+**研究身份：** `13e16278-f6e1-42e3-99f0-f488d941be54`；**修订：** `90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/90/fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece>) · [返回概览](#overview)
+
+**陈述：**
+
+In the existing cubic example, $D(z_0+t z_1)=t^2w$, $Dw=0$, and $tw$ is not a boundary. Thus $[w]\in H_5$ has exact order two, for a source in degree six.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece"></a>
+**反馈：**
+
+Full written argument available; review status is separate from the author's mathematical claim.
+
+**假设：**
+
+- Exact rational arithmetic and the explicit two-stage cubic model.
+
+**限制：**
+
+- Finite self-audit sharing project libraries; not independent proof verification or a universal assertion.
+
+**本记录依赖或指向：**
+
+- 背景 / background → [Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)：Calibrates the exponent and target-degree statement.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [audit_rees_screening.py](#asset-634a2fa57e5cb00b6307163307fe67c1e9e874eab7f6f1c1a92e5f0892da77be)：`code`，3733 字节；SHA-256 `634a2fa57e5cb00b6307163307fe67c1e9e874eab7f6f1c1a92e5f0892da77be`。
+  - 摘要：Reproducible exact rational Rees calibration, boundary nonmembership, and negative sign check.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\audit_rees_screening.py
+- [rees_screening_audit.json](#asset-5b134ed14c311cdfe377e346b65a60dd203ee0c1c2c0804ebeda10fc1eaad77d)：`bounded-computation`，3936 字节；SHA-256 `5b134ed14c311cdfe377e346b65a60dd203ee0c1c2c0804ebeda10fc1eaad77d`。
+  - 摘要：Seven exact checks and 28 elementary torsion transport cases; source degree six, target degree five, exponent two.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\rees_screening_audit.json
+- [probe_truncated_cubic.py](#asset-f180975e422eef236d5617fdd3364f7d5ebd97d146c0cf9d1d048cd7884697d2)：`code-dependency`，4818 字节；SHA-256 `f180975e422eef236d5617fdd3364f7d5ebd97d146c0cf9d1d048cd7884697d2`。
+  - 摘要：Existing relative two-stage bar implementation.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\probe_truncated_cubic.py
+- [probe_cubic_bar.py](#asset-d476efddbd446b3e7fb5088dca0cca52911d301ab383ca49ff620d42da8cc3e0)：`code-dependency`，3405 字节；SHA-256 `d476efddbd446b3e7fb5088dca0cca52911d301ab383ca49ff620d42da8cc3e0`。
+  - 摘要：Exact sparse rational boundary-span solver.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\probe_cubic_bar.py
+- [return_kernel_certificate.py](#asset-d4d22955c390c89af7a4ebf5b0f077e29a9543390ade831e38fe5364cd189b12)：`code-dependency`，14641 字节；SHA-256 `d4d22955c390c89af7a4ebf5b0f077e29a9543390ade831e38fe5364cd189b12`。
+  - 摘要：Rational linear algebra utilities imported by the existing bar code.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\return_kernel_certificate.py
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [ecafaa24-e96f-4ef7-8759-4d3cec727264](#review-8cf271b17647d0210a341a3f50037c37e9c46c56facd348e66237b3fbd25fabb)
+
+<a id="record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0"></a>
+### Vertical pure bimodule singularity remains outside the corridor
+
+**类型：** 计算或事实观察 / `observation`
+
+**状态：** 观察；审核接受；当前所选；当前可用=true；可交付=true
+
+**记录原始结论类型：** `observation`；**考虑依赖后的结论类型：** `observation`。
+
+**研究身份：** `b505948b-df5b-463d-985a-dca12970756e`；**修订：** `7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/7b/118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0>) · [返回概览](#overview)
+
+**陈述：**
+
+The corridor theorem requires $M\in\operatorname{perf}(C^e)$. If $\operatorname{pd}_{C^e}M=\infty$, the present argument gives no linear upper amplitude bound, even if both one-sided projective dimensions are finite.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0"></a>
+**反馈：**
+
+Full written argument available; review status is separate from the author's mathematical claim.
+
+**假设：**
+
+- Keep bimodule and one-sided projective dimensions separate.
+
+**限制：**
+
+- No general vertical-branch exclusion is claimed.
+- This is a boundary record, not a claimed counterexample to Universal Gap A.
+
+**本记录依赖或指向：**
+
+- 背景 / background → [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)：Records its exact hypothesis boundary.
+
+**引用本记录的后续、修订与更正：**
+
+- [Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9) → 背景 / background：Separate unresolved branch.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [5a1431ff-a987-4de6-9014-a95f0c42d274](#review-b795ccdfad6da6ddb5953b5e75eba31d3698b36a7eadabc77605d99756c18548)
+
+<a id="record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9"></a>
+### Universal Gap A current research state and source map
+
+**类型：** 计算或事实观察 / `observation`
+
+**状态：** 观察；审核接受；待复核 / 受影响；当前可用=false；可交付=true
+
+**记录原始结论类型：** `observation`；**考虑依赖后的结论类型：** `observation`。
+
+**研究身份：** `b513442a-b1ea-47a6-a000-3e0a05a663b4`；**修订：** `e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/e2/614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9>) · [返回概览](#overview)
+
+**陈述：**
+
+Universal Gap A remains open. The current perfect-bimodule branch forces linearly growing Rees torsion if persistent quotient classes all disappear. Earlier FG, PC and GP bridges remain open, while finite syzygy systems and explicit return certificates remain conditional tools.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9"></a>
+**反馈：**
+
+The user explicitly requested creating the missing formal MRS project and research map on 2026-09-27.
+
+**假设：**
+
+- Preserve the original unrestricted arbitrary-N primary objective.
+
+**限制：**
+
+- This is a bounded initial intake, not a full historical migration or independent review of all old manuscripts.
+- The unchanged original ZIP and legacy verified fact graph remain separate source evidence.
+
+**状态依据（原始诊断标记）：**
+
+- `dependency_not_usable:951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85`
+
+**本记录依赖或指向：**
+
+- 背景 / background → [Vertical pure bimodule singularity remains outside the corridor · 7b118517cb](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)：Separate unresolved branch.
+- 输入 / input → [Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)：Current conditional closing theorem.
+- 背景 / background → [Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35)：Current unresolved next step.
+- 背景 / background → [Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65)：Reports progress against the unchanged primary question.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [N-Vertex-Main-Route.md](#asset-2c6743a1778f68d9fda0eb5c022373565ed45fa585d968a0f090da0103cc036a)：`research-state`，45852 字节；SHA-256 `2c6743a1778f68d9fda0eb5c022373565ed45fa585d968a0f090da0103cc036a`。
+  - 摘要：Existing arbitrary-vertex programme and explicit unresolved FG, PC and GP bridges, including previous proved conditional results.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\N-Vertex-Main-Route.md
+- [README.md](#asset-c16d8ece58ecb7e7bd39a1c11d92d4d180b1b88076417b55acc45f52fd8b50ec)：`source-index`，26549 字节；SHA-256 `c16d8ece58ecb7e7bd39a1c11d92d4d180b1b88076417b55acc45f52fd8b50ec`。
+  - 摘要：Frozen source inventory at initial MRS intake; links locate earlier workspace manuscripts, not a claim that every linked file was ingested or reviewed.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\README.md
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [79189a1d-9f42-435e-92be-b9baed38a062](#review-0b17ae71fc9624ad07d2c1c2c090f669f54e12ebb3c2277b3e6ffe8a185982f7)
+
+<a id="record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a"></a>
+### Rank-one probes do not establish periodicity or finite generation
+
+**类型：** 失败经验 / `failure`
+
+**状态：** 失败经验；审核接受；待复核 / 受影响；当前可用=false；可交付=true
+
+**记录原始结论类型：** `failure`；**考虑依赖后的结论类型：** `failure`。
+
+**研究身份：** `5ba6b2f1-1fae-4c29-b307-9ff6c5015c1e`；**修订：** `733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/73/3bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a>) · [返回概览](#overview)
+
+**陈述：**
+
+A rank-one numerical probe, graph cycle, or matching infinite subsequence does not construct an actual map on $H(B,b_2)$, a coherent Rees operator, or a finite generating set for its full homology tail.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a"></a>
+**反馈：**
+
+Withdraw the unproved implication rank one implies periodicity; retain the obstruction route.
+
+**假设：**
+
+- Distinguish numerical resolution labels from actual module and chain maps.
+
+**限制：**
+
+- This closes the inference, not every more structured cycle-shift strategy.
+
+**重新研究的条件：**
+
+- Supply an explicit initial map, all coherence equations, and a separate finite-generation argument.
+
+**状态依据（原始诊断标记）：**
+
+- `dependency_not_usable:7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd`
+- `dependency_not_usable:c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1`
+
+**本记录依赖或指向：**
+
+- 前提 / premise → [Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)：Actual primitive transport is impossible when cyclic exponents grow.
+- 输入 / input → [Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)：Lists the missing chain equations.
+
+**引用本记录的后续、修订与更正：**
+
+- [Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35) → 输入 / input：Removes the invalid rank-one shortcut.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [2632d7ad-8d5d-4a2c-84d8-bbf7854f0102](#review-02d1094e1ede87f2f731780c5bea5cc6a1f3c449569a3ea850939ba56db65a58)
+
+<a id="record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532"></a>
+### Two-stage filtered relative bar setup
+
+**类型：** 定义 / `definition`
+
+**状态：** 定义；审核接受；当前所选；当前可用=true；可交付=true
+
+**记录原始结论类型：** `definition`；**考虑依赖后的结论类型：** `definition`。
+
+**研究身份：** `2148c37b-5043-4303-af9e-2f9c6f53e4ae`；**修订：** `1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/15/99e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532>) · [返回概览](#overview)
+
+**陈述：**
+
+$B=\bigoplus_{n,p}B_{n,p}$, $0\le p\le\lfloor n/2\rfloor$, with $b_2$ of bidegree $(-1,0)$ and $b_3$ of bidegree $(-1,1)$. The two squares and anticommutator vanish. $E_1^{p,q}=H_q(R_a\otimes_C^{\mathbf L}M^{\otimes_C^{\mathbf L}p}\otimes_C^{\mathbf L}L_b)$ and $d_r:(p,q)\mapsto(p+r,q-2r-1)$.
+
+**适用范围：**
+
+Universal Gap A, arbitrary finite vertex number; the precise additional hypotheses appear below.
+
+<a id="action-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532"></a>
+**动作：**
+
+Preserve the stated research item with exact evidence and explicit proof boundaries.
+
+<a id="feedback-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532"></a>
+**反馈：**
+
+Full written argument available; review status is separate from the author's mathematical claim.
+
+**假设：**
+
+- Finite-dimensional split elementary C, finite-dimensional C-bimodule M, augmented minimal two-stage model with the indicated relative bar complex.
+
+**限制：**
+
+- A conditional mathematical setup; existence for arbitrary deleted corners is not asserted.
+
+**本记录依赖或指向：**
+
+- 背景 / background → [Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65)：Defines the current conditional derived-deletion branch.
+
+**引用本记录的后续、修订与更正：**
+
+- [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01) → 背景 / background：Supplies the concrete deletion realization of the abstract setup.
+- [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013) → 术语或定义 / term：Uses the explicitly defined filtered bar complex and page indexing.
+- [Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a) → 术语或定义 / term：Fixes differential conventions and finite filtration.
+- [Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879) → 术语或定义 / term：Fixes differential conventions and finite filtration.
+- [Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1) → 术语或定义 / term：Defines the bar differential and grading.
+
+**来源：**
+
+- [Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.](#source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac)
+- [native-workspace-han-20260927-initial-intake](#source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62)
+
+**证据资产：**
+
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)：`proof`，12727 字节；SHA-256 `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+  - 摘要：Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [02f29ee1-c057-4b5e-bf89-327c85d40e32](#review-80243723847ed383c9145ce8321ec9ab25afc0242b36bae849872f1cc49c8206)
+
+<a id="record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca"></a>
+### Correct the positive-filtration cycle-lift proof wording
+
+**类型：** 更正 / `correction`
+
+**状态：** 更正；审核接受；当前所选；当前可用=true；可交付=true
+
+**记录原始结论类型：** `correction`；**考虑依赖后的结论类型：** `correction`。
+
+**研究身份：** `1154b6dc-be33-4c62-929f-f60a2c6a7cbb`；**修订：** `a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca`。
+
+[查看完整 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/a1/7e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca>) · [返回概览](#overview)
+
+**陈述：**
+
+A polynomial cycle lift forces the outgoing spectral-sequence differential of that class to vanish. In positive filtration it does not exclude a later incoming differential. The exact Rees torsion-order theorem remains unchanged.
+
+**适用范围：**
+
+The proof of the Rees page/exponent correspondence, allowing arbitrary starting filtration.
+
+<a id="action-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca"></a>
+**动作：**
+
+Keep the original record and source bytes; register a same-identity successor with the corrected proof.
+
+<a id="feedback-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca"></a>
+**反馈：**
+
+The contradiction requires outgoing vanishing only, so no theorem assumption or conclusion changes.
+
+**假设：**
+
+- The filtered bar setup and correction equations of the target record.
+
+**限制：**
+
+- This is a proof-presentation correction, not a proof of Universal Gap A or a grant of independent MRS acceptance.
+
+**更正原始字段：** `{"effect": "presentation", "reason": "The old proof sentence overstated permanent survival in positive filtration; replace it by the outgoing-differential vanishing which is sufficient.", "replacement": "6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a", "target": "bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879"}`
+
+**本记录依赖或指向：**
+
+- 更正指定的替代记录 → [Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)：替代记录需凭自身审核取得适用资格。
+- 更正目标 / presentation → [Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)：The old proof sentence overstated permanent survival in positive filtration; replace it by the outgoing-differential vanishing which is sufficient.
+
+**来源：**
+
+- [Independent staged-note semantic review on 2026-09-28, round 1.](#source-14f3322ed785d059c060247dd245065e79623616940e3ed85bfb2316562a7eae)
+- [native-rees-proof-correction-20260928](#source-12ed20ae4e24b100e7ad70f37b4abc60e321c81296b4b9a9cf20d76e8ecd8122)
+
+**证据资产：**
+
+- [gap-a-note-verifier-report.md](#asset-7039a52a7fa804de1be01cdbe9f91710e81de039b86f563643a30796bd153ee6)：`independent-note-review`，3921 字节；SHA-256 `7039a52a7fa804de1be01cdbe9f91710e81de039b86f563643a30796bd153ee6`。
+  - 摘要：Independent whole-note review identified one positive-filtration proof overstatement; the reviewer distinguishes note semantics from formal proof admission.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\gap-a-note-verifier-report.md
+- [Rees-Torsion-Screening-and-Cycle-Lifts.md](#asset-0529d3a037fda9c7a483bff58b701e6e4125e443af964ec2c560ad4572142457)：`proof`，12873 字节；SHA-256 `0529d3a037fda9c7a483bff58b701e6e4125e443af964ec2c560ad4572142457`。
+  - 摘要：Corrected complete manuscript: in positive filtration a cycle lift forces its outgoing differential to vanish, without asserting permanent survival.
+  - 原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**相关审核：** [6164fe8d-5da7-4da4-a7e6-720ea6e655b8](#review-c07833d43a7bbd083a00bc8f507d3903e04544885f393e344655737ef6de9711)
+
+<a id="assets"></a>
+## 资产与原始证据
+
+对象链接定位确切字节。外部引用可能没有随包附带正文；读取摘要与适用条件，取得文件后核对哈希。
+
+<a id="asset-0529d3a037fda9c7a483bff58b701e6e4125e443af964ec2c560ad4572142457"></a>
+### Rees-Torsion-Screening-and-Cycle-Lifts.md · 0529d3a037
+
+**SHA-256：** `0529d3a037fda9c7a483bff58b701e6e4125e443af964ec2c560ad4572142457`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/05/29d3a037fda9c7a483bff58b701e6e4125e443af964ec2c560ad4572142457>)
+
+- `proof`；12873 字节；Corrected complete manuscript: in positive filtration a cycle lift forces its outgoing differential to vanish, without asserting permanent survival.
+- `proof`；12873 字节；Corrected complete manuscript: in positive filtration a cycle lift forces its outgoing differential to vanish, without asserting permanent survival.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**使用此资产的记录：** [Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)；[Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca)
+
+**使用此资产的审核：** [6164fe8d-5da7-4da4-a7e6-720ea6e655b8](#review-c07833d43a7bbd083a00bc8f507d3903e04544885f393e344655737ef6de9711)；[47bc7732-45a0-4a72-bc50-bddabfdc82a6](#review-f6049bece04081e7f72d53ecb64cc9aed5d25c0823d348ed0410a5e99e7d7c9b)
+
+<a id="asset-2c6743a1778f68d9fda0eb5c022373565ed45fa585d968a0f090da0103cc036a"></a>
+### N-Vertex-Main-Route.md · 2c6743a177
+
+**SHA-256：** `2c6743a1778f68d9fda0eb5c022373565ed45fa585d968a0f090da0103cc036a`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/2c/6743a1778f68d9fda0eb5c022373565ed45fa585d968a0f090da0103cc036a>)
+
+- `research-state`；45852 字节；Existing arbitrary-vertex programme and explicit unresolved FG, PC and GP bridges, including previous proved conditional results.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\N-Vertex-Main-Route.md；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\N-Vertex-Main-Route.md
+
+**使用此资产的记录：** [Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9)
+
+**使用此资产的审核：** [79189a1d-9f42-435e-92be-b9baed38a062](#review-0b17ae71fc9624ad07d2c1c2c090f669f54e12ebb3c2277b3e6ffe8a185982f7)
+
+<a id="asset-479cc7f039544943f4bffbe3c880bc3e57b5faca6fae448e75a6a20e038fe550"></a>
+### Derived-Deletion-Screening-Normal-Form.md · 479cc7f039
+
+**SHA-256：** `479cc7f039544943f4bffbe3c880bc3e57b5faca6fae448e75a6a20e038fe550`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/47/9cc7f039544943f4bffbe3c880bc3e57b5faca6fae448e75a6a20e038fe550>)
+
+- `proof`；20238 字节；Self-audited derived deletion normal form, actual bar differential, opposite orientation, and eight-dimensional all-degree screening example.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Derived-Deletion-Screening-Normal-Form.md；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Derived-Deletion-Screening-Normal-Form.md
+
+**使用此资产的记录：** [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)
+
+**使用此资产的审核：** [af8a3fd7-f907-4675-8ac1-2937779f029e](#review-ed21a90e3afeb573a54faa21432a594a51372d90a54d87aea0e7a18902c82ad4)
+
+<a id="asset-4c9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96"></a>
+### 审核报告或材料 · 4c9e86396c
+
+**SHA-256：** `4c9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+
+**使用此资产的审核：** [2632d7ad-8d5d-4a2c-84d8-bbf7854f0102](#review-02d1094e1ede87f2f731780c5bea5cc6a1f3c449569a3ea850939ba56db65a58)；[79189a1d-9f42-435e-92be-b9baed38a062](#review-0b17ae71fc9624ad07d2c1c2c090f669f54e12ebb3c2277b3e6ffe8a185982f7)；[89ad3678-a775-4e41-bc06-84e30fcb0068](#review-2c3f2ff8833b72165bf48c88e1fa866ec89a720f10fae8709b83fb390c743c4e)；[24707762-80ac-46b7-aa8e-82ce7f10450d](#review-72835b71f48592d0f690790feca00355597afb8d0c8d9691014d81d299721137)；[ce7a2128-4fe0-4bd0-97fd-3c449b5e67d5](#review-7e68b45c2d82ff3d94bf2cc6b557c0e7c15d2082f9b9f6beedcfdfb177292ba8)；[02f29ee1-c057-4b5e-bf89-327c85d40e32](#review-80243723847ed383c9145ce8321ec9ab25afc0242b36bae849872f1cc49c8206)；[2dea7774-b72e-4bc2-b39c-c7473496a85c](#review-8a1fe77fa191d80e1654760fe909080d19c328b66a4586752970dfa0fd826150)；[ecafaa24-e96f-4ef7-8759-4d3cec727264](#review-8cf271b17647d0210a341a3f50037c37e9c46c56facd348e66237b3fbd25fabb)；[5a1431ff-a987-4de6-9014-a95f0c42d274](#review-b795ccdfad6da6ddb5953b5e75eba31d3698b36a7eadabc77605d99756c18548)；[7a6eae08-cec2-4d61-8682-b17466054612](#review-ba324e5cf710437ac6652e661ca3f63dc326b7aea4e9a0d23fb2314624a6a0e0)；[4ec0d78d-1cfd-410d-b584-716ef329f67f](#review-d49b9ed098baaaee4742c7e21ffb546acf895b68df40806518b79988865238b9)；[aadc9820-15aa-4578-9226-012180ba49d0](#review-d6ed7d4e7e591981c20fe59deb7a5677c30afaf255613bb6ec3c12c0a01efcb0)；[af8a3fd7-f907-4675-8ac1-2937779f029e](#review-ed21a90e3afeb573a54faa21432a594a51372d90a54d87aea0e7a18902c82ad4)
+
+<a id="asset-5b134ed14c311cdfe377e346b65a60dd203ee0c1c2c0804ebeda10fc1eaad77d"></a>
+### rees_screening_audit.json · 5b134ed14c
+
+**SHA-256：** `5b134ed14c311cdfe377e346b65a60dd203ee0c1c2c0804ebeda10fc1eaad77d`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/5b/134ed14c311cdfe377e346b65a60dd203ee0c1c2c0804ebeda10fc1eaad77d>)
+
+- `bounded-computation`；3936 字节；Seven exact checks and 28 elementary torsion transport cases; source degree six, target degree five, exponent two.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\rees_screening_audit.json；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\rees_screening_audit.json
+
+**使用此资产的记录：** [Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)
+
+**使用此资产的审核：** [ecafaa24-e96f-4ef7-8759-4d3cec727264](#review-8cf271b17647d0210a341a3f50037c37e9c46c56facd348e66237b3fbd25fabb)
+
+<a id="asset-634a2fa57e5cb00b6307163307fe67c1e9e874eab7f6f1c1a92e5f0892da77be"></a>
+### audit_rees_screening.py · 634a2fa57e
+
+**SHA-256：** `634a2fa57e5cb00b6307163307fe67c1e9e874eab7f6f1c1a92e5f0892da77be`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/63/4a2fa57e5cb00b6307163307fe67c1e9e874eab7f6f1c1a92e5f0892da77be>)
+
+- `code`；3733 字节；Reproducible exact rational Rees calibration, boundary nonmembership, and negative sign check.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\audit_rees_screening.py；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\audit_rees_screening.py
+
+**使用此资产的记录：** [Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)
+
+**使用此资产的审核：** [ecafaa24-e96f-4ef7-8759-4d3cec727264](#review-8cf271b17647d0210a341a3f50037c37e9c46c56facd348e66237b3fbd25fabb)
+
+<a id="asset-7039a52a7fa804de1be01cdbe9f91710e81de039b86f563643a30796bd153ee6"></a>
+### gap-a-note-verifier-report.md · 7039a52a7f
+
+**SHA-256：** `7039a52a7fa804de1be01cdbe9f91710e81de039b86f563643a30796bd153ee6`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/70/39a52a7fa804de1be01cdbe9f91710e81de039b86f563643a30796bd153ee6>)
+
+- `independent-note-review`；3921 字节；Independent whole-note review identified one positive-filtration proof overstatement; the reviewer distinguishes note semantics from formal proof admission.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\gap-a-note-verifier-report.md；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\gap-a-note-verifier-report.md
+
+**使用此资产的记录：** [Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca)
+
+**使用此资产的审核：** [6164fe8d-5da7-4da4-a7e6-720ea6e655b8](#review-c07833d43a7bbd083a00bc8f507d3903e04544885f393e344655737ef6de9711)
+
+<a id="asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4"></a>
+### Rees-Torsion-Screening-and-Cycle-Lifts.md · 834a3f6cb8
+
+**SHA-256：** `834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/83/4a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4>)
+
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- `proof`；12727 字节；Complete proofs of the corridor, Rees exponent/degree correspondence, conditional Noetherian collapse, operator obstruction equations, and primitive torsion transport.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\Rees-Torsion-Screening-and-Cycle-Lifts.md
+
+**使用此资产的记录：** [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)；[Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)；[Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)；[Vertical pure bimodule singularity remains outside the corridor · 7b118517cb](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)；[Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)；[Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)；[Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)；[Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)；[Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)；[Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35)；[Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9)
+
+**使用此资产的审核：** [2632d7ad-8d5d-4a2c-84d8-bbf7854f0102](#review-02d1094e1ede87f2f731780c5bea5cc6a1f3c449569a3ea850939ba56db65a58)；[79189a1d-9f42-435e-92be-b9baed38a062](#review-0b17ae71fc9624ad07d2c1c2c090f669f54e12ebb3c2277b3e6ffe8a185982f7)；[89ad3678-a775-4e41-bc06-84e30fcb0068](#review-2c3f2ff8833b72165bf48c88e1fa866ec89a720f10fae8709b83fb390c743c4e)；[ce7a2128-4fe0-4bd0-97fd-3c449b5e67d5](#review-7e68b45c2d82ff3d94bf2cc6b557c0e7c15d2082f9b9f6beedcfdfb177292ba8)；[02f29ee1-c057-4b5e-bf89-327c85d40e32](#review-80243723847ed383c9145ce8321ec9ab25afc0242b36bae849872f1cc49c8206)；[2dea7774-b72e-4bc2-b39c-c7473496a85c](#review-8a1fe77fa191d80e1654760fe909080d19c328b66a4586752970dfa0fd826150)；[ecafaa24-e96f-4ef7-8759-4d3cec727264](#review-8cf271b17647d0210a341a3f50037c37e9c46c56facd348e66237b3fbd25fabb)；[5a1431ff-a987-4de6-9014-a95f0c42d274](#review-b795ccdfad6da6ddb5953b5e75eba31d3698b36a7eadabc77605d99756c18548)；[7a6eae08-cec2-4d61-8682-b17466054612](#review-ba324e5cf710437ac6652e661ca3f63dc326b7aea4e9a0d23fb2314624a6a0e0)；[4ec0d78d-1cfd-410d-b584-716ef329f67f](#review-d49b9ed098baaaee4742c7e21ffb546acf895b68df40806518b79988865238b9)；[aadc9820-15aa-4578-9226-012180ba49d0](#review-d6ed7d4e7e591981c20fe59deb7a5677c30afaf255613bb6ec3c12c0a01efcb0)
+
+<a id="asset-c16d8ece58ecb7e7bd39a1c11d92d4d180b1b88076417b55acc45f52fd8b50ec"></a>
+### README.md · c16d8ece58
+
+**SHA-256：** `c16d8ece58ecb7e7bd39a1c11d92d4d180b1b88076417b55acc45f52fd8b50ec`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/c1/6d8ece58ecb7e7bd39a1c11d92d4d180b1b88076417b55acc45f52fd8b50ec>)
+
+- `source-index`；26549 字节；Frozen source inventory at initial MRS intake; links locate earlier workspace manuscripts, not a claim that every linked file was ingested or reviewed.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\README.md；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\README.md
+
+**使用此资产的记录：** [Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9)
+
+**使用此资产的审核：** [79189a1d-9f42-435e-92be-b9baed38a062](#review-0b17ae71fc9624ad07d2c1c2c090f669f54e12ebb3c2277b3e6ffe8a185982f7)
+
+<a id="asset-d476efddbd446b3e7fb5088dca0cca52911d301ab383ca49ff620d42da8cc3e0"></a>
+### probe_cubic_bar.py · d476efddbd
+
+**SHA-256：** `d476efddbd446b3e7fb5088dca0cca52911d301ab383ca49ff620d42da8cc3e0`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/d4/76efddbd446b3e7fb5088dca0cca52911d301ab383ca49ff620d42da8cc3e0>)
+
+- `code-dependency`；3405 字节；Exact sparse rational boundary-span solver.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\probe_cubic_bar.py；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\probe_cubic_bar.py
+
+**使用此资产的记录：** [Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)
+
+**使用此资产的审核：** [ecafaa24-e96f-4ef7-8759-4d3cec727264](#review-8cf271b17647d0210a341a3f50037c37e9c46c56facd348e66237b3fbd25fabb)
+
+<a id="asset-d4d22955c390c89af7a4ebf5b0f077e29a9543390ade831e38fe5364cd189b12"></a>
+### return_kernel_certificate.py · d4d22955c3
+
+**SHA-256：** `d4d22955c390c89af7a4ebf5b0f077e29a9543390ade831e38fe5364cd189b12`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/d4/d22955c390c89af7a4ebf5b0f077e29a9543390ade831e38fe5364cd189b12>)
+
+- `code-dependency`；14641 字节；Rational linear algebra utilities imported by the existing bar code.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\return_kernel_certificate.py；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\outputs\return_kernel_certificate.py
+
+**使用此资产的记录：** [Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)
+
+**使用此资产的审核：** [ecafaa24-e96f-4ef7-8759-4d3cec727264](#review-8cf271b17647d0210a341a3f50037c37e9c46c56facd348e66237b3fbd25fabb)
+
+<a id="asset-d6f7861f06f250afa64ce2ff7e1523508a34d6de8da5223f2fdbc11746dfcb7f"></a>
+### two_stage_screening_audit.json · d6f7861f06
+
+**SHA-256：** `d6f7861f06f250afa64ce2ff7e1523508a34d6de8da5223f2fdbc11746dfcb7f`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/d6/f7861f06f250afa64ce2ff7e1523508a34d6de8da5223f2fdbc11746dfcb7f>)
+
+- `bounded-computation`；7921 字节；Exact finite audit of the actual example, with proof-linked polynomial identities.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\two_stage_screening_audit.json；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\two_stage_screening_audit.json
+
+**使用此资产的记录：** [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)
+
+**使用此资产的审核：** [af8a3fd7-f907-4675-8ac1-2937779f029e](#review-ed21a90e3afeb573a54faa21432a594a51372d90a54d87aea0e7a18902c82ad4)
+
+<a id="asset-dfd9ca318769cc8cf5c8cdc3f4feadf1b37539679c2c996a6c63a6982f4ebc2b"></a>
+### 审核报告或材料 · dfd9ca3187
+
+**SHA-256：** `dfd9ca318769cc8cf5c8cdc3f4feadf1b37539679c2c996a6c63a6982f4ebc2b`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/df/d9ca318769cc8cf5c8cdc3f4feadf1b37539679c2c996a6c63a6982f4ebc2b>)
+
+
+**使用此资产的审核：** [6164fe8d-5da7-4da4-a7e6-720ea6e655b8](#review-c07833d43a7bbd083a00bc8f507d3903e04544885f393e344655737ef6de9711)；[47bc7732-45a0-4a72-bc50-bddabfdc82a6](#review-f6049bece04081e7f72d53ecb64cc9aed5d25c0823d348ed0410a5e99e7d7c9b)
+
+<a id="asset-f180975e422eef236d5617fdd3364f7d5ebd97d146c0cf9d1d048cd7884697d2"></a>
+### probe_truncated_cubic.py · f180975e42
+
+**SHA-256：** `f180975e422eef236d5617fdd3364f7d5ebd97d146c0cf9d1d048cd7884697d2`。
+
+**文件可用性：** 本地文件可用（已解析位置）。
+
+[重开内容对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/f1/80975e422eef236d5617fdd3364f7d5ebd97d146c0cf9d1d048cd7884697d2>)
+
+- `code-dependency`；4818 字节；Existing relative two-stage bar implementation.
+- C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\probe_truncated_cubic.py；原始定位：C:\Users\pcp\Documents\Codex\2026-09-09\files-pasted-by-the-user-han\work\probe_truncated_cubic.py
+
+**使用此资产的记录：** [Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)
+
+**使用此资产的审核：** [ecafaa24-e96f-4ef7-8759-4d3cec727264](#review-8cf271b17647d0210a341a3f50037c37e9c46c56facd348e66237b3fbd25fabb)
+
+<a id="reviews"></a>
+## 审核记录
+
+这里展示实际记录的审核方法和范围。不同名字不证明独立性，审核或字节校验也不自动证明数学。
+
+<a id="review-ed21a90e3afeb573a54faa21432a594a51372d90a54d87aea0e7a18902c82ad4"></a>
+### af8a3fd7-f907-4675-8ac1-2937779f029e
+
+**目标：** [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)
+
+**决定：** `inconclusive`；**覆盖：** `record_fidelity`, `proof`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/ed/21a90e3afeb573a54faa21432a594a51372d90a54d87aea0e7a18902c82ad4>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Derived deletion normal form and screening rank
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835608+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)；[479cc7f039](#asset-479cc7f039544943f4bffbe3c880bc3e57b5faca6fae448e75a6a20e038fe550)；[Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65)；[d6f7861f06](#asset-d6f7861f06f250afa64ce2ff7e1523508a34d6de8da5223f2fdbc11746dfcb7f)
+
+<a id="review-ba324e5cf710437ac6652e661ca3f63dc326b7aea4e9a0d23fb2314624a6a0e0"></a>
+### 7a6eae08-cec2-4d61-8682-b17466054612
+
+**目标：** [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)
+
+**决定：** `inconclusive`；**覆盖：** `record_fidelity`, `proof`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/ba/324e5cf710437ac6652e661ca3f63dc326b7aea4e9a0d23fb2314624a6a0e0>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Screening corridor
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835616+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)；[834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)
+
+<a id="review-80243723847ed383c9145ce8321ec9ab25afc0242b36bae849872f1cc49c8206"></a>
+### 02f29ee1-c057-4b5e-bf89-327c85d40e32
+
+**目标：** [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)
+
+**决定：** `accept`；**覆盖：** `record_fidelity`, `terminology`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/80/243723847ed383c9145ce8321ec9ab25afc0242b36bae849872f1cc49c8206>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Two-stage filtered relative bar setup
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835582+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)；[Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65)
+
+<a id="review-f6049bece04081e7f72d53ecb64cc9aed5d25c0823d348ed0410a5e99e7d7c9b"></a>
+### 47bc7732-45a0-4a72-bc50-bddabfdc82a6
+
+**目标：** [Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)
+
+**决定：** `inconclusive`；**覆盖：** `record_fidelity`, `proof`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/f6/049bece04081e7f72d53ecb64cc9aed5d25c0823d348ed0410a5e99e7d7c9b>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/df/d9ca318769cc8cf5c8cdc3f4feadf1b37539679c2c996a6c63a6982f4ebc2b>)
+
+**方法：** Self-review of exact proof-presentation repair identified by independent note review.
+
+**范围：** Rees death page and exact target torsion order
+
+**发现：** The theorem and all indices remain unchanged; the proof only requires outgoing vanishing.
+
+**审核者声明：** `{"basis": "Checked the exact one-sentence repair against the independent note finding.", "identity": "Astra, drafting researcher", "independence": "self"}`；**时间：** 2026-09-28T01:42:05.917609+00:00
+
+**限制：**
+
+- Self-review, not independent formal proof acceptance.
+
+**绑定材料：** [0529d3a037](#asset-0529d3a037fda9c7a483bff58b701e6e4125e443af964ec2c560ad4572142457)；[Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)
+
+<a id="review-02d1094e1ede87f2f731780c5bea5cc6a1f3c449569a3ea850939ba56db65a58"></a>
+### 2632d7ad-8d5d-4a2c-84d8-bbf7854f0102
+
+**目标：** [Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)
+
+**决定：** `accept`；**覆盖：** `record_fidelity`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/02/d1094e1ede87f2f731780c5bea5cc6a1f3c449569a3ea850939ba56db65a58>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Rank-one probes do not establish periodicity or finite generation
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835641+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)；[834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)；[Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)
+
+<a id="review-b795ccdfad6da6ddb5953b5e75eba31d3698b36a7eadabc77605d99756c18548"></a>
+### 5a1431ff-a987-4de6-9014-a95f0c42d274
+
+**目标：** [Vertical pure bimodule singularity remains outside the corridor · 7b118517cb](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)
+
+**决定：** `accept`；**覆盖：** `record_fidelity`, `source`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/b7/95ccdfad6da6ddb5953b5e75eba31d3698b36a7eadabc77605d99756c18548>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Vertical pure bimodule singularity remains outside the corridor
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835657+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)；[834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)
+
+<a id="review-d49b9ed098baaaee4742c7e21ffb546acf895b68df40806518b79988865238b9"></a>
+### 4ec0d78d-1cfd-410d-b584-716ef329f67f
+
+**目标：** [Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)
+
+**决定：** `inconclusive`；**覆盖：** `record_fidelity`, `proof`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/d4/9b9ed098baaaee4742c7e21ffb546acf895b68df40806518b79988865238b9>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Primitive torsion cannot be transported to a longer cyclic channel
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835636+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)；[Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)
+
+<a id="review-8cf271b17647d0210a341a3f50037c37e9c46c56facd348e66237b3fbd25fabb"></a>
+### ecafaa24-e96f-4ef7-8759-4d3cec727264
+
+**目标：** [Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)
+
+**决定：** `accept`；**覆盖：** `record_fidelity`, `computation`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/8c/f271b17647d0210a341a3f50037c37e9c46c56facd348e66237b3fbd25fabb>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Exact second-page Rees calibration
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835652+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [5b134ed14c](#asset-5b134ed14c311cdfe377e346b65a60dd203ee0c1c2c0804ebeda10fc1eaad77d)；[634a2fa57e](#asset-634a2fa57e5cb00b6307163307fe67c1e9e874eab7f6f1c1a92e5f0892da77be)；[834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)；[Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)；[d476efddbd](#asset-d476efddbd446b3e7fb5088dca0cca52911d301ab383ca49ff620d42da8cc3e0)；[d4d22955c3](#asset-d4d22955c390c89af7a4ebf5b0f077e29a9543390ade831e38fe5364cd189b12)；[f180975e42](#asset-f180975e422eef236d5617fdd3364f7d5ebd97d146c0cf9d1d048cd7884697d2)
+
+<a id="review-7e68b45c2d82ff3d94bf2cc6b557c0e7c15d2082f9b9f6beedcfdfb177292ba8"></a>
+### ce7a2128-4fe0-4bd0-97fd-3c449b5e67d5
+
+**目标：** [Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)
+
+**决定：** `inconclusive`；**覆盖：** `record_fidelity`, `proof`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/7e/68b45c2d82ff3d94bf2cc6b557c0e7c15d2082f9b9f6beedcfdfb177292ba8>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Uniform Rees torsion forces eventual quotient-edge surjectivity
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835625+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)；[834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)；[Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)
+
+<a id="review-c07833d43a7bbd083a00bc8f507d3903e04544885f393e344655737ef6de9711"></a>
+### 6164fe8d-5da7-4da4-a7e6-720ea6e655b8
+
+**目标：** [Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca)
+
+**决定：** `accept`；**覆盖：** `record_fidelity`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/c0/7833d43a7bbd083a00bc8f507d3903e04544885f393e344655737ef6de9711>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/df/d9ca318769cc8cf5c8cdc3f4feadf1b37539679c2c996a6c63a6982f4ebc2b>)
+
+**方法：** Self-review of exact proof-presentation repair identified by independent note review.
+
+**范围：** Correct the positive-filtration cycle-lift proof wording
+
+**发现：** The theorem and all indices remain unchanged; the proof only requires outgoing vanishing.
+
+**审核者声明：** `{"basis": "Checked the exact one-sentence repair against the independent note finding.", "identity": "Astra, drafting researcher", "independence": "self"}`；**时间：** 2026-09-28T01:42:05.917658+00:00
+
+**限制：**
+
+- Self-review, not independent formal proof acceptance.
+
+**绑定材料：** [0529d3a037](#asset-0529d3a037fda9c7a483bff58b701e6e4125e443af964ec2c560ad4572142457)；[Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)；[7039a52a7f](#asset-7039a52a7fa804de1be01cdbe9f91710e81de039b86f563643a30796bd153ee6)；[Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)
+
+<a id="review-8a1fe77fa191d80e1654760fe909080d19c328b66a4586752970dfa0fd826150"></a>
+### 2dea7774-b72e-4bc2-b39c-c7473496a85c
+
+**目标：** [Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)
+
+**决定：** `inconclusive`；**覆盖：** `record_fidelity`, `proof`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/8a/1fe77fa191d80e1654760fe909080d19c328b66a4586752970dfa0fd826150>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Rees death page and exact target torsion order
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835620+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)；[834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)
+
+<a id="review-2c3f2ff8833b72165bf48c88e1fa866ec89a720f10fae8709b83fb390c743c4e"></a>
+### 89ad3678-a775-4e41-bc06-84e30fcb0068
+
+**目标：** [Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)
+
+**决定：** `inconclusive`；**覆盖：** `record_fidelity`, `proof`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/2c/3f2ff8833b72165bf48c88e1fa866ec89a720f10fae8709b83fb390c743c4e>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Cycle-shift obstruction equations and local polynomiality
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835632+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)；[834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)
+
+<a id="review-d6ed7d4e7e591981c20fe59deb7a5677c30afaf255613bb6ec3c12c0a01efcb0"></a>
+### aadc9820-15aa-4578-9226-012180ba49d0
+
+**目标：** [Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35)
+
+**决定：** `accept`；**覆盖：** `record_fidelity`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/d6/ed7d4e7e591981c20fe59deb7a5677c30afaf255613bb6ec3c12c0a01efcb0>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Cycle-shift obstruction tower: return or descent remains open
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835646+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)；[Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)；[834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)；[Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)；[Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)
+
+<a id="review-72835b71f48592d0f690790feca00355597afb8d0c8d9691014d81d299721137"></a>
+### 24707762-80ac-46b7-aa8e-82ce7f10450d
+
+**目标：** [Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65)
+
+**决定：** `accept`；**覆盖：** `record_fidelity`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/72/835b71f48592d0f690790feca00355597afb8d0c8d9691014d81d299721137>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Universal Gap A
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835666+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+<a id="review-0b17ae71fc9624ad07d2c1c2c090f669f54e12ebb3c2277b3e6ffe8a185982f7"></a>
+### 79189a1d-9f42-435e-92be-b9baed38a062
+
+**目标：** [Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9)
+
+**决定：** `accept`；**覆盖：** `record_fidelity`, `source`
+
+[审核 JSON 对象](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/0b/17ae71fc9624ad07d2c1c2c090f669f54e12ebb3c2277b3e6ffe8a185982f7>) · [重开审核报告](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/研究数据/objects/4c/9e86396c03b9623b4bb706c69e064e1e1e6222159487038bca020af549fb96>)
+
+**方法：** Explicit self-audit of the preserved statement, assumptions, evidence and status.
+
+**范围：** Universal Gap A current research state and source map
+
+**发现：** The record preserves the stated mathematical and provenance boundary. See the substantive report; result claims await independent proof review.
+
+**审核者声明：** `{"basis": "Same researcher who drafted the new statements and ran the exact audit.", "identity": "Astra, primary drafting researcher", "independence": "self"}`；**时间：** 2026-09-27T15:19:22.835662+00:00
+
+**限制：**
+
+- Self-review by the drafting researcher; no independent proof acceptance or novelty verification.
+
+**绑定材料：** [2c6743a177](#asset-2c6743a1778f68d9fda0eb5c022373565ed45fa585d968a0f090da0103cc036a)；[Vertical pure bimodule singularity remains outside the corridor · 7b118517cb](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)；[834a3f6cb8](#asset-834a3f6cb8694081c3e339aec7ee3e8d8edc80cb6952b6125c48743f9357f7e4)；[Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)；[c16d8ece58](#asset-c16d8ece58ecb7e7bd39a1c11d92d4d180b1b88076417b55acc45f52fd8b50ec)；[Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35)；[Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65)
+
+<a id="sources"></a>
+## 来源索引
+
+来源保留多方贡献与引用关系；报告的名字或组织不等于已认证身份。
+
+<a id="source-b15d808b238e1ed337d41600a43bb35eb086062ecf9d57825728c622a2fd2a30"></a>
+### 来源 · b15d808b23
+
+Independent note review, round 1, identified this exact proof wording; this is not independent MRS proof acceptance.
+
+**来源类型：** 记录中的来源引用
+
+**相关记录：** [Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)
+
+<a id="source-14f3322ed785d059c060247dd245065e79623616940e3ed85bfb2316562a7eae"></a>
+### 来源 · 14f3322ed7
+
+Independent staged-note semantic review on 2026-09-28, round 1.
+
+**来源类型：** 记录中的来源引用
+
+**相关记录：** [Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca)
+
+<a id="source-f0386d0b18d6e5ea3b053656cc4354e41633d71ff2edada28b5500fc3a2c40ac"></a>
+### 来源 · f0386d0b18
+
+Native research continued from the current workspace on 2026-09-27; no external author attribution or novelty claim.
+
+**来源类型：** 记录中的来源引用
+
+**相关记录：** [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)；[Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)；[Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)；[Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)；[Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)；[Vertical pure bimodule singularity remains outside the corridor · 7b118517cb](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)；[Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)；[Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)；[Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)；[Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)；[Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)；[Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35)；[Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9)
+
+<a id="source-12ed20ae4e24b100e7ad70f37b4abc60e321c81296b4b9a9cf20d76e8ecd8122"></a>
+### 来源 · 12ed20ae4e
+
+native-rees-proof-correction-20260928
+
+**来源类型：** 报告的贡献来源（身份未认证）
+
+**相关记录：** [Rees death page and exact target torsion order · 6b4d1daeb0](#record-6b4d1daeb001d1d63d91b8a5beb806094fca9a0c0cc52e739c1cb8b805c0418a)；[Correct the positive-filtration cycle-lift proof wording · a17e93bf6b](#record-a17e93bf6bdcb9f99057c2fb2857a37aa0971d46957adb2eba6ead96b192e5ca)
+
+<a id="source-091e3d64fc3d5f25f9fb70e8bb33dc042f51d8f738a7c0b302ff6c9ebfa45d62"></a>
+### 来源 · 091e3d64fc
+
+native-workspace-han-20260927-initial-intake
+
+**来源类型：** 报告的贡献来源（身份未认证）
+
+**相关记录：** [Derived deletion normal form and screening rank · 09c07ac620](#record-09c07ac620f0475fdf1fa16810d30baec549ba2a153650284970b915f50d0c01)；[Screening corridor · 14453ac43c](#record-14453ac43c5a04ff673268ff26bd75720f22bf68ebc97dda493a585b27ae4013)；[Two-stage filtered relative bar setup · 1599e025c1](#record-1599e025c1fd65a4e5fcbcc5aa8797df4e9da68701d5168e9c098b8305a5f532)；[Rank-one probes do not establish periodicity or finite generation · 733bd32e48](#record-733bd32e48b84e37da0c82c6e6f428029338a17ea260904c7ffb3fdda2f1482a)；[Vertical pure bimodule singularity remains outside the corridor · 7b118517cb](#record-7b118517cbb4e5d96e374123755fbd44a2dc6251160d0ecd62db5bbe6525ecc0)；[Primitive torsion cannot be transported to a longer cyclic channel · 7d88327400](#record-7d88327400e7e7d24b0822c62343a12c4aa8937e3cf37a4ab0b0091b383ff0bd)；[Exact second-page Rees calibration · 90fb4028f8](#record-90fb4028f84d935dbf0a70a0eb15e57ac04d7daf3803e3568307fe801148cece)；[Uniform Rees torsion forces eventual quotient-edge surjectivity · 951de48da3](#record-951de48da3021266ed847eeedece7cc6fdf01a11ae7e290e15b1eafa4a155f85)；[Rees death page and exact target torsion order · bcd566ea1a](#record-bcd566ea1a816e9c2e6da40744daf0d870a74f8eab6259e64f59fbcde6cfa879)；[Cycle-shift obstruction equations and local polynomiality · c0715d28e3](#record-c0715d28e32503286aec8e5d1bbdd2d0aab1249d99ff9b3d5a2fac7723d2d4d1)；[Cycle-shift obstruction tower: return or descent remains open · cdc2c10583](#record-cdc2c10583c0ca2d66bd736f2a60deaaa141c3619720b69812a598f6add4ef35)；[Universal Gap A current research state and source map · e2614e5ac7](#record-e2614e5ac7920fa09726595eb9997146bb9dc3cca177f0172108c35c82c27ff9)
+
+<a id="source-308d6971102b49bef123871dfe78df1da646395f73bb5f49522794046a6e07bb"></a>
+### 来源 · 308d697110
+
+outputs/N-Vertex-Main-Route.md, Section 1, current workspace; initial objective adopted without strengthening its complex base field.
+
+**来源类型：** 记录中的来源引用
+
+**相关记录：** [Universal Gap A · d5eca183c8](#record-d5eca183c89b692751ae618f49a1645b6be10dd63fc0cd2b50e81a183a4a1f65)
+

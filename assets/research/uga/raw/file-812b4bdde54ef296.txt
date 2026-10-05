@@ -1,0 +1,477 @@
+# T28 — One-sided higher-pd deletion with an ordinary visible return
+
+Date: 2026-10-04.
+
+Status: complete ordinary proof and normal adversarial self-audit;
+actual minimal-resolution/carrier/corner calibration passed;
+NOT independently verified. Universal Gap A remains OPEN.
+
+Continue T27. This removes its BOTH-side finite-pd requirement for an
+explicit carrier-preserving class. The resulting bridge is supported
+ordinary Tor, with a possible detector change, not a claimed same-pair
+isomorphism. It permits arbitrarily high finite pd and NONPERFECT Ae.
+No projective differential image is deleted or assumed to preserve exactness.
+
+## 1. Exact hypotheses — C102
+
+A is elementary finite-dimensional over arbitrary k. F is nonempty
+proper, e=1-sum_F e_f, B=eAe, S=sum_F L_f. Require only
+
+\[
+d=\max_{f\in F}\operatorname{pd}_A L_f<\infty.
+\tag{1.1}
+\]
+
+No finite RIGHT pd is assumed. Let the ACTUAL ordinary Yoneda algebra
+E=Ext^*_A(S,S) have finite global dimension g, and let q be its highest
+nonzero degree, q<=d. Set
+
+\[
+a=d+g\max(q-1,0),\qquad t=\max(a-1,0).
+\tag{1.2}
+\]
+
+For a primitive label u define the LEFT projective composition carrier
+
+\[
+C_u=\{v:e_vAe_u\ne0\}.
+\tag{1.3}
+\]
+
+Require the following condition on the ACTUAL terminating minimal
+projective resolutions of the finite simples L_f:
+
+\[
+A e_u\text{ occurs in }P_p(L_f),\ p\ge1
+\quad\Longrightarrow\quad C_u\subseteq C_f.
+\tag{R}
+\]
+
+Equivalently the composition support of every projective term stays
+inside that of P_0(L_f)=A e_f. Only degrees1 through d must be checked.
+This condition concerns actual resolution terms and their whole physical
+columns, not a map-image support or graph path. It does NOT say that
+the factors of A e_f stay in F. Infinite-pd factors are allowed.
+
+A weaker, equally finite ordinary alternative suffices. For every retained
+target L_z, form the ACTUAL minimal graded RIGHT E-projective resolution
+of H(L_z)=Ext^*_A(S,L_z). Require that every primitive F generator f
+occurring in its covers satisfy C_z intersect (retained labels) subset C_f.
+Call this condition(U).
+Its covers terminate by finite gd(E). It concerns actual ordinary
+generators, not every component of an E-projective. The theorem holds
+under(U); condition(R) implies(U) by the proof in Section3. This gives
+a finite ordinary eligibility check even when(R) fails.
+
+### Theorem 1.1 — Ordinary supported return and strict descent
+
+If retained y,z have e_yAe_z nonzero and Tor^B_n(R_z,L_y) nonzero for
+infinitely many n, then A has a supported persistent ordinary pair with
+the SAME LEFT source y: either (z,y) itself, or (f,y) for some f in F
+with e_yAe_f nonzero. Degrees can shift by a bounded amount; a same-pair
+high isomorphism is not asserted.
+
+If A's ALL reverse-supported ordinary simple Tor vanish for n>M,
+then B's supported ordinary simple Tor vanish for
+
+\[
+n>M+t.
+\tag{1.4}
+\]
+
+LEFT infinite labels are EXACTLY restricted. For every finite LEFT M,
+writing b=pd_B(eM), m=pd_A M when finite,
+
+\[
+b\le m+t,\qquad m\le b+d+1.
+\tag{1.5}
+\]
+
+Finiteness of either implies finiteness of the other. Consequently
+gd(B)<=gd(A)+t and gd(A)<=gd(B)+d+1 whenever finite, and gd(A) is
+infinite iff gd(B) is infinite. Badness therefore descends from A to B,
+with strict algebra-dimension and vertex decrease. The chosen LEFT
+infinite count stays the same; RIGHT labels/counts may change.
+
+For a checked tower, supported cutoff is at most the original M plus
+the sum of its t's. Dimension prohibits infinitely many eligible moves.
+Eligibility of later blocks must be checked; no arbitrary primitive
+inheritance or universal eligible-block availability is claimed.
+
+The direct RIGHT theorem uses right finite pds, the ordinary right Yoneda
+algebra, and carriers {v:e_uAe_v nonzero} for right projectives e_uA.
+It preserves the RIGHT source (the original Tor detector z), and may
+change the LEFT source to f with e_fAe_z nonzero. No opposite-infinite-plus
+transfer is used.
+
+## 2. A finite actual UNIT construction from one-sided data
+
+The construction here uses Ext FROM S, which is bounded by LEFT pd d,
+rather than Ext TO S, whose bound in T27 required finite RIGHT pd.
+For a finite LEFT target Z put
+
+\[
+H(Z)=\bigoplus_n\operatorname{Hom}_{D(A)}(S,Z[n]),
+\tag{2.1}
+\]
+
+a finite graded RIGHT E-module supported in degrees0 through d.
+Its action is ordinary precomposition. Let K_0=H(Z) and P_i -> K_i
+be homogeneous minimal E-projective covers with kernels K_{i+1}.
+After g+1 covers K_{g+1}=0. Generator degrees satisfy
+
+\[
+i\le\sigma\le d+iq.
+\tag{2.2}
+\]
+
+As in C101 this follows from K_i inside rad P_{i-1} and the actual
+finite degree bound q on E. If E is semisimple, q=g=0 and no positive
+degree induction is needed.
+
+H(L_f[-sigma]) is the RIGHT E-projective with generator f in degree
+sigma. A map from that projective to H(X_i) is realized by an actual
+morphism L_f[-sigma] -> X_i. Starting X_0=Z, realize P_i -> K_i by
+finite sums S_i of these shifts and use the actual FIBER triangle
+
+\[
+X_{i+1}\longrightarrow S_i\longrightarrow X_i
+\longrightarrow X_{i+1}[1].
+\tag{2.3}
+\]
+
+Surjectivity in every H degree gives H(X_{i+1})=K_{i+1} by the actual
+long exact sequence. All X_i are bounded. Finally H(X_{g+1})=0.
+
+Take a bounded-below MINIMAL A-injective complex J for X_{g+1}.
+Minimality makes Hom_A(S,J) have zero differentials: they kill the
+injective socles. Hence H(X_{g+1})=0 excludes every I_f=D(e_fA)
+summand for f in F, in EVERY degree. The remaining summands I_u
+restrict to actual B injectives D(e_uB).
+
+Exact e(-) applied to (2.3) gives eX_{g+1}=eZ[-g-1]. Therefore
+eJ[g+1] is a genuine MINIMAL B-injective resolution of eZ. A lowest
+negative term in a bounded-below minimal complex with only degree-zero
+cohomology would have to inject into the next term and split, contradicting
+minimality. Thus no negative terms remain. This is ordinary exactness,
+not an assertion based on removing a finite-pd image.
+
+For retained u, literal ordinary adjunction gives
+
+\[
+\operatorname{Hom}_B(eA,D(e_uB))=D(e_uA).
+\tag{2.4}
+\]
+
+Termwise coinduction identifies J[g+1] with
+RHom_B(eA,eZ). The constructed Z -> J[g+1] has e-image the identity;
+derived adjunction identifies it with the actual UNIT. Denote its cone
+by Delta_Z.
+
+With T_i=X_i[i], rotated (2.3) gives S_i[i] -> T_i -> T_{i+1].
+The cone of the composite T_0=Z -> T_{g+1} is a finite extension of
+
+\[
+S_i[i+1]=\bigoplus L_f[i+1-\sigma].
+\tag{2.5}
+\]
+
+Its actual cohomology lies in [-1,a-1] and has F factors. For ALL
+finite Z this bounds Ext^n_B(eA,eZ) for n>t. Every finite B-module
+is eZ, using the finite ordinary A-module Z=Ae tensor_B X. It follows
+that the ACTUAL LEFT corner module eA has pd_B at most t. No assertion
+that Ae is perfect on the other side is made.
+
+For Z=L_z retained, H^0(Z)=0. The stronger generator lower bound
+sigma>=i+1 holds, so every block (2.5) has shift
+
+\[
+-t\le i+1-\sigma\le0.
+\tag{2.6}
+\]
+
+The actual retained-target unit cone has cohomology only in [0,t].
+If d=0 then H(L_z)=0 and Delta_{L_z}=0; t=0 handles that case.
+
+## 3. Carrier preservation makes EVERY error block physically visible
+
+Fix retained y,z with y in C_z. A generator f of P_0 in the above
+construction for Z=L_z must have a nonzero primitive f component in
+H(L_z), that is Ext^p_A(L_f,L_z) nonzero for some p>=1. The ACTUAL
+minimal resolution of L_f therefore has A e_z in degree p. Condition
+(R) gives C_z subset C_f, so y in C_f.
+
+Now suppose a RIGHT E-projective generator f is visible from y.
+The primitive h component of H(L_f[-sigma]) consists of ordinary
+Ext^p_A(L_h,L_f). A nonzero degree-zero component has h=f. A nonzero
+positive component makes A e_f occur in the actual resolution of L_h;
+(R) then gives C_f subset C_h. Hence EVERY primitive component h of
+that E-projective is visible from y. Its kernel is a submodule, so
+has only those visible components; its next cover generators inherit
+visibility. Induct through the actual g+1 covers.
+
+This proves that EVERY simple L_f appearing in the finite unit-cone
+filtration (2.5) has e_yAe_f nonzero. The argument uses primitive
+module components, not a vanished head mistaken for absence of factors.
+Nonsplit F cohomology causes no problem: actual cones and their exact
+sequences, rather than a formal splitting, supply the finite filtration.
+
+If(U) was checked directly, the same conclusion holds immediately for
+every actual generator in (2.5); no(R) propagation assumption is needed.
+
+Apply ordinary Hom_A(L_y,-[n]) to the UNIT triangle and use adjunction:
+
+\[
+\operatorname{Ext}^n_A(L_y,L_z)\longrightarrow
+\operatorname{Ext}^n_B(L_y,L_z)\longrightarrow
+\operatorname{Hom}_{D(A)}(L_y,\Delta_{L_z}[n]).
+\tag{3.1}
+\]
+
+Every filtration block on the right is L_f[k], -t<=k<=0, with physical
+e_yAe_f nonzero. If supported A Ext vanishes above M, each block
+Hom(L_y,L_f[n+k]) vanishes when n>M+t. Finite ordinary triangle
+sequences give the same vanishing for Delta_{L_z}. The first term
+of (3.1) also vanishes, proving (1.4).
+
+Conversely, if the B term persists and the first A term is eventually
+zero, the right term persists. A finite filtration forces some fixed
+visible f and fixed shift k to have Ext_A^{n+k}(L_y,L_f) nonzero
+infinitely often. Finite-dimensional ordinary duality identifies this
+with Tor_A(R_f,L_y). That is the required ACTUAL ordinary supported
+tail, with its correct physical pair. No singular/Tate output replaces it.
+
+## 4. Actual resolution proof of chosen pd labels and global infinity
+
+Since eA is LEFT B-perfect of pd at most t, exact restriction of a
+finite minimal A-projective resolution of M, followed by a bounded
+projective repair of its terms, gives pd_B(eM)<=pd_A(M)+t.
+
+For the converse, every finite F-supported module has LEFT pd<=d by
+ordinary composition-series exact sequences. Put N_0=AeM. The quotient
+M/N_0 has F factors. N_0 has no F simple in its HEAD because it is
+generated by retained primitive components, so its ACTUAL projective
+cover P_0 is in add(Ae). Its e-image is a minimal B-projective cover:
+for an Ae-generated N, e(rad_A N)=rad_B(eN). Kernel K_0 restricts
+to the first ordinary B syzygy of eM.
+
+Repeat with N_1=AeK_0 and the actual retained cover of N_1, keeping
+the F quotient K_0/N_1 and its finite resolution. These are REAL short
+exact sequences; no image is pruned. If pd_B(eM)=b, after b+1 such
+retained covers the remaining kernel has e-image zero and is F-supported.
+Its pd is at most d. Unwinding the actual short exact sequences and
+their bounded F repairs gives pd_A(M)<=b+d+1. This proves (1.5).
+
+Thus global infinity is equivalent and LEFT infinite labels are exact.
+Combining with the ordinary supported bridge gives A bad -> B bad.
+Dimension and vertices decrease strictly. RIGHT labels need not be
+exact: the frozen N7 shallow calibration already changes a retained
+RIGHT finite label to infinity. Likewise it has a persistent supported
+corner diagonal whose ambient SAME-pair Tor eventually vanishes.
+The theorem lifts to another visible detector; it never claims a
+full high Tor isomorphism from these one-sided hypotheses.
+
+The proof for RIGHT modules is direct with right injective complexes,
+RIGHT Yoneda covers and row carriers. For a supported B pair (z,y)
+it returns either the same pair or (z,f) with e_fAe_z nonzero, keeping
+the RIGHT source R_z. This invokes ordinary dual constructions only.
+
+## 5. Higher-pd nonperfect calibration without any shallow finite label
+
+Let N=N7 be the frozen seven-dimensional algebra of C094 and let H
+be the hereditary two-vertex algebra with one arrow (row1,column0).
+Set A=N tensor N tensor H. It has147 dimensions and8 vertices.
+Let F={(f,f,0),(f,f,1)}, the ENTIRE finite-LEFT block.
+
+Actual terminating LEFT F resolutions have pds3,2. The ordinary
+restricted E has one degree-one arrow from F0 to F1 and nothing else
+positive; its actual graded simple resolutions terminate in lengths1,0.
+Thus g=q=1, d=3, a=3,t=2. Every positive projective term has its
+whole carrier contained in that of its original F source: N tensor N
+has a FULL physical matrix, while the hereditary arrow's columns are
+nested. Actual finite covers check every inclusion.
+
+Every RIGHT F simple has INFINITE pd by the frozen ordinary N7 RIGHT
+kernel/tensor proof. The only original RIGHT finite labels are (v,v,0)
+and(v,v,1), with pds2,3, also checked by terminating actual resolutions.
+Thus NO finite simple of pd zero or one exists on EITHER side. The
+previous shallow automatic mechanism is unavailable in the original A.
+F is not cover-closed: its projectives contain infinite-LEFT labels.
+The full SAME block cannot satisfy C101's two-sided finite hypothesis.
+
+The ACTUAL corner has84 dimensions and6 vertices, with the retained
+Peirce entries literally unchanged. Ae is NOT perfect as a RIGHT B
+module: if it were, C093's ALL-source ordinary comparison would force
+the deleted RIGHT F labels to be finite, contradicting their actual
+ordinary tensor tails. The NEW LEFT-perfect eA is sufficient because
+condition(R) aligns all actual unit-error endpoints.
+
+The all-r family N7^{tensor r} tensor H, r>=2, has finite F LEFT pds
+r+1,r, all RIGHT F pds infinite, g=q=1 and cutoff loss at most r.
+No shallow finite simple exists on either side. Its theorem/corner
+claims are written all-r consequences of frozen ordinary tensor
+resolutions, not extrapolation from a bounded sample.
+
+These algebras are already infinite-plus via the frozen N7 tensor
+proof. They are calibration, not a badness counterexample or proof
+of universal carrier-preserving-block availability. The new mechanism
+is badness-preserving for the stated class at arbitrary source count;
+it does not solve the tensor-indecomposable residual by itself.
+
+## 6. Exact obstruction: finite pd and smooth Yoneda do not prevent expansion
+
+Let C have vertices f=0,q=1,y=2, arrows a(q,f), b(y,q), and ba=0.
+It is the five-dimensional radical-square-zero three-chain. The actual
+resolution of L_f has projective labels f,q,y and terminates at degree2.
+L_f has NO positive self-Ext, so its restricted E is k with gd0. Yet
+
+\[
+C_f=\{f,q\},\quad C_q=\{q,y\},\quad
+e_yCe_f=0,\ e_yCe_q\ne0.
+\tag{6.1}
+\]
+
+Its first syzygy's PROJECTIVE COVER expands the carrier. Thus condition
+(R) is NOT automatic even for a finite-pd exceptional simple and smooth
+ordinary E. This is an exact support counterexample, not a bad algebra.
+
+Tensor with N7^{tensor r}, r>=2, and choose F={(all-f,f)}. Its LEFT
+pd is r+2, RIGHT pd infinite and E_F=k, with no shallow finite label
+on either side. The degree-one projective (all-f,q) has physical
+component at (all-v,y), whereas the original F projective does not.
+Hence expansion persists at arbitrary finite pd in sparse one-sided
+smooth-Yoneda examples. In fact choosing the ENTIRE finite-LEFT block
+{(all-f,f),(all-f,q),(all-f,y)} does not repair this expansion: its
+LEFT pds are r+2,r+1,r, ALL RIGHT F pds remain infinite, and its ordinary
+E_F is the hereditary three-chain Y of global dimension1/top degree2.
+The small C factor has actual Ext-one from f to q and q to y; their
+lifted product is the nonzero Ext-two from f to y. The comparison lift
+is the identity on P_q and induces the identity on the simple P_y,
+so the product is a unit in every characteristic. Thus E_F is smooth
+even for the full finite-LEFT block, while its original f projective
+cover still expands to y. This all-r statement uses actual factor
+resolutions and the physical tensor identity; the full large tensor
+was not executed. It is NOT a refutation of a badness-specific global
+alternative or of other eligible deletion choices.
+
+### 6.1 Actual Yoneda generators repair the full sparse tensor despite(R) failure
+
+For A=N7^{tensor r} tensor C and the ENTIRE finite-LEFT block just
+described, a retained target is z=(z_N,c), z_N not all-f. The ordinary
+factor resolution of L_all-f has exactly one Ext generator to L_zN,
+in degree p=number of v entries of z_N,1<=p<=r. Thus its actual
+RIGHT E_F module H(L_z) is the shifted RIGHT projective
+H_C(L_c)=Ext_C^*(sum_all C simples,L_c). Its minimal E cover is already
+an isomorphism, generated by the SINGLE F label (all-f,c) in degree p.
+Ordinary tensor signs are units and do not change these generator labels.
+The target and generator have the SAME C carrier, and every N7 column
+has full support. Therefore C_z subset C_(all-f,c): condition(U) holds.
+The actual unit cone has just L_(all-f,c)[1-p]. It yields supported
+cutoff loss at most r-1, sharper than the general bound r+2.
+
+This applies as well to the147-dimensional hereditary-arrow calibration,
+whose sharper written ordinary loss is1 at r=2, rather than the general
+bound2. It also proves actual LEFT corner pd eA=r-1: restrict the
+terminating N7^{tensor r} all-f resolution. Every positive term is a
+retained projective, so it is the genuine MINIMAL corner resolution of
+eA e_all-f, of length r-1 with nonzero last term. Tensoring the regular
+C module preserves that length. This is a written actual factor proof,
+not a numerically reconstructed corner-module resolution.
+
+Hence(R) failure alone is not the final obstacle. Actual ordinary Yoneda
+generation can absorb an expanding finite-type intermediate head.
+The next example shows that(U) is also not automatically available.
+
+### 6.2 Connected whole-block obstruction — C103
+
+Use vertices u,q,f,w and basis their four idempotents, loops t_u,t_q,t_w,
+two entries m,n in(u,q), a,b in(q,f), c in(f,w), and d,e in(q,w).
+The ONLY nonzero radical products are t_u m=n, t_q a=b, a c=d,
+b c=e and t_q d=e. This is associative and connected, dimension14.
+Literal ordinary kernel isomorphisms give
+
+\[
+\Omega L_u=L_u,\quad \Omega L_q=P_u\oplus L_q,\quad
+\Omega L_f=H(a,b),\quad \Omega H=P_u,\quad
+\Omega L_w=P_f\oplus L_w.
+\tag{6.2}
+\]
+
+Thus H has finite pd1 although its composition factors are two copies
+of INFINITE-pd L_q. L_f has pd2, and its actual finite resolution has
+projective labels f,q,u. Every other LEFT simple is infinite by the
+written recurring simple summands in these actual kernels. Consequently
+F={f} is the ENTIRE finite-LEFT block and E_F=k,gd0. Its physical
+carrier C_f={f,q}, whereas its FIRST cover P_q has carrier {q,u}.
+The expanding head L_q is infinite, so no other finite-LEFT label can
+be added to F to absorb it.
+
+The right kernels are Omega R_f=R_w and Omega R_w=R_w. The actual LEFT
+diagonal tails for u,q,w also certify their RIGHT infinite pds by ordinary
+Tor. Hence every RIGHT simple is infinite, including R_f. No finite
+simple of pd zero or one exists on EITHER side. This is an actual
+one-sided, smooth-Yoneda, whole-block obstruction without a shallow
+alternative. Ae is nonperfect by the same C093 ordinary comparison
+contrapositive, while eA is LEFT-perfect of bound1.
+
+For retained target q, H(L_q)=Ext_A^*(L_f,L_q)=k in degree1. Over E_F=k
+its minimal cover has the unique generator f. But e_uAe_q has dimension2
+and e_uAe_f=0, so(U) fails for the actual unit-error label. The UNIT
+cone at q is L_f in degree zero, physically invisible from u. This is
+an exact failure of automatic(R)/(U) from one-sided finite pd/smooth E,
+even for the FULL finite-LEFT block. It does NOT refute the full
+badness-specific global return/descent alternative: the same algebra
+already has persistent ordinary supported diagonals u,q,w from (6.2).
+No negative assertion about the existence of some other safe reduction
+is made. The obstacle is a finite-pd image with an INFINITE simple head,
+whose actual projective cover expands the carrier. There is also NO
+ordinary quotient projection A -> eAe fixing the retained entries:
+both a and c would be killed, but their product d is retained and nonzero.
+Thus this example does not rely on a harmless retained quotient section.
+
+## 7. Computation, source and normal adversarial audit
+
+One-Sided-Carrier-Evidence retains the task, exact scripts, results and
+validated computation record. It freezes11 helper/source hashes and
+checks actual terminating F covers, every carrier inclusion, all-degree
+F Ext dimensions from those terminating covers, ordinary Y simple
+resolutions, actual RIGHT finite covers, and the literal147->84 corner.
+It separately checks the five-dimensional carrier-expansion counterexample,
+its FULL ordinary Yoneda algebra/product and terminating hereditary
+Y simple resolutions. Enlarging the written sparse tensor family to its
+whole finite-LEFT block does not repair(R), but DOES satisfy(U), as below.
+The147->84 check passed7063921 associativity triples,20 terminating covers,
+381 integral inverses,12 carrier inclusions,14 F Ext entries and3 homogeneous
+E covers. The small checks, including the connected14 example, add5829
+triples,21 covers,235 integral inverses,7 actual kernel isomorphisms
+and a genuine lifted ordinary Yoneda product.
+Integral bases and their inverses support arbitrary-characteristic
+calibration; general proofs and infinity use the written ordinary
+arguments and frozen all-degree factor kernels. Same author/shared
+helpers; NOT independently verified. Software integrity is not semantics.
+
+Audit points: H is RIGHT E and Ext FROM S; use fiber rather than cone
+to realize kernel syzygies; g+1 covers; minimal INJECTIVE exclusion;
+ordinary retained injectives and coinduction; actual UNIT map; shift
+i+1-sigma; retained-target lower bound sigma>=i+1; visibility propagates
+via Ext(L_h,L_f), in the correct direction; BOTH projective and physical
+supports in(R); ordinary finite triangle sequences rather than formal
+splitting; chosen pd repair keeps every F quotient; additive pd/cutoff
+bounds, not C101 max/isomorphism claims; opposite labels can increase;
+and direct right support is e_fAe_z. The primary projective-cover
+realization method is that attributed in T27 to
+[Ingalls-Paquette](https://arxiv.org/pdf/1703.08725), with the dual
+construction and supported ordinary argument written here. No novelty claim.
+
+## 8. Continuing the full objective
+
+C102 gives an actual supported ordinary bridge and strict badness
+dimension descent for one-sided finite blocks of arbitrarily high pd,
+including genuinely nonperfect Ae. The unresolved issue is whether
+badness forces this carrier control, another safe reduction, or an
+ordinary supported pair when finite projective covers expand. Smooth
+E alone, finite-pd map images, and graph/support cycles cannot answer it.
+Singular ordinary F Yoneda, all-infinite/no-factor cores, C076 final
+Peirce alignment, bounded-screening/local-trivial and the corrected
+Primitive/Binary/higher-output branches all stay on the map.
+Universal Gap A remains OPEN.

@@ -1,0 +1,216 @@
+# 指定 KLS 构造的 supported Tor 检测
+
+2026-09-11。**状态：以 Krah 的几何结果和 KLS 的折叠、商与周期化相容性为文献输入，完成以下自审证明；尚未独立数学核验，未确认新颖性。** 结论针对下文明确的 tilting 选择。一般有限维代数的 Universal Gap A 仍未证明。
+
+本稿将 [Corner-Tail-Periodicity.md](Corner-Tail-Periodicity.md) 中的有限判定进一步闭合：对这个指定的 KLS 构造，supported 第七次 Ext 的加权总和必为正。证明不需要先计算全部数值；它仍未给出具体哪一个 pair 非零，也未给出各个 Betti 数的精确值。
+
+## 1. 构造、文献输入和结论
+
+令 \(X\) 为十个一般位置点处的 \(\mathbb P^2\) 的吹起，取
+\[
+T=\mathcal O_X\oplus\bigoplus_{s=1}^{10}\mathcal O_X(E_s)
+\oplus\mathcal O_X(H)\oplus\mathcal O_X(2H),
+\quad\Gamma=\operatorname{End}_X(T),
+\quad\Lambda=\Gamma\otimes\mathbb C[\epsilon]/(\epsilon^2).
+\tag{1}
+\]
+Krah 的结果给出此 full strong 对象组，以及另一个包含 \(\mathcal O_X\) 的非满例外对象组 \(\mathbf E\)。其生成的 admissible 子范畴记为 \(\mathcal E\)，右正交 \(\mathcal P=\mathcal E^\perp\) 非零且 \(K_0(\mathcal P)=0\)。[Krah, Theorem 1.1、第 2 页与 Corollary 5.2，作者稿](https://j-krah.github.io/krah_a_phantom_on_a_rational_surface.pdf)
+
+将 \(\mathbf E\) 经 \(\mathbf R\operatorname{Hom}(T,-)\) 变成有界右 \(\Gamma\)-投射复形，并折叠成 \(N_t\)，取
+\[
+M=\Lambda\oplus\bigoplus_tN_t,\qquad
+A=\operatorname{End}_{\text{right }\Lambda}(M).
+\tag{2}
+\]
+使用最小复形及基本代数约定。保留的十三个顶点记作 \(0,1,\ldots,10,h,q\)，分别对应 (1) 中的十三项；其余十三个顶点来自 \(N_t\)。
+
+所需第二个外部输入是：折叠对应周期化，而且这一对应与按 \(\mathbf E\) 取商相容，保持所讨论对象的像。[KLS, Theorem 4.1 与 Lemma A.8](https://arxiv.org/html/2608.00177v1#S4) 本稿只用这一对象层面的归属反映，不使用 HH 消失去推断任何 Tor 的值。
+
+仍记左 simple 为 \(L_i\)，右 simple 为 \(R_i\)，
+\[
+\beta_{ij}(n)=\dim\operatorname{Ext}_A^n(L_j,L_i)
+=\dim\operatorname{Tor}_n^A(R_i,L_j),
+\qquad c_{ji}=\dim e_jAe_i.
+\tag{3}
+\]
+
+**定理。** 对 (1)–(2) 的指定构造，存在一个固定 pair，属于以下二十三种之一：
+\[
+(i,j)=(s,h),(s,q)\ (1\le s\le10),
+\qquad(h,h),(h,q),(q,q),
+\tag{4}
+\]
+使得
+\[
+\boxed{c_{ji}>0,\qquad
+\beta_{ij}(n)=\beta_{ij}(7)\ge1\quad\text{对每个 }n\ge7.}
+\tag{5}
+\]
+因此这一指定构造属于 Gap A。这里只确定有限候选集内必有一个固定 pair，没有把存在性写成某个尚未计算 pair 的显式证书。
+
+## 2. 已完成的代数输入
+
+[Corner-Tail-Periodicity.md，第 5 节](Corner-Tail-Periodicity.md) 的自审证明提供以下事实：
+
+- 每个删去的左 simple 同时满足 \(\operatorname{pd}_A L_f\le5\)、\(\operatorname{id}_A L_f\le5\)。两侧有分别的证明。
+- 全部 \(\beta_{ij}(n)\) 在 \(n\ge7\) 后逐次恒定。
+- \(\operatorname{id}_A L_0=1\)。
+- 按行 \(j\)、列 \(i\)，保留顶点间的实际 Peirce 维数为
+
+\[
+(c_{ji})_{j,i\in I}
+=2\begin{pmatrix}
+1&0&0&0\\
+\mathbf1&I_{10}&0&0\\
+3&2\mathbf1^{\mathsf T}&1&0\\
+6&5\mathbf1^{\mathsf T}&3&1
+\end{pmatrix}.
+\tag{6}
+\]
+
+特别地，源 simple 为 \(L_q\) 时，所有保留的目标位置都 supported；源 simple 为 \(L_h\) 时，除目标 \(q\) 以外的保留位置都 supported。另一方面，投射模 \(Ae_q\) 的组成因子在保留顶点中只能是 \(L_q\)。后一句读取的是 (6) 的列 \(q\)，与前两句读取的行不同。
+
+本稿剩下的工作是证明 \(L_h,L_q\) 不可能都具有有限投射维数，并将这一事实转成 (5)。
+
+## 3. 折叠后的归属如何反映回原范畴
+
+**引理 1。** 设 \(V\in\operatorname{Perf}(X)\)，\(P_V^\bullet\) 是其右 \(\Gamma\)-投射模型。若
+\[
+\operatorname{Fold}(P_V^\bullet)
+\in\operatorname{thick}_{D_{\mathrm{sg}}(\Lambda)}(N_t),
+\tag{7}
+\]
+则 \(V\in\mathcal E\)。
+
+**证明。** 记 \(\pi:\operatorname{Perf}(X)\to\mathcal P\) 为通过 Verdier 商得到的投影，核是 \(\mathcal E\)。由第 1 节明确列出的折叠与商相容性，(7) 意味着 \(\pi(V)\) 在 \(\operatorname{Perf}(\mathcal P\otimes\mathscr U)\) 中的像为零，其中 \(\mathscr U=\mathbb C[t,t^{-1}]\)、\(|t|=1\)、微分为零。
+
+任何非零对象 \(W\in\mathcal P\) 的恒等态射不会在此步骤消失，因为
+\[
+\operatorname{End}_{\mathcal P\otimes\mathscr U}(W)
+=\bigoplus_{r\in\mathbb Z}\operatorname{End}_{\mathcal P}(W)\otimes\mathbb C t^r
+\tag{8}
+\]
+是复形的直和，\(t^0\) 分量是复形直和项。故 \([1_W]\mapsto[1_W]\otimes1\) 单射；取完美包络及幂等完备化仍保持该对象的 Hom。因此 \(\pi(V)=0\)，即 \(V\in\mathcal E\)。\(\square\)
+
+这一步依赖的是保持对象的商相容性，不能只从两个范畴抽象 Morita 等价，就擅自识别一个具体 line bundle 的像。也没有使用“任意 corner simple Tor 可以提升”的错误推断。
+
+## 4. 两个 finite-pd simples 会迫使两个 line bundles 落入 E
+
+令 \(e\) 投影到 \(\Lambda\subset M\)，写
+\[
+N_t^*=\operatorname{Hom}_\Lambda(N_t,\Lambda),\qquad
+eA\simeq\Lambda\oplus\bigoplus_tN_t^*
+\quad\text{作为左 }\Lambda\text{-模}.
+\tag{9}
+\]
+因此 \(\operatorname{add}(eA)=\operatorname{add}(\Lambda\oplus\bigoplus N_t^*)\)。
+
+若一个左 \(A\)-模 \(Y\) 有有限投射维数，对其有限投射消解施加正合函子 \(e(-)\)，便得到
+\[
+eY\in\operatorname{thick}_{D^b(\Lambda)}(\Lambda,N_t^*).
+\tag{10}
+\]
+因此其 singularity category 中的像位于 \(\operatorname{thick}(N_t^*)\)。这里没有声称 \(eP\) 必然是 \(\Lambda\)-投射模；有限消解中的这些项来自 (9)，这就足够得到 (10)。
+
+为区分 simple，记 \(\ell_i\) 为左 \(\Gamma\)-simple，视作 \(\epsilon\) 作用为零的 \(\Lambda\)-模。保留顶点满足 \(eL_i=\ell_i\)。由 (6) 所对应的 \(\Gamma\) 结构：
+\[
+\ell_q=\Gamma e_q,\qquad
+0\longrightarrow(\Gamma e_q)^{\oplus3}
+\longrightarrow\Gamma e_h\longrightarrow\ell_h\longrightarrow0.
+\tag{11}
+\]
+确实，\(\Gamma e_q\) 仅有顶点 \(q\) 分量，而 \(\operatorname{rad}(\Gamma e_h)\) 是三个 \(\ell_q\) 的直和。
+
+假设 \(\operatorname{pd}_A L_h\) 与 \(\operatorname{pd}_A L_q\) 都有限。先对 \(L_q\) 使用 (10)，再对 \(L_h\) 使用 (10) 和 (11) 的三角，得到
+\[
+(\Gamma e_h,0),\ (\Gamma e_q,0)
+\in\operatorname{thick}_{D_{\mathrm{sg}}(\text{left }\Lambda)}(N_t^*).
+\tag{12}
+\]
+
+现在需要正确处理左右。双数扩张中底层 \(\Gamma\)-投射的差分模块，组成一个 Frobenius 范畴；投射兼内射对象是可缩的差分投射模。取 \(\operatorname{Hom}_\Lambda(-,\Lambda)\) 在左右两个此类范畴间给出反向正合等价，底层就是 \(\Gamma\)-投射模对偶，双重对偶是原模块。它保持可缩对象，因此保持 stable category 的 thick 归属。借助 \(\Lambda\) 的 Gorenstein 性，这也是 (12) 所在 singularity category 的对偶。
+
+上述对偶也可直接从前稿的公式 \(p\mapsto v(dp)+v(p)\epsilon\) 及带符号完全消解检查：底层投射模短正合列是分裂的，对偶保持正合；可缩对象仍可缩。在本次应用中，它将 \(N_t^*\) 送回 \(N_t\)，将 \((\Gamma e_r,0)\) 送到 \((e_r\Gamma,0)\)，\(r=h,q\)。所以 (12) 给出
+\[
+\operatorname{Fold}(e_h\Gamma),\operatorname{Fold}(e_q\Gamma)
+\in\operatorname{thick}_{D_{\mathrm{sg}}(\text{right }\Lambda)}(N_t).
+\tag{13}
+\]
+这两个右 \(\Gamma\)-投射模分别是 \(\operatorname{Hom}_X(T,\mathcal O(H))\) 与 \(\operatorname{Hom}_X(T,\mathcal O(2H))\)。由引理 1：
+\[
+\mathcal O(H),\mathcal O(2H)\in\mathcal E.
+\tag{14}
+\]
+
+## 5. 几何上的矛盾可以在 full exceptional collection 内完成
+
+\(\mathcal O\) 本来就在 \(\mathcal E\)。若 (14) 成立，则
+\[
+\mathcal B=\operatorname{thick}(\mathcal O,\mathcal O(H),\mathcal O(2H))
+\subseteq\mathcal E,
+\quad\mathcal P\subseteq\mathcal B^\perp.
+\tag{15}
+\]
+
+定义
+\[
+F_s=\operatorname{Cone}\bigl(\mathcal O\longrightarrow\mathcal O(E_s)\bigr).
+\]
+由 full strong collection (1) 的 Hom，\(\operatorname{Hom}^*(\mathcal O,F_s)=0\)。对不同 \(s,t\)，逆序及同层 Hom 消失，故 \(\operatorname{Hom}^*(F_s,F_t)=0\)；对 \(s=t\)，先对定义三角施加 \(\operatorname{Hom}(\mathcal O(E_s),-)\)，再施加 \(\operatorname{Hom}(-,F_s)\)，得到
+\[
+\operatorname{Hom}^*(F_s,F_s)=\mathbb C\text{，集中在次数零}.
+\tag{16}
+\]
+这里 \(\mathcal O\to\mathcal O(E_s)\) 是非零截面，因此在两个一维 Hom 空间间诱导的映射是同构。
+
+同样，\(\operatorname{Hom}^*(\mathcal B,F_s)=0\)。定义三角又把每个 \(\mathcal O(E_s)\) 放回 \(\operatorname{thick}(\mathcal B,F_1,\ldots,F_{10})\)，所以 (1) 的 full 性给出半正交分解
+\[
+\operatorname{Perf}(X)=
+\langle F_1,\ldots,F_{10},\mathcal B\rangle,
+\qquad
+\mathcal B^\perp=\operatorname{thick}(F_1,\ldots,F_{10})
+\simeq D^b(\mathbb C^{10}).
+\tag{17}
+\]
+
+若 \(\mathcal P\ne0\) 包含在右边这个范畴，它的一个非零对象必分解为 \(F_s\) 的移位直和。\(\mathcal P\) 是 thick，故至少含有某个 \(F_s\)。但 Euler pairing 在 \(K_0(\mathcal P)\) 上有 \(\chi(F_s,F_s)=1\)，与 \(K_0(\mathcal P)=0\) 矛盾。
+
+故第 4 节的假设不成立，已证明
+\[
+\boxed{\operatorname{pd}_A L_h=\infty\quad\text{或}\quad
+\operatorname{pd}_A L_q=\infty.}
+\tag{18}
+\]
+
+## 6. 从 (18) 得到固定的 supported pair
+
+若 \(\operatorname{pd}_A L_q=\infty\)，其最小消解不终止。删去 simple 的有限内射维数，使充分高的投射项只使用保留标签。至少一个保留标签出现无穷多次；(6) 的行 \(q\) 全为正，因此它给出源 \(q\) 的 infinite supported pair。\(\operatorname{id}_A L_0=1\) 排除目标零，只剩 (4) 中源为 \(q\) 的十二种。
+
+否则，\(\operatorname{pd}_A L_q<\infty\)，由 (18) 有 \(\operatorname{pd}_A L_h=\infty\)。假设它没有以保留标签 \(i\ne q\) 为目标的无限 Ext。结合删去 simple 的有限内射维数，充分高的最小投射消解便只含 \(Ae_q\) 的直和。取其中一个高次 syzygy
+\[
+Z\subseteq(Ae_q)^{\oplus r}.
+\tag{19}
+\]
+由 (6) 的列 \(q\)，\(Z\) 的组成因子只能是 \(L_q\) 和删去的 simple。这些 simple 全部具有有限投射维数：前者是本分支的假设，后者已由第 2 节证明。沿有限组成列用长正合列归纳，\(Z\) 也有有限投射维数。这与 \(L_h\) 的任意 syzygy 都有无限投射维数矛盾。
+
+所以至少一个保留标签 \(i\ne q\) 是 \(L_h\) 的 recurrent 目标。(6) 的行 \(h\) 使其 supported；有限内射维数再次排除目标零，得到 (4) 中源为 \(h\) 的十一种。
+
+两种情形都给出同一个固定 pair 在无穷多个次数非零。最后使用第 2 节的恒定性，将它加强为每个 \(n\ge7\) 均非零，即 (5)。\(\square\)
+
+## 7. 数值后果与任意 N 主线的边界
+
+现在已经证明
+\[
+\sum_{s=1}^{10}\bigl(\beta_{s h}(7)+\beta_{s q}(7)\bigr)
++\beta_{hh}(7)+\beta_{h q}(7)+\beta_{qq}(7)\ge1.
+\tag{20}
+\]
+故前稿的三十三项加权和 \(\mathcal T_7\) 至少为二，而且所有 \(n\ge7\) 取同一个正值。各项精确数值仍未知，不能任选一个 pair 报告为已计算非零。
+
+[kls-degree-seven-query.json](kls-degree-seven-query.json) 保存完整保留 Peirce 矩阵、三十三个 supported 查询和二十三个保证至少一个非零的候选；未计算的 Ext 值明确为 `null`。该文件记录的是证明后的有限接口，不是实际 KLS 消解的计算结果。
+
+这是对指定 KLS 构造的 Gap A 自审判定。它使用 full strong tilting 的明确选择；没有证明换成任意 tilting 后的 endomorphism algebra 仍有同样的 simple 标签结论。
+
+它也没有证明 Universal Gap A：一般代数未必具有这个双数角、有限维数的删去 simples、可反映对象归属的周期化模型，或第 5 节的半单正交补。对任意 \(N\) 的可复用步骤是实际尾端控制、有限投射消解的限制、以及借组成因子排除无支撑尾端；这些步骤尚未覆盖所有有限维代数。
+
+原 verified fact graph 未修改。前稿程序核算验证的是有限代数模型、双侧维数与周期性；本稿的几何和范畴论结论来自上述证明与明确列出的文献输入，不冒充程序验证或独立 verifier 的认证。

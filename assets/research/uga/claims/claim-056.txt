@@ -1,0 +1,13 @@
+## UGA-C056 — Binary Indecomposables Describe the Zero-Excursion Second Page
+**Status:** COMPLETE SELF-AUDITED PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** `runs/2026-10-03/Run-Target-B-Binary-Indecomposable-Frontier-2026-10-03.md`, Theorem 2.1 and Lemma 3.1 / Corollary 3.2.
+
+For \(I_2(H)=\bar H/\operatorname{im}m_2\), where the image means the entire binary-product span,
+\[
+E^2_{0,n}(z,y)\cong e_z I_2(H)^{-(n-1)}e_y\qquad(n\ge1).
+\]
+Binary-product classes have actual fillers of excursion at most one. Under degreewise finiteness and finite-dimensional \(H^0\), bounded binary-indecomposable degrees are equivalent to finite homogeneous associative generation. Thus finite generation of \(H^*(Q_x)\) excludes unbounded screening of zero-excursion classes, without assuming formality. This does not assert collapse of the whole spectral sequence. Finite-dimensionality of A alone does not imply finite generation of this cohomology algebra.
+
+**Depends on:** UGA-C055's passage/length comparison, not its formality hypothesis or UGA-C041's opposite transfer.
+
+---

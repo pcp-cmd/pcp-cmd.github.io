@@ -1,0 +1,427 @@
+# Global Route Audit — Bongartz ordinary ideal formulas, trace, and relative-resolution barriers
+
+**Date:** 2026-10-04, after canonical T38/C114.  
+**Task source:** user's `C:/Users/pcp/Desktop/handoff.md`, read in full. This is a global representation audit, not continuation of a local T39 closing lemma.  
+**Verdict:** **HYBRID**. Use the canonical ordinary Bongartz quotient representation for the global missing bridge; freeze further T38 existential head-selection engineering as the default route. Retain every proved ordinary comparison/descent/closure asset.  
+**Evidence:** literature formulas checked against a full primary proof; complete written ordinary counterexamples and normal adversarial self-audit; shared exact rational calibration. **Not independently verified; no formal MRS acceptance or novelty claim.**  
+**Universal Gap A:** **OPEN**. No UGA counterexample was found in this audit.
+
+## I. Canonical obstruction
+
+Let \(A\) be an elementary finite-dimensional algebra over **any** field \(k\), with radical \(J\), \(S=A/J=k^N\), left simples \(L_y=Ae_y/Je_y\), and right simples \(R_x=e_xA/e_xJ\). Set
+
+\[
+\beta_{xy}(n)=\dim_k\operatorname{Tor}^A_n(R_x,L_y)
+=\dim_k\operatorname{Ext}^n_A(L_y,L_x),\qquad
+C_{yx}=\dim_k e_yAe_x.
+\]
+
+The target is a **fixed** pair \((x,y)\) with \(C_{yx}>0\) and \(\beta_{xy}(n)>0\) infinitely often. This is reverse Peirce support. In our left-module convention an arrow \(y\to x\) lies in \(e_xJe_y/J^2\), while \(\operatorname{Hom}_A(Ae_r,Ae_s)=e_rAe_s\).
+
+The global failure condition is the existing condition
+
+\[
+(Z_b):\quad C_{yx}>0\Longrightarrow\beta_{xy}(n)=0\quad(n>b).
+\]
+
+For a real minimal left resolution \(P_\bullet(L_y)\), its multiplicity of \(Ae_x\) in degree \(n\) is exactly \(\beta_{xy}(n)\). Therefore
+
+\[
+\omega_n:=\sum_{x,y}C_{yx}\beta_{xy}(n)
+=\operatorname{tr}(C B_n)
+=\sum_y\dim_k e_yP_n(L_y),\qquad B_n=(\beta_{xy}(n)).
+\tag{1}
+\]
+
+Thus \((Z_b)\) is precisely \(\omega_n=0\) for every \(n>b\). The coefficients are nonnegative; no cancellation is hidden in this scalar test. This is the existing supported aggregate, not a new invariant.
+
+Infinite global dimension already forces some left simple to have infinite pd. Its minimal resolution has a nonzero term in **every** degree. Tensoring by \(S\) kills all minimal differentials, so \(\operatorname{Tor}^A_n(S,S)\ne0\) in every degree. Finite \(N^2\) pigeonhole then fixes a pair returning infinitely often. **Fixing the pair is already solved. The missing step is reverse visibility.**
+
+The stronger pointwise implication
+
+\[
+\beta_{xy}(n)>0\text{ infinitely often}\Longrightarrow C_{yx}>0
+\tag{2}
+\]
+
+is **FALSE**, even for a radical-square-zero two-vertex algebra; see Appendix B. Consequently a valid universal proof must use the **whole** badness condition, possibly changing the persistent pair. It cannot merely apply visibility to whichever pair pigeonhole first selects.
+
+Canonical assets reused, rather than reopened: C080 chosen-side at-most-two-infinite-simple closure; C088 actual closed finite-pd block comparison; C090 dominating recurrent column; C093–C102 ordinary corner/Yoneda eligibility; C105–C106 actual envelope/cross-Ext stopping; C107 every algebra with at most four **total** vertices; C110 every elementary \(J^3=0\) algebra; C111–C112 actual full-kernel ordinary comparisons and strict source descent. C113–C114 remain genuine negative guards, without asserting failure of existential badness-specific selection. The old Primitive/Binary, bounded-screening, local-trivial, Target-A and supported-weight branches remain on the map.
+
+## II. Existing-theory matches
+
+| Theory | UGA object | What it replaces | Exact theorem available? | Main missing bridge | Verdict |
+|---|---|---|---|---|---|
+| Bongartz / Butler–King high Tor, as proved by Huber–Kalck | \(K_n\), canonical intersections/sums of \(F,I^r\) in a hereditary path algebra | Choice of local lift/head/relation for representing the ordinary simple Tor groups | **YES:** Theorem 2.2, Remark 2.3\(2\), Lemmas 2.5–2.9; exact Tor formulas over any field | Simultaneous eventual vanishing of **visible** quotient blocks must force eventual vanishing of **all** blocks | **Best canonical representation; closure OPEN.** The same-pair shortcut is false. |
+| Hattori–Stallings / Lenzing / Igusa–Liu–Paquette; finite hub trace | Localized trace of an \(e\)-bounded resolution; endomorphism transferred through a finite-pd hub | In eligible cases, an infinite chain homotopy becomes a finite alternating identity | **YES:** ILP Lemmas 1.2–1.3, Proposition 1.4, Theorem 1.5; Armenta Lemma 10.9 | Badness must produce a trace class provably nonzero in the relevant quotient, and every required module must satisfy the trace hypotheses; a finite hub need not exist | **Conditional branch tool.** A finite identity alone can be a commutator tautology. |
+| Auslander–Iyama finite representation dimension / rejective chains | \(M\), \(\Gamma=\operatorname{End}_A(M)\), finite proper \(\operatorname{add}M\)-resolutions | Potential replacement of an infinite ordinary state space by finite relative homological length | **YES:** Iyama Theorem 2.2.2 and construction 2.5.1–2.5.2; Ringel Theorem 5 | Relative projective objects can have infinite **ordinary \(A\)-pd**; no comparison preserves supported ordinary Tor | **Reject as an automatic global bridge.** Dual numbers give a literal counterexample to that transfer. |
+| Saorín ordinary Yoneda finite generation | \(E=\operatorname{Ext}^*_A(S,S)\) and its genuine indecomposable generators | A finite generating-degree bound supplies genuine termination | **YES:** Saorín Theorem 1; stronger project bound \(\operatorname{gd}A\le Nb+(N-1)d\) under \((Z_b)\) and generators of degree \(\le d\) | \((Z_b)\Rightarrow E\) finitely generated is **OPEN and equivalent to UGA**, already recorded in the project | **Second route; reuse, do not relabel as new.** Nilpotence of \(E_+\) is insufficient. |
+| Gröbner / monomial degeneration / Anick / overlap automata | A normal-word system or initial algebra for (kQ/I) | Makes chains and overlaps calculable when ordinary cancellations are controlled | Normal-form tools exist; monomial ordinary kernels can be explicit | Persistence in the initial algebra need not survive to the original ordinary Tor | **Automatic transfer FALSE.** Explicit dimension-14 original has gd 2; its monomial initial algebra has an actual infinite diagonal tail. |
+| Noncommutative Artin–Rees / Rees finite generation | Ideal powers and their two-sided intersection quotients | Would provide a uniform stopping mechanism if an appropriate finite module/Noetherian structure were proved | **Conditional theory only**; its hypotheses are not supplied by finite-dimensional \(A\) | \(H=kQ\) may be non-Noetherian, and the interleaved intersections are not automatically a finitely generated Rees module | **Not an available universal stopping theorem.** See Appendix F; this does not forbid special Artin–Rees applications. |
+
+The high-Tor formulas below were verified from the full [Huber–Kalck primary proof, Theorem 2.2 and pp. 15–17](https://home.mathematik.uni-freiburg.de/arithgeom/preprints/huber-species.pdf), which attributes the earlier result to Bongartz and the Tor formulas also to Butler–King. The original Bongartz full text was not available in this audit; the [Butler–King primary abstract](https://researchportal.bath.ac.uk/en/publications/minimal-resolutions-of-algebras/) was read, but no additional theorem is inferred from that abstract.
+
+Trace scopes were checked in [Igusa–Liu–Paquette, §1 and Theorem 2.2](https://arxiv.org/pdf/1103.5361), [Han's perfect-complex trace treatment](https://arxiv.org/pdf/1302.7095), and [Armenta, Lemma 10.9 and Remark 10.10](https://arxiv.org/pdf/2607.20849). Only the explicit finite-hub identity is used here; the project's quarantined opposite-\(+\) transfer is not imported. Iyama's finite relative control was checked in [his rejective-category paper](https://arxiv.org/pdf/math/0311281) and [Ringel's constructive proof, Theorem 5](https://arxiv.org/pdf/0912.5001). The ordinary Yoneda stopping result is [Saorín, Theorem 1](https://arxiv.org/pdf/math/0306043).
+
+These are exact **available theorem scopes**, not a claim that no stronger theorem exists anywhere in the literature. The primary results checked this round do not supply the missing universal bridge.
+
+## III. Route ranking — at most three routes
+
+### R1. Canonical Bongartz ideal quotients under the full visibility mask
+
+**Objects.** \(H=kQ\), arrow ideal \(F\), admissible \(I\), and the \(S\)-bimodules \(K_n\) of Appendix A. Visibility is the same path-algebra block \(e_y(H/I)e_x\).
+
+**Available theorem.** \(e_xK_ne_y\simeq\operatorname{Tor}^A_n(R_x,L_y)\) degree by degree, with actual ordinary homology, over any elementary field. No local lift choice is needed to state or evaluate the obstruction.
+
+**Missing lemma.** Under the **full** \((Z_b)\), do the visible-block intersection identities \(3\)–\(4\) below force all blocks eventually to satisfy those identities? This is exactly UGA, not a newly proved weakening. Any next substantial investment must target a strict termination, actual ordinary support transfer, or a counterexample to this statement.
+
+**Advantage over T38.** Removes head-selection ambiguity from the representation of the target itself; puts every source and detector in one standard hereditary-ideal problem. Existing actual modules remain useful for testing any proposed ideal theorem.
+
+**Main risk.** A canonical reformulation alone may only relocate the same obstruction. Counting nonzero ideal powers, normal paths or nonminimal projective terms is not closure. The pointwise last arrow is already disproved; Appendix C also blocks automatic monomial transfer.
+
+### R2. Reuse the ordinary Yoneda finite-generation stopping theorem
+
+**Objects.** The ordinary algebra \(E\) and \(Q(E)=E_+/(E_+)^2\), together with the existing actual comparison kernels. This is ordinary Yoneda, not the derived-quotient binary residue.
+
+**Available theorem.** Under \((Z_b)\), \(E_+^{N(b+1)}=0\), and generation in degrees \(\le d\) gives the existing bound \(\operatorname{gd}A\le Nb+(N-1)d\). Reuse [N-Vertex-Main-Route.md, §§2–4](../../toolbox/Imported-Outputs/N-Vertex-Main-Route.md) and [Yoneda-Comparison-Kernel.md](../../toolbox/Imported-Outputs/Yoneda-Comparison-Kernel.md). The finite-generation plus eventual simple self-Ext criterion has the external Saorín theorem.
+
+**Missing lemma.** Full supported vanishing must imply \(Q(E)_n=0\) eventually. This old \(FG\) is equivalent to UGA. Bongartz's group isomorphisms alone do **not** identify Yoneda multiplication with arbitrary ideal multiplication.
+
+**Advantage over T38.** If a generating-degree bound is proved, the route already has a quantitative stopping theorem; no unbounded choice-state simulation is required.
+
+**Main risk.** Infinite new generators can coexist with nilpotent products. The frozen Saorín/N7 and ADR counterexamples already forbid extracting finite generation from diagonal cutoff or finite auxiliary endomorphism gd. R2 is a retained exact stopping interface, not a newly discovered closure mechanism.
+
+### R3. Localized trace / finite-pd hub, only in eligible branches
+
+**Objects.** Actual chain maps through a finite projective resolution \(Q_\bullet\) of a hub simple; or an \(e\)-bounded actual projective resolution and trace in \(HH_0(A/A(1-e)A)\).
+
+**Available theorem.** Localized trace is well defined under \(e\)-boundedness, with additivity for exact sequences satisfying that scope. Finite-hub lifts yield the finite alternating identity in Appendix D.
+
+**Missing lemma.** Badness must force a concrete nonzero trace class into that finite identity, while proving all localized additivity/anchor hypotheses. A nonzero radical path need not have a nonzero \(HH_0\) class. The all-infinite-simple core has no finite-pd simple hub by definition.
+
+**Advantage over T38.** When applicable, replaces an infinite homotopy calculation by finitely many actual maps. It can unify a family of finite-anchor cases without tracking carrier states.
+
+**Main risk.** The identity may be only cyclicity \([ab]=[ba]\), as in the explicit N7 computation, and may detect none of the ordinary persistent tail. No universal conclusion follows just from having a hub.
+
+Iyama's theorem and automatic monomial/Artin–Rees control are not retained as independent global routes. They can be auxiliary computations only after an ordinary comparison or exact finite-generation hypothesis is supplied.
+
+## IV. Main-route theorem skeleton
+
+Write \(A=H/I\) with \(H=kQ\), \(F\) the arrow ideal and \(F^\ell\subseteq I\subseteq F^2\). This is the elementary bound-quiver presentation, not an assumption that \(F=\operatorname{rad}H\). Define \(I^0=H\) and
+
+\[
+K_{2r}=\frac{I^r\cap F I^{r-1}F}{F I^r+I^rF}\quad(r\ge1),\qquad
+K_{2r+1}=\frac{F I^r\cap I^rF}{I^{r+1}+F I^rF}\quad(r\ge0).
+\]
+
+The safe skeleton is
+
+\[
+\begin{aligned}
+\operatorname{gd}A=\infty
+&\xRightarrow{\text{PROVED: actual minimal simple resolution}}
+ \operatorname{Tor}^A_n(S,S)\ne0\text{ for every }n\\
+&\xRightarrow{\text{LITERATURE THEOREM: Bongartz formula, exact Tor scope}}
+ K_n\ne0\text{ for every }n\\
+&\xRightarrow{\text{PROVED: finite }N^2\text{ pigeonhole}}
+ \exists(x,y):e_xK_ne_y\ne0\text{ infinitely often}. 
+\end{aligned}
+\]
+
+From the last line, \(e_yAe_x\ne0\) for **that same pair** is a **FALSE** arrow (Appendix B). Replace it by the single global arrow
+
+\[
+\boxed{\omega_n=0\text{ eventually}\quad
+\xRightarrow{\text{CURRENTLY UNKNOWN / EXACTLY UGA}}
+K_n=0\text{ eventually}.}
+\]
+
+Concretely, \((Z_b)\) says that for all \(C_{yx}>0\) and all sufficiently large \(r\),
+
+\[
+e_x(I^r\cap F I^{r-1}F)e_y
+=e_x(F I^r+I^rF)e_y,
+\tag{3}
+\]
+
+\[
+e_x(F I^r\cap I^rF)e_y
+=e_x(I^{r+1}+F I^rF)e_y.
+\tag{4}
+\]
+
+The unknown is whether these simultaneous equalities on **every visible block**, with a common eventual range, imply the equalities on **all** blocks eventually. If they do, \(K_n=0\) eventually, hence ordinary simple Tor vanishes eventually and \(\operatorname{gd}A<\infty\) (**PROVED ordinary minimal-resolution implication**), contradicting the first line. Conversely UGA immediately implies this eventual-total-vanishing statement. Thus the reduction has one exact open arrow and does not disguise a proof gap as a new theorem.
+
+## V. Decision — HYBRID
+
+Use R1's standard ideal representation to replace the **default** T38 lift-selection pursuit. Preserve C111–C114 and every earlier ordinary bridge: when their exact hypotheses hold they still close real branches. Retain R2's existing quantitative stopping interface and R3 only for checked trace/anchor hypotheses.
+
+This decision is a representation change with proved negative boundaries. It is **not** a claim that Bongartz already supplies global visibility, or that existential good choices under badness are impossible. Do not append another carrier invariant or state parameter unless it yields an actual ordinary bridge, strict descent, uniform stopping bound or branch exclusion. Do not reopen the four-total-vertex or general cube-zero classes to seek small UGA counterexamples. A credible candidate outside the closed classes would take priority over further proof engineering.
+
+UGA and Han's conjecture remain distinct targets. No Han reduction or Hochschild implication in an external paper is substituted for the ordinary supported-pair conclusion here.
+
+## Appendix A. Complete ordinary derivation and orientation audit of the ideal formulas
+
+The elementary quiver presentation is admissible; this gives \(F/I=J\) and \(H/F=S\). \(H\) is hereditary even when \(Q\) has cycles. Every left ideal of \(H\) is projective, so for every \(r\ge0\)
+
+\[
+P_{2r}=I^r/I^{r+1},\qquad
+P_{2r+1}=I^rF/I^{r+1}F
+\]
+
+is projective as a left \(A\)-module: each is \(A\otimes_H\) the corresponding projective left ideal. Inclusions in
+
+\[
+\cdots\subset I^2F\subset I^2\subset IF\subset I\subset F\subset H
+\]
+
+induce a projective resolution \(\cdots\to P_2\to P_1\to A\to S\to0\). Exactness follows by taking the two consecutive quotients of each nested triple; its even and odd kernels are respectively
+
+\[
+\ker d_{2r}=I^rF/I^{r+1},\qquad
+\ker d_{2r-1}=I^r/I^rF.
+\]
+
+At \(r=0\) the first formula includes the augmentation kernel (F/I). For \(n\ge1\), right exactness gives
+
+\[
+\operatorname{Tor}_n^A(S,S)
+\simeq\ker\big(S\otimes_A\ker d_{n-1}\longrightarrow S\otimes_AP_{n-1}\big).
+\]
+
+For \(n=2r\), the domain and target are
+
+\[
+\frac{I^r}{F I^r+I^rF}
+\longrightarrow
+\frac{I^{r-1}F}{F I^{r-1}F+I^rF}.
+\]
+
+The map is induced by inclusion, so its kernel is precisely the displayed \(K_{2r}\). For \(n=2r+1\) the map is
+
+\[
+\frac{I^rF}{F I^rF+I^{r+1}}
+\longrightarrow
+\frac{I^r}{F I^r+I^{r+1}},
+\]
+
+whose kernel is \(K_{2r+1}\). The denominators lie in their stated intersection numerators because \(I\subset F^2\). All constructions preserve the outside idempotents, so these are \(S\)-bimodule isomorphisms and
+
+\[
+e_xK_ne_y\simeq\operatorname{Tor}_n^A(R_x,L_y).
+\tag{5}
+\]
+
+Orientation anchors: \(K_1=F/F^2\); the arrow \(y\to x\) contributes to \(\operatorname{Tor}_1(R_x,L_y)\), since \(Ae_x\) covers that head of \(Je_y\). Also \(K_2=I/(FI+IF)\). Visibility is the **reverse** block \(e_y(H/I)e_x\), not \(e_x(H/I)e_y\). Plain vector duality identifies \(5\) with the dual of ordinary \(\operatorname{Ext}^n_A(L_y,L_x)\); no unexamined dual-bimodule convention is needed.
+
+The canonical resolution may be far from minimal. Nonzero \(I^r\), a nonzero \(P_n\), or a path overlap do not imply \(K_n\ne0\). The formulas compute **homology after the relevant intersection/sum quotient**, not a projective-term count. Field perfection is unnecessary for these Tor calculations; Huber–Kalck explicitly record this in Remark 2.3\(2\). No opposite-\(+\) comparison is used.
+
+## Appendix B. Actual two-vertex disproof of the same-pair visibility arrow
+
+Take vertices \(0,1\), an arrow \(a:0\to1\), a loop \(x:1\to1\), and \(A=kQ/F^2\). The basis is \(e_0,e_1,a,x\), with all radical products zero. Its **actual** minimal kernels are
+
+\[
+\Omega L_0=L_1,\qquad \Omega L_1=L_1.
+\]
+
+Indeed \(JP_0=ka\simeq L_1\), \(JP_1=kx\simeq L_1\). Thus
+
+\[
+\operatorname{Tor}_n^A(R_1,L_0)=k\quad(n\ge1),\qquad e_0Ae_1=0.
+\]
+
+For \(I=F^2\), both parity formulas reduce to \(K_n=F^n/F^{n+1}\). The class \(x^{n-1}a\in e_1K_ne_0\) is the canonical ideal representative of the same persistent invisible pair. This is an admissible finite algebra over any field, so the pointwise bridge is conclusively false.
+
+Nevertheless \(\operatorname{Tor}_n^A(R_1,L_1)=k\) for every \(n\ge1\), and \(e_1Ae_1\ne0\). **UGA holds in this algebra.** It breaks the proposed same-pair theorem, not UGA. Even total high visible vanishing for the one source \(L_0\) cannot replace the global condition on all sources.
+
+## Appendix C. Actual monomial-initial persistence can disappear in a finite-gd original
+
+Reuse the dimension-14 Auslander Hom algebra underlying C082, with the literal convention fixed here as
+
+\[
+A=\operatorname{End}_{k[t]/(t^3)}(M_1\oplus M_2\oplus M_3),\qquad M_i=k[t]/(t^i).
+\]
+
+C082 used the opposite algebra; its finite-gd asset is unchanged. For transparency, give the literal left maps below rather than transferring an infinite-\(+\) assertion across opposites. A Hom basis \(h_{i,j,s}:M_j\to M_i\) has \(\max(i-j,0)\le s<i\), sends \(1\mapsto t^s\), and satisfies \(h_{i,j,s}h_{j,l,u}=h_{i,l,s+u}\) if \(s+u<i\), zero otherwise.
+
+The quiver is \(1\rightleftarrows2\rightleftarrows3\), with \(a_1:1\to2,b_1:2\to1,a_2:2\to3,b_2:3\to2\), and mathematical multiplication read **right to left**. Map \(a_1=h_{2,1,1},b_1=h_{1,2,0},a_2=h_{3,2,1},b_2=h_{2,3,0}\). Then
+
+\[
+A\simeq kQ/(b_1a_1,\ a_1b_1-b_2a_2).
+\]
+
+Choose degree lex order \(a_1>b_1>a_2>b_2\). A complete reduced Gröbner system is
+
+\[
+b_1a_1\mapsto0,\quad a_1b_1\mapsto b_2a_2,\quad
+b_2a_2a_1\mapsto0,\quad b_1b_2a_2\mapsto0,\quad
+(b_2a_2)^2\mapsto0.
+\tag{6}
+\]
+
+The last three relations follow from the original two by multiplying/substituting; for example \(b_2a_2a_1=a_1b_1a_1=0\) and \((b_2a_2)^2=b_2a_2a_1b_1=0\). This order makes the only nonzero reduction strictly decrease; the zero reductions terminate. There are no proper containment ambiguities. The **complete** list of proper overlapping leading-word ambiguities is
+
+```
+b1 a1 b1
+a1 b1 a1
+a1 b1 b2 a2
+b2 a2 a1 b1
+b1 b2 a2 a1
+b1 b2 a2 b2 a2
+b2 a2 b2 a2 a1
+b2 a2 b2 a2 b2 a2
+```
+
+In each case reducing either distinguished subword yields normal form zero; \(6\) checks each directly. Therefore the Diamond Lemma gives the normal basis
+
+\[
+\begin{gathered}
+e_1,e_2,e_3;\quad a_1,b_1,a_2,b_2;\\
+a_2a_1,b_1b_2,b_2a_2,a_2b_2;\\
+a_2b_2a_2,b_2a_2b_2;\quad a_2b_2a_2b_2.
+\end{gathered}
+\]
+
+Every path of length five contains a leading word. The eleven positive-length normal words map to eleven distinct nonidentity Hom basis elements, proving the claimed presentation and dimension 14 over **any** field.
+
+Put \(P_i=Ae_i\). The following are **actual minimal exact** left simple resolutions, where \(\rho c\) means right multiplication by \(c\):
+
+\[
+0\to P_1\xrightarrow{\rho b_1}P_2\xrightarrow{\rho a_1}P_1\to L_1\to0,
+\]
+
+\[
+0\to P_2\xrightarrow{(\rho a_1,-\rho b_2)}P_1\oplus P_3
+\xrightarrow{(\rho b_1,\rho a_2)}P_2\to L_2\to0,
+\]
+
+\[
+0\to P_2\xrightarrow{\rho b_2}P_3\to L_3\to0.
+\]
+
+Here \(\dim P_i=3,5,6\). The first kernel is spanned by \(b_1,b_2a_2,a_2b_2a_2\), the injective image of \(P_1\) under \(\rho b_1\). The middle image is \(JP_2\), dimension 4; its kernel has dimension 5, equals the image of the displayed \(P_2\) map, whose \(\rho b_2\) component is injective. The last map identifies \(P_2\) with \(JP_3\) on the normal basis. All maps are radical. Thus the simple pds are (2,2,1) and \(\operatorname{gd}A=2\).
+
+Now let \(B=kQ/\operatorname{in}(I)\), the monomial algebra with all five leading words in \(6\) set to zero. It has **the same fourteen normal paths and the same physical Peirce dimensions**. Set \(M=Ba_1\), with basis \(a_1,a_2a_1\). Actual multiplication gives
+
+\[
+\Omega_B L_1=M.
+\]
+
+The real cover \(Be_2\xrightarrow{\rho a_1}M\) has full kernel
+
+\[
+\langle b_1,b_2a_2,a_2b_2a_2\rangle
+=Bb_1\oplus B(b_2a_2)\simeq L_1\oplus M.
+\]
+
+There is no omitted differential or assumed exact pruning: \(Bb_1=kb_1\), and \(B(b_2a_2)\) has the same arrow actions as \(M\). Hence
+
+\[
+\Omega_B M=L_1\oplus M,\qquad
+L_1\mid\Omega_B^{2m}L_1\quad(m\ge1),
+\]
+
+by actual minimal-cover additivity and induction. The resulting ordinary diagonal Tor satisfies
+
+\[
+\dim\operatorname{Tor}_{2m}^B(R_1,L_1)\ge1\quad\text{for every }m\ge1.
+\]
+
+In \(A\), the binomial relation reconnects \(b_1\) to \(b_2a_2\) via \(a_1b_1=b_2a_2\); the same vector-space kernel becomes \(P_1\), and the original resolution terminates. This is the **actual homological cancellation** that normal-word/overlap persistence alone misses. Thus infinite ordinary Tor in a finite monomial initial algebra does not force any infinite ordinary Tor in the original algebra, even with identical dimension and Peirce support. Neither \(A\) nor \(B\) is a UGA counterexample: \(A\) has finite gd; \(B\) has the displayed supported diagonal tail.
+
+## Appendix D. Trace does give finite identities, but not an automatic contradiction
+
+The localized ILP hypothesis is **\(e\)-boundedness**: every sufficiently high projective term has top annihilated by \(e\). It is not the assertion that the whole module has finite pd. The \(e\)-trace of these high terms vanishes, so its alternating sum is finite and independent of the lifts. Additivity requires the modules in the exact sequence to be \(e\)-bounded. Finite injective dimension of the simple supported by a primitive \(e\) supplies this boundedness for all modules (with the appropriate module-side convention), and leads to the radical-triviality statement in ILP Theorem 1.5. Strong no loop concludes \(\operatorname{Ext}^1(S_e,S_e)=0\) when that simple has finite pd or finite id, not a supported persistent ordinary tail.
+
+Under \((Z_b)\), each \(L_y\)'s minimal resolution is \(e_y\)-bounded, since actually \(e_yP_n(L_y)=0\) at high degree. Thus it is wrong to say trace can never be used on an infinite resolution. The gap is different: for **one fixed** \(e_y\), \((Z_b)\) does not control the high \(e_y\)-tops of every other source and intermediate module needed in a filtration. Using its own idempotent for each simple does not prove the common-\(e_y\) additivity hypotheses. No trace class known to be nonzero follows merely from the remaining invisible ordinary Tor.
+
+For a hub \(L_u\) with a finite resolution \(Q_\bullet\) of length \(d\), lifts \(h:P_\bullet\to Q_\bullet\), \(g:Q_\bullet\to P_\bullet\) of zero maps of simples satisfy the null-homotopy trace identity
+
+\[
+\operatorname{tr}_{HS}(h_0g_0)
+=\operatorname{tr}_{HS}(g_0h_0)
+=\sum_{i=1}^d(-1)^{i+1}\operatorname{tr}_{HS}(h_ig_i).
+\tag{7}
+\]
+
+Indeed \(hg\) lifts the zero endomorphism of \(L_u\), and the alternating trace of its null-homotopy telescopes on the **finite** \(Q_\bullet\). Cyclicity permits computing the degree-zero class on either projective. This is the mechanism of Armenta Lemma 10.9; his following Remark 10.10 explicitly records that this identity alone does not give a contradiction.
+
+Check \(7\) on the frozen Saorín/N7 actual algebra: \(a:0\to1,b:1\to0\), \(aba=0\). Basis
+
+\[
+e_0,e_1,a,b,p=ba,q=ab,r=bab,
+\]
+
+with nonzero radical products \(ba=p,ab=q,bq=pb=r\). Its infinite resolution of \(L_0\) has \(P_0=Ae_0\), \(P_i=Ae_1\) for \(i\ge1\), \(d_1=\rho a\), \(d_i=\rho q\) for \(i\ge2\). The real finite-pd hub resolution is
+
+\[
+0\to Ae_0\xrightarrow{\rho b}Ae_1\to L_1\to0.
+\]
+
+Choose \(h_0=\rho b,h_1=\rho a,h_i=0\) for \(i\ge2\), and \(g_0=\rho a,g_1=\rho b\). The chain-map equations hold: \(qa=ap=0\), and the degree-one squares compose to \(ab\) or \(ba\) as required. On \(Q_0,Q_1\) the composite \(hg\) is \(\rho q,\rho p\). Equation \(7\) is exactly
+
+\[
+[q]-[p]=[ab-ba]=0\quad\text{in }HH_0(A).
+\]
+
+It is a commutator identity, not a contradiction. The algebra already has a supported persistent **off-diagonal** ordinary pair; no claim of ambient badness is made. This example blocks extracting a universal contradiction from the bare finite-hub identity. A badness-specific trace nontriviality mechanism remains open; the existence of a finite-pd anchor in every global core is also unproved.
+
+## Appendix E. Actual relative-control counterexample
+
+Let \(D=k[t]/(t^2)\), \(L=D/(t)\), \(M=D\oplus L\). Since \(t^2=0\), every finite \(D\)-module is a sum of copies of \(D\) and \(L\), over any field. \(D\) is symmetric, so \(M\) is a generator-cogenerator. Every module therefore has proper \(\operatorname{add}(M)\)-resolution length **zero**.
+
+The literal algebra \(\Gamma=\operatorname{End}_D(M)\) has dimension 5, vertices \(L,D\), arrows \(a:L\to D\) (inclusion into \(tD\)), \(b:D\to L\) (quotient), and \(ba=0,ab=t\). Its actual left kernels are \(\Omega_\Gamma S_L=S_D\) and \(\Omega_\Gamma S_D=\Gamma e_L\), giving simple pds \(2,1\) and \(\operatorname{gd}\Gamma=2\). The right module \(\operatorname{Hom}_D(M,L)\) is projective over \(\Gamma\), since \(L\in\operatorname{add}(M)\).
+
+But the ordinary **\(D\)** resolution
+
+\[
+\cdots\xrightarrow{t}D\xrightarrow{t}D\xrightarrow{t}D\to L\to0
+\]
+
+is minimal and exact in every positive degree, giving \(\operatorname{Tor}_n^D(L,L)=k\) for all \(n\ge0\). Relative length zero and finite auxiliary gd therefore do not control ordinary \(D\)-pd or compare the persistent Tor back from relative projectives. This counterexample addresses unconditional transfer; it does not rule out an additional **proved badness-specific** comparison.
+
+The project already has a stronger ADR caution: finite gd of the radical-truncation endomorphism algebra need not make the **ordinary \(A\)-Ext** of its generator finitely generated; reuse [ADR-Obstruction-and-Cyclic-Return.md](../../toolbox/Imported-Outputs/ADR-Obstruction-and-Cyclic-Return.md). Repackaging that fact as a new Iyama closure would repeat a known failed inference.
+
+## Appendix F. Why Artin–Rees / ideal-power finiteness is not automatic
+
+The path algebra need not be Noetherian. For the one-vertex two-loop quiver, \(H=k\langle x,y\rangle\), even \(A=H/F^2\) is finite-dimensional and admissible. The left ideals
+
+\[
+L_m=\sum_{j=0}^{m}Hxy^jx
+\]
+
+strictly increase: \(xy^{m+1}x\) has none of \(xy^jx\), \(j\le m\), as a suffix, so it cannot lie in the monomial left ideal \(L_m\). Thus \(H\) is not left Noetherian; the analogous prefix argument gives the right boundary. A positively graded Rees ring with degree-zero quotient \(H\) cannot automatically be Noetherian either.
+
+Nor does \(J^\ell=0\) in \(A\) imply \(I^r=0\) in \(H\); for instance \(I=F^2\) in this example has nonzero powers in every degree. The relevant obstruction is the **intersection modulo the sum**, not the presence of powers or cycles. A proposed Artin–Rees use must provide its actual ring, filtration, module, finiteness and two-sided compatibility hypotheses. This appendix refutes automatic availability, not all possible specialized Artin–Rees applications.
+
+## Appendix G. MRS / Vault use and actual adversarial checks
+
+The main researcher used the existing MRS skill/workflow for durable source/claim/negative-result provenance and the already-installed Vault skill for bounded live-note retrieval. No substitute MRS service, formal-verifier acceptance, Vault clone or independent worker was created.
+
+Live Vault root: `C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault`. The method mappings were concrete:
+
+- `math/把集合问题转换为函数问题.md`: the union of visible pair supports becomes the existing nonnegative weighted matrix scalar \(1\), so eventual vanishing is one **global** condition without losing the reverse support mask.
+- `math/寻找桥梁让函数信息跨区传递.md`: insist on an explicit comparison for each representation change. Bongartz provides degreewise ordinary \(S\)-bimodule isomorphisms; relative Hom and monomial initial algebra provide no such persistence comparison, as Appendices C/E demonstrate. This note's retrieved body was bounded/truncated, and is only a methodological prompt, never project-specific authority.
+
+Queries with no metadata hits were not treated as a proof of absence. No Vault notes were edited or copied. Existing failed-route assets were searched before naming R2, ADR or new choice mechanisms; R2 was found already proved as a conditional/equivalent interface and reused.
+
+The adversarial scope was deliberately exact rather than a mechanical vertex enumeration. Radical-square-zero and two-vertex examples test the proposed **stronger bridge**, while C107/C110 already close those UGA classes. Existing cube-zero, truncated-cycle, tensor/triangular/one-point-extension, selfinjective and N7 assets supply ordinary positive/cancellation benchmarks. The new dimension-14 degeneration example tests a mature-theory transfer against **actual full kernels**, not graph data. No badness candidate survived; no exhaustive five-vertex or general finite-algebra search is claimed.
+
+Retained arithmetic evidence: [task](Global-Route-Audit-Evidence/task.md), [script](Global-Route-Audit-Evidence/verify_route_audit.py), [result](Global-Route-Audit-Evidence/result.json), [execution record](Global-Route-Audit-Evidence/execution-record.json), [repaired caller error](Global-Route-Audit-Evidence/initial-error.json). The actual final run passed **6020 literal associativity triples, 26 retained minimal covers, 207 integral basis inverses, 3 actual kernel isomorphisms**, and **all 8 Gröbner overlap pairs**. It found \(A_{14}\) pds (2,2,1), the displayed real \(B_{14}\) kernel decomposition, and \(\Gamma_5\) pds \(2,1\).
+
+The checks use shared existing rational helpers. Integral bases and inverse coordinate matrices plus the written normal-basis proofs support the stated any-field formulas. The finite Betti prefix is a calibration; **the literal split-kernel induction**, not extrapolation from that prefix, proves all-degree persistence. No checksum ritual or legacy hash-schema validation was performed. The initial API failure was repaired and separately recorded as an operational error, not mathematical negative evidence.
+
+### Normal adversarial audit before registering C115–C116
+
+1. **Module side/orientation:** \(K_1=F/F^2\), the actual arrow cover, and Appendix B fix \(e_xK_ne_y\); visibility is \(e_yAe_x\). No unexamined bimodule-dual swap or opposite-\(+\) claim is used.
+2. **Precise assumptions:** elementary finite-dimensional \(A\), any \(k\), admissible bound-quiver presentation. \(F\) is the arrow ideal, not assumed to be \(\operatorname{rad}H\). The Tor formulas retain their even/odd index ranges.
+3. **Ordinary versus derived/relative:** Appendix A computes ordinary Tor; all persistence certificates use real minimal covers. No singular/Tate or relative Ext is substituted.
+4. **Quantifiers:** gd infinity gives total Tor in every degree, but fixed pair only infinitely often. The same-pair visibility implication is false. The replacement statement uses ALL visible blocks and a common eventual range; it is OPEN/equivalent UGA.
+5. **Complete degeneration proof:** \(6\) terminates; no inclusion ambiguities; all eight overlap ambiguities resolve; normal basis realizes the literal End algebra; all three finite resolutions are exact and minimal. \(B\)'s full kernel is a true direct sum, proving the tail for every \(2m\).
+6. **Trace scope:** individual \(e\)-bounded modules allow trace; common-\(e\) additivity and nonzero class extraction are additional requirements. The finite-hub example proves no automatic contradiction, not a badness-specific trace theorem's failure.
+7. **No false global negative:** every bridge counterexample has a separate ordinary supported witness or finite gd. None disproves UGA. C107/C110 and existential badness-specific C112/C114 boundaries remain intact.
+8. **External attribution:** Huber–Kalck full proof and the exact primary trace/relative theorems were checked. Bongartz original and Butler–King full proof were not read; no unstated theorem is attributed to them. Literature search is not claimed exhaustive.
+9. **Evidence provenance:** complete written proof and same-author normal audit; bounded exact checks share project libraries. Not independent verification, not formal MRS acceptance, not proof by computation, not a novelty claim.
+10. **Closure priority:** R1 is a simpler exact representation, not a new solved closure. The unknown ordinary visible-return/global stopping arrow remains explicitly the next load-bearing target; all global branches and the UGA/Han separation are preserved.
+
+**Checkpoint conclusion:** standard canonical ordinary Tor representation established; same-pair, automatic monomial-transfer and relative-control shortcuts eliminated with actual modules; finite trace scope fixed. **HYBRID; full Universal Gap A OPEN.**

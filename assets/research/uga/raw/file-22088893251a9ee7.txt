@@ -1,0 +1,200 @@
+# §0 Mathematical verdict
+
+**Not solved.** Universal Gap A and the ultimate Han theorem remain open, but the actual corner-simple comparison is now verifier-instantiated and opposite-invariance is closed; the central missing interface has narrowed to promotion of the fifth, unbounded higher-error branch into a bilateral Peirce-compatible recurrence or a strict smaller-corner descent.
+
+**Closed components.** Dead-zone descent and strict vertex reduction are verifier-accepted (`59a12876ab799b9e`, `5da47c5107901438`, `4ac1cd635b7cb0e8`); one- and two-vertex closure are available (`60cb94b92665a3ca`, `ee07f374726a4e16`). The total five-way comparison is now instantiated on actual corner simples, canonical ambient simple quotients, and their kernels by `9b661439db7f6ae9`. Infinite-(+) is invariant under passage to the opposite algebra by `932a22f86dc2b944`.
+
+**Viable proof architecture.** Descend to a proper dead-zone corner, obtain a corner witness, apply the canonical five-way comparison, close the first four branches through Peirce provenance or recycle them, and turn the fifth unbounded-error recurrence into a paired (A/A^{op}) state that either yields a compatible witness or strictly descends.
+
+**Main blocker.** Neither cross support nor a recurrent radical transfer edge controls the required reverse Peirce block. `6bd89784ef94bef3` kills the generic cross-product implication, while `78e3ab82c1e9d0e7` shows that a Tor-recurrent minimal resolution can repeatedly contain a fixed radical edge (e_a\operatorname{rad}(A)e_c\ne0) although the reverse Peirce block (e_cAe_a) vanishes.
+
+**Highest-priority unresolved bridge.** Under the actual dead-zone origin and canonical comparison of `9b661439db7f6ae9`, prove that its fifth alternative—one fixed right simple occurring in infinitely many modules \(\operatorname{Tor}^{fAf}_q(R_a^{fAf},fA)\)—produces either a fixed left simple with persistent ambient Tor and a compatible Peirce block, or a proper secondary dead-zone corner carrying a strictly smaller recurrence state.
+
+**Method failure vs. proposition failure.** The support-only and single-radical-edge strategies are method failure, not proposition failure for Gap A or Han's conjecture.
+
+**Calibration caveat.** The comparison interface is now much sharper, but the fifth branch may still lose degreewise information under composition-factor extraction; no verified theorem yet converts it into infinite-(+).
+
+| Dashboard item | State |
+|---|---|
+| Fixed goal | UNCHANGED — solve the Han problem and build a recurrence–visibility theory beyond it, including corners, Peirce visibility, defect recycling, and Hochschild visibility. |
+| Verified complete proof | NO |
+| Verified counterexample | NO counterexample to universal Gap A or Han; YES counterexamples to support-only product recovery (`6bd89784ef94bef3`) and recurrent-radical-edge recovery (`78e3ab82c1e9d0e7`). |
+| Signed-closed sub-tasks | Dead-zone tail descent; strict size reduction; one-vertex closure; two-vertex strongly connected closure; opposite-invariance; canonical total corner-simple comparison. |
+| Main blocker | Fifth-branch promotion or strict descent from the unbounded higher comparison errors in `9b661439db7f6ae9`. |
+| Routes marked false/obsolete | YES — cross-support multiplication and reverse-Peirce inference from a recurrent radical edge are FALSE AS STATED. |
+| Highest-priority unresolved task | P0 — construct a provenance-sensitive bilateral transition for the fifth branch that survives both verified counterexamples. |
+
+| Sub-task | Status | Closed facts | Conditional facts | Main missing interface |
+|---|---|---|---|---|
+| Recurrence to dead-zone corner | SUBSTANTIAL | `59a12876ab799b9e`, `5da47c5107901438`, `4ac1cd635b7cb0e8` | The exact one-way/syzygy-return premise still requires final ordered instantiation | Match the external premise on the minimal Gap-A failure. |
+| Low-vertex frontier | SUBSTANTIAL | `60cb94b92665a3ca`, `ee07f374726a4e16` | Three-vertex mutual dumbbell remains open | Close the dumbbell or the narrower dead-zone form. |
+| Actual corner witness comparison | CLOSED | `35b1a1b5712044a4`, `9b661439db7f6ae9` | None for the five-way alternative statement itself | Downstream branches still require Peirce promotion, but the comparison output is fully typed. |
+| Fifth higher-error branch | PARTIAL | `69f8d86a55aa08aa`, `35b1a1b5712044a4`, `9b661439db7f6ae9` | A fixed right simple recurs as a composition factor across infinitely many (q) | Extract a fixed left recurrence or a proper secondary corner without losing degree information. |
+| Bilateral Peirce recycling | DANGEROUS | `932a22f86dc2b944`, `51edbf2274f700d5` | Generic support/radical data are refuted by `6bd89784ef94bef3`, `78e3ab82c1e9d0e7` | Add canonical comparison provenance and noncancelling relation-level data. |
+| Unified recurrence–visibility/Han theory | PARTIAL | Verified descent, comparison, and symmetry layers | No central recycling theorem or final Hochschild closure | Prove the recycling theorem, then connect infinite-(+) to the intended Hochschild conclusion with exact literature hypotheses. |
+
+**Current best proof skeleton**
+
+1. Assume a vertex-minimal finite-dimensional basic bound-quiver algebra (A) of infinite global dimension is not infinite-(+).
+2. Use the exact one-way theorem to obtain a dead zone from an infinite-projective-dimension simple.
+3. Apply `5da47c5107901438`, `59a12876ab799b9e`, and `4ac1cd635b7cb0e8` to get a proper infinite-global-dimension corner (B=fAf).
+4. Obtain an infinite-(+) corner-simple witness, using vertex minimality or the low-vertex facts `60cb94b92665a3ca`, `ee07f374726a4e16` once the mutual dumbbell is closed.
+5. Apply the canonical comparison `9b661439db7f6ae9` to this actual witness.
+6. In alternatives one through four, retain the quotient/kernel/higher-row provenance and seek the correctly ordered ambient Peirce block.
+7. In alternative five, use `69f8d86a55aa08aa` to fix the recurrent right simple across unbounded higher error degrees.
+8. Apply the paired construction to (A^{op}), justified by `932a22f86dc2b944`, and combine both degree/provenance states.
+9. Prove that the paired state either contains a noncancelling compatible matrix coefficient or determines a strictly smaller recurrent corner.
+10. Iterate the strict descent to contradiction, or obtain an ambient infinite-(+) witness, contradicting the chosen failure.
+11. After universal Gap A is closed, use the exact verified CLMS/Hochschild interface to reach Han's conjecture and state the broader recurrence–visibility theorem.
+
+**Central missing lemma.** Let (A=kQ/I) be vertex-minimal among finite-dimensional basic algebras of infinite global dimension that are not infinite-(+). Let (f) be the dead-zone idempotent obtained from an infinite-projective-dimension simple and (B=fAf). Let (R_a^B,L_b^B) be a corner infinite-(+) witness and suppose the canonical comparison of `9b661439db7f6ae9` lands in its fifth alternative: a fixed simple right (A)-module (T) is a composition factor of \(E_q=\operatorname{Tor}_q^B(R_a^B,fA)\) for infinitely many (q\ge1). Then, using the exact construction of (E_q), the dead-zone origin of (f), and the paired comparison for (A^{op}), either there exists a simple left (A)-module (U) such that \(\operatorname{Tor}_n^A(T,U)\ne0\) for infinitely many (n) and the correctly ordered Peirce block is nonzero, or there is a proper idempotent (f') for which (f'Af') has an infinite recurrence and the tuple (vertex support, ordered dead zone, comparison provenance, first nonzero radical/differential layer) strictly decreases in a stated well-founded order. The proof must use structure absent from both `6bd89784ef94bef3` and `78e3ab82c1e9d0e7`.
+
+# §1 Closed components and obsolete routes
+
+**Signed-closed components**
+
+- Dead-zone minimal-resolution tails produce a proper infinite-global-dimension corner — `59a12876ab799b9e`, `5da47c5107901438`, `4ac1cd635b7cb0e8`.
+- One-vertex and strongly connected two-vertex singular algebras are infinite-(+) — `60cb94b92665a3ca`, `ee07f374726a4e16`.
+- Infinite-(+) is invariant under the opposite algebra — `932a22f86dc2b944`.
+- Infinite minimal resolutions give fixed simple Tor recurrence and fixed radical transfer edges — `443dcfa36e4c44f5`, `51edbf2274f700d5`.
+- The abstract five-way comparison and its actual corner-simple instantiation are closed — `35b1a1b5712044a4`, `9b661439db7f6ae9`.
+
+| Route | Status | Reason |
+|---|---|---|
+| Persistent cross-Tor plus two nonzero cross pieces forces nonzero return product | FALSE AS STATED | Refuted by `6bd89784ef94bef3`. |
+| A fixed recurrent radical edge forces the reverse Peirce block | FALSE AS STATED | Refuted by `78e3ab82c1e9d0e7`. |
+| The abstract comparison still needs arbitrary quotient choices | OBSOLETE | `9b661439db7f6ae9` constructs canonical simple quotients and kernels. |
+| Finite-width analysis exhausts every comparison behavior | OBSOLETE | `35b1a1b5712044a4` adds the unbounded fifth alternative. |
+| Opposite-invariance must be assumed | OBSOLETE | It is verifier-closed by `932a22f86dc2b944`. |
+
+# §2 Interface contract table
+
+### One-way recurrence to dead-zone descent — produce the proper singular core
+**Input required.** A high-syzygy one-way statement with exactly ordered Peirce blocks for an infinite-projective-dimension simple in a minimal Gap-A failure.
+
+**Output claimed.** A proper idempotent corner of infinite global dimension.
+
+**Available facts.** `5da47c5107901438`, `59a12876ab799b9e`, `4ac1cd635b7cb0e8`.
+
+**Missing verification on the actual model.** 1. Match the exact external theorem. 2. Verify its left/right and top conventions. 3. Apply it to the chosen minimal failure.
+
+**Failure mode if ignored.** A reversed Peirce direction selects the wrong dead zone and destroys tail support.
+
+**Status.** SUBSTANTIAL
+
+### Proper singular core to corner witness — obtain an internal infinite-(+) pair
+**Input required.** Vertex minimality or a low-vertex theorem covering the relevant connected corner component.
+
+**Output claimed.** A corner-simple pair with persistent Tor and a nonzero ordered corner Peirce block.
+
+**Available facts.** `60cb94b92665a3ca`, `ee07f374726a4e16`.
+
+**Missing verification on the actual model.** 1. Close the mutual-dumbbell case. 2. Handle disconnected corners componentwise. 3. Match the minimality category.
+
+**Failure mode if ignored.** Infinite corner global dimension does not itself name a plus witness.
+
+**Status.** SUBSTANTIAL
+
+### Corner witness to canonical five-way ambient defect — instantiate all comparison outputs
+**Input required.** Corner simples (R_a^B,L_b^B), their canonical induced modules, quotient maps to ambient simples, and comparison kernels.
+
+**Output claimed.** Exactly one of five typed alternatives: ambient simple recurrence, one of two kernel recurrences, a fixed higher-row simple recurrence, or a right simple recurring across unbounded higher rows.
+
+**Available facts.** `35b1a1b5712044a4`, `9b661439db7f6ae9`.
+
+**Missing verification on the actual model.** None for the stated comparison output.
+
+**Failure mode if ignored.** Not applicable; this interface is fully instantiated, but its outputs are not yet all plus witnesses.
+
+**Status.** CLOSED
+
+### Fifth alternative to paired recurrence — restore the missing left side
+**Input required.** A fixed right simple (T) recurring in infinitely many higher comparison modules, exact degree/provenance data, and the corresponding opposite-algebra comparison.
+
+**Output claimed.** A fixed left simple with persistent ambient Tor, or a strictly smaller typed recurrence.
+
+**Available facts.** `69f8d86a55aa08aa`, `9b661439db7f6ae9`, `932a22f86dc2b944`.
+
+**Missing verification on the actual model.** 1. Preserve degree information through composition factors. 2. Relate the (A) and (A^{op}) higher-error families. 3. Prove recurrence or strict descent rather than mere repeated occurrence.
+
+**Failure mode if ignored.** A fixed composition factor across (q) need not have persistent Tor against any fixed left simple.
+
+**Status.** PARTIAL
+
+### Paired recurrence to Peirce visibility — obtain a noncancelling ordered block
+**Input required.** Canonical comparison provenance on both sides plus relation-level data that is not present in generic radical-square-zero cycles.
+
+**Output claimed.** An ambient infinite-(+) witness or a strict well-founded descent.
+
+**Available facts.** `932a22f86dc2b944`, `51edbf2274f700d5`; `6bd89784ef94bef3` and `78e3ab82c1e9d0e7` are boundary counterexamples.
+
+**Missing verification on the actual model.** 1. Define the paired state. 2. Identify a noncancelling matrix/radical coefficient. 3. Prove strict descent in the zero-block branch. 4. Exclude periodicity.
+
+**Failure mode if ignored.** Support and local radical edges can recur forever while the required reverse Peirce block stays zero.
+
+**Status.** DANGEROUS
+
+# §3 Dangerous heuristic lines and strategies not to pursue
+
+**Dangerous heuristic lines**
+
+- “A recurrent radical edge gives the return Peirce block.” **Status: Mathematically incorrect as stated.** `78e3ab82c1e9d0e7` exhibits a periodic minimal resolution with the fixed edge but a zero reverse block. The corrected route must use more than a one-step differential support edge.
+- “Both cross modules nonzero plus persistent cross-Tor forces their product.” **Status: Mathematically incorrect as stated.** `6bd89784ef94bef3` shows the multiplication image can vanish.
+- “Applying the construction to (A^{op}) automatically pairs the two defect families.” **Status: Not automatic.** `932a22f86dc2b944` proves plus-invariance and Tor symmetry, but does not identify the canonical higher-error modules from two different corner comparisons.
+- “A fixed simple composition factor in infinitely many (E_q) is a persistent Tor witness.” **Status: Conflated with a stronger claim.** `69f8d86a55aa08aa` proves repeated occurrence only; it does not fix a left simple or a homological degree family over (A).
+- “The comparison problem is still abstract.” **Status: Method shortcut, not a proof step.** `9b661439db7f6ae9` now supplies the actual canonical maps; future arguments should use their kernels and not arbitrary sequences.
+
+**Strategies not to pursue**
+
+- Do not infer reverse Peirce visibility from a recurrent radical edge: `78e3ab82c1e9d0e7` refutes it.
+- Do not infer a nonzero return product from cross supports: `6bd89784ef94bef3` refutes it.
+- Do not discard the fifth alternative as an error term: it is the remaining unbounded comparison behavior.
+- Do not use opposite-invariance as if it canonically identifies defect modules: construct the paired comparison maps explicitly.
+- Do not replace the actual kernels in `9b661439db7f6ae9` with arbitrary short exact sequences.
+- Do not claim the three-vertex frontier is closed until the mutual dumbbell is verifier-handled.
+
+# §4 Missing bridge lemmas
+
+### Bridge 1 — Fifth-branch promotion
+**Target statement.** Under the dead-zone and canonical corner-simple hypotheses of `9b661439db7f6ae9`, if a fixed simple right (A)-module (T) occurs in \(\operatorname{Tor}_q^{fAf}(R_a^{fAf},fA)\) for infinitely many (q), then either there is a fixed simple left (A)-module (U) with persistent \(\operatorname{Tor}_n^A(T,U)\), or the supports/provenance of these occurrences define a proper secondary corner with infinite recurrence.
+
+**Prerequisites.** Exact canonical quotient/kernel maps, finite-dimensionality in each degree, and the dead-zone origin of (f).
+
+**Existing facts to use.** `69f8d86a55aa08aa`, `35b1a1b5712044a4`, `9b661439db7f6ae9`.
+
+**Missing checks.** 1. Preserve degreewise maps rather than only composition factors. 2. Extract a fixed left side or secondary corner. 3. Prove persistence. 4. Track ordered Peirce support.
+
+**Closure criterion.** The fifth branch must end in the same kind of typed persistent pair as the first four branches or in a strictly smaller recurrence to which the full architecture reapplies. This bridge is independent and parallelizable.
+
+### Bridge 2 — Canonical bilateral noncancellation
+**Target statement.** For a vertex-minimal dead-zone failure, the paired canonical comparison diagrams for (A) and (A^{op}) cannot both remain Peirce-incompatible without producing either a nonzero compatible differential/radical matrix coefficient or a strict decrease of a relation-sensitive defect state.
+
+**Prerequisites.** Bridge 1 or one of the first four comparison branches, opposite-invariance, and explicit canonical comparison maps.
+
+**Existing facts to use.** `932a22f86dc2b944`, `9b661439db7f6ae9`, `51edbf2274f700d5`; boundary facts `6bd89784ef94bef3`, `78e3ab82c1e9d0e7`.
+
+**Missing checks.** 1. Define the paired state. 2. Match the two canonical diagrams. 3. Identify the relation-level coefficient. 4. Prove noncancellation or strict descent. 5. Exclude both counterexamples by a named hypothesis.
+
+**Closure criterion.** A proof must explicitly show why the two verified counterexamples cannot arise from the minimal dead-zone canonical comparison. This bridge depends on Bridge 1 but its invariant design is parallelizable.
+
+### Bridge 3 — Three-vertex mutual-dumbbell closure
+**Target statement.** Every three-vertex strongly connected finite-dimensional basic bound-quiver algebra in the mutual-dumbbell configuration with infinite global dimension is infinite-(+), or every such configuration arising as a dead-zone corner is infinite-(+).
+
+**Prerequisites.** Exact mutual-dumbbell hypotheses and ordered CLMS conventions.
+
+**Existing facts to use.** `ee07f374726a4e16`, `cfa612b56766b9c2`, `073459eead09a970`.
+
+**Missing checks.** 1. Isolate the surviving case. 2. Produce a matching simple Tor/Peirce witness. 3. Audit protected corners and relations.
+
+**Closure criterion.** The surviving dumbbell configuration itself must be covered without assuming visibility. This bridge is independent and parallelizable.
+
+### Bridge 4 — Exact Gap A to Han closure
+**Target statement.** Once every infinite-global-dimension finite-dimensional complex algebra is infinite-(+), the precise verified Hochschild or tau-Hochschild theorem implies nonvanishing in arbitrarily high degrees, hence eventual Hochschild vanishing forces finite global dimension.
+
+**Prerequisites.** Universal Gap A and the exact external theorem with all finiteness, field, grading, and ordinary-versus-tau Hochschild hypotheses matched.
+
+**Existing facts to use.** The current graph contains the algebraic recurrence and plus machinery but no finalized universal Gap-A fact.
+
+**Missing checks.** 1. Close Bridges 1–3. 2. Import the exact Hochschild interface as verifier-accepted facts. 3. Distinguish ordinary Hochschild homology from any tau variant. 4. Derive the contrapositive cleanly.
+
+**Closure criterion.** The final implication must be a verifier-accepted fact DAG ending in Han's original eventual-vanishing statement, not an appeal to terminology. This bridge depends on the preceding bridges.

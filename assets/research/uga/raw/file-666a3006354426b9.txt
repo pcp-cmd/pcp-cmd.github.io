@@ -1,0 +1,290 @@
+"""Check a finite exact syzygy system and certify persistent simple-pair Tor.
+
+Input includes actual modules, nonnegative transition multiplicities, and
+explicit isomorphisms from computed minimal syzygies to the stated sums.
+Dimension vectors or finitely repeated Betti numbers are not certificates.
+All arithmetic is rational; conclusions extend to C. See the companion
+Finite-Syzygy-System-Theorem.md for the all-degree implications.
+"""
+import argparse
+from collections import deque
+from fractions import Fraction as F
+import json
+from pathlib import Path
+import sys
+
+sys.dont_write_bytecode = True
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+import yoneda_generation_certificate as yg
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def integer(value, label):
+    require(type(value) is int and value >= 0, label + " must be a nonnegative integer")
+    return value
+
+
+def rational(value):
+    require(type(value) in (int, str) or isinstance(value, F),
+            "Rational coefficients must be integers or exact fraction strings")
+    return F(value)
+
+
+def encode(value):
+    if isinstance(value, F):
+        return str(value)
+    if isinstance(value, list):
+        return [encode(v) for v in value]
+    if isinstance(value, dict):
+        return {k: encode(v) for k, v in value.items()}
+    return value
+
+
+def module_payload(module):
+    return encode({"dimensions": module.dimensions, "actions": module.actions})
+
+
+def parse_module(algebra, data):
+    dims = data["dimensions"]
+    require(len(dims) == algebra.vertices, "Wrong module dimension-vector length")
+    for d in dims:
+        integer(d, "Module dimension")
+    raw = data["actions"]
+    require(len(raw) == algebra.d, "Every radical basis action must be specified")
+    actions = []
+    for b, matrix in zip(algebra.basis, raw):
+        require(len(matrix) == dims[b["right"]], "Wrong action column count")
+        require(all(len(c) == dims[b["left"]] for c in matrix), "Wrong action row count")
+        actions.append([[rational(c) for c in column] for column in matrix])
+    # Peirce labels give the idempotent actions. Check every composable radical
+    # product, including zero products, on every source basis vector.
+    for r, left in enumerate(algebra.basis):
+        for s, right in enumerate(algebra.basis):
+            if left["right"] != right["left"]:
+                continue
+            height = dims[left["left"]]
+            product = algebra.pair(r, s)
+            for k in range(dims[right["right"]]):
+                actual = rk.combine(actions[r], actions[s][k], height)
+                expected = [F(0)] * height
+                for t, coefficient in enumerate(product):
+                    if coefficient:
+                        expected = [x + coefficient * y
+                                    for x, y in zip(expected, actions[t][k])]
+                require(actual == expected, "Module actions violate the multiplication table")
+    return sr.Module(algebra, list(dims), actions)
+
+
+def direct_sum(algebra, states, multiplicities):
+    copies = [module for module, count in zip(states, multiplicities) for _ in range(count)]
+    dims = [sum(module.dimensions[v] for module in copies) for v in range(algebra.vertices)]
+    offsets = [0] * algebra.vertices
+    actions = [[] for _ in algebra.basis]
+    for module in copies:
+        for r, b in enumerate(algebra.basis):
+            for column in module.actions[r]:
+                result = [F(0)] * dims[b["left"]]
+                start = offsets[b["left"]]
+                result[start:start + len(column)] = column
+                actions[r].append(result)
+        offsets = [x + d for x, d in zip(offsets, module.dimensions)]
+    return sr.Module(algebra, dims, actions)
+
+
+def check_isomorphism(source, target, raw):
+    require(source.dimensions == target.dimensions, "Isomorphism dimension mismatch")
+    require(len(raw) == source.algebra.vertices, "Wrong isomorphism vertex count")
+    morphism = []
+    for d, matrix in zip(source.dimensions, raw):
+        require(len(matrix) == d and all(len(c) == d for c in matrix),
+                "Wrong isomorphism matrix shape")
+        morphism.append([[rational(c) for c in column] for column in matrix])
+    yg.check_module_map(source, target, morphism)
+    inverse = []
+    for d, matrix in zip(source.dimensions, morphism):
+        require(rk.rank(matrix) == d, "Isomorphism is singular")
+        read = sr.coordinates_reader(matrix, d)
+        inverse.append([read(rk.unit_vector(d, k)) for k in range(d)])
+    yg.check_module_map(target, source, inverse)
+    for d, matrix, inv in zip(source.dimensions, morphism, inverse):
+        for k in range(d):
+            unit = rk.unit_vector(d, k)
+            require(rk.combine(inv, matrix[k], d) == unit, "Inverse composition failed")
+            require(rk.combine(matrix, inv[k], d) == unit, "Forward composition failed")
+    return {"forward": encode(morphism), "inverse": encode(inverse),
+            "A_linear_two_sided_inverse_checked": True}
+
+
+def matvec(matrix, vector):
+    return [sum(x * y for x, y in zip(row, vector)) for row in matrix]
+
+
+def path(adjacency, start, targets):
+    queue = deque([[start]])
+    seen = {start}
+    while queue:
+        route = queue.popleft()
+        if route[-1] in targets:
+            return route
+        for nxt in adjacency[route[-1]]:
+            if nxt not in seen:
+                seen.add(nxt)
+                queue.append(route + [nxt])
+    return None
+
+
+def cycle_at(adjacency, base):
+    for nxt in adjacency[base]:
+        back = path(adjacency, nxt, {base})
+        if back is not None:
+            return [base] + back
+    return None
+
+
+def path_weight(transition, route):
+    result = 1
+    for a, b in zip(route, route[1:]):
+        result *= transition[b][a]
+    return result
+
+
+def persistence_witness(transition, head_row, initial, shift):
+    m = len(transition)
+    adjacency = [[b for b in range(m) if transition[b][a]] for a in range(m)]
+    outputs = {a for a in range(m) if head_row[a]}
+    for base in range(m):
+        cycle = cycle_at(adjacency, base)
+        if cycle is None:
+            continue
+        outgoing = path(adjacency, base, outputs)
+        if outgoing is None:
+            continue
+        for start, coefficient in enumerate(initial):
+            if not coefficient:
+                continue
+            incoming = path(adjacency, start, {base})
+            if incoming is None:
+                continue
+            c = coefficient * head_row[outgoing[-1]]
+            c *= path_weight(transition, incoming) * path_weight(transition, outgoing)
+            return {"entry_path": incoming, "cycle": cycle, "output_path": outgoing,
+                    "degree_offset": shift + len(incoming) + len(outgoing) - 2,
+                    "period": len(cycle) - 1, "coefficient": c,
+                    "cycle_weight": path_weight(transition, cycle),
+                    "all_degree_claim": "beta(offset + r*period) >= coefficient*cycle_weight**r for every integer r>=0"}
+    return None
+
+
+def check(data):
+    algebra = rk.Algebra(data["algebra"])
+    states = [parse_module(algebra, item) for item in data["states"]]
+    m = len(states)
+    require(m > 0, "At least one module state is required")
+    require(all(sum(module.dimensions) > 0 for module in states), "Zero module states are forbidden")
+    transition = data["transition"]
+    require(len(transition) == m and all(len(row) == m for row in transition),
+            "Transition matrix must be m by m, target rows and source columns")
+    for row in transition:
+        for value in row:
+            integer(value, "Transition multiplicity")
+    require(len(data["transition_isomorphisms"]) == m, "Missing transition isomorphism")
+    transitions = []
+    for a, module in enumerate(states):
+        kernel, cover = module.syzygy()
+        target = direct_sum(algebra, states, [transition[b][a] for b in range(m)])
+        iso = check_isomorphism(kernel, target, data["transition_isomorphisms"][a])
+        transitions.append({"state": a, "minimal_cover": cover, "isomorphism": iso})
+    heads = [[len(module.top_lifts()[i]) for module in states] for i in range(algebra.vertices)]
+    cartan = [[int(j == i) + len(algebra.component(j, i))
+               for i in range(algebra.vertices)] for j in range(algebra.vertices)]
+    results, seen = [], set()
+    for entry in data["entries"]:
+        j, q = entry["simple"], entry["shift"]
+        integer(j, "Simple vertex")
+        require(j < algebra.vertices and j not in seen, "Invalid or duplicate source simple")
+        seen.add(j)
+        integer(q, "Entry shift")
+        initial = entry["multiplicities"]
+        require(len(initial) == m, "Wrong entry-vector length")
+        for v in initial:
+            integer(v, "Entry multiplicity")
+        current, prefix = sr.Module.simple(algebra, j), []
+        for _ in range(q):
+            prefix.append(list(map(len, current.top_lifts())))
+            current, _ = current.syzygy()
+        target = direct_sum(algebra, states, initial)
+        entry_iso = check_isomorphism(current, target, entry["isomorphism"])
+        tail, vector = [], list(initial)
+        for _ in range(2 * m):
+            tail.append(matvec(heads, vector))
+            vector = matvec(transition, vector)
+        pairs = []
+        for i in range(algebra.vertices):
+            witness = persistence_witness(transition, heads[i], initial, q)
+            window = [tail[n][i] for n in range(m, 2 * m)]
+            require((witness is not None) == any(window), "Graph and finite-window criterion disagree")
+            pairs.append({"target": i, "source": j, "supported": cartan[j][i] > 0,
+                          "persistent": witness is not None,
+                          "window_degrees": [q + m, q + 2 * m - 1],
+                          "window_values": window, "witness": witness,
+                          "vanishes_in_all_degrees_at_least": None if witness else q + m})
+        infinite = any(pair["persistent"] for pair in pairs)
+        pd = "infinite" if infinite else max(n for n, row in enumerate(prefix + tail) if any(row))
+        results.append({"source": j, "shift": q, "entry_isomorphism": entry_iso,
+                        "prefix_Betti_columns": prefix, "tail_Betti_columns": tail,
+                        "projective_dimension": pd, "pairs": pairs})
+    full = len(seen) == algebra.vertices
+    adjacency = [[b for b in range(m) if transition[b][a]] for a in range(m)]
+    cycles = [cycle_at(adjacency, a) for a in range(m)]
+    # Any actual nonzero module on a cycle has infinite projective dimension,
+    # even when it is not reachable from one of the supplied simple entries.
+    infinite = any(cycle is not None for cycle in cycles)
+    gldim = "infinite" if infinite else (
+        max(row["projective_dimension"] for row in results) if full else "not determined")
+    # This additional sufficient criterion needs no entry for the simple whose
+    # persistence it detects: use a composition series of a recurrent module.
+    support_returns = []
+    for a, module in enumerate(states):
+        cycle = cycles[a]
+        if cycle is None:
+            continue
+        for i in range(algebra.vertices):
+            if heads[i][a] and all(not d or cartan[j][i] for j, d in enumerate(module.dimensions)):
+                support_returns.append({"state": a, "head_vertex": i, "cycle": cycle,
+                                        "cycle_weight": path_weight(transition, cycle),
+                                        "head_multiplicity": heads[i][a],
+                                        "composition_multiplicities": module.dimensions,
+                                        "claim": "sum_j [M:L_j]*beta_ij(r*period) >= head_multiplicity*cycle_weight**r for r>=1; all listed pairs supported"})
+    return {"status": "passed", "algebra_dimension": algebra.vertices + algebra.d,
+            "number_of_vertices": algebra.vertices, "number_of_states": m,
+            "state_dimensions": [module.dimensions for module in states],
+            "heads": heads, "Cartan_matrix": cartan, "transition": transition,
+            "transition_checks": transitions, "entries": results,
+            "all_simples_have_verified_entries": full, "global_dimension": gldim,
+            "supported_persistent_pairs": [[pair["target"], pair["source"]]
+                for row in results for pair in row["pairs"] if pair["persistent"] and pair["supported"]],
+            "support_detecting_module_returns": support_returns,
+            "proof": "Finite-Syzygy-System-Theorem.md",
+            "scope": "Finite exact module-isomorphism certificate plus proved all-degree recurrence; self-audit, not independent verification. No assertion that every algebra admits such a system."}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    data = json.loads(args.input.read_text(encoding="utf-8"))
+    result = check(data)
+    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"status": result["status"], "states": result["number_of_states"],
+                      "global_dimension": result["global_dimension"],
+                      "supported_persistent_pairs": result["supported_persistent_pairs"]}))
+
+
+if __name__ == "__main__":
+    main()

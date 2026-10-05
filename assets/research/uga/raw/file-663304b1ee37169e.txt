@@ -1,0 +1,1 @@
+First execution failed with AttributeError: frozen rk.Algebra has no attribute 'radical'. Caller attempted to loop over that nonexistent metadata. Corrected ONLY the new caller to use the frozen X.radical_bases() API already used by actual-cover helper; original helpers unchanged. A full rerun is required. This was an implementation API error, not a mathematical verdict.

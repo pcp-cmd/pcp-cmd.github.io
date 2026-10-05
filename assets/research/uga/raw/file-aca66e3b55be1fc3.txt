@@ -1,0 +1,384 @@
+{
+  "five_vertex_hub_remaining": {
+    "C_columns": [
+      31,
+      11,
+      21,
+      13,
+      19
+    ],
+    "forced_arrows": [],
+    "certificate": {
+      "valid": false,
+      "reason": "No cycle found by this sufficient criterion"
+    }
+  },
+  "five_vertex_bidirected_cycle_excluded": {
+    "C_columns": [
+      25,
+      22,
+      14,
+      13,
+      19
+    ],
+    "forced_arrows": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "certificate": {
+      "valid": true,
+      "cycle": [
+        0,
+        3,
+        2,
+        1,
+        4
+      ],
+      "length": 5,
+      "diagonal_Tor_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "Tor_nonzero_degrees": "all positive multiples of the cycle length",
+      "steps": [
+        {
+          "arrow": [
+            0,
+            3
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            0,
+            3,
+            2
+          ]
+        },
+        {
+          "arrow": [
+            3,
+            2
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "arrow": [
+            2,
+            1
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            2,
+            1,
+            4
+          ]
+        },
+        {
+          "arrow": [
+            1,
+            4
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            1,
+            4,
+            0
+          ]
+        },
+        {
+          "arrow": [
+            4,
+            0
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            4,
+            0,
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "five_vertex_mixed_pattern_excluded": {
+    "C_columns": [
+      25,
+      14,
+      22,
+      13,
+      19
+    ],
+    "forced_arrows": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "certificate": {
+      "valid": true,
+      "cycle": [
+        0,
+        3,
+        2,
+        4
+      ],
+      "length": 4,
+      "diagonal_Tor_vertices": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "Tor_nonzero_degrees": "all positive multiples of the cycle length",
+      "steps": [
+        {
+          "arrow": [
+            0,
+            3
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            0,
+            3,
+            2
+          ]
+        },
+        {
+          "arrow": [
+            3,
+            2
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            3,
+            2,
+            4
+          ]
+        },
+        {
+          "arrow": [
+            2,
+            4
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            2,
+            4,
+            0
+          ]
+        },
+        {
+          "arrow": [
+            4,
+            0
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            4,
+            0,
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "directed_triangle": {
+    "C_columns": [
+      3,
+      6,
+      5
+    ],
+    "forced_arrows": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "certificate": {
+      "valid": true,
+      "cycle": [
+        0,
+        1,
+        2
+      ],
+      "length": 3,
+      "diagonal_Tor_vertices": [
+        0,
+        1,
+        2
+      ],
+      "Tor_nonzero_degrees": "all positive multiples of the cycle length",
+      "steps": [
+        {
+          "arrow": [
+            0,
+            1
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "arrow": [
+            1,
+            2
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "arrow": [
+            2,
+            0
+          ],
+          "possible_intermediates": [],
+          "zero_product_triple": [
+            2,
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "bidirected_path": {
+    "C_columns": [
+      3,
+      7,
+      14,
+      12
+    ],
+    "forced_arrows": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "certificate": {
+      "valid": false,
+      "reason": "No cycle found by this sufficient criterion"
+    }
+  },
+  "full_support": {
+    "C_columns": [
+      31,
+      31,
+      31,
+      31,
+      31
+    ],
+    "forced_arrows": [],
+    "certificate": {
+      "valid": false,
+      "reason": "No cycle found by this sufficient criterion"
+    }
+  }
+}

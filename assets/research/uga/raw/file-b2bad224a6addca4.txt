@@ -1,0 +1,63 @@
+# Pending research records — saved 2026-10-05
+
+用户要求把全部现有研究记录放入已连接的本地 Universal Gap A 项目。本目录保存此前仅在临时目录中的最新材料，并指向已在项目中的并行草稿。
+
+**状态：材料已保存；全部保持 PENDING / 未登记 Claim。Universal Gap A 仍 OPEN。**
+
+本次只归档原始记录，不新增数学结论，不提升审查等级，不改写旧 Run。正式数学状态仍由 [CURRENT_STATE](../../../CURRENT_STATE.md)、[Claims](../../../claims/CLAIMS.md) 和最新 C129–C132 的 [Run](../Run-Projective-Balanced-Ideal-Strict-Ordinary-Descent-and-Finite-Pd-Boundary-2026-10-05.md) 决定。这里的来源及关系说明是归档导航，不是独立数学验收。
+
+## 1. h=1 actual multiplier envelope
+
+原作者：audit_radical_band；有 finite_pd_cover_descent 的有限范围实质审查。来源文件自己的状态为 complete ordinary proofs / normal self-audit / bounded separate-agent proof review。该标签按原文保留，**不代表独立或形式验证，也未登记到 Claims**。
+
+- [完整推导与适用性边界](h1-multiplier-envelope/H1-Actual-Multiplier-Envelope-and-Remaining-Global-Bridge.md)
+- [同团队有限范围证明审查](h1-multiplier-envelope/h1-ordinary-envelope-review.md)
+- [实际完整 cover / tensor 精确计算脚本](h1-multiplier-envelope/verify_h1_sharp_defect.py)
+- [该计算保留的结果](h1-multiplier-envelope/h1-sharp-defect-result.json)
+- [有限 Kupisch 公式发现脚本](h1-multiplier-envelope/search_actual_nakayama_defect.py)
+- [公式发现结果](h1-multiplier-envelope/search_actual_nakayama_defect.json)
+
+准确范围：whole LEFT pd I<=1；actual right subideal U 给出 Tor_n(U,I)=0 (n>=1)。讨论 LEFT pd(U tensor I) 时还要求 U 是实际双边理想且 LEFT pd U 有限。T=I tensor I 的 LEFT pd<=2。实际四项序列 0->D->T->I->E->0 给出 n>4 的 ordinary Tor/Ext 两次移位。这里 D=Tor_1(A/I,I)，E=I/I^2。实际 next power I^2 的 finite pd、D 的 finite pd、E 的 finite pd 等价，但不由 pd I 有限自动得到。
+
+J6zero 时 D=T 是实际有限误差；此序列的乘法为零，degree-two Yoneda class 为零，尚不能推出组成因子有限 pd 或 whole pd1/J6zero 类闭合。支持消失假设只给选定坐标的 Tor 消失，不能替换成所有右测试模的 finite-pd 判据。
+
+有限 gd 的 LEFT Kupisch (2,5,4,3) 维数14样例使 pd D=2 的界达到。实际运行保留2744个结合律三元组、6个 FULL covers、85个整数基逆、5个实际核/模同构，0 pruning。共享 helper 的成功不是独立证明验证。
+
+2996个有限公式候选的搜索没有提供通用闭环；“未找到某对象”不推出其不存在。此发现结果与实际完整 cover 校准分开保留。
+
+实际校准脚本通过 --project-root 参数复用项目内 [frozen cover helper](../../2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py)。在独立工作目录运行，并把 --project-root 指向本项目；不要把临时输出写回源证据。此轮归档未重跑原数学计算。
+
+## 2. radical-power bounded pattern exploration
+
+- [公式搜索脚本](radical-power-pattern-search/nakayama_pattern_search.py)
+- [保留结果](radical-power-pattern-search/nakayama-pattern-search.json)
+
+来源：root，2026-10-05。LEFT Kupisch c=(d-1,d,...,d)，N=4..24、d=6..3N+1，共798族。没有找到 finite-pd J3 / infinite-pd J5 的命中。**只是有限模式搜索，无全局定理或反例。**脚本原字节保留，输出路径仍是原 Windows 临时路径；在其他环境复跑前应在工作副本里改输出目标。它不能证明 J3-alone 自动控制 J5 或 cubic band。
+
+## 3. 已在项目 TEMP 中的 global ordinary switch 草稿
+
+这些文件没有重复复制；原路径、原字节及待审状态保留。
+
+- [早期 finite-state factor-switch 草稿](../../../TEMP/global-ordinary-switch/all-source-finite-state-factor-switch-boundary.md)：维数23构造，保留为发展历史；后续 composition-carrier 草稿更强。
+- [composition-carrier obstruction 与条件性严格切换](../../../TEMP/global-ordinary-switch/all-source-finite-state-composition-carrier-boundary.md)：维数13、四标签、J3zero 的已正样例，破坏 automatic factor-carrier containment。条件性严格 carrier 切换仍缺 eligible containment。不能说它反驳 finite-type GLOBAL return 或 Universal Gap A。
+- [pd1 cubic tensor defect 非 Loewy-two 草稿](../../../TEMP/global-ordinary-switch/pd-one-cubic-tensor-defect-loewy-three-counterexample.md)：9标签定向线 / J6，I=J3 的 LEFT pd1，I tensor I 是 projective，却仍有 J^2(I tensor I) 非零。只破坏 defect-Loewy-two 捷径，不反驳 pd1/J6zero 类闭合。
+
+原作者：global_ordinary_switch。上述草稿未登记 Claims，尚无完整 root 正式验收或独立验证；后续续研轮次的 usage-limit 失败是基础设施中断，不是数学反驳。审查前不得把条件性切换升级成全局定理。
+
+## 4. 已正式保存的 cover-kernel boundary
+
+finite_pd_cover_descent 的完整 cover-kernel 证明、代码和结果已按原字节保存于 [Projective-Ideal-Evidence](../Projective-Ideal-Evidence/finite-pd-full-cover-boundary.md)，并登记为 C132。本次没有重复复制那三个文件；新增保留的是上面的 h1 审查。
+
+C132 的 projective FULL kernel 不能自动产生 finite-pd head、radical、subkernel 或 proper cover-closed block。其样例已经有 ordinary supported return，不是 UGA 反例。C129 必须保留 whole projective ideal 与真实闭合条件。
+
+## 5. 旧探索与原始论文补齐
+
+- [primitive comparison 原任务](historical-primitive-exploration/task.md)、[原探索脚本](historical-primitive-exploration/test_primitive_inheritance.py)、[原探索结果](historical-primitive-exploration/primitive-inheritance-exploration.json)：保留2026-10-04的候选测试历史。task 中的 expected/candidate 文字不是已证明事实；当前正式结论以 C086 及其正式 Run 为准。这里没有重启旧路线，也没有从 finite cutoff 推出 infinity。
+- [cubic power-kernel 公式搜索脚本](historical-power-kernel-search/search_power_kernel.py)、[原搜索结果](historical-power-kernel-search/power-kernel-search.json)：N=7，长度范围2..7，279936个原向量、3348个 admissible 候选，bounded_no_hit。没有 literal FULL-cover replay；无命中不是全局不存在定理。只补齐既存探索原件。
+- [Huber–Kalck 原始论文 PDF](primary-sources/huber-species.pdf)：既存下载原字节，来源 https://home.mathematik.uni-freiburg.de/arithgeom/preprints/huber-species.pdf 。正式 C115 的 [Global Route Audit](../../2026-10-04/Run-Global-Route-Audit-Bongartz-Ordinary-Ideals-Trace-and-Relative-Resolution-Barriers-2026-10-04.md) 已引用这个 primary source。补齐原始资产，不新增引用或扩大该文定理范围，不声称已读到 Bongartz 原文或 Butler–King 完整证明。
+
+## 6. 字节和审查边界
+
+[sources.json](sources.json) 记录本次14个新增源材料的原路径、项目路径、SHA256、大小，以及3个既存 TEMP 草稿的身份。保存后逐项重读核对。这里的哈希只验证记录完整性，不验证数学真伪。
+
+未复制通用 Obsidian Vault；未生成 handoff、HTML、ZIP；未初始化替代 MRS 库。没有未披露的 Claims 升级。本目录是已连接项目的一部分，供通过已有本地连接按项目路径读取；本次没有向 ChatGPT 云项目另行上传文件。

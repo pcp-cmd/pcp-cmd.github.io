@@ -1,0 +1,220 @@
+"""Actual arbitrary-p carrier-lemma counterfamilies; same-author exact audit.
+
+The finite instances supplement the written all-p proof. Infinity is
+certified by actual kernel isomorphisms, never a bounded Betti prefix.
+"""
+import argparse
+from fractions import Fraction as F
+from itertools import product
+from hashlib import sha256
+from pathlib import Path
+import json
+import sys
+sys.dont_write_bytecode=True
+parser=argparse.ArgumentParser()
+parser.add_argument('--project-root',type=Path,required=True)
+parser.add_argument('--out',type=Path,required=True)
+args=parser.parse_args()
+helpers=args.project_root/'toolbox/Imported-Outputs'
+sys.path.insert(0,str(helpers))
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+import syzygy_system_certificate as ss
+
+counts={'associativity':0,'actual_minimal_covers':0,'integer_basis_inverses':0,
+        'actual_kernel_isomorphisms':0,'pruned_homology_isomorphisms':0}
+
+def integral(x):
+    if isinstance(x,F):return x.denominator==1
+    if isinstance(x,list):return all(integral(y) for y in x)
+    if isinstance(x,dict):return all(integral(y) for y in x.values())
+    return isinstance(x,(str,int,bool)) or x is None
+
+def unit_basis(columns,height):
+    assert len(columns)==height and integral(columns)
+    read=sr.coordinates_reader(columns,height)
+    inv=[read(rk.unit_vector(height,j)) for j in range(height)]
+    assert integral(inv)
+    for j in range(height):assert rk.combine(columns,inv[j],height)==rk.unit_vector(height,j)
+    counts['integer_basis_inverses']+=1
+    return {'basis':columns,'inverse':inv}
+
+class Table:
+    def __init__(self,vertices,basis,rad_products):
+        self.vertices=vertices;self.basis=basis;self.products=rad_products
+        self.index={name:i for i,(name,_,_) in enumerate(basis)}
+        self.radical=list(range(vertices,len(basis)))
+        for i,j,k in product(range(len(basis)),repeat=3):
+            ij,jk=self.mult(i,j),self.mult(j,k)
+            assert (None if ij is None else self.mult(ij,k))==(None if jk is None else self.mult(i,jk))
+            counts['associativity']+=1
+        self.payload={'vertices':vertices,'base_vertex':0,
+            'radical_basis':[{'name':n,'left':l,'right':r} for n,l,r in basis[vertices:]],
+            'radical_products':[{'left':basis[i][0],'right':basis[j][0],
+                                 'value':{basis[k][0]:1}} for (i,j),k in rad_products.items()]}
+        self.alg=rk.Algebra(self.payload)
+
+    def mult(self,i,j):
+        if i<self.vertices:return j if i==self.basis[j][1] else None
+        if j<self.vertices:return i if j==self.basis[i][2] else None
+        return self.products.get((i,j))
+
+    def opposite(self):
+        return Table(self.vertices,[(n,r,l) for n,l,r in self.basis],{(j,i):k for (i,j),k in self.products.items()})
+
+def cover(M):
+    a=M.algebra;ss.parse_module(a,ss.module_payload(M))
+    assert integral(M.actions)
+    rad,top=M.radical_bases(),M.top_lifts()
+    top_cert=[unit_basis(rad[v]+top[v],M.dimensions[v]) for v in range(a.vertices)]
+    K,info=M.syzygy(retain_maps=True);lin=info['linear_data']
+    assert integral(K.actions) and integral(lin['kernels'])
+    seq=[]
+    for v in range(a.vertices):
+        chosen,_=rk.independent(lin['images'][v])
+        image=unit_basis([lin['images'][v][i] for i in chosen],M.dimensions[v])
+        height=info['cover_dimensions'][v]
+        domain=unit_basis(lin['kernels'][v]+[rk.unit_vector(height,i) for i in chosen],height)
+        seq.append({'image':image,'kernel_and_complement':domain})
+    counts['actual_minimal_covers']+=1
+    cert={'module':ss.module_payload(M),'kernel':ss.module_payload(K),
+        'cover_multiplicities':info['cover_multiplicities'],'cover_dimensions':info['cover_dimensions'],
+        'cover_images':lin['images'],'kernel_inclusion':lin['kernels'],
+        'projective_actions':lin['projective_actions'],'top_basis_certificates':top_cert,
+        'exact_sequence_basis_certificates':seq,'A_linear_surjective_minimal':True}
+    return K,info,cert
+
+def projective(A,vertex):
+    local=[[i for i,(_,l,r) in enumerate(A.basis) if l==v and r==vertex] for v in range(A.vertices)]
+    return supported_module(A,local),local
+
+def supported_module(A,local):
+    dims=list(map(len,local));pos=[{b:j for j,b in enumerate(part)} for part in local]
+    actions=[]
+    for r in A.radical:
+        _,target,source=A.basis[r];columns=[]
+        for b in local[source]:
+            col=[F(0)]*dims[target];out=A.mult(r,b)
+            if out is not None:col[pos[target][out]]=F(1)
+            columns.append(col)
+        actions.append(columns)
+    M=sr.Module(A.alg,dims,actions)
+    ss.parse_module(A.alg,ss.module_payload(M))
+    return M
+
+def kernel_simple(A,vertex,dest,label):
+    K,_,cert=cover(sr.Module.simple(A.alg,vertex));S=sr.Module.simple(A.alg,dest)
+    maps=[[rk.unit_vector(d,j) for j in range(d)] for d in S.dimensions]
+    iso=ss.check_isomorphism(K,S,ss.encode(maps))
+    counts['actual_kernel_isomorphisms']+=1
+    return {'label':label,'cover':cert,'isomorphism':iso}
+
+def embedded_kernel_iso(A,source,target,embedded,label):
+    K,info,cert=cover(sr.Module.simple(A.alg,source));lin=info['linear_data'];maps=[]
+    for v,part in enumerate(embedded):
+        pos={source if r is None else A.vertices+r:j for j,(copy,r) in enumerate(lin['bases'][v])}
+        maps.append([lin['readers'][v](rk.unit_vector(len(pos),pos[b])) for b in part])
+    checked=ss.check_isomorphism(target,K,ss.encode(maps))
+    for cols,d in zip(maps,target.dimensions):unit_basis(cols,d)
+    counts['actual_kernel_isomorphisms']+=1
+    return {'label':label,'cover':cert,'target':ss.module_payload(target),'isomorphism':checked}
+
+def cycle(p):
+    return Table(p,[(f'e{i}',i,i) for i in range(p)]+[(f'alpha{i}',i,(i+1)%p) for i in range(p)],{})
+
+def star(p):
+    v=p-1
+    basis=[(f'e{i}',i,i) for i in range(p)]+[('t',v,v)]
+    basis += [(f'a{i}',v,i) for i in range(v)]
+    basis += [(f'b{i}',i,v) for i in range(v)]
+    basis += [(f'c{i}',v,v) for i in range(v)]
+    index={n:i for i,(n,_,_) in enumerate(basis)}
+    return Table(p,basis,{(index[f'a{i}'],index[f'b{i}']):index[f'c{i}'] for i in range(v)})
+
+cycles=[];stars=[]
+for p in [3,5,8]:
+    A=cycle(p);op=A.opposite()
+    assert len(A.basis)==2*p and len(A.alg.radical_powers[1])==0
+    left=[kernel_simple(A,i,(i-1)%p,f'Omega left L{i}=L{(i-1)%p}') for i in range(p)]
+    right=[kernel_simple(op,i,(i+1)%p,f'Omega right R{i}=R{(i+1)%p}') for i in range(p)]
+    carriers=[sorted({r for _,l,r in A.basis if l==i}) for i in range(p)]
+    assert carriers==[sorted({i,(i+1)%p}) for i in range(p)]
+    cycles.append({'p':p,'dimension':len(A.basis),'algebra':A.payload,
+        'left_actual_simple_syzygies':left,'right_actual_simple_syzygies':right,
+        'right_projective_infinite_carriers':carriers,
+        'all_degree_conclusions_from_actual_module_proof':{
+            'both_infinite_simple_sets':list(range(p)),
+            'every_nonprojective_finite_module_has_full_recurrent_projective_carrier':True,
+            'cross_images_are_infinite_pd_simples_with_strictly_smaller_module_carrier':True,
+            'supported_diagonal_Tor_degrees':'positive multiples of p',
+            'not_a_Gap_A_counterexample':True}})
+
+    A=star(p);op=A.opposite();v=p-1
+    assert len(A.basis)==4*p-2
+    right_old=[kernel_simple(op,i,v,f'Omega right R{i}=Rv') for i in range(v)]
+    left_old=[kernel_simple(A,i,v,f'Omega left L{i}=Lv') for i in range(v)]
+    P_right=[projective(op,i) for i in range(v)]
+    P_left=[projective(A,i) for i in range(v)]
+    right_target=ss.direct_sum(op.alg,[P for P,_ in P_right]+[sr.Module.simple(op.alg,v)],[1]*p)
+    left_target=ss.direct_sum(A.alg,[P for P,_ in P_left]+[sr.Module.simple(A.alg,v)],[1]*p)
+    embedded_right=[[] for _ in range(p)];embedded_left=[[] for _ in range(p)]
+    for i in range(v):
+        for w,part in enumerate(P_right[i][1]):
+            embedded_right[w].extend(A.mult(A.index[f'a{i}'],b) for b in part)
+        for w,part in enumerate(P_left[i][1]):
+            embedded_left[w].extend(A.mult(b,A.index[f'b{i}']) for b in part)
+    embedded_right[v].append(A.index['t']);embedded_left[v].append(A.index['t'])
+    assert all(b is not None for part in embedded_right+embedded_left for b in part)
+    right_v=embedded_kernel_iso(op,v,right_target,embedded_right,'Omega right Rv=sum e_i A direct sum Rv')
+    left_v=embedded_kernel_iso(A,v,left_target,embedded_left,'Omega left Lv=sum A e_i direct sum Lv')
+
+    # Literal repeated pruned differential is left multiplication by t
+    # in the right projective e_v A. Its kernel/image are coordinate
+    # subspaces over Z, so no field-dependent rank inference is needed.
+    Pv,local=projective(op,v)
+    domain=[b for part in local for b in part]
+    image={b:A.mult(A.index['t'],b) for b in domain}
+    assert image[v]==A.index['t']
+    assert all(out is None for b,out in image.items() if b!=v)
+    assert all(A.mult(A.index['t'],out) is None for out in image.values() if out is not None)
+    V_local=[[b for b in part if A.basis[b][0].startswith(('a','c'))] for part in local]
+    V=supported_module(op,V_local)
+    target=ss.direct_sum(op.alg,[P for P,_ in P_right],[1]*v)
+    pos=[{b:j for j,b in enumerate(part)} for part in V_local]
+    maps=[[] for _ in range(p)]
+    for i in range(v):
+        for w,part in enumerate(P_right[i][1]):
+            maps[w].extend(rk.unit_vector(len(V_local[w]),pos[w][A.mult(A.index[f'a{i}'],b)]) for b in part)
+    H_iso=ss.check_isomorphism(target,V,ss.encode(maps))
+    for cols,d in zip(maps,V.dimensions):unit_basis(cols,d)
+    counts['pruned_homology_isomorphisms']+=1
+    assert sum(V.dimensions)==2*v
+    assert all((l!=r or l==v) for _,l,r in A.basis[p:])
+    assert all(not (l<v and r<v) for _,l,r in A.basis[p:])
+    assert all(any(n==f'b{i}' and l==i and r==v for n,l,r in A.basis) for i in range(v))
+    carriers=[sorted({r for _,l,r in A.basis if l==i}) for i in range(p)]
+    assert carriers==[sorted({i,v}) for i in range(v)]+[list(range(p))]
+    stars.append({'p':p,'dimension':len(A.basis),'algebra':A.payload,
+        'left_old_simple_syzygies':left_old,'right_old_simple_syzygies':right_old,
+        'actual_left_v_syzygy':left_v,'actual_right_v_syzygy':right_v,
+        'right_projective_infinite_carriers':carriers,
+        'pruned_repeated_differential':{'basis_indices':domain,'image_indices':image,
+            'kernel_indices':[b for b in domain if b!=v],'image_basis_indices':[A.index['t']],
+            'positive_degree_homology':ss.module_payload(V),'homology_isomorphism_to_projectives':H_iso},
+        'all_degree_conclusions_from_actual_module_proof':{
+            'both_infinite_simple_sets':list(range(p)),
+            'proper_carrier_projectives_have_all_radical_Hom_zero':True,
+            'no_proper_carrier_nonzero_recurrent_minimal_projective_tail':True,
+            'cross_images_right_pd':0,'same_cross_injections_occur_every_positive_degree':True,
+            'pruned_homology_every_positive_degree':'direct sum of old right projectives',
+            'supported_Tor_Rv_Li_every_positive_degree':1,
+            'termwise_pruned_tensor_with_Li_every_degree':0,
+            'not_a_Gap_A_counterexample':True}})
+
+result={'status':'passed','python':sys.version,'independent_verification':False,
+    'parameters':[3,5,8],'counts':counts,'cycle_family':cycles,'projective_image_family':stars,
+    'dependencies':{f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest() for n in
+        ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']},
+    'scope':'Finite integral same-author cover/map certificates; separate written all-field/all-p/all-degree module proof. No independent verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','parameters':[3,5,8],'counts':counts,'independent_verification':False}))

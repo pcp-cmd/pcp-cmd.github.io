@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-04T02:40:52.499701+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "e764edc97be9f22a3ee464d2eefd426e1ec1663ee682728aaca4640e092e9b49",
+    "object": "Actual nonperfect shallow-complement weighted ordinary Tor migration and depth-two boundary",
+    "deliverables": [
+      "verify_shallow_corner.py",
+      "shallow-corner-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "A is elementary finite-dimensional and B=eAe is the actual retained corner, not an ordinary quotient.",
+      "Deleted LEFT simples have ambient pd at most one; the direct RIGHT theorem has the separate right condition.",
+      "All finite modules with deleted factors then have pd at most one, but their covers may have infinite-pd factors.",
+      "The real counit cone may be unbounded; a finite ordinary pd-one Hom window replaces a false bounded-global-error assertion.",
+      "Actual first projective kernels are injective, giving the physical Peirce-weighted dimension inequality.",
+      "Supported ordinary Tor migration can change detector/source, and retains the same degree and physical support.",
+      "The calibration has finite complement sizes 1,2,4 and literal actual returns; retained opposite-side finite labels can become corner-infinite.",
+      "A5 has Ext squared of the deleted simple nonzero and genuinely screens the Hom edge; connected S10 repeats that screening with an infinite original source and the entire finite-LEFT complement deleted.",
+      "All-field validity uses integral basis inverses and the separate module proof; finite Betti samples do not establish infinity.",
+      "All calibrations already have supported ordinary return or finite global dimension and are not Gap-A counterexamples."
+    ],
+    "domain": "Finite elementary literal algebra tables, actual ordinary projective kernels and Peirce-weighted corner migration",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Exact Fraction table and minimal-cover calculations with integral unimodular basis certificates"
+      ],
+      "existence_evidence": "verify_shallow_corner.py exports literal two-sided minimal covers, kernel isomorphisms and corner tables with integer inverse certificates.",
+      "local_availability": "available",
+      "availability_evidence": "Actual local run passed under Python 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "selection_reason": "Finite exact module maps certify the detector-switch/depth-two calibrations; the general weighted inequality is a separate ordinary proof.",
+    "fallback_reason": "Reused same-session inventory: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python through math-science-computation observer_run.py",
+    "command_or_input": "python -B verify_shallow_corner.py --project-root PROJECT_ROOT --out shallow-corner-result.json",
+    "code_artifact": "verify_shallow_corner.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_shallow_corner.py",
+      "sha256": "b4a2a7470029b56ad9eb5b1ee7f7a0599d811e2b9da4bf9a9c8ff94ef762c0b0"
+    },
+    {
+      "role": "result",
+      "path": "shallow-corner-result.json",
+      "sha256": "2ea44bdfb1660bfb51806b00919ab5b86e66a2a3aab91b37a877c0825fd93678"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "result_artifact": "shallow-corner-result.json",
+    "summary": "Finite complements of size 1,2,4, the A5 boundary and connected S10 infinite-source obstruction passed: 46320 associativity triples, 39 actual minimal covers, 36 actual kernel isomorphisms and 496 integral basis inverse certificates. Ordinary supported detector switching and sided pd profiles use actual kernel returns."
+  },
+  "verification": {
+    "methods": [
+      "Full-basis associativity and literal corner multiplication",
+      "Actual LEFT/RIGHT minimal covers with terminating projectives and recurrent kernels",
+      "Integral radical/top and exact-sequence bases with integer inverses",
+      "Literal projective-prefix extensions and nonsemisimple finite-complement calibration",
+      "Actual sided pd profiles, detector-switch identity and S10 infinite-source/whole-finite-complement obstruction",
+      "Written finite-truncation pd-one Hom window and injective-kernel weighted comparison",
+      "Written ordinary Ext/convergence proof of the A5 hyper-Ext d2 ranks",
+      "Artifact and dependency hashes plus schema validation"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact rational/integer arithmetic; no numerical residual.",
+    "limitations": [
+      "Same researcher and frozen shared helpers, not independent verification.",
+      "Finite complement sizes do not prove the unrestricted block theorem; that theorem has a separate ordinary proof.",
+      "All-parameter and all-field conclusions require the separate literal table/kernel and integral base-change argument.",
+      "A bounded Betti prefix never certifies the infinite tails; actual kernel isomorphisms do.",
+      "The actual cone need not be perfect: the theorem uses its ordinary pd-one Hom window.",
+      "Supported Tor may change detector/source; no fixed-pair isomorphism is asserted.",
+      "Only the chosen-side infinite labels and finite-pd monotonicity are preserved; opposite labels can be replaced.",
+      "The depth-two d2 maps were not directly computed as chain matrices; their ranks follow the written actual ordinary Ext/convergence proof.",
+      "The A5 example is not an unbounded-excursion Target-B example and does not change its formal derived quotient.",
+      "The connected S10 has an infinite original source with fully screened supported corner pairs but another visible ambient pair; it does not refute a badness-specific global bridge.",
+      "Later mixed-side eligibility and universal towers are not automatic.",
+      "Schema/hash validation certifies integrity, not independent mathematical semantics.",
+      "Backend inventory reused from the same session; no new remote or paid backend."
+    ]
+  }
+}

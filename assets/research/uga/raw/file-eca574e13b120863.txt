@@ -1,0 +1,36 @@
+# Cycle 9 master guidance — radical-depth recycling
+
+Transport is explicitly `off`; this guidance is authored by Main Codex from elaboration `d0f6e2ef942f6c27` with zero external-call cost. It is strategy, not proof authority.
+
+The live invariant is no longer support alone. `6eafbbe6a6361a9c` tags every canonical non-direct defect outside the current corner, while `2549cd596a814f8a` proves that a transfer product surviving in its first possible associated-graded radical layer closes infinite-(+). The central engine to prove is:
+
+\[
+\text{tagged defect at depth }d
+\longrightarrow
+\begin{cases}
+\text{leading product survives} &\Rightarrow \text{infinite-(+)},\\
+\text{leading product cancels} &\Rightarrow \text{tagged defect at depth }>d,\\
+\text{maximal-depth zero product} &\Rightarrow \text{proper singular complement}.
+\end{cases}
+\]
+
+## Branch A — mutual-dumbbell as a terminal depth model
+
+Use `8783e7694e73021e` and the zero cross blocks to split the two-vertex tail corner. Apply `59a12876ab799b9e` to the actual tail and isolate an infinite one-vertex factor. Prove that its recurrence lifts to the original minimal resolution and triggers `669c1e54f01a5b89`; otherwise identify the exact canonical obstruction and show that it defines the next smaller corner.
+
+## Branch B — canonical minimal-depth extraction
+
+For every non-direct alternative in `6eafbbe6a6361a9c`, use the actual quotient/kernel/higher-error maps to produce primitive endpoints and transfer elements (u\in e_b\operatorname{rad}^r(A)f), (v\in f\operatorname{rad}^s(A)e_a) at minimal depths. Preserve the persistent simple Tor pair. The theorem must feed directly into `2549cd596a814f8a`; arbitrary elements or support-only statements do not count.
+
+## Branch C — strict depth transition and terminal complement
+
+Assume Branch B's canonical elements. If (uv) cancels into the next radical layer, construct the next canonical tagged persistent pair and prove strictly larger total minimal depth. Use radical nilpotence only after the transition is verified. At the maximal zero-product stage, prove that complementary support contains an infinite-pd simple or a proper recurrent corner; explicitly exclude the projective escape `31c4037065600009` and bilateral zero-product example `9110d8cc8257b511` using actual dead-zone minimality.
+
+## Closure discipline
+
+- A radical-depth invariant is valid only with a functorial next defect and preserved infinite recurrence.
+- Complementary support is not yet complementary singularity.
+- A terminal zero product is a separate theorem obligation, not a contradiction by itself.
+- Every surviving leading product must use the correctly ordered persistent Tor endpoints of `2549cd596a814f8a`.
+- The mutual dumbbell closes only after factor recurrence is lifted back to the ambient resolution.
+- Universal Gap A and the ordinary-Hochschild implication remain downstream gates before any final paper.

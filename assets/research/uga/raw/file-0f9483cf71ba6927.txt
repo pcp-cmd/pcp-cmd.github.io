@@ -1,0 +1,705 @@
+# Han–Gap A / Gap B Unified Theory — Research Handoff
+
+**Timestamp:** 2026-08-18  
+**Project:** Han 猜想 / CLMS Gap A–Gap B  
+**Purpose:** 交给下一个对话继续研究；不要重启项目。
+
+---
+
+# 0. 执行原则
+
+这是一个长期数学研究项目。
+
+## 研究目标
+用户真正想要的不是“专门找 Gap A 反例”，而是：
+
+1. 尽可能解决 Gap A；
+2. 保留已经完成的 Gap B / KLS 结果；
+3. 最终把 Gap A 与 Gap B 整合成一套综合结构理论。
+
+## 汇报规则
+不要为了聊天节奏做阶段性汇报。正式汇报主要限于：
+
+- theorem-level 实质结果；
+- 关键 obstruction；
+- 明确 dead end；
+- construction；
+- Gap A / Gap B 最终判定；
+- 必须战略换方向；
+- 发现此前 candidate proof 有实质漏洞。
+
+## 文献与 provenance
+积极使用 primary literature，并标明：
+
+- **literature-derived**
+- **literature-confirmed**
+- **project synthesis**
+- **project-derived theorem / lemma**
+- **conjectural / exploratory**
+
+不要轻易宣称 novelty。
+
+## LaTeX 规则
+统一使用标准 LaTeX：
+\[
+\operatorname{Ext},\quad
+\operatorname{Tor},\quad
+\operatorname{End},\quad
+\operatorname{Hom},\quad
+\operatorname{gldim}.
+\]
+
+不要使用依赖自定义宏的 `\Ext`、`\Tor`、`\End` 等。
+
+---
+
+# 1. 总框架
+
+CLMS 将 Han 猜想拆成：
+\[
+\operatorname{gldim}A=\infty
+\overset{\mathrm{Gap\ A}}{\Longrightarrow}
+A\text{ infinite }+
+\overset{\mathrm{Gap\ B}}{\Longrightarrow}
+HH_*(A)\text{ infinite}.
+\]
+
+其中 infinite \(+\) 可由 simple-to-simple Tor / \(\tau\)-Hochschild 检测。
+
+项目当前目标：
+
+- **Gap B:** KLS 型 collapse 已有内部候选闭合；
+- **Gap A:** 仍未普遍解决，是当前主要攻关对象；
+- **统一理论:** 已形成 Serre–probe / Nakayama–Serre 框架，但当前冻结扩写，优先解决 Gap A。
+
+---
+
+# 2. KLS / Gap B：当前已知内部状态
+
+设 KLS 构造的代数为 \(A_{\mathrm{KLS}}\)，并令
+\[
+B=A_{\mathrm{KLS}}^{\mathrm{op}}.
+\]
+
+项目此前已经得到一个 **project-derived internal proof candidate**：
+\[
+\boxed{
+B\text{ is infinite }+
+}
+\]
+
+结合 KLS 已证：
+\[
+HH_n(A_{\mathrm{KLS}})=0
+\qquad(n\ge1),
+\]
+
+得到内部判定：
+\[
+\boxed{
+B=A_{\mathrm{KLS}}^{\mathrm{op}}
+\text{ 是 Gap-B failure 的候选模型。}
+}
+\]
+
+注意：
+
+- 这个结果尚未外部同行评审；
+- 尚未 Lean formalize；
+- 不宣称 novelty；
+- 严格封住的是 \(B=A^{op}\) 的 infinite \(+\)，**不自动等价于原 \(A\) 也是 infinite \(+\)**。
+
+---
+
+# 3. 已建立的统一理论骨架：Serre–Probe Framework
+
+这一部分是项目综合理论的重要资产，但下一个对话不要继续无限扩展它，除非它直接帮助 Gap A。
+
+取 \(A\) 的最小 \(A^e\)-投射分解
+\[
+P_\bullet\to A
+\]
+以及 Nakayama-twisted complex
+\[
+K_\bullet:=\nu_{A^e}(P_\bullet).
+\]
+
+Armenta 给出：
+\[
+H_n(K_\bullet)
+\cong
+\operatorname{Tor}_n^A(DA,DA)
+\cong
+D\operatorname{Ext}_{A^e}^n(A,A^e),
+\]
+且
+\[
+Z_n(K_\bullet)=\tau_nA.
+\]
+
+项目中得到链级 natural identification：
+\[
+\boxed{
+\operatorname{Hom}_{A^e}(DA,K_\bullet)
+\cong
+A\otimes_{A^e}P_\bullet.
+}
+\]
+
+因此同一复形 \(K_\bullet\) 同时承载：
+\[
+\boxed{
+\begin{aligned}
+H_n(K_\bullet)
+&=\text{Serre/Gorenstein shadow},\\
+Z_n(\operatorname{Hom}_{A^e}(DA,K_\bullet))
+&=HH_n^\tau(A),\\
+H_n(\operatorname{Hom}_{A^e}(DA,K_\bullet))
+&=HH_n(A).
+\end{aligned}}
+\]
+
+解释：
+
+- **Gap A** = singular/Nakayama tail 是否被 \(DA\)-probe 看见；
+- **Gap B** = 已被看见的 \(\tau\)-cycles 是否在 stable quotient / ordinary HH 中存活；
+- ordinary boundaries = injective-factorization saturation。
+
+可定义 dead injective sector：
+\[
+\mathcal D_A
+=
+\{J\in\operatorname{Inj}(A^e):
+\operatorname{Hom}_{A^e}(DA,J)=0\}.
+\]
+
+Gap-A hypothetical failure 在高阶表现为 Nakayama tail 落入这个 dead sector。
+
+---
+
+# 4. Eventual periodicity 已知工具
+
+若 regular \(A^e\)-module eventually periodic：
+\[
+\Omega_{A^e}^{N+p}A
+\cong
+\Omega_{A^e}^{N}A,
+\]
+则 Usui 的结果给：
+
+- minimal bimodule tail eventually \(p\)-periodic；
+- 所有 module 的 sufficiently high syzygies 受 \(p\)-periodicity 控制；
+- eventual-periodic algebra 满足 Auslander condition (AC)；
+- Gorenstein 情形可用 Tate-Hochschild / periodic complete-resolution tools。
+
+项目此前还有 Serre-shadow criterion candidate：
+\[
+A\text{ Iwanaga--Gorenstein}
+\iff
+\operatorname{Ext}_{A^e}^{\gg0}(A,A^e)=0
+\]
+在 eventually-periodic 类中成立（project-derived synthesis；需继续保留审计意识）。
+
+但是必须注意：
+
+> 不能无条件声称 eventual-periodic Gap-A failure \(\Rightarrow\) non-Gorenstein。
+
+因为 pure-residue hidden phase 仍未完全排除。
+
+---
+
+# 5. Gap A：当前最可靠新结果
+
+## 5.1 Recurrent-top lemma / single-top obstruction
+
+这是当前非常关键的 project-derived lemma。
+
+设 \(A\) hypothetical fails Gap A，\(S_x\) 是 infinite-pd simple。
+
+Armenta 的 syzygy-return / one-way criterion给出：充分大 \(n\),
+\[
+e_x\Omega^n(S_x)=0.
+\]
+
+等价地，高阶 top 支撑落入 dead zone：
+\[
+T_n(x):=
+\operatorname{supp}\operatorname{top}\Omega^n(S_x)
+\subseteq
+Z(x)
+=
+\{y:xAy=0\}.
+\]
+
+取一个 sufficiently high syzygy
+\[
+M=\Omega^n(S_x).
+\]
+
+若某个 top vertex \(y\in \operatorname{top}M\) 在后续最小分解中 recurrent，则：
+\[
+\operatorname{Ext}_A^j(M,S_y)\neq0
+\]
+对无限多个 \(j\) 成立。
+
+沿 \(M\) 的 composition series dévissage，存在 composition factor \(S_z\) 满足：
+\[
+\operatorname{Ext}_A^{j_t}(S_z,S_y)\neq0
+\]
+无限多次。
+
+Gap-A one-way law 强迫：
+\[
+zAy=0.
+\]
+
+但因为 \(S_z\) 是 \(M\) 的 composition factor，而 \(M\) 由 top 生成，所以必有某个 top \(y'\)：
+\[
+zAy'\neq0.
+\]
+
+因此：
+
+### Single-top impossible
+如果 \(\operatorname{top}M\) 只有一个 simple type \(S_y\)，则 \(y'=y\)，立刻矛盾。
+
+所以 hypothetical Gap-A failure 中，高阶 recurrent syzygy 必满足：
+\[
+\boxed{
+|\operatorname{supp}\operatorname{top}\Omega^n(S_x)|\ge2
+}
+\]
+在相应 recurrent tail 上成立。
+
+这可以理解为：
+\[
+\boxed{
+\text{Gap-A failure forces a multi-top derangement.}
+}
+\]
+
+---
+
+## 5.2 至少两个 infinite-pd simple 的结论
+
+一个更基础的无周期引理：
+
+若 \(S_x\) 是唯一 infinite-pd simple，而 Gap A 失败，则高阶 \(\Omega^n(S_x)\) 避开 \(S_x\)，其所有 composition factors 都是 finite-pd simples。
+
+有限长度扩张性质给：
+\[
+\operatorname{pd}\Omega^n(S_x)<\infty,
+\]
+反推出：
+\[
+\operatorname{pd}S_x<\infty,
+\]
+矛盾。
+
+因此：
+\[
+\boxed{
+\text{任何 Gap-A failure 至少有两个 infinite-pd simples.}
+}
+\]
+
+这个结论不需要 eventual periodicity。
+
+进一步，在 eventual-periodic 情形，利用 periodic syzygy + recurrent-top lemma，可以压得更强：
+
+- 高阶 periodic syzygy 不可能是 single-top；
+- 高阶 periodic syzygy 不可能只含一种 infinite-pd simple type；
+- hypothetical eventual-periodic failure 必须是 multi-top / multi-infinite derangement。
+
+但“至少三个 infinite-pd simples”这一更强版本目前虽然有较强内部论证，仍应继续审计后再正式使用。
+
+---
+
+# 6. 三顶点 Gap A：当前高置信度 candidate closure
+
+这是当前最重要的新 theorem candidate。
+
+Armenta v1 对三顶点 hypothetical Gap-A failure 给出两个 frontier：
+
+1. one-infinite case；
+2. mutual dumbbell case。
+
+项目当前论证：
+
+## 6.1 one-infinite case 被排除
+由上面“Gap-A failure 至少两个 infinite-pd simples”直接矛盾。
+
+## 6.2 mutual dumbbell 被排除
+Armenta 对 mutual dumbbell 给出 one-sided tail：
+
+对某个 \(S_x\)，高阶
+\[
+M_x=\Omega^N(S_x)
+\]
+的最小 resolution tail 只沿一个 dead vertex \(w\) 方向运行；对应 hub \(S_u\) 有有限 projective dimension（原文还给有限 injective dimension）。
+
+在这个 tail 中：
+\[
+\operatorname{Ext}_A^j(M_x,S_w)\neq0
+\]
+对所有充分大 \(j\) 成立。
+
+但若 Gap A 失败，则：
+\[
+\operatorname{Ext}_A^{\gg0}(S_w,S_w)=0.
+\]
+
+而有限 projective dimension的 hub \(S_u\) 给：
+\[
+\operatorname{Ext}_A^{\gg0}(S_u,S_w)=0.
+\]
+
+因为 \(M_x\) 的 composition factors只来自 \(S_u,S_w\)，沿 composition series 做 dévissage，得到：
+\[
+\operatorname{Ext}_A^{\gg0}(M_x,S_w)=0,
+\]
+矛盾。
+
+所以：
+\[
+\boxed{
+\textbf{Gap A 对所有至多 3 个顶点的 elementary finite-dimensional algebras 成立}
+}
+\]
+
+当前状态：
+
+- **project-derived theorem candidate**
+- 内部审计高置信度
+- 尚未外部同行审稿
+- 不宣称 novelty
+
+---
+
+# 7. 重要撤回 / 修正：不要再声称 \(v\le4\) 已解决
+
+此前一度得到过：
+\[
+|Q_0|\le4\Rightarrow\text{Gap A}
+\]
+的候选结论。
+
+**这个结论目前必须撤回为“未闭合”。**
+
+原因：
+
+- all-infinite 4-vertex case 有相当强的 combinatorial argument；
+- 但 “3 infinite + 1 finite hub” 的一般情况里，之前用了类似 mutual-dumbbell 的 finite-injective-dimension 行为；
+- 对一般 finite-pd hub，并不能自动假设 finite injective dimension；
+- 因此原来的 dévissage / splitting argument 有缺口。
+
+所以：
+\[
+\boxed{
+\text{目前只把 }v\le3\text{ 视为高置信度闭合；}
+}
+\]
+而：
+\[
+\boxed{
+v=4\text{ 仍是开放前沿。}
+}
+\]
+
+下一个对话千万不要继续引用“Gap A 对所有四顶点成立”作为既成事实。
+
+---
+
+# 8. Universal Gap A 当前真正障碍
+
+Gap-A failure 的高阶 syzygy 必须：
+
+- 避开原 simple；
+- 至少 multi-top；
+- 在 Ext 与 Peirce support 之间形成 derangement；
+- 不能用单纯 pigeonhole / finite graph argument 直接杀掉，因为 relations 可以把长度 \(2\) 及更长 path composites 全部杀死。
+
+可以把剩余结构叫：
+\[
+\boxed{
+\textbf{multi-top Ext–Peirce derangement}
+}
+\]
+
+其模式为：
+
+- 对 recurrent top \(y\)，存在 composition factor \(z\)：
+  \[
+  \operatorname{Ext}_A^{n_j}(S_z,S_y)\neq0
+  \]
+  infinitely often；
+- Gap-A failure 强迫
+  \[
+  zAy=0;
+  \]
+- 但 \(z\) 必从另一个 top \(y'\) 被实际生成：
+  \[
+  zAy'\neq0.
+  \]
+
+这就是 universal Gap A 当前最核心的“转移循环”难点。
+
+---
+
+# 9. Eventual-periodic 路线：已知 dead ends 与可用方向
+
+## 9.1 Tate/Yoneda route 的真实缺口
+eventual bimodule periodicity 可在 singular/Tate Yoneda 中产生可逆正次数 periodic class。
+
+但 CLMS 的 finite-generation criterion需要 ordinary simple Yoneda data。
+
+non-Gorenstein 情形中：
+\[
+\text{singular/Tate Ext}
+\not\Rightarrow
+\text{ordinary high Ext}
+\]
+没有现成 comparison isomorphism。
+
+所以不能偷换成：
+\[
+\text{periodic bimodule}
+\Rightarrow
+\text{ordinary Yoneda algebra finitely generated}
+\Rightarrow
+\text{infinite }+.
+\]
+
+这条路线目前卡在 comparison/fidelity gap。
+
+## 9.2 Proper quotient route 的真实缺口
+若 high tail 避开 vertex \(x\)，可考虑
+\[
+\bar A_x=A/Ae_xA.
+\]
+
+特定 tail 可在 \(\bar A_x\) 上继续作为 projective tail。
+
+但：
+\[
+A\to \bar A_x
+\]
+一般不是 homological epimorphism。
+
+不能仅凭某条 tail 的 confinement 就断言 infinite \(+\) witness 从 quotient 自动 lift 回 \(A\)。
+
+所以 minimal-counterexample induction 当前缺少 lifting theorem。
+
+## 9.3 Singular-core idempotent reduction
+令 \(e\) 为所有 infinite-pd simple vertices 之和。
+
+finite-pd simples 被 \(e\) 杀掉，因此 \(e\) 在 Chen 意义下具有 singularly-complete 的潜力。
+
+若还能证明：
+\[
+\operatorname{pd}_{eAe}(eA)<\infty,
+\]
+则可望得到：
+\[
+D_{\mathrm{sg}}(A)\simeq D_{\mathrm{sg}}(eAe).
+\]
+
+真正障碍是 cross module：
+\[
+eA(1-e)
+\]
+在 \(eAe\) 上可能具有 infinite projective dimension。
+
+这个 cross-module obstruction 很可能是 finite hubs 真正承载 singularity 的方式。
+
+这是一个值得继续攻的方向。
+
+---
+
+# 10. KLS 原代数 \(A\) 的 Gap-A 方向：仍未判定
+
+非常重要：
+
+我们已经内部封住的是：
+\[
+B=A_{\mathrm{KLS}}^{op}
+\text{ is infinite }+.
+\]
+
+但原 KLS 代数 \(A\) 是否 infinite \(+\) 仍未严格完成。
+
+KLS Proposition 3.2 的 partial-resolution 控制按照其 conventions 是右 \(A\)-modules，因此直接对应 \(A^{op}\) 的 Gap-A 方向。
+
+所以不能据此说原 \(A\) 也 infinite \(+\)。
+
+当前最有希望的镜像路线：
+
+设
+\[
+A=\operatorname{End}_{\Lambda}(M),
+\qquad
+M=\Lambda\oplus N,
+\]
+并考虑
+\[
+M^\vee=\operatorname{Hom}_{\Lambda}(M,\Lambda).
+\]
+
+利用 gendo-Gorenstein / double-centralizer 思想，尝试建立：
+\[
+A^{op}
+\simeq
+\operatorname{End}_{\Lambda^{op}}(M^\vee)
+\]
+以及相反方向的 Chen partial-resolution / singular quotient。
+
+如果这条镜像 quotient 能闭合：
+
+- 可能证明原 \(A\) 也是 infinite \(+\)；
+- 或者如果失败，可能暴露原 \(A\) 是 Gap-A counterexample。
+
+因此：
+\[
+\boxed{
+\textbf{KLS original-}A\textbf{ direction is a high-priority test.}
+}
+\]
+
+---
+
+# 11. 当前研究优先级
+
+下一个对话建议按以下顺序，不要回到泛泛综合理论。
+
+## Priority 1 — 完整审计三顶点 theorem candidate
+目标：
+\[
+\boxed{
+|Q_0|\le3
+\Longrightarrow
+\operatorname{gldim}A=\infty
+\Rightarrow
+A\text{ infinite }+.
+}
+\]
+
+需要：
+
+- 对 one-infinite proof 做书面化；
+- 对 mutual-dumbbell dévissage 做左右模、Ext 变量、composition factor 审计；
+- 对照 Armenta 原文 theorem/proposition 编号；
+- 检索是否 2026-08-18 前已有后续预印本做出同样结论；
+- 如果稳固，写成独立 proposition/theorem。
+
+## Priority 2 — 判定 KLS 原代数 \(A\) 是否 infinite \(+\)
+重点研究：
+\[
+M^\vee=\operatorname{Hom}_{\Lambda}(M,\Lambda)
+\]
+的 double-centralizer / gendo-Gorenstein mirror construction。
+
+目标是构造相反方向的 partial-resolution singular quotient。
+
+这是当前最现实的“Gap A 可能直接被 KLS 决定”的测试。
+
+## Priority 3 — 攻 \(v=4\) finite-hub case
+不能再假设 finite-pd hub 有 finite injective dimension。
+
+需要寻找以下任一工具：
+
+- finite-pd hub \(\Rightarrow\) finite-id under extra hypotheses；
+- idempotent singular reduction；
+- cross-module \(eA(1-e)\) obstruction；
+- recurrent-top derangement + exact sequence 直接反证；
+- bilateral eventual periodicity 强化。
+
+## Priority 4 — Eventual-periodic universal class
+如果普通 universal Gap A 暂时太难，尝试先证明：
+\[
+\boxed{
+A\text{ eventually periodic},
+\quad
+\operatorname{gldim}A=\infty
+\Longrightarrow
+A\text{ infinite }+.
+}
+\]
+
+真正缺口：
+\[
+\text{singular/Tate periodicity}
+\to
+\text{ordinary simple Yoneda visibility}.
+\]
+
+需要搜索/构造 comparison theorem。
+
+## Priority 5 — Singular core / cross module theory
+令 \(e\) 为 infinite-pd simples 的顶点和。
+
+研究：
+\[
+eAe,\qquad eA(1-e),\qquad (1-e)Ae.
+\]
+
+尝试证明：
+
+- 如果 cross module finite pd，则可 singular-reduce 到 \(eAe\)；
+- 如果 cross module infinite pd，则它本身产生 infinite \(+\) witness。
+
+如果能形成这种 dichotomy，可能给 universal induction。
+
+---
+
+# 12. 不要重复走的 dead ends
+
+1. **不要再把 25-dimensional exact-zero-divisor dumbbell 当主要目标。**  
+   它只作为 obstruction/test object。
+
+2. **不要声称 periodic module 自动给 simple self-Ext。**  
+   周期模确实有 nonzero self-extension，但传递到 simple Yoneda 有 multi-top/A\(_\infty\) 障碍。
+
+3. **不要把 singular/Tate self-map直接当 ordinary Ext。**  
+   non-Gorenstein 下 comparison 有真实缺口。
+
+4. **不要假设删除顶点 quotient 是 homological epimorphism。**  
+   需要额外 Tor-vanishing / stratifying 条件。
+
+5. **不要再声称 \(v\le4\) 已解决。**  
+   目前只高置信度闭合到 \(v\le3\)。
+
+6. **不要把 KLS Proposition 3.2 直接用于原 \(A\) 的 left-module Gap A。**  
+   conventions 是关键，直接服务于 \(A^{op}\) 方向。
+
+7. **不要宣称 universal Gap A 已解决。**  
+   截至 2026-08-18 仍未完成。
+
+---
+
+# 13. 当前最简状态总结
+
+\[
+\boxed{
+\begin{aligned}
+&\textbf{Gap B / KLS opposite:}
+&&\text{内部 candidate closure;}\\[1mm]
+&\textbf{Unified Serre–probe theory:}
+&&\text{已形成，可作为最终论文框架;}\\[1mm]
+&\textbf{Universal Gap A:}
+&&\text{仍 open;}\\[1mm]
+&\textbf{Gap A for }|Q_0|\le3:
+&&\text{高置信度 project-derived candidate theorem;}\\[1mm]
+&\textbf{Gap A for }|Q_0|=4:
+&&\text{仍未闭合；finite-hub case 是当前缺口;}\\[1mm]
+&\textbf{KLS original }A:
+&&\text{是否 infinite }+\text{ 尚未判定;}\\[1mm]
+&\textbf{Main structural obstruction:}
+&&\text{multi-top Ext--Peirce derangement.}
+\end{aligned}}
+\]
+
+---
+
+# 14. 建议下个对话的第一句执行指令
+
+> 继续 Han–Gap A/B 项目，不要重启。先把三顶点 Gap A candidate theorem 按 Armenta 原文逐条审计成正式证明；然后优先判定 KLS 原代数 \(A\) 是否 infinite \(+\)，重点使用 \(M^\vee=\operatorname{Hom}_\Lambda(M,\Lambda)\) 的 double-centralizer / gendo-Gorenstein mirror partial-resolution。不要再声称 \(v\le4\) 已解决；四顶点 finite-hub case 仍有缺口。若 KLS 原 \(A\) 不是 infinite \(+\)，立即转为 Gap-A counterexample 审计；若它也是 infinite \(+\)，提炼镜像机制并尝试推广到 universal/eventually-periodic Gap A。

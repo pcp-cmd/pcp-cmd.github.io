@@ -1,0 +1,54 @@
+# REPRESENTATION CHANGES
+
+The project repeatedly advanced by changing representation rather than forcing a blocked proof:
+
+1. Han homology vanishing → Gap A / Gap B taxonomy.
+2. module-periodic language → Serre–Probe / singular visibility.
+3. graph/support recurrence → fixed simple-pair Peirce visibility.
+4. ordinary vertex deletion → derived self-intersection \(S\otimes_D^{\mathbf L}S\).
+5. spectral-sequence screening → Rees torsion / primitive torsion births.
+6. finite parameter counting → \(\kappa\)-coupled rank / retract obstructions.
+7. graded FORK → filtered/Rees and radical-degeneration corrections.
+8. fixed detector → source/detector switching.
+9. singular corner → explicit cross modules \(eDf,fDe\).
+10. U7 incidence/corner routes → U8 two-sided derived coupler / alignment.
+
+These are historical representation changes, not a single proved implication chain.
+
+11. local mixed-linker Tor → zero-excursion column of an ambient relative bar spectral sequence.
+12. repeated screening labels → actual derived necklaces in \(H^*(Q_x)\).
+13. minimal derived necklace → bar cycle → primitive quotient \(P_\infty\).
+14. elementwise higher-product descent → degreewise subspace/Nakayama elimination.
+15. residual boundary filling → finite arrow alphabet with unbounded rooted-tree Massey excess.
+16. parallel minimal-counterexample view: quotient visible witness → negative-weight complete-screening problem; diagonal local screening → double deletion / Morita-context squeeze.
+
+11. local mixed-linker Tor → zero-excursion column of an ambient relative bar spectral sequence.
+12. repeated screening labels → actual derived necklaces in \(H^*(Q_x)\).
+13. minimal derived necklace → bar cycle → primitive quotient \(P_\infty\).
+14. elementwise higher-product descent → degreewise subspace/Nakayama elimination.
+15. residual boundary filling → finite arrow alphabet with unbounded rooted-tree Massey excess.
+16. parallel minimal-counterexample view: quotient visible witness → negative-weight complete-screening problem; diagonal local screening → double deletion / Morita-context squeeze.
+
+
+17. Actual positive-graded minimal ordinary resolutions -> INTEGER Cartan log derivative -> reverse-supported ordinary Tor in a uniform window (C117); finite ordinary bar filtration with separated adjacent Tor weights -> genuine comparison/generation/whole radical-Koszul closure (C118). Automatic mixed-weight transfer remains false by literal A14 d1.
+18. Sourcewise corner/syzygy Tiling -> corrected GLOBAL existential syzygy trace/full ordinary visible-mask target (C119,D011). Strong-quiver actual infinite source can leave itself forever; canonical Bongartz retained as BACKEND, eligible ordinary stopping as machinery. No new carrier invariant or independent-verification upgrade.
+
+19. Ordinary finite-state recurrence without automatic visibility -> coefficientwise INTEGER no-cancellation stopping plus ACTUAL eventually separated bar comparison (C120–C121). Closes an entire ordinary branch with explicit gd/window bounds, even when Yoneda finite generation fails and a low prefix mixes. No new derived invariant; persistent mixed/opposite-parity and general finite-type-only cores remain OPEN.
+
+
+20. Infinite real-tail quotient comparison -> SHARP finite actual-cover zero-row window and simultaneous ordinary gd stopping (C123); finite deleted simple labels -> actual FULL ideal/quotient-module pd obstruction (C124). This quantitatively completes an existing ordinary asset and rejects a deletion shortcut, without introducing another derived invariant. D011 main global ALL-source visible-mask target and general badness-preserving witness lifting remain OPEN.
+
+21. Finite deep-module error/pruning proposal -> ordinary Tor excludes OTHER-side high projective types when WHOLE deep simple factors have finite pd -> actual eventual Loewy-three projectives -> literal bar/head injections and TRUE simple-split DAG terminate with gd<=N(a+N(M+1)+1)-1 (C125). Closes an entire one-sided finite cubic-radical/J4zero class, not another derived necessary condition. General nonsemisimple deep ideals and all global branches remain OPEN.
+
+22. Nonsemisimple finite-pd cubic ideal -> balanced Loewy-two WHOLE envelope with mixed semisimple head -> actual ordinary connecting matrix and Nakayama give conditional finite pd of EVERY ideal factor -> C125 terminates (C126). Closes ENTIRE J5zero/one-sided finite pd J3 class; no new invariant, pullback-pd assumption, image pruning or claim at arbitrary Loewy length.
+
+
+23. Loewy-bounded finite cubic ideal -> ACTUAL finite-pd two-layer radical band at ANY Loewy length -> whole radical-power head captures EVERY deep factor -> ordinary conditional factor termination -> OTHER-side actual short-tail stopping (C127). Closes a genuine arbitrary-size class, with uniform gd bound and no new invariant, pruning or J3-alone upgrade.
+
+24. Both infinite band pds as localized sources -> actual triangular FULL-kernel obstruction -> global ordinary witness may lie OUTSIDE BOTH band factor sets (C128). Refutes unqualified localization and physical infinite-endpoint pumping while retaining the ALL-source existential target; does not refute UGA or badness-specific safe descent.
+
+25. Actual balanced projective radical ideal -> REAL flat tensor multiplication equals physical powers -> nilpotent projective-top matrix -> automatically PROPER CLOSED whole support -> smaller ordinary corner or C088 whole-block deletion (C129). TOTAL-label strict descent, with inherited zero ideals explicitly allowed. Radical powers s<=3 terminate at C110 and close the entire arbitrary-Loewy one-sided PROJECTIVE cubic class, with uniform gd/ideal-nilpotence bounds (C130).
+
+26. Projective-to-finite-pd shortcut -> actual three-cycle Nakayama9 FULL kernels -> ordinary Tor1(A/I,I) is the nonzero multiplication defect, top T00 stays1 and support is not cover closed (C131). Finite gd2 separates a failed mechanism from a failed conjecture; global badness-specific defect control and h>0 cubic closure remain OPEN. User explicitly authorized multiple parallel mathematical agents on2026-10-05; one root continues canonical integration, with bounded proof/construction subtasks.
+
+27. Finite-pd I-cover with projective FULL kernel -> actual radical/head cancellation counterexample -> no factorwise finite errors, strict cover saturation, inherited finite support-corner pd or same-simple quotient comparison (C132). The direct chosen WHOLE subkernel gate and global source alignment remain essential. Appended ordinary path proof, not another derived invariant; global badness-specific repair remains OPEN.

@@ -1,0 +1,12 @@
+## UGA-C054 — Visible Primitive Tails Are Bounded
+**Status:** COMPLETE SELF-AUDITED PROOF WITH DERIVED-LOCALISATION COMPARISON / NOT INDEPENDENTLY VERIFIED  
+**Source:** correction Run, Theorem 4.1.
+
+For retained endpoints,
+\[
+\dim\operatorname{Tor}^{A}_{d+1}(R_z,L_y)
+\ge\dim e_z(P_\infty)^{-d}e_y.
+\]
+Thus, in a non-infinite-\(+\) algebra, primitive tails vanish in every reverse-supported pair \(e_yAe_z\ne0\), including diagonal pairs. Unbounded primitive tails must be Peirce-invisible. This uses the **derived** quotient comparison and does not depend on UGA-C041's opposite-invariance gate.
+
+---

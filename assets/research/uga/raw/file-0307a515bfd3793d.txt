@@ -1,0 +1,318 @@
+# T25 — Automatic corner perfection from two-sided finite blocks and an ordinary Ext window
+
+Date: 2026-10-04.
+
+Status: complete ordinary proof and normal adversarial self-audit;
+reuses frozen actual factor resolutions and written tensor proof;
+NOT independently verified. No novelty claim. Universal Gap A remains OPEN.
+
+Continue T24 and the real T23 counit. This is a further closure mechanism
+for higher finite pd, without assuming corner-module perfection. Its
+ordinary Ext hypothesis prevents the actual Ext-two screening isolated
+by C095. Combined with two-sided finite pd it forces a UNIFORM finite
+cohomology amplitude and recovers ALL-module ordinary comparison.
+No source-count enumeration or new derived invariant is introduced.
+
+## 1. Exact hypotheses and conclusion (C098)
+
+A is elementary finite-dimensional over a field. Let F be a nonempty
+proper set of vertices, f=sum_F e_u, e=1-f, B=eAe. Require
+
+\[
+d=\max_{u\in F}\operatorname{pd}_{LEFT} L_u<\infty,
+\qquad r=\max_{u\in F}\operatorname{pd}_{RIGHT} R_u<\infty,
+\tag{1.1}
+\]
+\[
+\operatorname{Ext}^p_A(L_u,L_v)=0
+\quad(u,v\in F,\ p\ge2).
+\tag{1.2}
+\]
+
+Since d is finite, (1.2) only needs degrees 2<=p<=d. It is a
+TWO-ENDPOINT ordinary Ext hypothesis; Ext^1 inside F need NOT vanish.
+There is NO physical projective-cover closure condition on F and
+NO assumed finite corner-module pd.
+
+### Theorem 1.1
+
+The actual corner modules automatically satisfy
+
+\[
+\operatorname{pd}_{B^{op}}Ae\le\max\{r-1,0\},
+\qquad \operatorname{pd}_{B}eA\le\max\{d-1,0\}.
+\tag{1.3}
+\]
+
+For ALL finite LEFT A modules M,Z the natural ordinary Ext restriction
+
+\[
+\operatorname{Ext}^n_A(M,Z)\longrightarrow
+\operatorname{Ext}^n_B(eM,eZ)
+\tag{1.4}
+\]
+
+is an isomorphism for n>d+r. Its ordinary dual is
+
+\[
+\operatorname{Tor}^B_n(Re,eM)\longrightarrow
+\operatorname{Tor}^A_n(R,M),\qquad n>d+r,
+\tag{1.5}
+\]
+
+for ALL finite RIGHT R and LEFT M. B is the actual CORNER and the
+Tor direction is B->A, not an invented quotient map.
+
+## 2. The finite ordinary Ext window within F
+
+Finite-length devissage in source and target extends (1.2) to
+
+\[
+\operatorname{Ext}^p_A(H,K)=0\quad(p\ge2)
+\tag{2.1}
+\]
+
+for ALL finite modules H,K whose composition factors lie in F.
+Indeed ordinary long exact Ext sequences induct through each series;
+the neighbouring terms in every degree p>=2 vanish. This says nothing
+about higher Ext to targets OUTSIDE F or about pd H being <=1.
+The latter need only be <=d by the valid finite-factor pd implication.
+
+Let C be any bounded-above ordinary complex with finite F-cohomology
+H_i=H^{-i}C, i>=0. For a fixed F target L_u and n>=1, derived-category
+orthogonality removes the cohomology below -n. The finite truncation
+in [-n,0] splits into shifted H_i: each connecting map lies in an
+Ext group in (2.1) of degree >=2. This is a finite Postnikov splitting,
+not a convergence claim about an infinite direct sum.
+
+Consequently
+
+\[
+0\longrightarrow\operatorname{Ext}^1_A(H_{n-1},L_u)
+\longrightarrow\operatorname{Hom}_{D(A)}(C,L_u[n])
+\longrightarrow\operatorname{Hom}_A(H_n,L_u)
+\longrightarrow0.
+\tag{2.2}
+\]
+
+Ext-one between F modules is allowed. The Hom edge cannot be killed
+by a higher F output. This is the precise difference from C095,
+where Ext^2(L_v,L_v)=k repeatedly kills that edge.
+
+Unlike C094, (2.2) is asserted here only for F TARGETS. No pd-one
+window for arbitrary Z is claimed.
+
+## 3. Opposite pd bounds force the actual counit cone to be bounded
+
+For ANY finite LEFT A module M take actual minimal B Q resolving eM.
+The projective complex T=Ae tensor_B Q has its ordinary counit to M;
+write C_M for its cone. Exact restriction e makes its restricted
+counit a quasi-isomorphism. Thus its finite cohomology H_i has only
+F factors, while no bound on negative degrees is assumed initially.
+
+For every u in F the actual chain adjunction has Hom(T,L_u[*])=0,
+since eL_u=0. The counit triangle gives
+
+\[
+\operatorname{Hom}_{D(A)}(C_M,L_u[n])
+\cong\operatorname{Ext}^n_A(M,L_u).
+\tag{3.1}
+\]
+
+RIGHT pd R_u<=r makes the latter zero for EVERY finite M and n>r:
+it is the ordinary finite-dimensional dual of Tor^A_n(R_u,M).
+This use of opposite pd controls a TARGET ordinary Ext, and does not
+identify LEFT and RIGHT infinite label sets or use opposite-infinite-+.
+
+Apply (2.2). For n>r every Hom_A(H_n,L_u) is zero. A nonzero finite
+F module has some F simple quotient, so
+
+\[
+H_n(C_M)=0\quad(n>r),\qquad
+H^*(C_M)\text{ is supported in }[-r,0].
+\tag{3.2}
+\]
+
+This is the promised UNIFORM amplitude theorem. It depends on BOTH
+the ordinary Ext window and opposite finite pd. No local image was
+erased; the unbounded candidate defect was actually proved to terminate.
+
+For i>=1 the cone triangle identifies
+
+\[
+H^{-i-1}(C_M)\cong\operatorname{Tor}^B_i(Ae,eM).
+\tag{3.3}
+\]
+
+Thus positive Tor vanishes whenever i+1>r. Every finite LEFT B module
+X is eM for a finite M: take M=Ae tensor_B X, whose e-image is X.
+Testing all X, or just actual B simples, proves
+pd_{B^op} Ae<=max(r-1,0). This essential-surjectivity step cannot be
+replaced by testing only old retained simple modules.
+
+## 4. ALL-module ordinary bridge, supported return and strict descent
+
+Each actual cone cohomology in [-r,0] has ambient LEFT pd<=d.
+Finite ordinary truncations and projective repairs give
+
+\[
+\operatorname{Hom}_{D(A)}(C_M,Z[j])=0\quad(j>d+r)
+\tag{4.1}
+\]
+
+for ALL finite Z. This follows equally by summing the finite ordinary
+Ext windows: a cohomology module in degree -s contributes only through
+degree d+s, with s<=r. The cone is NOW bounded by (3.2), not presumed
+perfect from local finite pd.
+
+The counit triangle and chain adjunction consequently give the natural
+(1.4), and ordinary duality gives (1.5). The strict cutoff d+r also
+works if d or r is zero. Applying C093 through (1.3) alone would give
+the slightly looser d+max(r,1) when r=0; the actual bound (3.2)
+proves the displayed sharper d+r in that edge case.
+
+Both deleted label sets are finite by (1.1). The all-module comparison
+then proves exact retained LEFT and RIGHT infinite label preservation.
+For finite retained pd values a over A,b over B,
+
+\[
+a\le\max\{b,d+r\},\qquad b\le\max\{a,d+r\}.
+\tag{4.2}
+\]
+
+Global infinity is equivalent; finite values obey the corresponding
+max inequalities. Literal retained physical e_yBe_z=e_yAe_z spaces
+and same-pair high ordinary Tor let every supported B tail return in A.
+Therefore
+
+\[
+A\text{ bad}\Longrightarrow eAe\text{ bad},
+\qquad\dim_k eAe<\dim_k A.
+\tag{4.3}
+\]
+
+This deletes the WHOLE two-sided-finite ordinary-Ext-window branch at
+arbitrary source count, without an assumed corner perfection certificate.
+Both infinite counts stay unchanged; the strict measure is dimension.
+
+Checked towers have uniform comparison cutoff max_i(d_i+r_i), and
+finite terminal gd b gives gd A<=max(b,d_i+r_i). Each move removes
+vertices, so at most v-1 nonempty moves occur. Same-side or mixed
+future window/finite-pd eligibility is NOT asserted automatically.
+
+## 5. Direct RIGHT proof
+
+For a finite RIGHT M use (Me) tensor_B^L eA -> M. Its cohomology has
+F RIGHT factors. Ordinary vector-space duality identifies the F
+right Ext groups with reversed left groups, so (1.2) gives the same
+no-higher-F-Ext window. LEFT pd L_u<=d kills all-target right Ext
+to R_u above d. The same finite Hom edge forces right cone amplitude
+[-d,0] and proves pd_B eA<=max(d-1,0). Its right cohomology has
+pd<=r, so the ordinary comparison cutoff is again d+r.
+
+This is a direct proof with actual right projectives and ordinary
+module duality, not an assertion that A and A^op have the same infinite +.
+
+## 6. Arbitrarily high finite pd, with a sharp automatic corner-pd bound
+
+Reuse the actual regular-coupler algebra E from T22 at p=2, dimension
+13. Its sole finite LEFT AND RIGHT label is f, with pd one on each
+side; every other simple is infinite. Its actual LEFT L_f resolution
+has P_0=P_f,P_1=P_v and then terminates. Its actual LEFT L_v terms
+are P_0=P_v,P_1=P_f,P_n=P_v for all n>=2. Its actual RIGHT R_f
+has projective first kernel e_vE+e_wE and pd one. These are the
+unchanged T22 literal identities, not newly computed kernel claims.
+
+For EVERY s>=2 set A_s=E^(tensor s), with sole finite label
+F={(f,...,f)} on BOTH sides. C096's actual tensor minimal resolution
+gives d=r=s, while
+
+\[
+\operatorname{Ext}^p_{A_s}(L_F,L_F)=0\quad(p\ge1).
+\tag{6.1}
+\]
+
+Thus C098 applies. There is NO C094 shallow vertex and NO C088 finite
+closed block on either side: the sole finite cover hits infinite
+labels. The class criterion instead proves corner perfection and
+ordinary comparison above 2s automatically. These examples are
+already infinite + and are also handled by actual tensor-factor
+descent; their role here is to calibrate HIGH finite pd and the new
+uniform corner-pd bound, not to claim a new bad algebra.
+
+Let M=L_(v,...,v), retained. Each factor has Ext^1(L_v,L_f)=k and
+Ext^n(L_v,L_f)=0 for n!=1. Ordinary tensor Kunneth therefore gives
+
+\[
+\operatorname{Ext}^n_{A_s}(M,L_F)=
+ \begin{cases}k&n=s,\\0&n\ne s.\end{cases}
+\tag{6.2}
+\]
+
+F-supported modules are semisimple, since F is a singleton and
+Ext^1(L_F,L_F)=0. All positive self-Ext vanish by (6.1); the finite
+Hom edge of C_M hence identifies each H_n multiplicity with (6.2).
+Its degree-zero cohomology is zero because the retained simple M
+is in the image of the degree-zero counit. Consequently
+
+\[
+C_M\simeq L_F[s],\qquad
+\operatorname{Tor}^{eAe}_{s-1}(Ae,eM)=L_F\ne0.
+\tag{6.3}
+\]
+
+Together with (1.3) this proves
+
+\[
+\operatorname{pd}_{(eAe)^{op}}Ae=s-1.
+\tag{6.4}
+\]
+
+This sharp corner-pd conclusion follows actual ordinary module
+resolutions and the proven cone identities, NOT a finite degree sample
+or a new idempotent-derived-quotient nonformality statement. No
+sharpness of the ALL-module comparison cutoff 2s is asserted here.
+
+## 7. Exact obstruction and normal adversarial self-audit
+
+1. Both finite sides matter: LEFT pd d bounds cohomology-module pd;
+   RIGHT pd r kills all-source ordinary Ext to F targets.
+2. The F Ext window requires ALL p>=2 (equivalently 2 through d),
+   not merely Ext^2=0 if d>2. Ext-one inside F is allowed.
+3. Finite-factor devissage is used only in its valid direction; a
+   projective cover can have infinite-pd factors.
+4. For each target degree the Postnikov truncation is FINITE. Lower
+   unbounded pieces are excluded by ordinary t-structure orthogonality.
+5. The Hom edge is unkillable under the stated Ext hypothesis. Only
+   after its forced vanishing is the GLOBAL cone declared bounded.
+6. ALL finite B modules are tested via M=Ae tensor_B X; retained
+   simple tests alone do not prove corner-module pd.
+7. The actual cone is in [-r,0], giving strict cutoff n>d+r including
+   r=0. No equality-cutoff or vertex-only bound is inferred.
+8. The direct right argument uses ordinary vector-space duality and
+   actual right resolutions; no opposite-infinite-+ transfer.
+9. The old A5 deletion v is finite on BOTH sides with d=r=2 but
+   Ext^2(L_v,L_v)=k, and Ae is nonperfect. It breaks the claim that
+   two-sided finite pd ALONE forces perfection. C095 screening is
+   unchanged; it lies precisely outside (1.2).
+10. E tensor powers have arbitrary high finite pd and no shallow or
+    finite closed block; their automatic corner-pd bound is sharp.
+    They are already visible, not badness-specific counterexamples.
+11. No new finite arithmetic or independent verifier was invoked.
+    Frozen literal certificates and the written C096 tensor proof
+    are reused unchanged; this is normal same-author self-audit.
+12. Universal availability of (1.1),(1.2), or a tower to a known
+    terminal core, remains open. The theorem is a whole eligible
+    branch closure and uniform bound, not just a necessary condition.
+
+## 8. Continued global frontier
+
+C098 extends closure beyond shallow finite pd by an ordinary
+no-higher-F-Ext mechanism that proves the actual screening tail MUST
+terminate. It reconnects to C093's ALL-module ordinary Tor and strict
+dimension descent with explicit d+r cutoff. Two-sided finite blocks
+with actual higher F Ext, one-sided-only finite blocks, all-infinite
+tensor-indecomposable cores and the C076 physical-transfer gap still
+need a closure mechanism. Target A/local-trivial/supported-weight and
+Primitive/Binary/higher-output branches are not removed from the map.
+Universal Gap A remains OPEN; the full goal stays active.

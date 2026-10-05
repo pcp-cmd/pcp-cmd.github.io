@@ -1,0 +1,9 @@
+## UGA-C085 — Original Infinite-Source Blocks Before Count Two Suffice for All-Size Closure
+**Status:** COMPLETE SELF-AUDITED ORDINARY CLASS CLOSURE / STRICT CHOSEN-SIDE COUNT DESCENT / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Infinite-Source-Block-Closure-and-Primitive-Comparison-Obstruction-2026-10-04.md, Sections 1--2, 5, 7.
+
+Choose the LEFT side, I=I_L(A), p=|I|. For p<=2 reuse C080. For p>=3 assume eventual-even natural ordinary same-pair Tor surjectivity on ALL retained test pairs for every original block S contained in I with 1<=|S|<=p-2. Then A satisfies Gap A at every finite size. No comparison for originally finite-pd deleted sources or larger blocks is required. For a current bad C_T, C083 ensures every current infinite LEFT source lies in I minus T. If its count is at least three, |T|<=p-3, so S=T union {x} is covered by the original assumption. Factoring the onto A->C_S map through C_T makes the SECOND map onto. C083 supplies the eligible strict count reduction and induction invariant; after at most p-2 steps C080 is contradictory. The RIGHT theorem is separate with actual right modules and I_R(A), without opposite-+ or side-label equality.
+
+For exactly three infinite simples on a chosen side, ANY ONE infinite-source deletion with the C083 comparison is enough to close that branch. The source-block hypothesis is strictly weaker than C084's all-block condition by C086's A42: p=3 and all primitive maps are eventual full isomorphisms, but the {4,5} block fails arbitrarily late. The example's first move already reaches the two-source terminal case, so no inheritance beyond it is needed. No new quantitative bound, automatic comparison availability or arbitrary quotient coefficient inheritance is proved.
+
+---

@@ -1,0 +1,14 @@
+## UGA-C124 — Two-Sided Finite-Pd Deleted Simples Do Not Preserve Ordinary Quotient Tails
+
+**Status:** COMPLETE SELF-AUDITED ARBITRARY-SIZE COUNTERFAMILY / ACTUAL MINIMAL KERNELS / EXACT BOUNDED CALIBRATION / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Finite-Quotient-Ordinary-Window-and-Two-Sided-Finite-Label-Deletion-Obstruction-2026-10-04.md, Sections 4–6; Quotient-Gap-Evidence.
+
+For every m>=1 the actual monomial 5m-cycle with LEFT projective lengths (2,2,3,3,3) repeated has dimension13m and J3=0. Full ordinary kernel formula Omega M(i,l)=M(i+l,c_i-l) gives Omega^(4m)L0=L0 and supported diagonal Tor(R0,L0) nonzero at every positive multiple4m. Direct RIGHT lengths are (3,3,2,2,3), and Omega_RIGHT^(4m)R2=R2. Both infinite label sets are residues0,1,2,3 by the TWO direct actual-cover arguments.
+
+The deleted vertex4 has EXACT LEFT and RIGHT simple pds1: Omega L4=Ae5,Omega_RIGHT R4=e3A. Yet the actual ORDINARY quotient B=A/Ae4A is directed/finite gd<=5m-2 and retained L0 has pd_B3. Thus high SAME-pair ordinary comparison and infinity preservation FAIL, even with BOTH deleted simple pds1.
+
+Exact obstruction: I=Ae4A has dimension6 and LEFT direct summand M(4,2) with Omega=L6 of infinite pd; RIGHT direct summand M_R(4,2) has Omega_RIGHT=R2 of infinite pd. Therefore BOTH ideal pds and BOTH ambient quotient-module pds are infinite. Deleted SIMPLE labels do not control the whole actual kernel. The CORNER eAe retains path3->4->5, which B kills; C094 shallow corner descent and C088 cover-closed deletion remain intact.
+
+First targeted integral run at m=1,2,3 passed202464 associativity triples,78 FULL covers,2544 integral inverses,75 unit A-linear kernel isomorphisms; full all-m/all-field/all-degree proof is separate. No default checksums/formal acceptance/independent verification. Every member is already ordinary-positive and belongs to already closed monomial/J3 classes; no badness-specific reduction theorem or UGA is refuted, and no small-vertex classification is reopened.
+
+---

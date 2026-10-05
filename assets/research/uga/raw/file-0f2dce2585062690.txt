@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-03T15:34:31.601144+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "7dc35565d92e2c273f34837bdae0af0321f40b2e8bd1d4a73c5ec823f2440dab",
+    "object": "Actual 22-dimensional connected vertex-deletion calibration: an infinite-pd left source is deleted and the infinite-simple count increases",
+    "deliverables": [
+      "verify_infinite_simple_count.py",
+      "infinite-simple-count-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "B is the opposite endomorphism algebra of the three cyclic k[t]/t^3 modules; all Hom monomials and truncations are literal.",
+      "Gamma is the dual-number algebra; G is its simple; V=G tensor e3B is an actual bimodule.",
+      "A is the ordinary triangular extension by V and Gamma, with t_v V=0.",
+      "The quotient is the physical A/Ae3A, including full ideal closure, not a corner.",
+      "Exact module isomorphisms certify Omega L3=Ae2+Lv, Omega Lv=Lv, and Omega_right Rv=e3A+Rv.",
+      "The quotient has the actual radical-square-zero two-cycle and isolated dual-number loop.",
+      "Left count increases 2->3, right count 1->3; A already has visible ordinary diagonal Tor and is not a Gap-A counterexample."
+    ],
+    "domain": "Finite-dimensional elementary rational algebras and literal ordinary minimal resolutions",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Exact literal monomial Hom tables and frozen Fraction module-cover/isomorphism helpers"
+      ],
+      "existence_evidence": "verify_infinite_simple_count.py constructs actual full-basis algebras, physical quotient and A-linear module isomorphisms with inverse checks.",
+      "local_availability": "available",
+      "availability_evidence": "Actual local run passed under Python 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "selection_reason": "Small finite Hom and triangular tables admit exact local Fraction arithmetic and actual module maps.",
+    "fallback_reason": "Same-session backend inventory reused: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python process through the math-science-computation observer_run.py wrapper",
+    "command_or_input": "python -B verify_infinite_simple_count.py --project-root PROJECT_ROOT --out infinite-simple-count-result.json",
+    "code_artifact": "verify_infinite_simple_count.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_infinite_simple_count.py",
+      "sha256": "4fd754f9483f98a87030f32ddb4ce86d05851200f5a8fb0e08e9fc843fff92ec"
+    },
+    {
+      "role": "result",
+      "path": "infinite-simple-count-result.json",
+      "sha256": "87d5f6d9320c30706efa784db59e5f088a72c7950a3d0b2757403c0e01840acd"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "result_artifact": "infinite-simple-count-result.json",
+    "summary": "Passed 24,472 full-basis associativity triples, 1,276 ideal checks, 484 quotient products, 79 actual minimal covers, 17 actual module isomorphisms and 10 module action certificates. Infinite-simple counts are certified by the written all-degree module induction."
+  },
+  "verification": {
+    "methods": [
+      "Exhaustive actual full-basis associativity, including idempotents",
+      "Physical two-sided ideal closure and quotient multiplication",
+      "Actual minimal ordinary projective covers and complete projective action matrices",
+      "Actual A-linear module isomorphisms with two-sided inverse checks",
+      "Ordinary left/right minimal-resolution Betti comparisons through degree six"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact Fraction arithmetic; no numerical residual.",
+    "limitations": [
+      "Same-author code and proof; no independent verifier acceptance.",
+      "Arithmetic executed over Q; all-field claims use the separate literal module proof.",
+      "All-degree infinity comes from actual module identities plus written induction, not a bounded Betti sample.",
+      "This computation does not prove the all-size two-infinite-simple closure theorem or the general global alternative.",
+      "The calibration is already infinite + and does not refute a badness-preserving reduction under all-source no-infinite-+.",
+      "The deleted simple is infinite-pd on the left but finite-pd on the right; the two sets are distinct.",
+      "Unchanged shared project helpers are imported; their relative paths and hashes are in the result.",
+      "Schema and hash checks do not independently verify mathematical semantics.",
+      "Backend availability is reused from the same-session inventory."
+    ]
+  }
+}

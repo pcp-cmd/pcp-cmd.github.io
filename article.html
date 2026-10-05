@@ -3,71 +3,83 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aleksi Lab / Article</title>
-  <meta name="description" content="Aleksi Lab warm 手稿 article reader with Markdown, KaTeX, glyph header, and revision rail.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf9f5'/%3E%3Cpath d='M8 22C12 10 22 8 24 18' fill='none' stroke='%23141413' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='23' cy='18' r='3' fill='%23d97757'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
-  <link rel="stylesheet" href="./styles.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script defer data-lib="DOMPurify" src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <title>Writing · Aleksi</title>
+  <meta name="description" content="Aleksi 的文章阅读页。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/reading.css">
+  <script defer src="./assets/vendor/marked-12.0.2.min.js"></script>
+  <script defer data-lib="DOMPurify" src="./assets/vendor/purify-3.1.6.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script defer src="./site-data.js"></script>
   <script defer src="./content.js"></script>
   <script defer src="./content/content-bundle.js"></script>
+  <link rel="stylesheet" href="./assets/css/site-theme.css">
+  <script defer src="./assets/vendor/niku-home.js"></script>
+  <script defer src="./site-backdrop.js"></script>
+  <script defer src="./reading.js"></script>
+  <script defer src="./article-content.js"></script>
   <script defer src="./article.js"></script>
 </head>
-<body class="article-page">
-  <div class="paper-grain" aria-hidden="true"></div>
-  <header class="site-header article-site-header">
-    <a class="brand-mark" href="./index.html#home" aria-label="Aleksi Lab home">
-      <span>Aleksi Lab</span>
-      <small>未完手稿</small>
-    </a>
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="./chain.html">Chain</a>
-      <a href="./math.html">Math Lab</a>
-      <a href="./works.html">Works</a>
-      <a href="./manuscripts.html">Manuscripts</a>
-      <a href="./protocol.html">Protocol</a>
-    </nav>
+<body class="reading-page site-page" data-section="writing" data-article="true">
+  <canvas class="site-backdrop" data-site-backdrop aria-hidden="true"></canvas>
+  <a class="reading-skip site-skip" href="#content">跳到正文</a>
+  <header class="reading-mobile-header site-header">
+    <div class="reading-mobile-top">
+      <a class="site-brand" href="./index.html"><span>Aleksi</span><small>← 首页</small></a>
+      <a class="article-header-return" href="./writing.html" data-article-return>← 返回 Writing</a>
+      <nav class="site-navigation" aria-label="栏目">
+        <a href="./writing.html" aria-current="page">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
+      <button class="site-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-navigation">栏目 <span aria-hidden="true">⌄</span></button>
+    </div>
+    <div id="mobile-navigation" data-mobile-navigation hidden><nav class="reading-navigation" aria-label="栏目">
+        <a href="./writing.html" aria-current="page">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav></div>
   </header>
-
-  <main id="content" class="article-shell" data-article-shell>
-    <aside class="article-meta" data-article-meta>
-      <a class="return-link" href="./manuscripts.html">返回未完手稿</a>
-      <dl>
-        <dt>空间</dt>
-        <dd data-meta-room>加载中</dd>
-        <dt>状态</dt>
-        <dd data-meta-status>修订中</dd>
-        <dt>资产</dt>
-        <dd data-meta-artifact>手稿</dd>
-      </dl>
+  <div class="reading-layout">
+    <aside class="reading-left">
+      <a class="reading-home" href="./index.html">← 首页</a>
+      <a class="reading-brand" href="./index.html">Aleksi</a>
+      <nav class="reading-navigation" aria-label="栏目">
+        <a href="./writing.html" aria-current="page">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
     </aside>
-
-    <article class="article-manuscript" data-reveal>
-      <header class="article-header">
-        <div>
-          <p class="section-kicker" data-article-room>未完手稿</p>
-          <h1 data-article-title>正在加载手稿</h1>
-          <p class="article-judgment" data-article-judgment>一篇可以继续修订的知识手稿。</p>
-          <div class="article-tags" data-article-tags></div>
-        </div>
-        <div class="article-glyph" data-article-glyph aria-hidden="true"></div>
+    <article id="content" class="article-manuscript">
+      <a class="article-return" href="./writing.html" data-article-return>← 返回 Writing</a>
+      <header class="reading-article-heading">
+        <h1 data-article-title>正在加载文章</h1>
+        <p class="reading-article-date" data-article-date>日期待提供</p>
+        <p class="reading-article-notice" data-article-notice hidden></p>
       </header>
-      <div class="article-body" data-article-body></div>
-      <footer class="article-next" data-article-next></footer>
+      <div class="reading-mobile-directory" data-directory hidden>
+        <button type="button" data-directory-toggle aria-expanded="false" aria-controls="mobile-directory"><span>本文目录</span><span aria-hidden="true">⌄</span></button>
+        <nav id="mobile-directory" data-mobile-toc aria-label="本文目录" hidden></nav>
+      </div>
+      <div class="article-body reading-prose" data-article-body></div>
+      <footer class="article-next" data-article-next hidden></footer>
     </article>
-
-    <aside class="article-rail" data-article-rail>
-      <section>
-        <h2>本页目录</h2>
-        <nav class="article-toc" data-article-toc></nav>
-      </section>
-      <section class="revision-rail" data-revision-rail></section>
+    <aside class="reading-right" aria-label="本文目录">
+      <p class="reading-rail-label">本文目录</p>
+      <nav data-reading-toc aria-label="本文目录"></nav>
     </aside>
-  </main>
+  </div>
 </body>
 </html>

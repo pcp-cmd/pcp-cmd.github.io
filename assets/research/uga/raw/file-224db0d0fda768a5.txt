@@ -1,0 +1,286 @@
+"""Actual graded minimal covers and integer Cartan/log-derivative checks.
+
+This bounded shared audit supplements separate all-degree ordinary proofs.
+No independent verification or homological persistence from a prefix.
+"""
+from pathlib import Path
+from itertools import permutations
+from types import SimpleNamespace
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfor p in [3,5,8]:',1)[0],str(frozen),'exec'),globals())
+extra={'homogeneous_module_actions':0,'homogeneous_minimal_generators':0,
+       'homogeneous_kernel_vectors':0,'integer_Euler_cells':0,
+       'log_trace_coefficients':0,'translation_products':0,
+       'filtered_A14_multiplication_pairs':0}
+
+# Sparse multivariate integer polynomials; no floating point or mod-p derivative.
+def one(m=1):return {(0,)*m:1}
+def mon(d,c=1):return {tuple(d):c} if c else {}
+def add(a,b,sign=1):
+ c=dict(a)
+ for e,x in b.items():
+  c[e]=c.get(e,0)+sign*x
+  if not c[e]:del c[e]
+ return c
+def mul(a,b):
+ c={}
+ for e,x in a.items():
+  for f,y in b.items():
+   d=tuple(v+w for v,w in zip(e,f));c[d]=c.get(d,0)+x*y
+ return {e:x for e,x in c.items() if x}
+def determinant(C,m=1):
+ total={}
+ for p in permutations(range(len(C))):
+  term=one(m)
+  for i,j in enumerate(p):term=mul(term,C[i][j])
+  sign=(-1)**sum(p[i]>p[j] for i in range(len(p)) for j in range(i+1,len(p)))
+  total=add(total,term,sign)
+ return total
+def matmul(C,B):
+ return [[sum_poly([mul(C[i][k],B[k][j]) for k in range(len(C))])
+           for j in range(len(C))] for i in range(len(C))]
+def sum_poly(parts):
+ out={}
+ for p in parts:out=add(out,p)
+ return out
+def diff(p):return {(e[0]-1,):e[0]*a for e,a in p.items() if e[0]}
+def encoded(p):return [{'exponents':list(e),'coefficient':a} for e,a in sorted(p.items())]
+def cartan(A,degrees):
+ C=[[{} for _ in range(A.vertices)] for _ in range(A.vertices)]
+ for (_,l,r),d in zip(A.basis,degrees):C[l][r]=add(C[l][r],mon((d,)))
+ return C
+def log_coeffs(D,last):
+ assert D.get((0,),0)==1
+ d={e[0]:a for e,a in D.items()};u=max(d);g=[]
+ for i in range(last+1):
+  value=(i+1)*d.get(i+1,0)
+  value-=sum(d.get(j,0)*g[i-j] for j in range(1,min(i,u)+1))
+  g.append(value)
+ assert all(type(v) is int for v in g)
+ return g
+
+def homogeneous(vector,degrees):
+ ds={d for x,d in zip(vector,degrees) if x}
+ assert len(ds)==1,ds
+ return next(iter(ds))
+def graded_cover(A,M,G,degree,n):
+ for r,b in enumerate(A.alg.basis):
+  for j,col in enumerate(M.actions[r]):
+   for i,x in enumerate(col):
+    if x:
+     assert G[b['left']][i]==G[b['right']][j]+degree[A.vertices+r]
+     extra['homogeneous_module_actions']+=1
+ K,info,cert=cover(M);lin=info['linear_data']
+ shifts=[homogeneous(lift,G[v]) for v,lift in lin['copies']]
+ assert all(n<=d<=n*max(degree) for d in shifts)
+ extra['homogeneous_minimal_generators']+=len(shifts)
+ ambient=[[shifts[c]+(0 if r is None else degree[A.vertices+r])
+           for c,r in part] for part in lin['bases']]
+ for v,cols in enumerate(lin['images']):
+  for d,col in zip(ambient[v],cols):
+   if any(col):assert homogeneous(col,G[v])==d
+ KG=[[homogeneous(col,ambient[v]) for col in part]
+     for v,part in enumerate(lin['kernels'])]
+ extra['homogeneous_kernel_vectors']+=sum(map(len,KG))
+ betti=[{} for _ in range(A.vertices)]
+ for (v,_),d in zip(lin['copies'],shifts):betti[v]=add(betti[v],mon((d,)))
+ cert.update({'module_coordinate_degrees':G,'cover_generator_shifts':shifts,
+              'projective_coordinate_degrees':ambient,'kernel_coordinate_degrees':KG,
+              'homogeneous_degree_zero_map':True})
+ return K,KG,betti,cert
+
+def all_sources(A,degree,last):
+ bettis=[[[{} for _ in range(A.vertices)] for _ in range(A.vertices)] for _ in range(last+1)]
+ certs=[]
+ for y in range(A.vertices):
+  M=sr.Module.simple(A.alg,y);G=[([0] if v==y else []) for v in range(A.vertices)];seq=[]
+  for n in range(last+1):
+   M,G,b,cert=graded_cover(A,M,G,degree,n);seq.append(cert)
+   for x,p in enumerate(b):bettis[n][x][y]=p
+  certs.append(seq)
+ return bettis,certs
+
+def check_identity(C,B,last):
+ E=[[{} for _ in row] for row in C]
+ trace={}
+ for n,Bn in enumerate(B):
+  product=matmul(C,Bn)
+  for i in range(len(C)):
+   for j in range(len(C)):E[i][j]=add(E[i][j],product[i][j],(-1)**n)
+  for x in range(len(C)):
+   for y in range(len(C)):
+    trace=add(trace,mul(diff(C[y][x]),Bn[x][y]),(-1)**n)
+ for i,row in enumerate(E):
+  for j,p in enumerate(row):
+   trunc={e:a for e,a in p.items() if e[0]<=last}
+   assert trunc==(one() if i==j else {})
+   extra['integer_Euler_cells']+=last+1
+ D=determinant(C);g=log_coeffs(D,last)
+ assert [trace.get((d,),0) for d in range(last+1)]==g
+ extra['log_trace_coefficients']+=last+1
+ return D,g
+
+# Reuse C116's frozen normal paths and initial ideal, not a new GB calculation.
+old=json.loads((root/'runs/2026-10-04/Global-Route-Audit-Evidence/result.json').read_text(encoding='utf-8'))
+data=old['groebner_deformation_bridge_false']
+words=[tuple(w) for w in data['normal_words']]
+leads=[tuple(w) for w,_ in data['rules']]
+letters={'a1':(1,0),'b1':(0,1),'a2':(2,1),'b2':(1,2)}
+end=lambda w:(letters[w[0]][0],letters[w[-1]][1])
+index={w:i+3 for i,w in enumerate(words)}
+bp={}
+for u in words:
+ for v in words:
+  w=u+v
+  if end(u)[1]!=end(v)[0]:continue
+  if any(w[i:i+len(lead)]==lead for lead in leads for i in range(len(w)-len(lead)+1)):continue
+  bp[index[u],index[v]]=index[w]
+B=Table(3,[(f'e{i}',i,i) for i in range(3)]+[(' '.join(w),*end(w)) for w in words],bp)
+weights={'a1':1,'b1':1,'a2':1,'b2':2}
+bdegrees=[0]*3+[sum(weights[a] for a in w) for w in words]
+Bb,Bcert=all_sources(B,bdegrees,6)
+BC=cartan(B,bdegrees);BD,Bg=check_identity(BC,Bb,6)
+assert BD=={(0,):1,(2,):-1,(3,):1}
+
+# Same ordinary path-length grading has determinant one despite true infinite pd.
+BC1=cartan(B,[0]*3+[len(w) for w in words])
+assert determinant(BC1)==one()
+matrix_multivar=[[{} for _ in range(3)] for _ in range(3)]
+for i in range(3):matrix_multivar[i][i]=one(4)
+for w in words:
+ l,r=end(w);d=tuple(w.count(a) for a in letters)
+ matrix_multivar[l][r]=add(matrix_multivar[l][r],mon(d))
+multiD=determinant(matrix_multivar,4)
+assert multiD=={(0,0,0,0):1,(0,0,1,1):1,(1,1,0,0):-1}
+
+# Frozen A14 actual resolutions: use already proved graded maps, do not rerun them.
+AB=[[[{} for _ in range(3)] for _ in range(3)] for _ in range(3)]
+for i in range(3):AB[0][i][i]=one()
+for x,y in [(1,0),(0,1),(2,1),(1,2)]:AB[1][x][y]=mon((1,))
+for i in [0,1]:AB[2][i][i]=mon((2,))
+AD,Ag=check_identity(BC1,AB,9)
+assert AD==one() and not any(Ag)
+
+# A genuine finite descending filtration on A14 has associated graded B14.
+# Reduction a1 b1 -> b2 a2 RAISES the chosen weight from 2 to 3.
+def normal_A(word):
+ word=tuple(word)
+ while True:
+  for lead,replacement in data['rules']:
+   lead=tuple(lead)
+   for i in range(len(word)-len(lead)+1):
+    if word[i:i+len(lead)]==lead:
+     if replacement is None:return None
+     word=word[:i]+tuple(replacement)+word[i+len(lead):]
+     break
+   else:continue
+   break
+  else:return word
+ap={}
+for u in words:
+ for v in words:
+  if end(u)[1]!=end(v)[0]:continue
+  out=normal_A(u+v)
+  if out is not None:ap[index[u],index[v]]=index[out]
+A14=Table(3,B.basis,ap)
+for i,j in product(range(14),repeat=2):
+ k=A14.mult(i,j)
+ if k is not None:
+  assert bdegrees[k]>=bdegrees[i]+bdegrees[j]
+ associated=k if k is not None and bdegrees[k]==bdegrees[i]+bdegrees[j] else None
+ assert associated==B.mult(i,j)
+ extra['filtered_A14_multiplication_pairs']+=1
+assert A14.mult(index[('a1',)],index[('b1',)])==index[('b2','a2')]
+assert A14.mult(index[('b1',)],index[('a1',)]) is None
+assert B.mult(index[('b2','a2')],index[('a1',)]) is None
+assert sum(weights[a] for a in ('a1','b1','a1'))==3
+assert sum(weights[a] for a in ('b2','a2','a1'))==4
+
+# Actual five-vertex cubic quantum complete-intersection cover; Loewy length 5.
+N=5
+qbasis=[(i,0,0) for i in range(N)]
+qbasis += [(i,a,b) for i in range(N) for a in range(3) for b in range(3) if a+b]
+qindex={v:i for i,v in enumerate(qbasis)}
+names=[(f'e{i}' if not a+b else f'x{a}y{b}e{i}',(i+a+b)%N,i) for i,a,b in qbasis]
+def qm(p,q):
+ j,u,v=qbasis[p];i,a,b=qbasis[q]
+ if j!=(i+a+b)%N or u+a>2 or v+b>2:return None
+ return qindex[i,u+a,v+b],(-1)**(v*a)
+for p,q,r in product(range(45),repeat=3):
+ pq,qr=qm(p,q),qm(q,r)
+ left=None if pq is None else qm(pq[0],r)
+ right=None if qr is None else qm(p,qr[0])
+ left=None if left is None else (left[0],left[1]*pq[1])
+ right=None if right is None else (right[0],right[1]*qr[1])
+ assert left==right
+ counts['associativity']+=1
+products_q=[]
+for p,q in product(range(N,45),repeat=2):
+ out=qm(p,q)
+ if out is not None:products_q.append({'left':names[p][0],'right':names[q][0],'value':{names[out[0]][0]:out[1]}})
+payload={'vertices':N,'base_vertex':0,'radical_basis':[{'name':s,'left':l,'right':r} for s,l,r in names[N:]],'radical_products':products_q}
+Q=SimpleNamespace(vertices=N,basis=names,alg=rk.Algebra(payload),payload=payload)
+qdegrees=[a+b for i,a,b in qbasis]
+for shift in range(N):
+ translate=lambda p:qindex[(qbasis[p][0]+shift)%N,qbasis[p][1],qbasis[p][2]]
+ for p,q in product(range(45),repeat=2):
+  out=qm(p,q);other=qm(translate(p),translate(q))
+  assert other==(None if out is None else (translate(out[0]),out[1]))
+  extra['translation_products']+=1
+M=sr.Module.simple(Q.alg,0);G=[[0],[],[],[],[]]
+QB=[];Qcert=[]
+for n in range(7):
+ M,G,b,cert=graded_cover(Q,M,G,qdegrees,n);Qcert.append(cert)
+ assert sum(sum(p.values()) for p in b)==n+1
+ # Translation is an actual graded algebra automorphism, not a graph argument.
+ Bn=[[{} for _ in range(N)] for _ in range(N)]
+ for y in range(N):
+  for x,p in enumerate(b):Bn[(x+y)%N][y]=p
+ QB.append(Bn)
+QC=cartan(Q,qdegrees);QD,Qg=check_identity(QC,QB,6)
+assert QD=={(0,):1,(5,):2,(10,):3,(15,):2,(20,):1}
+assert max(qdegrees)==4 and max(e[0] for e in QD)==20
+def window_examples(C,B,w,u):
+ witness=[]
+ for b in range(3):
+  upper=(b+1)*w+u-1
+  found=[(n,x,y) for n,Bn in enumerate(B) if b<n<=upper
+         for x in range(len(C)) for y in range(len(C))
+         if C[y][x] and Bn[x][y]]
+  assert found
+  witness.append({'after':b,'upper':upper,'bounded_actual_witness':list(found[0])})
+ return witness
+result={'status':'PASS','evidence_status':'bounded shared exact self-audit; not independent verification',
+ 'counts':counts,'additional_checks':extra,
+ 'B14':{'grading_weights':weights,'highest_internal_degree':6,
+        'weighted_Cartan_determinant':encoded(BD),
+        'multigraded_determinant_variables':list(letters),
+        'multigraded_Cartan_determinant':encoded(multiD),
+        'path_length_Cartan_determinant':encoded(determinant(BC1)),
+        'weighted_log_derivative_coefficients_through_6':Bg,
+        'graded_actual_minimal_cover_certificates':Bcert,
+        'window_examples':window_examples(BC,Bb,6,3),
+        'infinite_pd_certificate':'Frozen C116: Omega L1=M, Omega M=L1 direct_sum M; not inferred from determinant1'},
+ 'A14':{'Cartan_determinant':encoded(AD),'log_derivative_coefficients_through_9':Ag,
+        'simple_pds':[2,2,1],'finite_resolution_source':'C116 actual graded resolutions reused',
+        'descending_filtration_normal_path_weights':weights,
+        'associated_graded_is_B14':True,
+        'filtration_is_not_the_radical_power_filtration':'b2 has weight2 but is a radical top arrow',
+        'actual_bar_differential':'b(a1|b1|a1)=(b2 a2)|a1',
+        'nonzero_first_filtered_differential':'Tor3^B(R2,L1), weight3 -> Tor2^B(R2,L1), weight4',
+        'purity_hypothesis_failed':True},
+ 'quantum_cubic_5vertex':{'dimension':45,'algebra':payload,'grading_degrees':qdegrees,
+        'Loewy_length':5,'Cartan_determinant':encoded(QD),
+        'max_internal_degree':4,'determinant_degree':20,
+        'graded_actual_simple0_cover_certificates':Qcert,
+        'translation_automorphism_checked':True,
+        'log_derivative_coefficients_through_6':Qg,
+        'window_examples':window_examples(QC,QB,4,20),
+        'universal_persistence_proof':'Written nonconstant-Cartan ordinary theorem; finite prefix is only calibration'},
+ 'scope':'Actual graded minimal-cover maps, integer Euler coefficients and trace orientation. No ungraded/associated-graded comparison inferred.'}
+args.out.write_text(json.dumps(result,ensure_ascii=False,indent=2,default=str)+'\n',encoding='utf-8')
+print(json.dumps({'status':'PASS','counts':counts,'additional_checks':extra,
+ 'B14_determinant':encoded(BD),'Q45_determinant':encoded(QD),'out':str(args.out)},ensure_ascii=False))

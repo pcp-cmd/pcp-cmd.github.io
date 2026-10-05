@@ -1,0 +1,186 @@
+# §0 Mathematical verdict
+
+**Not solved.** Universal Gap A and the broader recurrence–visibility / corner–defect theory remain open, but dead-zone descent, five-vertex reduction, corner-to-ambient Tor comparison, and finite-length simple extraction now have verifier-accepted components; the central unresolved interface is Peirce compatibility under the extra structure of a vertex-minimal Gap-A failure.
+
+**Closed components.** A high minimal syzygy tail supported on an idempotent corner forces that corner to have infinite global dimension (`59a12876ab799b9e`), and the dead-zone Hom hypothesis implies this support condition (`5da47c5107901438`). Strong connectivity yields the strict size bound (`4ac1cd635b7cb0e8`), while corner Tor can be transferred and decomposed into ambient persistent simple-pair alternatives under explicit acyclicity hypotheses (`78ea06837fb5f0cb`, `7d0a95b907de372f`).
+
+**Viable proof architecture.** The live route is descent to a smaller recurrent corner, exact separation of direct lifting from comparison error, then defect recycling using minimal-counterexample dead-zone constraints and bilateral recurrence rather than generic Peirce multiplication.
+
+**Main blocker.** Persistent cross-Tor and nonzero cross pieces do not force their product to be nonzero: `6bd89784ef94bef3` gives a two-vertex counterexample with persistent cross-Tor but (gAfAg=0). Thus general idempotent algebra is insufficient; the missing theorem must use the structural conditions of a vertex-minimal Gap-A failure.
+
+**Highest-priority unresolved bridge.** Prove that, in a vertex-minimal Gap-A failure, every persistent simple pair arising from the corner-comparison error either occupies an ambient nonzero Peirce position or generates a strictly smaller secondary dead-zone recurrence to which the descent can be iterated.
+
+**Method failure vs. proposition failure.** The generic cross-Tor-to-product route is a method failure, verifier-confirmed by `6bd89784ef94bef3`; this does not establish proposition failure for universal Gap A.
+
+**Calibration caveat.** Do not read the verifier-accepted reduction package as a near-complete proof: Peirce compatibility is the load-bearing theorem and remains unmatched.
+
+| Dashboard item | State |
+|---|---|
+| Fixed goal | UNCHANGED — solve the Han problem and build a theory beyond it explaining recurrence, simple visibility, Peirce visibility, corner defects, defect recycling, and Hochschild visibility. |
+| Verified complete proof | NO |
+| Verified counterexample | NO counterexample to universal Gap A; YES counterexample to the generic cross-Tor multiplication shortcut (`6bd89784ef94bef3`). |
+| Signed-closed sub-tasks | Dead-zone tail descent; strict size bound; one-vertex infinite-(+) closure; corner Tor comparison under explicit hypotheses; persistent Tor-to-simple devissage. |
+| Main blocker | Peirce-compatible recovery from the three ambient simple-pair alternatives in `7d0a95b907de372f`. |
+| Routes marked false/obsolete | YES — generic persistent cross-Tor plus two cross pieces implies nonzero product is FALSE AS STATED. |
+| Highest-priority unresolved task | P0 — a minimal-counterexample defect-recycling theorem that survives `6bd89784ef94bef3`. |
+
+| Sub-task | Status | Closed facts | Conditional facts | Main missing interface |
+|---|---|---|---|---|
+| Recurrence to dead-zone corner | SUBSTANTIAL | `59a12876ab799b9e`, `5da47c5107901438`, `4ac1cd635b7cb0e8` | Requires the exact external one-way/syzygy-return premise | Freshly verify the premise with correct ordered sides. |
+| Five-vertex frontier | SUBSTANTIAL | `073459eead09a970`, `b8a38ee00b9da7b0` | Three-vertex closure remains a hypothesis | Close the two- and three-vertex cases in this graph. |
+| Corner witness to ambient Tor | SUBSTANTIAL | `78ea06837fb5f0cb`, `901a9f0f7822a9fe`, `7d0a95b907de372f` | Comparison acyclicity and short exact sequences must be realized for the actual dead-zone witness | Construct the canonical error sequences and match their composition factors. |
+| Persistent error to Peirce visibility | DANGEROUS | `cde27e1302bea231`, `403f2eb4df5719d0` | Generic multiplication recovery is refuted by `6bd89784ef94bef3` | Add minimality, dead-zone, bilateral, or iterated-descent structure. |
+| Unified recurrence–visibility theory | PARTIAL | Verified descent and defect-decomposition modules | No verifier-accepted defect-recycling theorem | Formulate a functorial iteration invariant and termination mechanism. |
+
+**Current best proof skeleton**
+
+1. Assume a vertex-minimal finite-dimensional bound-quiver algebra (A) has infinite global dimension and is not infinite ((+)).
+2. Use the exact one-way/syzygy-return theorem to obtain the Hom dead-zone condition.
+3. Apply `5da47c5107901438` to obtain an infinite-global-dimension corner Δ=fAf.
+4. Use `4ac1cd635b7cb0e8` to make Δ strictly smaller; for five vertices, `073459eead09a970` reduces to the three-vertex closure.
+5. By vertex minimality, obtain an infinite-(+) witness in Δ.
+6. Under the valid comparison acyclicity, transfer the witness via `78ea06837fb5f0cb` and decompose it using `7d0a95b907de372f`.
+7. If the extracted simple pair has the compatible ambient Peirce block, obtain an ambient infinite-(+) witness.
+8. Otherwise define its Peirce-zero displacement as a secondary defect and descend again.
+9. Prove that finite vertex count plus bilateral (A/A^{op}) recurrence prevents infinite strict defect descent or a periodic derangement cycle.
+10. Conclude that an ambient compatible witness must occur, contradicting failure of infinite ((+)).
+
+**Central missing lemma.** Let (A=kQ/I) be vertex-minimal among finite-dimensional basic algebras with infinite global dimension that are not infinite ((+)). Let (f) be a dead-zone idempotent obtained from an infinite-projective-dimension simple, and suppose an infinite-(+) witness in (fAf) enters the ambient comparison package and yields one of the persistent simple pairs of `7d0a95b907de372f`. Then either the pair has a nonzero compatible ambient Peirce block, or there is a new proper idempotent (f'Af') of infinite global dimension together with a persistent recurrence whose support is strictly smaller in a well-founded invariant. The lemma must exclude the generic counterexample `6bd89784ef94bef3` by using vertex minimality and the origin of (f) as a syzygy dead zone.
+
+# §1 Closed components and obsolete routes
+
+**Signed-closed components**
+
+- Minimal syzygy-tail support gives an infinite-global-dimension corner — `59a12876ab799b9e`.
+- The dead-zone Hom condition implies the needed support — `5da47c5107901438`.
+- Strong connectivity gives ∣dead zone∣≤v−2 — `4ac1cd635b7cb0e8`.
+- The five-vertex case reduces conditionally to the three-vertex closure — `073459eead09a970`.
+- The one-primitive-idempotent case is infinite ((+)) — `b8a38ee00b9da7b0`.
+- Persistent Tor descends to simple composition factors — `cde27e1302bea231`.
+- Corner Tor admits an explicit ambient comparison and error trichotomy under Tor-acyclic induction — `78ea06837fb5f0cb`, `901a9f0f7822a9fe`, `7d0a95b907de372f`.
+
+| Route | Status | Reason |
+|---|---|---|
+| Persistent cross-Tor plus (fAg\neq0\neq gAf) forces (gAfAg\neq0) | FALSE AS STATED | `6bd89784ef94bef3` has persistent cross-Tor and both cross pieces nonzero but zero product. |
+| Corner witness automatically lifts | FALSE AS STATED | The verified comparison needs explicit projectivity or Tor-acyclicity (`78ea06837fb5f0cb`). |
+| Total persistent Tor is already infinite ((+)) | FALSE AS STATED | `cde27e1302bea231` gives simples but no compatible Peirce block. |
+| Solve only the five-vertex classification | OBSOLETE | The objective is a universal defect-recycling mechanism; the five-vertex case is a test frontier, not the final theory. |
+
+# §2 Interface contract table
+
+### One-way recurrence to dead-zone descent — create the smaller singular core
+**Input required.** A left-module high-syzygy statement: persistent occurrence of a simple in (\Omega_A^n(S_x)) under Gap-A failure forces (e_xAe_i=0), with ordered variables verified.
+
+**Output claimed.** An infinite-global-dimension corner and strict size reduction.
+
+**Available facts.** `5da47c5107901438`; `4ac1cd635b7cb0e8`.
+
+**Missing verification on the actual model.** 1. Import the exact literature premise. 2. Match Hom/top/Tor conventions. 3. Match strong connectivity after reduction.
+
+**Failure mode if ignored.** A reversed Peirce block changes the dead zone and invalidates the descent.
+
+**Status.** SUBSTANTIAL
+
+### Dead-zone corner to corner witness — use minimality or low-vertex closure
+**Input required.** Vertex minimality for universal Gap A, or a verifier-accepted low-vertex theorem.
+
+**Output claimed.** An infinite-(+) witness inside the smaller corner.
+
+**Available facts.** `073459eead09a970`; `b8a38ee00b9da7b0`.
+
+**Missing verification on the actual model.** 1. Close two vertices. 2. Close three vertices. 3. State how vertex minimality applies to non-connected corners if needed.
+
+**Failure mode if ignored.** Infinite corner global dimension alone does not provide an infinite-(+) pair.
+
+**Status.** SUBSTANTIAL
+
+### Corner witness to ambient persistent simple pair — separate direct lift and error
+**Input required.** A corner witness (X,Y), the relevant Tor-acyclicity of induction, and canonical short exact comparison sequences.
+
+**Output claimed.** One of three ambient persistent simple-pair alternatives.
+
+**Available facts.** `78ea06837fb5f0cb`; `901a9f0f7822a9fe`; `7d0a95b907de372f`.
+
+**Missing verification on the actual model.** 1. Identify (X,Y,K,Q,L,P) for a dead-zone witness. 2. Verify Tor-acyclicity or retain its failure as an additional defect. 3. Track idempotent support through each composition factor.
+
+**Failure mode if ignored.** An abstract trichotomy with arbitrary sequences does not establish that the actual corner comparison satisfies its hypotheses.
+
+**Status.** SUBSTANTIAL
+
+### Persistent simple pair to Peirce visibility — recycle incompatibility
+**Input required.** A persistent simple pair from the actual comparison, its exact support provenance, vertex-minimality, and bilateral recurrence constraints.
+
+**Output claimed.** Either a compatible ambient witness or a strictly smaller secondary defect.
+
+**Available facts.** `403f2eb4df5719d0` tracks cross support; `6bd89784ef94bef3` refutes the generic product implication.
+
+**Missing verification on the actual model.** 1. Define a well-founded defect invariant. 2. Prove strict decrease in the incompatible branch. 3. Exclude cyclic derangement via (A^{op}). 4. Preserve persistent recurrence under iteration.
+
+**Failure mode if ignored.** The two-vertex counterexample shows that support and persistence can coexist with zero return product forever.
+
+**Status.** DANGEROUS
+
+# §3 Dangerous heuristic lines and strategies not to pursue
+
+**Dangerous heuristic lines**
+
+- “Persistent cross-Tor plus arrows both ways gives a Peirce return.” **Status: Mathematically incorrect as stated.** `6bd89784ef94bef3` explicitly refutes this. The replacement must exploit dead-zone origin and vertex minimality.
+- “Finite-length dévissage solves visibility.” **Status: Conflated with a stronger claim.** `cde27e1302bea231` selects a fixed simple pair but says nothing about the required Peirce block.
+- “The five-vertex reduction closes Gap A.” **Status: Conditional only.** `073459eead09a970` still assumes the three-vertex theorem and provides a corner witness, not ambient lifting.
+- “Tor-acyclic induction is automatic for a corner.” **Status: Not automatic.** `78ea06837fb5f0cb` states it as an explicit hypothesis.
+- “A repeated support state gives a nonzero path product.” **Status: Method shortcut, not a proof step.** Relations can kill the product even when each local cross piece is nonzero, as `6bd89784ef94bef3` illustrates.
+
+**Strategies not to pursue**
+
+- Do not prove a generic cross-Tor-to-product theorem: it is false by `6bd89784ef94bef3`.
+- Do not erase the provenance of the three alternatives in `7d0a95b907de372f`: their composition-factor locations are the only route to extra structure.
+- Do not stop at three- or five-vertex closure: extract the invariant that makes defect descent terminate.
+- Do not assume Tor-acyclic induction; prove it or promote its failure to a new persistent defect.
+- Do not use support graphs without relation-level multiplication or radical-filtration control.
+- Do not treat an internally supplied low-vertex theorem as verified until it enters this fact graph.
+
+# §4 Missing bridge lemmas
+
+### Bridge 1 — Well-founded defect recycling
+**Target statement.** In a vertex-minimal Gap-A failure, an incompatible persistent simple pair produced by the actual dead-zone comparison determines a secondary corner recurrence with a strictly smaller invariant, unless it already yields an ambient infinite-(+) witness.
+
+**Prerequisites.** `5da47c5107901438`, `7d0a95b907de372f`, exact idempotent support provenance, and the Gap-A one-way law.
+
+**Existing facts to use.** `403f2eb4df5719d0` tracks cross support; `6bd89784ef94bef3` specifies what generic hypotheses cannot suffice.
+
+**Missing checks.** 1. Choose the invariant: vertex support, ordered dead-zone pair, or radical-depth data. 2. Prove strict decrease. 3. Preserve infinite Tor recurrence. 4. handle the failure of Tor-acyclic induction.
+
+**Closure criterion.** The bridge closes only with a precise well-founded invariant and a proof that every incompatible branch decreases it; this is dependent on Bridge 2's actual comparison model.
+
+### Bridge 2 — Canonical dead-zone comparison package
+**Target statement.** For an infinite-(+) witness in a dead-zone corner (B=fAf), construct canonical finite-dimensional (A)-modules and exact sequences satisfying `7d0a95b907de372f`, or else produce a named persistent higher cross-Tor defect that can enter Bridge 1.
+
+**Prerequisites.** Correct module sides and explicit corner bimodules.
+
+**Existing facts to use.** `78ea06837fb5f0cb`, `901a9f0f7822a9fe`, `7d0a95b907de372f`.
+
+**Missing checks.** 1. Define (K,Q,L,P) functorially. 2. Verify finite-dimensionality. 3. Verify Tor-acyclicity or identify its failure. 4. Track simple supports.
+
+**Closure criterion.** A complete comparison diagram must feed every possible failure into a specific persistent defect, with no unlabelled error term. This bridge is independent and parallelizable.
+
+### Bridge 3 — Three-vertex infinite-(+) closure
+**Target statement.** Every finite-dimensional basic complex algebra with at most three primitive idempotents and infinite global dimension has infinite ((+)).
+
+**Prerequisites.** Exact CLMS witness criterion, correct left/right Tor conventions, and any Armenta concentration theorem with hypotheses checked.
+
+**Existing facts to use.** `b8a38ee00b9da7b0` closes one vertex; `073459eead09a970` shows the payoff for five vertices.
+
+**Missing checks.** 1. Close two vertices. 2. Close the genuine three-vertex multi-top case. 3. Audit Peirce directions.
+
+**Closure criterion.** The theorem must enter the fact graph without assuming its own conclusion or an unverified protected-corner shortcut. This bridge is independent and parallelizable.
+
+### Bridge 4 — Bilateral derangement exclusion
+**Target statement.** Under the vertex-minimal dead-zone hypotheses, a periodic sequence of incompatible comparison defects for (A) and (A^{op}) cannot recur without producing a compatible ambient simple Tor pair.
+
+**Prerequisites.** Opposite-invariance of infinite ((+)), one-way laws on both sides, and a relation-sensitive recurrence state.
+
+**Existing facts to use.** `6bd89784ef94bef3` is the required adversarial base case showing that unilateral cross data is insufficient.
+
+**Missing checks.** 1. Verify opposite-invariance in this graph. 2. Define the bilateral state. 3. prove recurrence implies a nonzero relation-level transfer or strict defect descent.
+
+**Closure criterion.** The proof must exclude the zero-product phenomenon of `6bd89784ef94bef3` using a genuinely bilateral or minimality-based argument. This bridge is dependent on Bridge 1 but independently attackable at the state-invariant level.

@@ -1,0 +1,1887 @@
+{
+  "status": "passed",
+  "arithmetic": "exact rational",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "independent_verification": false,
+  "dependencies": {
+    "toolbox/Imported-Outputs/return_kernel_certificate.py": "d4d22955c390c89af7a4ebf5b0f077e29a9543390ade831e38fe5364cd189b12",
+    "toolbox/Imported-Outputs/syzygy_return_certificate.py": "6e0970c8c9455a9a552821f88c41ae785fef0a4d6a33471f9e89b90f1ccc8c66",
+    "toolbox/Imported-Outputs/syzygy_system_certificate.py": "f3585fc834fca6bfca6e638900c43d3db1635206d0b182ef6c8997081488139a",
+    "toolbox/Imported-Outputs/yoneda_generation_certificate.py": "3a9e9742dd9647f78aa60071b0398eb91180db716c203f8750ced74e17aba7b8"
+  },
+  "counts": {
+    "full_basis_associativity": 24472,
+    "cover_steps": 79,
+    "actual_module_isomorphisms": 17,
+    "module_action_certificates": 10,
+    "ideal_closure_checks": 1276,
+    "quotient_products": 484
+  },
+  "dimensions": {
+    "B": 14,
+    "A": 22,
+    "C": 6,
+    "ideal": 16
+  },
+  "physical_quotient_killed_basis": [
+    "h33_0",
+    "h13_2",
+    "h22_1",
+    "h23_1",
+    "h23_2",
+    "h31_0",
+    "h32_0",
+    "h32_1",
+    "h33_1",
+    "h33_2",
+    "v_h33_0",
+    "v_h31_0",
+    "v_h32_0",
+    "v_h32_1",
+    "v_h33_1",
+    "v_h33_2"
+  ],
+  "retained_original_vertex_indices": [
+    0,
+    1,
+    3
+  ],
+  "base_finite_simple_certificates": [
+    {
+      "simple": 0,
+      "pd": 2,
+      "Betti_prefix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "terminal_projective_isomorphism": {
+        "label": "last syzygy of vertex 0 is actual P0",
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    },
+    {
+      "simple": 1,
+      "pd": 2,
+      "Betti_prefix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "terminal_projective_isomorphism": {
+        "label": "last syzygy of vertex 1 is actual P1",
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    },
+    {
+      "simple": 2,
+      "pd": 1,
+      "Betti_prefix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "terminal_projective_isomorphism": {
+        "label": "last syzygy of vertex 2 is actual P1",
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    }
+  ],
+  "A_finite_left_simple_certificates": [
+    {
+      "simple": 0,
+      "pd": 2,
+      "Betti_prefix": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "terminal_projective_isomorphism": {
+        "label": "last syzygy of vertex 0 is actual P0",
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    },
+    {
+      "simple": 1,
+      "pd": 2,
+      "Betti_prefix": [
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "terminal_projective_isomorphism": {
+        "label": "last syzygy of vertex 1 is actual P1",
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    }
+  ],
+  "A_finite_right_simple_certificates": [
+    {
+      "simple": 0,
+      "pd": 2,
+      "Betti_prefix": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "terminal_projective_isomorphism": {
+        "label": "last syzygy of vertex 0 is actual P0",
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          []
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          []
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    },
+    {
+      "simple": 1,
+      "pd": 2,
+      "Betti_prefix": [
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "terminal_projective_isomorphism": {
+        "label": "last syzygy of vertex 1 is actual P1",
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          []
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          []
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    },
+    {
+      "simple": 2,
+      "pd": 1,
+      "Betti_prefix": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "terminal_projective_isomorphism": {
+        "label": "last syzygy of vertex 2 is actual P1",
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          []
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          []
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    }
+  ],
+  "actual_infinite_module_certificates": [
+    {
+      "label": "Omega_A L3 = A e2 direct sum Lv",
+      "forward": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ]
+        ]
+      ],
+      "inverse": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ]
+        ]
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    },
+    {
+      "label": "Omega_A Lv = Lv",
+      "forward": [
+        [],
+        [],
+        [],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "inverse": [
+        [],
+        [],
+        [],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    },
+    {
+      "label": "Omega_right Rv = e3 A direct sum Rv",
+      "forward": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "inverse": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    }
+  ],
+  "quotient_simple_syzygy_isomorphisms": [
+    {
+      "label": "left quotient Omega L0 = L1",
+      "forward": [
+        [],
+        [
+          [
+            "1"
+          ]
+        ],
+        []
+      ],
+      "inverse": [
+        [],
+        [
+          [
+            "1"
+          ]
+        ],
+        []
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    },
+    {
+      "label": "left quotient Omega L1 = L0",
+      "forward": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [],
+        []
+      ],
+      "inverse": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [],
+        []
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    },
+    {
+      "label": "left quotient Omega L2 = L2",
+      "forward": [
+        [],
+        [],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "inverse": [
+        [],
+        [],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    },
+    {
+      "label": "right quotient Omega L0 = L1",
+      "forward": [
+        [],
+        [
+          [
+            "1"
+          ]
+        ],
+        []
+      ],
+      "inverse": [
+        [],
+        [
+          [
+            "1"
+          ]
+        ],
+        []
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    },
+    {
+      "label": "right quotient Omega L1 = L0",
+      "forward": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [],
+        []
+      ],
+      "inverse": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [],
+        []
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    },
+    {
+      "label": "right quotient Omega L2 = L2",
+      "forward": [
+        [],
+        [],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "inverse": [
+        [],
+        [],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    }
+  ],
+  "A_left_Betti_through_degree_6": {
+    "0": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "1": [
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "2": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "3": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "A_right_Betti_through_degree_6": {
+    "0": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "1": [
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "2": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "3": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ]
+    ]
+  },
+  "all_degree_conclusions_from_actual_module_identities": {
+    "A_infinite_left_simples": [
+      2,
+      3
+    ],
+    "A_infinite_right_simples": [
+      3
+    ],
+    "C_infinite_left_simples_original_labels": [
+      0,
+      1,
+      3
+    ],
+    "C_infinite_right_simples_original_labels": [
+      0,
+      1,
+      3
+    ],
+    "deleted_simple_has_infinite_left_pd": true,
+    "left_infinite_count": [
+      2,
+      3
+    ],
+    "right_infinite_count": [
+      1,
+      3
+    ],
+    "already_infinite_plus": true,
+    "ordinary_supported_pair": {
+      "right": 3,
+      "left": 3,
+      "Tor_dimension_every_degree": 1
+    },
+    "not_a_Gap_A_counterexample": true,
+    "global_return_or_badness_count_descent_not_refuted": true
+  },
+  "algebra_payloads": {
+    "B": {
+      "vertices": 3,
+      "base_vertex": 0,
+      "radical_basis": [
+        {
+          "name": "h12_1",
+          "left": 0,
+          "right": 1
+        },
+        {
+          "name": "h13_2",
+          "left": 0,
+          "right": 2
+        },
+        {
+          "name": "h21_0",
+          "left": 1,
+          "right": 0
+        },
+        {
+          "name": "h22_1",
+          "left": 1,
+          "right": 1
+        },
+        {
+          "name": "h23_1",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "name": "h23_2",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "name": "h31_0",
+          "left": 2,
+          "right": 0
+        },
+        {
+          "name": "h32_0",
+          "left": 2,
+          "right": 1
+        },
+        {
+          "name": "h32_1",
+          "left": 2,
+          "right": 1
+        },
+        {
+          "name": "h33_1",
+          "left": 2,
+          "right": 2
+        },
+        {
+          "name": "h33_2",
+          "left": 2,
+          "right": 2
+        }
+      ],
+      "radical_products": [
+        {
+          "left": "h12_1",
+          "right": "h23_1",
+          "value": {
+            "h13_2": 1
+          }
+        },
+        {
+          "left": "h21_0",
+          "right": "h12_1",
+          "value": {
+            "h22_1": 1
+          }
+        },
+        {
+          "left": "h21_0",
+          "right": "h13_2",
+          "value": {
+            "h23_2": 1
+          }
+        },
+        {
+          "left": "h22_1",
+          "right": "h23_1",
+          "value": {
+            "h23_2": 1
+          }
+        },
+        {
+          "left": "h23_1",
+          "right": "h32_0",
+          "value": {
+            "h22_1": 1
+          }
+        },
+        {
+          "left": "h23_1",
+          "right": "h33_1",
+          "value": {
+            "h23_2": 1
+          }
+        },
+        {
+          "left": "h31_0",
+          "right": "h12_1",
+          "value": {
+            "h32_1": 1
+          }
+        },
+        {
+          "left": "h31_0",
+          "right": "h13_2",
+          "value": {
+            "h33_2": 1
+          }
+        },
+        {
+          "left": "h32_0",
+          "right": "h21_0",
+          "value": {
+            "h31_0": 1
+          }
+        },
+        {
+          "left": "h32_0",
+          "right": "h22_1",
+          "value": {
+            "h32_1": 1
+          }
+        },
+        {
+          "left": "h32_0",
+          "right": "h23_1",
+          "value": {
+            "h33_1": 1
+          }
+        },
+        {
+          "left": "h32_0",
+          "right": "h23_2",
+          "value": {
+            "h33_2": 1
+          }
+        },
+        {
+          "left": "h32_1",
+          "right": "h23_1",
+          "value": {
+            "h33_2": 1
+          }
+        },
+        {
+          "left": "h33_1",
+          "right": "h32_0",
+          "value": {
+            "h32_1": 1
+          }
+        },
+        {
+          "left": "h33_1",
+          "right": "h33_1",
+          "value": {
+            "h33_2": 1
+          }
+        }
+      ]
+    },
+    "A": {
+      "vertices": 4,
+      "base_vertex": 0,
+      "radical_basis": [
+        {
+          "name": "h12_1",
+          "left": 0,
+          "right": 1
+        },
+        {
+          "name": "h13_2",
+          "left": 0,
+          "right": 2
+        },
+        {
+          "name": "h21_0",
+          "left": 1,
+          "right": 0
+        },
+        {
+          "name": "h22_1",
+          "left": 1,
+          "right": 1
+        },
+        {
+          "name": "h23_1",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "name": "h23_2",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "name": "h31_0",
+          "left": 2,
+          "right": 0
+        },
+        {
+          "name": "h32_0",
+          "left": 2,
+          "right": 1
+        },
+        {
+          "name": "h32_1",
+          "left": 2,
+          "right": 1
+        },
+        {
+          "name": "h33_1",
+          "left": 2,
+          "right": 2
+        },
+        {
+          "name": "h33_2",
+          "left": 2,
+          "right": 2
+        },
+        {
+          "name": "tv",
+          "left": 3,
+          "right": 3
+        },
+        {
+          "name": "v_h33_0",
+          "left": 3,
+          "right": 2
+        },
+        {
+          "name": "v_h31_0",
+          "left": 3,
+          "right": 0
+        },
+        {
+          "name": "v_h32_0",
+          "left": 3,
+          "right": 1
+        },
+        {
+          "name": "v_h32_1",
+          "left": 3,
+          "right": 1
+        },
+        {
+          "name": "v_h33_1",
+          "left": 3,
+          "right": 2
+        },
+        {
+          "name": "v_h33_2",
+          "left": 3,
+          "right": 2
+        }
+      ],
+      "radical_products": [
+        {
+          "left": "h12_1",
+          "right": "h23_1",
+          "value": {
+            "h13_2": 1
+          }
+        },
+        {
+          "left": "h21_0",
+          "right": "h12_1",
+          "value": {
+            "h22_1": 1
+          }
+        },
+        {
+          "left": "h21_0",
+          "right": "h13_2",
+          "value": {
+            "h23_2": 1
+          }
+        },
+        {
+          "left": "h22_1",
+          "right": "h23_1",
+          "value": {
+            "h23_2": 1
+          }
+        },
+        {
+          "left": "h23_1",
+          "right": "h32_0",
+          "value": {
+            "h22_1": 1
+          }
+        },
+        {
+          "left": "h23_1",
+          "right": "h33_1",
+          "value": {
+            "h23_2": 1
+          }
+        },
+        {
+          "left": "h31_0",
+          "right": "h12_1",
+          "value": {
+            "h32_1": 1
+          }
+        },
+        {
+          "left": "h31_0",
+          "right": "h13_2",
+          "value": {
+            "h33_2": 1
+          }
+        },
+        {
+          "left": "h32_0",
+          "right": "h21_0",
+          "value": {
+            "h31_0": 1
+          }
+        },
+        {
+          "left": "h32_0",
+          "right": "h22_1",
+          "value": {
+            "h32_1": 1
+          }
+        },
+        {
+          "left": "h32_0",
+          "right": "h23_1",
+          "value": {
+            "h33_1": 1
+          }
+        },
+        {
+          "left": "h32_0",
+          "right": "h23_2",
+          "value": {
+            "h33_2": 1
+          }
+        },
+        {
+          "left": "h32_1",
+          "right": "h23_1",
+          "value": {
+            "h33_2": 1
+          }
+        },
+        {
+          "left": "h33_1",
+          "right": "h32_0",
+          "value": {
+            "h32_1": 1
+          }
+        },
+        {
+          "left": "h33_1",
+          "right": "h33_1",
+          "value": {
+            "h33_2": 1
+          }
+        },
+        {
+          "left": "v_h33_0",
+          "right": "h31_0",
+          "value": {
+            "v_h31_0": 1
+          }
+        },
+        {
+          "left": "v_h33_0",
+          "right": "h32_0",
+          "value": {
+            "v_h32_0": 1
+          }
+        },
+        {
+          "left": "v_h33_0",
+          "right": "h32_1",
+          "value": {
+            "v_h32_1": 1
+          }
+        },
+        {
+          "left": "v_h33_0",
+          "right": "h33_1",
+          "value": {
+            "v_h33_1": 1
+          }
+        },
+        {
+          "left": "v_h33_0",
+          "right": "h33_2",
+          "value": {
+            "v_h33_2": 1
+          }
+        },
+        {
+          "left": "v_h31_0",
+          "right": "h12_1",
+          "value": {
+            "v_h32_1": 1
+          }
+        },
+        {
+          "left": "v_h31_0",
+          "right": "h13_2",
+          "value": {
+            "v_h33_2": 1
+          }
+        },
+        {
+          "left": "v_h32_0",
+          "right": "h21_0",
+          "value": {
+            "v_h31_0": 1
+          }
+        },
+        {
+          "left": "v_h32_0",
+          "right": "h22_1",
+          "value": {
+            "v_h32_1": 1
+          }
+        },
+        {
+          "left": "v_h32_0",
+          "right": "h23_1",
+          "value": {
+            "v_h33_1": 1
+          }
+        },
+        {
+          "left": "v_h32_0",
+          "right": "h23_2",
+          "value": {
+            "v_h33_2": 1
+          }
+        },
+        {
+          "left": "v_h32_1",
+          "right": "h23_1",
+          "value": {
+            "v_h33_2": 1
+          }
+        },
+        {
+          "left": "v_h33_1",
+          "right": "h32_0",
+          "value": {
+            "v_h32_1": 1
+          }
+        },
+        {
+          "left": "v_h33_1",
+          "right": "h33_1",
+          "value": {
+            "v_h33_2": 1
+          }
+        }
+      ]
+    },
+    "C": {
+      "vertices": 3,
+      "base_vertex": 0,
+      "radical_basis": [
+        {
+          "name": "h12_1",
+          "left": 0,
+          "right": 1
+        },
+        {
+          "name": "h21_0",
+          "left": 1,
+          "right": 0
+        },
+        {
+          "name": "tv",
+          "left": 2,
+          "right": 2
+        }
+      ],
+      "radical_products": []
+    }
+  },
+  "scope": "Finite Q arithmetic and actual module isomorphisms; all-field proofs in the Run."
+}

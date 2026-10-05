@@ -1,0 +1,2223 @@
+# Universal Gap A — Universal Layer U5
+## Run B — Yoneda Transport / Tail-Action Algebra
+
+**Role:** Run B — Independent Algebraic-Action Route  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Completion label:** `B1_CONDITIONAL_YONEDA_TRANSPORT + B2_REFUTED_IN_GENERAL + B3_ACTUAL_COUNTERMODEL + FRONTIER_COMPRESSION`  
+**Global U5:** OPEN  
+**Field for the main formulas/countermodel:** split-basic finite-dimensional algebra over an algebraically closed field \(k\)
+
+This file freezes the actual research trajectory of the U5 Run B window.
+
+It does **not** claim:
+
+- that a nonzero Yoneda class acts nontrivially on the high-degree tail;
+- that Peirce visibility produces a Yoneda transport class;
+- that finite generation of a carrier Ext algebra implies Noetherianity or ACC on the required ideals;
+- that annihilator growth must continue indefinitely;
+- that a raw Ext-quiver path is a tail-active transport path;
+- that the actual local countermodel below is a Universal Gap-A counterexample.
+
+The principal result is a representation correction:
+
+\[
+\boxed{
+\text{raw Yoneda category}
+\quad\rightsquigarrow\quad
+\text{tail-action quotient category}.
+}
+\]
+
+The U5 transport problem is controlled by the action of Ext classes on the actual Ext tail, not by their mere existence.
+
+---
+
+# 1. Frozen U5 problem
+
+Fix a left simple source
+
+\[
+L_z
+\]
+
+and detector vertices \(i,j\) such that
+
+\[
+\operatorname{Tor}^D_n(R_i,L_z)\neq0
+\]
+
+for arbitrarily high \(n\), while
+
+\[
+e_zDe_j\neq0,
+\qquad
+j\neq i.
+\]
+
+The target is to force
+
+\[
+\operatorname{Tor}^D_n(R_j,L_z)\neq0
+\]
+
+in arbitrarily high degree, or obtain a strict descent.
+
+This run does not modify \(L_z\).
+
+It studies only detector-side algebraic transport.
+
+---
+
+# 2. Vault / MRS method mapping
+
+The required methods were explicitly mapped as follows.
+
+## 2.1 Dualization
+
+The Tor tail
+
+\[
+\operatorname{Tor}^D_n(R_v,L_z)
+\]
+
+is converted to the Ext tail
+
+\[
+\operatorname{Ext}^n_D(L_z,L_v^\vee),
+\]
+
+where
+
+\[
+L_v^\vee=D_kR_v.
+\]
+
+In the split-basic algebraically closed case this is simply \(L_v\).
+
+This is the first representation change.
+
+---
+
+## 2.2 Representation change
+
+Replace the family of predicates
+
+\[
+\operatorname{Tor}^{\infty}(R_v,L_z)
+\]
+
+by the vertex components of one graded Yoneda module
+
+\[
+M_z=\operatorname{Ext}^*_D(L_z,S),
+\qquad
+S=\bigoplus_vL_v.
+\]
+
+Then replace the raw Yoneda algebra by its quotient by the classes that act trivially on the tail.
+
+---
+
+## 2.3 Set problem \(\to\) function / action / ideal problem
+
+The sets
+
+\[
+\{v:\operatorname{Tor}^{\infty}(R_v,L_z)\}
+\]
+
+and
+
+\[
+\{v:e_zDe_v\neq0\}
+\]
+
+become the indicator functions
+
+\[
+\tau_z(v)
+\]
+
+and
+
+\[
+p_z(v).
+\]
+
+Transport is encoded by actual linear operators
+
+\[
+T_\eta
+\]
+
+on the high-degree Ext tail.
+
+Failure is encoded by the ideal
+
+\[
+\operatorname{Ann}^{\rm tail}(M_z).
+\]
+
+---
+
+## 2.4 Multiplicative projection
+
+For a Yoneda class
+
+\[
+\eta\in\operatorname{Ext}^m_D(L_u,L_v),
+\]
+
+postcomposition defines
+
+\[
+T_\eta:
+\operatorname{Ext}^n_D(L_z,L_u)
+\to
+\operatorname{Ext}^{n+m}_D(L_z,L_v).
+\]
+
+The high-degree germ of this map is the actual multiplicative projection used in U5.
+
+---
+
+## 2.5 Quotient
+
+The correct quotient is
+
+\[
+\boxed{
+E^{\rm act}_{\mathcal C,z}
+=
+E_{\mathcal C}/
+\operatorname{Ann}^{\rm tail}_{E_{\mathcal C}}(M_z).
+}
+\]
+
+Raw Ext classes that are invisible to the tail are zero in this quotient.
+
+---
+
+## 2.6 Bootstrap
+
+Bootstrap is allowed only along **tail-active** Yoneda products.
+
+If
+
+\[
+T_{\eta_1},\ldots,T_{\eta_r}
+\]
+
+compose to a nonzero tail operator, tail support propagates along the corresponding vertex sequence.
+
+Raw graph reachability is not enough.
+
+---
+
+## 2.7 Infinite descent
+
+A proposed descent parameter was the tail annihilator ideal.
+
+The run shows that failure can enlarge the annihilator once and then stabilize permanently.
+
+Therefore there is no general well-founded descent from annihilator growth alone.
+
+---
+
+## 2.8 Double counting
+
+Raw carrier counts are replaced by ranks/nonvanishing of the tail operators.
+
+The actual countermodel has one raw \(i\to j\) Yoneda class but zero active \(i\to j\) tail transport.
+
+Thus unweighted Hall/matching counts overestimate screening resources.
+
+---
+
+## 2.9 Local to global
+
+If one tail-active class transports from \(i\) to \(j\), the target simple \(L_j\) has an unbounded Ext/Tor tail.
+
+Repeated tail-active products propagate the support globally through the active carrier category.
+
+---
+
+## 2.10 Extreme example / counterexample
+
+The run uses:
+
+- root-of-unity quantum exterior;
+- infinite-order quantum-exterior moduli drift;
+- connected two-vertex triangular moduli carrier;
+- the U4 detector-blind singular map;
+- a new 10-dimensional actual Koszul countermodel built specifically for U5.
+
+---
+
+# 3. Tor–Ext duality: exact orientation
+
+Let \(R\) be a finite-dimensional right \(D\)-module and \(L\) a finite-dimensional left \(D\)-module.
+
+Take a finite-dimensional projective resolution
+
+\[
+P_\bullet\to L.
+\]
+
+For each \(n\) there is a natural vector-space isomorphism
+
+\[
+\boxed{
+D_k(R\otimes_DP_n)
+\cong
+\operatorname{Hom}_D(P_n,D_kR),
+}
+\tag{3.1}
+\]
+
+given by
+
+\[
+\Phi(\lambda)(p)(r)
+=
+\lambda(r\otimes p).
+\]
+
+Because all chain spaces are finite-dimensional,
+
+\[
+D_kH_n(C_\bullet)
+\cong
+H^n(D_kC_\bullet).
+\]
+
+Therefore
+
+\[
+\boxed{
+D_k\operatorname{Tor}^D_n(R,L)
+\cong
+\operatorname{Ext}^n_D(L,D_kR).
+}
+\tag{3.2}
+\]
+
+This is the canonical formula.
+
+---
+
+# 4. Split-basic / algebraically closed specialization
+
+Let
+
+\[
+R_i
+\]
+
+be the right simple at primitive vertex \(i\).
+
+If \(D\) is split-basic over an algebraically closed field, then
+
+\[
+D_kR_i\cong L_i.
+\]
+
+Hence:
+
+\[
+\boxed{
+D_k\operatorname{Tor}^D_n(R_i,L_z)
+\cong
+\operatorname{Ext}^n_D(L_z,L_i).
+}
+\tag{4.1}
+\]
+
+Thus:
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,L_z)\neq0
+\iff
+\operatorname{Ext}^n_D(L_z,L_i)\neq0.
+}
+\tag{4.2}
+\]
+
+This is the orientation used throughout the actual U5 countermodel.
+
+---
+
+# 5. General division-ring correction
+
+Over a non-split field the canonical target is
+
+\[
+\boxed{
+L_i^\vee:=D_kR_i.
+}
+\]
+
+It is the left simple in the same simple block as \(i\), but identifying it with a preselected \(L_i\) is not canonical.
+
+Thus the invariant statement is:
+
+\[
+\boxed{
+D_k\operatorname{Tor}^D_n(R_i,L_z)
+\cong
+\operatorname{Ext}^n_D(L_z,L_i^\vee).
+}
+\]
+
+If one tracks multiplicities over the division ring
+
+\[
+\Delta_i=\operatorname{End}_D(L_i),
+\]
+
+the corresponding left/right \(\Delta_i\)-module structures must be retained.
+
+The naive formula
+
+\[
+D\Tor=\Ext(-,L_i)
+\]
+
+without this identification is therefore not used in the non-split case.
+
+---
+
+# 6. Yoneda action algebra
+
+Set
+
+\[
+S=\bigoplus_vL_v
+\]
+
+and
+
+\[
+\boxed{
+E=\operatorname{Ext}^*_D(S,S).
+}
+\]
+
+Fix source \(z\):
+
+\[
+\boxed{
+M_z=
+\operatorname{Ext}^*_D(L_z,S).
+}
+\]
+
+We use the convention:
+
+for
+
+\[
+x\in\operatorname{Ext}^n_D(L_z,L_i)
+\]
+
+and
+
+\[
+\eta\in\operatorname{Ext}^m_D(L_i,L_j),
+\]
+
+define
+
+\[
+\boxed{
+x\cdot\eta
+:=
+\eta\circ x
+\in
+\operatorname{Ext}^{n+m}_D(L_z,L_j).
+}
+\tag{6.1}
+\]
+
+With this convention \(M_z\) is a graded right module over the Yoneda category/algebra.
+
+The vertex component is
+
+\[
+\boxed{
+M_ze_v
+=
+\operatorname{Ext}^*_D(L_z,L_v).
+}
+\]
+
+---
+
+# 7. Orientation from actual projective resolutions
+
+A transport class must come from actual homological data.
+
+Let
+
+\[
+\phi:\Omega^mL_i\to L_j
+\]
+
+be a stable morphism.
+
+Dimension shifting gives
+
+\[
+\boxed{
+[\phi]
+\longleftrightarrow
+\eta_\phi
+\in
+\operatorname{Ext}^m_D(L_i,L_j).
+}
+\tag{7.1}
+\]
+
+For \(m=1\), start from
+
+\[
+0\to\Omega L_i\to P_i\to L_i\to0
+\]
+
+and push out along
+
+\[
+\Omega L_i\to L_j.
+\]
+
+This gives
+
+\[
+0\to L_j\to E_\phi\to L_i\to0,
+\]
+
+so the class has orientation
+
+\[
+\boxed{
+L_i\rightsquigarrow L_j.
+}
+\]
+
+Postcomposition with this extension is exactly the operator in (6.1).
+
+Thus arrows/Peirce paths are not used to guess the Yoneda orientation.
+
+---
+
+# 8. Tail germs
+
+For a locally finite graded vector space
+
+\[
+V=\bigoplus_{n\ge0}V_n,
+\]
+
+two graded maps of fixed degree are considered tail-equivalent if they agree in all sufficiently high degrees.
+
+Equivalently one may work in the Serre quotient of locally finite graded vector spaces by those supported in only finitely many degrees.
+
+Write
+
+\[
+\overline V
+\]
+
+for the tail germ.
+
+Then:
+
+\[
+\boxed{
+\overline{M_ze_v}\neq0
+\iff
+\operatorname{Ext}^n_D(L_z,L_v)\neq0
+\text{ arbitrarily high}.
+}
+\tag{8.1}
+\]
+
+By Tor–Ext duality this is exactly
+
+\[
+\operatorname{Tor}^{\infty}(R_v,L_z).
+\]
+
+---
+
+# 9. Tail operators
+
+For a homogeneous Yoneda class
+
+\[
+\eta\in\operatorname{Ext}^m_D(L_u,L_v),
+\]
+
+postcomposition induces
+
+\[
+T_\eta:
+\overline{M_ze_u}
+\to
+\overline{M_ze_v}[m].
+\]
+
+Explicitly,
+
+\[
+T_\eta([x])=[x\cdot\eta].
+\]
+
+The operator is nonzero exactly when multiplication by \(\eta\) is nonzero in arbitrarily high degrees.
+
+This is the algebraic transport datum that raw \(E\) does not remember by itself.
+
+---
+
+# 10. B1 — Yoneda Tail Transport Lemma
+
+## Theorem
+
+Assume
+
+\[
+\overline{M_ze_i}\neq0
+\]
+
+and let
+
+\[
+\eta\in\operatorname{Ext}^m_D(L_i,L_j).
+\]
+
+If
+
+\[
+\boxed{
+T_\eta\neq0,
+}
+\]
+
+then
+
+\[
+\boxed{
+\overline{M_ze_j}\neq0.
+}
+\]
+
+Equivalently:
+
+\[
+\boxed{
+\operatorname{Tor}^{\infty}(R_i,L_z)
++
+T_\eta\neq0
+\Longrightarrow
+\operatorname{Tor}^{\infty}(R_j,L_z).
+}
+\tag{10.1}
+\]
+
+If in addition
+
+\[
+e_zDe_j\neq0,
+\]
+
+then \((R_j,L_z)\) is a Peirce-visible persistent pair.
+
+### Proof
+
+A nonzero tail map has nonzero image in arbitrarily high total degrees.
+
+Its image lies in the \(j\)-component
+
+\[
+\overline{M_ze_j}.
+\]
+
+Then use Tor–Ext duality.
+
+\(\square\)
+
+This proves B1 only under the **tail-active action hypothesis**.
+
+The existence of a nonzero raw Yoneda class is not enough.
+
+---
+
+# 11. Tail annihilator
+
+Let
+
+\[
+E_{\mathcal C}\subseteq E
+\]
+
+be any directed carrier subcategory/algebra generated by actual transport classes.
+
+Define
+
+\[
+\boxed{
+\operatorname{Ann}^{\rm tail}_{E_{\mathcal C}}(M_z)
+=
+\{
+\eta\in E_{\mathcal C}^{\rm hom}:
+T_\eta=0
+\}.
+}
+\tag{11.1}
+\]
+
+Equivalently:
+
+\[
+\eta\in\operatorname{Ann}^{\rm tail}
+\]
+
+if there exists \(N\) such that
+
+\[
+(M_z^ne_{\mathrm{src}\eta})\eta=0
+\qquad(n\ge N).
+\]
+
+---
+
+# 12. Tail annihilator is a two-sided graded ideal
+
+Let
+
+\[
+\eta\in\operatorname{Ann}^{\rm tail}
+\]
+
+and let \(a,b\) be fixed-degree composable classes in \(E_{\mathcal C}\).
+
+For sufficiently high \(x\),
+
+\[
+(xa)\eta=0,
+\]
+
+because
+
+\[
+\deg(xa)=\deg x+\deg a
+\]
+
+is again sufficiently high.
+
+Therefore
+
+\[
+x(a\eta b)=((xa)\eta)b=0.
+\]
+
+Likewise
+
+\[
+x(\eta a)=(x\eta)a=0.
+\]
+
+Hence:
+
+\[
+\boxed{
+\operatorname{Ann}^{\rm tail}_{E_{\mathcal C}}(M_z)
+\triangleleft
+E_{\mathcal C}
+}
+\tag{12.1}
+\]
+
+is a two-sided graded ideal.
+
+---
+
+# 13. Tail-action quotient
+
+Define
+
+\[
+\boxed{
+E^{\rm act}_{\mathcal C,z}
+=
+E_{\mathcal C}/
+\operatorname{Ann}^{\rm tail}_{E_{\mathcal C}}(M_z).
+}
+\tag{13.1}
+\]
+
+This is the correct U5 standard form.
+
+A class survives in
+
+\[
+E^{\rm act}_{\mathcal C,z}
+\]
+
+exactly when it acts nontrivially somewhere on the high-degree \(z\)-tail.
+
+Thus the carrier question becomes:
+
+\[
+\boxed{
+\text{does the tail-action quotient contain a nonzero morphism/product from }i
+\text{ to a visible }j?
+}
+\tag{13.2}
+\]
+
+If yes, B1 transfers the tail.
+
+If no, raw carrier geometry has been annihilated.
+
+---
+
+# 14. Functionification
+
+Define
+
+\[
+\boxed{
+\tau_z(v)
+=
+\mathbf 1_{
+\{
+\overline{M_ze_v}\neq0
+\}
+}
+}
+\tag{14.1}
+\]
+
+and
+
+\[
+\boxed{
+p_z(v)
+=
+\mathbf 1_{\{e_zDe_v\neq0\}}.
+}
+\tag{14.2}
+\]
+
+Then the Gap-A witness condition for the fixed source \(z\) is:
+
+\[
+\boxed{
+\exists v:
+\tau_z(v)p_z(v)=1.
+}
+\tag{14.3}
+\]
+
+The hypothetical failure condition is:
+
+\[
+\boxed{
+\tau_zp_z\equiv0.
+}
+\tag{14.4}
+\]
+
+---
+
+# 15. Active transport relation
+
+For fixed \(z\), define
+
+\[
+u\leadsto_z v
+\]
+
+if there is a homogeneous class
+
+\[
+\eta\in\operatorname{Ext}^*_D(L_u,L_v)
+\]
+
+whose image in
+
+\[
+E^{\rm act}_{\mathcal C,z}
+\]
+
+is nonzero.
+
+Then:
+
+\[
+\boxed{
+\tau_z(u)=1
+\text{ and }
+u\leadsto_zv
+\Longrightarrow
+\tau_z(v)=1.
+}
+\tag{15.1}
+\]
+
+Thus tail support is closed under actual nonzero tail transport.
+
+Repeated products give the bootstrap version.
+
+---
+
+# 16. Action-weighted double counting
+
+A raw carrier incidence matrix
+
+\[
+C(u,v)
+=
+\mathbf1_{\{
+\operatorname{Ext}^{>0}(L_u,L_v)\neq0
+\}}
+\]
+
+is too coarse.
+
+Define instead:
+
+\[
+\boxed{
+A_z(u,v)
+=
+\mathbf1_{\{
+\exists\eta:u\to v,\ T_\eta\neq0
+\}}.
+}
+\tag{16.1}
+\]
+
+Only \(A_z\) is a valid screening/transport resource matrix.
+
+If
+
+\[
+\tau_z(u)=1
+\]
+
+and
+
+\[
+A_z(u,v)=1,
+\]
+
+then \(v\) enters tail support.
+
+Therefore every Hall/matching/double-counting argument must use \(A_z\), not the Ext quiver or ordinary carrier graph.
+
+This is the U5 version of the old mismatch-matrix audit.
+
+---
+
+# 17. Actual U5 countermodel
+
+The strongest new adversarial result of this run is an explicit actual finite-dimensional split-basic algebra.
+
+Use four vertices
+
+\[
+\zeta,\ h,\ i,\ j.
+\]
+
+Arrows:
+
+\[
+U:h\to\zeta,
+\]
+
+\[
+V:i\to h,
+\]
+
+\[
+A:i\to i,
+\]
+
+\[
+C:j\to i,
+\]
+
+\[
+B:j\to\zeta.
+\]
+
+The composable length-two paths are:
+
+\[
+VU,\quad
+AV,\quad
+AA,\quad
+CV,\quad
+CA.
+\]
+
+Impose the quadratic monomial relations
+
+\[
+\boxed{
+VU=AV=AA=CV=0,
+}
+\tag{17.1}
+\]
+
+and keep
+
+\[
+\boxed{
+CA\neq0.
+}
+\tag{17.2}
+\]
+
+All length-three paths vanish automatically.
+
+Therefore a basis is:
+
+\[
+e_\zeta,e_h,e_i,e_j,
+U,V,A,C,B,CA,
+\]
+
+so
+
+\[
+\boxed{
+\dim_kD=10.
+}
+\]
+The algebra is finite-dimensional and quadratic monomial.
+
+---
+
+# 18. Yoneda algebra of the countermodel
+
+Quadratic monomial algebras are Koszul.
+
+The quadratic dual therefore computes
+
+\[
+E=\operatorname{Ext}^*_D(S,S).
+\]
+
+The opposite arrows are:
+
+\[
+u:\zeta\to h,
+\]
+
+\[
+v:h\to i,
+\]
+
+\[
+a:i\to i,
+\]
+
+\[
+\eta:i\to j,
+\]
+
+\[
+b:\zeta\to j.
+\]
+
+Because the only length-two path surviving in \(D\) is \(CA\), the orthogonal quadratic relation in the dual is exactly:
+
+\[
+\boxed{
+a\eta=0.
+}
+\tag{18.1}
+\]
+
+Hence:
+
+\[
+\boxed{
+E
+=
+kQ^{\rm op}/(a\eta).
+}
+\tag{18.2}
+\]
+
+---
+
+# 19. Persistent invisible \(i\)-tail
+
+Fix source
+
+\[
+L_\zeta.
+\]
+
+For every \(n\ge2\),
+
+\[
+\boxed{
+uv\,a^{n-2}
+\in
+\operatorname{Ext}^n_D(L_\zeta,L_i)
+}
+\tag{19.1}
+\]
+
+is a nonzero normal path.
+
+Therefore:
+
+\[
+\boxed{
+\tau_\zeta(i)=1.
+}
+\tag{19.2}
+\]
+
+However
+
+\[
+e_\zeta De_i=0.
+\]
+
+Indeed the only possible path from \(i\) to \(\zeta\) is
+
+\[
+VU,
+\]
+
+and \(VU=0\).
+
+Thus:
+
+\[
+\boxed{
+p_\zeta(i)=0.
+}
+\tag{19.3}
+\]
+
+The persistent \(i\)-tail is genuinely Peirce-invisible.
+
+---
+
+# 20. A visible vertex \(j\)
+
+The arrow
+
+\[
+B:j\to\zeta
+\]
+
+survives.
+
+Hence:
+
+\[
+\boxed{
+e_\zeta De_j\neq0,
+}
+\]
+
+so
+
+\[
+\boxed{
+p_\zeta(j)=1.
+}
+\tag{20.1}
+\]
+
+The raw Yoneda category also contains the nonzero transport class
+
+\[
+\boxed{
+\eta\in
+\operatorname{Ext}^1_D(L_i,L_j).
+}
+\tag{20.2}
+\]
+
+This is not guessed from the quiver.
+
+In the minimal projective resolution of \(L_i\), the \(L_j\)-top component of \(\Omega L_i\) produces the corresponding pushout extension.
+
+So its orientation is genuinely
+
+\[
+i\to j.
+\]
+
+---
+
+# 21. The nonzero transport class annihilates the entire high tail
+
+For the persistent classes (19.1),
+
+\[
+(uv\,a^{n-2})\cdot\eta
+=
+uv\,a^{n-2}\eta.
+\]
+
+For
+
+\[
+n\ge3,
+\]
+
+the word contains the forbidden subword
+
+\[
+a\eta.
+\]
+
+Therefore:
+
+\[
+\boxed{
+(uv\,a^{n-2})\eta=0
+\qquad(n\ge3).
+}
+\tag{21.1}
+\]
+
+Thus:
+
+\[
+\boxed{
+T_\eta=0
+}
+\]
+
+on the tail, although
+
+\[
+\eta\neq0
+\]
+
+in \(E\).
+
+Equivalently:
+
+\[
+\boxed{
+\eta\in
+\operatorname{Ann}^{\rm tail}_E(M_\zeta).
+}
+\tag{21.2}
+\]
+
+---
+
+# 22. The visible \(j\)-component is bounded
+
+The paths from \(\zeta\) to \(j\) in \(E\) are:
+
+\[
+b
+\]
+
+in degree \(1\), and
+
+\[
+uv\eta
+\]
+
+in degree \(3\).
+
+Any longer attempted path
+
+\[
+uv\,a^r\eta
+\qquad(r\ge1)
+\]
+
+contains
+
+\[
+a\eta
+\]
+
+and is zero.
+
+Hence:
+
+\[
+\boxed{
+\operatorname{Ext}^n_D(L_\zeta,L_j)=0
+\qquad(n\ge4).
+}
+\tag{22.1}
+\]
+
+So:
+
+\[
+\boxed{
+\tau_\zeta(j)=0.
+}
+\tag{22.2}
+\]
+
+By Tor–Ext duality:
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_j,L_\zeta)=0
+\qquad(n\ge4).
+}
+\tag{22.3}
+\]
+
+Thus the desired transport genuinely fails.
+
+---
+
+# 23. Full \(\tau/p\) mismatch in the countermodel
+
+In vertex order
+
+\[
+(\zeta,h,i,j),
+\]
+
+the persistent-tail indicator is
+
+\[
+\boxed{
+\tau_\zeta=(0,0,1,0).
+}
+\tag{23.1}
+\]
+
+The Peirce-visible indicator is
+
+\[
+\boxed{
+p_\zeta=(1,1,0,1).
+}
+\tag{23.2}
+\]
+
+Explanation:
+
+- \(p_\zeta(\zeta)=1\) by the idempotent;
+- \(p_\zeta(h)=1\) via \(U:h\to\zeta\);
+- \(p_\zeta(i)=0\) because \(VU=0\);
+- \(p_\zeta(j)=1\) via \(B:j\to\zeta\).
+
+Hence:
+
+\[
+\boxed{
+\tau_\zeta p_\zeta\equiv0.
+}
+\tag{23.3}
+\]
+
+This is an exact fixed-source invisible-return calibration.
+
+---
+
+# 24. Raw carrier versus active carrier
+
+In the same example:
+
+\[
+\operatorname{Ext}^1_D(L_i,L_j)\neq0.
+\]
+
+So the raw carrier matrix has an edge:
+
+\[
+i\to j.
+\]
+
+But:
+
+\[
+T_\eta=0
+\]
+
+on the tail.
+
+Thus:
+
+\[
+\boxed{
+C(i,j)=1,
+\qquad
+A_\zeta(i,j)=0.
+}
+\tag{24.1}
+\]
+
+This is the simplest possible proof that raw carrier counting is invalid.
+
+---
+
+# 25. Consequence for B1
+
+The unconditional statement
+
+\[
+\boxed{
+\eta\neq0
+\Longrightarrow
+\eta\text{ transports the tail}
+}
+\]
+
+is false.
+
+Even the conjunction
+
+\[
+\boxed{
+\eta\neq0
++
+\operatorname{Tor}^{\infty}(R_i,L_z)
++
+e_zDe_j\neq0
+}
+\]
+
+does not imply
+
+\[
+\operatorname{Tor}^{\infty}(R_j,L_z).
+\]
+
+The 10-dimensional algebra realizes all three hypotheses and violates the conclusion.
+
+Therefore B1 survives only in the form:
+
+\[
+\boxed{
+T_\eta\neq0
+\Longrightarrow
+\text{tail transport}.
+}
+\]
+
+---
+
+# 26. B2 — annihilator strict-growth audit
+
+Suppose failed transport classes are
+
+\[
+\eta_1,\eta_2,\ldots.
+\]
+
+Define
+
+\[
+J_t
+=
+\langle
+\eta_1,\ldots,\eta_t
+\rangle
+\subseteq
+\operatorname{Ann}^{\rm tail}.
+\]
+
+If
+
+\[
+\eta_{t+1}\notin J_t,
+\]
+
+then of course
+
+\[
+J_t\subsetneq J_{t+1}.
+\]
+
+But there is no reason every new carrier failure produces a class outside \(J_t\).
+
+The same tail-annihilator relation may recur indefinitely.
+
+---
+
+# 27. B2 is false without extra hypotheses
+
+The 10-dimensional countermodel already has:
+
+\[
+\eta\neq0,
+\qquad
+\eta\in\operatorname{Ann}^{\rm tail}.
+\]
+
+After adjoining \(\eta\) to the annihilator ideal, the visible \(j\)-transport is permanently dead.
+
+No further strict ideal growth is required.
+
+Thus:
+
+\[
+\boxed{
+\text{transport failure}
+\not\Rightarrow
+\text{indefinite strict annihilator growth}.
+}
+\tag{27.1}
+\]
+
+The annihilator can stabilize while the tail stays trapped in an invisible vertex.
+
+This refutes B2 in the proposed universal form.
+
+---
+
+# 28. Finite-generation / ACC audit
+
+There are three separate issues.
+
+## 28.1 Full Yoneda algebra
+
+For a general finite-dimensional algebra \(D\),
+
+\[
+E=\operatorname{Ext}^*_D(S,S)
+\]
+
+need not be finitely generated as an algebra.
+
+No universal finite-generation assumption is allowed.
+
+## 28.2 Chosen carrier algebra
+
+If the project supplies a finite set of actual carrier classes, one may define
+
+\[
+E_{\mathcal C}
+\]
+
+to be the graded category generated by them.
+
+Then \(E_{\mathcal C}\) is finitely generated by definition.
+
+However a finitely generated noncommutative algebra need not satisfy the desired ACC on two-sided ideals.
+
+So finite generation does not supply a universal termination argument.
+
+## 28.3 Even Noetherianity is insufficient
+
+Even if a particular \(E_{\mathcal C}\) is Noetherian, ACC only implies that a chain of annihilator ideals eventually stabilizes.
+
+It does **not** imply that the stabilized quotient contains a visible tail-active class.
+
+The 10-dimensional countermodel exhibits exactly the terminal alternative:
+
+\[
+\boxed{
+\text{annihilator stabilizes and the visible transport remains zero}.
+}
+\]
+
+---
+
+# 29. Nilpotence / radical-filtration audit
+
+No universal nilpotence statement is available for the positive-degree Yoneda algebra.
+
+The actual countermodel contains the nonnilpotent loop class
+
+\[
+a
+\]
+
+with
+
+\[
+a^n\neq0
+\qquad\forall n.
+\]
+
+The tail itself is generated by these powers after the initial path \(uv\).
+
+Therefore radical nilpotence of the original finite-dimensional algebra \(D\) does **not** imply nilpotence of \(E_+\).
+
+This blocks a naive radical-filtration descent.
+
+---
+
+# 30. Bootstrap in the tail-action quotient
+
+Let
+
+\[
+\overline E_z
+=
+E^{\rm act}_{\mathcal C,z}.
+\]
+
+If there is a nonzero composable product
+
+\[
+\bar\eta_1\cdots\bar\eta_r
+\]
+
+from \(i\) to \(v\) whose action on the \(i\)-tail is nonzero, then
+
+\[
+\tau_z(v)=1.
+\]
+
+Thus the valid bootstrap principle is:
+
+\[
+\boxed{
+\text{nonzero product in the tail-action representation}
+\Longrightarrow
+\text{support propagation}.
+}
+\tag{30.1}
+\]
+
+This is stronger than raw graph reachability and weaker than the desired Universal theorem.
+
+---
+
+# 31. Tail-action reachability frontier
+
+Let
+
+\[
+\operatorname{Reach}^{\rm act}_z(i)
+\]
+
+be the set of vertices reachable from \(i\) by a nonzero composite tail operator.
+
+Then:
+
+\[
+\boxed{
+v\in\operatorname{Reach}^{\rm act}_z(i)
+\Longrightarrow
+\tau_z(v)=1.
+}
+\tag{31.1}
+\]
+
+Therefore:
+
+\[
+\boxed{
+\operatorname{Reach}^{\rm act}_z(i)
+\cap
+\{v:p_z(v)=1\}
+\neq\varnothing
+}
+\]
+
+immediately gives a Gap-A witness for source \(z\).
+
+The exact surviving question is whether actual carrier geometry forces such an intersection.
+
+The countermodel says no under the frozen U5 data alone.
+
+---
+
+# 32. Double-counting / derangement audit
+
+A pure permutation or Hall argument may see:
+
+- one persistent invisible vertex \(i\);
+- one visible target \(j\);
+- one nonzero raw Yoneda edge \(i\to j\).
+
+It would therefore count a potential match.
+
+But the actual rank of the tail operator is zero.
+
+The correct double count is action-weighted:
+
+\[
+\boxed{
+\sum_{u\in \operatorname{supp}\tau_z}
+\sum_{v\in \operatorname{supp}p_z}
+\mathbf1_{\{T_{u\to v}\neq0\}}.
+}
+\]
+
+Under hypothetical failure this must be zero.
+
+In the countermodel the raw incidence count is positive while the action-weighted count is zero.
+
+Therefore:
+
+\[
+\boxed{
+\text{derangement / Hall combinatorics must be performed after quotienting by the tail annihilator}.
+}
+\tag{32.1}
+\]
+
+Pure graph cycle arguments remain invalid.
+
+---
+
+# 33. Mandatory adversarial test I — root-of-unity quantum exterior
+
+The frozen U4 calibration uses
+
+\[
+A_q
+=
+k\langle x,y\rangle/
+(x^2,y^2,xy+qyx)
+\]
+
+with
+
+\[
+\Omega M_\lambda
+\cong
+M_{\lambda/q}.
+\]
+
+For a root of unity \(q\), the \(M_\lambda\)-orbit can be finite and periodic.
+
+Nevertheless the simple quotient does not have to enter the same periodic orbit.
+
+Thus:
+
+\[
+\boxed{
+\text{finite recurrent module orbit}
+\not\Rightarrow
+\text{simple transport class}.
+}
+\]
+
+For U5 this means recurrence cannot be used to manufacture a Yoneda transport class \(\eta_{ij}\).
+
+Only the actual Yoneda action is relevant.
+
+---
+
+# 34. Mandatory adversarial test II — infinite-order moduli drift
+
+If \(q\) has infinite multiplicative order,
+
+\[
+\Omega^nM_\lambda
+\cong
+M_{\lambda q^{-n}}
+\]
+
+gives an infinite exact orbit with constant coarse module data.
+
+Thus a proposed transport mechanism cannot infer a fixed action class from repeated local state.
+
+The U5 action-algebra representation avoids this problem because it tracks the induced Yoneda operator rather than module-state identity.
+
+---
+
+# 35. Mandatory adversarial test III — connected two-vertex moduli carrier
+
+The frozen U4 triangular extension
+
+\[
+T_q=
+\begin{pmatrix}
+A_q&U\\
+0&k
+\end{pmatrix}
+\]
+
+preserves the quantum-exterior syzygy drift.
+
+So merely adding a connected second primitive vertex does not create a cross-vertex active Yoneda operator.
+
+This is consistent with the U5 countermodel:
+
+\[
+\text{connected carrier geometry}
+\not\Rightarrow
+\text{tail-active transport}.
+\]
+
+---
+
+# 36. Mandatory adversarial test IV — invisible-return calibration
+
+The new 10-dimensional algebra is the direct U5 calibration.
+
+It realizes:
+
+\[
+\tau_\zeta(i)=1,
+\qquad
+p_\zeta(i)=0,
+\]
+
+and
+
+\[
+p_\zeta(j)=1,
+\qquad
+\tau_\zeta(j)=0.
+\]
+
+It also has a nonzero raw transport class
+
+\[
+\eta:i\to j
+\]
+
+whose tail action is zero.
+
+Thus it attacks the precise frozen U5 interface rather than only a neighboring statement.
+
+---
+
+# 37. Mandatory adversarial test V — detector-blind singular map
+
+The exact label
+
+\[
+A/(xy)\to k
+\]
+
+was not located in the retrievable frozen U4 assets under that name.
+
+No unsupported reconstruction of that specific item is made here.
+
+The retrievable U4 actual calibration proving the same logical point is the 11-dimensional four-vertex algebra with a split epimorphism
+
+\[
+p:N\to L_z
+\]
+
+such that
+
+\[
+[p]\neq0
+\quad\text{in }D_{\rm sg}(D),
+\]
+
+but
+
+\[
+\operatorname{Tor}_n^D(R_i,p)=0
+\qquad(n\gg0).
+\]
+
+This confirms the U5 principle:
+
+\[
+\boxed{
+\text{nonzero global/singular transport datum}
+\not\Rightarrow
+\text{nonzero detector-local tail action}.
+}
+\]
+
+---
+
+# 38. Carrier geometry versus Yoneda geometry
+
+The ordinary Peirce condition
+
+\[
+e_zDe_j\neq0
+\]
+
+records an ordinary path/morphism in the algebra.
+
+The class needed for U5 is instead
+
+\[
+\eta_{ij}
+\in
+\operatorname{Ext}^{>0}_D(L_i,L_j).
+\]
+
+These are independent types of data.
+
+The 10-dimensional countermodel has:
+
+\[
+e_\zeta De_j\neq0
+\]
+
+and
+
+\[
+\eta_{ij}\neq0,
+\]
+
+yet the action still fails.
+
+So even having both pieces separately is insufficient.
+
+One must know their **tail coupling**.
+
+---
+
+# 39. Strongest positive theorem
+
+The strongest positive theorem of the run is:
+
+\[
+\boxed{
+\textbf{Yoneda Tail-Action Transport Theorem}
+}
+\]
+
+For split-basic finite-dimensional \(D\), fixed source \(z\), and vertices \(i,j\):
+
+if
+
+\[
+\operatorname{Tor}^{\infty}(R_i,L_z)
+\]
+
+and there exists
+
+\[
+\eta\in\operatorname{Ext}^m_D(L_i,L_j)
+\]
+
+whose Yoneda multiplication is nonzero in arbitrarily high degrees on
+
+\[
+\operatorname{Ext}^*_D(L_z,L_i),
+\]
+
+then
+
+\[
+\boxed{
+\operatorname{Tor}^{\infty}(R_j,L_z).
+}
+\]
+
+If
+
+\[
+e_zDe_j\neq0,
+\]
+
+this gives the required visible pair.
+
+The hypothesis is exactly that
+
+\[
+\eta\neq0
+\]
+
+in the tail-action quotient.
+
+---
+
+# 40. Strongest negative theorem
+
+The strongest negative theorem is the actual countermodel:
+
+\[
+\boxed{
+\textbf{Nonzero Yoneda Transport Does Not Imply Tail Transport.}
+}
+\]
+
+There exists a 10-dimensional split-basic finite-dimensional quadratic monomial algebra \(D\) and vertices
+
+\[
+\zeta,i,j
+\]
+
+such that:
+
+\[
+\operatorname{Tor}^{\infty}(R_i,L_\zeta),
+\]
+
+\[
+e_\zeta De_i=0,
+\]
+
+\[
+e_\zeta De_j\neq0,
+\]
+
+\[
+0\neq
+\eta\in
+\operatorname{Ext}^1_D(L_i,L_j),
+\]
+
+but
+
+\[
+T_\eta=0
+\]
+
+on the high Ext tail and
+
+\[
+\operatorname{Tor}^D_n(R_j,L_\zeta)=0
+\qquad(n\gg0).
+\]
+
+This refutes an unconditional U5 B1 theorem based only on existence of \(\eta\).
+
+---
+
+# 41. B2 status
+
+The proposed theorem
+
+\[
+\text{transport failure}
+\Rightarrow
+\text{strictly increasing tail annihilator}
+\]
+
+is false in general.
+
+What remains true is only the conditional tautological step:
+
+if a newly failed class is not contained in the ideal generated by earlier failed classes, then adjoining it strictly enlarges the annihilator ideal.
+No mechanism was found forcing infinitely many independent failures.
+
+Therefore:
+
+\[
+\boxed{
+\texttt{B2 — REFUTED IN GENERAL}.
+}
+\]
+
+---
+
+# 42. Representation breakthrough
+
+The correct U5 representation is the directed tail-action category
+
+\[
+\boxed{
+E^{\rm act}_{\mathcal C,z}
+=
+E_{\mathcal C}/
+\operatorname{Ann}^{\rm tail}(M_z).
+}
+\]
+
+This category has exactly the transport information that:
+
+- raw Peirce geometry lacks;
+- raw Ext nonvanishing lacks;
+- singular nonvanishing lacks;
+- ordinary graph reachability lacks.
+
+The frozen U5 problem becomes:
+
+\[
+\boxed{
+\textbf{Does actual carrier geometry force a nonzero morphism in }
+E^{\rm act}_{\mathcal C,z}
+\textbf{ from the invisible tail sector to a visible vertex?}
+}
+\]
+
+This is the exact remaining interface.
+
+---
+
+# 43. Universal impact
+
+U4 reduced the problem to a tail-recurrent simple in a Peirce-invisible sector.
+
+U5 now shows that raw Yoneda algebra does not automatically escape that sector.
+
+A raw class
+
+\[
+\eta:i\to j
+\]
+
+can exist and still be annihilated by the tail.
+
+Thus the new hierarchy is:
+
+\[
+\boxed{
+\text{Peirce path}
+<
+\text{Yoneda class}
+<
+\text{tail-active Yoneda class}.
+}
+\]
+
+Only the last one transfers the Universal witness.
+
+Therefore any successful future proof must establish a **tail-coupling theorem** for actual carrier classes, not merely their existence.
+
+---
+
+# 44. Exact remaining interface
+
+Let
+
+\[
+T_z
+=
+\{v:\tau_z(v)=1\}
+\]
+
+be the tail-support set and
+
+\[
+P_z
+=
+\{v:p_z(v)=1\}
+\]
+
+the Peirce-visible set.
+
+Under hypothetical failure:
+
+\[
+T_z\cap P_z=\varnothing.
+\]
+
+Let
+
+\[
+E^{\rm act}_{\mathcal C,z}
+\]
+
+be the tail-action carrier category.
+
+The remaining problem is:
+
+\[
+\boxed{
+\textbf{Can an actual Universal carrier recurrence have }
+T_z\neq\varnothing
+\textbf{ while every tail-active morphism out of }T_z
+\textbf{ remains inside }T_z
+\textbf{ or another invisible sector?}
+}
+\]
+
+Equivalently:
+
+\[
+\boxed{
+\operatorname{Reach}^{\rm act}_z(T_z)
+\cap P_z
+=
+\varnothing
+}
+\]
+
+may persist.
+
+The 10-dimensional countermodel shows this is possible locally.
+
+What remains open is whether the additional global/minimal-counterexample structure of Universal Gap A forbids it.
+
+---
+
+# 45. Completion label
+
+This run reaches:
+
+\[
+\boxed{
+\texttt{B1 — YONEDA TAIL TRANSPORT: CONDITIONAL / VERIFIED WITH ACTIVE-ACTION HYPOTHESIS}
+}
+\]
+
+\[
+\boxed{
+\texttt{B2 — TAIL-ANNIHILATOR STRICT GROWTH: REFUTED IN GENERAL}
+}
+\]
+
+\[
+\boxed{
+\texttt{B3 — ACTUAL COUNTERMODEL TO RAW YONEDA TRANSPORT}
+}
+\]
+
+with overall status
+
+\[
+\boxed{
+\texttt{MAJOR FRONTIER COMPRESSION}.
+}
+\]
+
+Universal Gap A remains open.
+
+---
+
+# 46. Run integrity
+
+The actual route was:
+
+1. retrieve the frozen U4 tail-detector and adversarial calibrations;
+2. map dualization, representation change, functionification, multiplicative projection, quotient, bootstrap, descent, double counting, local-to-global, and counterexample methods to the U5 objects;
+3. audit Tor–Ext duality with correct left/right orientation;
+4. distinguish the canonical general formula from the split-basic \(L_i\) specialization;
+5. define the Yoneda right action on
+   \[
+   M_z=\operatorname{Ext}^*(L_z,S);
+   \]
+6. derive the orientation of transport classes from projective-resolution maps rather than quiver guessing;
+7. define tail operators \(T_\eta\);
+8. prove the conditional Yoneda Tail Transport Lemma;
+9. define the tail annihilator and prove it is a graded two-sided ideal;
+10. quotient the carrier algebra by the tail annihilator;
+11. reformulate \(\tau_z/p_z\) using the active action matrix;
+12. test the root-of-unity quantum-exterior calibration;
+13. test infinite-order moduli drift;
+14. test the connected two-vertex triangular carrier;
+15. retain the U4 detector-blind singular-map calibration;
+16. construct the 10-dimensional quadratic monomial U5 countermodel;
+17. compute its quadratic dual/Yoneda algebra;
+18. verify the persistent invisible \(i\)-tail;
+19. verify visible \(j\);
+20. exhibit the nonzero class
+    \[
+    \eta\in\operatorname{Ext}^1(L_i,L_j);
+    \]
+21. prove the relation
+    \[
+    a\eta=0
+    \]
+    kills every sufficiently high \(i\)-tail class;
+22. verify the \(j\)-component is bounded;
+23. use this model to refute unconditional B1 and universal B2 strict-growth;
+24. freeze the remaining problem as reachability in the tail-action quotient category.
+
+No source module was modified.
+
+No raw graph cycle was promoted to a transport theorem.
+
+No nonzero Yoneda class was assumed to act nontrivially.
+
+No finite-generation/ACC assumption was silently inserted.
+
+No unavailable \(A/(xy)\to k\) calibration was reconstructed or attributed without support.

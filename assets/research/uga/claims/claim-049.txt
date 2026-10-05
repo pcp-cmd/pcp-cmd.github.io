@@ -1,0 +1,13 @@
+## UGA-C049 — Primitive-Necklace Survival
+**Status:** PROJECT-DERIVED / SELF-AUDITED / NOT INDEPENDENTLY VERIFIED  
+**Source:** final Derived-Necklace Run, Theorem 13.1
+
+If every edge of a minimal necklace survives nontrivially in
+\[
+P_\infty=\bar H/\sum_{r\ge2}\operatorname{im}m_r,
+\]
+then the necklace cycle is not a bar boundary.
+
+**Depends on:** UGA-C048.
+
+---

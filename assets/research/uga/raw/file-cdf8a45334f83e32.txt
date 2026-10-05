@@ -1,0 +1,101 @@
+"""Actual drifting resolution over Q, with bounded self but unbounded cross Ext.
+
+The infinite identities/type-based ordinary stopping theorem are written
+separately. Frozen exact helpers do NOT independently verify that proof.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfor p in [3,5,8]:',1)[0],str(frozen),'exec'),globals())
+payload={'vertices':1,'base_vertex':0,
+ 'radical_basis':[{'name':x,'left':0,'right':0} for x in ['x','y','z']],
+ 'radical_products':[{'left':'x','right':'y','value':{'z':1}},
+                     {'left':'y','right':'x','value':{'z':-2}}]}
+G=rk.Algebra(payload)
+def mul_basis(i,j):
+ if i==0:return rk.unit_vector(4,j)
+ if j==0:return rk.unit_vector(4,i)
+ return [F(0)]+G.pair(i-1,j-1)
+def mul(left,right):
+ out=[F(0)]*4
+ for i,a in enumerate(left):
+  for j,b in enumerate(right):
+   if a and b:out=[x+a*b*y for x,y in zip(out,mul_basis(i,j))]
+ return out
+for i,j,k in product(range(4),repeat=3):
+ ei,ej,ek=[rk.unit_vector(4,v) for v in [i,j,k]]
+ assert mul(mul(ei,ej),ek)==mul(ei,mul(ej,ek))
+ counts['associativity']+=1
+
+def state(lam):
+ M=sr.Module(G,[2],[[[F(0),F(1)],[F(0),F(0)]],
+  [[F(0),F(lam)],[F(0),F(0)]],[[F(0),F(0)],[F(0),F(0)]]])
+ ss.parse_module(G,ss.module_payload(M))
+ return M
+
+regular=sr.Module(G,[4],[[mul_basis(a,b) for b in range(4)] for a in range(1,4)])
+Kreg,info,regcover=cover(regular)
+assert not any(Kreg.dimensions)
+states=[]
+for lam in [1,2,4,8]:
+ M=state(lam);target=state(2*lam)
+ K,info,cert=cover(M)
+ assert info['cover_multiplicities']==[1] and info['cover_dimensions']==[4]
+ reader=sr.coordinates_reader(info['linear_data']['kernels'][0],4)
+ raw=[[F(0),-F(lam),F(1),F(0)],[F(0),F(0),F(0),F(1)]]
+ maps=[[reader(v) for v in raw]]
+ iso=ss.check_isomorphism(target,K,ss.encode(maps))
+ counts['actual_kernel_isomorphisms']+=1
+ assert integral(maps)
+ states.append({'lambda':lam,'actual_module':ss.module_payload(M),
+  'actual_minimal_cover':cert,'kernel_basis_y_minus_lambda_x_and_z':raw,
+  'kernel_iso_from_M_2lambda':iso,'kernel_isomorphism_maps':maps})
+
+def dmat(alpha):
+ generator=[F(0),-F(alpha),F(1),F(0)]
+ return [mul(rk.unit_vector(4,i),generator) for i in range(4)]
+
+differentials=[];cohomology=[]
+for n in range(1,9):
+ alpha=2**(n-1);d=dmat(alpha);nxt=dmat(2*alpha)
+ assert rk.rank(d)==2 and rk.rank(nxt)==2
+ assert all(not any(rk.combine(d,v,4)) for v in nxt)
+ ker=rk.nullspace(d,4)
+ assert len(ker)==2 and rk.rank(ker+nxt)==2
+ assert all(col[0]==0 for col in d) # Every differential lies in rad Gamma.
+ differentials.append({'degree':n,'generator_parameter':alpha,
+  'matrix':d,'next_matrix':nxt,'rank':2,'kernel_equals_next_image':True,
+  'ordinary_minimal':True})
+ for mu,expected,kind in [(F(1),int(n==1),'self'),(F(2**n),1,'future')]:
+  M=state(mu)
+  u=rk.unit_vector(2,0)
+  actual=[y-F(2**n)*x for x,y in zip(M.actions[0][0],M.actions[1][0])]
+  prev=[y-F(2**(n-1))*x for x,y in zip(M.actions[0][0],M.actions[1][0])]
+  delta=[actual,[F(0),F(0)]];previous=[prev,[F(0),F(0)]]
+  assert actual==[F(0),mu-F(2**n)]
+  assert all(not any(rk.combine(delta,v,2)) for v in previous)
+  dimension=2-rk.rank(delta)-rk.rank(previous)
+  assert dimension==expected,(n,mu,dimension,expected)
+  cohomology.append({'degree':n,'source_lambda':1,'target_mu':mu,'kind':kind,
+   'actual_Hom_differential':delta,'preceding_Hom_differential':previous,
+   'ordinary_Ext_dimension':dimension})
+
+dependencies={f'toolbox/Imported-Outputs/{name}':sha256((helpers/name).read_bytes()).hexdigest()
+ for name in ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py']}
+dep='runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+dependencies[dep]=sha256((project_root/dep).read_bytes()).hexdigest()
+result={'status':'passed','independent_verification':False,'field':'Q','algebra':payload,
+ 'counts':counts,'actual_projective_envelope_regular_Gamma':regcover,
+ 'actual_drifting_states':states,'actual_minimal_differential_segments':differentials,
+ 'ordinary_self_and_future_Ext_checks':cohomology,
+ 'written_infinite_identity':{'Omega_Mlambda':'M_2lambda','parameters':'2^n, n>=0; pairwise nonisomorphic by the y/x top-socle ratio',
+  'self_Ext':'ALL n>=2 vanish for each lambda nonzero','future_Ext':'Ext^n(Mlambda,M_(2^n lambda)) has dimension1 for ALL n>=1',
+  'same_carrier_type':{'LEFT_infinite':['S'],'RIGHT_infinite':['S'],'tau':1,'physical_rectangle':[[4]]},
+  'both_simple_pds_infinite':'actual drifting module has infinite pd; single simple finite would bound every finite module; its actual simple minimal resolution supplies ordinary diagonal Tor and forces right pd infinite',
+  'not_sample_infinity_inference':True,'not_a_badness_counterexample':True},
+ 'dependencies':dependencies,
+ 'scope':'Exact Q calibration at four parameters/eight actual differential steps. Infinite parameter/cochain formulas and general cross-Ext/carrier-type bound are complete separate written proofs; same author/shared helpers, NOT independent verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','counts':counts,'actual_drifting_parameters':4,
+ 'exact_differential_segments':8,'ordinary_Ext_checks':16,'field':'Q','independent_verification':False}))

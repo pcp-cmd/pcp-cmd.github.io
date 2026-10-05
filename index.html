@@ -3,75 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aleksi Lab</title>
-  <meta name="description" content="Aleksi Lab is a personal research lab for learning, making, AI collaboration, and revision.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23faf9f5'/%3E%3Cpath d='M8 22C12 10 22 8 24 18' fill='none' stroke='%23141413' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='23' cy='18' r='3' fill='%23c96442'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./styles.css">
-  <script defer src="./content.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-  <script defer src="./assets/lottie/overview-dark-data.js"></script>
-  <script defer src="./app.js"></script>
+  <title>Aleksi</title>
+  <meta name="description" content="Aleksi 的写作、项目、研究与作品。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/site-theme.css">
+  <link rel="stylesheet" href="./assets/css/entrance.css">
+  <script defer src="./site-data.js"></script>
+  <script defer src="./assets/vendor/niku-home.js"></script>
+  <script defer src="./site-backdrop.js"></script>
+  <script defer src="./home.js"></script>
 </head>
-<body class="home-redesign">
-  <div class="paper-grain" aria-hidden="true"></div>
-  <a class="skip-link" href="#content">Skip to content</a>
-
-  <header class="site-header">
-    <a class="brand-mark" href="#home" aria-label="Aleksi Lab home">
-      <span>Aleksi Lab</span>
-      <small>未完手稿</small>
-    </a>
-    <nav class="desktop-nav" aria-label="Primary navigation"></nav>
-  </header>
-
-  <main id="content">
-    <section class="hero paper-section" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow">PERSONAL LAB / INDEX</p>
-        <h1 class="hero-title">Aleksi Lab</h1>
-        <p class="hero-cn">Learning, making, and revision.</p>
-        <p class="hero-lede zh-copy">学习、创作与 AI 协作的长期实验室。</p>
-        <p class="hero-support zh-note">把学习、创作与反馈，修订成可复用的结构。</p>
-        <div class="hero-actions" aria-label="Key entrances">
-          <a href="./works.html">进入作品档案 →</a>
-          <a href="./math.html">打开数学实验室</a>
-        </div>
-      </div>
-
-      <aside class="hero-card hero-illustration-card hero-lottie-card" aria-label="Aleksi Lab living glyph">
-        <div class="hero-card-top">
-          <span>核心视觉</span>
-          <span>无限进步</span>
-        </div>
-        <figure class="hero-figure hero-lottie-figure">
-          <div class="hero-glyph-lottie" id="heroGlyphLottie" aria-hidden="true"></div>
-          <img class="hero-illustration hero-lottie-fallback" src="./assets/hero/infinite-progress-hero.webp" alt="Infinite Progress artifact for Aleksi Lab">
-        </figure>
-      </aside>
-    </section>
-
-    <section class="home-guide paper-section" id="guide" data-reveal>
-      <p class="section-kicker">Guide Rows / Entrances</p>
-      <div class="guide-row-list" data-guide-rows></div>
-    </section>
-
-    <section class="selected-artifacts paper-section" id="selected-artifacts" data-reveal>
-      <div class="section-intro">
-        <p class="section-kicker">Selected Artifacts</p>
-        <h2 class="section-title">精选档案</h2>
-      </div>
-      <div class="selected-artifact-grid" data-selected-artifacts></div>
-    </section>
-
-    <section class="home-archive paper-section" id="archive-links" data-reveal>
-      <p class="section-kicker">Archive Links</p>
-      <div class="archive-link-list" data-archive-links></div>
-    </section>
+<body class="entrance-page">
+  <a class="entrance-skip" href="./writing.html">进入 Writing</a>
+  <main class="entrance-canvas" aria-label="Aleksi 的六个栏目" data-entrance-canvas>
+    <canvas class="entrance-backdrop" data-entrance-backdrop aria-hidden="true"></canvas>
+    <div class="entrance-world" data-entrance-world>
+      <section class="photo-window" data-photo-window aria-label="Aleksi 的猫咪头像">
+        <h1>Aleksi</h1>
+        <img class="photo-image" src="./assets/images/avatar-cat.png" width="1254" height="1254" alt="蓝色背景中的灰白猫头像" decoding="async" fetchpriority="high">
+      </section>
+      <section class="entrance-window" data-window="writing">
+        <a class="window-title" href="./writing.html" aria-controls="preview-writing" aria-expanded="false">Writing</a>
+        <div class="window-preview" id="preview-writing" hidden><figure class="window-picture"><img src="./assets/images/previews/manga/writing.webp" alt="黑白漫画：手握钢笔在翻开的笔记本上书写" width="1774" height="887" decoding="async"></figure><a class="window-enter" href="./writing.html">进入</a></div>
+      </section>
+      <section class="entrance-window" data-window="project">
+        <a class="window-title" href="./project.html" aria-controls="preview-project" aria-expanded="false">Project</a>
+        <div class="window-preview" id="preview-project" hidden><figure class="window-picture"><img src="./assets/images/previews/manga/project.webp" alt="黑白漫画：桌前的双手正在组装小机器人" width="1774" height="887" decoding="async"></figure><a class="window-enter" href="./project.html">进入</a></div>
+      </section>
+      <section class="entrance-window" data-window="research">
+        <a class="window-title" href="./research.html" aria-controls="preview-research" aria-expanded="false">Research</a>
+        <div class="window-preview" id="preview-research" hidden><figure class="window-picture"><img src="./assets/images/previews/manga/research.webp" alt="黑白漫画：探索者站在书架间不断延伸的阶梯上" width="1774" height="887" decoding="async"></figure><a class="window-enter" href="./research.html">进入</a></div>
+      </section>
+      <section class="entrance-window" data-window="about">
+        <a class="window-title" href="./about.html" aria-controls="preview-about" aria-expanded="false">About</a>
+        <div class="window-preview" id="preview-about" hidden><figure class="window-picture"><img src="./assets/images/previews/manga/about.webp" alt="黑白漫画：一位虚构人物倚在窗边望向远方的背影" width="1774" height="886" decoding="async"></figure><a class="window-enter" href="./about.html">进入</a></div>
+      </section>
+      <section class="entrance-window" data-window="works">
+        <a class="window-title" href="./works.html" aria-controls="preview-works" aria-expanded="false">Works</a>
+        <div class="window-preview" id="preview-works" hidden><figure class="window-picture"><img src="./assets/images/previews/manga/works.webp" alt="黑白漫画：画笔在纸上绘出大幅墨色线条" width="1774" height="887" decoding="async"></figure><a class="window-enter" href="./works.html">进入</a></div>
+      </section>
+      <section class="entrance-window" data-window="room">
+        <a class="window-title" href="./room.html" aria-controls="preview-room" aria-expanded="false">Room</a>
+        <div class="window-preview" id="preview-room" hidden><figure class="window-picture"><img src="./assets/images/previews/manga/room.webp" alt="黑白漫画：书架之间的扶手椅、圆桌和翻开的书" width="1774" height="887" decoding="async"></figure><a class="window-enter" href="./room.html">进入</a></div>
+      </section>
+    </div>
   </main>
-
-  <footer class="site-footer">
-    <p>Aleksi Lab</p>
-    <p>未完手稿不是粗糙，而是始终保留下一次进入的位置。</p>
-  </footer>
+  <noscript><p class="entrance-noscript">可直接选择各栏目进入；窗口预览需要 JavaScript。</p></noscript>
 </body>
 </html>

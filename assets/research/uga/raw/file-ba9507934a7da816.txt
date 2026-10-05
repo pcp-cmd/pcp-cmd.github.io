@@ -1,0 +1,66 @@
+# HanGapBLean Formalization Roadmap
+
+## Phase I — Algebraic Periodic Detector
+
+### v0.1 — completed at source level
+
+- [x] Define the square-zero periodic differential `δ = i ∘ p`.
+- [x] State one-periodic Hom acyclicity pointwise.
+- [x] Prove acyclicity implies every map `N -> U` lifts through `Q`.
+- [x] Formalize the final abstract detector contradiction.
+- [x] Formalize the persistent-nonvanishing/eventual-vanishing contradiction.
+
+### v0.2 — completed at source level
+
+- [x] Define `ker(δ_*)` and `im(δ_*)` as additive subgroups.
+- [x] Define the one-periodic Homology quotient.
+- [x] Prove acyclicity forces the Homology quotient to be trivial.
+- [x] Define the subgroup of maps `N -> U` factoring through the middle term
+      `Q`.
+- [x] Define the corresponding stable-Hom quotient.
+- [x] Prove acyclicity forces that stable-Hom quotient to be trivial.
+
+### v0.3 — experimental source drafted; kernel check required
+
+- [x] Draft exactness predicate for `0 -> U --i--> Q --p--> U -> 0`.
+- [x] Draft an additive equivalence
+      `Hom(N,U) ≃+ ker(δ_*)` via `g |-> i ∘ g`.
+- [x] Draft proof that this equivalence sends the factor-through-`Q` subgroup to the
+      boundary subgroup.
+- [x] Draft the descent through `QuotientAddGroup.congr` to obtain the actual
+      canonical isomorphism
+      `periodicHomology ≃+ stableHomVia p`.
+- [ ] Replace the fixed-middle-term quotient by the usual subgroup of maps
+      factoring through arbitrary projectives, under the projectivity of `Q`.
+
+### v0.4 — category-level detector
+
+- [ ] Model projective resolutions / syzygies using existing mathlib homology
+      infrastructure where possible.
+- [ ] Formalize the finite-stage stabilization lemma needed for
+      `q(S) ≅ q(S)[1] -> Ω^m S ≅ Ω^(m+1) S` stably.
+- [ ] Upgrade stable periodicity to actual minimal period one.
+- [ ] Formalize the finite-injective-dimension exclusion of fold vertices.
+- [ ] Formalize right-orthogonal Verdier localization.
+
+## Phase II — KLS object tracking
+
+- [ ] Formalize the idempotent corner transport `X ⊗_A M ≅ Xe` in the needed
+      specialization.
+- [ ] Formalize exact tracking of the terminal simple.
+- [ ] Formalize the KLS quotient-periodization hypotheses as structures or
+      imported assumptions before attempting the full KLS construction.
+
+## Phase III — Geometric detector
+
+- [ ] Encode divisor arithmetic on the ten-point blow-up.
+- [ ] Verify the numerical dimensions `12`, `40`, `81`.
+- [ ] Formalize the relevant spectral-sequence page or expose it as a verified
+      hypothesis.
+- [ ] Derive the `9600` detector.
+
+## Phase IV — Full theorem
+
+- [ ] Combine machine-checked Periodic Detector with machine-checked geometric
+      detector.
+- [ ] Formal theorem corresponding to the manuscript Gap-B theorem.

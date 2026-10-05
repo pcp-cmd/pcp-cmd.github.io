@@ -1,0 +1,98 @@
+# HanGapBLean — Phase I
+
+Lean 4 formalization work for the algebraic core of the project-derived
+Periodic Detector argument in the Han–Gap B project.
+
+## Version
+
+Current source version: **0.2.0**.
+
+Pinned toolchain:
+
+- Lean `v4.32.1`
+- mathlib `v4.32.1`
+
+## What is formalized in v0.2
+
+### 1. Periodic Hom lifting
+
+`HanGapBLean/PeriodicHomology.lean` isolates the kernel/image step behind the
+manuscript statement
+
+`H(Hom(N,Q), δ_*) = 0  =>  every N -> U factors through Q`.
+
+The central theorem is:
+
+```lean
+theorem lift_through_projective_of_periodicHomAcyclic ...
+```
+
+### 2. One-periodic Homology as a quotient group
+
+`HanGapBLean/PeriodicHomologyQuotient.lean` defines
+
+- `periodicCycles = ker(δ_*)`,
+- `periodicBoundaries = im(δ_*)`,
+- `periodicHomology = cycles / (boundaries inside cycles)`.
+
+It proves that acyclicity makes this quotient a subsingleton.
+
+### 3. Stable-Hom quotient by the middle projective
+
+`HanGapBLean/StableHomQuotient.lean` defines the subgroup of maps `N -> U`
+that factor through the chosen middle term `Q`, and the quotient
+
+`stableHomVia p = Hom(N,U) / {maps factoring through Q}`.
+
+It proves that periodic Hom acyclicity makes this quotient a subsingleton.
+This is the machine-oriented version of the stable-Hom vanishing used in the
+paper.
+
+### 4. Abstract detector contradiction
+
+`HanGapBLean/DetectorLogic.lean` contains the proposition-level logical
+assembly
+
+`(not InfinitePlus -> every detector vanishes) + (some detector is nonzero)
+ -> InfinitePlus`.
+
+## What is *not* yet formalized
+
+- the canonical additive equivalence
+  `periodicHomology ≃+ stableHomVia p` under exactness;
+- the passage from singular period one to an actual high syzygy satisfying
+  `Omega L ≅ L`;
+- injective-dimension / Ext machinery for excluding fold vertices;
+- Verdier right-orthogonal localization;
+- KLS folding, dg quotient, and phantom periodization;
+- the Mattoo spectral sequence and the 9600-dimensional detector.
+
+Those are staged in `FORMALIZATION_ROADMAP.md`.
+
+## Build
+
+The project is intended to build with:
+
+```bash
+lake update
+lake exe cache get
+lake build
+```
+
+See `BUILD_STATUS.md` for the important distinction between source completion
+and an actual Lean kernel check.
+
+## Experimental v0.3 bridge
+
+`HanGapBLean/ExperimentalCanonicalBridge.lean` contains a source-level draft of
+the full canonical quotient bridge
+
+`stableHomVia p ≃+ periodicHomology i p`
+
+under injectivity of `i`, `p ∘ i = 0`, and exactness `ker p = range i`.
+
+It is intentionally **not imported by `HanGapBLean.lean` yet**.  Without a
+local Lean kernel, treating a deeper API-dependent construction as part of the
+default checked target would overstate its status.  After the first real
+`lake build`, this file should either be promoted into the default target or
+repaired against the exact mathlib API diagnostics.

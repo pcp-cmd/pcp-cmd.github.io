@@ -1,0 +1,58 @@
+"""Bounded formula discovery, not an actual-cover certificate.
+
+LEFT P_i has paths starting i, lengths 0..c_i-1, direction i -> i+1.
+Actual full uniserial kernel: Omega M(i,l) = M(i+l,c_i-l).
+For I=J^s, multiplication defect in column j:
+I tensor I e_j = J^s e_(j+s) / J^(c_j) e_(j+s).
+The kernel's retained path lengths are max(s,c_j-s)..min(c_(j+s),c_j)-1.
+"""
+from itertools import product
+import json
+from pathlib import Path
+
+def pd(c,i,l):
+    if l==0: return -1
+    seen=set(); n=len(c); depth=0
+    while l!=c[i]:
+        if (i,l) in seen: return None
+        seen.add((i,l))
+        assert 0<l<c[i]
+        i,l=(i+l)%n,c[i]-l
+        depth+=1
+    return depth
+
+def investigate(c,s=3):
+    n=len(c)
+    ip=[pd(c,(j+s)%n,cj-s) if cj>s else -1 for j,cj in enumerate(c)]
+    if any(p is None for p in ip):return None
+    dp=[]; states=[]
+    for j,cj in enumerate(c):
+        if cj<=s:continue
+        a=(j+s)%n; low=max(s,cj-s); upper=min(c[a],cj)
+        if upper>low:
+            states.append((j,(a+low)%n,upper-low))
+            dp.append(pd(c,(a+low)%n,upper-low))
+    return {'c':c,'I_pd':max(ip),'I_column_pds':ip,
+            'simple_pds':[pd(c,i,1) for i in range(n)],
+            'defect_states':states,'defect_pds':dp,
+            'defect_pd':None if any(p is None for p in dp) else max(dp,default=-1)}
+
+families=[investigate((n,)+(n+1,)*(n-1)) for n in range(4,11)]
+first_infinite=None; first_larger=None; inspected=0; finite_ideal=0
+for n in range(2,7):
+    for c in product(range(2,9),repeat=n):
+        if any(c[(i+1)%n]<c[i]-1 for i in range(n)):continue
+        inspected+=1
+        r=investigate(c)
+        if r is None or r['I_pd']<=0:continue
+        finite_ideal+=1
+        if r['defect_pd'] is None:
+            first_infinite=r;break
+        if r['defect_pd']>r['I_pd'] and first_larger is None:first_larger=r
+    if first_infinite:break
+result={'evidence_level':'bounded formula discovery only','inspected':inspected,
+        'finite_positive_pd_I_count':finite_ideal,
+        'first_infinite_defect':first_infinite,'first_larger_defect':first_larger,
+        'families':families}
+Path(__file__).with_suffix('.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+print(json.dumps(result))

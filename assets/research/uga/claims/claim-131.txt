@@ -1,0 +1,10 @@
+## UGA-C131 — Finite-Pd Cubic Ideals Do Not Inherit Projective Tensor-Power or Closed-Support Descent
+
+**Status:** COMPLETE ACTUAL-KERNEL MECHANISM COUNTEREXAMPLE / NORMAL ADVERSARIAL SELF-AUDIT / SEPARATE-AGENT PROOF REVIEW / NOT A UGA COUNTEREXAMPLE / NOT INDEPENDENTLY VERIFIED  
+**Source:** same Run Section9–10; Projective-Ideal-Evidence/finite-pd-boundary-result.json.
+
+The dimension9 directed three-cycle with LEFT Kupisch(4,3,2) has literal FULL kernels Omega L0=P1,Omega L1=P2,Omega L2=L0, so LEFT simple pds(1,1,2) and gd2. Its WHOLE I=J3 is LEFT L0 tensor RIGHT R0, pd_LEFT I=1, with JI=IJ=I2=J4=0.
+
+Nevertheless T00=1 is nonnilpotent and F={0} is NOT LEFT cover-closed because Ae0 contains1,2. Balance head/support equality still holds and F remains proper. Both radical actions kill I, giving actual I tensor_A I=k while physical I2=0. Actual RIGHT0->I->A->A/I->0 yields ordinary Tor1(A/I,I)=k, exactly the failed multiplication injection.
+
+This refutes replacing PROJECTIVE with FINITE-PD in C129's automatic tensor nilpotence/cover closure mechanism. It does NOT refute general finite-pd J3 ordinary closure, C126–C127, properness in general, or UGA. Passed729 triples,5 FULL covers,51 integral inverses and4 kernel/module isomorphisms; ordinary tensor/Tor has the separate exact-sequence proof.

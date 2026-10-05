@@ -1,0 +1,207 @@
+"""Actual simple period-one tails with expanding cyclic-image carriers.
+Separate written all-degree proof; shared exact self-audit only.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfor p in [3,5,8]:',1)[0],str(frozen),'exec'),globals())
+from yoneda_generation_certificate import check_module_map
+r,s,u,t,v,w=range(6)
+base=[('er',r,r),('es',s,s),('eu',u,u),('et',t,t),('ev',v,v),
+      ('ar',r,u),('as',s,u),('bt',t,u),('cv',v,u),
+      ('cr',u,r),('cs',u,s),('dr',r,r),('dsr',s,r),('dt',t,r),
+      ('drs',r,s),('ds',s,s),('dv',v,s),('zt',t,t),('zv',v,v)]
+idx={name:i for i,(name,_,_) in enumerate(base)}
+bp={('ar','cr'):'dr',('as','cr'):'dsr',('bt','cr'):'dt',
+    ('ar','cs'):'drs',('as','cs'):'ds',('cv','cs'):'dv'}
+def basemult(i,j):
+    if i<5:return j if i==base[j][1] else None
+    if j<5:return i if j==base[i][2] else None
+    name=bp.get((base[i][0],base[j][0]))
+    return idx.get(name) if name else None
+# Genuine Y=(Pr+Ps)/Pu, pd_A Y=1, dimension5.
+# Use bases r:[er,dr], s:[es,dsr], u:[cr], with cs=-cr,
+# drs=-dr, ds=-dsr, and dt=dv=0.
+ydims=[2,2,1,0,0]
+def yaction(i):
+    _,left,right=base[i]
+    matrix=[[F(0)]*ydims[left] for _ in range(ydims[right])]
+    if i<5:
+        return [rk.unit_vector(ydims[left],j) for j in range(ydims[left])]
+    entries={'cr':[(0,0,1)],'cs':[(0,0,-1)],
+             'ar':[(0,1,1)],'as':[(0,1,1)],
+             'dr':[(0,1,1)],'dsr':[(0,1,1)],
+             'drs':[(0,1,-1)],'ds':[(0,1,-1)]}
+    for col,row,val in entries.get(base[i][0],[]):matrix[col][row]=F(val)
+    return matrix
+# A tensor Q[x]/x2 plus a genuine one-point extension with rad Pw=Y tensor k.
+# Radical basis lists base radical tensor1, ALL base elements tensor x,
+# then the5 actual Y columns from the new source w.
+rad=[{'name':name,'left':left,'right':right} for name,left,right in base[5:]]
+rad += [{'name':name+'_x','left':left,'right':right} for name,left,right in base]
+y_names=[['yw_r0','yw_r1'],['yw_s0','yw_s1'],['yw_u0'],[],[]]
+rad += [{'name':name,'left':q,'right':w} for q in range(5) for name in y_names[q]]
+radidx={b['name']:i for i,b in enumerate(rad)}
+def tensor_symbol(i,bit):return base[i][0]+('_x' if bit else '')
+rad_tensors=[(i,0) for i in range(5,len(base))]+[(i,1) for i in range(len(base))]
+products=[]
+for a,(i,bit1) in enumerate(rad_tensors):
+    for b,(j,bit2) in enumerate(rad_tensors):
+        k=basemult(i,j)
+        if k is not None and bit1+bit2<2:
+            products.append({'left':rad[a]['name'],'right':rad[b]['name'],
+                             'value':{tensor_symbol(k,bit1+bit2):1}})
+    if bit1==0:
+        _,left,right=base[i];matrix=yaction(i)
+        for col,name in enumerate(y_names[right]):
+            value={y_names[left][row]:int(c) for row,c in enumerate(matrix[col]) if c}
+            if value:products.append({'left':rad[a]['name'],'right':name,'value':value})
+payload={'vertices':6,'base_vertex':w,'radical_basis':rad,'radical_products':products}
+A=rk.Algebra(payload)
+full=[(f'e{i}',i,i) for i in range(6)]+[(b['name'],b['left'],b['right']) for b in rad]
+dim=len(full)
+def mult(i,j):
+    if i<6:return rk.unit_vector(dim,j) if i==full[j][1] else [F(0)]*dim
+    if j<6:return rk.unit_vector(dim,i) if j==full[i][2] else [F(0)]*dim
+    return [F(0)]*6+A.pair(i-6,j-6)
+for i,j,k in product(range(dim),repeat=3):
+    assert rk.combine([mult(l,k) for l in range(dim)],mult(i,j),dim)==rk.combine([mult(i,l) for l in range(dim)],mult(j,k),dim)
+    counts['associativity']+=1
+Lw=sr.Module.simple(A,w)
+X,xi,xcert=cover(Lw)
+assert X.dimensions==ydims+[0]
+Z,zi,zcert=cover(X)
+assert zi['cover_multiplicities']==[1,1,0,0,0,0]
+ZZ,zzi,zzcert=cover(Z)
+assert zzi['cover_multiplicities']==[1,1,1,0,0,0]
+# Recover actual period-one maps using the tensor differential D=[[x,i],[0,-x]].
+# First syzygy Z embeds in Q0=Pr+Ps. Its source generators are
+# Er=xer, Es=xes, G=cr+cs. The first-kernel coordinates retain this literal basis.
+lin=zi['linear_data']
+def ambient(q,copy,name):
+    b=radidx[name] if name in radidx else None
+    position=lin['bases'][q].index((copy,b))
+    return rk.unit_vector(zi['cover_dimensions'][q],position)
+def zvec(q,copy,name):return lin['readers'][q](ambient(q,copy,name))
+Er=zvec(r,0,'er_x');Es=zvec(s,1,'es_x')
+G=lin['readers'][u]([a+b for a,b in zip(ambient(u,0,'cr'),ambient(u,1,'cs'))])
+# A real period-one kernel isomorphism, rather than extrapolated Betti data.
+Zcanonical=sr.Module(A,Z.dimensions,Z.actions)
+Zcanonical.top_lifts=lambda:[[Er],[Es],[G],[],[],[]]
+Kperiod,periodinfo,periodcert=cover(Zcanonical)
+plin=periodinfo['linear_data'];period_map=[]
+for q in range(6):
+    oldpos={entry:j for j,entry in enumerate(lin['bases'][q])}
+    projected=[]
+    for col in plin['kernels'][q]:
+        vector=[F(0)]*zi['cover_dimensions'][q]
+        for j,entry in enumerate(plin['bases'][q]):
+            if entry[0]<2:vector[oldpos[entry]]+=col[j]
+        projected.append(lin['readers'][q](vector))
+    period_map.append(projected)
+period_iso=ss.check_isomorphism(Kperiod,Z,ss.encode(period_map))
+counts['actual_kernel_isomorphisms']+=1
+def act(name,vector):
+    b=rad[radidx[name]]
+    return rk.combine(Z.actions[radidx[name]],vector,Z.dimensions[b['left']])
+hr=[a+b for a,b in zip(Er,act('ar',G))]
+hs=[a+b for a,b in zip(Es,act('as',G))]
+head_lifts={r:hr,s:hs,u:G}
+for q,h in head_lifts.items():
+    assert rk.rank(Z.radical_bases()[q]+[h])==len(Z.radical_bases()[q])+1
+def generated(q,h):
+    images=[[] for _ in range(6)];images[q].append(h)
+    for j,b in enumerate(rad):
+        if b['right']==q:images[b['left']].append(rk.combine(Z.actions[j],h,Z.dimensions[b['left']]))
+    selected=[]
+    for q,cols in enumerate(images):
+        chosen,_=rk.independent(cols);selected.append([cols[i] for i in chosen])
+    readers=[sr.coordinates_reader(cols,Z.dimensions[q]) for q,cols in enumerate(selected)]
+    actions=[]
+    for j,b in enumerate(rad):
+        actions.append([readers[b['left']](rk.combine(Z.actions[j],col,Z.dimensions[b['left']])) for col in selected[b['right']]])
+    C=sr.Module(A,list(map(len,selected)),actions)
+    check_module_map(C,Z,selected)
+    return C,selected
+images=[]
+cyclic_kernel_isos=[]
+for q,h in head_lifts.items():
+    C,embedding=generated(q,h);K,ki,kcert=cover(C)
+    if q==u:assert not any(K.dimensions)
+    else:assert ki['cover_multiplicities']==[int(j==q) for j in range(6)]
+    images.append({'head':q,'module':ss.module_payload(C),'inclusion':embedding,'cover':kcert})
+    if q!=u:
+        names=['cr','dr','dsr','dt'] if q==r else ['cs','drs','ds','dv']
+        local=[[name for name in names if base[idx[name]][1]==j] for j in range(6)]
+        dims=list(map(len,local));position=[{name:i for i,name in enumerate(part)} for part in local]
+        expected_actions=[]
+        for b in rad:
+            cols=[]
+            for name in local[b['right']]:
+                column=[F(0)]*dims[b['left']]
+                if b['name'] in idx:
+                    out=basemult(idx[b['name']],idx[name])
+                    if out is not None:column[position[b['left']][base[out][0]]]=F(1)
+                cols.append(column)
+            expected_actions.append(cols)
+        M=sr.Module(A,dims,expected_actions)
+        klin=ki['linear_data'];morphism=[]
+        for vertex,part in enumerate(local):
+            pos={entry:j for j,entry in enumerate(klin['bases'][vertex])}
+            morphism.append([klin['readers'][vertex](rk.unit_vector(ki['cover_dimensions'][vertex],pos[(0,radidx[name+'_x'])])) for name in part])
+        iso=ss.check_isomorphism(M,K,ss.encode(morphism))
+        counts['actual_kernel_isomorphisms']+=1
+        cyclic_kernel_isos.append({'head':q,'kernel_equals_JA_Phead_tensor_k':iso})
+        current=K;check_rows=[]
+        for degree in range(1,5):
+            nxt,info,cert=cover(current)
+            expected=[0]*6;expected[u]=1
+            expected[v if q==r else t]=degree-1
+            assert info['cover_multiplicities']==expected
+            check_rows.append({'positive_cyclic_degree':degree,'cover':cert});current=nxt
+        cyclic_kernel_isos[-1]['bounded_ordinary_Tor_checks']=check_rows
+    print(json.dumps({'cyclic_head':q,'dimensions':C.dimensions,'kernel_dimensions':K.dimensions}))
+H=ss.direct_sum(A,[ss.parse_module(A,e['module']) for e in images],[1,1,1])
+sum_map=[]
+for q in range(6):sum_map.append([col for e in images for col in e['inclusion'][q]])
+check_module_map(H,Z,sum_map)
+assert all(rk.rank(sum_map[q])==Z.dimensions[q] for q in range(6))
+full_kernel=[rk.nullspace(sum_map[q],Z.dimensions[q]) for q in range(6)]
+readers=[sr.coordinates_reader(full_kernel[q],H.dimensions[q]) for q in range(6)]
+Factions=[]
+for j,b in enumerate(rad):
+    Factions.append([readers[b['left']](rk.combine(H.actions[j],col,H.dimensions[b['left']])) for col in full_kernel[b['right']]])
+Fk=sr.Module(A,list(map(len,full_kernel)),Factions)
+check_module_map(Fk,H,full_kernel)
+def loewy_length(module):
+    layer=[[rk.unit_vector(d,j) for j in range(d)] for d in module.dimensions]
+    length=0
+    while any(layer):
+        length+=1;new=[[] for _ in range(6)]
+        for j,b in enumerate(rad):
+            new[b['left']]+=[rk.combine(module.actions[j],col,module.dimensions[b['left']]) for col in layer[b['right']]]
+        layer=[]
+        for cols in new:
+            chosen,_=rk.independent(cols);layer.append([cols[i] for i in chosen])
+    return length
+assert loewy_length(Z)==3 and loewy_length(Fk)==2
+assert len(A.radical_powers[2])>0 and len(A.radical_powers[3])==0
+print(json.dumps({'relation_dimensions':Fk.dimensions,'Y_tail_dimensions':Z.dimensions}))
+tails=[];current=Lw
+for n in range(6):
+    K,info,cert=cover(current)
+    if n>=2:assert info['cover_multiplicities']==[1,1,1,0,0,0]
+    tails.append({'degree':n,'cover':cert});current=K
+result={'status':'passed','counts':counts,'field':'Q','dimension':dim,'algebra':payload,
+        'actual_simple_first_cover':xcert,'actual_second_cover':zcert,
+        'actual_tail_head_cover':zzcert,'modified_minimal_head_lifts':head_lifts,
+        'actual_period_one_kernel_isomorphism':period_iso,
+        'period_one_real_minimal_cover':periodcert,
+        'actual_cyclic_kernel_isomorphisms':cyclic_kernel_isos,
+        'actual_cyclic_images':images,'actual_full_relation_kernel':ss.module_payload(Fk),
+        'full_relation_inclusion':full_kernel,'actual_simple_tail_covers':tails,
+        'actual_Loewy_lengths':{'tail_Z':3,'full_relations_F':2,'algebra':4},
+        'independent_verification':False,'all_degree_proof_separate':True}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','counts':counts,'dimension':dim}))

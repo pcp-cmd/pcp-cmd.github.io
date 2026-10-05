@@ -1,0 +1,1946 @@
+# Universal Gap A — Universal Layer U4
+## Run C — Adversarial Anchor Gate / Screening Audit
+
+**Role:** Run C — Independent Destruction  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Frozen output:** `Run-C-U4-AdversarialGate.md`
+
+## Completion label
+
+\[
+\boxed{
+\texttt{DIRECT AUGMENTATION REFUTED; BARE D\_sg ANCHOR REFUTED;}
+}
+\]
+
+\[
+\boxed{
+\texttt{TRANSFER-OR-DESCENT SURVIVES; EMPTY K-QUADRANT REMAINS OPEN;}
+}
+\]
+
+A new exact calibration is also obtained:
+
+\[
+\boxed{
+\texttt{BOUNDED }K
++
+\texttt{ BILATERALLY FREE TERMINAL DEFECT}
++
+\texttt{ ACTUAL CORING}
+\not\Rightarrow
+\texttt{ SCREENING}.
+}
+\]
+
+The old bare statements remain withdrawn:
+
+- finite exact context does not imply simple restart;
+- first positive defect does not imply a later positive defect;
+- \(M\otimes_SM\neq0\) does not imply renewal;
+- the old “semisimple deleted corner amplitude-2 no-go” is false/withdrawn;
+- finite \(\operatorname{gldim}F\) does not by itself force defect renewal.
+
+No bounded-\(K\) + complete-diagonal-screening ordinary algebra was found in this run.
+
+---
+
+# 1. Vault method mapping
+
+This run used the required adversarial methods as follows.
+
+| Vault method | Actual object / map / complex used |
+|---|---|
+| Extreme example | quantum exterior \(A_q\), the 4-vertex anchor algebra below, and a symmetric Nakayama endomorphism family |
+| Counterexample | high-syzygy \(N\twoheadrightarrow L_z\) whose Tor comparison is eventually zero; singularly nonzero map with detector-zero tail |
+| Representation change | comparison map \(\to\) kernel/mapping cone; \(D_{\rm sg}\to\) detector-tail quotient; \(K\)-homology \(\to\) Postnikov \(d_3\) action |
+| Reverse infinite descent | kernel descent strictly lowers composition length, but visibility need not descend |
+| Standard-form audit | short exact sequence \(0\to K\to N\to L_z\to0\); Keller–Vossieck syzygy model of \(D_{\rm sg}\); amplitude-2 Postnikov form |
+| Local/global mismatch | a map can be nonzero in \(D_{\rm sg}\) while the fixed detector \(R_i\) sees it as zero in all high degrees |
+| Moduli drift | \(\Omega M_\lambda\simeq M_{\lambda/q}\) in quantum exterior; connected two-vertex triangular extension preserves the drift |
+| Bootstrap failure analysis | direct augmentation transfer fails; singularly nonzero anchor fails; bilateral-free bounded defect still need not screen |
+
+The main recurring lesson is not “finite state fails” in the abstract. It is more precise:
+
+\[
+\boxed{
+\text{the state must be anchored to the chosen detector and must retain the actual transport map.}
+}
+\]
+
+---
+
+# 2. Mandatory V calibration I — root-of-unity quantum exterior
+
+Let
+
+\[
+A_q
+=
+k\langle x,y\rangle/
+(x^2,y^2,xy+qyx)
+\]
+
+and define the two-dimensional module
+
+\[
+M_\lambda=\langle u,v\rangle,
+\qquad
+xu=v,\quad yu=\lambda v,\quad xv=yv=0.
+\]
+
+The exact syzygy calculation gives
+
+\[
+\boxed{
+\Omega M_\lambda\cong M_{\lambda/q}.
+}
+\]
+
+For \(q=-1\),
+
+\[
+M_\lambda\leftrightarrow M_{-\lambda}
+\]
+
+is an exact finite periodic orbit.
+
+Nevertheless the unique simple cannot enter this orbit: every syzygy of the simple has odd vector-space dimension whereas
+
+\[
+\dim M_{\pm\lambda}=2.
+\]
+
+Therefore:
+
+\[
+\boxed{
+\text{finite exact recurrent module orbit}
+\not\Rightarrow
+\text{simple-seed restart}.
+}
+\]
+
+This remains a mandatory calibration for every proposed U4 anchor theorem.
+
+---
+
+# 3. Mandatory V calibration II — infinite-order moduli drift
+
+If \(q\) has infinite multiplicative order, then
+
+\[
+\Omega^nM_\lambda
+\cong
+M_{\lambda q^{-n}},
+\]
+
+and these modules are pairwise nonisomorphic.
+
+Yet the entire coarse local signature remains constant:
+
+\[
+\dim=2,\qquad
+\operatorname{LoewyLen}=2,
+\]
+
+\[
+\operatorname{top}\cong k,\qquad
+\operatorname{soc}\cong k,
+\]
+
+and the \(x\)- and \(y\)-maps have constant ranks.
+
+Hence local boundedness does not bound the exact context state.
+
+The missing datum is the transport/holonomy parameter
+
+\[
+\lambda_n=\lambda q^{-n}.
+\]
+
+This calibration rules out any U4 bridge that silently recovers exact-state alignment from bounded local data.
+
+---
+
+# 4. Mandatory V calibration III — connected two-vertex moduli-drift model
+
+The preceding drift is not repaired merely by putting it inside a connected two-vertex algebra.
+
+Let
+
+\[
+T_q=
+\begin{pmatrix}
+A_q & U\\
+0 & k
+\end{pmatrix},
+\]
+
+where \(U\neq0\) is any finite-dimensional \(A_q\)-\(k\) bimodule; for example take the unique simple left \(A_q\)-module.
+
+Let
+
+\[
+e=
+\begin{pmatrix}
+1&0\\0&0
+\end{pmatrix}.
+\]
+
+Then
+
+\[
+T_qe
+\]
+
+is projective as a left \(T_q\)-module and free of rank one as a right \(A_q\)-module.
+
+Thus the exact embedding
+
+\[
+F(-)=T_qe\otimes_{A_q}-
+\]
+
+sends an \(A_q\)-projective resolution to a \(T_q\)-projective resolution and preserves the syzygy transport:
+
+\[
+\boxed{
+\Omega_{T_q}^nF(M_\lambda)
+\cong
+F(M_{\lambda q^{-n}}).
+}
+\]
+
+Therefore a connected two-vertex ambient algebra does not remove the quantum-exterior moduli drift.
+
+### Exact limitation
+
+The recurrent modules in this calibration remain supported on the \(e\)-side. Therefore this example does **not** refute a theorem whose explicit hypothesis requires the recurrent carrier itself to use both primitive vertices recurrently.
+
+It does refute the weaker claim that adding finite connected carrier structure automatically repairs the anchor problem.
+
+---
+
+# 5. Priority 1 — actual comparison-map counterexample
+
+We now construct an ordinary finite-dimensional basic algebra in which:
+
+\[
+N\twoheadrightarrow L_z,
+\]
+
+\[
+\operatorname{Tor}_n^D(R_i,N)\neq0
+\quad\text{for all large }n,
+\]
+
+but
+
+\[
+\operatorname{Tor}_n^D(R_i,N)
+\longrightarrow
+\operatorname{Tor}_n^D(R_i,L_z)
+\]
+
+is zero for all sufficiently large \(n\).
+
+Moreover \(N\) is itself a first syzygy of a simple.
+
+---
+
+# 6. The four-vertex algebra
+
+Use vertices
+
+\[
+i,\ w,\ z,\ b.
+\]
+
+Arrows:
+
+\[
+x:i\to i,
+\qquad
+y:w\to w,
+\]
+
+\[
+a:i\to z,
+\qquad
+c:w\to z,
+\]
+
+\[
+d:i\to b,
+\qquad
+\varepsilon:z\to b.
+\]
+
+Relations:
+
+\[
+x^2=0,\qquad y^2=0,
+\]
+
+\[
+yc=0,
+\qquad
+xd=0,
+\]
+
+\[
+a\varepsilon=0,
+\qquad
+c\varepsilon=0.
+\]
+
+No relation kills \(xa\).
+
+The admissible path basis is
+
+\[
+e_i,e_w,e_z,e_b,
+x,y,a,xa,c,d,\varepsilon,
+\]
+
+so
+
+\[
+\dim_kD=11.
+\]
+
+The algebra is finite-dimensional, basic, and connected.
+
+---
+
+# 7. Relevant left projectives
+
+With \(P_v=De_v\):
+
+\[
+P_i=\langle e_i,x\rangle,
+\qquad
+\operatorname{rad}P_i=\langle x\rangle\cong L_i.
+\]
+
+Hence
+
+\[
+\boxed{
+\Omega L_i\cong L_i.
+}
+\]
+
+Similarly,
+
+\[
+P_w=\langle e_w,y\rangle,
+\qquad
+\Omega L_w\cong L_w.
+\]
+
+For \(z\),
+
+\[
+P_z
+=
+\langle e_z,a,xa,c\rangle.
+\]
+
+Its radical decomposes as
+
+\[
+\operatorname{rad}P_z
+=
+Da\oplus Dc.
+\]
+
+Since
+
+\[
+Da=\langle a,xa\rangle\cong P_i
+\]
+
+and
+
+\[
+Dc=\langle c\rangle\cong L_w,
+\]
+
+we have
+
+\[
+\boxed{
+\Omega L_z\cong P_i\oplus L_w.
+}
+\]
+
+Consequently:
+
+- \(L_z\) has infinite projective dimension because the \(L_w\)-tail is periodic;
+- the \(P_i\)-branch occurs only at the first syzygy.
+
+Thus for the right simple detector \(R_i\),
+
+\[
+\boxed{
+\operatorname{Tor}_n^D(R_i,L_z)=0
+\qquad(n\ge2).
+}
+\]
+
+At the same time
+
+\[
+e_zDe_i\neq0
+\]
+
+because the path \(a:i\to z\) survives.
+
+So \(z\) is Peirce-visible from \(i\).
+
+---
+
+# 8. A high-syzygy source
+
+For \(b\),
+
+\[
+P_b
+=
+\langle e_b,d,\varepsilon\rangle.
+\]
+
+The imposed relations give
+
+\[
+Dd\cong L_i,
+\qquad
+D\varepsilon\cong L_z.
+\]
+
+Therefore
+
+\[
+\operatorname{rad}P_b
+=
+Dd\oplus D\varepsilon
+\cong
+L_i\oplus L_z.
+\]
+
+Hence
+
+\[
+\boxed{
+N:=\Omega L_b
+\cong
+L_i\oplus L_z.
+}
+\]
+
+Take the canonical projection
+
+\[
+p:N=L_i\oplus L_z\twoheadrightarrow L_z.
+\]
+
+Since the \(L_i\)-summand is periodic,
+
+\[
+\operatorname{Tor}_n^D(R_i,N)\neq0
+\qquad
+\forall n\ge0.
+\]
+
+But for \(n\ge2\),
+
+\[
+\operatorname{Tor}_n^D(R_i,L_z)=0.
+\]
+
+Therefore
+
+\[
+\boxed{
+\operatorname{Tor}_n^D(R_i,p)=0
+\qquad
+(n\ge2),
+}
+\]
+
+despite persistent Tor in the source.
+
+This is an actual high-syzygy comparison-map counterexample.
+
+---
+
+# 9. What the comparison counterexample destroys
+
+It destroys the bare statement
+
+\[
+\boxed{
+\text{persistent Tor of }N
++
+N\twoheadrightarrow L_z
++
+e_zDe_i\neq0
+\Rightarrow
+\text{persistent Tor of }L_z.
+}
+\]
+
+Even all of the following are simultaneously true:
+
+- \(N\) is an actual syzygy of a simple;
+- \(L_z\) is Peirce-visible from \(i\);
+- \(N\) has a persistent \(R_i\)-detector tail;
+- the quotient map is an actual module epimorphism.
+
+The induced tail map can still be eventually zero.
+
+So **augmentation alone is not an anchor**.
+
+---
+
+# 10. Where the recurrence goes
+
+Here
+
+\[
+K_0:=\ker p=L_i.
+\]
+
+Since the short exact sequence is split,
+
+\[
+0\to L_i
+\to
+L_i\oplus L_z
+\xrightarrow{p}
+L_z
+\to0,
+\]
+
+the mapping cone satisfies
+
+\[
+\operatorname{Cone}(p)\simeq L_i[1].
+\]
+
+Thus all of the persistent \(R_i\)-recurrence missed by \(L_z\) is absorbed by the kernel / cone.
+
+This is not merely heuristic. The long exact Tor sequence gives the general exact fragment
+
+\[
+0
+\to
+\operatorname{coker}f_{n+1}
+\to
+\operatorname{Tor}_n^D(R_i,K_0)
+\to
+\ker f_n
+\to0,
+\]
+
+where
+
+\[
+f_n:
+\operatorname{Tor}_n^D(R_i,N)
+\to
+\operatorname{Tor}_n^D(R_i,L_z).
+\]
+
+If \(f_n=0\) eventually and the source is nonzero infinitely often, then
+
+\[
+\boxed{
+\operatorname{Tor}_n^D(R_i,K_0)\neq0
+\quad\text{infinitely often}.
+}
+\]
+
+---
+
+# 11. Audit of Run A transfer-or-descent
+
+The completed Run A statement was not merely “comparison transfer”.
+
+It included the fallback:
+
+\[
+\text{transfer}
+\quad\text{or}\quad
+\text{strict kernel descent}.
+\]
+
+The counterexample above **does not refute that disjunction**.
+
+Indeed,
+
+\[
+\ell(K_0)=1<2=\ell(N),
+\]
+
+and the recurrence descends immediately to the simple
+
+\[
+L_i.
+\]
+
+Moreover the terminal pair is diagonal:
+
+\[
+e_iDe_i\neq0,
+\]
+
+so this particular calibration ends in a visible persistent pair.
+
+Therefore the correct audit is:
+
+\[
+\boxed{
+\text{DIRECT AUGMENTATION TRANSFER IS FALSE;}
+}
+\]
+
+\[
+\boxed{
+\text{THE FORMAL TRANSFER-OR-LENGTH-DESCENT LEMMA SURVIVES.}
+}
+\]
+
+What remains unresolved is exactly the issue already isolated by Run A:
+
+> when descent reaches a persistent simple, must that simple lie in the visible sector \(V_i\)?
+
+The present example is favorable because it lands at \(L_i\). It gives no proof of visibility preservation in general.
+
+---
+
+# 12. Reverse infinite-descent audit
+
+Because the quotient is simple,
+
+\[
+0\to K\to N\to L_z\to0
+\]
+
+always gives
+
+\[
+\ell(K)=\ell(N)-1.
+\]
+
+Thus ordinary module length is a valid well-founded descent parameter whenever the comparison map is tail-zero.
+
+This part is robust.
+
+But the descent parameter says nothing about Peirce visibility.
+
+Therefore:
+
+\[
+\boxed{
+\text{length descent controls termination, not detector–carrier alignment.}
+}
+\]
+
+Any theorem that tries to derive visibility solely from the fact that length descends is missing a local/global bridge.
+
+---
+
+# 13. Priority 2 — singularity-category anchor audit
+
+The same four-vertex algebra gives a sharper counterexample.
+
+The projection
+
+\[
+p:N=L_i\oplus L_z\to L_z
+\]
+
+is split.
+
+Since \(L_z\) has infinite projective dimension,
+
+\[
+L_z\neq0
+\quad\text{in }D_{\rm sg}(D).
+\]
+
+Let
+
+\[
+s:L_z\hookrightarrow N
+\]
+
+be the split inclusion.
+
+In the singularity category,
+
+\[
+p\circ s=\operatorname{id}_{L_z}.
+\]
+
+Therefore
+
+\[
+\boxed{
+[p]\neq0
+\quad\text{in }D_{\rm sg}(D).
+}
+\]
+
+Yet we already proved
+
+\[
+\boxed{
+\operatorname{Tor}_n^D(R_i,p)=0
+\qquad(n\ge2).
+}
+\]
+
+So:
+
+\[
+\boxed{
+\text{singularly nonzero map}
+\not\Rightarrow
+\text{tail transfer for a fixed detector}.
+}
+\]
+
+This directly destroys the bare stable-anchor statement if “anchor” means only nonzero in \(D_{\rm sg}(D)\).
+
+---
+
+# 14. Why this is a local/global mismatch
+
+Globally, \(L_z\) is singular.
+
+Locally relative to \(R_i\), its tail is dead:
+
+\[
+\operatorname{Tor}_n^D(R_i,L_z)=0
+\qquad(n\gg0).
+\]
+
+Thus the singularity category correctly remembers that \(L_z\) is not perfect, but it forgets **which right-simple detector sees the singularity**.
+
+This is precisely the missing datum.
+
+The representation change
+
+\[
+\text{module category}
+\to
+D_{\rm sg}(D)
+\]
+
+is useful but too coarse for detector-specific transfer.
+
+---
+
+# 15. One-way stable theorem that survives
+
+For finite-dimensional algebras there is a standard Keller–Vossieck description
+
+\[
+\operatorname{Hom}_{D_{\rm sg}(D)}(M,N)
+\cong
+\varinjlim_m
+\underline{\operatorname{Hom}}_D
+(\Omega^mM,\Omega^mN).
+\]
+
+Consequently, if
+
+\[
+[f]=0
+\quad\text{in }D_{\rm sg}(D),
+\]
+
+then for some sufficiently large \(m\),
+
+\[
+\Omega^m f
+\]
+
+is zero in the stable category, hence factors through a projective.
+
+By natural dimension shifting, for every right \(D\)-module \(R\),
+
+\[
+\boxed{
+\operatorname{Tor}_n^D(R,f)=0
+\qquad(n\gg0).
+}
+\]
+
+Therefore the converse attack requested in U4 fails:
+
+> a genuinely persistent nonzero Tor transfer cannot come from a singularly zero map.
+
+So singular nonvanishing is **necessary** for persistent transfer.
+
+It is not sufficient for a fixed detector.
+
+---
+
+# 16. Detector-local representation is the correct refinement
+
+Let
+
+\[
+\mathfrak T_i(-)
+=
+R_i\otimes_D^{\mathbf L}-.
+\]
+
+Modulo bounded complexes this factors through the singularity category:
+
+\[
+\overline{\mathfrak T}_i:
+D_{\rm sg}(D)
+\longrightarrow
+\mathcal T(k),
+\]
+
+where
+
+\[
+\mathcal T(k)
+=
+D^-_{\rm fd}(k)/D^b_{\rm fd}(k).
+\]
+
+For modules,
+
+\[
+\overline{\mathfrak T}_i(M)\neq0
+\]
+
+exactly when
+
+\[
+\operatorname{Tor}_n^D(R_i,M)\neq0
+\]
+
+arbitrarily far out.
+
+The four-vertex example has
+
+\[
+L_z\neq0
+\quad\text{in }D_{\rm sg}(D),
+\]
+
+but
+
+\[
+\overline{\mathfrak T}_i(L_z)=0.
+\]
+
+Also
+
+\[
+[p]\neq0
+\quad\text{in }D_{\rm sg}(D),
+\]
+
+but
+
+\[
+\overline{\mathfrak T}_i(p)=0.
+\]
+
+Thus the detector-kernel is genuinely nontrivial.
+
+This validates the refined Run B representation rather than refuting it.
+
+---
+
+# 17. Audit of completed Run B stable-anchor result
+
+Run B's completed statement used the detector-tail functor, not bare singular nonvanishing.
+
+Its operative dichotomy is:
+
+- if the augmentation morphism is detector-nonzero, recurrence transfers;
+- if it is detector-zero, recurrence is absorbed by the kernel and length descends.
+
+The four-vertex counterexample lies entirely in the second branch.
+
+Therefore:
+
+\[
+\boxed{
+\text{BARE }D_{\rm sg}\text{-ANCHOR IS REFUTED;}
+}
+\]
+
+but
+
+\[
+\boxed{
+\overline{\mathfrak T}_i\text{-ANCHOR / KERNEL-DESCENT SURVIVES THIS AUDIT.}
+}
+\]
+
+The remaining unresolved terminal issue is the same as Run B reported:
+
+\[
+\boxed{
+\text{can the invisible sector indefinitely carry the detector recurrence?}
+}
+\]
+
+No new counterexample to that statement was produced here.
+
+---
+
+# 18. Standard-form audit of the V-line
+
+The correct standard form is not:
+
+\[
+N\twoheadrightarrow L_z
+\]
+
+alone, nor
+
+\[
+[N\to L_z]\neq0
+\quad\text{in }D_{\rm sg}.
+\]
+
+It is the detector-local triangle
+
+\[
+K\to N\xrightarrow fL_z\to K[1]
+\]
+
+after applying
+
+\[
+\overline{\mathfrak T}_i.
+\]
+
+There are only two robust branches:
+
+### Transfer branch
+
+\[
+\overline{\mathfrak T}_i(f)\neq0.
+\]
+
+Then some tail survives in \(L_z\).
+
+### Absorption branch
+
+\[
+\overline{\mathfrak T}_i(f)=0.
+\]
+
+Then the tail is forced into \(K\), and module length decreases.
+
+No purely categorical replacement of
+
+\[
+\overline{\mathfrak T}_i(f)\neq0
+\]
+
+by
+
+\[
+[f]\neq0\in D_{\rm sg}
+\]
+
+is valid.
+
+---
+
+# 19. Priority 3 — frozen K-line facts
+
+The following are retained:
+
+1. Bare first-defect renewal is false.
+2. An actual seven-dimensional quotient realizes bounded amplitude \(2\):
+   \[
+   H_0(K)=S,\qquad H_2(K)\neq0,\qquad H_{>2}(K)=0,
+   \]
+   but does not completely screen the diagonal tail.
+3. In that example the positive defect is not free/perfect on both sides.
+4. The old eight-dimensional actual permanent-screening example has
+   \[
+   a(K)=\infty.
+   \]
+5. Complete amplitude-2 screening, if it occurs with terminal defect \(M\), requires the Postnikov class
+   \[
+   \alpha:S\to M[3]
+   \]
+   to act as an eventual isomorphism on the singular Tor tail.
+6. Equivalently, \(M\) must act as a three-step singular shift/invertible correspondence on both sides.
+
+No old “first defect forces renewal” statement is reused.
+
+---
+
+# 20. A stronger actual bounded-\(K\) calibration
+
+The seven-dimensional example could be dismissed because its terminal defect is one-sidedly degenerate.
+
+The next construction removes that defect.
+
+Let
+\[
+\Lambda=k[t]/(t^{r+2}),
+\qquad
+r\ge3.
+\]
+
+Write
+
+\[
+X_m=\Lambda/(t^m).
+\]
+
+Set
+
+\[
+G
+=
+X_{r+2}
+\oplus
+X_r
+\oplus
+X_{r-2},
+\]
+
+and
+
+\[
+D_r=\operatorname{End}_\Lambda(G).
+\]
+
+Let \(e\) be the primitive idempotent corresponding to \(X_r\).
+
+Because the summands of \(G\) are pairwise nonisomorphic indecomposables,
+
+\[
+D_r
+\]
+
+is finite-dimensional and basic.
+
+---
+
+# 21. The vertex quotient
+
+We have
+
+\[
+eD_re
+\cong
+\operatorname{End}_\Lambda(X_r)
+\cong
+k[t]/(t^r).
+\]
+
+A map \(X_r\to X_r\) factors through \(X_{r+2}\) or \(X_{r-2}\) exactly in the ideal generated by \(t^2\).
+
+Therefore
+
+\[
+\boxed{
+S
+=
+D_r/D_r(1-e)D_r
+\cong
+k[t]/(t^2).
+}
+\]
+
+Thus \(S\) is singular local.
+
+---
+
+# 22. Exact approximation sequence
+
+Define
+
+\[
+f:
+X_{r+2}\oplus X_{r-2}
+\to
+X_r
+\]
+
+by
+
+\[
+f(u,v)
+=
+\pi(u)+t^2v,
+\]
+
+where
+
+\[
+\pi:X_{r+2}\twoheadrightarrow X_r
+\]
+
+is the natural quotient.
+
+Define
+
+\[
+g:X_r\to X_{r+2}\oplus X_{r-2}
+\]
+
+by
+
+\[
+g(w)
+=
+(t^2w,-\bar w),
+\]
+
+where
+
+\[
+\bar w
+\]
+
+is the quotient of \(w\) modulo \(t^{r-2}\).
+
+Then
+
+\[
+f g=0,
+\]
+
+\(g\) is injective, and the dimensions give
+
+\[
+\boxed{
+0
+\to
+X_r
+\xrightarrow g
+X_{r+2}\oplus X_{r-2}
+\xrightarrow f
+X_r
+\to0.
+}
+\]
+
+The map \(f\) is the right approximation whose image consists precisely of maps into \(X_r\) factoring through the two deleted summands.
+
+Applying \(\operatorname{Hom}_\Lambda(G,-)\) yields
+
+\[
+\boxed{
+0
+\to
+P_e
+\to
+P_{r+2}\oplus P_{r-2}
+\to
+P_e
+\to
+S
+\to0.
+}
+\]
+
+Thus
+
+\[
+\operatorname{pd}_{D_r}S=2.
+\]
+
+---
+
+# 23. Exact self-intersection
+
+Tensor the preceding resolution with the left \(S\)-module.
+
+The outer projectives are killed by the quotient:
+
+\[
+P_{r+2}\otimes_{D_r}S=0,
+\qquad
+P_{r-2}\otimes_{D_r}S=0,
+\]
+
+whereas
+
+\[
+P_e\otimes_{D_r}S\cong S.
+\]
+
+Therefore
+
+\[
+\boxed{
+H_q(S\otimes_{D_r}^{\mathbf L}S)
+=
+\begin{cases}
+S,&q=0,2,\\
+0,&q\ne0,2.
+\end{cases}
+}
+\]
+
+Moreover multiplication by \(t\) on every \(X_m\) commutes with \(f\) and \(g\).
+
+Its class modulo factor-through maps is the generator of
+
+\[
+S=k[t]/(t^2).
+\]
+
+Hence the left and right \(S\)-actions on \(H_2\) are both the regular action.
+
+Thus
+
+\[
+\boxed{
+H_2(K)\cong {}_SS_S.
+}
+\]
+
+This family therefore satisfies all of:
+
+- actual finite-dimensional ordinary algebra;
+- actual idempotent quotient;
+- bounded terminal amplitude \(2\);
+- nonzero terminal defect;
+- defect free of rank one on the left;
+- defect free of rank one on the right;
+- actual Postnikov/coring coherence, because \(K\) comes from an ordinary algebra.
+
+This is a substantially stronger bounded calibration than the old seven-dimensional near-miss.
+
+---
+
+# 24. Yet complete screening still fails
+
+Let \(R_e,L_e\) be the right and left simples of \(D_r\) at the middle vertex.
+
+The radical of the projective corresponding to \(X_r\) is controlled by the relative almost-split map
+
+\[
+h:
+X_r\oplus X_{r+2}\oplus X_{r-2}
+\to
+X_r
+\]
+
+with components
+
+\[
+(t,\pi,t^2).
+\]
+
+Its kernel has length \(2r\), and its nilpotent \(t\)-action has precisely two Jordan blocks:
+
+\[
+\boxed{
+\ker h
+\cong
+X_{r+1}\oplus X_{r-1}.
+}
+\]
+
+The missing modules are themselves relative-periodic because
+
+\[
+0
+\to
+X_{r+1}
+\to
+X_{r+2}\oplus X_r
+\to
+X_{r+1}
+\to0,
+\]
+
+and
+
+\[
+0
+\to
+X_{r-1}
+\to
+X_r\oplus X_{r-2}
+\to
+X_{r-1}
+\to0.
+\]
+
+Therefore, after the first two steps, the minimal projective resolution of \(R_e\) repeats a projective term containing
+
+\[
+P_e^{\oplus2}
+\]
+
+in every degree.
+
+Because the resolution is minimal, tensoring with the left simple \(L_e\) kills all radical differentials.
+
+Hence
+
+\[
+\boxed{
+\dim_k
+\operatorname{Tor}^{D_r}_n(R_e,L_e)
+=
+2
+\qquad
+(n\gg0).
+}
+\]
+
+In particular:
+
+\[
+\boxed{
+\text{the diagonal tail is not screened.}
+}
+\]
+
+---
+
+# 25. Consequence for the amplitude-2 Postnikov class
+
+For
+
+\[
+S=k[t]/(t^2),
+\]
+
+we have
+
+\[
+\dim_k\operatorname{Tor}^S_n(k,k)=1
+\qquad
+\forall n\ge0.
+\]
+
+The bounded \(K\) above has two spectral rows:
+
+\[
+H_0(K)=S,
+\qquad
+H_2(K)=S.
+\]
+
+If the unique possible screening differential
+
+\[
+d_3
+\]
+
+were an eventual isomorphism, the two rows would cancel in high degrees.
+
+They do not.
+
+Instead the ambient diagonal Tor has the full two-row dimension in the tail.
+
+Therefore in this actual family
+
+\[
+\boxed{
+d_3\text{ is zero on the eventual simple Tor tail.}
+}
+\]
+
+Equivalently, the Postnikov class is not singularly invertible on the detector tail.
+
+---
+
+# 26. New K-line negative result
+
+The family \(D_r\) proves:
+
+\[
+\boxed{
+\text{bounded terminal }K
++
+{}_SM,M_S\text{ free}
++
+\text{actual coring coherence}
+\not\Rightarrow
+\text{complete screening}.
+}
+\]
+
+So bilateral perfection/free is only a **necessary architecture condition**, not the missing screening mechanism.
+
+The real additional datum is the action of the Postnikov/coring class itself:
+
+\[
+\boxed{
+\alpha\text{ must be singularly invertible / tail-isomorphic}.
+}
+\]
+
+This sharpens the U4 empty-quadrant problem.
+
+---
+
+# 27. Reverse-descent interpretation of the Nakayama calibration
+
+The quotient
+
+\[
+S=k[t]/(t^2)
+\]
+
+arises because the selected summands jump by two:
+
+\[
+r+2,\ r,\ r-2.
+\]
+
+That same gap necessarily leaves the adjacent modules
+
+\[
+X_{r+1},
+\qquad
+X_{r-1}
+\]
+
+outside the selected generator.
+
+Those missing adjacent states are exactly the periodic kernel of the simple-projective comparison map.
+
+Thus in this family the same combinatorial gap has two effects:
+
+1. it leaves a singular local quotient \(S\);
+2. it creates relative-periodic missing states that feed the ambient diagonal recurrence.
+
+This is a genuine repeated-failure identity **inside this Nakayama endomorphism family**.
+
+It is not claimed universally.
+
+---
+
+# 28. Empty-quadrant audit
+
+At the end of U4 Run C, the actual calibration table is:
+
+| \(K\) | diagonal screening | actual status |
+|---|---|---|
+| bounded, one-sided defect | no | 7-dimensional quotient |
+| bounded, defect \(S\)-free on both sides | no | Nakayama-gap family \(D_r\) |
+| unbounded | yes | old 8-dimensional permanent-screening example |
+| bounded | yes | **not found** |
+
+Therefore:
+
+\[
+\boxed{
+\text{bounded }K+\text{complete diagonal screening}
+}
+\]
+
+remains the empty quadrant.
+
+No ordinary finite-dimensional \(D\) realizing it was produced.
+
+No universal no-go was proved either.
+
+---
+
+# 29. Why the old permanent-screening example still matters
+
+The old actual eight-dimensional calibration has complete screening but unbounded \(K\).
+
+Thus it shows that sufficiently rich derived correction can cancel the local quotient tail.
+
+The Nakayama family shows the opposite:
+
+even a bounded, bilaterally free, perfectly actual defect can fail completely if the Postnikov transport is not the required singular shift.
+
+Together they isolate the missing issue much more sharply:
+
+\[
+\boxed{
+\text{not defect existence,}
+\quad
+\text{not defect freeness,}
+\quad
+\text{but singularly invertible transport.}
+}
+\]
+
+---
+
+# 30. Cross-line question: should V and K now be unified?
+
+Only partially.
+
+## V-line
+
+The necessary datum is detector-specific:
+
+\[
+\overline{\mathfrak T}_i(f).
+\]
+
+A globally nonzero singular map can be detector-zero.
+
+## K-line
+
+The necessary datum is the actual Postnikov/coring transport:
+
+\[
+\alpha:S\to M[r+1]
+\]
+
+and whether it is singularly invertible on the simple tail.
+
+Both involve “transport”, but the present run did not prove an equivalence between:
+
+\[
+\text{simple anchor}
+\]
+
+and
+
+\[
+\text{coring/no-return anchor}.
+\]
+
+Therefore the proposed unification is **not promoted to a theorem**.
+
+The justified common language is only:
+
+\[
+\boxed{
+\text{nonzero state/object is too weak; the induced tail transport must be retained.}
+}
+\]
+
+---
+
+# 31. Counterexample inventory
+
+## Counterexample A — root-of-unity finite context
+
+\[
+A_{-1},
+\qquad
+M_\lambda\leftrightarrow M_{-\lambda},
+\]
+
+finite exact periodic module context but no simple restart.
+
+## Counterexample B — infinite-order drift
+
+\[
+\Omega^nM_\lambda=M_{\lambda q^{-n}},
+\]
+
+constant local Loewy/rank data with unbounded exact moduli state.
+
+## Counterexample C — connected two-vertex drift
+
+Triangular extension \(T_q\) preserves the exact quantum-exterior drift; ambient two-vertex connectedness alone does not restore an anchor.
+
+## Counterexample D — direct augmentation transfer
+
+The 11-dimensional four-vertex algebra has
+
+\[
+N=\Omega L_b\twoheadrightarrow L_z,
+\]
+
+visible \(z\),
+
+\[
+\operatorname{Tor}_n(R_i,N)\neq0
+\]
+
+persistently, but the comparison map is zero for all \(n\ge2\).
+
+## Counterexample E — bare singularity anchor
+
+In the same algebra,
+
+\[
+[p]\neq0
+\quad\text{in }D_{\rm sg}(D),
+\]
+
+but
+
+\[
+\overline{\mathfrak T}_i(p)=0.
+\]
+
+## Counterexample F — bilateral-free bounded \(K\) is insufficient
+
+The Nakayama family \(D_r\) has
+
+\[
+H_*(K)=S\oplus S[2]
+\]
+
+with regular bimodule defect but persistent ambient diagonal Tor.
+
+---
+
+# 32. Withdrawn statements / negative assets
+
+The following remain unusable without new hypotheses:
+
+### W1
+\[
+\text{finite exact context}\Rightarrow\text{simple restart}.
+\]
+
+False.
+
+### W2
+\[
+H_r(K)\neq0\Rightarrow H_{>r}(K)\neq0.
+\]
+
+False.
+
+### W3
+\[
+M\otimes_SM\neq0\Rightarrow\text{renewal}.
+\]
+
+False.
+
+### W4
+\[
+\text{semisimple deleted corner}\Rightarrow
+\text{nontrivial amplitude-2 impossible}.
+\]
+
+Withdrawn and refuted by an actual quotient.
+
+### W5
+\[
+\operatorname{gldim}F<\infty
+\Rightarrow
+\text{defect renewal}.
+\]
+
+Not valid.
+
+### W6
+\[
+[f]\neq0\text{ in }D_{\rm sg}
+\Rightarrow
+\operatorname{Tor}_n(R_i,f)\neq0\text{ infinitely often}.
+\]
+
+False by the four-vertex anchor example.
+
+### W7
+\[
+\text{bilateral-free terminal defect}
++
+\text{actual coring}
+\Rightarrow
+\text{screening}.
+\]
+
+False by the Nakayama-gap family.
+
+---
+
+# 33. Exact surviving hypotheses
+
+The adversarial audit leaves the following statements intact.
+
+## S1 — comparison transfer-or-kernel absorption
+
+For
+
+\[
+0\to K\to N\xrightarrow fL_z\to0,
+\]
+
+the long exact Tor sequence yields
+
+\[
+0
+\to
+\operatorname{coker}f_{n+1}
+\to
+\operatorname{Tor}_n(R_i,K)
+\to
+\ker f_n
+\to0.
+\]
+
+Thus recurrence either appears in the quotient image or is absorbed by the kernel.
+
+## S2 — strict length descent
+
+If \(L_z\) is simple and the comparison is tail-zero, then
+
+\[
+\ell(K)=\ell(N)-1.
+\]
+
+So the descent terminates.
+
+## S3 — singularly zero implies detector-tail zero
+
+If
+
+\[
+[f]=0
+\quad\text{in }D_{\rm sg}(D),
+\]
+
+then for every fixed right module \(R\),
+
+\[
+\operatorname{Tor}_n^D(R,f)=0
+\qquad(n\gg0).
+\]
+
+## S4 — detector-tail nonzero is stronger than singular nonzero
+
+For direct transfer one needs
+
+\[
+\overline{\mathfrak T}_i(f)\neq0,
+\]
+
+not merely
+
+\[
+[f]\neq0
+\quad\text{in }D_{\rm sg}.
+\]
+
+## S5 — complete amplitude-2 screening needs Postnikov invertibility
+
+If bounded amplitude-2 complete screening exists, the class
+
+\[
+\alpha:S\to M[3]
+\]
+
+must induce the singular three-step shift on both left and right tails.
+
+Bilateral module freeness alone is insufficient.
+
+---
+
+# 34. What remains genuinely open
+
+## V / anchor frontier
+
+Run A and Run B both reduce the problem to the same terminal obstruction:
+
+after finite length descent one obtains a detector-live simple, but it may lie outside
+
+\[
+V_i=\{z:e_zDe_i\neq0\}.
+\]
+
+The unresolved question is:
+
+\[
+\boxed{
+\text{can the invisible sector carry the recurrence indefinitely?}
+}
+\]
+
+Solving this requires a genuine detector–carrier alignment theorem or an actual invisible-sector counterarchitecture.
+
+## K frontier
+
+The unresolved construction problem is:
+
+\[
+\boxed{
+\text{actual bounded }K
++
+\text{singularly invertible Postnikov/coring transport}.
+}
+\]
+
+The present run shows that even a regular rank-one terminal defect does not supply this automatically.
+
+---
+
+# 35. Recommended U5 node
+
+\[
+\boxed{
+\textbf{Universal Layer U5 — Detector-Localized Visibility / Postnikov Invertibility}
+}
+\]
+
+Keep the V and K branches separate unless a theorem really joins them.
+
+## U5-V
+
+Study the detector-local quotient
+
+\[
+\overline{\mathfrak T}_i
+\]
+
+and the visible sector
+
+\[
+V_i.
+\]
+
+Target:
+
+> prove that repeated kernel descent cannot terminate permanently in the invisible sector, or construct an actual algebra where it does.
+
+Mandatory calibrations:
+
+- the four-vertex singularly-nonzero detector-zero example from this run;
+- root-of-unity quantum exterior;
+- infinite-order moduli drift.
+
+## U5-K
+
+Search for an actual ordinary algebra whose bounded \(K\) has a Postnikov class acting as a singular shift.
+
+Mandatory calibrations:
+
+- 7-dimensional bounded one-sided example;
+- Nakayama-gap bilateral-free/no-screen family;
+- 8-dimensional unbounded/permanent-screen example.
+
+A promising adversarial direction is to deform the Nakayama-gap model so that the terminal bimodule stays invertible while the \(d_3\) class becomes nonzero on the simple Tor tail.
+
+---
+
+# 36. Final outcome
+
+### C1 — actual counterexample to proposed augmentation transfer
+
+\[
+\boxed{\textbf{ACHIEVED for direct comparison-map transfer.}}
+\]
+
+The broader transfer-or-length-descent theorem is **not** refuted.
+
+### C2 — actual counterexample to bare stable anchor
+
+\[
+\boxed{\textbf{ACHIEVED.}}
+\]
+
+A map can be nonzero in \(D_{\rm sg}\) but zero under the fixed tail detector.
+
+The refined detector-tail anchor of Run B survives.
+
+### C3 — actual bounded complete screener
+
+\[
+\boxed{\textbf{NOT FOUND.}}
+\]
+
+The empty quadrant remains open.
+
+### C4 — repeated-failure identity strong enough for a theorem
+
+A **family theorem** was obtained:
+
+for the symmetric Nakayama-gap endomorphism family \(D_r\),
+
+\[
+K
+\]
+
+is bounded amplitude \(2\) with
+
+\[
+H_2(K)\cong{}_SS_S,
+\]
+
+but
+
+\[
+\operatorname{Tor}^{D_r}_n(R_e,L_e)\neq0
+\]
+
+for every sufficiently large \(n\).
+
+This is not claimed as a universal no-go.
+
+---
+
+# 37. Research-integrity log
+
+1. The old semisimple-corner amplitude-2 no-go was not reused; it remains withdrawn.
+2. Bare first-defect renewal was not reused.
+3. \(M\otimes_SM\neq0\) was not treated as a bootstrap.
+4. The comparison counterexample was tested against the **completed** Run A disjunction; it refutes only direct transfer, not kernel descent.
+5. The singularity counterexample was tested against the **completed** Run B detector-tail refinement; it refutes bare \(D_{\rm sg}\)-nonvanishing, not the refined tail functor.
+6. The K search did not treat the old permanent-screening algebra as bounded.
+7. The Nakayama-gap construction is an actual ordinary finite-dimensional algebra family, not a formal dg or \(A_\infty\) model.
+8. No claim that V and K are “the same obstruction” was made.
+
+---
+
+# 38. Frozen research state
+
+The strongest U4 Run C conclusion is:
+
+\[
+\boxed{
+\textbf{ordinary augmentation and ordinary singularity are both too coarse for detector transfer.}
+}
+\]
+
+The correct V-line representation is detector-local:
+
+\[
+\boxed{
+\overline{\mathfrak T}_i(f).
+}
+\]
+
+The strongest K-line conclusion is:
+
+\[
+\boxed{
+\textbf{boundedness + bilateral freeness + actual coring are still too coarse for screening.}
+}
+\]
+
+The correct missing K datum is the **action** of the Postnikov/coring class on the singular tail.
+
+Thus U4 does not close Universal Gap A.
+
+It replaces two overly coarse anchors by two sharper frontier objects:
+
+\[
+\boxed{
+\text{detector-local visibility}
+}
+\]
+
+and
+
+\[
+\boxed{
+\text{singularly invertible Postnikov transport}.
+}
+\]

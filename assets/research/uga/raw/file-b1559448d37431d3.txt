@@ -1,0 +1,389 @@
+# 任意 N 的 radical 截断头部检测定理
+
+2026-09-10。状态：下面的等价检测、短正合列、核维数恒等式有完整自审证明，并完成精确计算交叉检查；未独立数学核验，未确认新颖性。**Universal Gap A 的一般结论仍未证明。**
+
+主目标见 [N-Vertex-Main-Route.md](N-Vertex-Main-Route.md)。本轮没有给顶点数或 Peirce 图形添加限制，而是把 supported Tor 检测转移到一个固定、有限、具有简单头部的模块族上。
+
+## 1. 一个与原问题等价的有限测试族
+
+设 \(A\) 为有限维 basic \(\mathbb C\)-代数，
+\(J=\operatorname{rad}A\)，\(P_i=Ae_i\)，\(L_i=P_i/JP_i\)。
+记 \(P_i\) 的 Loewy 长度为 \(\ell_i\)，定义
+\[
+Q_{i,r}=P_i/J^rP_i\quad(0\le r\le\ell_i).
+\]
+因此 \(Q_{i,0}=0\)，\(Q_{i,\ell_i}=P_i\)，而每个非零 \(Q_{i,r}\) 的头部恰为 \(L_i\)。
+
+使用小写字母记录实际维数：
+\[
+c_{ji}=\dim e_jAe_i=[P_i:L_j],\qquad
+\beta_{ij}(n)=\dim\operatorname{Ext}_A^n(L_j,L_i).
+\]
+这里 \(c\) 与旧稿只记录零/非零的布尔矩阵 \(C\) 不同。
+
+**定理 1。** 对任何整数 \(b\ge0\)，以下两条等价：
+
+\[
+\beta_{ij}(n)=0
+\quad\text{对所有 }n>b\text{ 及所有 }c_{ji}>0;
+\tag{1}
+\]
+\[
+\operatorname{Ext}_A^n(Q_{i,r},L_i)=0
+\quad\text{对所有 }i,\ 1\le r<\ell_i,\ n>b.
+\tag{2}
+\]
+
+(1) 正是完整的 Peirce-supported Ext 最终消失条件。(2) 只需测试至多
+\[
+\sum_i(\ell_i-1)\le N(\ell-1),\qquad \ell=\max_i\ell_i,
+\]
+个固定模块及各自的简单头部；不需要枚举任意子模或任意参数族。
+
+**证明。** 若 (1) 成立，\(Q_{i,r}\) 的所有 composition factors 都来自 \(P_i\)，所以每个因子 \(L_j\) 满足 \(c_{ji}>0\)。反复对 composition series 使用长正合列，得到同次数不等式
+\[
+\dim\operatorname{Ext}_A^n(Q_{i,r},L_i)
+\le
+\sum_j[Q_{i,r}:L_j]\beta_{ij}(n).
+\tag{3}
+\]
+因此得到 (2)。
+
+反过来，记
+\[
+F_{i,r}=J^rP_i/J^{r+1}P_i.
+\]
+对短正合列
+\[
+0\longrightarrow F_{i,r}\longrightarrow Q_{i,r+1}
+\longrightarrow Q_{i,r}\longrightarrow0
+\tag{4}
+\]
+应用 \(\operatorname{Ext}_A^*(-,L_i)\)，得到
+\[
+\operatorname{Ext}_A^n(Q_{i,r+1},L_i)
+\longrightarrow
+\operatorname{Ext}_A^n(F_{i,r},L_i)
+\longrightarrow
+\operatorname{Ext}_A^{n+1}(Q_{i,r},L_i).
+\]
+当 \(n>b\) 时两端为零；端点 \(Q_{i,0}=0\) 和
+\(Q_{i,\ell_i}=P_i\) 也不造成例外。每个 \(F_{i,r}\) semisimple，所以其中每个 simple 因子到 \(L_i\) 的 \(n\) 次 Ext 都为零。每个 \(c_{ji}>0\) 的 \(L_j\) 都出现在某一层中，得到 (1)。 \(\square\)
+
+同一个 composition-series 论证还说明：(1) 会使任何由 \(P_i\) 的有限直和生成的模块 \(M\) 满足
+\(\operatorname{Ext}_A^n(M,L_i)=0\) 对全部 \(n>b\) 成立。但在反向检测时，上面的有限截断族已经足够。
+
+**推论。** \(A\) 存在 infinite \(+\)-pair，当且仅当存在固定的 \(i,r\)，使
+\[
+\operatorname{Ext}_A^n(Q_{i,r},\operatorname{top}Q_{i,r})
+=\operatorname{Ext}_A^n(Q_{i,r},L_i)
+\ne0
+\]
+对无穷多个 \(n\) 成立。两边的索引集有限，所以最终消失与共同次数界之间没有量词问题。
+
+这给出原目标的等价形式，但尚未证明无限全局维数必然产生这样的 \(Q_{i,r}\)。
+
+## 2. 将全部 radical 层装入一个短正合列
+
+固定 \(i\)，令
+\[
+G_i=\bigoplus_{r=1}^{\ell_i-1}Q_{i,r},\qquad
+F_i=\bigoplus_{r=0}^{\ell_i-1}F_{i,r}.
+\]
+\(F_i\) 是 \(P_i\) 的 semisimplification：
+\[
+F_i\simeq\bigoplus_j L_j^{\oplus c_{ji}}.
+\]
+
+把 (4) 对全部 \(r\) 作直接和，得到
+\[
+\boxed{
+0\longrightarrow F_i
+\longrightarrow G_i\oplus P_i
+\xrightarrow{\,p_i\,}G_i
+\longrightarrow0.
+}
+\tag{5}
+\]
+其中 \(p_i\) 将 \(Q_{i,r+1}\) 送到 \(Q_{i,r}\)，而最短的
+\(Q_{i,1}\) 送到零。限制到 \(G_i\) 上，得到
+\[
+u_i:G_i\longrightarrow G_i,\qquad u_i^{\ell_i-1}=0
+\quad(\ell_i\ge2).
+\tag{6}
+\]
+这里是实际模块映射的幂零性，不是对高次 Ext 生成元的假设。
+
+记
+\[
+V_i^n=\operatorname{Ext}_A^n(G_i,L_i),\qquad
+u_i^{n,*}=\operatorname{Ext}_A^n(u_i,L_i):V_i^n\to V_i^n,
+\]
+并定义
+\[
+D_i(n)=\dim V_i^n,\qquad
+k_i(n)=\dim\ker u_i^{n,*},
+\]
+\[
+T_i(n)=\sum_jc_{ji}\beta_{ij}(n)
+=\dim\operatorname{Ext}_A^n(F_i,L_i).
+\tag{7}
+\]
+若 \(G_i=0\)，相关空间与数字均取零。
+
+注意 \(T_i(n)\) 按 target \(i\) 分组；它一般不等于
+\(\dim e_iP_n^{(i)}\)，后者按 source \(i\) 分组。求全部 \(i\) 的和后，才都是同一个加权 supported Betti 总数。
+
+## 3. 精确核维数恒等式
+
+**定理 2。** 对每个 \(i\) 和每个 \(n\ge1\)，有短正合列
+\[
+0\longrightarrow\operatorname{coker}u_i^{n,*}
+\longrightarrow\operatorname{Ext}_A^n(F_i,L_i)
+\longrightarrow\ker u_i^{n+1,*}
+\longrightarrow0,
+\tag{8}
+\]
+从而
+\[
+\boxed{T_i(n)=k_i(n)+k_i(n+1).}
+\tag{9}
+\]
+
+另外，
+\[
+\boxed{
+k_i(n)\le D_i(n)\le(\ell_i-1)k_i(n)
+\quad(n\ge1).
+}
+\tag{10}
+\]
+当 \(\ell_i=1\) 时三个量均为零。
+
+**证明。** 对 (5) 应用 Ext。在正次数上
+\(\operatorname{Ext}_A^n(P_i,L_i)=0\)，而映射 \(p_i^*\) 在剩余
+\(G_i\) 部分就是 \(u_i^{n,*}\)。取长正合列中连续的一段，就得到 (8)。
+
+有限维线性空间上任何自映射都有
+\(\dim\operatorname{coker}u=\dim\ker u\)，因此得到 (9)。
+
+由 (6)，\(u_i^{n,*}\) 的幂零指数不超过 \(\ell_i-1\)。若 \(u^p=0\)，则
+\[
+\dim V=\dim\ker u^p\le p\dim\ker u.
+\]
+例如可用 \(u^{a-1}\) 将
+\(\ker u^a/\ker u^{a-1}\) 单射到 \(\ker u\)，再逐层相加。取
+\(p=\ell_i-1\) 即得 (10)。 \(\square\)
+
+特别地，
+\[
+D_i(n)\le(\ell_i-1)T_i(n),\qquad
+T_i(n)\le D_i(n)+D_i(n+1).
+\tag{11}
+\]
+因此若一个 supported Betti 数在次数 \(n\) 非零，那么至少有一个截断商的头部 Ext 在次数 \(n\) 或 \(n+1\) 非零。一次有限窗口里 \(D_i(n)=0\)，尚不足以推出同次数的 \(T_i(n)=0\)。
+
+## 4. 这个核等于对角 cosyzygy 的维数
+
+令 \(Z_i^0=L_i\)，并使用最小 injective resolution 定义
+\[
+0\longrightarrow Z_i^n\longrightarrow I_i^n
+\longrightarrow Z_i^{n+1}\longrightarrow0.
+\]
+
+**定理 3。** 对全部 \(n\ge1\)，
+\[
+\boxed{k_i(n)=\dim e_iZ_i^n.}
+\tag{12}
+\]
+
+这里断言的是数值相等，不额外宣称构造了两个空间间的自然同构。
+
+**证明。** 最小 injective resolution 中，
+\[
+I_i^n\simeq\bigoplus_jD(e_jA)^{\oplus\beta_{ij}(n)}.
+\]
+故 \(\dim e_iI_i^n=T_i(n)\)。令 \(z_i(n)=\dim e_iZ_i^n\)，正合性给出
+\[
+T_i(n)=z_i(n)+z_i(n+1),\quad
+z_i(0)=1,\quad z_i(1)=c_{ii}-1.
+\tag{13}
+\]
+
+还需确定 (9) 的初值。每个非零 \(Q_{i,r}\) 的头部是 \(L_i\)，所以
+\[
+\dim\operatorname{Hom}(G_i,L_i)=\ell_i-1,\qquad
+\dim\operatorname{Hom}(G_i\oplus P_i,L_i)=\ell_i.
+\]
+因为 \(p_i\) 满射，诱导的 Hom 映射单射，其 cokernel 维数为 1。
+另一方面，\(\dim\operatorname{Hom}(F_i,L_i)=c_{ii}\)。
+(5) 的长正合列于是给出
+\[
+k_i(1)=c_{ii}-1.
+\tag{14}
+\]
+(9) 与 (13) 具有相同初值和相同递推，逐次得到 (12)。当
+\(\ell_i=1\) 时同样直接成立。 \(\square\)
+
+这表明本轮构造确实与原项目的左右 tiling 问题相连，没有换成一个只在特殊模型里有效的指标。
+
+## 5. 全次数的检测高度与增长率
+
+记 \(T(n)=\sum_iT_i(n)\)，\(D(n)=\sum_iD_i(n)\)。
+由 (11)，
+\[
+D(n)\le(\ell-1)T(n),\qquad T(n)\le D(n)+D(n+1).
+\tag{15}
+\]
+
+因此以下检测高度完全相同，取值允许 \(+\infty\)，空集的上确界取 0：
+\[
+\boxed{
+\sup\{n\ge1:T(n)>0\}
+=
+\sup\{n\ge1:D(n)>0\}.
+}
+\tag{16}
+\]
+无限时由 (15) 直接得到；有限时若 \(m\) 为 \(T\) 的最后非零次数，则
+\(D(m+1)=0\)，而 \(T(m)\le D(m)+D(m+1)\)，所以 \(D(m)>0\)。
+
+还具有相同的指数增长率：
+\[
+\boxed{
+\limsup_{n\to\infty}T(n)^{1/n}
+=
+\limsup_{n\to\infty}D(n)^{1/n}.
+}
+\tag{17}
+\]
+常数倍和相邻次数的有限和不改变此 limsup；有限维代数的这些 Ext 维数至多指数增长，也不存在次数移动引起的额外收敛问题。
+
+所以截断商检测不仅保持“是否无穷”，也保持最终检测高度和指数增长率。这里没有把它们等同于普通 Hochschild homology。
+
+(16) 是 supported 检测高度，不是直接声称它等于 \(\operatorname{gldim}A\)。例如单箭头 \(0\to1\) 的路径代数具有全局维数 1，但其唯一正次数 simple-pair Ext 没有反向 Peirce 支撑，故 \(T(n)=D(n)=0\) 对所有 \(n\ge1\) 成立。
+
+## 6. 精确计算及另一侧的交叉检查
+
+[radical_head_certificate.py](radical_head_certificate.py) 从实际乘法表构造 \(P_i\) 的 radical filtration、各个商模块及自然投影，并用最小消解比较映射计算 \(u_i^{n,*}\) 的秩。商模块稳定性、覆盖最小性和比较映射的 \(A\)-linearity 均被检查。
+
+结果见 [radical-head-certificates.json](radical-head-certificates.json)。本轮计算六个代数、27 个 proper radical quotients，核对了次数一至五的 (9)–(10)，并保留次数六的数据供相邻次数检查。
+
+| 校准代数 | 截断商数量 | 主要检查 |
+|---|---:|---|
+| 原归档五维例 | 3 | 有限全局维数；同时展示同次数 \(D_i(n)=0\) 而 \(T_i(n)>0\) 的可能性。 |
+| 六维截断二圈 | 4 | 非零检测在相邻次数之间移动；不能把单次缺口当作最终消失。 |
+| 七维单项式例 | 5 | 原 simple 的 self-Ext 检测不足；截断商头部检测持续。 |
+| \(\mathbb C[x]/(x^4)\) | 3 | \(k(n)=3,1,3,1,\ldots\)，而 \(D(n)=3\)。 |
+| 二十二维中心模型 | 10 | 多顶点、多层比较映射的实际核算。 |
+| 四维量子外代数 | 2 | \(T(n)=4(n+1)\)，前六次数据与 \(k(n)=D(n)=2n+1\) 一致。 |
+
+表中量子外代数的线性表达式仅概括本轮计算的数据；本稿不依赖它们作全次数推断。
+
+另用 opposite algebra 的最小 projective resolutions 计算
+\(D(\Omega_{A^{op}}^nR_i)\)，即 \(L_i\) 的 cosyzygies。这给出不同计算路径，对 (12) 作了 78 个正次数比较，全部一致。结果见
+[../work/radical_head_opposite_audit.json](../work/radical_head_opposite_audit.json)。
+
+这些是数学公式的有限计算交叉检查，不是独立数学 verifier 认证。
+
+## 7. 不能自动推出周期返回：一个已知的精确反例
+
+若要继续利用上述头部检测，必须避免如下两个错误步骤：
+
+- 将任意循环模块的 infinite head-Ext 自动提升为该模块的 infinite self-Ext。
+- 从有限顶点数、固定模块维数及固定 Loewy 长度推断 syzygies 必定重复。
+
+四维量子外代数上的已知例子同时排除这两步。相关构造见
+[Erdmann，Section 4.1，Lemmas 4.1–4.2 与 Corollary 4.3](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/26516CA33D32E5B50A8C291AEE0EB145/S1446788716000331a.pdf/extfinite_modules_for_weakly_symmetric_algebras_with_radical_cube_zero.pdf)。
+下面用本项目的左模块坐标重新计算；参数与文献互为倒数。
+
+取
+\[
+B=\mathbb C\langle x,y\rangle/(x^2,y^2,xy+2yx),\qquad z=yx.
+\]
+令 \(M_\lambda\) 为基 \(v,w\) 上的二维左模块：
+\[
+xv=\lambda w,\quad yv=w,\quad
+xw=yw=zv=zw=0,\qquad\lambda\ne0.
+\]
+它等于循环商 \(B/B(x-\lambda y)\)，头部为唯一 simple \(L\)。
+
+覆盖 \(B\to M_\lambda\) 的 kernel 是
+\[
+B(x-\lambda y)=\langle x-\lambda y,z\rangle.
+\]
+令 \(u=x-\lambda y\)，则 \(xu=2\lambda z\)，\(yu=z\)，故
+\[
+\boxed{\Omega^nM_\lambda\simeq M_{2^n\lambda}\quad(n\ge0).}
+\tag{18}
+\]
+一个同构必须保持 \(xv/yv\) 的比值，所以不同非零参数给出不同同构类。
+全部 syzygies 都只有二维，但不会重复。
+
+由于目标 \(L\) semisimple，最小消解给出
+\[
+\dim\operatorname{Ext}_B^n(M_\lambda,L)=1\quad(n\ge0).
+\tag{19}
+\]
+
+现在计算 self-Ext，不能再把它直接等同于 Hom。一个映射
+\(M_a\to M_\lambda\) 将头部送到 \(\alpha v+\beta w\)，关系要求
+\((a-\lambda)\alpha=0\)。因此当 \(a\ne\lambda\) 时 Hom 空间一维，只有 socle maps。
+
+在计算 \(n\) 次 self-Ext 时，kernel 的头部嵌入前一投射模 \(B\) 的元素是
+\[
+x-2^{n-1}\lambda y.
+\]
+将 \(1\) 送到 \(\alpha v+\beta w\) 的投射模映射，在这个 kernel 头部上的值为
+\[
+\alpha\lambda(1-2^{n-1})w.
+\]
+当 \(n\ge2\) 时，这些限制映射已经覆盖上面的一维 Hom 空间。因此
+\[
+\boxed{
+\dim\operatorname{Ext}_B^1(M_\lambda,M_\lambda)=1,\qquad
+\operatorname{Ext}_B^n(M_\lambda,M_\lambda)=0\quad(n\ge2).
+}
+\tag{20}
+\]
+而 \(\dim\operatorname{End}_B(M_\lambda)=2\)。
+
+[../work/audit_quantum_cyclic_obstruction.py](../work/audit_quantum_cyclic_obstruction.py)
+另行通过解 \(A\)-linear Hom 方程、再除以实际 projective restrictions，
+核对了 \(\lambda=1\) 的次数零至八。输出见
+[../work/quantum_cyclic_obstruction_audit.json](../work/quantum_cyclic_obstruction_audit.json)。
+
+这是 (18)–(20) 的有限审计；全次数结论来自刚才的显式证明。
+
+这个例子不满足主假设 (1)，也不是 Universal Gap A 的反例。
+\(M_\lambda\) 也不是这里有限测试族中的 radical-power quotient：该局部代数的 proper radical 截断商维数分别为 1 和 3。它说明，主线不能随意把截断商替换为任意循环模块后再使用上述两个错误推断。
+
+## 8. 与 ADR 构造的接口及尚未完成的步骤
+
+将所有 \(Q_{i,r}\)（包括 \(P_i\)）作直和，得到经典 ADR 构造所用的模块。其 endomorphism algebra 的 quasi-hereditary 结构有文献依据，见
+[Tsukamoto，Theorem 2.2 及 Section 3](https://arxiv.org/pdf/1805.08085)。
+这提供了一个适合进一步检查的有限辅助代数。
+
+但辅助 endomorphism algebra 的有限全局维数，不会自动传回原来的 \(A\)。尤其不能假设这些截断商构成的 additive category 对 syzygy 封闭。量子外代数上
+\(\Omega L=J\) 的维数为 3、头部维数为 2，而 proper 截断商是 \(L\) 和
+\(B/J^2\)，后者头部维数为 1；比较维数、头部及 radical 即可看出
+\(J\) 不属于它们与 \(B\) 生成的 additive category。
+
+任意 \(N\) 的剩余问题现在可以保持原范围地写成
+\[
+\boxed{
+\operatorname{gldim}A=\infty
+\ \Longrightarrow\
+\exists i,r:
+\operatorname{Ext}_A^n(Q_{i,r},L_i)\ne0
+\text{ 对无穷多个 }n.
+}
+\tag{21}
+\]
+(21) 与原 Universal Gap A 等价，**本轮没有证明 (21)**。
+已经得到的是固定有限测试族、实际幂零比较映射、精确检测恒等式，以及两条不能采用的推断的反例。
+
+下一步需要利用这个特殊截断族与原代数之间的实际关系，证明它的全部头部 Ext 不可能同时有界而原代数仍有无限全局维数；或把这项关系接回
+[Yoneda-Comparison-Kernel.md](Yoneda-Comparison-Kernel.md) 的最终生成元核。此处仍需新的数学论证。
+
+原 verified fact graph 未修改。

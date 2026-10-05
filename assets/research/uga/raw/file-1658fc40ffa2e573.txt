@@ -1,0 +1,978 @@
+{
+  "schema_version": 1,
+  "evidence_status": "bounded exact self-check",
+  "independent_verification": false,
+  "arithmetic": "rational exact",
+  "python": "3.14.3",
+  "helper_sha256": "300441c20f5fe2994bc287acad58ea4a8c5176600d72232a9f6a5cbf3cbb87eb",
+  "checks": {
+    "A_associativity_triples": 84546,
+    "ordinary_resolution_A_linearity_checks": 7054,
+    "ordinary_resolution_exactness_steps": 115,
+    "literal_finite_simple_resolutions": 36,
+    "literal_infinite_source_and_right_kernel_certificates": 4,
+    "C_associativity_triples": 17920,
+    "kernel_square_zero_checks": 370,
+    "actual_two_sided_ideal_checks": 1844,
+    "canonical_actual_left_projective_checks": 552,
+    "ordinary_F_simple_module_checks": 276,
+    "literal_d_squared_words": 726,
+    "ordinary_homology_records": 126,
+    "actual_projection_chain_checks": 298
+  },
+  "cases": [
+    {
+      "chain_vertices": 7,
+      "total_vertices": 8,
+      "dimensions": {
+        "A": 25,
+        "C": 16,
+        "K": 9
+      },
+      "actual_tensor_nilpotence_index": 4,
+      "nonperfect": true,
+      "first_kernel_module": {
+        "right_simple": 4
+      },
+      "mismatch": {
+        "kernel_degree": 5,
+        "actual_dimension": 1,
+        "first_module_prediction": 0
+      },
+      "ordinary_records": {
+        "A_original_pair": [
+          {
+            "degree": 0,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 1,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 7,
+            "outgoing_rank": 1,
+            "incoming_rank": 6,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 10,
+            "outgoing_rank": 6,
+            "incoming_rank": 4,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 5,
+            "outgoing_rank": 4,
+            "incoming_rank": 1,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 1,
+            "outgoing_rank": 1,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          }
+        ],
+        "C_original_pair": [
+          {
+            "degree": 0,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          }
+        ],
+        "A_first_kernel_pair": [
+          {
+            "degree": 0,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 3,
+            "outgoing_rank": 0,
+            "incoming_rank": 2,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 3,
+            "outgoing_rank": 2,
+            "incoming_rank": 1,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 1,
+            "outgoing_rank": 1,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          }
+        ],
+        "C_first_kernel_pair": [
+          {
+            "degree": 0,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          }
+        ],
+        "actual_comparison_kernel": [
+          {
+            "degree": 0,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 1,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 7,
+            "outgoing_rank": 1,
+            "incoming_rank": 6,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 10,
+            "outgoing_rank": 6,
+            "incoming_rank": 4,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 5,
+            "outgoing_rank": 4,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          }
+        ],
+        "A_supported_source": [
+          {
+            "degree": 0,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          }
+        ],
+        "C_supported_source": [
+          {
+            "degree": 0,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          }
+        ]
+      }
+    },
+    {
+      "chain_vertices": 11,
+      "total_vertices": 12,
+      "dimensions": {
+        "A": 41,
+        "C": 24,
+        "K": 17
+      },
+      "actual_tensor_nilpotence_index": 6,
+      "nonperfect": true,
+      "first_kernel_module": {
+        "right_simple": 8
+      },
+      "mismatch": {
+        "kernel_degree": 9,
+        "actual_dimension": 1,
+        "first_module_prediction": 0
+      },
+      "ordinary_records": {
+        "A_original_pair": [
+          {
+            "degree": 0,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 10,
+            "outgoing_rank": 0,
+            "incoming_rank": 10,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 51,
+            "outgoing_rank": 10,
+            "incoming_rank": 41,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 90,
+            "outgoing_rank": 41,
+            "incoming_rank": 49,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 7,
+            "chain_dimension": 77,
+            "outgoing_rank": 49,
+            "incoming_rank": 28,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 8,
+            "chain_dimension": 36,
+            "outgoing_rank": 28,
+            "incoming_rank": 8,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 9,
+            "chain_dimension": 9,
+            "outgoing_rank": 8,
+            "incoming_rank": 1,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 10,
+            "chain_dimension": 1,
+            "outgoing_rank": 1,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          }
+        ],
+        "C_original_pair": [
+          {
+            "degree": 0,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 7,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 8,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 9,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 10,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          }
+        ],
+        "A_first_kernel_pair": [
+          {
+            "degree": 0,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 3,
+            "outgoing_rank": 0,
+            "incoming_rank": 3,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 19,
+            "outgoing_rank": 3,
+            "incoming_rank": 15,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 30,
+            "outgoing_rank": 15,
+            "incoming_rank": 15,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 21,
+            "outgoing_rank": 15,
+            "incoming_rank": 6,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 7,
+            "chain_dimension": 7,
+            "outgoing_rank": 6,
+            "incoming_rank": 1,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 8,
+            "chain_dimension": 1,
+            "outgoing_rank": 1,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 9,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 10,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          }
+        ],
+        "C_first_kernel_pair": [
+          {
+            "degree": 0,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 7,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 8,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 9,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 10,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          }
+        ],
+        "actual_comparison_kernel": [
+          {
+            "degree": 0,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 10,
+            "outgoing_rank": 0,
+            "incoming_rank": 10,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 51,
+            "outgoing_rank": 10,
+            "incoming_rank": 41,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 90,
+            "outgoing_rank": 41,
+            "incoming_rank": 49,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 7,
+            "chain_dimension": 77,
+            "outgoing_rank": 49,
+            "incoming_rank": 28,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 8,
+            "chain_dimension": 36,
+            "outgoing_rank": 28,
+            "incoming_rank": 8,
+            "homology_dimension": 0
+          },
+          {
+            "degree": 9,
+            "chain_dimension": 9,
+            "outgoing_rank": 8,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 10,
+            "chain_dimension": 0,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 0
+          }
+        ],
+        "A_supported_source": [
+          {
+            "degree": 0,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 7,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 8,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 9,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 10,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          }
+        ],
+        "C_supported_source": [
+          {
+            "degree": 0,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 1,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 2,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 3,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 4,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 5,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 6,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 7,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 8,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 9,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          },
+          {
+            "degree": 10,
+            "chain_dimension": 1,
+            "outgoing_rank": 0,
+            "incoming_rank": 0,
+            "homology_dimension": 1
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "Two connected actual nonsplit square-zero nonperfect examples. All outgoing/incoming ranks at stated bounds, literal finite path resolutions and literal infinite loop/right-kernel certificates. The all-size theorem and all-degree family proof are separate."
+}

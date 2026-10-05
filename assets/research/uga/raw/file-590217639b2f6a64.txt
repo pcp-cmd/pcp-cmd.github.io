@@ -1,0 +1,90 @@
+"""Actual higher-pd one-sided block, ordinary E covers and carrier audit.
+
+The supported-return/unit proof is written separately. No pruning of images,
+no infinite-pd conclusion from a finite Betti sample, no independent audit.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Yoneda-Termination-Evidence/verify_yoneda_termination.py'
+__file__=str(frozen)
+exec(compile(frozen.read_text(encoding='utf-8').split('\nC=nakayama_five()',1)[0],str(frozen),'exec'),globals())
+counts.update({'projective_carrier_inclusions':0,'all_degree_F_Ext_entries':0})
+
+N=nakayama_seven()
+N2,N2cert=tensor_table(N,N)
+H=Table(2,[('e0',0,0),('e1',1,1),('h',1,0)],{})
+original,tensor_cert=tensor_table(N2,H)
+assert len(original.basis)==147 and original.vertices==8
+op=original.opposite()
+Flabels=[0,1];retained=list(range(2,8))
+physical=tensor_cert['Peirce_matrix']
+carriers=[{v for v in range(8) if physical[v][u]} for u in range(8)]
+left_F=[];carrier_checks=[]
+for f in Flabels:
+    terms=finite_resolution(original,f,[3,2][f]);left_F.append(terms)
+    for item in terms:
+        n=item['degree'];mult=item['actual_cover']['cover_multiplicities']
+        for z in Flabels:
+            expected=int(n==0 and z==f or f==0 and z==1 and n==1)
+            assert mult[z]==expected,(f,n,z,mult)
+            counts['all_degree_F_Ext_entries']+=1
+        for u,copies in enumerate(mult):
+            if copies:
+                assert carriers[u]<=carriers[f],(f,n,u,carriers[u],carriers[f])
+                carrier_checks.append({'F_source':f,'resolution_degree':n,'projective_label':u,
+                  'multiplicity':copies,'source_carrier':sorted(carriers[f]),'term_carrier':sorted(carriers[u])})
+                counts['projective_carrier_inclusions']+=1
+assert any(u in carriers[f] and u not in Flabels for f in Flabels for u in range(8))
+right_finite=[finite_resolution(op,z,[2,3][z-6]) for z in [6,7]]
+Y=Table(2,[('e0',0,0),('e1',1,1),('eta',1,0)],{})
+Yres=[graded_resolution(Y,0,[(0,0),(1,1)]),graded_resolution(Y,1,[(1,0)])]
+B,labelmap,selected=actual_corner(original,retained)
+assert len(B.basis)==84 and B.vertices==6
+
+# Minimal projective carrier expansion can occur even with finite pd and E=k.
+C=Table(3,[('e0',0,0),('e1',1,1),('e2',2,2),('a',1,0),('b',2,1)],{})
+counter=finite_resolution(C,0,2)
+assert [x['actual_cover']['cover_multiplicities'] for x in counter]==[[1,0,0],[0,1,0],[0,0,1]]
+Cphysical=[[sum(l==y and r==z for _,l,r in C.basis) for z in range(3)] for y in range(3)]
+assert Cphysical[2][0]==0 and Cphysical[2][1]==1
+assert all(x['actual_cover']['cover_multiplicities'][0]==int(x['degree']==0) for x in counter)
+tensor_expansion={'factor_N2_peirce_matrix':N2cert['Peirce_matrix'],
+ 'source_label_pairs':[0,0],'expanding_projective_pairs':[0,1],
+ 'physical_row_pairs':[3,2],
+ 'physical_row_source':N2cert['Peirce_matrix'][3][0]*Cphysical[2][0],
+ 'physical_row_projective':N2cert['Peirce_matrix'][3][0]*Cphysical[2][1],
+ 'written_tensor_conclusion':'N7^r tensor C has LEFT finite F=(all-f,0) pd r+2, RIGHT pd infinity, E_F=k, and carrier expansion, for every r>=2. No shallow finite labels on either side. Full tensor table not executed.'}
+assert tensor_expansion['physical_row_source']==0 and tensor_expansion['physical_row_projective']==4
+dependencies={f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest() for n in
+ ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']}
+for directory,names in [('Carrier-Lemma-Evidence',['verify_carrier_lemma.py','verify_finite_factor_carrier.py']),
+ ('Shallow-Corner-Evidence',['verify_shallow_corner.py']),('Tensor-Factor-Evidence',['verify_tensor_factor.py']),
+ ('Perfect-Corner-Evidence',['verify_perfect_corner.py']),('Directed-Ext-Evidence',['verify_directed_ext.py']),
+ ('Yoneda-Termination-Evidence',['verify_yoneda_termination.py'])]:
+    for n in names:
+        rel=f'runs/2026-10-04/{directory}/{n}';dependencies[rel]=sha256((project_root/rel).read_bytes()).hexdigest()
+result={'status':'passed','python':sys.version,'independent_verification':False,'counts':counts,
+ 'one_sided_calibration':{'algebra':original.payload,'dimension':147,'vertices':8,
+    'tensor_certificate':tensor_cert,'F_labels':Flabels,'LEFT_F_pds':[3,2],
+    'LEFT_F_terminating_actual_resolutions':left_F,'carrier_inclusion_checks':carrier_checks,
+    'ordinary_F_Yoneda_algebra':Y.payload,'graded_Yoneda_simple_resolutions':Yres,
+    'E_global_dimension':1,'E_highest_degree':1,'general_unit_coinduction_bound_a':3,
+    'general_supported_cutoff_loss_t':2,
+    'original_RIGHT_finite_labels':[6,7],'original_RIGHT_finite_pds':[2,3],
+    'original_RIGHT_finite_actual_resolutions':right_finite,
+    'RIGHT_F_pd_infinity_from_written_frozen_tensor_proof':True,
+    'actual_Ae_RIGHT_corner_NONPERFECT_from_C093_contrapositive':True,
+    'no_finite_pd_zero_or_one_simple_on_EITHER_side':True,
+    'F_not_cover_closed':True,'already_infinite_plus_from_frozen_tensor_proof':True,
+    'not_a_Gap_A_counterexample':True},
+ 'actual_corner':{'algebra':B.payload,'dimension':84,'vertices':6,
+                 'original_retained_labels':retained,'selected_original_basis':selected},
+ 'carrier_expansion_counterexample':{'algebra':C.payload,'physical_matrix':Cphysical,
+    'LEFT_F_pd':2,'RIGHT_F_pd':0,'E_F':'k in degree zero','LEFT_actual_resolution':counter,
+    'source_carrier':[0,1],'degree_one_projective_carrier':[1,2],
+    'all_other_degrees_positive_self_Ext':0,'written_sparse_tensor_extension':tensor_expansion},
+ 'dependencies':dependencies,
+ 'scope':'Finite actual terminating resolutions/carrier/Yoneda/corner certificates. General supported ordinary unit theorem and all-r statements are written proofs. Infinity uses frozen ordinary tensor factors. No independent verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','dimensions':[147,84],'counts':counts,'independent_verification':False}))

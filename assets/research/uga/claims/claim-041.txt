@@ -1,0 +1,17 @@
+## UGA-C041 — Two-Sided Finite-Head Collision
+**Status:** PROJECT-DERIVED THEOREM / READY FOR INDEPENDENT VERIFICATION  
+**Source:** `proofs/Universal-Gap-A-Two-Sided-Finite-Head-Collision-2026-10-02.md`
+
+For a hypothetical non-infinite-\(+\) elementary finite-dimensional algebra and a nontrivial local corner
+\[
+\Gamma_x=e_xAe_x\neq k,
+\]
+the source package derives fixed \(y,z\neq x\) with
+\[
+\operatorname{Tor}^{\Gamma_x}_m(e_zAe_x,e_xAe_y)\neq0
+\quad\text{for infinitely many }m.
+\]
+
+**Verification gate:** the right-head argument uses a project-derived opposite-invariance step that remains quarantined by RG-005.
+
+---

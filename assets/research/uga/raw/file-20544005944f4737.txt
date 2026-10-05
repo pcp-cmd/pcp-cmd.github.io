@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-03T10:05:57.415070+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "1d72b300652fb17b8d0b89180f17bc6f26463f31da7b6baac9bbfa3c530d9bb1",
+    "object": "Actual mixed-parity periodic projective-column calibration from a five-cycle block deletion",
+    "deliverables": [
+      "verify_periodic_columns.py",
+      "periodic-columns-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "A is the actual ten-dimensional radical-square-zero oriented five-cycle 1->x->0->a->b->1.",
+      "The deleted idempotent is the nonprimitive block E=ex+ea+eb; C=k e0 times k e1.",
+      "Normalized negative passages give M1=e0 k u e1 and M2=e1 k v e0, with zero products and no higher operations.",
+      "The shifted weights are two and three, while all closed walks in the two-vertex component have total weight divisible by five.",
+      "Ordinary Tor recorded through degree twelve; incoming complex degree thirteen included."
+    ],
+    "domain": "Elementary finite-dimensional algebras over Q and ordinary relative simple-pair bar homology",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Literal finite multiplication and relative-bar word enumeration using local Python integers"
+      ],
+      "existence_evidence": "verify_periodic_columns.py implements the full multiplication table, normalized passages and exact finite word counts.",
+      "local_availability": "available",
+      "availability_evidence": "Actual local execution passed under Python 3.14.3."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3",
+    "selection_reason": "The literal square-zero algebra and bar differentials admit exact standard-library integer checks.",
+    "fallback_reason": "Reused same-session local inventory: no callable local Mathematica or native Sage. No paid or remote substitute."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python process through the skill observer_run.py wrapper",
+    "command_or_input": "python -B verify_periodic_columns.py --out periodic-columns-result.json",
+    "code_artifact": "verify_periodic_columns.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_periodic_columns.py",
+      "sha256": "e4e6f36afe3fd5c1f77e12b853e1df0a356c0d6b8d69460c12c120ad163b1b35"
+    },
+    {
+      "role": "result",
+      "path": "periodic-columns-result.json",
+      "sha256": "d53bdeb2d35a280b462dc5c3b56bc5e7f8c05d666df639f98990040f6b3f69f3"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "summary": "Passed 1000 associativity triples, 25 radical-square products, 325 ambient Tor records, 52 retained records and 56 ambient/model matches including incoming degree thirteen; literal normalized passages and four boundary joins checked.",
+    "result_artifact": "periodic-columns-result.json"
+  },
+  "verification": {
+    "methods": [
+      "Exhaustive finite multiplication associativity",
+      "Literal square-zero radical products and zero ordinary bar differentials",
+      "Literal normalized deleted-corner two-sided bar words",
+      "Actual weighted retained words with explicit endpoint labels",
+      "Exact ambient and retained model word dimensions through incoming degree thirteen"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact integer arithmetic; no numerical residual.",
+    "limitations": [
+      "The generic mixed-periodicity proof is separate from this finite calibration.",
+      "This example deletes a block of three vertices, not one primitive vertex.",
+      "All-degree and all-characteristic claims use the finite path proof in the Run.",
+      "A5's aperiodic finite-gldim certificate is reused from the Primitive-Seed Run; it is not rerun here.",
+      "No comparison-map rank, independent verification, or general cycle return is asserted.",
+      "Code and proof have the same author; no independent verifier acceptance.",
+      "Schema validation and artifact hashes do not verify mathematical semantics.",
+      "Same-session Mathematica/Sage availability evidence was reused; no repeated backend probe."
+    ]
+  }
+}

@@ -1,0 +1,304 @@
+"""Actual primitive-comparison noninheritance, with integral cover certificates.
+
+Exact same-author checking. Primitive eventual comparisons are proved by
+the written triangular right-resolution argument, not bounded Tor samples.
+"""
+import argparse
+from fractions import Fraction as F
+from itertools import product
+from hashlib import sha256
+import json
+from pathlib import Path
+import sys
+sys.dont_write_bytecode = True
+parser=argparse.ArgumentParser()
+parser.add_argument('--project-root',type=Path,required=True)
+parser.add_argument('--out',type=Path,required=True)
+args=parser.parse_args()
+helpers=args.project_root/'toolbox/Imported-Outputs'
+sys.path.insert(0,str(helpers))
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+import syzygy_system_certificate as ss
+
+counts={'full_basis_associativity':0,'quotient_products':0,
+        'integral_cover_steps':0,'unimodular_basis_certificates':0,
+        'actual_isomorphisms':0}
+
+def integral(value):
+    if isinstance(value,F):return value.denominator==1
+    if isinstance(value,list):return all(integral(v) for v in value)
+    if isinstance(value,dict):return all(integral(v) for v in value.values())
+    return isinstance(value,(int,str,bool)) or value is None
+
+def unit_basis(columns,height):
+    assert len(columns)==height and integral(columns)
+    read=sr.coordinates_reader(columns,height)
+    inv=[read(rk.unit_vector(height,j)) for j in range(height)]
+    assert integral(inv), 'not a unimodular integer basis'
+    for j in range(height):
+        assert rk.combine(columns,inv[j],height)==rk.unit_vector(height,j)
+    counts['unimodular_basis_certificates']+=1
+    return {'basis':columns,'inverse':inv}
+
+class Table:
+    def __init__(self,vertices,basis,mult):
+        self.vertices,self.basis,self.mult=vertices,basis,mult
+        self.names=[b[0] for b in basis]
+        self.index={n:i for i,n in enumerate(self.names)}
+        self.radical=list(range(vertices,len(basis)))
+        for i,j,k in product(range(len(basis)),repeat=3):
+            ij,jk=mult(i,j),mult(j,k)
+            assert (None if ij is None else mult(ij,k))==(None if jk is None else mult(i,jk))
+            counts['full_basis_associativity']+=1
+        self.payload={'vertices':vertices,'base_vertex':0,
+          'radical_basis':[{'name':n,'left':l,'right':r} for n,l,r in basis[vertices:]],
+          'radical_products':[]}
+        for i,j in product(self.radical,repeat=2):
+            out=mult(i,j)
+            if out is not None:
+                assert out>=vertices
+                self.payload['radical_products'].append({'left':self.names[i],'right':self.names[j],
+                                                        'value':{self.names[out]:1}})
+        self.alg=rk.Algebra(self.payload)
+
+    def opposite(self):
+        return Table(self.vertices,[(n,r,l) for n,l,r in self.basis],lambda i,j:self.mult(j,i))
+
+def make_B():
+    modules=[(s,l) for l in [1,2,3] for s in [0,1]]
+    units=[(i,i,0) for i in range(6)]
+    homs=[(i,j,p) for i,(s,l) in enumerate(modules)
+          for j,(t,m) in enumerate(modules) for p in range(max(0,m-l),m) if (t+p)%2==s]
+    triples=units+[h for h in homs if h not in units]
+    loc={h:i for i,h in enumerate(triples)}
+    basis=[(f'h{i}_{j}_{p}',i,j) for i,j,p in triples]
+    def mult(x,y):
+        a,b,p=triples[x]; c,d,q=triples[y]
+        return None if b!=c or p+q>=modules[d][1] else loc[a,d,p+q]
+    return Table(6,basis,mult),modules,triples
+
+def triangle(B,frames):
+    v=B.vertices
+    basis=B.basis[:v]+[('ev',v,v)]+B.basis[v:]
+    B_to_A={i:i if i<v else i+1 for i in range(len(B.basis))}
+    A_to_B={x:y for y,x in B_to_A.items()}
+    tv=len(basis);basis.append(('tv',v,v))
+    copies,from_B={},{}
+    for f in frames:
+        for b,(_,left,right) in enumerate(B.basis):
+            if left==f:
+                copies[len(basis)]=(f,b);from_B[f,b]=len(basis)
+                basis.append((f'v{f}_'+B.names[b],v,right))
+    def mult(i,j):
+        if i in A_to_B and j in A_to_B:
+            out=B.mult(A_to_B[i],A_to_B[j])
+            return None if out is None else B_to_A[out]
+        if i==v:return j if j==v or j==tv or j in copies else None
+        if i==tv:return tv if j==v else None
+        if i in copies and j in A_to_B:
+            f,b=copies[i];out=B.mult(b,A_to_B[j])
+            return None if out is None else from_B[f,out]
+        return None
+    return Table(v+1,basis,mult),B_to_A,from_B
+
+def quotient(A,deleted):
+    killed=set(deleted);old=-1
+    while old!=len(killed):
+        old=len(killed)
+        for i in list(killed):
+            for j in range(len(A.basis)):
+                for out in [A.mult(i,j),A.mult(j,i)]:
+                    if out is not None:killed.add(out)
+    kept=[i for i in range(len(A.basis)) if i not in killed]
+    labels=[i for i in range(A.vertices) if i not in deleted]
+    vl={i:j for j,i in enumerate(labels)};rev={i:j for j,i in enumerate(kept)}
+    basis=[(A.names[i],vl[A.basis[i][1]],vl[A.basis[i][2]]) for i in kept]
+    C=Table(len(labels),basis,lambda i,j:rev.get(A.mult(kept[i],kept[j])))
+    for i,j in product(range(len(A.basis)),repeat=2):
+        out=A.mult(i,j)
+        if i in killed or j in killed:assert out is None or out in killed
+        else:assert C.mult(rev[i],rev[j])==rev.get(out)
+        counts['quotient_products']+=1
+    return C,labels,kept,sorted(killed)
+
+def cover(M):
+    a=M.algebra
+    assert integral(M.actions)
+    ss.parse_module(a,ss.module_payload(M))
+    radical=M.radical_bases();top=M.top_lifts()
+    top_cert=[unit_basis(radical[v]+top[v],M.dimensions[v]) for v in range(a.vertices)]
+    K,info=M.syzygy(retain_maps=True);lin=info['linear_data']
+    assert integral(K.actions) and integral(lin['kernels'])
+    sequence_cert=[]
+    for v in range(a.vertices):
+        chosen,_=rk.independent(lin['images'][v])
+        image_cert=unit_basis([lin['images'][v][i] for i in chosen],M.dimensions[v])
+        height=info['cover_dimensions'][v]
+        domain_cert=unit_basis(lin['kernels'][v]+[rk.unit_vector(height,i) for i in chosen],height)
+        sequence_cert.append({'codomain':image_cert,'domain':domain_cert})
+    counts['integral_cover_steps']+=1
+    cert={'module':ss.module_payload(M),'kernel':ss.module_payload(K),
+      'cover_multiplicities':info['cover_multiplicities'],
+      'cover_dimensions':info['cover_dimensions'],
+      'cover_images':lin['images'],'kernel_inclusion':lin['kernels'],
+      'projective_actions':lin['projective_actions'],
+      'top_basis_certificates':top_cert,'exact_sequence_basis_certificates':sequence_cert,
+      'A_linear_surjective_minimal_checked':True,'all_fields_by_integral_unimodular_bases':True}
+    return K,info,cert
+
+def finite_resolution(table,vertex,expected_pd):
+    M=sr.Module.simple(table.alg,vertex);certs=[]
+    for n in range(expected_pd+1):
+        assert sum(M.dimensions)>0
+        M,_,cert=cover(M);certs.append(cert)
+    assert sum(M.dimensions)==0
+    return {'simple':vertex,'pd':expected_pd,'integral_cover_certificates':certs}
+
+def projective(table,vertex):
+    local=[[i for i,(_,l,r) in enumerate(table.basis) if l==v and r==vertex]
+           for v in range(table.vertices)]
+    pos=[{i:j for j,i in enumerate(part)} for part in local]
+    dims=list(map(len,local));actions=[]
+    for r in table.radical:
+        _,target,source=table.basis[r];columns=[]
+        for b in local[source]:
+            vector=[F(0)]*dims[target];out=table.mult(r,b)
+            if out is not None:vector[pos[target][out]]=F(1)
+            columns.append(vector)
+        actions.append(columns)
+    return sr.Module(table.alg,dims,actions),local
+
+def first_kernel_iso(table,source,target,embedded,label):
+    K,info,cert=cover(sr.Module.simple(table.alg,source));lin=info['linear_data']
+    maps=[]
+    for v,part in enumerate(embedded):
+        positions={source if r is None else table.vertices+r:j
+                   for j,(copy,r) in enumerate(lin['bases'][v])}
+        maps.append([lin['readers'][v](rk.unit_vector(len(positions),positions[b])) for b in part])
+    checked=ss.check_isomorphism(target,K,ss.encode(maps))
+    assert integral(maps)
+    for columns,d in zip(maps,target.dimensions):unit_basis(columns,d)
+    counts['actual_isomorphisms']+=1
+    return {'label':label,'cover':cert,'target':ss.module_payload(target),'isomorphism':checked}
+
+B,modules,triples=make_B()
+assert len(B.basis)==28
+base=[finite_resolution(B,i,2 if i<4 else 1) for i in range(6)]
+primitive_base=[]
+expected={0:[1,2,2,1,1],1:[1,2,2,1,1],2:[0,2,1,1,0],3:[2,0,1,0,1],
+          4:[4,2,3,2,1],5:[2,4,2,3,1]}
+for deleted in range(6):
+    C,labels,kept,killed=quotient(B,[deleted])
+    entries=[finite_resolution(C,i,pd) for i,pd in enumerate(expected[deleted])]
+    primitive_base.append({'deleted':deleted,'labels':labels,'dimension':len(C.basis),
+        'algebra':C.payload,'finite_resolutions':entries})
+
+A,B_to_A,from_B=triangle(B,[4,5])
+assert len(A.basis)==42
+v=6
+A_finite=[finite_resolution(A,i,2) for i in range(4)]
+Lv=sr.Module.simple(A.alg,v)
+left_infinite=[]
+for frame,kernel_vertex in [(4,3),(5,2)]:
+    P,local=projective(A,kernel_vertex)
+    target=ss.direct_sum(A.alg,[P,Lv],[1,1])
+    inj=A.index[f'h{kernel_vertex}_{frame}_1']
+    embedded=[[A.mult(b,inj) for b in part] for part in local]
+    assert all(b is not None for part in embedded for b in part)
+    embedded[v].append(from_B[frame,frame])
+    left_infinite.append(first_kernel_iso(A,frame,target,embedded,
+        f'Omega left L{frame}=A e{kernel_vertex} direct sum Lv'))
+left_infinite.append(first_kernel_iso(A,v,Lv,[[] for _ in range(6)]+[[A.index['tv']]],
+                                     'Omega left Lv=Lv'))
+
+Aop=A.opposite()
+right_finite=[]
+for i in range(6):
+    # Actual right resolutions are audited; symmetry permutes labels and
+    # retains the pd2/pd1 distinction of these uniserial objects.
+    right_finite.append(finite_resolution(Aop,i,2 if i<4 else 1))
+P4,b4=projective(Aop,4);P5,b5=projective(Aop,5)
+Rv=sr.Module.simple(Aop.alg,v)
+target=ss.direct_sum(Aop.alg,[P4,P5,Rv],[1,1,1])
+A_to_B={x:i for i,x in B_to_A.items()}
+embedded=[[from_B[4,A_to_B[b]] for b in b4[j]]+
+          [from_B[5,A_to_B[b]] for b in b5[j]] for j in range(7)]
+embedded[v].append(A.index['tv'])
+right_infinite=first_kernel_iso(Aop,v,target,embedded,
+                               'Omega right Rv=e4 A direct sum e5 A direct sum Rv')
+
+first,labels_first,kept_first,killed_first=quotient(A,[4])
+joint,labels_joint,kept_joint,killed_joint=quotient(A,[4,5])
+assert len(first.basis)==19 and len(joint.basis)==10
+first_finite=[finite_resolution(first,labels_first.index(i),pd) for i,pd in [(0,4),(1,2),(2,3),(3,2)]]
+first_v=labels_first.index(v);first_frame=labels_first.index(5)
+P,local=projective(first,labels_first.index(2))
+target=ss.direct_sum(first.alg,[P,sr.Module.simple(first.alg,first_v)],[1,1])
+inj=first.index['h2_5_1']
+embedded=[[first.mult(b,inj) for b in part] for part in local]
+assert all(b is not None for part in embedded for b in part)
+embedded[first_v].append(first.index['v5_h5_5_0'])
+first_infinite=first_kernel_iso(first,first_frame,target,embedded,
+                              'Omega first-quotient L5=Ce2 direct sum Lv')
+
+joint_isos=[]
+next_label={0:2,2:1,1:3,3:0,6:6}
+assert len(joint.alg.radical_powers[1])==0
+for old in labels_joint:
+    source=labels_joint.index(old);dest=labels_joint.index(next_label[old])
+    K,_,cert=cover(sr.Module.simple(joint.alg,source))
+    S=sr.Module.simple(joint.alg,dest)
+    identity=[[rk.unit_vector(d,i) for i in range(d)] for d in S.dimensions]
+    checked=ss.check_isomorphism(K,S,ss.encode(identity))
+    counts['actual_isomorphisms']+=1
+    joint_isos.append({'source_original_label':old,'next_original_label':next_label[old],
+                       'cover':cert,'isomorphism':checked})
+
+# Check the physical triangular quotient normal form at every primitive
+# old deletion: each V copy becomes e_frame(B/Be_hB), or zero if removed.
+primitive_A=[]
+for deleted in range(7):
+    C,labels,kept,killed=quotient(A,[deleted])
+    if deleted==6:
+        assert len(C.basis)==28
+    else:
+        base_C,base_labels,base_kept,_=quotient(B,[deleted])
+        for frame in [4,5]:
+            for b in range(len(B.basis)):
+                if B.basis[b][1]==frame:
+                    assert (from_B[frame,b] in kept)==(b in base_kept and frame!=deleted)
+        assert len(C.basis)==len(base_C.basis)+2+sum(
+            1 for b in base_kept if B.basis[b][1] in [4,5])
+    primitive_A.append({'deleted_original_label':deleted,'dimension':len(C.basis),
+                        'retained_original_labels':labels,'algebra':C.payload,
+                        'triangular_projective_bimodule_quotient_checked':True})
+
+result={'status':'passed','python':sys.version,'independent_verification':False,
+    'counts':counts,'dimensions':{'B':28,'A':42,'first_quotient':19,'joint_quotient':10},
+    'base_modules':modules,'base_algebra':B.payload,'A_algebra':A.payload,
+    'B_finite_resolutions':base,'B_primitive_quotients':primitive_base,
+    'A_finite_left_resolutions':A_finite,'A_finite_right_resolutions':right_finite,
+    'A_actual_left_infinite_certificates':left_infinite,
+    'A_actual_right_infinite_certificate':right_infinite,
+    'first_quotient':{'original_labels':labels_first,'algebra':first.payload,
+        'finite_resolutions':first_finite,'remaining_infinite_frame_certificate':first_infinite},
+    'joint_quotient':{'original_labels':labels_joint,'algebra':joint.payload,
+        'simple_syzygy_isomorphisms':joint_isos},
+    'A_primitive_quotients':primitive_A,
+    'all_degree_conclusions_from_written_module_proof':{
+        'initial_left_infinite':[4,5,6],'initial_right_infinite':[6],
+        'first_left_infinite':[5,6],'first_right_infinite':[6],
+        'joint_left_infinite':[0,1,2,3,6],'joint_right_infinite':[0,1,2,3,6],
+        'all_initial_primitive_comparisons_are_isomorphisms_degrees_at_least':5,
+        'second_infinite_source_comparison_fails_every_cutoff':True,
+        'joint_diagonal_tail_degrees':'4r, r>=1',
+        'actual_initial_nonsection_eligible_move':True,
+        'already_infinite_plus':True,'not_a_Gap_A_counterexample':True},
+    'dependencies':{f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest() for n in
+        ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']},
+    'scope':'Integral actual cover/isomorphism certificates and written all-field/all-degree comparison proof; no independent verification'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','dimensions':result['dimensions'],'counts':counts,
+    'initial_left_count':3,'first_left_count':2,'joint_left_count':5,
+    'independent_verification':False}))

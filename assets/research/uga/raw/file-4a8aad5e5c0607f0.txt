@@ -1,0 +1,18 @@
+# BRANCH STATUS — frozen for final file engineering
+
+| Branch | Frozen status | File-engineering interpretation |
+|---|---|---|
+| Han conjecture itself | externally refuted by KLS 2026 | historical background; do not restart |
+| KLS original-\(A\) \(+\)/co\(+\) classification | historically reopened after convention correction | preserve historical status labels from source files |
+| Universal Gap A | **OPEN** | no final proof or counterexample is claimed |
+| finite-vertex / FORK laboratory | source-dependent mixture of verified reductions, candidates, and refuted subroutes | keep provenance/status labels; do not flatten |
+| Long01 primitive/transgression line | major frontier compression | reusable tools, not a complete proof |
+| U2 | bounded self-intersection / Postnikov standard-form work | retained |
+| U3 | naive first-defect bootstrap refuted; refined coupling frontier | retained negative knowledge |
+| U4 | detector-local visibility / singularly invertible Postnikov transport frontier | retained |
+| U5 | detector/source switching and Yoneda transport refinements | retained |
+| U6 | source–detector–carrier mismatch + cross-module leakage | retained |
+| U7-A | bi-singular incidence route | retained, not promoted beyond source status |
+| U7-B | cross-module return route | retained, not promoted beyond source status |
+| U7-C | adversarial coupler checkpoint | explicitly incomplete checkpoint |
+| U8 | Derived Two-Sided Coupling / Alignment | current frontier; **OPEN** |

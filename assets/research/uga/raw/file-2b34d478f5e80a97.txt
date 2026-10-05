@@ -1,0 +1,130 @@
+"""FULL actual (4,3,3) cover/kernel calibration using frozen project helpers.
+
+Only this finite calibration is computational. The full path proof is separate.
+"""
+from pathlib import Path
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfor p in [3,5,8]:',1)[0],str(frozen),'exec'),globals())
+
+def nakayama(c):
+    N=len(c)
+    basis=[(f'e{i}',i,i) for i in range(N)]
+    paths={(i,0):i for i in range(N)}
+    for i in range(N):
+        for l in range(1,c[i]):
+            paths[i,l]=len(basis)
+            basis.append((f'p{i}_{l}',(i+l)%N,i))
+    products={}
+    for (i,l),b in paths.items():
+        if not l:continue
+        for (j,m),a in paths.items():
+            if m and j==(i+l)%N and l+m<c[i]:
+                products[a,b]=paths[i,l+m]
+    return Table(N,basis,products),paths
+
+def quotient_module(A,paths,i,l):
+    local=[[paths[i,t] for t in range(l) if (i+t)%A.vertices==v]
+           for v in range(A.vertices)]
+    dims=list(map(len,local));pos=[{b:j for j,b in enumerate(part)} for part in local]
+    actions=[]
+    for r in A.radical:
+        _,target,source=A.basis[r];columns=[]
+        for b in local[source]:
+            col=[F(0)]*dims[target];out=A.mult(r,b)
+            if out in pos[target]:col[pos[target][out]]=F(1)
+            columns.append(col)
+        actions.append(columns)
+    M=sr.Module(A.alg,dims,actions)
+    ss.parse_module(A.alg,ss.module_payload(M))
+    return M
+
+def identity_kernel_iso(M,K):
+    assert M.dimensions==K.dimensions
+    iso=ss.check_isomorphism(M,K,ss.encode(
+        [[rk.unit_vector(d,j) for j in range(d)] for d in M.dimensions]))
+    counts['actual_kernel_isomorphisms']+=1
+    return iso
+
+A,paths=nakayama([4,3,3]);B,bpaths=nakayama([3,3,3])
+D=Table(1,[('e0',0,0),('w',0,0)],{})
+Aop=A.opposite()
+assert len(A.basis)==10 and len(B.basis)==9
+I=supported_module(A,[[paths[0,3]],[],[]])
+assert I.actions==sr.Module.simple(A.alg,0).actions
+assert not A.alg.radical_powers[3]
+assert len(A.alg.radical_powers[2])==1
+I_kernel,I_info,I_cover=cover(I)
+P1,_=projective(A,1)
+I_kernel_iso=identity_kernel_iso(P1,I_kernel)
+zero,_,kernel_cover=cover(I_kernel)
+assert not any(zero.dimensions)
+
+# Direct RIGHT R0 cover: all ending paths establish Omega_RIGHT R0=P2_RIGHT.
+RP2,right_local=projective(Aop,2)
+right_embedded=[[Aop.mult(b,paths[2,1]) for b in part] for part in right_local]
+assert all(b is not None for part in right_embedded for b in part)
+right_R0=embedded_kernel_iso(Aop,0,RP2,right_embedded,'FULL RIGHT Omega R0=P2_RIGHT')
+
+S1=sr.Module.simple(A.alg,1)
+M22=quotient_module(A,paths,2,2)
+K1,_,C1=cover(S1)
+iso1=identity_kernel_iso(M22,K1)
+K2,_,C2=cover(M22)
+iso2=identity_kernel_iso(S1,K2)
+S2=sr.Module.simple(A.alg,2)
+M02=quotient_module(A,paths,0,2)
+K3,_,C3=cover(S2)
+iso3=identity_kernel_iso(M02,K3)
+K4,_,C4=cover(M02)
+iso4=identity_kernel_iso(M22,K4)
+
+# The radical of the finite-pd FULL kernel P1 is the infinite-pd M(2,2).
+radP1=supported_module(A,
+    [[paths[1,t] for t in (1,2) if (1+t)%3==v] for v in range(3)])
+assert radP1.actions==M22.actions and radP1.dimensions==M22.dimensions
+
+# Actual B self-return at original source 0 contrasts with pd_A L0=1.
+BS0=sr.Module.simple(B.alg,0)
+BM12=quotient_module(B,bpaths,1,2)
+BK1,_,BC1=cover(BS0)
+biso1=identity_kernel_iso(BM12,BK1)
+BK2,_,BC2=cover(BM12)
+biso2=identity_kernel_iso(BS0,BK2)
+
+# Actual support corner D=e0Ae0 is dual numbers. Its inherited cubic ideal
+# is the radical simple, whose FULL minimal kernel is itself in every degree.
+DS0=sr.Module.simple(D.alg,0)
+DK,_,DC=cover(DS0)
+diso=identity_kernel_iso(DS0,DK)
+
+result={'status':'passed','field':'Q','counts':counts,
+  'A':A.payload,'B=A/J3':B.payload,'D=e0Ae0':D.payload,'A_LEFT_Kupisch':[4,3,3],
+  'FULL_J3_cover':I_cover,'FULL_J3_kernel_projective_P1_iso':I_kernel_iso,
+  'FULL_kernel_terminating_cover':kernel_cover,
+  'actual_RIGHT_R0_pd1_cover':right_R0,
+  'actual_L1_period2':[{'cover':C1,'iso':iso1},{'cover':C2,'iso':iso2}],
+  'actual_L2_entry_into_L1_period':[{'cover':C3,'iso':iso3},{'cover':C4,'iso':iso4}],
+  'actual_B_L0_period2':[{'cover':BC1,'iso':biso1},{'cover':BC2,'iso':biso2}],
+  'actual_D_simple_period1':{'cover':DC,'iso':diso},
+  'all_degree_conclusions_from_separate_path_proof':{
+    'LEFT_simple_pds':[1,'infinite','infinite'],'WHOLE_LEFT_J3_pd':1,
+    'FULL_kernel_pd':0,'FULL_kernel_factor_labels':[0,1,2],
+    'FULL_kernel_head_label':1,'FULL_kernel_radical_pd':'infinite',
+    'J3_support_F':[0],'projective_cover_saturated_F':[0,1,2],
+    'no_proper_nonempty_cover_closed_block':True,
+    'inherited_support_corner_ideal_pd':'infinite',
+    'D_simple_Tor':'nonzero in every degree',
+    'A_gd':'infinite','A_supported_diagonal_L1':'nonzero at all positive even degrees',
+    'ambient_LEFT_pd_of_B':2,
+    'A_source0_Tor':'zero above degree1',
+    'B_source0_Tor':'nonzero at all positive even degrees',
+    'NOT_badness_counterexample':True},
+  'independent_verification':False,
+  'scope':'Refutes finite-pd kernel factorwise repair and automatic finite cover-closed enlargement, with FULL projective kernel; does not refute badness-specific repair or UGA.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','dimension_A':10,'dimension_B':9,
+                 'WHOLE_LEFT_J3_pd':1,'FULL_kernel_pd':0,
+                 'cover_saturated_F':[0,1,2],'counts':counts}))

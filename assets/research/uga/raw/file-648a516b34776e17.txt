@@ -1,0 +1,2750 @@
+{
+  "status": "passed",
+  "field": "Q",
+  "counts": {
+    "associativity": 2737,
+    "actual_minimal_covers": 10,
+    "integer_basis_inverses": 87,
+    "actual_kernel_isomorphisms": 9,
+    "pruned_homology_isomorphisms": 0
+  },
+  "A": {
+    "vertices": 3,
+    "base_vertex": 0,
+    "radical_basis": [
+      {
+        "name": "p0_1",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "p0_2",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "name": "p0_3",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "p1_1",
+        "left": 2,
+        "right": 1
+      },
+      {
+        "name": "p1_2",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "p2_1",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "name": "p2_2",
+        "left": 1,
+        "right": 2
+      }
+    ],
+    "radical_products": [
+      {
+        "left": "p1_1",
+        "right": "p0_1",
+        "value": {
+          "p0_2": 1
+        }
+      },
+      {
+        "left": "p1_2",
+        "right": "p0_1",
+        "value": {
+          "p0_3": 1
+        }
+      },
+      {
+        "left": "p2_1",
+        "right": "p0_2",
+        "value": {
+          "p0_3": 1
+        }
+      },
+      {
+        "left": "p2_1",
+        "right": "p1_1",
+        "value": {
+          "p1_2": 1
+        }
+      },
+      {
+        "left": "p0_1",
+        "right": "p2_1",
+        "value": {
+          "p2_2": 1
+        }
+      }
+    ]
+  },
+  "B=A/J3": {
+    "vertices": 3,
+    "base_vertex": 0,
+    "radical_basis": [
+      {
+        "name": "p0_1",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "p0_2",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "name": "p1_1",
+        "left": 2,
+        "right": 1
+      },
+      {
+        "name": "p1_2",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "p2_1",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "name": "p2_2",
+        "left": 1,
+        "right": 2
+      }
+    ],
+    "radical_products": [
+      {
+        "left": "p1_1",
+        "right": "p0_1",
+        "value": {
+          "p0_2": 1
+        }
+      },
+      {
+        "left": "p2_1",
+        "right": "p1_1",
+        "value": {
+          "p1_2": 1
+        }
+      },
+      {
+        "left": "p0_1",
+        "right": "p2_1",
+        "value": {
+          "p2_2": 1
+        }
+      }
+    ]
+  },
+  "D=e0Ae0": {
+    "vertices": 1,
+    "base_vertex": 0,
+    "radical_basis": [
+      {
+        "name": "w",
+        "left": 0,
+        "right": 0
+      }
+    ],
+    "radical_products": []
+  },
+  "A_LEFT_Kupisch": [
+    4,
+    3,
+    3
+  ],
+  "FULL_J3_cover": {
+    "module": {
+      "dimensions": [
+        1,
+        0,
+        0
+      ],
+      "actions": [
+        [
+          []
+        ],
+        [
+          []
+        ],
+        [
+          [
+            "0"
+          ]
+        ],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "kernel": {
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "actions": [
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ]
+      ]
+    },
+    "cover_multiplicities": [
+      1,
+      0,
+      0
+    ],
+    "cover_dimensions": [
+      2,
+      1,
+      1
+    ],
+    "cover_images": [
+      [
+        [
+          "1"
+        ],
+        [
+          "0"
+        ]
+      ],
+      [
+        []
+      ],
+      [
+        []
+      ]
+    ],
+    "kernel_inclusion": [
+      [
+        [
+          "0",
+          "1"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ]
+    ],
+    "projective_actions": [
+      [
+        [
+          "1"
+        ],
+        [
+          "0"
+        ]
+      ],
+      [
+        [
+          "1"
+        ],
+        [
+          "0"
+        ]
+      ],
+      [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "0",
+          "1"
+        ]
+      ],
+      [
+        [
+          "0",
+          "1"
+        ]
+      ],
+      [
+        [
+          "0"
+        ]
+      ]
+    ],
+    "top_basis_certificates": [
+      {
+        "basis": [
+          [
+            "1"
+          ]
+        ],
+        "inverse": [
+          [
+            "1"
+          ]
+        ]
+      },
+      {
+        "basis": [],
+        "inverse": []
+      },
+      {
+        "basis": [],
+        "inverse": []
+      }
+    ],
+    "exact_sequence_basis_certificates": [
+      {
+        "image": {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        },
+        "kernel_and_complement": {
+          "basis": [
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "0"
+            ]
+          ],
+          "inverse": [
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "0"
+            ]
+          ]
+        }
+      },
+      {
+        "image": {
+          "basis": [],
+          "inverse": []
+        },
+        "kernel_and_complement": {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        }
+      },
+      {
+        "image": {
+          "basis": [],
+          "inverse": []
+        },
+        "kernel_and_complement": {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        }
+      }
+    ],
+    "A_linear_surjective_minimal": true
+  },
+  "FULL_J3_kernel_projective_P1_iso": {
+    "forward": [
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ]
+    ],
+    "inverse": [
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ]
+    ],
+    "A_linear_two_sided_inverse_checked": true
+  },
+  "FULL_kernel_terminating_cover": {
+    "module": {
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "actions": [
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ]
+      ]
+    },
+    "kernel": {
+      "dimensions": [
+        0,
+        0,
+        0
+      ],
+      "actions": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "cover_multiplicities": [
+      0,
+      1,
+      0
+    ],
+    "cover_dimensions": [
+      1,
+      1,
+      1
+    ],
+    "cover_images": [
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ]
+    ],
+    "kernel_inclusion": [
+      [],
+      [],
+      []
+    ],
+    "projective_actions": [
+      [
+        [
+          "0"
+        ]
+      ],
+      [
+        [
+          "0"
+        ]
+      ],
+      [
+        [
+          "0"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "1"
+        ]
+      ],
+      [
+        [
+          "0"
+        ]
+      ]
+    ],
+    "top_basis_certificates": [
+      {
+        "basis": [
+          [
+            "1"
+          ]
+        ],
+        "inverse": [
+          [
+            "1"
+          ]
+        ]
+      },
+      {
+        "basis": [
+          [
+            "1"
+          ]
+        ],
+        "inverse": [
+          [
+            "1"
+          ]
+        ]
+      },
+      {
+        "basis": [
+          [
+            "1"
+          ]
+        ],
+        "inverse": [
+          [
+            "1"
+          ]
+        ]
+      }
+    ],
+    "exact_sequence_basis_certificates": [
+      {
+        "image": {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        },
+        "kernel_and_complement": {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        }
+      },
+      {
+        "image": {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        },
+        "kernel_and_complement": {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        }
+      },
+      {
+        "image": {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        },
+        "kernel_and_complement": {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        }
+      }
+    ],
+    "A_linear_surjective_minimal": true
+  },
+  "actual_RIGHT_R0_pd1_cover": {
+    "label": "FULL RIGHT Omega R0=P2_RIGHT",
+    "cover": {
+      "module": {
+        "dimensions": [
+          1,
+          0,
+          0
+        ],
+        "actions": [
+          [],
+          [],
+          [
+            [
+              "0"
+            ]
+          ],
+          [],
+          [
+            []
+          ],
+          [
+            []
+          ],
+          []
+        ]
+      },
+      "kernel": {
+        "dimensions": [
+          1,
+          1,
+          1
+        ],
+        "actions": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ]
+        ]
+      },
+      "cover_multiplicities": [
+        1,
+        0,
+        0
+      ],
+      "cover_dimensions": [
+        2,
+        1,
+        1
+      ],
+      "cover_images": [
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          []
+        ],
+        [
+          []
+        ]
+      ],
+      "kernel_inclusion": [
+        [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "projective_actions": [
+        [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ]
+      ],
+      "top_basis_certificates": [
+        {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        },
+        {
+          "basis": [],
+          "inverse": []
+        },
+        {
+          "basis": [],
+          "inverse": []
+        }
+      ],
+      "exact_sequence_basis_certificates": [
+        {
+          "image": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0"
+              ]
+            ],
+            "inverse": [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0"
+              ]
+            ]
+          }
+        },
+        {
+          "image": {
+            "basis": [],
+            "inverse": []
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "image": {
+            "basis": [],
+            "inverse": []
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        }
+      ],
+      "A_linear_surjective_minimal": true
+    },
+    "target": {
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "actions": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ],
+        [
+          [
+            "0"
+          ]
+        ]
+      ]
+    },
+    "isomorphism": {
+      "forward": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "inverse": [
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ],
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    }
+  },
+  "actual_L1_period2": [
+    {
+      "cover": {
+        "module": {
+          "dimensions": [
+            0,
+            1,
+            0
+          ],
+          "actions": [
+            [],
+            [],
+            [],
+            [
+              []
+            ],
+            [
+              []
+            ],
+            [],
+            []
+          ]
+        },
+        "kernel": {
+          "dimensions": [
+            1,
+            0,
+            1
+          ],
+          "actions": [
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              []
+            ]
+          ]
+        },
+        "cover_multiplicities": [
+          0,
+          1,
+          0
+        ],
+        "cover_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "cover_images": [
+          [
+            []
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            []
+          ]
+        ],
+        "kernel_inclusion": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "projective_actions": [
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ]
+        ],
+        "top_basis_certificates": [
+          {
+            "basis": [],
+            "inverse": []
+          },
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          {
+            "basis": [],
+            "inverse": []
+          }
+        ],
+        "exact_sequence_basis_certificates": [
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          }
+        ],
+        "A_linear_surjective_minimal": true
+      },
+      "iso": {
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    },
+    {
+      "cover": {
+        "module": {
+          "dimensions": [
+            1,
+            0,
+            1
+          ],
+          "actions": [
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              []
+            ]
+          ]
+        },
+        "kernel": {
+          "dimensions": [
+            0,
+            1,
+            0
+          ],
+          "actions": [
+            [],
+            [],
+            [],
+            [
+              []
+            ],
+            [
+              []
+            ],
+            [],
+            []
+          ]
+        },
+        "cover_multiplicities": [
+          0,
+          0,
+          1
+        ],
+        "cover_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "cover_images": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            []
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "kernel_inclusion": [
+          [],
+          [
+            [
+              "1"
+            ]
+          ],
+          []
+        ],
+        "projective_actions": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "top_basis_certificates": [
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          {
+            "basis": [],
+            "inverse": []
+          },
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        ],
+        "exact_sequence_basis_certificates": [
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          }
+        ],
+        "A_linear_surjective_minimal": true
+      },
+      "iso": {
+        "forward": [
+          [],
+          [
+            [
+              "1"
+            ]
+          ],
+          []
+        ],
+        "inverse": [
+          [],
+          [
+            [
+              "1"
+            ]
+          ],
+          []
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    }
+  ],
+  "actual_L2_entry_into_L1_period": [
+    {
+      "cover": {
+        "module": {
+          "dimensions": [
+            0,
+            0,
+            1
+          ],
+          "actions": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+              []
+            ],
+            [
+              []
+            ]
+          ]
+        },
+        "kernel": {
+          "dimensions": [
+            1,
+            1,
+            0
+          ],
+          "actions": [
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            []
+          ]
+        },
+        "cover_multiplicities": [
+          0,
+          0,
+          1
+        ],
+        "cover_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "cover_images": [
+          [
+            []
+          ],
+          [
+            []
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "kernel_inclusion": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          []
+        ],
+        "projective_actions": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "top_basis_certificates": [
+          {
+            "basis": [],
+            "inverse": []
+          },
+          {
+            "basis": [],
+            "inverse": []
+          },
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        ],
+        "exact_sequence_basis_certificates": [
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          }
+        ],
+        "A_linear_surjective_minimal": true
+      },
+      "iso": {
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          []
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          []
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    },
+    {
+      "cover": {
+        "module": {
+          "dimensions": [
+            1,
+            1,
+            0
+          ],
+          "actions": [
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            []
+          ]
+        },
+        "kernel": {
+          "dimensions": [
+            1,
+            0,
+            1
+          ],
+          "actions": [
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [
+              [
+                "0"
+              ]
+            ],
+            [],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              []
+            ]
+          ]
+        },
+        "cover_multiplicities": [
+          1,
+          0,
+          0
+        ],
+        "cover_dimensions": [
+          2,
+          1,
+          1
+        ],
+        "cover_images": [
+          [
+            [
+              "1"
+            ],
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            []
+          ]
+        ],
+        "kernel_inclusion": [
+          [
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "projective_actions": [
+          [
+            [
+              "1"
+            ],
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ],
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "0",
+              "1"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ]
+        ],
+        "top_basis_certificates": [
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          {
+            "basis": [],
+            "inverse": []
+          }
+        ],
+        "exact_sequence_basis_certificates": [
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "1",
+                  "0"
+                ]
+              ],
+              "inverse": [
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "1",
+                  "0"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          }
+        ],
+        "A_linear_surjective_minimal": true
+      },
+      "iso": {
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    }
+  ],
+  "actual_B_L0_period2": [
+    {
+      "cover": {
+        "module": {
+          "dimensions": [
+            1,
+            0,
+            0
+          ],
+          "actions": [
+            [
+              []
+            ],
+            [
+              []
+            ],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        "kernel": {
+          "dimensions": [
+            0,
+            1,
+            1
+          ],
+          "actions": [
+            [],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              []
+            ],
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ]
+          ]
+        },
+        "cover_multiplicities": [
+          1,
+          0,
+          0
+        ],
+        "cover_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "cover_images": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            []
+          ],
+          [
+            []
+          ]
+        ],
+        "kernel_inclusion": [
+          [],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "projective_actions": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ]
+        ],
+        "top_basis_certificates": [
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          {
+            "basis": [],
+            "inverse": []
+          },
+          {
+            "basis": [],
+            "inverse": []
+          }
+        ],
+        "exact_sequence_basis_certificates": [
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          }
+        ],
+        "A_linear_surjective_minimal": true
+      },
+      "iso": {
+        "forward": [
+          [],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "inverse": [
+          [],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    },
+    {
+      "cover": {
+        "module": {
+          "dimensions": [
+            0,
+            1,
+            1
+          ],
+          "actions": [
+            [],
+            [],
+            [
+              [
+                "1"
+              ]
+            ],
+            [
+              []
+            ],
+            [
+              []
+            ],
+            [
+              [
+                "0"
+              ]
+            ]
+          ]
+        },
+        "kernel": {
+          "dimensions": [
+            1,
+            0,
+            0
+          ],
+          "actions": [
+            [
+              []
+            ],
+            [
+              []
+            ],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        "cover_multiplicities": [
+          0,
+          1,
+          0
+        ],
+        "cover_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "cover_images": [
+          [
+            []
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ]
+        ],
+        "kernel_inclusion": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          []
+        ],
+        "projective_actions": [
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "1"
+            ]
+          ],
+          [
+            [
+              "0"
+            ]
+          ]
+        ],
+        "top_basis_certificates": [
+          {
+            "basis": [],
+            "inverse": []
+          },
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          }
+        ],
+        "exact_sequence_basis_certificates": [
+          {
+            "image": {
+              "basis": [],
+              "inverse": []
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          },
+          {
+            "image": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            },
+            "kernel_and_complement": {
+              "basis": [
+                [
+                  "1"
+                ]
+              ],
+              "inverse": [
+                [
+                  "1"
+                ]
+              ]
+            }
+          }
+        ],
+        "A_linear_surjective_minimal": true
+      },
+      "iso": {
+        "forward": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          []
+        ],
+        "inverse": [
+          [
+            [
+              "1"
+            ]
+          ],
+          [],
+          []
+        ],
+        "A_linear_two_sided_inverse_checked": true
+      }
+    }
+  ],
+  "actual_D_simple_period1": {
+    "cover": {
+      "module": {
+        "dimensions": [
+          1
+        ],
+        "actions": [
+          [
+            [
+              "0"
+            ]
+          ]
+        ]
+      },
+      "kernel": {
+        "dimensions": [
+          1
+        ],
+        "actions": [
+          [
+            [
+              "0"
+            ]
+          ]
+        ]
+      },
+      "cover_multiplicities": [
+        1
+      ],
+      "cover_dimensions": [
+        2
+      ],
+      "cover_images": [
+        [
+          [
+            "1"
+          ],
+          [
+            "0"
+          ]
+        ]
+      ],
+      "kernel_inclusion": [
+        [
+          [
+            "0",
+            "1"
+          ]
+        ]
+      ],
+      "projective_actions": [
+        [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ]
+      ],
+      "top_basis_certificates": [
+        {
+          "basis": [
+            [
+              "1"
+            ]
+          ],
+          "inverse": [
+            [
+              "1"
+            ]
+          ]
+        }
+      ],
+      "exact_sequence_basis_certificates": [
+        {
+          "image": {
+            "basis": [
+              [
+                "1"
+              ]
+            ],
+            "inverse": [
+              [
+                "1"
+              ]
+            ]
+          },
+          "kernel_and_complement": {
+            "basis": [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0"
+              ]
+            ],
+            "inverse": [
+              [
+                "0",
+                "1"
+              ],
+              [
+                "1",
+                "0"
+              ]
+            ]
+          }
+        }
+      ],
+      "A_linear_surjective_minimal": true
+    },
+    "iso": {
+      "forward": [
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "inverse": [
+        [
+          [
+            "1"
+          ]
+        ]
+      ],
+      "A_linear_two_sided_inverse_checked": true
+    }
+  },
+  "all_degree_conclusions_from_separate_path_proof": {
+    "LEFT_simple_pds": [
+      1,
+      "infinite",
+      "infinite"
+    ],
+    "WHOLE_LEFT_J3_pd": 1,
+    "FULL_kernel_pd": 0,
+    "FULL_kernel_factor_labels": [
+      0,
+      1,
+      2
+    ],
+    "FULL_kernel_head_label": 1,
+    "FULL_kernel_radical_pd": "infinite",
+    "J3_support_F": [
+      0
+    ],
+    "projective_cover_saturated_F": [
+      0,
+      1,
+      2
+    ],
+    "no_proper_nonempty_cover_closed_block": true,
+    "inherited_support_corner_ideal_pd": "infinite",
+    "D_simple_Tor": "nonzero in every degree",
+    "A_gd": "infinite",
+    "A_supported_diagonal_L1": "nonzero at all positive even degrees",
+    "ambient_LEFT_pd_of_B": 2,
+    "A_source0_Tor": "zero above degree1",
+    "B_source0_Tor": "nonzero at all positive even degrees",
+    "NOT_badness_counterexample": true
+  },
+  "independent_verification": false,
+  "scope": "Refutes finite-pd kernel factorwise repair and automatic finite cover-closed enlargement, with FULL projective kernel; does not refute badness-specific repair or UGA."
+}

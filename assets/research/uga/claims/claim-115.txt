@@ -1,0 +1,19 @@
+## UGA-C115 — Canonical Bongartz Ordinary Tor Formulas Give a Global Ideal-Block Formulation; Fixed-Pair Persistence Does Not Imply Reverse Visibility
+
+**Status:** CLASSICAL TOR FORMULA VERIFIED FROM FULL PRIMARY PROOF / COMPLETE ORDINARY DERIVATION AND NORMAL ADVERSARIAL SELF-AUDIT / ANY ELEMENTARY FIELD / GLOBAL BRIDGE OPEN / NOT INDEPENDENTLY VERIFIED; NO NOVELTY CLAIM  
+**Source:** Run-Global-Route-Audit-Bongartz-Ordinary-Ideals-Trace-and-Relative-Resolution-Barriers-2026-10-04.md Sections I–V and Appendices A–B,G; Global-Route-Audit-Evidence. External formula: Huber–Kalck Theorem 2.2, Remark 2.3(2), Lemmas 2.5–2.9, attributing earlier Bongartz/Butler–King work. Original Bongartz/Butler–King full proofs were not read; exact Tor scope was checked in the Huber–Kalck full proof.
+
+For elementary finite-dimensional A over ANY k, present A=H/I, H=kQ, arrow ideal F, admissible F^ell subset I subset F^2, I^0=H. Define
+
+\[
+K_{2r}=(I^r\cap F I^{r-1}F)/(F I^r+I^rF)\quad(r\ge1),\qquad
+K_{2r+1}=(F I^r\cap I^rF)/(I^{r+1}+F I^rF)\quad(r\ge0).
+\]
+
+There are ordinary S-bimodule isomorphisms K_n=Tor_n^A(S,S), with e_x K_n e_y=Tor_n^A(R_x,L_y), S=A/J. Low-degree anchors K1=F/F2 and K2=I/(FI+IF) fix orientation; reverse visibility is e_y(H/I)e_x, not e_x(H/I)e_y. Proof uses the actual hereditary-ideal projective resolution I^r/I^(r+1), I^rF/I^(r+1)F and its tensor-kernel quotients. F need NOT equal rad H; nonzero ideal powers/nonminimal terms alone do NOT prove Tor persistence.
+
+gd A infinite gives total Tor_n(S,S) nonzero in EVERY degree by an actual infinite minimal simple resolution; finitely many pairs give ONE fixed pair infinitely often. However SAME-pair reverse visibility is FALSE: the dimension4 radical-square-zero algebra a:0->1, loop x:1->1 has actual Omega L0=L1 and Omega L1=L1, so Tor_n(R1,L0)=k every n>=1 but e0Ae1=0. Its e1 K_n e0 is spanned by x^(n-1)a. It ALSO has supported Tor_n(R1,L1)=k every n>=1, so this is NOT a UGA counterexample.
+
+Full badness Z_b is sum C_yx dim(e_x K_n e_y)=0 for ALL n>b, where C_yx=dim e_yAe_x, equivalently ALL visible blocks of BOTH parity intersections equal their denominator blocks eventually. The assertion that this forces ALL K_n to vanish eventually is EXACTLY EQUIVALENT TO UGA and remains OPEN. Canonical representation removes local lift choices from the target's description; it does not itself supply a visibility/termination theorem, Yoneda product identification or automatic Artin–Rees hypothesis. C107/C110 closed classes and all global branches retained.
+
+---

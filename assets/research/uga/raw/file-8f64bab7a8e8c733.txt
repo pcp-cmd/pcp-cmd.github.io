@@ -1,0 +1,566 @@
+# Universal Gap A — Target-B primitive-seed correction
+
+**Date:** 2026-10-03  
+**Status:** COMPLETE ARGUMENTS WITH NORMAL SELF-AUDIT / NOT INDEPENDENTLY VERIFIED  
+**Global status:** Universal Gap A remains OPEN.  
+**Research mode:** one main researcher; ordinary research continuation, not a new MRS store or a whole-history audit.
+
+This Run corrects the claimed exhaustive alternative in Sections 17–18 of
+`toolbox/Research-Runs/2026-10-02/07_Derived-Necklace-Excursion-Final.md`.
+The old Run remains unchanged. Its all-edge primitive criterion and its
+generation theorem under vanishing of **every** negative primitive degree are
+retained. Their stronger paraphrases are not retained.
+
+## 1. Two quantifier errors in the previous freeze
+
+Theorem 13.1 requires **every edge** of an already established bar cycle to
+have nonzero image in the primitive quotient. One primitive edge alone does
+not suffice. Section 18, item 2 loses this quantifier.
+
+Theorem 16.1 assumes `(P_infinity)^(-d)=0` for all `1 <= d <= D`. Absence of
+primitive edges on selected high-degree necklaces, or even vanishing of the
+entire primitive quotient in sufficiently negative degrees, does not imply
+that hypothesis for the low degrees. Section 18, item 3 loses this condition.
+
+The valid statements are therefore sufficient criteria and a conditional
+generation theorem. They do not establish an exhaustive two-branch reduction
+of Target B to degree-zero arrow-rooted Massey trees.
+
+### 1.1 One primitive negative edge can occur on a boundary necklace
+
+Here is a finite connective graded algebra, regarded as a minimal augmented
+A-infinity algebra with only `m_2` nonzero. Take vertices 1,2,3 and arrows
+
+\[
+a:1\to2,\quad b:2\to3,\quad c:3\to1,
+\qquad |a|=|b|=|c|=-1.
+\]
+
+Products are in algebraic order: `ba` walks first `a`, then `b`. Impose
+`ac=cb=0` and retain `d=ba`. A basis is the three idempotents and `a,b,c,d`.
+There are no reduced diagonal classes; the shortest necklaces have length
+two, using `d:1->3` and `c:3->1`. We have
+
+\[
+D_\infty=kd,\quad P_\infty=k\bar a\oplus k\bar b\oplus k\bar c.
+\]
+
+The minimal necklace word `[d|c]` is a cycle, since `dc=b(ac)=0`, and contains
+the primitive negative edge `c`. Nevertheless
+
+\[
+b_{\rm bar}[b|a|c]=\pm[d|c],
+\]
+
+because the other possible contraction is `ac=0`. Hence it is a boundary.
+The sign is a unit under either consistent suspension convention, including
+characteristic two. This does not refute Theorem 13.1: `d` is decomposable.
+It refutes the one-edge paraphrase. No claim that this example itself is an
+ordinary finite-dimensional-algebra derived quotient is needed for this
+logical test of the A-infinity assertion.
+
+## 2. Explicit idempotent derived quotient with a low-degree primitive seed
+
+This example is an **actual** derived quotient of an ordinary five-dimensional
+algebra. It calibrates the high-degree-versus-all-degree error. It is not a
+counterexample to Universal Gap A or an example of unbounded excursion depth.
+
+Let `A` have vertices 1,2, arrows `a:1->2`, `b:2->1`, and relation `ba=0`,
+again in algebraic product order. Put `t=ab`. Then
+
+\[
+A=\operatorname{span}_k\{e_1,e_2,a,b,t\},\qquad
+J=\operatorname{span}_k\{a,b,t\},\qquad J^3=0.
+\]
+
+The only nonzero radical product is `ab=t`.
+
+### 2.1 Ambient global dimension is exactly two
+
+For left modules `P_i=Ae_i`,
+
+\[
+P_1=\langle e_1,a\rangle,\quad
+P_2=\langle e_2,b,t\rangle.
+\]
+
+`JP_1=ka` is `L_2`. The radical `JP_2=<b,t>` is isomorphic to `P_1` via
+`e_1 -> b`, `a -> t`. Thus the minimal resolutions are
+
+\[
+0\to P_1\to P_2\to L_2\to0,
+\]
+\[
+0\to P_1\to P_2\to P_1\to L_1\to0.
+\]
+
+The second resolution splices the first into the cover of `L_1`.
+All differentials have radical image, so `pd L_2=1`, `pd L_1=2`, and
+`gldim A=2`. In particular ordinary Tor is zero in every degree above two.
+
+### 2.2 A strict model of the derived quotient
+
+Delete `e=e_2` and set `f=e_1`. Braun–Chuang–Lazarev, Theorem 2.14 and
+Proposition 9.6, give the model
+
+\[
+B=A\langle h\rangle/(he=eh=h),\qquad |h|=-1,\quad dh=e.
+\]
+
+Their paper uses homological grading; the displayed grading is cohomological.
+Over a field the flatness/left-properness hypothesis applies. The retained
+corner `Q=fBf` is a model for the remaining vertex of the derived quotient.
+The blocks with an `e` endpoint are contractible by multiplication by `h`,
+so their removal does not remove derived homology.
+
+For `n>=1`,
+
+\[
+Q^{-n}=\operatorname{span}_k
+\{b h g_1 h\cdots h g_{n-1}h a:g_i\in\{e,t\}\},
+\qquad Q^0=kf.
+\]
+
+The negative complex is the shifted unnormalized two-sided bar complex of
+`k` with itself over `Gamma=eAe=k[t]/(t^2)`. Its map from degree -1 to degree
+zero is multiplication `ba=0`. Bar normalization removes tensors containing
+an internal `e`, leaving one basis vector
+
+\[
+v_n=b h(t h)^{n-1}a
+\]
+
+in each degree -n. The normalized differential is zero: `bt=ta=t^2=0`.
+Consequently `H^(-n)(Q)=k[v_n]` for every `n>=1`.
+
+Put `u=bha`. It is closed and
+
+\[
+u^n=b h(ab)h\cdots(ab)h a=v_n.
+\]
+
+The dg algebra map `k<u> -> Q`, with `|u|=-1` and zero differential, therefore
+induces an isomorphism in every degree. Equivalently the normalization
+projection sends `v_n` to `u^n` and all internally degenerate words to zero;
+the connecting product is always `ab=t`, so this projection is multiplicative.
+Thus
+
+\[
+\boxed{Q\simeq k\langle u\rangle,\qquad |u|=-1.}
+\]
+
+With one generator this is the associative polynomial algebra. It is not
+being interpreted as a graded-commutative polynomial algebra; the odd
+degree does not impose `u^2=0`.
+
+### 2.3 Primitive quotient, tree degrees, and complete high-degree screening
+
+Choose the formal minimal model `H=k<u>`. Here
+
+\[
+H^0=k,\quad R=0,\quad
+D_\infty=u^2k[u],\quad P_\infty=ku.
+\]
+
+So `(P_infinity)^(-d)=0` for every `d>=2`, while negative homology is unbounded.
+Every `u^n` is generated by a binary tree on the negative leaf `u`, with
+Massey excess zero. There are no nonzero degree-zero radical leaves at all.
+
+Moreover the one-edge necklace `[u]` is non-boundary, but every `[u^n]` for
+`n>=2` is a boundary:
+
+\[
+b_{\rm bar}[u|u^{n-1}]=\pm[u^n].
+\]
+
+In fact the two-cell semifree `H`-module resolution with generator `v` of
+degree -2 and `dv=u` resolves `k`. Its augmentation kernel is paired by
+`u^jv -> +/-u^(j+1)`. After tensoring with `k` the differential vanishes,
+giving
+
+\[
+\operatorname{Tor}^Q_n(k,k)=
+\begin{cases}k,&n=0,2,\\0,&\text{otherwise}.\end{cases}
+\]
+
+This agrees with the ambient minimal resolution. It also shows why one
+non-boundary primitive necklace does not establish a persistent Tor tail.
+
+The local `Gamma` classes have explicitly bounded excursion screening. In
+ambient bar notation, for every `m>=1` set
+
+\[
+\alpha_m=[b|\underbrace{t|\cdots|t}_{m}|a],\qquad
+\beta_m=[b|a|b|\underbrace{t|\cdots|t}_{m-1}|a].
+\]
+
+All contractions of `beta_m` are zero except its `ab=t` joint, so
+`partial beta_m=+/-alpha_m`. The former has one retained internal vertex,
+the latter none. Thus every such local class is killed from excursion
+filtration one. This is a bounded-screening calibration, not Branch U.
+
+## 3. Replacement lemma: generation by all primitive seeds
+
+Fix a strictly unital, minimal, connective, `S`-augmented A-infinity model
+`H`, where `S=k^q`, `C=H^0` is finite dimensional, and `R=rad C`.
+Work in this chosen model; no invariance of `P_infinity` under a change of
+minimal model is asserted. Define
+
+\[
+D_\infty=\sum_{r\ge2}\operatorname{im}m_r,\qquad
+P_\infty=\bar H/D_\infty.
+\]
+
+For each `d>=0` choose a homogeneous `S`-bimodule lift `V_d` of
+`(P_infinity)^(-d)`. In degree zero, `V_0` lifts `R/R^2`.
+
+### Theorem 3.1 — Mixed-primitive generation
+
+Every homogeneous element of `bar H` is a finite linear combination of
+evaluations of finite planar rooted A-infinity trees whose leaves lie in
+the spaces `V_d`. For an evaluated tree of negative degree -d,
+
+\[
+\boxed{d=\sum_{\ell\in\operatorname{Leaves}(T)}d_\ell
+       +\sum_{v\in\operatorname{Int}(T)}(r(v)-2).}
+\]
+
+Thus negative degree can come from repeated negative primitive leaves,
+Massey excess, or both. Vanishing of primitives only above degree `d_0`
+restricts the leaf alphabet to `V_0,...,V_(d_0)`; it does not remove its
+negative-degree letters.
+
+#### Proof
+
+First `D_infinity` in degree zero is `R^2`, by connectiveness and
+`|m_r|=2-r`. Since `R` is nilpotent, `R=V_0+R^2` implies that `R` is generated
+by finite products of elements of `V_0`.
+
+Now fix `d>0` and put `M_d=H^(-d)`. The retained degree decomposition says
+
+\[
+D_\infty\cap M_d\subseteq RM_d+M_dR+G_d,
+\]
+
+where `G_d` is the `C`-bimodule generated by operation values whose negative
+inputs have magnitude strictly less than d. Indeed an input of magnitude d
+can occur only in `m_2` with the other reduced input in `R`, because
+`d=sum d_j+r-2`. Hence
+
+\[
+M_d=V_d+RM_d+M_dR+G_d.
+\]
+
+Let `W_d` be the `C`-bimodule generated by `V_d+G_d`. On `M_d/W_d`,
+
+\[
+\overline M_d=R\overline M_d+\overline M_dR.
+\]
+
+If `R^l=0`, the ideal of `C^e` generated by left and right radical action
+has power `2l-1` zero: in any product of that many actions, at least l
+occur on one side. Iterating the last equality therefore gives
+`overline M_d=0`. This is also the Nakayama argument used in the old Run.
+
+Thus `M_d=W_d`. Induction on d replaces every smaller-degree negative input
+by its already obtained finite tree expression. The `C`-bimodule actions
+are binary products; radical elements expand into products of `V_0` and
+semisimple idempotents merely select the Peirce components. Strict unitality
+allows unit vertices to be removed. This proves the generation statement
+without selecting a single term from a sum of operation images.
+
+Finally each operation contributes degree `2-r(v)`, giving the displayed
+degree formula. QED.
+
+### Corollary 3.2 — Primitive support generates all support
+
+Draw an edge `i->j` when `e_j V_d e_i` is nonzero for some d. Every nonzero
+Peirce class of `bar H` has a nonzero tree term, and the leaves of that term
+form a composable path in this primitive support graph with the same
+endpoints. Therefore the reduced support of `H` is contained in the path
+closure of the primitive support graph. In particular a derived support
+necklace forces a cycle in primitive support.
+
+This is only a support statement. It is not a Tor-return or non-boundary
+statement, and it does not identify a primitive-support cycle with a
+minimal necklace in the full support of H.
+
+### Corollary 3.3 — Acyclic bounded primitive support bounds negative homology
+
+Assume `V_d=0` for `d>d_0`, and that the primitive support graph is acyclic.
+If `q>=2`, then
+
+\[
+\boxed{H^{-d}=0\quad\text{for }d>(q-1)(d_0+1)-1.}
+\]
+
+For `q=1`, acyclicity means there are no primitive edges, and `bar H=0`.
+If all negative primitives vanish, the sharper conclusion is that a nonzero
+negative class requires `q>=4` and has `d<=q-3`.
+
+#### Proof
+
+In a nonzero evaluated tree, its L ordered primitive leaves trace an actual
+directed path. Acyclicity gives `L<=q-1`. If I is the number of internal
+vertices, the tree identity `sum_v(r(v)-1)=L-1` gives
+
+\[
+\operatorname{mex}(T)=L-1-I\le L-1.
+\]
+
+Theorem 3.1 yields `d<=L d_0+L-1`, proving the first bound. If `d_0=0` and
+the output is negative, `I>=1`, so `d=mex(T)<=L-2<=q-3`; a positive excess
+also requires `L>=3`. QED.
+
+Unbounded negative homology with bounded primitive degrees therefore forces
+cyclic primitive support. The five-dimensional example shows that this
+cycle can be generated by a low-degree negative seed and binary products.
+It cannot be dismissed by an arrow-only argument.
+
+## 4. One-edge primitive detection and Peirce visibility
+
+For a minimal model H as above, every one-letter word `[eta]` is a bar
+cycle. Its homological degree is `d+1` when `eta` has degree -d. Project the
+length-one component to `P_infinity`. Every boundary projects to zero,
+since each length-one boundary component is a sum of operation outputs.
+
+### Theorem 4.1 — Peircewise primitive lower bound
+
+For every retained pair `(z,y)` and `d>=0`,
+
+\[
+\dim\operatorname{Tor}^{Q_x}_{d+1}(R_z,L_y)
+\ \ge\ \dim e_z(P_\infty)^{-d}e_y.
+\]
+
+To see this, choose linearly independent representatives of a basis of the
+right side. Any boundary linear combination of their one-letter cycles
+would project to a nontrivial relation in that basis. The representatives
+therefore give independent homology classes. A choice of representatives
+is used; a canonical map from the quotient into Tor is not claimed.
+
+For retained simples the **derived** quotient comparison is
+
+\[
+\operatorname{Tor}^{Q_x}_n(R_z,L_y)
+\cong\operatorname{Tor}^A_n(R_z,L_y).
+\]
+
+This is the derived-localisation comparison already recorded in the
+Supported-Derived-Weight Run, Section 1. Its external input is BCL:
+the quotient is localisation at `1-e_x`, and restriction identifies its
+derived module category with the full subcategory of local A-modules
+(Corollary 4.29 and Section 9). The retained simples are local because
+`e_x` annihilates them. Full faithfulness gives the Ext comparison; duality
+of the degreewise finite simple bar complexes gives the Tor comparison.
+Alternatively, use `Q_x tensor_A^L Q_x ~= Q_x` and associativity of derived
+tensor products. The ordinary quotient `A/Ae_xA` is not substituted here.
+
+Consequently, if A is not infinite + and N is a uniform degree above which
+all reverse-supported simple-pair Tor groups vanish, then
+
+\[
+\boxed{e_z(P_\infty)^{-d}e_y=0
+\quad\text{if }d+1\ge N\text{ and }e_yAe_z\ne0.}
+\]
+
+In particular all diagonal primitive tails are bounded. An unbounded
+primitive tail can occur only on a fixed Peirce-invisible pair after a
+subsequence. This conclusion does not use the quarantined opposite-
+invariance step or the finite-head theorem.
+
+## 5. Computation and evidence scope
+
+`Primitive-Seed-Evidence/verify_auslander_seed.py` uses Python 3.14.3 and
+standard-library exact rational arithmetic. No suitable local Mathematica
+or native Sage executable was available in the checked backend inventory.
+The exposed Wolfram connector is a remote service, not evidence of the
+required local Windows Wolfram MCP; it was not used. The finite calculation
+was small enough to use a sparse exact rational elimination implementation.
+
+The recorded run checked:
+
+- all 125 associativity triples of the five-dimensional multiplication table;
+- the full unnormalized quotient complexes in degrees -1 through -8,
+  with incoming differentials through degree -9: each homology dimension
+  is one, and `u^n` is a cycle and is not in the incoming boundary span;
+- all four ambient simple-pair bar complexes in degrees 0 through 12,
+  with incoming differentials through degree 13;
+- 3,089 differential-square checks and the normalized coefficient
+  functionals against every recorded incoming quotient basis word.
+- 233 retained-vertex passage regroupings, including their differential
+  signs, against the ordinary ambient bar complex;
+- the explicit excursion-one fillers of Section 2.3 for local degrees 1–8.
+
+All checks passed. The computation is **bounded-check**, not independent
+verification and not proof of an infinite family. The full all-degree
+conclusion comes from Section 2's bar-normalization argument and explicit
+minimal resolutions. The computation record validates artifact identity
+and reproducibility metadata, not mathematical truth.
+
+## 6. Normal adversarial self-audit
+
+1. **All edges versus one edge:** Section 1.1 tests the lost quantifier with
+   an explicit boundary. The original all-edge criterion is unchanged.
+2. **All negative degrees versus a tail:** Section 2 is a genuine ordinary
+   algebra derived quotient where the primitive tail vanishes but a low
+   negative seed remains. It tests the strengthened generation conclusion.
+3. **Linear combinations:** Theorem 3.1 uses a quotient by an entire generated
+   subspace. No individual higher-product output is selected from a sum.
+4. **Binary growth versus higher arity:** The degree formula includes leaf
+   weights. The calibration has unbounded negative degree and zero excess.
+5. **Support versus homology:** Corollaries 3.2–3.3 only assert support and
+   degree constraints. They do not infer ordinary Tor from a support cycle.
+6. **Ordinary versus derived quotient:** Theorem 4.1 uses localisation and
+   its explicit comparison. It does not assume the ordinary quotient map
+   is a homological epimorphism.
+7. **Visibility:** The primitive tail conclusion explicitly uses
+   `e_yAe_z != 0`. Invisible off-diagonal tails are not excluded.
+8. **Comparison scope:** The finite calibration has `pd L_1=2`, `pd L_2=1`.
+   It does not meet the infinite-pd anchor of a genuine Gap-A failure and
+   does not establish or refute unbounded excursion screening.
+9. **Model choice:** All primitive claims refer to one fixed minimal
+   A-infinity model. Model invariance has not been proved or assumed.
+10. **Independent verification:** These proofs and calculations have one
+    author. Their status remains self-audited, not independently verified.
+11. **Formal versus arbitrary higher operations:** Section 8 uses augmented
+    formality to obtain an equivalent bar differential with only its binary
+    component. It does not infer formality or a higher-page bound merely
+    from finite-dimensionality or a finite list of operation arities.
+
+## 7. Corrected active frontier and next mathematical action
+
+The existing primitive-necklace survival and all-negative-primitive-vanishing
+generation lemmas remain usable under their exact hypotheses. The claimed
+exhaustive arrow-only Target-B alternative is withdrawn.
+
+The next active object is the **full Peirce-graded primitive seed system**,
+including low-degree negative seeds. Its degree contributions obey
+
+\[
+d=\text{sum of negative primitive leaf weights}+\operatorname{mex}(T).
+\]
+
+For a hypothetical non-+ algebra, the visible primitive degrees are bounded;
+any unbounded primitive tail must lie on invisible pairs. If all primitive
+degrees are bounded while negative homology is unbounded, primitive support
+must be cyclic. The outstanding step is to connect these actual seed-
+generated cycles to supported ordinary bar homology while controlling all
+incoming boundaries. A primitive-support cycle alone does not do this.
+
+Section 8 below excludes formal quotients from Branch U. In the remaining
+local-singular Target-B application, retain the genuine infinite-pd
+anchor `pd_A L_x=infinity` and the actual unbounded excursion-fill condition.
+The new seed lemmas do not yet show these are incompatible with complete
+screening. Target A, the local-trivial branch, and supported-weight screening
+also remain open. The opposite-side source conflict remains quarantined.
+
+## Sources and dependencies
+
+- Project current-state freeze and UGA-C049–C051, read before research.
+- Final 2026-10-02 Derived-Necklace Run, Sections 12–18.
+- Supported-Derived-Weight Run, Section 1: derived quotient comparison.
+- Existing U7 Auslander corner-lift calibration: reused as the reason to
+  test against finite-global-dimension ambient algebras; the exact quotient
+  and primitive calculation here is supplied explicitly.
+- C. Braun, J. Chuang, A. Lazarev,
+  [Derived localisation of algebras and modules](https://arxiv.org/pdf/1505.01146),
+  Theorem 2.14, Corollary 4.29, Section 9 and Proposition 9.6.
+- C. Cibils, M. Lanzilotta, E. N. Marcos, A. Solotar,
+  [Happel's question, Han's conjecture and tau-Hochschild (co)homology](https://arxiv.org/html/2509.05135v1),
+  Definition 5.4 for the orientation of the infinite-+ support condition.
+
+No assertion of novelty or independent literature verification of the new
+generation lemma is made.
+
+## 8. Further continuation: formal quotient excludes unbounded excursion depth
+
+The following conclusion uses the actual excursion filtration, not the
+different negative-weight filtration in the parallel Run.
+
+### 8.1 Exact passage/bar identification
+
+Let `e=e_x`, `f=1-e`, `Gamma=eAe=k e + bar Gamma`. Normalize the retained
+corner of the strict BCL model by removing negative words containing an
+internal `e`. These words form an acyclic dg ideal: they are the usual
+two-sided bar degeneracies, and multiplying passages preserves any such
+internal degeneracy. The quotient `Q_norm` is therefore a model for the
+retained corner of the derived quotient, with
+
+\[
+Q_{\rm norm}^0=fAf,\qquad
+Q_{\rm norm}^{-n}=fAe\otimes_k
+\bar\Gamma^{\otimes_k(n-1)}\otimes_k eAf
+\quad(n\ge1).
+\]
+
+Its augmentation ideal has degree-zero part `fJf`. Its differential
+multiplies across the internal e-vertex joints; for a degree -1 passage its
+map to degree zero is ambient multiplication. Its multiplication concatenates
+passages by multiplying their touching endpoint factors.
+
+For retained endpoints `(z,y)`, expand each reduced bar letter of `Q_norm`
+into its ambient radical passage. A degree-zero letter expands into one
+radical factor. A degree -n letter expands into n+1 radical factors with
+all n internal vertices x. Conversely every ambient bar word partitions
+uniquely at its retained internal vertices. This gives an isomorphism of
+graded vector spaces
+
+\[
+e_zB(Q_{\rm norm})e_y\cong B^A(z,y),
+\qquad \text{bar length}=\epsilon_x+1
+\]
+
+in positive total degree; the length-zero vertex terms match as well.
+
+It is a chain isomorphism. To fix signs, let a suspended letter have degree
+`|q|-1`, use `b_1(sq)=-s(dq)` and
+`b_2(sq|sq')=(-1)^(|q|-1)s(qq')`, with the tensor Koszul signs. Expansion
+then gives the ordinary bar signs `(-1)^i` for removing the i-th internal
+ambient vertex. The `b_1` terms remove precisely x vertices; `b_2` terms
+remove retained vertices. There are no additional contractions. Hence the
+excursion filtration is exactly the reduced-bar length filtration shifted
+by one under this isomorphism.
+
+### Theorem 8.2 — Formality exclusion for Target B
+
+Assume `Q_x` is formal as an augmented `S` dg algebra on the retained
+vertices. Then its excursion spectral sequence collapses at `E^2`.
+Every zero-excursion class that dies is hit by `d_1`; in particular unbounded
+excursion screening is impossible.
+
+#### Proof
+
+Use the exact filtered identification above. Augmented formality permits
+the minimal augmented A-infinity model `H=H^*(Q_x)` to have only `m_2`
+nonzero. The bar map of an augmented A-infinity quasi-isomorphism from
+this model to `Q_norm` does not increase bar length; its leading component
+is the tensor power of its linear quasi-isomorphism. Thus it induces an
+isomorphism of the length-filtration spectral sequences from `E^1` onward.
+This can equally be applied to a formality zigzag.
+
+In `B(H)` there is no length-preserving differential, and its only
+differential lowers length by one. Every `E^2` class has a representative
+in one bar length killed by `b_2`, which is already a cycle for the full
+differential. Thus all subsequent differentials vanish. Connectiveness
+bounds bar length in each total degree, so no completion/convergence issue
+occurs. Transfer the collapse back through the filtered isomorphism. QED.
+
+This does not assume that finite-dimensionality bounds higher arity. It
+requires actual **augmented formality**, not merely a guessed zero list of
+higher operations or an unbounded dg algebra's graded cohomology ring.
+Nor is collapse at `E^2` being identified with negative-weight collapse.
+
+The five-dimensional example meets the formality hypothesis and the
+explicit chains in Section 2.3 realize its `d_1` screenings in every local
+degree. The theorem is independent of the opposite-side transfer gate.
+
+### Updated Target-B question
+
+The unbounded excursion branch must use an augmented **non-formal** derived
+quotient. Its primitive seed system may include negative low-degree leaves,
+and its high-degree primitive tails must be Peirce-invisible in a non-+
+algebra. The remaining task is to use the infinite-pd anchor to control the
+non-formal higher corrections producing arbitrarily late differentials,
+and obtain a supported ordinary Tor tail or a legitimate strict descent.
+No such closure theorem is proved in this Run.

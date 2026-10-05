@@ -1,0 +1,16 @@
+## UGA-C128 — Both Infinite-Pd Cubic-Band Sides Still Do Not Localize a Global Ordinary Witness to Their Factor Labels
+
+**Status:** COMPLETE ACTUAL-KERNEL COUNTEREXAMPLE / NORMAL ADVERSARIAL SELF-AUDIT / NOT A UGA COUNTEREXAMPLE / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Arbitrary-Loewy-Radical-Band-Ordinary-Closure-and-Global-Source-Obstruction-2026-10-05.md Section7–9; Cubic-Band-Evidence; literal C119 kernel assets reused.
+
+The UNQUALIFIED proposed lemma that an infinite-pd H3 on BOTH sides supplies a supported persistent ordinary pair with LEFT source in F3^L OR RIGHT source in F3^R is FALSE.
+
+Actual dimension26/six-vertex triangular A has diagonal blocks D=B^op,B from C119, and W=LEFT L_b2 tensor RIGHT(e_d2D/<w_D>). Its full table gives J3=kzt,J4=0,H3=LEFT L_b2 tensor RIGHT R_d2. BOTH band pds are infinite, via actual kernels Omega L_b2=P_b1+V_B,Omega V_B=U_B,Omega U_B=U_B and the direct RIGHT D identities. Thus F3^L={b2},F3^R={d2}.
+
+For EVERY n>=2 the ONLY left-source-b2 detector is b3, and the ONLY right-source-d2 detector is d3. The reverse physical entries C_b2,b3=C_d3,d2=0. Consequently ALL supported ordinary pairs involving EITHER band source label vanish for n>=2. Even C_b2,d2=2 is physically nonzero with BOTH endpoints infinite-pd, but Tor_n(R_d2,L_b2)=0 for ALL n>=0 because the actual left resolution stays in B projectives.
+
+Global Tor_n(R_b3,L_b3) is nonzero EVERY positive degree, outside BOTH band label sets, by the TRUE U_B split and its real period. The obstruction therefore demands global source switching; it does NOT refute UGA, a badness-specific return/descent alternative, safe global reduction or finite-type GLOBAL return.
+
+First literal-table run passed35152 associativity triples,7 FULL covers,168 integral inverses,9 unit kernel/module isomorphisms, including THREE all-degree source/period identities directly on EACH side and the outside-band split. Connected/monomial/already-positive, no strong-connectivity assumption, prefix-to-infinity inference or vertex classification. Shared exact helpers/normal self-audit NOT independent/formal verification. Global UGA OPEN.
+
+---

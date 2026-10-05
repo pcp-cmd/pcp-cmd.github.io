@@ -1,0 +1,440 @@
+# Eventual ordinary Tor weight separation closes the whole filtered branch
+
+Date: 2026-10-04.
+
+Status: complete ordinary proofs and normal adversarial main-researcher
+self-audit; targeted shared exact computation passed. NOT independently
+verified. No novelty or formal-verifier acceptance claim. Universal Gap A
+remains OPEN.
+
+This continues C117–C119 and D011. The decisive improvement is a WHOLE
+branch closure, not another condition on a hypothetical counterexample:
+eventual separation of the actual graded ordinary Tor weights forces an
+ordinary supported persistent pair in the original filtered algebra.
+No associative Yoneda finite-generation, finite syzygy-type, selected-source
+return, or opposite-plus hypothesis is needed.
+
+The initially tested finite-simple-syzygy-type route is still OPEN without
+the old extra alignment/regular-Ext assumptions. The imported
+Finite-Syzygy-System-Theorem, Regular-Ext-and-Self-Extension-Transfer and
+Supported-Submodule-Localization were read before pursuing it. Finite
+state recurrences do not themselves supply a physical simple-pair
+comparison. Their stable proofs are retained rather than reproduced.
+
+## 1. Actual conventions and dependencies
+
+Let A be elementary finite-dimensional over ANY field k, with S=A/J=k^N.
+Left simples are L_y, right simples R_x; visibility is REVERSE:
+\[
+\beta_{xy}(n)=\dim\operatorname{Tor}^A_n(R_x,L_y)
+=\dim\operatorname{Ext}^n_A(L_y,L_x),\qquad
+C_{yx}=\dim e_yAe_x.
+\]
+
+Reuse the actual minimal-resolution integer Euler identity and ordinary
+log-derivative window of C117, and the real finite filtered bar comparison
+of C118. These have separate complete proofs at their existing self-audit
+status. C119 forbids upgrading existence to every chosen source.
+
+For an ACTUAL positive-graded G with G_0=S, highest degree w, write
+\[
+C_{yx}(t)=\sum_d\dim e_yG_de_x\,t^d,\quad D(t)=\det C(t),\quad
+B_{n,xy}(t)=\sum_d\beta^G_{xy}(n,d)t^d.
+\]
+C117 gives n<=d<=nw for every real minimal generator and the
+coefficientwise finite integer identity
+\[
+Q(t):=\sum_{n\ge0}(-1)^nB_n(t)=C(t)^{-1}.
+\tag{1}
+\]
+All derivatives, signs and polynomial degrees below concern INTEGER
+dimensions, not arithmetic in k.
+
+## 2. C120 — An ordinary Euler no-cancellation stopping theorem
+
+Assume there is an integer d0>=0 such that, for EVERY ordered pair x,y
+and EVERY internal degree d>d0, all n with
+\(\beta^G_{xy}(n,d)>0\) have the SAME parity. The allowed parity can
+depend on x,y,d. There may be several n of that parity and several
+internal weights in one homological degree.
+
+Then
+\[
+\boxed{\operatorname{gd}G<\infty\ \Longleftrightarrow\ D(t)=1,}
+\tag{2}
+\]
+and, if D=1,
+\[
+\boxed{\operatorname{gd}G\le\max\{d0,(N-1)w\}.}
+\tag{3}
+\]
+If gd G is infinite, put u=deg D>=1. For EVERY b>=0 there are some
+x,y and a degree n with
+\[
+\boxed{b<n\le(b+1)w+u-1,\quad
+e_yGe_x\ne0,\quad \operatorname{Tor}^G_n(R_x,L_y)\ne0.}
+\tag{4}
+\]
+Consequently ONE fixed supported ordered pair persists infinitely often.
+
+### Proof
+
+If gd G is finite, Q in (1) is a polynomial matrix. Taking determinants
+in C Q=I gives a polynomial inverse for D in Z[t]. Thus D is a unit;
+D(0)=1 forces D=1. This direction requires no parity assumption.
+
+Conversely, if D=1, the adjugate identity says Q=adj C. Every entry
+has degree at most (N-1)w. For d>max{d0,(N-1)w}, its coefficient is
+therefore zero. But (1) and the hypothesis make that coefficient either
+a sum of nonnegative integer Betti numbers or the negative of such
+a sum. The sum is finite because n<=d. All its summands are zero.
+No nonzero graded Betti number can then have such an internal degree.
+Since n<=d, every Tor degree n>max{d0,(N-1)w} vanishes. The actual
+minimal S resolution terminates, proving (3) and (2).
+
+For infinite gd, (2) forces D!=1. Apply the already proved C117 ordinary
+window (4) with the exact same orientation. No invented invariant or
+singular-to-ordinary substitution is used. QED.
+
+This is a stopping theorem with an explicit polynomial degree bound.
+Finite state counts, regular-target Ext, and module rectangles do not
+enter it. It does NOT assert the parity hypothesis automatically.
+
+## 3. C121 — Eventual adjacent separation, rather than all-degree separation
+
+Let A have a REAL finite descending multiplicative filtration by ideals
+\[
+F^0A=A,\quad F^1A=J,\quad F^{h+1}A=0,\quad
+F^pA\,F^qA\subset F^{p+q}A,
+\]
+and let G=gr_F A, w=max{d:G_d!=0}. Write W_n for the actual internal
+weights of ordinary Tor_n^G(S,S).
+
+Suppose an integer q>=0 satisfies
+\[
+\boxed{\max W_n<\min W_{n+1}\quad(n\ge q)}
+\tag{5}
+\]
+whenever both adjacent groups are nonzero. The prefix through q may
+have mixed or overlapping weights. Then for EVERY ordered pair
+and EVERY n>=q+1,
+\[
+\boxed{\operatorname{gr}_F\operatorname{Tor}^A_n(R_x,L_y)
+\cong\operatorname{Tor}^G_n(R_x,L_y).}
+\tag{6}
+\]
+This is an associated-graded vector-space identification and equality of
+ordinary Betti dimensions, not a canonical splitting or algebra map G->A.
+Physical Peirce supports agree by the actual finite ideal filtration.
+
+Moreover
+\[
+\boxed{\operatorname{gd}A=\infty\ \Longleftrightarrow\
+\operatorname{gd}G=\infty\ \Longleftrightarrow\ D_G(t)\ne1.}
+\tag{7}
+\]
+If D_G=1 and w>=1, then
+\[
+\boxed{\operatorname{gd}A\le
+\max\{q,(q-1)w,(N-1)w\}.}
+\tag{8}
+\]
+For w=0 both A and G are semisimple and have gd0.
+
+If gd A is infinite, for EVERY b>=0, with B=max{b,q}, u=deg D_G>=1,
+\[
+\boxed{\exists x,y,n:\quad b<n\le(B+1)w+u-1,\quad
+e_yAe_x\ne0,\quad\operatorname{Tor}^A_n(R_x,L_y)\ne0.}
+\tag{9}
+\]
+In particular u<=Nw gives a bound depending only on b,q,N,w.
+This closes the ENTIRE eventually separated finite-filtration branch
+at arbitrary finite size and Loewy length over ANY elementary field.
+
+### Proof of the high ordinary comparison
+
+Reuse C118's actual normalized S-relative bar filtration. Each degree-n
+term has finite internal weights n..nh, the leading differential is the
+bar differential of G, and
+\[
+d_r:(n,d)\longrightarrow(n-1,d+r)\quad(r\ge1).
+\]
+For n>=q+1, (5) excludes EVERY outgoing differential since all target
+weights in W_(n-1) are lower, and EVERY incoming differential from
+degree n+1 since its weights are higher. Later pages are subquotients
+of these same E1 cells, so neither kind can appear later. Finite
+filtration in each degree supplies convergence. Thus (6) follows.
+No comparison in the possibly mixed prefix is claimed.
+
+The real minimal S resolution has no Tor-degree gaps: once a projective
+cover term is zero, every later kernel is zero. Its nonempty W_n therefore
+form an initial interval. It follows from (5) that the W_n for n>=q
+are pairwise disjoint. Generators in all earlier degrees n<q have
+internal degree at most (q-1)w. Hence G satisfies C120 with
+\[
+d0=\max\{0,(q-1)w\}.
+\]
+If D_G=1, C120 gives gd G<=max{d0,(N-1)w}; (6) then kills every
+A Tor degree above the maximum of that bound and q, proving (8).
+If either algebra has infinite gd, (6) makes the other infinite as well;
+C120 proves the last equivalence in (7). Finally apply C117 to G with
+cutoff B and lift its SAME pair/degree through (6) and finite Peirce
+support equality. This proves (9). QED.
+
+For q=0, this makes C118's ENTIRE separated-weight class closed without
+any additional Yoneda generation premise, with the finite-gd bound
+(N-1)w. Common pure Tor weights per homological degree are included.
+For radical powers, every ACTUAL d-Koszul gr_J A, d>=2, is included:
+its weights are delta(2r)=rd, delta(2r+1)=rd+1 and are strictly
+increasing. No low-degree-generation theorem is needed for this
+supported conclusion. C118's stronger Koszul diagonal theorem remains.
+
+## 4. Separation does not mean finite generation or diagonal return
+
+Reuse the complete actual N7 proof in Imported-Outputs/
+Finite-Syzygy-System-Theorem.md and C105. In its genuine path grading,
+\[
+W_0=\{0\},\quad W_1=\{1\},\quad W_n=\{2n-1\}\ (n\ge2),
+\qquad D(t)=1+t^2.
+\]
+The actual kernels Omega L0=M, Omega M=M with internal shift2,
+and Omega L1=P0 prove these ALL-degree statements. Thus (5) holds
+with q=0. Nevertheless ALL positive simple diagonals vanish and
+the WHOLE positive ordinary Yoneda ideal has square zero while
+remaining infinite-dimensional. In particular it is not finitely
+generated. The supported off-diagonal pair (R1,L0) persists in EVERY
+positive degree.
+
+This verifies that C120–C121 actually bypass the finite-generation
+bottleneck. They must not be summarized as diagonal theorems.
+N7 was already closed by older assets; it is a scope benchmark,
+not a reopened small-vertex search.
+
+Conversely, C116 B14 with all arrows degree1 has D=1 and a genuine
+infinite minimal tail, so it necessarily violates C120's eventual
+parity condition. A different legal grading can change that verdict.
+The existing A14 weighted filtration has nonzero d1:(3,3)->(2,4)
+and does not satisfy the separation needed by (6). Those failures
+remain intact; neither is a UGA counterexample.
+
+## 5. A literal nongradable filtered Frobenius calibration
+
+For ANY field define A16 with basis the 16 squarefree monomials x_I,
+I subset{1,2,3,4}, including 1. Products of disjoint subsets are their
+union. The ONLY additional nonzero overlapping products are
+\[
+x_i^2=\prod_{j\ne i}x_j=:m_i.
+\tag{10}
+\]
+Every other overlapping product is zero. In particular x_i^3=x_1234
+and every product of five radical factors is zero.
+
+This is an actual associative commutative algebra. For radical triples,
+three pairwise disjoint factors give the union on both sides. An overlap
+can be nonzero only through the repeated singleton in (10); its product
+with a third factor is nonzero only when that factor is again x_i,
+giving x_1234 on both sides. All remaining overlaps give zero on both
+sides. Identities supply the other associativity cases.
+
+Its radical powers are spans of squarefree monomials of sizes at least
+p (p=1..4), of dimensions15,11,5,1; J5=0. Thus
+\[
+\operatorname{gr}_J A16=k[x_1,x_2,x_3,x_4]/(x_1^2,x_2^2,x_3^2,x_4^2).
+\tag{11}
+\]
+The tensor of the four actual dual-number minimal resolutions, with
+generator degree n in each factor, is exact over k and minimal over
+the tensor algebra. It proves ALL n
+\[
+W_n=\{n\},\quad
+\dim\operatorname{Tor}^{\operatorname{gr}A16}_n(k,k)=\binom{n+3}{3},
+\quad D_G(t)=(1+t)^4.
+\]
+Theorem (6) therefore gives these ordinary Betti dimensions also for
+A16; a finite prefix is not their proof. Extracting the top monomial
+coefficient gives the complement-permutation nondegenerate pairing,
+so A16 is Frobenius over every field.
+
+### No positive grading with degree-zero k, in characteristic !=2
+
+This demonstrates why associated-graded and actual-graded hypotheses
+must stay separate. Suppose such a positive grading existed. Its
+formal G_m action on V=J/J2 preserves the kernel of
+Sym2(V)->J2/J3. Over k(t), a vector sum a_i x_i has square zero
+in J2/J3 exactly when at most one a_i is nonzero: characteristic!=2
+and independence of the six x_i x_j force a_i a_j=0.
+The action therefore preserves the four coordinate axes up to permutation.
+Its value at t=1 is identity, so the permutation is identity; each axis
+has a positive character t^(w_i).
+
+Choose homogeneous lifts y_i=x_i+u_i, u_i in J2, of weights w_i>0.
+Modulo J4, the coefficient of m_i in y_i^2 is still1:
+2x_i u_i has cubic monomials containing i, while u_i^2 belongs to J4.
+The coordinate m_i in J3/J4 has weight sum_(j!=i) w_j.
+Homogeneity forces
+\[
+2w_i=\sum_{j\ne i}w_j\quad(i=1,2,3,4).
+\]
+Adding yields 2 sum w_i=3 sum w_i, impossible for positive weights.
+This proves nongradability, over finite fields as well: the formal
+action argument uses k(t), not an abundance of k-rational torus points.
+It is NOT asserted in characteristic2.
+
+For an arbitrary-size calibration, tensor A16 with the path algebra
+of the directed N-vertex line. The radical graded algebra is the
+tensor of the two actual Koszul graded algebras; their tensor minimal
+resolutions prove purity. It lies in C121. For N5 the dimension is240
+and Loewy length9. Its corners retain A16; a positive grading with
+degree-zero k^N would, after conjugating the semisimple lift, grade
+such a corner, contradicting the preceding proof in characteristic!=2.
+The existing actual tensor theorem C096 already handles this family.
+It calibrates applicability beyond actual positive gradings and the old
+four-total-vertex/cube-zero classes; it is not a new vertex classification.
+
+## 6. Sources, Vault and targeted exact computation
+
+The new load-bearing arguments are (1)'s integer no-cancellation and the
+late-page version of the existing C118 comparison. They use the complete
+project C117/C118 ordinary proofs, not a new unverified external theorem.
+[Green–Marcos](https://arxiv.org/pdf/0812.3408), introduction pp1–2,
+was read for the exact d-Koszul/pure-degree definition only. No general
+monomial-transfer or finite-generation theorem from it is assumed here.
+
+Existing MRS governs the durable records. The installed live Vault Skill
+queried the explicit user root for finite-state/minimality/recursive
+descent methods; that bounded query returned no candidates. No Vault
+content was copied, edited or used as project authority. The route
+changed because a genuine ordinary closure was available.
+
+The cached backend inventory was read and the selected Python3.14.3
+Fraction runtime executed live. Reusing the existing exact actual-cover
+helpers was the appropriate primary route; no CAS/backend was installed.
+[Script](Separated-Filtration-Evidence/verify_separated_filtration.py),
+[result](Separated-Filtration-Evidence/result.json),
+[execution record](Separated-Filtration-Evidence/execution-record.json)
+and [task](Separated-Filtration-Evidence/task.md) are retained.
+The FIRST actual invocation passed8535 associativity triples,
+3 FULL actual minimal covers,9 integral basis inverses,
+256 filtered product comparisons and528 cubic-lift coefficient checks.
+The A16 actual Betti prefix is1,4,10; the written tensor/filtered proof
+supplies every later degree. N7's unchanged full periodic certificates
+were reused, not replayed.
+
+These are shared bounded exact checks and written main-researcher proofs,
+not independent verification, formal MRS acceptance or novelty evidence.
+No routine hashes or old whole-project checks were introduced.
+
+## 7. Normal adversarial audit before Claims
+
+1. C120 requires SAME parity in each high internal degree and ordered
+   pair, not positive dimensions alone. Opposite signs may cancel.
+2. Polynomial inverse degree is the cofactor bound (N-1)w; all infinite
+   Euler coefficients are finite by n<=d. Arithmetic is over Z.
+3. A zero Tor degree ends the ACTUAL minimal S resolution; that is why
+   adjacent eventual separation implies disjoint high W_n. It is not
+   a support-graph argument.
+4. In C121 BOTH outgoing and incoming pages vanish only for n>=q+1.
+   No all-degree Betti equality or low-prefix comparison is inferred.
+5. Early generators have degree<=(q-1)w; the additional q in (8)
+   accounts for all possibly changed prefix degrees in A.
+6. The window uses max{b,q}, preserving a strict n>b and high ordinary
+   eligibility. It gives some supported pair per window and ONE fixed
+   pair infinitely often, not every chosen source or a diagonal.
+7. N7 tests and breaks finite-generation/diagonal strengthening despite
+   strict pure weights. B14/A14 retain both cancellation and transfer
+   barriers. No existing negative result is discarded.
+8. A16 uses its FULL literal multiplication, real J powers and genuine
+   covers. Nongradability is proved only in characteristic!=2; the
+   Tor comparison and Frobenius pairing hold in every characteristic.
+9. Finite actual simple-syzygy type by itself remains an unresolved
+   global bridge. No finite-type hypothesis or finiteness theorem was
+   silently converted into (5).
+10. No opposite-plus, stable/Tate replacement, deleted differential,
+    automatic filtration/Koszulity or finite-prefix persistence occurs.
+
+## 8. Checkpoint and continued global target
+
+C120 registers ordinary no-cancellation stopping and C121 closes ALL
+eventually separated finite-filtration cores, with a uniform ordinary
+supported window and finite-gd bound. The improvement removes BOTH
+an associative-generation premise and an all-degree-prefix premise from
+this branch. It explicitly includes arbitrary d-Koszul radical graded
+cores but is not restricted to them.
+
+After this checkpoint, D011's global existential ordinary visible-mask
+problem remains active. The exact missing issue here is perpetual
+mixed weights/opposite-parity cancellation together with real filtered
+screening; no theorem forces arbitrary hard cores to have eventual
+separation. Finite type alone, arbitrary nonpure constant-determinant
+graded cores, nongradable nonseparated cores, Target-A/bounded screening,
+Target-B/higher-output, local-trivial and supported-weight branches
+remain on the research map. Universal Gap A remains OPEN.
+
+## 9. Continued research after the checkpoint — C122 actual finite states with perpetual cancellation
+
+The next test asked whether finite ACTUAL syzygy states automatically
+provide the C120–C121 hypotheses. They do not. This is a precise barrier
+to using that closing mechanism on all finite-type tails, not a
+falsification of the global finite-type supported-return problem.
+
+Reuse C116's FULL B14 kernel and give every arrow actual degree1.
+Let S=L1 in degree0 and M=Ba1 with generator a1 in degree1.
+Writing a positive shift as an increase of generator degree, the literal
+basis b1,b2a2,a2b2a2 in the real cover Be2<1> proves
+\[
+\Omega S=M,\qquad
+\Omega M=S\langle2\rangle\oplus M\langle2\rangle.
+\tag{12}
+\]
+The S generator b1 has degree2, and the M generator b2a2 has degree3;
+a1->b2a2,a2a1->a2b2a2 is the ACTUAL graded module isomorphism
+with shift2. These are genuine minimal kernels, not a graded-state
+numerical guess. Ignoring the shifts leaves only two module states.
+
+Starting in M, a return to M is either the direct one-syzygy summand
+in (12), or the two-syzygy route through S. BOTH increase internal
+degree by2. After r returns, a choices of the latter route give
+homological degree n=r+1+a and generator degree2r+1. Additivity of
+real minimal covers therefore proves the exact ALL-degree formula
+\[
+\boxed{\beta^B_{21}(n,2r+1)=
+\binom{r}{n-r-1}\quad(r+1\le n\le2r+1),}
+\tag{13}
+\]
+with zero outside that interval. No other state has head L2, so this
+counts the entire indicated ordered block.
+
+For every r>=1, consecutive degrees r+1,r+2 BOTH have nonzero
+ordinary Tor in the SAME internal weight2r+1 and SAME ordered pair.
+Thus neither eventual entrywise one-parity nor eventual adjacent
+global weight separation is forced by finite actual states.
+This happens arbitrarily late, not just in an exceptional prefix.
+
+The precise signed cancellation is
+\[
+\sum_n(-1)^n\beta^B_{21}(n,2r+1)
+=(-1)^{r+1}\sum_{a=0}^r(-1)^a\binom ra=0
+\quad(r\ge1).
+\tag{14}
+\]
+This explains an actual entry of the constant-determinant polynomial
+Euler inverse, rather than an abstract possible cancellation.
+
+Ordinary physical return is nonetheless very strong: for every n>=1
+take r=n-1,a=0 in (13). It gives beta^B_21(n,2n-1)>=1, and
+e1Be2 contains b1. Hence THIS fixed OFF-DIAGONAL supported pair is
+nonzero in EVERY positive ordinary Tor degree. C116's existing diagonal
+at every2m remains. A different legitimate B grading also recovers
+C117's nonconstant determinant, but no theorem guarantees such a
+regrading or an eligible filtration in every finite-type hard core.
+
+Normal adversarial audit: the indices1,2 are the written quiver labels;
+the source is S=L1, target/simple detector L2, visibility e1Be2.
+Both cycle costs and internal shifts follow from the actual FULL
+kernel, and minimum covers preserve direct sums. (14) concerns
+integer Euler coefficients and does not annihilate Tor groups.
+Finite type alone is not disproved as a GLOBAL UGA closing hypothesis;
+only automatic no-cancellation/separation is disproved. No sourcewise,
+opposite-plus, singular, independent-review or small-class-search
+inference. Unchanged actual C116 certificates were reused without
+a new computation replay. D011 global target/UGA OPEN remain active.

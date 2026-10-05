@@ -1,0 +1,27 @@
+# Exact task — nonsimple bi-singular module envelopes
+
+Continue T29, without replacing the full Universal Gap A objective.
+Generalize actual finite-pd semisimple envelopes to actual finite module
+families Xi with true exact sequences0->sum Xj copies->Hi->Xi copies->0.
+Hi finite pd, nonprojective permitted. Prove all-target ordinary Ext-one
+connecting-product generation; actual positive-word nilpotence gives
+pd Xi<=h+r(B+1)-1 when module self-Ext vanish above B.
+
+Bridge back to SUPPORTED ordinary simple Tor by double ordinary devissage:
+for every surviving infinite family member, all its infinite-LEFT factors j
+and infinite-RIGHT factors k must have D(j,k)>0. Finite-side factors vanish
+in ordinary Ext using pd/id, no opposite-infinite-plus transfer. Finite
+module types/subkernels may be removed ONLY by actual Hi kernel quotients
+and real short exact sequences, not differential image pruning.
+
+N7 nonsimple period-one state must return OFF-DIAGONAL Rf,Lv: its LEFT
+infinite factor is v, RIGHT infinite factor f. Higher-Loewy calibration
+T26 tensor old A5 has dimension130: Xi=Lqi tensor regularC Loewy3,
+Hi actual pd1 image tensor C Loewy4, true nonsemisimple kernels Xi+1.
+Verify exact A-linear inclusion/projection, finite projective Hi kernels,
+nonsplit first syzygy, actual period-two maps and physical rectangles.
+
+SCC ordinary reduction was found already proved in Toolbox and is reused,
+NOT presented as new work. General finite-family/rectangle availability
+is OPEN. Existing same-author helpers and finite exact checks are NOT
+independent proof verification; infinity must come from actual kernels.

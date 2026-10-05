@@ -1,0 +1,16 @@
+## UGA-C060 — A Section Gives a Split Ordinary Supported-Tor Bridge
+**Status:** COMPLETE SELF-AUDITED PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Ordinary-Tor-Retraction-and-Vertex-Descent-2026-10-03.md, Theorem 2.1, Proposition 2.2 and Corollary 2.3.
+
+For the retained derived quotient q, let H be a strictly unital, augmented minimal model over the retained vertex algebra, with H^0=C=A/Ae_xA. An augmented A_infinity section C -> H with linear term the identity gives, for every retained pair and degree,
+\[
+\operatorname{Tor}^C_n(R_z,L_y)
+\text{ as a split summand of }\operatorname{Tor}^A_n(R_z,L_y).
+\]
+Reverse support e_yCe_z!=0 lifts to e_yAe_z!=0. A sufficient criterion is that all higher operations on pure radical-C inputs vanish in an adapted model; mixed higher operations and unbounded negative cohomology are allowed.
+
+Consequently a globally vertex-minimal counterexample has no such section at an infinite-pd deleted vertex. This excludes augmented formal deletion models across the global screening branches, extending the scope of UGA-C055. It does not imply that arbitrary non-formal quotients have sections.
+
+**Depends on:** the derived-localisation comparison and UGA-C058 for quotient infinity; not the opposite-transfer gate. The local-trivial kappa=0 section mechanism is a reused earlier asset.
+
+---

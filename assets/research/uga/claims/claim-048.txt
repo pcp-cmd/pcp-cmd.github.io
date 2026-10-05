@@ -1,0 +1,9 @@
+## UGA-C048 — Minimal-Necklace Cycle Lemma
+**Status:** PROJECT-DERIVED / SELF-AUDITED / NOT INDEPENDENTLY VERIFIED  
+**Source:** final Derived-Necklace Run, Theorem 12.1
+
+A minimal positive-length derived necklace gives a nonzero reduced bar cycle in a strictly unital minimal augmented \(A_\infty\)-model of \(H^*(Q_x)\).
+
+**Depends on:** UGA-C047.
+
+---

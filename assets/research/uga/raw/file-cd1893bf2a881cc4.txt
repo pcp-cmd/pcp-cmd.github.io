@@ -1,0 +1,204 @@
+# Han’s conjecture：完整研究过程、数学结果与故障节点
+
+日期：2026-08-11（Asia/Shanghai）
+
+## 1. 执行结论
+
+研究对象是下述命题：对 ordinary finite-dimensional complex associative unital algebra (A)，若 (HH_n(A)=0) 对所有充分大的 (n) 成立，是否必有 (\operatorname{gldim}(A)<\infty)？
+
+本次研究得到两层结论，必须分开表述：
+
+1. **文献层面的当前答案：有一篇直接声称反例的最新预印本。** Bochao Kong、Yeqin Liu、Yu Shen 的 *A counterexample to Han's conjecture*，arXiv:2608.00177v1，声称构造 ordinary finite-dimensional (mathbb C)-algebra (A)，满足 (\operatorname{gldim}(A)=\infty) 且 (HH_n(A)=0) 对所有 (n\ge1) 成立。若该证明完整正确，则 Han’s conjecture 为假，而且反例满足比“eventual vanishing”更强的 all-positive-degree vanishing。
+2. **Danus 事实图层面的结论：尚未把整篇反例认证为一个 integrated verified fact。** 构造所得 (A) 的 ordinary finite-dimensionality、若干关键 formal implications，以及 periodization 中非零类的保留已经通过独立 verifier；但 Krah phantom、dg quotient/Morita/enhancement、Shklyarov Künneth 与 Wang–Arunachalam–Keller comparison 在该实际构造上的全部 hypothesis matching 仍是外部依赖。因此 Danus 的严格结论是：**文献强烈指向 conjecture 为假，但本次 bounded audit 没有完成整篇证明的逐依赖认证。**
+
+截至最终官方 arXiv 复核，页面仍只列 v1（2026-07-31 18:03:02 UTC），没有 v2、withdrawal 或 replacement。bounded search 未发现正式 correction 或 refutation；这只是未发现，不等价于不存在。
+
+## 2. 研究边界与 3-worker roster
+
+用户确认的 roster 为：
+
+| Worker | 模型角色 | Phase I 独立任务 | Phase II 文献复现任务 |
+|---|---|---|---|
+| `high` | high | positive proof route | source/version/dependency audit |
+| `high2` | high | counterexample construction search | ordinary algebra construction + infinite-global-dimension branch |
+| `xhigh` | xhigh | adversarial structural analysis | Hochschild-vanishing branch + gap search |
+
+所有 correctness-bearing facts 只能由 worker 提交，再由 fresh independent verifier 判定；Main Codex 没有 `fact_submit` 权限，也没有手工写入事实图。
+
+## 3. 冻结协议与独立性
+
+### 3.1 Freeze 000：意外暴露时的空状态
+
+- 时间：2026-08-11 12:28:59 +08:00。
+- 在创建或启动任何 worker 之前，Main Codex 只想进行 title/abstract-level 搜索；Exa 意外返回了 arXiv:2608.00177 的 extended highlights，其中包含 claimed theorem 与部分 proof-strategy summary。
+- Main Codex 立即停止，没有打开论文 URL。
+- 当时没有 worker、没有独立 proof attempt、没有 counterexample search，因此可冻结的独立数学进展为 **null state**。
+- 这一事件污染了 Main Codex 对 claimed conclusion 的认识，但没有污染随后创建的 fresh worker contexts。
+
+证据：`runtime/intake/han-conjecture/INDEPENDENT_FREEZE-000.md`。
+
+### 3.2 Freeze 001：第一轮 literature-blind 研究
+
+- 时间：2026-08-11 12:54:48 +08:00。
+- 三个 effective Round 1 assignment 明确禁止 browsing、search、citation、abstract 与 paper reading。
+- public logs 中没有实际 web-search 或 `search_arxiv_theorems` call marker。
+- Main Codex 没有向 workers 披露论文、作者、claimed answer 或 construction。
+- Freeze 001 记录 6 个当时已经落入事实图的 independent verified facts；随后用 append-only Freeze 001A 记录 3 个在冻结时已进入 verifier pipeline 的 late independent facts。
+
+证据：
+
+- `runtime/projects/han-conjecture/freezes/FREEZE-001.md`
+- `runtime/projects/han-conjecture/freezes/FREEZE-001A-LATE-VERIFIER-RESULTS.md`
+
+## 4. 独立推导：在读论文之前得到了什么
+
+Phase I 最终冻结了 9 个 signed auxiliary facts；它们既没有证明也没有反驳 Han’s conjecture，但清楚排除了多个自然路线。
+
+| Fact | 独立结论 | 对主问题的意义 |
+|---|---|---|
+| `04353b793493b930` | (mathbb C[t]/(t^2)) 有 infinite global dimension，但所有 (n\ge1) 的 (HH_n) 都 nonzero。 | 最小 singular local algebra 不是反例。 |
+| `dacc4a83710455b7` | 对同一 algebra 的独立 strengthening，包括 (HH_0\ne0)。 | 独立校准结果。 |
+| `341cd214da0de5ac` | 所有 (mathbb C[t]/(t^m)), (m\ge2)，都有 infinite global dimension 与所有 positive degrees 的 persistent Hochschild homology。 | 排除整个 truncated-polynomial family。 |
+| `0ec0d2d1eb2de6e7` | 若所有 simple left modules 有统一 projective-dimension bound (d)，则所有 finite-dimensional left modules 也有该 bound。 | 建立 positive route 的 finite-length reduction。 |
+| `04fe02e4d9a47b9f` | 存在 finite-dimensional (B)-(B)-bimodule (M)，right projective dimension infinite，但 (operatorname{Tor}_i^B(M,M)=0) 对所有 (i\ge1)。 | 直接否定 generic self-Tor detection；positive proof 必须使用 diagonal bimodule 的特殊结构。 |
+| `1b2bda16c85d0e04` | 一个 5-dimensional lopsided two-cycle algebra 的两个 simple modules 的 projective dimensions 为 1 与 2。 | 该 candidate 的 syzygy cycle 终止。 |
+| `6521487f41269d40` | 上述 lopsided algebra 的所有 finite-dimensional left modules 的 projective dimension 至多 2。 | 进一步排除该 candidate。 |
+| `4673db954701a71d` | radical-square-zero oriented cycles 有 infinite global dimension，但 infinitely many positive Hochschild degrees nonzero。 | 排除纯 oriented-cycle family。 |
+| `f57bf3108a82a0e6` | 有 split dual-number diagonal corner 的 upper triangular algebras 在每个 positive degree 都有 nonzero Hochschild homology。 | 排除自然 triangular-extension route。 |
+
+**Phase I verdict：unresolved。** 得到的是 method failure 与 candidate elimination，不是 proposition failure。
+
+### 4.1 独立阶段被 verifier 拒绝的节点
+
+| Verification record | Verdict | 精确问题 | 后续处理 |
+|---|---|---|---|
+| `4dadec0f9f8ef3a8` | wrong | 错误断言 (operatorname{Ext}^{d+1}_A(-,Y)) 在 contravariant first variable 中与 filtered colimits 交换。 | 仅保留可证明的 finite-length lemma，成为 `0ec0d2d1eb2de6e7`。 |
+| `68573e0fd65380bd` | rejected / non-self-contained | projective-dimension bound 的符号未声明，并与 (A^e) notation 冲突。 | 没有将 intended diagonal claim 当作事实。 |
+| `2914b6edcebb0588` | wrong | 证明错误地用 termwise flatness 保持 exactness。 | 修复为“augmented bimodule resolution 在忘掉到 right (A)-modules 后 split exact”，得到 `0d5910abd98b476c`。该修复在 Phase II boundary 之后落图，故不计入 Freeze 001 的 9 个独立事实。 |
+
+## 5. 文献检索与 source audit
+
+### 5.1 Primary source
+
+- 标题：*A counterexample to Han's conjecture*
+- 作者：Bochao Kong, Yeqin Liu, Yu Shen
+- arXiv：2608.00177v1
+- 提交时间：2026-07-31 18:03:02 UTC
+- 官方 abstract claim：存在 finite-dimensional (mathbb C)-algebra (A)，使 (\operatorname{gldim}(A)=\infty) 且 (HH_n(A)=0) for (n\ge1)。
+- 官方页面：<https://arxiv.org/abs/2608.00177>
+
+本地 audited copy：
+
+| 文件 | SHA-256 |
+|---|---|
+| `runtime/projects/han-conjecture/workers/high/downloads/2608.00177v1/2608.00177v1.pdf` | `E34AAE6494074705E4DBA75C8F6AE6214EB08C57B0F9A096569E3FA6CA814725` |
+| `runtime/projects/han-conjecture/workers/high/downloads/2608.00177v1/2608.00177v1-src.tar` | `4836CF4CFED73BAD9D02C9A90AC5A836B6D82A07ED1FC30FDC50B231E773CB3D` |
+| Krah dependency PDF | `99FE4539F7E8DADB50DCC9159D310D7DA9BB4FCDAE916B1CF9A34D250D4BAA45` |
+| Wang–Arunachalam–Keller dependency PDF | `532FCE63BD118A5D9ECACD7EB6F577290635A7881F68E4728070D65CC62E259B` |
+
+预印本在 acknowledgements 中说明使用 GPT models 协助 constructions 与 manuscript preparation，并称作者对数学与参考文献进行了独立检查。这提高审计要求，但既不能证明也不能反驳数学结论。
+
+### 5.2 论文的 construction chain
+
+Source audit `5c57daa1cd9d50a1` 记录的 load-bearing chain 为：
+
+1. 取 (X=\operatorname{Bl}_{p_1,\ldots,p_{10}}\mathbb P^2)，其中 10 points general。
+2. 用 Hille–Perling tilting bundle (T)，令 (Gamma=\operatorname{End}_X(T))。
+3. 用 Krah 的 length-13 exceptional collection ((L_1,\ldots,L_{13})) 及其 nonzero universal phantom (mathcal P)，其 claimed Hochschild homology 全部为零。
+4. 令 (Delta=mathbb C[\epsilon]/(\epsilon^2))，(Lambda=Gamma\otimes\Delta)。
+5. 选择代表 (R\operatorname{Hom}_X(T,L_i)) 的 bounded projective (Gamma)-complexes (P_i^\bullet)，fold 成 ordinary right (Lambda)-modules (N_i)。
+6. 令 (N=\bigoplus_iN_i)、(M=Lambda\oplus N)、(A=\operatorname{End}_\Lambda(M))。
+7. 论文声称 (D_{\mathrm{sg}}^{dg}(A)) dg-Morita equivalent to (\operatorname{Perf}(\mathcal P\otimes\mathbb C[t,t^{-1}])), (|t|=1)。
+8. 由 (mathcal P\ne0) 与 periodization nonzeroness，推出 (D_{\mathrm{sg}}(A)\ne0)，所以 (\operatorname{gldim}(A)=\infty)。
+9. 由 (HH_*(\mathcal P)=0)、Künneth 与 dg Morita invariance，推出 singularity-category Hochschild homology vanishes。
+10. 用 Wang–Arunachalam–Keller comparison (HH_p(D_{\mathrm{sg}}^{dg}(A))\cong HH_{p-1}(A)) for (p\ge2)，得到 (HH_n(A)=0) for all (n\ge1)。
+
+## 6. 文献复现：哪些部分已经被 Danus verifier 接受
+
+| Fact | Provenance | 已认证内容 | 没有认证的内容 |
+|---|---|---|---|
+| `40cb2e3c58bf6ec6` | literature reproduction | 给定 source construction data，(M) finite-dimensional，且 (A=\operatorname{End}_\Lambda(M)) 是 ordinary associative unital finite-dimensional (mathbb C)-algebra。 | 不包含 dg Morita equivalence 或最终反例结论。 |
+| `bf2f1ee16158e0e2` | literature-inspired formal lemma | 非零 degree-zero cohomology class 在 tensoring with (mathbb C[t,t^{-1}]) 后仍 nonzero。 | 不证明论文实际 phantom class 已沿全部 quotient/equivalence 传到 (D_{\mathrm{sg}}(A))。 |
+| `a5863957e36dc4c3` | literature reproduction formal lemma | over (mathbb C)，acyclic complex tensor another complex 仍 acyclic；quasi-isomorphic target 也 acyclic。 | 不独立验证 Shklyarov theorem 或其 hypotheses。 |
+| `168a7842aec9604b` | literature-inspired formal lemma | 若 singularity-category (HH_p=0) 且 comparison isomorphism 对所有 (p\ge2) 成立，则 (HH_n(A)=0) 对所有 (n\ge1)，包括 (n=1\leftrightarrow p=2)。 | 不验证 WAK comparison 对 actual (A) 的 hypotheses。 |
+| `bd597721f09fbbf2` | integrated conditional bridge | 将 tensor acyclicity 与 degree shift 组合成 all-positive-degree ordinary Hochschild vanishing。 | 整体仍以 dg Morita/Künneth/WAK inputs 为 hypotheses。 |
+| `0d5910abd98b476c` | post-freeze self-contained repair | 若 diagonal (A) 作为 (A^e)-module 的 projective dimension (le d)，则所有 simple left (A)-modules 的 projective dimension (le d)。 | 不从 eventual (HH)-vanishing 推出 diagonal perfection。 |
+
+### 6.1 最后没有闭合的 external interfaces
+
+1. Krah phantom 在 source 使用的 exact surface/category 上确实 nonzero 且 Hochschild-acyclic。
+2. Appendix 中的 compression/orbit/Drinfeld/Chen chain 确实给出 dg Morita-level equivalence，而非仅 triangulated homotopy-category equivalence。
+3. Shklyarov Künneth theorem 的 smallness/perfectness 等 hypotheses 对 actual dg categories 成立。
+4. Wang–Arunachalam–Keller comparison 的 grading、basic-to-general Morita passage 与 chosen enhancement 对 actual (A) 成立。
+
+xhigh 的 bounded adversarial audit 没找到一个 precise internal contradiction，但也没有把这些 external inputs 独立升级为 verified facts。准确状态是 **no gap found in bounded audit**, 不是 **proof certified**。
+
+## 7. 综合结论与可能的新贡献
+
+### 7.1 独立推导
+
+- 排除了 truncated polynomial、radical-square-zero oriented cycle、split dual-number triangular extension 与一个 lopsided two-cycle candidate。
+- 证明 generic self-Tor vanishing 不能推出 finite projective dimension。
+- 建立 simple-module bound 到 finite-dimensional-module bound，以及 diagonal finite projective dimension 到 simple-module bound 的 reduction chain。
+
+### 7.2 文献启发
+
+- singularity category / phantom / periodization 为何可能让 non-smoothness 对 Hochschild homology 不可见。
+- WAK degree shift 如何把 singularity-category vanishing 转成 ordinary (HH_n(A)) 的 all-positive-degree vanishing。
+
+### 7.3 文献复现
+
+- ordinary finite-dimensional algebra realization 已认证。
+- tensor-acyclicity、periodization nonzeroness 与 degree bookkeeping 已认证。
+- 从这些输入到最终 (HH_n(A)=0) 的 formal conditional package 已认证。
+
+### 7.4 综合结论
+
+- **按当前 primary literature：Han’s conjecture 已被一篇 2026 v1 preprint 声称反驳。**
+- **按本次 Danus 独立认证：还不能无保留地把 conjecture 标记为 verified-false。** 剩余风险集中在几项高级 external categorical interfaces，而不是 ordinary finite-dimensionality 或 (n=1) degree bookkeeping。
+
+### 7.5 可能的新贡献
+
+本次没有建立可主张 novelty 的新 theorem。Phase I 的 self-Tor blind-spot example、family eliminations 与 reduction lemmas 是独立得到且 verifier-accepted 的有用 auxiliary results，但没有进行足以支持 novelty claim 的全面文献比对，因此不得称为新贡献。
+
+## 8. 完整运行时间线与故障节点
+
+| 节点 | 发生了什么 | 数学状态 | 修复/处置 |
+|---|---|---|---|
+| Initial health gate | `runtime/.danus-initialized` 存在，但首次 doctor 不满足 launch gate。 | 无数学影响。 | 运行 full `setup.ps1`；Codex/ChatGPT authentication、verify service 与 repo-local runtime 建立成功；paid API 禁用。 |
+| Pre-worker search exposure | Exa 返回 direct candidate 的 extended highlights。 | Main Codex contaminated；workers 尚不存在。 | 立即冻结 null state 为 Freeze 000；不打开论文。 |
+| First sandboxed worker start | 每个 worker 连续 5 个 immediate failures：`state_5.sqlite` readonly、arg0 cleanup denied、in-process app-server denied。 | 没有有效数学轮次。 | 使用 official Danus CLI 在允许的 Windows execution path 重启；这些失败轮不计入 effective Phase I。 |
+| Phase I effective Round 1 | 三名 workers literature-blind 运行。 | 6 个 facts 先落图；3 个 submissions 仍在 verifier pipeline。 | 写 Freeze 001；停止 workers。 |
+| Official stop defect | `danus stop --force` 只杀/更新 registered parent，child `python/cmd/node/codex` processes 仍存活并继续写状态。 | 导致 3 个 pre-disclosure submissions 延迟落图，并造成额外 allowance 消耗。 | 用 absolute validated worker-root command lines 精确盘点；首次清理 30 个 worker-bound processes，remaining 0；之后每个 bounded Phase II worker 完成即用同样方法清理 5 个残留进程。 |
+| Freeze 001A | 3 个 verifier runs 的 start time 均早于 Cycle-2 disclosure guidance。 | facts `652...`, `467...`, `f57...` 仍属 independent Phase I。 | 写 append-only addendum，不修改原 freeze。 |
+| Phase II source audit | high 下载并 hash v1 PDF/source，读取 exact TeX，列 dependency map。 | 仅 source claim，不升级 final theorem。 | 共享记录 `5c57daa1cd9d50a1`。 |
+| Phase II reconstruction | high2 与 xhigh 各执行 1 个 bounded round。 | 4 个新的 literature-reproduction formal facts + 1 个先前 literature-inspired shift fact；final theorem 仍 conditional。 | 立即停止每个 worker；exact process cleanup 后 remaining 0。 |
+| Final process audit | exact project worker-root process count 为 0；verify service alive/healthy。 | 无新数学。 | 证明 worker quota consumption 已停止；idle verifier 不主动发起模型调用。 |
+| Final doctor | 后续 doctor 的 Codex check 返回 `'NoneType' object has no attribute 'strip'`，authentication 因此标记 not checked；同一时刻 verify service healthy，且隔离 writer 实际成功调用 authenticated Codex。 | 属诊断脚本层不一致，不推翻已观察到的实际 writer/verifier 成功。 | 诚实记录，不把 doctor 的单层失败改写成系统整体成功或失败。 |
+| Isolated report generation | MCP resident process 用 Windows locale 把 Unicode prompt 写入 stdin，Codex 报 invalid UTF-8 at byte 296；两次都在 model run 前失败。 | 没有数学报告输出。 | 将 `danus/authoring/driver.py` 从 locale `text=True` 改为 explicit `encoding="utf-8"`；用新 Python process 加载修复后的相同 `summary_write` implementation。 |
+| PDF rendering | sandboxed headless Chrome 因 crashpad/access denied 失败。 | clean report.md 已存在。 | 在允许的 local execution path 重跑 renderer，生成 PDF；视觉检查发现 unsupported `\boxed{\begin{minipage}}` 红色 raw TeX，再做纯 markup 修复并重渲染。最终 11 pages，末页无 raw TeX、无裁切。 |
+
+## 9. 额度与费用边界
+
+这是用户特别关心的边界：
+
+1. **所有 worker、verifier 与 isolated report-writer 的 Codex model 调用都使用当前用户账号的 ChatGPT/Codex authenticated allowance。** 它们会消耗该账号的相应产品额度，不会转移到其他人的账号。
+2. **没有启用 OpenAI usage-based API transport，也没有使用 API key 产生单独账单。** 三次 strategy consult 都是 `transport=off`、`status=disabled`、input/output tokens 0、`cost_usd=0.0`；project consult total 为 `0.0000`。
+3. Phase I 的 official-stop defect 确实造成 orphan child processes 继续运行，因而发生了本不计划的额外账号 allowance 消耗。日志没有一个可信的跨 worker/verifier aggregate token total，所以本报告不编造总数。
+4. 成功的 isolated mathematical report writer 日志记录 `tokens used 33,827`；这是用户账号 allowance 内的模型使用，不是 paid API cost。两次 invalid-UTF-8 report attempts 在读取 prompt 时即失败，没有生成报告。
+5. 最终 exact process audit 为 `ALL_WORKER_PROCESSES=0`。verify service 保持 healthy/idle；idle service 本身不会调用模型。后续没有启动新 worker round。
+
+## 10. 交付物与可复核入口
+
+| 交付物 | 路径 | 作用 |
+|---|---|---|
+| 隔离式纯数学 PDF | `runtime/projects/han-conjecture/report/Han-Conjecture-Mathematical-Report.pdf` | 只含 scrubbed verified mathematics；不含 worker、fact id、quota、故障或未认证文献结论。 |
+| 隔离报告 source | `runtime/projects/han-conjecture/report/report.md` | PDF 的 human-readable source；leak backstop hits 0。 |
+| 本完整报告 | `runtime/projects/han-conjecture/deliverables/Han-Conjecture-Complete-Research-Process.md` | 数学结论、provenance、时间线、失败节点、额度与文献状态。 |
+| Final elaboration | `runtime/projects/han-conjecture/cycle-3-final-elaboration.md` | Danus 五段式最终数学状态综合。 |
+| Source audit | shared memory id `5c57daa1cd9d50a1` | primary source、hashes、construction chain、dependency map。 |
+| Freeze records | `runtime/intake/han-conjecture/INDEPENDENT_FREEZE-000.md`; `runtime/projects/han-conjecture/freezes/FREEZE-001.md`; `FREEZE-001A-LATE-VERIFIER-RESULTS.md` | 证明独立阶段与文献阶段的边界。 |
+
+## 11. 最终一句话
+
+**当前最合理的数学判断是：Han’s conjecture 很可能已被 arXiv:2608.00177v1 的 ordinary finite-dimensional counterexample 推翻；本次 Danus 已独立验证其 algebraic type 与若干 formal bridges，却没有在限定轮次内完成所有高级 categorical dependencies 的 integrated verification，所以交付结论必须保留“文献反例已出现、Danus 全证明认证未闭合”这一区分。**

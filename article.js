@@ -7,177 +7,40 @@ const calloutClasses = [
   'callout-revision'
 ];
 
+function escapeHtml(value) {
+  return String(value || '').replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[character]));
+}
+
+function renderMarkdownSafely(markdown) {
+  if (window.marked && window.DOMPurify) {
+    return window.AleksiArticleContent.renderMarkdownSafely(markdown);
+  }
+  return `<pre>${escapeHtml(markdown)}</pre>`;
+}
+
 function articleHref(src) {
   return `./article.html?src=${encodeURIComponent(src)}`;
 }
 
 function findManuscript(src, id) {
   const registry = [
+    ...(window.ALEKSI_SITE?.writing || []).filter((item) => item.approved === true),
     ...(content.articles || []),
     ...(content.manuscripts || [])
   ];
   return registry.find((item) => (id && item.id === id) || item.source === src) || null;
 }
 
-function normalizePath(path) {
-  const parts = String(path || '').replace(/\\/g, '/').split('/');
-  const stack = [];
-  parts.forEach((part) => {
-    if (!part || part === '.') return;
-    if (part === '..') stack.pop();
-    else stack.push(part);
-  });
-  return stack.join('/');
-}
-
-function decodeHashUnicode(path) {
-  return String(path || '').replace(/#U([0-9a-fA-F]{4,6})/g, (_, hex) => {
-    try {
-      return String.fromCodePoint(parseInt(hex, 16));
-    } catch (error) {
-      return _;
-    }
-  });
-}
-
-function encodeCjkHashUnicode(path) {
-  return String(path || '').replace(/[^\x00-\x7F]/g, (char) => {
-    return `#U${char.codePointAt(0).toString(16)}`;
-  });
-}
-
-function safeDecodeURIComponent(value) {
-  try {
-    return decodeURIComponent(value);
-  } catch (error) {
-    return value;
-  }
-}
-
-function getMarkdownKeys() {
-  return Object.keys(window.ALEKSI_MARKDOWN_BUNDLE || {});
-}
-
-function resolveMarkdownSource(src) {
-  const normalized = normalizePath(safeDecodeURIComponent(src || ''));
-  const bundle = window.ALEKSI_MARKDOWN_BUNDLE || {};
-  const keys = getMarkdownKeys();
-
-  const candidates = [
-    normalized,
-    normalizePath(decodeHashUnicode(normalized)),
-    normalizePath(encodeCjkHashUnicode(normalized)),
-    normalizePath(encodeCjkHashUnicode(decodeHashUnicode(normalized)))
-  ].filter(Boolean);
-
-  for (const candidate of candidates) {
-    if (bundle[candidate]) return candidate;
-  }
-
-  const decodedTarget = normalizePath(decodeHashUnicode(normalized));
-  const encodedTarget = normalizePath(encodeCjkHashUnicode(decodedTarget));
-
-  const matchedKey = keys.find((key) => {
-    const decodedKey = normalizePath(decodeHashUnicode(key));
-    return key === normalized
-      || key === encodedTarget
-      || decodedKey === decodedTarget
-      || decodedKey.endsWith(`/${decodedTarget.split('/').pop()}`);
-  });
-
-  if (matchedKey) return matchedKey;
-
-  const markdownIndex = window.ALEKSI_JSON_BUNDLE && window.ALEKSI_JSON_BUNDLE['content/markdown-index.json'];
-  const indexFiles = markdownIndex && Array.isArray(markdownIndex.files) ? markdownIndex.files : [];
-  const indexed = indexFiles.find((item) => {
-    const source = normalizePath(item.source || '');
-    const decodedSource = normalizePath(decodeHashUnicode(source));
-    return source === normalized || decodedSource === decodedTarget || source === encodedTarget;
-  });
-
-  if (indexed && bundle[indexed.source]) return indexed.source;
-
-  return normalized;
-}
-
-
-function resolveRelativePath(baseSrc, target) {
-  if (!target || /^(https?:|mailto:|tel:|#|data:|\/)/i.test(target)) return target;
-  const baseDir = String(baseSrc || '').split('/').slice(0, -1).join('/');
-  return normalizePath(`${baseDir}/${target}`);
-}
-
-function rewriteMarkdownLinks(markdown, src) {
-  const baseSrc = src || '';
-  return String(markdown || '')
-    .replace(/(!?\[[^\]]*\])\(([^)]+)\)/g, (match, label, rawTarget) => {
-      const parts = rawTarget.trim().split(/\s+/);
-      const target = parts[0].replace(/^['"]|['"]$/g, '');
-      const suffix = parts.slice(1).join(' ');
-      const resolved = resolveRelativePath(baseSrc, target);
-      if (label.startsWith('!')) {
-        return `${label}(${resolved}${suffix ? ` ${suffix}` : ''})`;
-      }
-      if (/\.md(?:#.*)?$/i.test(target)) {
-        const [file, hash = ''] = resolved.split('#');
-        return `${label}(${articleHref(file)}${hash ? `#${hash}` : ''})`;
-      }
-      return `${label}(${resolved}${suffix ? ` ${suffix}` : ''})`;
-    });
-}
-
-async function loadMarkdown(src) {
-  const normalized = resolveMarkdownSource(src);
-  const bundled = window.ALEKSI_MARKDOWN_BUNDLE && window.ALEKSI_MARKDOWN_BUNDLE[normalized];
-
-  if (bundled) {
-    return bundled;
-  }
-
-  try {
-    const response = await fetch(normalized);
-    if (!response.ok) throw new Error(`Could not load ${normalized}`);
-    return await response.text();
-  } catch (error) {
-    throw new Error(`这页手稿还没有接入阅读索引。缺少路径：${normalized}`);
-  }
-}
-
-function parseFrontmatter(markdown) {
-  if (!markdown.startsWith('---')) return { meta: {}, body: markdown };
-  const end = markdown.indexOf('\n---', 3);
-  if (end === -1) return { meta: {}, body: markdown };
-
-  const rawMeta = markdown.slice(3, end).trim().split(/\r?\n/);
-  const body = markdown.slice(end + 4).trim();
-  const meta = {};
-  let currentKey = null;
-
-  rawMeta.forEach((line) => {
-    const listItem = line.match(/^\s*-\s+(.+)$/);
-    if (listItem && currentKey) {
-      meta[currentKey] = Array.isArray(meta[currentKey]) ? meta[currentKey] : [];
-      meta[currentKey].push(listItem[1].trim());
-      return;
-    }
-
-    const pair = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
-    if (!pair) return;
-    currentKey = pair[1];
-    const value = pair[2].trim();
-    meta[currentKey] = value || [];
-  });
-
-  return { meta, body };
-}
-
-function renderCallouts(markdown) {
-  const types = ['definition', 'proof', 'error', 'toolbox', 'revision'];
-  return markdown.replace(/:::(definition|proof|error|toolbox|revision)\s*([\s\S]*?):::/g, (_, type, body) => {
-    const label = types.includes(type) ? type : 'revision';
-    return `\n<section class="callout callout-${label}">\n<p class="callout-label">${label}</p>\n${body.trim()}\n</section>\n`;
-  });
-}
+// The same article content feeds the continuous reader and the physical book.
+async function loadMarkdown(src) { return window.AleksiArticleContent.loadMarkdown(src); }
+function parseFrontmatter(markdown) { return window.AleksiArticleContent.parseFrontmatter(markdown); }
+function renderCallouts(markdown) { return window.AleksiArticleContent.renderCallouts(markdown); }
 
 function extractTitle(body, meta, fallback) {
   if (meta.title) return meta.title;
@@ -186,7 +49,7 @@ function extractTitle(body, meta, fallback) {
 }
 
 function stripLeadingTitleHeading(body) {
-  return String(body || '').replace(/^\s*#\s+[^\n]+\n+/, '');
+  return window.AleksiArticleContent.stripLeadingTitleHeading(body);
 }
 
 
@@ -381,6 +244,10 @@ function renderRevisionRail(meta) {
 }
 
 function renderToc() {
+  if (window.AleksiReading) {
+    window.AleksiReading.refreshToc();
+    return;
+  }
   const toc = document.querySelector('[data-article-toc]');
   const body = document.querySelector('[data-article-body]');
   if (!toc || !body) return;
@@ -414,6 +281,19 @@ function renderMath() {
 }
 
 function applyMeta(meta) {
+  if (document.body.classList.contains('reading-page')) {
+    document.querySelector('[data-article-title]').textContent = meta.title || '文章标题待提供';
+    document.title = `${meta.title || 'Writing'} · Aleksi`;
+    document.querySelector('[data-article-date]').textContent = [
+      typeof meta.date === 'string' && meta.date ? meta.date : '日期待提供',
+      meta.type === 'note' ? '短记' : '长文',
+      meta.sample ? '排版样文（未发布）' : ''
+    ].filter(Boolean).join(' · ');
+    const notice = document.querySelector('[data-article-notice]');
+    notice.hidden = !meta.sample;
+    notice.textContent = meta.sample ? '合成中文样文，仅用于本地排版核对，不代表 Aleksi 的真实经历、项目成果或研究进展。' : '';
+    return;
+  }
   document.querySelector('[data-article-room]').textContent = cnRoom(meta.room || '未完手稿');
   document.querySelector('[data-article-title]').textContent = meta.title || '未命名手稿';
   document.querySelector('[data-article-judgment]').textContent = meta.judgment || meta.description || '一件可以继续修订的知识资产。';
@@ -439,14 +319,25 @@ async function renderArticle() {
   const initialSrc = params.get('src');
   const known = findManuscript(initialSrc, id);
   const src = initialSrc || known?.source || 'content/system/revision-protocol/index.md';
+  const sample = params.get('sample') === 'reading';
+  configureArticleReturn(params, src);
 
   try {
-    const raw = await loadMarkdown(src);
+    let raw;
+    if (sample) {
+      if (!window.AleksiReading?.localPreview) throw new Error('排版样文仅在本地预览中提供。');
+      const response = await fetch('./docs/fixtures/reading-sample.zh.md');
+      if (!response.ok) throw new Error('本地排版样文暂时无法打开。');
+      raw = await response.text();
+    } else {
+      raw = await loadMarkdown(src);
+    }
     const parsed = parseFrontmatter(raw);
     const mergedMeta = {
       ...(known || {}),
       ...parsed.meta
     };
+    mergedMeta.sample = sample;
     mergedMeta.title = extractTitle(parsed.body, mergedMeta, known?.title);
     mergedMeta.chain = normalizeChain(mergedMeta.chain, known?.chain);
 
@@ -454,27 +345,38 @@ async function renderArticle() {
     renderArticleGlyph(mergedMeta);
     renderRevisionRail(mergedMeta);
 
-    const readableBody = stripLeadingTitleHeading(parsed.body);
-    const withCallouts = renderCallouts(rewriteMarkdownLinks(readableBody, src));
-    const html = window.marked ? marked.parse(withCallouts) : `<pre>${withCallouts}</pre>`;
-    const clean = window.DOMPurify ? DOMPurify.sanitize(html) : html;
-    document.querySelector('[data-article-body]').innerHTML = clean;
+    let readableBody = stripLeadingTitleHeading(parsed.body);
+    if (sample) {
+      // The fixture's metadata and usage notice are rendered in the title block.
+      readableBody = readableBody.slice(readableBody.indexOf('## '));
+    }
+    document.querySelector('[data-article-body]').innerHTML = window.AleksiArticleContent.renderArticleBody(
+      readableBody, sample ? 'docs/fixtures/reading-sample.zh.md' : src
+    );
     localizeArticleHeadings();
     renderToc();
     renderMath();
   } catch (error) {
+    if (document.body.classList.contains('reading-page')) {
+      document.querySelector('[data-article-title]').textContent = '文章暂时无法打开';
+      document.querySelector('[data-article-date]').textContent = '';
+      document.querySelector('[data-article-body]').innerHTML = `<p>${escapeHtml(error.message)}</p><p><a href="./writing.html">返回 Writing</a></p>`;
+      renderToc();
+      return;
+    }
     document.querySelector('[data-article-title]').textContent = '手稿暂时无法打开';
     document.querySelector('[data-article-judgment]').textContent = '这不是内容本身的问题，而是阅读索引还没有把这条路径映射到正确的手稿文件。';
     document.querySelector('[data-article-body]').innerHTML = `
       <section class="callout callout-error article-missing">
         <p>这页手稿还没有接入阅读索引，可能是中文文件名、Unicode 转义文件名或离线缓存没有同步。</p>
-        <p class="dev-note">Dev note: ${error.message}。请检查 <code>content/markdown-index.json</code>、<code>content/content-bundle.js</code> 与文章链接里的 <code>src</code> 是否一致。</p>
+        <p class="dev-note">Dev note: ${escapeHtml(error.message)}。请检查 <code>content/markdown-index.json</code>、<code>content/content-bundle.js</code> 与文章链接里的 <code>src</code> 是否一致。</p>
       </section>`;
     renderToc();
   }
 }
 
 function initArticleMotion() {
+  if (document.body.classList.contains('reading-page')) return;
   if (!window.gsap) return;
   if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
 
@@ -498,3 +400,29 @@ document.addEventListener('DOMContentLoaded', async () => {
   await renderArticle();
   initArticleMotion();
 });
+
+function configureArticleReturn(params, src) {
+  const choices = {
+    writing: ['./writing.html', 'Writing'],
+    research: ['./research.html', 'Research'],
+    manuscripts: ['./manuscripts.html', 'Manuscripts'],
+    math: ['./math.html', 'Math Lab'],
+    protocol: ['./protocol.html', 'Protocol'],
+    works: ['./works.html', 'Works']
+  };
+  let target = choices[params.get('from')] || choices.writing;
+  if (!choices[params.get('from')] && document.referrer) {
+    try {
+      const origin = new URL(document.referrer);
+      const route = origin.pathname.split('/').pop();
+      if (origin.origin === location.origin && route === 'work-detail.html') target = [`./work-detail.html${origin.search}`, '作品详情'];
+      else if (origin.origin === location.origin) {
+        const key = route.replace(/\.html$/, '');
+        if (choices[key]) target = choices[key];
+      }
+    } catch (error) { /* Direct entry falls back to the Writing hierarchy. */ }
+  }
+  document.querySelectorAll('[data-article-return]').forEach((link) => {
+    link.href = target[0]; link.textContent = `← 返回 ${target[1]}`;
+  });
+}

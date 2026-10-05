@@ -1,0 +1,553 @@
+# T21 — Arbitrary-carrier audit, finite-factor obstruction, and ordinary return
+
+Date: 2026-10-04.
+
+Status: complete ordinary module proofs and normal adversarial self-audit;
+finite exact integral kernel/differential certificates passed; NOT
+independently verified. No novelty claim. Universal Gap A remains OPEN.
+
+This continues T20's valid closed finite-pd block deletion and the user's
+arbitrary-p request. It does not enumerate cases by infinite-source count.
+It tests actual minimal resolutions, rather than deleting differentials
+on the strength of finite pd. Three families show precisely why the
+unqualified carrier-reduction/finite-image mechanism fails. A positive
+arbitrary-size ordinary bridge closes a genuine terminal block class.
+
+The new finite-factor family answers the latest question negatively:
+even finite-FACTOR cross-map images of pd one in every high degree need
+not provide any eligible closed finite-side vertex block on either side.
+All three families already have ordinary visible return. They refute
+unqualified intermediate lemmas, NOT Universal Gap A and NOT a version
+whose extra hypothesis is that A is bad.
+
+## 1. Exact meanings and reused ordinary assets
+
+A is elementary finite-dimensional over any field k. L_y is LEFT simple,
+R_z RIGHT simple, I_L and I_R are their separately defined infinite-pd
+sets. Physical reverse support for Tor^A(R_z,L_y) is e_yAe_z.
+
+For a LEFT projective Ae_z define its infinite-factor carrier
+
+\[
+C_z^L=\{j\in I_L:e_jAe_z\ne0\}.
+\tag{1.1}
+\]
+
+For a RIGHT projective e_yA use
+
+\[
+C_y^R=\{j\in I_R:e_yAe_j\ne0\}.
+\tag{1.2}
+\]
+
+For a module, its carrier means the labels of its infinite-pd simple
+COMPOSITION FACTORS. For an actual recurrent projective tail, its
+carrier means the union of these carriers for the projective types
+occurring infinitely often. These are different objects. A strict drop
+for a map IMAGE does not establish a drop for its minimal projective
+cover, its syzygies, or a recurrent tail.
+
+Use C080, C088, C089, the actual Peirce-block proof and ordinary
+finite-length Tor inequalities. The high tail is first cut beyond the
+last occurrence of every nonpersistent projective label. Literal
+both-direction Hom zero separates it into ACTUAL exact minimal blocks.
+No graph cycle supplies recurrence. No stable/Tate/singular class or
+opposite-+ transfer is used.
+
+The requested bi-singular purification is not an established ordinary
+comparison operation for arbitrary images. Sections 3–4 make every
+simple infinite-pd on BOTH sides, so deletion of finite-pd SIMPLE
+labels cannot change them. Any stronger purification must specify and
+prove its ordinary comparison; none is assumed here.
+
+## 2. A positive arbitrary-size terminal bridge
+
+### Theorem 2.1 — A carrier-dominating recurrent detector forces ordinary visible return (C090)
+
+Let K be an actual persistent Peirce component in a sufficiently high
+minimal LEFT simple resolution, and let
+
+\[
+S_K=\bigcup_{z\in K}C_z^L.
+\tag{2.1}
+\]
+
+If some recurrent projective type q in K satisfies
+
+\[
+C_q^L=S_K,
+\tag{2.2}
+\]
+
+then there is a fixed j with e_jAe_q nonzero and
+Tor^A_n(R_q,L_j) nonzero for infinitely many n. No bound on either
+infinite-source count or on total vertex number is required.
+
+#### Proof
+
+The literal high block is exact and minimal. Augment it at degree s
+by X=coker(P^K_{s+1}->P^K_s). This is a finite LEFT module whose actual
+minimal resolution is that block with the degree shift. Since q really
+recurs, Tor^A_n(R_q,X) is nonzero infinitely often. X is a quotient of
+P^K_s, so its infinite left simple factors lie in S_K.
+
+Let d be the maximum pd of the finitely many finite-pd LEFT simples,
+taking d=0 when the set is empty. Ordinary long exact Tor sequences
+along an actual composition series give, for n>d,
+
+\[
+\dim\operatorname{Tor}^A_n(R_q,X)
+\le\sum_{j\in S_K}[X:L_j]
+       \dim\operatorname{Tor}^A_n(R_q,L_j).
+\tag{2.3}
+\]
+
+If S_K were empty X would have finite pd, contradicting recurrence.
+Otherwise finite pigeonhole in (2.3) selects a fixed j in S_K with
+persistent ordinary Tor. By (2.2) e_jAe_q is nonzero. This is the SAME
+detector and supported simple pair. QED.
+
+The RIGHT proof is direct: use an actual high RIGHT block, a recurrent
+projective e_qA with C_q^R equal to the union, and its genuine right
+block module X. Tor(X,L_q) persists, finite RIGHT factors die uniformly,
+and a fixed R_j has Tor(R_j,L_q) persistent with e_qAe_j nonzero.
+
+Constant per-projective infinite carriers are a special case. The
+condition only needs ONE dominating recurrent projective. A constant
+UNION of carriers alone is insufficient; every finite tail has such a
+union. C087's singleton-carrier block lemma is included in this proof.
+
+Together with C088 this gives an arbitrary-size terminating class:
+if checked closed finite-side block deletions lead to an actual block
+with a dominating recurrent detector, its visible ordinary pair lifts
+through every all-degree comparison. Each nonempty deletion lowers
+vertex number and dimension; positive opposite-side intersection
+also lowers the indicated infinite count. This asserts neither
+automatic deletion availability nor universal terminal dominance.
+
+## 3. Smaller image carrier does not give smaller recurrent carrier
+
+### Family 3.1 — A radical-square-zero oriented p-cycle, every p>=3
+
+Let \(\mathsf C_p\) have identities e_i and
+alpha_i in e_i A e_{i+1}, indices modulo p, and all radical products
+zero. Its dimension is 2p. Actual syzygies are
+
+\[
+\Omega R_i=R_{i+1},\qquad \Omega L_i=L_{i-1}.
+\tag{3.1}
+\]
+
+Thus I_L=I_R is ALL p labels. The actual minimal RIGHT R_i resolution
+has Q_n=e_{i+n}A; its differential is left multiplication by
+alpha_{i+n-1}. The adjacent projective carriers are
+
+\[
+C_{i+n}^R=\{i+n,i+n+1\},\qquad
+C_{i+n-1}^R=\{i+n-1,i+n\}.
+\tag{3.2}
+\]
+
+They are incomparable. The differential image is the infinite-pd
+simple R_{i+n}, with singleton carrier equal to their intersection.
+This is a genuine strict IMAGE-carrier decrease. Its actual projective
+cover immediately has the two-label carrier again, and (3.1) cycles
+through all p labels. There is no strict recurrent-tail decrease.
+
+In fact this obstruction holds for ANY finite module of infinite pd
+over this algebra. Its first minimal syzygy is a nonzero semisimple
+submodule of Q_0 J, since J^2=0. Every nonzero simple summand has the
+actual cyclic syzygies (3.1). Thus EVERY projective type occurs
+infinitely often in its minimal tail. The recurrent carrier is ALL p
+labels, so no proper-carrier infinite minimal tail exists at all.
+
+Finite-simple purification does nothing because all labels are
+infinite on both sides. Ordinary Tor(R_i,L_i)=k in every positive
+degree divisible by p, with physical diagonal support. Hence this is
+a counterexample to the unqualified strict carrier lemma, not to Gap A.
+
+## 4. Uniformly projective cross images cannot simply be eliminated
+
+### Family 4.1 — Actual projective-image obstruction, every p>=3
+
+Let \(\mathsf D_p\) have vertices 0,...,p-2,v=p-1, identities, and
+
+\[
+t\in e_vAe_v,\quad a_i\in e_vAe_i,\quad
+b_i\in e_iAe_v,\quad c_i\in e_vAe_v.
+\tag{4.1}
+\]
+
+The ONLY nonzero radical products are a_i b_i=c_i; all others are
+zero. This is associative with J^3=0 and dimension 4p-2. For RIGHT
+projectives P_i=e_iA and P_v=e_vA,
+
+\[
+P_i=k e_i\oplus k b_i,\quad
+a_iA=k a_i\oplus k c_i\cong P_i,
+\]
+\[
+\Omega R_i=R_v,\qquad
+\Omega R_v=\bigoplus_{i<p-1}P_i\oplus R_v.
+\tag{4.2}
+\]
+
+On the LEFT, b_i,c_i span a copy of Ae_i inside Ae_v, giving
+Omega L_i=L_v and Omega L_v=(sum Ae_i) direct sum L_v. These actual
+kernel identities prove all simples infinite-pd on BOTH sides.
+
+The actual minimal RIGHT resolution of R_v has Q_0=P_v and
+
+\[
+Q_n=P_v\oplus\bigoplus_i P_i\quad(n\ge1).
+\tag{4.3}
+\]
+
+Each d_n injects P_i isomorphically onto a_iA in the preceding P_v,
+and sends the P_v summand by t into k t in that same summand. All
+maps have radical entries, hence are minimal. Their kernel is
+rad(P_v) in the source P_v; the next image is exactly that kernel.
+This proves exactness in ALL degrees.
+
+The projective carriers are C_i^R={i,v} and C_v^R=ALL p labels.
+Cross maps P_i->P_v occur in every positive degree and have image
+of RIGHT pd zero. Their pds have a uniform bound of zero.
+
+Delete those correction summands/maps and keep only the actual
+projectives P_v with differential t. The resulting complex has
+
+\[
+H_n(P_v\xrightarrow{t}P_v\xrightarrow{t}\cdots)
+\cong\bigoplus_i P_i\ne0\quad(n\ge1).
+\tag{4.4}
+\]
+
+Indeed ker(t)=rad(P_v)=sum a_iA direct sum kt and im(t)=kt.
+Thus even projective homology survives in arbitrarily high degrees.
+Finite pd of each local error does not make this unbounded collection
+of errors a bounded perfect correction.
+
+The exact resolution (4.3) gives Tor_n(R_v,L_i)=k for every n>=1,
+and e_iAe_v=k b_i is nonzero. These are SUPPORTED ordinary tails.
+The pruned terms P_v tensor L_i are zero in every degree. Pruning
+therefore loses an actual supported ordinary tail, in addition to
+destroying exactness. It cannot compute ordinary Tor over A.
+
+No smaller-carrier infinite minimal tail rescues the alternative.
+Any proper-carrier tail must omit P_v. Between the other projectives
+all radical Hom spaces vanish: off-diagonal old-old Peirce entries
+are zero and each old diagonal is just k. Every remaining minimal
+differential is therefore zero, incompatible with a nonzero exact
+infinite tail. This holds for any finite module's minimal tail.
+
+The images a_iA are projective, but are NOT split projective summands
+of the indecomposable P_v containing them in its radical. No invertible
+matrix entry is available for ordinary cancellation. A derived repair
+using nonprojective quotient terms must retain their ordinary derived
+tensor corrections; it is not an unchanged A-projective resolution.
+
+This algebra already has supported ordinary return. Moreover its
+recurrent P_v dominates the whole carrier, so Theorem 2.1 handles it
+directly. Deleting its essential projective images is unnecessary.
+
+## 5. Finite-FACTOR images need not supply any eligible closed block
+
+### Family 5.1 — Every p>=2, exactly p LEFT infinite labels and p+1 RIGHT infinite labels (C092)
+
+Start with the nine-dimensional cyclic Nakayama algebra B on f,v:
+
+\[
+a\in e_fBe_v,\qquad b\in e_vBe_f,\qquad baba=0.
+\tag{5.1}
+\]
+
+The literal basis is e_f,e_v,a,b,ab,ba,aba,bab,abab. Products are
+path concatenation whenever the result is in this basis. In particular
+abab is NONZERO and baba is zero. Its LEFT projectives have uniserial
+factor strings
+
+\[
+P_f: f,v,f,v,f,\qquad P_v:v,f,v,f.
+\tag{5.2}
+\]
+
+Right multiplication by b identifies P_v with rad(P_f). Hence
+
+\[
+\Omega L_f=P_v,\quad \operatorname{pd}L_f=1.
+\tag{5.3}
+\]
+
+Put U_1=rad(P_v)=span(a,ba,aba) and U_2=span(ba,aba). Actual minimal
+covers give
+
+\[
+\Omega L_v=U_1,\quad \Omega U_1=U_2,\quad \Omega U_2=U_2.
+\tag{5.4}
+\]
+
+For Omega U_1, the kernel in P_f is span(bab,abab), isomorphic to U_2
+by right multiplication by b. For Omega U_2, the cover P_v maps its
+generator to ba and its kernel is span(ba,aba) again. Thus L_v really
+has infinite ordinary pd. No prefix test is used.
+
+Adjoin q=p-1 vertices w_r, each with a dual-number corner
+Gamma_r=k[t_r]/t_r^2, and m_r in e_fAe_{w_r}. All radical products
+involving m_r or t_r are zero. This is the literal triangular algebra
+
+\[
+\mathsf E_p=
+\begin{pmatrix}B&M\\0&\prod_{r=1}^{p-1}\Gamma_r\end{pmatrix},
+\qquad M=\bigoplus_r L_f\otimes_k G_r,
+\tag{5.5}
+\]
+
+where G_r is the RIGHT Gamma_r simple. It is connected, has p+1
+vertices, dimension 9+3(p-1)=3p+6, and J^5=0. Old LEFT projectives
+and their resolutions are literally unchanged. For a chosen w,
+
+\[
+P_w=Ae_w=k e_w\oplus k t_w\oplus k m_w,
+\qquad \Omega L_w=L_f\oplus L_w.
+\tag{5.6}
+\]
+
+Consequently
+
+\[
+I_L=\{v,w_1,\ldots,w_{p-1}\},\quad F_L=\{f\},\quad
+\operatorname{pd}_A L_f=1.
+\tag{5.7}
+\]
+
+These statements are exact ordinary ones: (5.3) terminates, (5.4)
+returns, and (5.6) contains a direct copy of L_w at every iteration.
+
+On the RIGHT, P_v^R=e_vA still equals e_vB. Left multiplication by a
+identifies it with aB in rad(e_fA). The other radical summands are
+m_r A=R_{w_r}. Therefore
+
+\[
+\Omega R_f=P_v^R\oplus\bigoplus_r R_{w_r},\qquad
+\Omega R_{w_r}=R_{w_r}.
+\tag{5.8}
+\]
+
+For R_v let V_1=span(b,ba,bab) inside e_vA and V_2=span(ba,bab).
+Their genuine minimal covers give
+
+\[
+\Omega R_v=V_1,\quad
+\Omega V_1=V_2\oplus\bigoplus_r R_{w_r},\quad
+\Omega V_2=V_2.
+\tag{5.9}
+\]
+
+The copy of V_2 in the first kernel is span(aba,abab) in e_fA,
+via left multiplication by a; the extra m_r are independent simples.
+Equations (5.8)–(5.9) prove directly that
+
+\[
+I_R=\{f,v,w_1,\ldots,w_{p-1}\},\qquad F_R=\varnothing.
+\tag{5.10}
+\]
+
+#### The cross maps occur in the actual recurrent minimal tail
+
+The LEFT L_w resolution is
+
+\[
+Q_0=P_w,\quad Q_1=P_f\oplus P_w,\quad
+Q_n=P_v\oplus P_f\oplus P_w\quad(n\ge2).
+\tag{5.11}
+\]
+
+For all n>=2 its three nonzero differential blocks are
+
+\[
+P_v\xrightarrow{\,b\,}P_f,\qquad
+P_f\xrightarrow{\,m_w\,}P_w,\qquad
+P_w\xrightarrow{\,t_w\,}P_w,
+\tag{5.12}
+\]
+
+where LEFT maps act by RIGHT multiplication. The middle map has
+image k m_w=L_f. Its kernel is rad(P_f)=P_v; the last map has kernel
+L_f direct sum L_w, and the first map is injective. Thus each whole
+kernel equals the next whole image. All entries b,m_w,t_w lie in J,
+so (5.11) is exact and minimal in EVERY degree.
+
+Its infinite-factor carriers are
+
+\[
+C_f^L=C_v^L=\{v\},\qquad C_{w_r}^L=\{w_r\}.
+\tag{5.13}
+\]
+
+Hence P_f->P_w is a genuine cross map between distinct infinite
+carriers. Its image contains ONLY a finite-pd simple factor and has
+pd one, uniformly, at every positive resolution degree.
+
+#### No eligible finite-side closed block exists on either side
+
+Any LEFT-finite block containing that image's vertex must be F={f},
+because (5.7) lists ALL finite LEFT simples. But
+
+\[
+e_vAe_f\supset k b\ne0,
+\tag{5.14}
+\]
+
+so gAf is nonzero: P_f's cover contains the infinite LEFT label v.
+No LEFT-finite projective-cover-closed block can contain f. There
+is no nonempty RIGHT-finite block at all by (5.10). Therefore no
+C088 deletion of either side is available, despite the recurrent
+finite-FACTOR cross images.
+
+Deleting their correction branch P_f and P_v from (5.11) leaves
+P_w with differential t_w, whose positive-degree homology is L_f
+in EVERY degree: ker(t_w)=L_f+L_w and im(t_w)=L_w. It is not exact.
+If all terms are kept but the middle maps alone are zeroed, the
+two independent branches have homology L_f direct sum L_f in every
+high degree. Neither operation is an ordinary resolution.
+
+From (5.11), Tor_n(R_f,L_w)=k for n>=1 and Tor_n(R_v,L_w)=k for
+n>=2; pruning loses both. These two pairs are physically invisible,
+since e_wAe_f=e_wAe_v=0. Separately Tor_n(R_w,L_w)=k in EVERY degree
+has diagonal physical support. Thus the family is already infinite +.
+It refutes automatic finite-image-to-closed-block existence and literal
+ordinary elimination; it does not refute a badness-specific alternative.
+
+The factor/cover distinction is essential: L_f is finite-pd, although
+its projective cover P_f contains the infinite-pd factor L_v. Bounded
+pd does not pass to composition factors. Every r contributes the same
+actual recurrent phenomenon, so the obstruction has no count cutoff.
+
+## 6. Exact availability criterion for the valid block mechanism
+
+For a finite LEFT factor label u, form the least set H_L(u) that
+contains u and is closed under adding every label j with e_jAe_z
+nonzero for a label z already in the set. This is the literal
+projective-cover closure, with no homological inference from its graph.
+
+There exists a C088 finite-LEFT closed block containing a support set
+U if and only if the union H_L(U) avoids I_L. Necessity follows because
+any closed block containing U contains its entire closure. Sufficiency:
+that closure is itself finite-LEFT and cover-closed; if A has an
+infinite LEFT simple it is proper. A finite-factor image alone specifies
+U contained in F_L, not H_L(U) contained in F_L. Family E_p fails in one
+step f->v by (5.14).
+
+The union of ALL eligible finite-LEFT blocks is itself the maximal
+eligible finite-LEFT block. Removing it by C088 already performs every
+available same-side block deletion at once. No new eligible LEFT block
+appears solely from that deletion: any original closure path to an
+infinite LEFT label cannot pass through the removed closed block and
+then leave it. A RIGHT block deletion can change this conclusion by
+removing an infinite LEFT label; each such move still has the exact
+proved C088 count and comparison control. The RIGHT criterion is proved
+directly using entries e_zAe_j for RIGHT covers.
+
+This gives a concrete eligibility test and maximal valid deletion, not
+an assertion of universal availability. It replaces unsuccessful
+individual deletion choices without introducing a new derived invariant.
+
+## 7. Computation and all-field boundary
+
+Evidence is in Carrier-Lemma-Evidence/:
+
+- verify_carrier_lemma.py / carrier-lemma-result.json: cycle and
+  projective-image families at p=3,5,8; 78,288 associativity triples,
+  64 actual minimal covers/kernel isomorphisms, 1,224 integer basis
+  inverse certificates and three literal pruned-homology identifications.
+- verify_finite_factor_carrier.py / finite-factor-carrier-result.json:
+  finite-factor family at p=3,5,8; 79,272 associativity triples,
+  76 actual minimal covers/kernel isomorphisms, 2,223 integer basis
+  inverse certificates, 13 literal recurrent differential checks and
+  13 pruned-homology identifications.
+- task.md and computation-record.json record scope, code/result hashes,
+  shared helper dependencies and verification limits.
+
+Every cover exports its actual module actions, augmentation images,
+kernel inclusions, radical/top bases and their integer inverses. For
+each vertex, chosen image columns give an integral basis of the target;
+kernel columns plus chosen domain units give an integral basis of the
+projective source. These bases have integer inverses. Consequently all
+these maps remain surjective and exact after base change to EVERY field.
+Integral top/radical decompositions and containment of the kernel in
+the projective radical prove minimality after every base change. The
+displayed kernel isomorphisms likewise have integral inverses. Recurrent
+matrix image=kernel and d^2=0 are checked with these actual bases.
+
+Finite parameter instances are supplementary. The literal multiplication
+tables, module identities and exact matrices in Sections 3–5 establish
+ALL p, ALL degrees and ALL fields separately. A bounded Betti prefix
+does not prove any infinite tail. The code shares existing helpers and
+is same-author arithmetic self-audit, NOT independent verification.
+Schema/hash validation certifies integrity only.
+
+A bounded method-Vault query for finite-length/Nakayama resolutions
+returned no candidate; no Vault item was adopted as a mathematical fact.
+Existing built-in MRS durable records and the project's ordinary assets
+are reused. No replacement verifier service or Vault copy was created.
+
+## 8. Normal adversarial self-audit
+
+1. IMAGE carrier versus PROJECTIVE carrier: Section 3 explicitly shows
+   the strict singleton image drop and the immediate projective-cover
+   expansion. It proves nonexistence of any proper recurrent minimal
+   tail, rather than merely failing to find one.
+2. Purification: Sections 3–4 have all simples infinite on both sides.
+   No finite-simple deletion can evade them. Stronger singular operations
+   need an explicit ordinary comparison and are not silently substituted.
+3. Finite pd versus finite factors: Section 4's images are projective
+   with infinite simple factors. Section 5 separately strengthens the
+   obstruction to images with ONLY finite-pd factors and pd one.
+4. Actual recurrence: All three use literal syzygy identities and minimal
+   differential matrices in every degree. No support-cycle inference.
+5. Exactness after pruning: It fails, and the precise repeated homology
+   is computed in Sections 4–5. No operation erases maps and continues
+   calling the complex an ordinary projective resolution.
+6. Projective cancellation: A projective image in a projective radical
+   need not be a split summand of the codomain. There is no invertible
+   entry; bounded local pd does not give bounded GLOBAL homological error.
+7. Same-pair support: Section 4 really loses supported Tor(R_v,L_i).
+   Section 5's lost f/v pairs are invisible; its visible w diagonal is
+   stated separately. These assertions must not be conflated.
+8. Closed-block existence: E_p lists every simple's actual sided pd.
+   Its only finite LEFT label has a cover reaching infinite v, and no
+   finite RIGHT label exists. This proves failure on BOTH sides.
+9. Carrier bridge: Theorem 2.1 requires a REAL exact minimal block and
+   a recurrent detector whose own carrier contains the WHOLE block union.
+   A graph component, an eventual constant union or singular recurrence
+   alone does not satisfy it.
+10. Stronger bad-only hypotheses: Every family already has ordinary
+    visible return. The proposed bad-only global disjunction is NOT
+    refuted. C088/C089 remain valid, and E_p does not withdraw them.
+11. Source count: Arbitrary parameters define uniform families and an
+    arbitrary-size bridge. Finite arithmetic at three parameter values
+    is not case-by-case count research or universal computation.
+12. Evidence: Complete same-author proofs and exact integral finite
+    checks, no independent acceptance, no novelty or universal bound.
+
+## 9. Consequence for the global closure route
+
+The unqualified carrier-reduction/finite-pd elimination lemma is FALSE.
+Even finite-factor images do not always supply the valid closed blocks.
+The exact obstruction is the expansion under actual projective covers,
+and recurring finite-pd correction branches in infinitely many degrees.
+
+The constant-carrier terminal goal does have a valid ordinary bridge,
+now weakened to one carrier-dominating recurrent projective. C088 supplies
+actual finite descent when literal finite-side closure is present. The
+remaining global theorem must use BADNESS in addition to these local
+facts: force an actual supported return, provide another eligible
+ordinary reduction, or prove a bounded/terminating correction mechanism.
+One must not infer any of those from finite image pd or a physical
+carrier intersection alone.
+
+No retreat to the old Target-B state occurs. Primitive-Seed Correction,
+Binary-Indecomposable Frontier, bounded-screening Target A, local-trivial
+nonperfect couplers, C076 support transfer, supported-weight screening
+and the higher-output branch remain on the global map. Universal Gap A
+remains OPEN; the active goal is unchanged.

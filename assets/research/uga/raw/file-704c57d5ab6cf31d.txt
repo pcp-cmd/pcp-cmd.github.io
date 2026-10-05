@@ -1,0 +1,663 @@
+# 任意 N 顶点主路线：Yoneda、返回补角与乘法参数空间
+
+初稿 2026-09-10，更新至 2026-09-28。用户已明确要求主攻任意 \(N\)，不以逐个增加顶点或积累特殊代数族代替一般结论。
+
+**状态：一般 \(N\) 的主目标仍未证明。** 本稿区分已证明的统一引理和未证明的桥梁：Yoneda 路线为 (FG)，返回补角路线为整个前缀复形的 perfectness (PC)，见第 13 节；最新的乘法参数路线为泛点上的 supported 持续非消失 (GP)，见第 17 节。以下约化、核商公式和条件性上界均有完整自审证明；没有独立 verifier 认证，新颖性也未确认。
+
+## 1. 主目标与假设的精确形式
+
+设 \(A\) 是任意有限维 basic \(\mathbb C\)-代数，恰有 \(N\) 个 simple isomorphism classes。固定
+\[
+1=\sum_{i=1}^N e_i,\quad J=\operatorname{rad}A,\quad
+L_j=Ae_j/Je_j,\quad R_i=e_iA/e_iJ.
+\]
+本稿不限制 \(N\)，不限制 Peirce 图形，也不假设 \(J^3=0\)、有限表示型或有限生成的 Yoneda algebra。
+
+目标是
+\[
+\boxed{
+\operatorname{gldim}A=\infty
+\Longrightarrow
+\exists i,j:\ e_jAe_i\ne0,\ 
+\operatorname{Tor}_n^A(R_i,L_j)\ne0
+\text{ 对无穷多个 }n.
+}
+\tag{U}
+\]
+这是当前项目的 Universal Gap A 目标。它涉及 supported Tor；不能把结论换成普通 HH 的存活而不另作证明。
+
+令
+\[
+\mathcal E^n_{ij}=\operatorname{Ext}_A^n(L_j,L_i),\qquad
+\mathcal E=\operatorname{Ext}_A^*(A/J,A/J).
+\]
+有限维对偶识别
+\[
+\mathcal E^n_{ij}\simeq\operatorname{Tor}_n^A(R_i,L_j)^*.
+\]
+假设 (U) 的结论不成立。由于仅有有限个 ordered simple pairs，可以取一个共同整数 \(b\ge0\)，使
+\[
+\mathcal E^n_{ij}=0
+\quad\text{只要 }n>b\text{ 且 }e_jAe_i\ne0.
+\tag{Z_b}
+\]
+这比仅要求高次 self-Ext 消失更强。
+
+如果 \(P_n^{(j)}\) 是 \(L_j\) 的最小投射消解，则
+\[
+\dim e_jP_n^{(j)}
+=\sum_i \dim(e_jAe_i)\dim\mathcal E^n_{ij}.
+\]
+所以 \((Z_b)\) 恰好说
+\[
+e_jP_n^{(j)}=0\quad\text{对所有 }j,\ n>b.
+\tag{1}
+\]
+任意 \(N\) 路线要排除的是：所有 simple 的高次投射项都同时避开自己的顶点，但仍有无限消解。
+
+## 2. 已证明：在假设下，Yoneda 正次数理想统一幂零
+
+记 \(\mathcal E_+=\bigoplus_{n>0}\mathcal E^n\)。
+
+**引理 1。** 若 \((Z_b)\) 成立，则
+\[
+\boxed{(\mathcal E_+)^{N(b+1)}=0.}
+\tag{2}
+\]
+还存在更直接的高次理想界
+\[
+\boxed{\left(\bigoplus_{n>b}\mathcal E^n\right)^N=0.}
+\tag{3}
+\]
+
+**证明。** 展开一个 Yoneda 乘积的 simple idempotent 分量后，每个可组合项对应一串 simple
+\[
+L_{v_0}\longrightarrow L_{v_1}\longrightarrow\cdots
+\longrightarrow L_{v_q},
+\]
+每一步带一个正整数次数。如果整个乘积非零，则任何连续子乘积也非零。
+
+取 \(q=N(b+1)\)。这串 \(q+1\) 个顶点中，有某个顶点至少出现 \(b+2\) 次。取其第一次和最后一次出现之间的子乘积；它是次数至少 \(b+1\) 的非零 self-Ext，与 \((Z_b)\) 矛盾。这证明 (2)。
+
+对于 (3)，取 \(N\) 个次数各大于 \(b\) 的因子。\(N+1\) 个端点必有重复；重复点之间的子乘积次数大于 \(b\)，同样矛盾。\(\square\)
+
+**不能推出的结论。** 幂零的正次数理想仍可能无限维，因为它可能有任意高次的新生成元。不能从 (2) 直接宣布 \(\mathcal E\) 有限维。实际代数已经会出现这种现象：Saorín 的双向二圈单项式例子有无限全局维数，而所有 simple 的高次 self-Ext 都消失，Yoneda algebra 需要无穷多个生成元。它仍有项目所需的 off-diagonal \(+\)-pair，所以不是 (U) 的反例；它说明不能丢掉 \((Z_b)\) 的非对角 Peirce 条件。[Saorín，Example 1](https://arxiv.org/pdf/math/0306043)
+
+## 3. 已证明：有限生成一旦成立，就有任意 N 的明确上界
+
+**定理 2。** 假设 \((Z_b)\) 成立，且 \(\mathcal E\) 由次数不超过 \(d\ge1\) 的齐次元素及 \(\mathcal E^0\) 生成。那么
+\[
+\boxed{\operatorname{gldim}A\le Nb+(N-1)d.}
+\tag{4}
+\]
+更一般地，即使整个 \(\mathcal E\) 尚未知道有限生成，由其不超过 \(d\) 次部分生成的子代数，也在所有
+\[
+n>Nb+(N-1)d
+\]
+的次数上为零。
+
+**证明。** 考察由次数至多 \(d\) 的正次数齐次元素组成的任意非零乘积。展开 simple idempotents 后，只需处理一条非零可组合 word。设其各步次数为 \(a_t\in[1,d]\)，累计次数为
+\[
+0=s_0<s_1<\cdots<s_q=D.
+\]
+对每个出现过的顶点 \(v\)，取它第一次到最后一次出现的闭区间
+\[
+I_v=[\min\{s_t:v_t=v\},\max\{s_t:v_t=v\}].
+\]
+若顶点仅出现一次，区间长度为零；否则其两端之间是一个非零 self-Ext 子乘积，所以
+\[
+|I_v|\le b.
+\]
+
+这些区间覆盖了所有离散位置 \(s_t\)。它们并集中的每个空隙都位于某两个相邻离散位置之间，因而长度至多 \(d\)。并集至多有 \(N\) 个连通分支，空隙至多 \(N-1\) 个。由于 0 和 \(D\) 也被覆盖，得到
+\[
+D\le\sum_v|I_v|+(N-1)d\le Nb+(N-1)d.
+\]
+故所有更高次 words 都为零，证明子代数版本。当这些生成元生成整个 \(\mathcal E\) 时，所有 simple-pair Ext 在上述界之外全为零；有限维代数的全局维数等于 simple projective dimensions 的最大值，得到 (4)。\(\square\)
+
+有限生成加上最终 self-Ext 消失推出有限全局维数这一方向已有文献依据，见 [Saorín，Theorem 1](https://arxiv.org/pdf/math/0306043)。这里把所用的顶点 word 论证和具体上界全部写出，便于与后面的未证明桥梁分开审查。
+
+## 4. 任意 N 的核心桥梁：尚未证明
+
+定义 indecomposable Yoneda generators
+\[
+Q(\mathcal E)=\mathcal E_+/(\mathcal E_+)^2,\qquad
+Q^n_{ij}=
+\frac{\mathcal E^n_{ij}}
+{\sum_{r=1}^{n-1}\sum_t
+ \mathcal E^r_{it}\mathcal E^{n-r}_{tj}}.
+\tag{5}
+\]
+每个固定次数有限维。因此
+\[
+\mathcal E\text{ 有限生成}
+\Longleftrightarrow
+Q^n=0\text{ 对所有充分大的 }n.
+\tag{6}
+\]
+右向左由次数归纳得到：选取有限多齐次代表，其余元素逐次写成较低次数的乘积。
+
+主攻的桥梁是
+\[
+\boxed{
+(Z_b)\Longrightarrow Q^n(\mathcal E)=0
+\text{ 对所有充分大的 }n.
+}
+\tag{FG}
+\]
+它要求使用 \(\mathcal E\) 与实际有限维代数乘法的兼容性，而不只是一个抽象幂零分次代数。
+
+**命题 3。** 对所有有限维 basic 代数而言，(U) 与 (FG) 等价。
+
+**证明。** 若 (FG) 成立，定理 2 排除了 \((Z_b)\) 与无限全局维数同时出现，因此得到 (U)。反过来，若 (U) 成立，则 \((Z_b)\) 迫使全局维数有限，于是整个 Yoneda algebra 有限维，当然满足 (FG)。\(\square\)
+
+这是一条等价约化，不是对 (FG) 的证明。它的用途是：把任意 \(N\) 的同一个缺口固定在“高次新生成元是否最终停止出现”上，避免反复改做小顶点枚举。
+
+**本轮新增的统一接口。** [Radical-Head-Detection.md](Radical-Head-Detection.md) 证明：\((Z_b)\) 等价于对所有 proper radical 截断商
+\[
+Q_{i,r}=Ae_i/J^rAe_i
+\]
+都有 \(\operatorname{Ext}_A^n(Q_{i,r},L_i)=0\)（\(n>b\)）。这里只需固定的至多 \(N(\ell-1)\) 个模块，\(\ell\) 为 radical 幂零指数。
+
+新稿还把这些商打包成 \(G_i\)，构造实际幂零映射 \(u_i:G_i\to G_i\)，并证明加权 supported Betti 数满足
+\[
+\sum_j\dim(e_jAe_i)\dim\operatorname{Ext}_A^n(L_j,L_i)
+=\dim\ker u_i^{n,*}+\dim\ker u_i^{n+1,*}.
+\]
+这些核的维数还等于相应对角 cosyzygy 分量的维数。该公式给出有限截断族与原 tiling 目标的精确联系；它没有证明这些头部 Ext 必须持续，也没有关闭 (FG)。
+
+## 5. 已证明：新的高阶类来自一个具体的深层核商
+
+固定 source simple \(L_j\) 和 \(n\ge2\)。令
+\[
+M=\Omega^{n-1}L_j,\qquad
+P=P_{n-1}^{(j)}\twoheadrightarrow M,\qquad
+K=\Omega^nL_j\subseteq JP.
+\]
+定义
+\[
+\Delta_n(L_j)=\frac{K\cap J^2P}{JK}.
+\tag{7}
+\]
+由于 \(JK\subseteq K\cap J^2P\)，该商有定义，且是 semisimple。
+
+**定理 4（深层核商公式）。** 存在自然的向量空间短正合列
+\[
+0\longrightarrow
+\sum_t\mathcal E^1_{it}\mathcal E^{n-1}_{tj}
+\longrightarrow\mathcal E^n_{ij}
+\longrightarrow
+\operatorname{Hom}_A(\Delta_n(L_j),L_i)
+\longrightarrow0.
+\tag{8}
+\]
+因而真正的 indecomposable quotient \(Q^n_{ij}\) 是右端向量空间的一个商。
+
+这里 (8) 只除掉“左边一个次数一因子”的乘积。不能把它直接等同于 (5)，因为次数二、三或更高的乘积也可能分解某些剩余类。
+
+**证明第一步：最小消解的 Hom 表示。** 因目标 \(L_i\) semisimple，任意映射 \(P\to L_i\) 都消灭 \(JP\)，从而在 \(K\) 上为零。维数平移给出
+\[
+\mathcal E^n_{ij}=\operatorname{Hom}_A(K,L_i).
+\tag{9}
+\]
+
+**第二步：识别次数一乘积的像。** 由于 \(P\to M\) 是最小投射覆盖，\(P/JP\simeq M/JM\)。将 \(P\) 分成各 \(Ae_t\) 的 copies 后，所有映射 \(M\to L_t\) 提供这些 top coordinates。将每个 coordinate 与
+\[
+\operatorname{Ext}^1_A(L_t,L_i)
+=\operatorname{Hom}_A(Je_t,L_i)
+\]
+相乘，恰好得到所有映射 \(JP\to L_i\) 在 \(K\) 上的限制。因此
+\[
+\sum_t\mathcal E^1_{it}\mathcal E^{n-1}_{tj}
+=
+\operatorname{im}\!\left(
+\operatorname{Hom}_A(JP,L_i)\longrightarrow\operatorname{Hom}_A(K,L_i)
+\right).
+\tag{10}
+\]
+也可以直接用比较映射验证：选择 \(P\to Ae_t\) 的 copy projection，限制到 \(K\subseteq JP\)，再与 \(Je_t\to L_i\) 复合，就是相应的 Yoneda product。
+
+**第三步：限制映射的像。** 任意 \(JP\to L_i\) 消灭 \(J^2P\)，所以 (10) 中的映射均消灭 \(K\cap J^2P\)。反过来，如果 \(f:K\to L_i\) 消灭这一交集，则它在
+\[
+K/(K\cap J^2P)\hookrightarrow JP/J^2P
+\]
+上定义映射。右侧 semisimple，所以可以延伸到整个 \(JP/J^2P\)，进而延伸为 \(JP\to L_i\)。因此 (10) 恰好是所有消灭 \(K\cap J^2P\) 的映射。
+
+最后，所有 \(K\to L_i\) 都消灭 \(JK\)，而
+\[
+(K\cap J^2P)/JK\subseteq K/JK
+\]
+是 semisimple submodule，任意到 \(L_i\) 的映射都可以延伸到 \(K/JK\)。将 (9) 除以上述 annihilator 就得到 (8)。\(\square\)
+
+证明中的最小 syzygy 表示与 Yoneda 比较映射描述，可与 [Saorín，第 2 页的乘积约定及 Lemma 2 的证明](https://arxiv.org/pdf/math/0306043) 对照。本稿在 (10)–(8) 中分别证明了像、核和满射，不靠维数猜测。
+
+**一个已经闭合的条件推论。** 若 \((Z_b)\) 成立，且对全部 simples 和全部 \(n>d\) 都有
+\[
+\Omega^nL_j\cap J^2P_{n-1}^{(j)}=J\Omega^nL_j,
+\tag{11}
+\]
+则由 (8) 归纳可知 \(\mathcal E\) 由次数不超过 \(d\) 的部分生成，从而有 (4)。
+
+(11) 是充分条件，不应被偷换成所有代数自动满足的事实。主桥梁 (FG) 还允许深层核商持续存在，只要其类最终由有界次数的高阶 Yoneda 生成元表达。
+
+**后续已经完成的扩展。** [Yoneda-Comparison-Kernel.md](Yoneda-Comparison-Kernel.md) 将 (8) 扩展到全部正次数乘积。它通过实际 syzygy 比较映射定义
+\[
+\Phi_{n,n-1,j}:\operatorname{top}\Omega^nL_j\longrightarrow
+\bigoplus_{r=1}^{n-1}\bigoplus_t
+\operatorname{Hom}_{\mathbb C}
+ (\mathcal E^{n-r}_{tj},\operatorname{top}\Omega^rL_t),
+\]
+并证明
+\[
+Q^n_{ij}(\mathcal E)\simeq
+\operatorname{Hom}_{A/J}(\ker\Phi_{n,n-1,j},L_i).
+\]
+因此现在可以精确计算真正的新生成元，而不是只看 (7)。五个实际代数已完成次数一至五的比较映射核算；四个小代数还通过另一套 bar complex 乘积计算交叉检查。全部一般公式不限制 \(N\)，但在 \((Z_b)\) 下证明这些核最终为零的步骤仍然缺失。
+
+## 6. 为什么 radical 幂零性还没有自动关闭桥梁
+
+(7) 的分子在 \(J^2P\) 内，不表示它在 \(K\) 内自动含有 split simple summands。
+
+例如取
+\[
+B=\mathbb C[x]/(x^4),\quad
+P=B,\quad M=B/(x^2),\quad K=(x^2).
+\]
+则
+\[
+K\cap J^2P=K,\qquad JK=(x^3),\qquad
+\operatorname{soc}K=(x^3).
+\]
+故深层商 \(K/JK\) 非零，但其非零元素没有落在 socle 中的代表。\(K\) 是长度二的 indecomposable module，没有 simple direct summand。
+
+这个例子不是 (U) 的反例；它排除了一个错误的证明步骤：不能从“深层商 semisimple”直接跳到“syzygy 含有 split simple”。
+
+对任意有限维模块 \(K\)，顶点 \(i\) 处可分裂出的 simple copies 数量恰为
+\[
+\delta_i(K)=
+\dim e_i\operatorname{soc}K-
+\dim\bigl(e_i\operatorname{soc}K\cap e_iJK\bigr).
+\tag{12}
+\]
+取 socle 中与 \(JK\) 相交为零的补空间，它嵌入 \(K/JK\)；沿 semisimple top 的投影构造 retraction 即可证明可分裂性。反之，任意 simple direct summand 必与 \(JK\) 相交为零。
+
+因此下一步可以分别计算：
+
+- (7)：高阶类尚未被一次 Ext 乘积解释的部分。
+- (12)：其中是否有能在 syzygy 层面分裂、进而反复返回的 simple。
+
+在 \(J^3=0\) 情形，深层部分位于 socle，已有 Saorín 的一般理论处理这一机制。对于 \(J^3\ne0\)，深层商的非零类可能继续向 \(J^3P\) 等更深位置传递。虽然每个固定投射模的 radical filtration 有限，不同 syzygy 次数却使用不同的投射模，不能把它们当成同一条有限下降链。
+
+## 7. 本轮已经核实的高阶返回机制，及其用途
+
+[Higher-Syzygy-Return-Theorem.md](Higher-Syzygy-Return-Theorem.md) 证明一个一般引理：若某个 simple 满足
+\[
+\Omega^dL_h\simeq L_h^{\oplus g}\oplus T,\qquad g\ge1,
+\tag{13}
+\]
+则其 self-Ext 含有 \(g\) 个次数 \(d\) 生成元的自由结合子代数。这个引理对任意 \(N\)、任意 radical 幂零长度成立。它提供了有限结构证书，不以有限次非零 Tor 数字代替无限证明。
+
+辅助计算还找到一个 22 维五顶点代数，其 Peirce 支撑正是当前残余中心模式，上一轮的四个返回核全部为零，但
+\[
+\Omega^5L_0\simeq L_0\oplus
+\Omega(L_1\oplus L_2\oplus L_3\oplus L_4).
+\]
+因此它有非幂零的次数五 self-Ext 类。它只实现残余的 \(C\)，不实现残余的 \(H\)，更不是 Universal Gap A 的反例。
+
+这些计算用于验证 (12)–(13) 能捕获上一轮箭头张量方法看不到的高阶返回。这个模型的 \(J^3=0\)，其存在 infinite \(+\) 不能作为一个新的一般情形来宣传；本轮额外给出的是精确 syzygy 分解和全次数递推。
+
+## 8. 任意 N 主线的当前断点
+
+已经完成的统一链条是
+\[
+(Z_b)
+\ \Longrightarrow\
+\mathcal E_+\text{ 幂零},
+\]
+\[
+(Z_b)+\mathcal E\text{ 在次数 }\le d\text{ 生成}
+\ \Longrightarrow\
+\operatorname{gldim}A\le Nb+(N-1)d,
+\]
+以及对任意 \(N\) 和任意 radical 幂零长度成立的精确核商公式 (8)。
+
+**Yoneda 主桥梁 (FG) 仍未证明。** 实际需要解决的是：在全套 Peirce 支撑消失条件下，深层核商中是否可能在任意高次持续产生新的、不能由既有 Yoneda 类相乘得到的生成元。
+
+这一步不能靠有限顶点数的简单 pigeonhole、任意 corner Tor lifting、有限次计算或默认 syzygy 周期性完成。后续研究应继续攻击这个实际 kernel/image 与乘法兼容性问题；特殊支撑定理和具体代数只用来检验候选论证。
+
+[Radical-Head-Detection.md 的第 7 节](Radical-Head-Detection.md) 还给出并核算了一个已知的四维量子外代数例子：二维循环模块的头部 Ext 始终非零，自扩张却在二次以后消失，syzygy 参数也永不重复。它不满足 \((Z_b)\)，所以不是主目标的反例；它明确排除了把一般头部 Ext 检测自动提升为同一模块周期返回的捷径。
+
+原 verified fact graph 未修改。本稿没有把等价约化或待证桥梁写入已核验事实。
+
+## 9. ADR 有限生成推断的反例与有效的非半单返回
+
+2026-09-11 的 [ADR-Obstruction-and-Cyclic-Return.md](ADR-Obstruction-and-Cyclic-Return.md) 已证明：对每个 \(N\ge3\)，存在连通 \(2N+3\) 维代数 \(A_N\)，令 \(G\) 为全部互不同构的投射模 radical 截断商之和，则
+\[
+\operatorname{gldim}\operatorname{End}_{A_N}(G)^{\mathrm{op}}\le4,
+\qquad
+\dim\left(E_+(G)/E_+(G)^2\right)^n\ge2\quad(n\ge2).
+\]
+所以辅助 ADR 代数的有限全局维数不能自动消除 \(A\) 上的高次 Ext 生成元。这些例子具有明确的 infinite \(+\)-pair，不满足 \((Z_b)\)，故没有否定本稿的条件性桥梁 (FG)。
+
+同一新稿去掉旧 split-return 引理的半单性限制：任何非投射模 \(M\) 若满足 \(\Omega^dM\simeq M^{\oplus g}\oplus T\)，其 self-Ext 都含有 \(g\) 个次数 \(d\) 生成元的自由结合子代数。证明使用稳定 Hom 检测，处理了非半单目标的投射限制边界。
+
+若进一步 \(\operatorname{top}M=L_i^{\oplus t}\)，则对全部 \(q\ge1\)，
+\[
+\sum_j[M:L_j]\beta_{ij}(dq)\ge t g^q,
+\]
+且所有出现的 \(j\) 都满足 \(e_jAe_i\ne0\)。这是任意 \(N\) 的实际充分条件；仍未证明无限全局维数总能提供这样的模块返回。研究需要继续使用完整 \((Z_b)\) 处理未被返回机制覆盖的高次比较核。
+
+## 10. 双数角的尾端控制与有限判定
+
+[Corner-Tail-Periodicity.md](Corner-Tail-Periodicity.md) 给出另一个不限制 \(N\) 的条件定理。若对某个 \(e\)，被删去的左 simple 满足 \(\operatorname{id}_A L_f\le a\)，且
+\[
+eAe=\Gamma\otimes\mathbb C[\epsilon]/(\epsilon^2),
+\qquad\operatorname{gldim}\Gamma\le g,
+\]
+则每个有限维模的最小 syzygy 在第 \(R=a+g+2\) 次后两步周期，所有 simple Betti 数从第 \(R\) 次起逐次恒定。如果 \({}_\Gamma eA\) 投射，可改用 \(R=\max\{a+1,g\}+1\)。
+
+其证明先由删去 simple 的有限内射维数把实际消解尾端限制在 \(\operatorname{add}(Ae)\)，再用两个投射项的表示证明 counit 同构，最后利用双数扩张的带符号 syzygy。这一机制不要求一般的 corner Tor lifting，也不从有界维数猜测周期性。
+
+于是 infinite \(+\) 的存在等价于第 \(R\) 次有某个 \(c_{ji}\beta_{ij}(R)>0\)。对采用 Krah 显式 strong tilting bundle 的 KLS 构造，四层支撑给出 \(a\le5\)、\(g\le3\)，并满足额外投射性，故可取 \(R=7\)。有效的保留 Peirce 支撑已经明确；Betti 矩阵的精确值尚未计算，但其 supported 部分非零性已由下一节的证明闭合。
+
+这没有解决 (FG)：没有证明任意代数都具有上述角，也没有在一般情形排除非零恒定尾矩阵完全落在 Peirce 支撑之外。若支撑上的第 \(R\) 次全零，目前的一般定理只能得出 \((Z_{R-1})\)，仍须使用主路线的完整乘法与比较核信息。
+
+## 11. 指定 KLS 构造的 supported 非消失已经自审闭合
+
+[KLS-Supported-Tor-Detection.md](KLS-Supported-Tor-Detection.md) 进一步证明：对上述明确 tilting 选择，存在固定的 supported pair，且 \(\beta_{ij}(n)=\beta_{ij}(7)\ge1\) 对全部 \(n\ge7\) 成立。候选 pair 被限制到二十三种；目前没有确定其中哪一种，也没有给出各个精确维数。
+
+证明首先假设对应 \(\mathcal O(H),\mathcal O(2H)\) 的两个左 simple 都有有限投射维数。限制它们的有限消解，并对差分投射模作正确的左右对偶，再使用 KLS 文献中保持对象的周期化与商相容性，迫使这两个 line bundles 都落入非满例外对象组生成的子范畴。它本来包含 \(\mathcal O\)，所以其非零 phantom 右正交将落入 \(D^b(\mathbb C^{10})\)，与零 Grothendieck group 矛盾。故两个 simple 至少有一个具有无限投射维数。
+
+最后利用保留 Peirce 支撑和删去 simple 的双侧有限维数，把这一无限投射维数转成 supported Tor；尾端恒定性给出每个 \(n\ge7\) 非零。这一结论有完整自审证明，依赖明确列出的几何及周期化文献输入，尚未独立核验。
+
+它解决了一个关键构造的检测问题，不能替代任意 \(N\) 的主目标。一般情形仍缺少保证这些几何、角代数或半单正交补结构存在的理由，(FG) 仍然未证明。
+
+## 12. 一般删点的精确条件与必须保留的相对数据
+
+[Idempotent-Deletion-and-Ext-Comparison.md](Idempotent-Deletion-and-Ext-Comparison.md) 完整写出任意 N 的比较定理：若被删 simple 的内射维数至多 a，且 \(c=\operatorname{pd}_{eAe}eA<\infty\)，则
+\[
+\operatorname{Ext}_A^n(X,Y)\simeq
+\operatorname{Ext}_{eAe}^n(eX,eY)\quad(n\ge a+c+2)
+\]
+对所有有限模成立，Gap A 随之双向传递。两个有限性条件也是存在统一高次比较界的必要条件；这一一般机制已有文献，不主张新颖性。连通校准族说明，a=0 时起始次数 c+2 不能统一降低。
+
+十维反例显示：被删 simple 的 pd 和 id 同时有限，仍不足以保证 \(\operatorname{pd}_{eAe}eA<\infty\)；即使保留的恰好是全部无限 pd 左 simple 也会失败。若仅知道被删 simple 有限 pd，正确对象是
+\[
+D_{\rm sg}(A)\simeq D^b(eAe\text{-mod})/\operatorname{thick}(eA).
+\]
+因此一般删点必须保留 eA 及其边界 summands，不能自动把该商写成 \(D_{\rm sg}(eAe)\)。
+
+## 13. 任意 N 的返回补角路线与最佳有限窗口
+
+[N-Vertex-Return-Complement.md](N-Vertex-Return-Complement.md) 直接对每个 source j 定义
+\[
+u_j=\sum_{e_jAe_i=0}e_i,\qquad B_j=u_jAu_j.
+\]
+因为 j 本身被排除，每个非零 \(B_j\) 都少于 N 个顶点。在 \((Z_b)\) 下，实际尾端
+\[
+u_jP_{b+1}^{(j)}\leftarrow u_jP_{b+2}^{(j)}\leftarrow\cdots
+\]
+是指定模 \(T_j=u_j\Omega_A^{b+1}L_j\) 的最小 B_j 消解，并同时终止。低次项给出有限复形
+\[
+\mathcal K_j^{(b)}=
+[u_jP_b^{(j)}\to\cdots\to u_jP_0^{(j)}]\simeq T_j[b].
+\]
+因此对每个非零补角，
+\[
+\operatorname{pd}_A L_j<\infty
+\Longleftrightarrow \mathcal K_j^{(b)}\in\operatorname{perf}B_j.
+\]
+其奇点范畴中的像不依赖于继续增大 b。一般主目标等价于
+\[
+\boxed{(Z_b)\Longrightarrow
+\mathcal K_j^{(b)}\in\operatorname{perf}B_j\text{ 对所有 }j.}
+\tag{PC}
+\]
+**(PC) 尚未证明。** 它要求在较少顶点上保留实际有限复形及全部微分，不是把主目标直接套到较小角上的 simple。
+
+这里已经获得一个有精确界的条件性定理：若 \(c_j=\operatorname{pd}_{B_j}(u_jA)<\infty\)，则 source j 的全部 supported Tor 只要在连续区间
+\[
+[M,M+c_j+1]\quad(M\ge1)
+\]
+内为零，就有 \(\operatorname{pd}_A L_j\le M+c_j\)。所以所有这些边界维数有限的代数满足 (U)。长度 \(c_j+2\) 对每个非负 c_j 都不能缩短，证明及任意顶点数的校准族已经写出。
+
+必须区别一个已被否定的加强：不能从 \((Z_b)\) 推出每个前缀项 \(u_jP_r^{(j)}\) 都有限 pd。十一维、全局维数三的实际代数给出限制正合列
+\[
+0\to\mathbb C\to\mathbb C[\epsilon]/(\epsilon^2)\to\mathbb C\to0;
+\]
+首尾项无限 pd，整个复形却为零。因此一般桥梁必须是整个复形的 perfectness，不能丢掉项间抵消，也不能只排除无限边界模块。
+
+这些更新保留了任意 N 的原目标；(FG) 与 (PC) 均是明确的未闭合步骤。全部新增有限审计见 [idempotent_deletion_audit.json](../work/idempotent_deletion_audit.json)，没有改写原 verified fact graph。
+
+## 14. 前缀复形必须满足的对侧 Tor 条件
+
+[Tor-Orthogonality-and-Corner-Tests.md](Tor-Orthogonality-and-Corner-Tests.md) 继续使用同一个任意 N 接口，证明真实尾端还满足
+\[
+\operatorname{Tor}_{n}^{B_j}(Au_j,T_j)=0\quad(n>0),
+\qquad Au_j\otimes_{B_j}T_j\simeq\Omega_A^{b+1}L_j.
+\]
+这里 \(Au_j\) 是右 B_j 模；前稿的有限 pd 条件使用的是左 B_j 模 \(u_jA\)。两者不能交换。
+
+若每个右 B_j simple 都有长度至多 r 的 add(Au_j) 正合分解，则所有满足上述 Tor 正交的 T_j 都有 pd≤r；这可在左边界 \(u_jA\) 无限 pd 时继续检测实际尾端。有限窗口版本也已证明：source j 的 supported Tor 在 \([M,M+r+2]\) 为零，就有 \(\operatorname{pd}_A L_j\le M+r\)。一个十维代数证明 r=0 时三次窗口不能缩成两次。
+
+更一般地，\(D^b(\text{mod-}B_j)=\operatorname{thick}(Au_j)\) 已足以迫使 T_j 有限 pd。因而潜在 (U) 反例的每个无限 pd source，都必须同时保留非 perfect 的左前缀复形和非零的右相对商
+\[
+D^b(\text{mod-}B_j)/\operatorname{thick}(Au_j)\ne0.
+\]
+前者与后者之间有由 T_j 给出的实际导出 tensor 检测。十一维有限全局维数反例中的无限前缀项不满足该 Tor 正交条件，因此不能单独冒充永久尾端。
+
+尚未证明全套 \((Z_b)\) 必然使这些右相对商为零，或给出上述有限分解。四维校准例说明单个 source 的条件不足以完成这一步。当前推进增加了真实的左右兼容性条件，没有把 (PC) 标记为已证。精确算例见 [tor_orthogonality_audit.json](../work/tor_orthogonality_audit.json)。
+
+## 15. 右边界窗口对每个分解长度都已证明最优
+
+[Sharp-Right-Boundary-Windows.md](Sharp-Right-Boundary-Windows.md) 将第 14 节的最优性从 r=0 推广到每个 r≥0：存在连通的 r+3 顶点代数，其右边界满足长度至多 r 的 add(Au) 分解条件，而某个无限 pd simple 的 supported Tor 在次数 1,…,r+2 全零，至第 r+3 次才重新出现。r≥1 时还能取 J³=0。
+
+这是统一代数族的实际 syzygy 与边界 Tor 证明，r=0,…,5 的有限精确核对另行保存。因此 r+3 次窗口不能缩短；但仍没有证明一般代数满足该右边界假设。这一最佳条件定理不能替代 (PC)。
+
+## 16. 关键偏序上的 Boolean 消去仍不足
+
+[Critical-Poset-Support-Obstruction.md](Critical-Poset-Support-Obstruction.md) 构造任意 m≥8 的抽象矩阵 C,H：关键标签的左右集合相同，C 是偏序支撑，H 避开 supported 位置且每行每列非空，却通过既有左右分量检测及递归覆盖检测。
+
+该族证明这些指定的必要条件不能单独推出 H=0。它没有实现为实际代数，也没有否定 (U)。限制到关键标签以后，不能由内部缺少双向邻居推断 local radical 为零，因为经被略去顶点的返回仍可能存在。故后续必须保留完整乘法、关系及实际尾端信息。
+
+## 17. 用真实乘法参数空间把全局问题集中到泛点
+
+本轮按用户要求检索并读取了两篇 Vault 方法笔记，具体采用范围见 [Vault-Method-Reuse-20260923.md](Vault-Method-Reuse-20260923.md)。由多项式约束与闭条件延拓得到 [Polynomial-Family-Tor-Certificates.md](Polynomial-Family-Tor-Certificates.md) 的任意 N 归约。
+
+固定 E=\(\mathbb C^N\)、各 Peirce radical 向量空间及一个幂零界，让全部满足结合律与该幂零界的乘法组成参数空间 X。bar 链空间固定，微分是结构常数的线性矩阵，
+\[
+\beta_{ij}(n)=c_n^{ij}-\operatorname{rank}\delta_n^{ij}
+-\operatorname{rank}\delta_{n+1}^{ij}.
+\]
+故固定次数的 Tor 非零是子式定义的闭条件，泛点非零可传到全部特殊点。有限全局维数 locus 在固定 X 内开且具有某个统一上界 D，因此无限全局维数 locus 是有限个不可约分支之并；这一步属于已知的固定维数机制，没有得到仅依赖 N 的界。
+
+利用复数域上一个点可以同时实现可数多个矩阵的泛点秩，已经自审证明：族内 (U) 等价于
+\[
+\boxed{\text{每个无限全局维数分支的泛点，具有固定 supported pair 的无穷 Tor}.}
+\tag{GP}
+\]
+若泛点具有该 pair，则可在整个分支上使用相同 pair、相同无界次数集。若删掉 supported 限制，这种一致非消失已可直接证明；**没有证明能够在 supported 位置选到见证，(GP) 仍然开放。**
+
+这个步骤可具体写为无穷多个次数的 bar 矩阵最大子式属于分支素理想。它保留了 Boolean 抽象丢掉的乘法，但有限次理想成员测试仍不能推出无穷性。五维族 ba=t*z 同时校准特化方向：t≠0 时全局维数为 2，t=0 时为无穷，三阶 self-Tor 从零跳到三维。80 项有理数精确比较通过，全参数和全次数结论分别由实际子式 t³ 与 syzygy 分解证明。
+
+下一步应把 (PC) 的指定有限前缀及其对侧 Tor 正交一起带到这些泛点，尝试证明 supported 的秩缺陷在无界次数集出现。当前 (FG)、(PC)、(GP) 都是明确未闭合的核心步骤，不能把等价改写当作主目标的证明。
+
+## 18. 泛点返回证书可以越过特殊点判据的失败
+
+[Generic-Return-and-Specialization.md](Generic-Return-and-Specialization.md) 把第 17 节的参数化和原返回核定理结合：在不可约族的函数域上，用有限秩条件求出正返回核，若实际零接缝图有圈，则该族每一个复点都具有固定 diagonal pair 的全部偶数 Tor。泛点的加权路径计数 \(b_r\) 给出全族共同下界，特殊点无需仍满足原返回核条件。
+
+这是一条实际的全次数充分定理，不需要先找出无限全局维数 locus 的全部分支。它只需有限个乘法秩及零接缝证据，随后由原返回核证明和 Tor 维数上半连续性得到所有次数。
+
+相应校准族适用于每个 N≥3、g≥1，连通且维数 2N+4g。非零参数时，基点 0 的泛点返回核维数为 g；零参数时，各分支返回核全为零。尽管如此，所有参数上都有实际最小 syzygy 恒等式
+\[
+\Omega^2L_0\simeq L_0^{\oplus g},\qquad
+\operatorname{Ext}^*(L_0,L_0)\simeq\mathbb C\langle x_1,\ldots,x_g\rangle,
+\quad |x_s|=2.
+\]
+因此 \(\dim\operatorname{Tor}_{2r}(R_0,L_0)=g^r\)。它证明泛点方法可超出原返回核判据在单点的适用范围，但并未声称该点无法由已有 syzygy 返回定理检测。
+
+同一文稿排除了一个可能的捷径：将任意乘法缩放为 tμ 时，bar 微分是 tδ；其参数环同调恰由原 Tor 的自由部分及 \(\operatorname{im}\delta_{n+1}\) 对应的 t-挠部分组成。平方零极限的大量同调并不自动给出一般位置的自由部分。
+
+目前可对每个无限全局维数分支尝试泛点返回证书；不能从无穷全局维数直接推出证书存在。剩余分支仍需要 (PC) 或新的全次数机制，Universal Gap A 没有被标记为完成。
+
+## 19. 二步泛点机制的边界与任意长度证书
+
+[Bar-Cycle-Pairing-Theorem.md](Bar-Cycle-Pairing-Theorem.md) 回答了第 18 节的普遍性问题：平方零有向 N 圈（N≥3）有无限全局维数，self-Tor 只在 N 的倍数次数出现，二阶全部为零；固定 E 双模 J 后其乘法空间又只有一个点。因此“所有无限全局维数分支都有旧二步泛点证书”是假的。这没有否定一般 (GP)。
+
+新增任意长度的条件定理：对长度 d 的 g 个 bar 返回链，若它们闭、具有杀死 boundaries 的单位对偶配对、且所有有序接缝为零，则
+\[
+\dim\operatorname{Tor}_{rd}(R_h,L_h)\ge g^r,
+\qquad \mathbb C\langle X_1,\ldots,X_g\rangle
+\hookrightarrow\operatorname{Ext}^*(L_h,L_h),\quad |X_s|=d.
+\]
+证明通过串接 chains 和 cup cocycles 保持单位配对，对全部 r 成立。它不要求箭头商投影非零，可覆盖截断多项式的高阶因子，也处理 N 圈的 N 步返回。
+
+上一轮参数族现在还有参数无关的明确证书：链 \(n_s\otimes a\)，对偶泛函在 \(n_s\otimes a\) 与 \(c_s\otimes f\) 上均取 1，其余基 word 上取零。三重 word 的边界抵消保证闭性，接缝 \(a n_s=0\)。因此自由 Yoneda 单词在整个族上有直接的链与对偶证据，不只靠 Tor 维数特化。
+
+有限程序保存了 12 个完整证书和两个必要条件遗漏的拒绝检查。2026-09-27 补正：一般代数总能提供任意长度证书的断言也是假的，见下一节的 Saorín 例子。该证书要求非幂零 Yoneda 类，比持续 Tor 更强；充分定理本身及其应用保持有效，不能用它替换 (U)。
+
+## 20. 以实际模块的有限系统保留非对角持续 Tor
+
+[Finite-Syzygy-System-Theorem.md](Finite-Syzygy-System-Theorem.md) 对项目已有 Saorín 七维例子写出完整最小 syzygy 恒等式：
+\[
+\Omega L_0=M,\quad \Omega M\simeq M,\quad
+\Omega L_1\simeq P_0,\quad \Omega P_0=0.
+\]
+其中 top(M)=L_1。这给出 β_{10}(n)=1 对所有 n≥1，且该 pair supported；两个 simple 的正次数 self-Ext 却全零，simple Yoneda 正次数理想平方为零。故任意长度的同 simple 自返回证书的普遍性已被否定，泛点特化也不能救回这个断言。一般 (U)、非对角 (GP) 不受否定。
+
+项目原有 2N+3 维连通分支族还给出每个 N≥3 的同样障碍：全部 positive simple self-Ext 为零，β_{10}(n)=1 对所有 n≥1。实际三个状态 M、P_0、D 满足 ΩM=M⊕D、ΩP_0=ΩD=0；D 是投射 sink simples 的和，只是无圈状态。这里复用已有全次数覆盖证明，不是由三个有限样本外推任意 N。
+
+新的有限证书要求非零实际模块 M_1,…,M_m 及明确同构
+\[
+\Omega M_\alpha\simeq\bigoplus_\gamma M_\gamma^{T_{\gamma\alpha}},
+\qquad \Omega^{q_j}L_j\simeq\bigoplus_\alpha M_\alpha^{(v_j)_\alpha}.
+\]
+令 H 为头部重数矩阵，则所有次数都有 β_{ij}(q_j+n)=(HT^n v_j)_i。持续非零等价于存在从入口可到达、又可通到目标头部的有向圈，也等价于在 q_j+m,…,q_j+2m−1 中至少一次非零。此窗口一般不能少看最后一次；圈还提供一个等差数列上的 c w^r 下界。这里 m 是模块状态数，不是单纯由 N 给定的界。
+
+若圈上的 M 有一个头部 L_i，并且其每个组成因子 L_j 均满足 C_{ji}>0，则圈的分裂返回及组成列 Ext 不等式给出
+\[
+\sum_j[M:L_j]\beta_{ij}(rd)\ge [\operatorname{top}M:L_i]w^r.
+\]
+特别地，头部集中于 i 时 supported 条件自动成立。因此，**全部 simples 进入有限精确系统、且所有循环模块都有单顶点头部的代数，满足任意 N 的 (U)**。Saorín 例子由非简单模块 M 检出，而不是由 simple 自返回检出。
+
+12 个系统中 38 个过渡同构和 40 个入口同构通过精确验证，另有 2290 项 Betti 比较、51 项 bar 比较及五个拒绝检查。完整输入、实际同构及逆矩阵已保存。一般代数的有限系统存在性没有证明，多头部状态不自动满足上述支撑条件；(FG)、(PC)、(GP) 均保持未证。不能把有界维数或有限次重复当作实际封闭系统。
+
+## 21. 多头部返回可以通过支撑子模及其实际商检测
+
+[Supported-Submodule-Localization.md](Supported-Submodule-Localization.md) 给出一般有限维代数上的精确不等式。令 B_i={j:C_{ji}>0}，取短正合列 0→K→M→Q→0 且 supp K⊆B_i，则
+\[
+\sum_{j\in B_i}[K:L_j]\beta_{ij}(n)
+\ge\dim\operatorname{Ext}^n(K,L_i)
+\ge\dim\operatorname{Ext}^n(M,L_i)-\dim\operatorname{Ext}^n(Q,L_i).
+\]
+若 M 有实际分裂返回 Ω^dM⊇M^{\oplus g}，且头部含 h 个 L_i，商的目标 Ext 最终为零，就得到全部足够大 r 上的 h g^r supported 下界。无需 M 单顶点头部；也无需 Q 有限 pd。商增长严格较慢时，同一差值也足够。
+
+规范 K_i(M) 是 M 中支撑位于 B_i 的最大子模，可由全部 radical 作用的核交求出。Q_i=M/K_i 满足 e_iQ_i=0，且 socle 完全位于 B_i 外，但其他组成因子仍可位于 B_i 内。令 e=∑_{j∉B_i}e_j、B=eAe，则 Q_i 恰为自然映射 M→Hom_B(eA,eM) 的像；核与余核都只含 B_i 中组成因子。因此在 (Z_b) 下，这个 coinduction 模块与 M 对 L_i 的 Ext 从 n>b+1 起同构。**Ext 的第一变量方向阻止直接使用伴随或按顶点数归纳，这一步仍需边界条件。**
+
+新的校准模块适用于每个 N≥3：在叉形 quiver 的路径代数上张量双数代数，得到 4N−2 维连通代数和 3N−4 维不可分解模块 M_N，满足 ΩM_N=M_N，头部含全部 N 个顶点。没有一个项目 Peirce 列覆盖 M_N 的全部支撑。对 N−1 个源头部，规范商虽然无限 pd，对指定 simple 的 Ext 却全零，新检测成立。余下的汇点头部则有持续余商 Ext，限制映射在每个正次数为零；N=3 时两端 Ext 都是一维，仍不能传递。
+
+该代数族 J³=0，其 (U) 本来已受 Saorín 的已知定理覆盖。这里证明的是新的条件接口可处理真正不可分解的任意多头部返回，以及实际映射检查不可省略。3 个成员的 13 个成功检测、3 个正确未判定、51 个系统或入口同构、112 项 Ext 限制映射、686 项 Betti 和 27 项 bar 比较通过；九维例子另核对了 coinduction 与不能只看箭头的边界。
+
+尚未证明每个返回模块都存在可消去商的头部，更未证明有限返回系统普遍存在。后续可研究规范商与 (PC) 指定前缀的关系，或从实际乘法控制余商 Ext 的增长；一般 (U) 及 (FG)、(PC)、(GP) 保持未证。
+
+## 22. 正则目标 Ext 给出不限制头部的有限窗口
+
+[Regular-Ext-and-Self-Extension-Transfer.md](Regular-Ext-and-Self-Extension-Transfer.md) 为第 20 节的实际状态系统加入 G_α=dim Ext¹(M_α,A)。若 Ω^qX=⊕M_α^{v_α}，则
+\[
+\dim\operatorname{Ext}^{q+1+n}(X,A)=GT^n v.
+\]
+G 必须由 Hom(ΩM_α,A) 模去投射限制边界计算，不能直接采用 Hom 维数。图中从入口经圈到 G 非零状态的路径，精确决定 regular-target 的持续性；其检测窗口是 q+m+1,…,q+2m。
+
+若 Ext^n(X,A)=0 对 n>c，则对任意 ℓ≥0、n>c，
+\[
+\operatorname{Ext}^n(X,X)\simeq
+\operatorname{Ext}^{n+\ell}(X,\Omega^\ell X)\simeq
+\operatorname{Ext}^n(\Omega^\ell X,\Omega^\ell X).
+\]
+第二变量换位需要两侧正则目标 Ext 消失，这正是不能省略的条件。次数下界不随 ℓ 增加。无限 pd 时，可达圈提供某个 Ω^ℓX 的非投射直和项 M，并有 Ω^dM⊇M^{⊕g}，d≤m。非半单返回定理及上述同构给出 dim Ext^{rd}(X,X)≥g^r 对 rd>c 成立，所以 c+1,…,c+m 中必有一次非零。
+
+因此，无论头部有多少顶点，只要无限 pd 的 simple 进入实际有限系统且其 regular-target Ext 最终消失，就有 diagonal supported Tor 持续。全部 simples 满足这两项条件时得到任意 N 的 (U)；id_A A<∞ 是第二项的充分条件。
+
+还能把两个窗口合并为不再附加全次数消失的判据：
+\[
+\operatorname{pd}X<\infty\quad\Longleftrightarrow\quad
+\operatorname{Ext}^n(X,X\oplus A)=0\quad(q+m+1\le n\le q+2m).
+\]
+成立时 pd(X)≤q+m−1。先用窗口中到 A 的部分证明全部后续消失，再用 self-Ext 部分排除可达圈。m 状态的平方零有向圈表明一般窗口的最后一次不能删掉。这里 m 仍是实际模块状态数，没有得到只依赖 N 的界。
+
+前一节的多头部周期族满足 id_A A≤1，所有周期状态的 G 都为零；新条件也处理了前一节局部化失败的汇点。Saorín 七维例子的 Ext^n(L_0,A) 却从 n=2 起恒为一维，原有 N 顶点分支族从 n=2 起恒为 2N−3 维；它们的 simple self-Ext 全零，故 regular-target 假设确实不能丢。量子外代数的二维模块则到 A 的 Ext 全零而 self-Ext 最终为零，却有无限、两两不同构的二维 syzygies，排除以有界维数替代有限状态。
+
+12 个系统的 52 个源查询得到 35 项 self-Ext 证书、5 项正确未判定、12 个有限 pd 源；258 项正则 Ext 递推和 161 个实际比较映射通过。定理与已有 Auslander–Reiten / syzygy 文献的关系已经注明，未宣称新颖性。一般有限系统的存在，以及 regular Ext 持续时如何得到方向正确的 supported pair，仍是未证明步骤；不能把联合检测中的正则目标非零当作 (U) 所需的 simple-pair 非零。
+
+## 23. regular Ext 持续时，转而控制实际投射前缀的损失
+
+[Projective-Prefix-Ext-Transfer.md](Projective-Prefix-Ext-Transfer.md) 不再要求整个 A 的 Ext 尾端消失。取实际前缀的 K=Ω^ℓX、projectives P_0,…,P_{ℓ−1}，令
+\[
+\delta_\ell(X,n)=\sum_{t<\ell}\dim\operatorname{Ext}^{n+t+1}(X,P_t).
+\]
+逐次第二变量的长正合列给出比较映射 θ_n:Ext^n(X,X)→Ext^n(K,K)，并有
+\[
+\dim\operatorname{coker}\theta_n\le\delta_\ell(X,n).
+\]
+若 K 含 a 个非投射 M，且 Ω^dM 含 g 个 M，则 dim Ext^{rd}(X,X)≥a²g^r−δ_ℓ(X,rd)。因此只需实际前缀损失最终为零，或增长严格小于返回下界，就能传回持续 self-Ext；X 为 simple 时就是 diagonal supported Tor。只用右端 Ext 消失得到的是满射，Kronecker 模块校准了它不必为同构。
+
+有限系统中逐个计算 G_{iα}=dim Ext¹(M_α,Ae_i)，并保留前缀重数 b_i(t)，得到精确损失递推
+\[
+\delta_\ell(X,n)=\left[\sum_{t<\ell}\left(\sum_i b_i(t)G_i\right)T^t\right]T^{n-q}v
+\quad(n\ge\max\{q,1\}).
+\]
+未出现在前缀中的 projectives 允许持续 Ext。实际使用的目标若 Ext^{>b_t}(X,P_t)=0，可取 h=max({1}∪{b_t−t})；所有 rd≥h 都保留返回下界，并在 [h,h+d−1] 内出现一次非零。
+
+每个 N≥4 的 4N−4 维连通扩张族证明此条件确实比上一轮宽：给旧的双数张量叉形代数添一个新 source s→0，杀死涉及新箭头的全部 radical 乘法。旧 projectives 的内射维数仍至多一，新 P_s 却使所有旧 simple 到 A 的 Ext 持续。新判据仍检测全部旧 simple，以及一个头部含 N−1 个顶点的不可分解周期模块。新 simple L_s 自扩张全零、前缀损失恒为一，比较映射为 0→C，正确留下未判定；整个代数已由其他 pair 满足 (U)。此 J³=0 族不作为新解决的代数类宣称。
+
+真实 Ext¹ 输出状态还有非零出边，使第 22 节联合有限 pd 窗口可提前一次：
+\[
+\operatorname{pd}X<\infty\iff
+\operatorname{Ext}^n(X,X\oplus A)=0\quad(q+m\le n\le q+2m-1).
+\]
+有限 pd 时仍有 pd≤q+m−1。一般 Hom/头部输出不满足这个附加性质，不能把其他窗口自动同样提前。
+
+六个系统中 28 个源得到 22 项 self-Ext 证书，其中 19 项的 regular Ext 持续；五项正确未判定、一个有限 pd 源。113 项实际映射与损失、673 项 projective-target 维数及三个强化窗口校准通过。该扩张族还由新 injective simple L_s 的直和包含证明 Tor_n(DA,DA)≥1 对所有 n≥2，明确不能对一般 A 无条件借用 Serre 导出平方有界的有限滤过论证；这不涉及普通 HH 的非消失。
+
+下一处确切缺口是：若 (Z_b) 成立，是否能排除实际前缀损失 δ_ℓ(L_j,rd)≥a²g^r 对所有充分大 r 成立？目前没有证明。一般返回或有限状态系统的存在性同样未证；(U)、(FG)、(PC)、(GP) 保持原状态。
+
+## 24. 当前优先级：derived deletion 的全部过滤层
+
+新交接要求优先研究 two-stage derived quotient，完整论证集中在 [Derived-Deletion-Screening-Normal-Form.md](Derived-Deletion-Screening-Normal-Form.md)。本节所列为 project-derived theorem / lemma，尚未外部认证。
+
+先修正一项方向前提：Tor 的消解级 flip 与 Peirce 转置给出 (+(A^{op})\iff +(A))。固定有序 pair 要交换，固定 source 未必不变；不能把两项转置只做一项而换成 co(+)。CLMS 定义及 Armenta Proposition 4.7 的推导已逐式核对，详见 [审计](../work/kls-orientation-audit-20260927.md)。于是 not (+) 已允许两侧 one-way law。对每个非半单 local corner (\Gamma_x)，左右有界 finite heads 与 (\operatorname{Tor}^{\Gamma_x}_n(k_x,k_x)\ne0) 迫使某个固定 (z,y\ne x) 的 mixed Tor 无限多次非零，**无需另加 not co(+)**；没有推出它们的合成或固定同余类非零。
+
+在 (e_xAe_x=k) 分支，令 (C=A/Ae_xA)、(M=\ker(Ae_x\otimes e_xA\to A))。已审定 (M\cong\operatorname{Tor}_2^A(C,C))、(H^*Q=C\oplus M[1])，以及唯一高阶运算 (\kappa=m_3\in HH^3(C,M))。顶点最小反例若 (\operatorname{pd}L_x=\infty)，则删点商 infinite (+)，故 (Q\to C) 不得分裂，必有 (\kappa\ne0)。双模系数 dévissage 又给出某个 (a,b\ne x) 同时有 (\operatorname{Ext}^3_C(L_b,L_a)\ne0) 及 (\ker(e_aAe_x\otimes e_xAe_b\to e_aAe_b)\ne0)。这些只是一阶必要碰撞，不能直接当成持续返回。
+
+对一个固定商见证 (R_a,L_b)，按 bar words 中 (M) 的数目过滤，得到
+\[
+E_1^{p,q}=H_q(R_a\otimes_C^{\mathbf L}M^{\otimes_C^{\mathbf L}p}\otimes_C^{\mathbf L}L_b),
+\qquad d_r:(p,q)\to(p+r,q-2r-1).
+\]
+它收敛到总次数 (q+2p) 的 (\operatorname{Tor}^A(R_a,L_b))。所有微分保持外端 Peirce pair，首次 (d_1) 由 (m_3) 给出，更高页需要实际边界修正。投影诱导的边映射 (\epsilon_n:\operatorname{Tor}^A_n\to\operatorname{Tor}^C_n) 满足
+\[
+\dim\operatorname{Tor}^C_n-\dim\operatorname{im}\epsilon_n
+=\sum_{r=1}^{\lfloor(n-1)/2\rfloor}\operatorname{rank}d_r^{0,n}.
+\]
+所以全部高次 Tor 消失会强迫无限多次真实 cubic 消去；但页数可能增长，有限顶点不保证固定页，也不会自动删除外端支撑。一个按次数有限的实际 staircase 复形说明，仅凭这些微分恒等式不足以排除无界修正长度；未声称该 staircase 是有限维代数的 bar。
+
+更强的校准来自实际八维代数：删去 local-trivial 顶点后 (C=k[t]/(t^3),M=k)，只有 (\kappa(t,t,t^2)=\kappa(t,t^2,t)=1)。商 Tor 每次都为一维，但其到原代数的 Ext inflation 从次数五起全零，六次类死于 (d_2)。全次数证明使用自由 dg 代数中的明确 (dF=\eta^3)，并非有限外推。原代数仍有持续 supported Tor，所产生的新类全部落在商边映射的核中。1681 个 bar words 和次数 0–7 的实际最小消解比较通过。
+
+**当前 candidate：必须排除最小反例中全部过滤层同时最终消失，而不仅是证明原商类必须活下来。** Priority A 的谱序列已写清；Priority B 的固定页强版本和 Priority C 的闭合返回 / 严格下降仍未证明。它们需要使用 bar coalgebra 及 (M=\ker\mu) 的额外结构。不得把有限标签的重复提升成非零 Yoneda / Tor 合成；(U) 及既有等价归约的未证状态均保持。
+
+## 25. Rees 消去范围与实际算子的缺口
+
+2026-09-28 续接见 [完整证明](Rees-Torsion-Screening-and-Cycle-Lifts.md) 及新建的 [MRS / Vault 入口](<C:/Users/pcp/Documents/Aleksi-Knowledge/笔记共享vault/math/研究项目/Universal Gap A/00-项目入口.md>)。研究主目标保持第 1 节的原始量词和复数底域。
+
+在第 24 节的 two-stage 模型中，若 \(d=\operatorname{pd}_{C^e}M<\infty\)，双模投射消解的张量幂给出 \(E_1^{p,q}=0\) 于 \(p\ge1,\ q>pd\)。因此零列次数 \(n\) 的死亡页满足
+\[
+\left\lceil\frac{n-1}{d+2}\right\rceil\le r
+\le\left\lfloor\frac{n-1}{2}\right\rfloor.
+\]
+令 \(\mathcal B=(B[t],b_2+tb_3)\)。实际校正方程产生 \(DZ=t^rw,\ Dw=0\)，并且非零第 \(r\) 页微分保证 \([w]\in H_{n-1}(\mathcal B)\) 的挠阶恰为 \(r\)。**挠元在目标次数，不是原商类本身。** 正过滤的 cycle 提升只迫使 outgoing differential 为零，不排除后续 incoming differential；初稿的过强表述已更正并保留审读历史。
+
+若高次 \(t\)-挠部分被一个统一的 \(t^T\) 消去，则 \(n>(d+2)T+1\) 且目标次数处于该尾部时，商边缘映射满射。一个包含中心 \(t\) 的左 Noetherian 算子环及整条同调尾部的有限生成性足以给出该界。因此这一条件下，商的持续 supported pair 传回原代数。
+
+循环移位的下一步必须是实际链映射：对 \(U_m:B_{n,p}\to B_{n+L,p+\ell+m}\)，障碍方程为 \(\partial_2U_{m+1}=-\partial_3U_m\)，障碍类位于相应 End 复形的 \(H_{L-1}\)。完整解因每个输入的过滤有限而逐项为多项式，但仍不自动给出有限生成。更基本地，当 \(0<r<s\) 时，任何 \(k[t]/(t^r)\to k[t]/(t^s)\) 的像都位于 \(t^{s-r}\) 倍子模，故不能在递增长度的真实循环挠通道上保持原始生成元的单位传递。
+
+一般初始移位、障碍给出返回或下降、以及双模投射维数无限的分支仍未解决。七项精确校准及 28 个初等挠模检查不能替代这些一般步骤；(U)、FG、PC、GP 的开放状态没有改变。

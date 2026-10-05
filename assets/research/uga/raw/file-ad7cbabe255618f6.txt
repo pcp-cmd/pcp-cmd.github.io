@@ -1,0 +1,177 @@
+"""Exact frozen-helper extension for the no-Loewy-bound cubic-band theorem.
+
+The all-size proof is separate. The quotient is constructed from a WHOLE
+invariant ideal, never by pruning differential images.
+"""
+from pathlib import Path
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=root/'runs/2026-10-04/General-Cube-Zero-Evidence/verify_general_cubezero_linear_core.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nN=5;f=N;g=N+1',1)[0],str(frozen),'exec'),globals())
+from math import gcd
+
+N=5
+ell=6
+f=lambda j:N+j
+basis=[(f'e{i}',i,i) for i in range(N+ell+1)]
+for i in range(N):
+    basis.extend([(f'x{i}',(i+1)%N,i),(f'z{i}',(i+2)%N,i)])
+for i in range(ell+1):
+    for j in range(i+1,ell+1):
+        basis.append((f'p{i}_{j}',f(j),f(i)))
+basis.extend([('c0',f(0),0),('c1',f(0),N-1),('c2',f(0),N-2)])
+ix={name:i for i,(name,_,_) in enumerate(basis)}
+products={(ix[f'x{(i+1)%N}'],ix[f'x{i}']):ix[f'z{i}'] for i in range(N)}
+for i in range(ell+1):
+    for j in range(i+1,ell+1):
+        for k in range(j+1,ell+1):
+            products[ix[f'p{j}_{k}'],ix[f'p{i}_{j}']]=ix[f'p{i}_{k}']
+products.update({(ix['c0'],ix[f'x{N-1}']):ix['c1'],
+                 (ix['c1'],ix[f'x{N-2}']):ix['c2'],
+                 (ix['c0'],ix[f'z{N-2}']):ix['c2']})
+A=Table(N+ell+1,basis,products)
+O=A.opposite()
+assert len(A.basis)==3*N+(ell+1)*(ell+2)//2+3==46
+
+def power_indices(k):
+    columns=A.alg.radical_powers[k-1] if k-1<len(A.alg.radical_powers) else []
+    selected=[]
+    for col in columns:
+        support=[i for i,x in enumerate(col) if x]
+        assert len(support)==1 and col[support[0]]==1
+        selected.append(A.vertices+support[0])
+    return selected
+
+def local_indices(indices):
+    return [[b for b in indices if A.basis[b][1]==v] for v in range(A.vertices)]
+
+def identity_iso(M,K,label):
+    assert M.dimensions==K.dimensions
+    checked=ss.check_isomorphism(M,K,ss.encode(
+        [[rk.unit_vector(d,j) for j in range(d)] for d in M.dimensions]))
+    counts['actual_kernel_isomorphisms']+=1
+    return {'label':label,'isomorphism':checked}
+
+def projective_kernel(M,origins,label):
+    K,info,cert=cover(M)
+    lin=info['linear_data']
+    targets=[projective(A,k)[0] for _,_,k in origins]
+    target=ss.direct_sum(A.alg,targets,[1]*len(targets))
+    embeddings=[[] for _ in range(A.vertices)]
+    for g,q,k in origins:
+        copies=[j for j,(v,_) in enumerate(lin['copies']) if v==g]
+        assert len(copies)==1
+        copy=copies[0]
+        P,local=projective(A,k)
+        for v,part in enumerate(local):
+            pos={(c,g if b is None else A.vertices+b):j
+                 for j,(c,b) in enumerate(lin['bases'][v])}
+            for b in part:
+                image=A.mult(b,q)
+                assert image is not None
+                embeddings[v].append(lin['readers'][v](
+                    rk.unit_vector(info['cover_dimensions'][v],pos[copy,image])))
+    checked=ss.check_isomorphism(target,K,ss.encode(embeddings))
+    for cols,d in zip(embeddings,K.dimensions):
+        unit_basis(cols,d)
+    counts['actual_kernel_isomorphisms']+=1
+    K2,_,next_cert=cover(K)
+    assert not any(K2.dimensions)
+    assert any(K.dimensions)
+    return {'label':label,'pd':1,'first_cover':cert,
+            'FULL_kernel_projective_isomorphism':checked,'kernel_cover':next_cert}
+
+I3_indices=power_indices(3)
+I5_indices=power_indices(5)
+assert len(I3_indices)==11 and len(I5_indices)==3
+assert power_indices(6) and not power_indices(7)
+I3=supported_module(A,local_indices(I3_indices))
+I5=supported_module(A,local_indices(I5_indices))
+I3_cert=projective_kernel(I3,[(f(0),ix['p0_1'],f(1))],
+                          'WHOLE LEFT J3 pd1; its FULL kernel is P_f1')
+I5_zero,_,I5_cert=cover(I5)
+assert not any(I5_zero.dimensions)
+
+# Genuine quotient J3/J5. Check the WHOLE invariant kernel first.
+lower=set(I5_indices)
+upper=set(I3_indices)
+for b in lower:
+    for a in A.radical:
+        value=A.mult(a,b)
+        assert value is None or value in lower
+keep=local_indices(sorted(upper-lower))
+pos=[{b:j for j,b in enumerate(part)} for part in keep]
+actions=[]
+for a in A.radical:
+    _,target,source=A.basis[a]
+    columns=[]
+    for b in keep[source]:
+        col=[F(0)]*len(keep[target])
+        value=A.mult(a,b)
+        assert value is None or value in upper
+        if value is not None and value not in lower:
+            col[pos[target][value]]=F(1)
+        columns.append(col)
+    actions.append(columns)
+H=sr.Module(A.alg,list(map(len,keep)),actions)
+ss.parse_module(A.alg,ss.module_payload(H))
+H_cert=projective_kernel(H,[(f(0),ix['p0_1'],f(1)),
+                          (f(3),ix['p3_5'],f(5)),
+                          (f(4),ix['p4_6'],f(6))],
+                         'WHOLE LEFT J3/J5 pd1, with every actual kernel term kept')
+upper_local=local_indices(I3_indices)
+lower_local=local_indices(I5_indices)
+inclusion=[];projection=[];exact_bases=[]
+for v in range(A.vertices):
+    ipos={b:j for j,b in enumerate(upper_local[v])}
+    inc=[rk.unit_vector(len(upper_local[v]),ipos[b]) for b in lower_local[v]]
+    lift=[rk.unit_vector(len(upper_local[v]),ipos[b]) for b in keep[v]]
+    proj=[[F(int(b==c)) for c in keep[v]] for b in upper_local[v]]
+    inclusion.append(inc);projection.append(proj)
+    exact_bases.append(unit_basis(inc+lift,len(upper_local[v])))
+yg.check_module_map(I5,I3,inclusion)
+yg.check_module_map(I3,H,projection)
+assert sum(I3.dimensions)==sum(I5.dimensions)+sum(H.dimensions)
+Flabels=[v for v,d in enumerate(I3.dimensions) if d]
+headH=[len(v) for v in H.top_lifts()]
+assert Flabels==[f(0)]+[f(j) for j in range(3,ell+1)]
+assert [v for v,d in enumerate(headH) if d]==Flabels
+assert sum(map(len,H.radical_bases()))==3
+
+# Every old RIGHT projective is unchanged; retain the ACTUAL period kernels.
+old_steps=[]
+for i in range(N):
+    K,_,c0=cover(sr.Module.simple(O.alg,i))
+    K2,_,c1=cover(K)
+    iso=identity_iso(K2,sr.Module.simple(O.alg,(i-3)%N),
+                     f'actual RIGHT Omega2 R{i}=R{(i-3)%N}')
+    old_steps.append({'label':i,'covers':[c0,c1],'kernel_isomorphism':iso})
+
+# The cubic ideal has an infinite-pd RIGHT direct summand at the new row f0.
+right_deep_local=[[ix['c2']] if v==N-2 else [] for v in range(O.vertices)]
+right_deep=supported_module(O,right_deep_local)
+right_deep_iso=identity_iso(right_deep,sr.Module.simple(O.alg,N-2),
+                            'RIGHT row f0 of J3 is old infinite R_(N-2)')
+assert all(A.basis[b][1]!=f(0) for b in I3_indices if b!=ix['c2'])
+period=2*N//gcd(N,3)
+
+result={'status':'passed','field':'Q','python':sys.version,'independent_verification':False,
+        'counts':counts,'parameters':{'N':N,'ell':ell},'algebra':A.payload,
+        'dimension':len(A.basis),'Loewy_length':ell+1,'J6_nonzero':True,'J7_zero':True,
+        'whole_LEFT_J3_pd':1,'whole_LEFT_J5_pd':0,'whole_LEFT_J3_over_J5_pd':1,
+        'whole_RIGHT_J3_pd':'infinity by its actual old-simple direct summand',
+        'radical_power_dimensions':[len(power_indices(k)) for k in range(1,ell+2)],
+        'LEFT_J3_actual_resolution':I3_cert,'LEFT_J5_actual_projective_cover':I5_cert,
+        'LEFT_band_actual_resolution':H_cert,'actual_band_module':ss.module_payload(H),
+        'WHOLE_quotient_exact_sequence':{'inclusion':inclusion,'projection':projection,
+                                        'kernel_and_lift_unit_bases':exact_bases},
+        'WHOLE_cubic_factor_labels':Flabels,'band_head_multiplicities':headH,
+        'all_old_RIGHT_actual_two_step_kernels':old_steps,
+        'all_degree_ordinary_diagonal_period_from_actual_kernel_iteration':period,
+        'RIGHT_J3_infinite_direct_summand':right_deep_iso,
+        'scope':'One literal unbounded-Loewy-family calibration, with whole invariant ideal quotient and full minimal covers. The general ordinary closure proof and all N/ell/fields/degrees are separate; shared helper evidence is not independent/formal verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','dimension':len(A.basis),'Loewy_length':ell+1,
+                  'LEFT_pds_J3_J5_band':[1,0,1],'RIGHT_J3_pd':'infinity',
+                  'counts':counts,'actual_old_diagonal_period':period}))

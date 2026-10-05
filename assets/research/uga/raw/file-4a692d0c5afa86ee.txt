@@ -1,0 +1,2458 @@
+# Universal Gap A — Universal Layer U6
+## Run B — Sign-Twisted Return / Inverse Postnikov Realization
+
+**Role:** Run B — Actual Realization / Reverse Engineering  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Completion label:** `ACTUAL_SIGN_TWIST_REALIZED + POSTNIKOV_SPLIT + MINIMAL_ARCHITECTURE_NO_GO + FINITE_NORMAL_FORM`  
+**Universal Gap A:** OPEN  
+**Field:** \(k\), \(\operatorname{char}k\neq2\)
+
+This file freezes the actual research trajectory of the U6 Run B window.
+
+The main outcome is sharply two-sided:
+
+\[
+\boxed{
+\textbf{the sign-twisted terminal bimodule is realizable by an actual ordinary quotient;}
+}
+\]
+
+but
+
+\[
+\boxed{
+\textbf{in the minimal rank-one two-vertex realization its Postnikov class is forced to split.}
+}
+\]
+
+A natural deformation that attempts to activate the Postnikov class is incompatible with the sign twist by a concrete associativity identity.
+
+Thus the run does **not** construct the desired complete screener.
+
+It does produce:
+
+1. an explicit \(10\)-dimensional ordinary family realizing
+   \[
+   tm=\lambda mt;
+   \]
+2. an actual sign-twist example at \(\lambda=-1\);
+3. an exact proof that its Postnikov class is \(0\);
+4. a minimal-class no-go showing that the first natural Postnikov-activation deformation forces
+   \[
+   \lambda=1;
+   \]
+5. a finite reverse-engineering normal form for the next search.
+
+---
+
+# 1. Frozen target
+
+Fix
+
+\[
+S=k[t]/(t^2),
+\qquad
+\operatorname{char}k\neq2.
+\]
+
+The frozen U5 K-frontier identifies the unique minimal rank-one sign candidate
+
+\[
+\boxed{
+M={}_1S_\sigma,
+\qquad
+\sigma(t)=-t.
+}
+\]
+
+In generator notation this is
+
+\[
+\boxed{
+tm=-mt.
+}
+\]
+
+The synthetic target is
+
+\[
+\boxed{
+\Omega^3_{S^e}(S)\cong{}_1S_\sigma.
+}
+\]
+
+The exact U6 realization target is an ordinary finite-dimensional algebra \(D\) with primitive \(e\) such that
+
+\[
+S=D/D(1-e)D,
+\]
+
+\[
+H_*(S\otimes_D^{\mathbf L}S)
+=
+S\oplus M[2],
+\]
+
+and the Postnikov class
+
+\[
+\alpha\in\operatorname{Ext}^3_{S^e}(S,M)
+\]
+
+is the nonzero generator and induces the singular three-step shift.
+
+---
+
+# 2. Frozen calibration state imported into U6
+
+The earlier bounded-self-intersection work supplied three indispensable calibrations.
+
+## K1 — seven-dimensional near-miss
+
+There exists an actual amplitude-two quotient with
+
+\[
+H_0(K)=S,\qquad H_2(K)\cong S
+\]
+
+as a right \(S\)-module, but the opposite action is nonprojective:
+
+\[
+{}_SH_2(K)\cong k\oplus k.
+\]
+
+Thus amplitude \(2\) itself is realizable, but one-sided freeness does not screen.
+
+## K2 — Nakayama-gap family
+
+The family built from the \(k[t]/(t^6)\)-module gap has
+
+\[
+H_0(K)=S,\qquad
+H_2(K)\cong{}_SS_S,
+\qquad
+H_{>2}(K)=0,
+\]
+
+with regular relation
+
+\[
+tm=mt.
+\]
+
+The defect is free rank one on both sides and comes from an actual ordinary quotient, yet the diagonal Tor tail persists.
+
+Thus bilateral freeness plus actual coring coherence does not imply screening.
+
+## K3 — old permanent screener
+
+The old actual deletion can screen the diagonal tail, but its \(K\) is unbounded.
+
+So the still-empty quadrant before this run was:
+
+\[
+\boxed{
+K\text{ bounded}
++
+\text{complete diagonal screening}.
+}
+\]
+
+---
+
+# 3. Vault gate — explicit mapping
+
+The required Vault methods were applied as follows.
+
+## 3.1 Representation change
+
+Do not enumerate quivers first.
+
+Replace the desired quotient by the prescribed truncated dual-number bimodule resolution
+
+\[
+S^e
+\xrightarrow{t_\ell+t_r}
+S^e
+\xrightarrow{t_\ell-t_r}
+S^e.
+\]
+
+Then ask what ordinary idempotent extension can produce a two-step \(D\)-resolution whose quotient-chain action imitates these two signs.
+
+---
+
+## 3.2 Standard form
+
+The minimal ordinary architecture is:
+
+\[
+0\to eD
+\xrightarrow{b}
+fD
+\xrightarrow{a}
+eD
+\to S\to0.
+\]
+
+A lift of \(t\) is represented by a chain endomorphism
+
+\[
+T=(x,y,s)
+\]
+
+with
+
+\[
+x\in eDe,\qquad y\in fDf,\qquad s\in eDe.
+\]
+
+The twist is read from the terminal component:
+
+\[
+s\equiv\lambda x
+\]
+
+modulo the quotient ideal.
+
+---
+
+## 3.3 Reverse engineering
+
+Instead of asking what \(H_2\) a quiver happens to produce, prescribe
+
+\[
+tm=\lambda mt
+\]
+
+and solve the chain-map equations:
+
+\[
+\boxed{
+xa=ay,
+\qquad
+yb=\lambda bx.
+}
+\]
+
+These become defining relations of the ordinary algebra.
+
+---
+
+## 3.4 Cross-domain migration
+
+The core relation
+
+\[
+tm=-mt
+\]
+
+was compared with:
+
+- Ore/skew relations;
+- \(\mathbb Z/2\)-graded sign rules;
+- super anticommutation;
+- automorphism-twisted bimodules;
+- matrix-factorization signs
+  \[
+  t_\ell-t_r,\quad t_\ell+t_r;
+  \]
+- twisted Morita-context compatibility.
+
+The migration was not used as a theorem.
+
+It was translated into concrete ordinary-algebra equations.
+
+---
+
+## 3.5 Adding a parameter / deformation
+
+First introduce the twist parameter
+
+\[
+\lambda\in k^\times.
+\]
+
+Then introduce a second parameter
+
+\[
+\nu
+\]
+
+whose job is to destroy strict square-zero of the lifted \(t\)-action and thereby attempt to activate the Postnikov class.
+
+This produces the two-parameter normal form
+
+\[
+D_{\lambda,\nu}.
+\]
+
+---
+
+## 3.6 Quotient / kernel
+
+The quotient gate is
+
+\[
+D\to S=D/DfD.
+\]
+
+The resolution kernel gate is
+
+\[
+\ker(a:fD\to eD)=b(eD).
+\]
+
+This is checked exactly, not by dimension alone.
+
+---
+
+## 3.7 Local-to-global
+
+The local relations
+
+\[
+ay=xa,
+\qquad
+yb=\lambda bx
+\]
+
+determine the global \(S\)-bimodule action on \(H_2(K)\).
+
+The local associativity critical pair for \(y^3\) then becomes a global obstruction to combining sign twist with nontrivial Postnikov activation.
+
+---
+
+## 3.8 Multiplicative projection
+
+The chain lift
+
+\[
+T
+\]
+
+is squared.
+
+The distinction
+
+\[
+T^2=0
+\]
+
+versus
+
+\[
+T^2=dH+Hd\neq0
+\]
+
+is used as the first detector of whether the Postnikov extension can be nontrivial.
+
+---
+
+## 3.9 Extreme example / counterexample
+
+The run uses:
+
+- the synthetic dual-number third bimodule syzygy;
+- the seven-dimensional one-sided near-miss;
+- the regular Nakayama-gap family;
+- the old unbounded screener;
+- the new \(10\)-dimensional sign-twist actual quotient.
+
+---
+
+## 3.10 Bootstrap failure analysis
+
+The run explicitly attacks the tempting claim
+
+\[
+H_2(K)\cong{}_1S_{\sigma_{-1}}
+\Longrightarrow
+\alpha\neq0.
+\]
+
+The new actual family refutes it.
+
+Thus “correct terminal bimodule” is still not enough.
+
+---
+
+# 4. Cross-domain migration workflow
+
+The required five-step migration is:
+
+### Step 1 — isolate the core relation
+
+\[
+tm=-mt.
+\]
+
+### Step 2 — find isomorphic patterns
+
+The same algebraic sign occurs in:
+
+\[
+t_\ell+t_r,
+\]
+
+super-commutation, and automorphism twisting by
+
+\[
+\sigma(t)=-t.
+\]
+
+### Step 3 — migrate the tool
+
+Represent the quotient generator \(t\) by a chain endomorphism
+
+\[
+(x,y,\lambda x)
+\]
+
+on a two-step projective resolution.
+
+### Step 4 — modify for ordinary realization
+
+The chain action must come from literal multiplication in a finite-dimensional associative algebra.
+
+Hence impose:
+
+\[
+ay=xa,
+\qquad
+yb=\lambda bx,
+\]
+
+together with exactness relations.
+
+### Step 5 — construction workflow
+
+1. build \(D_\lambda\);
+2. verify the exact right resolution;
+3. read off the bimodule twist;
+4. inspect \(T^2\);
+5. if \(T^2=0\), add a deformation parameter \(\nu\);
+6. test associativity;
+7. reject any branch violating injectivity/boundedness.
+
+This workflow produces the main no-go identity of the run.
+
+---
+
+# 5. Synthetic target in standard form
+
+Put
+
+\[
+S^e=S\otimes_kS^{op}.
+\]
+
+Write
+
+\[
+t_\ell=t\otimes1,
+\qquad
+t_r=1\otimes t.
+\]
+
+The standard minimal bimodule resolution begins
+
+\[
+\cdots
+\to
+S^e
+\xrightarrow{t_\ell-t_r}
+S^e
+\xrightarrow{t_\ell+t_r}
+S^e
+\xrightarrow{t_\ell-t_r}
+S^e
+\to S\to0.
+\]
+
+Thus the synthetic amplitude-two complex is
+
+\[
+\boxed{
+K_{\rm syn}
+=
+[
+S^e
+\xrightarrow{t_\ell+t_r}
+S^e
+\xrightarrow{t_\ell-t_r}
+S^e
+].
+}
+\]
+
+Its degree-two homology is
+
+\[
+\ker(t_\ell+t_r)
+=
+(t_\ell-t_r)S^e.
+\]
+
+Let
+
+\[
+m=t_\ell-t_r.
+\]
+
+Then
+
+\[
+t_\ell m=-t_\ell t_r,
+\]
+
+while
+
+\[
+m t_r=t_\ell t_r.
+\]
+
+Hence
+
+\[
+\boxed{
+t_\ell m=-m t_r.
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+H_2(K_{\rm syn})
+\cong
+{}_1S_{\sigma_{-1}}.
+}
+\]
+
+The corresponding three-extension is the canonical nonzero class
+
+\[
+\alpha_{\rm syn}
+\in
+\operatorname{Ext}^3_{S^e}
+(S,{}_1S_{\sigma_{-1}}).
+\]
+
+This is the inverse-realization blueprint.
+
+---
+
+# 6. First reverse-engineered family \(D_\lambda\)
+
+Take two vertices
+
+\[
+e,\ f.
+\]
+
+Use loops
+
+\[
+x:e\to e,
+\qquad
+y:f\to f,
+\]
+
+and arrows
+
+\[
+a:e\to f,
+\qquad
+b:f\to e.
+\]
+
+Paths are composed left-to-right in this section.
+
+For
+
+\[
+\lambda\in k^\times,
+\]
+
+define \(D_\lambda\) by
+
+\[
+\boxed{
+x^2=0,
+\qquad
+y^2=0,
+\qquad
+ab=0,
+}
+\tag{6.1}
+\]
+
+and the skew transport relations
+
+\[
+\boxed{
+ay=xa,
+\qquad
+yb=\lambda bx.
+}
+\tag{6.2}
+\]
+
+---
+
+# 7. Finite-dimensionality of \(D_\lambda\)
+
+Using
+
+\[
+ay\mapsto xa,
+\qquad
+yb\mapsto\lambda bx,
+\]
+
+every nonzero path reduces to one of
+
+\[
+e,\ f,\ x,\ y,\ a,\ b,\ xa,\ bx,\ ba,\ bxa.
+\]
+
+All longer paths vanish.
+
+Thus:
+
+\[
+\boxed{
+\dim_kD_\lambda=10.
+}
+\tag{7.1}
+\]
+
+This is an ordinary finite-dimensional basic algebra.
+
+---
+
+# 8. The quotient is exactly the dual numbers
+
+Delete \(f\).
+
+Because all paths through \(f\) lie in
+
+\[
+D_\lambda fD_\lambda,
+\]
+
+the retained corner leaves only
+
+\[
+e,\ x
+\]
+
+with
+
+\[
+x^2=0.
+\]
+
+Hence:
+
+\[
+\boxed{
+S
+=
+D_\lambda/D_\lambda fD_\lambda
+\cong
+k[x]/(x^2).
+}
+\tag{8.1}
+\]
+
+The retained idempotent \(e\) is primitive.
+
+---
+
+# 9. Exact projective resolution
+
+The right projectives have bases
+
+\[
+eD_\lambda
+=
+\langle
+e,x,a,xa
+\rangle,
+\]
+
+and
+
+\[
+fD_\lambda
+=
+\langle
+f,y,b,bx,ba,bxa
+\rangle.
+\]
+
+Left multiplication by \(b\) gives
+
+\[
+e\mapsto b,
+\quad
+x\mapsto bx,
+\quad
+a\mapsto ba,
+\quad
+xa\mapsto bxa.
+\]
+
+These four images are linearly independent.
+
+Therefore
+
+\[
+\boxed{
+b:eD_\lambda\to fD_\lambda
+\text{ is injective}.
+}
+\tag{9.1}
+\]
+
+Left multiplication by \(a\) gives
+
+\[
+f\mapsto a,
+\qquad
+y\mapsto ay=xa,
+\]
+
+and kills
+
+\[
+b,bx,ba,bxa
+\]
+
+because \(ab=0\).
+
+Thus
+
+\[
+\boxed{
+\ker(a:fD_\lambda\to eD_\lambda)
+=
+\langle b,bx,ba,bxa\rangle
+=
+b(eD_\lambda).
+}
+\tag{9.2}
+\]
+
+The cokernel is
+
+\[
+eD_\lambda/
+\langle a,xa\rangle
+\cong
+S.
+\]
+
+Hence:
+
+\[
+\boxed{
+0
+\to
+eD_\lambda
+\xrightarrow{b}
+fD_\lambda
+\xrightarrow{a}
+eD_\lambda
+\to
+S
+\to0
+}
+\tag{9.3}
+\]
+
+is exact.
+
+In particular:
+
+\[
+\boxed{
+\operatorname{pd}_{D_\lambda}S=2.
+}
+\]
+
+---
+
+# 10. H0/H1 and boundedness gate
+
+Tensor (9.3) with the left \(D_\lambda\)-module \(S\).
+
+Since
+
+\[
+fS=0,
+\]
+
+we obtain
+
+\[
+S
+\longrightarrow
+0
+\longrightarrow
+S.
+\]
+
+Therefore:
+
+\[
+\boxed{
+H_q(K_\lambda)
+=
+\begin{cases}
+S,&q=0,2\text{ as right }S\text{-modules},\\
+0,&q\ne0,2,
+\end{cases}
+}
+\tag{10.1}
+\]
+
+where
+
+\[
+K_\lambda
+=
+S\otimes_{D_\lambda}^{\mathbf L}S.
+\]
+
+Thus all three gates hold exactly:
+
+\[
+\boxed{
+H_0(K_\lambda)=S,
+\qquad
+H_1(K_\lambda)=0,
+\qquad
+H_q(K_\lambda)=0\ (q>2).
+}
+\]
+
+No boundedness inference is made from a partial resolution; the resolution terminates.
+
+---
+
+# 11. Computing the left action on \(H_2\)
+
+Lift left multiplication by \(t=x\) on \(S\) to the projective resolution.
+
+Define:
+
+\[
+T_0=L_x
+\quad\text{on }eD,
+\]
+
+\[
+T_1=L_y
+\quad\text{on }fD,
+\]
+
+\[
+T_2=L_{\lambda x}
+\quad\text{on }eD.
+\]
+
+The relation
+
+\[
+ay=xa
+\]
+
+gives
+
+\[
+d_1T_1=T_0d_1.
+\]
+
+The relation
+
+\[
+yb=\lambda bx
+\]
+
+gives
+
+\[
+T_1d_2=d_2T_2.
+\]
+
+So
+
+\[
+T=(T_0,T_1,T_2)
+\]
+
+is a chain endomorphism lifting \(t\).
+
+After tensoring with \(S\), the degree-two generator \(m\) satisfies:
+
+\[
+\boxed{
+tm=\lambda mt.
+}
+\tag{11.1}
+\]
+
+Therefore the terminal defect is bilaterally free rank one.
+
+In the convention
+
+\[
+M_c={}_1S_{\sigma_c},
+\qquad
+\sigma_c(t)=ct,
+\]
+
+the relation is
+
+\[
+tm=c^{-1}mt.
+\]
+
+Hence
+
+\[
+c=\lambda^{-1}.
+\]
+
+For the sign point there is no convention ambiguity:
+
+\[
+\boxed{
+\lambda=-1
+\Longrightarrow
+H_2(K_{-1})
+\cong
+{}_1S_{\sigma_{-1}}.
+}
+\tag{11.2}
+\]
+
+---
+
+# 12. The actual sign twist exists
+
+The branch
+
+\[
+\boxed{\lambda=-1}
+\]
+
+is an actual finite-dimensional ordinary algebra with
+
+\[
+S=D_{-1}/D_{-1}fD_{-1}
+\cong k[t]/(t^2),
+\]
+
+and
+
+\[
+\boxed{
+H_*(K_{-1})
+=
+S
+\oplus
+{}_1S_{\sigma_{-1}}[2].
+}
+\tag{12.1}
+\]
+
+Thus the possible broad claim
+
+\[
+\text{actual idempotent quotient forbids the sign twist}
+\]
+
+is false.
+
+This is a genuine construction result of U6.
+
+---
+
+# 13. Why \(D_\lambda\) has zero Postnikov class
+
+The same chain lift satisfies:
+
+\[
+T_0^2=L_{x^2}=0,
+\]
+
+\[
+T_1^2=L_{y^2}=0,
+\]
+
+and
+
+\[
+T_2^2=L_{\lambda^2x^2}=0.
+\]
+
+Hence:
+
+\[
+\boxed{
+T^2=0
+}
+\tag{13.1}
+\]
+
+strictly, not merely up to homotopy.
+
+Therefore the projective resolution (9.3) is itself a strict left-\(S\), right-\(D_\lambda\) bimodule complex.
+
+Tensoring with \(S\) gives the strict \(S\)-bimodule complex
+
+\[
+{}_SS_S
+\quad\oplus\quad
+H_2(K_\lambda)[2]
+\]
+
+with zero differential.
+
+Consequently:
+
+\[
+\boxed{
+K_\lambda
+\simeq
+S
+\oplus
+H_2(K_\lambda)[2]
+\quad\text{in }D(S^e).
+}
+\tag{13.2}
+\]
+
+The Postnikov triangle splits.
+
+Therefore:
+
+\[
+\boxed{
+\alpha_\lambda=0.
+}
+\tag{13.3}
+\]
+
+This includes the sign point.
+
+---
+
+# 14. Actual sign-twist non-screener
+
+At
+
+\[
+\lambda=-1,
+\]
+
+we have exactly the desired bimodule
+
+\[
+M={}_1S_{\sigma_{-1}},
+\]
+
+but
+
+\[
+\alpha=0.
+\]
+
+Thus:
+
+\[
+\boxed{
+\text{correct sign-twisted terminal defect}
+\not\Rightarrow
+\text{screening}.
+}
+\tag{14.1}
+\]
+
+This is an actual ordinary finite-dimensional counterexample to the stronger heuristic.
+
+---
+
+# 15. Exact diagonal Tor for the split sign family
+
+Let
+
+\[
+k=S/(t)
+\]
+
+be the simple.
+
+Since
+
+\[
+K_{-1}
+\simeq
+S\oplus M[2],
+\]
+
+we get
+
+\[
+k\otimes_S^{\mathbf L}
+K_{-1}
+\otimes_S^{\mathbf L}k
+\simeq
+\left(
+k\otimes_S^{\mathbf L}k
+\right)
+\oplus
+\left(
+k\otimes_S^{\mathbf L}M
+\otimes_S^{\mathbf L}k
+\right)[2].
+\]
+
+The twist disappears after reduction to \(k\), and \(M\) is free rank one on both sides.
+
+Hence both summands have one-dimensional homology in every nonnegative local Tor degree.
+
+Therefore:
+
+\[
+\boxed{
+\dim_k
+\operatorname{Tor}^{D_{-1}}_n(R_e,L_e)
+=
+\begin{cases}
+1,&n=0,1,\\
+2,&n\ge2.
+\end{cases}
+}
+\tag{15.1}
+\]
+
+So the diagonal tail is maximally unscreened.
+
+---
+
+# 16. What a nonzero Postnikov class requires in this architecture
+
+The split failure points to the missing mechanism.
+
+A nonzero Postnikov class requires the quotient relation
+
+\[
+t^2=0
+\]
+
+to hold on the chosen projective resolution **only up to nontrivial chain homotopy**, rather than strictly.
+
+Thus one should seek:
+
+\[
+\boxed{
+T^2=dH+Hd\neq0.
+}
+\tag{16.1}
+\]
+
+In the minimal rank-one resolution (9.3), the only natural middle-loop deformation is:
+
+\[
+\boxed{
+y^2=\nu ba.
+}
+\tag{16.2}
+\]
+
+This introduces a Postnikov-activation parameter
+
+\[
+\nu\in k.
+\]
+
+---
+
+# 17. Two-parameter deformation \(D_{\lambda,\nu}\)
+
+Keep:
+
+\[
+x^2=0,
+\qquad
+ab=0,
+\]
+
+\[
+ay=xa,
+\]
+
+\[
+yb=\lambda bx,
+\]
+
+and replace
+
+\[
+y^2=0
+\]
+
+by
+
+\[
+\boxed{
+y^2=\nu ba.
+}
+\tag{17.1}
+\]
+
+The same chain lift
+
+\[
+T=(x,y,\lambda x)
+\]
+
+now satisfies:
+
+\[
+T_0^2=0,
+\qquad
+T_2^2=0,
+\]
+
+but
+
+\[
+T_1^2=L_{\nu ba}.
+\]
+
+This is nullhomotopic through
+
+\[
+H_0=\nu L_b,
+\qquad
+H_1=0,
+\]
+
+because:
+
+\[
+a(\nu b)=\nu ab=0,
+\]
+
+and
+
+\[
+(\nu b)a=\nu ba.
+\]
+
+Thus:
+
+\[
+\boxed{
+T^2=dH+Hd.
+}
+\tag{17.2}
+\]
+
+So \(\nu\neq0\) is precisely the first natural attempt to turn the strict \(S\)-action into a homotopy-coherent one.
+
+This is the inverse-Postnikov deformation.
+
+---
+
+# 18. Associativity critical-pair obstruction
+
+Now audit ordinary associativity.
+
+Compute \(y^3\) in the two possible ways.
+
+Using
+
+\[
+y^2=\nu ba
+\]
+
+first on the left:
+
+\[
+(y^2)y
+=
+\nu bay.
+\]
+
+Using
+
+\[
+ay=xa,
+\]
+
+this is
+
+\[
+\nu bxa.
+\]
+
+On the other hand:
+
+\[
+y(y^2)
+=
+\nu yba.
+\]
+
+Using
+
+\[
+yb=\lambda bx,
+\]
+
+this is
+
+\[
+\nu\lambda bxa.
+\]
+
+Associativity therefore forces:
+
+\[
+\boxed{
+\nu(1-\lambda)bxa=0.
+}
+\tag{18.1}
+\]
+
+---
+
+# 19. Exactness converts associativity into a scalar equation
+
+The boundedness gate requires
+
+\[
+b:eD\to fD
+\]
+
+to remain injective.
+
+In particular:
+
+\[
+xa\neq0
+\]
+
+must satisfy
+
+\[
+\boxed{
+bxa\neq0.
+}
+\tag{19.1}
+\]
+
+Otherwise \(xa\) lies in the kernel of the first projective-resolution map.
+
+Hence, in the target architecture, (18.1) reduces to:
+
+\[
+\boxed{
+\nu(1-\lambda)=0.
+}
+\tag{19.2}
+\]
+
+This is the central ordinary-realization equation of the run.
+
+---
+
+# 20. Sign twist and Postnikov activation are incompatible in the minimal architecture
+
+At the target sign point:
+
+\[
+\lambda=-1.
+\]
+
+Since
+
+\[
+\operatorname{char}k\neq2,
+\]
+
+we have
+
+\[
+1-\lambda=2\neq0.
+\]
+
+Therefore (19.2) implies:
+
+\[
+\boxed{
+\nu=0.
+}
+\tag{20.1}
+\]
+
+But
+
+\[
+\nu=0
+\]
+
+returns to the strict-square-zero family \(D_\lambda\), where
+
+\[
+\alpha=0.
+\]
+
+Thus:
+
+\[
+\boxed{
+\text{sign twist}
++
+\text{nontrivial middle square homotopy}
++
+\text{rank-one two-step exactness}
+}
+\]
+
+are mutually incompatible.
+
+---
+
+# 21. Minimal-architecture Sign/Postnikov No-Go Theorem
+
+## Theorem
+
+Consider an ordinary two-vertex realization with:
+
+1. retained primitive \(e\);
+2. one deleted primitive \(f\);
+3. quotient
+   \[
+   S=k[t]/(t^2);
+   \]
+4. a minimal rank-one isolated-second-return resolution
+   \[
+   0\to eD\xrightarrow b fD\xrightarrow a eD\to S\to0;
+   \]
+5. one middle lift \(y\in fDf\) satisfying
+   \[
+   ay=xa,
+   \qquad
+   yb=\lambda bx;
+   \]
+6. the minimal Postnikov-activation deformation
+   \[
+   y^2=\nu ba;
+   \]
+7. injectivity of \(b\).
+
+Then:
+
+\[
+\boxed{
+\nu(1-\lambda)=0.
+}
+\]
+
+Consequently, over characteristic different from \(2\),
+
+\[
+\boxed{
+\lambda=-1
+\Longrightarrow
+\nu=0.
+}
+\]
+
+Hence this entire minimal architecture cannot realize simultaneously:
+
+\[
+H_2(K)\cong{}_1S_{\sigma_{-1}}
+\]
+
+and a nontrivial Postnikov activation through the unique rank-one homotopy channel.
+
+\(\square\)
+
+This is the B2 result of the run.
+
+---
+
+# 22. What happens if one forces \(\lambda=-1,\nu\neq0\)
+
+Associativity forces:
+
+\[
+bxa=0.
+\]
+
+But
+
+\[
+xa\neq0
+\]
+
+in the retained projective.
+
+Thus:
+
+\[
+b:eD\to fD
+\]
+
+is no longer injective.
+
+The exact resolution (9.3) breaks.
+
+Hence at least one of the required gates fails:
+
+- isolated second return;
+- free rank-one \(H_2\);
+- bounded amplitude \(2\).
+
+So the obstruction is not cosmetic.
+
+It destroys the realization mechanism itself.
+
+---
+
+# 23. Relation to the synthetic dual-number resolution
+
+The synthetic target alternates:
+
+\[
+t_\ell-t_r,
+\qquad
+t_\ell+t_r.
+\]
+
+The sign-twisted third syzygy is possible there because the resolution contains two different bimodule differential signs.
+
+The minimal ordinary rank-one architecture tries to encode the same information through one middle element \(y\).
+
+The equations
+
+\[
+ay=xa,
+\qquad
+yb=-bx
+\]
+
+successfully encode the sign twist.
+
+But making the square of \(y\) carry the missing extension information creates the associativity conflict
+
+\[
+(y^2)y\neq y(y^2)
+\]
+
+unless the activation parameter vanishes.
+
+This identifies exactly what failed in migrating the matrix-factorization pattern to a single deleted state.
+
+---
+
+# 24. Why K2 stays regular
+
+The Nakayama-gap family has commuting \(t\)-transport throughout its approximation sequences.
+
+Its terminal relation is:
+
+\[
+tm=mt.
+\]
+
+In the present language it occupies the branch
+
+\[
+\lambda=1.
+\]
+
+The associativity equation
+
+\[
+\nu(1-\lambda)=0
+\]
+
+places **no** restriction on \(\nu\) when
+
+\[
+\lambda=1.
+\]
+
+So the regular architecture has room for non-strict square-zero homotopy.
+
+The sign architecture does not.
+
+This gives a structural explanation of why merely deforming the regular rank-one model by changing a scalar sign is not enough.
+
+---
+
+# 25. Parameter-family audit
+
+The family \(D_\lambda\) realizes every nonzero scalar twist:
+
+\[
+tm=\lambda mt.
+\]
+
+Equivalently, in the frozen convention
+
+\[
+M_c={}_1S_{\sigma_c},
+\]
+
+it realizes
+
+\[
+c=\lambda^{-1}.
+\]
+
+Thus:
+
+- \(\lambda=1\): regular rank-one defect;
+- \(\lambda=-1\): desired sign-twisted defect;
+- generic \(\lambda\): generic automorphism-twisted rank-one defect.
+
+But for all \(D_\lambda\):
+
+\[
+\boxed{
+\alpha=0.
+}
+\]
+
+So the entire one-parameter strict family realizes the U5 rank-one bimodule classification but none of the required nonzero Postnikov anchor.
+
+---
+
+# 26. Attempted Postnikov deformation audit
+
+The first natural deformation was:
+
+\[
+y^2=\nu ba.
+\]
+
+Results:
+
+### \(\nu=0\)
+
+All \(\lambda\) allowed.
+
+But:
+
+\[
+\alpha=0.
+\]
+
+### \(\nu\neq0,\lambda=1\)
+
+Associativity is compatible with exactness.
+
+This gives a legitimate non-strict-square-zero ordinary deformation, but it lies in the regular-twist branch and therefore cannot be the frozen sign target.
+
+No claim is made here that its Postnikov class is a generator.
+
+### \(\nu\neq0,\lambda=-1\)
+
+Impossible with injective \(b\) in characteristic \(\neq2\).
+
+This is the decisive failed construction.
+
+---
+
+# 27. Coring audit of the actual sign family
+
+For every \(D_\lambda\),
+
+\[
+K_\lambda=S\otimes_{D_\lambda}^{\mathbf L}S
+\]
+
+is an actual derived self-intersection.
+
+Therefore it automatically carries the canonical derived coring maps:
+
+\[
+\mu:K_\lambda\to S,
+\]
+
+\[
+\Delta:
+K_\lambda
+\to
+K_\lambda\otimes_S^{\mathbf L}K_\lambda,
+\]
+
+with counit and coassociativity.
+
+The left/right \(S\)-actions are the actual quotient actions.
+
+At the homology level:
+
+\[
+H_0(K)=S,
+\qquad
+H_2(K)=M_\lambda.
+\]
+
+Since \(H_1=0\), the total-degree-two part of \(\Delta\) has only:
+
+\[
+M_\lambda\otimes S
+\]
+
+and
+
+\[
+S\otimes M_\lambda
+\]
+
+as possible primitive components.
+
+The counit identities force the expected primitive projections.
+
+Thus the sign twist is compatible with actual coring coherence.
+
+What fails is not coring existence.
+
+It is the nontrivial Postnikov extension.
+
+---
+
+# 28. Counit/coassociativity do not activate \(\alpha\)
+
+The family \(D_{-1}\) is particularly important because it proves:
+
+\[
+\boxed{
+\text{actual quotient}
++
+\text{actual coring}
++
+\text{bilateral sign-twisted free defect}
+\not\Rightarrow
+\alpha\neq0.
+}
+\]
+
+So the remaining construction problem cannot be solved merely by checking:
+
+- counit;
+- coassociativity;
+- bilateral free action;
+- sign twist.
+
+One must construct an actual **homotopy-coherent non-split quotient action**.
+
+---
+
+# 29. H0/H1 gate status
+
+For the new actual family:
+
+\[
+\boxed{
+H_0(K)=S
+}
+\]
+
+and
+
+\[
+\boxed{
+H_1(K)=0
+}
+\]
+
+are proved by the complete exact resolution.
+
+The ordinary idempotent-ideal constraint is therefore respected.
+
+No \(H_1\) defect is hidden.
+
+---
+
+# 30. Boundedness gate status
+
+For the new actual family:
+
+\[
+\boxed{
+H_q(K)=0
+\qquad(q>2).
+}
+\]
+
+This follows from the explicit length-two projective resolution.
+
+Thus the example lies in the previously empty **bounded \(K\)** side.
+
+It fails screening only because:
+
+\[
+\alpha=0.
+\]
+
+---
+
+# 31. Postnikov gate status
+
+For \(D_{-1}\):
+
+\[
+H_2(K)
+\cong
+{}_1S_{\sigma_{-1}}
+\]
+
+passes the bimodule gate.
+
+But:
+
+\[
+\boxed{
+\alpha=0.
+}
+\]
+
+Hence it fails the Postnikov gate exactly.
+
+This is a cleaner calibration than K1/K2:
+
+- K1 failed bilateral projectivity;
+- K2 had the wrong regular twist and no screening;
+- \(D_{-1}\) has the **correct sign twist** and actual bounded coring, but still has zero Postnikov class.
+
+---
+
+# 32. Calibration table after U6
+
+| model | bounded \(K\) | bilateral free \(H_2\) | sign twist | nonzero/invertible \(\alpha\) | screening |
+|---|---:|---:|---:|---:|---:|
+| 7-dimensional K1 | yes | no | no | no useful anchor | no |
+| Nakayama-gap K2 | yes | yes | no (\(c=1\)) | not tail-invertible | no |
+| new \(D_{-1}\) | yes | yes | **yes** | **zero** | no |
+| old K3 | no | not terminal amplitude-2 | n/a | rich higher transport | yes |
+| synthetic \(K_{\rm syn}\) | yes | yes | **yes** | **generator** | yes abstractly |
+| desired ordinary model | yes | yes | **yes** | **generator** | **not found** |
+
+This isolates one remaining missing bit:
+
+\[
+\boxed{
+\text{ordinary realization of the nonzero sign-twisted Postnikov class}.
+}
+\]
+
+---
+
+# 33. B1 status
+
+An actual sign-twisted terminal defect has now been constructed.
+
+But an actual sign-twisted **screener** has not.
+
+Thus:
+
+\[
+\boxed{
+\texttt{B1 — PARTIAL: SIGN TWIST ACTUAL, COMPLETE SCREENER NOT FOUND}.
+}
+\]
+
+---
+
+# 34. B2 status
+
+A universal sign-twist prohibition is false because \(D_{-1}\) realizes the sign twist.
+
+However a broad natural minimal architecture has been excluded:
+
+\[
+\boxed{
+\textbf{one deleted primitive}
++
+\textbf{rank-one isolated second return}
++
+\textbf{single middle-loop Postnikov activation}.
+}
+\]
+
+In that class:
+
+\[
+\lambda=-1
+\Longrightarrow
+\nu=0
+\Longrightarrow
+\alpha=0.
+\]
+
+Therefore:
+
+\[
+\boxed{
+\texttt{B2 — ACHIEVED FOR THE MINIMAL RANK-ONE TWO-VERTEX ARCHITECTURE}.
+}
+\]
+
+---
+
+# 35. B3 — finite realization normal form
+
+The next ordinary search should not enumerate quivers arbitrarily.
+
+Any next candidate must break at least one ingredient used in the no-go.
+
+The minimal possibilities are:
+
+1. **more than one deleted projective**
+   \[
+   P_1=f_1D\oplus f_2D\oplus\cdots;
+   \]
+
+2. **higher-rank middle state**, so the lift of \(t\) is a matrix
+   \[
+   Y
+   \]
+   rather than a scalar loop \(y\);
+
+3. **more than one homotopy channel**, so
+   \[
+   T^2=dH+Hd
+   \]
+   can be nonzero without forcing one scalar \(y^2=\nu ba\);
+
+4. **retained \(t^2\) becomes a nonzero factor-through element in \(D\)** even though it vanishes in \(S\);
+
+5. **nontrivial deleted-corner algebra**
+   allowing matrix-factorization-type sign alternation.
+
+Thus the next finite normal form is:
+
+\[
+\boxed{
+0
+\to
+eD
+\xrightarrow{B}
+P
+\xrightarrow{A}
+eD
+\to
+S
+\to0,
+}
+\tag{35.1}
+\]
+
+where
+
+\[
+P=\bigoplus_{\mu=1}^r f_\mu D,
+\qquad
+r\ge2,
+\]
+
+together with a middle endomorphism
+
+\[
+Y\in\operatorname{End}_D(P)
+\]
+
+satisfying:
+
+\[
+\boxed{
+xA=AY,
+}
+\tag{35.2}
+\]
+
+\[
+\boxed{
+YB=-Bx
+}
+\tag{35.3}
+\]
+
+for the sign target,
+
+and a genuinely nonzero homotopy equation
+
+\[
+\boxed{
+Y^2
+=
+BH_1+H_0A
+}
+\tag{35.4}
+\]
+
+compatible with:
+
+\[
+AB=0,
+\]
+
+injectivity of \(B\),
+
+\[
+\ker A=\operatorname{im}B,
+\]
+
+and finite-dimensionality.
+
+These are finite matrix equations.
+
+This is the B3 realization normal form.
+
+---
+
+# 36. Cross-domain lesson from matrix factorizations
+
+The synthetic dual-number resolution alternates two distinct signs:
+
+\[
+t_\ell-t_r,
+\qquad
+t_\ell+t_r.
+\]
+
+A one-dimensional deleted state cannot simultaneously:
+
+- transmit the sign flip;
+- carry a nontrivial square homotopy;
+- preserve exactness.
+
+The next natural migration is therefore not another scalar skew relation.
+
+It is a **matrix sign architecture**.
+
+The middle operator should be allowed to have at least two states, analogous to a \(2\times2\) super/Clifford block.
+
+This is the justified cross-domain migration for U7/U6-continuation.
+
+No claim is made that such a block is automatically realizable by an ordinary algebra.
+
+---
+
+# 37. Concrete next finite equations
+
+For the smallest new search, take:
+
+\[
+P=f_1D\oplus f_2D.
+\]
+
+Write:
+
+\[
+A=(a_1\ a_2),
+\]
+
+\[
+B=
+\begin{pmatrix}
+b_1\\
+b_2
+\end{pmatrix},
+\]
+
+and
+
+\[
+Y=
+\begin{pmatrix}
+y_{11}&y_{12}\\
+y_{21}&y_{22}
+\end{pmatrix}.
+\]
+
+The exact sign-twist equations are:
+
+\[
+\boxed{
+a_1b_1+a_2b_2=0,
+}
+\tag{37.1}
+\]
+
+\[
+\boxed{
+x(a_1\ a_2)
+=
+(a_1\ a_2)Y,
+}
+\tag{37.2}
+\]
+
+\[
+\boxed{
+Y
+\begin{pmatrix}
+b_1\\
+b_2
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+b_1\\
+b_2
+\end{pmatrix}
+x.
+}
+\tag{37.3}
+\]
+
+Postnikov activation requires:
+
+\[
+\boxed{
+Y^2\neq0
+}
+\]
+
+as a chain map, but
+
+\[
+\boxed{
+Y^2
+=
+BH_1+H_0A
+}
+\tag{37.4}
+\]
+
+for suitable homotopy matrices \(H_0,H_1\).
+
+Additionally:
+
+\[
+\boxed{
+B\text{ injective},
+\qquad
+\ker A=\operatorname{im}B.
+}
+\tag{37.5}
+\]
+
+The U6 problem has therefore been reduced to a finite system of algebraic matrix relations plus finite-dimensionality constraints.
+
+---
+
+# 38. Why this is not quiver enumeration
+
+The variables
+
+\[
+A,B,Y,H_0,H_1
+\]
+
+encode precisely:
+
+- the isolated second return;
+- sign transport;
+- the nontrivial nullhomotopy of \(t^2\);
+- the Postnikov activation channel.
+
+Any quiver realization should be generated from a solution of these equations.
+
+So the next search is an inverse-realization problem, not a list of random algebras.
+
+---
+
+# 39. Strongest construction result
+
+\[
+\boxed{
+\textbf{Actual Sign-Twist Realization Theorem}
+}
+\]
+
+For every
+
+\[
+\lambda\in k^\times
+\]
+
+there is a \(10\)-dimensional finite-dimensional basic algebra \(D_\lambda\) with primitive \(e\) such that
+
+\[
+D_\lambda/D_\lambda(1-e)D_\lambda
+\cong
+k[t]/(t^2),
+\]
+
+\[
+H_q
+\left(
+S\otimes_{D_\lambda}^{\mathbf L}S
+\right)
+=
+0
+\quad(q\ne0,2),
+\]
+
+and
+
+\[
+H_2
+\]
+
+is free rank one on both sides with
+
+\[
+tm=\lambda mt.
+\]
+
+For
+
+\[
+\lambda=-1
+\]
+
+this gives the exact frozen sign-twisted bimodule.
+
+However its Postnikov class is zero.
+
+---
+
+# 40. Strongest no-go result
+
+\[
+\boxed{
+\textbf{Minimal Sign/Postnikov Incompatibility Theorem}
+}
+\]
+
+In the one-deleted-vertex rank-one two-step architecture, the minimal deformation attempting to make the quotient generator square only homotopically to zero satisfies:
+
+\[
+\boxed{
+\nu(1-\lambda)=0.
+}
+\]
+
+Consequently:
+
+\[
+\boxed{
+\operatorname{char}k\neq2,
+\quad
+\lambda=-1
+\Longrightarrow
+\nu=0.
+}
+\]
+
+Thus the minimal scalar skew architecture cannot realize the nonzero sign-twisted Postnikov generator.
+
+---
+
+# 41. Universal impact
+
+Before U6 the unknown was whether the sign-twisted terminal bimodule itself might be impossible for actual idempotent quotients.
+
+It is not.
+
+The actual obstruction is one level higher:
+
+\[
+\boxed{
+\textbf{sign twist can be realized;
+sign twist + non-split Postnikov transport is the hard part.}
+}
+\]
+
+This separates two previously entangled questions:
+
+\[
+\text{bimodule realization}
+\]
+
+and
+
+\[
+\text{extension/coring realization}.
+\]
+
+The first is now solved in the minimal case.
+
+The second remains open.
+
+---
+
+# 42. Exact next frontier
+
+Do **not** continue scalar \((\lambda,\nu)\) searches.
+
+The scalar architecture has been exhausted at the relevant interface.
+
+The smallest justified next search is the two-state deleted sector:
+
+\[
+\boxed{
+P=f_1D\oplus f_2D.
+}
+\]
+
+Solve the finite equations:
+
+\[
+AB=0,
+\]
+
+\[
+xA=AY,
+\]
+
+\[
+YB=-Bx,
+\]
+
+\[
+Y^2=BH_1+H_0A,
+\]
+
+together with:
+
+\[
+B\text{ injective},
+\]
+
+\[
+\ker A=\operatorname{im}B,
+\]
+
+finite-dimensionality,
+
+and the requirement that the induced Postnikov class be nonzero after both left and right simple reduction.
+
+This is the exact finite realization frontier frozen by U6.
+
+---
+
+# 43. Completion label
+
+The run ends with:
+
+\[
+\boxed{
+\texttt{ACTUAL SIGN TWIST REALIZED}
+}
+\]
+
+\[
+\boxed{
+\texttt{POSTNIKOV CLASS SPLIT IN MINIMAL FAMILY}
+}
+\]
+
+\[
+\boxed{
+\texttt{MINIMAL RANK-ONE SIGN/POSTNIKOV NO-GO}
+}
+\]
+
+\[
+\boxed{
+\texttt{FINITE MATRIX REALIZATION FRONTIER}.
+}
+\]
+
+No actual bounded complete screener was found.
+
+---
+
+# 44. Run integrity
+
+The actual route was:
+
+1. retrieve the frozen bounded-\(K\), regular-defect, one-sided-defect and synthetic calibrations;
+2. rewrite the dual-number target as the truncated bimodule resolution with maps
+   \[
+   t_\ell-t_r,\quad t_\ell+t_r;
+   \]
+3. verify directly that its third syzygy satisfies
+   \[
+   tm=-mt;
+   \]
+4. migrate the sign rule to an ordinary two-vertex skew architecture;
+5. derive the equations
+   \[
+   ay=xa,\qquad yb=\lambda bx;
+   \]
+6. construct the \(10\)-dimensional family \(D_\lambda\);
+7. prove finite-dimensionality by an explicit path basis;
+8. prove the complete length-two projective resolution of \(S\);
+9. verify
+   \[
+   H_0=S,\ H_1=0,\ H_{>2}=0;
+   \]
+10. compute the actual left/right action on \(H_2\);
+11. obtain
+    \[
+    tm=\lambda mt;
+    \]
+12. specialize to \(\lambda=-1\) and thereby realize the frozen sign-twisted bimodule;
+13. audit the chain lift and discover
+    \[
+    T^2=0
+    \]
+    strictly;
+14. conclude that the Postnikov triangle splits and
+    \[
+    \alpha=0;
+    \]
+15. compute the resulting unscreened diagonal Tor;
+16. introduce the deformation
+    \[
+    y^2=\nu ba
+    \]
+    to make \(T^2\) only nullhomotopic;
+17. verify the homotopy equation
+    \[
+    T^2=dH+Hd;
+    \]
+18. audit the \(y^3\) associativity critical pair;
+19. derive
+    \[
+    \nu(1-\lambda)bxa=0;
+    \]
+20. use injectivity of \(b\) to deduce
+    \[
+    \nu(1-\lambda)=0;
+    \]
+21. conclude that the sign point forces \(\nu=0\) in characteristic different from \(2\);
+22. identify the scalar minimal architecture as exhausted;
+23. migrate the next construction to a matrix/two-deleted-state architecture;
+24. freeze the finite equations
+    \[
+    AB=0,\quad xA=AY,\quad YB=-Bx,\quad Y^2=BH_1+H_0A.
+    \]
+
+No random quiver enumeration was used.
+
+No partial resolution was promoted to boundedness.
+
+No sign twist was identified with screening without checking the Postnikov class.
+
+No abstract coring object was substituted for an actual ordinary quotient.
+
+No universal sign-twist prohibition was claimed after the explicit \(D_{-1}\) construction.

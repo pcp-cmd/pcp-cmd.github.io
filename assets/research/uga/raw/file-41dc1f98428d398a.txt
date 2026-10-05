@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-04T04:28:38.337147+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "e55233e727f11c2dcfef37512cbcd9c1a1f695f6658164768dae19f9a2601be3",
+    "object": "Uniform actual ordinary counit termination from finite global F Yoneda dimension, including cyclic F Ext",
+    "deliverables": [
+      "verify_yoneda_termination.py",
+      "yoneda-termination-result.json",
+      "computation-record.json",
+      "initial-failed-execution.txt"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "F is nonempty proper and finite-pd on BOTH sides with maxima d,r; E_F is the actual ordinary postcomposition Yoneda algebra.",
+      "Finite dimensionality/nilpotence alone fails; actual global dimension g must be finite and q is the top nonzero E_F degree.",
+      "Minimal graded E projective covers are realized by actual triangles; g+1 covers kill the ordinary G module.",
+      "Actual minimal A projective terms then exclude F, so the retained complex is an actual minimal ordinary B resolution.",
+      "Generator degree i<=sigma<=r+i q yields actual counit amplitude r+g max(q-1,0).",
+      "Ordinary ALL-module comparison holds for STRICT n>N=d+r+g max(q-1,0); both retained infinite labels are exact.",
+      "Badness descends with cutoff max(M,N) and strict dimension; no infinite-count decrease or primitive-peeling inheritance is asserted.",
+      "The cyclic65-dimensional calibration has actual terminating F and E_F minimal resolutions; products are lifted actual Yoneda maps.",
+      "Initial corner/Ae dimension constants40/80 failed; corrected20/40 exact run passed and the failure log is preserved.",
+      "Same researcher/shared helpers, schema and hashes do not constitute independent proof verification."
+    ],
+    "domain": "Finite elementary ordinary algebras and their actual minimal resolutions, Yoneda products and idempotent corners",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Exact Fraction actual minimal covers and integral basis certificates with literal finite corner multiplication"
+      ],
+      "existence_evidence": "verify_directed_ext.py builds the actual E13 tensor C5 and checks sided terminating F covers through three actual corners.",
+      "local_availability": "available",
+      "availability_evidence": "Successful local exact execution under 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "selection_reason": "Exact cyclic F Yoneda products, terminating homogeneous E_F covers and literal ordinary corner module; the all-size degree/amplitude proof is separate.",
+    "fallback_reason": "Reused same-session inventory: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python through math-science-computation observer_run.py",
+    "command_or_input": "python -B verify_yoneda_termination.py --project-root PROJECT_ROOT --out yoneda-termination-result.json",
+    "code_artifact": "verify_yoneda_termination.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_yoneda_termination.py",
+      "sha256": "4bf85cedc7fc8fe13ef00f05bb0224d64db958f5d7c8f399df0bdd27e061246c"
+    },
+    {
+      "role": "result",
+      "path": "yoneda-termination-result.json",
+      "sha256": "a79fd719f17fdf212ed79428bd654ddeb311cc778b5550f8045cb5d62340e901"
+    },
+    {
+      "role": "log",
+      "path": "initial-failed-execution.txt",
+      "sha256": "b1a480a2c227e1786afc0644378a865a3c70db9a9faad327a01fefb60cb93d7f"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "result_artifact": "yoneda-termination-result.json",
+    "summary": "Cyclic F Ext, E_F gd2 and literal65->20 corner passed834572 associativity triples,29 actual minimal covers,343 integral basis inverses,8 actual Yoneda product checks,5 homogeneous E covers and800 corner right-linearity checks. Initial dimension-constant failure preserved. General ordinary amplitude/comparison proof is separate."
+  },
+  "verification": {
+    "methods": [
+      "Full multiplication-basis associativity for original/opposite tensor, finite Yoneda and literal corner tables",
+      "Actual sided finite F minimal projective covers terminating in degrees2,3; integral exact-sequence basis inverses",
+      "Genuine degree-two Yoneda products from A-linear lifted minimal-resolution comparison maps",
+      "Terminating homogeneous Y simple resolutions with exact label/generator-degree pairs",
+      "Literal two-regular-copy RIGHT B module Ae permutation/inverse and800 right-linearity equations",
+      "Written actual projective-cover realization, minimal ordinary corner resolution, homogeneous degree bounds and ALL-module Ext/Tor proof",
+      "Ten frozen dependency hashes and artifact/computation-record validation",
+      "Preserved initial exact-execution dimension-assertion failure and corrected successful rerun"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact integer/rational certificates; no numerical residual.",
+    "limitations": [
+      "Same author and frozen shared helpers, not independent verification.",
+      "The general ordinary theorem is a written proof, not established by one finite example.",
+      "Finite E and positive-ideal nilpotence do not imply finite gd(E).",
+      "New sufficient comparison cutoff8 is not asserted sharp; literal corner has sharper C093 bound4.",
+      "Cyclic E_F permits whole deletion but does not establish arbitrary partial/singleton eligibility inheritance.",
+      "The65-dimensional example is already infinite-plus; all-degree infinity comes from frozen factor/tensor proofs, never a finite Betti prefix.",
+      "No product recurrent-kernel infinity check is claimed.",
+      "The initial assertion confused Ae dimension40 with corner B dimension20; corrected constants were fully rerun.",
+      "Backend inventory reused from the same session; no remote or paid backend.",
+      "Schema/hash validation certifies integrity only; full Universal Gap A and badness-specific eligible-block availability remain open."
+    ]
+  }
+}

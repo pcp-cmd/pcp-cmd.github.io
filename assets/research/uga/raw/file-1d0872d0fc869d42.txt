@@ -1,0 +1,288 @@
+# 只控制实际投射前缀：自扩张传递的损失与有限窗口
+
+日期：2026-09-27。状态：**完整自审证明及精确有理数核算；尚未独立数学核验，未确认新颖性。** 本稿继续上一轮 regular-target 持续的剩余情形，不更换任意 N 的主目标。新增结论不要求到整个 A 的 Ext 最终消失，而只控制通往返回模块的实际投射前缀，并保留条件失败时的定量损失。
+
+这确实放宽了上一轮传递条件：第 5 节给出每个 N≥4 的连通代数，其中相关源到 A 的 Ext 全部持续，但到指定前缀投射模的高次 Ext 全零。新加入的一个 simple 则让同一损失达到上界、传递完全失败，故程序必须返回未判定。一般 Universal Gap A 仍未证明。
+
+## 1. 比较映射的余核由哪些 Ext 控制
+
+设 A 为有限维 basic 复代数，X 为有限维左模。固定其实际最小投射消解的前缀
+\[
+0\longrightarrow K=\Omega^\ell X\longrightarrow P_{\ell-1}
+\longrightarrow\cdots\longrightarrow P_0\longrightarrow X\longrightarrow0.
+\tag{1}
+\]
+ℓ=0 时取 K=X、空前缀。定义 n≥1 时的损失上界
+\[
+\delta_\ell(X,n)=\sum_{t=0}^{\ell-1}
+\dim\operatorname{Ext}^{n+t+1}_A(X,P_t).
+\tag{2}
+\]
+
+**定理 1。** 存在由实际 syzygy 提升给出的自然映射
+\[
+\theta_n:\operatorname{Ext}^n_A(X,X)
+\longrightarrow\operatorname{Ext}^n_A(K,K)
+\]
+满足
+\[
+\boxed{\quad\dim\operatorname{coker}\theta_n\le\delta_\ell(X,n),\qquad
+\dim\operatorname{Ext}^n(X,X)\ge
+\dim\operatorname{Ext}^n(K,K)-\delta_\ell(X,n).\quad}
+\tag{3}
+\]
+特别地，δ_ℓ(X,n)=0 时 θ_n 为满射。这里只控制余核，不能自动称为同构。
+
+**证明。** 记 K_t=Ω^tX。对
+\(0\to K_{t+1}\to P_t\to K_t\to0\)
+使用第二变量的长正合列，得到
+\[
+\operatorname{Ext}^{n+t}(X,P_t)\longrightarrow
+\operatorname{Ext}^{n+t}(X,K_t)\xrightarrow{\partial_t}
+\operatorname{Ext}^{n+t+1}(X,K_{t+1})\longrightarrow
+\operatorname{Ext}^{n+t+1}(X,P_t).
+\tag{4}
+\]
+因此 coker ∂_t 的维数至多为 (2) 的第 t 项。有限维线性映射复合的余核维数至多为各步余核维数之和，故 ∂_{ℓ−1}⋯∂_0 的余核满足 (3)。最后使用第一变量的无条件 dimension shifting
+\[
+\operatorname{Ext}^{n+\ell}(X,K)\simeq\operatorname{Ext}^n(K,K).
+\]
+所得映射正是将代表 f:Ω^nX→X 作 ℓ 次 syzygy 提升后取 Ext 类的映射。ℓ=0 时它为恒等。\(\square\)
+
+**为何只有满射。** 取 Kronecker quiver 0⇉1 的路径代数，X 的两个顶点空间均为 C，两支箭头的作用分别为 1、0。则 ΩX=L_1 为 projective，而 Ext¹(X,X)=C。n=1 时 (2) 是 Ext²(X,P_0)=0，但 θ_1 为 C→0。程序核对了此零矩阵及 Ext¹(X,P_0)=C；后一个空间可以贡献核。
+
+## 2. 返回类能够承受多少损失
+
+假设 K 中含有 M 的 a≥1 个直和副本，M 非投射，并有实际分裂返回
+\[
+\Omega^dM\simeq M^{\oplus g}\oplus W,\qquad d,g\ge1.
+\tag{5}
+\]
+已有的 [非半单分裂返回定理](ADR-Obstruction-and-Cyclic-Return.md) 给出
+dim Ext^{rd}(M,M)≥g^r。由 Ext 对两变量的有限直和可加性及 (3)，得
+\[
+\boxed{\quad
+\dim\operatorname{Ext}^{rd}(X,X)
+\ge a^2g^r-\delta_\ell(X,rd)\qquad(r\ge1).
+\quad}
+\tag{6}
+\]
+
+这条不等式不需要有限状态系统，也不需要所有 projectives 有限内射维数。只要右边对无穷多 r 为正，就得到持续 self-Ext。一个充分条件是 δ_ℓ(X,rd)≤C h^r，0≤h<g；另一个是损失最终为零。本文程序认证后一项，不声称解决任意两个递推数列之差的最终正性。
+
+具体地，若对每个 t<ℓ 有
+\[
+\operatorname{Ext}^u(X,P_t)=0\quad(u>b_t),
+\]
+其中 b_t 为非负整数，则令
+\[
+h=\max\bigl(\{1\}\cup\{b_t-t:0\le t<\ell\}\bigr).
+\tag{7}
+\]
+n≥h 时 n+t+1>b_t，所以 δ_ℓ(X,n)=0。从而
+\[
+\dim\operatorname{Ext}^{rd}(X,X)\ge a^2g^r
+\quad(rd\ge h).
+\tag{8}
+\]
+首个可保证的次数为 d⌈h/d⌉，位于 [h,h+d−1]。
+
+若 X=L_j，则 Ext^{rd}(L_j,L_j) 与 Tor_{rd}(R_j,L_j) 对偶，且 e_jAe_j≠0，因此 (8) 是 supported diagonal Tor 证书。对非 simple 的 X，仅由 (8) 不自动推出指定 simple-pair 结论。
+
+相较上一轮的统一假设 Ext^{>c}(X,A)=0，现在只需控制有限个 P_t。即使仍采用上一轮统一假设，(7) 也给出 h≤max{1,c}：为了保住非零类，满射已经足够，无需把比较映射同时证明为单射。
+
+**对潜在反例的必要条件。** 若 Ext^{rd}(L_j,L_j) 最终为零，但实际尾端含有 (5)，则 (6) 强制
+\[
+\delta_\ell(L_j,rd)\ge a^2g^r
+\quad\text{对所有充分大的 }r.
+\tag{9}
+\]
+因此至少一个**实际前缀投射目标**必须产生持续 Ext；只在 A 的其他投射直和项中发现持续类已经不够。若 g>1，总损失还必须承受相应的指数增长。尚未证明完整 Peirce 消失条件排除这种情况。
+
+## 3. 在有限状态系统中，损失本身有精确递推
+
+沿用 [有限系统定理](Finite-Syzygy-System-Theorem.md) 的实际数据
+\[
+\Omega M_\alpha\simeq\bigoplus_\gamma M_\gamma^{T_{\gamma\alpha}},
+\qquad\Omega^qX\simeq\bigoplus_\alpha M_\alpha^{v_\alpha},
+\tag{10}
+\]
+状态数为 m。对每个 indecomposable projective Q_i=Ae_i，计算
+\[
+G_{i\alpha}=\dim\operatorname{Ext}^1(M_\alpha,Q_i).
+\tag{11}
+\]
+所有 G 都是 Hom(ΩM_α,Q_i) 模去实际投射限制的商维数。
+
+若 P_t=⊕_i Q_i^{b_i(t)}，则对 n≥max{q,1}，
+\[
+\delta_\ell(X,n)=R\,T^{n-q}v,
+\qquad
+R=\sum_{t=0}^{\ell-1}\left(\sum_i b_i(t)G_i\right)T^t.
+\tag{12}
+\]
+这是由第一变量换位及可加性直接得到的等式，没有消去任何边界。R 非负，故其持续性由同一可达圈图精确决定。
+
+每个固定 Q_i 的 Ext 尾端也由 G_iT^nv 决定。若每个实际使用的 Q_i 都无 productive cycle，程序求其最后非零次数，再按 (7) 给出 h。未出现在前缀中的 projectives 允许持续 Ext，甚至允许无限内射维数。
+
+实际前缀目标持久时，程序返回 `not_certified_prefix_loss_persists`，同时保存目标列表和损失递推。它没有断言比较映射必为零；只有第 5 节与 Saorín 校准的实际映射检查证明了各自的完全失败。
+
+## 4. 顺带把联合有限窗口提前一次
+
+前稿的 regular-target 图判定将 G 当作一般非负输出行。实际 Ext¹ 标签还满足一个额外事实：
+\[
+G_\alpha>0\quad\Longrightarrow\quad\Omega M_\alpha\ne0,
+\tag{13}
+\]
+也就是输出状态至少有一条出边。否则 M_α projective，Ext¹ 为零。这个性质对任何固定目标 Y 的标签 Ext¹(M_α,Y) 都成立。
+
+**引理 2。** 若从入口不能经圈到达输出，则 (13) 使所有长度至少 m−1 的入口到输出路径都不存在。
+
+**证明。** 有重复顶点的路径已经含有 productive cycle。若长度 m−1 的路径无重复，它恰好用完全部 m 个状态；由 (13)，终点还有出边，只能回到路径上的某个顶点，于是仍得到能够返回输出的圈，矛盾。更长路径自动有重复。\(\square\)
+
+反过来，若有 productive cycle，取无重复的入口路径及输出路径，两者总长≤2m−2。若总长小于 m−1，沿长度≤m 的圈重复，直到首次达到 m−1；所得长度不超过 2m−2。因此
+\[
+\operatorname{Ext}^n(X,Y)\text{ 持续非零}
+\iff
+\exists n\in[q+m,q+2m-1]:\operatorname{Ext}^n(X,Y)\ne0.
+\tag{14}
+\]
+若窗口全零，则 Ext^n(X,Y)=0 对所有 n≥q+m 成立。
+
+由此，[上一轮联合判据](Regular-Ext-and-Self-Extension-Transfer.md) 可加强为
+\[
+\boxed{\quad
+\operatorname{pd}X<\infty
+\iff
+\operatorname{Ext}^n(X,X\oplus A)=0
+\quad(q+m\le n\le q+2m-1).
+\quad}
+\tag{15}
+\]
+成立时仍有 pd(X)≤q+m−1。
+
+**证明。** 有限 pd 排除入口可达圈，给出该 pd 上界及窗口消失。反向用 (14) 的 Y=A，得到 Ext^{>q+m−1}(X,A)=0；若 pd(X)=∞，前稿的循环自扩张传递定理就在 q+m,…,q+2m−1 中给出非零项，与假设矛盾。\(\square\)
+
+此处额外使用了 Ext¹ 标签的真实性质；对一般头部输出 H_α=dim Hom(M_α,L_i)，projective 状态可以有非零输出，不能不加检查就同样提前原 Tor 窗口。
+
+两个边界均有实际校准：
+
+- m 状态的 radical-square-zero 有向线，源 simple 的 pd=m−1，且 Ext^{m−1}(X,A)≠0。若把 (15) 整个窗口再提前一次，其“有限 pd ⇒ 窗口全零”方向就会失败。一般 q 可在线前面再添 q 个顶点，取后 m 个 simples 作状态。
+- m 圈取入口 q=1，则窗口为 m+1,…,2m，而 self-Ext 只在 m 的倍数非零，最后一次不能删除。审计采用 m=3 的实际入口；有向线另检查 m=3,5。
+
+旧窗口结论仍正确，本稿只是利用 (13) 得到更早的界。m 仍是模块状态数，不是只依赖 N 的已知常数。
+
+## 5. 每个 N≥4 都有旧条件失效、新条件成功的连通例子
+
+令 r=N−2，旧顶点为 0,1,…,r，新顶点记 s=r+1。取
+\[
+B=\mathbb C[\epsilon]/(\epsilon^2)\otimes\mathbb C Q,
+\qquad Q:\ t\to0\quad(1\le t\le r).
+\]
+旧 radical 基为 x_0,…,x_r、a_t,y_t，唯一非零 radical 乘法为
+\[
+x_0a_t=a_tx_t=y_t.
+\tag{16}
+\]
+再添箭头 b:s→0，并令所有涉及 b 的 radical 乘法为零，所得代数记 A_N。由这个完整乘法表可直接核对结合律；它也是用左 B 模 L_0 作新 projective radical 的一次三角扩张。
+
+A_N 连通，dim A_N=4N−4，J³=0。新投射模 P_s 有头部 L_s、socle L_0；所有旧投射列 P_i（i≤r）保持不变。因此旧模块的最小消解及旧模块之间的 Ext 均保持不变，而且
+\[
+\Omega L_s=L_0,\quad\Omega L_0=L_0,
+\quad\Omega L_t=X_t,\quad\Omega X_t=X_t\quad(1\le t\le r).
+\tag{17}
+\]
+X_t 的头部为 L_t⊕L_0。
+
+### 5.1 旧前缀 projectives 的内射维数仍至多一
+
+前稿已证明 id_B B≤1：对双数代数与遗传代数的张量积，将后者的长度一内射分解张量前者即可。又因 ΩL_0=L_0，得到 Ext_B^{>0}(L_0,P_i)=0 对所有旧 i。
+
+对旧 simple 源与旧 projective 目标，A_N 的 Ext 与 B 相同。对新源 L_s，第一变量换位给出
+\[
+\operatorname{Ext}_{A_N}^{n}(L_s,P_i)
+\simeq\operatorname{Ext}_{A_N}^{n-1}(L_0,P_i)=0
+\quad(n\ge2,\ i\le r).
+\]
+由 simple 检测内射维数，id_{A_N}P_i≤1 对每个旧 i 成立。
+
+因此每个旧 simple L_j 用 ℓ=1 即可：P_0^{(j)}=P_j 的相关 Ext 从次数二起全零，K=ΩL_j 是一步周期的非投射模。公式 (7) 给出 h=1，(8) 给出持续对角 Tor。实际头部递推进一步给出
+\[
+\dim\operatorname{Ext}_{A_N}^{n}(L_j,L_j)=1
+\quad(j\le r,\ n\ge1).
+\tag{18}
+\]
+
+### 5.2 到整个 A 的 Ext 却没有最终消失
+
+若 Y 是旧顶点支撑的模块，任何 Y→P_s 的映射都落在 Cb≅L_0 中，所以
+\(\operatorname{Hom}(Y,P_s)\simeq\operatorname{Hom}(Y,L_0)\)。从旧 projective 到 P_s 的映射消灭 radical：能非零的头部像只能是 b，而 Jb=0。因此它们的 syzygy 限制边界全零。
+
+利用 (17) 的头部，得
+\[
+\dim\operatorname{Ext}_{A_N}^{n}(L_j,P_s)=1
+\quad(j\le r,\ n\ge1).
+\tag{19}
+\]
+所以这些源到 A_N 的 Ext 持续非零，且 id_{A_N}A_N=∞；旧的 regular-target 最终消失条件全部失效。然而 P_s 根本没有出现在这些源的实际前缀中，新条件仍然成功。
+
+### 5.3 不可分解的任意多头部模块也能传递
+
+复用 [多头部周期模块](Supported-Submodule-Localization.md) M：每个旧源 t 处取 v_t，顶点 0 处取 u_1,…,u_r,g_1,…,g_{r−1}，作用为
+\[
+a_tv_t=u_t,\qquad x_0g_t=u_t-u_r,
+\]
+其余 radical 作用为零，新顶点空间为零。原来的实际覆盖及不可分解性证明原样成立：ΩM=M，End(M) 为标量加平方零理想。其维数 3N−7，头部含全部 N−1 个旧顶点。
+
+它的覆盖只含旧 projectives，所以同样 h=1，得到持续 self-Ext。但
+\[
+\dim\operatorname{Ext}^{n}(M,P_s)=r-1=N-3>0
+\quad(n\ge1),
+\tag{20}
+\]
+来自 Ω^nM=M、top(M) 中 r−1 个 L_0 及上述零投射限制。故新判据也真正处理了正则目标条件失败的不可分解多头部源。
+
+### 5.4 新 source 的传递完全失败
+
+对 L_s，其实际前缀正是 P_s。由 (17)、(19)，
+\[
+\operatorname{Ext}^{n}(L_s,L_s)=0\quad(n\ge1),\qquad
+\dim\operatorname{Ext}^{n+1}(L_s,P_s)=1\quad(n\ge1).
+\tag{21}
+\]
+另一方面 Ext^n(L_0,L_0)=C。因此 θ_n 是 0→C，其余核维数与 δ_1(L_s,n) 均为一。这对每个正次数都达到 (3) 的损失上界。
+
+这里 β_{0s}(n)=1，但 e_sA_Ne_0=0，所以这个源自身没有持续 supported pair；其他旧源已经使整个代数满足 (U)。这是正确未判定的校准，不是 (U) 反例。A_N 又满足 J³=0，其 (U) 也属于既有理论范围，不能将该族当作新解决的代数类。
+
+## 6. 一个与当前文献使用有关的可核对推论
+
+上述构造还说明不能在一般情形下假设 Serre bimodule 的导出平方有界。记 D 为复向量空间对偶。新顶点 s 没有入箭头，e_sA_N=C e_s，所以左 injective D(e_sA_N)=L_s 是 D A_N 的直和项。P_s 又是 A_N 的直和项。由 (21)，
+\[
+\dim\operatorname{Ext}_{A_N}^{n}(D A_N,A_N)\ge1
+\quad(n\ge2).
+\]
+有限维对偶给出
+\[
+\boxed{\quad\dim\operatorname{Tor}^{A_N}_n(D A_N,D A_N)\ge1
+\quad(n\ge2).\quad}
+\tag{22}
+\]
+因此 D A_N⊗^L_{A_N}D A_N 有无界的正同调。
+
+另有 [实际对偶模块核算](../work/prefix_shadow_audit.json) 及其 [脚本](../work/audit_prefix_shadow.py)：N=4 时显式构造 D A_N 的全部作用矩阵，验证 L_s 的分裂包含与投影，算得次数 1,…,4 的 Ext(D A_N,A_N) 维数为 19,2,2,2。该有限检查支持对偶与直和接口，(22) 的全部次数仍来自上述证明。
+
+本轮检索的 [Armenta, *The Serre–Hochschild plane of a finite-dimensional algebra*, §4 / Theorem 4.1](https://arxiv.org/pdf/2609.20220) 在有限滤过论证中使用了 Serre 幂的高次同调最终为零。(22) 表明一般有限维代数并不保证该项有界性；若借用该有限滤过论证，必须另行核实相应假设。本稿只指出这一具体使用边界，不据此判断该预印本的全部其他结论，也不使用它证明本稿定理。
+
+(22) 涉及带系数的 Tor，不是普通 HH_n(A_N)；不能跨越这一区别宣称解决韩猜想。
+
+## 7. 计算证据与尚未解决的问题
+
+[prefix_ext_transfer_certificate.py](prefix_ext_transfer_certificate.py) 验证全部实际乘法、模块、最小 syzygy 同构及入口，然后逐个 projective 计算 Ext¹ 商。输出实际前缀、各目标最后非零次数或持续圈、损失递推 (12)、传递窗口及正确的未判定状态。有限系统与证明的依赖继续来自项目现有代码，没有称为独立核验。
+
+复算材料：[审计脚本](../work/audit_prefix_ext_transfer.py)、[完整输入和结果](../work/prefix_ext_transfer_audit.json)、[CLI 输入](../work/prefix_ext_transfer_input.json)、[CLI 输出](../work/prefix_ext_transfer_checked.json)、[计算记录](../work/projective-prefix-transfer-computation-record.json)。
+
+主审计为六个系统、28 个源查询：22 项 self-Ext 证书，其中 19 项在 regular Ext 持续时成立；五项因实际前缀损失持续而正确未判定，一个有限 pd 源。113 项实际比较映射及损失不等式、673 项 projective-target 维数检查通过；两个虚假消失界被拒绝，Kronecker 例子确认满射不必单射。另有三个强化窗口校准。任意 N、全部次数的结论依靠上述证明，不由 N=4,6,9 的有限样本外推。
+
+这里继续复用 [Vault 方法记录](Vault-Method-Reuse-20260923.md) 中保留完整约束的原则：projective 标签保留实际来源，Ext 保留投射限制边界，比较映射保留余核；未再次读取或修改 Vault。长正合列和 syzygy 换位属于已有 homological 方法，背景见前稿的 [Wei, Lemma 6.4](https://arxiv.org/pdf/1109.6226)，本稿不宣称基础机制新颖。
+
+**剩余问题更具体了，但没有消失：** 在完整 Peirce 消失条件下，能否排除 (9) 所要求的、发生在实际投射前缀上的持续损失？还没有证明。一般返回模块或有限状态系统的存在性也未证明。新条件处理了 regular Ext 持续的一部分真实情形，并未完成一般 (U)、(FG)、(PC) 或 (GP)。

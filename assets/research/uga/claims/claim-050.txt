@@ -1,0 +1,13 @@
+## UGA-C050 — Nakayama Elimination of Same-Degree Transport
+**Status:** PROJECT-DERIVED / SELF-AUDITED / NOT INDEPENDENTLY VERIFIED  
+**Source:** final Derived-Necklace Run, Lemmas 15.1–15.2
+
+For \(C=H^0(Q_x)\), \(R=\operatorname{rad}C\), \(M_d=H^{-d}(Q_x)\), if the primitive quotient vanishes in degree \(-d\), then
+\[
+M_d=G_d,
+\]
+where \(G_d\) is generated from higher operations whose negative inputs have strictly smaller negative magnitude. Same-degree radical transport is inessential.
+
+**Depends on:** UGA-C049 plus the degreewise decomposition in Section 15.
+
+---

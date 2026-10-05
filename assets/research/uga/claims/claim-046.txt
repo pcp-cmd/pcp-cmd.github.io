@@ -1,0 +1,9 @@
+## UGA-C046 — Excursion-Screening Principle
+**Status:** PROJECT-DERIVED / SELF-AUDITED / NOT INDEPENDENTLY VERIFIED  
+**Source:** final Derived-Necklace Run, Theorem 4.1
+
+A zero-excursion local class that dies ambiently must be hit by a genuine higher-excursion correction chain. This yields survival / bounded-screening / unbounded-screening subsequence branches.
+
+**Depends on:** UGA-C045.
+
+---

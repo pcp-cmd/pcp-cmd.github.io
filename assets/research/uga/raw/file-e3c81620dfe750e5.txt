@@ -1,0 +1,28 @@
+# Cycle 8 master guidance — separator first, then canonical secondary-corner descent
+
+Transport is explicitly `off`; this guidance is authored by Main Codex from elaboration `ae357d2a1c8932bd` with zero external-call cost. It is strategy, not proof authority.
+
+Three generic recycling proposals are now verifier-refuted: `31c4037065600009` permits a projective recurring fifth-branch simple, `78e3ab82c1e9d0e7` separates a recurrent radical edge from the required reverse block, and `9110d8cc8257b511` preserves cross-Tor on both (A) and (A^{op}) while both return products vanish. Stop proving support-level variants.
+
+The next theorem must begin with a separator property (P) enjoyed by the actual canonical comparison of a vertex-minimal syzygy dead-zone failure and absent from all three counterexamples. Suitable candidates must concern the actual quotient/kernel/edge maps, not just their supports: essentiality of the canonical quotient, nonprojectivity forced by minimality, a nonzero associated-graded matrix coefficient, or a functorial construction of a smaller singular corner.
+
+## Branch A — mutual-dumbbell terminal analysis
+
+Treat the three-vertex mutual dumbbell as a possible terminal state of descent. Use `0dc7d2e243818132` as the exact target: locate a recurrent projective summand and the correctly ordered Peirce block. If it fails, state the precise relation pattern and determine whether that failure itself produces a smaller two-vertex corner covered by `ee07f374726a4e16`.
+
+## Branch B — formulate and prove the separator
+
+Compare the actual dead-zone canonical maps in `9b661439db7f6ae9` against `31c4037065600009`, `78e3ab82c1e9d0e7`, and `9110d8cc8257b511`. Name one exact property (P), prove it from vertex minimality plus syzygy dead-zone origin, verify that every counterexample lacks it, and show that (P) is strong enough to yield either `0dc7d2e243818132` or a proper secondary recurrent corner. A descriptive difference without downstream force is not enough.
+
+## Branch C — construct the secondary corner and well-founded order
+
+Assume the strongest plausible separator (P) and build the next idempotent directly from the canonical kernel/higher-error maps. Prove: nonzero proper idempotent, infinite recurrence in its corner, preservation of the ordered provenance, and strict decrease of one explicit well-founded tuple. If a candidate order fails, submit the counterexample rather than weakening the closure claim. The deliverable is a theorem-sized descent transition reusable at every iteration.
+
+## Closure discipline
+
+- Generic fifth-branch promotion is closed as false, not as a proof route.
+- Generic bilateral recurrence is closed as false, not as a proof route.
+- Vertex minimality has force only after constructing a strictly smaller failure or recurrent corner.
+- Property (P) must be proved on the actual dead-zone construction and falsified on all adversarial examples.
+- The final plus step must match `0dc7d2e243818132` exactly.
+- Human report and publication remain downstream of the verified descent theorem and ordinary-Hochschild closure.

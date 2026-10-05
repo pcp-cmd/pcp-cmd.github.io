@@ -1,0 +1,342 @@
+"""Exact rational checks of an ordinary, connected, nonperfect calibration.
+
+The all-size claims use literal path resolutions, not extrapolation.
+Unchanged Fraction matrix routines are imported from frozen C073 evidence.
+"""
+from argparse import ArgumentParser
+from collections import Counter
+from fractions import Fraction
+from hashlib import sha256
+from importlib.util import module_from_spec, spec_from_file_location
+from itertools import product
+from pathlib import Path
+import json
+import platform
+
+HELPER = Path(
+    r"C:\Users\pcp\Desktop\Universal-Gap-A-Codex-Project-2026-10-03"
+    r"\runs\2026-10-03\Square-Zero-Quotient-Evidence"
+    r"\verify_squarezero_quotient.py"
+)
+spec = spec_from_file_location("frozen_c073_matrix", HELPER)
+helper = module_from_spec(spec)
+spec.loader.exec_module(helper)
+COUNTS = Counter()
+
+
+class Algebra:
+    def __init__(self, size, quotient=False):
+        self.size = size
+        self.star = size
+        self.quotient = quotient
+        self.max_length = 1 if quotient else 3
+        self.basis = tuple(
+            [("p", j, l) for j in range(size)
+             for l in range(min(self.max_length, size-1-j)+1)]
+            + [("star",), ("t",), ("c",)]
+        )
+        self.index = {x: i for i, x in enumerate(self.basis)}
+        self.endpoints = tuple(
+            (x[1]+x[2], x[1]) if x[0] == "p"
+            else ((0, size) if x[0] == "c" else (size, size))
+            for x in self.basis
+        )
+        self.rad = tuple(
+            i for i, x in enumerate(self.basis)
+            if (x[0] == "p" and x[2]) or x[0] in ("t", "c")
+        )
+        self.ids = tuple(self.index["p", j, 0] for j in range(size)) + (
+            self.index["star",],
+        )
+        self.table = {}
+        for a, b in product(range(len(self.basis)), repeat=2):
+            left, right = self.basis[a], self.basis[b]
+            if self.endpoints[a][1] != self.endpoints[b][0]:
+                value = None
+            elif a in self.ids:
+                value = b
+            elif b in self.ids:
+                value = a
+            elif left[0] == right[0] == "p":
+                value = self.index.get(("p", right[1], left[2]+right[2]))
+            else:
+                value = None
+            self.table[a, b] = value
+        self.word_cache = {}
+
+    def mul(self, a, b):
+        return None if a is None or b is None else self.table[a, b]
+
+    def words(self, degree, z, y):
+        key = degree, z, y
+        if key not in self.word_cache:
+            if degree == 0:
+                out = [()] if z == y else []
+            else:
+                out = []
+                for b in self.rad:
+                    left, right = self.endpoints[b]
+                    if right == y:
+                        out.extend(w+(b,) for w in self.words(degree-1, z, left))
+            self.word_cache[key] = tuple(out)
+        return self.word_cache[key]
+
+    def dword(self, word):
+        out = Counter()
+        for j in range(len(word)-1):
+            m = self.mul(word[j], word[j+1])
+            if m is not None:
+                out[word[:j]+(m,)+word[j+2:]] += (-1)**j
+        return {w: v for w, v in out.items() if v}
+
+
+def differential(alg, current, lower):
+    index = {w: i for i, w in enumerate(lower)}
+    return [{index[w]: v for w, v in alg.dword(word).items()} for word in current]
+
+
+def check_d_squared(alg, words):
+    for word in words:
+        out = Counter()
+        for w, v in alg.dword(word).items():
+            for u, c in alg.dword(w).items():
+                out[u] += v*c
+        assert all(v == 0 for v in out.values())
+        COUNTS["literal_d_squared_words"] += 1
+
+
+def expected_tor(size, quotient, degree, z, y):
+    if y == size and z == size:
+        return 1
+    assert y < size and z < size
+    if quotient:
+        return int(z-y == degree)
+    if degree % 2 == 0:
+        return int(z-y == 2*degree)
+    return int(z-y == 2*degree-1)
+
+
+def homology(alg, z, y, upto, kernel=False):
+    groups = []
+    for n in range(upto+2):
+        words = alg.words(n, z, y)
+        if kernel:
+            words = tuple(w for w in words if any(
+                alg.basis[b][0] == "p" and alg.basis[b][2] >= 2 for b in w
+            ))
+        groups.append(words)
+    ranks = []
+    for n, words in enumerate(groups):
+        lower = groups[n-1] if n else ()
+        check_d_squared(alg, words)
+        ranks.append(helper.rank(differential(alg, words, lower), len(lower)))
+    records = []
+    for n in range(upto+1):
+        dim = len(groups[n])-ranks[n]-ranks[n+1]
+        assert dim >= 0
+        if not kernel:
+            assert dim == expected_tor(alg.size, alg.quotient, n, z, y)
+        else:
+            assert (z, y) == (alg.size-1, 0)
+            assert dim == int(n == alg.size-2)
+        records.append({
+            "degree": n, "chain_dimension": len(groups[n]),
+            "outgoing_rank": ranks[n], "incoming_rank": ranks[n+1],
+            "homology_dimension": dim,
+        })
+        COUNTS["ordinary_homology_records"] += 1
+    return records
+
+
+def verify_resolutions(alg):
+    size = alg.size
+    for y in range(size):
+        indices = (
+            list(range(y, size)) if alg.quotient else
+            [j for r in range(size) for j in (y+4*r, y+4*r+1) if j < size]
+        )
+        modules = [
+            [b for b, ep in enumerate(alg.endpoints) if ep[1] == j]
+            for j in indices
+        ]
+        maps = {}
+        for n in range(1, len(indices)):
+            a = alg.index["p", indices[n-1], indices[n]-indices[n-1]]
+            images = {b: alg.mul(b, a) for b in modules[n]}
+            assert len([v for v in images.values() if v is not None]) == len(
+                set(v for v in images.values() if v is not None)
+            )
+            for c, b in product(range(len(alg.basis)), modules[n]):
+                assert alg.mul(c, images[b]) == (
+                    images[alg.mul(c, b)] if alg.mul(c, b) is not None else None
+                )
+                COUNTS["ordinary_resolution_A_linearity_checks"] += 1
+            maps[n] = images
+        first_radical = {b for b in modules[0] if b in alg.rad}
+        assert ({v for v in maps[1].values() if v is not None}
+                if len(indices) > 1 else set()) == first_radical
+        for n in range(1, len(indices)):
+            kernel = {b for b, v in maps[n].items() if v is None}
+            next_image = (
+                {v for v in maps[n+1].values() if v is not None}
+                if n+1 < len(indices) else set()
+            )
+            assert kernel == next_image
+            assert kernel <= set(alg.rad)
+            COUNTS["ordinary_resolution_exactness_steps"] += 1
+        expected_pd = (
+            size-1-y if alg.quotient
+            else 2*((size-1-y)//4)+int((size-1-y) % 4 > 0)
+        )
+        assert len(indices)-1 == expected_pd
+        COUNTS["literal_finite_simple_resolutions"] += 1
+    # The actual infinite source: radical P_star = L_star direct sum L_0.
+    radical_star = [b for b in alg.rad if alg.endpoints[b][1] == size]
+    assert {alg.basis[b] for b in radical_star} == {("t",), ("c",)}
+    assert all(alg.mul(r, b) is None for r, b in product(alg.rad, radical_star))
+    # Right R_0 has kernel R_star, whose right resolution is t-periodic.
+    row0 = [b for b, ep in enumerate(alg.endpoints) if ep[0] == 0]
+    assert {alg.basis[b] for b in row0} == {("p", 0, 0), ("c",)}
+    assert all(alg.mul(alg.index["c",], r) is None for r in alg.rad)
+    star_row = [b for b, ep in enumerate(alg.endpoints) if ep[0] == size]
+    assert {alg.basis[b] for b in star_row} == {("star",), ("t",)}
+    assert {b for b in star_row if alg.mul(alg.index["t",], b) is None} == {
+        alg.index["t",]
+    }
+    COUNTS["literal_infinite_source_and_right_kernel_certificates"] += 1
+
+
+def calibration(size):
+    assert size >= 7 and size % 4 == 3
+    aa, cc = Algebra(size), Algebra(size, True)
+    assert len(aa.basis) == 4*size-3
+    assert len(cc.basis) == 2*size+2
+    kernel = [
+        i for i, b in enumerate(aa.basis) if b[0] == "p" and b[2] in (2, 3)
+    ]
+    assert len(kernel) == 2*size-5
+    for label, alg in (("A", aa), ("C", cc)):
+        for a, b, c in product(range(len(alg.basis)), repeat=3):
+            assert alg.mul(alg.mul(a, b), c) == alg.mul(a, alg.mul(b, c))
+            COUNTS[label+"_associativity_triples"] += 1
+        verify_resolutions(alg)
+    for a, b in product(kernel, repeat=2):
+        assert aa.mul(a, b) is None
+        COUNTS["kernel_square_zero_checks"] += 1
+    for a, b in product(kernel, range(len(aa.basis))):
+        assert aa.mul(a, b) in kernel+[None]
+        assert aa.mul(b, a) in kernel+[None]
+        COUNTS["actual_two_sided_ideal_checks"] += 2
+    lift = {i: aa.index[b] for i, b in enumerate(cc.basis)}
+    for j in range(size-2):
+        column = [i for i in kernel if aa.endpoints[i][1] == j]
+        cp = [i for i, ep in enumerate(cc.endpoints) if ep[1] == j+2]
+        image = {
+            i: aa.index["p", j, cc.basis[i][2]+2]
+            for i in cp
+        }
+        assert set(image.values()) == set(column)
+        for c, p in product(range(len(cc.basis)), cp):
+            value = cc.mul(c, p)
+            assert aa.mul(lift[c], image[p]) == (
+                image[value] if value is not None else None
+            )
+            COUNTS["canonical_actual_left_projective_checks"] += 1
+    left_radical_kernel = {
+        aa.mul(lift[c], k)
+        for c, k in product(cc.rad, kernel)
+        if aa.mul(lift[c], k) is not None
+    }
+    assert left_radical_kernel == {
+        i for i in kernel if aa.basis[i][2] == 3
+    }
+    for k, c in product(kernel, cc.rad):
+        assert aa.mul(k, lift[c]) is None or aa.mul(k, lift[c]) in left_radical_kernel
+        COUNTS["ordinary_F_simple_module_checks"] += 1
+    # A unique-arrow lift makes the ordinary quotient nonsplit.
+    a0, a1 = aa.index["p", 0, 1], aa.index["p", 1, 1]
+    assert aa.mul(a1, a0) == aa.index["p", 0, 2]
+    assert cc.mul(cc.index["p", 1, 1], cc.index["p", 0, 1]) is None
+    # Stable type projectors cannot commute with this actual right action.
+    p = aa.index["p", 1, 2]
+    assert aa.mul(p, a0) == aa.index["p", 0, 3]
+    assert aa.endpoints[p][0] == 3  # top Ce_3
+    assert aa.endpoints[aa.mul(p, a0)][0] == 3  # radical of Ce_2
+    # e_2 K is the ordinary right simple R_0, not a projective C-right module.
+    row2 = [k for k in kernel if aa.endpoints[k][0] == 2]
+    assert row2 == [aa.index["p", 0, 2]]
+    assert all(aa.mul(row2[0], lift[c]) is None for c in cc.rad)
+    upto = size-1
+    end = size-1
+    records = {
+        "A_original_pair": homology(aa, end, 0, upto),
+        "C_original_pair": homology(cc, end, 0, upto),
+        "A_first_kernel_pair": homology(aa, end-2, 0, upto),
+        "C_first_kernel_pair": homology(cc, end-2, 0, upto),
+        "actual_comparison_kernel": homology(aa, end, 0, upto, True),
+        "A_supported_source": homology(aa, size, size, upto),
+        "C_supported_source": homology(cc, size, size, upto),
+    }
+    # Literal ordinary projection is a chain map; kernel words are exactly
+    # those containing a length-2 or length-3 letter.
+    for n in range(upto+2):
+        for w in aa.words(n, end, 0):
+            projection = (
+                tuple(cc.index[aa.basis[b]] for b in w)
+                if all(aa.basis[b] in cc.index for b in w) else None
+            )
+            projected_boundary = Counter()
+            for v, c in aa.dword(w).items():
+                if all(aa.basis[b] in cc.index for b in v):
+                    projected_boundary[tuple(cc.index[aa.basis[b]] for b in v)] += c
+            assert {v: c for v, c in projected_boundary.items() if c} == (
+                cc.dword(projection) if projection is not None else {}
+            )
+            COUNTS["actual_projection_chain_checks"] += 1
+    bad_n = size-2
+    actual = records["actual_comparison_kernel"][bad_n]["homology_dimension"]
+    false_prediction = records["A_first_kernel_pair"][bad_n-1]["homology_dimension"]
+    assert (actual, false_prediction) == (1, 0)
+    r = (size-3)//4
+    assert records["A_first_kernel_pair"][2*r]["homology_dimension"] == 1
+    assert records["actual_comparison_kernel"][2*r+1]["homology_dimension"] == 0
+    return {
+        "chain_vertices": size, "total_vertices": size+1,
+        "dimensions": {"A": len(aa.basis), "C": len(cc.basis), "K": len(kernel)},
+        "actual_tensor_nilpotence_index": (size+1)//2,
+        "nonperfect": True,
+        "first_kernel_module": {"right_simple": end-2},
+        "mismatch": {"kernel_degree": bad_n, "actual_dimension": actual,
+                     "first_module_prediction": false_prediction},
+        "ordinary_records": records,
+    }
+
+
+def main(path):
+    cases = [calibration(size) for size in (7, 11)]
+    result = {
+        "schema_version": 1, "evidence_status": "bounded exact self-check",
+        "independent_verification": False, "arithmetic": "rational exact",
+        "python": platform.python_version(),
+        "helper_sha256": sha256(HELPER.read_bytes()).hexdigest(),
+        "checks": dict(COUNTS), "cases": cases,
+        "scope": (
+            "Two connected actual nonsplit square-zero nonperfect examples. "
+            "All outgoing/incoming ranks at stated bounds, literal finite "
+            "path resolutions and literal infinite loop/right-kernel certificates. "
+            "The all-size theorem and all-degree family proof are separate."
+        ),
+    }
+    Path(path).write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n",
+                          encoding="utf-8")
+    print(json.dumps({
+        "ok": True, "cases": [
+            {k: c[k] for k in ("chain_vertices", "dimensions", "mismatch")} for c in cases
+        ], "checks": dict(COUNTS),
+    }, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser()
+    parser.add_argument("--out", required=True)
+    main(parser.parse_args().out)

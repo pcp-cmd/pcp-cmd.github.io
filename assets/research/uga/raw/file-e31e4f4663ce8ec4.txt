@@ -1,0 +1,747 @@
+# Universal Gap A — Derived Necklace Excursion Bridge
+
+**Date:** 2026-10-02  
+**Status:** PROJECT-DERIVED LEMMA / SELF-AUDITED / NOT INDEPENDENTLY VERIFIED  
+**Scope:** local-singular branch after the two-sided finite-head collision theorem.
+
+---
+
+## 0. Frozen input
+
+Let \(A\) be an elementary finite-dimensional algebra and fix a vertex \(x\). Put
+\[
+\Gamma=e_xAe_x,
+\qquad \bar\Gamma=e_x\operatorname{rad}(A)e_x.
+\]
+Assume \(y,z\neq x\) and set
+\[
+M_z=e_zAe_x,
+\qquad N_y=e_xAe_y.
+\]
+In the local-singular branch of the current project, one has a fixed pair \((z,y)\) such that
+\[
+\operatorname{Tor}^{\Gamma}_m(M_z,N_y)\neq0
+\quad\text{for infinitely many }m.
+\]
+
+The purpose of this note is not to claim that these classes automatically give infinite \(+\). It identifies exactly how such a local class can be hidden inside the ambient algebra.
+
+---
+
+# 1. Ambient relative bar complex
+
+Let
+\[
+E=\bigoplus_{v\in Q_0}ke_v,
+\qquad J=\operatorname{rad}A.
+\]
+For \(y,z\) fixed, the normalized relative bar complex computing
+\(\operatorname{Tor}^A_*(R_z,L_y)\) is
+\[
+B_n^A(z,y)=e_zJ^{\otimes_E n}e_y
+\]
+with the usual differential obtained by multiplying adjacent radical factors.
+
+A nonzero pure bar word has a unique vertex string
+\[
+y=v_0,v_1,\dots,v_{n-1},v_n=z,
+\]
+with
+\[
+a_i\in e_{v_i}Je_{v_{i-1}}.
+\]
+
+Define its **\(x\)-excursion number** by
+\[
+\epsilon_x(a_n|\cdots|a_1)
+=
+\#\{1\le i\le n-1:v_i\neq x\}.
+\]
+Thus only internal vertices are counted; the fixed endpoints \(y,z\) are not counted.
+
+Let
+\[
+F_pB_n^A(z,y)
+=
+\operatorname{span}\{w:\epsilon_x(w)\le p\}.
+\]
+
+---
+
+# 2. Excursion filtration lemma
+
+## Lemma 2.1
+\(F_\bullet\) is an increasing filtration by subcomplexes.
+
+### Proof
+Each bar differential term multiplies two adjacent factors and therefore removes exactly one internal vertex \(v_i\).
+
+- If \(v_i=x\), the excursion number is unchanged.
+- If \(v_i\neq x\), the excursion number decreases by exactly one.
+
+Hence the differential never increases \(\epsilon_x\), so
+\[
+d(F_p)\subseteq F_p.
+\]
+For fixed bar degree \(n\), one has \(0\le p\le n-1\), hence the filtration is finite in every total degree. \(\square\)
+
+Consequently there is a convergent homological spectral sequence
+\[
+E^r_{p,*}(x;z,y)
+\Longrightarrow
+\operatorname{Tor}^A_*(R_z,L_y).
+\]
+With the increasing-filtration convention, \(d_r\) lowers excursion filtration by \(r\).
+
+---
+
+# 3. Zero-excursion column = local mixed Tor
+
+The filtration-zero words are exactly those whose every internal vertex is \(x\).
+
+For \(m\ge1\), an ambient bar word of degree \(m+2\) in filtration zero has the form
+\[
+M_z\otimes_k
+\bar\Gamma^{\otimes_k m}
+\otimes_k N_y.
+\]
+The filtration-preserving part of the ambient bar differential multiplies only across internal copies of \(x\). It is therefore exactly the normalized two-sided bar differential computing
+\[
+\operatorname{Tor}^{\Gamma}_m(M_z,N_y).
+\]
+
+(The bar degree-two term has an additional ambient multiplication into bar degree one; this affects only the low-degree \(m=0\) edge and is irrelevant for the infinite tail.)
+
+Therefore:
+
+## Theorem 3.1 — Zero-excursion identification
+For every \(m\ge1\),
+\[
+\boxed{
+E^1_{0,m+2}(x;z,y)
+\cong
+\operatorname{Tor}^{\Gamma}_m
+(e_zAe_x,e_xAe_y).
+}
+\]
+
+In particular, the current two-sided finite-head collision produces infinitely many nonzero classes in the zero-excursion column of an ambient bar spectral sequence.
+
+---
+
+# 4. Exact meaning of “hiding”
+
+Because the spectral sequence is concentrated in filtration \(p\ge0\), a class in the zero-excursion column cannot support a differential to negative filtration. It can disappear only by being **hit** by a higher-filtration class.
+
+Thus:
+
+## Theorem 4.1 — Excursion-screening principle
+Let
+\[
+0\neq\alpha_m
+\in
+\operatorname{Tor}^{\Gamma}_m(M_z,N_y)
+\cong E^1_{0,m+2}.
+\]
+If \(\alpha_m\) does not survive to
+\[
+\operatorname{Tor}^A_{m+2}(R_z,L_y),
+\]
+then for some page \(r\ge1\), its surviving representative on that page lies in the image of a differential coming from excursion filtration \(r\).
+
+Equivalently, killing the local class requires an actual ambient correction chain whose leading filtration contains exactly \(r\) internal visits to vertices different from \(x\).
+
+This gives a numerical screening complexity:
+\[
+\operatorname{escfill}_x(\alpha)
+=
+\min\{r:\alpha\text{ is killed from filtration }r\},
+\]
+with \(\operatorname{escfill}_x(\alpha)=\infty\) for a permanent cycle.
+
+This is the local-singular analogue of a filling-depth invariant, but it is defined directly in the ordinary ambient bar complex and needs no eventual periodicity.
+
+---
+
+# 5. First no-hiding dichotomy
+
+Assume the fixed local pair has infinitely many nonzero classes.
+
+Then exactly one of the following occurs along an infinite subsequence.
+
+### Branch S — survival
+Infinitely many zero-excursion classes survive to
+\[
+\operatorname{Tor}^A_{m+2}(R_z,L_y).
+\]
+
+### Branch B — bounded excursion screening
+There exists a fixed \(R\) such that infinitely many local classes die with
+\[
+\operatorname{escfill}_x\le R.
+\]
+After passing to a subsequence, some fixed page \(r\le R\) screens infinitely many of them.
+
+### Branch U — unbounded excursion screening
+There are local classes \(\alpha_{m_j}\) with
+\[
+\operatorname{escfill}_x(\alpha_{m_j})\to\infty.
+\]
+Hence their actual ambient fillers visit arbitrarily many non-\(x\) internal vertices.
+
+This trichotomy is exhaustive and does not infer any periodic operator from repeated labels.
+
+---
+
+# 6. Peirce visibility must be separated from homological survival
+
+Even Branch S does not automatically prove infinite \(+\).
+
+The surviving ambient group is
+\[
+\operatorname{Tor}^A_*(R_z,L_y).
+\]
+For this to be an infinite-\(+\) witness one additionally needs the reverse Peirce support
+\[
+\boxed{e_yAe_z\neq0.}
+\]
+
+Therefore the old phrase “no-hiding” actually contains two logically distinct problems:
+
+1. **homological hiding:** local classes are killed in the ambient bar complex;
+2. **Peirce hiding:** ambient classes survive, but only in pairs with \(e_yAe_z=0\).
+
+These must not be conflated.
+
+### Corollary 6.1 — supported survival closes the branch
+If
+\[
+e_yAe_z\neq0
+\]
+and infinitely many zero-excursion classes survive, then \(A\) has infinite \(+\).
+
+Hence, in a hypothetical Gap-A failure, every reverse-supported local collision pair must be screened infinitely often.
+
+---
+
+# 7. What unbounded screening really forces
+
+Suppose \(|Q_0|=N\). A filtration-\(r\) source contains \(r\) internal vertices different from \(x\), counted with repetition.
+
+If
+\[
+r>N-1,
+\]
+then some non-\(x\) vertex label repeats in the actual correction chain.
+
+Thus Branch U forces arbitrarily long **chain-level necklaces**. This is stronger than a naked graph cycle: the repeated vertices occur inside actual bar chains participating in differentials that kill specified local homology classes.
+
+However, repetition alone still does not imply a nonzero Tor/Yoneda return. A new deconcatenation/comparison lemma is required to turn a repeated chain-level necklace into either:
+
+- a supported ordinary Tor class, or
+- a strict smaller-support obstruction.
+
+No such implication is claimed here.
+
+---
+
+# 8. MRS/Vault mapping used in this run
+
+The following Vault methods were used concretely.
+
+### Bridge / cross-region transfer
+The unknown ambient behavior was replaced by a bridge from the controlled local corner complex to the full bar complex. The bridge is not an analogy: it is the excursion filtration whose zero column is the local Tor tail.
+
+### Representation change
+The mixed-linker statement was changed from an isolated Tor assertion into a filtered ordinary bar problem. The new object carries both the local witness and every possible ambient killing mechanism.
+
+### Infinite descent / minimal counterexample
+The next intended measure is no longer raw degree. It is the excursion/support complexity of a minimal killer. A successful descent must produce a strictly smaller support or a strictly smaller excursion filler while preserving a genuine obstruction.
+
+### Local-to-global
+Local homology is placed as an explicit filtration-zero piece of the ambient computation. This records exactly what extra global data are needed to destroy it.
+
+---
+
+# 9. Adversarial audit
+
+The following tempting strengthenings are **not** proved:
+
+1. local mixed Tor \(\Rightarrow\) ambient Tor survival;
+2. ambient Tor survival \(\Rightarrow\) infinite \(+\) without \(e_yAe_z\neq0\);
+3. unbounded excursion depth \(\Rightarrow\) periodic operator;
+4. repeated vertex in a killer \(\Rightarrow\) homological return;
+5. a proper-support killer \(\Rightarrow\) a smaller Gap-A counterexample.
+
+The last implication is especially unsafe: unbounded corner/mixed Tor can occur inside an ambient algebra of finite global dimension, so strict algebra descent needs an additional comparison theorem.
+
+---
+
+# 10. Current frontier after this lemma
+
+The local-singular branch is now reduced to two explicit tasks.
+
+## Target A — bounded-screening closure
+If a fixed excursion page screens infinitely many zero-column local classes, extract a fixed chain-level operation and show that it yields supported return or a legitimate strict descent.
+
+## Target B — unbounded-necklace closure
+If excursion filling depth is unbounded, use bar deconcatenation plus support-minimality to show that an actual repeated necklace contains either a supported permanent class or a strictly smaller obstruction.
+
+The immediate next attack should be **Target B**, because the number of vertex labels is finite while excursion depth is unbounded; this is the point where minimal-invariant-subset / infinite-descent methods can genuinely act.
+
+---
+
+## Frozen status
+
+\[
+\boxed{
+\text{Two-sided finite-head collision}
+\Longrightarrow
+\text{zero-excursion ambient bar recurrence}
+}
+\]
+
+is now a precise project-derived bridge.
+
+Universal Gap A remains open.
+
+---
+
+# 11. New extraction in the unbounded branch: a genuine derived necklace
+
+This section records a further consequence of Branch U. It is still not the final no-hiding theorem, but it upgrades “repeated vertex labels” to a cycle made of actual nonzero homology classes.
+
+Fix an excursion filtration level \(p\). Because the filtration-preserving differential contracts only internal copies of \(x\), it preserves the ordered list of the \(p\) non-\(x\) internal vertices.
+
+Hence the \(E^0\), and therefore \(E^1\), page splits as a direct sum over ordered external vertex strings
+\[
+\mathbf v=(v_1,\ldots,v_p),
+\qquad v_i\neq x.
+\]
+For a fixed string, the zero-order complex factors into the tensor product of the \(p+1\) passage complexes between consecutive external vertices
+\[
+y=v_0\rightsquigarrow v_1\rightsquigarrow\cdots
+\rightsquigarrow v_p\rightsquigarrow v_{p+1}=z,
+\]
+where every internal vertex inside one passage is \(x\).
+
+Over the field \(k\), Künneth gives the corresponding \(E^1\)-summand as the tensor product of the passage homology spaces.
+Equivalently, using the standard derived quotient
+\[
+Q_x=A/^{\mathbf L}Ae_xA,
+\]
+these passage homology spaces are the Peirce homology pieces of \(Q_x\) (with the usual degree shift in negative degrees).
+
+## Theorem 11.1 — Derived-necklace extraction
+Assume Branch U: zero-excursion local classes require screening in arbitrarily large excursion filtration.
+
+Then there exists a directed cycle of vertices away from \(x\),
+\[
+v_0,v_1,\ldots,v_s=v_0,
+\qquad v_i\neq x,
+\]
+and homogeneous nonzero derived classes
+\[
+0\neq\eta_i
+\in
+ e_{v_i}H^*(Q_x)e_{v_{i-1}}
+\qquad(1\le i\le s),
+\]
+such that the tensor
+\[
+\eta_s\otimes\cdots\otimes\eta_1
+\]
+is nonzero on the corresponding \(E^1\) necklace summand.
+
+Moreover one may choose the cycle support-minimal, in which case the external vertices \(v_0,\ldots,v_{s-1}\) are pairwise distinct.
+
+### Proof
+Choose a screened local class whose minimal screening filtration is \(r>N-1\). A page-\(r\) source must have a nonzero \(E^1\) component in filtration \(r\); otherwise it could not survive to page \(r\).
+
+Since \(E^1_r\) is the direct sum over ordered external vertex strings, at least one string
+\[
+(v_1,\ldots,v_r)
+\]
+has nonzero component. Its fixed-string summand is, by Künneth, a tensor product of the homology of the consecutive \(x\)-passage complexes. Therefore every factor homology space in that tensor product is nonzero.
+
+There are only \(N-1\) possible vertex labels different from \(x\), while the string has length \(r>N-1\). Hence some label repeats. Take two occurrences of the same label and the sub-string between them. Choosing a nonzero homogeneous class in each nonzero passage-homology factor gives a composable closed tensor of nonzero classes. This is the required derived necklace.
+
+Among all such closed sub-strings choose one with minimal support. Any repeated internal vertex in that cycle would cut out a strictly smaller closed sub-string with nonzero passage factors, contradicting minimality. Hence the chosen external vertices are pairwise distinct except for the initial/final base vertex. \(\square\)
+
+### What this improves
+The old forbidden inference was
+\[
+\text{repeated graph labels}\Rightarrow\text{homological return}.
+\]
+The theorem above does **not** make that inference. Instead, it produces a cycle whose edges are already actual nonzero classes in the Peirce homology of the derived quotient. Thus the remaining problem is no longer to manufacture a homological necklace from graph recurrence; the necklace is now present on the \(E^1\) page.
+
+### Remaining gap
+A composable cycle of nonzero \(H^*(Q_x)\)-classes can still be destroyed by the higher bar differential / higher \(A_\infty\) operations. Therefore one must still prove one of:
+
+1. some support-minimal derived necklace has a permanent bar class, giving diagonal ambient Tor and hence infinite \(+\); or
+2. every attempted necklace is killed, and the killing data yields a strictly smaller obstruction or a bounded finite-state screening mechanism.
+
+This is now the precise Target B frontier.
+
+---
+
+# 12. Minimal derived necklace is an actual diagonal bar cycle
+
+Theorem 11.1 gives a cycle of nonzero classes in \(H^*(Q_x)\), but a priori a bar differential could still contract consecutive classes by \(m_2,m_3,\ldots\).
+
+Choose a strictly unital minimal \(S\)-augmented \(A_\infty\) model
+\[
+H=H^*(Q_x),
+\qquad S=\bigoplus_{v\neq x}ke_v,
+\]
+with all normalized higher products preserving the reduced augmentation ideal \(\bar H\).
+
+Call a **derived necklace** a cyclic sequence
+\[
+\eta_i\in e_{v_i}\bar H e_{v_{i-1}}\setminus\{0\},
+\qquad
+v_s=v_0.
+\]
+Its length is \(s\).
+
+## Theorem 12.1 — Minimal-necklace cycle lemma
+Assume at least one derived necklace exists. Choose one of minimal positive length
+\[
+\mathcal N=(\eta_s,\ldots,\eta_1).
+\]
+Then the corresponding reduced bar word
+\[
+[\eta_s|\cdots|\eta_1]
+\]
+is a nonzero cycle in the minimal \(A_\infty\) bar complex of \(H\).
+
+### Proof
+The bar differential is the sum over all contiguous blocks of the word, replacing a block
+\[
+\eta_{i+r-1}|\cdots|\eta_i
+\]
+by
+\[
+m_r(\eta_{i+r-1},\ldots,\eta_i),
+\qquad r\ge2,
+\]
+with the standard signs. Since the model is minimal, there is no \(m_1\) term.
+
+Suppose one such value is nonzero.
+
+- If the block is a proper consecutive block of the necklace, replacing the block by its nonzero output produces another composable closed necklace with strictly fewer edges.
+- If the block is the whole necklace, its nonzero output lies in
+  \[
+  e_{v_0}\bar H e_{v_0},
+  \]
+  and hence is a one-edge derived necklace.
+
+Either case contradicts minimality of the chosen necklace. Therefore every bar-differential summand is zero, so
+\[
+d[\eta_s|\cdots|\eta_1]=0.
+\]
+The tensor itself is nonzero because the Peirce idempotents match and each \(\eta_i\neq0\). \(\square\)
+
+### Consequence
+The unbounded-screening branch therefore forces the existence of an actual **diagonal bar cycle** after passing to a minimal derived necklace.
+
+The remaining issue is now strictly:
+\[
+\boxed{
+\text{Can every such minimal derived-necklace cycle be a bar boundary?}
+}
+\]
+
+If one of these cycles is non-boundary, it gives a diagonal Tor class for a simple away from \(x\). If non-boundary minimal necklaces occur in infinitely many total degrees, the diagonal Peirce support is automatic and \(A\) has infinite \(+\).
+
+Thus Target B has been compressed from
+\[
+\text{“turn repeated excursions into a return”}
+\]
+to
+\[
+\boxed{
+\text{“rule out permanent boundary-filling of minimal derived-necklace cycles.”}
+}
+\]
+
+No claim is made yet that a minimal necklace cannot be a boundary; a boundary may come from a longer bar word through an \(A_\infty\) operation whose output is one of the necklace edges.
+
+---
+
+# 13. Primitive-edge criterion: when a minimal necklace cannot be a boundary
+
+Let
+\[
+\bar H
+\]
+be the reduced augmentation ideal of the minimal \(A_\infty\) model \(H=H^*(Q_x)\). Define the homogeneous \(S\)-sub-bimodule
+\[
+D_{\infty}
+=
+\sum_{r\ge2}\operatorname{im}
+\bigl(m_r:\bar H^{\otimes_S r}\to\bar H\bigr),
+\]
+and the **\(A_\infty\)-primitive quotient**
+\[
+P_{\infty}=\bar H/D_{\infty}.
+\]
+
+## Theorem 13.1 — Primitive-necklace survival
+Let
+\[
+w=[\eta_s|\cdots|\eta_1]
+\]
+be the bar cycle supplied by Theorem 12.1. If every edge has nonzero primitive image
+\[
+\overline{\eta_i}\neq0
+\quad\text{in }P_{\infty},
+\]
+then \(w\) is not a bar boundary.
+
+### Proof
+Project the length-\(s\) bar-chain space by
+\[
+\pi_s:
+\bar H^{\otimes_S s}
+\longrightarrow
+P_{\infty}^{\otimes_S s}.
+\]
+
+Consider the length-\(s\) component of an arbitrary bar boundary. Every term contributing to this component is obtained by applying some \(m_r\), \(r\ge2\), to a contiguous block of a longer word and replacing that block by its output. Therefore at least one tensor slot of every such term lies in \(D_{\infty}\). Hence
+\[
+\pi_s(\text{every length-}s\text{ boundary component})=0.
+\]
+
+But
+\[
+\pi_s(w)
+=
+\overline{\eta_s}\otimes\cdots\otimes\overline{\eta_1}.
+\]
+Because the Peirce idempotents match and \(S\) is semisimple, this pure tensor is nonzero whenever every factor is nonzero. Thus \(w\) cannot be a boundary. \(\square\)
+
+## Corollary 13.2 — Exact obstruction to killing a minimal necklace
+If a minimal derived-necklace bar cycle is a boundary, then at least one of its edges satisfies
+\[
+\eta_i\in D_{\infty}.
+\]
+In words: **some necklace edge is itself generated by a genuine \(A_\infty\) operation.**
+
+This is substantially sharper than saying merely that “higher operations may kill the necklace.” The higher-operation complexity must already enter one of the individual edges.
+
+---
+
+# 14. Degree descent versus degree-preserving transport
+
+For a homogeneous negative class
+\[
+\eta\in H^{-d},\qquad d>0,
+\]
+suppose \(\eta\) occurs as an output of a normalized higher product.
+
+The degree convention
+\[
+|m_r|=2-r
+\]
+gives
+\[
+d
+=
+\sum_j d_j+r-2,
+\qquad d_j=-|\xi_j|\ge0.
+\]
+
+Therefore there are only two mechanisms that can produce an edge without lowering the negative degree of at least one input:
+
+1. **degree-preserving transport:** \(r=2\), with one input in \(H^0\) and the other still in degree \(-d\); this is left or right multiplication by a radical \(H^0\)-class;
+2. **degree descent:** every other case uses only negative inputs of strictly smaller negative degree than \(d\) (or, for \(m_2\) with two negative inputs, two positive magnitudes summing to \(d\)).
+
+Thus Corollary 13.2 converts permanent boundary-filling into a new dichotomy:
+
+\[
+\boxed{
+\text{minimal necklace boundary}
+\Longrightarrow
+\text{radical transport at the same degree}
+\quad\text{or}\quad
+\text{generation from lower negative degrees}.
+}
+\]
+
+The first mechanism is constrained by the nilpotence of \(\operatorname{rad}H^0=\operatorname{rad}(A/Ae_xA)\); the second is well-founded in the negative-degree parameter.
+
+This is the next intended descent measure. A full proof that the two mechanisms cannot sustain all high-degree minimal necklaces indefinitely is not yet supplied here.
+
+
+---
+
+# 15. Repair of Section 14: linear combinations and Nakayama elimination
+
+Section 14 used the convenient phrase that a decomposable edge is "an output" of one higher product.  The precise conclusion of Corollary 13.2 is weaker:
+\[
+\eta\in D_\infty=\sum_{r\ge2}\operatorname{im}m_r,
+\]
+so \(\eta\) may be a finite linear combination of higher-product outputs.  Any descent argument must therefore be formulated at the level of subspaces, not by choosing one output term without justification.
+
+The following degreewise Nakayama argument repairs this point and, at the same time, removes degree-preserving radical transport from the genuine obstruction.
+
+Let
+\[
+C:=H^0(Q_x),\qquad R:=\operatorname{rad}C,
+\qquad M_d:=H^{-d}(Q_x)\quad(d>0).
+\]
+Because \(Q_x\) is connective, every normalized input has degree \(\le0\).  The binary product \(m_2\) makes \(M_d\) a finite-dimensional \(C\)-bimodule.
+
+For fixed \(d>0\), let \(G_d\subseteq M_d\) be the \(C\)-sub-bimodule generated by all higher-product values
+\[
+m_r(\xi_r,\ldots,\xi_1)\in M_d
+\]
+for which every negative-degree input has magnitude strictly smaller than \(d\).  Degree-zero inputs are allowed.
+
+## Lemma 15.1 — Degree decomposition of the decomposable subspace
+In degree \(-d\),
+\[
+D_\infty\cap M_d
+\subseteq
+RM_d+M_dR+G_d.
+\]
+In fact equality holds after replacing \(G_d\) by the bimodule generated by the non-transport outputs.
+
+### Proof
+Take a homogeneous term
+\[
+m_r(\xi_r,\ldots,\xi_1)\in M_d.
+\]
+Write \(|\xi_j|=-d_j\) with \(d_j\ge0\).  Since \(|m_r|=2-r\),
+\[
+d=\sum_j d_j+r-2.
+\]
+If some input has magnitude \(d_j=d\), then necessarily \(r=2\) and every other input has degree zero.  In the reduced augmented model that degree-zero input lies in \(R\), so the output belongs to \(RM_d+M_dR\).
+
+In every other case all negative inputs have magnitude strictly smaller than \(d\), so the output lies in \(G_d\).  Summing over all terms gives the inclusion. \(\square\)
+
+## Lemma 15.2 — Nakayama elimination of same-degree transport
+Assume the primitive quotient vanishes in degree \(-d\):
+\[
+(P_\infty)^{-d}=0.
+\]
+Then
+\[
+\boxed{M_d=G_d.}
+\]
+Thus every degree-\(-d\) class is generated, as a \(C\)-bimodule, from higher operations whose negative inputs have strictly smaller negative magnitude.  Same-degree radical transport contributes no essential generator.
+
+### Proof
+The assumption \((P_\infty)^{-d}=0\) says
+\[
+M_d=D_\infty\cap M_d.
+\]
+Lemma 15.1 gives
+\[
+M_d=RM_d+M_dR+G_d.
+\]
+Pass to the finite-dimensional \(C\)-bimodule
+\[
+\overline M_d:=M_d/G_d.
+\]
+Then
+\[
+\overline M_d=R\overline M_d+\overline M_dR.
+\]
+Since \(C/R\) is the separable semisimple vertex algebra, the radical of \(C^e\) acts on a bimodule by the subspace generated by left and right multiplication by \(R\).  Hence
+\[
+\overline M_d=\operatorname{rad}(C^e)\,\overline M_d.
+\]
+Nakayama's lemma for the finite-dimensional algebra \(C^e\) gives \(\overline M_d=0\).  Therefore \(M_d=G_d\). \(\square\)
+
+### Consequence
+The genuine obstruction is not indefinite transport by \(H^0\)-radical elements.  If no primitive class exists in degree \(-d\), then degree \(-d\) is forced from strictly lower negative degrees.
+
+This gives a well-founded degree induction that is valid for linear combinations.
+
+---
+
+# 16. Primitive-or-Massey-generation dichotomy
+
+The preceding lemma can be iterated.
+
+## Theorem 16.1 — Negative primitive or degree-zero generation
+Fix \(D>0\).  Suppose
+\[
+(P_\infty)^{-d}=0
+\qquad(1\le d\le D).
+\]
+Then every class in \(H^{-d}(Q_x)\), \(1\le d\le D\), lies in the \(C\)-bimodule generated by evaluations of finite rooted \(A_\infty\)-trees whose leaves all lie in the degree-zero radical \(R\).
+
+### Proof
+Induct on \(d\).  Lemma 15.2 expresses every degree-\(-d\) class in terms of higher-product values whose negative inputs have smaller magnitude.  Apply the induction hypothesis to those negative inputs and graft the corresponding rooted trees into the inputs.  The process terminates because the negative magnitude strictly decreases along every non-degree-zero branch. \(\square\)
+
+For a rooted tree \(T\) with only degree-zero leaves, let \(r(v)\) be the arity of an internal vertex.  Its output degree satisfies
+\[
+|\operatorname{out}(T)|
+=-\sum_{v\in\operatorname{Int}(T)}(r(v)-2).
+\]
+Thus define its **Massey excess**
+\[
+\operatorname{mex}(T)
+:=\sum_v(r(v)-2).
+\]
+A tree producing a degree-\(-d\) class has exactly
+\[
+\operatorname{mex}(T)=d.
+\]
+
+Hence, if the negative homology of \(Q_x\) is unbounded while the negative primitive quotient vanishes in all degrees, then the derived quotient must support nonzero degree-zero-rooted \(A_\infty\)-trees of arbitrarily large Massey excess.
+
+This is a sharper residual obstruction than "radical transport can continue forever": radical transport has been eliminated by Nakayama, and the only remaining mechanism is genuinely higher homotopy composition.
+
+---
+
+# 17. Degree-zero primitive layer
+
+Because \(H\) is connective, an operation \(m_r\) with \(r\ge3\) on reduced inputs has strictly negative output degree.  Therefore the decomposable subspace in degree zero is exactly
+\[
+D_\infty\cap H^0=R^2,
+\]
+and
+\[
+\boxed{(P_\infty)^0\cong R/R^2.}
+\]
+Thus the primitive degree-zero leaves in the terminal generation picture are precisely the arrow-level classes of the ordinary quotient algebra \(C=A/Ae_xA\).
+
+Combining Theorems 13.1, 15.2 and 16.1 gives the repaired Target-B alternative:
+
+\[
+\boxed{
+\begin{array}{c}
+\text{primitive edge survives}\;\Longrightarrow\;\text{non-boundary necklace},\\[1mm]
+\text{or}\\[1mm]
+\text{all negative primitives disappear}\;\Longrightarrow\;
+\text{unbounded degree-zero-rooted Massey excess}.
+\end{array}}
+\]
+
+The second line is now the precise hard branch.  It cannot be dismissed by nilpotence of \(R\): nilpotence controls repeated \(m_2\)-transport, but it does not by itself bound higher \(A_\infty\)-trees.
+
+---
+
+# 18. New frozen frontier
+
+The previous tentative idea "radical nilpotence + degree descent automatically terminates all boundary fillings" is therefore **not proved and should not be used**.
+
+What is proved is stronger in one direction and more honest in another:
+
+1. degree-preserving radical transport is inessential after passing to the appropriate quotient, by Nakayama;
+2. if primitive negative edges occur on a minimal necklace, they give a permanent bar class;
+3. if no such primitive negative edges occur in arbitrarily high degrees, unbounded negative derived homology must be generated by finite rooted \(A_\infty\)-trees on the finite degree-zero arrow layer, with unbounded Massey excess.
+
+Therefore the remaining Target-B question is:
+\[
+\boxed{
+\text{Can a finite-dimensional idempotent derived quotient sustain}\
+\text{unbounded arrow-rooted Massey excess while every resulting closed necklace is screened?}
+}
+\]
+
+A closure theorem for this finite-alphabet Massey branch, or a strict-support descent extracted from it, would finish the unbounded-excursion side.

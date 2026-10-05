@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "date": "2026-10-04",
+  "kind": "targeted exact research execution record",
+  "actual_executed_script": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-global-route-audit\\verify_route_audit.py",
+  "retained_script": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Global-Route-Audit-Evidence\\verify_route_audit.py",
+  "retained_result": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Global-Route-Audit-Evidence\\result.json",
+  "proof": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Run-Global-Route-Audit-Bongartz-Ordinary-Ideals-Trace-and-Relative-Resolution-Barriers-2026-10-04.md",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "counts": {
+    "associativity": 6020,
+    "actual_minimal_covers": 26,
+    "integer_basis_inverses": 207,
+    "actual_kernel_isomorphisms": 3,
+    "pruned_homology_isomorphisms": 0
+  },
+  "invocation": {
+    "wrapper": "C:/Users/pcp/.codex/skills/math-science-computation/scripts/observer_run.py",
+    "catalog": "C:/Users/pcp/.codex/skills/math-science-computation/references/observer-phases.json",
+    "phase": "math-science-computation.script.run",
+    "arguments": [
+      "-B",
+      "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-global-route-audit\\verify_route_audit.py",
+      "--project-root",
+      "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03",
+      "--out",
+      "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-global-route-audit\\result.json"
+    ]
+  },
+  "shared_dependencies": [
+    "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py (definitions before its p-loop)",
+    "toolbox/Imported-Outputs/return_kernel_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_return_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_system_certificate.py"
+  ],
+  "execution_history": "Initial caller used a nonexistent sr.Module.direct_sum attribute. Repaired to ss.direct_sum; final extended run passed. A concise reconstructed error record is retained separately.",
+  "mathematical_scope": "Literal finite multiplication, actual minimal covers and kernel-coordinate isomorphisms, complete eight Groebner overlap checks. All-degree and any-field results use separate written basis proofs; the Betti prefix is only calibration.",
+  "independent_verification": false,
+  "formal_verifier_acceptance": false,
+  "default_checksums_computed": false,
+  "legacy_hash_schema_validated": false,
+  "fixed_pair_visibility_implication": false,
+  "automatic_monomial_initial_Tor_transfer": false,
+  "automatic_relative_to_ordinary_Tor_transfer": false,
+  "finite_hub_trace_identity_is_alone_a_contradiction": false,
+  "UGA": "OPEN"
+}

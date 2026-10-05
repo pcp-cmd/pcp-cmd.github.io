@@ -1,0 +1,1533 @@
+# Universal Gap A — Universal Layer U3
+## Run B — First-Defect Bootstrap
+
+**Role:** Defect Propagation / Bootstrap  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Run:** B  
+**Completion label:** `REFUTED_NAIVE_BOOTSTRAP + MAJOR_FRONTIER_COMPRESSION`  
+**Global U3:** OPEN
+
+This file freezes the actual research trajectory completed in this run so far.
+
+It does **not** claim a full First-Defect Bootstrap Theorem.
+
+The principal result of this run is negative but structurally useful:
+
+\[
+\boxed{
+H_r(K)\neq0
+\not\Rightarrow
+\exists q>r:\ H_q(K)\neq0
+}
+\]
+
+for actual finite-dimensional idempotent quotients, even when \(r\) is the first positive defect.
+
+The failure is not isolated to \(r=2\): an explicit actual family exists for every \(r\ge2\).
+
+The run then identifies the extra property that any viable bootstrap theorem must use:
+
+\[
+\boxed{
+\text{bilateral no-return/perfectness data + actual coring coupling, not mere nonzero defect.}
+}
+\]
+
+---
+
+# 1. Frozen setting
+
+Let
+
+\[
+S=D/D(1-e)D
+\]
+
+be a singular finite-dimensional local algebra and set
+
+\[
+K=S\otimes_D^{\mathbf L}S.
+\]
+
+We assume
+
+\[
+H_0(K)=S,
+\qquad
+H_1(K)=0,
+\]
+
+and
+
+\[
+K\not\simeq S.
+\]
+
+Define the first positive defect degree
+
+\[
+\boxed{
+r=\min\{q>0:H_q(K)\neq0\}.
+}
+\]
+
+Write
+
+\[
+\boxed{
+M=H_r(K).
+}
+\]
+
+The initial target proposed for this run was
+
+\[
+\boxed{
+M\neq0
+\Longrightarrow
+\exists q>r:\ H_q(K)\neq0.
+}
+\tag{1.1}
+\]
+
+The run shows that (1.1) is false.
+
+---
+
+# 2. Vault method mapping
+
+The user required explicit use of the following Vault methods.
+
+The retrieval available in this run exposed prior uses and methodological patterns rather than a separate canonical card for every named method.
+
+No missing Vault text was invented.
+
+The methods were mapped to the present object
+
+\[
+K=S\otimes_D^{\mathbf L}S
+\]
+
+as follows.
+
+## 2.1 Bootstrap
+
+Target:
+
+\[
+H_r(K)\neq0
+\]
+
+should create a later defect
+
+\[
+H_{q_1}(K)\neq0,
+\qquad
+q_1>r,
+\]
+
+together with a property \(P\) satisfying
+
+\[
+P(H_r)\Longrightarrow P(H_{q_1}),
+\]
+
+so that the process can be iterated.
+
+The run tests first whether “nonzero defect” itself is enough.
+
+It is not.
+
+---
+
+## 2.2 Multiplicative projection
+
+Use the actual derived-coring comultiplication
+
+\[
+\boxed{
+\Delta:
+K\longrightarrow K\otimes_S^{\mathbf L}K
+}
+\]
+
+and attempt to project the first defect to its self-interaction sector
+
+\[
+M[-r]\otimes_S^{\mathbf L}M[-r].
+\]
+
+The candidate object is
+
+\[
+\pi_{MM}\Delta.
+\]
+
+The run computes its lowest-degree behavior and shows that the naive projection vanishes for degree reasons.
+
+---
+
+## 2.3 “An epsilon of room”
+
+Use the full empty strip
+
+\[
+H_q(K)=0
+\qquad
+(0<q<r)
+\]
+
+as spectral room.
+
+The run studies extremal classes in the tensor-square spectral sequence and asks whether any source capable of killing the first \(M\otimes M\) self-interaction exists.
+
+A genuine edge-survival statement is obtained.
+
+However survival inside
+
+\[
+K\otimes_S^{\mathbf L}K
+\]
+
+does not force a later defect in \(K\).
+
+---
+
+## 2.4 Local to global
+
+The intended plan was:
+
+1. prove a local first-row propagation statement;
+2. identify a hereditary property \(P\);
+3. iterate.
+
+The local propagation statement fails without additional hypotheses.
+
+Therefore the local-to-global method redirects the problem toward identifying the correct \(P\).
+
+---
+
+## 2.5 Stratification / extreme row
+
+The Postnikov / Künneth spectral sequence is stratified by defect rows.
+
+The run isolates:
+
+- the lowest positive row \(r\);
+- the first possible self-interaction total degree \(2r\);
+- the extremal term \(M\otimes_SM\).
+
+No whole-spectral-sequence averaging argument is used.
+
+---
+
+## 2.6 Infinite descent
+
+After propagation fails, the method is reversed:
+
+> can failure force a strictly smaller defect object, smaller support, or smaller complexity?
+
+The run does not obtain a universal strict descent theorem.
+
+Instead it identifies a structural descent in the **hypothesis space**:
+
+\[
+\text{nonzero }M
+\quad\leadsto\quad
+\text{bilaterally perfect/free, coring-coupled }M.
+\]
+
+The naked property “\(M\neq0\)” is discarded.
+
+---
+
+## 2.7 Representation change
+
+The run changes representation in sequence:
+
+\[
+K
+\longrightarrow
+K\otimes_S^{\mathbf L}K
+\longrightarrow
+\text{Künneth edge geometry}
+\longrightarrow
+\text{minimal }D\text{-resolution of }S.
+\]
+
+The last representation produces the decisive actual counterexample family.
+
+---
+
+## 2.8 Term-by-term estimate
+
+All candidate differentials entering or leaving the extremal row are checked by their bidegrees.
+
+The statement
+
+> “there is not enough cancellation”
+
+is never used without source/target analysis.
+
+---
+
+# 3. First positive row geometry
+
+Because \(r\) is the first positive defect,
+
+\[
+H_q(K)=0
+\qquad
+0<q<r.
+\]
+
+Thus the graded homology object begins
+
+\[
+H_*(K)
+=
+S
+\oplus
+M[r]
+\oplus
+(\text{possible higher rows}).
+\]
+
+The first possible positive self-interaction occurs in total degree
+
+\[
+2r.
+\]
+
+At lower total degrees, there is no \(M\otimes M\) contribution.
+
+This is the basic “room” available to the bootstrap attempt.
+
+---
+
+# 4. Self-interaction projection audit
+
+The actual quotient self-intersection has a derived-coring structure
+
+\[
+\Delta:
+K\to K\otimes_S^{\mathbf L}K.
+\]
+
+The original hope was that
+
+\[
+\pi_{MM}\Delta
+\]
+
+might already be nonzero on
+
+\[
+H_r(K)=M
+\]
+
+and hence force a new defect.
+
+That is impossible for a simple degree reason.
+
+In total degree \(r\), the Künneth \(E_2\)-page for
+
+\[
+K\otimes_S^{\mathbf L}K
+\]
+
+contains only the primitive pieces
+
+\[
+S\otimes_SM
+\]
+
+and
+
+\[
+M\otimes_SS.
+\]
+
+The \(M\otimes_SM\) sector begins only in total degree
+
+\[
+2r.
+\]
+
+Therefore
+
+\[
+\boxed{
+\pi_{MM}\Delta|_{H_r(K)}=0
+}
+\tag{4.1}
+\]
+
+is forced by grading.
+
+It is not a contradiction with coassociativity.
+
+---
+
+# 5. Primitive part forced by counits
+
+The coring counit identities are
+
+\[
+(\mu\otimes1)\Delta
+=
+\operatorname{id}_K,
+\]
+
+\[
+(1\otimes\mu)\Delta
+=
+\operatorname{id}_K.
+\]
+
+On the first defect class
+
+\[
+m\in M=H_r(K),
+\]
+
+these identities force the total-degree-\(r\) part of \(\Delta_*(m)\) to have the primitive form
+
+\[
+\boxed{
+\Delta_*(m)
+=
+m\otimes1
++
+1\otimes m
+}
+\tag{5.1}
+\]
+
+up to the usual endpoint / side convention.
+
+Thus the first defect behaves primitively to first order.
+
+No quadratic self-copy is available at degree \(r\).
+
+---
+
+# 6. First-Defect Edge Survival Lemma — what is actually true
+
+Assume temporarily that
+
+\[
+H_q(K)=0
+\qquad
+(r<q<2r).
+\]
+
+Consider the Künneth spectral sequence for
+
+\[
+K\otimes_S^{\mathbf L}K.
+\]
+
+At total degree \(2r\), the extremal term
+
+\[
+\boxed{
+M\otimes_SM
+}
+\]
+
+appears.
+
+Because all positive rows strictly below \(r\) vanish and all rows strictly between \(r\) and \(2r\) are assumed absent, there is no earlier positive-row source capable of killing this extremal tensor term through the obvious low-page channels.
+
+Thus one gets an edge-survival statement:
+
+\[
+\boxed{
+M\otimes_SM
+\text{ contributes a surviving class in }
+H_{2r}(K\otimes_S^{\mathbf L}K)
+}
+\tag{6.1}
+\]
+
+whenever the actual tensor product is nonzero and the stated row gap holds.
+
+This is the legitimate “epsilon of room” output.
+
+---
+
+# 7. Why edge survival does not bootstrap \(K\)
+
+The crucial failure is:
+
+\[
+H_{2r}(K\otimes_S^{\mathbf L}K)\neq0
+\]
+
+does **not** imply
+
+\[
+H_{2r}(K)\neq0.
+\]
+
+The comultiplication
+
+\[
+\Delta:K\to K\otimes_S^{\mathbf L}K
+\]
+
+is constrained by counit identities and behaves like a split coaction / monomorphism-type map.
+
+It is not a surjection onto all tensor-square homology.
+
+Therefore a class in
+
+\[
+M\otimes_SM
+\]
+
+may lie entirely outside the image of
+
+\[
+\Delta_*H_*(K).
+\]
+
+Hence the implication
+
+\[
+\boxed{
+\text{surviving self-interaction in }K\otimes K
+\Longrightarrow
+\text{next defect in }K
+}
+\]
+
+is invalid.
+
+This is the precise failure of the most natural multiplicative-projection bootstrap.
+
+---
+
+# 8. The seven-dimensional amplitude-two near-miss
+
+The previous U2 run produced an actual finite-dimensional idempotent quotient that already destroys the naive bootstrap at \(r=2\).
+
+Take the quiver algebra \(D\) with vertices \(e,f\),
+
+- loop
+  \[
+  x:e\to e,
+  \]
+- arrows
+  \[
+  a:e\to f,
+  \qquad
+  b:f\to e,
+  \]
+
+and relations
+
+\[
+\boxed{
+x^2=0,
+\qquad
+xa=0,
+\qquad
+ab=0.
+}
+\]
+
+Delete \(f\).
+
+Then
+
+\[
+\boxed{
+S=D/DfD
+\cong
+k[x]/(x^2).
+}
+\]
+
+There is an exact right resolution
+
+\[
+\boxed{
+0
+\to
+eD
+\xrightarrow{b}
+fD
+\xrightarrow{a}
+eD
+\to
+S
+\to0.
+}
+\tag{8.1}
+\]
+
+Tensoring with \(S\) kills the \(fD\)-term and gives
+
+\[
+S\to0\to S.
+\]
+
+Therefore
+
+\[
+\boxed{
+H_q(K)
+=
+\operatorname{Tor}^D_q(S,S)
+=
+\begin{cases}
+S,&q=0,2,\\
+0,&q\neq0,2.
+\end{cases}
+}
+\tag{8.2}
+\]
+
+Thus
+
+\[
+r=2,
+\qquad
+M=H_2(K)\neq0,
+\]
+
+but
+
+\[
+\boxed{
+H_q(K)=0
+\qquad(q>2).
+}
+\]
+
+So the first target theorem is false.
+
+---
+
+# 9. Why the seven-dimensional near-miss is not a no-return counterexample
+
+The same U2 computation found that the bimodule \(M\) is asymmetric:
+
+\[
+\boxed{
+M_S\cong S,
+}
+\]
+
+but
+
+\[
+\boxed{
+{}_SM\cong k\oplus k.
+}
+\]
+
+Thus \(M\) is right projective/free but left nonprojective.
+
+This violates the separate left/right perfection forced by the hypothetical no-return branch.
+
+Moreover the ambient diagonal simple already returns:
+
+\[
+xD\cong k_e
+\]
+
+inside the radical of \(eD\), giving arbitrarily high ambient diagonal Tor.
+
+Therefore this example refutes the **bare bootstrap theorem** without refuting the refined no-return strategy.
+
+---
+
+# 10. Arbitrary first-defect degree counterexample family
+
+The failure is not special to \(r=2\).
+
+For every integer
+
+\[
+\boxed{r\ge2}
+\]
+
+construct a finite-dimensional algebra \(D_r\) as follows.
+
+Vertices:
+
+\[
+e,f_1,\ldots,f_{r-1}.
+\]
+
+At \(e\), put a loop
+
+\[
+x:e\to e.
+\]
+
+Put an oriented cycle
+
+\[
+e
+\xrightarrow{a_1}
+f_1
+\xrightarrow{a_2}
+f_2
+\to\cdots\to
+f_{r-1}
+\xrightarrow{a_r}
+e.
+\]
+
+Impose:
+
+\[
+\boxed{
+x^2=0,
+}
+\]
+
+\[
+\boxed{
+xa_1=0,
+}
+\]
+
+and
+
+\[
+\boxed{
+a_i a_{i+1}=0
+\qquad
+(1\le i<r).
+}
+\]
+
+Do **not** kill the final return products needed for injectivity, in particular
+
+\[
+a_rx,
+\qquad
+a_ra_1.
+\]
+
+The relations make the algebra finite-dimensional: any sufficiently long path contains one of the forbidden adjacent products.
+
+Delete all \(f_i\).
+
+Then
+
+\[
+\boxed{
+S
+=
+D_r/D_r(1-e)D_r
+\cong
+k[x]/(x^2).
+}
+\tag{10.1}
+\]
+
+---
+
+# 11. Exact resolution for the family
+
+There is an exact right \(D_r\)-resolution
+
+\[
+\boxed{
+0
+\to
+eD_r
+\xrightarrow{a_r}
+f_{r-1}D_r
+\xrightarrow{a_{r-1}}
+\cdots
+\xrightarrow{a_2}
+f_1D_r
+\xrightarrow{a_1}
+eD_r
+\to
+S
+\to0.
+}
+\tag{11.1}
+\]
+
+The maps are given by left multiplication by the corresponding arrows.
+
+The imposed zero-relations ensure successive compositions vanish.
+
+The retained final products ensure the first map is injective in exactly the same way as in the \(r=2\) model.
+
+Tensor with \(S\).
+
+Every projective supported at \(f_i\) dies:
+
+\[
+f_iD_r\otimes_{D_r}S=0.
+\]
+
+Both copies of \(eD_r\) become \(S\).
+
+Hence
+
+\[
+\boxed{
+K_r
+=
+S\otimes_{D_r}^{\mathbf L}S
+}
+\]
+
+has homology
+
+\[
+\boxed{
+H_q(K_r)
+=
+\begin{cases}
+S,&q=0,r,\\
+0,&q\neq0,r,
+\end{cases}
+}
+\tag{11.2}
+\]
+
+at least as right \(S\)-modules.
+
+Thus:
+
+\[
+\boxed{
+H_r(K_r)\neq0,
+\qquad
+H_q(K_r)=0
+\quad(q>r).
+}
+\tag{11.3}
+\]
+
+This gives a counterexample to the bare first-defect bootstrap in **every first-defect degree**.
+
+---
+
+# 12. Main refutation theorem
+
+## Theorem 12.1 — No Bare First-Defect Bootstrap
+
+For every integer
+
+\[
+r\ge2,
+\]
+
+there exists a finite-dimensional algebra \(D_r\), primitive idempotent \(e\), and singular local vertex quotient
+
+\[
+S=D_r/D_r(1-e)D_r
+\]
+
+such that, for
+
+\[
+K=S\otimes_{D_r}^{\mathbf L}S,
+\]
+
+one has
+
+\[
+H_0(K)=S,
+\]
+
+\[
+H_q(K)=0
+\qquad
+(0<q<r),
+\]
+
+\[
+H_r(K)\neq0,
+\]
+
+and
+
+\[
+\boxed{
+H_q(K)=0
+\qquad
+(q>r).
+}
+\]
+
+Therefore:
+
+\[
+\boxed{
+H_r(K)\neq0
+\not\Rightarrow
+\exists q>r:H_q(K)\neq0
+}
+\]
+
+even for actual finite-dimensional idempotent quotients.
+
+\(\square\)
+
+---
+
+# 13. Consequence for the proposed bootstrap property
+
+The property
+
+\[
+P_0(M):\quad M\neq0
+\]
+
+is not inheritable.
+
+It cannot serve as the bootstrap invariant.
+
+The no-return branch from U1/U2 imposes extra conditions absent from the family above.
+
+The most important frozen one is:
+
+\[
+\boxed{
+K
+\text{ separately perfect on both }S\text{-sides}.
+}
+\]
+
+For first defect \(M\), this strongly pushes toward:
+
+\[
+\boxed{
+{}_SM
+\text{ and }
+M_S
+\text{ finite-pd/projective/free}
+}
+\]
+
+in the minimal-amplitude situations already analyzed.
+
+The seven-dimensional near-miss fails precisely here.
+
+---
+
+# 14. Refined bootstrap candidate
+
+The run therefore replaces the false property \(P_0\) by the candidate
+
+\[
+\boxed{
+P(M)
+=
+\left[
+\begin{array}{l}
+M\neq0,\\
+M\text{ is perfect/projective/free on both }S\text{-sides},\\
+M\text{ is coupled to the actual derived coring }\Delta,\\
+\text{the ambient diagonal pair has no persistent return}
+\end{array}
+\right].
+}
+\tag{14.1}
+\]
+
+The refined research question is:
+
+\[
+\boxed{
+P(H_r(K))
+\Longrightarrow
+\exists q>r
+\text{ with }
+P(H_q(K))?
+}
+\tag{14.2}
+\]
+
+This remains OPEN.
+
+---
+
+# 15. Why coring coupling must enter \(P\)
+
+The synthetic amplitude-two screener from U2 already showed that:
+
+- separate left/right perfection;
+- a two-row shape;
+- a Postnikov extension class;
+- singular periodicity;
+
+are mutually compatible at the abstract \(S\)-bimodule level.
+
+Thus even “bilaterally perfect \(M\)” alone cannot prove renewal.
+
+The missing data is that actual
+
+\[
+K=S\otimes_D^{\mathbf L}S
+\]
+
+is not an arbitrary bimodule complex.
+
+It carries an actual derived coring/comonad structure
+
+\[
+\Delta:
+K\to K\otimes_S^{\mathbf L}K
+\]
+
+with counits and coassociativity.
+
+Therefore any surviving bootstrap theorem must exploit **higher coherent interaction between \(\Delta\) and the Postnikov defects**, not simply one-sided or two-sided projectivity.
+
+---
+
+# 16. Extreme-row analysis
+
+The first positive row gives a genuine extremal statement:
+
+if
+
+\[
+H_q(K)=0
+\qquad
+(r<q<2r),
+\]
+
+then the first tensor-square self-interaction
+
+\[
+M\otimes_SM
+\]
+
+sits at the edge of the Künneth page.
+
+Under the nonvanishing assumption
+
+\[
+M\otimes_SM\neq0,
+\]
+
+the lack of intermediate rows prevents the simplest incoming cancellations.
+
+Thus:
+
+\[
+\boxed{
+M\otimes_SM
+\text{ survives as tensor-square homology}.
+}
+\]
+
+However, the derived coring map need not hit this component.
+
+So the “epsilon of room” creates a **tensor-square survivor**, not a **next defect of \(K\)**.
+
+This distinction must be retained in all future work.
+
+---
+
+# 17. Counterexample to a proposed multiplicative-projection lemma
+
+The following strengthening is false:
+
+> If \(M=H_r(K)\neq0\) is the first positive defect and \(M\otimes_SM\neq0\), then the coring self-interaction forces \(H_{2r}(K)\neq0\).
+
+Reason:
+
+1. \(\pi_{MM}\Delta|_{H_r}=0\) by degree.
+2. The \(M\otimes M\) class may survive in
+   \[
+   H_{2r}(K\otimes K)
+   \]
+   without belonging to the image of
+   \[
+   \Delta_*H_{2r}(K).
+   \]
+3. The actual family \(K_r\) above has no \(H_{2r}(K_r)\) when \(2r>r\).
+
+Hence tensor-square survival is insufficient.
+
+---
+
+# 18. Finite-\(\operatorname{gldim}F\) laboratory — status
+
+The user proposed
+
+\[
+F=(1-e)D(1-e)
+\]
+
+and the derived defect presentation
+
+\[
+D(1-e)\otimes_F^{\mathbf L}(1-e)D
+\to
+D(1-e)D.
+\]
+
+The associated fibre
+
+\[
+\mathcal M
+=
+\operatorname{fib}
+\left(
+D(1-e)\otimes_F^{\mathbf L}(1-e)D
+\to
+D(1-e)D
+\right)
+\]
+
+is expected to have finite amplitude when
+
+\[
+\operatorname{gldim}F<\infty.
+\]
+
+In the actual counterexample family \(D_r\), the deleted corner is supported on the line of vertices
+
+\[
+f_1,\ldots,f_{r-1}
+\]
+
+with only forward arrows and radical-square-zero adjacent compositions.
+
+This gives a finite-dimensional acyclic deleted-corner algebra \(F_r\), hence finite global dimension.
+
+Therefore the family already lies inside the intended finite-\(\operatorname{gldim}F\) laboratory.
+
+Yet first defect does not renew.
+
+So:
+
+\[
+\boxed{
+\operatorname{gldim}F<\infty
+}
+\]
+
+by itself is not enough to produce bootstrap.
+
+What it may still do is combine with the refined bilateral/coring property \(P\).
+
+That refined statement remains OPEN.
+
+---
+
+# 19. Semisimple-corner / hereditary-corner calibration
+
+The requested semisimple/hereditary deleted-corner tests were used at the level of mechanism.
+
+The family above has deleted corners \(F_r\) of finite global dimension and includes the simplest acyclic/hereditary-type configurations.
+
+The observed behavior is:
+
+\[
+\boxed{
+\text{finite-gldim / hereditary deleted corner}
+\not\Rightarrow
+\text{first-defect renewal}.
+}
+\]
+
+This is compatible with the old semisimple-edge intuition:
+
+tensor-square self-interaction can survive while the original self-intersection \(K\) remains bounded.
+
+Therefore any semisimple-corner bootstrap theorem must use additional structure beyond the existence of the edge term \(M\otimes_SM\).
+
+No universal semisimple/hereditary renewal theorem was established in this run.
+
+---
+
+# 20. Old permanent-screening calibration
+
+The previously frozen actual eight-dimensional deletion supplies an opposite type of calibration.
+
+It shows that:
+
+- productive special structures may be repeatedly killed by actual corrections;
+- first and even second correction obstructions can occur;
+- those obstruction targets can generate new total survivors rather than complete extinction.
+
+In particular, actual deletion can exhibit persistent screening behavior without producing a simple “next row by self-tensor” mechanism.
+
+This supports the present conclusion:
+
+\[
+\boxed{
+\text{renewal, if true in the Universal branch, must be a structured coring/transgression phenomenon.}
+}
+\]
+
+It cannot follow merely from the existence of a first positive defect.
+
+---
+
+# 21. Propagation failure as descent — what was obtained
+
+A full strict support/complexity descent theorem was **not** proved.
+
+What was proved is a strict reduction of the allowed bootstrap invariant.
+
+The sequence of failed candidates is:
+
+\[
+M\neq0
+\]
+
+fails.
+
+Then
+
+\[
+M\neq0
++
+M\otimes_SM\neq0
+\]
+
+still fails.
+
+Then
+
+\[
+\text{tensor-square edge survivor}
+\]
+
+still does not force renewal.
+
+Therefore any viable \(P\) must contain data not present in those three conditions.
+
+The minimal currently justified enlargement is:
+
+\[
+\boxed{
+P=
+\text{bilateral perfect/free}
++
+\text{actual coring coupling}
++
+\text{no ambient return}.
+}
+\]
+
+This is a descent in the space of possible mechanisms, not yet a module/support descent theorem.
+
+---
+
+# 22. Infinite-descent route — current frontier
+
+Suppose refined propagation fails for a defect satisfying \(P\).
+
+A future descent theorem would need to extract one of:
+
+- a smaller coring support;
+- a smaller Postnikov defect;
+- a lower-amplitude derived quotient;
+- a strictly simpler deleted-corner defect presentation.
+
+No such canonical invariant was isolated in this run.
+
+Thus:
+
+\[
+\boxed{
+\text{PROPAGATION FAILURE}\Rightarrow\text{STRICT DESCENT}
+}
+\]
+
+remains OPEN.
+
+---
+
+# 23. Strongest theorem
+
+The strongest verified theorem of this run is:
+
+\[
+\boxed{\textbf{No Bare First-Defect Bootstrap Theorem}}
+\]
+
+> For every \(r\ge2\), there exists an actual finite-dimensional idempotent quotient with singular local \(S\) such that
+> \[
+> H_0(K)=S,\qquad
+> H_q(K)=0\ (0<q<r),
+> \]
+> \[
+> H_r(K)\neq0,
+> \]
+> but
+> \[
+> H_q(K)=0\qquad(q>r).
+> \]
+> Therefore a nonzero first positive defect does not force any later defect.
+
+This kills the original highest target of U3 in its stated bare form.
+
+---
+
+# 24. Strongest positive structural asset
+
+The strongest positive asset is the edge-survival statement:
+
+\[
+\boxed{
+\text{a first defect with an empty interval above it produces a canonical extremal self-interaction in }K\otimes K.
+}
+\]
+
+Concretely, under
+
+\[
+H_q(K)=0
+\qquad
+(r<q<2r),
+\]
+
+the first possible quadratic self-interaction lies in
+
+\[
+M\otimes_SM
+\]
+
+at total degree \(2r\) and is protected from the simplest earlier-row cancellations.
+
+This does **not** renew \(K\), but it isolates the exact place where actual coring realization must act.
+
+---
+
+# 25. Refuted claims
+
+## Refuted A
+
+\[
+H_r(K)\neq0
+\Longrightarrow
+\exists q>r:H_q(K)\neq0.
+\]
+
+False for every \(r\ge2\).
+
+---
+
+## Refuted B
+
+\[
+M\otimes_SM\neq0
+\Longrightarrow
+H_{2r}(K)\neq0.
+\]
+
+False.
+
+Tensor-square homology need not be hit by the coring image of \(K\).
+
+---
+
+## Refuted C
+
+\[
+\pi_{MM}\Delta|_{H_r}\neq0
+\]
+
+as a universal first-order mechanism.
+
+False by degree:
+
+\[
+\pi_{MM}\Delta|_{H_r}=0.
+\]
+
+---
+
+## Refuted D
+
+Finite-global-dimension deleted corner alone forces renewal.
+
+False in the counterexample family.
+
+---
+
+# 26. Candidate refined bootstrap property
+
+The next candidate property is:
+
+\[
+\boxed{
+P_r(M):
+\begin{cases}
+M=H_r(K)\neq0,\\
+{}_SM,\ M_S\text{ are perfect/projective/free},\\
+M\text{ participates nontrivially in the actual coring/Postnikov coupling},\\
+\text{ambient diagonal pair has no persistent return}.
+\end{cases}
+}
+\]
+
+The refined target becomes:
+
+\[
+\boxed{
+P_r(H_r(K))
+\Longrightarrow
+\exists q>r:
+P_q(H_q(K)).
+}
+\]
+
+No proof or counterexample for this refined statement was obtained.
+
+---
+
+# 27. Universal impact
+
+The first-defect bootstrap route cannot proceed from homological nonvanishing alone.
+
+The Universal branch is therefore narrower than the original U3 prompt suggests.
+
+A valid propagation theorem must distinguish:
+
+\[
+\boxed{
+\text{bounded actual near-miss defects}
+}
+\]
+
+from
+
+\[
+\boxed{
+\text{no-return defects constrained by bilateral perfection and actual coring structure}.
+}
+\]
+
+The actual counterexample family proves that this distinction is mathematically necessary, not stylistic.
+
+---
+
+# 28. Exact remaining interface
+
+The next exact problem is:
+
+\[
+\boxed{
+\textbf{Can an actual first defect that is bilaterally perfect/free and coring-coupled terminate?}
+}
+\]
+
+More explicitly:
+
+Let
+
+\[
+r=\min\{q>0:H_q(K)\neq0\}
+\]
+
+and assume
+
+\[
+M=H_r(K)
+\]
+
+is projective/free on both \(S\)-sides, with the full no-return hypotheses from U1/U2.
+
+Can one still have
+
+\[
+\boxed{
+H_q(K)=0
+\qquad(q>r)?
+}
+\]
+
+The U2 synthetic syzygy machine says yes abstractly.
+
+The actual family in this run says yes without bilateral perfection.
+
+No actual finite-dimensional example satisfying **both** bilateral perfection and terminal first defect is currently known in this run.
+
+No theorem excluding it was proved.
+
+That is the precise U3 frontier.
+
+---
+
+# 29. Completion label
+
+The run does not satisfy the originally proposed First-Defect Bootstrap theorem.
+
+Instead it reaches:
+
+\[
+\boxed{
+\texttt{REFUTED\_NAIVE\_BOOTSTRAP}
+}
+\]
+
+and
+
+\[
+\boxed{
+\texttt{MAJOR\_FRONTIER\_COMPRESSION}.
+}
+\]
+
+The correct research object is no longer:
+
+\[
+M\neq0.
+\]
+
+It is:
+
+\[
+\boxed{
+\text{bilaterally perfect, actual-coring-coupled terminal first defect}.
+}
+\]
+
+---
+
+# 30. Run integrity
+
+The actual research trajectory was:
+
+1. map the required Vault methods onto
+   \[
+   K=S\otimes_D^{\mathbf L}S;
+   \]
+2. isolate the empty strip below the first positive row;
+3. test the naive \(M\otimes M\) self-interaction projection;
+4. discover that
+   \[
+   \pi_{MM}\Delta|_{H_r}=0
+   \]
+   for degree reasons;
+5. identify the primitive first-order coring image;
+6. prove an extremal tensor-square edge-survival statement;
+7. discover that tensor-square survival does not force a later \(K\)-defect;
+8. test the seven-dimensional actual amplitude-two near-miss;
+9. observe that it directly refutes the bare bootstrap theorem;
+10. generalize that near-miss to an actual family for every \(r\ge2\);
+11. observe that finite-global-dimension deleted corners do not repair the bare theorem;
+12. isolate bilateral perfection/free structure plus actual coring coupling as the missing bootstrap property;
+13. compare with the old actual permanent-screening calibration;
+14. freeze the refined terminal-first-defect realization problem.
+
+No abstract bimodule screener was substituted for an actual quotient counterexample.
+
+No tensor-square survivor was promoted to a \(K\)-defect without a map forcing it.
+
+No two examples were treated as a universal proof.
+
+No unverified Vault wording was invented.

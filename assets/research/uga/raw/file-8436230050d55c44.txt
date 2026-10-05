@@ -1,0 +1,178 @@
+# §0 Mathematical verdict
+
+**Not solved.** Independent Phase I did not decide Han's conjecture; a current arXiv v1 preprint claims an ordinary finite-dimensional complex counterexample, but its construction and proof have not yet been reproduced or accepted into this project's fact graph.
+
+**Closed components.** Six independent facts are signed: two dual-number calibrations (`04353b793493b930`, `dacc4a83710455b7`), the full truncated-polynomial exclusion (`341cd214da0de5ac`), finite-length propagation from simples (`0ec0d2d1eb2de6e7`), a generic self-Tor detection counterexample (`04fe02e4d9a47b9f`), and a finite-global-dimension two-vertex test algebra (`1b2bda16c85d0e04`).
+
+**Viable proof architecture.** Audit and reproduce the claimed counterexample by separating the final ordinary algebra, its nonzero singularity category/infinite global dimension, and its positive-degree Hochschild-homology vanishing into independently verifiable interfaces.
+
+**Main blocker.** The candidate paper's decisive categorical equivalence and every theorem imported through it are not verified facts in this project.
+
+**Highest-priority unresolved bridge.** Verify a complete chain from an explicitly defined finite-dimensional ordinary complex algebra to both \(D_{sg}(A)\ne0\) and \(HH_n(A)=0\) for all \(n\ge1\).
+
+**Method failure vs. proposition failure.** Phase I established method failure for generic self-Tor detection (`04fe02e4d9a47b9f`). The source claims proposition failure, but proposition failure remains unverified in the fact graph until the construction is reproduced.
+
+**Calibration caveat.** Do not read the existence of an arXiv title or abstract as a verified counterexample; the paper is recent v1 and its proof has not yet crossed Danus's verifier boundary.
+
+| Dashboard item | Current state |
+|---|---|
+| Fixed goal | UNCHANGED: decide whether eventual Hochschild-homology vanishing for a finite-dimensional complex algebra forces finite global dimension. |
+| Verified complete proof | NO |
+| Verified counterexample | NO |
+| Signed-closed sub-tasks | 6 independent auxiliary/calibration facts; none decides the conjecture |
+| Main blocker | Reproduce the candidate paper's ordinary-algebra construction and the singularity/Hochschild interfaces. |
+| Routes marked false/obsolete | YES: generic self-Tor detection is FALSE AS STATED; truncated-polynomial counterexamples are OBSOLETE. |
+| Highest-priority unresolved task | P0: verifier-gated reproduction of the claimed finite-dimensional ordinary counterexample. |
+
+| Sub-task | Status | Closed facts | Conditional facts | Main missing interface |
+|---|---|---|---|---|
+| Independent positive mechanism | PARTIAL | `0ec0d2d1eb2de6e7` | none | Eventual \(HH\)-vanishing to diagonal perfection remains missing. |
+| Independent counterexample search | PARTIAL | `04353b793493b930`, `dacc4a83710455b7`, `341cd214da0de5ac`, `1b2bda16c85d0e04` | none | Natural small families were excluded; no independent counterexample was found. |
+| Adversarial method audit | CLOSED | `04fe02e4d9a47b9f` | none | The generic self-Tor implication is refuted; diagonal-specific structure remains the live interface. |
+| Candidate literature source | UNKNOWN | none | arXiv:2608.00177v1 claims a counterexample | Version/authorship/source status and dependencies require audit. |
+| Literature proof reproduction | UNKNOWN | none | none | No construction theorem or categorical equivalence has been verified here. |
+
+**Current best proof skeleton.**
+
+1. Record exact metadata and version history for arXiv:2608.00177v1.
+2. Extract the final algebra's explicit construction and prove it is an ordinary finite-dimensional \(\mathbb C\)-algebra.
+3. Verify every categorical equivalence used to identify its dg singularity category.
+4. Prove that the identified singularity category is nonzero.
+5. Deduce \(\operatorname{gldim}(A)=\infty\) from that nonvanishing with all hypotheses matched.
+6. Verify the Hochschild-homology comparison between positive-degree \(HH_n(A)\) and the dg singularity category.
+7. Prove the relevant dg category is Hochschild-acyclic.
+8. Deduce \(HH_n(A)=0\) for every \(n\ge1\).
+9. Submit the integrated counterexample theorem to the independent verifier.
+
+**Central missing lemma.** There exists an explicitly defined ordinary finite-dimensional complex algebra \(A\) for which the canonical dg singularity category is both nonzero and Hochschild-acyclic, and the comparison map used in the candidate source identifies this acyclicity with \(HH_n(A)=0\) for all \(n\ge1\). This is non-trivial because the construction passes through geometric, dg, quotient, periodization, and ordinary-algebra interfaces, any one of which can invalidate the final deduction if its hypotheses or enhancement compatibility fail.
+
+# §1 Closed components and obsolete routes
+
+## Signed-closed components
+
+- Dual numbers have infinite global dimension and persistent positive-degree Hochschild homology — `04353b793493b930`, `dacc4a83710455b7`.
+- All truncated polynomial algebras \(\mathbb C[t]/(t^m)\), \(m\ge2\), have persistent positive-degree Hochschild homology — `341cd214da0de5ac`.
+- Uniform projective-dimension bounds on simples propagate to finite-dimensional modules — `0ec0d2d1eb2de6e7`.
+- Generic eventual self-Tor vanishing does not force finite one-sided projective dimension — `04fe02e4d9a47b9f`.
+- The tested lopsided two-cycle algebra has simple projective dimensions 1 and 2 — `1b2bda16c85d0e04`.
+
+## Failed or obsolete routes
+
+| Route | Status | Reason |
+|---|---|---|
+| Generic self-Tor detection | FALSE AS STATED | Refuted by `04fe02e4d9a47b9f`; diagonal-specific input is indispensable. |
+| Truncated polynomial counterexample family | OBSOLETE | `341cd214da0de5ac` gives nonzero \(HH_n\) in every positive degree. |
+| The tested lopsided two-cycle algebra | OBSOLETE | `1b2bda16c85d0e04` gives finite projective dimensions for both simples. |
+
+# §2 Interface contract table
+
+### Source status → admissible literature input — establish what is actually being audited
+
+**Input required.** An identifiable primary source with stable arXiv identifier, authors, version, date, exact theorem statement, and accessible dependencies.
+
+**Output claimed.** A bounded source package whose claims can be reproduced without relying on search snippets.
+
+**Available facts.** None; bibliographic metadata is not a mathematical fact.
+
+**Missing verification on the actual model.** (1) Download and hash v1; (2) inspect version history; (3) identify all load-bearing citations; (4) search for corrections or conflicting follow-up.
+
+**Failure mode if ignored.** A changed, withdrawn, or incorrectly parsed version could be mistaken for the source actually proved.
+
+**Status.** UNKNOWN
+
+### Construction → ordinary finite-dimensional algebra — leave the dg/geometric world correctly
+
+**Input required.** The paper's exact finite-dimensional algebra construction, including every quotient, extension, endomorphism algebra, and partial-resolution step.
+
+**Output claimed.** A specific associative unital algebra \(A\) of finite \(\mathbb C\)-dimension, concentrated in degree zero.
+
+**Available facts.** The Phase-I examples show why ordinary and finite-dimensional must be checked, but none verifies the literature construction.
+
+**Missing verification on the actual model.** (1) Define \(A\) without ellipsis; (2) prove finite dimension; (3) prove ordinary-algebra status; (4) check every functorial construction lands in the claimed category.
+
+**Failure mode if ignored.** A dg, topological, or infinite-dimensional counterexample does not answer the stated conjecture.
+
+**Status.** UNKNOWN
+
+### Singularity identification → infinite global dimension — verify non-smoothness
+
+**Input required.** A dg Morita equivalence between the final algebra's canonical dg singularity category and a precisely specified nonzero category.
+
+**Output claimed.** \(D_{sg}(A)\ne0\), hence \(\operatorname{gldim}(A)=\infty\).
+
+**Available facts.** None for the source construction.
+
+**Missing verification on the actual model.** (1) Nonzeroness witness; (2) enhancement and quotient compatibility; (3) applicability of the finite-global-dimension equivalence.
+
+**Failure mode if ignored.** A homotopy-category equivalence without the required dg enhancement can be insufficient for later Hochschild-homology transport.
+
+**Status.** UNKNOWN
+
+### Hochschild-acyclic singularity category → positive-degree vanishing — verify the decisive homology interface
+
+**Input required.** The precise comparison theorem between \(HH_n(A)\) and Hochschild homology of the canonical dg singularity category, plus a proof that the latter is acyclic.
+
+**Output claimed.** \(HH_n(A)=0\) for every \(n\ge1\).
+
+**Available facts.** `04fe02e4d9a47b9f` warns that abstract self-Tor reasoning is insufficient.
+
+**Missing verification on the actual model.** (1) Degree shifts and low-degree edge cases; (2) hypotheses of the comparison theorem; (3) Morita invariance/localization/Kunneth inputs; (4) actual acyclicity proof.
+
+**Failure mode if ignored.** Vanishing in the wrong grading, for a different enhancement, or only in sufficiently high degrees of a related category may not yield the advertised all-positive-degree vanishing.
+
+**Status.** UNKNOWN
+
+# §3 Dangerous heuristic lines and strategies not to pursue
+
+- “The abstract says \(HH_n=0\), so the conjecture is disproved.” **Status: Mathematically incorrect as stated.** An abstract is a claim, not a verifier-accepted proof.
+- “A dg counterexample automatically gives an ordinary one.” **Status: Not automatic.** The final ordinary-algebra realization is the main interface to audit.
+- “An equivalence of triangulated homotopy categories transports Hochschild homology.” **Status: Conditional only.** Hochschild homology depends on dg/enhancement data; the exact Morita/enhancement statement must be proved.
+- “Nonzero \(K_0\) and vanishing Hochschild homology of a phantom automatically survive every quotient and periodization.” **Status: Conditional only.** Compatibility with the exact construction is load-bearing.
+- “The source's use of an AI model makes it wrong.” **Status: Mathematically incorrect as stated.** Provenance raises the audit burden but neither proves nor refutes the mathematics.
+
+**Strategies not to pursue.**
+
+- Do not certify the source from its arXiv existence, title, or author assertion.
+- Do not replace reproduction with a survey citation or secondary summary.
+- Do not conflate the previously known dg analogue with the ordinary conjecture.
+- Do not compress the quotient/periodization compatibility into “standard.”
+- Do not claim a new contribution merely because Phase I independently found an auxiliary fact.
+
+# §4 Missing bridge lemmas
+
+### Bridge 1 — ordinary-algebra realization
+
+**Target statement.** The candidate source's final object \(A\) is an explicitly defined ordinary associative unital finite-dimensional complex algebra.
+
+**Prerequisites.** Complete definitions of every algebra/category and construction used to produce \(A\).
+
+**Existing facts to use.** None.
+
+**Missing checks.** Reproduce the construction, dimensions, and degree-zero concentration.
+
+**Closure criterion.** A cold reader can reconstruct \(A\) and verify finite-dimensional ordinary-algebra status without trusting the source's conclusion. Independent and parallelizable.
+
+### Bridge 2 — nonzero singularity category
+
+**Target statement.** The canonical dg singularity category of the final algebra \(A\) is nonzero, with an explicit surviving object or invariant, hence \(\operatorname{gldim}(A)=\infty\).
+
+**Prerequisites.** Bridge 1 and every dg quotient/Morita equivalence in the source.
+
+**Existing facts to use.** None.
+
+**Missing checks.** Enhancement compatibility and a nonzeroness witness.
+
+**Closure criterion.** The nonzero object/invariant is transported through a fully verified chain to \(D_{sg}(A)\). Dependent on Bridge 1.
+
+### Bridge 3 — all-positive-degree Hochschild vanishing
+
+**Target statement.** For the same final algebra \(A\), \(HH_n(A)=0\) for every integer \(n\ge1\).
+
+**Prerequisites.** Bridge 1, the canonical dg singularity comparison, and a verified Hochschild-acyclicity computation.
+
+**Existing facts to use.** `04fe02e4d9a47b9f` only supplies an obstruction to naive reasoning, not the target.
+
+**Missing checks.** Degree conventions, comparison theorem hypotheses, Morita/localization compatibility, and low-degree cases.
+
+**Closure criterion.** A verifier accepts the complete comparison-and-acyclicity argument for every positive degree. Dependent on Bridge 1 and parallelizable with Bridge 2 after the construction is fixed.
+

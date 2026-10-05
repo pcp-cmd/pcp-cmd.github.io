@@ -1,0 +1,2436 @@
+# Universal Gap A — Universal Layer U7
+## Run B — Cross-Module Corner Return / Minimal-Counterexample Bootstrap
+
+**Role:** Run B — Main Complementary Researcher / Corner-Lift Route  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Completion label:**  
+`FINITE-CROSS-PD E-SECTOR RETURN + OPPOSITE-CROSS SINGULARITY + SIMPLE CROSS-SOURCE DESCENT + MULTIPLICATION-KERNEL GATE`  
+**Global U7:** OPEN  
+**Universal Gap A:** OPEN
+
+This file freezes the actual research trajectory of this U7 Run B window.
+
+It does **not** claim:
+
+- that an infinite\(+\) corner automatically lifts to an infinite\(+\) ambient algebra;
+- that an infinite-pd cross module automatically contains a visible persistent pair;
+- that a length-two Peirce path has nonzero composite;
+- that a zero Peirce product automatically gives a nonzero \(\operatorname{Ext}^2\) relation;
+- that a nonzero low-degree relation acts nontrivially on a persistent tail;
+- that finite source labels or recurrent projective types imply exact module periodicity.
+
+The principal new results are:
+
+1. a clean derived-induction **cross-return object** in the finite-\(\operatorname{pd}_\Gamma(eDf)\) branch;
+2. an unconditional theorem that the **opposite cross module**
+   \[
+   {}_\Gamma fDe
+   \]
+   is singular whenever the finite-source corner \(\Gamma=fDf\) has infinite global dimension;
+3. a well-founded reduction of an infinite-pd cross module to a **simple singular cross source** with a fixed persistent Tor detector;
+4. a precise multiplication-kernel / bar-complex gate showing what additional datum would close the projective mediator branch;
+5. an exact description of the remaining alignment obstruction.
+
+---
+
+# 1. Frozen setting
+
+Let \(D\) be a finite-dimensional basic algebra and define
+
+\[
+I_\infty
+=
+\{x:\operatorname{pd}_D L_x=\infty\}.
+\]
+
+Put
+
+\[
+e=\sum_{x\in I_\infty}e_x,
+\qquad
+f=1-e.
+\]
+
+Thus every simple \(D\)-module supported at \(f\) has finite projective dimension over \(D\).
+
+Assume the U6 A1-failure branch:
+
+\[
+x\in I_\infty,
+\qquad
+\Sigma_x\cap I_\infty=\varnothing.
+\]
+
+The frozen U6 corner theorem gives
+
+\[
+\boxed{
+\Gamma=fDf,
+\qquad
+\operatorname{gldim}\Gamma=\infty.
+}
+\tag{1.1}
+\]
+
+Moreover
+
+\[
+|Q_0(\Gamma)|<|Q_0(D)|.
+\]
+
+Assume \(D\) is a vertex-minimal hypothetical Universal Gap-A failure.
+
+Then minimality forces:
+
+\[
+\boxed{
+\Gamma\text{ satisfies Gap A}.
+}
+\tag{1.2}
+\]
+
+Hence there exist primitive vertices
+
+\[
+i,j\in f
+\]
+
+such that
+
+\[
+\boxed{
+e_j\Gamma e_i\neq0
+}
+\tag{1.3}
+\]
+
+and
+
+\[
+\boxed{
+\operatorname{Tor}^{\Gamma}_n
+(R_i^\Gamma,S_j^\Gamma)
+\neq0
+\quad\text{for arbitrarily high }n.
+}
+\tag{1.4}
+\]
+
+The U7 problem is to return this witness to \(D\), or to obtain a strict smaller singular carrier.
+
+---
+
+# 2. Vault gate — explicit method mapping
+
+The required Vault methods were mapped to the actual U7 objects as follows.
+
+## 2.1 Minimal counterexample
+
+The well-founded complexity is first
+
+\[
+|Q_0(D)|.
+\]
+
+Since
+
+\[
+\Gamma=fDf
+\]
+
+has strictly fewer vertices, vertex-minimality turns the corner from a hypothetical failure into a known Gap-A-positive algebra.
+
+The role of minimality is therefore not to identify the lifted pair automatically.
+
+It guarantees the existence of a genuine visible corner witness \((i,j)\).
+
+---
+
+## 2.2 Quotient / corner
+
+The main decomposition is
+
+\[
+1=e+f,
+\qquad
+\Gamma=fDf.
+\]
+
+The cross pieces are kept distinct:
+
+\[
+\boxed{
+eDf_\Gamma
+}
+\]
+
+and
+
+\[
+\boxed{
+{}_\Gamma fDe.
+}
+\]
+
+They have opposite orientations and control different induction/restriction failures.
+
+---
+
+## 2.3 Recollement
+
+The recollement intuition is used only as a diagnostic.
+
+A full singular recollement/equivalence would require the relevant cross terms to preserve perfect objects.
+
+The run proves that one of these cross terms,
+
+\[
+{}_\Gamma fDe,
+\]
+
+is necessarily infinite-pd in the present singular corner branch.
+
+Thus the most naive singular-equivalence route is structurally blocked.
+
+---
+
+## 2.4 Induction / restriction
+
+Derived induction is
+
+\[
+\boxed{
+F=
+Df\otimes_\Gamma^{\mathbf L}-.
+}
+\]
+
+For the corner simple:
+
+\[
+\boxed{
+Y_j
+=
+Df\otimes_\Gamma^{\mathbf L}S_j^\Gamma.
+}
+\]
+
+The frozen U6 identity is used without reproof:
+
+\[
+R_i\otimes_D^{\mathbf L}Y_j
+\simeq
+R_i^\Gamma\otimes_\Gamma^{\mathbf L}S_j^\Gamma.
+\]
+
+Restriction is the exact functor
+
+\[
+M\mapsto fM.
+\]
+
+The restriction of a \(D\)-projective \(De_v\) is:
+
+\[
+fDe_v
+=
+\begin{cases}
+\Gamma e_v,&v\in f,\\
+fDe_v,&v\in e.
+\end{cases}
+\]
+
+This is the key calculation behind the opposite-cross singularity theorem.
+
+---
+
+## 2.5 Singularity-category transfer
+
+When
+
+\[
+\operatorname{pd}_\Gamma(eDf)<\infty,
+\]
+
+the induction object \(Y_j\) is bounded.
+
+Since \(L_j\) has finite \(D\)-projective dimension, its image is zero in \(D_{\rm sg}(D)\).
+
+Thus the singular content of the induced corner simple must lie entirely in the cross-return fiber.
+
+This gives the cleanest representation of the finite-cross branch.
+
+---
+
+## 2.6 Finite-pd / infinite-pd separation
+
+By construction:
+
+\[
+x\in e
+\iff
+\operatorname{pd}_D L_x=\infty,
+\]
+
+while
+
+\[
+j\in f
+\Longrightarrow
+\operatorname{pd}_D L_j<\infty.
+\]
+
+This separation is used twice:
+
+1. to kill \(L_j\) as a possible high ambient Tor carrier;
+2. to prove that any \(e\)-supported simple extracted from the return object lies automatically in \(I_\infty\).
+
+The same finite-length argument is used inside \(\Gamma\) to extract a simple infinite-pd factor from a singular cross module.
+
+---
+
+## 2.7 Bootstrap
+
+The bootstrap is not exact-state recurrence.
+
+It is:
+
+\[
+\text{singular cross module}
+\to
+\text{singular simple factor}
+\to
+\text{fixed recurrent projective type}
+\to
+\text{persistent simple Tor pair}.
+\]
+
+This reduces module complexity to length \(1\).
+
+---
+
+## 2.8 Local-to-global
+
+A bounded induced complex has finitely many homology modules.
+
+If its \(R_i\)-Tor tail is unbounded, some homology module carries an unbounded tail.
+
+A finite composition series then produces a simple factor with the same persistence in arbitrarily high degree.
+
+This is the local-to-global passage used in the finite cross-pd branch.
+
+---
+
+## 2.9 Representation change
+
+Three representations are used:
+
+\[
+Y_j
+\quad\rightsquigarrow\quad
+Z_j=\operatorname{fib}(Y_j\to L_j),
+\]
+
+\[
+\text{zero Peirce product}
+\quad\rightsquigarrow\quad
+\text{relative bar multiplication kernel},
+\]
+
+and
+
+\[
+eDf\text{ singular}
+\quad\rightsquigarrow\quad
+\text{simple cross-source fork}.
+\]
+
+Each change isolates the actual missing interface.
+
+---
+
+## 2.10 Infinite descent
+
+Two well-founded descents are audited.
+
+### Module-length descent
+
+If \(eDf\) is singular and not simple, pass to a simple infinite-pd composition factor.
+
+This strictly decreases composition length.
+
+### Vertex descent
+
+Passing from \(D\) to \(\Gamma=fDf\) strictly decreases vertices.
+
+A further strict corner descent inside \(\Gamma\) is not claimed without controlling the new cross modules.
+
+---
+
+## 2.11 Cross-module obstruction
+
+The two cross modules are the central U7 objects:
+
+\[
+eDf_\Gamma
+\]
+
+controls boundedness of induction,
+
+while
+
+\[
+{}_\Gamma fDe
+\]
+
+controls whether restriction of ambient perfect objects remains perfect over \(\Gamma\).
+
+The run proves the second one is necessarily singular.
+
+---
+
+## 2.12 Extreme counterexamples
+
+The required calibrations are:
+
+- the dual-number Auslander algebra;
+- finite-pd peeling;
+- cyclic Nakayama \([3,4]\);
+- U1 invisible-return/source-switch behavior;
+- quantum-exterior moduli drift;
+- a small normalized-bar example showing zero product need not give a nonzero \(\operatorname{Ext}^2\) class.
+
+---
+
+# 3. Minimal-counterexample gate
+
+Because
+
+\[
+|Q_0(\Gamma)|<|Q_0(D)|
+\]
+
+and \(D\) is vertex-minimal among hypothetical failures, \(\Gamma\) is not a failure.
+
+Since
+
+\[
+\operatorname{gldim}\Gamma=\infty,
+\]
+
+there exists a corner witness \((i,j)\) satisfying (1.3)–(1.4).
+
+This is the only use of the full Universal Gap-A conclusion for \(\Gamma\).
+
+The run never assumes that every infinite-pd source of \(\Gamma\) has a visible persistent pair.
+
+That stronger source-specific statement is false in general by the same phenomenon already exposed in U6.
+
+---
+
+# 4. Derived induction object
+
+Set
+
+\[
+\boxed{
+Y_j
+=
+Df\otimes_\Gamma^{\mathbf L}S_j^\Gamma.
+}
+\tag{4.1}
+\]
+
+Frozen U6 gives:
+
+\[
+\boxed{
+R_i\otimes_D^{\mathbf L}Y_j
+\simeq
+R_i^\Gamma\otimes_\Gamma^{\mathbf L}S_j^\Gamma.
+}
+\tag{4.2}
+\]
+
+Therefore:
+
+\[
+\boxed{
+H_n
+\left(
+R_i\otimes_D^{\mathbf L}Y_j
+\right)
+\neq0
+\quad\text{for arbitrarily high }n.
+}
+\tag{4.3}
+\]
+
+As a right \(\Gamma\)-module:
+
+\[
+\boxed{
+Df_\Gamma
+=
+\Gamma_\Gamma
+\oplus
+eDf_\Gamma.
+}
+\tag{4.4}
+\]
+
+This decomposition is a right-\(\Gamma\) decomposition.
+
+It is not a decomposition by left \(D\)-submodules.
+
+That distinction is retained throughout the run.
+
+---
+
+# 5. Restricting the induction object
+
+Apply \(f\) on the left.
+
+Since
+
+\[
+fDf=\Gamma,
+\]
+
+we obtain:
+
+\[
+\boxed{
+fY_j
+\simeq
+\Gamma\otimes_\Gamma^{\mathbf L}S_j^\Gamma
+\simeq
+S_j^\Gamma.
+}
+\tag{5.1}
+\]
+
+Therefore:
+
+\[
+\boxed{
+fH_q(Y_j)=0
+\qquad(q>0),
+}
+\tag{5.2}
+\]
+
+and
+
+\[
+fH_0(Y_j)\cong S_j^\Gamma.
+\]
+
+Thus every positive homology module of \(Y_j\) is \(e\)-supported.
+
+This observation is independent of any formality assumption.
+
+---
+
+# 6. The cross-return fiber
+
+There is a natural counit/comparison map
+
+\[
+\epsilon_j:
+Y_j
+\longrightarrow
+L_j.
+\]
+
+Define:
+
+\[
+\boxed{
+Z_j
+=
+\operatorname{fib}(\epsilon_j).
+}
+\tag{6.1}
+\]
+
+Applying \(f\), the comparison becomes the identity on \(S_j^\Gamma\).
+
+Hence:
+
+\[
+\boxed{
+fZ_j\simeq0.
+}
+\tag{6.2}
+\]
+
+So every homology module
+
+\[
+H_q(Z_j)
+\]
+
+is supported on \(e\).
+
+At degree zero this recovers the frozen exact sequence
+
+\[
+\boxed{
+0
+\to
+C_j
+\to
+Df\otimes_\Gamma S_j^\Gamma
+\to
+L_j
+\to0,
+}
+\tag{6.3}
+\]
+
+with
+
+\[
+fC_j=0.
+\]
+
+Thus \(Z_j\) is the derived version of the old cross kernel \(C_j\).
+
+---
+
+# 7. Finite cross-pd branch
+
+Assume:
+
+\[
+\boxed{
+d=\operatorname{pd}_\Gamma(eDf)<\infty.
+}
+\tag{7.1}
+\]
+
+Then \(Df_\Gamma\) has finite projective dimension.
+
+Therefore:
+
+\[
+Y_j
+\]
+
+and
+
+\[
+Z_j
+\]
+
+are bounded complexes.
+
+The corner tail (4.3) is unbounded.
+
+Since \(j\in f\), by definition:
+
+\[
+\operatorname{pd}_D L_j<\infty.
+\]
+
+Hence for every fixed right \(D\)-module \(R\):
+
+\[
+R\otimes_D^{\mathbf L}L_j
+\]
+
+has bounded homology.
+
+From the triangle
+
+\[
+Z_j
+\to
+Y_j
+\to
+L_j
+\to
+Z_j[1],
+\]
+
+we obtain:
+
+\[
+\boxed{
+R_i\otimes_D^{\mathbf L}Z_j
+\text{ has unbounded homology}.
+}
+\tag{7.2}
+\]
+
+Thus the entire high corner recurrence returns to an \(e\)-supported bounded complex.
+
+---
+
+# 8. Finite-Cross-Pd E-Sector Return Theorem
+
+## Theorem 8.1
+
+Assume:
+
+\[
+\operatorname{pd}_\Gamma(eDf)<\infty.
+\]
+
+Then there exists a finite-dimensional \(e\)-supported \(D\)-module \(M\) such that
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,M)\neq0
+\quad\text{for arbitrarily high }n.
+}
+\tag{8.1}
+\]
+
+Consequently there exists
+
+\[
+\boxed{
+x\in I_\infty
+}
+\]
+
+such that
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,L_x)\neq0
+\quad\text{for arbitrarily high }n.
+}
+\tag{8.2}
+\]
+
+### Proof
+
+Because \(Z_j\) is bounded and has finitely many finite-dimensional homology modules, the hyper-Tor spectral sequence
+
+\[
+E^2_{p,q}
+=
+\operatorname{Tor}^D_p(R_i,H_q(Z_j))
+\Longrightarrow
+H_{p+q}
+(R_i\otimes_D^{\mathbf L}Z_j)
+\]
+
+has finitely many rows.
+
+The abutment is unbounded by (7.2).
+
+Therefore at least one row has nonzero terms in arbitrarily high horizontal degree.
+
+Choose such an \(H_q(Z_j)\).
+
+It is \(e\)-supported by (6.2).
+
+Take a composition series.
+
+If every simple factor had eventually zero \(R_i\)-Tor, repeated long exact sequences would force \(H_q(Z_j)\) to have eventually zero \(R_i\)-Tor.
+
+Contradiction.
+
+Hence some simple factor \(L_x\) has persistent \(R_i\)-Tor.
+
+Since \(H_q(Z_j)\) is \(e\)-supported,
+
+\[
+x\in I_\infty.
+\]
+
+\(\square\)
+
+---
+
+# 9. Consequence under hypothetical Gap-A failure
+
+If \(D\) is a hypothetical failure, then the persistent pair in (8.2) must be Peirce-invisible:
+
+\[
+\boxed{
+e_xDe_i=0.
+}
+\tag{9.1}
+\]
+
+So finite cross-pd does not immediately close the minimal-counterexample loop.
+
+It returns the recurrence to the infinite-pd source side but can return it to the wrong Peirce detector.
+
+This is precisely the source/detector mismatch already seen in U6.
+
+---
+
+# 10. Projective cross-module subcase
+
+Assume the stronger condition:
+
+\[
+\boxed{
+\operatorname{pd}_\Gamma(eDf)=0.
+}
+\tag{10.1}
+\]
+
+Then:
+
+\[
+H_q(Y_j)=0
+\qquad(q>0).
+\]
+
+Thus:
+
+\[
+Z_j=C_j
+\]
+
+is an ordinary \(e\)-supported \(D\)-module in degree zero.
+
+Any simple composition factor \(L_x\) of \(C_j\) is a composition factor of
+
+\[
+Df\otimes_\Gamma S_j^\Gamma.
+\]
+
+But:
+
+\[
+Df\otimes_\Gamma S_j^\Gamma
+\]
+
+is a quotient of
+
+\[
+De_j.
+\]
+
+Therefore:
+
+\[
+\boxed{
+e_xDe_j\neq0.
+}
+\tag{10.2}
+\]
+
+Combining (1.3), (8.2), (9.1), and (10.2), one obtains the mediator geometry:
+
+\[
+\boxed{
+e_xDe_j\neq0,
+\qquad
+e_jDe_i\neq0,
+\qquad
+e_xDe_i=0,
+}
+\tag{10.3}
+\]
+
+together with:
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,L_x)\neq0
+\quad\text{i.o.}
+}
+\tag{10.4}
+\]
+
+This is the exact projective-cross normal form.
+
+---
+
+# 11. Multiplication-defect object
+
+Let
+
+\[
+J=\operatorname{rad}D
+\]
+
+and
+
+\[
+E=D/J.
+\]
+
+Because \(x\in e\) and \(i,j\in f\), all off-diagonal Peirce elements lie in \(J\).
+
+Choose:
+
+\[
+0\neq u\in e_xJe_j,
+\]
+
+\[
+0\neq v\in e_jJe_i.
+\]
+
+Since:
+
+\[
+e_xDe_i=0,
+\]
+
+we have:
+
+\[
+\boxed{
+uv=0.
+}
+\tag{11.1}
+\]
+
+Therefore:
+
+\[
+u\otimes v
+\in
+e_x(J\otimes_EJ)e_i
+\]
+
+is a cycle for the normalized relative-bar multiplication differential
+
+\[
+d_2:
+J\otimes_EJ
+\to
+J,
+\qquad
+d_2(a\otimes b)=ab.
+\]
+
+Define the degree-two relation quotient:
+
+\[
+\boxed{
+\mathcal R_{x,i}
+=
+\frac{
+\ker
+\left(
+e_x(J\otimes_EJ)e_i
+\to
+e_xJe_i
+\right)
+}{
+\operatorname{im}
+\left(
+e_xJ^{\otimes_E3}e_i
+\xrightarrow{d_3}
+e_xJ^{\otimes_E2}e_i
+\right)
+}.
+}
+\tag{11.2}
+\]
+
+In the split-basic convention, its dual is the corresponding degree-two Yoneda relation space between endpoints \(i\) and \(x\).
+
+---
+
+# 12. Zero product does not imply a nonzero relation class
+
+This is an important destruction test.
+
+Take an acyclic path algebra with composable arrows
+
+\[
+a,\ b,\ c
+\]
+
+and impose only
+
+\[
+bc=0.
+\]
+
+Then:
+
+\[
+u=ab\neq0,
+\qquad
+v=c,
+\]
+
+but:
+
+\[
+uv=abc=0.
+\]
+
+In the normalized bar complex:
+
+\[
+d_3(a\otimes b\otimes c)
+=
+ab\otimes c
+-
+a\otimes bc
+=
+u\otimes v.
+\]
+
+Hence:
+
+\[
+\boxed{
+[u\otimes v]=0
+\quad\text{in }\mathcal R.
+}
+\tag{12.1}
+\]
+
+Therefore:
+
+\[
+\boxed{
+\text{zero Peirce composition}
+\not\Rightarrow
+\text{new }\operatorname{Tor}_2/\operatorname{Ext}^2\text{ class}.
+}
+\tag{12.2}
+\]
+The multiplication-kernel route requires a minimal relation class, not merely a zero path product.
+
+---
+
+# 13. Reverse-relation diagonalization gate
+
+Assume now that the mediator cycle survives:
+
+\[
+\boxed{
+0\neq
+\rho
+\in
+\operatorname{Ext}^2_D(L_i,L_x).
+}
+\tag{13.1}
+\]
+
+The persistent ambient pair (10.4) dualizes in the split-basic case to classes:
+
+\[
+a_n
+\in
+\operatorname{Ext}^n_D(L_x,L_i)
+\]
+
+for arbitrarily high \(n\).
+
+There are two diagonal Yoneda composites:
+
+\[
+\boxed{
+a_n\rho
+\in
+\operatorname{Ext}^{n+2}_D(L_x,L_x),
+}
+\tag{13.2}
+\]
+
+and
+
+\[
+\boxed{
+\rho a_n
+\in
+\operatorname{Ext}^{n+2}_D(L_i,L_i).
+}
+\tag{13.3}
+\]
+
+If either family is nonzero for arbitrarily high \(n\), then \(D\) has a persistent diagonal simple self-Ext tail.
+
+Since:
+
+\[
+e_xDe_x\neq0
+\]
+
+and
+
+\[
+e_iDe_i\neq0,
+\]
+
+this is automatically a Peirce-visible Gap-A witness.
+
+Thus:
+
+\[
+\boxed{
+\text{tail-active reverse relation}
+\Longrightarrow
+\text{ambient visible diagonal recurrence}.
+}
+\tag{13.4}
+\]
+
+This is a valid conditional Cross-Module Return Theorem for the projective mediator subcase.
+
+---
+
+# 14. Why the relation gate still does not close B1
+
+The remaining failure modes are real.
+
+### Failure A — bar-degenerate mediator
+
+\[
+[u\otimes v]=0
+\]
+
+in the relation quotient.
+
+Then no degree-two reverse Yoneda class is produced.
+
+### Failure B — tail-annihilating relation
+
+A nonzero
+
+\[
+\rho
+\]
+
+may exist but satisfy:
+
+\[
+a_n\rho=0,
+\qquad
+\rho a_n=0
+\]
+
+for all sufficiently high persistent tail classes \(a_n\).
+
+The U5 action-algebra audit already showed that nonzero Yoneda classes can act trivially on the high tail.
+
+Therefore:
+
+\[
+\boxed{
+\rho\neq0
+\not\Rightarrow
+\text{diagonal persistence}.
+}
+\tag{14.1}
+\]
+
+So the multiplication-kernel bridge identifies the next exact datum but does not close the Universal route.
+
+---
+
+# 15. Infinite cross-pd branch
+
+Assume:
+
+\[
+\boxed{
+\operatorname{pd}_\Gamma(eDf)=\infty.
+}
+\tag{15.1}
+\]
+
+The cross module \(eDf_\Gamma\) has finite composition length.
+
+If every simple composition factor had finite projective dimension, repeated extension bounds would give:
+
+\[
+\operatorname{pd}_\Gamma(eDf)<\infty,
+\]
+
+contradiction.
+
+Therefore there exists a simple right \(\Gamma\)-module:
+
+\[
+\boxed{
+R_u^\Gamma
+}
+\]
+
+which is a composition factor of \(eDf\) and satisfies:
+
+\[
+\boxed{
+\operatorname{pd}_\Gamma R_u^\Gamma=\infty.
+}
+\tag{15.2}
+\]
+
+This is the first strict descent.
+
+---
+
+# 16. Fixed detector extraction from the simple cross source
+
+Take a minimal projective resolution of \(R_u^\Gamma\).
+
+Since \(\Gamma\) has finitely many primitive projective types, some projective
+
+\[
+e_v\Gamma
+\]
+
+appears in infinitely many degrees.
+
+Minimality makes all differential matrices radical.
+
+Tensoring with the left simple
+
+\[
+S_v^\Gamma
+\]
+
+kills the radical differentials.
+
+Hence:
+
+\[
+\boxed{
+\operatorname{Tor}^\Gamma_n
+(R_u^\Gamma,S_v^\Gamma)
+\neq0
+\quad\text{for arbitrarily high }n.
+}
+\tag{16.1}
+\]
+
+Thus the singular cross module yields a genuine persistent simple Tor pair over \(\Gamma\).
+
+---
+
+# 17. Cross Peirce attachment of the simple source
+
+Because \(R_u^\Gamma\) is a composition factor of \(eDf\),
+
+\[
+(eDf)e_u\neq0.
+\]
+
+But:
+
+\[
+(eDf)e_u
+=
+eDe_u
+=
+\bigoplus_{x\in I_\infty}e_xDe_u.
+\]
+
+Therefore:
+
+\[
+\boxed{
+\exists x\in I_\infty:
+e_xDe_u\neq0.
+}
+\tag{17.1}
+\]
+
+Combining (16.1) and (17.1), every infinite-pd \(eDf\) produces the **simple cross-source fork**:
+
+\[
+\boxed{
+x\in I_\infty,
+\quad
+u,v\in f,
+\quad
+e_xDe_u\neq0,
+\quad
+\operatorname{Tor}_\Gamma^\infty
+(R_u^\Gamma,S_v^\Gamma).
+}
+\tag{17.2}
+\]
+
+This is the correct standard form for the infinite \(eDf\) branch.
+
+---
+
+# 18. B2 — strict carrier descent
+
+The passage
+
+\[
+eDf
+\rightsquigarrow
+R_u^\Gamma
+\]
+
+is well-founded.
+
+If \(eDf\) has composition length \(>1\), then:
+
+\[
+\ell_\Gamma(R_u^\Gamma)=1
+<
+\ell_\Gamma(eDf).
+\]
+
+Thus:
+
+\[
+\boxed{
+\text{singular cross module}
+\Longrightarrow
+\text{simple singular cross carrier}.
+}
+\tag{18.1}
+\]
+
+This verifies B2 in a module-carrier sense.
+
+It does not yet give a strictly smaller corner algebra.
+
+If \(eDf\) is already simple, the module-length descent is terminal.
+
+---
+
+# 19. New theorem — opposite cross module is necessarily singular
+
+## Theorem 19.1 — Opposite Cross-Singularity Necessity
+
+Assume:
+
+\[
+e=\sum_{\operatorname{pd}_D L_x=\infty}e_x,
+\qquad
+f=1-e,
+\qquad
+\Gamma=fDf,
+\]
+
+and:
+
+\[
+\operatorname{gldim}\Gamma=\infty.
+\]
+
+Then:
+
+\[
+\boxed{
+\operatorname{pd}_\Gamma({}_\Gamma fDe)=\infty.
+}
+\tag{19.1}
+\]
+
+### Proof
+
+Assume instead:
+
+\[
+\operatorname{pd}_\Gamma(fDe)<\infty.
+\]
+
+Take any \(j\in f\).
+
+By definition of \(f\):
+
+\[
+\operatorname{pd}_D L_j<\infty.
+\]
+
+Choose a finite \(D\)-projective resolution of \(L_j\).
+
+Every indecomposable term is some \(De_v\).
+
+Apply the exact restriction functor \(f(-)\).
+
+If \(v\in f\), then:
+
+\[
+fDe_v
+=
+\Gamma e_v
+\]
+
+is projective over \(\Gamma\).
+
+If \(v\in e\), then:
+
+\[
+fDe_v
+\]
+
+is a direct summand of \(fDe\), hence has finite \(\Gamma\)-projective dimension by assumption.
+
+Therefore the restricted finite resolution is a bounded complex of finite-pd \(\Gamma\)-modules resolving
+
+\[
+fL_j
+=
+S_j^\Gamma.
+\]
+
+Replacing each term by a finite projective resolution and totalizing yields:
+
+\[
+\operatorname{pd}_\Gamma S_j^\Gamma<\infty.
+\]
+
+This holds for every simple \(S_j^\Gamma\).
+
+Since \(\Gamma\) is finite-dimensional with finitely many simples:
+
+\[
+\operatorname{gldim}\Gamma<\infty,
+\]
+
+contradiction.
+
+\(\square\)
+
+---
+
+# 20. Consequence — the U6 dichotomy is intrinsically asymmetric
+
+U6 split according to:
+
+\[
+\operatorname{pd}_\Gamma(eDf)
+<\infty
+\quad\text{or}\quad
+=\infty.
+\]
+
+The new theorem says that simultaneously:
+
+\[
+\boxed{
+\operatorname{pd}_\Gamma(fDe)=\infty
+}
+\]
+
+on the opposite left-\(\Gamma\) side.
+
+Therefore:
+
+### finite \(eDf\)-branch
+
+One cross orientation is bounded, but the opposite orientation is necessarily singular.
+
+### infinite \(eDf\)-branch
+
+Both directions carry singular cross data.
+
+So the terminal obstruction is not:
+
+> “is there a singular cross module?”
+
+There always is one.
+
+The actual problem is:
+
+\[
+\boxed{
+\text{can the singular cross data be aligned with the corner Gap-A witness?}
+}
+\tag{20.1}
+\]
+
+---
+
+# 21. Simple opposite-cross fork
+
+Apply the same finite-length extraction to:
+
+\[
+{}_\Gamma fDe.
+\]
+
+By Theorem 19.1, it has infinite projective dimension.
+
+Hence some simple composition factor:
+
+\[
+S_v^\Gamma
+\]
+
+has:
+
+\[
+\operatorname{pd}_\Gamma S_v^\Gamma=\infty.
+\]
+
+Because \(S_v^\Gamma\) is a composition factor of \(fDe\):
+
+\[
+e_vDe\neq0.
+\]
+
+Therefore some \(x\in I_\infty\) satisfies:
+
+\[
+\boxed{
+e_vDe_x\neq0.
+}
+\tag{21.1}
+\]
+
+The minimal projective resolution of \(S_v^\Gamma\) contains some recurrent right detector \(R_u^\Gamma\):
+
+\[
+\boxed{
+\operatorname{Tor}^\Gamma_n
+(R_u^\Gamma,S_v^\Gamma)
+\neq0
+\quad\text{i.o.}
+}
+\tag{21.2}
+\]
+
+So every U7 corner branch contains an **opposite cross fork**:
+
+\[
+\boxed{
+x\in I_\infty,
+\quad
+u,v\in f,
+\quad
+e_vDe_x\neq0,
+\quad
+\operatorname{Tor}^\Gamma_\infty(R_u^\Gamma,S_v^\Gamma).
+}
+\tag{21.3}
+\]
+
+This is unconditional once \(\Gamma\) is singular.
+
+---
+
+# 22. Recollement / singular-equivalence audit
+
+The opposite-cross theorem explains why a naive singular equivalence is unavailable.
+
+For restriction:
+
+\[
+f(-):D^b(D)\to D^b(\Gamma),
+\]
+
+a \(D\)-projective \(De_x\) with \(x\in e\) restricts to:
+
+\[
+fDe_x.
+\]
+
+Since \(fDe\) is infinite-pd over \(\Gamma\), restriction need not send \(\operatorname{Perf}(D)\) into \(\operatorname{Perf}(\Gamma)\).
+
+Thus restriction does not automatically descend to the required singularity-category functor.
+
+For induction:
+
+\[
+Df\otimes_\Gamma^{\mathbf L}-,
+\]
+
+boundedness on finite modules requires control of:
+
+\[
+eDf_\Gamma.
+\]
+
+Hence:
+
+\[
+\boxed{
+eDf
+\text{ controls induction boundedness,}
+\qquad
+fDe
+\text{ controls restriction-perfectness.}
+}
+\tag{22.1}
+\]
+
+This is the exact recollement obstruction.
+
+---
+
+# 23. One-way singular induction in the finite branch
+
+If:
+
+\[
+\operatorname{pd}_\Gamma(eDf)<\infty,
+\]
+
+then:
+
+\[
+Df_\Gamma
+=
+\Gamma\oplus eDf
+\]
+
+has finite projective dimension.
+
+Thus derived induction sends:
+
+\[
+D^b(\Gamma)
+\to
+D^b(D).
+\]
+
+It also sends \(\Gamma\)-projectives to \(D\)-projectives:
+
+\[
+Df\otimes_\Gamma\Gamma e_j
+\cong
+De_j.
+\]
+
+Therefore it descends to a one-way singular functor:
+
+\[
+\boxed{
+D_{\rm sg}(\Gamma)
+\longrightarrow
+D_{\rm sg}(D).
+}
+\tag{23.1}
+\]
+
+The cross-return fiber \(Z_j\) is precisely the \(e\)-supported singular content of the image of \(S_j^\Gamma\).
+
+The opposite functor is blocked by Theorem 19.1.
+
+So no singular equivalence is obtained.
+
+---
+
+# 24. Auslander calibration
+
+Take:
+
+\[
+A=k[t]/(t^2)
+\]
+
+and the Auslander algebra:
+
+\[
+\boxed{
+D_{\rm Aus}
+=
+\operatorname{End}_{A}(A\oplus k)
+}
+\]
+
+up to the conventional opposite used for left/right module notation.
+
+The frozen calibration is:
+
+\[
+\operatorname{gldim}D_{\rm Aus}=2,
+\]
+
+while the corner corresponding to the \(A\)-summand is:
+
+\[
+\boxed{
+fD_{\rm Aus}f\cong A,
+}
+\]
+
+which is local singular and infinite\(+\).
+
+Thus:
+
+\[
+\boxed{
+fDf\text{ infinite+}
+\not\Rightarrow
+D\text{ infinite+}.
+}
+\tag{24.1}
+\]
+
+The example is consistent with the present cross-module picture: one cross orientation is the simple \(A\)-module \(k\), hence has infinite \(A\)-projective dimension.
+
+The example does not satisfy the U7 minimal-counterexample gate:
+
+\[
+I_\infty(D_{\rm Aus})=\varnothing
+\]
+
+because \(D_{\rm Aus}\) has finite global dimension.
+
+Hence it refutes unconditional corner lift but not the refined U7 structure theorem.
+
+---
+
+# 25. Peeling calibration
+
+The frozen peeling result says finite-pd simple quotients may be removed while preserving sufficiently high Tor tails.
+
+It also warns:
+
+\[
+\boxed{
+\text{a finite-pd vertex may recur in another source's high projective tail}.
+}
+\]
+
+Therefore the facts:
+
+\[
+i,j\in f
+\]
+
+and
+
+\[
+\operatorname{Tor}^\Gamma_\infty(R_i^\Gamma,S_j^\Gamma)
+\]
+
+do not imply that \(i\) or \(j\) should be promoted to ambient infinite-pd source vertices.
+
+U7 respects the source/detector role separation.
+
+---
+
+# 26. Cyclic Nakayama calibration
+
+The cyclic Nakayama algebra with Kupisch series:
+
+\[
+[3,4]
+\]
+
+has:
+
+\[
+I_\infty=\{0\},
+\qquad
+\Sigma_0=\{1\},
+\qquad
+\operatorname{pd}L_1=1.
+\]
+
+Thus an infinite-pd source may have only a finite-pd recurrent detector.
+
+This rules out any U7 argument that tries to make the corner detector \(i\in f\) itself the next ambient source.
+
+The correct return object is the \(e\)-supported cross fiber \(Z_j\), not the detector label.
+
+---
+
+# 27. U1 invisible-return calibration
+
+The frozen invisible-return example shows that:
+
+- a source-relative persistent pair can be Peirce-invisible;
+- another source inside the recurrent core can supply the actual visible witness.
+
+Therefore U7 explicitly allows source change.
+
+The simple cross-source descent in Sections 15–18 is compatible with this calibration.
+
+It does not insist on preserving the original corner source \(j\).
+
+---
+
+# 28. Quantum-drift calibration
+
+Quantum exterior families satisfy:
+
+\[
+\Omega M_\lambda
+\simeq
+M_{\lambda/q}
+\]
+
+and for \(q\) of infinite order the orbit can contain infinitely many pairwise nonisomorphic modules.
+
+Therefore:
+
+\[
+\boxed{
+\text{recurrent projective types}
+\not\Rightarrow
+\text{exact-state periodicity}.
+}
+\]
+
+U7 uses repeated projective types only to select a fixed simple Tor detector.
+
+No module-periodicity theorem is inferred.
+
+---
+
+# 29. What finite-cross return really proves
+
+The finite-cross theorem proves:
+
+\[
+\boxed{
+\Gamma\text{ visible persistent pair}
+\Longrightarrow
+D\text{ has a persistent pair }
+(R_i,L_x)
+\text{ with }x\in I_\infty.
+}
+\]
+
+It does not prove:
+
+\[
+e_xDe_i\neq0.
+\]
+
+In a hypothetical Gap-A failure it proves the opposite:
+
+\[
+e_xDe_i=0.
+\]
+
+Thus the return theorem lands exactly on a new source/detector mismatch.
+
+The projective subcase adds a finite-pd mediator \(j\):
+
+\[
+x\to j\to i,
+\]
+
+but the direct product remains zero.
+
+---
+
+# 30. Multiplication-kernel dichotomy
+
+The projective mediator branch now has the following exact split.
+
+## Branch M0 — bar-degenerate zero product
+
+The class
+
+\[
+u\otimes v
+\]
+
+dies as a \(d_3\)-boundary.
+
+Then the zero product represents a higher factorization/refinement, not a new \(\operatorname{Ext}^2\) bridge.
+
+## Branch M1 — nonzero minimal reverse relation
+
+A class
+
+\[
+0\neq
+\rho\in\operatorname{Ext}^2_D(L_i,L_x)
+\]
+
+survives.
+
+Then:
+
+### M1a — tail active
+
+If \(\rho\) composes nontrivially with the persistent tail in arbitrarily high degrees, diagonal persistence follows and U7 closes positively.
+
+### M1b — tail annihilating
+
+If both diagonal products vanish eventually, \(\rho\) lies in the appropriate tail-action annihilator.
+
+This is a genuine obstruction branch.
+
+U5 already showed that such annihilation need not force endless ideal growth.
+
+So M1b is not automatically a descent.
+
+---
+
+# 31. Infinite-cross bootstrap normal form
+
+The infinite branch reduces to:
+
+\[
+\boxed{
+x
+\overset{\rm Peirce}{\longleftarrow}
+u
+\overset{\Tor^\infty_\Gamma}{\longrightarrow}
+v,
+}
+\]
+
+with:
+
+\[
+x\in I_\infty(D),
+\qquad
+u,v\in Q_0(\Gamma).
+\]
+
+More invariantly:
+
+\[
+\boxed{
+R_u^\Gamma
+\text{ is an infinite-pd simple factor of }eDf,
+}
+\]
+
+\[
+\boxed{
+\operatorname{Tor}^\Gamma_\infty(R_u^\Gamma,S_v^\Gamma),
+}
+\]
+
+and:
+
+\[
+\boxed{
+e_xDe_u\neq0
+}
+\]
+
+for some ambient infinite-pd vertex \(x\).
+
+This is the terminal simple carrier obtained from \(eDf\).
+
+---
+
+# 32. Why this does not yet give a strict smaller corner
+
+The recurrent projective support of \(R_u^\Gamma\) may use vertices outside the ordinary support of \(eDf\).
+
+A corner on the support of \(eDf\) can therefore lose the high projective tail.
+
+Likewise a terminal SCC of recurrent projective labels need not preserve induction/restriction without new cross-module conditions.
+
+Hence:
+
+\[
+\boxed{
+\text{simple cross-source descent}
+\not\Rightarrow
+\text{strict corner descent}.
+}
+\tag{32.1}
+\]
+
+This is the same support-versus-tail distinction already encountered in U6.
+
+No unjustified smaller corner is claimed.
+
+---
+
+# 33. Minimal-counterexample bootstrap loop — current status
+
+The desired loop was:
+
+\[
+D\text{ minimal failure}
+\to
+\Gamma\text{ smaller positive}
+\to
+\text{corner witness}
+\to
+\text{cross defect}
+\to
+\text{ambient witness or smaller singular carrier}.
+\]
+
+The run now verifies the following parts.
+
+### Step 1
+
+\[
+D\to\Gamma
+\]
+
+is strict vertex descent.
+
+### Step 2
+
+Minimality gives a visible persistent corner pair.
+
+### Step 3a — finite \(eDf\)-pd
+
+The corner tail returns to an \(e\)-supported ambient singular object and then to an infinite-pd ambient simple \(L_x\).
+
+### Step 3b — infinite \(eDf\)-pd
+
+The cross module descends to an infinite-pd simple right \(\Gamma\)-module with fixed persistent detector.
+
+### Step 4
+
+Independently, the opposite cross module \(fDe\) is always singular and yields an opposite cross fork.
+
+### Missing Step
+
+The corner witness and the cross forks are not yet forced to share the same source/detector labels.
+
+That is the remaining alignment problem.
+
+---
+
+# 34. Strongest theorem package
+
+## T1 — Finite-Cross-Pd E-Sector Return
+
+If:
+
+\[
+\operatorname{pd}_\Gamma(eDf)<\infty,
+\]
+
+then any persistent corner pair
+
+\[
+(R_i^\Gamma,S_j^\Gamma)
+\]
+
+returns to an ambient persistent pair:
+
+\[
+\boxed{
+(R_i,L_x)
+}
+\]
+
+for some:
+
+\[
+\boxed{
+x\in I_\infty(D).
+}
+\]
+
+The return is carried by the \(e\)-supported cross fiber \(Z_j\).
+
+## T2 — Projective Mediator Normal Form
+
+If:
+
+\[
+\operatorname{pd}_\Gamma(eDf)=0,
+\]
+
+then \(x\) may be chosen with:
+
+\[
+\boxed{
+e_xDe_j\neq0,
+\qquad
+e_jDe_i\neq0,
+\qquad
+e_xDe_i=0,
+}
+\]
+
+and:
+
+\[
+\operatorname{Tor}^\infty_D(R_i,L_x).
+\]
+
+## T3 — Tail-Active Reverse Relation Closure
+
+In the projective mediator case, if the zero product produces a nonzero reverse relation
+
+\[
+\rho\in\operatorname{Ext}^2_D(L_i,L_x)
+\]
+
+which acts nontrivially on the persistent tail in arbitrarily high degrees, then \(D\) has persistent diagonal self-Ext and therefore a visible Gap-A witness.
+
+## T4 — Simple Cross-Source Extraction
+
+If:
+
+\[
+\operatorname{pd}_\Gamma(eDf)=\infty,
+\]
+
+then there exist:
+
+\[
+x\in I_\infty(D),
+\qquad
+u,v\in f
+\]
+
+such that:
+
+\[
+e_xDe_u\neq0
+\]
+
+and:
+
+\[
+\boxed{
+\operatorname{Tor}^\Gamma_n
+(R_u^\Gamma,S_v^\Gamma)
+\neq0
+\quad\text{i.o.}
+}
+\]
+
+where \(R_u^\Gamma\) is a simple factor of \(eDf\) with infinite \(\Gamma\)-pd.
+
+## T5 — Opposite Cross-Singularity Necessity
+
+If:
+
+\[
+\Gamma=fDf
+\]
+
+has infinite global dimension and \(f\) consists exactly of the finite-pd \(D\)-simple vertices, then:
+
+\[
+\boxed{
+\operatorname{pd}_\Gamma({}_\Gamma fDe)=\infty.
+}
+\]
+
+So one singular cross orientation is unavoidable.
+
+---
+
+# 35. B1 status
+
+The strongest unconditional B1 statement obtained is:
+
+\[
+\boxed{
+\text{finite cross-pd corner recurrence}
+\Rightarrow
+\text{ambient recurrence on the }e\text{-source side}.
+}
+\]
+
+The full statement:
+
+\[
+\Gamma\text{ visible recurrence}
+\Rightarrow
+D\text{ visible recurrence}
+\]
+
+is not proved.
+
+It is proved under the extra projective-mediator hypothesis plus a tail-active reverse relation.
+
+Therefore:
+
+\[
+\boxed{
+\texttt{B1 — PARTIAL / CONDITIONAL CLOSURE}.
+}
+\]
+
+---
+
+# 36. B2 status
+
+A strict module-carrier descent is verified:
+
+\[
+eDf\text{ singular}
+\Longrightarrow
+R_u^\Gamma\text{ singular simple factor}.
+\]
+
+The opposite cross module is also necessarily singular.
+
+A strict corner-algebra descent beyond \(\Gamma\) is not proved.
+
+Therefore:
+
+\[
+\boxed{
+\texttt{B2 — VERIFIED FOR MODULE CARRIER, OPEN FOR CORNER CARRIER}.
+}
+\]
+
+---
+
+# 37. B3 status
+
+The proposed conclusion:
+
+\[
+\Sigma_x\cap I_\infty=\varnothing
+\]
+
+cannot yet be ruled out in a vertex-minimal hypothetical failure.
+
+What U7 proves is that such a branch must support all of the following simultaneously:
+
+1. a smaller singular corner
+   \[
+   \Gamma=fDf
+   \]
+   satisfying Gap A;
+
+2. a visible persistent corner witness
+   \[
+   (i,j);
+   \]
+
+3. either finite-\(eDf\)-pd return to an ambient infinite source \(x\), or a simple singular \(eDf\)-source;
+
+4. an unavoidable singular opposite cross module
+   \[
+   fDe;
+   \]
+
+5. if the projective mediator branch occurs, every reverse relation capable of closing the loop must either be bar-degenerate or tail-annihilating.
+
+Thus:
+
+\[
+\boxed{
+\texttt{B3 — NOT CLOSED, BUT THE MINIMAL FAILURE NORMAL FORM IS STRICTLY STRONGER}.
+}
+\]
+
+---
+
+# 38. Exact remaining frontier
+
+The remaining problem is an alignment theorem.
+
+There are now three independently forced data sets.
+
+## Corner witness
+
+\[
+\boxed{
+i,j\in f,
+\quad
+e_j\Gamma e_i\neq0,
+\quad
+\operatorname{Tor}_\Gamma^\infty(R_i^\Gamma,S_j^\Gamma).
+}
+\]
+
+## Right-cross singular/return data
+
+Either:
+
+\[
+\boxed{
+\operatorname{pd}_\Gamma(eDf)<\infty
+}
+\]
+
+and the corner tail returns to some:
+
+\[
+x\in I_\infty(D),
+\]
+
+or:
+
+\[
+\boxed{
+R_u^\Gamma
+\subset_{\rm comp} eDf,
+\quad
+\operatorname{Tor}_\Gamma^\infty(R_u^\Gamma,S_v^\Gamma),
+\quad
+e_xDe_u\neq0.
+}
+\]
+
+## Opposite-cross singular data
+
+Always:
+
+\[
+\boxed{
+S_{v'}^\Gamma
+\subset_{\rm comp}fDe,
+\quad
+\operatorname{Tor}_\Gamma^\infty(R_{u'}^\Gamma,S_{v'}^\Gamma),
+\quad
+e_{v'}De_{x'}\neq0.
+}
+\]
+
+The missing theorem would force some overlap among:
+
+\[
+(i,j),\quad(u,v,x),\quad(u',v',x').
+\]
+
+Without such overlap, the corner witness and the cross feedback can remain homologically misaligned.
+
+This is the exact U7 frontier.
+
+---
+
+# 39. Recommended next representation
+
+Do not return to arbitrary module recurrence.
+
+The next finite object should record a colored cross-witness incidence system with three edge types:
+
+1. corner persistent-Tor edges;
+2. \(eDf\)-attachment edges;
+3. \(fDe\)-attachment edges.
+
+Every edge must retain its actual tail-action/comparison map.
+
+A pure graph cycle is insufficient.
+
+The candidate invariant should measure whether a terminal corner Tor component is closed under both cross attachments.
+
+If it is not closed, one obtains a strict support expansion/descent.
+
+If it is closed, the resulting bi-cross component is the smallest place where a true multiplication/relation argument should be attempted.
+
+---
+
+# 40. Universal impact
+
+U7 changes the corner problem in two ways.
+
+First:
+
+\[
+\boxed{
+\text{finite cross-pd does not merely say “induction is well behaved”;}
+}
+\]
+
+it forces the singular corner recurrence to reappear as an \(e\)-supported ambient singular object.
+
+Second:
+
+\[
+\boxed{
+\text{a singular finite-source corner forces a singular opposite cross module}.
+}
+\]
+
+So the corner singularity cannot be isolated entirely inside \(\Gamma\).
+
+It must interact homologically with the ambient infinite-source sector.
+
+What is still missing is not cross interaction itself.
+
+It is alignment of that interaction with the specific persistent corner witness.
+
+---
+
+# 41. Completion label
+
+The run ends with:
+
+\[
+\boxed{
+\texttt{FINITE-CROSS-PD E-SECTOR RETURN}
+}
+\]
+
+\[
+\boxed{
+\texttt{OPPOSITE-CROSS SINGULARITY THEOREM}
+}
+\]
+
+\[
+\boxed{
+\texttt{SIMPLE CROSS-SOURCE DESCENT}
+}
+\]
+
+\[
+\boxed{
+\texttt{MULTIPLICATION-KERNEL / TAIL-ACTION GATE}
+}
+\]
+
+and overall:
+
+\[
+\boxed{
+\texttt{MAJOR FRONTIER COMPRESSION — FULL CORNER LIFT OPEN}.
+}
+\]
+
+---
+
+# 42. Run integrity
+
+The actual research trajectory was:
+
+1. retrieve U6 source-switch/corner assets and the mandatory U4/U1 calibrations;
+2. map every required Vault method to
+   \[
+   D,e,f,\Gamma,eDf,fDe,Y_j;
+   \]
+3. keep the two cross-module orientations distinct;
+4. use the frozen derived-induction identity without re-proving it;
+5. compute
+   \[
+   fY_j\simeq S_j^\Gamma;
+   \]
+6. introduce the cross-return fiber
+   \[
+   Z_j=\operatorname{fib}(Y_j\to L_j);
+   \]
+7. prove all homology of \(Z_j\) is \(e\)-supported;
+8. in the finite \(eDf\)-pd branch, prove \(Z_j\) is bounded and carries the entire unbounded corner Tor tail;
+9. use finite-row hyper-Tor and finite-length dévissage to extract
+   \[
+   x\in I_\infty
+   \]
+   with
+   \[
+   \operatorname{Tor}_D^\infty(R_i,L_x);
+   \]
+10. specialize to projective \(eDf\) and recover the mediator geometry
+    \[
+    x\to j\to i
+    \]
+    with zero direct product;
+11. move the zero product into the normalized relative bar complex;
+12. construct the explicit \(u=ab,\ v=c,\ bc=0\) calibration showing a zero product can be a \(d_3\)-boundary;
+13. isolate the surviving reverse-relation branch;
+14. prove that a tail-active reverse relation would create persistent diagonal self-Ext and close Gap A;
+15. retain tail-annihilation as a genuine failure branch;
+16. in the infinite \(eDf\)-pd branch, descend by composition length to an infinite-pd simple factor \(R_u^\Gamma\);
+17. extract a fixed recurrent detector \(S_v^\Gamma\) from its minimal resolution;
+18. use the fact that \(R_u^\Gamma\) is a factor of \(eDf\) to obtain
+    \[
+    e_xDe_u\neq0
+    \]
+    for some \(x\in I_\infty\);
+19. prove the new opposite-cross singularity theorem
+    \[
+    \operatorname{pd}_\Gamma(fDe)=\infty;
+    \]
+20. extract the opposite simple cross fork;
+21. audit the recollement/singular-equivalence consequences;
+22. test the result against the Auslander algebra;
+23. test source-switch claims against peeling, cyclic Nakayama, U1 invisible-return, and quantum drift;
+24. freeze the remaining obstruction as alignment of the corner witness with the two cross-module forks.
+
+No unconditional corner-to-ambient lift was claimed.
+
+No zero Peirce product was promoted automatically to \(\operatorname{Ext}^2\).
+
+No nonzero Yoneda relation was assumed to act on the high tail.
+
+No recurrent projective type was upgraded to exact-state periodicity.
+
+No smaller corner was claimed without controlling its cross modules.

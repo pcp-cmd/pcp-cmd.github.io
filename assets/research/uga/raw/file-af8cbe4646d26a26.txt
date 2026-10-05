@@ -1,0 +1,14 @@
+Initial exact execution exited1 at the frozen N7 boundary-action check.
+All earlier connected26/envelope/kernel/finite-J2 checks had completed,
+but the run was NOT accepted as passing before correction and full rerun.
+
+Traceback (most recent call last):
+  File "C:\Users\pcp\AppData\Local\Temp\UGA-20261004-finite-envelope\verify_finite_envelope.py", line 75, in <module>
+    assert Nvmod.dimensions==[0,1] and all(not any(any(col) for col in mat) for mats in Nvmod.actions for mat in mats)
+TypeError: 'Fraction' object is not iterable
+
+Cause: Module.actions has one matrix per radical basis element and one
+vector per source column. The new check descended one level too deeply.
+Correction: all(not any(col) for mat in Nvmod.actions for col in mat).
+No frozen helper, multiplication table, kernel certificate or mathematical
+hypothesis was changed. Corrected full execution result is recorded separately.

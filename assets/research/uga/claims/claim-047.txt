@@ -1,0 +1,9 @@
+## UGA-C047 — Derived-Necklace Extraction
+**Status:** PROJECT-DERIVED / SELF-AUDITED / NOT INDEPENDENTLY VERIFIED  
+**Source:** final Derived-Necklace Run, Theorem 11.1
+
+Unbounded excursion screening forces a support-minimal directed cycle whose edges are actual nonzero Peirce homology classes in \(H^*(Q_x)\), not merely repeated graph labels.
+
+**Depends on:** UGA-C046.
+
+---

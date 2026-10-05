@@ -1,0 +1,14 @@
+## UGA-C123 — Finite Ordinary Quotient Forces a Sharp Actual Zero-Row Window and Supported Return
+
+**Status:** COMPLETE SELF-AUDITED ORDINARY PROOF / SHARP ACTUAL COVER WINDOW / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Finite-Quotient-Ordinary-Window-and-Two-Sided-Finite-Label-Deletion-Obstruction-2026-10-04.md, Sections 1–3 and 5.
+
+For ANY elementary finite-dimensional A/field, nonempty proper F, ORDINARY B=A/Ae_FA of LEFT gd<=d, and an ACTUAL minimal LEFT resolution P_n of finite M: e_FP_a=...=e_FP_(a+d)=0 implies pd_A M<=a+d. These d+1 genuine covers, including ALL kernels, are minimal B covers: IP_n=0, their A-projectivity gives B-projectivity, and J_BP_n=J_AP_n. Finite gd makes the last actual cover an isomorphism. Nothing is pruned and no arbitrary simple comparison/homological epimorphism is assumed.
+
+For SINGLETON F={j} with ACTUAL LEFT pd L_j infinite, every interval of d+1 consecutive degrees has dim e_jP_n(L_j)>0. After EVERY b>=0, some b<n<=b+d+1 has C_jx>0 and Tor_n(R_x,L_j) nonzero. ONE fixed detector x recurs infinitely often by finite pigeonhole, not necessarily j or every degree. Direct RIGHT covers give the corresponding fixed RIGHT-source pair through sum_y beta_jy C_yj; no opposite-infinite-plus transfer. Block aggregates do not by themselves align a selected simple source.
+
+Thus the WHOLE finite-gd singleton-quotient/infinite-source class satisfies UGA at arbitrary size, and all-singleton-finite-gd quotients plus full supported cutoff n>b imply gd A<=b+1+max_j gd(A/Ae_jA). Finite pd_A B_j=t additionally gives retained-simple pds<=t+d; if the deleted pd h is finite then gd A<=max{h,t+d}, otherwise infinite gd forces the deleted source infinite and the ordinary window applies. Finite-pd deleted simple labels alone do NOT imply this quotient-module bound.
+
+The exact cycle C091 has gd quotient d=p-2 and d consecutive actual zero-row terms in an infinite resolution, so d+1 is sharp. C058's real-tail comparison/older qualitative quotient-infinitude are REUSED; the finite-interval quantitative completion is new project content, with no novelty or independent-verification claim. C119 universal selected-source return stays FALSE outside the finite-gd-quotient hypothesis. General safe quotient descent/finite-type global return and UGA remain OPEN.
+
+---

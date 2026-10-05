@@ -1,0 +1,20 @@
+# T35 targeted actual ordinary calibration
+
+Continue T34; four-vertex closure is already registered/reused.
+Test the general radical-cube-zero ordinary return proof at its load-bearing
+bar/Ext-one and NONEXACT actual core interfaces.
+
+1. Nonselfinjective28: real kernel split errors Lf have pd1; augmented
+   projective core has nonzero finite-pd homology, while linear head maps
+   are injective and genuine successive maps compose to zero.
+2. Compare linear ordinary bar tensor kernels with actual length-n
+   ordinary Ext-one products via A-linear resolution lifts in three
+   tables, all endpoint cells through degree4.
+3. NonKoszul kC5/J3: actual simple restarts despite Ext-one squared zero.
+4. Preserve N7: nonzero cubic path, literal nonsimple period-one deep
+   kernel, zero linear head coefficient, ordinary kernel isomorphism.
+
+Complete general all-field/all-degree proof and normal adversarial
+self-audit are in the Run. Exact finite checks are NOT independent
+proof verification. No claim that the core complex is exact.
+No routine checksum operation or HTML.

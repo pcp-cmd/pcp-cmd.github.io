@@ -1,0 +1,119 @@
+"""Finite-complement perfect corner: actual sharp ordinary cutoff two.
+
+Loads frozen local helper definitions without rerunning old computations.
+All-parameter ordinary comparison has a separate bounded-cone proof.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_finite_factor_carrier.py'
+saved_file=__file__
+__file__=str(frozen)
+exec(compile(frozen.read_text(encoding='utf-8').split('families=[]',1)[0],str(frozen),'exec'),globals())
+__file__=saved_file
+
+def perfect_family(p):
+    vertices=p+1;old=['a','b','ab','ba','aba','bab','abab']
+    basis=[(f'e{i}',i,i) for i in range(vertices)]
+    basis += [(w,0 if w[0]=='a' else 1,1 if w[-1]=='a' else 0) for w in old]
+    basis += [(f'm{w}',0,w) for w in range(2,vertices)]
+    basis += [(f'n{w}',0,w) for w in range(2,vertices)]
+    basis += [(f't{w}',w,w) for w in range(2,vertices)]
+    ix={n:i for i,(n,_,_) in enumerate(basis)}
+    products={(ix[u],ix[v]):ix[u+v] for u in old for v in old if u+v in old}
+    products.update({(ix[f'm{w}'],ix[f't{w}']):ix[f'n{w}'] for w in range(2,vertices)})
+    A=Table(vertices,basis,products)
+    assert len(A.basis)==4*p+5 and len(A.alg.radical_powers[4])==0
+    return A
+
+def corner_right_projectivity(A,p):
+    # Retained corner is a product of p dual-number algebras.
+    basis=[(f'e{i}',i,i) for i in range(p)]+[(f'h{i}',i,i) for i in range(p)]
+    B=Table(p,basis,{})
+    assert all(not (l!=r and l and r) for _,l,r in A.basis)
+    local=[[A.index['e1'],A.index['ba'],A.index['a'],A.index['aba']]]
+    local += [[A.index[f'e{w}'],A.index[f't{w}'],A.index[f'm{w}'],A.index[f'n{w}']] for w in range(2,A.vertices)]
+    actions=[]
+    entries=[A.index['ba']]+[A.index[f't{w}'] for w in range(2,A.vertices)]
+    for j,entry in enumerate(entries):
+        pos={b:i for i,b in enumerate(local[j])}
+        cols=[]
+        for b in local[j]:
+            value=A.mult(b,entry);col=[F(0)]*4
+            if value is not None:col[pos[value]]=F(1)
+            cols.append(col)
+        actions.append(cols)
+    Ae=sr.Module(B.alg,[4]*p,actions)
+    ss.parse_module(B.alg,ss.module_payload(Ae))
+    targets=[projective(B,j)[0] for j in range(p)]
+    T=ss.direct_sum(B.alg,targets,[2]*p)
+    maps=[[rk.unit_vector(4,i) for i in range(4)] for j in range(p)]
+    checked=ss.check_isomorphism(T,Ae,ss.encode(maps))
+    for cols in maps:unit_basis(cols,4)
+    # The corner itself has no mixed retained Peirce entry.
+    return {'corner':B.payload,'Ae_right_corner_module':ss.module_payload(Ae),
+            'isomorphism_to_two_copies_of_each_corner_projective':checked,
+            'natural_basis_indices':local,'pd_right_corner_Ae':0}
+
+families=[]
+for p in [3,5,8]:
+    A=perfect_family(p);original=A;op=A.opposite()
+    Pf,localf=projective(A,0);Pv,localv=projective(A,1)
+    Lf=sr.Module.simple(A.alg,0)
+    T,E=combined(A,[(Pv,localv,lambda b:(0,A.mult(b,A.index['b'])))])
+    left=[kernel_iso(Lf,T,E,'Omega left Lf=Pv; pd=1')]
+    U1local=local_names(A,['a','ba','aba']);U1=supported_module(A,U1local)
+    U2local=local_names(A,['ba','aba']);U2=supported_module(A,U2local)
+    left.append(kernel_iso(sr.Module.simple(A.alg,1),U1,[[(1,b) for b in part] for part in U1local],'Omega left Lv=U1'))
+    left.append(kernel_iso(U1,U2,[[(0,A.mult(b,A.index['b'])) for b in part] for part in U2local],'Omega left U1=U2'))
+    left.append(kernel_iso(U2,U2,[[(1,b) for b in part] for part in U2local],'Omega left U2=U2'))
+    corners=corner_right_projectivity(A,p)
+    sharp=[]
+    for w in range(2,A.vertices):
+        Lw=sr.Module.simple(A.alg,w)
+        Ulocal=local_names(A,[f't{w}',f'm{w}',f'n{w}']);U=supported_module(A,Ulocal)
+        Klocal=local_names(A,[f't{w}',f'n{w}']);K=supported_module(A,Klocal)
+        left.append(kernel_iso(Lw,U,[[(w,b) for b in part] for part in Ulocal],f'Omega left L{w}=U{w}'))
+        fixed,E=combined(A,[(Pv,localv,lambda b:(0,A.mult(b,A.index['b']))),
+                           (K,Klocal,lambda b,w=w:(w,b))])
+        left.append(kernel_iso(U,fixed,E,f'Omega left U{w}=Pv+K{w}'))
+        check=kernel_iso(fixed,K,[[(w,b) for b in part] for part in Klocal],f'Omega left (Pv+K{w})=K{w}')
+        assert check['cover']['cover_multiplicities'][1]==1
+        left.append(check)
+        check=kernel_iso(K,K,[[(w,b) for b in part] for part in Klocal],f'Omega left K{w}=K{w}')
+        assert check['cover']['cover_multiplicities']==[int(j==w) for j in range(A.vertices)]
+        left.append(check)
+        sharp.append({'label':w,'actual_Tor_A_degree_two_Rv_Lw':1,
+          'corner_Tor_B_degree_two_Rv_Lw':0,'d':1,'t':0,'N':2,
+          'high_left_Lw_projective_type_only_w_from_degree':3})
+    A=op
+    PvR,localvR=projective(A,1)
+    parts=[(PvR,localvR,lambda b:(0,original.mult(original.index['a'],b)))]
+    parts += [(projective(A,w)[0],projective(A,w)[1],lambda b,w=w:(0,original.mult(original.index[f'm{w}'],b))) for w in range(2,A.vertices)]
+    T,E=combined(A,parts)
+    right=[kernel_iso(sr.Module.simple(A.alg,0),T,E,'Omega right Rf=e_v A+sum e_w A; pd=1')]
+    assert cover(T)[0].dimensions==[0]*A.vertices
+    V1local=local_names(A,['b','ba','bab']);V1=supported_module(A,V1local)
+    V2local=local_names(A,['ba','bab']);V2=supported_module(A,V2local)
+    right.append(kernel_iso(sr.Module.simple(A.alg,1),V1,[[(1,b) for b in part] for part in V1local],'Omega right Rv=V1'))
+    parts=[(V2,V2local,lambda b:(0,original.mult(original.index['a'],b)))]
+    parts += [(projective(A,w)[0],projective(A,w)[1],lambda b,w=w:(0,original.mult(original.index[f'm{w}'],b))) for w in range(2,A.vertices)]
+    T,E=combined(A,parts)
+    right.append(kernel_iso(V1,T,E,'Omega right V1=V2+sum e_w A'))
+    right.append(kernel_iso(V2,V2,[[(1,b) for b in part] for part in V2local],'Omega right V2=V2'))
+    right.extend(kernel_simple(A,w,w,f'Omega right R{w}=R{w}') for w in range(2,A.vertices))
+    families.append({'p':p,'dimension':len(original.basis),'algebra':original.payload,
+      'actual_left_kernels':left,'actual_right_kernels':right,'perfect_corner_certificate':corners,
+      'strict_cutoff_examples':sharp,'all_degree_conclusions_from_written_proof':{
+        'finite_left_and_right_f_pd':1,'both_infinite_simple_sets':list(range(1,A.vertices)),
+        'ordinary_Ext_restriction_and_dual_Tor_iso_for_n_greater_than':2,
+        'bound_not_valid_at_degree_two':True,'not_a_Gap_A_counterexample':True}})
+dependencies={f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest() for n in
+ ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']}
+dependencies.update({f'runs/2026-10-04/Carrier-Lemma-Evidence/{n}':sha256((frozen.parent/n).read_bytes()).hexdigest() for n in
+ ['verify_carrier_lemma.py','verify_finite_factor_carrier.py']})
+result={'status':'passed','python':sys.version,'independent_verification':False,'parameters':[3,5,8],
+ 'counts':counts,'perfect_corner_families':families,'dependencies':dependencies,
+ 'scope':'Finite integral actual-cover/corner-projectivity audit; separate all-p/all-module ordinary comparison proof.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','parameters':[3,5,8],'counts':counts,'independent_verification':False}))
