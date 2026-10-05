@@ -1,0 +1,333 @@
+# Run — Ordinary split radical quotients give strict dimension descent
+
+**Date:** 2026-10-03  
+**Researcher:** one main Codex researcher  
+**Evidence:** complete elementary proof and normal adversarial self-audit;
+not independently verified  
+**Global status:** Universal Gap A remains OPEN. No novelty claim is made.
+
+After T8, the attempt to force general derived tensor nilpotence has no
+complete proof. Resolution-term cycles cannot supply it, by C068. This
+continuation changes the global reduction: an ordinary split radical
+quotient can decrease algebra dimension without deleting a vertex or
+introducing another derived invariant.
+
+Its two required properties are proved directly: supported ordinary
+quotient Tor is a split summand of ambient Tor, and infinite global
+dimension passes to the quotient if the actual ambient kernel has finite
+projective dimension on either stated side. Every such nonzero reduction
+strictly decreases the positive integer dim_k A.
+
+This supplies a terminating all-size class theorem and can be combined
+with the existing vertex-deletion bridges. It does not say that every
+hypothetical counterexample admits one of these reductions.
+
+## 1. Align an arbitrary ordinary section with the vertex algebra
+
+Let A be elementary finite-dimensional over k, with fixed primitive
+idempotents e_1,...,e_v, and K an ideal contained in J(A). Put B=A/K,
+write pi:A -> B for the ordinary quotient, and suppose it has a unital
+k-algebra section s. Radical containment ensures B has exactly the
+same labelled simples and primitive vertex images bar e_i.
+
+The section need not initially satisfy s(bar e_i)=e_i.
+Let f_i=s(bar e_i) and
+
+\[
+u=\sum_i e_i f_i.
+\tag{1.1}
+\]
+
+Then pi(u)=1, so u belongs to 1+K and is invertible, since K is
+nilpotent. Orthogonality gives
+
+\[
+u f_j=e_j f_j=e_j u.
+\]
+
+Thus the conjugated section s'(b)=u s(b)u^{-1} satisfies
+
+\[
+s'(\bar e_i)=e_i,\qquad \pi s'=\mathrm{id}_B.
+\tag{1.2}
+\]
+
+Also J(B)=J(A)/K, and s'(J(B)) is contained in J(A): the preimage
+of J(B) under pi is J(A). Consequently pi and s' preserve the
+ordinary vertex augmentation. No extra vertex-preserving assumption
+on the initial section is necessary.
+
+### Lemma 1.1 — Split ordinary Tor with the same Peirce pair
+
+For every labelled right/left simple pair and every n>=0,
+
+\[
+\operatorname{Tor}^B_n(R_z,L_y)
+\quad\hbox{is a split summand of}\quad
+\operatorname{Tor}^A_n(R_z,L_y).
+\tag{1.3}
+\]
+
+#### Proof
+
+Use normalized relative bars over S=sum_i k e_i. The maps on radical
+letters induced by pi and s' are chain maps, since both preserve S,
+augmentation and ordinary products. Their composite on B's bar is
+the identity. Endpoint simple modules have the same S actions,
+so the retract holds separately for every (z,y). Passing to homology
+proves (1.3). QED.
+
+If e_y B e_z is nonzero, (1.2) embeds it into e_y A e_z. A fixed
+ordinary supported B tail therefore gives a fixed supported A tail.
+This does not require a section of a derived quotient, a local corner,
+coefficient perfectness, or an opposite-side infinite-+ transfer.
+
+It also follows that gldim B<=gldim A: if all ordinary A simple-pair
+Tor above a finite degree vanishes, (1.3) gives the same for B.
+
+## 2. One-sided ambient finite pd preserves global dimension infinity
+
+### Lemma 2.1 — A finite-pd quotient cannot lose all global infinity
+
+For any K contained in J(A), without a section assumption, suppose
+
+\[
+d=\operatorname{pd}_{A^{op}}K<\infty.
+\tag{2.1}
+\]
+
+If g=gldim B is finite, then
+
+\[
+\operatorname{gldim}A\le g+d+1.
+\tag{2.2}
+\]
+
+#### Proof
+
+The exact right-module sequence 0 -> K -> A -> B -> 0 gives
+pd_{A^{op}} B<=d+1. Each B-projective right module is a direct
+summand of a direct sum of B, so has ambient right pd<=d+1.
+
+Every simple right A-module is inflated from B, because K is contained
+in the radical. Resolve it by B-projectives in length at most g.
+After restriction this is still an exact sequence of right A-modules,
+all its terms having ambient pd<=d+1. The elementary finite-resolution
+inequality gives pd_{A^{op}} R_z<=g+d+1 for every z.
+
+Hence Tor^A_n(R_z,L_y)=0 for all simple pairs and all n>g+d+1.
+The top of a nonzero term in a minimal left-simple projective
+resolution is detected by some R_z tensor that term. Thus all left
+simples also have pd<=g+d+1. For a finite-dimensional algebra this
+bounds its global dimension, proving (2.2). QED.
+
+The left-sided version is proved directly: if pd_A K=d is finite,
+resolve each left A-simple by B-projectives and use pd_A B<=d+1.
+The right version did not assume a theorem transferring infinite +
+to the opposite algebra.
+
+### Theorem 2.2 — The ordinary reduction preserves global infinity
+
+Under the split radical quotient of Section 1, finite actual ambient
+pd of K on either one stated side gives
+
+\[
+\operatorname{gldim}A<\infty
+\quad\Longleftrightarrow\quad
+\operatorname{gldim}B<\infty.
+\tag{2.3}
+\]
+
+When finite, with d the chosen ambient one-sided pd,
+
+\[
+\operatorname{gldim}B\le\operatorname{gldim}A
+\le\operatorname{gldim}B+d+1.
+\tag{2.4}
+\]
+
+#### Proof
+
+Section 1 gives the lower inequality and the forward implication.
+Lemma 2.1 gives the upper inequality and the reverse implication.
+QED.
+
+No finite pd on the other side, K^2=0, finite C^e-pd or tensor
+nilpotence is assumed. The finite pd is that of the actual ideal
+over the current ambient A, not merely over B.
+
+### Literature comparison at its exact scope
+
+[Giatagantzidis, Theorem 2.14](https://arxiv.org/html/2507.12978v1#S2.SS3)
+gives a split radical quotient theorem for finitistic and global
+dimension, under finite right ambient kernel pd and an additional
+left-pd or square-zero alternative. The elementary proof above only
+addresses global dimension, using the common simple modules, and
+does not need that alternative. No extension of that paper's
+finitistic-dimension theorem is asserted or used here.
+
+## 3. Strict descent, class closure and a quantitative bound
+
+### Theorem 3.1 — A bad algebra passes to a strictly smaller bad quotient
+
+Suppose K is nonzero and satisfies Sections 1--2. If A were a
+Gap-A counterexample, B would be one too, and
+
+\[
+\boxed{\dim_k B=\dim_k A-\dim_k K<\dim_k A.}
+\tag{3.1}
+\]
+
+#### Proof
+
+A has infinite global dimension. Theorem 2.2 makes B's global
+dimension infinite. If B had a supported ordinary infinite tail,
+Lemma 1.1 would lift it to A with the same reverse-supported pair.
+Thus B is not infinite +. Formula (3.1) follows from the nonzero
+kernel. QED.
+
+This is a well-founded strict descent, not merely a change in a
+counterexample's structure.
+
+### Corollary 3.2 — All-size closure under finite-pd split radical extensions
+
+If B satisfies Universal Gap A and A -> B satisfies Sections 1--2,
+then A satisfies Universal Gap A. Iterate through any finite tower
+of such actual split radical quotients. The final algebra's ordinary
+supported tail retracts through the whole tower, and (2.3) preserves
+global infinity throughout.
+
+In particular, the entire class obtained by finitely many such
+extensions from an erasure-stable algebra of C061 satisfies Gap A
+at arbitrary finite size. There is no vertex-number ceiling.
+Other already justified Gap-A base classes can be substituted.
+
+A full reduction chain of nonzero kernels cannot be infinite:
+dimension strictly decreases at every step and remains at least
+the number of simple vertices. Hypotheses must be checked at
+each actual step; they are not declared to inherit automatically.
+
+### Corollary 3.3 — Supported vanishing yields a finite gldim bound
+
+Let A=A_0 -> A_1 -> ... -> A_r=B be such a tower, with nonzero
+radical kernels K_i and chosen finite ambient one-sided dimensions
+d_i. All quotients have v labelled vertices. Suppose B has the
+all-vertex ordinary sections of C061, and suppose every
+reverse-supported A simple-pair Tor vanishes for every n>=M,
+where M>=1. Then
+
+\[
+\boxed{\operatorname{gldim}A
+\le(v-1)M+\sum_{i=0}^{r-1}(d_i+1).}
+\tag{3.2}
+\]
+
+#### Proof
+
+Composed ordinary bar retracts give the same supported all-degree
+vanishing in B: its reverse support embeds into A's support.
+C061 gives gldim B<=(v-1)M. Apply (2.4) backwards at each step.
+QED.
+
+The terminal all-vertex section condition, all reverse-supported
+pairs, all n>=M, and actual finite ambient kernel pd are retained.
+This is a class-specific bound, not a finite-window certificate.
+
+### Combining the global moves
+
+A bad algebra also passes to a smaller bad algebra through the
+existing ordinary-section infinite-pd vertex deletion of C061,
+or a C067 deletion satisfying its exact finite-corridor hypotheses.
+The same positive integer dim_k A strictly decreases for all these
+moves. Thus they can be used in one checked reduction chain
+without proving that their separate hypotheses inherit.
+
+This statement unifies actual reductions; it does not prove an
+available reduction exists at every nonterminal bad algebra.
+That existence is the remaining universal closure issue.
+
+## 4. Actual one-sided calibration outside the square-zero/left-pd alternative
+
+First take the four-dimensional algebra E with vertices y,x,
+radical basis c:y->y and b:x->y, and all radical products zero.
+Its quotient by K_E=k b is the split ordinary algebra
+k[c]/(c^2) times k at x.
+
+As a right E-module, K_E is e_x E=k e_x via e_x -> b, so is
+projective. As a left E-module it is L_y. The column E e_y has
+radical k c isomorphic to L_y, giving Omega L_y=L_y and infinite
+left pd. This proves actual one-sided projectivity without
+assuming left finite pd.
+
+Let T be the six-dimensional path algebra of the line 0->1->2,
+with arrows alpha,beta and gamma=beta alpha. Its radical has
+right-module decomposition
+
+\[
+J(T)\cong e_0T\oplus e_1T,
+\tag{4.1}
+\]
+
+given by e_0 -> alpha and e_1 -> beta; the latter also sends
+alpha to gamma. Thus J(T) is right-projective, while
+J(T)^2=k gamma is nonzero.
+
+Now set
+
+\[
+A=E\times T,\qquad K=K_E\times J(T).
+\tag{4.2}
+\]
+
+A has dimension ten and five vertices; K has dimension four.
+The ordinary quotient B has dimension six and is
+k[c]/(c^2) times k^4, with its explicit vertex/radical section.
+The actual ideal K is right-projective over A, has infinite
+left pd, and K^2 is nonzero.
+
+Thus (4.2) satisfies Theorem 2.2 with d=0 while neither the
+left-finite-pd nor square-zero alternative holds. The retained
+ordinary y bar words c|...|c give a supported Tor class in every
+degree in B, and their ordinary section supplies the same tail
+in A. This is infinite +, not a counterexample.
+
+All these statements follow from the displayed basis maps over
+every field. No bounded experiment or new backend execution is
+needed for the elementary finite certificates.
+
+## 5. Normal adversarial audit and remaining research
+
+1. K is contained in the actual radical. Otherwise the quotient
+   may lose simples carrying global infinity; the finite-simple
+   resolution argument fails. A direct-product projection deleting
+   an infinite-gldim factor illustrates that failure.
+2. The ordinary section is actual and unital. Equation (1.1)
+   aligns its idempotents, so the retract is separately augmented
+   at each original simple pair.
+3. Support is checked in the ordinary quotient and lifted through
+   that section. No support cycle is treated as homology.
+4. The finite pd concerns actual K over actual A on the stated
+   side. Finite pd of resolution terms or of K over B is insufficient
+   for the proof as stated.
+5. Only one side is needed for global dimension. The proof compares
+   finite bounds through ordinary simple-pair Tor, without an
+   infinite-+/opposite transfer. No finitistic theorem is claimed.
+6. The lower global-dimension bound uses the ordinary bar retract;
+   it is not assumed for arbitrary nonsplit radical quotients.
+7. Every nonzero reduction lowers dimension. Reusing a representation
+   or deleting a label without the infinity and Tor comparisons is
+   not a descent move.
+8. Each step in a mixed chain needs its own exact hypotheses.
+   No new automatic inheritance of sections, perfectness or tensor
+   nilpotence is asserted.
+9. The numerical bound uses the terminal all-vertex C061 condition,
+   not its weaker infinite-pd-only qualitative condition.
+10. This is a substantive class closure, but it does not settle the
+    general reduction-existence problem. Target A, local-trivial
+    nonprojective/non-nilpotent screening and the unbounded
+    higher-output Target-B frontier remain open.
+
+The next high-priority task is a theorem forcing one of these actual
+ordinary reductions or an ordinary supported tail in every remaining
+irreducible case. Additional descriptions of that irreducible residue
+without such a mechanism have low priority.

@@ -1,0 +1,297 @@
+{
+  "status": "passed",
+  "backend": "python",
+  "version": "3.14.3",
+  "field": "Q",
+  "evidence_level": "bounded-check",
+  "associativity_triples": 729,
+  "module_certificates": {
+    "maps": [
+      {
+        "map": "dy1",
+        "domain_dimension": 9,
+        "rank": 5
+      },
+      {
+        "map": "dy2",
+        "domain_dimension": 6,
+        "rank": 4
+      },
+      {
+        "map": "dy3",
+        "domain_dimension": 3,
+        "rank": 2
+      },
+      {
+        "map": "dy4",
+        "domain_dimension": 6,
+        "rank": 1
+      },
+      {
+        "map": "dx1",
+        "domain_dimension": 6,
+        "rank": 2
+      },
+      {
+        "map": "dx2",
+        "domain_dimension": 6,
+        "rank": 4
+      },
+      {
+        "map": "dx3",
+        "domain_dimension": 6,
+        "rank": 2
+      }
+    ],
+    "a_linearity_checks": 378,
+    "exact_periodic_pairs": 7,
+    "linker_kernel_dimension": 2
+  },
+  "ambient_bound": 4,
+  "ambient_incoming_degree": 5,
+  "ambient_d_square_checks": 2457,
+  "ambient_tor": [
+    {
+      "source": 0,
+      "target": 0,
+      "degree": 0,
+      "bar_dimension": 1,
+      "tor_dimension": 1,
+      "ordinary_quotient_projection_rank": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "degree": 1,
+      "bar_dimension": 3,
+      "tor_dimension": 1,
+      "ordinary_quotient_projection_rank": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "degree": 2,
+      "bar_dimension": 13,
+      "tor_dimension": 1,
+      "ordinary_quotient_projection_rank": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "degree": 3,
+      "bar_dimension": 51,
+      "tor_dimension": 0,
+      "ordinary_quotient_projection_rank": 0
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "degree": 4,
+      "bar_dimension": 205,
+      "tor_dimension": 1,
+      "ordinary_quotient_projection_rank": 0
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "degree": 0,
+      "bar_dimension": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "degree": 1,
+      "bar_dimension": 2,
+      "tor_dimension": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "degree": 2,
+      "bar_dimension": 6,
+      "tor_dimension": 0
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "degree": 3,
+      "bar_dimension": 26,
+      "tor_dimension": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "degree": 4,
+      "bar_dimension": 102,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 0,
+      "degree": 0,
+      "bar_dimension": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 0,
+      "degree": 1,
+      "bar_dimension": 2,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 0,
+      "degree": 2,
+      "bar_dimension": 6,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 0,
+      "degree": 3,
+      "bar_dimension": 26,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 0,
+      "degree": 4,
+      "bar_dimension": 102,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 0,
+      "bar_dimension": 1,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 1,
+      "bar_dimension": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 2,
+      "bar_dimension": 4,
+      "tor_dimension": 2
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 3,
+      "bar_dimension": 12,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 4,
+      "bar_dimension": 52,
+      "tor_dimension": 2
+    }
+  ],
+  "minimal_model_bound": 8,
+  "minimal_model_incoming_degree": 9,
+  "minimal_model_d_square_checks": 682,
+  "minimal_model_tor": [
+    {
+      "degree": 0,
+      "bar_dimension": 1,
+      "tor_dimension": 1,
+      "projection_rank": 1
+    },
+    {
+      "degree": 1,
+      "bar_dimension": 1,
+      "tor_dimension": 1,
+      "projection_rank": 1
+    },
+    {
+      "degree": 2,
+      "bar_dimension": 3,
+      "tor_dimension": 1,
+      "projection_rank": 1
+    },
+    {
+      "degree": 3,
+      "bar_dimension": 5,
+      "tor_dimension": 0,
+      "projection_rank": 0
+    },
+    {
+      "degree": 4,
+      "bar_dimension": 11,
+      "tor_dimension": 1,
+      "projection_rank": 0
+    },
+    {
+      "degree": 5,
+      "bar_dimension": 21,
+      "tor_dimension": 1,
+      "projection_rank": 0
+    },
+    {
+      "degree": 6,
+      "bar_dimension": 43,
+      "tor_dimension": 1,
+      "projection_rank": 0
+    },
+    {
+      "degree": 7,
+      "bar_dimension": 85,
+      "tor_dimension": 0,
+      "projection_rank": 0
+    },
+    {
+      "degree": 8,
+      "bar_dimension": 171,
+      "tor_dimension": 1,
+      "projection_rank": 0
+    }
+  ],
+  "actual_screening": [
+    {
+      "degree": 3,
+      "v_slot_terms": 1,
+      "first_weight_page_nonzero": true
+    },
+    {
+      "degree": 4,
+      "v_slot_terms": 2,
+      "first_weight_page_nonzero": true
+    },
+    {
+      "degree": 5,
+      "v_slot_terms": 3,
+      "first_weight_page_nonzero": true
+    },
+    {
+      "degree": 6,
+      "v_slot_terms": 4,
+      "first_weight_page_nonzero": true
+    },
+    {
+      "degree": 7,
+      "v_slot_terms": 5,
+      "first_weight_page_nonzero": true
+    },
+    {
+      "degree": 8,
+      "v_slot_terms": 6,
+      "first_weight_page_nonzero": true
+    }
+  ],
+  "limitations": [
+    "Same author for proof and code; not independent verification.",
+    "Finite bar bounds do not prove the generic parity theorem.",
+    "The calibration is infinite +, not a Gap-A counterexample.",
+    "The all-degree periods use the separately explained finite exact module certificates."
+  ]
+}

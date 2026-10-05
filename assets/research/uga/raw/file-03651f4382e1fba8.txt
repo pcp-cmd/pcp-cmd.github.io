@@ -1,0 +1,38 @@
+# Cycle 6 master guidance — close the dumbbell, totalize comparison, force relation-sensitive recycling
+
+Transport is explicitly `off`; this guidance is authored by Main Codex from elaboration `ad4bfc4cb1e9485b` with zero external-call cost. It is strategy, not proof authority.
+
+The new fact `ee07f374726a4e16` changes the finite frontier: the two-vertex strongly connected case is closed. Do not spend further rounds reproving it. The next finite obstruction is now sharply isolated as the three-vertex mutual-dumbbell configuration, while the universal route still depends on a provenance-sensitive defect-recycling theorem.
+
+The common architecture remains
+
+\[
+\text{minimal-resolution recurrence}
+\to\text{dead-zone corner}
+\to\text{corner witness}
+\to\text{typed ambient recurrence or higher defect}
+\to\text{compatible Peirce witness or strict descent}.
+\]
+
+The mandatory negative test is `6bd89784ef94bef3`: support recurrence, two nonzero cross pieces, and persistent cross-Tor are insufficient. Every positive bridge must name the extra dead-zone, comparison-provenance, radical-matrix, vertex-minimality, or bilateral hypothesis that excludes this example.
+
+## Branch A — isolate and close the three-vertex mutual dumbbell
+
+Use `ee07f374726a4e16` as the two-vertex base and `cfa612b56766b9c2` for any source vertex that sees all vertices. State the mutual-dumbbell configuration exactly, with ordered left/right conventions and every protected-corner hypothesis explicit. Seek a reusable sufficient theorem narrower than a blanket three-vertex classification if it is exactly what dead-zone corners need. The decisive deliverable is a verifier-accepted infinite-(+) witness for the surviving dumbbell configuration, or a rigorous counterexample showing the proposed low-vertex closure is false. Verify opposite-invariance separately if used.
+
+## Branch B — remove the finite-width blind spot and instantiate the actual comparison
+
+Start from the actual corner witness (X,Y) and construct the canonical ambient modules (M,N,K,Q,L,P). Use `92f5bd1cf37b96dc` as the exact spectral-sequence interface and `8efc3c23abb4cc64` as the finite-width output atlas. Prove one of two things: the dead-zone hypotheses force a finite bound on \(\operatorname{Tor}^{fAf}_q(X,fA)\), or unbounded higher rows can be packaged into a new recurrent defect that retains a fixed simple pair and exact vertex provenance. No argument may silently discard cancellations or an unbounded family of rows. The deliverable is a total comparison theorem on the actual dead-zone construction.
+
+## Branch C — build a relation-sensitive defect transition
+
+Combine `443dcfa36e4c44f5`, `39de5538689bf91c`, and the four provenance classes of `8efc3c23abb4cc64`. Define the transition state using at least the ordered recurrent simple pair, dead-zone idempotent, comparison branch, and a relation-sensitive coordinate such as the first nonzero radical layer or an explicit differential-matrix coefficient. Prove that a Peirce-incompatible state gives either a compatible witness or a strict decrease to a proper recurrent corner. If unilateral states can repeat, formulate the paired (A/A^{op}) state and prove that periodicity forces a noncancelling ordered Peirce coefficient. Explicitly test every proposed invariant on `6bd89784ef94bef3`; if it does not decrease or exclude that algebra, reject it.
+
+## Shared closure criteria
+
+- A low-vertex result closes only when the mutual dumbbell itself is handled, not when the all-infinite three-vertex case is excluded.
+- A comparison result closes only when every spectral-sequence row reaches a typed output or is proven absent.
+- A recycling result closes only with an explicit well-founded order or a rigorous bilateral periodicity exclusion.
+- A persistent simple Tor pair is not yet infinite-(+) until the correctly ordered Peirce block is nonzero.
+- Continue to promote small verifier-checkable lemmas; no handoff assertion or master guidance is proof authority.
+- The ultimate human report and paper remain deferred until the central recycling theorem and its interfaces are verifier-closed.

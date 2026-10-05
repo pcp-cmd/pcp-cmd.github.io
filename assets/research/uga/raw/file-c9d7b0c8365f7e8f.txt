@@ -1,0 +1,38 @@
+# 商类死亡页的线性下界
+
+状态：项目推导定理，完整自审；独立证明审核待进行。
+
+## 假设和结论
+
+设 $C$ 为有限维 elementary 代数，$M$ 为有限维 $C$-双模，$R_a,L_b$ 为右、左 simple。two-stage bar 复形 $B$ 的 $J$-字母次数为一，$M$-字母次数为二。用 $p$ 数 $M$-字母，用 $q$ 数 $J$-字母，总次数为 $q+2p$。其谱序列为
+
+$$
+E_1^{p,q}=H_q\left(R_a\otimes_C^{\mathbf L}
+M^{\otimes_C^{\mathbf L}p}\otimes_C^{\mathbf L}L_b\right),
+\qquad d_r:(p,q)\longmapsto(p+r,q-2r-1).
+$$
+
+若 $d=\operatorname{pd}_{C^e}M<\infty$，则 $p\ge1$ 时只有 $0\le q\le pd$ 可能非零。因此零列次数 $n$ 的非零 outgoing differential 只能发生于
+
+$$
+\left\lceil\frac{n-1}{d+2}\right\rceil
+\le r\le
+\left\lfloor\frac{n-1}{2}\right\rfloor.
+$$
+
+## 证明
+
+取次数零至 $d$ 的双模投射消解 $P\to M$。其每项是 $Ce_u\otimes_k e_vC$ 的有限直和的直和项。两项的张量为
+
+$$
+(Ce_u\otimes_k e_vC)\otimes_C(Ce_w\otimes_k e_zC)
+\cong Ce_u\otimes_k(e_vCe_w)\otimes_k e_zC,
+$$
+
+仍为双模投射。因此 $P^{\otimes_C p}$ 位于次数零至 $pd$，并计算导出张量幂。先张量右 simple 后，各项仍为右 $C$-投射，故再张量左 simple 确实计算上述导出表达式。得到所述振幅界。
+
+从 $(0,n)$ 发出的第 $r$ 页微分落在 $(r,n-2r-1)$。后续页是第一页对应位置的子商，所以非零要求 $0\le n-2r-1\le rd$，整理即得结论。证毕。
+
+此处要求有限的**双模**投射维数；不能换成左右两边分别有限，见 [[Vertical-Pure-Bimodule-Singularity|双模障碍]]。结合 [[Rees-HPL-Screening|Rees 对应]]，无界次数的商类消去将迫使至少线性增长的挠阶。统一挠界的后果见 [[Rees-Noetherian-Screening-Collapse|条件定理]]。
+
+正式记录：b08741b2-32a9-43c1-bf1d-48ca79934903。来源原稿、字节身份及审核报告见 [[Universal-Gap-A-MRS-Map|证据地图]]。

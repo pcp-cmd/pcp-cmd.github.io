@@ -1,0 +1,26 @@
+# Exact falsification — sourcewise Tiling and singular corner return
+
+Use the complete eleven-dimensional multiplication table from SectionI of the
+Route Judge Run. Check associativity, actual Gabriel strong connectivity, all
+three simple resolutions through degree6, and the two FULL kernel isomorphisms
+Omega U=U and Omega V=U. The isomorphisms supply the period-one written induction;
+the Betti prefix does not prove infinity.
+
+The selected standard-library Fraction/Python backend reuses the frozen actual
+cover and module-map helpers. Reproduce:
+
+    python -B verify_route_counterexample.py --project-root PROJECT_ROOT --out RESULT.json
+
+The final script/result are byte-identical copies of the successful temporary
+execution. Dependencies: Carrier-Lemma-Evidence/verify_carrier_lemma.py definitions
+before its p-loop; toolbox/Imported-Outputs/return_kernel_certificate.py,
+syzygy_return_certificate.py and syzygy_system_certificate.py.
+
+The proof is over ANY field; the arithmetic check is exact rational calibration
+with integral bases. Source2 has infinite ordinary pd and never returns after
+degree1 despite a singular/nonprojective occurring corner term. Source3 DOES have
+a supported ordinary diagonal in every positive degree. This falsifies an
+overstated sourcewise statement in an already-closed class, not Universal Gap A.
+
+The route judge is the continuing main researcher; a role name and shared code
+do not make the audit independent. No formal MRS acceptance or default hashes.

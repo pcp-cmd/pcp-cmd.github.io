@@ -1,0 +1,15 @@
+Initial extension of the small factor check to the connected12 example,
+before any canonical publication. Captured exit1:
+
+Traceback (most recent call last):
+  File "verify_full_finite_block_expansion.py", line 31, in <module>
+    certs.append(kernel_iso(Lq,target,embedded,'Omega LEFT Lq=P_u plus Lq'))
+  File "verify_finite_factor_carrier.py", line 51, in kernel_iso
+    key=(copies[label_v],None if b<A.vertices else b-A.vertices)
+NameError: name 'A' is not defined
+
+Diagnosis: the unchanged frozen kernel_iso helper uses the caller's global
+current literal table A. The new standalone small-check script had only
+named that table T. Explicitly binding A=T before those calls repairs the
+adapter boundary; no frozen helper or mathematical statement was changed.
+The corrected exact small check must pass before checkpointing.

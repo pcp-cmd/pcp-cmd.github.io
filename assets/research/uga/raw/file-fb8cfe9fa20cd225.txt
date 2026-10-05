@@ -1,0 +1,984 @@
+{
+  "modules": [
+    {
+      "head_vertex": 0,
+      "radical_exponent": 1,
+      "is_projective": false,
+      "dimension": 1
+    },
+    {
+      "head_vertex": 0,
+      "radical_exponent": 2,
+      "is_projective": false,
+      "dimension": 2
+    },
+    {
+      "head_vertex": 0,
+      "radical_exponent": 3,
+      "is_projective": true,
+      "dimension": 3
+    },
+    {
+      "head_vertex": 1,
+      "radical_exponent": 1,
+      "is_projective": false,
+      "dimension": 1
+    },
+    {
+      "head_vertex": 1,
+      "radical_exponent": 2,
+      "is_projective": false,
+      "dimension": 2
+    },
+    {
+      "head_vertex": 1,
+      "radical_exponent": 3,
+      "is_projective": false,
+      "dimension": 3
+    },
+    {
+      "head_vertex": 1,
+      "radical_exponent": 4,
+      "is_projective": true,
+      "dimension": 4
+    }
+  ],
+  "degree_zero_Hom_dimensions_by_source_target": [
+    [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0,
+      1,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2
+    ]
+  ],
+  "endomorphism_algebra_dimension": 42,
+  "degrees": [
+    {
+      "degree": 1,
+      "by_source": [
+        {
+          "source": 0,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 1,
+          "Ext_dimensions_by_target": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 2,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 3,
+          "Ext_dimensions_by_target": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 4,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 5,
+          "Ext_dimensions_by_target": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 6,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "total_Ext_dimension": 14,
+      "total_new_generator_dimension": 14
+    },
+    {
+      "degree": 2,
+      "by_source": [
+        {
+          "source": 0,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 1,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 2,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 3,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 4,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 5,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 6,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "total_Ext_dimension": 12,
+      "total_new_generator_dimension": 0
+    },
+    {
+      "degree": 3,
+      "by_source": [
+        {
+          "source": 0,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 1,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 2,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 3,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 4,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 5,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 6,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "total_Ext_dimension": 16,
+      "total_new_generator_dimension": 0
+    },
+    {
+      "degree": 4,
+      "by_source": [
+        {
+          "source": 0,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 1,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 2,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 3,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 4,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 5,
+          "Ext_dimensions_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "source": 6,
+          "Ext_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "positive_product_ranks_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "new_generator_dimensions_by_target": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "total_Ext_dimension": 16,
+      "total_new_generator_dimension": 0
+    }
+  ],
+  "comparison_maps_checked": 136,
+  "scope": "finite Ext products only; no conclusion about eventual finite generation"
+}

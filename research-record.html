@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>研究档案 · Aleksi</title>
+  <meta name="description" content="Universal Gap A 完整原始研究档案。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/reading.css">
+  <script defer src="./assets/vendor/marked-12.0.2.min.js"></script>
+  <script defer data-lib="DOMPurify" src="./assets/vendor/purify-3.1.6.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script defer src="./site-data.js"></script>
+  <link rel="stylesheet" href="./assets/css/site-theme.css">
+  <script defer src="./assets/vendor/niku-home.js"></script>
+  <script defer src="./site-backdrop.js"></script>
+  <script defer src="./reading.js"></script>
+  <script defer src="./article-content.js"></script>
+  <script defer src="./research-archive.js"></script>
+  <link rel="stylesheet" href="./assets/css/research-archive.css">
+</head>
+<body class="reading-page site-page" data-section="research" data-article="true" data-research-record>
+  <canvas class="site-backdrop" data-site-backdrop aria-hidden="true"></canvas>
+  <a class="reading-skip site-skip" href="#content">跳到正文</a>
+  <header class="reading-mobile-header site-header">
+    <div class="reading-mobile-top">
+      <a class="site-brand" href="./index.html"><span>Aleksi</span><small>← 首页</small></a>
+      <a class="article-header-return" href="./research.html#archive" data-article-return>← 返回研究档案</a>
+      <nav class="site-navigation" aria-label="栏目">
+        <a href="./writing.html">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html" aria-current="page">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
+      <button class="site-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-navigation">栏目 <span aria-hidden="true">⌄</span></button>
+    </div>
+    <div id="mobile-navigation" data-mobile-navigation hidden><nav class="reading-navigation" aria-label="栏目">
+        <a href="./writing.html">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html" aria-current="page">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav></div>
+  </header>
+  <div class="reading-layout">
+    <aside class="reading-left">
+      <a class="reading-home" href="./index.html">← 首页</a>
+      <a class="reading-brand" href="./index.html">Aleksi</a>
+      <nav class="reading-navigation" aria-label="栏目">
+        <a href="./writing.html">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html" aria-current="page">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
+    </aside>
+    <article id="content" class="article-manuscript archive-record">
+      <a class="article-return" href="./research.html#archive" data-article-return>← 返回研究档案</a>
+      <header class="reading-article-heading">
+        <p class="reading-kicker" data-record-kind>Research archive</p>
+        <h1 data-record-title>正在加载记录</h1>
+        <p class="archive-path" data-record-source></p>
+        <p class="archive-record-status" data-record-status></p>
+        <a class="archive-button" data-record-download hidden>下载原文 ↓</a>
+        <p class="archive-hash">SHA-256 <span data-record-hash></span></p>
+        <p class="reading-article-notice" data-article-notice hidden></p>
+      </header>
+      <div class="reading-mobile-directory" data-directory hidden>
+        <button type="button" data-directory-toggle aria-expanded="false" aria-controls="mobile-directory"><span>本文目录</span><span aria-hidden="true">⌄</span></button>
+        <nav id="mobile-directory" data-mobile-toc aria-label="本文目录" hidden></nav>
+      </div>
+      <div class="article-body reading-prose" data-article-body data-record-body></div>
+      <section class="archive-related" data-record-related hidden></section>
+      <footer class="article-next" data-article-next hidden></footer>
+    </article>
+    <aside class="reading-right" aria-label="本文目录">
+      <p class="reading-rail-label">本文目录</p>
+      <nav data-reading-toc aria-label="本文目录"></nav>
+    </aside>
+  </div>
+</body>
+</html>

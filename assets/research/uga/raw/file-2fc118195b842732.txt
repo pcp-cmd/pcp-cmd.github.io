@@ -1,0 +1,22 @@
+# Exact calibration for periodic actual projective columns
+
+Object: the ten-dimensional radical-square-zero oriented five-cycle
+1 -> x -> 0 -> a -> b -> 1, deleting the block x+a+b.
+
+The retained quotient C is k e0 + k e1. Its actual negative homology has
+u in e0 M1 e1 and v in e1 M2 e0. The shifted edge weights are two and
+three; their individual gcd is one, but the gcd of all closed-walk
+weights in the two-vertex component is five.
+
+Deliverables: verify_periodic_columns.py, periodic-columns-result.json,
+computation-record.json. Check the ambient multiplication, literal
+normalized deleted-block passages, retained weighted words, and ordinary
+simple-pair Tor through degree 12 with incoming degree 13.
+
+Use exact local Python integers. The generic theorem and all-degree,
+all-characteristic calibration proof are separate written arguments.
+Do not rerun the unchanged A5 calibration. Its actual k<u>, |u|=-1
+model and finite-gldim-two certificate are the aperiodic negative test.
+
+Evidence boundary: same-author bounded self-check; no independent
+verification, generic computer proof, or primitive-deletion realization.

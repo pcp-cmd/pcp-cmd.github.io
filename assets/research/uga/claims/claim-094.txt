@@ -1,0 +1,20 @@
+## UGA-C094 — Automatic Shallow CORNER Descent by Same-Degree Weighted Ordinary Tor
+**Status:** COMPLETE SELF-AUDITED ARBITRARY-SIZE ORDINARY PROOF / ACTUAL INJECTIVE MINIMAL KERNEL AND UNBOUNDED CONE WINDOW / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Shallow-Finite-Complement-Weighted-Ordinary-Return-and-Depth-Two-Obstruction-2026-10-04.md, Sections 1–7 and 9–11.
+
+Let A be elementary finite-dimensional, F a nonempty proper set of LEFT simple labels with pd_A L_f<=1, e=1-sum_F e_f and B=eAe. Neither projective-cover closure of F nor finite RIGHT B pd of Ae is assumed. With D(u,z)=dim e_uAe_z and ordinary beta_q^A(M,n)=dim Tor^A_n(R_q,M), for ANY finite LEFT M, retained q, ANY row u and n>=1:
+
+\[
+D(u,q)\beta_q^B(eM,n)\le D(u,q)\beta_q^A(M,n)
+  +\sum_{f\in F}D(u,f)\beta_f^A(M,n).
+\]
+
+Take u=y,M=L_y retained. A physically supported persistent ordinary B pair forces a physically supported persistent A pair with SAME source y and detector among q or F. Contributions occur in the SAME degree. A uniform supported A cutoff M is inherited with ZERO loss. This is a weighted ordinary inequality allowing an endpoint switch, NOT all-pair comparison/isomorphism.
+
+Actual minimal B Q gives the A-projective complex T=Ae tensor_B Q and its counit cone C_M. Exact e kills all cone cohomology; each finite H_i=H^{-i}C has F factors and pd_A<=1, but cohomology may be unbounded below. A FINITE truncation for each ordinary target Z[n] yields 0->Ext^1(H_{n-1},Z)->Hom_D(C,Z[n])->Hom(H_n,Z)->0. For retained q the first screen is Ext^1(H_n,L_q); for f in F the chain adjunction has Hom(T,L_f[*])=0 so Hom(H_n,L_f) is bounded by Ext^n_A(M,L_f). The ACTUAL minimal resolution 0->P_1 INJECTS->P_0->H_n->0 gives D(u,q) dim Ext^1(H_n,L_q)<=sum_F D(u,f) dim Hom(H_n,L_f). This injection, ordinary counit triangle and Tor–Ext duality prove the weighted bridge. Errors are never deleted; no graph, stable/Tate or opposite-+ step.
+
+Summing over ALL rows gives positive column weights and pd_B L_y<=pd_A L_y for finite retained LEFT simples. If B pd b is finite, the actual finite Q and bounded F-cohomology repair give A pd<=b+2. Thus chosen LEFT labels are exact, retained finite values b<=a<=b+2, gd B<=gd A<=gd B+2 when finite, and global infinity is equivalent. Badness strictly descends in algebra dimension/vertex number. Original same-side pd<=1 labels remain eligible; the opposite label set can change. Direct RIGHT proof assumes deleted RIGHT pd<=1 and gives D(y,z) beta^B_zy(n)<=D(y,z) beta^A_zy(n)+sum_F D(f,z) beta^A_zf(n), with unchanged detector z and possible source switch. It proves exact RIGHT labels and right finite-pd monotonicity independently. A dimension-minimal bad algebra has no finite pd-zero/pd-one simple on EITHER side.
+
+Any checked shallow mixed tower terminates in <=v-1 moves, inherits supported cutoff M unchanged and gives gd A<=b+2r from a finite terminal gd b. Same-side eligibility inherits; mixed-side future pd must be checked. No universal terminal-core theorem. The nonperfect seven-dimensional Nakayama calibration has I_L={v}, I_R={f}, but deleting LEFT-pd-one f gives both corner sets {v}; the old v diagonal has zero ambient positive Tor while the corner diagonal persists. Supported ambient return switches to f,v and the weighted inequality is equality. Projective-prefix extensions allow arbitrary nonsemisimple finite F size. Shared-helper finite kernel/integral checks plus complete all-size proof are self-audited, not independently verified.
+
+---

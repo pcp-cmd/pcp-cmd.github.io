@@ -1,0 +1,21 @@
+## UGA-C127 — Finite-Pd Whole Two-Layer Radical Bands Close the Ordinary Branch at Arbitrary Loewy Length
+
+**Status:** COMPLETE WRITTEN ORDINARY CLASS-CLOSURE PROOF / NORMAL ADVERSARIAL SELF-AUDIT / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Arbitrary-Loewy-Radical-Band-Ordinary-Closure-and-Global-Source-Obstruction-2026-10-05.md Sections1–6,8–9; Cubic-Band-Evidence; C125–C126 reused.
+
+For ANY elementary finite-dimensional A/field/finite N, if SOME s in {1,2,3} has finite LEFT OR RIGHT pd of the WHOLE actual band H_s=J^s/J^(s+2), infinite gd forces ONE FIXED ordinary supported DIAGONAL Tor pair persistent infinitely often. NO Loewy-length bound, grading, selfinjectivity, finite syzygy-type or full Yoneda generation is assumed.
+
+For EVERY s>=1, LEFT support of J^s equals the head support of J^s/J^(s+1): e_fJ^s=e_fJ^(s+1)=(e_fJ^s)J forces zero by RIGHT nilpotent Nakayama. Thus the actual semisimple kernel/head envelope0->J^(s+1)/J^(s+2)->H_s->J^s/J^(s+1)->0 contains EVERY deep factor label in its head. Under ordinary diagonal cutoff n>M, C126's all-target ordinary connecting-map surjections give every factor pd<=h+m_s(M+1)-1, with h=pd_LEFT H_s and m_s=|LEFT support J^s|. Ordinary Tor excludes OTHER-side high projective types; s<=3 gives actual Q_nJ3=0 and C125 terminates:
+
+\[
+\boxed{\operatorname{gd}A\le
+N\bigl[h+(m_s+N)(M+1)+1\bigr]-1.}
+\]
+
+This formula is for NONZERO H_s. If H_s0, nilpotence gives J^s0 and the separate cube-zero theorem applies. Direct RIGHT Nakayama/envelope plus direct LEFT-cover proof supplies the right version without opposite-infinite-plus transfer.
+
+In particular finite pd of WHOLE J3/J5 closes an entire arbitrary-size/arbitrary-Loewy class. BOTH same-side finite pds J3 and J5 supply it by the ACTUAL exact sequence and pd H3<=max{pd J3,1+pd J5}. Both J3,J4 finite instead give the semisimple head's finite factors directly. The inference from finite pd J3 ALONE to finite pd J5 or H3 is NOT PROVED here; no radical-power counterexample to it is asserted. Factor control works for arbitrary s, but this stronger DIAGONAL class closure is ONLY s<=3: frozen N7 rules out an all-s upgrade.
+
+Connected all-N/ell triangular calibration has unbounded Loewy length and whole LEFT pds(J3,J5,H3)=(1,0,1), while whole RIGHT J3 is infinite and the old actual two-step periods give ordinary diagonals. First N5,ell6 dimension46/12-vertex run has J6 nonzero,J7zero and passed194672 associativity triples,15 FULL covers,576 integral inverses,8 unit kernel/module isomorphisms. Separate arbitrary-field/size proof, shared helper self-audit NOT independent/formal acceptance. Already-positive monomial calibration, not a UGA search or vertex classification. General UGA remains OPEN.
+
+---

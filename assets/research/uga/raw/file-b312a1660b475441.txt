@@ -1,0 +1,57 @@
+# Cycle 10 master guidance — stop increasing depth; prove a singular-complement theorem
+
+Transport is explicitly `off`; this guidance is authored by Main Codex from elaboration `ffd24cd90219ec90` with zero external-call cost. It is strategy, not proof authority.
+
+The new facts change the fork. By `ab1afea4df0ce668`, a transfer product that is nonzero at any radical depth already closes infinite-plus. Therefore “leading coefficient cancels, so increase depth” is no longer the central engine. The only product obstruction worth carrying is **exact zero**. In parallel, `74cb54be76b478c7` shows that the fifth branch has one honest residual state: recurring outside simples of finite ambient projective dimension.
+
+The next theorem should be a singular-complement theorem for the *whole canonical error family*, not for one recurring composition factor. Let
+
+\[
+E_q=\operatorname{Tor}_q^{fAf}(R_a^{fAf},fA),\qquad q\ge1.
+\]
+
+Facts `39d5bd8b2d2d4b6a` and `6eafbbe6a6361a9c` give (E_qf=0), so every (E_q) is canonically a right module over the complementary corner (gAg), (g=1-f). The primary question is now:
+
+> If (E_q\ne0) for unbounded (q), must either some recurring simple factor have infinite projective dimension over (A), or must (gAg) have infinite global dimension with an explicit witness derived from the (E_q)-family?
+
+This formulation preserves the comparison provenance that the projective-simple counterexample destroys when one selects only a single factor.
+
+## Branch A — mutual dumbbell through the singular-complement interface
+
+Repair the rejected diagonal-factor lemma as a fully self-contained statement and establish that both one-vertex factors in `12f95b5af9a6fd16` have infinite global dimension. Then do not attempt to relabel their syzygies as ambient simples. Instead set (g=e_u), (f=e_x+e_w), and formulate the exact comparison of the two factor error families with the hub complement. Prove one of:
+
+1. a correctly ordered nonzero transfer product, hence `ab1afea4df0ce668`;
+2. an infinite minimal resolution over the singleton hub corner, hence `b8a38ee00b9da7b0`;
+3. a verifier-checkable obstruction showing why the hub cannot carry the error, leaving an exact named through-hub kernel theorem.
+
+The deliverable is not another support normal form; it is a theorem connecting a split factor's infinite tail to either ambient plus or an explicitly singular complementary corner.
+
+## Branch B — uniform finite-pd analysis of the entire fifth error family
+
+Let (Sigma) be the finite set of simple right (A)-types that occur in (E_q) for infinitely many (q). Prove first that, after discarding finitely many degrees, every composition factor of every nonzero (E_q) belongs to (Sigma). Split:
+
+- if some (T\in\Sigma) has infinite ambient projective dimension, use `ef663e7166147a48` and route to the actual-product/zero-product dichotomy;
+- if every (T\in\Sigma) has finite ambient projective dimension, use `0ec0d2d1eb2de6e7` to obtain a single uniform bound on (operatorname{pd}_A(E_q)) in all sufficiently high degrees.
+
+Then determine what the uniform bound forces in the canonical hyper-Tor comparison `92f5bd1cf37b96dc`. The desired conclusion is not “a recurring simple is nonprojective”; it is either a boundedness contradiction with the persistent corner Tor, or a functorial infinite-resolution witness over (gAg). If neither follows, submit a concrete counterexample satisfying the whole-family uniform-bound hypotheses.
+
+## Branch C — complementary-corner descent for complexes with (f)-annihilated homology
+
+Abstract the minimum homological statement needed by Branch B. For (g=1-f), start with the actual projective (fAf)-resolution used to compute (E_q), retain its (A)-module/bimodule structure, and use (E_qf=0). Seek a theorem of the form:
+
+\[
+H_q(C_*)\ne0\text{ for unbounded }q,\quad H_q(C_*)f=0,
+\]
+
+together with a uniform finite (A)-projective-dimension bound on those homology modules, implies (gAg) has infinite global dimension, provided the complex is the canonical corner-derived tensor complex. Every extra hypothesis must be stated explicitly and checked against `31c4037065600009` and `b4f467013c4ed631`.
+
+Use `b4f467013c4ed631` as the positive calibration: exact-zero transfer products can still leave a singleton singular corner. The deliverable is a precise descent lemma with an explicit (gAg)-module of infinite projective dimension, or a counterexample proving that additional canonical structure is needed.
+
+## Integration discipline
+
+- Use exact zero, not “higher radical depth,” as the residual product state.
+- Track the full high-degree error family before choosing a simple factor.
+- Finite projective dimension of each recurring type should be converted to a uniform bound; do not stop at the dichotomy `74cb54be76b478c7`.
+- Any claim that (gAg) is singular must exhibit an infinite resolution or an accepted criterion, not merely infinitely many nonzero (A)-modules supported on (g).
+- The mutual dumbbell and generic fifth branch should meet at the same singular-complement interface if the architecture is correct.
+- Universal Gap A and the ordinary-Hochschild implication remain downstream; no final Han claim is authorized before both are verifier-closed.

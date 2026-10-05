@@ -1,0 +1,19 @@
+# Test actual primitive-comparison inheritance
+
+Let R be the two-vertex oriented cycle with all paths of length three zero.
+Let M contain all six uniserial indecomposables (top s=0,1, lengths1,2,3).
+Construct B=End_R(M)^op with literal Hom shifts, then every physical
+primitive quotient and the quotient deleting both length-three modules.
+Compute exact minimal left covers, recording finite termination or actual
+split-return certificates, never inferring infinity from a cutoff alone.
+
+Candidate purpose: test whether high-even comparison for every original
+primitive quotient inherits. B is expected finite-gldim; if all primitive
+quotients are finite-gldim but a two-vertex block quotient is infinite, the
+automatic inheritance implication fails. An infinite-loop triangular
+extension can then test the same phenomenon at actual infinite sources.
+
+This is an exploratory exact Q computation, not a claimed theorem or
+independent verification. Use the existing frozen module helpers and local
+Python. Stop expanding syzygies if dimension exceeds 200; unresolved is
+not a mathematical verdict. No Vault or project source is modified.

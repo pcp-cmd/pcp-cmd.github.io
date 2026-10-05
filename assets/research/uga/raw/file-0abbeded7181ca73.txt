@@ -1,0 +1,259 @@
+# T36 — Pointwise finite-pd semisimple tail quotients give genuine strict type descent
+
+Date: 2026-10-04. Continue T35. C107 four-vertex closure and C110
+ENTIRE general radical-cube-zero closure are reused, not reopened.
+This tests an ACTUAL ordinary finite-error mechanism for higher Loewy
+length. No case split in the number of infinite sources.
+
+Status: COMPLETE ORDINARY PROOF / NORMAL ADVERSARIAL SELF-AUDIT.
+No new arithmetic needed: reuse the literal nonsplit26 and N7 modules,
+including T35's new actual N7 deep-kernel certificate. NOT independently
+verified; no novelty claim. Universal Gap A remains OPEN.
+
+## 1. C111 — Exact semisimplifying subkernels, not arbitrary image pruning
+
+Let A be elementary finite-dimensional over any field. Fix an infinite
+LEFT simple L_y and its actual minimal syzygies X_n=Omega^n L_y.
+Let T_y be the familiar recurrent projective-label set of C109.
+Suppose at ARBITRARILY LARGE indices n there is a REAL submodule
+F_n subset X_n with
+
+\[
+\operatorname{pd}_A F_n=d_n<\infty,\qquad JX_n\subseteq F_n.
+\tag{1.1}
+\]
+
+Thus V_n=X_n/F_n is an ACTUAL semisimple module, say
+V_n=direct sum_j L_j^(b_(j,n)). The pd values d_n need NOT have one
+uniform upper bound. F_n need NOT split, be semisimple or have only
+finite-pd simple factors.
+
+Then either some selected infinite L_j has persistent ordinary
+DIAGONAL Tor(R_j,L_j), or there is an infinite LEFT simple L_j with
+
+\[
+\varnothing\ne T_j\subsetneq T_y.
+\tag{1.2}
+\]
+
+Under ambient BADNESS the diagonal alternative is excluded, so this
+is a genuine badness-preserving SOURCE/tail reduction strictly lowering
+|T| on the SAME algebra. It is NOT an algebra quotient and NOT a decrease
+of the algebra's number of infinite simple labels.
+
+If EVERY infinite-LEFT simple has(1.1) at arbitrarily late indices,
+then the WHOLE arbitrary-size class has a fixed ordinary supported
+simple diagonal Tor tail. A finite nonempty recurrent type set cannot
+strictly decrease indefinitely. This applies at arbitrary Loewy length.
+
+## 2. The actual quotient preserves all high ordinary Tor
+
+The real short exact sequence is
+
+\[
+0\longrightarrow F_n\longrightarrow X_n
+ \longrightarrow V_n\longrightarrow0.
+\tag{2.1}
+\]
+
+For EVERY right A-module R and EVERY r>d_n+1, its ordinary long exact
+sequence gives the SAME-degree isomorphism induced by the projection:
+
+\[
+\operatorname{Tor}^A_r(R,X_n)
+ \overset{\sim}{\longrightarrow}\operatorname{Tor}^A_r(R,V_n)
+ =\bigoplus_j\operatorname{Tor}^A_r(R,L_j)^{b_{j,n}}.
+\tag{2.2}
+\]
+
+Both Tor_r(R,F_n) and Tor_(r-1)(R,F_n) vanish at this strict cutoff.
+Ordinary projective dimension shifting through the ORIGINAL exact
+resolution of L_y gives, in the same range,
+
+\[
+\operatorname{Tor}^A_{n+r}(R,L_y)
+ \cong\bigoplus_j\operatorname{Tor}^A_r(R,L_j)^{b_{j,n}}.
+\tag{2.3}
+\]
+
+No differential or repeated image is deleted from the original complex.
+The module quotient and its real exact sequence supply ALL exactness.
+The corresponding first-variable ordinary Ext map is
+Ext^r_A(V_n,Z) -> Ext^r_A(X_n,Z), an isomorphism for every target Z
+and the same r>d_n+1. No singular or stable identification is used.
+
+X_n is infinite-pd. Since F_n has finite pd, (2.1) implies V_n has
+infinite pd. Otherwise both outer modules have finite pd and so does
+X_n. Therefore some L_j occurring in V_n has infinite LEFT pd.
+
+For this ONE fixed event n, (2.3) with every simple detector R_q implies
+
+\[
+T_y=\bigcup_{j:b_{j,n}>0}T_j.
+\tag{2.4}
+\]
+
+Finite-pd simple factors have empty T_j. Every infinite constituent
+gives nonempty T_j subset T_y. This statement is about ACTUAL ordinary
+recurrent projective types, not a smaller composition/image carrier
+whose projective cover might expand as in C091.
+
+The finite value d_n suffices for(2.4) independently at that event.
+There is NO need to glue(2.2) into a single uniform all-index comparison.
+This is why pointwise finite error pd is sufficient here, unlike the
+uniform-amplitude/envelope conclusions of C106. No finitistic dimension
+or uniform error bound is silently invoked.
+
+## 3. Arbitrarily late actual heads make the reduction STRICT
+
+For every eligible n choose an infinite simple constituent j_n of V_n.
+There are finitely many simple labels. Some FIXED infinite j is selected
+at infinitely many unbounded indices n. Since V_n is a semisimple
+QUOTIENT of X_n, not merely a composition subfactor, its copies of L_j
+come from actual HEAD copies of X_n:
+
+\[
+\beta_{j,y}(n)=\dim\operatorname{Tor}^A_n(R_j,L_y)
+ \ge b_{j,n}\ge1.
+\tag{3.1}
+\]
+
+The actual minimal cover head makes this equality ordinary. It follows
+that j in T_y. Each of these events separately gives T_j subset T_y
+by(2.4), while pd L_j infinite makes T_j nonempty.
+
+If ordinary Tor(R_j,L_j) is nonzero infinitely often, it is already a
+fixed supported diagonal witness. Otherwise j notin T_j. Thus j lies
+in the original recurrent type set and is absent from the new one,
+giving the STRICT inclusion(1.2).
+
+This extends C109's actual split-simple mechanism: an actual simple
+DIRECT summand is no longer required, because the proven all-detector
+high Tor isomorphism replaces it. Infinitely late HEAD appearances are
+still essential to strictness; one isolated quotient only gives(2.4).
+No assumption that a socle/subquotient label is a projective head.
+
+Under badness, passing to L_j retains the SAME bad algebra, infinite
+LEFT pd, nonempty genuine ordinary recurrent tail and smaller integer
+|T|. An eligible chain has at most |T_y|-1 moves. If the eligibility
+assumption holds for every infinite simple, apply it to a minimum-|T|
+infinite source. The resulting strictly smaller nonempty T_j is
+impossible. Consequently an ordinary diagonal tail exists. The proof
+even assumes only eventual vanishing of all simple diagonals for its
+contradiction; it does not need all reverse-supported off-diagonal
+cutoffs. It does NOT assert availability of(1.1) for every bad algebra.
+
+## 4. A canonical actual deep-kernel test and direct right version
+
+At a real minimal cover Q_(n-1)->X_(n-1), its kernel is X_n subset
+JQ_(n-1). Define the familiar ACTUAL deep kernel submodule
+
+\[
+F_n^{\rm deep}=X_n\cap J^2Q_{n-1}.
+\tag{4.1}
+\]
+
+Since JX_n subset J^2Q_(n-1), it satisfies the semisimplifying
+containment in(1.1). Thus finite pd of this WHOLE submodule at arbitrarily
+late indices is a concrete sufficient eligibility test. One can also
+use any other actual finite-pd F_n containing JX_n. The theorem does
+NOT infer finite pd of(4.1) from finite pd of J^2Q or of one cross-image;
+submodules of finite-pd modules can have infinite pd.
+
+The direct RIGHT proof uses actual X_n=Omega^n R_z, real RIGHT finite-pd
+F_n containing X_n J, and its semisimple quotient sum R_j. The ordinary
+LES gives Tor_r(X_n,L)=sum Tor_r(R_j,L) for every LEFT module L and
+r>d_n+1. Define T_z^R by recurrent LEFT projective-detector labels in
+the actual right resolution. Repeated quotient-head j belongs to T_z^R,
+but eventual diagonal vanishing excludes j from T_j^R, while actual
+high Tor comparison gives nonempty T_j^R subset T_z^R. The same strict
+source descent/whole-class closure follows directly. No quarantined
+opposite-infinite-plus theorem is needed and the two label sets are
+never identified.
+
+## 5. Reused actual nonsplit26 calibration, and the exact N7 obstruction
+
+Use C104's connected26 algebra and its already checked real first
+syzygy X=Omega L_q0 with basis a0,m0,n0. Its actual radical is
+F=span(m0,n0), isomorphic to the PROJECTIVE P_u by
+e_u->m0,t_u->n0. The action m1 a0=m0 makes F NONSPLIT in X.
+The quotient X/F is L_q1. Hence (2.1) is the real nonsplit sequence
+
+\[
+0\to P_u\to X\to L_{q1}\to0.
+\tag{5.1}
+\]
+
+The removed finite-pd module has two copies of the INFINITE-pd simple
+L_u among its composition factors. This explicitly tests that C111
+does not require finite-factor errors. Every RIGHT module has
+Tor_r(R,X)=Tor_r(R,L_q1) for r>1 by(5.1). This is elimination through
+the exact module quotient, not split-image pruning.
+
+The frozen actual identity Omega X=L_q0 gives Omega^2 L_q0=L_q0, so
+X reappears at every odd syzygy degree. Those repeated nonsplit
+finite-pd semisimplifications genuinely meet the late-event hypothesis.
+The diagonal-return alternative holds; T_q0=T_q1={q0,q1}, so STRICT
+descent is not asserted for this already-positive calibration.
+The existing all-degree ordinary proof and retained integral covers
+are reused, not recomputed or upgraded to independent verification.
+
+In contrast, the N7 period-one two-dimensional indecomposable state X
+has simple radical L_v of infinite LEFT pd and simple head L_f of
+finite LEFT pd. Its only submodules containing JX are JX and X;
+both have infinite pd. There is NO finite-pd semisimplifying submodule
+at any such late event. Its actual deep kernel is the whole X inside
+J^2P_f, certified again in T35 with zero linear head coefficient.
+Thus ordinary Ext-one nilpotence and the absence of simple summands
+do not provide automatic C111 eligibility. N7 already has the C105
+OFF-DIAGONAL supported pair(R_f,L_v); this is not a UGA counterexample.
+
+This identifies the real higher-radical obstruction: a persistent
+NONSIMPLE deep radical with infinite pd, rather than pointwise finite
+pd error values becoming large. The latter are handled by this
+theorem without a uniform bound. Killing the former requires ordinary
+supported visibility or a genuine safe reduction, not a new residue.
+
+## 6. Normal adversarial audit and scope
+
+- F_n is a real LEFT finite-pd submodule; the containment JX_n subset
+  F_n is what makes the quotient semisimple. One arbitrary cross-image
+  or finite-pd factor does not imply this condition.
+- The quotient sequence is exact as a module sequence, and its ordinary
+  LES gives the strict cutoff r>d_n+1 for BOTH neighboring error terms.
+  No exactness is asserted for a pruned infinite resolution.
+- V_n infinite pd is derived from X_n infinite/F_n finite. Some selected
+  quotient simple is therefore genuinely LEFT-infinite.
+- Equation(2.4) uses ALL original simple detectors and eventual ordinary
+  isomorphisms at ONE event; it is not image-composition containment.
+- The d_n may be unbounded. Only recurrence containment, not a global
+  uniform all-index/all-degree comparison or numerical pd bound, is
+  claimed in that case. C106 uniform-error guard remains intact.
+- Infinitely late occurrences of a fixed quotient HEAD put j in T_y.
+  A socle/composition factor/one isolated event would not suffice.
+- Ordinary self-diagonal cutoff is the exact source of strictness.
+  The positive26/p-cycle examples can have equal T sets and actual
+  returns, so unqualified strictness is still false.
+- Descent changes source on SAME A, not algebra dimension/vertex count
+  or infinite-simple labels. Its finite integer |T| cannot descend
+  indefinitely when each new source is genuinely eligible.
+- No uniform bound on finite-pd modules, semisimple errors, splitting
+  of F, opposite transfer, singular substitution or graph return.
+- Canonical deep intersections must be checked directly; ambient
+  finite pd does not descend automatically to their submodules.
+- N7 defeats automatic eligibility and ordinary diagonal generalization;
+  its off-diagonal C105 return and all older negative results remain.
+- Complete ordinary proof/normal main-researcher self-audit; no new
+  computation, independent/formal verifier or novelty claim.
+
+C111 supplies a correct ordinary finite-error bridge plus well-founded
+source-carrier descent at arbitrary p/Loewy length. It closes the entire
+late semisimplification class with pointwise finite pd, without inventing
+an invariant or assuming exactness after image deletion. Availability in
+all remaining bad higher-radical cores is still unproved. C110 cube-zero
+and C107 four-vertex closure are retained; all original bounded-screening,
+local-trivial, Target-A/Primitive/Binary/higher-output/supported-weight
+branches and full Universal Gap A remain OPEN. The next task is ordinary
+supported control or strict reduction of the persistently infinite-pd
+nonsimple deep core, with N7's successful off-diagonal visibility kept
+in view.

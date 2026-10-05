@@ -1,0 +1,177 @@
+{
+  "vertices": 5,
+  "base_vertex": 0,
+  "radical_basis": [
+    {
+      "name": "a1",
+      "left": 1,
+      "right": 0
+    },
+    {
+      "name": "a2",
+      "left": 2,
+      "right": 0
+    },
+    {
+      "name": "a3",
+      "left": 3,
+      "right": 0
+    },
+    {
+      "name": "a4",
+      "left": 4,
+      "right": 0
+    },
+    {
+      "name": "b1",
+      "left": 0,
+      "right": 1
+    },
+    {
+      "name": "b2",
+      "left": 0,
+      "right": 2
+    },
+    {
+      "name": "b3",
+      "left": 0,
+      "right": 3
+    },
+    {
+      "name": "b4",
+      "left": 0,
+      "right": 4
+    },
+    {
+      "name": "z",
+      "left": 0,
+      "right": 0
+    },
+    {
+      "name": "c1_1",
+      "left": 1,
+      "right": 1
+    },
+    {
+      "name": "c1_4",
+      "left": 1,
+      "right": 4
+    },
+    {
+      "name": "c2_1",
+      "left": 2,
+      "right": 1
+    },
+    {
+      "name": "c2_2",
+      "left": 2,
+      "right": 2
+    },
+    {
+      "name": "c3_2",
+      "left": 3,
+      "right": 2
+    },
+    {
+      "name": "c3_3",
+      "left": 3,
+      "right": 3
+    },
+    {
+      "name": "c4_3",
+      "left": 4,
+      "right": 3
+    },
+    {
+      "name": "c4_4",
+      "left": 4,
+      "right": 4
+    }
+  ],
+  "radical_products": [
+    {
+      "left": "b1",
+      "right": "a1",
+      "value": {
+        "z": 1
+      }
+    },
+    {
+      "left": "b2",
+      "right": "a2",
+      "value": {
+        "z": 1
+      }
+    },
+    {
+      "left": "b3",
+      "right": "a3",
+      "value": {
+        "z": 1
+      }
+    },
+    {
+      "left": "b4",
+      "right": "a4",
+      "value": {
+        "z": 1
+      }
+    },
+    {
+      "left": "a1",
+      "right": "b1",
+      "value": {
+        "c1_1": 1
+      }
+    },
+    {
+      "left": "a1",
+      "right": "b4",
+      "value": {
+        "c1_4": 1
+      }
+    },
+    {
+      "left": "a2",
+      "right": "b1",
+      "value": {
+        "c2_1": 1
+      }
+    },
+    {
+      "left": "a2",
+      "right": "b2",
+      "value": {
+        "c2_2": 1
+      }
+    },
+    {
+      "left": "a3",
+      "right": "b2",
+      "value": {
+        "c3_2": 1
+      }
+    },
+    {
+      "left": "a3",
+      "right": "b3",
+      "value": {
+        "c3_3": 1
+      }
+    },
+    {
+      "left": "a4",
+      "right": "b3",
+      "value": {
+        "c4_3": 1
+      }
+    },
+    {
+      "left": "a4",
+      "right": "b4",
+      "value": {
+        "c4_4": 1
+      }
+    }
+  ]
+}

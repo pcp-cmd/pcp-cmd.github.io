@@ -1,0 +1,264 @@
+# T29 — Finite-pd semisimple envelopes force ordinary return
+
+Date: 2026-10-04. Continue the canonical T28 state.
+
+Status: complete ordinary proof and normal adversarial self-audit;
+exact actual-module calibration passed and computation record validated.
+NOT independently verified. Universal Gap A remains OPEN.
+
+The expanding infinite head in C103 does not automatically supply a
+deletion block. Here a concrete class of such heads supplies an ordinary
+return instead. The mechanism is actual high ordinary Yoneda generation,
+followed by the project's EXISTING positive-ideal nilpotence theorem.
+It works with an arbitrary number of sources; no count-by-count split.
+
+## 1. C104 — Actual finite-pd semisimple envelopes
+
+Let A be elementary finite-dimensional over arbitrary k. Fix a nonempty
+finite set T of m LEFT simple labels. For EVERY t in T require an ACTUAL
+finite LEFT module H_t of finite pd, with an actual short exact sequence
+
+\[
+0\longrightarrow\bigoplus_{s\in T}L_s^{a_{ts}}
+\longrightarrow H_t\longrightarrow L_t^{b_t}\longrightarrow0,
+\qquad b_t\ge1.
+\tag{1.1}
+\]
+
+Put h=max_t pd_A H_t. The envelope can be nonsplit and need not be
+projective. In applications it can be a finite-pd differential image;
+its ENTIRE kernel in (1.1), rather than its head alone, must be the
+stated semisimple T module. We do not infer this from composition factors.
+
+### Theorem 1.1 — Uniform termination or a supported ordinary diagonal
+
+If all ordinary diagonal Ext_A^n(L_t,L_t), t in T, vanish for n>M,
+M>=0, then
+
+\[
+\operatorname{pd}_A L_t\le h+m(M+1)-1\quad(t\in T).
+\tag{1.2}
+\]
+
+Consequently, if ANY L_t has infinite pd, SOME fixed t in T has
+Ext_A^n(L_t,L_t) nonzero for infinitely many n. Ordinary duality gives
+Tor_A^n(R_t,L_t) nonzero infinitely often, and e_tAe_t contains e_t.
+This is an ordinary PHYSICALLY SUPPORTED return, not singular evidence.
+
+Finite-pd errors may be included through ACTUAL short exact sequences
+
+\[
+0\to U_t\to Q_t\to L_t^{b_t}\to0,\qquad
+0\to K_t\to U_t\to\bigoplus_{s\in T}L_s^{a_{ts}}\to0,
+\tag{1.3}
+\]
+
+where Q_t,K_t have finite LEFT pd. The ACTUAL quotient H_t=Q_t/K_t
+has exactly (1.1) and
+
+\[
+\operatorname{pd}H_t\le\max(\operatorname{pd}Q_t,
+1+\operatorname{pd}K_t).
+\tag{1.4}
+\]
+
+If K_t=0 its contribution is omitted. Thus (1.2) applies with the
+maximum of these sufficient bounds. K_t need not split from U_t.
+These are ordinary module quotients with recorded exact sequences,
+not pruning maps in an infinite resolution. No exactness-preservation
+claim about a deleted differential image is involved.
+
+The direct RIGHT version uses right modules and gives the same ordinary
+diagonal Tor conclusion; it invokes no opposite-infinite-plus theorem.
+
+## 2. Complete ordinary proof
+
+Fix ANY finite LEFT target Z. Applying ordinary Ext(-,Z) to (1.1),
+for EVERY n>=h the connecting map is SURJECTIVE:
+
+\[
+\bigoplus_{s\in T}\operatorname{Ext}^n_A(L_s,Z)^{a_{ts}}
+\twoheadrightarrow\operatorname{Ext}^{n+1}_A(L_t,Z)^{b_t}.
+\tag{2.1}
+\]
+
+Indeed the following term is Ext^{n+1}_A(H_t,Z)=0. It is not
+necessary to claim the connecting map injective at n=h. Each matrix
+entry of (2.1) is composition with an ACTUAL ordinary extension class
+alpha in Ext^1_A(L_t,L_s), obtained by pushout and projection from
+(1.1). Surjectivity and b_t>=1 imply that EVERY ordinary class in
+Ext^{n+1}(L_t,Z) is a sum of such degree-one products with classes
+from the preceding degree and sources in T. Matrix dimensions a_ts
+and b_t do not affect this assertion; embedding into one target
+coordinate and taking its projection suffices.
+
+Therefore for n>=h and EVERY K>=1, each class with source in T in
+degree n+K is a sum of preceding degree-n classes followed by K
+composable ordinary degree-one Yoneda classes with ALL intermediate
+source labels in T. This is a real surjectivity theorem in ordinary
+Ext, not an inference from a support walk.
+
+Reuse the project's positive-ideal nilpotence argument in
+toolbox/Imported-Outputs/N-Vertex-Main-Route.md, Section2. Under the
+stated diagonal bound M, ANY composable positive ordinary word of
+length m(M+1) with labels in T is zero. If it were nonzero, every
+contiguous subproduct would be nonzero. Among its m(M+1)+1 endpoint
+labels, one occurs at least M+2 times; its first-to-last subproduct
+is a self-Ext of degree at least M+1, a contradiction. This uses an
+ACTUAL nonzero associative Yoneda product, not a graph cycle.
+
+Set K=m(M+1) and n=h. All Ext_A^{h+K}(L_t,Z) are zero. The same
+argument applies in EVERY higher degree, for EVERY target Z. Taking
+all simple Z and using the ACTUAL minimal projective resolutions,
+the entire projective term P_{h+K}(L_t) is zero and the resolution
+terminates at h+K-1. This proves (1.2), including h=0 and M=0.
+The nonempty finite set T makes the contrapositive yield a FIXED
+infinite diagonal, by taking a common cutoff if all diagonals were
+eventually zero. All comparison steps are ordinary.
+
+For (1.3), K_t is a genuine submodule of U_t and Q_t. Quotienting
+the two actual sequences gives (1.1); the actual sequence
+0->K_t->Q_t->H_t->0 gives (1.4) by the ordinary pd inequality.
+No nonsplit kernel is erased or supposed to preserve a complex.
+
+## 3. Corollary — finite ordinary radical-square pd closes a global class
+
+Let J=rad A. If pd_A(J^2)<infinity, Universal Gap A holds for A;
+in fact gd(A)=infinity forces a persistent ordinary SIMPLE DIAGONAL.
+Write r=pd_A J^2 when J^2 nonzero and N the number of vertices.
+The actual modules
+
+\[
+H_t=Ae_t/J^2e_t,
+\qquad0\to Je_t/J^2e_t\to H_t\to L_t\to0
+\tag{3.1}
+\]
+
+supply (1.1) with T ALL labels. Each J^2e_t is an actual LEFT
+direct summand of J^2 (right idempotent action), so has pd<=r.
+The actual quotient (3.1) has pd<=r+1. If all simple diagonals
+vanish above M, the uniform ordinary bound is
+
+\[
+\operatorname{gldim}A\le r+N(M+1).
+\tag{3.2}
+\]
+
+When J^2=0 use h=0 directly, yielding gd(A)<=N(M+1)-1. The RIGHT
+version is direct. No algebra quotient is assumed a homological
+epimorphism; neither ordinary Tor invariance of A/J^2 nor finite
+right pd is used. No novelty or sharpness claim is made.
+
+This is a genuine class closure with a uniform bound. The hypothesis
+is NOT known automatic under global badness. Frozen N7 has
+J^2Ae_v=k(ba) isomorphic to infinite-pd LEFT L_v; its high ordinary
+simple diagonals vanish, while a supported off-diagonal persists.
+Thus the finite-pd radical-square assumption cannot be dropped and
+diagonal return cannot replace the full Universal Gap A target.
+
+The class can be enlarged using ACTUAL chosen-side purification.
+It suffices that J^2e_t have finite LEFT pd for EVERY infinite-LEFT
+simple t; no condition on J^2e_f for finite-LEFT labels is needed.
+Take T=I_L, p=|T|>0. In the actual semisimple module
+Je_t/J^2e_t, separate its infinite T factors from finite-LEFT factors.
+Let K_t be the ACTUAL preimage in Je_t of the finite-factor summand.
+The exact sequence0->J^2e_t->K_t->finite semisimple->0 proves finite
+pd K_t; the actual quotient Ae_t/K_t supplies (1.1) for T. If r
+bounds these J^2e_t pds (zero modules omitted) and d bounds all
+finite LEFT simple pds, pd K_t<=max(r,d), giving the sufficient bound
+pd L_t<=max(r,d)+p(M+1) under all infinite-label diagonal cutoff M.
+Empty finite-factor families can be omitted; zero modules allow h=0.
+Thus this larger class also forces an ordinary supported diagonal.
+This is a real module preimage and quotient, not an assumed exact
+resolution after deleting finite-pd differential images. Eligibility
+of these deep kernels in arbitrary bad algebras remains unproved.
+
+For the ALL-label finite-pd J^2 hypothesis, (2.1) additionally proves
+that the entire ACTUAL ordinary Yoneda algebra is generated in
+degrees at most max(1,r+1). This is a sufficient finite-generation
+bridge in this class; it does not prove the universal(FG) assertion.
+
+## 4. The C103 expanding-head obstruction is killed in this class
+
+C103 has actual image H(a,b) of pd1 with top L_q and radical L_q.
+It is already an envelope (1.1) for T={q}. If the q diagonal vanished
+above M, (1.2) would give pd L_q<=M+1, contradicting its ACTUAL
+infinite resolution. This recovers its ordinary return using only the
+finite-pd image exact sequence; no projective-tail splitting is needed.
+
+For EVERY p>=1 there is a connected14p-dimensional family with labels
+u_i,q_i,f_i,w_i, i modulo p. Loops at u_i,w_i; arrows a_i in(q_{i+1},q_i),
+m_i,n_i in(u_i,q_i),x_i in(q_i,f_i),y_i in(q_{i+1},f_i),c_i in(f_i,w_i),
+d_i in(q_i,w_i),e_i in(q_{i+1},w_i). ONLY nonzero radical products are
+t_ui m_i=n_i,a_i x_i=y_i,x_i c_i=d_i,y_i c_i=e_i,a_i d_i=e_i.
+Actual kernels give Omega L_qi=P_ui+L_q(i+1),Omega L_fi=H_i,
+Omega H_i=P_ui,Omega L_wi=P_fi+L_wi,Omega L_ui=L_ui. Each H_i is
+a finite-pd Loewy-two ACTUAL image with top L_qi and radical L_q(i+1).
+T={q_i} satisfies (1.1), h=1, so arbitrary-p ordinary return follows.
+All finite LEFT labels f_i have pd2,E_F=k^p, all RIGHT labels infinite;
+U fails at u_i,q_i. This shows the new ordinary route can handle
+a family missed by the deletion-visibility route, without splitting
+into the number of infinite sources. The all-p statement is written
+from the displayed literal kernels, not a finite sample extrapolation.
+
+### 4.1 A nonsplit actual first syzygy
+
+A connected26-dimensional calibration uses common u, q0,q1,f0,f1,w0,w1.
+Replace the two separate u loops/columns by a single u and add actual
+products m1 a0=m0,n1 a0=n0. Keep t_u m_i=n_i and all other displayed
+family products for p=2. These extra products make Omega L_q0 the
+NONSPLIT module D with basis a0,m0,n0: its HEAD is only L_q1,
+and its actual minimal cover is P_q1 with kernel L_q0. The submodule
+span(m0,n0)=P_u does not split in D. The exact finite envelopes H_i
+still have pd1 and semisimple radicals L_q(i+1). Actual F images
+and all f pds2 remain; this tests precisely the absence of a split
+syzygy assumption. Literal minimal covers and maps verified these
+claims exactly. The same ordinary proof works despite the
+nonzero radical action connecting the finite kernel to its quotient.
+
+The exact check passed18135 full associativity triples,27 actual minimal
+covers,558 integral basis inverses and10 actual kernel isomorphisms.
+It separately checked a nonzero J^2 of LEFT pd0 in the hereditary
+three-chain, whose simple resolutions terminate with gd1. The frozen
+radical-square-zero three-chain has h=0,M=0,m=3 and actual gd2,
+matching the bound2 in (1.2); no sharpness claim for the other bounds.
+The initial new boundary-action check descended one matrix dimension
+too deeply and raised TypeError; corrected flattening and the full
+successful rerun are preserved. No frozen helper or algebra table was
+changed. Infinity is proved by the literal written kernels, and the
+general all-target generation theorem is a separate complete proof;
+finite-degree sampling does not establish either. Finite-Envelope-Evidence
+retains task, exact code/result, validated record and failed-execution log.
+Shared sources/helpers and this researcher, NOT independent verification.
+
+## 5. Adversarial audit and boundary
+
+Completed audit: actual (1.1)/(1.3), NOT mere factor supports; finite
+pd on the correct LEFT side; EVERY T label has an envelope; sources
+of the semisimple kernel stay in T; Ext first-variable sequence with
+n>=h gives surjectivity, not an unproved isomorphism; connecting maps
+are actual ordinary degree-one Yoneda multiplication; rectangular
+matrix coordinates do not assume equal multiplicities; nilpotence
+acts on real products and then on ALL-target ordinary Ext; pd bound
+is h+m(M+1)-1, with no extra subtraction; J^2e_t is a LEFT direct
+summand and actual quotient remains exact; zero J^2 uses h=0;
+right proof is direct; no opposite-infinite-plus transfer or singular
+return is used. Shared helpers/self-audit are not independent verification.
+
+The Loewy-two kernel hypothesis is load-bearing. A higher Loewy
+finite-pd envelope does not supply (2.1) as SIMPLE degree-one products;
+further extensions can hide genuine new ordinary generators. All
+projectives are finite-pd envelopes of their heads, so dropping the
+semisimple-kernel/finite-pd-repair condition would assert ordinary
+diagonal return universally, refuted by the frozen Saorin/N7 example.
+No general higher-Loewy or automatic recurrent-image envelope theorem
+has been proved.
+
+C102 retains its one-sided deletion role. C104 closes a genuine
+alternative for some of its expanding-carrier failures and a finite
+ordinary radical-square-pd class. The general badness-specific
+cross-map/eligible reduction, nonsemisimple infinite radical error,
+singular finite-block Yoneda, all-infinite/no-factor cores, C076
+physical transfer and ALL original Target-A/bounded-screening,
+local-trivial, Primitive/Binary/higher-output/supported-weight branches
+remain OPEN. Universal Gap A remains OPEN.

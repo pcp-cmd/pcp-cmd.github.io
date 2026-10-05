@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-04T01:30:01.407258+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "1dafdc4ea392594005f28608c7f9f338d6276e681e91c14d566f4f8d0bc51049",
+    "object": "Actual arbitrary-parameter carrier and finite-factor cross-map obstructions, with integral minimal resolutions",
+    "deliverables": [
+      "verify_carrier_lemma.py",
+      "carrier-lemma-result.json",
+      "verify_finite_factor_carrier.py",
+      "finite-factor-carrier-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "All algebras are literal elementary multiplication tables with integral zero/one structure constants.",
+      "Cycle family has radical square zero; projective-image family has only a_i b_i=c_i; finite-factor family is the stated Nakayama/dual-number triangular extension.",
+      "Actual projective covers and literal A-linear kernel isomorphisms are used for both module sides.",
+      "Integer radical/top and exact-sequence bases with integer inverses support the separate all-field proof.",
+      "Infinite tails and arbitrary parameters are established by written literal syzygy/matrix identities, not bounded Betti sampling.",
+      "All counterfamilies already have supported ordinary return and are not Gap-A counterexamples.",
+      "Bare finite-pd image, finite-factor image, actual projective carrier and recurrent carrier are distinct objects."
+    ],
+    "domain": "Finite elementary algebra tables, ordinary minimal resolutions and integral kernel/differential certificates",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Exact Fraction table and minimal-cover calculations with integral unimodular basis certificates"
+      ],
+      "existence_evidence": "The two code artifacts export actual covers, integer inverse bases, syzygy isomorphisms and recurrent matrices.",
+      "local_availability": "available",
+      "availability_evidence": "Actual local run passed under Python 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "selection_reason": "Literal finite maps permit exact local Fraction arithmetic with integral all-field certificates; both parameter-family proofs are separate.",
+    "fallback_reason": "Reused same-session inventory: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python through math-science-computation observer_run.py",
+    "command_or_input": "python -B verify_carrier_lemma.py --project-root PROJECT_ROOT --out carrier-lemma-result.json; python -B verify_finite_factor_carrier.py --project-root PROJECT_ROOT --out finite-factor-carrier-result.json",
+    "code_artifact": "verify_carrier_lemma.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_carrier_lemma.py",
+      "sha256": "a7920afdcb91fe6bbfca5ebc89d5b7bb45292bc687a0c183962e544c1311e8f6"
+    },
+    {
+      "role": "result",
+      "path": "carrier-lemma-result.json",
+      "sha256": "7e1f4ed5fc9f00f25444e93d8ff86f6d7a57acadb46df0a5c30cec118e0f2c6c"
+    },
+    {
+      "role": "code",
+      "path": "verify_finite_factor_carrier.py",
+      "sha256": "88309914cc33baa96335bce7540a3c0a6d69d9c6ecbc765eeb89c8b84835a854"
+    },
+    {
+      "role": "result",
+      "path": "finite-factor-carrier-result.json",
+      "sha256": "5fffd8bce9184b128cd67d28d5a7c85589d8073477ddd7a6d0d9bbefedc54a56"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "result_artifact": "finite-factor-carrier-result.json",
+    "summary": "Both p=3,5,8 audits passed: 157560 associativity triples, 140 actual covers/kernel isomorphisms, 3447 integer basis inverses, 16 pruned-homology isomorphisms and 13 literal recurrent differential checks."
+  },
+  "verification": {
+    "methods": [
+      "Full-basis associativity and literal radical nilpotence",
+      "Actual minimal covers, radical/top decompositions and integral exact-sequence bases",
+      "A-linear kernel isomorphisms with integer inverse certificates on both module sides",
+      "Literal recurring projective matrices: d squared zero, A-linearity, image equals kernel",
+      "Pruned complexes have explicit nonzero homology in every positive degree by the written matrix proof",
+      "Written all-parameter, all-field and all-degree module identities in T21 Run",
+      "Code/result/task hashes and schema validation"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact rational/integer arithmetic; no numerical residual.",
+    "limitations": [
+      "Same researcher and shared imported helpers; no independent verifier acceptance.",
+      "Finite parameters p=3,5,8 supplement, and do not prove, the all-p statements.",
+      "All-field validity uses integer inverse bases plus the separate written base-change argument.",
+      "All-degree persistence uses actual syzygy return/matrix identities, not bounded Betti prefixes.",
+      "The second code loads helper definitions from the first; this is explicitly dependent arithmetic evidence.",
+      "Each result records frozen imported helper SHA256 hashes.",
+      "Counterfamilies already have supported ordinary Tor and do not refute a badness-specific global alternative.",
+      "The positive carrier-dominance theorem is a written ordinary proof, not independently computationally verified.",
+      "Hash/schema validation certifies integrity, not independent mathematical semantics.",
+      "Backend inventory is reused from this session; no remote paid backend or new inventory claim.",
+      "Universal Gap A and universal eligible-reduction availability remain OPEN."
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+## UGA-C090 — Carrier-Dominating Recurrent Projective Gives Ordinary Visible Return
+**Status:** COMPLETE SELF-AUDITED ORDINARY ARBITRARY-SIZE BRIDGE / ACTUAL MINIMAL BLOCK / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Arbitrary-Carrier-Audit-Finite-Factor-Obstruction-and-Ordinary-Return-2026-10-04.md, Sections 1–2 and 8.
+
+In an actual high exact minimal persistent LEFT block K let C_z={j in I_L:e_jAe_z!=0} and S_K=union_{z in K}C_z. If ONE actually recurrent Ae_q has C_q=S_K, then some fixed j has persistent ordinary Tor(R_q,L_j) with physical e_jAe_q!=0. Augment the REAL block by X=coker(P_{s+1}^K->P_s^K). Its infinite left factors lie in S_K and Tor(R_q,X) persists. Finite factors die uniformly; ordinary composition detection selects j in S_K, hence in C_q. Empty S_K would make X finite-pd and is impossible. Direct RIGHT proof uses right carriers and Tor(X,L_q), separately. No source-count/total-size bound, opposite-+ transfer, stable comparison or graph-to-return shortcut. Constant PER-PROJECTIVE carriers suffice; eventual constancy of the UNION alone does not. With checked C088 deletions the terminal supported pair lifts through every all-degree comparison and dimension/vertex descent terminates. Automatic availability or dominance is not proved. Complete same-author proof and normal adversarial audit, not independent verification.
+
+---

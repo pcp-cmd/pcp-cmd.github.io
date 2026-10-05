@@ -1,0 +1,11 @@
+## UGA-C083 — Eventual Even Ordinary Tor Gives No-New-Label Control and Eligible Strict Count Descent
+**Status:** COMPLETE SELF-AUDITED ORDINARY PROOFS / C058/C062/C067 AND UNCHANGED ACTUAL CALIBRATIONS REUSED / NOT INDEPENDENTLY VERIFIED; NO NOVELTY CLAIM  
+**Source:** Run-Even-Tor-Comparison-and-Strict-Infinite-Count-Descent-2026-10-04.md, Sections 1--4, 7--8.
+
+For an actual quotient A->C with the retained elementary simple labels, assume its natural ordinary same-pair Tor map is surjective for EVERY retained pair in EVERY EVEN degree n>=N, N finite. For a finite left simple pd a, the first even m>=max(N,a+1) has all C detector tests zero, so the whole minimal C-projective term is zero and pd_C L_y<=m-1. Direct right covers give the corresponding right bound. Therefore I_L(C) is contained in retained I_L(A), and I_R(C) in retained I_R(A); no new infinite-pd labels arise on either side. No converse, full Tor isomorphism or section is inferred.
+
+Every infinite-+ C has some supported even tail by the ordinary identity b_n=t_n+t_{n+1}; same-pair surjectivity and the physical quotient component lift that tail to A. Thus for a bad A and x with infinite LEFT pd, C=A/Ae_xA is bad by C058's actual annihilated infinite tail plus this even bridge, and |I_L(C)|<=|I_L(A)|-1 while |I_R(C)|<=|I_R(A)|. The sum also decreases. A RIGHT-chosen version uses actual right tails directly, without opposite-+ or equating infinite-side labels. C062's exact odd C^e-projective layers give N=0; C067's exact bounded-perfect actually tensor-nilpotent hypotheses give N=U+2. A coefficient hypothesis is not assumed to inherit after deletion.
+
+The comparison must cover ALL retained simple pairs: C073's supported t-bar even maps are onto, but right R1 acquires infinite quotient pd through a reverse-invisible test. C082's A22->C6 fails even surjectivity in arbitrarily high diagonal-supported degrees, explaining its newly infinite labels. Both are already infinite +, not global counterexamples. General existence of this eligible move or another supported ordinary bridge remains open.
+
+---

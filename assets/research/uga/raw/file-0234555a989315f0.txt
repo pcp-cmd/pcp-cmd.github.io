@@ -1,0 +1,259 @@
+# Route Judge Report — corner / higher Yoneda / canonical ordinary ideals
+
+**Date:** 2026-10-04.  
+**Request:** desktop handoff.md, “Universal Gap A — Route Judge Handoff”. The document supplies the proposed routes; their mathematical assertions are tested, not adopted as authority.  
+**Authority read:** START_HERE, CURRENT_STATE, DECISIONS, AGENTS, relevant Claims, Regression/Negative Knowledge, C115–C116 Global Route Audit, and the completed pending graded-Cartan/filtered-comparison proof.  
+**Evidence status:** FULL WRITTEN COUNTEREXAMPLE AND ORDINARY DERIVATIONS / PRIMARY-SOURCE SCOPE CHECK / NORMAL ADVERSARIAL SELF-AUDIT / NOT INDEPENDENTLY VERIFIED. The handoff's role label does not manufacture independence. No novelty or formal MRS certification claimed. UGA remains OPEN.
+
+## I. Verification corrections
+
+**The most consequential correction is mathematical, not a theorem number.** The sourcewise Tiling statement printed as Armenta Conjecture8.10 is FALSE under its written hypotheses. Its asserted equivalence to the GLOBAL Gap A does not follow from Theorems3.1/4.5, which only furnish an EXISTENTIAL returning vertex. Here is an actual strongly connected counterexample, including a nontrivial singular corner at the nonreturning source.
+
+Work over ANY field. Use vertices1,2,3 and arrows
+
+\[
+a:1\to2,\quad b:2\to1,\quad c:2\to3,\quad
+s:3\to3,\quad d:3\to1.
+\]
+
+The algebra \(A_{11}\) has basis
+
+\[
+e_1,e_2,e_3,a,b,c,s,d,t,v,w
+\]
+
+with the standard endpoint identity products, and exactly the following nonzero radical products:
+
+\[
+ab=t,\qquad ds=v,\qquad dc=w.
+\tag{1}
+\]
+
+Here \(t\in e_2Ae_2\), \(v\in e_1Ae_3\), \(w\in e_1Ae_2\); every radical product not listed, including every product with \(t,v,w\), is zero. All radical triple products are zero on BOTH associations; identity/endpoints handle every remaining associativity case. Thus (1) defines an elementary associative algebra of dimension11 with \(J^3=0\). The arrows are precisely a basis of \(J/J^2\), and \(1\to2\to3\to1\) makes its Gabriel quiver strongly connected. This graph check is not used to infer homological return.
+
+Its ACTUAL left projectives are
+
+\[
+P_1=\langle e_1,a\rangle,\quad
+P_2=\langle e_2,b,c,t,w\rangle,\quad
+P_3=\langle e_3,s,d,v\rangle.
+\]
+
+Let \(U=As=\langle s,v\rangle\), \(V=Ac=\langle c,w\rangle\). Multiplication gives
+
+\[
+Ab=\langle b,t\rangle\simeq P_1,\qquad
+JP_2=Ab\oplus V.
+\tag{2}
+\]
+
+For clarity these are actual submodule direct sums, not top/composition-factor equalities. The isomorphism in (2) sends \(e_1\mapsto b,\ a\mapsto t\). Both \(U,V\) have top \(L_3\) and radical \(L_1\). Their REAL minimal covers \(P_3\to U,V\) send \(e_3\mapsto s,c\), respectively, and \(d\mapsto v,w\); in BOTH cases the full kernel is \(\langle s,v\rangle=U\). Hence
+
+\[
+\boxed{\Omega L_2=P_1\oplus V,\quad
+\Omega^2L_2=U,\quad\Omega U=U.}
+\tag{3}
+\]
+
+No nonzero projective kernel is left unexamined: \(P_3\to U\) has nonzero kernel \(U\), so \(U\) is nonprojective and its period-one real minimal resolution never terminates. Therefore \(\operatorname{pd}_A L_2=\infty\), while
+
+\[
+\boxed{e_2\Omega^n_A(L_2)=0\quad\text{for EVERY }n\ge2.}
+\tag{4}
+\]
+
+The chosen corner is nontrivial:
+
+\[
+\Gamma=e_2Ae_2=k[t]/t^2,\quad
+e_2Ae_1=ka,\quad e_2Ae_3=0.
+\tag{5}
+\]
+
+The relevant left \(\Gamma\)-module \(ka\) is nonprojective, of infinite pd, and occurs in the degree-one term of the actual \(L_2\) resolution. Applying \(e_2(-)\) produces the FINITE exact corner complex
+
+\[
+0\longrightarrow k
+\xrightarrow{\,1\mapsto t\,}\Gamma
+\longrightarrow k\longrightarrow0.
+\tag{6}
+\]
+
+The infinite corner homology resides inside its singular degree-one term; it does not force infinitely late ordinary A-return to source2.
+
+**This is NOT a UGA counterexample.** Indeed \(JP_3=U\oplus Ad=U\oplus L_1\), so additivity and (3) leave a true \(U\) summand in EVERY \(\Omega^nL_3,\ n\ge1\). Its head contains \(L_3\), giving ordinary \(\operatorname{Tor}_n^A(R_3,L_3)\ne0\) for EVERY \(n\ge1\). Also \(\Omega L_1=L_2\); all three left simples have infinite pd. C107/C110 already close this entire small/cube-zero class. We used one explicit example to test a claimed sourcewise statement, not to reopen a closed class for a UGA search.
+
+The correct reduction is
+
+\[
+\operatorname{gd}A=\infty\quad\Longrightarrow_{\rm OPEN}\quad
+\exists x:\ e_x\Omega_A^n(L_x)\ne0\text{ infinitely often}.
+\tag{7}
+\]
+
+Replacing \(\exists x\) by “for ANY selected infinite-pd \(L_x\)” is invalid, even with strong connectivity, a singular \(\Gamma_x\), finite syzygy type, and actual recurring projectives. The universal sourcewise implication is withdrawn; the global existential statement is retained.
+
+**Primary-source scope/number check.** [Armenta v1](https://arxiv.org/html/2607.20849) prints the relevant items as Theorem3.1 (global syzygy return), Theorem4.5 (SCC cutting/lifting), Theorem8.4 (corner projectivity, \(\Gamma_x\ne k\), EVERY occurring term on the LEFT), Theorem9.12 (different protected-corner hypothesis), and Conjecture8.10 (the false sourcewise statement just tested). Theorems3.1,4.5,8.4 have direct ordinary proofs consistent with SectionsII,V below; (1)–(4) do not contradict them. Conjecture8.10's displayed assertion/equivalence is not admissible input. Corollary10.7's corner singularity conclusion concerns its conditional three-vertex configuration, not an ordinary comparison theorem.
+
+**The local-Artinian gate is TRUE in the needed finite-module scope.** For a finite-dimensional local algebra \(\Gamma\), every finitely generated finite-pd LEFT module is projective. Here is the full proof: finite projectives over a local semiperfect ring are free. If a minimal finite free resolution had positive last degree, its final injective map would have entries in \(J_\Gamma\). Choose nonzero \(z\in J_\Gamma^{h-1}\), with \(J_\Gamma^h=0\), so \(zJ_\Gamma=0\). The nonzero vector with one coordinate z in the final free module maps to zero, contradicting injectivity. For RIGHT modules use \(J_\Gamma z=0\) in the same argument. When J=0, every module is projective already. Thus the little finitistic dimension is0 on both sides. [Gélinas, Proposition1.16/Example1.17](https://arxiv.org/pdf/2004.04828) supplies the primary Bass/delooping context; in the Artinian scope its stated big-dimension version also gives0, but only the just-proved finite-module fact is used here. No arbitrary local Noetherian/semiperfect extension is claimed.
+
+**The other anchor is sufficient, not necessary.** [CLMS v2, Theorem6.5](https://arxiv.org/html/2509.05135v2#S6.SS2) is the infinite-dimensional finitely GENERATED ORDINARY Yoneda-subcategory criterion. Example6.10 in the same source explicitly has infinite + with every finitely generated Yoneda subalgebra finite-dimensional. The proposed converse is unavailable and cannot serve as the single universal missing lemma.
+
+The eleven-dimensional evidence checks1331 complete basis triples,24 actual minimal covers,216 integral basis inverses and TWO explicit kernel-module isomorphisms. Files: [script](Route-Judge-Evidence/verify_route_counterexample.py), [result](Route-Judge-Evidence/result.json), [execution record](Route-Judge-Evidence/execution-record.json). The all-degree/any-field statements use (1)–(3), not the Betti prefix. Shared helpers and this author's review are NOT independent verification.
+
+## II. R1 judgment — Corner/change-of-rings
+
+**AUXILIARY.** The projective branch is a genuine ordinary theorem. The nonprojective branch does not yield a shorter universal bridge, and its pointwise target is actually false by (3)–(6).
+
+For the projective branch, exact \(e_x(-)\) takes the real A-resolution to a \(\Gamma_x\)-projective resolution of k. If an \(e_x\Omega^n(L_x)\) vanished, a finite \(\Gamma_x\)-projective resolution would result. The local proof in SectionI excludes that when \(\Gamma_x\ne k\). Thus every such syzygy has nonzero x-part. This is precisely the conditional branch in Theorem8.4, including its LEFT-side orientation and all-occurring-terms quantifier. It does not require the restricted complex to be minimal.
+
+Replacing “projective” by “finite pd” adds no local branch: by SectionI they are the same for the finite corner terms. A finite exact complex of finite-pd terms can be resolved by a finite ordinary projective total complex; its length is at most \(\max_i(i+\operatorname{pd}_\Gamma C_i)\). With infinite-pd terms this inference is false; (6) is the smallest possible shape of that failure inside an actual infinite A-resolution.
+
+The relevant mature theory has an explicit eligibility boundary. [Psaroudakis–Skartsæterhagen–Solberg, Corollary3.12](https://arxiv.org/pdf/1402.1588) characterizes eventual ordinary Ext comparison for \(e(-)\) by either pair
+
+\[
+\operatorname{id}_A T<\infty,\quad
+\operatorname{pd}_{eAe}(eA)<\infty,
+\qquad T=(A/AeA)/\operatorname{rad}(A/AeA),
+\tag{8}
+\]
+
+or
+
+\[
+\operatorname{pd}_A T<\infty,\quad
+\operatorname{pd}_{(eAe)^{op}}(Ae)<\infty.
+\tag{9}
+\]
+
+The actual induced Ext maps are isomorphisms above the sum of the dimensions in either eligible pair. Corollary3.11 has source/target-specific Ext-vanishing alternatives, still with the corresponding finite corner pd. These are exact ordinary tools; they do not say that arbitrary idempotents satisfy (8)/(9). A nonprojective occurring \(e_xAe_y\) makes \(\operatorname{pd}_{\Gamma_x}e_xA=\infty\), since it is a direct summand. The necessary finite-pd requirement fails precisely where the proposed route needs new force. Stratifying-ideal or homological-epimorphism methods likewise need actual multiplication/Tor hypotheses; strong connectivity supplies none. A singular equivalence on its own is not an ordinary supported-Tor bridge.
+
+The handoff's mutual-dumbbell comparison is therefore diagnostic, not a universal theorem: the conditional finite-head complexes in Armenta Theorem10.6/Corollary10.7 have singular linking terms, so the finite-projective-totalization argument does not apply. The current PROJECT already closes <=4 TOTAL vertices (C107); the paper's old three-vertex conditional stratum must not be relabelled as our latest open frontier. At >=5 vertices the same general nonprojective comparison issue remains unclosed.
+
+The necessary new R1 theorem would have to use **simultaneous all-source badness** to produce either another ordinary supported pair or an eligible strict reduction. Bare nonprojectivity, \(\operatorname{pd}_\Gamma M_y=\infty\), or a finite relative resolution of k is insufficient. Rewording (7) as corner nonhiding is still UGA, not a newly shortened lemma.
+
+**Finite syzygy machinery, checked rather than rebuilt.** [Goodearl–Huisgen-Zimmermann, Definitions2.1 and Section2](https://arxiv.org/pdf/1407.2321) distinguish finite indecomposable syzygy type from repetition index and give finitistic-dimension applications. [Howard, Section3](https://arxiv.org/pdf/1011.3554) uses syzygy quivers based on ACTUAL syzygy direct-sum decompositions for complexity. Neither theorem, in the inspected scope, forces a hypothetical UGA failure to have finite syzygy type or supplies universal physical support return.
+
+| Exact available hypothesis | What it gives here |
+|---|---|
+| Monomial algebra | Reuse C061 whole-class UGA closure; mature finite-type computation adds no missing proof. |
+| An ACTUAL periodic simple \(\Omega^rL_i\simeq L_i,\ r>0\) | Real cover iteration makes ordinary diagonal Betti nonzero at every multiple of r. |
+| Infinitely late actual simple summands under the project cutoff | Reuse C109 strict recurrent-type descent and supported return. |
+| Finite syzygy types plus C105/C106's actual ordinary alignment/cross-Ext hypothesis | Reuse that comparison/termination theorem. |
+| Finite syzygy type alone | Genuine finite-state recurrence is available; general UGA closure is not concluded by the inspected complexity/finitistic theorems. In particular it does NOT imply sourcewise Tiling: (3)–(4) is already a finite-type counterexample. |
+
+No finite-state guarantee for the general hard core is inferred. C108/C106's genuine infinite-state examples remain valid, and the representation of a finite syzygy quiver is not itself the ordinary reverse-support comparison.
+
+## III. R2 judgment — A-infinity
+
+**AUXILIARY.** [Jasso's displayed Keller theorem](https://arxiv.org/html/2402.14004) gives generation in degrees0 and1 as a MINIMAL \(A_\infty\)-algebra over any field, even for a finite-simple abelian length category. The displayed theorem has no numbered “Theorem1” in the inspected HTML. It is not associative generation or a uniform tree-stopping theorem.
+
+In an S-linear many-object model, \(m_r\) acts on composable inputs, keeps their outside endpoints and has degree \(2-r\). This support rule describes a possible input walk; it does not make the product of a repeated-vertex subwalk nonzero in ordinary Ext. For an associative nonzero word every contiguous subproduct is nonzero, which is why the existing finite-generation bound stops long words. For a higher-operation tree, an arbitrary closed subwalk is not a subtree operation; replacing an internal operation by a cyclic cut has no nonvanishing theorem. The Stasheff identities supply cancellation relations, not that missing implication.
+
+The exact absent arrow is
+
+\[
+\text{unbounded genuine higher-output classes}
+\quad\Longrightarrow_{\rm OPEN}\quad
+\text{unbounded ORDINARY reverse-supported classes, or strict badness descent}.
+\tag{10}
+\]
+
+It must be GLOBAL: even a strongly connected Ext-one quiver and Keller generation cannot force return to every selected infinite source, because both hold for (1), while (4) fails that conclusion. There is no independent new A-infinity support theorem in the sources actually checked here. This is a bounded-source conclusion, not an assertion that no such theorem exists anywhere.
+
+C116's finite-gd A14 / infinite-gd monomial B14 already shows why storing relation/cancellation data is not survival. The completed graded-Cartan Run strengthens this to a REAL finite bar filtration, \(\operatorname{gr}_F A14=B14\), with actual nonzero
+
+\[
+d_1:E^1_{3,3}\to E^1_{2,4},\qquad
+b_A(a_1|b_1|a_1)=(b_2a_2)|a_1.
+\]
+
+Thus (10) cannot be filled by automatic degeneration transfer. The separately proved adjacent-degree-separation theorem C118 is eligible stopping machinery, including all incoming/outgoing differentials and finite degreewise convergence. It closes the radical-associated-graded Koszul class; arbitrary higher-output algebras do not meet that hypothesis automatically.
+
+CLMS Theorem6.5 is an actual ordinary sufficient branch, and the project reuses its finite-generation word bound. The complete Yoneda algebra need not be finitely generated, and existence of an infinite-dimensional finitely generated subcategory is itself not a necessary condition for UGA return. Keller generation must not be substituted for it.
+
+## IV. R3 judgment — Bongartz
+
+**BACKEND.** C115's checked hereditary-ideal ordinary Tor quotients remain canonical for computation, falsification and orientation. Nothing in the new handoff produces a stronger general ideal stopping theorem. The remaining all-visible-block implication is still exactly UGA.
+
+This is a representation/backend distinction: Bongartz is retained in the HYBRID main ordinary-support formulation, rather than promoted as a self-sufficient proof route. Same-pair visibility is false (C115); monomial persistence transfer is false (C116); automatic non-Noetherian Artin–Rees use remains excluded. No previously failed search is restarted without a proved comparison hypothesis.
+
+Two completed genuine global-class tools are now retained in the same programme:
+
+\[
+\begin{aligned}
+&A=\bigoplus_{0\le d\le w}A_d,\quad A_0=k^N,\quad
+D(t)=\det C(t)\ne1\\
+&\hspace{1em}\Longrightarrow
+\forall b\ \exists(x,y,n):
+\ b<n\le(b+1)w+\deg D-1,\\
+&\hspace{7em} e_yAe_x\ne0,\quad \operatorname{Tor}_n^A(R_x,L_y)\ne0;
+\end{aligned}
+\tag{11}
+\]
+
+and
+
+\[
+\operatorname{gr}_J A\text{ Koszul},\quad \operatorname{gd}A=\infty
+\Longrightarrow
+\exists i:\operatorname{Tor}_n^A(R_i,L_i)\ne0\text{ infinitely often}.
+\tag{12}
+\]
+
+These are C117/C118, with full written ordinary proofs in [the separate Run](Run-Graded-Cartan-Ordinary-Tor-Bridge-and-Pure-Filtered-Transfer-2026-10-04.md). (11) uses INTEGER Cartan dimensions/Jacobi derivative and actual minimal resolutions; it applies in every field, and its highest-column determinant proof closes all ACTUAL positively graded nonsemisimple selfinjective algebras at arbitrary Loewy length. (12) uses a finite ordinary bar filtration with pure weights, proving survival and ordinary generation. Neither is a claim about arbitrary nongraded selfinjective A, automatic associated-graded transfer, every simple, or all UGA. Constant determinant can coexist with infinite gd; mixed weights can be killed by actual differentials.
+
+## V. Best known theorem skeleton
+
+There is a correct formulation with ONE open arrow. It is GLOBAL/EXISTENTIAL, not the false sourcewise Tiling assertion. Set \(s_n(A)=\sum_i\dim e_i\Omega_A^n(L_i)\).
+
+\[
+\begin{aligned}
+\operatorname{gd}\Lambda=\infty
+&\xRightarrow{\text{LITERATURE THEOREM: verified SCC cutting}}
+\exists\text{ SCC-corner }A,\ \operatorname{gd}A=\infty\\
+&\xRightarrow{\text{PROJECT PROVED: actual minimal resolutions}}
+\Omega_A^n(S)\ne0\quad\text{for EVERY }n\\
+&\xRightarrow{\boxed{\text{ONE OPEN ARROW}}}
+s_n(A)\ne0\quad\text{for infinitely many }n\\
+&\xRightarrow{\text{PROJECT PROVED: exact Peirce SES identity}}
+\omega_n(A)=s_n(A)+s_{n+1}(A)\ne0\text{ infinitely often}\\
+&\xRightarrow{\text{PROJECT PROVED: finite pairs + ordinary definition}}
+A\text{ is infinite }+\\
+&\xRightarrow{\text{LITERATURE THEOREM: verified triangular lifting}}
+\Lambda\text{ is infinite }+ .
+\end{aligned}
+\tag{13}
+\]
+
+For the Peirce identity, write the actual left simple resolutions
+\(P_n(L_y)=\bigoplus_x(Ae_x)^{\beta_{xy}(n)}\).
+Applying exact \(e_y(-)\) to
+\(0\to\Omega^{n+1}L_y\to P_n(L_y)\to\Omega^nL_y\to0\)
+gives
+
+\[
+\sum_x\dim(e_yAe_x)\beta_{xy}(n)
+=\dim e_y\Omega^nL_y+\dim e_y\Omega^{n+1}L_y.
+\]
+
+Summing y proves (13)'s ordinary identity directly, with no opposite-side transfer. The SCC/lifting inputs can also be derived from block-triangular actual resolutions: one closed corner is a full resolution, and restriction to the other gives a projective resolution with projective extra summands, so diagonal dimension return lifts. Finite gd of both diagonal blocks gives finite gd of the triangular algebra. Only the one ordinary support-return implication is missing.
+
+Under C115 the identical open arrow is
+
+\[
+\boxed{\text{ALL reverse-visible }e_xK_ne_y=0\text{ eventually}
+\quad\Longrightarrow_{\rm OPEN}\quad
+K_n=0\text{ eventually}.}
+\tag{14}
+\]
+
+(13) and (14) are equivalent forms of full UGA, not theorems solving it. The sourcewise strengthening of the boxed arrow is FALSE by (4); any rewrite that reintroduces it creates an invalid second requirement. Conditional (11)/(12), C107/C110, eligible actual corner/descent assets, and ordinary finite-generation bounds supply proved portions of (13), not its missing universal step.
+
+## VI. Final route decision
+
+**HYBRID.** Keep the simultaneous global ordinary support-return problem as the main target, use Bongartz as its canonical ordinary backend, and use only proved ordinary stopping/transfer mechanisms—currently the Cartan window, separated filtered/Koszul comparison, ordinary Yoneda generation, and eligible corner/descent assets. R1's nonprojective pointwise target is broken by a strong actual counterexample; R2 stores the missing information but does not provide its termination theorem. The next substantial investment must attack the ALL-source open arrow, rather than select a new source and demand its own return. D-010's freeze of default T38 choice engineering remains effective; D-011 records this sharper quantifier correction and route judgment.
+
+Normal audit checked all endpoint conventions, full actual cover kernels, period-one induction, corner exactness, the singular-term versus ordinary-A boundary, primary hypotheses, and global quantifiers. The Vault method query for “量词 存在 任意 反例” returned no candidates; this is not evidence of library-wide absence. An initial call omitted the explicit existing Vault root and failed refresh; the scoped retry with the user-provided root succeeded against the existing577-note index. No Vault note was edited or copied. The prior full method note used for the Cartan scalar remains an asset, not project theorem authority. MRS retention uses the established project ledgers and preserves every old Run; no new harness/topology is constructed.
+
+**Universal Gap A remains OPEN.** All bounded-screening, local-trivial, constant-determinant/nonpure graded, genuinely screened filtered, and other unresolved branches stay on the map; no canonical opposite-infinite-plus quarantine or prior theorem status is silently upgraded.

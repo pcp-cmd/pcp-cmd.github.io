@@ -1,0 +1,360 @@
+# T37 — Actual cyclic head relations: ordinary return or strict descent
+
+Date: 2026-10-04. Continue canonical T36. C107 four-vertex and C110
+entire arbitrary-size cube-zero closures are reused. No mechanical
+next-vertex or infinite-source-count classification.
+Status: complete ordinary proofs / normal adversarial SELF-AUDIT /
+targeted exact counterexample. NOT independently verified, no novelty
+claim. Universal Gap A remains OPEN.
+
+## 1. C112 — The full actual head-relation kernel supplies a correct bridge
+
+Call a nonzero module primitive-cyclic if it is a quotient of ONE
+primitive left projective Ae_t. This includes every simple and permits
+nonsemisimple modules and infinitely many isomorphism types. No stable
+or derived quotient is meant.
+
+For any finite LEFT module Y, choose a REAL basis of its semisimple
+head and homogeneous primitive lifts u_alpha=e_(r_alpha)u_alpha.
+Put C_alpha=A u_alpha subset Y, an actual primitive-cyclic submodule.
+The lifts minimally generate Y. Each C_alpha has head L_(r_alpha),
+and the actual sum map defines a real short exact sequence
+
+\[
+0\to F(Y)\to H(Y):=\bigoplus_\alpha C_\alpha
+ \overset{\sigma}{\longrightarrow}Y\to0,
+\qquad\sigma((x_\alpha))=\sum_\alpha x_\alpha.
+\tag{1.1}
+\]
+
+F(Y) is the familiar complete relation module of these actual images.
+It is not one differential image, one pairwise intersection, or an
+assumed direct-sum complement. The induced head map is an isomorphism,
+so
+
+\[
+F(Y)\subseteq JH(Y).
+\tag{1.2}
+\]
+
+### Finite relation kernel
+
+If pd LEFT F(Y)=d<infinity, the actual ordinary LES gives, for EVERY
+right module R and EVERY r>d+1,
+
+\[
+\operatorname{Tor}_r^A(R,H(Y))
+ \overset{\sim}{\longrightarrow}\operatorname{Tor}_r^A(R,Y).
+\tag{1.3}
+\]
+
+Thus sufficiently high ordinary Tor is exactly the sum of the cyclic
+pieces' Tor. If Y has infinite pd, at least one C_alpha has infinite
+pd, since finite pd of both F and all C_alpha would imply finite pd Y.
+
+For a finite module X write T(X) for its ACTUAL recurrent projective
+detector labels: q in T(X) iff Tor_n(R_q,X) is nonzero infinitely often.
+Equation(1.3) yields
+
+\[
+T(Y)=\bigcup_\alpha T(C_\alpha).
+\tag{1.4}
+\]
+
+This is all-detector ORDINARY recurrence, not image-factor support.
+There is no assertion that erasing images preserves exactness of an
+infinite differential complex. The short exact sequence is the proof.
+
+### Ordinary supported return from a primitive-cyclic head detector
+
+If C is a quotient of Ae_r and r in T(C), then A already has a fixed
+ordinary supported simple pair. Every composition factor L_j of C
+occurs in Ae_r, so D(j,r)=dim e_jAe_r is positive. If all such ordinary
+Tor(R_r,L_j) vanished eventually, finitely many factors and the ordinary
+LES of a composition filtration would make Tor(R_r,C) vanish eventually.
+Contradiction. Some FIXED j therefore has Tor_n(R_r,L_j) nonzero
+infinitely often with D(j,r)>0. It may be OFF-DIAGONAL.
+
+This reuses the project's ordinary projective-carrier/devissage bridge.
+Under ambient BADNESS, it proves
+
+\[
+r\notin T(C)\qquad(C\text{ primitive-cyclic with head }L_r).
+\tag{1.5}
+\]
+
+No relation between LEFT and RIGHT infinite labels is assumed.
+
+## 2. A genuine arbitrary-size strict carrier reduction
+
+Start with an infinite-pd primitive-cyclic source X and its ORIGINAL
+actual minimal resolution. Because there are finitely many projective
+labels, sufficiently late syzygies Y=Omega^n X have every projective
+head label r_alpha in T(X): all nonrecurrent labels have stopped.
+Also T(Y)=T(X) by ordinary projective dimension shifting.
+
+Suppose such a late Y admits a choice of genuine head lifts with
+finite-pd full relation kernel F(Y). Equations(1.3)-(1.4) select an
+infinite-pd C_alpha with
+
+\[
+\varnothing\ne T(C_\alpha)\subseteq T(X).
+\tag{2.1}
+\]
+
+Its own head r_alpha lies in T(X). Either r_alpha is recurrent in
+C_alpha, in which case Section1 gives ordinary SUPPORTED return,
+or it is absent from T(C_alpha). In the latter case
+
+\[
+\varnothing\ne T(C_\alpha)\subsetneq T(X).
+\tag{2.2}
+\]
+
+Under badness the first alternative is impossible. Passing from X to
+C_alpha changes only the module source on SAME A, retains infinite pd
+and a genuine ordinary tail, and strictly lowers |T|. The new source is
+again primitive-cyclic. No projective-cover expansion has been ignored:
+its whole ordinary resolution is what defines T(C_alpha).
+
+### Whole-class closure
+
+Assume EVERY infinite-pd primitive-cyclic module X has ARBITRARILY LATE
+actual syzygies admitting minimal head lifts with finite-pd full relation
+kernel F(Y). Then Universal Gap A holds for this whole arbitrary-size,
+arbitrary-Loewy class, with a possibly OFF-DIAGONAL ordinary simple pair.
+
+Proof: gd infinity supplies an infinite simple, hence an infinite
+primitive-cyclic source. Under badness choose a source with minimum
+nonempty |T| among ALL infinite primitive-cyclic modules. This minimum
+exists among finitely many subsets of the N projective labels, not
+because there are finitely many modules or isomorphism states.
+Choose an eligible Y beyond all nonrecurrent projective heads.
+Equation(2.2) yields another infinite primitive-cyclic source with a
+strictly smaller nonempty |T|. Contradiction. An iterative version has
+at most |T(X)|-1 successful strict source moves.
+
+Only the error pd at the chosen event needs to be finite. Values over
+different modules/indices can be unbounded. No uniform all-index Tor
+comparison or numerical pd bound is claimed. This is a new proper
+ordinary finite-error elimination criterion and closing mechanism,
+not a theorem that arbitrary finite-pd map images can be erased.
+
+The same proof applies to a designated source family of primitive-cyclic
+modules if it contains an infinite source and the eligible cyclic images
+remain in that family. Actual syzygy systems that decompose into such
+primitive-cyclic states have F=0 on those direct-sum decompositions;
+the older single-head FINITE-system theorem is reused and its finite
+state restriction is unnecessary for this argument. No blanket
+syzygy-finiteness or closure of an arbitrary chosen family is inferred.
+
+For example elementary Nakayama algebras have uniserial primitive
+projectives/quotients and uniserial actual cover kernels; nonzero
+syzygies have a single primitive head, so F=0. This familiar class is
+a reuse/corollary, not a novelty or next-size classification claim.
+N7's actual permanent cyclic tail is handled by the ordinary
+OFF-DIAGONAL head detector of Section1, retaining C105's witness.
+
+The direct RIGHT proof uses cyclic submodules u_alpha A generated by
+primitive right head lifts, RIGHT finite pd of the relation kernel and
+ordinary Tor with all LEFT modules. A recurrent left detector equal to
+the right cyclic head selects supported Tor by right composition
+devissage. It is not the quarantined opposite-infinite-plus transfer.
+
+## 3. When every cyclic image is finite-pd, the REAL relation kernel descends in Loewy length
+
+There is a second correct ordinary move in the SAME real sequence(1.1).
+Assume instead every C_alpha has finite LEFT pd, h=max pd C_alpha,
+while Y has infinite LEFT pd. Then F(Y) has infinite LEFT pd, and for
+every R and r>h the ordinary LES gives
+
+\[
+\operatorname{Tor}_{r+1}^A(R,Y)
+ \cong\operatorname{Tor}_r^A(R,F(Y)),\qquad
+T(F(Y))=T(Y).
+\tag{3.1}
+\]
+
+Every C_alpha is a submodule of Y. Equation(1.2) implies
+
+\[
+\operatorname{Loewy}(F(Y))
+ \le\operatorname{Loewy}(Y)-1.
+\tag{3.2}
+\]
+
+Thus replacing Y by the FULL actual relation kernel retains the
+ordinary infinite tail and strictly decreases its positive Loewy
+length. It is a valid finite descent for CONSECUTIVE applications of
+this same all-images-finite module move. It cannot continue at a
+nonzero semisimple infinite-pd module, whose head images are the
+infinite-pd simples themselves.
+
+This is NOT a proof that Loewy decreases throughout arbitrary syzygy
+iteration: taking new projective covers/syzygies can increase Loewy.
+Nor is F necessarily primitive-cyclic, or its new head automatically
+recurrent. Do not stitch(3.2) to Section2 without proving those
+additional eligibility conditions. The mixed case—both an infinite
+cyclic image and an infinite full relation kernel—still lacks the
+ordinary carrier comparison(1.4). It remains a real global obstruction.
+
+## 4. Sequential intersections suffice; pairwise intersections do NOT
+
+For a chosen ordering of the actual cyclic images, put
+U_m=sum_(alpha<=m) C_alpha and let F_m be the kernel of
+direct sum_(alpha<=m) C_alpha -> U_m. Projection to the last summand
+gives the REAL exact module sequence
+
+\[
+0\to F_{m-1}\to F_m\to C_m\cap U_{m-1}\to0.
+\tag{4.1}
+\]
+
+F_1=0. If EVERY sequential intersection C_m intersect(sum_previous C)
+has finite pd, then the FULL F(Y) has finite pd, with bound at most
+the maximum of those finitely many intersection pds. This is a proved
+ordinary eligibility test for Section2. Pairwise finite-pd intersections
+do not imply the sequential condition, as the actual counterexample
+below proves. Conversely finite pd of F alone does not automatically
+pass to its submodules/quotients F_m or the individual intersections.
+
+## 5. C113 — Projective images and zero pairwise intersections can still have infinite-pd full relations
+
+For p>=3 over Q, use vertices v,r_1,...,r_p. Take arrows
+c_i:v->r_i,a_i:r_i->v and two independent radical-square elements
+d_0,d_1 in(v,v). The ONLY nonzero radical products are
+
+\[
+a_i c_i=w_{i0}d_0+w_{i1}d_1,
+\tag{5.1}
+\]
+
+where the vectors w_i in Q^2 span Q^2 and are pairwise nonparallel.
+For instance use(1,0),(0,1), then(1,j),1<=j<=p-2. All other radical
+products vanish. This gives an associative elementary algebra of
+dimension3p+3 and J^3=0. Associativity follows because every nonzero
+radical product lies in the annihilated span(d_0,d_1).
+
+Actual LEFT projectives have
+
+\[
+P_{r_i}=\langle e_{r_i},a_i\rangle,\qquad
+P_v=\langle e_v,c_1,...,c_p,d_0,d_1\rangle.
+\tag{5.2}
+\]
+
+The real first syzygy Y=Omega L_v=JP_v has head sum_i L_(r_i),
+radical L_v^2, and a_i c_i=w_i. Each actual head-generated image
+C_i=A c_i has basis(c_i,w_i) and is isomorphic to PROJECTIVE P_(r_i).
+Distinct C_i have different heads, and their radical lines are
+nonparallel, so
+
+\[
+\operatorname{pd}C_i=0,\qquad C_i\cap C_j=0\quad(i\ne j).
+\tag{5.3}
+\]
+
+Nonetheless the genuine minimal cover/direct image sum
+direct sum_i P_(r_i)->Y has kernel
+
+\[
+F(Y)=L_v^{p-2}.
+\tag{5.4}
+\]
+
+The head map is an isomorphism and the radical map is the rank-two
+matrix with columns w_i, giving its p-2-dimensional semisimple kernel.
+These are actual maps, not a numerical incidence model. In particular
+
+\[
+\Omega L_v=Y,\qquad\Omega Y=L_v^{p-2},\qquad
+\Omega^{2m}L_v=L_v^{(p-2)^m}\quad(m\ge1).
+\tag{5.5}
+\]
+
+All covers are genuine minimal covers. This proves pd L_v infinity,
+pd F(Y) infinity, and ordinary diagonal Tor_(2m)(R_v,L_v) of dimension
+(p-2)^m for EVERY m>=1. Thus the example is already infinite-plus and
+is NOT a Universal Gap A counterexample. The actual relation obstruction
+reappears in odd syzygy stages; it is not an isolated arbitrary module.
+
+With the first three w_i=(1,0),(0,1),(1,1), the first two cyclic images
+have direct projective sum, but
+C_3 intersect(C_1+C_2)=J C_3=L_v of infinite pd. It is invisible to
+EVERY pairwise intersection test. This breaks the proposed replacement
+of the FULL relation test by individual finite-pd images or pairwise
+finite-pd/zero cross intersections, in actual ordinary minimal tails.
+
+It also calibrates Section3 positively: all image modules are projective,
+so the correct object to keep is the infinite-pd relation kernel, with
+T(F)=T(Y), ordinary Tor shifted by1 and Loewy length dropping2->1.
+Keeping only the sum of projective images erases the actual ordinary
+infinite tail instead.
+
+## 6. Exact targeted calibration and normal audit
+
+Cyclic-Head-Relations-Evidence checks the p=4 five-TOTAL-vertex
+dimension15 instance. It tests ONE arbitrary-p mechanism; it does not
+reopen four vertices or classify five vertices. Passed3375 complete
+literal associativity triples,12 retained minimal cover certificates,
+180 integral basis inverses,1 actual relation-kernel isomorphism,
+4 actual projective image covers/inclusions and6 zero pairwise
+intersections. Six actual minimal simple-cover degrees match(5.5).
+Infinity/all-p identities have separate written ordinary proofs.
+Ranks/pairwise nonparallel checks are explicitly over Q; no unsupported
+claim in small characteristics. Shared helpers/this researcher are
+not independent verification. No routine checksums or HTML.
+
+Normal adversarial audit:
+
+- source objects are actual quotients of ONE primitive projective;
+  switching to a new cyclic image preserves that source class;
+- minimal primitive head lifts give a REAL sum epimorphism, with the
+  ENTIRE relation kernel and F subset JH, not just pairwise overlaps;
+- ordinary projection iso in(1.3) requires r>pd F+1, both neighboring
+  error Tors zero. It preserves every detector in the SAME degree;
+- primitive cyclic composition support lies in the PHYSICAL column
+  C_r, so r-recurrence returns ordinary supported SIMPLE Tor via true
+  devissage; witnesses can be OFF-DIAGONAL as N7 requires;
+- a sufficiently late original minimal syzygy has EVERY head in T(X).
+  One earlier transient head would not justify strictness;
+- T(C) subset T(X) is proved using full high Tor comparison. No
+  smaller-image-carrier/no-expansion assumption replaces it;
+- |T| minimum uses finite label subsets, not finite module states;
+- whole-class closure needs arbitrarily late eligibility for EVERY new
+  infinite primitive-cyclic source, or a checked closed source family;
+- pointwise finite relation pds suffice for recurrence, no uniform
+  all-index cutoff/finitistic bound or quantitative gd bound;
+- all-images-finite move keeps the actual infinite relation kernel,
+  shifts ordinary Tor for r>h and genuinely lowers Loewy by1;
+- consecutive Loewy descent is not generalized to a new-syzygy process;
+  it need not stay primitive-cyclic/head-recurrent;
+- sequential intersection SES is proved. Pairwise tests are genuinely
+  inadequate even with ALL images projective, in a recurrent real tail;
+- no graph/support-only return, singular/Tate substitution, opposite
+  transfer, pruned-complex exactness or infinite-simple-count assertion;
+- normal self-audit/shared exact arithmetic is not independent/formal
+  proof acceptance or a novelty claim.
+
+## 7. Remaining closing problem
+
+C112 proves a correct high ordinary Tor bridge, strict finite recurrent
+carrier source descent, whole-class closure WITHOUT finite states, and
+a separate correct Loewy descent when all images are finite-pd.
+C113 breaks a natural but false pairwise/individual-image weakening.
+These are closing mechanisms and an exact load-bearing obstruction,
+not new derived invariants.
+
+General mixed persistent cores can have BOTH infinite-pd cyclic images
+and infinite-pd full relations; (1.3) then does not compare carriers.
+C108/C110 already close some failures of finite-relation eligibility:
+their nonsimple Loewy2 indecomposable multihead zigzag tails have
+nonzero semisimple relation kernels, all LEFT simples infinite, so
+those relation kernels have infinite pd. Such positive examples must
+not be discarded. Ordinary supported return or a safe strict reduction
+in the remaining mixed higher-radical core is the actual next task.
+
+C107/C110 closed cases and all C105/C106/C111 ordinary tools remain.
+Every original bounded-screening, local-trivial, Target-A/Primitive/
+Binary/higher-output/supported-weight branch stays on the global map.
+Universal Gap A remains OPEN; no completion claim.

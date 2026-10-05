@@ -1,0 +1,30 @@
+from pathlib import Path
+import json
+def pd(c,t,l):
+    seen=set();n=0
+    while l:
+        if l==c[t]:return n
+        key=(t,l)
+        if key in seen:return None
+        seen.add(key)
+        assert 0<l<c[t]
+        t,l=(t+l)%len(c),c[t]-l
+        n+=1
+    return max(0,n-1)
+def ideal_pd(c,s):
+    terms=[pd(c,(i+s)%len(c),c[i]-s) for i in range(len(c)) if c[i]>s]
+    return None if None in terms else max(terms,default=0)
+hits=[];families=0
+for N in range(4,25):
+    for d in range(6,3*N+2):
+        c=[d-1]+[d]*(N-1)
+        assert all(c[(i+1)%N]>=c[i]-1 for i in range(N))
+        families+=1
+        if ideal_pd(c,3) is not None and ideal_pd(c,5) is None:
+            hits.append({'N':N,'d':d,'c':c,'J3_LEFT_pd':ideal_pd(c,3),
+                         'J5_LEFT_pd':None,'simples_LEFT_pd':[pd(c,i,1) for i in range(N)]})
+output={'pattern':'LEFT(c0=d-1,ci=d), exact actual-uniserial formula only',
+        'families':families,'hits':hits,'scope':'Not a global theorem; any hit requires actual full-cover replay.'}
+Path(r'C:\Users\pcp\AppData\Local\Temp\UGA-20261005-projective-ideal\nakayama-pattern-search.json').write_text(json.dumps(output,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'families':families,'hit_count':len(hits),'first_hits':hits[:2]}))
+

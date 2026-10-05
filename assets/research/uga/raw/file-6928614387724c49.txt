@@ -1,0 +1,161 @@
+"""Exact extension of the frozen actual-cover and ordinary Yoneda helpers.
+
+One connected triangular calibration; the arbitrary-size theorem is written
+separately. No pruning, extrapolation, default hashes or independent claim.
+"""
+from pathlib import Path
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=root/'runs/2026-10-04/General-Cube-Zero-Evidence/verify_general_cubezero_linear_core.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nN=5;f=N;g=N+1',1)[0],str(frozen),'exec'),globals())
+from math import gcd
+
+N=5
+r=2
+f=lambda j:N+j
+basis=[(f'e{i}',i,i) for i in range(N+r+1)]
+for i in range(N):
+    basis.extend([(f'x{i}',(i+1)%N,i),(f'z{i}',(i+2)%N,i)])
+for j in range(r):
+    basis.append((f'h{j}',f(j+1),f(j)))
+basis.extend([('c0',f(0),0),('c1',f(0),N-1),('c2',f(0),N-2)])
+ix={name:i for i,(name,_,_) in enumerate(basis)}
+products={(ix[f'x{(i+1)%N}'],ix[f'x{i}']):ix[f'z{i}'] for i in range(N)}
+products.update({(ix['c0'],ix[f'x{N-1}']):ix['c1'],
+                 (ix['c1'],ix[f'x{N-2}']):ix['c2'],
+                 (ix['c0'],ix[f'z{N-2}']):ix['c2']})
+A=Table(N+r+1,basis,products)
+O=A.opposite()
+assert len(A.basis)==3*N+2*r+4==23
+def power_indices(k):
+    columns=A.alg.radical_powers[k-1] if k-1<len(A.alg.radical_powers) else []
+    selected=[]
+    for col in columns:
+        support=[i for i,x in enumerate(col) if x]
+        assert len(support)==1 and col[support[0]]==1
+        selected.append(support[0])
+    return selected
+assert power_indices(3)==[ix['c2']-A.vertices]
+assert A.alg.radical_powers[3]==[]
+
+def identity_iso(source,target,label):
+    assert source.dimensions==target.dimensions
+    iso=ss.check_isomorphism(source,target,ss.encode(
+        [[rk.unit_vector(d,j) for j in range(d)] for d in source.dimensions]))
+    counts['actual_kernel_isomorphisms']+=1
+    return {'label':label,'isomorphism':iso}
+
+left_finite=[]
+for j in range(r+1):
+    X=sr.Module.simple(A.alg,f(j))
+    terms=[]
+    for n in range(r-j+1):
+        K,info,cert=cover(X)
+        assert info['cover_multiplicities']==[int(i==f(j+n)) for i in range(A.vertices)]
+        if n<r-j:
+            iso=identity_iso(K,sr.Module.simple(A.alg,f(j+n+1)),
+                             f'actual LEFT Omega Lf{j+n}=Lf{j+n+1}')
+        else:
+            assert not any(K.dimensions)
+            iso={'label':'FULL kernel is zero'}
+        terms.append({'degree':n,'cover':cert,'kernel_check':iso})
+        X=K
+    left_finite.append({'label':f(j),'pd':r-j,'terms':terms})
+
+# J^3 really is the finite-pd LEFT simple; its RIGHT label is old/infinite.
+deep_local=[[b for b in [ix['c2']] if A.basis[b][1]==i] for i in range(A.vertices)]
+deep_left=supported_module(A,deep_local)
+deep_left_iso=identity_iso(deep_left,sr.Module.simple(A.alg,f(0)),
+                           'whole actual J^3 equals LEFT Lf0')
+deep_right_local=[[b for b in [ix['c2']] if O.basis[b][1]==i] for i in range(O.vertices)]
+deep_right=supported_module(O,deep_right_local)
+deep_right_iso=identity_iso(deep_right,sr.Module.simple(O.alg,N-2),
+                            'whole actual J^3 equals RIGHT R_(N-2)')
+
+# Each old RIGHT projective is the original truncated-cycle projective.
+old_period_steps=[]
+for i in range(N):
+    X=sr.Module.simple(O.alg,i)
+    K,_,c0=cover(X)
+    K2,_,c1=cover(K)
+    iso=identity_iso(K2,sr.Module.simple(O.alg,(i-3)%N),
+                     f'FULL actual RIGHT Omega^2 R{i}=R{(i-3)%N}')
+    old_period_steps.append({'label':i,'covers':[c0,c1],'kernel_isomorphism':iso})
+period=2*N//gcd(N,3)
+assert period==10
+
+right_finite=[]
+for j in range(r+1):
+    X=sr.Module.simple(O.alg,f(j))
+    terms=[]
+    for n in range(j+2):
+        K,info,cert=cover(X)
+        label=f(j-n) if n<=j else 0
+        assert info['cover_multiplicities']==[int(i==label) for i in range(O.vertices)]
+        if n<j:
+            iso=identity_iso(K,sr.Module.simple(O.alg,f(j-n-1)),
+                             'actual RIGHT finite simple step')
+        elif n==j:
+            P0,_=projective(O,0)
+            iso=identity_iso(K,P0,'whole actual RIGHT kernel W=e0A')
+        else:
+            assert not any(K.dimensions)
+            iso={'label':'FULL kernel is zero'}
+        terms.append({'degree':n,'cover':cert,'kernel_check':iso})
+        X=K
+    right_finite.append({'label':f(j),'pd':j+1,'terms':terms})
+
+loewy=[]
+for i in range(A.vertices):
+    powers=[]
+    for k in range(1,5):
+        selected=set(power_indices(k))
+        powers.append(sum(A.basis[A.vertices+b][1]==i for b in selected))
+    assert powers[2]==int(i==f(0))
+    loewy.append({'RIGHT_projective_label':i,'radical_power_dimensions':powers})
+assert right_finite[-1]['terms'][r]['cover']['cover_multiplicities'][f(0)]==1
+assert right_finite[-1]['terms'][r+1]['cover']['cover_multiplicities'][0]==1
+
+# Whole J^2 is NOT finite-pd on the LEFT: its source N-2 column is
+# the actual extension 0 -> Lf0 -> H -> L0 -> 0.
+Hlocal=[[b for b in [ix[f'z{N-2}'],ix['c2']] if A.basis[b][1]==i] for i in range(A.vertices)]
+H=supported_module(A,Hlocal)
+assert H.dimensions==[int(i in [0,f(0)]) for i in range(A.vertices)]
+assert [len(v) for v in H.radical_bases()]==[int(i==f(0)) for i in range(A.vertices)]
+Hcover=cover(H)[2]
+
+# Actual degree-one ordinary products, not a singular/stable proxy.
+# This calibration has a real length grading; the general theorem uses
+# only the injection of literal V-tensor cycles into ordinary bar homology.
+rad2=set(power_indices(2))
+V=[b for b in A.radical if b-A.vertices not in rad2]
+actual,lifts=degree_one_products(A,4)
+bar=[]
+for n in range(1,5):
+    cells,words=bar_linear_cells(A,V,n)
+    assert cells==actual[n-1]
+    bar.append({'degree':n,'composable_words':words,'literal_linear_cycle_cells':cells,
+                'ordinary_Ext_one_word_cells':actual[n-1]})
+assert sum(map(sum,actual[2]))>0
+assert sum(map(sum,actual[3]))==0
+
+result={'status':'passed','python':sys.version,'field':'Q','independent_verification':False,
+        'counts':counts,'parameters':{'N':N,'r':r},
+        'algebra':A.payload,'dimension':len(A.basis),'J4_zero':True,'J3_nonzero':True,
+        'LEFT_J3_pd':r,'RIGHT_J3_pd':'infinity by actual old RIGHT simple periods',
+        'LEFT_finite_simple_resolutions':left_finite,'RIGHT_finite_simple_resolutions':right_finite,
+        'deep_LEFT_module':ss.module_payload(deep_left),'deep_LEFT_isomorphism':deep_left_iso,
+        'deep_RIGHT_isomorphism':deep_right_iso,
+        'all_old_RIGHT_two_step_actual_kernels':old_period_steps,
+        'all_degree_diagonal_period_from_written_iteration':period,
+        'RIGHT_projective_Loewy_data':loewy,
+        'pd_LEFT_J2_infinity_actual_extension':{'module':ss.module_payload(H),'cover':Hcover,
+            'actual_radical':f(0),'actual_simple_quotient':0},
+        'ordinary_Ext_one_lifts':lifts,'ordinary_products_and_literal_cycles':bar,
+        'highest_nonzero_Ext_one_word_length':3,
+        'scope':'One literal connected calibration using frozen exact helpers. Written proofs supply all N,r and all degrees/fields. No independence/formal acceptance or universal claim from a prefix.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':result['status'],'dimension':len(A.basis),'counts':counts,
+                  'LEFT_J3_pd':r,'RIGHT_J3_pd':'infinite','ordinary_Ext_one_lifts':lifts,
+                  'highest_Ext_one_word_length':3,'actual_old_diagonal_period':period}))

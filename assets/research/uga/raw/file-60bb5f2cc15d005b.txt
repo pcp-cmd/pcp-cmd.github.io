@@ -1,0 +1,31 @@
+# Nonperfect shallow-complement ordinary supported return
+
+Continue T22's corner complex. Test whether finite LEFT vertex complements
+whose simples have ambient pd at most one admit ordinary supported return
+and badness-preserving strict dimension descent without perfection of Ae.
+Use actual minimal projective kernels and retain the real unbounded cone
+cohomology. No deleting finite-pd images or graph-to-Tor inference.
+
+Deliver a same-degree Peirce-weighted ordinary Tor inequality, uniform
+supported cutoff with zero loss, exact chosen-side finite/infinite labels,
+and the direct RIGHT theorem. Test opposite-side label preservation and
+the depth-two boundary using actual algebras.
+
+Deliverables: verify_shallow_corner.py, shallow-corner-result.json,
+computation-record.json and the separate T23 proof Run. The connected
+projective-prefix/Nakayama family varies finite-complement sizes 1,2,4;
+all deleted LEFT pds are one. Actual opposite RIGHT labels are replaced
+in the retained corner, and supported Tor changes detector. A5 recalibrates
+pd-two failure and the ordinary hyper-Ext d2 obstruction. A connected
+ten-dimensional calibration also has an infinite original LEFT source
+and its ENTIRE finite-LEFT complement of pd two removed; its corner
+supported source pair is fully screened, while another ambient pair
+already returns. This tests the actual infinite-source anchor explicitly.
+
+Finite arithmetic verifies literal kernels, table associativity and
+integral basis inverses. The general theorem, all-parameter statements and
+d2 ranks require the separate written proof; ranks are forced by actual
+ordinary Ext/convergence, not independently computed chain-level pages.
+Frozen helpers are reused without rerunning their old main computations;
+all dependencies are hashed. Same-author audit, NOT independent verification.
+Universal Gap A stays OPEN.

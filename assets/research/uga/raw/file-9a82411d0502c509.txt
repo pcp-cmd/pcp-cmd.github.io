@@ -1,0 +1,406 @@
+# T17 — Eventual even Tor gives eligible count descent and an inherited all-size class
+
+Date: 2026-10-04 (continuation begun before the local midnight).
+
+Status: complete self-audited ordinary proofs, reusing the established
+C058/C062/C067 bridges and T16's unchanged actual countercalibration;
+no new computation, no novelty claim, not independently verified.
+Universal Gap A remains OPEN for arbitrary algebras.
+
+This continues immediately after the T16 checkpoint. It responds to
+the precise obstruction that infinite-left-vertex deletion can create
+new infinite quotient labels. A weaker ordinary comparison than a
+section or all-degree Tor isomorphism prevents that obstruction:
+surjectivity in every sufficiently high EVEN degree, on ALL retained
+simple pairs. It constructs an eligible strict count move and proves
+inheritance of a finite all-block comparison hypothesis. The conclusion
+closes that whole class at every finite size and merges existing
+section, parity and finite-corridor mechanisms when they supply the
+stated ordinary maps. General existence of those maps is not proved.
+
+## 1. Actual ordinary quotient maps
+
+A is finite-dimensional elementary over any field; use the left/right
+simples, beta_zy(n) and physical D(y,z)=dim e_yAe_z from T16.
+I_L(A) and I_R(A) are the two separately defined infinite-pd sets.
+
+For a vertex block S, put e_S=sum_{x in S}e_x and
+
+\[
+C_S=A/Ae_SA.
+\]
+
+The retained simples have the same labels. The natural ordinary
+relative bar map for A -> C_S gives
+
+\[
+\epsilon^S_n:\operatorname{Tor}^A_n(R_z,L_y)
+\longrightarrow\operatorname{Tor}^{C_S}_n(R_z,L_y),\qquad y,z\notin S.
+\tag{1.1}
+\]
+
+This map exists without a homological epimorphism or a section.
+For nested blocks T subset S it factors, literally on the ordinary
+bar complexes, through A -> C_T -> C_S. This is a chain-map statement,
+not a comparison inferred from singular/Tate information.
+
+### Hypothesis E_N for one quotient
+
+There is a finite N>=0 such that (1.1) is surjective for EVERY retained
+pair and EVERY EVEN n>=N. Neither odd degrees, injectivity, a split
+chain map, a section nor a coefficient perfectness hypothesis is part
+of this ordinary statement.
+
+It concerns all simple pairs. Supported-pair comparison alone will
+not give the finite-pd-label control below.
+
+## 2. High even comparison controls individual simple pds
+
+### Theorem 2.1 — No new infinite labels on either side
+
+Under E_N for A -> C_S,
+
+\[
+I_L(C_S)\subseteq I_L(A)\setminus S,\qquad
+I_R(C_S)\subseteq I_R(A)\setminus S.
+\tag{2.1}
+\]
+
+More precisely, if a=pd_A L_y<infinity for y notin S and
+
+\[
+m=2\left\lceil\frac{\max(N,a+1)}2\right\rceil,
+\]
+
+then
+
+\[
+\operatorname{pd}_{C_S}L_y\le m-1.
+\tag{2.2}
+\]
+
+The direct right bound is identical with a=pd_right,A R_z.
+
+#### Proof
+
+The even integer m is strictly greater than a and at least N.
+Every A-Tor_m(R_z,L_y) is zero. For ALL retained z, surjectivity
+makes C_S-Tor_m(R_z,L_y) zero. Thus the ENTIRE m-th minimal
+C_S-projective term of L_y is zero. A minimal resolution cannot
+restart after a zero cover, so pd_C_S L_y<=m-1.
+
+For a finite-pd right R_z, use all retained LEFT tests L_y.
+Their vanishing at the same m makes the whole m-th minimal RIGHT
+projective term zero. This proves the direct right bound and both
+inclusions. No identification of infinite-pd side labels is used. QED.
+
+In particular C062's surjectivity in all even degrees gives a finite
+quotient pd bounded by a+1 for every ambient finite-pd simple, even
+though it supplies no full Tor isomorphism or algebra section. This
+is the missing ordinary no-new-label consequence of that bridge.
+No converse of (2.1) is claimed.
+
+## 3. Even comparison also preserves absence of visible return
+
+Reuse C062, Lemma 1.1, whose input is solely the ordinary cover identity.
+For any elementary ordinary algebra B, set
+
+\[
+b_n(B)=\sum_{y,z}\dim(e_yBe_z)\,
+              \dim\operatorname{Tor}^B_n(R_z,L_y),\qquad
+t_n(B)=\sum_y\dim e_y\Omega_B^n L_y.
+\]
+
+Then b_n=t_n+t_{n+1}, with nonnegative integer summands. If all
+sufficiently high EVEN b_n were zero, both parity sequences t_n
+would eventually be zero, and then all high b_n would be zero.
+Consequently infinite + in B always gives some fixed physically
+supported pair in infinitely many EVEN degrees.
+
+### Theorem 3.1 — Supported infinity lifts through E_N
+
+If C_S is infinite + and E_N holds, A is infinite +.
+
+Choose the supported even tail in C_S just described. Discard its
+finitely many degrees below N. Surjectivity gives a nonzero ordinary
+A class for the SAME retained pair in each remaining degree.
+The physical component e_yC_Se_z is a quotient of e_yAe_z, so its
+nonzero support lifts too. QED.
+
+Hence a non-infinite-+ A has non-infinite-+ C_S under E_N.
+This is stronger than merely producing an infinite ordinary pair
+with unproved reverse support. It does not say a preselected
+quotient pair must itself have an even tail.
+
+## 4. An actual badness-preserving strict count move
+
+### Theorem 4.1 — Eventual even comparison is an eligible count reduction
+
+Let A be hypothetical bad: gd A=infinity and A is not infinite +.
+Choose x in I_L(A), and put C=A/Ae_xA. If this quotient satisfies
+E_N, then C is bad and
+
+\[
+\boxed{|I_L(C)|\le |I_L(A)|-1,\qquad
+       |I_R(C)|\le |I_R(A)|.}
+\tag{4.1}
+\]
+
+Thus the actual left count strictly decreases, and so does the sum
+of the separately chosen left/right counts. The statement does not
+require x in I_R(A).
+
+#### Proof
+
+Theorem 3.1 passes absence of infinite + to C.
+Reuse the actual-tail result C058 to prove gd C=infinity. To spell
+out its ordinary input: high terms P_n(L_x) have e_xP_n=0 by
+non-infinite-+, since each reverse-supported pair from L_x has
+only finitely many nonzero Tor degrees. Thus they use only Ae_z
+with e_xAe_z=0. Each such projective is annihilated by Ae_xA and
+is exactly Ce_z. A sufficiently high real X=Omega_A^s L_x has
+its SAME minimal resolution over A and C. It has infinite A-pd,
+hence infinite C-pd. In particular C is not finite-gldim.
+
+Theorem 2.1 creates no new infinite labels in C on either side.
+Since the actually infinite left label x has been removed, the
+left inclusion is strict in cardinality, giving (4.1). QED.
+
+For a chosen infinite RIGHT label there is a direct right version.
+The high right terms of R_x have Q_n e_x=0 and are sums of e_yA
+with e_yAe_x=0. They are annihilated by Ae_xA and equal e_yC,
+so the same actual right tail has infinite C-pd. Equation (2.1)
+then decreases the right count by at least one and does not
+increase the left count. No opposite-infinite-+ theorem is used.
+
+This proves both parts of eligibility: actual badness preservation
+AND strict count decrease. Merely erasing an infinite label, or
+showing that the quotient is smaller, would prove neither by itself.
+
+Existing bridges supply E_N under their EXACT hypotheses:
+
+- an ordinary corner section (C061) gives all-degree split comparison,
+  hence E_0;
+- C062's actual negative homology, zero in positive even weights and
+  C^e-projective in every odd weight, gives E_0, even for unbounded
+  degrees and nonzero higher operations;
+- C067's bounded negative ceiling a, actual C^e-pd bound D and actual
+  derived tensor nilpotence ell give high same-pair isomorphism for
+  n>U+1, U=(ell-1)(a+1+D), hence E_{U+2}.
+
+No such coefficient or section hypothesis is inferred automatically.
+These ordinary facts provide a strict count move at a checked
+deletion even when there is no ordinary section. Their coefficient
+hypotheses are not assumed to survive a second deletion.
+
+## 5. Proved inheritance without assuming coefficient inheritance
+
+### All-block eventual-even comparison property
+
+For every nonempty proper vertex block S, assume A -> C_S satisfies
+E_{N_S} for some finite N_S. The number of blocks is finite. Choose
+
+\[
+N=\max_S N_S
+\tag{5.1}
+\]
+
+(put N=0 for a one-vertex algebra). Call this the all-block hypothesis;
+it is a statement about ACTUAL ordinary maps, not an assertion that
+every finite algebra has them. A primitive-only comparison hypothesis
+does not suffice for the inheritance proof below.
+
+### Lemma 5.1 — The same ordinary hypothesis passes to every block quotient
+
+Let B=C_T. For a block U of retained vertices, its quotient is
+D=A/Ae_{T union U}A. For each pair retained in D, natural maps factor
+
+\[
+\operatorname{Tor}^A_n\longrightarrow
+\operatorname{Tor}^B_n\longrightarrow\operatorname{Tor}^D_n.
+\tag{5.2}
+\]
+
+The composite is onto for every even n>=N, by the all-block hypothesis
+at T union U. Therefore the SECOND map is onto in those degrees.
+B has the same all-block property with cutoff at most N. QED.
+
+This proof does not require the first map to be onto, a chain section,
+or any inheritance of the negative modules, formality, projectivity,
+perfectness or tensor nilpotence. It proves the required ordinary-map
+inheritance directly. An available coefficient model is one way to
+certify an original comparison, not the carrier of the induction.
+
+### Theorem 5.2 — Whole-class closure at every finite size
+
+Every elementary finite-dimensional algebra satisfying the all-block
+eventual-even comparison hypothesis satisfies Universal Gap A.
+
+Suppose A in this class were bad. If either infinite-simple count
+were at most two, C080 would already contradict badness. Otherwise
+choose an infinite LEFT simple x and apply Theorem 4.1. It produces
+a bad quotient with strictly lower left count, and Lemma 5.1 preserves
+the all-block property. Repeat on the actual current quotient.
+
+At every step eligibility is proved, no new infinite labels occur,
+and the left count drops by at least one. After at most
+|I_L(A)|-2 steps a bad algebra with at most two infinite left simples
+would remain, contradicting C080. Thus no bad A in this class exists.
+The direct right selection gives the corresponding bound
+|I_R(A)|-2 on a right-chosen chain. QED.
+
+The theorem permits different original block comparisons to be
+certified by different bridge mechanisms. It does not claim that
+primitive C062/C067 hypotheses automatically hold for every block,
+or that the all-block class contains the entire C061 infinite-vertex-
+only class. The latter already has its own proved section inheritance.
+
+An explicit tower of checked E_N primitive moves also terminates by
+the same count argument over a C080 terminal algebra, even without
+the all-block assumption. That version still requires checking each
+actual next move; it is not an automatic-existence theorem.
+
+## 6. Uniform bound for this class under all-degree supported vanishing
+
+### Theorem 6.1
+
+Assume the all-block comparison cutoff N and suppose ALL reverse-
+supported A simple-pair Tor vanishes for EVERY n>=M>=1. Let
+
+\[
+M_* = 2\left\lceil\frac{\max(M,N)}2\right\rceil.
+\tag{6.1}
+\]
+
+If A has v vertices, then
+
+\[
+\boxed{\operatorname{gldim}A\le(v-1)M_*.}
+\tag{6.2}
+\]
+
+#### Proof
+
+For every block quotient B=C_S, a B-supported pair is physically
+A-supported. At all even n>=M_* its A-Tor is zero and the comparison
+is onto. Thus b_n(B)=0 for every such even degree. The nonnegative
+identity b_n=t_n+t_{n+1} makes t_n(B)=0 for ALL n>=M_* and then
+b_n(B)=0 for ALL n>=M_*. Every supported B pair vanishes in this
+full range, since it is a nonnegative summand of b_n(B).
+
+Now induct on the number of vertices, using actual resolutions.
+With one vertex, a nonsemisimple finite local algebra has a
+nonterminating minimal free simple resolution and nonzero supported
+diagonal Tor in every degree. The assumed vanishing therefore makes
+that endpoint semisimple, with gd zero.
+
+For an arbitrary vertex x of the current algebra B, all terms in
+the minimal resolution of L_x from degree M_* onward have zero x component.
+As in Theorem 4.1, the real X=Omega_B^{M_*} L_x has the SAME minimal
+resolution over the ordinary quotient D=B/Be_xB. This comparison
+does not require L_x to have infinite pd; zero X is allowed.
+By Lemma 5.1 and the preceding support-vanishing argument, D has
+both the all-block comparison property and the cutoff M_*.
+The inductive bound is gd D<=(number_of_vertices(B)-2)M_*.
+Ordinary dimension shifting gives pd_B L_x<=M_*+gd D.
+This holds for EVERY x, proving (6.2). QED.
+
+The bound retains the actual N and the EVERY-pair/EVERY-degree
+vanishing hypothesis. It is not a universal excursion/page bound,
+a bound for arbitrary A, or a short finite-window test. Even-only
+information is promoted to the full supported range only through
+the proved nonnegative ordinary cover identity.
+
+## 7. Exact obstruction calibration, reused without recomputation
+
+T16's unchanged A22 has pd_A L1=pd_A L2=2, but its actual quotient
+C6 after deleting infinite LEFT vertex3 contains the square-zero
+two-cycle. For instance
+
+\[
+\operatorname{Tor}^{A22}_{2r}(R_1,L_1)=0\ (r\ge2),\qquad
+\operatorname{Tor}^{C6}_{2r}(R_1,L_1)=k\ (r\ge1).
+\tag{7.1}
+\]
+
+Both endpoints are retained and the quotient pair is diagonal-
+supported. Thus this actual infinite-vertex deletion fails E_N
+for EVERY finite N. Its newly infinite quotient labels are precisely
+what Theorem 2.1 excludes under a real even comparison. The example
+already has the separate visible (Rv,Lv) tail; it remains a counter-
+calibration to automatic comparison/count descent, not to Gap A.
+
+No multiplication table, bounded computation, old Run or computation
+record is rerun or rewritten. Its literal module proof and exact
+artifact hashes are reused. C073 additionally demonstrates why
+even supported-pair surjectivity does not suffice for all-label
+control. For its A_tri -> C_tri, the supported (R0,L0) bar consists
+solely of t letters and the quotient map is the identity in every
+degree. Every other supported C_tri pair has zero positive Tor:
+L1 is left projective, and the physical a component is e1 C_tri e0.
+Thus every supported even comparison is onto, yet the formerly
+finite-pd RIGHT R1 becomes infinite-pd through the reverse-invisible
+tests Tor(R1,L0). The ALL-retained-pair condition in Theorem 2.1
+cannot be replaced by supported comparison alone.
+
+## 8. Normal adversarial self-audit
+
+1. Every comparison is an actual ordinary same-pair quotient bar map.
+2. E_N quantifies all retained simple pairs, not only visible pairs.
+3. For finite pd a, the tested even m is >a and >=N. Vanishing for ALL
+   detectors makes the whole minimal term zero; no finite-pd converse
+   on composition factors is used.
+4. The right finite-pd proof uses direct right covers, not opposite-+.
+5. Infinite + has SOME supported even tail by b_n=t_n+t_{n+1}; a
+   preselected pair need not occur in even degrees.
+6. Physical support lifts from the ordinary quotient for the same pair.
+7. Infinite gldim transfer requires no-infinite-+ and an actually
+   infinite deleted source, with the real high annihilated tail C058.
+8. The count is strict because that label is removed AND no retained
+   finite-pd label becomes infinite; neither condition substitutes for
+   the other.
+9. Left/right labels are separate. The sum decreases because both
+   inclusions hold and one chosen side is strict, not because x is
+   declared infinite on both sides.
+10. The C062/C067/section hypotheses are retained exactly. E_N itself
+    implies no section, perfectness or tensor-nilpotence conclusion.
+11. All-block inheritance uses surjectivity of the COMPOSITE in (5.2)
+    to deduce surjectivity of the second map. No reversed implication.
+12. All-block is a genuine hypothesis. Primitive-only coefficient
+    control does not imply it or survive a next deletion automatically.
+13. The count chain ends at C080 after at most the initial chosen count
+    minus two steps; every intermediate algebra is actually bad under
+    the contradiction assumption.
+14. M_* is even and >=M,N. Nonnegative b_even=0 controls BOTH consecutive
+    t terms and hence all high supported degrees, before vertex induction.
+15. The quantitative induction applies C058's elementary annihilated-tail
+    argument to finite sources too. It does not assume their pds are infinite.
+16. The endpoint local resolution argument is ordinary and minimal;
+    the bound (v-1)M_* includes its gd zero base.
+17. No universal bound, short checking window or global all-block map
+    existence is asserted. The unchanged actual A22 violates that map.
+18. This is same-author self-audit and asset synthesis, not independent
+    verifier acceptance or a literature-novelty claim.
+
+## 9. Research verdict
+
+The proposed global alternative has a concrete valid mechanism beyond
+ordinary sections: sufficiently high even SAME-PAIR ordinary Tor
+surjectivity forbids new infinite labels, lifts supported infinity,
+and makes infinite-source deletion a strict badness-preserving count
+move. An inherited all-block ordinary-map hypothesis closes an entire
+all-size class and gives the explicit conditional bound (6.2).
+
+The general alternative is still unproved. A22 shows the exact missing
+comparison can fail even when the deleted LEFT source is genuinely
+infinite-pd. C076's radical moves preserve their kernel-side counts,
+and its missing physical support transfer is not repaired by this
+different vertex criterion. No reason has yet forced an E_N deletion,
+another eligible dimension move, or an ordinary visible return in
+every three-or-more-infinite-source residue.
+
+This is a closure bridge, strict descent and class unification, not
+another necessary-condition-only higher-output invariant. Continue
+seeking actual comparisons or ordinary visible return in that residue.
+Target A, local-trivial, supported-weight and higher-output Target B
+all remain retained and open in their general forms.

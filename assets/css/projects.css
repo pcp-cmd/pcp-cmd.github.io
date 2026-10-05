@@ -1,0 +1,15 @@
+/* Project records use the site's shared Niku frames and typographic scale. */
+.project-list .project-record { padding-top: 1.5rem; border-top: 2px solid var(--site-ink); }
+.project-list .project-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; margin: 0 0 1rem; color: var(--site-muted); font: 14px/1.6 var(--site-display); }
+.project-list .project-purpose { font-size: 1.125rem; line-height: 1.7; }
+.project-list .project-status { margin: 1.5rem 0; padding: .8rem 1rem; border-left: 3px solid var(--site-ink); background: #f3f3f3; font-size: .875rem; line-height: 1.7; }
+.project-status > span { display: block; margin-bottom: .25rem; font-family: var(--site-display); }
+.project-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.project-actions a { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; padding: .5rem .75rem; border: 2px solid var(--site-ink); color: var(--site-ink); background: var(--site-paper); font: 16px/1.5 var(--site-display); text-decoration: none; }
+.project-actions a:hover { color: var(--site-paper); background: var(--site-ink); text-decoration: none; }
+.project-link-context { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.project-list .project-source-note { margin-top: 2rem; color: var(--site-muted); font-size: .8125rem; line-height: 1.7; }
+@media (max-width: 760px) {
+  .project-list .project-purpose { font-size: 1rem; }
+  .project-list .project-status { padding: .65rem .75rem; }
+}

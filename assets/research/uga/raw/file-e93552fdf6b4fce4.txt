@@ -1,0 +1,165 @@
+"""Actual higher-Loewy module envelopes and bi-singular physical support.
+
+General ordinary all-target generation/return is a separate written proof.
+This script uses frozen exact helpers and is NOT independent verification.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Finite-Envelope-Evidence/verify_finite_envelope.py'
+__file__=str(frozen)
+exec(compile(frozen.read_text(encoding='utf-8').split('\nsimples=',1)[0],str(frozen),'exec'),globals())
+# T is the frozen connected26 table; its earlier prefix binds all helpers.
+
+def loewy(M):
+ current=[[rk.unit_vector(d,i) for i in range(d)] for d in M.dimensions]
+ for step in range(1,12):
+  cols=[[] for _ in M.dimensions]
+  for a,actions in zip(M.algebra.basis,M.actions):
+   cols[a['left']]+=[rk.combine(actions,v,M.dimensions[a['left']]) for v in current[a['right']]]
+  nxt=[]
+  for part in cols:
+   chosen,_=rk.independent(part);nxt.append([part[i] for i in chosen])
+  if not any(nxt):return step
+  current=nxt
+ raise AssertionError('Loewy calibration did not terminate')
+
+def check_linear(source,target,maps):
+ for a,sa,ta in zip(source.algebra.basis,source.actions,target.actions):
+  for i in range(source.dimensions[a['right']]):
+   left=rk.combine(ta,maps[a['right']][i],target.dimensions[a['left']])
+   right=rk.combine(maps[a['left']],sa[i],target.dimensions[a['left']])
+   assert left==right
+
+# Frozen N7: nonsimple self-envelope selects the OFF-DIAGONAL pair.
+N=nakayama_seven();A=N
+Xlocal=local_names(N,['a','ba']);X=supported_module(N,Xlocal)
+emb=[[(0,N.index['ab'])] if v==0 else [(0,N.index['bab'])] for v in range(2)]
+Nperiod=kernel_iso(X,X,emb,'Omega X=X, actual nonsimple period one')
+Nsource=kernel_iso(sr.Module.simple(N.alg,1),X,
+ [[(1,b) for b in part] for part in Xlocal],'Omega LEFT Lv=X')
+NfiniteL=finite_resolution(N,0,1)
+NfiniteR=finite_resolution(N.opposite(),1,1)
+assert loewy(X)==2
+assert sum(l==1 and r==0 for _,l,r in N.basis)==2
+
+# Higher-Loewy actual tensor family, with NONPROJECTIVE finite-pd H_i.
+C=nakayama_five()
+Cleft=[finite_resolution(C,j,[1,2][j]) for j in range(2)]
+Cright=[finite_resolution(C.opposite(),j,[1,2][j]) for j in range(2)]
+big,tensor_cert=tensor_table(T,C);A=big
+assert len(big.basis)==130 and big.vertices==14
+pair_to_big={tuple(pair):i for i,pair in enumerate(tensor_cert['tensor_basis_pairs'])}
+regular_local=[[b for b,(_,l,r) in enumerate(C.basis) if l==v] for v in range(2)]
+regular=supported_module(C,regular_local)
+
+def factor_action(table,M,b):
+ if b<table.vertices:
+  return [rk.unit_vector(M.dimensions[b],i) for i in range(M.dimensions[b])]
+ return M.actions[b-table.vertices]
+
+def tensor_module(X,Y):
+ dims=[X.dimensions[v]*Y.dimensions[w] for v in range(T.vertices) for w in range(C.vertices)]
+ acts=[]
+ for ab in big.radical:
+  tb,cb=tensor_cert['tensor_basis_pairs'][ab]
+  _,lt,rt=T.basis[tb];_,lc,rc=C.basis[cb]
+  xm,ym=factor_action(T,X,tb),factor_action(C,Y,cb)
+  columns=[]
+  for ix in range(X.dimensions[rt]):
+   for iy in range(Y.dimensions[rc]):
+    columns.append([xm[ix][jx]*ym[iy][jy]
+     for jx in range(X.dimensions[lt]) for jy in range(Y.dimensions[lc])])
+  acts.append(columns)
+ M=sr.Module(big.alg,dims,acts)
+ ss.parse_module(big.alg,ss.module_payload(M))
+ return M
+
+modules=[tensor_module(sr.Module.simple(T.alg,q),regular) for q in [q0,q1]]
+def tensor_local(tnames):
+ return [[ab for ab,(tb,cb) in enumerate(tensor_cert['tensor_basis_pairs'])
+   if T.basis[tb][0] in tnames and big.basis[ab][1]==v] for v in range(big.vertices)]
+
+Ulocal=tensor_local(['e0','tu']);PU=supported_module(big,Ulocal)
+PUker,PUinfo,PUcover=cover(PU)
+assert not any(PUker.dimensions)
+envelopes=[]
+for i,q in enumerate([q0,q1]):
+ local=tensor_local([f'x{i}',f'y{i}']);H=supported_module(big,local)
+ other=modules[1-i];own=modules[i]
+ include=[];project=[];exact=[]
+ for v,part in enumerate(local):
+  _,cv=divmod(v,C.vertices)
+  cols=[]
+  for cb in regular_local[cv] if other.dimensions[v] else []:
+   ab=pair_to_big[T.index[f'y{i}'],cb]
+   cols.append(rk.unit_vector(H.dimensions[v],part.index(ab)))
+  include.append(cols)
+  p=[]
+  for ab in part:
+   tb,cb=tensor_cert['tensor_basis_pairs'][ab]
+   p.append(rk.unit_vector(own.dimensions[v],regular_local[cv].index(cb))
+    if tb==T.index[f'x{i}'] else [F(0)]*own.dimensions[v])
+  project.append(p)
+  assert rk.rank(cols)==other.dimensions[v] and rk.rank(p)==own.dimensions[v]
+  assert len(part)==own.dimensions[v]+other.dimensions[v]
+  assert all(not any(rk.combine(p,col,own.dimensions[v])) for col in cols)
+  exact.append({'injection_rank':rk.rank(cols),'projection_rank':rk.rank(p),'middle_dimension':len(part)})
+ check_linear(other,H,include);check_linear(H,own,project)
+ embedded=[]
+ for part in Ulocal:
+  loc=[]
+  for ab in part:
+   tb,cb=tensor_cert['tensor_basis_pairs'][ab]
+   out=T.mult(tb,T.index[f'm{i}']);assert out is not None
+   loc.append((q*C.vertices+C.basis[cb][2],pair_to_big[out,cb]))
+  embedded.append(loc)
+ Hkernel=kernel_iso(H,PU,embedded,f'Omega actual higher-Loewy H{i}=P_u tensor C')
+ assert loewy(H)==4 and loewy(own)==3
+ rectangle=[[sum(l==x and r==y for _,l,r in big.basis)
+  for y in [q*2,q*2+1]] for x in [q*2,q*2+1]]
+ assert all(x>0 for row in rectangle for x in row)
+ envelopes.append({'module':ss.module_payload(H),'pd':1,'Loewy_length':4,
+  'source_state':ss.module_payload(own),'state_Loewy_length':3,
+  'actual_inclusion':include,'actual_projection':project,'exactness_ranks':exact,
+  'A_linear_maps':True,'finite_projective_kernel':Hkernel,
+  'LEFT_and_RIGHT_infinite_factor_labels_from_written_tensor_proof':[q*2,q*2+1],
+  'bi_singular_physical_rectangle':rectangle})
+
+Dlocal=tensor_local(['a0','m0','n0']);D=supported_module(big,Dlocal)
+embedded=[]
+for part in Dlocal:
+ embedded.append([(q0*2+C.basis[tensor_cert['tensor_basis_pairs'][ab][1]][2],ab) for ab in part])
+period1=kernel_iso(modules[0],D,embedded,'Omega X0=D tensor C, NONSPLIT finite kernel')
+embedded=[]
+for v in range(big.vertices):
+ tv,cv=divmod(v,2)
+ embedded.append([(q1*2+C.basis[cb][2],pair_to_big[T.index['a1'],cb])
+  for cb in regular_local[cv]] if tv==q0 else [])
+period2=kernel_iso(D,modules[0],embedded,'Omega(D tensor C)=X0, actual period two')
+KD,infoD,coverD=cover(D)
+assert [i for i,x in enumerate(infoD['cover_multiplicities']) if x]==[q1*2,q1*2+1]
+
+dependencies={f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest()
+ for n in ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']}
+for directory,names in [('Carrier-Lemma-Evidence',['verify_carrier_lemma.py','verify_finite_factor_carrier.py']),
+ ('Shallow-Corner-Evidence',['verify_shallow_corner.py']),('Tensor-Factor-Evidence',['verify_tensor_factor.py']),
+ ('Perfect-Corner-Evidence',['verify_perfect_corner.py']),('Directed-Ext-Evidence',['verify_directed_ext.py']),
+ ('Yoneda-Termination-Evidence',['verify_yoneda_termination.py']),('Finite-Envelope-Evidence',['verify_finite_envelope.py'])]:
+ for n in names:
+  rel=f'runs/2026-10-04/{directory}/{n}';dependencies[rel]=sha256((project_root/rel).read_bytes()).hexdigest()
+result={'status':'passed','independent_verification':False,'counts':counts,
+ 'N7_nonsimple_off_diagonal':{'algebra':N.payload,'module':ss.module_payload(X),
+  'period_one':Nperiod,'source_Lv_kernel':Nsource,'LEFT_f_finite_resolution':NfiniteL,
+  'RIGHT_v_finite_resolution':NfiniteR,'CL':[1],'CR':[0],'physical_rectangle':[[2]],
+  'only_possible_persistent_supported_pair':{'LEFT_source':1,'RIGHT_detector':0}},
+ 'higher_Loewy130':{'algebra':big.payload,'dimension':130,'vertices':14,
+  'ordinary_tensor_certificate':tensor_cert,'finite_factor_LEFT_resolutions':Cleft,
+  'finite_factor_RIGHT_resolutions':Cright,'envelopes':envelopes,
+  'projective_Pu_tensor_C':PUcover,'X0_period_two_kernels':[period1,period2],
+  'D_tensor_C_actual_minimal_cover':coverD,'finite_kernel_does_NOT_split':True},
+ 'dependencies':dependencies,
+ 'scope':'Actual module envelope maps, Loewy layers, finite-pd kernels and bi-singular rectangles. General all-target ordinary proof/infinity from actual recursive kernels, not bounded Betti prefixes; shared helpers, NOT independently verified.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','dimension':130,'state_Loewy':3,'envelope_Loewy':4,
+ 'envelope_pd':1,'counts':counts,'independent_verification':False}))

@@ -1,0 +1,2007 @@
+# Universal Gap A — Universal Layer U5
+## Run C — Adversarial Detector Switch / Postnikov Realization
+
+**Role:** Run C — Independent Destruction  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Frozen output:** `Run-C-U5-AdversarialSwitch.md`
+
+## Completion label
+
+\[
+\boxed{
+\texttt{C1 ACHIEVED + C2 ACHIEVED + C3 ACHIEVED}
+}
+\]
+
+\[
+\boxed{
+\texttt{C4 NOT FOUND; K-FRONTIER SHARPENED TO SIGN-TWIST REALIZATION}
+}
+\]
+
+A further exact K-line result was obtained:
+
+\[
+\boxed{
+S=k[t]/(t^2),\ M\cong S\text{ as a regular bimodule}
+\Longrightarrow
+\text{amplitude-2 complete screening is impossible}.
+}
+\]
+
+For rank-one bimodules over the dual numbers, the only possible singularly invertible degree-three Postnikov anchor is the **sign twist**
+
+\[
+\boxed{
+M\cong {}_1S_\sigma,\qquad \sigma(t)=-t.
+}
+\]
+
+No finite-dimensional ordinary idempotent quotient realizing this complete bounded screener was constructed.
+
+Universal Gap A remains open.
+
+---
+
+# 0. Run integrity and actual trajectory
+
+This file freezes the actual U5 Run C trajectory.
+
+The run did **not** begin by inventing a fresh theorem. It first re-audited the U4 frozen assets because the prompt explicitly forbade reusing several withdrawn statements.
+
+The first phase was therefore slower than intended. The following were rechecked before the new attacks:
+
+- the U4 detector-tail functor;
+- augmentation transfer only under detector/kernel conditions;
+- the Peirce-invisible terminal sector;
+- the amplitude-two Postnikov normal form;
+- the fact that bilateral freeness alone does not screen;
+- the old bounded/unbounded screening calibrations.
+
+After that audit, the run stopped broad retrieval and moved to explicit counterarchitecture.
+
+The main new construction is a single 18-dimensional self-injective cyclic Nakayama algebra. It simultaneously supplies:
+
+1. an actual bare detector-switch counterexample;
+2. an actual failure of every relative cone gate from a live detector to a visible dead detector;
+3. an actual Yoneda-tail-action counterexample with stable annihilator.
+
+The K-line then changed representation from “search random ordinary algebras” to the exact degree-three bimodule cohomology of the dual numbers. This exposed the sign-twisted bimodule as the minimal realization target.
+
+No formal dg example was promoted to an ordinary algebra.
+
+---
+
+# 1. Mandatory correction log
+
+The following remain frozen negative assets and are **not** reused as theorems:
+
+\[
+\text{finite context}
+\Rightarrow
+\text{restart}
+\]
+
+is false.
+
+\[
+\text{Peirce edge}
+\Rightarrow
+\text{detector switch}
+\]
+
+is false; this run gives a new explicit counterexample.
+
+\[
+Q(f)\neq0
+\Rightarrow
+\text{tail transfer}
+\]
+
+is false.
+
+\[
+\eta\neq0
+\Rightarrow
+\text{tail action nonzero}
+\]
+
+is false; this run gives a new explicit counterexample.
+
+\[
+\text{first defect}
+\Rightarrow
+\text{renewal}
+\]
+
+is false.
+
+\[
+M\otimes_SM\neq0
+\Rightarrow
+\text{renewal}
+\]
+
+is false.
+
+The earlier Run C statement
+
+\[
+\text{semisimple deleted corner}
+\Rightarrow
+\text{amplitude-2 impossible}
+\]
+
+remains withdrawn/refuted.
+
+\[
+\operatorname{gldim}F<\infty
+\Rightarrow
+\text{renewal}
+\]
+
+is not valid.
+
+\[
+\text{bilateral free}
+\Rightarrow
+\text{screening}
+\]
+
+is false.
+
+---
+
+# 2. Vault adversarial method mapping
+
+The requested methods were used on concrete U5 objects as follows.
+
+| Method | Object / map / quotient used in U5 |
+|---|---|
+| Counterexample | cyclic Nakayama \(kC_6/J^3\), detector pair \((R_3,R_2)\), Yoneda class \(\eta_{12}\) |
+| Extreme example | one strongly connected self-injective carrier where visibility and Tor detection separate maximally |
+| Representation change | Peirce path \(\to\) minimal-projective-term support; cone condition \(\to\) detector-tail quotient; \(K\)-frontier \(\to\) twisted rank-one bimodules |
+| Reverse infinite descent | relative cone failure preserves the same periodic tail rather than decreasing any obvious complexity |
+| Local/global mismatch | \(e_zDe_j\neq0\) but \(R_j\) never occurs in the minimal resolution of \(L_z\) |
+| Standard-form audit | cyclic Nakayama four-step resolution; amplitude-two triangle \(M[2]\to K\to S\to M[3]\); minimal \(S^e\)-resolution of dual numbers |
+| Moduli drift | root-of-unity and infinite-order quantum exterior calibrations retained as mandatory tests |
+| Bootstrap failure analysis | nonzero Peirce path and nonzero Yoneda class both fail to transport the tail |
+| Quotient/kernel mismatch | visible path reaches a lower radical layer, while the minimal resolution only records projective-cover tops; detector quotient kills the proposed switch |
+
+The decisive methodological replacement is:
+
+\[
+\boxed{
+\text{Peirce reachability is not syzygy-top reachability.}
+}
+\]
+
+---
+
+# 3. Mandatory calibration V1 — root-of-unity quantum exterior
+
+Retain
+
+\[
+A_q
+=
+k\langle x,y\rangle/
+(x^2,y^2,xy+qyx)
+\]
+
+and the standard two-dimensional modules \(M_\lambda\) with
+
+\[
+\Omega M_\lambda\simeq M_{\lambda/q}
+\]
+
+(up to the fixed convention for parameter direction).
+
+For root-of-unity \(q\), an exact finite periodic module orbit can recur forever while the simple does not enter that orbit.
+
+Therefore U5 is not allowed to infer detector switching from exact finite recurrence.
+
+The new cyclic-Nakayama counterexample below is stronger in a different direction: there is no moduli drift at all, the carrier is finite and periodic, and detector switching still fails.
+
+---
+
+# 4. Mandatory calibration V2 — infinite-order moduli drift
+
+For infinite-order \(q\),
+
+\[
+M_\lambda,\ M_{\lambda/q},\ M_{\lambda/q^2},\ldots
+\]
+
+can be pairwise nonisomorphic while all coarse local Loewy/rank data remain constant.
+
+Thus any detector-switch proof that needs exact state repetition is already disqualified.
+
+The U5 counterexample below avoids this loophole entirely: the syzygy pattern is strictly periodic of period four.
+
+---
+
+# 5. Mandatory calibration V3 — two-vertex moduli carrier
+
+The triangular two-vertex extension from U4 shows that merely embedding the quantum-exterior dynamics in a connected finite carrier does not repair the anchor.
+
+U5 therefore demanded a stronger test:
+
+> can the carrier itself be strongly connected and finite, with no moduli drift, while detector switching still fails?
+
+The answer is yes.
+
+That is the role of the cyclic Nakayama algebra below.
+
+---
+
+# 6. Mandatory calibration V4 — exterior augmentation
+
+The U5 prompt freezes the U4 calibration
+
+\[
+A/(xy)\longrightarrow k
+\]
+
+as a nonzero singular map that is detector-zero.
+
+This run did not recompute that calibration.
+
+It was used as a morphism-level warning:
+
+\[
+\boxed{
+\text{singular nonzero}
+\not\Rightarrow
+\text{detector nonzero}.
+}
+\]
+
+The new U5 relative-cone counterexample is stronger: the source and target detector-tail **objects themselves** are inequivalent, so every possible cone gate between them fails, not merely one chosen augmentation.
+
+---
+
+# 7. Mandatory calibration V5 — U1 invisible-return pattern
+
+The U1 invisible-return calibration already showed that quotient/Peirce visibility can fail to align with the actual recurrent detector sector.
+
+Its frozen role in U5 was design guidance:
+
+- place a vertex \(j\) in the Peirce-visible sector of \(z\);
+- place \(j\) in a detector-dead congruence class of the minimal resolution;
+- keep a different detector \(i\) recurrent.
+
+The cyclic Nakayama construction realizes exactly that separation inside one strongly connected carrier.
+
+---
+
+# 8. Priority 1 — the actual bare detector-switch counterexample
+
+Let \(Q\) be the oriented six-cycle with vertices
+
+\[
+0,1,2,3,4,5
+\]
+
+and arrows
+
+\[
+a_v:v\longrightarrow v-1
+\qquad
+(\bmod 6).
+\]
+
+Let \(J\) be the arrow ideal and put
+
+\[
+\boxed{
+D=kQ/J^3.
+}
+\]
+
+This is a finite-dimensional basic self-injective Nakayama algebra.
+
+Every surviving path has length \(0,1,\) or \(2\), hence
+
+\[
+\boxed{
+\dim_kD=6(1+1+1)=18.
+}
+\]
+
+The entire quiver is one strongly connected component.
+
+Set
+
+\[
+z=0,\qquad
+i=3,\qquad
+j=2.
+\]
+
+---
+
+# 9. Exact left resolution of \(L_0\)
+
+Write
+
+\[
+P_v=De_v.
+\]
+
+The projective \(P_v\) has composition series
+
+\[
+L_v,\ L_{v+1},\ L_{v+2}.
+\]
+
+Therefore
+
+\[
+\Omega L_v=\operatorname{rad}P_v
+\]
+
+has top \(L_{v+1}\), and the projective cover
+
+\[
+P_{v+1}\twoheadrightarrow \Omega L_v
+\]
+
+has kernel
+
+\[
+L_{v+3}.
+\]
+
+Thus:
+
+\[
+\boxed{
+\Omega^2L_v\cong L_{v+3}.
+}
+\]
+
+Iterating,
+
+\[
+\boxed{
+\Omega^4L_v\cong L_v.
+}
+\]
+
+For \(z=0\), the minimal projective resolution has projective terms
+
+\[
+\boxed{
+P_0,\ P_1,\ P_3,\ P_4,\ P_0,\ P_1,\ P_3,\ P_4,\ldots
+}
+\]
+
+in homological degrees
+
+\[
+0,1,2,3,4,5,6,7,\ldots.
+\]
+
+Because the resolution is minimal, tensoring with a right simple kills all differentials.
+
+Hence
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_3,L_0)\cong k
+\quad
+\text{when }n\equiv2\pmod4,
+}
+\]
+
+so \(R_3\) detects \(L_0\) arbitrarily high.
+
+But \(P_2\) never appears, so
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_2,L_0)=0
+\qquad
+\forall n\ge0.
+}
+\]
+
+---
+
+# 10. Peirce visibility of the dead detector
+
+Although \(R_2\) is completely dead on the Tor tail of \(L_0\), there is a nonzero length-two path
+
+\[
+2\longrightarrow1\longrightarrow0.
+\]
+
+Since only paths of length \(3\) are killed,
+
+\[
+\boxed{
+e_0De_2\neq0.
+}
+\]
+
+Thus:
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_3,L_0)\neq0
+\text{ arbitrarily high},
+}
+\]
+
+\[
+\boxed{
+e_0De_2\neq0,
+}
+\]
+
+but
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_2,L_0)=0
+\quad(n\gg0).
+}
+\]
+
+This is exactly the requested bare detector-switch counterexample.
+
+---
+
+# 11. The optional strengthening is also achieved
+
+The counterexample additionally satisfies all of the desirable strengthening conditions.
+
+## Same recurrent SCC
+
+Vertices \(3\) and \(2\) lie in the same strongly connected oriented cycle.
+
+## Strongly connected carrier
+
+The entire primitive-vertex carrier is strongly connected.
+
+## Finite exact carrier
+
+There are six vertices and the simple resolution is exactly \(4\)-periodic.
+
+## Actual high-syzygy origin
+
+Since
+
+\[
+\Omega^4L_0\cong L_0,
+\]
+
+the target simple is itself a high syzygy.
+
+Therefore:
+
+\[
+\boxed{
+\texttt{C1 — ACTUAL BARE DETECTOR-SWITCH COUNTEREXAMPLE: ACHIEVED.}
+}
+\]
+
+---
+
+# 12. Why the detector switch fails
+
+The path
+
+\[
+2\to1\to0
+\]
+
+proves Peirce visibility.
+
+But in the first syzygy
+
+\[
+\Omega L_0=\operatorname{rad}P_0
+\]
+
+the simple \(L_2\) occurs in the **second radical layer**, not in the top.
+
+The next minimal projective cover therefore uses \(P_1\), not \(P_2\).
+
+This is the exact mismatch:
+
+\[
+\boxed{
+\text{Peirce path support}
+\neq
+\text{minimal-projective-cover support}.
+}
+\]
+
+Detector switching requires information about the projective-cover/top transport, not mere existence of a path in \(e_zDe_j\).
+
+This is the smallest missing datum in the bare theorem.
+
+---
+
+# 13. Failed earlier strengthening attempt: radical-square-zero model
+
+Before locating the cyclic Nakayama model, the run considered a radical-square-zero construction with:
+
+- a periodic loop at \(i\);
+- arrows \(i\to z\) and \(j\to z\).
+
+This easily separates a recurrent \(i\)-detector from a dead \(j\)-detector.
+
+However, trying simultaneously to force \(i\) and \(j\) into one recurrent strongly connected carrier fails in the naive \(J^2=0\) architecture: an incoming arrow \(j\to i\) immediately places \(L_j\) in the top of \(\Omega L_i\), causing the \(j\)-projective to recur.
+
+This failed construction is what motivated moving from Loewy length \(2\) to the \(J^3=0\) Nakayama model, where a Peirce-visible vertex can sit in a lower radical layer without ever entering the minimal projective-term sequence.
+
+---
+
+# 14. Priority 2 — attack on the relative cone gate
+
+Use the same algebra \(D=kC_6/J^3\), the same target
+
+\[
+z=0,
+\]
+
+but now keep
+
+\[
+i=3,\qquad j=2.
+\]
+
+Define the right-detector tail functor
+
+\[
+\mathfrak E_z^R(X)
+=
+X\otimes_D^{\mathbf L}L_0
+\]
+
+viewed in the quotient that forgets bounded homology.
+
+From the preceding calculation:
+
+\[
+\boxed{
+\mathfrak E_z^R(R_3)\neq0,
+}
+\]
+
+while
+
+\[
+\boxed{
+\mathfrak E_z^R(R_2)=0.
+}
+\]
+
+---
+
+# 15. There is an actual natural carrier map
+
+For right modules the orientation is reversed in the projective resolution.
+
+The radical of
+
+\[
+e_3D
+\]
+
+has top \(R_2\).
+
+Hence
+
+\[
+\boxed{
+\operatorname{Ext}^1_{D^{\mathrm{op}}}(R_3,R_2)\neq0.
+}
+\]
+
+Choose a nonzero class
+
+\[
+f:R_3\longrightarrow R_2[1].
+\]
+
+So the cone test is not vacuous: there is a natural nonzero derived carrier map from the live detector to the visible dead detector.
+
+---
+
+# 16. Every cone gate fails
+
+More strongly, let
+
+\[
+f:R_3\to R_2[m]
+\]
+
+be **any** morphism for any shift \(m\).
+
+Apply the exact tail functor to the triangle
+
+\[
+R_3
+\xrightarrow f
+R_2[m]
+\to
+\operatorname{Cone}(f)
+\to
+R_3[1].
+\]
+
+Since
+
+\[
+\mathfrak E_z^R(R_2[m])=0,
+\]
+
+exactness gives
+
+\[
+\boxed{
+\mathfrak E_z^R(\operatorname{Cone}(f))
+\cong
+\mathfrak E_z^R(R_3)[1].
+}
+\]
+
+The right side is nonzero.
+
+Therefore
+
+\[
+\boxed{
+\operatorname{Cone}(f)\notin\mathcal K_z^R
+}
+\]
+
+for every possible \(f\).
+
+In particular the natural nonzero
+
+\[
+R_3\to R_2[1]
+\]
+
+fails the relative cone gate.
+
+---
+
+# 17. Generalized-correspondence audit
+
+The same object-level obstruction defeats any roof/correspondence intended to identify \(R_3\) with a shift of \(R_2\) modulo \(\mathcal K_z^R\).
+
+In the detector quotient:
+
+\[
+R_3\neq0,
+\qquad
+R_2=0.
+\]
+
+So no generalized correspondence whose error cones are all in \(\mathcal K_z^R\) can make them isomorphic.
+
+Thus the obstruction is stronger than “the obvious arrow map has the wrong cone”.
+
+It is:
+
+\[
+\boxed{
+[R_3]\neq[R_2[m]]
+\text{ already at the object level of the detector quotient.}
+}
+\]
+
+---
+
+# 18. Where the surviving cone tail goes
+
+It does not move to \(j=2\).
+
+It does not move to a third detector.
+
+It returns to \(i=3\), shifted:
+
+\[
+\boxed{
+\mathfrak E_z^R(\operatorname{Cone}(f))
+\cong
+\mathfrak E_z^R(R_3)[1].
+}
+\]
+
+Because the tail is \(4\)-periodic, iterating the same type of cone operation produces no strict local complexity descent.
+
+So in this example:
+
+\[
+\boxed{
+\text{cone failure}
+\to
+\text{same detector tail}
+\to
+\text{periodic persistence},
+}
+\]
+
+not descent.
+
+Therefore:
+
+\[
+\boxed{
+\texttt{C2 — RELATIVE-CONE STRATEGY COUNTEREXAMPLE: ACHIEVED.}
+}
+\]
+
+---
+
+# 19. Reverse infinite-descent audit of the cone strategy
+
+The obvious candidate complexities remain constant:
+
+- support size;
+- vector-space dimension of the simple detectors;
+- SCC size;
+- period;
+- tail Betti dimension.
+
+The cone replaces the live tail by a shift of itself.
+
+Therefore a reverse infinite-descent principle of the form
+
+\[
+\text{failed cone gate}
+\Rightarrow
+\text{strictly smaller detector state}
+\]
+
+is false without an additional invariant.
+
+The missing datum cannot be a mere local dimension-type complexity.
+
+---
+
+# 20. Priority 3 — Yoneda-tail action counterexample
+
+Use the **same** algebra
+
+\[
+D=kC_6/J^3
+\]
+
+and the same target
+
+\[
+z=0.
+\]
+
+For this attack choose
+
+\[
+i'=1,\qquad j'=2.
+\]
+
+The minimal resolution of \(L_1\) starts
+
+\[
+P_1,\ P_2,\ldots,
+\]
+
+so
+
+\[
+\boxed{
+0\neq
+\eta
+\in
+\operatorname{Ext}^1_D(L_1,L_2).
+}
+\]
+
+---
+
+# 21. Tail Ext from \(L_0\) to \(L_1\)
+
+The projective-term pattern for \(L_0\) is
+
+\[
+P_0,P_1,P_3,P_4
+\]
+
+repeated with period four.
+
+Therefore
+
+\[
+\boxed{
+\operatorname{Ext}^{4q+1}_D(L_0,L_1)\cong k
+\qquad(q\ge0),
+}
+\]
+
+while the \(L_2\)-column is absent:
+
+\[
+\boxed{
+\operatorname{Ext}^{n}_D(L_0,L_2)=0
+\qquad
+\forall n\ge0.
+}
+\]
+
+In particular,
+
+\[
+\operatorname{Ext}^{4q+2}_D(L_0,L_2)=0.
+\]
+
+---
+
+# 22. Nonzero Yoneda class acts as zero on the entire tail
+
+Yoneda composition gives
+
+\[
+-\circ\eta:
+\operatorname{Ext}^n_D(L_0,L_1)
+\longrightarrow
+\operatorname{Ext}^{n+1}_D(L_0,L_2).
+\]
+
+Whenever the source is nonzero,
+
+\[
+n=4q+1,
+\]
+
+the target is
+
+\[
+\operatorname{Ext}^{4q+2}_D(L_0,L_2)=0.
+\]
+
+Hence
+
+\[
+\boxed{
+-\circ\eta=0
+}
+\]
+
+on every nonzero high-degree source group.
+
+Thus:
+
+\[
+\boxed{
+0\neq\eta
+\in
+\operatorname{Ext}^1_D(L_1,L_2)
+}
+\]
+
+but its action on the \(L_0\)-tail is identically zero.
+
+Therefore:
+
+\[
+\boxed{
+\texttt{C3 — YONEDA-TAIL ACTION COUNTEREXAMPLE: ACHIEVED.}
+}
+\]
+
+---
+
+# 23. Stable annihilator with no strict growth
+
+Let
+
+\[
+M_{0}^{\mathrm{tail}}
+=
+\bigoplus_{n\gg0}
+\operatorname{Ext}^n_D(L_0,-)
+\]
+
+restricted to the carrier sector containing \(1,2\).
+
+The class
+
+\[
+\eta_{12}
+\]
+
+annihilates the entire nonzero \(L_1\)-tail from the outset.
+
+Because the resolution is \(4\)-periodic, the same annihilation pattern repeats exactly after every four degrees.
+
+Thus the tail annihilator contains
+
+\[
+\eta_{12}
+\]
+
+at every stage and does not have to enlarge merely because the same transport attempt fails again.
+
+So the inference
+
+\[
+\boxed{
+\text{failed Yoneda action}
+\Rightarrow
+\text{strict annihilator growth}
+}
+\]
+
+is false without an additional “fresh class outside the current annihilator” hypothesis.
+
+This does **not** refute a refined strategy that explicitly chooses new independent Yoneda classes modulo the existing annihilator.
+
+It refutes the bare bootstrap.
+
+---
+
+# 24. Why one algebra kills both switch mechanisms
+
+The new Nakayama model shows two distinct failures inside one exact periodic carrier.
+
+## Peirce failure
+
+\[
+e_0De_2\neq0
+\]
+
+but \(P_2\) never appears in the minimal resolution of \(L_0\).
+
+## Yoneda failure
+
+\[
+\operatorname{Ext}^1(L_1,L_2)\neq0
+\]
+
+but the \(L_2\)-tail of \(L_0\) is zero, so the action cannot land anywhere.
+
+The common mechanism is not moduli drift.
+
+It is a **radical-layer / minimal-cover mismatch**.
+
+The visible/Yoneda target exists algebraically, but it lives in a sector absent from the recurrent projective-cover support.
+
+---
+
+# 25. Strongest V-line correction
+
+The following is now definitely unusable:
+
+\[
+\text{Peirce-visible from }j
+\Rightarrow
+\text{\(j\) can replace the live detector}.
+\]
+
+A surviving detector-switch theorem must use something closer to:
+
+\[
+\boxed{
+\text{\(j\) occurs in recurrent minimal-projective/top transport}
+}
+\]
+
+or an equivalent detector-tail condition.
+
+Likewise a surviving Yoneda theorem must assume:
+
+\[
+\boxed{
+\eta
+\notin
+\operatorname{Ann}(M_z^{\mathrm{tail}})
+}
+\]
+
+rather than merely
+
+\[
+\eta\neq0.
+\]
+
+These are not conclusions of a global theorem yet; they are exact hypotheses forced by the counterexamples.
+
+---
+
+# 26. K-line frozen frontier
+
+The K-line does **not** revisit:
+
+\[
+H_r(K)\neq0\Rightarrow H_{>r}(K)\neq0.
+\]
+
+It does **not** revisit:
+
+\[
+\text{bilateral free}\Rightarrow\text{screening}.
+\]
+
+The only allowed target is:
+
+\[
+\boxed{
+\text{actual bounded }K
++
+\text{bilaterally singular-invertible Postnikov anchor}.
+}
+\]
+
+The U4 amplitude-two standard form is retained:
+
+\[
+M[2]
+\to
+K
+\to
+S
+\xrightarrow{\alpha}
+M[3].
+\]
+
+Strong screening requires the left and right simple reductions of \(\alpha\) to be isomorphisms in the corresponding singularity categories.
+
+---
+
+# 27. Mandatory K calibration K1 — seven-dimensional near-miss
+
+The actual seven-dimensional quotient proves:
+
+- amplitude \(2\) is realizable;
+- bounded \(K\) is realizable;
+- isolated second return is realizable.
+
+But its terminal defect is not separately free on both sides.
+
+Therefore it does not reach the U5 frontier.
+
+No new work was spent trying to rescue it.
+
+---
+
+# 28. Mandatory K calibration K2 — \(M_6\oplus M_4\oplus M_2\)
+
+For
+
+\[
+\Lambda=k[t]/(t^6),
+\]
+
+\[
+G=M_6\oplus M_4\oplus M_2,
+\]
+
+\[
+D=\operatorname{End}_\Lambda(G),
+\]
+
+with \(e\) corresponding to \(M_4\), U4 gives
+
+\[
+S\cong k[t]/(t^2)
+\]
+
+and
+
+\[
+H_*(K)=S\oplus S[2].
+\]
+
+The positive defect is the regular bimodule:
+
+\[
+\boxed{
+H_2(K)\cong{}_SS_S.
+}
+\]
+
+Nevertheless complete screening fails.
+
+U5 now gives a structural explanation independent of the previous Betti calculation.
+
+---
+
+# 29. Mandatory K calibration K3 — old permanent-screening example
+
+The old ordinary algebra does achieve complete diagonal screening.
+
+But its self-intersection is unbounded:
+
+\[
+a(K)=\infty.
+\]
+
+Therefore it cannot solve the U5 bounded-Postnikov realization problem.
+
+It remains the calibration showing that ordinary finite-dimensional algebras are capable of permanent screening when infinitely many derived corrections are available.
+
+---
+
+# 30. K-line representation change: classify rank-one bimodule anchors
+
+Now specialize to
+
+\[
+\boxed{
+S=k[t]/(t^2)
+}
+\]
+
+over the project field \(k\) of characteristic \(0\).
+
+Every rank-one \(S\)-bimodule that is free on each side is, after choosing a left generator, of the form
+
+\[
+\boxed{
+M_c={}_1S_{\sigma_c},
+\qquad
+\sigma_c(t)=ct,
+\qquad
+c\in k^\times.
+}
+\]
+
+Thus the K-line realization question admits a one-parameter normal form.
+
+This is the relevant use of representation change:
+
+\[
+\boxed{
+\text{bilaterally free rank-one defect}
+\rightsquigarrow
+\text{automorphism parameter }c.
+}
+\]
+
+---
+
+# 31. Minimal bimodule resolution of the dual numbers
+
+Put
+
+\[
+S^e=S\otimes_kS^{\mathrm{op}}.
+\]
+
+The standard two-periodic \(S^e\)-projective resolution of \(S\) has rank-one terms:
+
+\[
+\cdots
+\to
+S^e
+\xrightarrow{u}
+S^e
+\xrightarrow{v}
+S^e
+\xrightarrow{u}
+S^e
+\to
+S
+\to0,
+\]
+
+where
+
+\[
+u=t\otimes1-1\otimes t,
+\]
+
+\[
+v=t\otimes1+1\otimes t.
+\]
+
+Apply
+
+\[
+\operatorname{Hom}_{S^e}(-,M_c).
+\]
+
+Identify each cochain term with \(M_c\).
+
+For
+
+\[
+m=a+bt,
+\]
+
+the induced operators are:
+
+\[
+u^*(m)
+=
+tm-mt
+=
+(1-c)a\,t,
+\]
+
+and
+
+\[
+v^*(m)
+=
+tm+mt
+=
+(1+c)a\,t.
+\]
+
+Hence
+
+\[
+\boxed{
+\operatorname{Ext}^3_{S^e}(S,M_c)
+=
+\ker(v^*)/\operatorname{im}(u^*).
+}
+\]
+
+---
+
+# 32. Exact rank-one classification
+
+There are three cases.
+
+## Case A — \(c\neq\pm1\)
+
+Both \(u^*\) and \(v^*\) have image \(kt\) and kernel \(kt\).
+
+Therefore
+
+\[
+\boxed{
+\operatorname{Ext}^3_{S^e}(S,M_c)=0.
+}
+\]
+
+No amplitude-two Postnikov anchor exists at all.
+
+---
+
+## Case B — \(c=1\): regular bimodule
+
+Then
+
+\[
+u^*=0,
+\qquad
+v^*(a+bt)=2a\,t.
+\]
+
+Thus
+
+\[
+\operatorname{Ext}^3_{S^e}(S,S)
+\cong
+kt.
+\]
+
+Every degree-three class is represented by a radical element \(t\).
+
+Tensor the class with the simple
+
+\[
+k=S/(t).
+\]
+
+The representative \(t\) maps to zero.
+
+Therefore the induced simple-level anchor
+
+\[
+k\to k[3]
+\]
+
+is zero.
+
+Hence:
+
+\[
+\boxed{
+M\cong{}_SS_S
+\Longrightarrow
+\text{no singularly invertible degree-three anchor}.
+}
+\]
+
+This proves a genuine no-screening theorem for the regular rank-one defect.
+
+In particular it explains K2 structurally: the regular defect cannot screen, regardless of the ambient ordinary realization.
+
+---
+
+## Case C — \(c=-1\): sign twist
+
+Now
+
+\[
+u^*(a+bt)=2a\,t,
+\qquad
+v^*=0.
+\]
+
+Therefore
+
+\[
+\operatorname{Ext}^3_{S^e}(S,M_{-1})
+\cong
+S/(t)
+\cong k.
+\]
+
+A generator is represented by the **unit**
+
+\[
+1\in S.
+\]
+
+After tensoring with the simple \(k\), this unit remains nonzero.
+
+Since
+
+\[
+S=k[t]/(t^2)
+\]
+
+is self-injective and
+
+\[
+\Omega k\cong k,
+\]
+
+the singular category is \(1\)-periodic on the unique simple and
+
+\[
+\operatorname{Hom}_{D_{\rm sg}(S)}(k,k[3])\cong k.
+\]
+
+Thus every nonzero such map is an isomorphism.
+
+The opposite/right computation uses
+
+\[
+\sigma^{-1}=\sigma
+\]
+
+when \(c=-1\).
+
+So the right anchor is also an isomorphism.
+
+Therefore:
+
+\[
+\boxed{
+\textbf{the unique rank-one dual-number defect capable of complete amplitude-two screening is}
+}
+\]
+
+\[
+\boxed{
+M\cong{}_1S_{\sigma},
+\qquad
+\sigma(t)=-t.
+}
+\]
+
+---
+
+# 33. Identification with the canonical synthetic screener
+
+The third bimodule syzygy of the dual numbers is exactly the sign twist.
+
+Indeed
+
+\[
+\Omega^3_{S^e}(S)
+=
+\ker\left(
+v:S^e\to S^e
+\right).
+\]
+
+Inside
+
+\[
+S^e
+=
+k[t_\ell,t_r]/(t_\ell^2,t_r^2),
+\]
+
+the kernel of multiplication by
+
+\[
+t_\ell+t_r
+\]
+
+is generated by
+
+\[
+m=t_\ell-t_r
+\]
+
+and \(t_\ell t_r\).
+
+Using \(m\) as generator:
+
+\[
+t_\ell m
+=
+-\,m t_r.
+\]
+
+Therefore
+
+\[
+\boxed{
+\Omega^3_{S^e}(S)
+\cong
+{}_1S_{\sigma},
+\qquad
+\sigma(t)=-t.
+}
+\]
+
+This recovers exactly the canonical synthetic amplitude-two screener from the U2 classification.
+
+So the U5 rank-one realization target is no longer vague.
+
+It is:
+
+\[
+\boxed{
+H_2(K)
+\cong
+\Omega^3_{S^e}(S)
+\cong
+{}_1S_{\sigma_{-1}}
+}
+\]
+
+with the canonical nonzero Postnikov class.
+
+---
+
+# 34. K2 is now ruled out for a stronger reason
+
+The Nakayama-gap example K2 has
+
+\[
+H_2(K)\cong{}_SS_S.
+\]
+
+That is the \(c=1\) case.
+
+The rank-one classification shows that every
+
+\[
+\alpha\in\operatorname{Ext}^3_{S^e}(S,S)
+\]
+
+dies after simple reduction.
+
+Thus no deformation that leaves the terminal bimodule **regular** can ever turn K2 into a complete screener.
+
+This is stronger than saying “the particular \(d_3\) computed in K2 is zero”.
+
+It says:
+
+\[
+\boxed{
+\text{regular rank-one }H_2
+\text{ is structurally the wrong bimodule type}.
+}
+\]
+
+---
+
+# 35. Failed K construction — scalar deformation of the Nakayama model
+
+The natural first attempt was to deform the approximation maps in
+
+\[
+0
+\to
+M_4
+\to
+M_6\oplus M_2
+\to
+M_4
+\to0
+\]
+
+by nonzero scalars.
+
+This cannot reach the sign twist.
+
+Reasons:
+
+1. scaling the components is absorbed by automorphisms of the uniserial summands;
+2. the ambient algebra
+   \[
+   \operatorname{End}_{k[t]/(t^6)}
+   (M_6\oplus M_4\oplus M_2)
+   \]
+   does not change;
+3. all module maps are \(k[t]\)-linear and therefore commute with the retained \(t\)-action;
+4. the terminal defect remains the **regular** \(S\)-bimodule.
+
+Thus scalar/moduli tuning inside this commutative uniserial architecture cannot convert
+
+\[
+t m=m t
+\]
+
+into the required
+
+\[
+t m=-m t.
+\]
+
+This construction route is closed.
+
+---
+
+# 36. Failed K construction — adding farther uniserial summands
+
+A second natural attempt is to enlarge the Nakayama generator while preserving the distance-two gap around the retained summand.
+
+This also does not produce the sign twist.
+
+As long as the retained endomorphism \(t\) comes from the central \(k[t]\)-action, all factorization maps remain \(k[t]\)-linear.
+
+Consequently the terminal defect continues to carry commuting left/right \(t\)-actions.
+
+So any bounded rank-one defect obtained in this commutative-uniserial endomorphism architecture remains in the \(c=1\) class.
+
+By the rank-one theorem above it cannot screen.
+
+This is a family-level obstruction, not a universal obstruction for arbitrary finite-dimensional algebras.
+
+---
+
+# 37. Actual Postnikov realization status
+
+The U5 run therefore reaches the following exact frontier.
+
+## Abstract target
+
+Completely understood in rank one:
+
+\[
+S=k[t]/(t^2),
+\]
+
+\[
+M={}_1S_{\sigma_{-1}},
+\]
+
+\[
+\alpha\neq0
+\in
+\operatorname{Ext}^3_{S^e}(S,M)
+\cong k.
+\]
+
+This \(\alpha\) is singularly invertible on both sides.
+
+## Actual quotient target
+
+Still open:
+
+find finite-dimensional ordinary \(D\) and primitive \(e\) such that
+
+\[
+S=D/D(1-e)D
+\cong
+k[t]/(t^2),
+\]
+
+\[
+H_*(S\otimes_D^{\mathbf L}S)
+=
+S\oplus
+{}_1S_{\sigma_{-1}}[2],
+\]
+
+and the actual Postnikov class is the nonzero generator.
+
+No such \(D\) was found in this run.
+
+---
+
+# 38. Empty-quadrant audit after U5
+
+The calibration table is now sharper.
+
+| Case | bounded \(K\) | terminal bimodule | complete screening |
+|---|---:|---|---:|
+| K1 seven-dimensional | yes | one-sided free only | no |
+| K2 Nakayama gap | yes | regular rank-one \(S\) | no |
+| U5 regular-rank-one theorem | yes, hypothetical | regular rank-one \(S\) | **impossible** |
+| canonical synthetic screener | yes | sign twist \({}_1S_{\sigma_{-1}}\) | yes abstractly |
+| old permanent screener K3 | no | infinitely many corrections | yes |
+| actual sign-twist realization | ? | sign twist | **not found** |
+
+Thus the empty quadrant has been reduced to a much smaller realization problem.
+
+---
+
+# 39. Strongest K-line theorem of U5
+
+## Theorem — rank-one dual-number Postnikov gate
+
+Let
+
+\[
+S=k[t]/(t^2),
+\qquad
+\operatorname{char}k\neq2,
+\]
+
+and suppose an amplitude-two candidate has a terminal bimodule \(M\) free of rank one on both sides.
+
+Write
+
+\[
+M\cong{}_1S_{\sigma_c},
+\qquad
+\sigma_c(t)=ct.
+\]
+
+Then a degree-three Postnikov class capable of inducing singular isomorphisms on both simple tails exists **if and only if**
+
+\[
+\boxed{
+c=-1.
+}
+\]
+
+For \(c=1\), all degree-three bimodule classes become zero after simple reduction.
+
+For \(c\neq\pm1\),
+
+\[
+\operatorname{Ext}^3_{S^e}(S,M)=0.
+\]
+
+Therefore the minimal actual bounded complete screener over the dual numbers must realize the sign-twisted third bimodule syzygy.
+
+---
+
+# 40. Cross-line audit
+
+The V-line and K-line both now involve “transport”, but they are not identified.
+
+## V-line transport
+
+The relevant invariant is whether a detector object actually survives under the fixed target tail functor.
+
+The Nakayama counterexample shows Peirce visibility is too coarse.
+
+## K-line transport
+
+The relevant invariant is the actual bimodule automorphism type and the degree-three Postnikov class.
+
+The regular/sign distinction is invisible if one records only one-sided freeness.
+
+No theorem in this run identifies the two structures.
+
+Therefore U5 continues to keep them separate.
+
+---
+
+# 41. Strongest surviving hypotheses
+
+After the attacks, the following statements survive.
+
+## V-S1 — object-level detector condition
+
+A detector switch from \(i\) to \(j\) can only succeed if
+
+\[
+\mathfrak E_z^R(R_i)
+\]
+
+and an appropriate shift/correspondence built from
+
+\[
+\mathfrak E_z^R(R_j)
+\]
+
+are compatible in the detector-tail quotient.
+
+Peirce visibility alone is insufficient.
+
+## V-S2 — cone gate is exact but demanding
+
+If
+
+\[
+\operatorname{Cone}(f)\in\mathcal K_z^R,
+\]
+
+then the detector tails of source and target are identified.
+
+The Nakayama example shows this hypothesis can fail for **every** map simultaneously.
+
+## V-S3 — Yoneda action needs a nonannihilation hypothesis
+
+One needs
+
+\[
+\eta\notin
+\operatorname{Ann}
+(M_z^{\mathrm{tail}})
+\]
+
+or a comparable faithful-action hypothesis.
+
+\[
+\eta\neq0
+\]
+
+alone is useless.
+
+## K-S1 — amplitude-two screening remains Postnikov screening
+
+The unique \(d_3\) remains the only screening datum at amplitude two.
+
+## K-S2 — regular rank-one defect is impossible over dual numbers
+
+The sign twist, not the regular bimodule, is the minimal viable target.
+
+---
+
+# 42. Success labels
+
+## C1 — actual bare detector-switch counterexample
+
+\[
+\boxed{\textbf{ACHIEVED}}
+\]
+
+with
+
+\[
+D=kC_6/J^3,
+\quad
+z=0,\ i=3,\ j=2.
+\]
+
+It additionally has:
+
+- same recurrent SCC;
+- strongly connected carrier;
+- finite exact carrier;
+- actual high-syzygy origin.
+
+## C2 — relative-cone strategy counterexample
+
+\[
+\boxed{\textbf{ACHIEVED}}
+\]
+
+and stronger than requested:
+
+\[
+\operatorname{Cone}(f)\notin\mathcal K_z^R
+\]
+
+for **every**
+
+\[
+f:R_3\to R_2[m].
+\]
+
+A natural nonzero \(m=1\) map exists.
+
+## C3 — Yoneda-tail action counterexample
+
+\[
+\boxed{\textbf{ACHIEVED}}
+\]
+
+in the same algebra, using
+
+\[
+0\neq\eta\in\operatorname{Ext}^1(L_1,L_2),
+\]
+
+whose action on the \(L_0\)-to-\(L_1\) tail is identically zero.
+
+The annihilator can remain stable under the periodic tail.
+
+## C4 — actual bounded complete screener
+
+\[
+\boxed{\textbf{NOT FOUND}}
+\]
+
+## C5 — no-go theorem
+
+A universal no-go for all ordinary algebras was **not** proved.
+
+But a strong exact rank-one theorem was proved:
+
+\[
+\boxed{
+S=k[t]/(t^2),\
+M\text{ bilaterally rank-one free}
+\Rightarrow
+\text{screening anchor possible only for the sign twist}.
+}
+\]
+
+This survives K1/K2/K3 and the synthetic calibration.
+
+---
+
+# 43. Withdrawn / corrected claims created during U5
+
+No prior withdrawn theorem was revived.
+
+One search instinct was corrected during the run:
+
+> try to turn the regular Nakayama defect into a screener by scalar deformation.
+
+The exact \(S^e\)-cohomology calculation shows this cannot work.
+
+The issue is not the scalar value of the extension map.
+
+It is the **bimodule automorphism type**:
+
+\[
+c=1
+\]
+
+versus
+
+\[
+c=-1.
+\]
+
+This is now frozen as a corrected K-line design rule.
+
+---
+
+# 44. Recommended next node
+
+\[
+\boxed{
+\textbf{Universal Layer U6 — Top-Accessible Detection / Sign-Twisted Return Realization}
+}
+\]
+
+Keep the two branches separate.
+
+## U6-V — top-accessible detector transport
+
+Do not use Peirce visibility as the transport condition.
+
+Study a strengthened relation such as:
+
+\[
+j
+\text{ occurs recurrently in the top of a detector-relevant syzygy}
+\]
+
+or an equivalent nonzero object/morphism condition in the detector-tail quotient.
+
+Mandatory calibration:
+
+\[
+D=kC_6/J^3,
+\quad
+(z,i,j)=(0,3,2).
+\]
+
+Any proposed theorem must explain why the visible socle-layer vertex \(2\) is excluded.
+
+For Yoneda descent, require fresh classes modulo the current tail annihilator; repeated use of a class already in the annihilator cannot yield descent.
+
+## U6-K — sign-twisted actual return
+
+Target exactly:
+
+\[
+S=k[t]/(t^2),
+\]
+
+\[
+H_2(K)\cong{}_1S_{\sigma_{-1}},
+\]
+
+\[
+\sigma_{-1}(t)=-t,
+\]
+
+with the nonzero class
+
+\[
+\alpha
+\in
+\operatorname{Ext}^3_{S^e}
+(S,{}_1S_{\sigma_{-1}})
+\cong k.
+\]
+
+Two routes are legitimate:
+
+### Construction route
+
+Use a genuinely noncommutative deleted sector / Morita context capable of producing the sign relation
+
+\[
+tm=-mt.
+\]
+
+The commutative uniserial endomorphism route cannot do this.
+
+### Destruction route
+
+Prove that the actual derived-coring identities of an idempotent quotient forbid the sign-twisted third bimodule syzygy.
+
+That would close the minimal rank-one empty quadrant.
+
+---
+
+# 45. Final frozen state
+
+The strongest new V-line conclusion is:
+
+\[
+\boxed{
+\textbf{Peirce-visible detector switching is false even inside one finite strongly connected periodic carrier.}
+}
+\]
+
+The strongest new relative-cone conclusion is:
+
+\[
+\boxed{
+\textbf{the cone gate can fail for every map simultaneously because the two detector objects are already separated in the tail quotient.}
+}
+\]
+
+The strongest new Yoneda conclusion is:
+
+\[
+\boxed{
+\textbf{a nonzero Ext class can annihilate the entire periodic tail with no forced annihilator growth.}
+}
+\]
+
+The strongest new K-line conclusion is:
+
+\[
+\boxed{
+\textbf{for the dual numbers, regular rank-one defects can never screen; the minimal viable bounded screener must carry the sign-twisted third bimodule syzygy.}
+}
+\]
+
+Universal Gap A is not resolved by U5 Run C.
+
+But the two frontiers are substantially narrower:
+
+\[
+\boxed{
+\text{top-accessible detector transport}
+}
+\]
+and
+
+\[
+\boxed{
+\text{actual sign-twisted Postnikov realization}.
+}
+\]

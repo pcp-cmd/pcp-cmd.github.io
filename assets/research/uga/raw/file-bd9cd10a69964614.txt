@@ -1,0 +1,133 @@
+# Pending boundary test: all-source finite states still do not give factor-carrier containment
+
+2026-10-05. Subagent `global_ordinary_switch`. PENDING, not a canonical Claim or Run.
+Complete written ordinary kernel argument below; same-author audit only, no new exact helper run.
+Universal Gap A and its badness-specific global finite-state bridge remain OPEN.
+
+## 1. Reused boundary and what this example adds
+
+C114 already gives an actual period-one state whose composition-factor sources expand the recurrent projective carrier. The example below strengthens **only the applicability boundary**: every original simple resolution of the ambient algebra enters a genuinely finite, explicitly specified state family. Thus even ALL-SOURCE finite state availability does not establish the missing factor-source containment step in Run11.
+
+This algebra already has several supported ordinary diagonals, so it is not a counterexample to UGA or the badness-specific global alternative. No canonical checkpoint is recommended on the basis of this calibration alone.
+
+## 2. Algebra and the actual projective injection
+
+Work over any field. Let B be the path algebra of
+
+\[
+r\xrightarrow{c_r}u\xleftarrow{c_s}s,\qquad u\xrightarrow{a}t.
+\]
+
+Products are read right to left. Its nine basis elements are four idempotents, three arrows, and the paths ac_r,ac_s. Its actual LEFT projectives have dimensions
+
+\[
+\dim P_r=\dim P_s=3,\quad\dim P_u=2,\quad\dim P_t=1.
+\]
+
+The map i:P_u -> P_r direct_sum P_s, e_u |-> (c_r,c_s), a |-> (ac_r,ac_s), is an actual injective radical map. Let Y be its cokernel. Then
+
+\[
+0\to P_u\overset{i}{\longrightarrow}P_r\oplus P_s\to Y\to0
+\tag{2.1}
+\]
+
+is minimal, pd_B Y=1, and Y has one-dimensional components at r,s,u,t. Choose its actions so c_r: k_r -> k_u is 1, c_s: k_s -> k_u is -1, and a:k_u -> k_t is 1. Signs remain valid in characteristic 2.
+
+Put D=k[x]/(x^2), Lambda=B tensor_k D (dimension 18), and W=Y tensor_k k_D. Form the actual one-point extension A with old corner Lambda and new LEFT projective
+
+\[
+P_q=ke_q\oplus W,\qquad\operatorname{rad}P_q=W.
+\]
+
+The only new Peirce column is W; its old radical actions are the displayed B module actions, and x acts as zero. The old projectives and their actual resolutions are unchanged. Thus A has dimension 23 and five simple labels.
+
+## 3. Full ordinary period-one kernel lemma
+
+For any actual minimal injection i:Q -> P of finite B-projectives, put Y=coker i. Tensor its two-term exact projective resolution with the actual minimal D-resolution of k_D. Since k is a field, the ordinary total complex is exact. Its degree zero is P_D=P tensor D; every positive degree is P_D direct_sum Q_D. The first differential is (x,i), and subsequent differentials have matrix
+
+\[
+\begin{pmatrix}x&i\\0&-x\end{pmatrix}.
+\]
+
+All entries are radical, so this is a real minimal Lambda-resolution. Let Z=Omega_Lambda(Y tensor k_D)=xP_D+i(Q_D) inside P_D.
+
+Projection onto the first coordinate gives an actual Lambda-isomorphism
+
+\[
+\ker(x,i)\cong Z.
+\tag{3.1}
+\]
+
+Indeed, if xp+i(q)=0, reduction modulo x and injectivity of i imply q=xq_1. Hence p lies in xP_D+i(Q_D). If p=0, injectivity of i gives q=0. Conversely p=xp_1+i(q_1) lifts to (p,-xq_1) in the kernel. The lift is independent of its chosen expression, because the projection is injective. This proves Omega Z=Z using FULL kernels, not Betti repetition.
+
+The real minimal cover of Z is P_D direct_sum Q_D, so its head is top P direct_sum top Q. Apply this to (2.1):
+
+\[
+\Omega_A L_q=W,\quad\Omega_A^2 L_q=Z,\quad\Omega_A Z\cong Z,
+\]
+
+\[
+\operatorname{top}Z=L_r\oplus L_s\oplus L_u,\qquad
+[Z]=(1,1,3,3,0),\qquad T(Z)=\{r,s,u\}.
+\tag{3.2}
+\]
+
+Here T means the labels of ACTUAL recurrent projectives in the ordinary minimal resolution. In particular Z contains L_t as a composition factor, with multiplicity three.
+
+## 4. The ALL-source finite state family is explicit
+
+B is hereditary, and its simple resolutions have injections rad P_i -> P_i with
+
+\[
+\operatorname{rad}P_r=P_u,\quad\operatorname{rad}P_s=P_u,
+\quad\operatorname{rad}P_u=P_t,\quad\operatorname{rad}P_t=0.
+\]
+
+The same FULL-kernel lemma gives states Z_i=Omega_A L_i for i=r,s,u,t, each with Omega Z_i=Z_i. At t this is the literal dual-number resolution, Z_t=L_t. Every original simple therefore enters the finite actual family
+
+\[
+\mathcal X=\{Z_r,Z_s,Z_u,Z_t,Z,W\},
+\]
+
+with Omega W=Z and all other transitions identity. Their head and composition vectors, in label order (r,s,u,t,q), are:
+
+| State | Head | Composition vector |
+|---|---|---|
+| Z_r | r+u | (1,0,2,2,0) |
+| Z_s | s+u | (0,1,2,2,0) |
+| Z_u | u+t | (0,0,1,2,0) |
+| Z_t | t | (0,0,0,1,0) |
+| Z | r+s+u | (1,1,3,3,0) |
+| W | r+s | (1,1,1,1,0) |
+
+The actual Cartan matrix is
+
+\[
+C=\begin{pmatrix}
+2&0&0&0&1\\
+0&2&0&0&1\\
+2&2&2&0&1\\
+2&2&2&2&1\\
+0&0&0&0&1
+\end{pmatrix}.
+\]
+
+With the displayed head/composition matrices H,D and the actual transition matrix M, direct multiplication gives CH=D(I+M). For each periodic state, CH=2D; for W, CH_W=D_W+D_Z. Thus the example satisfies the exact global finite-state composition identity, not merely a graph model.
+
+Nevertheless
+
+\[
+L_t\text{ is a composition factor of recurrent }Z,\qquad
+T(L_t)=\{t\}\not\subseteq T(Z)=\{r,s,u\}.
+\tag{4.1}
+\]
+
+The source L_q itself has a real infinite periodic tail with T(L_q)={r,s,u}; switching to the factor source L_t introduces a genuinely new recurrent projective type.
+
+## 5. Exact scope and audit
+
+The statement refuted is: "ALL-source finite actual syzygy states, together with CH=D(I+M), imply recurrent-carrier containment after switching to a composition-factor source." The refutation is in actual ordinary resolutions over any field.
+
+The all-source full visible-mask stopping theorem is **not** refuted: every old simple L_i has its own label in top Z_i, so Tor_n(R_i,L_i) is nonzero for every n>=1. This is an already positive algebra. Full badness, rather than finite-state availability alone, would have to supply any stronger containment or an alternative global return/descent argument.
+
+Self-audit checks: the tensor factor with x is the same D on each summand; the injection is genuinely minimal and monic; projection proves the whole kernel isomorphism; old resolutions remain ordinary A-resolutions; all six state transitions and all five original-simple entries are explicit; composition-support, recurrent-projective support, and reverse Peirce support are not identified; no sourcewise Tiling, independent/formal verification, or universal finite-family existence claim is made.

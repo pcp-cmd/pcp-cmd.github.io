@@ -1,0 +1,11 @@
+## UGA-C084 — All-Block Even Comparison Inherits and Closes an All-Size Class with a Bound
+**Status:** COMPLETE SELF-AUDITED ALL-SIZE ORDINARY CLASS CLOSURE / STRICT FINITE-COUNT DESCENT / CONDITIONAL UNIFORM BOUND / NOT INDEPENDENTLY VERIFIED  
+**Source:** even-comparison Run, Sections 5--8.
+
+Assume for EVERY nonempty proper vertex block S that A->A/Ae_SA has eventual-even same-pair ordinary Tor surjectivity on all retained pairs. There are finitely many blocks, so take N=max N_S. For nested quotients A->C_T->C_S, the ordinary bar maps factor and the composite is onto in all even n>=N. Consequently the SECOND map is onto there. Every block quotient inherits this actual ordinary all-block comparison property, with cutoff at most N, without inheriting any coefficient projectivity, perfectness, tensor nilpotence, section or formality hypothesis.
+
+A bad algebra in this class has a C083 eligible infinite-source deletion. Its chosen infinite-simple count strictly decreases, the class inherits, and after at most the initial chosen count minus two steps a bad algebra in C080's terminal class would remain. Thus EVERY finite-size elementary algebra in this all-block comparison class satisfies Gap A. A direct right-chosen chain works separately. Different original comparisons may be certified by different section/parity/finite-corridor mechanisms; primitive-only coefficient or comparison hypotheses are not asserted to supply the all-block property. General availability is not proved.
+
+If additionally EVERY reverse-supported A pair vanishes for EVERY n>=M>=1, put M_*=2ceil(max(M,N)/2). Even comparison and the nonnegative ordinary cover identity force all supported degrees in every block quotient to vanish from M_* onward. Actual annihilated-tail comparison and vertex induction then give gd A<=(v-1)M_*. This keeps the actual N, all-block hypothesis and all-source/all-degree vanishing; it is neither a universal bound for arbitrary A nor a short finite-window test. The unchanged A22 violates even comparison arbitrarily late. No new computation or independent verification.
+
+---

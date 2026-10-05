@@ -1,0 +1,160 @@
+# 右边界检测的最优窗口：任意分解长度
+
+2026-09-23。接续 [真实尾端的 Tor 正交性](Tor-Orthogonality-and-Corner-Tests.md)。
+
+**状态：任意 N 的 Universal Gap A 仍未证明。** 本稿证明已有右边界检测定理中的 r+3 次窗口对每个 r≥0 都最优。证明为自审；r=0,…,5 的有限精确核算已通过，尚未独立核验，未确认新颖性。
+
+## 1. 被校准的定理及量词
+
+令 A 为有限维 basic 复代数，固定左 simple L_j，记
+\[
+F_j=\{i:e_jAe_i\ne0\},\quad
+u=\sum_{i\notin F_j}e_i,\quad B=uAu,\quad W=(Au)_B.
+\]
+假设每个右 B-simple 都有长度至多 r 的 add(W) 正合分解。前稿证明：对 M≥1，若
+\[
+\operatorname{Tor}_n^A(R_i,L_j)=0
+\quad(i\in F_j,\ M\le n\le M+r+2),
+\tag{1}
+\]
+则 pd_A L_j≤M+r。这里共检查 r+3 个连续次数。
+
+**定理。** 对每个整数 r≥0，都存在连通的 r+3 顶点代数 A_r 及 source 0，使上述右边界分解条件成立，而
+\[
+\operatorname{pd}_{A_r}L_0=\infty,
+\qquad
+\operatorname{Tor}_n^{A_r}(R_i,L_0)=0
+\quad(i\in F_0,\ 1\le n\le r+2).
+\tag{2}
+\]
+在 n=r+3 时出现 supported Tor。因此，(1) 的统一窗口长度不能从 r+3 改成 r+2，即使 M=1、A 连通，甚至 r≥1 时 J³=0。
+
+这校准的是附带右边界假设的定理。没有断言一般代数都满足该假设。
+
+## 2. 任意 r 的代数
+
+顶点为 0,…,r+2。写 x_*=r+1、y=r+2；箭头为
+\[
+a_i:i\longrightarrow i+1\quad(0\le i\le r+1),
+\qquad c:y\longrightarrow0,
+\]
+以及顶点 x_* 上的 loop x。乘法从右向左读取。取单项式关系
+\[
+x^2=0,\quad a_{r+1}x=0,\quad xa_r=0,
+\quad ca_{r+1}=0,
+\quad a_{i+1}a_i=0\ (0\le i<r).
+\tag{3}
+\]
+
+若 r≥1，除各箭头外仅有两个非零长路径
+\[
+t=a_{r+1}a_r:r\to y,\qquad q=a_0c:y\to1.
+\]
+所有长度三的路径为零，所以 dim A_r=2r+9、J³=0。
+
+若 r=0，还保留长度三路径 s=a_1a_0c，因此 dim A_0=10、J⁴=0。这就是前稿的三顶点十维例子；这里复用它，而不将它误写成 J³=0。
+
+唯一终止在顶点 0 的正长度非零路径是 c，所以
+\[
+F_0=\{0,y\},\qquad u=e_1+\cdots+e_{r+1}.
+\tag{4}
+\]
+角 B 的箭头是 1→⋯→r+1 及末端 loop x，所有二次 radical 乘积均为零。
+
+## 3. 实际 A 消解与首次返回
+
+令 P_i=A_re_i。对 r≥1，直接读取路径基得到
+\[
+\Omega L_i=L_{i+1}\quad(0\le i<r).
+\tag{5}
+\]
+JP_r 有基 a_r、t；P_{x_*}→JP_r 把 e_{x_*} 送到 a_r、a_{r+1} 送到 t、x 送到零。其核是 kx≅L_{x_*}。故所有 r≥0 都有
+\[
+\Omega^{r+2}L_0\simeq L_{x_*}.
+\tag{6}
+\]
+同样由 P_{x_*} 的基 e_{x_*}、x、a_{r+1} 得到
+\[
+\Omega L_{x_*}\simeq L_{x_*}\oplus L_y.
+\tag{7}
+\]
+因此 L_{x_*} 及 L_0 均无限 pd。另一方面，右乘 c 给出
+\[
+P_0\xrightarrow{\sim}JP_y,
+\quad\text{所以 }\operatorname{pd}L_y=1.
+\tag{8}
+\]
+此式在 r=0 时也成立：P_0 的三条路径对应 c、a_0c、a_1a_0c。
+
+L_0 的最小投射项标签从次数 1 开始依次是
+\[
+1,2,\ldots,r,\ x_*,\ x_*,\ \{x_*,y\},\ldots.
+\tag{9}
+\]
+当 r=0，前面的 1,…,r 是空列。因此次数 1,…,r+2 都避开 F_0，而第 r+3 次包含 P_y，且
+\[
+\dim\operatorname{Tor}_{r+3}^{A_r}(R_y,L_0)=1.
+\tag{10}
+\]
+(7) 的 split return 是无穷性的证明；没有从有限 Betti 表推断无穷。
+
+## 4. 右 B-simples 的 add(W) 分解
+
+记 Q_i=e_iB 为右 B 投射模，S_i 为右 B-simple。由 (4) 及路径基，
+\[
+W=A_ru\simeq B\oplus V,\qquad V=e_yA_ru;
+\tag{11}
+\]
+另一个被删顶点满足 e_0A_ru=0。
+
+当 r≥1，V 有基 a_{r+1}、t，唯一非零 radical 作用为
+\[
+a_{r+1}\cdot a_r=t.
+\]
+所以存在短正合列
+\[
+0\longrightarrow S_r\longrightarrow V
+\longrightarrow S_{r+1}\longrightarrow0.
+\tag{12}
+\]
+对 1≤i≤r，右 B-simple S_i 的最小投射消解为
+\[
+0\longrightarrow Q_1\longrightarrow\cdots
+\longrightarrow Q_i\longrightarrow S_i\longrightarrow0,
+\tag{13}
+\]
+长度为 i−1。将 S_r 的消解接到 (12)，得到
+\[
+0\longrightarrow Q_1\longrightarrow\cdots
+\longrightarrow Q_r\longrightarrow V
+\longrightarrow S_{r+1}\longrightarrow0.
+\tag{14}
+\]
+其长度是 r，全部项属于 add(W)。当 r=0，则 B 为双数代数且 V=S_1，直接取长度 0。因此全部 r 都满足定理要求的右侧假设。
+
+## 5. 被有限窗口遗漏的 Tor 障碍
+
+取候选尾端 T=uΩ_A L_0。所有 r 都有 T≅左 B-simple L_1。其 B 消解依次使用 Q_i 的左模版本 Be_i：从 Be_1 沿链到 Be_{r+1}，此后以 loop x 重复。
+
+将该消解与 V tensor。若 r≥1，次数 r、r−1 的两个一维项之间，微分由 a_{r+1}a_r=t 给出同构；之后的 x 微分全为零。若 r=0，全部正次数 x 微分为零。于是统一得到
+\[
+\operatorname{Tor}_n^B(W,T)\cong
+\begin{cases}
+0,&1\le n\le r,\\
+\mathbb C,&n\ge r+1.
+\end{cases}
+\tag{15}
+\]
+这精确解释了为何 r+2 个投射项仍不足：它们尚未强迫检测 (15) 中首次非零的次数。
+
+同时 uP_0≅T 无限 pd，因此左边界 uA 的有限 pd 检测在整族上均不适用。右侧条件确实覆盖了左侧条件之外的例子。
+
+由于 A_r 的 L_0 无限 pd，结合窗口定理还可知：所有右 simples 的共同 add(W) 分解界不可能小于 r；否则其更短窗口已落在 (2) 的消失区间中，产生矛盾。
+
+## 6. 验证与主目标接口
+
+[audit_sharp_right_windows.py](../work/audit_sharp_right_windows.py) 对 r=0,…,5 检查实际乘法、最小覆盖、(6)—(8) 的模块同构、(12) 的 radical 与 quotient、右侧有限消解，以及 33 个精确 Tor 维数。结果见 [sharp_right_windows_audit.json](../work/sharp_right_windows_audit.json)。所有计算使用有理数，随后可扩标量到复数。
+
+任意 r 的结论依靠 (3)—(15) 的统一证明。计算不是独立数学审稿，也没有改动原 verified fact graph。
+
+一般 N 路线仍需从完整的 supported 消失条件推出实际尾端终止，或证明足以终止它的右侧有限分解。此稿证明了右侧方法已得到的窗口是精确的，未证明这项有限分解对所有代数普遍存在。

@@ -1,0 +1,339 @@
+# Ordinary graded Cartan bridge and exact filtered transfer under degree separation
+
+**Date:** 2026-10-04, continuing the Global Route Audit/C115–C116 and D-010 HYBRID.  
+**Status:** COMPLETE WRITTEN ORDINARY PROOFS / NORMAL ADVERSARIAL SELF-AUDIT / TARGETED EXACT CALIBRATION / NOT INDEPENDENTLY VERIFIED. No novelty or formal MRS acceptance claim.  
+**Progress:** a mature graded-Cartan logarithmic derivative gives an actual supported ordinary Tor tail, with a uniform homological window, over ANY elementary field. This closes the entire actual-positive-graded nonconstant-determinant branch, including all positive-graded nonsemisimple selfinjective algebras at arbitrary Loewy length. A standard finite bar filtration supplies a separately proved ordinary transfer under degree separation; radical-associated-graded Koszul algebras have ordinary degree-one Yoneda generation and diagonal closure.  
+**Boundary:** no automatic associated-graded transfer. The reused A14 has a genuine finite descending filtration with gr A=B14 and nonconstant graded determinant, but gd A=2; a real first bar differential kills a graded class. Constant determinant also does not imply finite gd. **Full UGA remains OPEN.**
+
+## 1. Existing assets and why this investment helps close branches
+
+C115 fixes the canonical ordinary ideal blocks; C116 forbids automatic monomial persistence transfer. The project already closes all monomial algebras via C061, so monomial closure is reused, not reproved. C110's cube-zero result and C108's stronger every-simple selfinjective cube-zero result stay intact. The existing N-Vertex-Main-Route Sections2–4 supplies the actual ordinary Yoneda stopping bound once generation is proved. No local T38 head-selection lemma is pursued here.
+
+The new target is an explicit standard scalar identity that retains the full reverse-support mask and can FORCE ordinary homology, rather than count relation words or introduce another carrier invariant. The subsequent filtered comparison has a proved stopping of ALL higher differentials under its exact hypothesis. This is a closing mechanism for whole arbitrary-size classes, not just a necessary condition on a hypothetical counterexample.
+
+Relevant prior searches: Claims/Toolbox/Regression contain monomial section closure, the associated-graded lifting guard, ordinary degree-one bar products, and the older FG interface. No corresponding graded-Cartan ordinary window theorem or separated-weight ordinary transfer was found in the bounded project search; no claim of global absence or mathematical novelty is made.
+
+## 2. Exact objects, orientations, and the actual graded minimal resolution
+
+Let
+
+\[
+A=\bigoplus_{d=0}^{w}A_d,\qquad A_0=S=k^N,\qquad
+J=\bigoplus_{d>0}A_d,
+\]
+
+be an ACTUAL positive grading of the elementary finite-dimensional algebra, over any field. The algebra need not be generated in degree1. Let \(w=\max\{d:A_d\ne0\}\). Set
+
+\[
+C_{yx}(t)=\sum_{d\ge0}\dim_k(e_yA_de_x)t^d,\qquad
+D(t)=\det C(t)\in\mathbb Z[t],\quad D(0)=1.
+\]
+
+Rows are physical target vertices; columns are primitive projective sources. For the left simple \(L_y\) in degree0, write its ACTUAL minimal graded projective resolution as
+
+\[
+P_n(L_y)=\bigoplus_{x,d}(Ae_x)\langle d\rangle^{\beta_{xy}(n,d)},\qquad
+B_n(t)_{xy}=\sum_d\beta_{xy}(n,d)t^d.
+\]
+
+Here \(\langle d\rangle\) places a primitive generator in degree \(d\). Forgetting the grading gives an actual minimal ordinary resolution, since its differentials still have radical image. Consequently
+
+\[
+\sum_d\beta_{xy}(n,d)=
+\dim_k\operatorname{Tor}^A_n(R_x,L_y).
+\tag{1}
+\]
+
+Reverse visibility is \(C_{yx}(1)=\dim e_yAe_x>0\), exactly as in C115. It is not \(C_{xy}(1)\).
+
+**Generator-degree bounds.** Every nonzero generator of \(P_n\) has
+
+\[
+n\le d\le nw.
+\tag{2}
+\]
+
+Proof: \(P_0\) has degree0 generators. In a minimal cover the new syzygy lies in \(JP_{n-1}\), so its minimum degree increases by at least1. A module contained in \(P_{n-1}\), whose highest component has degree at most \((n-1)w+w\), cannot have a top lift above \(nw\). Choose homogeneous top lifts for its real projective cover. Induction proves both inequalities, without uniform pd or module-state assumptions.
+
+For each fixed internal degree \(q\), \(P_n[q]=0\) once \(n>q\). The degree-\(q\) resolution is thus a finite exact sequence. Taking its integer Euler characteristic gives the degreewise formal identity
+
+\[
+C(t)Q(t)=I,\qquad
+Q(t)=\sum_{n\ge0}(-1)^nB_n(t)=C(t)^{-1}
+\quad\text{in }\operatorname{Mat}_N(\mathbb Z[[t]]).
+\tag{3}
+\]
+
+This is an ordinary dimension calculation from actual minimal resolutions. The sum is coefficientwise finite; it is not an analytic evaluation at \(t=1\).
+
+## 3. The direct ordinary logarithmic-derivative bridge
+
+Jacobi's determinant identity applied over \(\mathbb Q[[t]]\) to the INTEGER matrix (3) yields
+
+\[
+\frac{D'(t)}{D(t)}
+=\operatorname{tr}\big(C'(t)C(t)^{-1}\big)
+=\sum_{n\ge0}(-1)^n
+ \sum_{x,y}C'_{yx}(t)B_n(t)_{xy}.
+\tag{4}
+\]
+
+The derivative is of the polynomial of integer dimensions. It is NOT a derivative of structure constants in \(k\), and is never reduced modulo \(\operatorname{char}k\). Each coefficient in \(C'_{yx}B_{n,xy}\) is a nonnegative integer. If such a coefficient is nonzero, then (1) is nonzero and \(C_{yx}(1)>0\): an actual ordinary SUPPORTED pair is present. Different \(n\)'s can cancel in (4); a nonzero coefficient nonetheless certifies at least one real supported summand.
+
+Assume \(D\ne1\) and put \(u=\deg D\ge1\), necessarily \(u\le Nw\). Write
+
+\[
+\frac{D'}D=\sum_{m\ge0}g_mt^m,\qquad
+D=1+c_1t+\cdots+c_ut^u.
+\]
+
+The \(g_m\) are integers, by formal inversion of a polynomial with constant term1, and satisfy
+
+\[
+g_m+c_1g_{m-1}+\cdots+c_ug_{m-u}=0\qquad(m\ge u).
+\tag{5}
+\]
+
+The series is not a polynomial: otherwise \(D'=DG\) with polynomial \(G\), impossible for nonconstant \(D\) in characteristic0 since \(\deg D'<\deg D\). These calculations take place in \(\mathbb Z\subset\mathbb Q\), whatever the original field.
+
+There cannot be \(u\) consecutive zero coefficients anywhere at nonnegative indices. Such a block beginning at \(L\ge0\), together with (5) starting at \(L+u\), would make every later coefficient zero, contrary to the preceding paragraph.
+
+### Theorem 3.1 — Supported ordinary Tor in a uniform window
+
+For EVERY integer \(b\ge0\), some pair \((x,y)\) and some \(n\) satisfy
+
+\[
+\boxed{
+b<n\le(b+1)w+u-1,\qquad
+e_yAe_x\ne0,\qquad
+\operatorname{Tor}^A_n(R_x,L_y)\ne0.
+}
+\tag{6}
+\]
+
+Proof: choose a nonzero \(g_m\) among the \(u\) consecutive indices
+\((b+1)w,\ldots,(b+1)w+u-1\). In (4), every term of homological degree \(n\le b\) has polynomial degree at most \(w-1+nw\le(b+1)w-1\), by (2), so none contributes to \(g_m\). A nonzero contribution must have \(n>b\). Since \(\deg B_n\) begins at \(n\) and \(\deg C'\) begins at a nonnegative integer, \(n\le m\). A nonzero summand gives the stated actual supported pair. This proves (6).
+
+As \(b\) tends to infinity, finite \(N^2\) pigeonhole fixes ONE supported pair nonzero infinitely often. Its individual degrees need not occupy every window; the window assertion is for the supported aggregate. In particular gd A is infinite, and the entire ACTUAL positive-graded nonconstant-\(D\) branch of UGA is closed.
+
+**Equivalent contrapositive boundary.** Full supported cutoff \(Z_b\) forces \(D=1\) for every actual positive grading. This is useful only because the nonconstant branch has just been excluded with ordinary witnesses and a stopping window; \(D=1\) itself is not closure.
+
+## 4. Whole arbitrary-size classes, including higher Loewy selfinjective algebras
+
+### 4.1 Actual positive-graded selfinjective algebras
+
+Assume A is also selfinjective. Each indecomposable \(Ae_i\) has one simple socle \(L_{\nu(i)}\), with \(\nu\) a permutation. Let \(w_i\) be the highest nonzero graded degree of \(Ae_i\). That highest component is annihilated by all positive elements, so lies in the simple socle. It is therefore one-dimensional, at exactly row \(\nu(i)\), and every other entry of column \(i\) has degree strictly less than \(w_i\).
+
+In the determinant, the coefficient of \(t^{\sum_iw_i}\) comes from the UNIQUE permutation \(\nu\), with coefficient \(\operatorname{sgn}\nu=\pm1\). Consequently
+
+\[
+\deg D=\sum_iw_i.
+\tag{7}
+\]
+
+If A is not semisimple, this degree is positive. Theorem3.1 closes the WHOLE positive-graded nonsemisimple selfinjective class, at arbitrary finite vertex count and arbitrary Loewy length, over any elementary field. Its explicit window uses \(w=\max_iw_i\), \(u=\sum_iw_i\). The conclusion is one fixed ordinary supported pair, possibly off-diagonal; it is NOT the stronger EVERY-simple diagonal assertion of C108 in its cube-zero class.
+
+No selfinjectivity of an associated graded algebra is presumed. Nongraded selfinjective cases are not closed by this argument.
+
+### 4.2 Actual Koszul algebras
+
+For a Koszul algebra, \(\beta_{xy}(n,d)=0\) unless \(d=n\). If \(D=1\), the inverse \(C^{-1}=\operatorname{adj}C\) is polynomial. Coefficient \(t^n\) in (3) is then \((-1)^n(\beta_{xy}(n,n))\), with no cross-homological cancellation. Thus all simple Betti matrices vanish eventually and gd A is finite. Therefore infinite-gd ACTUAL Koszul algebras have \(D\ne1\), and Theorem3.1 closes this whole class over any field. Section5 below gives a stronger diagonal result and extends it to radical-associated-graded Koszul algebras with an actual ordinary comparison.
+
+### 4.3 Actual positive multigradings
+
+If A has a finite \(\mathbb N^s\)-grading with degree0 equal to S and every radical component of nonzero total degree, use its standard multigraded Cartan determinant. If that integer polynomial is nonconstant, choose positive integer weights separating its finitely many distinct exponent vectors; for example sufficiently large successive powers of one integer distinguish the bounded coordinates. The specialized polynomial remains nonconstant and defines an ACTUAL positive integer grading of A. Theorem3.1 applies. No grading is manufactured on A unless its actual multiplication respects it.
+
+## 5. Exact ordinary associated-graded transfer under degree separation
+
+Let A be elementary finite-dimensional, with a FINITE descending multiplicative filtration by two-sided ideals
+
+\[
+F^0A=A,\qquad F^1A=J,\qquad F^{h+1}A=0,\qquad
+F^pA\,F^qA\subseteq F^{p+q}A.
+\]
+
+Let \(G=\operatorname{gr}_F A\), so \(G_0=S\), and let
+
+\[
+W_n=\{d:\operatorname{Tor}^G_n(S,S)_d\ne0\}.
+\]
+
+These are the ACTUAL ordinary bigraded Tor groups of G. Assume the exact separation condition
+
+\[
+\max W_{n-1}<\min W_n
+\tag{8}
+\]
+
+whenever both adjacent groups are nonzero. This is a substantive hypothesis, not inferred from finite algebra dimension, nonconstant determinant, graph cycles or quadratic relations.
+
+### Lemma 5.1 — All higher ordinary bar differentials vanish
+
+The normalized S-relative ordinary bar complex for \(\operatorname{Tor}^A(S,S)\) has degree-n term \(J^{\otimes_S n}\). Filter a tensor by the sum of its factors' F-orders. Its degree-n filtration lies between weights \(n\) and \(nh\), so it is finite in each degree. Multiplication preserves or increases weight, and its leading differential is exactly the ordinary bar differential for G. Outside idempotents are retained.
+
+The resulting convergent ordinary spectral sequence has
+
+\[
+E^1_{n,d}=\operatorname{Tor}^G_n(S,S)_d,\qquad
+d_r:E^r_{n,d}\longrightarrow E^r_{n-1,d+r}\quad(r\ge1).
+\tag{9}
+\]
+
+Under (8), an outgoing target has weight greater than every possible weight in homological degree \(n-1\); an incoming class starts in \(W_{n+1}\) and reaches still larger weight, above every possible weight in degree n. Thus BOTH incoming and outgoing differentials vanish, on every page. The finite degreewise filtration gives
+
+\[
+\operatorname{gr}_F\operatorname{Tor}^A_n(R_x,L_y)
+\simeq\operatorname{Tor}^G_n(R_x,L_y)
+\quad\text{as weight-graded vector spaces}.
+\tag{10}
+\]
+
+In particular ordinary Betti dimensions agree for EVERY pair and EVERY degree. A general weight-splitting is not canonical; (10) is an associated-graded identification, not an invented algebra map \(G\to A\) or an unchecked Tor inflation map.
+
+The physical Peirce support is also exact:
+
+\[
+\dim e_yAe_x=\sum_p\dim e_yG_pe_x.
+\tag{11}
+\]
+
+Thus supported persistence, every chosen-side simple pd label, and global infinity agree under (8). Any established UGA closure for G transfers to A through actual ordinary groups. This is a precise repair of the old associated-graded lifting guard; without (8) or another actual comparison it remains invalid.
+
+### Lemma 5.2 — Ordinary Yoneda generation transfers
+
+Dual ordinary bar cochains carry the finite degreewise filtration and cup product compatible with tensor deconcatenation. The corresponding associated ordinary Ext algebra after the degeneration in (9) is the ordinary graded Ext algebra of G, preserving homological degrees and vertex labels.
+
+If that algebra is generated in homological degrees at most \(d\), lift a finite basis in degrees0 through d to ordinary Ext_A. For any ordinary class, subtract a polynomial in the lifted classes with the same leading filtered symbol; continue through its FINITE degreewise filtration. This terminates and proves generation of ordinary Ext_A in homological degrees at most d. There is no use of singular/Tate Ext, finite-state propagation or an assumed projective-map comparison.
+
+The existing project ordinary word theorem now gives, under diagonal cutoff n>b (in particular under full Z_b),
+
+\[
+\operatorname{gd}A\le Nb+(N-1)d.
+\tag{12}
+\]
+
+The stopping theorem is reused from N-Vertex-Main-Route; it is not a new FG theorem for arbitrary A.
+
+### Corollary 5.3 — Radical-associated-graded Koszul closure, with a diagonal
+
+Take \(F^pA=J^p\) and assume the ACTUAL \(G=\operatorname{gr}_J A\) is Koszul. Then \(W_n=\{n\}\) when nonzero, so (8) holds. The ordinary Ext algebra of G is generated in degree1: in internal weight n its ordinary bar cycles are the intersection of every adjacent quadratic kernel in \((G_1)^{\otimes_S n}\), with NO incoming weight-n boundary. Ordinary degree-one cup words restrict from the whole tensor dual onto the dual of that cycle space. Koszul purity says this is all its degree-n Ext. This is the same genuine lowest-weight cup argument reused in C110, without extending C110's cube-zero core proof.
+
+Lemma5.2 gives ordinary degree-one generation for A. If gd A is infinite, ordinary degree-one words of arbitrarily large length exist. Expanding vertex endpoints, finite vertex repetition gives nonzero self-Ext subproducts of arbitrarily large degree, and then fixes one diagonal by finite pigeonhole. Hence
+
+\[
+\boxed{\operatorname{gd}A=\infty\Longrightarrow
+\exists i:\operatorname{Tor}^A_n(R_i,L_i)\ne0
+\text{ infinitely often}.}
+\tag{13}
+\]
+
+Under a common diagonal cutoff n>b, (12) with d=1 gives
+\(\operatorname{gd}A\le Nb+N-1\). This closes the ENTIRE radical-associated-graded Koszul class at arbitrary size/Loewy length over ANY elementary field. No positive grading of A itself is required. No claim that all quadratic algebras, all finite algebras, or all selfinjective algebras have Koszul radical graded algebra is made.
+
+More generally, under (8) plus proved degree-d generation for Ext_G, (12) applies. Without that generation, (10)–(11) still transfer any already-closed supported-return class, including a nonconstant-Cartan G.
+
+## 6. Actual negative and positive calibrations
+
+### 6.1 Reused B14: determinant one is not finite gd
+
+Use the frozen C116 normal basis for the monomial B14. Write arrow variables a,b,c,d for \(a_1,b_1,a_2,b_2\). Its actual multigraded matrix is
+
+\[
+C=
+\begin{pmatrix}
+1&b&bd\\
+a&1+cd&d(1+cd)\\
+ac&c(1+cd)&1+cd+(cd)^2
+\end{pmatrix},\qquad
+\det C=1+cd-ab.
+\tag{14}
+\]
+
+Assigning every arrow degree1 makes D(t)=1. Nevertheless its TRUE C116 kernels are \(\Omega L_1=M\), \(\Omega M=L_1\oplus M\), so infinite pd and ordinary diagonal return persist. The constant determinant makes the logarithmic derivative vanish by cross-homological cancellation; it is not a pd bound.
+
+For the ACTUAL legitimate B grading \(\deg(a_1,b_1,a_2,b_2)=(1,1,1,2)\), (14) becomes
+
+\[
+D_B(t)=1-t^2+t^3,\qquad w=6,\quad u=3.
+\]
+
+Theorem3.1 certifies supported ordinary Tor after every b within n<=6(b+1)+2. C116's true split-kernel proof remains a sharper all-degree witness. In original A14, the binomial requires \(\deg a_1+\deg b_1=\deg b_2+\deg a_2\) for any grading respecting these homogeneous arrows, so (14) specializes to1. Do not assign the incompatible B grading to A.
+
+### 6.2 A14 admits a finite filtration with gr A=B14, yet gd A=2
+
+There IS a different, genuine filtration on A14: give each frozen normal basis path the B weights above and let F^pA be the span of paths of weight at least p. The C116 reduction \(a_1b_1\mapsto b_2a_2\) raises weight2 to3; every other forbidden lead reduces to zero. Thus every nonzero product has weight at least the sum of the inputs, and its weight-equal part is exactly the B monomial product. Therefore the F^p are descending two-sided ideals, F1=J, F7=0, and \(\operatorname{gr}_F A=B14\). This is NOT the radical-power filtration: the arrow b2 already has F-weight2.
+
+The associated graded has \(D_B\ne1\) and an infinite supported ordinary tail, while original A14 has gd2. So no nonconstant-determinant theorem for associated objects can be used on A without an actual comparison.
+
+The failure is an EXPLICIT ordinary higher differential. In the filtered bar complex,
+
+\[
+b_A(a_1\mid b_1\mid a_1)
+=(b_2a_2)\mid a_1.
+\tag{15}
+\]
+
+The left tensor has weight3. Its leading bar differential in B is zero since \(a_1b_1=b_1a_1=0\). It gives a nonzero \(\operatorname{Tor}^B_3(R_2,L_1)\) weight3 class: the word \(a_1b_1a_1\) lies in \(FI\cap IF\), not in \(I^2+FIF\), whose words have length at least4.
+
+The right tensor has weight4 and represents the nonzero \(\operatorname{Tor}^B_2(R_2,L_1)\) class of the minimal relation \(b_2a_2a_1\). It is homologous to \(b_2\mid a_2a_1\), and its relation class is nonzero in \(I/(FI+IF)\). Thus (15) is a REAL nonzero \(d_1:E^1_{3,3}\to E^1_{2,4}\). It violates (8) and explains the disappearance of this actual ordinary pair in A. No abstract staircase or graph inference is involved.
+
+This does not refute Corollary5.3: radical-gr A14 is its original actual Koszul path-length grading, whereas the weighted filtered gr B14 is non-Koszul and lacks degree separation.
+
+### 6.3 Nonmonomial higher-Loewy five-vertex example inside the full selfinjective theorem
+
+For any N>=2 use basis \(x^ay^be_i\), i mod N, \(0\le a,b\le2\), with target \(i+a+b\), source i. Product, when endpoints match, is
+
+\[
+(x^uy^ve_j)(x^ay^be_i)
+=(-1)^{va}x^{u+a}y^{v+b}e_i
+\]
+
+if both new exponents are <=2, and zero otherwise. It is a literal cyclic cover of the cubic quantum complete intersection, over any field; in characteristic2 the signs become1. Associativity follows from addition of the exponents and the identity \(va+w(u+a)=wu+(v+w)a\). Degree is a+b, Loewy length5. The functional summing coefficients of \(x^2y^2e_i\) gives a signed-permutation nondegenerate pairing by complementary exponent monomials. Thus the algebra is Frobenius/selfinjective, with one socle in degree4 per column.
+
+For N=5 it has dimension45 and
+
+\[
+C(t)=(I+tT+t^2T^2)^2,\qquad
+D(t)=(1+t^5+t^{10})^2,\qquad w=4,\quad u=20,
+\]
+
+where T is the actual graded column-shift permutation. The ordinary theorem gives a supported witness after EVERY b at some n<=4(b+1)+19. This algebra is nonmonomial, has J3 nonzero, and lies beyond the old <=4-total-vertex and cube-zero classes. It is a calibration of an arbitrary-size theorem, not a five-vertex classification. Its finite Betti prefix n+1 does not prove persistence; Theorem3.1 does.
+
+### 6.4 Characteristic boundary
+
+For k of characteristic2, the actual local algebra k[x,y]/(x2,y2) has integer Cartan polynomial (1+t)^2 and integer logarithmic derivative 2/(1+t). Reducing that derivative into k would erase the certificate. The proof never does so. Its ordinary tensor-product minimal resolution also gives Betti n+1; no characteristic0 homology theorem was extended silently.
+
+## 7. External mathematics, Vault and exact computation scope
+
+The mature interface is supported by [Bergh–Madsen, Hochschild homology and global dimension](https://arxiv.org/pdf/0803.3550), full primary Sections3–4 read: logarithmic-derivative recurrence; graded Cartan inverse expressed by graded ordinary Ext (Theorem4.1, citing Wilson); and the Koszul nonconstant-determinant argument. Their Corollary3.5/Theorem4.4 conclude Hochschild persistence in characteristic0. Here (3)–(6) give a SEPARATE ordinary simple-Tor proof over any field and a homological window. No assertion about Hochschild/cyclic homology in positive characteristic is inferred, and Wilson's original full proof was not read. [Priddy's original Koszul resolutions paper](https://www.ams.org/tran/1970-152-01/S0002-9947-1970-0265437-8/S0002-9947-1970-0265437-8.pdf) is a primary-source locator only: full text was not retrieved successfully. The exact finite bar comparison needed here is proved in Section5 and does not depend on an unchecked paraphrase of that paper.
+
+The existing MRS workflow retains claims, proofs, failures and source scope. The existing live Vault note math/把集合问题转换为函数问题.md was read completely through its installed skill. Its concrete role was converting the union of reverse-visible ordinary groups into a standard matrix scalar that can be attacked by (4). The chosen scalar has an explicit nonzero-coefficient-to-ordinary-witness theorem; it is not merely another necessary invariant. No Vault note was edited/copied or treated as project authority.
+
+Exact standard-library rational computation was selected to reuse the frozen actual-cover helpers; the cached local inventory records no callable local Mathematica/Sage executable, and the selected Python executed live successfully. No backend was installed. The frozen C116 normal-word/proof assets were reused; their unchanged GB checks were not repeated.
+
+Retained evidence: [script](Graded-Cartan-Evidence/verify_graded_cartan.py), [result](Graded-Cartan-Evidence/result.json), [execution record](Graded-Cartan-Evidence/execution-record.json), [task](Graded-Cartan-Evidence/task.md). Final extended run passed96613 literal associativity triples,28 actual minimal covers,294 integral basis inverses;325 homogeneous module-action entries,116 homogeneous cover generators,374 homogeneous kernel vectors,328 integer Euler coefficients,24 logarithmic-trace coefficients,10125 actual translation-automorphism product identities and196 filtered A14 product pairs. The A14 finite graded resolutions were reused from C116 rather than recomputed. No new actual kernel-isomorphism count or pruned-complex comparison is claimed.
+
+The result retains actual graded generator shifts, cover/kernel maps and coordinate degrees. The first run passed; after adding the explicit filtered A14 comparison/cancellation, the final extended run passed. A finite prefix checks orientation and formulas, NOT infinite tail persistence or Koszulity. General conclusions are supplied by the written proofs above. Shared exact arithmetic and normal main-researcher review are NOT independent verification, formal MRS acceptance or novelty evidence; no routine hashes or legacy hash-schema validation were used.
+
+## 8. Normal adversarial audit before C117–C118
+
+1. Actual positive grading is required for (3) on A. A filtration/initial algebra is handled only after a separate ordinary transfer theorem; (15) breaks blanket substitution.
+2. \(C_{yx}\), \(B_{n,xy}\), the inverse identity and trace use the SAME convention. Nonzero terms in (4) imply the exact reverse-supported ordinary pair.
+3. Derivatives, nonzero recurrence coefficients and degree arguments take place over INTEGER dimensions/\(\mathbb Q\), independent of the field characteristic. They are not operations in k.
+4. Every coefficientwise Euler sum is finite by n<=internal generator degree. The upper internal generator degree nw is proved using actual kernel inclusion/real covers, not support recurrence.
+5. D!=1 is explicit. No u-consecutive-zero block argument is used for D=1/u=0. Bound (6) is for some supported pair in each window, not one preselected pair/every degree.
+6. Selfinjective highest columns have exactly one simple socle; their Nakayama permutation gives a unique top determinant term. Only one global supported pair is concluded, not every simple/diagonal/nonselfinjective/ungraded closure.
+7. Filtered bar direction is n,d -> n-1,d+r; BOTH incoming and outgoing classes are excluded by strict adjacent weight separation. Filtrations are finite in each degree, so no completion/convergence gap remains.
+8. General comparison (10) is an associated-graded vector-space identification and Betti equality, not an invented algebra map. Physical supports agree by the actual finite Peirce filtrations.
+9. Yoneda generation is transferred via its real filtered ordinary cup algebra and finite degreewise leading-symbol descent. Koszulity/strict separation is a hypothesis, not inferred from a bounded check.
+10. C116 B14 proves constant D does not imply finite gd; the actual A14 weighted filtration and nonzero d1 prove nonconstant graded D does not survive without the comparison hypothesis. Neither is UGA false.
+11. Existing C061 monomial/C108/C110 closures and the old FG bound were reused with exact scope. The new proof does not extend the cube-zero core injection beyond J3=0 or import singular/opposite transfer.
+12. Full UGA, nongradable/screened cores, constant-determinant nonpure graded algebras, and every original global branch remain OPEN. These whole-class closures shorten the global task without redefining it.
+
+## 9. Checkpoint and next mathematical target
+
+C117 registers the direct ordinary graded-Cartan bridge/window and its entire positive-graded selfinjective closure. C118 registers the actual filtered degree-separation ordinary comparison and radical-Koszul diagonal closure, with (15) as its precise automatic-transfer obstruction. The default D010 HYBRID representation is retained: these are two load-bearing external-theory bridges within it, not a return to T38 selection.
+
+The remaining global arrow is still the C115 full-visible-mask stopping theorem. For actual graded cores this Run now closes the nonconstant-determinant branch; a constant determinant alone can hide genuine ordinary tails by alternating internal cancellation. For filtered cores it closes those with proved degree separation (or another actual ordinary comparison), but not mixed adjacent weights/higher differential screening. The explicit d1 mechanism identifies the real obstruction to indiscriminate associated-graded replacement; it does not justify creating another invariant instead of proving a stopping/ordinary bridge.
+
+**Universal Gap A remains OPEN at arbitrary finite size.**

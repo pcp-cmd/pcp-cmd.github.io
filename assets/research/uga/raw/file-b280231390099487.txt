@@ -1,0 +1,461 @@
+# T22 — Finite-complement perfect corners give ordinary comparison and dimension descent
+
+Date: 2026-10-04.
+
+Status: complete ordinary projective-complex proof, normal adversarial
+self-audit, exact integral finite calibration passed; NOT independently
+verified. No novelty claim. Universal Gap A remains OPEN.
+
+This follows T21's failure of repeated local finite-pd pruning. The
+successful replacement controls the GLOBAL homological amplitude of a
+canonical projective complex. Its corner representation need not be an
+ordinary quotient. Under its exact finite-pd hypotheses, the comparison
+is between ordinary Ext/Tor, with a uniform explicit cutoff. It gives
+strict dimension descent for a bad algebra, at arbitrary finite source
+count, without case-by-case enumeration.
+
+This mechanism is distinct from C088. It allows finite-side covers to
+contain infinite factors, but requires perfection of the relevant corner
+module. That additional hypothesis is not automatic; T21's actual
+finite-factor family fails it in infinitely many degrees. The direct
+right version is proved using right modules and no opposite-+ transfer.
+
+## 1. Hypotheses, actual projectives and exact restriction
+
+Let A be finite-dimensional elementary over any field. Let F be a
+nonempty proper vertex set, f=sum_{u in F}e_u, e=1-f and B=eAe.
+Assume
+
+\[
+d=\max_{u\in F}\operatorname{pd}_A L_u<\infty,
+\qquad t=\operatorname{pd}_{B^{op}}(Ae)<\infty.
+\tag{1.1}
+\]
+
+Here Ae is the ACTUAL (A,B)-bimodule, with RIGHT B pd in (1.1).
+B is the retained CORNER, not A/AfA. No algebra homomorphism A->B
+or quotient comparison is asserted. Retained physical Peirce spaces
+are literally the same:
+
+\[
+e_yBe_z=e_yAe_z\quad(y,z\notin F).
+\tag{1.2}
+\]
+
+Put
+
+\[
+N=d+t+1.
+\tag{1.3}
+\]
+
+The exact functor E(M)=eM on LEFT modules has left derived adjoint
+G(-)=Ae tensor^L_B(-). Its right derived adjoint expression is
+RHom_A(Ae,-)=e(-), since Ae is LEFT A projective. These identities
+will be realised by actual ordinary projective complexes, not invoked
+as a singular equivalence.
+
+## 2. Bounded ordinary defect and uniform high Ext isomorphism
+
+### Theorem 2.1 — Ordinary high comparison for ALL finite modules (C093)
+
+For every finite LEFT A modules M,Z the actual exact restriction map
+on ordinary Yoneda Ext is an isomorphism for n>N:
+
+\[
+\operatorname{Ext}^n_A(M,Z)
+\xrightarrow{\ \sim\ }
+\operatorname{Ext}^n_B(eM,eZ).
+\tag{2.1}
+\]
+
+For every finite RIGHT A module R and finite LEFT A module M, its
+finite-dimensional dual gives a natural ordinary isomorphism
+
+\[
+\operatorname{Tor}^B_n(Re,eM)
+\xrightarrow{\ \sim\ }
+\operatorname{Tor}^A_n(R,M)\quad(n>N).
+\tag{2.2}
+\]
+
+The direction in (2.2) is B->A, dual to Ext restriction. It is NOT
+an A->B quotient change-of-rings map.
+
+#### Proof from actual ordinary projective complexes
+
+Take the actual minimal B-projective resolution Q^bullet of eM,
+in nonpositive cohomological degrees. Form
+
+\[
+T^\bullet=Ae\otimes_B Q^\bullet.
+\tag{2.3}
+\]
+
+Every term is a sum of Ae_j=Ae tensor_B Be_j, j retained, hence
+an actual LEFT A projective. It need not be minimal or exact;
+we do NOT call it a projective resolution of M. Its homology is
+
+\[
+H^{-i}(T^\bullet)=\operatorname{Tor}^B_i(Ae,eM),
+\quad H^{-i}(T^\bullet)=0\ (i>t).
+\tag{2.4}
+\]
+
+Let P^bullet be the actual minimal A-projective resolution of M.
+Projectivity of Q gives a comparison Q->eP resolving the identity
+on eM. Adjunction gives a chain map T->P representing the canonical
+counit epsilon:G(eM)->M. Let C_M be its cone. Applying e gives a
+quasi-isomorphism Q->eP, so EVERY cohomology module of C_M is
+annihilated by e and has only F LEFT simple factors. Also
+
+\[
+H^j(C_M)=0\quad(j<-t-1\text{ or }j>0).
+\tag{2.5}
+\]
+
+Finite-length ordinary devissage from (1.1) gives pd_A H^j(C_M)<=d
+for each of the finitely many nonzero cohomology modules. This is a
+bounded GLOBAL defect. Resolving those modules and using the finite
+truncation triangles gives a bounded LEFT A projective representative
+of C_M in degrees [-N,0]. Equivalently, direct ordinary Ext devissage
+in those triangles gives
+
+\[
+\operatorname{Hom}_{D(A)}(C_M,Z[n])=0\quad(n>N)
+\tag{2.6}
+\]
+
+for EVERY finite Z. In fact a cohomology module at degree -s contributes
+ordinary Ext^{n-s}_A(H^{-s}(C_M),Z), zero when n>d+s, and s<=t+1.
+This proves (2.6) with the displayed N, not an unspecified cutoff.
+
+Apply ordinary RHom_A(-,Z) to T->M->C_M. The two adjoining defect
+terms vanish in degrees n and n+1 when n>N. Thus
+
+\[
+\operatorname{Ext}^n_A(M,Z)
+\cong\operatorname{Hom}_{D(A)}(T,Z[n])
+\cong\operatorname{Ext}^n_B(eM,eZ).
+\tag{2.7}
+\]
+
+The last identification is the literal chain adjunction
+Hom_A(Ae tensor_B Q,Z)=Hom_B(Q,eZ). Under it, composition with
+epsilon is exactly the restriction map E on ordinary Ext: e epsilon
+resolves the identity. So (2.1) identifies the natural map, not merely
+group dimensions. All derived notation here is an ordinary-projective
+calculation with a bounded perfect error; no singular/Tate/stable
+comparison is used.
+
+For finite R put Z=D R, where D=Hom_k(-,k). The natural identity
+e(DR)=D(Re) and ordinary tensor–Hom duality give
+D Tor^A_n(R,M)=Ext^n_A(M,DR), and the analogous identity over B.
+Dualising (2.1) proves (2.2). QED.
+
+### Corollary 2.2 — Deleted RIGHT simples are forced finite-pd
+
+Take Z=L_u for u in F. Then eZ=0, so Ext^n_A(M,L_u)=0 for EVERY
+finite M and n>N. By ordinary finite-dimensional duality,
+
+\[
+\operatorname{pd}_{A^{op}}R_u\le N\quad(u\in F).
+\tag{2.8}
+\]
+
+Thus (1.1) deletes only vertices finite-pd on BOTH sides. It cannot
+lower the number of infinite RIGHT labels. In particular, if a
+LEFT-finite vertex has infinite RIGHT pd, then for the complementary
+corner the module Ae cannot have finite RIGHT B pd. This conclusion
+follows from an ordinary all-module comparison, not side transfer.
+
+## 3. Exact infinite labels, supported return and strict dimension descent
+
+### Corollary 3.1 — Retained ordinary labels and finite pd bounds
+
+For every retained LEFT label y, the A and B simple pds are either
+both infinite or both finite. If finite a=pd_A L_y, b=pd_B L_y, then
+
+\[
+a\le\max\{b,N\},\qquad b\le\max\{a,N\}.
+\tag{3.1}
+\]
+
+Indeed high Ext to all A simple targets is (2.1); deleted targets have
+zero e-image. Conversely all B simple targets occur as eL_z for
+retained z. Testing those actual simple targets proves both bounds.
+
+The same finite/infinite equivalence and the same inequalities hold
+for every retained RIGHT R_z by (2.2), testing all LEFT simples and
+using that deleted sources have e-image zero. Deleted labels are
+finite on both sides by (1.1) and (2.8). Hence, as labelled sets,
+
+\[
+I_L(B)=I_L(A),\qquad I_R(B)=I_R(A).
+\tag{3.2}
+\]
+
+These sets lie entirely in the retained vertices. No opposite-+
+theorem or inference from missing tests enters. Finite pds strictly
+above N are in fact equal by (3.1). Small finite pds need not agree.
+
+### Corollary 3.2 — Global infinity equivalence, uniform bound and badness descent
+
+The exact functor e(-) is essentially surjective on finite B modules:
+for X use the actual finite A module Ae tensor_B X, whose restriction
+is B tensor_B X=X. Therefore (2.1) implies, whenever finite,
+
+\[
+\operatorname{gd}A\le\max\{\operatorname{gd}B,N\},\qquad
+\operatorname{gd}B\le\max\{\operatorname{gd}A,N\}.
+\tag{3.3}
+\]
+
+In particular gd A is infinite iff gd B is infinite; this also follows
+from (3.2). Any ordinary B supported persistent simple pair has the
+SAME supported A tail by (1.2) and the high Tor isomorphism (2.2).
+A bad A therefore gives a bad B. The nonempty deleted identity
+sum f ensures
+
+\[
+\dim_k B<\dim_k A.
+\tag{3.4}
+\]
+
+This is a legitimate well-founded global descent at ANY source count.
+The left/right infinite counts are preserved, not decreased. C088's
+opposite-count drop is a different mechanism with different hypotheses.
+One may remove a finite vertex by this corner move even when its
+projective cover contains infinite factors and no C088 block exists.
+
+Consequently a vertex- or dimension-minimal bad algebra has NO proper
+finite-LEFT complement satisfying (1.1). This excludes the entire
+perfect-corner branch of that global alternative, rather than merely
+making a hypothetical counterexample more elaborate.
+
+### Corollary 3.3 — Checked towers close and comparison bounds compose
+
+For a sequence of such actual checked corners, the ordinary Ext
+restriction maps compose and the dual Tor maps compose in the
+reverse direction. All are isomorphisms for n>max_i N_i; every retained
+physical pair is unchanged. No perfection inheritance is asserted:
+each actual corner module and finite complement must be checked.
+
+Each nonempty deletion lowers dimension and vertex number, so at most
+v-1 moves are possible from v vertices. If the terminal algebra has a
+proved ordinary return (for example C080 or C090), it lifts throughout
+the tower. If it has finite gd b, then
+
+\[
+\operatorname{gd}A\le\max\{b,N_1,\ldots,N_r\}.
+\tag{3.5}
+\]
+
+This supplies a uniform proved bound for the checked tower class.
+It does not claim automatic existence of such a tower in every A.
+
+## 4. Direct RIGHT finite-complement theorem
+
+Assume instead all deleted RIGHT R_u have pd at most d_R and
+t_R=pd_B(eA)<infinity, with eA the actual LEFT B module. For an actual
+RIGHT A module M use its exact restriction Me and a minimal RIGHT
+B resolution Q. The projective complex Q tensor_B eA has RIGHT A
+projective terms. Its homology is zero below -t_R; its counit to M
+has cone in degrees [-t_R-1,0] with ONLY deleted RIGHT factors.
+Those have RIGHT A pd at most d_R. The same finite ordinary cone
+devissage gives RIGHT ordinary Ext restriction isomorphism above
+N_R=d_R+t_R+1. Ordinary finite-dimensional duality gives (2.2) for
+LEFT/RIGHT tensor modules above that N_R.
+
+Deleted LEFT simples consequently have pd<=N_R. Both retained infinite
+sets are exactly preserved, all supported ordinary simple tails lift,
+global infinity is equivalent, and dimension strictly decreases.
+The proof is on actual RIGHT projectives; it does not assume
+A infinite + iff A^op infinite +.
+
+## 5. An actual sharp all-parameter calibration
+
+For every p>=2 modify C092's E_p as follows. Keep its nine-dimensional
+Nakayama base B_9 and p-1 dual-number vertices w. Replace the simple
+RIGHT Gamma_w coupler by the REGULAR RIGHT Gamma_w module. Thus add
+n_w in e_fAe_w and make the only extra radical product
+
+\[
+m_w t_w=n_w.
+\tag{5.1}
+\]
+
+All other new radical products vanish. The resulting connected algebra
+A_p has p+1 vertices and dimension 9+4(p-1)=4p+5. Let F={f}. The
+actual corner is
+
+\[
+B'=eA_pe\cong\Gamma_v\times\prod_w\Gamma_w,
+\quad\Gamma_v=k[ba]/(ba)^2.
+\tag{5.2}
+\]
+
+The left finite simple L_f still has actual Omega L_f=P_v, so d=1.
+As a RIGHT B' module, Ae has TWO regular copies at each retained
+dual-number vertex. At v the free generators are e_v and a, with
+e_v(ba)=ba and a(ba)=aba. At w the free generators are e_w and m_w,
+with e_w t_w=t_w and m_w t_w=n_w. These are literal basis isomorphisms,
+so t=0 and N=2. Yet e_vAe_f contains b and e_fAe_v contains a, so
+F is NOT cover-closed on EITHER side. All other labels are infinite-pd
+on both sides, so no larger finite-side block is available. C088's
+block hypotheses fail on both sides; the new corner theorem applies.
+
+For LEFT L_w put U_w=rad(P_w)=span(t_w,m_w,n_w) and
+K_w=span(t_w,n_w). Actual minimal kernels are
+
+\[
+\Omega L_w=U_w,\quad \Omega U_w=P_v\oplus K_w,
+\quad \Omega(P_v\oplus K_w)=K_w,\quad \Omega K_w=K_w.
+\tag{5.3}
+\]
+
+For the last identity P_w maps its generator to t_w: m_w maps to
+n_w and its kernel is span(t_w,n_w) again. The U_w cover is P_f+P_w;
+rad(P_f) contributes P_v and that same P_w kernel contributes K_w.
+All maps are radical and exact. Thus the minimal L_w resolution has
+
+\[
+Q_0=P_w,\quad Q_1=P_f\oplus P_w,\quad
+Q_2=P_v\oplus P_w,\quad Q_n=P_w\quad(n\ge3).
+\tag{5.4}
+\]
+
+In particular
+
+\[
+\operatorname{Tor}^{A_p}_2(R_v,L_w)=k,
+\qquad\operatorname{Tor}^{B'}_2(R_v,L_w)=0.
+\tag{5.5}
+\]
+
+The bound n>N is therefore sharp already at d=1,t=0: it cannot be
+replaced by n>=N. For every n>2 the complete retained-pair comparison
+is the ordinary isomorphism of Theorem 2.1, not a finite-prefix guess.
+
+On the RIGHT, Omega R_f=e_vA+sum_w e_wA is projective, via multiplication
+by a and by m_w; hence pd_RIGHT R_f=1. The old periodic V_2 returns,
+with only additional projective summands in Omega V_1, and
+Omega R_w=R_w. On the LEFT the old U_2 returns and (5.3) returns.
+Thus both actual infinite sets are {v,w_r}; neither count drops.
+Ordinary w/v diagonals are persistent, so this is a calibration, not
+a bad algebra. Literal all-p proofs supplement the finite arithmetic.
+
+## 6. The nonperfect obstruction is exactly unbounded error
+
+In the UNMODIFIED C092 E_p, the same complementary corner is the
+product B' of dual numbers, but Ae as a RIGHT B' module contains
+the simple Gamma_w summand k m_w instead of a regular summand.
+It has infinite RIGHT pd, and actual periodic Gamma_w resolutions give
+
+\[
+\operatorname{Tor}^{B'}_i(Ae,L_w)\cong L_f
+\quad\text{for EVERY }i\ge1.
+\tag{6.1}
+\]
+
+These are finite LEFT-pd modules of pd one, but they occur in
+unboundedly negative degrees of the actual tensor complex. The counit
+cone has no bounded global projective amplitude. The bounded-cone
+proof of Section 2 therefore does NOT apply. In that E_p,
+Tor^A_n(R_v,L_w)=k for all n>=2 while the corner mixed Tor is zero;
+the ordinary high comparison really fails.
+
+This is the precise defect separating legitimate removal of a bounded
+perfect GLOBAL error from illegitimate removal of infinitely repeated
+finite-pd LOCAL images. It also calibrates Corollary 2.2: f is LEFT
+finite but RIGHT infinite there, which forces the corner module
+nonperfect. The perfect-corner branch is excluded by strict dimension
+descent; the remaining nonperfect branch still needs supported ordinary
+return or another eligible reduction, not more derived invariants.
+
+## 7. Finite arithmetic and evidence boundary
+
+Perfect-Corner-Evidence/ contains verify_perfect_corner.py,
+perfect-corner-result.json, task.md and computation-record.json.
+At p=3,5,8 the arithmetic passed 147,694 full-basis associativity
+triples, 92 actual minimal covers, 89 actual kernel isomorphisms,
+2,486 integer basis/inverse certificates and three corner-module
+projectivity isomorphisms. It confirms both-sided ordinary kernel
+identities, finite terminating R_f covers and the degree-two mismatch.
+
+The code loads frozen helper definitions from T21 without rerunning
+its old main computations. All imported code dependencies have hashes
+in the result. These checks share helpers and authorship; they are NOT
+independent verification. Integral basis/inverse exactness and radical
+top certificates give the same all-field base-change argument as T21.
+The all-parameter calibration and ALL-module ordinary comparison are
+the separate written proofs, not claims established by bounded sampling.
+Record/hash validation certifies integrity only. No new backend probe,
+paid service, Vault copy, HTML or purported MRS verifier approval.
+
+## 8. Normal adversarial self-audit
+
+1. CORNER versus quotient: B=eAe; A->B is not generally an algebra
+   homomorphism. The map is ordinary Ext restriction, dual to Tor B->A.
+   No A->B quotient comparison is substituted.
+2. Side condition: t is RIGHT B pd of Ae for the LEFT-complement
+   theorem. The direct RIGHT theorem uses LEFT B pd of eA. Neither
+   corner-module pd is inferred from pd of the deleted simples.
+3. Actual minimality/exactness: T=Ae tensor Q has projective terms but
+   may be nonexact/nonminimal. Its actual Tor homology is retained,
+   then the counit cone is resolved with a BOUNDED ordinary projective
+   complex. No local finite-pd images are simply erased.
+4. Cone support: exact e applied to the counit is a quasi-isomorphism,
+   so e kills EVERY cone cohomology module. Thus its factors are the
+   specified finite LEFT set and pd<=d is justified by finite devissage.
+5. Bound/sign: cone cohomology lies in [-t-1,0]. At degree -s the
+   contribution is Ext^{n-s}, giving cutoff d+t+1 and requiring strict
+   n>N. Equation (5.5) proves the strict cutoff necessary.
+6. Arbitrary M,Z: no support, coefficient perfectness or injective-pd
+   condition on them is imposed. Their finite sizes and exact restriction
+   suffice; the cone bound is UNIFORM in both modules.
+7. Natural map: chain adjunction identifies the counit-induced map
+   with ordinary exact restriction on Ext, not just Betti equality.
+   Finite-dimensional duality gives the specified Tor direction.
+8. Deleted detectors: they are checked through ALL-source Ext to L_u,
+   yielding pd_RIGHT R_u<=N. Missing retained tests do not justify
+   this by themselves. Both label partitions are then proved exactly.
+9. Count: this theorem preserves BOTH infinite counts; it supplies
+   strict DIMENSION/vertex descent. Do not call it C088's opposite
+   infinite-count decrease or assume it deletes an infinite source.
+10. Global bound: e is essentially surjective using the finite module
+    Ae tensor_B X. This proves BOTH inequalities in (3.3); no corner
+    global-dimension monotonicity is assumed.
+11. Supported tail: retained physical entries are literally equal and
+    ordinary high Tor is an isomorphism in the SAME pair. Thus badness
+    descends. This is the full ordinary bridge, not singular return.
+12. Inheritance: maps compose for CHECKED towers; later perfection and
+    finite complements are NOT automatic. Every actual step lowers dim.
+13. Nonperfect limit: (6.1) is an actual unbounded Tor calculation with
+    finite-pd outputs. It blocks the bounded global cone proof; one
+    cannot apply it using only local image pds.
+14. Verification/global scope: complete same-author proof, exact shared
+    arithmetic, no independent verification/novelty claim. The nonperfect
+    complement/core, C076 support issue, Target A, local-trivial and
+    higher-output branches remain OPEN.
+
+## 9. Actual next closure frontier
+
+The finite-image question has a negative answer at the generality
+proposed in T19/T20. The positive replacement is an explicit ordinary
+comparison and well-founded dimension descent when the ACTUAL corner
+coupler has finite homological amplitude. This removes a whole global
+perfect-corner branch at arbitrary source count and gives a sharp bound.
+
+C088 still permits nonperfect but physically closed finite blocks and
+may strictly lower the opposite infinite count. C093 permits physically
+nonclosed finite complements with a perfect actual corner module, and
+strictly lowers dimension. C090 closes the genuine dominating-carrier
+terminal class. These are complementary proved ordinary mechanisms.
+
+What remains is to force one of these, another eligible ordinary move,
+or a visible ordinary pair in a bad nonperfect/no-deletion core.
+Primitive-Seed Correction and the Binary-Indecomposable Frontier are
+preserved; bounded-screening Target A, local-trivial nonperfect and
+supported-weight/higher-output screening do not disappear. Universal
+Gap A remains OPEN; the full goal stays active.

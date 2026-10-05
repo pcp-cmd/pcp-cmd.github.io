@@ -1,0 +1,9 @@
+## UGA-C089 — One-Sided Three-Label Containment and Closed Mismatch-Carrier Closure
+**Status:** COMPLETE SELF-AUDITED ORDINARY CLASS CLOSURES / ACTUAL MINIMAL BLOCK RETURN / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Closed-Finite-Block-Ordinary-Comparison-and-Three-Source-Containment-2026-10-04.md, Sections 2 and 6–8.
+
+If |I_L|=3 and I_L is contained in I_R, A is infinite + at arbitrary total finite size; I_R may contain arbitrarily many extra labels. Under badness each of the three corresponding rows W_z has at least two labels by C080 and misses z, so equals I_L minus {z}. All physical off-diagonal entries between these three labels vanish. Entire sufficiently high RIGHT minimal resolutions use only I_L labels and split by real exact projective types. A recurrent block gives Tor(X,L_j) persistent; X is a quotient of copies of e_jA, so ordinary composition detection selects a fixed physically supported Tor(R_q,L_j). The direct RIGHT containment theorem assumes |I_R|=3 and I_R contained in I_L, and uses actual LEFT blocks. No equality of the two sets, socle condition or opposite-+ transfer is used.
+
+If |I_L|=3 and every right-only infinite label belongs to a C088 closed finite-LEFT block, A is infinite +. Containment closes immediately; otherwise the union of supplied blocks is finite-LEFT, proper and closed. Its deletion preserves badness yet leaves at most two RIGHT infinite labels, contradicting C080. The direct right theorem is separate. For larger counts C088 still gives genuine eligible moves, but repeated block existence or termination at this terminal class is not asserted. This strengthens the common-three-label part of C087 without withdrawing it and does not start case-by-case count research. No new computation, independent verification or full Universal Gap A solution is claimed.
+
+---

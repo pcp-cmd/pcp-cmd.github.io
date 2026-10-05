@@ -5,6 +5,7 @@ const { spawnSync } = require('child_process');
 
 const root = path.resolve(__dirname, '..');
 const generatedFiles = [
+  'writing.html',
   'content/markdown-index.json',
   'content/content-bundle.js',
   'content/manifest.json'

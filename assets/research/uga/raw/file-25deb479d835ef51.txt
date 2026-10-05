@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "date": "2026-10-05",
+  "kind": "targeted exact research execution record",
+  "proof": "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03/runs/2026-10-05/Run-Arbitrary-Loewy-Radical-Band-Ordinary-Closure-and-Global-Source-Obstruction-2026-10-05.md",
+  "profile": "reproducible, existing project execution-record convention; routine checksum schema deliberately not used",
+  "executions": [
+    {
+      "status": "passed",
+      "actual_executed_script": "C:/Users/pcp/AppData/Local/Temp/UGA-20261005-cubic-band/verify_cubic_band.py",
+      "retained_script": "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03/runs/2026-10-05/Cubic-Band-Evidence/verify_cubic_band.py",
+      "retained_result": "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03/runs/2026-10-05/Cubic-Band-Evidence/cubic-band-result.json",
+      "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+      "parameters": {
+        "N": 5,
+        "ell": 6
+      },
+      "counts": {
+        "associativity": 194672,
+        "actual_minimal_covers": 15,
+        "integer_basis_inverses": 576,
+        "actual_kernel_isomorphisms": 8,
+        "pruned_homology_isomorphisms": 0
+      },
+      "invocation": {
+        "launcher": "C:/Users/pcp/.agent-reach-venv/Scripts/python.exe",
+        "wrapper": null,
+        "arguments": [
+          "-B",
+          "C:/Users/pcp/AppData/Local/Temp/UGA-20261005-cubic-band/verify_cubic_band.py",
+          "--project-root",
+          "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03",
+          "--out",
+          "C:/Users/pcp/AppData/Local/Temp/UGA-20261005-cubic-band/cubic-band-result.json"
+        ]
+      },
+      "retained_bytes_equal_executed_bytes": true,
+      "execution_history": "First material invocation passed; no failed invocation or repeated full-range verification.",
+      "mathematical_scope": "Actual dimension46/12-vertex unbounded-Loewy-family calibration: whole LEFT J3,J5,J3/J5 pds1,0,1; whole quotient and full kernel maps; unchanged old RIGHT period kernels."
+    },
+    {
+      "status": "passed",
+      "actual_executed_script": "C:/Users/pcp/AppData/Local/Temp/UGA-20261005-cubic-band/verify_infinite_band_locality.py",
+      "retained_script": "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03/runs/2026-10-05/Cubic-Band-Evidence/verify_infinite_band_locality.py",
+      "retained_result": "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03/runs/2026-10-05/Cubic-Band-Evidence/infinite-band-locality-result.json",
+      "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+      "parameters": {
+        "dimension": 26,
+        "vertices": 6
+      },
+      "counts": {
+        "associativity": 35152,
+        "actual_minimal_covers": 7,
+        "integer_basis_inverses": 168,
+        "actual_kernel_isomorphisms": 9,
+        "pruned_homology_isomorphisms": 0
+      },
+      "invocation": {
+        "launcher": "C:/Users/pcp/.agent-reach-venv/Scripts/python.exe",
+        "wrapper": null,
+        "arguments": [
+          "-B",
+          "C:/Users/pcp/AppData/Local/Temp/UGA-20261005-cubic-band/verify_infinite_band_locality.py",
+          "--project-root",
+          "C:/Users/pcp/Desktop/Universal-Gap-A-Codex-Project-2026-10-03",
+          "--out",
+          "C:/Users/pcp/AppData/Local/Temp/UGA-20261005-cubic-band/infinite-band-locality-result.json"
+        ]
+      },
+      "retained_bytes_equal_executed_bytes": true,
+      "execution_history": "First material invocation passed; no failed invocation or repeated full-range verification.",
+      "mathematical_scope": "Actual dimension26 bilateral infinite-band source-locality obstruction: full kernel identities on each side, physical support zeros, nonzero cross support and a persistent global ordinary diagonal outside both band factor sets."
+    }
+  ],
+  "evidence_level": "bounded-check",
+  "coefficient_domain": "Exact rational/integral actual module matrices with unit integral basis inverses; separate arbitrary-field proofs.",
+  "shared_dependencies": [
+    "runs/2026-10-04/General-Cube-Zero-Evidence/verify_general_cubezero_linear_core.py (definitions before N=5 examples)",
+    "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py (definitions before p-loop)",
+    "toolbox/Imported-Outputs/return_kernel_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_return_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_system_certificate.py"
+  ],
+  "backend_selection": "Frozen-helper extension through original Python/Fraction implementation. Selected Python3.14.3/Fraction capability was live-checked immediately before EACH material run. No new computation engine.",
+  "fallback_reason": "not-required: selected exact route completed",
+  "independent_verification": false,
+  "formal_verifier_acceptance": false,
+  "default_checksums_computed": false,
+  "UGA": "OPEN"
+}

@@ -1,0 +1,1604 @@
+# Universal Gap A — Universal Layer U2
+## Run B — Bounded Derived Self-Intersection Screening
+
+**Role:** Derived Self-Intersection / Diagonal Return  
+**Research system:** Native MRS  
+**Primary branch studied:** amplitude \(a=2\)  
+**Completion label:** `AMPLITUDE_2_CLASSIFICATION / ACTUAL_REALIZATION_FRONTIER`  
+**Universal Gap A:** not solved
+
+This file freezes the actual research trajectory of the run.
+
+---
+
+# 1. Frozen setting
+
+Let
+
+\[
+S=D/D(1-e)D
+\]
+
+be a finite-dimensional singular local algebra with unique simple
+
+\[
+k=k_e.
+\]
+
+Put
+
+\[
+K=S\otimes_D^{\mathbf L}S.
+\]
+
+For the vertex ideal
+
+\[
+I=D(1-e)D
+\]
+
+we have
+
+\[
+I^2=I,
+\]
+
+hence
+
+\[
+H_0(K)=S,
+\qquad
+H_1(K)=0.
+\]
+
+The diagonal ambient object is
+
+\[
+\boxed{
+A_K
+=
+k\otimes_S^{\mathbf L}
+K
+\otimes_S^{\mathbf L}k
+\simeq
+R_e\otimes_D^{\mathbf L}L_e.
+}
+\]
+
+Since
+
+\[
+eDe\ni e\neq0,
+\]
+
+persistent homology of \(A_K\) in arbitrarily high degree is already a Peirce-visible diagonal return.
+
+Thus the hypothetical no-return branch requires
+
+\[
+H_n(A_K)=0
+\qquad(n\gg0).
+\]
+
+The preceding U1 run also forces \(K\) to have finite positive amplitude and to be perfect separately as a left and right \(S\)-complex.
+
+This run studies the minimal positive amplitude
+
+\[
+\boxed{a=2}.
+\]
+
+---
+
+# 2. Amplitude-two homology
+
+Assume
+
+\[
+H_q(K)=0
+\qquad(q\neq0,2).
+\]
+
+Set
+
+\[
+M=H_2(K).
+\]
+
+Then
+
+\[
+H_*(K)=S\oplus M[2]
+\]
+
+as a graded \(S\)-bimodule.
+
+No formality assumption is made.
+
+---
+
+# 3. Multiplication cone and the unique Postnikov datum
+
+Let
+
+\[
+\mu:K\to S
+\]
+
+be the multiplication/counit map.
+
+It induces an isomorphism on \(H_0\), and \(S\) has no positive homology.
+
+The long exact sequence of the cone therefore gives
+
+\[
+H_q(\operatorname{Cone}\mu)
+=
+\begin{cases}
+M,&q=3,\\
+0,&q\neq3.
+\end{cases}
+\]
+
+Hence, canonically in \(D(S^e)\),
+
+\[
+\boxed{
+\operatorname{Cone}(\mu)\simeq M[3].
+}
+\]
+
+Thus \(K\) is classified as a two-stage \(S\)-bimodule object by a triangle
+
+\[
+\boxed{
+M[2]
+\longrightarrow
+K
+\xrightarrow{\mu}
+S
+\xrightarrow{\alpha}
+M[3],
+}
+\tag{3.1}
+\]
+
+where
+
+\[
+\boxed{
+\alpha\in
+\operatorname{Ext}^3_{S^e}(S,M).
+}
+\tag{3.2}
+\]
+
+This is the invariant standard form of the amplitude-two problem.
+
+---
+
+# 4. What the \(A_\infty\) audit actually says
+
+One should not identify the full transferred structure with an arbitrary formal two-row spectral sequence.
+
+There may be additional transferred \(A_\infty\)-coring or model-dependent operations after choosing coordinates.
+
+However, for the **underlying amplitude-two derived \(S\)-bimodule** and for diagonal screening, all non-formal information is already packaged by the single Postnikov class
+
+\[
+\alpha.
+\]
+
+The reason is structural:
+
+- the only homology rows of \(K\) are \(q=0,2\);
+- every spectral differential except the row-jump \(0\to2\) is excluded by bidegree;
+- therefore the only possible screening differential is \(d_3\).
+
+So the finite list of operations relevant to diagonal screening is:
+
+1. the strict left/right \(S\)-actions on \(S\) and \(M\);
+2. the single degree-three Postnikov transgression \(\alpha\).
+
+This statement does **not** claim that a transferred \(A_\infty\) coring has no additional higher coordinate operations.
+
+It says only that no additional operation can create an independent page in the amplitude-two diagonal spectral sequence.
+
+---
+
+# 5. Separate perfection forces \(M\) to be free on both sides
+
+The no-return branch gives:
+
+\[
+K\in\operatorname{Perf}(S\text{-mod})
+\]
+
+after forgetting the right action, and similarly on the right.
+
+From triangle (3.1), forgetting one side gives:
+
+\[
+M[2]\to K\to S.
+\]
+
+Since \(K\) and \(S\) are perfect one-sided complexes,
+
+\[
+M
+\]
+
+has finite projective dimension as a left \(S\)-module and as a right \(S\)-module.
+
+For a finite-dimensional local algebra, every finite-dimensional module of finite projective dimension is projective.
+
+Hence:
+
+\[
+\boxed{
+{}_SM
+\text{ and }
+M_S
+\text{ are projective}.
+}
+\]
+
+Since \(S\) is local, they are free.
+
+Write their common free rank as
+
+\[
+\boxed{\rho}.
+\]
+
+The ranks agree because both equal
+
+\[
+\frac{\dim_kM}{\dim_kS}.
+\]
+
+Thus every amplitude-two strong-screening candidate must already satisfy the very restrictive condition
+
+\[
+\boxed{
+M\text{ is separately free of rank }\rho.
+}
+\]
+
+---
+
+# 6. Exact hyper-Tor spectral sequence
+
+Apply the exact derived functor
+
+\[
+F(X)
+=
+k\otimes_S^{\mathbf L}
+X
+\otimes_S^{\mathbf L}k
+\]
+
+to \(K\).
+
+The Postnikov filtration on \(K\) gives a first-quadrant homological spectral sequence
+
+\[
+\boxed{
+E^2_{p,q}
+=
+H_p
+\left(
+k\otimes_S^{\mathbf L}
+H_q(K)
+\otimes_S^{\mathbf L}k
+\right)
+\Longrightarrow
+H_{p+q}(A_K).
+}
+\tag{6.1}
+\]
+
+For \(a=2\), the only nonzero rows are:
+
+\[
+\boxed{
+E^2_{p,0}
+=
+\operatorname{Tor}^S_p(k,k),
+}
+\tag{6.2}
+\]
+
+and
+
+\[
+\boxed{
+E^2_{p,2}
+=
+H_p
+\left(
+k\otimes_S^{\mathbf L}
+M
+\otimes_S^{\mathbf L}k
+\right).
+}
+\tag{6.3}
+\]
+
+The homological differential has bidegree
+
+\[
+d_r:
+E^r_{p,q}
+\to
+E^r_{p-r,q+r-1}.
+\]
+
+Therefore the only possible nonzero differential between the two rows is
+
+\[
+\boxed{
+d_3:
+E^3_{p,0}
+\longrightarrow
+E^3_{p-3,2}.
+}
+\tag{6.4}
+\]
+
+There is no incoming differential to row \(0\), and no outgoing differential from row \(2\).
+
+Thus
+
+\[
+E^3=E^2
+\]
+
+and
+
+\[
+E^4=E^\infty.
+\]
+
+---
+
+# 7. Two-row cancellation classification
+
+Define
+
+\[
+T_p
+=
+\operatorname{Tor}^S_p(k,k)
+\]
+
+and
+
+\[
+U_p
+=
+H_p
+\left(
+k\otimes_S^{\mathbf L}
+M
+\otimes_S^{\mathbf L}k
+\right).
+\]
+
+Then
+
+\[
+d_3:T_p\to U_{p-3}.
+\]
+
+If
+
+\[
+H_n(A_K)=0
+\qquad(n\gg0),
+\]
+
+then for all sufficiently large \(p\),
+
+\[
+\ker d_3=0
+\]
+
+because the bottom \(E^\infty\)-term vanishes.
+
+Likewise, for all sufficiently large \(q\),
+
+\[
+\operatorname{coker}
+\left(
+d_3:T_{q+3}\to U_q
+\right)
+=0
+\]
+
+because the top \(E^\infty\)-term vanishes.
+
+Hence:
+
+\[
+\boxed{
+d_3:
+T_{q+3}
+\xrightarrow{\sim}
+U_q
+\qquad(q\gg0).
+}
+\tag{7.1}
+\]
+
+So complete amplitude-two screening is not merely “many cancellations”.
+
+It is eventual **isomorphism** between the two rows.
+
+---
+
+# 8. Reduction of the upper row to one local module
+
+Because \(M\) is projective as a left \(S\)-module,
+
+\[
+k\otimes_S^{\mathbf L}M
+=
+k\otimes_SM.
+\]
+
+Set
+
+\[
+\boxed{
+N_R=k\otimes_SM,
+}
+\]
+
+a finite-dimensional right \(S\)-module.
+
+Then
+
+\[
+\boxed{
+U_q
+=
+\operatorname{Tor}^S_q(N_R,k).
+}
+\tag{8.1}
+\]
+
+Similarly, using right projectivity,
+
+\[
+N_L=M\otimes_Sk
+\]
+
+is a left \(S\)-module and the same upper row can be calculated from the opposite orientation.
+
+Since \(M\) is left/right free of rank \(\rho\),
+
+\[
+\dim_kN_R
+=
+\dim_kN_L
+=
+\rho.
+\]
+
+If either \(N_R\) or \(N_L\) were projective, then its positive Tor would vanish, contradicting (7.1).
+
+Therefore:
+
+\[
+\boxed{
+N_R,\ N_L
+\text{ are nonprojective local modules}.
+}
+\]
+
+Hence both have infinite projective dimension.
+
+---
+
+# 9. The \(d_3\) is exactly the Postnikov class
+
+Apply \(F\) to triangle (3.1):
+
+\[
+F(M)[2]
+\longrightarrow
+F(K)
+\longrightarrow
+F(S)
+\xrightarrow{F(\alpha)}
+F(M)[3].
+\]
+
+Now
+
+\[
+F(S)=k\otimes_S^{\mathbf L}k.
+\]
+
+The connecting morphism
+
+\[
+F(\alpha):
+F(S)\to F(M)[3]
+\]
+
+induces on homology exactly the differential (6.4).
+
+Thus:
+
+\[
+\boxed{
+d_3
+=
+H_*(F(\alpha)).
+}
+\tag{9.1}
+\]
+
+So there is one and only one actual screening datum in amplitude \(2\):
+
+\[
+\boxed{\alpha}.
+\]
+
+---
+
+# 10. Singular-category reformulation
+
+Tensor \(\alpha\) on the right with the left simple:
+
+\[
+\boxed{
+\alpha_L:
+k
+\longrightarrow
+N_L[3]
+}
+\tag{10.1}
+\]
+
+in \(D^b(S\text{-mod})\).
+
+Let
+
+\[
+C_L=\operatorname{Cone}(\alpha_L).
+\]
+
+Tensoring \(C_L\) on the left by the right simple \(k\) gives, up to the fixed shift,
+
+\[
+k\otimes_S^{\mathbf L}C_L
+\simeq
+\operatorname{Cone}(F(\alpha))
+\simeq
+F(K)[1].
+\]
+
+Therefore strong diagonal screening is equivalent to
+
+\[
+k\otimes_S^{\mathbf L}C_L
+\]
+
+having bounded homology.
+
+For a finite-dimensional local algebra, the unique simple detects perfection:
+
+\[
+k\otimes_S^{\mathbf L}C_L
+\text{ bounded}
+\Longleftrightarrow
+C_L\in\operatorname{Perf}(S).
+\]
+
+Hence:
+
+\[
+\boxed{
+\text{strong amplitude-two screening}
+\Longleftrightarrow
+\alpha_L
+\text{ is an isomorphism in }D_{\rm sg}(S).
+}
+\tag{10.2}
+\]
+
+The right-handed version is:
+
+\[
+\boxed{
+k
+\longrightarrow
+N_R[3]
+}
+\]
+
+is an isomorphism in the right singularity category.
+
+---
+
+# 11. Amplitude-Two Singular-Periodicity Classification
+
+The preceding argument gives the main theorem.
+
+## Theorem 11.1
+
+Let
+
+\[
+S=D/D(1-e)D
+\]
+
+be singular local and assume:
+
+\[
+H_*(K)=S\oplus M[2]
+\]
+
+with \(K=S\otimes_D^{\mathbf L}S\) separately perfect on both \(S\)-sides.
+
+Then complete eventual diagonal screening holds if and only if the Postnikov class
+
+\[
+\alpha\in\operatorname{Ext}^3_{S^e}(S,M)
+\]
+
+induces singular isomorphisms
+
+\[
+\boxed{
+k
+\simeq
+(M\otimes_Sk)[3]
+}
+\]
+
+in the left singularity category and
+
+\[
+\boxed{
+k
+\simeq
+(k\otimes_SM)[3]
+}
+\]
+
+in the right singularity category.
+
+Equivalently, the \(d_3\)-transgression is eventually an isomorphism:
+
+\[
+\boxed{
+\operatorname{Tor}^S_{q+3}(k,k)
+\cong
+H_q
+\left(
+k\otimes_S^{\mathbf L}
+M
+\otimes_S^{\mathbf L}k
+\right)
+\qquad(q\gg0).
+}
+\]
+
+Thus amplitude-two screening is precisely a singular-periodicity mechanism.
+
+---
+
+# 12. Natural transformation on the entire singular category
+
+The bimodule map
+
+\[
+\alpha:S\to M[3]
+\]
+
+defines a natural transformation
+
+\[
+\operatorname{Id}
+\longrightarrow
+M\otimes_S^{\mathbf L}-[3].
+\]
+
+Let \(\mathcal C\) be the full subcategory of \(D^b(S\text{-mod})\) consisting of modules/complexes on which the cone of this transformation is perfect.
+
+This is a thick subcategory.
+
+Under complete diagonal screening it contains the unique simple \(k\).
+
+Every finite-dimensional \(S\)-module is built from \(k\) by a finite composition series.
+
+Therefore \(k\) generates the singularity category, and:
+
+\[
+\boxed{
+M\otimes_S^{\mathbf L}-[3]
+\simeq
+\operatorname{Id}
+\quad
+\text{on }D_{\rm sg}(S).
+}
+\tag{12.1}
+\]
+
+Similarly:
+
+\[
+\boxed{
+-\otimes_S^{\mathbf L}M[3]
+\simeq
+\operatorname{Id}
+}
+\]
+
+on the right singularity category.
+
+So a genuine amplitude-two screener forces \(M\) to be singularly invertible and to implement the three-step suspension.
+
+This is much stronger than an arbitrary two-row spectral cancellation.
+
+---
+
+# 13. Betti-tail consequence
+
+Let
+
+\[
+N_L=M\otimes_Sk.
+\]
+
+The singular isomorphism
+
+\[
+k\simeq N_L[3]
+\]
+
+implies that sufficiently high minimal projective-resolution tails are shifted copies.
+
+In particular:
+
+\[
+\boxed{
+\beta_n^S(k)
+=
+\beta_{n-3}^S(N_L)
+\qquad(n\gg0).
+}
+\tag{13.1}
+\]
+
+There is an analogous right-handed equality for \(N_R\).
+
+Thus any amplitude-two actual construction must produce an explicit local module whose Betti tail is the simple's tail shifted by three.
+
+---
+
+# 14. \(K_0\) / Euler obstruction
+
+Let
+
+\[
+s=\ell_S(S)
+\]
+
+be the composition length of the local algebra.
+
+Since \(M\) is free of rank \(\rho\) on either side,
+
+\[
+N_L=M\otimes_Sk
+\]
+
+has composition length
+
+\[
+\rho.
+\]
+
+From
+
+\[
+\alpha_L:k\to N_L[3]
+\]
+
+and the fact that its cone is perfect,
+
+\[
+[\operatorname{Cone}\alpha_L]
+=
+-[N_L]-[k]
+=
+-(\rho+1)[k]
+\]
+
+must lie in the subgroup of \(K_0(D^b(\operatorname{mod}S))\) generated by projectives.
+
+Since
+
+\[
+[S]=s[k],
+\]
+
+we obtain:
+
+\[
+\boxed{
+s\mid(\rho+1).
+}
+\tag{14.1}
+\]
+
+Equivalently:
+
+\[
+\boxed{
+\rho\equiv-1\pmod{s}.
+}
+\tag{14.2}
+\]
+
+Therefore the smallest possible separate free rank is
+
+\[
+\boxed{
+\rho\ge s-1.
+}
+\]
+
+This is a genuine amplitude-two Euler obstruction.
+
+It is only necessary, not sufficient.
+
+---
+
+# 15. Minimal-resolution normal form for an actual quotient
+
+There is a second actual-realization constraint which does not appear in an arbitrary two-stage object.
+
+Take a minimal right \(D\)-projective resolution
+
+\[
+\cdots\to P_2\to P_1\to P_0\to S\to0.
+\]
+
+Tensor with the left \(D\)-module \(S\).
+
+Only projective summands at the vertex \(e\) survive.
+
+Thus
+
+\[
+C_\bullet=P_\bullet\otimes_DS
+\]
+
+is a minimal complex of finite free right \(S\)-modules.
+
+Its homology is
+
+\[
+H_0(C)=S,\qquad
+H_1(C)=0,\qquad
+H_2(C)=M,
+\]
+
+and all higher homology vanishes.
+
+Since \(S\) and \(M\) are projective right \(S\)-modules, minimality forces the complex itself into the normal form
+
+\[
+\boxed{
+C_0=S,\qquad
+C_1=0,\qquad
+C_2=S^\rho,\qquad
+C_n=0\quad(n\ge3).
+}
+\tag{15.1}
+\]
+
+Indeed:
+
+- \(H_0=S\) projective forces \(\operatorname{im}d_1=0\);
+- \(H_1=0\) then forces \(C_1=0\);
+- \(H_2=S^\rho\) projective forces \(\operatorname{im}d_3=0\);
+- \(H_3=0\) then forces \(C_3=0\);
+- induction kills all higher terms.
+
+Consequently, in the minimal right \(D\)-resolution of \(S\), the \(e\)-projective occurs:
+
+- once in degree \(0\);
+- zero times in degree \(1\);
+- exactly \(\rho\) times in degree \(2\);
+- zero times in every degree \(\ge3\).
+
+The same statement holds for the minimal left resolution.
+
+Thus every actual amplitude-two screener must have a:
+
+\[
+\boxed{
+\textbf{bidirectional isolated second return to }e.
+}
+\]
+
+This is a concrete actual-quotient condition not present in an abstract two-row spectral sequence.
+
+---
+
+# 16. Formal amplitude-two screening countermachine
+
+At this point it is essential to test whether the preceding homological constraints are themselves contradictory.
+
+They are not.
+
+Let \(S\) be any finite-dimensional singular local algebra.
+
+Choose a finite-projective \(S^e\)-resolution beginning
+
+\[
+\cdots
+\longrightarrow
+P_2
+\xrightarrow{d_2}
+P_1
+\xrightarrow{d_1}
+P_0
+\longrightarrow
+S
+\longrightarrow0.
+\]
+
+Set
+
+\[
+\boxed{
+M=\Omega^3_{S^e}(S)
+=
+\ker(d_2).
+}
+\]
+
+Because \(S\) is projective as a left and right module over itself, the bimodule syzygies are projective separately on each side.
+
+Thus \(M\) is separately projective/free.
+
+Now take the brutal truncation
+
+\[
+\boxed{
+K_{\mathrm{syn}}
+=
+[P_2\to P_1\to P_0]
+}
+\]
+
+in homological degrees \(2,1,0\).
+
+Then
+
+\[
+H_0(K_{\mathrm{syn}})=S,
+\]
+
+\[
+H_1(K_{\mathrm{syn}})=0,
+\]
+
+\[
+H_2(K_{\mathrm{syn}})=M.
+\]
+
+The associated Postnikov class is precisely the canonical three-extension
+\[
+\boxed{
+\alpha_{\mathrm{syn}}
+\in
+\operatorname{Ext}^3_{S^e}(S,M).
+}
+\]
+
+Moreover \(K_{\mathrm{syn}}\) is a bounded complex of \(S^e\)-projectives.
+
+Hence
+
+\[
+k\otimes_S
+K_{\mathrm{syn}}
+\otimes_Sk
+\]
+
+is itself a bounded finite complex.
+
+Therefore:
+
+\[
+\boxed{
+H_n
+\left(
+k\otimes_S^{\mathbf L}
+K_{\mathrm{syn}}
+\otimes_S^{\mathbf L}k
+\right)
+=0
+\qquad(n\gg0),
+}
+\]
+
+while
+
+\[
+\operatorname{Tor}^S_n(k,k)\neq0
+\qquad
+\forall n.
+\]
+
+Thus:
+
+\[
+\boxed{
+\text{amplitude-two complete screening is perfectly consistent at the abstract }S\text{-bimodule level}.
+}
+\]
+
+This destroys any proposed no-screening argument using only:
+
+- the two-row shape;
+- separate perfection;
+- the Euler congruence;
+- the existence of a single \(\alpha\);
+- finite-dimensional local rigidity.
+
+Actual idempotent-quotient realization is essential.
+
+---
+
+# 17. Why the synthetic machine is the canonical extreme case
+
+The canonical class
+
+\[
+\alpha_{\mathrm{syn}}
+\]
+
+is a dimension-shifting class.
+
+Tensoring the three-extension with a module gives the usual third-syzygy transformation.
+
+Consequently its induced functor on the singularity category realizes exactly the shift required in Theorem 11.1.
+
+So the singular-periodicity classification is not empty or overrestrictive.
+
+The canonical bimodule syzygy provides the universal abstract model for it.
+
+---
+
+# 18. Actual amplitude-two near-miss
+
+The next question is whether amplitude \(2\) occurs at all for an actual idempotent quotient.
+
+It does.
+
+Consider the finite-dimensional quiver algebra \(D\) with vertices \(e,f\),
+
+- a loop
+  \[
+  x:e\to e,
+  \]
+- arrows
+  \[
+  a:e\to f,
+  \qquad
+  b:f\to e,
+  \]
+
+and relations
+
+\[
+\boxed{
+x^2=0,\qquad
+xa=0,\qquad
+ab=0.
+}
+\tag{18.1}
+\]
+
+A basis is
+
+\[
+e,f,x,a,b,bx,ba,
+\]
+
+so
+
+\[
+\dim_kD=7.
+\]
+
+Delete \(f\).
+
+Then
+
+\[
+\boxed{
+S=D/DfD
+\cong
+k[x]/(x^2),
+}
+\]
+
+which is singular local.
+
+---
+
+# 19. Exact right resolution in the near-miss
+
+The right projectives have bases
+
+\[
+eD=\langle e,x,a\rangle,
+\]
+
+\[
+fD=\langle f,b,bx,ba\rangle.
+\]
+
+Right \(D\)-module maps given by left multiplication by \(a,b\) give
+
+\[
+\boxed{
+0
+\longrightarrow
+eD
+\xrightarrow{\,b\,}
+fD
+\xrightarrow{\,a\,}
+eD
+\longrightarrow
+S
+\longrightarrow0.
+}
+\tag{19.1}
+\]
+
+Indeed:
+
+\[
+b(e)=b,\qquad
+b(x)=bx,\qquad
+b(a)=ba,
+\]
+
+so the first map is injective.
+
+Also:
+
+\[
+a(f)=a,
+\]
+
+while
+
+\[
+ab=abx=aba=0.
+\]
+
+Thus
+
+\[
+\ker(a:fD\to eD)
+=
+\langle b,bx,ba\rangle
+=
+b(eD).
+\]
+
+Finally,
+
+\[
+eD/aD
+=
+\langle e,x\rangle
+\cong
+k[x]/(x^2).
+\]
+
+Tensor (19.1) with \(S\).
+
+Since
+
+\[
+fS=0,
+\]
+
+we get
+
+\[
+S
+\longrightarrow
+0
+\longrightarrow
+S.
+\]
+
+Therefore:
+
+\[
+\boxed{
+\operatorname{Tor}^D_q(S,S)
+=
+\begin{cases}
+S,&q=0,2,\\
+0,&q\neq0,2,
+\end{cases}
+}
+\]
+
+as right \(S\)-modules.
+
+Thus an actual idempotent quotient of amplitude exactly \(2\) exists.
+
+---
+
+# 20. Why the actual near-miss does not screen
+
+The crucial defect is the opposite \(S\)-action on
+
+\[
+M=\operatorname{Tor}^D_2(S,S).
+\]
+
+The left action of \(x\in S\) is computed by lifting left multiplication by \(x\) to the resolution (19.1).
+
+At degree \(0\), use left multiplication by \(x\) on \(eD\).
+
+Since
+
+\[
+xa=0,
+\]
+
+the degree-\(1\) lift may be chosen zero.
+
+Since
+
+\[
+eD\xrightarrow{b}fD
+\]
+
+is injective, the degree-\(2\) lift is then also zero.
+
+Hence \(x\) acts trivially on \(\operatorname{Tor}_2\) from the left.
+
+Therefore:
+
+\[
+\boxed{
+{}_SM
+\cong
+k\oplus k,
+}
+\]
+
+while
+
+\[
+M_S\cong S.
+\]
+
+So \(M\) is projective on the right but nonprojective on the left.
+
+This violates the separate-perfection condition forced by hypothetical no-return.
+
+The ambient diagonal simple also visibly recurs: the radical of \(eD\) contains the right submodule
+
+\[
+xD\cong k_e.
+\]
+
+Thus:
+
+\[
+\operatorname{Tor}^D_n(k_e,k_e)\neq0
+\]
+
+in arbitrarily high degree.
+
+This seven-dimensional algebra is an exact actual calibration:
+
+\[
+\boxed{
+\text{amplitude }2\text{ is realizable, but one-sided freeness is not enough for screening}.
+}
+\]
+
+---
+
+# 21. What actual realization must additionally achieve
+
+The synthetic syzygy machine proves that homological data alone permit complete screening.
+
+The seven-dimensional example proves that actual amplitude two itself is not forbidden.
+
+Therefore the surviving actual problem is the conjunction of both requirements:
+
+1. actual idempotent-quotient realization;
+2. separate left/right free \(M\);
+3. bidirectional isolated second return;
+4. a Postnikov class
+   \[
+   \alpha\in\operatorname{Ext}^3_{S^e}(S,M)
+   \]
+   inducing the three-step singular shift.
+
+This is a substantially narrower problem than the original amplitude-two question.
+
+---
+
+# 22. Derived-coring / comonad realization condition
+
+An actual self-intersection is not an arbitrary object of \(D(S^e)\).
+
+It is the kernel of the extension-restriction comonad:
+
+\[
+K=S\otimes_D^{\mathbf L}S.
+\]
+
+Therefore it carries a counit
+
+\[
+\mu:K\to S
+\]
+
+and a derived coassociative comultiplication
+
+\[
+\boxed{
+\Delta:
+K
+\longrightarrow
+K\otimes_S^{\mathbf L}K
+}
+\]
+
+coming from inserting the middle \(S\)-factor.
+
+The counit identities hold:
+
+\[
+(\mu\otimes1)\Delta
+=
+\operatorname{id}_K,
+\]
+
+\[
+(1\otimes\mu)\Delta
+=
+\operatorname{id}_K.
+\]
+
+Hence an abstract pair
+
+\[
+(M,\alpha)
+\]
+
+is not yet an actual quotient candidate.
+
+It must admit the higher coherent coring/comonad structure arising from a finite-dimensional ordinary algebra \(D\).
+
+The synthetic syzygy screener has the correct homological shape, but this run did not prove that its required coring can be realized by a finite-dimensional ordinary idempotent quotient.
+
+This is the exact realization gap.
+
+---
+
+# 23. \(K_0\) does not kill amplitude two
+
+The Euler congruence
+
+\[
+s\mid(\rho+1)
+\]
+
+is strong but compatible with the synthetic syzygy screener.
+
+Indeed, in a bimodule projective resolution, every \(S^e\)-projective term is separately free, and the alternating one-sided rank identity automatically gives the same congruence.
+
+Thus:
+
+\[
+\boxed{
+K_0/Euler\text{ supplies a filter, not a no-go theorem}.
+}
+\]
+
+No stronger universal \(K_0\) contradiction was obtained.
+
+---
+
+# 24. Local rigidity does not kill amplitude two
+
+Since \(M\) is separately free, the upper row is governed by the finite local modules
+
+\[
+N_L=M\otimes_Sk,
+\qquad
+N_R=k\otimes_SM.
+\]
+
+Strong screening forces both to be nonprojective and singularly shifted copies of \(k\).
+
+Thus local rigidity yields:
+
+- infinite projective dimension of \(N_L,N_R\);
+- eventual Betti-tail matching;
+- the rank congruence.
+
+But the synthetic syzygy example shows these conditions are mutually compatible.
+
+Therefore no local-module-only contradiction exists at this stage.
+
+---
+
+# 25. Status of an Amplitude-2 No-Screening Theorem
+
+\[
+\boxed{\textbf{REFUTED at the abstract two-stage level}.}
+\]
+
+There are explicit canonical amplitude-two \(S\)-bimodule screening machines.
+
+However:
+
+\[
+\boxed{\textbf{OPEN for actual idempotent quotients under the full no-return hypotheses}.}
+\]
+
+No actual finite-dimensional \(D\) satisfying all of:
+
+\[
+H_*(K)=S\oplus M[2],
+\]
+
+\[
+{}_SM,\ M_S\text{ free},
+\]
+
+\[
+k\otimes_S^{\mathbf L}K\otimes_S^{\mathbf L}k
+\text{ eventually acyclic},
+\]
+
+was constructed.
+
+Nor was such a realization ruled out.
+
+---
+
+# 26. Strongest theorem
+
+The strongest theorem of the run is:
+
+\[
+\boxed{\textbf{Amplitude-Two Singular-Periodicity Classification}}
+\]
+
+An actual no-return amplitude-two quotient can screen the diagonal local self-Tor only if its unique Postnikov class
+
+\[
+\alpha\in\operatorname{Ext}^3_{S^e}(S,M)
+\]
+
+turns the separately free bimodule \(M\) into the three-step suspension bimodule of the singularity category:
+
+\[
+M\otimes_S^{\mathbf L}-
+\simeq
+[-3]
+\]
+
+on \(D_{\rm sg}(S)\),
+
+and similarly on the right.
+
+Equivalently the unique two-row transgression
+
+\[
+d_3
+\]
+
+must be an eventual isomorphism.
+
+Additionally:
+
+\[
+\boxed{
+\operatorname{rank}_S M
+\equiv -1
+\pmod{\ell_S(S)}.
+}
+\]
+
+---
+
+# 27. Next invariant
+
+The run does **not** move to amplitude \(3\).
+
+Amplitude \(2\) has not been killed.
+
+The correct next invariant is the combination:
+
+\[
+\boxed{
+\textbf{bidirectional isolated second return}
++
+\textbf{singularly invertible Postnikov class}
++
+\textbf{actual derived-coring realization}.
+}
+\]
+
+Concretely, the next construction/destruction problem is:
+
+> Can a finite-dimensional ordinary algebra \(D\) and primitive \(e\) realize a local singular quotient \(S\) whose minimal left and right \(D\)-resolutions each return to the \(e\)-projective only in degree \(2\), with the induced \(M\) free on both sides and the resulting \(\alpha\) implementing the three-step singular shift?
+
+This is a finite-amplitude actual-realization problem, not a general spectral-sequence problem.
+
+---
+
+# 28. Completion label
+
+The run achieves:
+
+\[
+\boxed{\texttt{B — AMPLITUDE\_2\_CLASSIFICATION}}
+\]
+
+together with a strict actual-realization frontier.
+
+The amplitude-two branch survives.
+
+No move to \(a=3\) is justified yet.
+
+---
+
+# 29. Run integrity
+
+The actual trajectory was:
+
+1. freeze the U1 self-intersection reduction;
+2. impose amplitude \(a=2\);
+3. identify the multiplication cone and the unique
+   \[
+   \alpha\in\operatorname{Ext}^3_{S^e}(S,M);
+   \]
+4. build the exact two-row hyper-Tor spectral sequence;
+5. prove \(d_3\) is the only possible screening differential;
+6. use separate perfection plus local rigidity to prove \(M\) is free on both sides;
+7. show strong screening forces \(d_3\) to be an eventual isomorphism;
+8. reformulate this as a singular-category isomorphism;
+9. promote the simple-level isomorphism to the whole singularity category;
+10. derive Betti-tail matching and the \(K_0\) congruence;
+11. derive the bidirectional isolated-second-return normal form for actual minimal \(D\)-resolutions;
+12. construct the canonical third-bimodule-syzygy screening machine, proving abstract amplitude-two screening is possible;
+13. construct an actual seven-dimensional amplitude-two idempotent quotient;
+14. compute that its \(M\) is free on only one side and that ambient diagonal return persists;
+15. isolate actual derived-coring/comonad realization as the remaining interface.
+
+No formality of \(K\) was assumed.
+
+No Tor algebra multiplication was assumed.
+
+No arbitrary two-row spectral sequence was substituted for an actual quotient.
+
+No finite low-degree numerical computation was promoted to an eventual theorem.

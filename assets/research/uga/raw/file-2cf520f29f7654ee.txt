@@ -1,0 +1,247 @@
+# 任意 N 的完整 Yoneda 生成元核：比较映射公式
+
+2026-09-10。状态：本稿的有限次数公式有完整自审证明与两套计算交叉检查；没有独立数学 verifier 认证。**一般 N 的最终消失桥梁仍未证明。**
+
+主目标及其精确假设见 [N-Vertex-Main-Route.md](N-Vertex-Main-Route.md)。本稿把其中仅检测一次 Ext 乘积的深层核商，扩展为检测全部正次数 Yoneda 乘积的核。它不限制顶点数、Loewy 长度或 Peirce 图形。
+
+## 1. 固定记号
+
+设 \(A\) 为有限维 basic \(\mathbb C\)-代数，\(J=\operatorname{rad}A\)，\(L_1,\ldots,L_N\) 为左 simples。所有 syzygies 使用固定的最小投射消解。记
+\[
+V_{n,j}=\Omega^nL_j/J\Omega^nL_j,\qquad
+\mathcal E^n_{ij}=\operatorname{Ext}_A^n(L_j,L_i).
+\]
+对于 \(n\ge0\)，有
+\[
+\mathcal E^n_{ij}\simeq\operatorname{Hom}_{A/J}(V_{n,j},L_i).
+\tag{1}
+\]
+对于 \(n>0\)，这是最小消解给出的 Hom 表示；对于 \(n=0\)，就是 simple 的 Hom。
+
+固定 \(n\ge2\)，取 \(1\le r<n\) 及
+\[
+f\in\mathcal E^{n-r}_{tj}
+=\operatorname{Hom}_A(\Omega^{n-r}L_j,L_t).
+\]
+利用投射覆盖的比较映射，把 \(f\) 提升 \(r\) 步，得到
+\[
+\Omega^rf:\Omega^nL_j\longrightarrow\Omega^rL_t.
+\]
+在 semisimple tops 上取诱导映射
+\[
+\phi_{r,f}:V_{n,j}\longrightarrow V_{r,t}.
+\tag{2}
+\]
+
+**引理 1。** (2) 不依赖提升的选择，而且关于 \(f\) 线性。
+
+**证明。** 对任意 \(i\) 及任意
+\(g:\Omega^rL_t\to L_i\)，复合 \(g\Omega^rf\) 表示同一个 Yoneda product \(gf\)。最小消解的 (1) 说明：两种选择表示相同 Ext 类时，它们作为 \(\Omega^nL_j\to L_i\) 的映射本身相同，没有非零的 projective restrictions 需要再商掉。所有 \(V_{r,t}\to L_i\) 的映射共同分离这个 semisimple module 中的向量，因此两种 top maps 相同。对两个 \(f\) 的和及标量倍使用同样论证，就得到线性。 \(\square\)
+
+比较映射与 Yoneda product 的基本对应可核对 [Saorín，第 2 页](https://arxiv.org/pdf/math/0306043)。这里另行证明了所需的 top 层选择无关性。
+
+## 2. 完整的比较核公式
+
+取 \(1\le d<n\)。定义 \(A/J\)-linear map
+\[
+\Phi_{n,d,j}:V_{n,j}\longrightarrow
+\bigoplus_{r=1}^{d}\bigoplus_t
+\operatorname{Hom}_{\mathbb C}
+  (\mathcal E^{n-r}_{tj},V_{r,t}),
+\tag{3}
+\]
+其中在 \((r,t)\) 分量上，向量 \(v\) 被送到函数
+\(f\mapsto\phi_{r,f}(v)\)。右端的 \(A/J\)-作用只作用于 \(V_{r,t}\)。
+
+记
+\[
+\mathcal K_{n,d}(L_j)=\ker\Phi_{n,d,j}.
+\tag{4}
+\]
+
+**定理 2。** 对每个 \(i,j,n,d\)，有自然向量空间同构
+\[
+\boxed{
+\frac{\mathcal E^n_{ij}}
+{\sum_{r=1}^{d}\sum_t
+ \mathcal E^r_{it}\mathcal E^{n-r}_{tj}}
+\simeq
+\operatorname{Hom}_{A/J}(\mathcal K_{n,d}(L_j),L_i).
+}
+\tag{5}
+\]
+
+特别地，令
+\[
+\mathcal K_n(L_j)=\mathcal K_{n,n-1}(L_j),
+\]
+则真正的新生成元商满足
+\[
+\boxed{
+Q^n_{ij}(\mathcal E)
+=\bigl(\mathcal E_+/(\mathcal E_+)^2\bigr)^n_{ij}
+\simeq\operatorname{Hom}_{A/J}(\mathcal K_n(L_j),L_i).
+}
+\tag{6}
+\]
+
+**证明。** 将 (3) 的有限维向量空间对偶化，并取到 \(L_i\) 的 \(A/J\)-linear maps。一个右端分量的线性泛函可以展开为有限和：先在某个 \(f\in\mathcal E^{n-r}_{tj}\) 上取值，再施加某个
+\(g\in\operatorname{Hom}_{A/J}(V_{r,t},L_i)=\mathcal E^r_{it}\)。
+其与 \(\Phi_{n,d,j}\) 的复合正是 \(g\phi_{r,f}\)，即 Yoneda product \(gf\)。
+
+因此对偶映射的像恰好是 (5) 的分母。由于所有 \(A/J\)-modules semisimple，到 \(L_i\) 的 Hom 函子正合；这个像就是所有消灭 \(\ker\Phi_{n,d,j}\) 的 maps。把 \(\operatorname{Hom}_{A/J}(V_{n,j},L_i)\) 除以该像，就得到右端。取 \(d=n-1\) 得到 (6)。 \(\square\)
+
+这不是仅凭相同维数猜测同构。核、乘积像及满射都已逐一识别。
+
+## 3. 与深层核商的关系
+
+当 \(d=1\) 时，上一个主路线中的公式给出
+\[
+\boxed{
+\mathcal K_{n,1}(L_j)
+=
+\frac{\Omega^nL_j\cap J^2P_{n-1}^{(j)}}
+     {J\Omega^nL_j}
+\quad\text{作为 }V_{n,j}\text{ 的子模}.
+}
+\tag{7}
+\]
+等式可直接由共同 annihilator 验证：左侧消灭所有一次 Ext 乘积；右侧在 \(V_{n,j}\) 中也恰好有这个 annihilator。
+
+随着允许的左因子次数增加，核逐步缩小：
+\[
+V_{n,j}\supseteq
+\mathcal K_{n,1}(L_j)\supseteq
+\mathcal K_{n,2}(L_j)\supseteq\cdots\supseteq
+\mathcal K_n(L_j).
+\tag{8}
+\]
+中间任意一步都可能严格缩小。只计算 (7) 不能断言出现了新的 Yoneda 生成元。
+
+两个准确的有限生成判据是：
+
+1. \(\mathcal E\) 由次数不超过 \(d\) 的元素生成，当且仅当
+   \(\mathcal K_n(L_j)=0\) 对全部 \(j\) 和全部 \(n>d\) 成立。
+2. 等价地，\(\mathcal K_{n,d}(L_j)=0\) 对全部 \(j\) 和全部 \(n>d\) 成立。
+
+第一条是分次代数的次数归纳。第二条的反向同样归纳；正向把任意生成元 word 的最左因子取出来，其次数不超过 \(d\)。
+
+这些判据需要验证所有 \(n>d\)。一个有限计算窗口里核为零，尚不能替代这个全称条件。
+
+## 4. 可以执行的实际乘法步骤
+
+[yoneda_generation_certificate.py](yoneda_generation_certificate.py) 实现了 (2)–(6)，输入实际 radical 乘法表。
+
+- 对每个 simple 取最小投射覆盖，保留 kernel 在 projective 中的嵌入。
+- 用 semisimple top 的坐标给出各个 Ext 空间的基。
+- 将每个 \(f\) 的头部像提升到目标 projective cover，再按 \(A\)-linearity 延伸。
+- 限制到实际 kernels，并递归得到 \(\Omega^rf\)。
+- 在 tops 上求乘积的共同秩，得到完整的新生成元维数。
+
+每一步检查 \(A\)-linearity 与投射覆盖方块的交换性；基础消解还检查覆盖满射、kernel 稳定性及最小性。乘法表先检查结合律、Peirce 相容性及 radical 幂零性。
+
+程序输出按左因子次数分类的乘积秩，也输出所有正次数乘积的总秩。有限次数的新生成元数据保存在 [yoneda-generation-certificates.json](yoneda-generation-certificates.json)。
+
+## 5. 两个不能混淆的校准例
+
+### 5.1. 深层商一直出现，但只需两个生成次数
+
+取 \(B=\mathbb C[x]/(x^4)\)，唯一 simple 为 \(L\)。最小消解交替使用乘 \(x\) 和乘 \(x^3\)，所以每次 Ext 都是一维：
+\[
+\dim\operatorname{Ext}_B^n(L,L)=1\quad(n\ge0).
+\]
+对于 \(n\ge2\)，(7) 的维数是
+\[
+\dim\mathcal K_{n,1}(L)=
+\begin{cases}
+1,&n\text{ 偶数},\\
+0,&n\text{ 奇数}.
+\end{cases}
+\tag{9}
+\]
+但 \(\Omega^2L\simeq L\)。固定这个同构给出的二次类，其幂及与一次类的乘积，在比较映射表示下都是非零。因此 Yoneda algebra 由一次和二次类生成：
+\[
+\dim\mathcal K_2(L)=1,\qquad
+\mathcal K_n(L)=0\quad(n\ge3).
+\tag{10}
+\]
+所以“深层商始终非零”不等于“始终有新的不可分解生成元”。这里的一般次数结论来自上述二周期消解；程序另外核对了次数一至五。
+
+### 5.2. 每个高次都有新生成元，但违反完整的 Peirce 假设
+
+取两个顶点 \(0,1\)，箭头
+\(a:0\to1,\ b:1\to0\)，唯一单项式零关系是按行走顺序写的 \(aba\)。
+非零正长度路径为
+\[
+a,\ b,\ ab,\ ba,\ bab.
+\]
+故代数维数为七。\(P_0\) 长度三，\(P_1\) 长度四，均为 uniserial。
+
+\(JP_1\simeq P_0\)，所以 \(\operatorname{pd}L_1=1\)。
+另一方面，\(M=JP_0\) 是长度二、top 为 \(L_1\) 的模块，而且
+\[
+\Omega L_0=M,\qquad \Omega M\simeq M.
+\]
+于是对于 \(n\ge2\)，唯一非零的 simple-pair Ext 为
+\[
+\mathcal E^n_{1,0}\simeq\mathbb C.
+\]
+一次 Ext 在两个相反方向各为一维。任何两个正次数类的可组合乘积都落在正次数 self-Ext 中，因而为零；其余组合端点不匹配。故
+\[
+\mathcal E_+^2=0,\qquad
+Q^n_{1,0}\simeq\mathbb C\quad(n\ge2).
+\tag{11}
+\]
+这个校准例及其无限生成性质已有 [Saorín，Example 1](https://arxiv.org/pdf/math/0306043)；以上写出了本程序使用的左模块标记和消解。
+
+关键是 \(e_0Ae_1\ne0\)，由箭头 \(b\) 见证。因此这个无限 Ext 对恰好是 supported pair，违反 \((Z_b)\)。它不是 Universal Gap A 的反例。它证明，仅靠高次 self-Ext 消失、\(\mathcal E_+\) 幂零或有限顶点数，不能关闭任意 \(N\) 的桥梁。
+
+## 6. 有限核算结果与交叉检查
+
+五个实际代数都计算到次数五：
+
+| 代数 | 检查的比较映射数 | 与主问题相关的结果 |
+|---|---:|---|
+| 原归档五维有限全局维数例 | 26 | 全部三次及以后 Ext 为零；没有错误的无限性证书。 |
+| 六维二圈截断代数 | 40 | 一、二次有生成元，三至五次没有新生成元。 |
+| \(\mathbb C[x]/(x^4)\) | 20 | 四次深层商非零，但四次完整生成元商为零。 |
+| 七维单项式例 | 30 | 每个二至五次都有新生成元；与 (11) 的全次数证明一致。 |
+| 二十二维五顶点中心模型 | 195 | 中心五次 Ext 维数为 5；正次数乘积像维数为 4；真正的新生成元商维数为 1。 |
+
+最后一行只断言该实际乘法表中的计算结果。它没有把所有相同 Peirce 支撑的代数都排除；非幂零五次类的全次数论证仍见 [Higher-Syzygy-Return-Theorem.md](Higher-Syzygy-Return-Theorem.md)。
+
+另有两种交叉检查，保存在 [../work/yoneda_comparison_audit.json](../work/yoneda_comparison_audit.json)：
+
+- 在四个小代数上，另行使用 normalized relative bar complex 计算到次数四的 cohomology 和全部正次数乘积秩；29 个 bar product 全部为 cocycles，维数与最小消解算法一致。
+- 在五个代数上，给投射覆盖的线性 section 加入 kernel-valued 修正后重算到次数四；全部乘积商不变。
+
+这两种检查检验的是不同计算路径及提升选择无关性，不是独立数学审稿或形式化证明。
+
+运行：
+
+~~~powershell
+python outputs/yoneda_generation_certificate.py --demo --output outputs/yoneda-generation-certificates.json
+python work/audit_yoneda_comparison.py
+~~~
+
+## 7. 任意 N 的主断点没有被隐藏
+
+现在未证明的 (FG) 桥梁有了完全具体的形式：
+\[
+\boxed{
+\left[
+e_jP_n^{(j)}=0\text{ 对所有 }j\text{ 和所有充分大的 }n
+\right]
+\Longrightarrow
+\left[
+\ker\Phi_{n,n-1,j}=0\text{ 对所有 }j\text{ 和所有充分大的 }n
+\right].
+}
+\tag{12}
+\]
+左边是完整的 Peirce-supported Ext 最终消失；右边是新生成元最终停止出现。
+
+本稿没有证明 (12)。它把此前容易混淆的三个对象严格分开：Ext 非零、一次乘积未能解释的类、所有正次数乘积都未能解释的新生成元。下一步需要在实际比较映射中使用左边的全套支撑条件，证明右边的最终单射；不能把这项工作替换成再次增加特殊例子。
+
+原 verified fact graph 未修改。
+

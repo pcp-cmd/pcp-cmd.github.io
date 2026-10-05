@@ -1,0 +1,232 @@
+# T15 — Ordinary closure when only one simple has infinite projective dimension
+
+Date: 2026-10-03.
+
+Status: complete self-audited all-size ordinary proof; standard finite-length
+projective-dimension devissage and existing project syzygy identities;
+no novelty claim and no new computation; not independently verified.
+Universal Gap A remains OPEN in general.
+
+## 1. A global branch, not an added derived invariant
+
+The acceptance target remains Universal Gap A for every finite size.
+After T13's supported-migration gap and T14's canonical-tensor audit,
+we inspected a global parameter: the actual number of ordinary simples
+of infinite projective dimension, on each chosen side separately.
+
+The entire branch with at most one infinite-pd left simple closes.
+So does the right version, by an independent direct ordinary argument
+on right resolutions. This does not require ideal existence, sections,
+formality, a bounded screening page, an Ext generation assumption or
+an opposite-side infinite-+ transfer.
+
+The proof is a synthesis of standard composition-series pd bounds and
+the project's existing syzygy-component / supported-Tor identity.
+It is not a new claim about stable or singular categories.
+
+Let A be elementary finite-dimensional over any field. Write L_x for
+left simples, R_x for right simples, and J=rad A. Let P_n(L_x)
+be its actual minimal left resolution. Its multiplicity of Ae_z is
+dim Tor_n^A(R_z,L_x). Supported means e_xAe_z!=0.
+
+## 2. The finite-length input
+
+If all composition factors of a finite module X have pd<=d on one
+stated side, then pd X<=d. Induct on a composition series and use the
+ordinary long exact Tor sequence, or the ordinary pd inequality for
+a short exact sequence.
+
+This is an upper bound, not its false converse: a finite-pd projective
+can have composition factors of infinite pd. Only the proved direction
+is used below.
+
+For an elementary algebra, the multiplicity of L_x as a composition
+factor is dim e_xX; on the right it is dim X e_x.
+
+## 3. Exactly one infinite-pd left simple gives visible Tor in every degree
+
+### Theorem 3.1
+
+Suppose L_x is the only infinite-pd left simple. Then for EVERY n>=0,
+
+\[
+\sum_z \dim(e_xAe_z)\,
+       \dim\operatorname{Tor}_n^A(R_z,L_x)
+=\dim e_x\Omega_A^nL_x+\dim e_x\Omega_A^{n+1}L_x
+\ge2.
+\tag{3.1}
+\]
+
+Consequently one fixed z with e_xAe_z!=0 has ordinary Tor_n^A(R_z,L_x)
+nonzero in infinitely many degrees. A is infinite +, for arbitrary
+finite vertex number.
+
+#### Proof
+
+Every actual Omega_A^n L_x has infinite pd. Otherwise dimension shifting
+through the first n finite projective terms would give finite pd L_x.
+
+All other left simples have finite pd. There are finitely many, so their
+maximum d is finite (put d=0 if there are none). If some Omega_A^n L_x
+had no L_x composition factor, Section 2 would give pd<=d, a contradiction.
+Therefore dim e_x Omega_A^n L_x>=1 for every n>=0.
+
+Apply the exact component functor e_x(-) to
+
+\[
+0\longrightarrow\Omega_A^{n+1}L_x\longrightarrow P_n(L_x)
+\longrightarrow\Omega_A^nL_x\longrightarrow0.
+\tag{3.2}
+\]
+
+The two syzygy components have dimension at least one. Minimality
+identifies the left-projective multiplicities in P_n with ordinary
+simple-pair Tor, giving (3.1). Its summands have nonnegative dimensions.
+For every n at least one supported label z occurs; a finite set of
+labels contains one occurring in infinitely many degrees. QED.
+
+The fixed pair need not be diagonal, and the theorem does not claim
+one fixed pair is nonzero in every degree.
+
+In particular dim e_xAe_x>=2, by n=0. Thus a unique infinite-pd left
+simple cannot have a trivial local corner. This is a consequence of the
+actual projective cover, not an inference from quiver cycles.
+
+### Corollary 3.2 — Full branch exclusion
+
+Every finite-dimensional elementary algebra with at most one infinite-pd
+left simple satisfies Universal Gap A. If there are none, all simples
+have finite pd and the global dimension is finite. If there is one,
+Theorem 3.1 gives the required ordinary supported witness.
+
+## 4. Direct ordinary right-side theorem
+
+Suppose R_x is the only infinite-pd RIGHT simple. Use its actual minimal
+right resolution Q_n(R_x), with multiplicity of e_yA equal to
+dim Tor_n^A(R_x,L_y).
+
+Every Omega_right^n R_x has infinite right pd. By the same composition
+series argument it contains R_x in every degree. Apply (-)e_x to its
+short exact projective-cover sequence. This gives
+
+\[
+\sum_y\dim(e_yAe_x)\,
+      \dim\operatorname{Tor}_n^A(R_x,L_y)
+=\dim(\Omega_{\rm right}^nR_x)e_x
+ +\dim(\Omega_{\rm right}^{n+1}R_x)e_x
+\ge2
+\tag{4.1}
+\]
+
+for every n>=0. Select a fixed y from the finite label set. The
+nonzero physical Peirce component is exactly e_yAe_x, the support
+required for that SAME ordinary pair (R_x,L_y).
+
+Hence the at-most-one-infinite-pd right-simple branch also satisfies
+Gap A. No global opposite-infinite-+ theorem is invoked or cleared.
+Ordinary right resolutions compute the stated ordinary A-Tor directly.
+
+## 5. A quantitative termination statement
+
+### Theorem 5.1
+
+Fix a left simple L_x and assume pd L_y<=d<infinity for every y!=x.
+Suppose for M>=1,
+
+\[
+\operatorname{Tor}_n^A(R_z,L_x)=0
+\quad\text{for every }n\ge M\text{ and every }z
+\text{ with }e_xAe_z\ne0.
+\tag{5.1}
+\]
+
+Then
+
+\[
+\operatorname{pd}_A L_x\le M+d,\qquad
+\operatorname{gldim} A\le M+d.
+\tag{5.2}
+\]
+
+#### Proof
+
+The hypothesis makes e_xP_M(L_x)=0. Since P_M surjects onto
+Omega_A^M L_x, its x component is zero too. All composition factors
+of that actual syzygy have pd<=d, so it has pd<=d.
+Dimension shifting gives pd L_x<=M+d. Every other simple already
+has pd<=d, giving the global bound. QED.
+
+There is a direct right version: fix R_x, bound all other right-simple
+pds by d, and assume all ordinary pairs (R_x,L_y) with e_yAe_x!=0
+vanish in every n>=M. Then all right simples have pd<=M+d, so all
+ordinary simple-pair Tor vanishes above M+d. Minimal left resolutions
+then give the same global-dimension bound, without opposite-+ transfer.
+
+The theorem keeps the finite pd bound d and all-degree vanishing.
+It is not a uniform finite-window test or a bound depending only on
+the number of vertices.
+
+## 6. Existing diagonal-free calibration
+
+Reuse the unchanged Saorin seven-dimensional example from
+toolbox/Imported-Outputs/Finite-Syzygy-System-Theorem.md, Section 1.
+It has only L_0 of infinite left pd, L_1 of pd one, and
+
+\[
+\Omega L_0=M,\quad\Omega M\simeq M,\quad
+\operatorname{top}M=L_1,\quad\operatorname{rad}M=L_0.
+\tag{6.1}
+\]
+
+Thus e_0 Omega^n L_0 has dimension one in every n>=1, while all
+positive simple self-Ext vanishes. The actual supported off-diagonal
+pair has Tor_n(R_1,L_0)=k for every n>=1 and dim e_0Ae_1=2,
+exactly realizing the left-hand side of (3.1) as two.
+
+This confirms that composition return is enough for Gap A and does
+not imply top return at the same simple. The existing connected
+2N+3-dimensional extension family adds projective sink simples;
+L_0 remains the unique infinite-pd left simple, so this calibration
+already extends to arbitrary finite vertex number.
+
+No multiplication table, computation or old proof was rerun. The
+all-degree ordinary module identities are the reused certificate.
+
+## 7. Normal adversarial self-audit
+
+1. Infinite pd of every actual syzygy follows by ordinary dimension
+   shifting; no singular-category implication is used.
+2. The finite composition-series pd implication is used in its valid
+   direction only; no converse is asserted.
+3. The finite maximum d is taken over other simples on the SAME
+   chosen side; left and right infinite-pd labels are not identified.
+4. Composition multiplicity is an actual Peirce-component dimension.
+5. The exact cover sequence gives the sum of TWO syzygy dimensions.
+6. Every-degree aggregate positivity selects a fixed pair only by
+   finite pigeonhole; no fixed every-degree or diagonal claim follows.
+7. The right proof has the physical support e_yAe_x and computes the
+   same ordinary A-Tor directly. The opposite-source quarantine stays.
+8. The quantitative statement retains d and every n>=M; no fixed
+   finite checking window or vertex-only bound is claimed.
+9. The Saorin calibration excludes strengthening to diagonal self-Ext.
+10. No generally available descent from multiple infinite-pd simples
+    to the singleton branch is inferred.
+11. This is same-author self-audit, not independent verification and
+    not a literature-novelty assertion.
+
+## 8. Remaining goal
+
+This deletes both singleton-infinite-simple branches at arbitrary
+finite size by actual ordinary homology. In a hypothetical Gap-A failure
+there must therefore be at least two infinite-pd simples on each side.
+That necessary consequence is secondary to the full branch theorem.
+
+The general problem is still open. A terminating descent in the number
+of infinite-pd simples must preserve badness and the chosen ordinary
+side. C061 provides such descent under its actual section hypotheses;
+none is assumed automatically here. C076 still lacks final physical
+support preservation for its general higher-index ordinary migration.
+Target A, general local-trivial, supported-weight and higher-output
+Target-B branches remain on the map. Continue prioritizing supported
+ordinary return or a proved decreasing mechanism for the remaining
+multiple-infinite-simple case.

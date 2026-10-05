@@ -31,9 +31,9 @@ function loadPlaywright() {
   } catch (initialError) {
     const userProfile = process.env.USERPROFILE;
     const installHelp = [
-      'Playwright is optional and only required for browser QA.',
-      'Install it with:',
-      '  npm install -D playwright',
+      'Playwright is declared as a development dependency and required for browser release QA.',
+      'Install project dependencies and Chromium with:',
+      '  npm install',
       '  npx playwright install chromium'
     ].join('\n');
     if (!userProfile) {
@@ -81,6 +81,13 @@ const { chromium } = loadPlaywright();
 
 const routes = [
   '/',
+  '/writing.html',
+  '/project.html',
+  '/research.html',
+  '/research-record.html?id=claim-130',
+  '/about.html',
+  '/room.html',
+  '/article.html?sample=reading',
   '/article.html?src=content/system/revision-protocol/index.md',
   '/article.html?src=content%2Fdesign%2Fworks%2Flucia-punishing-gray-raven%2Farticle.md',
   '/works.html',
@@ -100,6 +107,13 @@ const viewports = [
 
 const routeNames = new Map([
   ['/', 'home'],
+  ['/writing.html', 'writing'],
+  ['/project.html', 'project'],
+  ['/research.html', 'research'],
+  ['/research-record.html?id=claim-130', 'research-record'],
+  ['/about.html', 'about'],
+  ['/room.html', 'room'],
+  ['/article.html?sample=reading', 'sample'],
   ['/article.html?src=content/system/revision-protocol/index.md', 'article'],
   [
     '/article.html?src=content%2Fdesign%2Fworks%2Flucia-punishing-gray-raven%2Farticle.md',
@@ -309,9 +323,17 @@ async function assertNoOverflow(page, label) {
 }
 
 async function assertActiveNavigation(page, label) {
+  const mobileReading = await page.evaluate(() => (document.body.classList.contains('reading-page') || document.body.classList.contains('gallery-page')) && innerWidth <= 760);
+  if (mobileReading) await page.locator('[data-menu-toggle]').click();
   const activeNav = await page.evaluate(() => {
     const link = document.querySelector(
-      '.desktop-nav a.is-active, .desktop-nav a[aria-current="page"], .site-nav a.is-active, .site-nav a[aria-current="page"]'
+      document.body.classList.contains('site-page')
+        ? (innerWidth <= 760 ? '[data-mobile-navigation] a[aria-current="page"]' : '.site-navigation a[aria-current="page"]')
+        : document.body.classList.contains('reading-page')
+        ? (innerWidth <= 760 ? '.reading-mobile-header a[aria-current="page"]' : '.reading-left a[aria-current="page"]')
+        : (document.body.classList.contains('gallery-page') && innerWidth <= 760
+          ? '[data-mobile-navigation] a[aria-current="page"]'
+          : '.desktop-nav a.is-active, .desktop-nav a[aria-current="page"], .site-nav a.is-active, .site-nav a[aria-current="page"]')
     );
     if (!link) return null;
     const style = getComputedStyle(link);
@@ -330,11 +352,14 @@ async function assertActiveNavigation(page, label) {
       top: rect.top,
       bottom: rect.bottom,
       left: rect.left,
-      right: rect.right
+      right: rect.right,
+      themed: document.body.classList.contains('site-page'),
+      labels: [...document.querySelectorAll('.site-navigation a')].map(item => item.textContent.trim())
     };
   });
 
   assert(activeNav !== null, `${label} is missing an active navigation link`);
+  if (activeNav.themed) assert(activeNav.labels.join(',') === 'Writing,Project,Research,About,Works,Room', `${label} must expose all six shared section links`);
   assert(
     activeNav.display !== 'none'
       && activeNav.visibility !== 'hidden'
@@ -347,85 +372,86 @@ async function assertActiveNavigation(page, label) {
     activeNav.color !== 'transparent' && activeNav.alpha > 0,
     `${label} active navigation color is transparent: ${activeNav.color}`
   );
+  if (mobileReading) await page.locator('[data-menu-toggle]').click();
 }
 
-async function assertHomeHero(page, viewport, label) {
+async function assertHomeEntrance(page, viewport, label) {
+  const state = await page.evaluate(() => ({
+    count: document.querySelectorAll('[data-window]').length,
+    photo: document.querySelectorAll('[data-photo-window]').length,
+    labels: [...document.querySelectorAll('.window-title')].map((item) => item.textContent),
+    expanded: document.querySelectorAll('[data-window].is-open').length,
+    background: getComputedStyle(document.body).backgroundColor,
+    photoText: document.querySelector('[data-photo-window]').textContent,
+    photoImage: (() => {
+      const image = document.querySelector('[data-photo-window] img');
+      return image && { loaded: image.complete && image.naturalWidth > 100 && image.naturalHeight > 100, alt: image.alt, visible: image.getBoundingClientRect().width > 0 };
+    })(),
+    windows: [...document.querySelectorAll('[data-window]')].map((item) => {
+      const r = item.getBoundingClientRect(); return { left:r.left, right:r.right, top:r.top, bottom:r.bottom };
+    })
+  }));
+  assert(state.count === 6 && state.photo === 1, `${label} must show six section windows and one photo window`);
+  assert(state.labels.join(',') === 'Writing,Project,Research,About,Works,Room', `${label} has incorrect section labels`);
+  assert(state.expanded === 0, `${label} must initially show titles only`);
+  assert(state.background === 'rgb(255, 255, 255)', `${label} must preserve the white home`);
+  assert(state.photoImage?.loaded && state.photoImage.visible && state.photoImage.alt && !state.photoText.includes('照片待提供'), `${label} must load the supplied avatar instead of a photo placeholder`);
+  for (const r of state.windows) assert(r.left >= 8 && r.right <= viewport.width - 8, `${label} hides an entrance outside the viewport`);
+}
+
+async function assertHalftoneInterface(page, label) {
+  const themed = await page.locator('body.site-page, body.entrance-page').count();
+  if (!themed) return;
   const result = await page.evaluate(() => {
-    const hero = document.querySelector('.home-redesign .hero');
-    const card = document.querySelector('.hero-lottie-card');
-    const titleStrip = document.querySelector('.hero-lottie-card .hero-card-top');
-    const figure = document.querySelector('.hero-lottie-figure');
-    const glyph = document.querySelector('#heroGlyphLottie');
-    const fallback = document.querySelector('.hero-lottie-fallback');
-    if (!hero || !card || !titleStrip || !figure || !glyph || !fallback) return null;
-
-    const heroRect = hero.getBoundingClientRect();
-    const cardRect = card.getBoundingClientRect();
-    const glyphRect = glyph.getBoundingClientRect();
-    const cardStyle = getComputedStyle(card);
-    const titleStyle = getComputedStyle(titleStrip);
-    const figureStyle = getComputedStyle(figure);
-    const fallbackStyle = getComputedStyle(fallback);
-
-    return {
-      heroWidth: heroRect.width,
-      cardWidth: cardRect.width,
-      cardLeft: cardRect.left,
-      cardRight: cardRect.right,
-      glyphWidth: glyphRect.width,
-      cardBorder: cardStyle.borderTopWidth,
-      cardPadding: cardStyle.paddingTop,
-      cardBackgroundImage: cardStyle.backgroundImage,
-      cardBackgroundColor: cardStyle.backgroundColor,
-      cardShadow: cardStyle.boxShadow,
-      titleDisplay: titleStyle.display,
-      figureBackgroundImage: figureStyle.backgroundImage,
-      figureBackgroundColor: figureStyle.backgroundColor,
-      figureOverflow: figureStyle.overflow,
-      fallbackNaturalWidth: fallback.naturalWidth,
-      fallbackOpacity: Number(fallbackStyle.opacity),
-      failed: figure.classList.contains('lottie-failed')
-    };
+    const canvas = document.querySelector('[data-site-backdrop], [data-entrance-backdrop]');
+    if (!canvas || !canvas.width || !canvas.height) return null;
+    const gl = canvas.getContext('webgl2');
+    if (!gl || canvas.dataset.backdropRenderer !== 'niku-webgl2') return null;
+    const pixels = new Uint8Array(canvas.width * canvas.height * 4);
+    gl.readPixels(0, 0, canvas.width, canvas.height, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
+    let dark = 0, light = 0;
+    for (let i = 0; i < pixels.length; i += 64) {
+      if (pixels[i] < 32 && pixels[i + 1] < 32 && pixels[i + 2] < 32) dark++;
+      if (pixels[i] > 224 && pixels[i + 1] > 224 && pixels[i + 2] > 224) light++;
+    }
+    const heading = document.querySelector('.window-title, .reading-page-heading h1, .reading-article-heading h1, .gallery-heading h1');
+    return { dark, light, font: heading && getComputedStyle(heading).fontFamily, loaded: document.fonts.check('18px DotGothic16'), background: getComputedStyle(document.body).backgroundColor };
   });
+  assert(result && result.dark > 100 && result.light > 100, `${label} must visibly render black and white halftone dots`);
+  assert(result.loaded && result.font.includes('DotGothic16'), `${label} must share the entrance display font`);
+  assert(result.background === 'rgb(255, 255, 255)', `${label} must use the shared paper base`);
+}
 
-  assert(result !== null, `${label} is missing the Lottie hero structure`);
-  assert(result.cardBorder === '0px', `${label} Lottie wrapper still has a border`);
-  assert(result.cardPadding === '0px', `${label} Lottie wrapper still has card padding`);
-  assert(result.cardBackgroundImage === 'none', `${label} Lottie wrapper still has a background image`);
-  assert(
-    result.cardBackgroundColor === 'rgba(0, 0, 0, 0)',
-    `${label} Lottie wrapper still has a background color: ${result.cardBackgroundColor}`
-  );
-  assert(result.cardShadow === 'none', `${label} Lottie wrapper still has a card shadow`);
-  assert(result.titleDisplay === 'none', `${label} Lottie title strip is still visible`);
-  assert(
-    result.figureBackgroundImage === 'none'
-      && result.figureBackgroundColor === 'rgba(0, 0, 0, 0)'
-      && result.figureOverflow === 'visible',
-    `${label} Lottie figure is not a transparent, unboxed visual`
-  );
-  assert(result.fallbackNaturalWidth > 0, `${label} Lottie fallback image did not load`);
-  assert(
-    result.failed && result.fallbackOpacity > 0,
-    `${label} must reveal the fallback when the external Lottie runtime is unavailable`
-  );
+async function assertReadingGeometry(page, label) {
+  if (!await page.locator('body.reading-page').count()) return;
+  const result = await page.evaluate(() => {
+    const main = document.querySelector('.reading-main, .article-manuscript');
+    const rect = main.getBoundingClientRect();
+    return { width: rect.width, max: getComputedStyle(main).maxWidth, background: getComputedStyle(document.body).backgroundColor,
+      font: getComputedStyle(document.body).fontSize,
+      themed: document.body.classList.contains('site-page'),
+      navigation: [...document.querySelectorAll(document.body.classList.contains('site-page') ? '.site-navigation a' : '.reading-left .reading-navigation a')].map(a=>a.textContent) };
+  });
+  assert(result.width <= 768.1 && result.max === '768px', `${label} must use a maximum 48rem reader`);
+  assert(result.background === (result.themed ? 'rgb(255, 255, 255)' : 'rgb(240, 236, 224)'), `${label} has an unexpected page background`);
+  assert(result.font === '16px', `${label} must keep readable body size`);
+  assert(result.navigation.join(',') === (result.themed ? 'Writing,Project,Research,About,Works,Room' : 'Writing,Project,Research,About,Works'), `${label} changed the navigation outside its six-section or legacy five-section contract`);
+}
 
-  if (viewport.width >= 980) {
-    const visualShare = result.cardWidth / result.heroWidth;
-    assert(
-      visualShare >= 0.38 && visualShare <= 0.55,
-      `${label} right visual share must be about 40%-50%; received ${visualShare.toFixed(3)}`
-    );
-    assert(
-      result.glyphWidth >= result.cardWidth * 0.95,
-      `${label} glyph is still too small for a hero visual`
-    );
-  } else {
-    assert(
-      result.cardLeft >= -4 && result.cardRight <= viewport.width + 4,
-      `${label} Lottie wrapper exceeds the mobile viewport`
-    );
-  }
+async function assertRoomEntry(page, label) {
+  await page.waitForURL('**/magic-cabin/index.html?view=shelf');
+  await page.waitForFunction(() => document.body.dataset.cabinFocus === 'shelf');
+  assert(await page.locator('#cabinCanvas').isVisible(), `${label} must enter the actual cabin shelf`);
+  assert(await page.locator('.cabin-return').getAttribute('href') === '../writing.html', `${label} must retain its return to Writing`);
+  await page.locator('#libraryDirectory summary').click();
+  await page.locator('#libraryList button').first().click();
+  await page.waitForFunction(() => document.querySelector('#bookReader').open && document.querySelector('#bookReader').getAttribute('aria-busy') === 'false');
+  const before = await page.locator('#bookReader').getAttribute('data-page');
+  await page.locator('#readerNext').click();
+  await page.waitForFunction(old => document.querySelector('#bookReader').dataset.page !== old && document.querySelector('#flipSheet').hidden, before);
+  assert((await page.locator('#pageLeft .book-prose, #pageRight .book-prose').first().innerText()).length > 20, `${label} must read Markdown inside the book after its title page`);
+  assert(page.url().includes('/magic-cabin/index.html?view=shelf'), `${label} must turn pages without leaving the cabin`);
+  await page.locator('#readerClose').click();
 }
 
 async function assertArticleGeometry(page, viewport, label) {
@@ -447,8 +473,8 @@ async function assertArticleGeometry(page, viewport, label) {
   assert(result !== null, `${label} is missing the article reader`);
   assert(result.textLength > 100, `${label} did not render meaningful article content`);
   assert(
-    result.bodyWidth <= Math.min(680, result.manuscriptWidth) + 2,
-    `${label} article body is wider than its 680px reading measure`
+    result.bodyWidth <= Math.min(768, result.manuscriptWidth) + 2,
+    `${label} article body is wider than its 48rem reading measure`
   );
   assert(
     result.bodyLeft >= -4 && result.bodyRight <= viewport.width + 4,
@@ -458,124 +484,94 @@ async function assertArticleGeometry(page, viewport, label) {
 
 async function assertWorksSemanticsAndGeometry(page, label) {
   const result = await page.evaluate(() => {
-    const tolerance = 3;
     const cards = [...document.querySelectorAll('[data-work-card]')];
-    const problems = [];
-    const semantics = [];
-    const selectors = [
-      '.exhibition-card__body',
-      '.exhibition-card__title',
-      '.exhibition-card__summary',
-      '.exhibition-card__source',
-      '.exhibition-card__toggle',
-      '.exhibition-card__cta'
-    ];
-
-    for (const [cardIndex, card] of cards.entries()) {
-      const cardRect = card.getBoundingClientRect();
-      const toggle = card.querySelector('.exhibition-card__toggle');
-      const cta = card.querySelector('.exhibition-card__cta');
-      semantics.push({
-        articleTag: card.tagName,
-        articleRole: card.getAttribute('role'),
-        articleTabIndex: card.getAttribute('tabindex'),
-        toggleTag: toggle?.tagName,
-        toggleType: toggle?.getAttribute('type'),
-        toggleExpanded: toggle?.getAttribute('aria-expanded'),
-        toggleLabel: toggle?.getAttribute('aria-label'),
-        ctaTag: cta?.tagName,
-        ctaHref: cta?.getAttribute('href'),
-        ctaText: cta?.textContent.trim(),
-        nestedInteractive: Boolean(card.querySelector('a a, a button, button a, button button'))
-      });
-
-      for (const selector of selectors) {
-        const element = card.querySelector(selector);
-        if (!element) {
-          problems.push(`card ${cardIndex + 1} missing ${selector}`);
-          continue;
-        }
-        const rect = element.getBoundingClientRect();
-        if (rect.width <= 0 || rect.height <= 0) {
-          problems.push(`card ${cardIndex + 1} ${selector} has an empty box`);
-          continue;
-        }
-        if (
-          rect.left < cardRect.left - tolerance
-          || rect.right > cardRect.right + tolerance
-          || rect.top < cardRect.top - tolerance
-          || rect.bottom > cardRect.bottom + tolerance
-        ) {
-          problems.push(
-            `card ${cardIndex + 1} ${selector} escapes card `
-            + `[${rect.left.toFixed(1)},${rect.top.toFixed(1)},${rect.right.toFixed(1)},${rect.bottom.toFixed(1)}] `
-            + `outside [${cardRect.left.toFixed(1)},${cardRect.top.toFixed(1)},${cardRect.right.toFixed(1)},${cardRect.bottom.toFixed(1)}]`
-          );
-        }
-      }
-    }
-    return { count: cards.length, problems, semantics };
+    return {
+      count: cards.length,
+      legacyLinks: document.querySelectorAll('.exhibition-stage a, [data-works-index]').length,
+      oldRuntime: [...document.scripts].some((script) => /\/(?:content|works-data|works)\.js$/.test(script.src)),
+      temporaryCopy: /临时演示|正式作品的名称与介绍待提供/.test(document.body.textContent),
+      catalog: (window.ALEKSI_WORKS_CATALOG || []).map(item => ({ title: item.title, shortTitle: item.shortTitle, summary: item.summary, alt: item.alt })),
+      cards: cards.map((card) => {
+        const button = card.querySelector('[data-gallery-open]'), image = card.querySelector('img');
+        const rect = button?.getBoundingClientRect();
+        return { tag: card.tagName, button: button?.tagName, type: button?.type,
+          popup: button?.getAttribute('aria-haspopup'), label: button?.getAttribute('aria-label'),
+          loaded: image?.naturalWidth > 0, alt: image?.alt, height: rect?.height, title: card.querySelector('.gallery-card-title')?.textContent,
+          nested: Boolean(card.querySelector('button button, button a')) };
+      })
+    };
   });
-
-  assert(result.count === 13, `${label} must render exactly 13 Works cards; found ${result.count}`);
-  assert(result.problems.length === 0, `${label} card content boxes escape their cards:\n${result.problems.join('\n')}`);
-  for (const [index, semantic] of result.semantics.entries()) {
-    assert(semantic.articleTag === 'ARTICLE', `${label} card ${index + 1} must be an article`);
-    assert(semantic.articleRole !== 'button', `${label} card ${index + 1} must not use role=button`);
-    assert(semantic.articleTabIndex === null, `${label} card ${index + 1} must not be an extra tab stop`);
-    assert(
-      semantic.toggleTag === 'BUTTON'
-        && semantic.toggleType === 'button'
-        && semantic.toggleExpanded === 'false'
-        && Boolean(semantic.toggleLabel),
-      `${label} card ${index + 1} has invalid toggle semantics`
-    );
-    assert(
-      semantic.ctaTag === 'A'
-        && /^\.\/work-detail\.html\?work=[a-z0-9-]+$/.test(semantic.ctaHref || '')
-        && semantic.ctaText === '进入作品',
-      `${label} card ${index + 1} has invalid CTA semantics`
-    );
-    assert(!semantic.nestedInteractive, `${label} card ${index + 1} nests interactive controls`);
+  assert(result.count === 13 && result.catalog.length === 13, `${label} must render 13 source-backed work cards`);
+  assert(result.legacyLinks === 0 && !result.oldRuntime && !result.temporaryCopy, `${label} must show restored content without old article routes or temporary-demo copy`);
+  for (const [index, card] of result.cards.entries()) {
+    const work = result.catalog[index];
+    assert(card.tag === 'ARTICLE' && card.button === 'BUTTON' && card.type === 'button'
+      && card.popup === 'dialog' && card.label?.includes(work.title) && card.title === work.shortTitle, `${label} card ${index + 1} must name the work and open the image viewer`);
+    assert(card.loaded && card.alt === work.alt && work.summary.length > 10, `${label} card ${index + 1} is missing its original image, alt text, or description`);
+    assert(card.height >= 44 && !card.nested, `${label} card ${index + 1} has an inaccessible target`);
   }
 }
 
 async function assertWorksInteraction(page, viewport, label) {
-  const cards = page.locator('[data-work-card]');
-  const firstCard = cards.first();
+  const firstCard = page.locator('[data-work-card]').first();
+  const button = firstCard.locator('[data-gallery-open]');
   const initialTransform = await firstCard.evaluate((card) => getComputedStyle(card).transform);
-  await firstCard.hover({ force: true });
+  await firstCard.hover();
   await page.waitForTimeout(620);
-  const hoverTransform = await firstCard.evaluate((card) => getComputedStyle(card).transform);
-  assert(hoverTransform !== initialTransform, `${label} first card hover transform did not change`);
-
-  await page.mouse.move(0, 0);
-  await firstCard.locator('.exhibition-card__toggle').click({ force: true });
-  await page.waitForTimeout(40);
+  assert(await firstCard.evaluate((card) => getComputedStyle(card).transform) !== initialTransform, `${label} hover must lift the image card`);
+  const beforeUrl = page.url(), beforeHistory = await page.evaluate(() => history.length);
+  await button.click();
+  await page.locator('[data-gallery-viewer][open]').waitFor();
+  await page.locator('[data-viewer-image]').evaluate((image) => image.decode());
   const selected = await page.evaluate(() => ({
     active: document.querySelectorAll('[data-work-card].is-active').length,
     muted: document.querySelectorAll('[data-work-card].is-muted').length,
-    mutedOpacity: [...document.querySelectorAll('[data-work-card].is-muted')]
-      .map((card) => Number(getComputedStyle(card).opacity))
+    caption: document.querySelector('[data-viewer-caption]').textContent,
+    counter: document.querySelector('[data-viewer-counter]').textContent,
+    details: document.querySelector('[data-viewer-details]').textContent,
+    focusInDialog: document.querySelector('[data-gallery-viewer]').contains(document.activeElement)
   }));
-  assert(selected.active === 1, `${label} must have exactly one active card after toggle; found ${selected.active}`);
-  assert(selected.muted === 12, `${label} must have exactly 12 muted cards after toggle; found ${selected.muted}`);
-
-  if (viewport.width < 1180) {
-    assert(
-      selected.mutedOpacity.every((opacity) => opacity >= 0.9),
-      `${label} tablet/mobile muted cards must remain readable: ${selected.mutedOpacity.join(', ')}`
-    );
+  assert(selected.active === 1 && selected.muted === 12, `${label} opening an image must retain focus and muting behavior`);
+  await page.waitForTimeout(500);
+  const mutedOpacity = await page.locator('[data-work-card].is-muted').evaluateAll((cards) => cards.map((card) => Number(getComputedStyle(card).opacity)));
+  assert(mutedOpacity.every((opacity) => opacity <= .5), `${label} the other cards must visibly dim after selection`);
+  assert(selected.focusInDialog && selected.caption === 'Lucia / Punishing: Gray Raven' && selected.counter === '01 / 13', `${label} viewer must receive keyboard focus and name the original work`);
+  assert(selected.details.includes('露西亚') && selected.details.includes('版式') && selected.details.includes('视觉语言'), `${label} viewer must present restored work content in place`);
+  assert(page.url() === beforeUrl && await page.evaluate(() => history.length) === beforeHistory, `${label} opening an image must not navigate to an old page`);
+  const fits = await page.locator('[data-viewer-image]').evaluate((image) => {
+    const r = image.getBoundingClientRect(); return r.left >= 0 && r.top >= 0 && r.right <= innerWidth && r.bottom <= innerHeight;
+  });
+  assert(fits, `${label} enlarged image must fit the viewport`);
+  if (viewport.name === 'desktop-1440' || viewport.name === 'mobile-390') {
+    await page.screenshot({ path: path.join(outputDir, `works-zoom-${viewport.name}.png`) });
   }
-
+  await page.locator('[data-viewer-next]').click();
+  assert((await page.locator('[data-viewer-counter]').textContent()) === '02 / 13' && (await page.locator('[data-viewer-caption]').textContent()) === 'Momo Ayase / Dandadan', `${label} next image button must update both image and restored title`);
+  await page.keyboard.press('ArrowLeft');
+  assert((await page.locator('[data-viewer-counter]').textContent()) === '01 / 13', `${label} keyboard image navigation must work`);
   await page.keyboard.press('Escape');
   await page.waitForTimeout(40);
-  const cleared = await page.evaluate(() => ({
-    active: document.querySelectorAll('[data-work-card].is-active').length,
-    muted: document.querySelectorAll('[data-work-card].is-muted').length
-  }));
-  assert(cleared.active === 0, `${label} Escape must clear the active card`);
-  assert(cleared.muted === 0, `${label} Escape must clear muted card state`);
+  assert(await page.locator('[data-gallery-viewer]').evaluate((viewer) => !viewer.open), `${label} Escape must close the viewer`);
+  assert(await button.evaluate((button) => button === document.activeElement), `${label} closing the viewer must restore focus`);
+  await page.locator('[data-work-card]').nth(6).locator('[data-gallery-open]').click();
+  await page.locator('[data-viewer-image]').evaluate(image => image.decode());
+  const originalSource = await page.locator('[data-viewer-image]').getAttribute('src');
+  const correctedFilter = await page.locator('[data-viewer-image]').evaluate(image => getComputedStyle(image).filter);
+  assert((await page.locator('[data-viewer-caption]').textContent()) === 'The Hills / Typographic Study' && correctedFilter !== 'none', `${label} 07 must default to its reversible display correction`);
+  await page.locator('[data-viewer-original]').click();
+  assert(await page.locator('[data-viewer-image]').evaluate(image => getComputedStyle(image).filter) === 'none' && await page.locator('[data-viewer-image]').getAttribute('src') === originalSource, `${label} 07 original toggle must remove only the display correction`);
+  assert((await page.locator('[data-viewer-original]').textContent()) === '显示校正', `${label} 07 original view must offer return to correction`);
+  await page.locator('[data-viewer-original]').click();
+  assert(await page.locator('[data-viewer-image]').evaluate(image => getComputedStyle(image).filter) === correctedFilter, `${label} 07 correction must be restorable`);
+  await page.locator('[data-viewer-next]').click();
+  await page.locator('[data-viewer-image]').evaluate(image => image.decode());
+  assert(!await page.locator('[data-viewer-original]').isVisible() && await page.locator('[data-viewer-image]').evaluate(image => getComputedStyle(image).filter) === 'none', `${label} the next work must retain its original colors`);
+  assert(page.url() === beforeUrl && await page.evaluate(() => history.length) === beforeHistory, `${label} work descriptions and tone comparison must remain in the current exhibition`);
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => !document.querySelector('[data-gallery-viewer]').open && !document.querySelector('[data-work-card].is-active, [data-work-card].is-muted'));
+  assert(await page.locator('[data-work-card].is-active, [data-work-card].is-muted').count() === 0, `${label} closing must clear selection states`);
+  await page.waitForFunction(() => [...document.querySelectorAll('[data-work-card]')].every((card) => Number(getComputedStyle(card).opacity) >= .99 && card.getAnimations({ subtree: true }).every((animation) => animation.playState !== 'running')));
+  assert(await page.locator('[data-work-card]').count() === 13, `${label} closing must return to the fully visible exhibition`);
 }
 
 function rectanglesIntersect(first, second, tolerance = 0.5) {
@@ -672,16 +668,21 @@ async function runMatrix(browser, baseUrl) {
           25_000,
           `${label} navigation`
         );
+        if (routeName === 'room') await page.waitForURL('**/magic-cabin/index.html?view=shelf');
+        if (routeName === 'research-record') await page.waitForFunction(() => document.body.dataset.recordReady === 'true');
         await waitForStablePage(page);
         await assertNoOverflow(page, label);
-        if (!['home', 'article', 'work-article'].includes(routeName)) {
+        await assertHalftoneInterface(page, label);
+        await assertReadingGeometry(page, label);
+        if (!['home', 'article', 'work-article', 'sample', 'room'].includes(routeName)) {
           await assertActiveNavigation(page, label);
         }
 
         if (routeName === 'home') {
-          await assertHomeHero(page, viewport, label);
+          await assertHomeEntrance(page, viewport, label);
         }
-        if (['article', 'work-article'].includes(routeName)) {
+        if (routeName === 'room') await assertRoomEntry(page, label);
+        if (['article', 'work-article', 'sample'].includes(routeName)) {
           await assertArticleGeometry(page, viewport, label);
         }
         if (routeName === 'works') {
@@ -696,6 +697,7 @@ async function runMatrix(browser, baseUrl) {
         await withTimeout(
           page.screenshot({
             path: path.join(outputDir, `${routeName}-${viewport.name}.png`),
+            animations: routeName === 'works' ? 'disabled' : 'allow',
             fullPage: true
           }),
           30_000,
@@ -793,7 +795,14 @@ async function auditReducedMotion(browser, baseUrl) {
 }
 
 async function main() {
-  fs.rmSync(outputDir, { recursive: true, force: true });
+  const skipTouch = process.argv.includes('--redesign-desktop-only');
+  const focused = process.argv.includes('--redesign-only') || skipTouch;
+  // Refresh generated root captures while keeping prior visual comparison evidence.
+  if (!focused && fs.existsSync(outputDir)) {
+    for (const entry of fs.readdirSync(outputDir, { withFileTypes: true })) {
+      if (entry.isFile() && (entry.name.endsWith('.png') || entry.name === 'redesign-results.json')) fs.unlinkSync(path.join(outputDir, entry.name));
+    }
+  }
   fs.mkdirSync(outputDir, { recursive: true });
 
   const { server, baseUrl } = await createStaticServer();
@@ -804,9 +813,13 @@ async function main() {
     if (executablePath) launchOptions.executablePath = executablePath;
     browser = await chromium.launch(launchOptions);
 
-    await runMatrix(browser, baseUrl);
-    await auditDetailStates(browser, baseUrl);
-    await auditReducedMotion(browser, baseUrl);
+    if (!focused) {
+      await runMatrix(browser, baseUrl);
+      await auditDetailStates(browser, baseUrl);
+      await auditReducedMotion(browser, baseUrl);
+    }
+    await require('./redesign-browser-qa.js').run({ browser, baseUrl, root, outputDir, assert, openAuditedPage, waitForStablePage, assertNoOverflow, assertNoRuntimeErrors, skipTouch });
+    await require('./research-archive-qa.js').run({ browser, baseUrl, root, outputDir, assert, openAuditedPage, waitForStablePage, assertNoOverflow, assertNoRuntimeErrors });
 
     const screenshots = fs.readdirSync(outputDir).filter((file) => file.endsWith('.png'));
     const requiredScreenshots = [
@@ -815,6 +828,14 @@ async function main() {
       'article-desktop-1440.png',
       'article-mobile-390.png',
       'work-article-desktop-1440.png',
+      'writing-desktop-1440.png',
+      'project-desktop-1440.png',
+      'research-desktop-1440.png',
+      'about-desktop-1440.png',
+      'room-desktop-1440.png',
+      'room-mobile-390.png',
+      'sample-desktop-1440.png',
+      'sample-mobile-390.png',
       'work-article-mobile-390.png',
       'works-desktop-1440.png',
       'works-desktop-1366.png',
@@ -834,12 +855,12 @@ async function main() {
     }
     const expectedScreenshotCount = routes.length * viewports.length + 1;
     assert(
-      screenshots.length === expectedScreenshotCount,
-      `Expected ${expectedScreenshotCount} screenshots; found ${screenshots.length}`
+      screenshots.length >= expectedScreenshotCount,
+      `Expected at least ${expectedScreenshotCount} screenshots; found ${screenshots.length}`
     );
 
     console.log(
-      `Browser QA passed for Aleksi Lab v1.7.2-clean-reset: ${assertions} assertions, `
+      `Browser QA passed for Aleksi: ${assertions} assertions, `
       + `${screenshots.length} screenshots in ${outputDir}`
     );
   } finally {

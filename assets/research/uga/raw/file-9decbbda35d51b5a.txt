@@ -1,0 +1,2750 @@
+# Universal Gap A — Universal Layer U6
+## Run C — Adversarial Source Core / Sign-Twist Audit
+
+**Role:** Run C — Independent Destruction  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Frozen output:** `Run-C-U6-AdversarialCore.md`
+
+---
+
+# 0. Completion status
+
+\[
+\boxed{
+\texttt{C1 PARTIAL + C2 ACHIEVED + C3 ACHIEVED + C5 ACHIEVED + C6 ACHIEVED}
+}
+\]
+
+\[
+\boxed{
+\texttt{C4 — ACTUAL BOUNDED COMPLETE SCREENER: NOT FOUND}
+}
+\]
+
+The run produced four main adversarial results.
+
+1. A recurrent projective/top vertex need **not** correspond to an infinite-projective-dimension simple.
+2. Peeling a finite-pd recurrent top preserves the high detector tail, but need **not** reduce recurrent top support; the peeled finite-pd vertex can reappear one syzygy later.
+3. A finite source cycle can consist entirely of Peirce-invisible active source edges and still fail to close Universal Gap A because a different source supplies a visible persistent pair.
+4. The sign-twist bimodule itself is actually realizable in a bounded amplitude-two ordinary quotient, but the actual Postnikov class can still be zero/noninvertible. Thus:
+   \[
+   H_2(K)\text{ sign-twisted}
+   \not\Rightarrow
+   \alpha\text{ is the screening generator}.
+   \]
+
+Two broad sign-twist no-go mechanisms were also isolated:
+
+- a one-deleted-vertex **semisimple deleted corner** cannot realize a bounded rank-one sign-twist screener;
+- in a natural serial deleted-loop compression, associativity forces the twist parameter to be \(+1\), not \(-1\), if the isolated second-return map is injective.
+
+Universal Gap A remains open.
+
+---
+
+# 1. Vault adversarial method mapping
+
+| Required method | U6 use |
+|---|---|
+| Extreme example | radical-square-zero peeling algebra; self-injective cyclic Nakayama; Auslander algebra of the dual numbers; skew two-vertex family \(D_\lambda\) |
+| Minimal counterexample | audited what vertex/corner minimality actually gives and where lifting fails |
+| Delete one hypothesis | removed “infinite-pd successor”, “strict support descent”, “cross module finite pd”, and “Postnikov generator” one at a time |
+| Representation change | recurrent-top set \(\to\) eventual Betti support; source cycle \(\to\) Peirce-labeled source graph; sign relation \(\to\) actual bimodule + Postnikov pair \((M,\alpha)\) |
+| Reverse infinite descent | showed peeling lowers composition length but support can return immediately, so support is not a descent invariant |
+| Local/global mismatch | finite-pd simple can occur infinitely in another simple's projective tail; singular corner can be infinite \(+\) while ambient algebra has finite global dimension |
+| Quotient/corner lifting mismatch | \(fDf\) can be infinite \(+\) but no witness lifts to \(D\) |
+| Bootstrap failure | source cycle does not imply visible closure; sign-twisted \(H_2\) does not imply screening |
+| Standard-form audit | exact minimal resolutions for the peeling algebra and \(D_\lambda\); amplitude-two Postnikov standard form |
+| Cross-domain migration audit | HLM \(H(M)=Q(S(M))\) preserves eventual syzygies, but does not automatically preserve finite-head maps or corner-lifting data |
+
+---
+
+# 2. Mandatory calibration V1 — U5 cyclic Nakayama
+
+Retain the U5 algebra
+
+\[
+D_{\mathrm{cyc}}=kC_6/J^3
+\]
+
+with arrows
+
+\[
+v\to v-1\pmod 6.
+\]
+
+For left simples:
+
+\[
+\Omega^2 L_v\cong L_{v+3},
+\qquad
+\Omega^4L_v\cong L_v.
+\]
+
+The minimal projective terms for \(L_v\) are
+
+\[
+P_v,\ P_{v+1},\ P_{v+3},\ P_{v+4}
+\]
+
+periodically.
+
+U5 used \(z=0,i=3,j=2\) to refute fixed-source detector switch.
+
+U6 uses the same algebra for a different purpose.
+
+**Important:** this algebra is not a source-dead Universal counterexample. It has visible persistent pairs, including diagonal periodic pairs. It must not be used as a contradiction to Gap A itself.
+
+---
+
+# 3. Mandatory calibration V2 — U5 10-dimensional raw-Yoneda model
+
+The frozen U5 raw-Yoneda countermodel has vertices
+
+\[
+\zeta,h,i,j
+\]
+
+and arrows
+
+\[
+U:h\to\zeta,\qquad
+V:i\to h,\qquad
+A:i\to i,\qquad
+C:j\to i,\qquad
+B:j\to\zeta.
+\]
+
+All length-two paths vanish except
+
+\[
+CA\neq0.
+\]
+
+Hence
+
+\[
+\dim_kD=10.
+\]
+
+Its Yoneda quiver contains
+
+\[
+u:\zeta\to h,\qquad
+v:h\to i,\qquad
+a:i\to i,\qquad
+\eta:i\to j,\qquad
+b:\zeta\to j
+\]
+
+with the crucial relation
+
+\[
+\boxed{a\eta=0}.
+\]
+
+The recurrent tail satisfies
+
+\[
+uv\,a^{n-2}
+\neq0
+\in
+\operatorname{Ext}^n(L_\zeta,L_i)
+\qquad(n\ge2),
+\]
+
+whereas
+
+\[
+\operatorname{Ext}^n(L_\zeta,L_j)=0
+\qquad(n\ge4).
+\]
+
+Thus
+
+\[
+0\neq
+\eta\in\operatorname{Ext}^1(L_i,L_j)
+\]
+
+acts trivially on the high tail.
+
+This is retained as a mandatory warning:
+
+\[
+\boxed{
+\eta\neq0
+\not\Rightarrow
+\text{tail-active source transport}.
+}
+\]
+
+The new U6 source-core arguments below do not replace this calibration.
+
+---
+
+# 4. Mandatory calibration V3 — quantum moduli drift
+
+Retain
+
+\[
+A_q
+=
+k\langle x,y\rangle/
+(x^2,y^2,xy+qyx)
+\]
+
+and the standard family \(M_\lambda\) with
+
+\[
+\Omega M_\lambda
+\simeq
+M_{\lambda/q}
+\]
+
+(up to the fixed parameter convention).
+
+For \(q\) of infinite multiplicative order, the exact module state drifts through infinitely many nonisomorphic \(M_{\lambda q^{-n}}\) while all coarse local Loewy/rank data remain constant.
+
+Therefore no U6 peeling/source-core argument may silently identify:
+
+\[
+\text{bounded local structure}
+\]
+
+with
+
+\[
+\text{finite exact source state}.
+\]
+
+---
+
+# 5. Mandatory calibration V4 — multi-top derangement assets
+
+The older project asset says that in a hypothetical Gap-A failure, a sufficiently high recurrent syzygy cannot be single-top; the obstruction is a multi-top Ext–Peirce derangement.
+
+The relevant pattern is:
+
+- a recurrent top \(y\);
+- a composition factor \(z\);
+- persistent
+  \[
+  \operatorname{Ext}^{n_t}(L_z,L_y)\neq0;
+  \]
+- but the one-way law forces the corresponding Peirce channel to be absent;
+- \(z\) is generated from another top \(y'\).
+
+U6 uses this only as a calibration.
+
+The peeling counterexample below shows that even if one of the recurrent top simples has finite pd, deleting one quotient copy of it does not force the top support to shrink.
+
+---
+
+# 6. Attack A1 — recurrent top need not be an infinite-pd source
+
+Work with **left modules**.
+
+Let \(A_{\mathrm{peel}}=kQ/J^2\), where \(Q\) has vertices
+
+\[
+x,\ y,
+\]
+
+a loop
+
+\[
+\ell:x\to x,
+\]
+
+and two arrows
+
+\[
+b_1,b_2:y\to x.
+\]
+
+All paths of length \(2\) vanish.
+
+Then
+
+\[
+P_x=Ae_x
+\]
+
+has radical
+
+\[
+\operatorname{rad}P_x
+\cong
+L_x\oplus L_y^{\oplus2}.
+\]
+
+The vertex \(y\) has no incoming arrows, so
+
+\[
+P_y=L_y
+\]
+
+and
+
+\[
+\boxed{
+\operatorname{pd}L_y=0.
+}
+\]
+
+On the other hand,
+
+\[
+\boxed{
+\Omega L_x
+\cong
+L_x\oplus L_y^{\oplus2}.
+}
+\]
+
+Since \(\Omega L_y=0\),
+
+\[
+\boxed{
+\Omega^nL_x
+\cong
+L_x\oplus L_y^{\oplus2}
+\qquad(n\ge1).
+}
+\]
+
+Thus \(y\) occurs in the recurrent projective/top support of \(L_x\) in every high degree, but
+
+\[
+\operatorname{pd}L_y<\infty.
+\]
+
+Therefore the pointwise implication
+
+\[
+\boxed{
+y\in\Sigma_z
+\Rightarrow
+\operatorname{pd}L_y=\infty
+}
+\]
+
+is false for finite-dimensional algebras.
+
+---
+
+# 7. Exact status of C1
+
+The preceding example does **not** achieve the stronger target
+
+\[
+\Sigma_z\cap I_\infty=\varnothing.
+\]
+
+Indeed \(x\) itself is recurrent and
+
+\[
+\operatorname{pd}L_x=\infty.
+\]
+
+So the run distinguishes two statements.
+
+### Refuted
+
+\[
+y\in\Sigma_z
+\Rightarrow
+y\in I_\infty.
+\]
+
+### Still open in this run
+
+\[
+z\in I_\infty
+\Rightarrow
+\Sigma_z\cap I_\infty\neq\varnothing.
+\]
+
+Hence:
+
+\[
+\boxed{
+\texttt{C1 — PARTIAL: POINTWISE INFINITE-PD SUCCESSOR CLAIM REFUTED;}
+}
+\]
+
+\[
+\boxed{
+\texttt{EXISTENTIAL INFINITE-PD SUCCESSOR NOT REFUTED.}
+}
+\]
+
+No false upgrade is made.
+
+---
+
+# 8. Attack finite-pd peeling — exact countermodel
+
+Set
+
+\[
+M=\Omega L_x
+=
+L_x\oplus L_y^{\oplus2}.
+\]
+
+Project onto one copy:
+
+\[
+\pi:M\twoheadrightarrow L_y.
+\]
+
+Then
+
+\[
+K=\ker\pi
+\cong
+L_x\oplus L_y.
+\]
+
+Because \(L_y\) is projective, for every right detector \(R\),
+
+\[
+\operatorname{Tor}_n^A(R,L_y)=0
+\qquad(n>0).
+\]
+
+The long exact Tor sequence therefore gives an eventual tail isomorphism
+
+\[
+\boxed{
+\operatorname{Tor}_n^A(R,K)
+\cong
+\operatorname{Tor}_n^A(R,M)
+\qquad(n\gg0).
+}
+\]
+
+So high detector recurrence really is preserved by peeling a finite-pd simple quotient.
+
+But the expected support descent fails.
+
+Before peeling:
+
+\[
+\operatorname{supp}\operatorname{top}M
+=
+\{x,y\}.
+\]
+
+After peeling:
+
+\[
+\operatorname{supp}\operatorname{top}K
+=
+\{x,y\}.
+\]
+
+The support has not decreased at all.
+
+Worse:
+
+\[
+\Omega K
+=
+\Omega L_x
+\cong
+L_x\oplus L_y^{\oplus2}
+=
+M.
+\]
+
+Thus the peeled finite-pd top vertex \(y\) immediately returns with its old multiplicity.
+
+---
+
+# 9. Peeling conclusion
+
+This refutes both upgrades:
+
+\[
+\boxed{
+\text{finite-pd peeling}
+\Rightarrow
+\text{recurrent top support strictly decreases}
+}
+\]
+
+and
+
+\[
+\boxed{
+\text{once peeled, the finite-pd recurrent top cannot reappear}.
+}
+\]
+
+What survives is only:
+
+\[
+\boxed{
+\text{finite-pd quotient peeling preserves the sufficiently high detector tail}.
+}
+\]
+
+Composition length can decrease for the current module while recurrent support fails to decrease as a tail invariant.
+
+Therefore:
+
+\[
+\boxed{\texttt{C2 — ACHIEVED.}}
+\]
+
+---
+
+# 10. Reverse infinite-descent audit
+
+The example explains the failure of a naive well-founded descent.
+
+The current module length drops:
+
+\[
+\ell(K)=\ell(M)-1.
+\]
+
+But after applying one syzygy:
+
+\[
+\Omega K\cong M.
+\]
+
+Hence length descent of the chosen representative is not a descent of the recurrent dynamical state.
+
+A valid source-core descent therefore needs a complexity invariant stable under the operation used to return to the recurrent tail.
+
+Plain:
+
+- support size;
+- current top multiplicity;
+- module length
+
+are insufficient by themselves.
+
+---
+
+# 11. Attack bi-singular root \(H(M)=Q(S(M))\)
+
+The HLM tool used in the project supplies, for
+
+\[
+\alpha
+=
+\max\{\operatorname{pd}L:
+L\text{ simple and }\operatorname{pd}L<\infty\},
+\]
+
+an infinite-pd module
+
+\[
+H(M)=Q(S(M))
+\]
+
+whose top and socle consist only of infinite-pd simples and satisfying
+
+\[
+\boxed{
+\Omega^{\alpha+2}H(M)
+\cong
+\Omega^{\alpha+2}M.
+}
+\]
+
+This statement survives the U6 audit.
+
+---
+
+# 12. Exactly what the high-syzygy isomorphism preserves
+
+From
+
+\[
+\Omega^N H(M)\cong\Omega^N M
+\]
+
+with \(N=\alpha+2\), minimal projective covers agree from that point onward.
+
+Thus for every \(r\ge0\),
+
+\[
+\Omega^{N+r}H(M)
+\cong
+\Omega^{N+r}M,
+\]
+
+and the eventual Betti vectors agree:
+
+\[
+\boxed{
+\beta_{N+r,*}(H(M))
+=
+\beta_{N+r,*}(M).
+}
+\]
+
+Therefore the following **tail-defined** data are preserved:
+
+- recurrent Betti support;
+- infinitely-often projective vertices;
+- any source relation defined only by eventual projective-term recurrence;
+- the terminal SCC of that eventual Betti-source graph.
+
+So U6 did **not** find a counterexample to this narrow use of the bi-singular root.
+
+---
+
+# 13. What \(H(M)\) does not preserve automatically
+
+The same high syzygy does **not** identify:
+
+- the finite head of the two resolutions;
+- the original top or socle;
+- a chosen augmentation
+  \[
+  M\twoheadrightarrow L_y;
+  \]
+- the kernel of such an augmentation;
+- composition-series provenance;
+- a distinguished source map;
+- an idempotent restriction/induction map;
+- a corner witness or its lifting data.
+
+Peirce geometry
+
+\[
+e_uDe_v
+\]
+
+is of course a property of \(D\) and does not change, but the fact that the **same vertex set** occurs eventually does not give the same finite-head realization maps.
+
+Thus the valid upgrade is:
+
+\[
+\boxed{
+\text{same high syzygy}
+\Rightarrow
+\text{same eventual Betti dynamics},
+}
+\]
+
+not:
+
+\[
+\text{same high syzygy}
+\Rightarrow
+\text{same full source dynamics with the same anchors and lifts}.
+\]
+
+This is the quotient/kernel mismatch to retain.
+
+---
+
+# 14. Cross-domain migration audit
+
+The HLM purification tool is useful because it changes the module while preserving the eventual resolution.
+
+However, source-core and corner arguments add extra structures not present in the HLM statement.
+
+Therefore migration from:
+
+\[
+\text{finite-pd/infinite-pd layer separation}
+\]
+
+to:
+
+\[
+\text{Peirce/source/corner transport}
+\]
+
+must explicitly carry the additional maps.
+
+U6 finds no defect in the HLM theorem itself.
+
+It rejects only the overinterpretation of that theorem.
+
+---
+
+# 15. Attack minimal source SCC — invisible source cycle
+
+Return to
+
+\[
+D_{\mathrm{cyc}}=kC_6/J^3.
+\]
+
+Define the source relation
+
+\[
+x\leadsto_\infty y
+\]
+
+by
+
+\[
+\operatorname{Ext}^n_D(L_x,L_y)\neq0
+\]
+
+for arbitrarily high \(n\).
+
+For \(L_0\), the periodic projective sequence contains
+
+\[
+P_3
+\]
+
+in all degrees
+
+\[
+n\equiv2\pmod4.
+\]
+
+Hence
+
+\[
+\boxed{
+0\leadsto_\infty3.
+}
+\]
+
+For \(L_3\), the periodic projective sequence is
+
+\[
+P_3,P_4,P_0,P_1,\ldots,
+\]
+
+so
+
+\[
+\boxed{
+3\leadsto_\infty0.
+}
+\]
+
+Thus there is a source cycle:
+
+\[
+\boxed{
+0\leadsto_\infty3
+\leadsto_\infty0.
+}
+\]
+
+---
+
+# 16. Every active edge of this source cycle is Peirce-invisible
+
+In the oriented six-cycle, the shortest path
+
+\[
+3\to0
+\]
+
+has length \(3\).
+
+Likewise the shortest path
+
+\[
+0\to3
+\]
+
+has length \(3\).
+
+But
+
+\[
+J^3=0.
+\]
+
+Therefore:
+
+\[
+\boxed{
+e_0De_3=0,
+\qquad
+e_3De_0=0.
+}
+\]
+
+So this actual source cycle has no active Peirce return on either edge.
+
+This directly refutes:
+
+\[
+\boxed{
+\text{source cycle}
+\Rightarrow
+\text{visible return along a source edge}.
+}
+\]
+
+---
+
+# 17. Why this is not a Universal counterexample
+
+The same algebra has visible persistent pairs elsewhere.
+
+For example:
+
+\[
+\Omega^4L_0\cong L_0
+\]
+
+and
+
+\[
+e_0De_0\neq0.
+\]
+
+Thus the diagonal pair already supplies a visible persistent witness.
+
+Therefore the correct conclusion is not that source cycles are useless.
+
+It is:
+
+\[
+\boxed{
+\text{a Peirce-invisible source SCC is not by itself a Universal closure mechanism}.
+}
+\]
+
+A second mechanism may provide the actual Gap-A witness outside the chosen source edges.
+
+Hence:
+
+\[
+\boxed{\texttt{C3 — SOURCE-CYCLE CLOSURE REFUTED.}}
+\]
+
+This is exactly why U5 cyclic Nakayama must not be misread as a source-dead counterexample.
+
+---
+
+# 18. Attack corner descent — actual lift failure
+
+Let
+
+\[
+\Lambda=k[t]/(t^2),
+\qquad
+G=\Lambda\oplus k,
+\]
+
+and define
+
+\[
+\boxed{
+D_{\mathrm{Aus}}
+=
+\operatorname{End}_\Lambda(G).
+}
+\]
+
+Let \(f\) be the primitive idempotent corresponding to the summand \(\Lambda\).
+
+Then
+
+\[
+\boxed{
+fD_{\mathrm{Aus}}f
+\cong
+\operatorname{End}_\Lambda(\Lambda)
+\cong
+\Lambda
+=
+k[t]/(t^2).
+}
+\]
+
+The corner is singular self-injective and is infinite \(+\): its unique simple has a periodic infinite projective resolution.
+
+---
+
+# 19. The witness does not lift
+
+\(D_{\mathrm{Aus}}\) is the Auslander algebra of the representation-finite algebra \(k[t]/(t^2)\).
+
+Therefore
+
+\[
+\boxed{
+\operatorname{gldim}D_{\mathrm{Aus}}=2.
+}
+\]
+
+So the ambient algebra has no arbitrarily-high Tor pair at all.
+
+Hence:
+
+\[
+\boxed{
+fD_{\mathrm{Aus}}f\text{ is infinite }+
+}
+\]
+
+but the corner witness cannot lift to
+
+\[
+D_{\mathrm{Aus}}.
+\]
+
+This is an explicit counterexample to the bare statement:
+
+\[
+\boxed{
+fDf\text{ infinite }+
+\Rightarrow
+D\text{ infinite }+.
+}
+\]
+
+---
+
+# 20. Exact cross-module obstruction in the Auslander example
+
+The off-diagonal blocks are
+
+\[
+\operatorname{Hom}_\Lambda(k,\Lambda)
+\cong k,
+\]
+
+and
+
+\[
+\operatorname{Hom}_\Lambda(\Lambda,k)
+\cong k.
+\]
+
+Viewed on the \(\Lambda\)-side, these are the unique simple \(\Lambda\)-module.
+
+Since \(\Lambda\) is nonsemisimple self-injective,
+
+\[
+\boxed{
+\operatorname{pd}_\Lambda k=\infty.
+}
+\]
+
+Thus the failure of lifting is carried exactly by the cross module.
+
+This agrees with the older PSS/recollement warning:
+
+> corner confinement is not enough; finite-pd cross modules or an actual homological/singular-equivalence hypothesis are required.
+
+This is a clean quotient/corner lifting mismatch.
+
+---
+
+# 21. Corner-descent conclusion
+
+Any U6 source-core descent through
+
+\[
+fDf
+\]
+
+must audit at least one of:
+
+- finite projective dimension of the relevant cross module;
+- homological epimorphism / stratifying ideal;
+- eventual homological isomorphism;
+- singular equivalence.
+
+Without such a condition:
+
+\[
+\boxed{
+\text{infinite }+\text{ in }fDf
+}
+\]
+
+can disappear completely in \(D\).
+
+---
+
+# 22. K-line frozen frontier
+
+The U5 frontier is retained.
+
+Let
+
+\[
+S=k[t]/(t^2).
+\]
+
+For an amplitude-two quotient:
+
+\[
+M[2]
+\to
+K
+\to
+S
+\xrightarrow{\alpha}
+M[3].
+\]
+
+If \(M\) is bilaterally rank-one free, write
+
+\[
+M\cong{}_1S_{\sigma_c},
+\qquad
+\sigma_c(t)=ct.
+\]
+
+The U5 rank-one audit gives:
+
+- \(c\neq\pm1\): no degree-three bimodule class;
+- \(c=1\): classes exist but die after simple reduction;
+- \(c=-1\): the nonzero class is the unique candidate that is singularly invertible on both sides.
+
+Thus the minimal target remains the sign twist.
+
+U6 now asks whether the **ordinary algebra realization** can realize both:
+
+\[
+M\cong{}_1S_{\sigma_{-1}}
+\]
+
+and the nonzero Postnikov generator.
+
+---
+
+# 23. Parameter family \(D_\lambda\): actual bounded twisted \(H_2\)
+
+Fix
+
+\[
+\lambda\in k^\times.
+\]
+
+Let \(D_\lambda\) have two primitive vertices \(e,f\), loops
+
+\[
+t:e\to e,
+\qquad
+u:f\to f,
+\]
+
+and arrows
+
+\[
+a:e\to f,
+\qquad
+b:f\to e.
+\]
+
+Impose
+
+\[
+\boxed{
+t^2=0,\qquad
+u^2=0,\qquad
+ab=0,
+}
+\]
+
+together with the skew relations
+
+\[
+\boxed{
+ta=au,
+\qquad
+ub=\lambda\,bt.
+}
+\]
+
+No relation kills \(ba\).
+
+All longer consequences are generated by these relations.
+
+---
+
+# 24. Exact basis and dimension
+
+A basis is
+
+\[
+\boxed{
+e,f,t,u,a,au,b,ub,ba,bau.
+}
+\]
+
+Indeed
+
+\[
+bt=\lambda^{-1}ub,
+\]
+
+and every path of length at least \(4\) vanishes.
+
+Thus
+
+\[
+\boxed{
+\dim_kD_\lambda=10.
+}
+\]
+
+The algebra is finite-dimensional and basic.
+
+The deleted corner is nonsemisimple; in particular this family is **not** covered by the semisimple-deleted-corner no-go proved later.
+
+---
+
+# 25. Exact right resolution of the quotient
+
+Delete \(f\).
+
+Since all terms involving \(f\) vanish in the quotient,
+
+\[
+\boxed{
+S=D_\lambda/D_\lambda fD_\lambda
+\cong
+k[t]/(t^2).
+}
+\]
+
+The right projectives have bases
+
+\[
+eD_\lambda
+=
+\langle e,t,a,au\rangle,
+\]
+
+\[
+fD_\lambda
+=
+\langle f,u,b,ub,ba,bau\rangle.
+\]
+
+Left multiplication gives:
+
+\[
+\boxed{
+0
+\to
+eD_\lambda
+\xrightarrow{\,b\,}
+fD_\lambda
+\xrightarrow{\,a\,}
+eD_\lambda
+\to
+S
+\to0.
+}
+\]
+
+Verification:
+
+\[
+b(e)=b,
+\]
+
+\[
+b(t)=\lambda^{-1}ub,
+\]
+
+\[
+b(a)=ba,
+\]
+
+\[
+b(au)=bau.
+\]
+
+These four vectors are independent, so the first map is injective.
+
+Also:
+
+\[
+a(f)=a,
+\qquad
+a(u)=au,
+\]
+
+while
+
+\[
+a(b)=a(ub)=a(ba)=a(bau)=0.
+\]
+
+Hence:
+
+\[
+\ker(a:fD_\lambda\to eD_\lambda)
+=
+\langle b,ub,ba,bau\rangle
+=
+b(eD_\lambda).
+\]
+
+Finally:
+
+\[
+eD_\lambda/aD_\lambda
+=
+\langle e,t\rangle
+\cong
+S.
+\]
+
+So the resolution is exact.
+
+---
+
+# 26. Actual self-intersection is bounded amplitude two
+
+Tensor the resolution with \(S\).
+
+Since
+
+\[
+fS=0,
+\]
+
+the tensor complex has only the two retained terms.
+
+Therefore:
+
+\[
+\boxed{
+H_q
+\left(
+S\otimes_{D_\lambda}^{\mathbf L}S
+\right)
+=
+0
+\qquad(q\neq0,2),
+}
+\]
+
+with
+
+\[
+H_0\cong S
+\]
+
+and
+
+\[
+H_2\cong S
+\]
+
+as a right \(S\)-module.
+
+Thus this is a genuine ordinary finite-dimensional bounded amplitude-two realization for every
+
+\[
+\lambda\neq0.
+\]
+
+---
+
+# 27. Exact left action on \(H_2\)
+
+The right action is regular.
+
+To compute the left action of \(t\), lift left multiplication by \(t\) through the exact resolution.
+
+At degree \(0\):
+
+\[
+g_0=L_t.
+\]
+
+Because
+
+\[
+ta=au,
+\]
+
+take at degree \(1\):
+
+\[
+g_1=L_u.
+\]
+
+Now
+
+\[
+g_1d_2
+=
+L_uL_b
+=
+L_{ub}
+=
+\lambda L_{bt}.
+\]
+
+Hence take at degree \(2\):
+
+\[
+g_2=\lambda L_t.
+\]
+
+Therefore, for a generator \(m\in H_2\),
+
+\[
+\boxed{
+t\,m
+=
+\lambda\,m\,t.
+}
+\]
+
+So \(H_2\) is free of rank one on both sides and has twist parameter \(\lambda\).
+
+Equivalently, in the U5 convention
+
+\[
+M\cong{}_1S_{\sigma_c},
+\]
+
+the right-twist parameter is
+
+\[
+c=\lambda^{-1}.
+\]
+
+In particular:
+
+\[
+\boxed{
+\lambda=-1
+\Longrightarrow
+H_2(K)
+\text{ is the sign twist}.
+}
+\]
+
+This is an **actual sign-twisted bounded \(H_2\) realization**.
+
+---
+
+# 28. Why this still does not screen
+
+The sign-twisted homology alone is not enough.
+
+Let \(R_e,L_e\) be the right and left simples at \(e\).
+
+The minimal right resolution of \(R_e\) begins:
+
+\[
+P_0=eD_\lambda,
+\]
+
+\[
+P_1=eD_\lambda\oplus fD_\lambda.
+\]
+
+From degree \(2\) onward:
+
+\[
+\boxed{
+P_n
+=
+(eD_\lambda)^{\oplus2}
+\oplus
+fD_\lambda
+\qquad(n\ge2).
+}
+\]
+
+More precisely,
+
+\[
+\boxed{
+\Omega^2R_e
+\cong
+\Omega^3R_e,
+}
+\]
+
+so the tail is \(1\)-periodic from \(\Omega^2\) onward.
+
+---
+
+# 29. Exact periodicity check
+
+Inside
+
+\[
+P_1=eD_\lambda\oplus fD_\lambda,
+\]
+
+a basis of \(\Omega^2R_e\) is:
+
+\[
+q_1=(t,0),
+\]
+
+\[
+q_2=(au,0),
+\]
+
+\[
+q_3=(-a,u),
+\]
+
+\[
+q_4=(0,b),
+\]
+
+\[
+q_5=(0,ub),
+\]
+
+\[
+q_6=(0,ba),
+\]
+
+\[
+q_7=(0,bau).
+\]
+
+The projective cover of \(\Omega^2R_e\) is
+
+\[
+(eD_\lambda)^{\oplus2}\oplus fD_\lambda.
+\]
+
+A kernel basis for \(\Omega^3R_e\) can be chosen as
+
+\[
+r_1=(t,0,0),
+\]
+
+\[
+r_2=(au,0,0),
+\]
+
+\[
+r_3=(a,0,u),
+\]
+
+\[
+r_4=(0,-\lambda t,b),
+\]
+
+\[
+r_5=(0,0,ub),
+\]
+
+\[
+r_6=(0,-\lambda au,ba),
+\]
+
+\[
+r_7=(0,0,bau).
+\]
+
+Relative to these bases, a right \(D_\lambda\)-module isomorphism
+
+\[
+\Omega^2R_e
+\longrightarrow
+\Omega^3R_e
+\]
+
+is represented by:
+
+\[
+\boxed{
+T_\lambda=
+\begin{pmatrix}
+1&0&0&-1&0&0&0\\
+0&1&-1&0&0&-1&0\\
+0&0&-1&0&0&0&0\\
+0&0&0&-1&0&0&0\\
+-\lambda^{-1}&0&0&-\lambda^{-1}&-1&0&0\\
+0&0&1&0&0&-1&0\\
+0&-1&-1&0&0&-1&-1
+\end{pmatrix}.
+}
+\]
+
+Its determinant is
+
+\[
+\boxed{-1}.
+\]
+
+Thus the periodicity is valid for every
+
+\[
+\lambda\in k^\times.
+\]
+
+---
+
+# 30. Persistent diagonal Tor
+
+Because the resolution is minimal, all differentials vanish after tensoring with the left simple \(L_e\).
+
+The projective term \(P_n\) contains two copies of \(eD_\lambda\) for every \(n\ge2\).
+
+Hence:
+
+\[
+\boxed{
+\dim_k
+\operatorname{Tor}^{D_\lambda}_n(R_e,L_e)
+=
+2
+\qquad(n\ge2).
+}
+\]
+
+Therefore none of the algebras \(D_\lambda\) completely screens the diagonal tail.
+
+In particular the sign point
+
+\[
+\lambda=-1
+\]
+
+is **not** a bounded complete screener.
+
+---
+
+# 31. Exact Postnikov consequence at the sign point
+
+At
+
+\[
+\lambda=-1,
+\]
+
+we have:
+
+\[
+H_*(K)
+=
+S\oplus
+{}_1S_{\sigma_{-1}}[2].
+\]
+
+For the dual numbers, U5 computed:
+
+\[
+\operatorname{Ext}^3_{S^e}
+\left(
+S,
+{}_1S_{\sigma_{-1}}
+\right)
+\cong k.
+\]
+
+The nonzero class is the singularly invertible screening generator.
+
+But \(D_{-1}\) does **not** screen.
+
+Therefore its actual Postnikov class cannot be that generator.
+
+Hence:
+
+\[
+\boxed{
+\alpha(D_{-1})=0
+}
+\]
+
+in this one-dimensional Ext group.
+
+This gives a direct actual counterexample to:
+
+\[
+\boxed{
+H_2(K)\text{ sign-twisted}
+\Rightarrow
+\alpha\text{ is the nonzero generator}.
+}
+\]
+
+So U6 separates the two pieces of the K-line frontier:
+
+\[
+\boxed{
+\text{twist type}
+\quad\text{and}\quad
+\text{Postnikov coupling}.
+}
+\]
+
+---
+
+# 32. Parameter audit
+
+The family \(D_\lambda\) realizes every nonzero relation:
+
+\[
+\boxed{
+t\,m=\lambda\,m\,t.
+}
+\]
+
+Thus multiple twist parameters are realizable by actual ordinary finite-dimensional algebras.
+
+But screening fails for all of them.
+
+The U5 rank-one theorem remains correct:
+
+- \(\lambda\neq\pm1\) corresponds to a bimodule type with no viable degree-three singular anchor;
+- \(\lambda=1\) is the regular type and cannot screen;
+- \(\lambda=-1\) is the only viable bimodule type, but the actual \(D_{-1}\) realization chooses the zero/noninvertible Postnikov class.
+
+Therefore:
+
+\[
+\boxed{
+\lambda=-1
+\text{ is necessary at rank one, but not sufficient}.
+}
+\]
+
+---
+
+# 33. One deleted semisimple vertex — broad no-go
+
+Now consider a two-vertex basic algebra with primitive idempotents
+
+\[
+e,f,
+\qquad
+1=e+f,
+\]
+
+and assume:
+
+\[
+\boxed{
+fDf=kf.
+}
+\]
+
+Let
+
+\[
+X=eDf,
+\qquad
+Y=fDe.
+\]
+
+Since \(X,Y\subseteq J(D)\),
+
+\[
+YX
+\subseteq
+J(D)^2\cap fDf
+=
+0.
+\]
+
+Thus:
+
+\[
+\boxed{
+YX=0.
+}
+\]
+
+Let
+
+\[
+\mu:
+Df\otimes_k fD
+\to
+DfD
+\]
+
+be multiplication and let
+
+\[
+N=\ker\mu.
+\]
+
+Because the non-\(X\otimes Y\) block maps are injective into distinct Peirce blocks,
+
+\[
+N
+=
+\ker
+\left(
+X\otimes_kY
+\to
+eDfDe
+\right).
+\]
+
+---
+
+# 34. The multiplication defect is automatically quotient-supported
+
+Let
+
+\[
+I=DfD,
+\qquad
+S=D/I.
+\]
+
+For \(xy\in eIe\) and \(x'\in X\),
+
+\[
+(xy)x'
+=
+x(yx')
+=
+0
+\]
+
+because
+
+\[
+YX=0.
+\]
+
+Similarly:
+
+\[
+Y(eIe)=0.
+\]
+
+The remaining Peirce parts of \(I\) also annihilate the kernel for source/target reasons.
+
+Therefore:
+
+\[
+\boxed{
+IN=NI=0.
+}
+\]
+
+So \(N\) is already an \(S\)-bimodule.
+
+There is an exact right-\(D\) sequence
+
+\[
+\boxed{
+0
+\to
+N
+\to
+Df\otimes_k fD
+\to
+D
+\to
+S
+\to0.
+}
+\]
+
+Both middle modules are right projective.
+
+Hence:
+
+\[
+\Omega_D^2S\cong N.
+\]
+
+---
+
+# 35. Semisimple-deleted-corner sign-twist obstruction
+
+Suppose the desired terminal defect is free of positive rank on the right over \(S\).
+
+Then
+
+\[
+N_D
+\cong
+S_D^{\oplus\rho}
+\]
+
+as right \(D\)-modules.
+
+Therefore:
+
+\[
+\Omega_D^2S
+\cong
+S^{\oplus\rho}.
+\]
+
+Dimension shifting gives:
+
+\[
+\boxed{
+\operatorname{Tor}_{n+2}^D(S,S)
+\cong
+\operatorname{Tor}_n^D(S,S)^{\oplus\rho}
+\qquad(n\ge1).
+}
+\]
+
+Moreover:
+
+\[
+\operatorname{Tor}_2^D(S,S)
+\cong
+N\neq0.
+\]
+
+Thus the self-intersection is unbounded.
+
+In particular a rank-one sign twist, which is right-free of rank one, cannot give bounded \(K\).
+
+Therefore:
+
+\[
+\boxed{
+\textbf{one deleted semisimple vertex cannot realize the U6 bounded sign-twist screener.}
+}
+\]
+
+This is a genuine broad-class no-go.
+
+---
+
+# 36. Correction of an older Run C audit
+
+An older Run C branch had treated the seven-dimensional amplitude-two near-miss as if its deleted corner were semisimple.
+
+Re-audit of its frozen basis gives:
+
+\[
+fD
+=
+\langle f,b,bx,ba\rangle.
+\]
+
+The path
+
+\[
+ba
+\]
+
+is an \(f\)-to-\(f\) element and survives.
+
+Moreover:
+
+\[
+(ba)^2
+=
+b(ab)a
+=
+0.
+\]
+
+Thus:
+
+\[
+\boxed{
+fDf
+\cong
+k[\varepsilon]/(\varepsilon^2),
+}
+\]
+
+not \(k\).
+
+So the seven-dimensional near-miss does **not** refute the semisimple-deleted-corner obstruction above.
+
+The previous “semisimple-corner no-go was refuted by the 7-dimensional example” statement must be corrected.
+
+The U6 theorem proved here is the restricted statement actually needed for the sign-twist frontier:
+
+> semisimple deleted corner + nonzero right-free terminal defect forces unbounded self-intersection.
+
+No broader theorem is claimed without proof.
+
+---
+
+# 37. Minimal Morita sign-twist construction — sign appears naturally but boundedness fails
+
+There is also a direct two-vertex Morita-context construction showing that the sign relation itself is easy to realize.
+
+Take
+
+\[
+R=k[t]/(t^4),
+\qquad
+S=R/(t^2).
+\]
+
+Let
+
+\[
+X=S
+\]
+
+as a left \(R\)-module via the quotient, and
+
+\[
+Y=S
+\]
+
+as a right \(R\)-module via the quotient.
+
+Let the deleted corner be
+
+\[
+F=k.
+\]
+
+Define the return pairing
+
+\[
+\phi:
+X\otimes_kY
+\to
+R
+\]
+
+by
+
+\[
+\phi(x,y)=t^2xy.
+\]
+
+Take the opposite pairing
+
+\[
+Y\otimes_RX\to k
+\]
+
+to be zero.
+
+Associativity holds because the image
+
+\[
+(t^2)
+\]
+
+annihilates both \(X\) and \(Y\).
+
+The resulting Morita-context algebra has dimension
+
+\[
+4+2+2+1=9.
+\]
+
+Deleting \(F\) gives:
+
+\[
+S=k[t]/(t^2).
+\]
+
+---
+
+# 38. The multiplication kernel is the sign twist
+
+Use bases:
+
+\[
+X=\langle x_0,x_1\rangle,
+\qquad
+tx_0=x_1,\quad tx_1=0,
+\]
+
+\[
+Y=\langle y_0,y_1\rangle,
+\qquad
+y_0t=y_1,\quad y_1t=0.
+\]
+
+Then:
+
+\[
+\phi(x_0,y_0)=t^2,
+\]
+
+\[
+\phi(x_1,y_0)=t^3,
+\]
+
+\[
+\phi(x_0,y_1)=t^3,
+\]
+
+\[
+\phi(x_1,y_1)=0.
+\]
+
+The kernel is generated by
+
+\[
+m=x_1\otimes y_0-x_0\otimes y_1,
+\]
+
+\[
+n=x_1\otimes y_1.
+\]
+
+Now:
+
+\[
+tm=-n,
+\]
+
+while
+
+\[
+mt=n.
+\]
+
+Thus:
+
+\[
+\boxed{
+tm=-mt.
+}
+\]
+
+So:
+
+\[
+\boxed{
+N\cong{}_1S_{\sigma_{-1}}
+}
+\]
+
+up to the left/right convention.
+
+This is an actual sign-twist multiplication defect.
+
+---
+
+# 39. Why the Morita sign-twist is unbounded
+
+Because the deleted corner is semisimple, the preceding no-go applies.
+
+More concretely:
+
+\[
+\Omega_D^2S\cong N.
+\]
+
+As a right \(S\)-module, \(N\) is free rank one.
+
+Therefore as a right \(D\)-module:
+
+\[
+N_D\cong S_D.
+\]
+
+Hence:
+
+\[
+\boxed{
+\Omega_D^2S\cong S
+}
+\]
+
+as right modules.
+
+Thus the right resolution is \(2\)-periodic after the start, and:
+
+\[
+\operatorname{Tor}^{D}_{2q}(S,S)\neq0
+\]
+
+for all \(q\ge1\).
+
+So the minimal Morita construction realizes the sign but fails boundedness.
+
+This is a clean construction/destruction pair.
+
+---
+
+# 40. Serial deleted-loop attempt
+
+The next natural idea is to use a nonsemisimple deleted corner and compress the return path into powers of the deleted loop.
+
+Keep:
+
+\[
+ta=au,
+\qquad
+ub=\lambda bt,
+\]
+
+but now impose a serial return relation:
+
+\[
+\boxed{
+ba=\gamma u^2,
+\qquad
+\gamma\neq0.
+}
+\]
+
+To retain the desired isolated second-return resolution, the vector
+
+\[
+au\in eD
+\]
+
+must survive under the injection
+
+\[
+eD\xrightarrow{b}fD.
+\]
+
+Thus:
+
+\[
+\boxed{
+bau\neq0.
+}
+\]
+
+Equivalently:
+
+\[
+u^3\neq0
+\]
+
+because
+
+\[
+bau=\gamma u^3.
+\]
+
+---
+
+# 41. Associativity forces the wrong sign
+
+Associativity gives:
+
+\[
+u(ba)
+=
+(ub)a.
+\]
+
+The left side is:
+
+\[
+u(ba)
+=
+\gamma u^3.
+\]
+
+The right side is:
+
+\[
+(ub)a
+=
+\lambda bta
+=
+\lambda bau
+=
+\lambda\gamma u^3.
+\]
+
+Therefore:
+
+\[
+\boxed{
+(1-\lambda)\gamma u^3=0.
+}
+\]
+
+Since:
+
+\[
+\gamma\neq0
+\]
+
+and injectivity requires
+
+\[
+u^3\neq0,
+\]
+
+we obtain:
+
+\[
+\boxed{
+\lambda=1.
+}
+\]
+
+Thus in this broad serial-return class:
+
+\[
+\boxed{
+\text{isolated second return}
+\Rightarrow
+\lambda=+1.
+}
+\]
+
+The sign value
+
+\[
+\lambda=-1
+\]
+
+is impossible in characteristic \(0\).
+
+Indeed at \(\lambda=-1\), associativity forces
+
+\[
+u^3=0,
+\]
+
+hence
+
+\[
+bau=0,
+\]
+
+and the intended map
+
+\[
+eD\xrightarrow{b}fD
+\]
+
+kills \(au\), so the amplitude-two resolution is no longer exact.
+
+This is a second broad-class sign-twist no-go.
+
+---
+
+# 42. Interpretation of the two sign obstructions
+
+The two easiest deleted sectors fail in opposite ways.
+
+## Semisimple deleted corner
+
+The sign-twist defect is realizable, but it is itself the second syzygy:
+
+\[
+\Omega^2S\cong S_\sigma,
+\]
+
+so the self-intersection becomes periodic and unbounded.
+
+## Serial compressed deleted corner
+
+Trying to convert the return path into the deleted loop square creates enough Postnikov coupling to matter, but associativity forces:
+
+\[
+\lambda=+1,
+\]
+
+or destroys injectivity at \(\lambda=-1\).
+
+## Uncompressed \(D_\lambda\)
+
+The sign twist is bounded and exact, but its actual Postnikov class is zero/noninvertible.
+
+So the three failures isolate a new tension:
+
+\[
+\boxed{
+\text{sign twist}
++
+\text{boundedness}
++
+\text{nonzero Postnikov coupling}
+}
+\]
+
+cannot be achieved by any of these minimal architectures simultaneously.
+
+---
+
+# 43. U6 K-line conclusion
+
+U6 does **not** prove a universal sign-twist no-go.
+
+It does prove:
+
+### Theorem K6.1 — semisimple deleted-corner no-go
+
+A one-deleted-vertex semisimple corner cannot realize a bounded amplitude-two candidate with nonzero right-free terminal defect.
+
+### Theorem K6.2 — serial return sign obstruction
+
+For the natural two-loop/two-arrow isolated-return normal form with
+
+\[
+ba=\gamma u^2\neq0,
+\]
+
+associativity and injectivity force:
+
+\[
+\lambda=1.
+\]
+
+### Calibration K6.3 — actual bounded sign-twist near-miss
+
+The 10-dimensional family \(D_\lambda\) realizes:
+
+\[
+H_2(K):
+tm=\lambda mt
+\]
+
+with bounded amplitude two for every \(\lambda\neq0\).
+
+At:
+
+\[
+\lambda=-1
+\]
+
+the terminal defect is exactly sign-twisted, but:
+
+\[
+\alpha=0
+\]
+
+and the diagonal Tor remains persistent.
+
+This is the strongest K-line progress of the run.
+
+---
+
+# 44. Strongest surviving source-side statements
+
+The adversarial audit leaves the following source statements intact.
+
+## S-A1 — finite-pd quotient peeling preserves the high Tor tail
+
+For:
+
+\[
+0\to K\to M\to L_y\to0
+\]
+
+with:
+
+\[
+\operatorname{pd}L_y<\infty,
+\]
+
+the induced Tor maps give:
+
+\[
+\operatorname{Tor}^{\gg0}(R,K)
+\cong
+\operatorname{Tor}^{\gg0}(R,M).
+\]
+
+This is correct.
+
+## S-A2 — peeling does not imply support descent
+
+No strict decrease of recurrent top support follows.
+
+## S-A3 — HLM root preserves eventual Betti dynamics
+
+The high-syzygy isomorphism is sufficient for eventual Betti/source support, but not for finite-head anchors or corner lifting.
+
+## S-A4 — source cycle is not visibility closure
+
+A recurrent source SCC can be completely Peirce-invisible on its active edges.
+
+## S-A5 — corner lift needs cross-module control
+
+The Auslander example forbids a bare lifting theorem.
+
+---
+
+# 45. Success labels
+
+### C1 — counterexample to Infinite-Pd Successor
+
+\[
+\boxed{\textbf{PARTIAL}}
+\]
+
+The pointwise statement
+
+\[
+y\in\Sigma_z
+\Rightarrow
+\operatorname{pd}L_y=\infty
+\]
+
+is refuted.
+
+The stronger existential statement
+
+\[
+\Sigma_z\cap I_\infty\neq\varnothing
+\]
+
+for every infinite-pd \(z\) is not refuted.
+
+### C2 — counterexample to finite-pd top peeling/descent
+
+\[
+\boxed{\textbf{ACHIEVED}}
+\]
+
+Tail recurrence is preserved, but recurrent support can remain unchanged and the peeled vertex can immediately reappear.
+
+### C3 — counterexample to source-core closure
+
+\[
+\boxed{\textbf{ACHIEVED}}
+\]
+
+The cyclic Nakayama algebra has an actual Peirce-invisible source 2-cycle:
+
+\[
+0\leadsto_\infty3\leadsto_\infty0
+\]
+
+while visible recurrence exists elsewhere.
+
+The Auslander corner gives an independent corner-lifting failure.
+
+### C4 — actual sign-twist bounded complete screener
+
+\[
+\boxed{\textbf{NOT FOUND}}
+\]
+
+### C5 — broad sign-twist realization no-go
+
+\[
+\boxed{\textbf{ACHIEVED IN TWO BROAD CLASSES}}
+\]
+
+- semisimple one-deleted-vertex class;
+- serial deleted-loop compression class.
+
+### C6 — representation change
+
+\[
+\boxed{\textbf{ACHIEVED}}
+\]
+
+The next representation must retain:
+
+\[
+\boxed{
+\text{terminal twist type}
++
+\text{actual Postnikov class}
+}
+\]
+
+rather than \(H_2\) alone.
+
+On the source side it must retain:
+
+\[
+\boxed{
+\text{eventual Betti/source support}
++
+\text{infinite-pd eligibility}
++
+\text{cross-module lift data}.
+}
+\]
+
+---
+
+# 46. Withdrawn / corrected claims
+
+The following are explicitly forbidden after U6.
+
+## W1
+
+\[
+y\in\Sigma_z
+\Rightarrow
+\operatorname{pd}L_y=\infty.
+\]
+
+False.
+
+## W2
+
+\[
+\text{finite-pd peeling}
+\Rightarrow
+\text{recurrent support strictly decreases}.
+\]
+
+False.
+
+## W3
+
+\[
+\text{source cycle}
+\Rightarrow
+\text{Peirce-visible return on the cycle}.
+\]
+
+False.
+
+## W4
+
+\[
+fDf\text{ infinite }+
+\Rightarrow
+D\text{ infinite }+.
+\]
+
+False without lifting hypotheses.
+
+## W5
+
+\[
+H_2(K)\text{ sign-twisted}
+\Rightarrow
+\alpha\neq0.
+\]
+
+False by \(D_{-1}\).
+
+## W6
+
+\[
+tm=-mt\text{ as an actual relation}
+\Rightarrow
+\text{bounded complete screening}.
+\]
+
+False.
+
+## Correction W7
+
+The old seven-dimensional amplitude-two near-miss does **not** have a semisimple deleted corner; its deleted corner contains the surviving nilpotent \(ba\).
+
+So it cannot be used to refute the semisimple-corner obstruction proved here.
+
+---
+
+# 47. Strongest theorem-level outcome
+
+The strongest new theorem package is:
+
+\[
+\boxed{
+\textbf{U6 Sign-Twist Trichotomy for Minimal Two-Vertex Architectures}
+}
+\]
+
+For the dual-number retained quotient:
+
+1. a semisimple deleted corner can realize the sign multiplication kernel, but then the self-intersection is forced to be unbounded;
+2. the 10-dimensional skew family realizes bounded sign-twisted \(H_2\), but its actual Postnikov class is zero/noninvertible;
+3. the natural serial compression intended to make the Postnikov coupling nontrivial forces the twist parameter back to \(+1\) by associativity.
+
+Thus the remaining actual bounded complete screener must leave these minimal architectures.
+
+It needs a deleted sector with enough noncommutative structure to separate:
+
+\[
+\text{second-syzygy boundedness}
+\]
+
+from
+
+\[
+\text{sign-twisted Postnikov coupling}.
+\]
+
+---
+
+# 48. Recommended U7 node
+
+\[
+\boxed{
+\textbf{Universal Layer U7 — Eligible Source Kernel / Nonserial Postnikov Coupler}
+}
+\]
+
+Keep the source and K lines separate.
+
+## U7-A — eligible source kernel
+
+Do not iterate over all recurrent tops.
+
+Define a source eligibility structure carrying at least:
+
+\[
+(\text{recurrent Betti vertex},\ \operatorname{pd}\text{-status},\ \text{tail action}).
+\]
+
+Questions:
+
+1. Is the still-open existential statement true?
+   \[
+   z\in I_\infty
+   \Rightarrow
+   \Sigma_z\cap I_\infty\neq\varnothing.
+   \]
+2. If not, construct the stronger countermodel with:
+   \[
+   \Sigma_z\cap I_\infty=\varnothing.
+   \]
+3. If finite-pd vertices are peeled, use a quotient invariant that cannot be regenerated by one syzygy.
+4. Before corner descent, require explicit finite-pd cross-module / singular-equivalence hypotheses.
+
+Mandatory U7 calibration:
+
+\[
+A_{\mathrm{peel}}=kQ/J^2
+\]
+
+from this run.
+
+Any proposed strict-support descent must fail on it unless it carries extra data.
+
+## U7-K — nonserial Postnikov coupler
+
+Start from the exact bounded sign point:
+
+\[
+D_{-1}.
+\]
+
+Do **not** search again for the sign twist; it already exists.
+
+Search only for a deformation that changes:
+
+\[
+\alpha=0
+\]
+
+to
+
+\[
+\alpha\neq0
+\]
+
+while preserving:
+
+\[
+H_*(K)
+=
+S\oplus
+{}_1S_{\sigma_{-1}}[2].
+\]
+
+The deleted sector must evade both:
+
+- the semisimple recurrence obstruction;
+- the serial associativity obstruction.
+
+Therefore prioritize:
+
+- at least two independent deleted-loop directions;
+- a genuinely noncommutative deleted corner;
+- a nonserial Morita context;
+- a \(\mathbb Z/2\)-graded/skew deleted sector where the sign automorphism is structural rather than imposed on a single serial loop.
+
+The exact target is no longer:
+
+\[
+tm=-mt.
+\]
+
+That part is solved.
+
+The target is:
+
+\[
+\boxed{
+tm=-mt
+\quad+\quad
+\alpha\neq0
+\quad+\quad
+\operatorname{pd}_D S=2
+}
+\]
+
+with the nonzero \(\alpha\) equal to the unique singularly invertible generator.
+
+---
+
+# 49. Frozen research state
+
+U6 narrows the two frontiers to:
+
+## Source side
+
+\[
+\boxed{
+\text{recurrent top}
+\neq
+\text{eligible infinite-pd successor}.
+}
+\]
+
+Peeling finite-pd tops is tail-safe but not support-decreasing.
+
+Source SCC recurrence is not Peirce closure.
+
+Corner recurrence does not lift without cross-module control.
+
+## K side
+
+\[
+\boxed{
+\text{sign-twisted }H_2
+\neq
+\text{sign-twisted Postnikov screening}.
+}
+\]
+
+The sign bimodule is realizable.
+
+Boundedness is realizable.
+
+Both can occur simultaneously.
+
+What remains missing is the **nonzero actual Postnikov coupler**.
+
+That is the exact U7 realization frontier.
+
+---
+
+# 50. Assets consulted / reused
+
+The run reused and audited the following project assets rather than rebuilding their claims from memory:
+
+- `Run-C-U5-AdversarialSwitch.md`
+- `Run-C-U4-AdversarialGate.md`
+- `Run-B-U4-StableAnchor.md`
+- `Run-B-U2-SelfIntersection.md`
+- the HLM / vertex-deletion project handoff containing
+  \[
+  H(M)=Q(S(M))
+  \]
+  and
+  \[
+  \Omega^{\alpha+2}H(M)\cong\Omega^{\alpha+2}M;
+  \]
+- historical multi-top Ext–Peirce derangement assets;
+- the exact U5 10-dimensional raw-Yoneda calibration.
+
+No formal dg construction was presented as an ordinary algebra.
+
+No completed theorem from A/B was silently assumed beyond its frozen verified hypotheses.
+
+No source-cycle, corner-lift, or sign-twist statement was promoted beyond what the actual examples prove.

@@ -1,0 +1,243 @@
+"""Exact calibration for the ordinary degree-one / actual cube-zero core bridge.
+
+The arbitrary-field/all-degree closure proof is separate. The intentionally
+nonexact core complex is never treated as a resolution. No default digests.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfor p in [3,5,8]:',1)[0],str(frozen),'exec'),globals())
+import yoneda_generation_certificate as yg
+
+def cube_layers(T):
+    W=sorted(set(T.products.values()))
+    V=[b for b in T.radical if b not in W]
+    assert all(T.mult(w,r) is None and T.mult(r,w) is None for w in W for r in T.radical)
+    assert set(T.products.values())=={T.mult(a,b) for a,b in product(V,repeat=2) if T.mult(a,b) is not None}
+    return V,W
+
+def bar_linear_cells(T,V,n):
+    """Actual kernel in bar degree n, internal degree n. No boundaries there."""
+    if n==0:
+        return [[int(i==j) for j in range(T.vertices)] for i in range(T.vertices)],0
+    words=[(b,) for b in V]
+    for _ in range(n-1):
+        words=[word+(b,) for word in words for b in V if T.basis[word[-1]][2]==T.basis[b][1]]
+    cells=[[0]*T.vertices for _ in range(T.vertices)]
+    for source,target in product(range(T.vertices),repeat=2):
+        local=[w for w in words if T.basis[w[-1]][2]==source and T.basis[w[0]][1]==target]
+        outputs=[]
+        for word in local:
+            col={}
+            for p in range(n-1):
+                value=T.mult(word[p],word[p+1])
+                if value is not None:
+                    out=word[:p]+(value,)+word[p+2:]
+                    col[out]=col.get(out,F(0))+F((-1)**(p+1))
+            outputs.append(col)
+        rows=sorted({row for col in outputs for row in col})
+        columns=[[col.get(row,F(0)) for row in rows] for col in outputs]
+        cells[source][target]=len(local)-rk.rank(columns)
+    return cells,len(words)
+
+def map_composition(first,second,target):
+    return [[rk.combine(second[v],col,target.dimensions[v]) for col in first[v]]
+            for v in range(target.algebra.vertices)]
+
+def degree_one_products(T,max_degree):
+    """Only products of actual Ext-one classes, with checked ordinary lifts."""
+    resolutions=[yg.Resolution(T.alg,j,max_degree+1) for j in range(T.vertices)]
+    current={}
+    comparisons=0
+    for source,target in product(range(T.vertices),repeat=2):
+        current[source,target]=list(yg.cochain_maps(resolutions[source].modules[1],target))
+    result=[]
+    for n in range(1,max_degree+1):
+        cells=[[0]*T.vertices for _ in range(T.vertices)]
+        reduced={}
+        for source,target in product(range(T.vertices),repeat=2):
+            M=resolutions[source].modules[n]
+            lifts,_=yg.top_reader(M)
+            vectors=[[rk.combine(phi[target],lift,1)[0] for lift in lifts[target]]
+                     for phi in current[source,target]]
+            selected,_=rk.independent(vectors)
+            cells[source][target]=len(selected)
+            reduced[source,target]=[current[source,target][i] for i in selected]
+        result.append(cells)
+        if n==max_degree:break
+        nxt={(i,j):[] for i,j in product(range(T.vertices),repeat=2)}
+        for source,middle in product(range(T.vertices),repeat=2):
+            for phi in reduced[source,middle]:
+                lift=yg.syzygy_map(resolutions[source].covers[n],resolutions[middle].covers[0],phi)
+                comparisons+=1
+                for target in range(T.vertices):
+                    for psi in yg.cochain_maps(resolutions[middle].modules[1],target):
+                        composed=map_composition(lift,psi,sr.Module.simple(T.alg,target))
+                        yg.check_module_map(resolutions[source].modules[n+1],
+                                            sr.Module.simple(T.alg,target),composed)
+                        nxt[source,target].append(composed)
+        current=nxt
+    return result,comparisons
+
+def socle_dimensions(M):
+    result=[]
+    for vertex in range(M.algebra.vertices):
+        height=sum(M.dimensions[b['left']] for b in M.algebra.basis if b['right']==vertex)
+        columns=[]
+        for j in range(M.dimensions[vertex]):
+            col=[]
+            for b,action in zip(M.algebra.basis,M.actions):
+                if b['right']==vertex:col.extend(action[j])
+            assert len(col)==height
+            columns.append(col)
+        result.append(M.dimensions[vertex]-rk.rank(columns))
+    return result
+
+N=5;f=N;g=N+1
+basis=[(f'e{i}',i,i) for i in range(N+2)]
+for i in range(N):
+    basis.extend([(f'a{i}',(i+1)%N,i),(f'b{i}',(i-1)%N,i),
+                  (f'z{i}',i,i),(f'c{i}',f,i)])
+basis.append(('h',g,f))
+idx={name:i for i,(name,_,_) in enumerate(basis)}
+products={}
+for i in range(N):
+    products[idx[f'b{(i+1)%N}'],idx[f'a{i}']]=idx[f'z{i}']
+    products[idx[f'a{(i-1)%N}'],idx[f'b{i}']]=idx[f'z{i}']
+Z=Table(N+2,basis,products)
+V,W=cube_layers(Z)
+assert len(Z.basis)==28 and len(W)==N
+# Nonselfinjectivity is literal: every old projective has two socle simples.
+socles=[]
+for i in range(N):
+    P,_=projective(Z,i)
+    soc=socle_dimensions(P)
+    assert soc==[int(j in (i,f)) for j in range(N+2)]
+    socles.append(soc)
+Sf=sr.Module.simple(Z.alg,f)
+Kg,_,cf=cover(Sf);K0,_,cg=cover(Kg)
+assert Kg.dimensions==[int(i==g) for i in range(N+2)] and not any(K0.dimensions)
+# Start in the genuine first syzygy, removing only its TRUE Lf summand.
+K,info,initial=cover(sr.Module.simple(Z.alg,0))
+def main_part(K):
+    dims=[d if v<N else 0 for v,d in enumerate(K.dimensions)]
+    actions=[]
+    for b,act in zip(K.algebra.basis,K.actions):
+        actions.append(act if b['left']<N and b['right']<N else
+                       [[F(0)]*dims[b['left']] for _ in range(dims[b['right']])])
+    M=sr.Module(K.algebra,dims,actions)
+    ss.parse_module(K.algebra,ss.module_payload(M))
+    return M
+Y=main_part(K)
+assert Y.dimensions[f]==Y.dimensions[g]==0
+core=[];previous=None;previous_d=None
+for n in range(6):
+    rad=[len(v) for v in Y.radical_bases()]
+    soc=socle_dimensions(Y)
+    assert soc==rad and sum(Y.dimensions)==2*n+3
+    K,info,cert=cover(Y);linear=info['linear_data']
+    head=info['cover_multiplicities']
+    assert sum(head)==n+2 and head[f]==head[g]==0
+    # Actual kernel = next nonsimple state DIRECT SUM finite-pd Lf copies.
+    assert K.dimensions[f]==n+2 and K.dimensions[g]==0
+    assert all(not any(col) for b,act in zip(K.algebra.basis,K.actions)
+               for col in act if b['right']==f or b['left']==f)
+    following=main_part(K)
+    assert sum(following.dimensions)==2*n+5
+    lifted_heads=[];linear_ranks=[]
+    for v in range(N+2):
+        heads=following.top_lifts()[v]
+        vectors=[rk.combine(linear['kernels'][v],h,info['cover_dimensions'][v]) for h in heads]
+        keep=[j for j,(_,r) in enumerate(linear['bases'][v])
+              if r is not None and Z.vertices+r in V]
+        parts=[[col[j] for j in keep] for col in vectors]
+        assert rk.rank(parts)==len(heads)
+        linear_ranks.append(len(heads));lifted_heads.append(vectors)
+    # Build the real maps Q(next core)->Q(current core), not just head ranks.
+    next_info=following.syzygy(retain_maps=True)[1]
+    next_linear=next_info['linear_data']
+    image_heads=[]
+    for v,h in next_linear['copies']:
+        image_heads.append(rk.combine(linear['kernels'][v],h,info['cover_dimensions'][v]))
+    dn=[]
+    for v,part in enumerate(next_linear['bases']):
+        cols=[]
+        for copy,r in part:
+            cols.append(image_heads[copy] if r is None else
+                        rk.combine(linear['projective_actions'][r],image_heads[copy],
+                                   info['cover_dimensions'][v]))
+        dn.append(cols)
+    if previous_d is not None:
+        for v,cols in enumerate(dn):
+            assert all(not any(rk.combine(previous_d[v],col,previous['cover_dimensions'][v])) for col in cols)
+    # Its degree-n homology is deliberately NONZERO finite-pd Lf^(n+2).
+    assert sum(K.dimensions)-sum(following.dimensions)==n+2
+    core.append({'degree':n,'actual_core':ss.module_payload(Y),'actual_cover':cert,
+                 'removed_TRUE_simple_summand':{'label':f,'multiplicity':n+2,'pd':1},
+                 'next_core':ss.module_payload(following),'linear_head_injection_ranks':linear_ranks,
+                 'real_projective_map_next_to_current':dn,
+                 'nonexact_AUGMENTED_core_homology':{'label':f,'multiplicity':n+2,'pd':1}})
+    previous=info;previous_d=dn;Y=following
+
+cycle_basis=[(f'e{i}',i,i) for i in range(N)]
+for i in range(N):cycle_basis.extend([(f'x{i}',(i+1)%N,i),(f'x2_{i}',(i+2)%N,i)])
+idx2={name:i for i,(name,_,_) in enumerate(cycle_basis)}
+C=Table(N,cycle_basis,{(idx2[f'x{(i+1)%N}'],idx2[f'x{i}']):idx2[f'x2_{i}'] for i in range(N)})
+CV,CW=cube_layers(C)
+period=[];X=sr.Module.simple(C.alg,0)
+for n in range(6):
+    K,info,cert=cover(X)
+    assert sum(X.dimensions)==(1 if n%2==0 else 2)
+    period.append({'degree':n,'state':ss.module_payload(X),'cover':cert,
+                   'actual_SIMPLE_syzygy':n%2==0})
+    X=K
+A5=Table(2,[('e0',0,0),('e1',1,1),('a',1,0),('b',0,1),('ba',0,0)],{(3,2):4})
+AV,AW=cube_layers(A5)
+benchmarks=[];comparisons=0;cells_checked=0
+for name,T,TV in [('nonselfinjective28',Z,V),('nonKoszul_truncated_cycle15',C,CV),('finite_gd_A5',A5,AV)]:
+    actual,lifts=degree_one_products(T,4);comparisons+=lifts
+    bar=[]
+    for n in range(1,5):
+        cells,words=bar_linear_cells(T,TV,n)
+        assert actual[n-1]==cells,(name,n,actual[n-1],cells)
+        cells_checked+=T.vertices**2
+        bar.append({'degree':n,'composable_tensor_words':words,'bar_kernel_by_source_target':cells,
+                    'ordinary_Ext_one_word_rank_by_source_target':actual[n-1]})
+    benchmarks.append({'name':name,'algebra':T.payload,'dimension':len(T.basis),
+                       'radical_cube_zero':True,'linear_bar_equals_actual_ordinary_products':bar})
+assert not any(any(row) for row in benchmarks[1]['linear_bar_equals_actual_ordinary_products'][1]['bar_kernel_by_source_target'])
+assert not any(any(row) for row in benchmarks[2]['linear_bar_equals_actual_ordinary_products'][2]['bar_kernel_by_source_target'])
+# Frozen Saorin N7 is outside J^3=0: preserve its actual nonzero cubic path.
+N7=rk.Algebra(yg.saorin_seven())
+assert len(N7.radical_powers[2])>0 and len(N7.radical_powers[3])==0
+NX,_,nfirst=cover(sr.Module.simple(N7,0))
+NK,ninfo,ncover=cover(NX)
+assert sum(NX.dimensions)==sum(NK.dimensions)==2
+assert socle_dimensions(NK)==[len(v) for v in NK.radical_bases()]
+niso=ss.check_isomorphism(NX,NK,ss.encode([[rk.unit_vector(d,j) for j in range(d)] for d in NX.dimensions]))
+counts['actual_kernel_isomorphisms']+=1
+# In this traversal-word convention, vertex0 is LEFT-infinite, vertex1
+# LEFT-finite. The period-one kernel sits wholly in J^2P_1 and is not
+# semisimple: the actual linear head coefficient has rank zero.
+nj2=yg.radical_square_bases(yg.Cover(NX))
+for v in range(N7.vertices):
+    assert rk.rank(nj2[v]+ninfo['linear_data']['kernels'][v])==len(nj2[v])
+assert yg.deep_kernel_dimensions(yg.Cover(NX))==[0,1]
+result={'status':'passed','independent_verification':False,'field':'Q','counts':counts,
+        'ordinary_Ext_one_comparison_lifts':comparisons,'bar_Yoneda_cell_checks':cells_checked,
+        'nonselfinjective_finite_error_core':{'algebra':Z.payload,'socles':socles,
+            'finite_simple_pd1_covers':[cf,cg],'first_simple_cover':initial,'core':core,
+            'core_complex_augmented_by_actual_Q0_to_Y0':True,
+            'core_complex_exact':False,'homology_NOT_deleted_under_an_exactness_claim':True},
+        'nonKoszul_actual_simple_restarts':period,'ordinary_bar_product_benchmarks':benchmarks,
+        'frozen_N7_boundary':{'J3_nonzero_dimension':len(N7.radical_powers[2]),'J4_zero':True,
+            'traversal_word_source':0,'actual_first_cover':nfirst,'actual_period_one_cover':ncover,
+            'actual_kernel_isomorphism':niso,'nonsimple_deep_kernel_linear_head_rank':0},
+        'dependencies':['runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py']+
+            [f'toolbox/Imported-Outputs/{x}.py' for x in ['return_kernel_certificate','syzygy_return_certificate','syzygy_system_certificate','yoneda_generation_certificate']],
+        'scope':'Actual nonexact finite-pd-simple core maps/linear injections, three ordinary bar/product finite benchmarks, real simple restarts, and N7 cubic boundary. General all-field/all-degree cube-zero closure is a separate written proof; shared helpers/same researcher are NOT independent verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','counts':counts,'bar_Yoneda_cell_checks':cells_checked,
+                  'ordinary_Ext_one_comparison_lifts':comparisons,'core_stages':6,
+                  'nonexact_core_homology_pd':1,'independent_verification':False}))

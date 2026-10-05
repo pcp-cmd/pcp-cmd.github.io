@@ -1,0 +1,208 @@
+"""Exact bounded checks for an infinite-pd triangular extension.
+
+A has basis e1,e2,e3,a,b,t,c,s with ab=t and all other radical
+products zero. a:1->2, b:2->1, c:2->3, t:2->2, s:3->3.
+This is a calibration, not a Gap-A counterexample or an independent audit.
+"""
+from __future__ import annotations
+import argparse
+from collections import defaultdict
+from fractions import Fraction
+from itertools import product
+import json
+from pathlib import Path
+import platform
+import sys
+
+ARROWS = {'a': (1, 2), 'b': (2, 1), 't': (2, 2),
+          'c': (2, 3), 's': (3, 3)}
+ENDPOINTS = {'e1': (1, 1), 'e2': (2, 2), 'e3': (3, 3), **ARROWS}
+
+def clean(v):
+    return {k: Fraction(x) for k, x in v.items() if x}
+
+def reduce_vector(v, pivots):
+    v = clean(v)
+    while v:
+        lead = min(v)
+        if lead not in pivots:
+            return v
+        coefficient = v[lead]
+        for k, x in pivots[lead].items():
+            v[k] = v.get(k, Fraction(0)) - coefficient*x
+            if not v[k]:
+                del v[k]
+    return v
+
+def echelon(columns):
+    pivots = {}
+    for col in columns:
+        v = reduce_vector(col, pivots)
+        if v:
+            lead = min(v)
+            pivots[lead] = {k: x/v[lead] for k, x in v.items()}
+    return pivots
+
+def apply_linear(v, d):
+    out = defaultdict(Fraction)
+    for word, x in v.items():
+        for target, y in d(word).items():
+            out[target] += x*y
+    return clean(out)
+
+def multiply(left, right):
+    if left is None or right is None:
+        return None
+    if ENDPOINTS[left][0] != ENDPOINTS[right][1]:
+        return None
+    if left.startswith('e'):
+        return right
+    if right.startswith('e'):
+        return left
+    return 't' if (left, right) == ('a', 'b') else None
+
+def bar_basis(n, source, target):
+    words = [((), source)]
+    for _ in range(n):
+        words = [(w+(a,), end) for w, at in words
+                 for a, (start, end) in ARROWS.items() if start == at]
+    return [w for w, at in words if at == target]
+
+def bar_differential(word):
+    out = defaultdict(Fraction)
+    for j in range(len(word)-1):
+        merged = multiply(word[j+1], word[j])
+        if merged:
+            out[word[:j]+(merged,)+word[j+2:]] += (-1)**j
+    return clean(out)
+
+def expected_betti(n, source, target):
+    if source == 1:
+        return int((target == 1 and n in (0, 2)) or
+                   (target == 2 and n == 1) or (target == 3 and n >= 2))
+    if source == 2:
+        return int((target == 2 and n == 0) or
+                   (target == 1 and n == 1) or (target == 3 and n >= 1))
+    return int(target == 3)
+
+def passage_expand(letters):
+    out = ()
+    for kind, n in letters:
+        out += ('s',) if kind == 's' else (
+            ('a',)+('t',)*(n-1)+(('b',) if kind == 'u' else ('c',)))
+    return out
+
+def passage_regroup(word):
+    letters = []
+    j = 0
+    while j < len(word):
+        if word[j] == 's':
+            letters.append(('s', 0))
+            j += 1
+            continue
+        assert word[j] == 'a'
+        j += 1
+        power = 1
+        while j < len(word) and word[j] == 't':
+            power += 1
+            j += 1
+        assert j < len(word) and word[j] in ('b', 'c')
+        letters.append(('u' if word[j] == 'b' else 'v', power))
+        j += 1
+    return tuple(letters)
+
+def passage_bar_differential(letters):
+    out = defaultdict(Fraction)
+    prefix = 0
+    for j in range(len(letters)-1):
+        kind, power = letters[j]
+        next_kind, next_power = letters[j+1]
+        if kind == 'u' and next_kind in ('u', 'v'):
+            target = letters[:j]+((next_kind, power+next_power),)+letters[j+2:]
+            out[target] += (-1)**(prefix+power)
+        prefix += power+1
+    return clean(out)
+
+def check(bound, passage_bound):
+    assoc = 0
+    for a,b,c in product(ENDPOINTS, repeat=3):
+        assert multiply(multiply(a,b),c) == multiply(a,multiply(b,c))
+        assoc += 1
+    projectives = {i: {a for a,(source,_) in ENDPOINTS.items() if source == i}
+                   for i in (1,2,3)}
+    assert projectives == {1:{'e1','a'}, 2:{'e2','b','t','c'}, 3:{'e3','s'}}
+    # P1 -> Ab, e1->b and a->t, is an A-module isomorphism.
+    image = {'e1':'b', 'a':'t'}
+    for left, right in product(ENDPOINTS, projectives[1]):
+        lhs = multiply(left,right)
+        assert (None if lhs is None else image[lhs]) == multiply(left,image[right])
+    assert {multiply(a,'c') for a in ENDPOINTS} <= {None,'c'}
+    assert {multiply(a,'s') for a in ENDPOINTS} <= {None,'s'}
+    assert multiply('s','e3') == 's' and multiply('s','s') is None
+    ideal = {z for a,b in product(ENDPOINTS,repeat=2)
+             if (z := multiply(multiply(a,'e2'),b)) is not None}
+    assert ideal == {'e2','a','b','t','c'}
+    assert all(multiply(a,'e3') is None for a in ideal)
+    # The e2-to-e3 column is zero, hence every negative Qe3 passage vanishes.
+    assert not {a for a,(source,target) in ENDPOINTS.items() if (source,target)==(3,2)}
+    rows = []
+    square_checks = 0
+    passage_checks = 0
+    for source,target in product((1,2,3),repeat=2):
+        for n in range(bound+1):
+            basis = bar_basis(n,source,target)
+            outgoing = [bar_differential(w) for w in basis]
+            incoming = [bar_differential(w) for w in bar_basis(n+1,source,target)]
+            rank_out = len(echelon(outgoing))
+            rank_in = len(echelon(incoming))
+            dim = len(basis)-rank_out-rank_in
+            assert dim == expected_betti(n,source,target), (n,source,target,dim)
+            for w in basis:
+                assert not apply_linear(bar_differential(w),bar_differential)
+                square_checks += 1
+                if source in (1,3) and target in (1,3) and n <= passage_bound:
+                    letters = passage_regroup(w)
+                    assert passage_expand(letters) == w
+                    expanded = {passage_expand(k):v for k,v in
+                                passage_bar_differential(letters).items()}
+                    assert expanded == bar_differential(w), w
+                    passage_checks += 1
+            rows.append({'source':source,'target':target,'degree':n,
+                         'chain_dimension':len(basis),'outgoing_rank':rank_out,
+                         'incoming_rank':rank_in,'tor_dimension':dim})
+    fillers = []
+    for kind,last in (('u','b'),('v','c')):
+        for n in range(2,passage_bound+1):
+            alpha = ('a',)+('t',)*(n-1)+(last,)
+            beta = ('a','b','a')+('t',)*(n-2)+(last,)
+            assert bar_differential(beta) == {alpha:Fraction(-1)}
+            assert not bar_differential(alpha)
+            vertices = [ARROWS[a][1] for a in beta[:-1]]
+            assert sum(at != 2 for at in vertices) == 1
+            fillers.append({'kind':kind,'negative_magnitude':n,
+                            'filler_excursion':1})
+    return {'status':'passed','evidence_level':'bounded-check',
+            'python_version':platform.python_version(),
+            'associativity_triples':assoc,'bar_bound':bound,
+            'incoming_degree':bound+1,'bar_pairs':9,
+            'differential_square_checks':square_checks,
+            'passage_chain_checks':passage_checks,
+            'fillers':fillers,'tor_results':rows,
+            'limitations':['Finite degrees do not prove infinite tails.',
+                           'Analytic resolution and quotient proofs are in the Run.',
+                           'Self-audited computation is not independent verification.',
+                           'Global infinite + holds at vertex 3; this is not a counterexample.']}
+
+def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--bar-bound',type=int,default=10)
+    parser.add_argument('--passage-bound',type=int,default=8)
+    parser.add_argument('--out',type=Path,required=True)
+    args=parser.parse_args()
+    assert args.bar_bound >= args.passage_bound >= 2
+    result=check(args.bar_bound,args.passage_bound)
+    args.out.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:v for k,v in result.items() if k not in ('tor_results','fillers','limitations')}))
+
+if __name__=='__main__':
+    main()

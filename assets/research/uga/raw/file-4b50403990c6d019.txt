@@ -1,0 +1,523 @@
+# Universal Gap A — Four-Vertex Closure Handoff for Codex
+
+**Date:** 2026-10-04  
+**Purpose:** stop duplicate four-vertex work in the main Codex window and transfer the current project-derived closure argument.  
+**Status:** **PROJECT-DERIVED / SELF-AUDITED CANDIDATE — NEEDS INDEPENDENT AUDIT BEFORE CANONICAL THEOREM PROMOTION.**  
+**Universal Gap A:** still open.
+
+---
+
+## 0. Immediate instruction to Codex
+
+You are currently working on the four-vertex case. Before doing more new four-vertex research, audit the argument below.
+
+If the audit passes, **stop spending research time on four vertices**, register the result, and return to the universal program.
+
+Do **not** mechanically continue to five vertices.
+
+Candidate result:
+
+\[
+\boxed{
+|Q_0|\le 4,\qquad \operatorname{gldim}A=\infty
+\Longrightarrow
+A\text{ is of infinite }+\text{ global dimension}.
+}
+\]
+
+Equivalently, any genuine Universal Gap A counterexample would require at least five vertices.
+
+---
+
+# 1. Inputs
+
+The argument uses the following.
+
+## 1.1 SCC reduction
+
+Reduce to a strongly connected component corner of infinite global dimension. If the corner is infinite \(+\), the whole algebra is infinite \(+\).
+
+## 1.2 One-way law
+
+If \(A\) is not infinite \(+\), then for each vertex \(x\), sufficiently high projective tops in the minimal resolution of \(S_x\) lie in
+
+\[
+Z(x):=\{y:e_xAe_y=0\}.
+\]
+
+Equivalently, sufficiently high projective types for source \(x\) are restricted to the Peirce-dead zone of \(x\).
+
+## 1.3 C080
+
+A Gap-A failure cannot have at most two infinite-left-pd simples.
+
+Hence for a four-vertex bad algebra:
+
+\[
+|I_L|\in\{3,4\}.
+\]
+
+## 1.4 C090 — dominant recurrent projective
+
+In a genuine recurrent exact high tail, if one recurrent projective type has infinite-factor carrier equal to the entire recurrent carrier, then an ordinary Peirce-supported persistent Tor/Ext pair exists.
+
+In particular, a bad tail cannot eventually contain only one recurrent projective type.
+
+## 1.5 Protected-corner theorem
+
+Use the project/literature protected-corner result only after checking the exact Peirce orientation and all hypotheses.
+
+This is the most important external audit point in Case A below.
+
+---
+
+# 2. First four-vertex rigidity
+
+Assume \(A\) is strongly connected, has four vertices, infinite global dimension, and is not infinite \(+\).
+
+Fix \(x\in I_L\).
+
+Because the quiver is strongly connected, \(x\) has at least one external in-neighbour / externally visible label.
+
+Also
+
+\[
+e_xAe_x\neq0,
+\]
+
+so \(x\notin Z(x)\).
+
+Therefore, among four vertices,
+
+\[
+|Z(x)|\le2.
+\]
+
+Now suppose
+
+\[
+|Z(x)|=1.
+\]
+
+By the one-way law, all sufficiently high projective terms in the minimal resolution of \(S_x\) use only that one projective type.
+
+After deleting a finite prefix, this gives a single recurrent projective type.
+
+C090 then forces an ordinary visible return, contradicting badness.
+
+Hence:
+
+\[
+\boxed{|Z(x)|=2}
+\]
+
+for every infinite-pd source \(x\).
+
+Moreover, both labels in \(Z(x)\) must occur recurrently infinitely often. Otherwise the tail eventually reduces to one recurrent type and C090 applies again.
+
+Thus for every \(x\in I_L\),
+
+\[
+W(x):=Q_0\setminus Z(x)
+\]
+
+has exactly two labels:
+
+\[
+\boxed{W(x)=\{x,u_x\}},
+\]
+
+where \(u_x\) is the unique external visible / in-neighbour label, subject to final Peirce-orientation audit.
+
+This is the main four-vertex rigidity.
+
+---
+
+# 3. Case A — all four left simples have infinite projective dimension
+
+Assume
+
+\[
+|I_L|=4.
+\]
+
+For every vertex \(x\), there is a unique external visible/in-neighbour \(u_x\).
+
+Because the quiver is strongly connected, every vertex must occur as some \(u_x\).
+
+Hence
+
+\[
+x\mapsto u_x
+\]
+
+is a fixed-point-free permutation of the four vertices.
+
+The only cycle types are:
+
+1. a single 4-cycle;
+2. two disjoint 2-cycles.
+
+The second cannot give a strongly connected quiver.
+
+Therefore, after relabelling, we obtain a 4-cycle pattern.
+
+With the intended Peirce convention, write this as
+
+\[
+W(i)=\{i,i-1\},
+\qquad
+Z(i)=\{i+1,i+2\}.
+\]
+
+Equivalently,
+
+\[
+e_iAe_{i+1}=e_iAe_{i+2}=0.
+\]
+
+---
+
+# 4. Local corner at a vertex of the 4-cycle
+
+Consider source \(i-1\).
+
+Its high recurrent tail is forced into the two projective labels in
+
+\[
+Z(i-1).
+\]
+
+One of them is \(i\).
+
+Suppose
+
+\[
+e_iAe_i=k.
+\]
+
+Then the endomorphism ring of the indecomposable projective \(P_i\) has zero radical contribution at the primitive corner:
+
+\[
+\operatorname{rad}(e_iAe_i)=0.
+\]
+
+Minimality therefore forbids a nonzero \(P_i\to P_i\) differential entry.
+
+The dead-zone relation also kills the relevant cross-Hom from the \(P_i\)-summand to the other allowed recurrent projective type.
+
+Hence the outgoing differential on a recurrent \(P_i\)-summand is zero.
+
+But the high tail is exact.
+
+So the whole \(P_i\)-summand would have to lie in the image of the next differential.
+
+Minimality gives
+
+\[
+\operatorname{im}d_{n+1}\subseteq\operatorname{rad}P_n,
+\]
+
+and an entire indecomposable projective direct summand cannot lie inside its own radical.
+
+Contradiction.
+
+Therefore
+
+\[
+\boxed{e_iAe_i\neq k}
+\]
+
+for every vertex \(i\).
+
+---
+
+# 5. Protected-corner collision
+
+For each \(i\), the 4-cycle dead-zone pattern also gives the reverse Peirce vanishing required by the intended protected-corner criterion.
+
+Thus every \(i\) has
+
+\[
+e_iAe_i\neq k
+\]
+
+and satisfies the protected-corner configuration.
+
+The protected-corner theorem then forces persistent self-return:
+
+\[
+\Ext_A^n(S_i,S_i)\neq0
+\]
+
+in infinitely many / all relevant high degrees according to the exact theorem statement.
+
+Since
+
+\[
+e_iAe_i\neq0,
+\]
+
+this is already an ordinary supported infinite-\(+\) witness.
+
+Contradiction.
+
+Therefore:
+
+\[
+\boxed{\text{the four-left-infinite case is impossible}.}
+\]
+
+**Audit warning:** verify the exact protected-corner theorem and Peirce orientation before promoting this section.
+
+---
+
+# 6. Case B — exactly three left simples are infinite-pd
+
+Assume
+
+\[
+I_L=\{x,r,s\}
+\]
+
+and \(f\) is the unique finite-left-pd vertex.
+
+Fix an infinite source \(x\).
+
+Assume for contradiction that its unique external visible/in-neighbour is \(f\).
+
+Then
+
+\[
+Z(x)=\{r,s\}.
+\]
+
+Hence the high recurrent tail of \(S_x\) uses only
+
+\[
+P_r,\ P_s,
+\]
+
+and both occur recurrently.
+
+Define their infinite-factor carriers:
+
+\[
+C_r:=\{j\in I_L:e_jAe_r\neq0\},
+\]
+
+\[
+C_s:=\{j\in I_L:e_jAe_s\neq0\}.
+\]
+
+Because \(r,s\in Z(x)\),
+
+\[
+x\notin C_r,\qquad x\notin C_s.
+\]
+
+Therefore
+
+\[
+C_r,C_s\subseteq\{r,s\}.
+\]
+
+Also diagonals are nonzero, so
+
+\[
+r\in C_r,\qquad s\in C_s.
+\]
+
+If
+
+\[
+s\in C_r,
+\]
+
+then
+
+\[
+C_r=\{r,s\},
+\]
+
+which is the full recurrent infinite-factor carrier.
+
+C090 then says \(P_r\) is a dominant recurrent projective and forces an ordinary visible return.
+
+Badness excludes this.
+
+Similarly,
+
+\[
+r\notin C_s.
+\]
+
+Hence
+
+\[
+\boxed{C_r=\{r\},\qquad C_s=\{s\}.}
+\]
+
+Thus, with the current Hom/Peirce convention,
+
+\[
+\boxed{e_rAe_s=e_sAe_r=0.}
+\]
+
+The high minimal tail therefore splits into two independent projective-type blocks:
+
+\[
+P_\bullet=P_\bullet^{(r)}\oplus P_\bullet^{(s)}.
+\]
+
+Because there are no cross differential entries, exactness splits blockwise.
+
+At least one block is an infinite recurrent exact block.
+
+That block uses a single recurrent projective type.
+
+C090 applies again and forces visible return.
+
+Contradiction.
+
+Therefore:
+
+\[
+\boxed{u_x\neq f}
+\]
+
+for every infinite vertex \(x\).
+
+---
+
+# 7. Strong connectivity kills the three-infinite case
+
+The finite-left vertex \(f\) lies in the same strongly connected quiver.
+
+Hence there is a path from \(f\) into the infinite-vertex set.
+
+Look at the first edge where the path enters an infinite vertex:
+
+\[
+f\to x
+\]
+
+for some \(x\in I_L\).
+
+Then \(f\) is an external in-neighbour / visible predecessor of \(x\).
+
+But Section 6 proved that the unique external visible/in-neighbour of an infinite vertex cannot be \(f\).
+
+Contradiction.
+
+Therefore:
+
+\[
+\boxed{\text{the three-left-infinite four-vertex case is impossible}.}
+\]
+
+---
+
+# 8. Four-vertex candidate theorem
+
+C080 leaves only the two cases above:
+
+\[
+|I_L|=3
+\quad\text{or}\quad
+|I_L|=4.
+\]
+
+Both are impossible.
+
+Hence there is no strongly connected four-vertex UGA counterexample.
+
+Using SCC reduction and the existing \(\le3\)-vertex closure:
+
+\[
+\boxed{
+|Q_0|\le4,\qquad
+\operatorname{gldim}A=\infty
+\Longrightarrow
+A\text{ is infinite }+.
+}
+\]
+
+Thus any genuine counterexample must satisfy
+
+\[
+\boxed{|Q_0|\ge5.}
+\]
+
+---
+
+# 9. Why Codex should stop duplicating four-vertex research
+
+The reusable mechanism is not the number four.
+
+It is the combination
+
+\[
+\boxed{
+\text{one-way dead zone}
++
+\text{C090 forbids single recurrent type}
++
+\text{strong connectivity}
++
+\text{protected local return}.
+}
+\]
+
+If the audit passes, save this as a side theorem and return to the universal program.
+
+Do not start a five-vertex case split unless it exposes a genuinely arbitrary-size invariant or descent principle.
+
+---
+
+# 10. Mandatory audit before canonical promotion
+
+Codex should now audit, in this order:
+
+1. Exact SCC reduction and lift.
+2. Exact one-way law and \(e_xAe_y\) orientation.
+3. Exact current canonical C080 statement.
+4. Exact current canonical C090 statement.
+5. Whether \(|Z(x)|=1\) truly implies an eventually single recurrent type in the actual minimal tail.
+6. The fixed-point-free permutation argument in Case A.
+7. The minimality argument forcing \(e_iAe_i\neq k\).
+8. The exact protected-corner theorem, verbatim.
+9. The Peirce orientation needed for the protected-corner hypothesis.
+10. Both cross-Hom vanishings and block splitting in Case B.
+11. The strong-connectivity first-entry-edge argument.
+12. Try to explicitly construct a four-vertex counterexample to any intermediate lemma before accepting the result.
+
+Return one of:
+
+- `VERIFIED`;
+- `VERIFIED AFTER REPAIR`;
+- `NOT VERIFIED`, with the first invalid implication.
+
+---
+
+# 11. DO NOT CLAIM
+
+Until the audit passes, do not state this as an externally verified theorem.
+
+Do not use:
+
+\[
+\text{graph cycle}\Rightarrow\text{homological return}.
+\]
+
+Do not use an unverified opposite-side transfer.
+
+Do not claim UGA is solved.
+
+The correct current label is:
+
+\[
+\boxed{
+\text{FOUR-VERTEX CLOSURE — PROJECT-DERIVED AUDIT CANDIDATE}.
+}
+\]

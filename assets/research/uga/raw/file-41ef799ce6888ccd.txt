@@ -1,0 +1,634 @@
+# Universal Gap A — Visibility-Aligned Universal Screening Dichotomy
+## Direct diagonal screening for the local-singular branch
+
+**Date:** 2026-10-02  
+**Status:** PROJECT-DERIVED REDUCTION / REQUIRES INDEPENDENT VERIFICATION  
+**Scope:** elementary finite-dimensional algebras; arbitrary number of vertices.
+
+---
+
+# 0. Strategic correction
+
+The previous local-singular programme used the two-sided finite-head collision to extract a fixed mixed pair
+\[
+\operatorname{Tor}^{e_xAe_x}_m(e_zAe_x,e_xAe_y)\neq0\quad\text{i.o.}
+\]
+and then asked how to turn that pair into an ambient Peirce-visible witness.
+
+For the main Universal Gap A route this is unnecessarily indirect.
+
+At a vertex with a nontrivial local corner, the diagonal pair \((x,x)\) is already Peirce-visible.  The correct primary comparison is therefore
+\[
+\operatorname{Tor}^{e_xAe_x}(k_x,k_x)
+\quad\text{versus}\quad
+\operatorname{Tor}^{A}(R_x,L_x),
+\]
+not the mixed-linker pair.
+
+The mixed collision remains useful as a structural description of the screening mechanism, but it is no longer the visibility bridge.
+
+---
+
+# 1. Setup
+
+Let \(A\) be an elementary finite-dimensional algebra which is not infinite \(+\).  Fix a primitive vertex \(x\) and put
+\[
+\Gamma=e_xAe_x.
+\]
+Assume
+\[
+\Gamma\neq k.
+\]
+Then \(\Gamma\) is a nonsemisimple finite-dimensional local algebra with unique simple \(k_x\).
+
+The local-simple argument from the two-sided finite-head theorem gives
+\[
+\boxed{
+\operatorname{Tor}^{\Gamma}_n(k_x,k_x)\neq0
+\qquad\forall n\ge0.
+}
+\tag{1.1}
+\]
+
+On the other hand the ambient diagonal pair is automatically supported because
+\[
+e_xAe_x\neq0.
+\]
+Since \(A\) is not infinite \(+\),
+\[
+\boxed{
+\operatorname{Tor}^{A}_n(R_x,L_x)=0
+\qquad(n\gg0).
+}
+\tag{1.2}
+\]
+
+Thus every sufficiently high local self-Tor class must disappear when the local corner is embedded back into \(A\).
+
+---
+
+# 2. Relative bar complex and excursion number
+
+Let
+\[
+E=A/\operatorname{rad}A=\bigoplus_v ke_v,
+\qquad J=\operatorname{rad}A.
+\]
+The normalized relative bar complex computing the ambient diagonal Tor is
+\[
+B^A_\bullet(x,x)
+=
+R_x\otimes_E T_E^c(J)\otimes_E L_x.
+\tag{2.1}
+\]
+
+A nonzero homogeneous bar word of degree \(n\)
+\[
+w=[a_n|\cdots|a_1]
+\]
+has a unique primitive vertex sequence
+\[
+x=v_0,v_1,\ldots,v_{n-1},v_n=x
+\]
+with
+\[
+a_t\in e_{v_t}Je_{v_{t-1}}.
+\]
+Define its **excursion number**
+\[
+\epsilon_x(w)
+=
+\#\{1\le t\le n-1:v_t\neq x\}.
+\tag{2.2}
+\]
+
+Let
+\[
+F_pB^A_n(x,x)
+=
+\langle w:\epsilon_x(w)\le p\rangle.
+\tag{2.3}
+\]
+This is an increasing filtration.
+
+---
+
+# 3. Excursion monotonicity
+
+The ordinary bar differential multiplies two adjacent radical letters and thereby removes exactly one internal vertex.
+
+If the removed vertex is \(x\), excursion number is unchanged.  If the removed vertex is not \(x\), excursion number drops by one.  Therefore
+\[
+d(F_p)\subseteq F_p
+\]
+and the differential changes excursion number by either \(0\) or \(-1\).
+
+The filtration is finite in every bar degree because
+\[
+0\le\epsilon_x(w)\le n-1.
+\]
+Hence the associated spectral sequence converges to
+\[
+\operatorname{Tor}^{A}_*(R_x,L_x).
+\]
+
+Using bidegrees
+\[
+p=\epsilon_x,
+\qquad q=n-p,
+\]
+the differential convention is
+\[
+\boxed{
+d_r:E_r^{p,q}\longrightarrow E_r^{p-r,q+r-1}.
+}
+\tag{3.1}
+\]
+Thus the zero-excursion column has no outgoing differential; it can only be killed by incoming excursion differentials.
+
+---
+
+# 4. Zero-excursion identification
+
+At excursion number zero every internal vertex equals \(x\).  Therefore every letter lies in
+\[
+e_xJe_x=\operatorname{rad}\Gamma,
+\]
+and the excursion-preserving differential is exactly the normalized bar differential of the local algebra \(\Gamma\).
+
+Hence
+\[
+\boxed{
+E_1^{0,n}
+\cong
+\operatorname{Tor}^{\Gamma}_n(k_x,k_x).
+}
+\tag{4.1}
+\]
+By (1.1), this group is nonzero for every \(n\ge0\).
+
+Combining with (1.2) gives the main conclusion.
+
+---
+
+# 5. Diagonal Corner Complete-Screening Theorem
+
+## Theorem 5.1
+Let \(A\) be an elementary finite-dimensional algebra which is not infinite \(+\), and let \(x\) satisfy
+\[
+e_xAe_x\neq k.
+\]
+Then the excursion spectral sequence of Sections 2--4 has
+\[
+E_1^{0,n}\neq0
+\qquad\forall n\ge0,
+\]
+but
+\[
+E_\infty^{0,n}=0
+\qquad(n\gg0).
+\]
+Consequently every sufficiently high local self-Tor class is hit by an incoming differential
+\[
+d_r:E_r^{r,n-r+1}\longrightarrow E_r^{0,n}
+\tag{5.1}
+\]
+for some \(r\ge1\).
+
+In particular, the local-singular branch is a **diagonal supported complete-screening problem** from the outset.
+
+### Significance
+No Peirce-support conversion is needed:
+
+- source: local diagonal pair \((x,x)\);
+- target: ambient diagonal pair \((x,x)\);
+- support: \(e_xAe_x\neq0\) automatically.
+
+The only remaining issue is homological screening by excursions away from \(x\).
+
+---
+
+# 6. Screening depth
+
+For a nonzero class
+\[
+\alpha_n\in E_1^{0,n},
+\]
+define its **excursion screening depth** to be the least \(r\) such that it is hit by (5.1).
+
+For high \(n\) this depth is finite by Theorem 5.1.
+
+After passing to a sequence \(n_t\to\infty\), exactly one of the following occurs.
+
+## BX — bounded excursion screening
+There exists \(R\) such that all selected \(\alpha_{n_t}\) have screening depth at most \(R\).  By pigeonhole, one fixed \(r\le R\) hits infinitely many high local self-Tor classes.
+
+A source for
+\[
+d_r:E_r^{r,n-r+1}\to E_r^{0,n}
+\]
+has bar degree \(n+1\) and exactly \(r\) non-\(x\) internal vertices.  Thus it has
+\[
+n-r
+\]
+internal occurrences of \(x\).
+
+With \(r\) fixed and \(n\to\infty\), the word decomposes into at most \(r+1\) runs of \(x\)-vertices, so at least one local \(\Gamma\)-run has length tending to infinity.
+
+Hence bounded excursion screening necessarily reuses unbounded local \(\Gamma\)-homology through a finite number of fixed cross-excursion slots.
+
+This is the bar-level origin of the two-sided finite-head collision.
+
+## UX — unbounded excursion screening
+The first hitting pages satisfy
+\[
+r_t\to\infty.
+\]
+Then any screening mechanism requires arbitrarily many non-\(x\) internal vertices.  Since the ambient vertex set is finite, actual screening words contain arbitrarily long recurrent outside-vertex patterns.
+
+This is the correct ordinary-bar form of the derived-necklace branch.  It uses genuine bar words in \(A\), not a graph-cycle-to-homology inference.
+
+---
+
+# 7. Fixed-depth extraction
+
+Suppose Branch BX holds with one fixed depth \(r\).
+
+There are only finitely many sequences of the \(r\) outside primitive vertices.  Passing to a subsequence fixes that outside-vertex pattern.  The excursion-preserving differential on the corresponding associated-graded summand acts independently on the intervening \(x\)-runs by the \(\Gamma\)-bar differential.
+
+Therefore unbounded source degree forces at least one fixed local slot to carry unbounded \(\Gamma\)-derived tensor homology between fixed finite-dimensional cross modules.
+
+Schematically, after fixing all finite outside data, one obtains modules \(U,V\), each a finite direct sum of Peirce modules of the form
+\[
+e_zAe_x,\qquad e_xAe_y,\qquad k_x,
+\]
+with
+\[
+\boxed{
+\operatorname{Tor}^{\Gamma}_m(U,V)\neq0
+\quad\text{for arbitrarily high }m.
+}
+\tag{7.1}
+\]
+Finite direct-sum extraction yields a fixed primitive cross pair with persistent local Tor.
+
+For \(r=1\), this specializes to the mixed-linker collision
+\[
+\operatorname{Tor}^{\Gamma}_m(e_zAe_x,e_xAe_y)\neq0
+\quad\text{i.o.}
+\]
+from the two-sided finite-head theorem.
+
+Thus the finite-head collision should be viewed as a **fixed-depth shadow of diagonal complete screening**, not as the primary visibility bridge.
+
+No claim is made that (7.1) alone lifts to ambient simple Tor.
+
+---
+
+# 8. New primary universal split
+
+Now assume \(A\) is a vertex-minimal counterexample to Universal Gap A and choose \(x\) with
+\[
+\operatorname{pd}_A L_x=\infty.
+\]
+There are only two cases.
+
+## Case LT — local trivial
+\[
+e_xAe_x=k.
+\]
+Then vertex deletion gives
+\[
+C=A/Ae_xA,
+\qquad
+\operatorname{gldim}C=\infty,
+\]
+and minimality forces \(C\) infinite \(+\).
+
+The derived quotient has only the first negative defect layer:
+\[
+H^0(Q)=C,
+\qquad H^{-1}(Q)=M,
+\qquad H^{<-1}(Q)=0,
+\]
+so the existing two-stage screening machinery applies.
+
+The visible pair comes from \(C\) and is completely screened in the same supported block.
+
+## Case LS — local singular
+\[
+e_xAe_x\neq k.
+\]
+Do **not** first pass through an arbitrary mixed pair.  Apply Theorem 5.1 directly:
+\[
+\operatorname{Tor}^{e_xAe_x}_n(k_x,k_x)\neq0\quad\forall n,
+\]
+while
+\[
+\operatorname{Tor}^{A}_n(R_x,L_x)=0\quad(n\gg0).
+\]
+Thus the diagonal local tail is completely screened by excursions.
+
+This branch stays inside the ordinary bar complex of \(A\); no arbitrary higher \(A_\infty\) operations are needed to formulate the primary obstruction.
+
+---
+
+# 9. Visibility-Aligned Universal Screening Dichotomy
+
+Every vertex-minimal counterexample, after choosing an infinite-pd simple \(L_x\), falls into one of two **already Peirce-aligned** complete-screening problems:
+
+\[
+\boxed{
+\begin{array}{ll}
+\text{LT: } e_xAe_x=k,
+&\text{a fixed supported quotient-Tor tail is screened by the two-stage derived quotient};\\[1mm]
+\text{LS: } e_xAe_x\neq k,
+&\text{the diagonal local self-Tor tail is screened by ordinary excursions in }A.
+\end{array}
+}
+\tag{9.1}
+\]
+
+This removes the former common bottleneck
+\[
+\text{``first obtain a mixed local witness, then make it Peirce-visible.''}
+\]
+
+In both branches visibility is fixed before the screening analysis.
+
+---
+
+# 10. Exact remaining targets
+
+The universal problem has not been solved.
+
+The two remaining closure targets are now:
+
+### LT closure
+Rule out simultaneous complete screening of every supported quotient recurrence in the two-stage local-trivial deletion model.
+
+### LS closure
+Rule out complete diagonal screening
+\[
+\operatorname{Tor}^{\Gamma}_*(k_x,k_x)
+\rightsquigarrow0
+\quad\text{inside}\quad
+\operatorname{Tor}^{A}_*(R_x,L_x)
+\]
+when \(L_x\) itself has infinite projective dimension over \(A\).
+
+For LS, the first exact split is:
+
+1. bounded excursion depth \(\Rightarrow\) fixed finite cross-screening architecture / mixed collision;
+2. unbounded excursion depth \(\Rightarrow\) recurrent actual excursion words / necklace architecture.
+
+The extra hypothesis
+\[
+\operatorname{pd}_A L_x=\infty
+\]
+must now be used decisively.  The diagonal screening theorem itself did not need it; therefore any attempted closure which also does not use it is likely too strong and should be adversarially tested against finite-global-dimension examples such as Auslander-type screening configurations.
+
+---
+
+# 11. Route governance
+
+1. The local-singular primary route is now **diagonal excursion screening**, not mixed-linker visibility.
+2. The two-sided finite-head collision is retained as a structural theorem and as the bounded-excursion extraction mechanism.
+3. The derived-weight quotient spectral sequence remains the correct general bridge for the minimal-deletion witness, especially in LT and for global synthesis.
+4. Do not infer a Tor class from a support cycle.
+5. Do not infer non-boundary from a zero product.
+6. Any next LS theorem must materially use \(\operatorname{pd}_A L_x=\infty\), otherwise it risks proving a statement falsified by finite-global-dimension algebras with nontrivial local corners.
+
+---
+
+# 12. New theorem — complement-corner infinity
+
+The previous sections used the infinite projective dimension of \(L_x\) only to choose a relevant vertex.  It in fact gives a second strict deletion theorem which does not appear in the earlier project toolbox.
+
+Let
+\[
+f=1-e_x,
+\qquad B=fAf.
+\]
+
+## Theorem 12.1 — Complement-Corner Infinity
+Assume
+\[
+A\text{ is not infinite }+
+\]
+and
+\[
+\operatorname{pd}_A L_x=\infty.
+\]
+Then
+\[
+\boxed{
+\operatorname{gldim}(fAf)=\infty.
+}
+\tag{12.1}
+\]
+
+### Proof
+Take the minimal left \(A\)-projective resolution
+\[
+\cdots\to P_2\to P_1\to P_0\to L_x\to0.
+\]
+Because \(A\) is not infinite \(+\), the one-way law gives \(N\) such that
+\[
+e_xP_n=0
+\qquad(n\ge N).
+\tag{12.2}
+\]
+
+Write
+\[
+P_n\simeq\bigoplus_{y}(Ae_y)^{\beta_{ny}}.
+\]
+If \(Ae_y\) occurs in \(P_n\) with \(n\ge N\), then (12.2) implies
+\[
+e_xAe_y=0.
+\tag{12.3}
+\]
+Hence
+\[
+Ae_y=fAe_y=fAf\,e_y=Be_y.
+\tag{12.4}
+\]
+So every \(P_n\), \(n\ge N\), is already a finitely generated projective left \(B\)-module.
+
+Put
+\[
+K=\Omega_A^{N+1}(L_x)=\operatorname{im}(P_N\to P_{N-1}).
+\]
+Since \(e_xP_N=0\),
+\[
+e_xK=0,
+\]
+so \(K=fK\) is naturally a \(B\)-module.  The tail
+\[
+\cdots\to P_{N+2}\to P_{N+1}\to P_N\to K\to0
+\tag{12.5}
+\]
+is therefore an exact projective \(B\)-resolution.
+
+It is minimal over \(B\).  Indeed the \(A\)-resolution is minimal, so the image of every tail differential lies in
+\[
+J_A P_n.
+\]
+For an indecomposable tail summand \(Ae_y=Be_y\), (12.3) gives
+\[
+J_Ae_y=fJ_Ae_y=fJ_Af\,e_y=J_Be_y.
+\]
+Thus every tail differential is radical also as a \(B\)-map.
+
+Since \(\operatorname{pd}_A L_x=\infty\), the minimal \(A\)-resolution has \(P_n\neq0\) for all \(n\).  Hence the minimal \(B\)-resolution (12.5) never terminates, and
+\[
+\operatorname{pd}_B K=\infty.
+\]
+Therefore
+\[
+\operatorname{gldim}B=\infty.
+\]
+\(\square\)
+
+---
+
+# 13. Double Vertex-Deletion Theorem
+
+The project already had the ordinary quotient deletion theorem:
+\[
+C=A/Ae_xA,
+\qquad
+\operatorname{pd}_A L_x=\infty,
+\qquad
+A\text{ not }+
+\Longrightarrow
+\operatorname{gldim}C=\infty.
+\tag{13.1}
+\]
+
+Combining (13.1) with Theorem 12.1 yields:
+
+## Theorem 13.1 — Double Deletion
+For every infinite-pd vertex \(x\) in a hypothetical Gap-A failure,
+\[
+\boxed{
+\operatorname{gldim}(A/Ae_xA)=\infty
+\quad\text{and}\quad
+\operatorname{gldim}((1-e_x)A(1-e_x))=\infty.
+}
+\tag{13.2}
+\]
+
+If \(A\) is vertex-minimal among all counterexamples, both algebras have strictly fewer primitive vertices.  Therefore minimality forces **both** to be infinite \(+\):
+\[
+\boxed{
+C_x=A/Ae_xA\text{ is infinite }+,
+\qquad
+B_x=(1-e_x)A(1-e_x)\text{ is infinite }+.
+}
+\tag{13.3}
+\]
+
+This is stronger than the previously used quotient-only minimality reduction.
+
+---
+
+# 14. Morita-context squeeze
+
+The two smaller algebras in Theorem 13.1 have the same surviving primitive vertices but different multiplication.
+
+Put
+\[
+B=fAf,
+\qquad
+M=fAe,
+\qquad
+N=eAf,
+\qquad
+\Gamma=eAe.
+\]
+Then
+\[
+A\cong
+\begin{pmatrix}
+\Gamma & N\\
+M & B
+\end{pmatrix}
+\]
+with the usual Morita-context multiplication maps.
+
+Moreover
+\[
+C=A/AeA
+\cong
+B/K,
+\tag{14.1}
+\]
+where
+\[
+K=fAeAf
+=
+\operatorname{im}\left(
+M\otimes_{\Gamma}N\longrightarrow B
+\right).
+\tag{14.2}
+\]
+
+Thus a vertex-minimal counterexample with infinite-pd vertex \(x\) has the rigid shape
+\[
+\boxed{
+B\text{ infinite }+,
+\qquad
+B/K\text{ infinite }+,
+\qquad
+A\text{ not infinite }+.
+}
+\tag{14.3}
+\]
+
+If additionally \(\Gamma\neq k\), then \(\Gamma\) itself is one-vertex infinite \(+\), while its diagonal self-Tor is completely screened in \(A\).  Hence the local-singular branch becomes a **three-way squeeze**:
+\[
+\boxed{
+\Gamma\text{ infinite }+,
+\qquad
+B\text{ infinite }+,
+\qquad
+C=B/K\text{ infinite }+,
+\qquad
+A\text{ not }+.
+}
+\tag{14.4}
+\]
+
+The coupling ideal \(K\) factors through the single deleted vertex.  Any universal counterexample must therefore allow the same one-vertex Morita context simultaneously to:
+
+1. screen the diagonal \(\Gamma\)-tail when passing to \(A\);
+2. screen every persistent supported \(B\)-witness when passing to \(A\);
+3. while the quotient \(B/K\) still retains or creates an infinite-\(+\) witness.
+
+This is the new highest-leverage formulation of the local-singular branch.
+
+---
+
+# 15. Immediate route consequence
+
+The next LS target should no longer be phrased only as a necklace closure.
+
+It is now:
+\[
+\boxed{
+\textbf{Morita-Context Mutual-Screening Closure:}
+\quad
+\text{rule out (14.4) under }\operatorname{pd}_A L_x=\infty.
+}
+\tag{15.1}
+\]
+
+This formulation uses all three pieces that were previously separated:
+
+- the local diagonal singularity \(\Gamma\);
+- the strict complement-corner descent \(B\);
+- the ordinary quotient descent \(C=B/K\).
+
+The old mixed-linker collision records the nontrivial homology of the Morita coupling \(M\otimes_\Gamma^{\mathbf L}N\).  It should now be inserted as the coupling defect between the three forced positive objects, rather than asked to create visibility by itself.

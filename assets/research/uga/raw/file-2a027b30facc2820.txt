@@ -1,0 +1,35 @@
+# 任意顶点数的当前缺口
+
+状态：**Universal Gap A 未解决。** 2026-09-27 建立正式 MRS 记录。此前的证明稿和计算证据继续使用；新建目录不重启研究。
+
+## 目标与量词
+
+令 $A$ 为任意有限维 basic 复代数，$1=\sum_{i=1}^N e_i$，$J=\operatorname{rad}A$，$L_j=Ae_j/Je_j$，$R_i=e_iA/e_iJ$。要证明
+
+$$
+\operatorname{gldim}A=\infty
+\Longrightarrow
+\exists i,j:\ e_jAe_i\ne0,\quad
+\operatorname{Tor}^A_n(R_i,L_j)\ne0
+\text{ 对无穷多个 }n.
+$$
+
+先固定代数，再选一个固定的有序顶点对，最后取无穷多个次数。没有添加图形、Loewy 长度或表示型限制。普通 Hochschild 同调的存活仍需另外证明。
+
+## 已有论证与本次推进
+
+已有 two-stage derived deletion 稿在 $eAe=\mathbb C$ 时识别 $C=A/AeA$、$M=\operatorname{Tor}_2^A(C,C)$ 和 $\kappa\in HH^3(C,M)$。相应 bar 微分只有 $b_2,b_3$，但谱序列可以有非零高页微分。实际八维例子中，商的全部高次类被消去，原代数却仍有新的持续 Tor。因此不能只追踪商类。
+
+本次 [[Screening-Corridor|消去范围]] 证明：若 $d=\operatorname{pd}_{C^e}M<\infty$，次数 $n$ 的商类死亡页至少为 $\lceil(n-1)/(d+2)\rceil$。[[Rees-HPL-Screening|Rees 对应]] 把该死亡页识别为**低一同调次数**中的精确挠阶。
+
+[[Rees-Noetherian-Screening-Collapse|条件定理]] 随之得到：若整条同调尾部的 $t$-挠阶有统一界，高次商类就全部存活。Noetherian 算子环上的有限生成性足以给出此界，但一般情形的算子和有限生成性尚未构造。
+
+## 当前核心问题
+
+真实有限维删点模型能否长期产生线性增长的 Rees 挠阶，同时没有 supported 返回或严格下降？[[Cycle-Shift-Obstruction-Tower|算子障碍]] 精确写出了提升方程；首个非零障碍怎样给出返回或下降仍未证明。
+
+当 $M$ 的双模投射维数无限时，[[Vertical-Pure-Bimodule-Singularity|双模障碍]] 不受当前消去范围控制。旧路线中的 Yoneda 有限生成桥梁 FG、整个前缀复形的 perfectness 桥梁 PC、泛点持续非消失桥梁 GP 也仍未解决。
+
+八维校准的源次数为六、目标次数为五、挠阶恰为二。20 个候选边界的精确线性方程无解。有限计算核对公式和符号，不能替代一般证明。带证明的记录保留自审状态，未授予独立证明接受。
+
+正式记录：b513442a-b1ea-47a6-a000-3e0a05a663b4。来源原稿、字节身份及审核报告见 [[Universal-Gap-A-MRS-Map|证据地图]]。

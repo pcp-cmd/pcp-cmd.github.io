@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-04T01:50:53.741254+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "4f4089c6acc5e8d7e13b74c960fe51a921ee4e434cdb39a667dc9835ffecb094",
+    "object": "Actual sharp finite-complement perfect-corner ordinary comparison with strict dimension descent",
+    "deliverables": [
+      "verify_perfect_corner.py",
+      "perfect-corner-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "The corner is B=eAe, not the ordinary quotient A/AfA.",
+      "Deleted LEFT simple pds are bounded by d and the actual Ae RIGHT B pd by t.",
+      "A minimal B resolution gives A-projective tensor terms; nonexact homology is retained and the counit cone is repaired using a bounded ordinary projective complex.",
+      "The written comparison is ordinary Ext restriction and its dual Tor map B->A, for all finite coefficients above N=d+t+1.",
+      "The actual all-p calibration has regular right dual-number couplers, d=1,t=0,N=2 and no finite-side cover-closed block on either side.",
+      "Both-sided minimal kernels identify finite pd and recurrent modules; integral inverse bases support all-field validity.",
+      "The degree-two mixed Tor mismatch makes the strict cutoff sharp; high natural maps are proved separately, not sampled.",
+      "Infinite counts are preserved; the eligible descent is strict algebra dimension/vertex number.",
+      "The family already has supported ordinary return and is not a Gap-A counterexample."
+    ],
+    "domain": "Actual elementary triangular algebra tables, ordinary projective complexes and finite-complement corner comparison",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Exact Fraction table and minimal-cover calculations with integral unimodular basis certificates"
+      ],
+      "existence_evidence": "verify_perfect_corner.py exports actual minimal kernels and literal corner-projectivity isomorphisms with integer inverses.",
+      "local_availability": "available",
+      "availability_evidence": "Actual local run passed under Python 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "selection_reason": "Exact local finite-module maps certify the calibration; the all-module uniform comparison is a separate ordinary bounded-cone proof.",
+    "fallback_reason": "Reused same-session inventory: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python through math-science-computation observer_run.py",
+    "command_or_input": "python -B verify_perfect_corner.py --project-root PROJECT_ROOT --out perfect-corner-result.json",
+    "code_artifact": "verify_perfect_corner.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_perfect_corner.py",
+      "sha256": "6a3282a122d8a391fca227dc2e184666cc82383d66924ac6c0e9b0bb469756c6"
+    },
+    {
+      "role": "result",
+      "path": "perfect-corner-result.json",
+      "sha256": "c8a247777aa6b67d8e574c5577b92ca38ecc9960349133c9e89beda2988c8556"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "result_artifact": "perfect-corner-result.json",
+    "summary": "p=3,5,8 audits passed: 147694 associativity triples, 92 actual covers, 89 kernel isomorphisms, 2486 integer basis inverse certificates and three literal corner-projectivity isomorphisms. Degree-two mixed Tor fails comparison; written high comparison holds for n>2."
+  },
+  "verification": {
+    "methods": [
+      "Full-basis associativity and radical nilpotence",
+      "Actual LEFT/RIGHT minimal covers with finite termination and exact recurrent kernels",
+      "Integral radical/top and exact-sequence bases with integer inverses",
+      "Actual Ae RIGHT corner module isomorphism to two copies of each corner projective",
+      "Actual degree-two A Betti multiplicity versus the product corner zero mixed Tor",
+      "Separate all-parameter/all-field/all-module ordinary bounded-cone proof",
+      "Record schema and artifact/dependency hash validation"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact rational/integer arithmetic; no numerical residual.",
+    "limitations": [
+      "Same researcher and shared frozen helpers, not independent verification.",
+      "The finite calibration does not prove the uniform theorem; the written ordinary projective/cone argument does.",
+      "All-p and all-field validity require the separate literal module/basis proof.",
+      "High natural Ext restriction/Tor map ranks are not computationally sampled.",
+      "The Tor direction is B->A; there need not be a quotient homomorphism A->B.",
+      "Perfection of the actual corner module is not automatic and does not inherit without checking.",
+      "The theorem preserves both infinite counts and lowers only dimension/vertex number.",
+      "The nonperfect E_p from T21 has unbounded finite-pd Tor outputs and is not covered.",
+      "The calibration already has supported ordinary return; no badness-specific counterexample or full Gap-A closure.",
+      "Hash/schema validation is integrity checking, not independent semantic verification.",
+      "Backend inventory reused from the same session; no remote or paid backend."
+    ]
+  }
+}

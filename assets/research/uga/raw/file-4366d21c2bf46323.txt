@@ -1,0 +1,15 @@
+Initial exact calibration execution, before canonical publication.
+Exit code 1, captured from unified exec session 88266:
+
+Traceback (most recent call last):
+  File "C:\Users\pcp\AppData\Local\Temp\UGA-20261004-yoneda-termination\verify_yoneda_termination.py", line 99, in <module>
+    assert len(B.basis)==40
+           ^^^^^^^^^^^^^^^^
+AssertionError
+
+Diagnosis: D's retained corner is the product of two dual-number algebras,
+dimension 4, so B=(eD e) tensor A5 has dimension 20. Ae is two regular
+RIGHT B copies and has dimension 40. The initial expected dimensions 40/80
+were mistaken. Corrected constants are 20/40. No general theorem argument
+depended on those erroneous expected constants. The next full exact run
+must pass before this evidence can be checkpointed.

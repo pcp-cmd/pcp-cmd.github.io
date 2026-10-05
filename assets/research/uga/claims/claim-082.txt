@@ -1,0 +1,11 @@
+## UGA-C082 — Erasing an Infinite-Pd Left Vertex Can Increase Both Infinite-Simple Counts
+**Status:** EXPLICIT ALL-FIELD / ALL-DEGREE ACTUAL MODULE COUNTERCALIBRATION; BOUNDED EXACT Q SELF-CHECK / NOT INDEPENDENTLY VERIFIED  
+**Source:** two-infinite-simple Run, Sections 5--7; Infinite-Simple-Count-Evidence.
+
+Let B=End_{k[t]/t^3}(M1+M2+M3)^op, M_i=k[t]/t^i, with its literal Hom-monomial multiplication. Its dimension is14 and left/right simple pds are2,2,1, by actual finite resolutions. Set Gamma=k[t_v]/t_v^2, G=Gamma/(t_v), V=G tensor e3B and A=[[B,0],[V,Gamma]], dimension22, connected with four vertices. Exact triangular induction keeps L1,L2 of pd two. Actual Omega L3=Ae2 direct sum Lv and Omega Lv=Lv give I_L(A)={3,v}. Direct right covers have Omega_right Rv=e3A direct sum Rv and all old right simples finite, giving I_R(A)={v}.
+
+The physical ordinary quotient C=A/Ae3A kills all V and Be3B and equals D times Gamma, dimension6. D is the radical-square-zero two-cycle: only the t endomorphism of M2 factors through M3 among retained Hom spaces. All three retained left/right simples are infinite-pd. The deleted L3 has infinite LEFT pd, yet counts increase LEFT2->3 and RIGHT1->3, because formerly finite retained L1,L2 acquire infinite quotient pd. Unique retained cross-map lifts have a nonzero product in the corner and zero product in D, so an ordinary vertex-aligned corner section is absent.
+
+A already has supported Tor(Rv,Lv)=k in every degree. Therefore this refutes automatic count monotonicity for deletion of an infinite-pd LEFT simple, not Universal Gap A or the full visible-return OR eligible badness-preserving strict-count-reduction alternative. Deleted R3 is finite-pd on the right; no equality of side labels is claimed. Literal module proofs establish all fields/degrees; 24,472 full-basis associativity triples, the physical quotient and actual module isomorphisms pass exact rational checks with recorded frozen-helper hashes. Same-author shared-code computation and record validation are not independent mathematical verification.
+
+---

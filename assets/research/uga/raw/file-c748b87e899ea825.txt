@@ -1,0 +1,536 @@
+# Universal Gap A — Supported Derived-Weight Screening
+## Minimal-counterexample synthesis of quotient witness and local-corner defect
+
+**Date:** 2026-10-02  
+**Status:** PROJECT-DERIVED THEOREM PACKAGE / REQUIRES INDEPENDENT VERIFICATION  
+**Scope:** elementary finite-dimensional algebras over a field; arbitrary number of vertices.  
+**Main correction:** in a vertex-minimal counterexample, do not ask the local mixed-linker pair itself to become the visible infinite-\(+\) witness.  The visible pair is supplied by the smaller ordinary quotient; the derived quotient supplies the screening defect.
+
+---
+
+# 0. Frozen inputs
+
+Let \(A\) be a hypothetical counterexample to Universal Gap A which is minimal in the number of primitive vertices:
+
+\[
+\operatorname{gldim}A=\infty,
+\qquad
+A\text{ is not infinite }+.
+\]
+
+Choose a vertex \(x\) with
+\[
+\operatorname{pd}_A L_x=\infty,
+\]
+and put
+\[
+e=e_x,\qquad \Gamma=eAe,\qquad C=A/AeA,
+\qquad Q=A/^{\mathbf L}AeA.
+\]
+
+The project-derived vertex-deletion theorem gives
+\[
+\operatorname{gldim}C=\infty.
+\]
+Since \(C\) has fewer vertices than \(A\), minimality of \(A\) forces \(C\) to be infinite \(+\).
+
+Hence there is a **fixed** pair of surviving vertices \((i,j)\), both different from \(x\), such that
+\[
+e_jCe_i\neq0
+\]
+and
+\[
+\operatorname{Tor}^{C}_n(R_i,L_j)\neq0
+\quad\text{for infinitely many }n.
+\tag{0.1}
+\]
+
+Because \(C\) is a quotient of \(A\),
+\[
+e_jCe_i\neq0\Longrightarrow e_jAe_i\neq0.
+\]
+Since \(A\) is not infinite \(+\), this same supported pair satisfies
+\[
+\operatorname{Tor}^{A}_n(R_i,L_j)=0
+\qquad(n\gg0).
+\tag{0.2}
+\]
+
+Thus the visibility problem is aligned **before** any screening analysis begins.
+
+---
+
+# 1. Literature-confirmed derived quotient facts
+
+Braun--Chuang--Lazarev identify the idempotent derived quotient with derived localisation:
+\[
+Q\simeq L_{1-e}A.
+\]
+The localisation map \(A\to Q\) is a homological epimorphism; equivalently restriction
+\[
+D(Q)\longrightarrow D(A)
+\]
+is fully faithful.
+
+For right and left \(Q\)-modules \(R,L\), associativity and
+\[
+Q\otimes_A^{\mathbf L}Q\simeq Q
+\]
+give
+\[
+R\otimes_A^{\mathbf L}L
+\simeq
+R\otimes_Q^{\mathbf L}L.
+\tag{1.1}
+\]
+The simples \(R_i,L_j\) with \(i,j\neq x\) are \((1-e)\)-local, hence are naturally in this class. Therefore
+\[
+\boxed{
+\operatorname{Tor}^{A}_n(R_i,L_j)
+\cong
+\operatorname{Tor}^{Q}_n(R_i,L_j)
+}
+\qquad\forall n.
+\tag{1.2}
+\]
+
+Booth's cohomology description of the derived quotient gives
+\[
+H^0(Q)=C,
+\]
+\[
+H^{-1}(Q)=\ker(Ae\otimes_{\Gamma}eA\to A),
+\]
+and for \(d>1\),
+\[
+\boxed{
+H^{-d}(Q)
+\cong
+\operatorname{Tor}^{\Gamma}_{d-1}(Ae,eA).
+}
+\tag{1.3}
+\]
+In particular \(Q\) is connective.
+
+References used for these inputs:
+
+- Braun--Chuang--Lazarev, *Derived localisation of algebras and modules*, especially the idempotent-derived-quotient discussion and the homological-epimorphism property of derived localisation.
+- Booth, *Noncommutative deformation theory, the derived quotient, and DG singularity categories*, derived-quotient cohomology formula.
+
+---
+
+# 2. Minimal relative \(A_\infty\) model
+
+Let
+\[
+S=\bigoplus_{v\neq x}ke_v.
+\]
+Choose a strictly unital minimal \(S\)-augmented \(A_\infty\)-model
+\[
+H:=H^*(Q)
+\]
+of \(Q\).  Thus
+\[
+H^0=C,
+\qquad H^{>0}=0,
+\]
+and
+\[
+|m_r|=2-r.
+\]
+Write the reduced part as
+\[
+\bar H=\operatorname{rad}C\oplus H^{<0}.
+\]
+For the fixed supported pair \((i,j)\) from (0.1), use the reduced relative bar complex
+\[
+B_{ij}(H)
+=
+R_i\otimes_S T^c_S(s\bar H)\otimes_S L_j.
+\tag{2.1}
+\]
+Its homology computes
+\[
+H_n(B_{ij}(H))
+\cong
+\operatorname{Tor}^{Q}_n(R_i,L_j).
+\tag{2.2}
+\]
+
+---
+
+# 3. Negative-weight filtration
+
+For a homogeneous bar word
+\[
+w=[h_\ell|\cdots|h_1]
+\]
+with
+\[
+|h_a|=-d_a,\qquad d_a\ge0,
+\]
+define its **negative weight**
+\[
+\operatorname{wt}(w)=\sum_{a=1}^{\ell}d_a.
+\tag{3.1}
+\]
+The homological bar degree of \(w\) is
+\[
+N=\ell+\operatorname{wt}(w).
+\tag{3.2}
+\]
+
+Filter decreasingly by weight:
+\[
+F^pB_{ij}
+=
+\langle w:\operatorname{wt}(w)\ge p\rangle.
+\tag{3.3}
+\]
+
+## Lemma 3.1 — Weight monotonicity
+If a bar differential term contracts \(r\) consecutive inputs by \(m_r\), then
+\[
+\operatorname{wt}(\text{output word})
+=
+\operatorname{wt}(\text{input word})+(r-2).
+\tag{3.4}
+\]
+Hence the bar differential never decreases negative weight.
+
+### Proof
+If the contracted inputs have negative magnitudes \(d_1,\ldots,d_r\), then
+\[
+\left|m_r(h_r,\ldots,h_1)\right|
+=
+-\sum_a d_a+2-r.
+\]
+Therefore its negative magnitude is
+\[
+\sum_a d_a+r-2.
+\]
+All untouched letters contribute the same weight before and after the contraction.  This proves (3.4). \(\square\)
+
+## Lemma 3.2 — Degreewise finiteness
+For fixed homological degree \(N\),
+\[
+0\le \operatorname{wt}(w)\le N.
+\]
+Thus
+\[
+F^{N+1}B_{ij,N}=0.
+\]
+The weight filtration is therefore finite in every total degree, so its spectral sequence converges without any global boundedness assumption on \(H^{<0}(Q)\).
+
+---
+
+# 4. Derived-Weight Screening Spectral Sequence
+
+Use bidegrees
+\[
+p=\operatorname{wt},
+\qquad q=N-p.
+\]
+The weight-preserving part of the bar differential is exactly the binary operation \(m_2\).  All \(m_r\) for \(r\ge3\) raise weight by \(r-2\).
+
+Therefore the filtration in Section 3 gives a convergent spectral sequence
+\[
+E_r^{p,q}(i,j)
+\Longrightarrow
+\operatorname{Tor}^{Q}_{p+q}(R_i,L_j)
+\cong
+\operatorname{Tor}^{A}_{p+q}(R_i,L_j),
+\tag{4.1}
+\]
+with differential convention
+\[
+\boxed{
+d_r:E_r^{p,q}\longrightarrow E_r^{p+r,q-r-1}.
+}
+\tag{4.2}
+\]
+
+## Theorem 4.1 — The zero-weight column is the ordinary quotient Tor
+At weight zero every bar letter lies in
+\[
+\operatorname{rad}H^0=\operatorname{rad}C,
+\]
+and the associated differential is exactly the ordinary normalized bar differential of \(C\). Hence
+\[
+\boxed{
+E_1^{0,n}(i,j)
+\cong
+\operatorname{Tor}^{C}_n(R_i,L_j).
+}
+\tag{4.3}
+\]
+
+This is the general arbitrary-corner analogue of the zero-column in the old two-stage deletion spectral sequence.
+
+### Consistency check with the local-trivial two-stage model
+If \(eAe=k\), then \(H^{<-1}(Q)=0\).  Negative weight is simply the number of \(H^{-1}\)-letters.  Writing the old two-stage second coordinate \(q_{\rm old}\), one has
+\[
+q=q_{\rm old}+p.
+\]
+The general differential (4.2) becomes
+\[
+(p,q_{\rm old})\mapsto(p+r,q_{\rm old}-2r-1),
+\]
+which is exactly the previously audited two-stage formula.
+
+---
+
+# 5. Supported Complete-Screening Normal Form
+
+## Theorem 5.1
+Let \(A\) be a vertex-minimal counterexample to Universal Gap A, choose \(x\) with \(\operatorname{pd}_A L_x=\infty\), and form \(C,Q\) as above.  Then there is a fixed pair \((i,j)\), with
+\[
+e_jCe_i\neq0,
+\]
+for which:
+
+1. the zero-weight column is nonzero in infinitely many degrees:
+   \[
+   E_1^{0,n}(i,j)\neq0
+   \quad\text{for infinitely many }n;
+   \tag{5.1}
+   \]
+2. the abutment for the same pair vanishes in all sufficiently high total degrees:
+   \[
+   \operatorname{Tor}^{Q}_n(R_i,L_j)
+   \cong
+   \operatorname{Tor}^{A}_n(R_i,L_j)
+   =0
+   \qquad(n\gg0).
+   \tag{5.2}
+   \]
+
+Consequently infinitely many nonzero classes in the **same Peirce-supported zero-weight block** must be killed by positive-weight differentials.
+
+### Proof
+Vertex deletion plus minimality gives \(C\) infinite \(+\), hence a fixed pair satisfying (0.1).  Equation (4.3) gives (5.1).  The support relation lifts from \(C\) to \(A\), and \(A\) is not infinite \(+\), so (0.2) holds.  Equation (1.2) gives (5.2).  Convergence then forces the indicated deaths. \(\square\)
+
+### Main consequence
+The old visibility mismatch is absent here.  The detector pair and the Peirce-support pair are chosen **before** passage to the derived quotient and stay fixed throughout the spectral sequence.
+
+The remaining problem is purely:
+\[
+\boxed{
+\text{How can positive negative-weight derived data completely screen}
+\text{ a fixed supported infinite Tor tail of }C?
+}
+\tag{5.3}
+\]
+
+---
+
+# 6. Unification of the two local-corner branches
+
+The same spectral sequence treats both branches of the two-sided finite-head collision theorem.
+
+## 6.1 Local-trivial branch
+If
+\[
+\Gamma=eAe=k,
+\]
+then
+\[
+H^{<-1}(Q)=0.
+\]
+All screening is generated from the single defect layer
+\[
+H^{-1}(Q)=\ker(Ae\otimes_k eA\to A),
+\]
+with the old two-stage \(m_3\)-controlled normal form.
+
+## 6.2 Local-singular branch
+If
+\[
+\Gamma=eAe\neq k,
+\]
+the two-sided finite-head collision theorem gives a fixed pair \((z,y)\), \(z,y\neq x\), such that
+\[
+\operatorname{Tor}^{\Gamma}_m(e_zAe,eAe_y)\neq0
+\quad\text{for infinitely many }m.
+\]
+By (1.3),
+\[
+\boxed{
+e_zH^{-(m+1)}(Q)e_y\neq0
+\quad\text{for infinitely many }m.
+}
+\tag{6.1}
+\]
+Thus the local-singular branch supplies genuinely unbounded negative-weight screening material inside the same derived quotient that screens the fixed visible quotient pair from Theorem 5.1.
+
+This is the correct role of the mixed-linker collision: it is a **carrier/screening-resource theorem**, not by itself the visible infinite-\(+\) witness.
+
+---
+
+# 7. Screening-weight dichotomy
+
+Choose nonzero zero-column classes
+\[
+\alpha_t\in E_1^{0,n_t}(i,j),
+\qquad n_t\to\infty,
+\]
+which die in the spectral sequence.  Let \(r_t\ge1\) be the first page on which \(\alpha_t\) dies.
+
+Then exactly one of the following occurs after passage to a subsequence.
+
+### Branch BW — bounded screening weight
+There exists \(R\) such that
+\[
+r_t\le R
+\qquad\forall t.
+\tag{7.1}
+\]
+By pigeonhole, one fixed page \(r\le R\) kills infinitely many high-degree quotient classes.
+
+Only the finite derived jet
+\[
+H^0,H^{-1},\ldots,H^{-r}
+\]
+and operations of weight increase at most \(r\) can participate.  In particular a single operation \(m_s\) contributing directly to such a differential has
+\[
+s-2\le r,
+\qquad s\le r+2.
+\tag{7.2}
+\]
+Thus this branch is a **finite-weight / finite-arity screening problem**, even though the homological degrees \(n_t\) are unbounded.
+
+### Branch UW — unbounded screening weight
+\[
+r_t\to\infty.
+\tag{7.3}
+\]
+Then complete screening requires correction data of arbitrarily large total negative weight.
+
+This is the general replacement for the old phrase “unbounded excursion depth”.  It is intrinsic to the derived quotient and aligned with the actual visible quotient witness.
+
+---
+
+# 8. Two-parameter extraction in the unbounded-weight branch
+
+For each large \(r_t\), a nonzero target on page \(r_t\) has a representative whose leading associated-graded component contains a nonzero composable bar word of exact negative weight \(r_t\):
+\[
+w_t=[h_{\ell_t}|\cdots|h_1],
+\qquad
+\sum_a -|h_a|=r_t.
+\tag{8.1}
+\]
+The endpoints are fixed by the chosen pair \((i,j)\).
+
+After taking a subsequence, one of two subbranches occurs.
+
+## 8.1 Deep-edge branch
+The bar lengths \(\ell_t\) are bounded by some \(L\).  Then some letter satisfies
+\[
+-|h_a|\ge r_t/L\to\infty.
+\]
+Because there are only finitely many positions and primitive endpoint pairs, there are fixed vertices \((u,v)\) and unbounded integers \(d_t\) such that
+\[
+0\neq\eta_t\in e_uH^{-d_t}(Q)e_v,
+\qquad d_t\to\infty,
+\tag{8.2}
+\]
+and these classes occur inside a uniformly bounded composable context connecting the fixed detector endpoints \((i,j)\).
+
+Using (1.3), for \(d_t>1\), each such deep edge is a fixed-Peirce local-corner class
+\[
+\eta_t\in
+\operatorname{Tor}^{\Gamma}_{d_t-1}(e_uAe,eAe_v).
+\tag{8.3}
+\]
+Thus unbounded screening has been forced into an **aligned deep mixed-linker channel**.
+
+## 8.2 Long-word branch
+The lengths \(\ell_t\to\infty\).  Every nonzero Peirce-homogeneous summand of \(w_t\) determines a composable sequence of primitive vertices between the fixed endpoints.  Finiteness of the vertex set forces repeated vertices inside arbitrarily long words.  Hence one can extract arbitrarily long words containing closed consecutive derived subwords.
+
+This is an **actual derived-support necklace**, not the forbidden inference “graph cycle implies homological return”: the letters are genuine nonzero homogeneous classes of \(H^*(Q)\).  No claim is made here that the closed subword is automatically a non-boundary bar class.
+
+The old primitive-vs-decomposable necklace machinery applies only after this extraction and remains subject to its boundary-generation obstruction.
+
+---
+
+# 9. What has been gained
+
+Before this synthesis, the universal frontier was split into:
+
+- a visible witness problem in the ordinary quotient;
+- a local mixed-linker problem at \(eAe\);
+- a Peirce visibility/no-hiding problem when trying to promote the mixed linker directly.
+
+Theorem 5.1 removes the third item from the minimal-counterexample route.
+
+The universal counterexample is now forced into the following single normal form:
+
+\[
+\boxed{
+\begin{array}{c}
+\text{a fixed Peirce-supported pair }(i,j)\text{ has}\newline
+\operatorname{Tor}^{C}_n(R_i,L_j)\neq0\text{ infinitely often},\newline
+\text{but the same pair has }\operatorname{Tor}^{A}_n(R_i,L_j)=0\text{ eventually};\newline
+\text{therefore the derived quotient }Q\text{ completely screens the}\newline
+\text{weight-zero tail by positive negative-weight data.}
+\end{array}
+}
+\tag{9.1}
+\]
+
+The corner \(eAe\) then determines the available screening resources:
+
+- \(eAe=k\): one negative layer, old two-stage branch;
+- \(eAe\neq k\): unbounded negative layers, by finite-head collision.
+
+---
+
+# 10. Current exact frontier
+
+Universal Gap A is **not** proved here.
+
+The next problem is no longer “make an arbitrary local mixed pair visible”.  It is:
+
+\[
+\boxed{
+\textbf{Supported Complete-Screening Closure:}\quad
+\text{Can a finite-dimensional idempotent derived quotient completely kill}\newline
+\text{an infinite weight-zero Tor tail in one fixed Peirce-supported block?}
+}
+\tag{10.1}
+\]
+
+The first split is now exact:
+
+1. **bounded screening weight:** a fixed finite derived jet repeatedly kills arbitrarily high quotient classes;
+2. **unbounded screening weight:** either an aligned deep-edge channel occurs or arbitrarily long actual derived-support words occur.
+
+The highest-value next task is to attack Branch BW first, because it is finite-weight and finite-arity.  If Branch BW can be excluded in a minimal counterexample, all remaining counterexamples are forced into the unbounded-weight branch, where the deep-edge / long-word extraction is already available.
+
+---
+
+# 11. Route corrections / forbidden upgrades
+
+1. Do **not** infer from Armenta's self-syzygy return criterion that one may choose a diagonal Tor pair \(\operatorname{Tor}^C_n(R_v,L_v)\neq0\) infinitely often.  Syzygy Peirce return is weaker than top/projective-multiplicity return.
+2. Do **not** infer ordinary ambient return directly from the local mixed-linker Tor.
+3. Do **not** infer homological return from a repeated vertex label or a support graph cycle.
+4. Do **not** claim radical nilpotence bounds higher \(A_\infty\) arity or Massey excess.
+5. Do **not** identify the old excursion filtration with the present negative-weight filtration.  They solve different comparison problems.
+
+---
+
+# 12. Route fingerprint
+
+**PROOF_OBJECT:** relative bar complex of a minimal \(S\)-augmented \(A_\infty\)-model of the idempotent derived quotient.
+
+**REPRESENTATION_CHANGE:** ordinary quotient witness \(\to\) weight-zero bar column; corner Tor defects \(\to\) negative cohomology of the same derived quotient.
+
+**BRIDGE:** derived localisation \(A\to Q\) plus the negative-weight filtration.
+
+**MINIMALITY USE:** forces the ordinary quotient \(C\) to be infinite \(+\), supplying the fixed visible supported pair.
+
+**LOCAL-TO-GLOBAL USE:** the same pair is supported already in \(A\), so eventual ambient vanishing gives complete screening.
+
+**DESCENT PARAMETER:** first screening weight; in the unbounded branch, bar length versus deepest negative edge.
+
+**MAIN REMAINING OBSTRUCTION:** bounded finite-jet complete screening, or unbounded aligned correction complexity.

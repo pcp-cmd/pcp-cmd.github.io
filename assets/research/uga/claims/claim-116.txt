@@ -1,0 +1,12 @@
+## UGA-C116 — A Finite-Gd Dimension-14 Algebra Has a Dimension-14 Monomial Initial Algebra with an Actual Infinite Ordinary Diagonal Tail
+
+**Status:** COMPLETE ANY-FIELD NORMAL-BASIS AND ACTUAL MINIMAL-RESOLUTION PROOF / NORMAL ADVERSARIAL SELF-AUDIT / AUTOMATIC MONOMIAL TOR-PERSISTENCE TRANSFER FALSE / NOT A UGA COUNTEREXAMPLE / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Global-Route-Audit-Bongartz-Ordinary-Ideals-Trace-and-Relative-Resolution-Barriers-2026-10-04.md Appendix C,G; Global-Route-Audit-Evidence. Reuses the C082 literal Auslander Hom algebra, fixing the End rather than End-op convention explicitly.
+
+Over ANY k take quiver1<->2<->3, a1:1->2,b1:2->1,a2:2->3,b2:3->2, and A=kQ/(b1a1,a1b1-b2a2). With right-to-left mathematical products and degree lex a1>b1>a2>b2, a complete reduced Groebner system has leading words b1a1,a1b1,b2a2a1,b1b2a2,(b2a2)^2, with only a1b1 replaced by b2a2 and all other leads zero. All EIGHT proper overlap ambiguities resolve to zero; no containment ambiguity. The fourteen normal paths identify A with literal End_{k[t]/t^3}(M1+M2+M3), M_i=k[t]/t^i. Actual left simple resolutions have pds2,2,1, so gd A=2.
+
+The monomial B=kQ/in(I) has the SAME dimension14 and SAME physical Peirce dimensions. Let M=B a1, basis a1,a2a1. Actual minimal kernels are Omega_B L1=M and Omega_B M=Bb1 direct_sum B(b2a2)=L1 direct_sum M. The latter is the FULL kernel of Be2 -> M by right multiplication a1, basis b1,b2a2,a2b2a2. Real cover additivity proves L1 a TRUE direct summand of Omega_B^(2m)L1 for EVERY m>=1; hence ordinary Tor^B_(2m)(R1,L1)>=1. In A, the binomial a1b1=b2a2 makes that same vector-space kernel the nonsplit projective P1, terminating the original resolution.
+
+Thus nonzero infinite monomial/overlap ordinary homology does NOT automatically survive to the original algebra, even when dimension and all physical supports agree. A has finite gd and B has a supported diagonal; neither is a UGA counterexample or evidence against a separately proved badness-specific degeneration comparison. The exact shared Q calibration passed6020 literal triples,26 covers,207 integral inverses,3 actual kernel isomorphisms and8 Groebner pairs, including pds2,2,1 for A and2,1 for the separate relative-control Gamma5. The written full basis/kernel induction proves all degrees/fields; the finite Betti prefix does not. No independent/formal MRS certification, routine checksum or novelty claim.
+
+---

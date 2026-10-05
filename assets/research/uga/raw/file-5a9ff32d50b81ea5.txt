@@ -1,0 +1,297 @@
+# 任意 N：ADR 有限生成障碍与非半单返回定理
+
+2026-09-11。状态：下述两个结论均有完整自审证明，并完成有限精确计算；未独立数学核验，未确认新颖性。**Universal Gap A 仍未证明。**
+
+本稿完成两件不同的事。第一，构造每个 \(N\ge3\) 都适用的连通代数，证明加入全部投射模的 radical 截断商后，Yoneda algebra 仍可能在每个高次产生新生成元。第二，将此前只对半单模证明的 split syzygy 返回定理推广到非投射模，并在模块头部集中于一个顶点时推出 infinite supported Tor。
+
+前者排除一个候选证明步骤；后者给出可以实际使用的充分条件。二者都不能替代 [任意 N 主目标](N-Vertex-Main-Route.md) 中仍未证明的桥梁。
+
+## 1. ADR 的有限全局维数究竟提供了什么
+
+对有限维 basic \(\mathbb C\)-代数 \(A\)，记 \(P_i=Ae_i\)，\(J=\operatorname{rad}A\)，\(\ell_i=\ell\ell(P_i)\)，取
+\[
+G_A=\bigoplus_i\bigoplus_{r=1}^{\ell_i}P_i/J^rP_i,
+\qquad B_A=\operatorname{End}_A(G_A)^{\mathrm{op}}.
+\tag{1}
+\]
+这里包含全部 \(P_i\)，并去除了重复同构类。经典 ADR 理论给出
+\[
+\operatorname{gldim}B_A\le\ell\ell(A).
+\tag{2}
+\]
+可核对 [Tsukamoto, Corollary 2.8 与第 3 节开头](https://arxiv.org/pdf/1805.08085)。该文用右模；对 \(A^{\mathrm{op}}\) 应用其结论，再使用有限维代数左右全局维数相同，得到这里的左模约定。
+
+但是 (2) 不会自动推出
+\[
+\operatorname{Ext}_A^*(G_A,G_A)\text{ 有限生成}.
+\tag{3}
+\]
+下面给出 (3) 的显式反例族。特别注意：\(\operatorname{Ext}_{B_A}\) 与 \(\operatorname{Ext}_A\) 是不同的 Ext。
+
+## 2. 每个 N 都存在的反例族
+
+令 \(N\ge3\)，取顶点 \(0,1,2,\ldots,N-1\)，箭头
+\[
+a:0\longrightarrow1,\qquad b:1\longrightarrow0,
+\qquad c_t:1\longrightarrow t\quad(2\le t<N).
+\]
+路径名称按**行走顺序**书写。令
+\[
+A_N=\mathbb C Q/(aba,\ ac_t\ (2\le t<N)).
+\tag{4}
+\]
+除 idempotents 外，一组基为
+\[
+a,b,c_2,\ldots,c_{N-1},\quad p=ab,\quad q=ba,\quad r=bab.
+\]
+所以
+\[
+\dim A_N=2N+3,\qquad J^4=0,\quad J^3\ne0.
+\tag{5}
+\]
+这是连通代数；\(N=3\) 时维数为九。
+
+为避免路径乘法方向的歧义，左投射模的非零箭头作用完整列为
+\[
+\begin{array}{c|c|l}
+\text{模块}&\text{基}&\text{非零箭头作用}\\\hline
+P_0&e_0,a,p&a e_0=a,\ b a=p\\
+P_1&e_1,b,q,r,c_2,\ldots,c_{N-1}
+&b e_1=b,\ c_t e_1=c_t,\ a b=q,\ b q=r\\
+P_t&e_t&\text{无}\quad(2\le t<N).
+\end{array}
+\tag{6}
+\]
+这里 \(p,q,r\) 是上述路径的名字；表中的左乘符号表示模块作用。
+
+记
+\[
+S=L_0,\quad T=L_1,\quad D=\bigoplus_{t=2}^{N-1}P_t,
+\]
+\[
+U=P_0/J^2P_0,\quad V=P_1/J^2P_1,\quad W=P_1/J^3P_1.
+\]
+全部互不同构的 radical 截断商恰为
+\[
+G=S\oplus U\oplus P_0\oplus T\oplus V\oplus W\oplus P_1\oplus D.
+\tag{7}
+\]
+其中 \(D\) 的每个 simple projective 分别计作一个直和项；总数是 \(N+5\)。
+
+令 \(M=JP_0\)。它有基 \(u\)（顶点 1）、\(v\)（顶点 0），唯一非零箭头作用为 \(bu=v\)。因此它具有简单头部 \(T\)，维数为二，且不是 \(G\) 的直和项。事实上，\(G\) 中具有头部 \(T\) 的项的维数依次为 \(1,N,N+1,N+2\)。
+
+### 2.1 全次数的最小 syzygies
+
+由 (6) 的投射覆盖直接得到
+\[
+\begin{array}{c|c}
+X&\Omega X\\\hline
+S&M\\
+U&S\\
+T&P_0\oplus D\\
+V&M\\
+W&S\\
+M&M\oplus D.
+\end{array}
+\tag{8}
+\]
+\(P_0,P_1,P_t\) 的 syzygies 为零。例如覆盖 \(P_1\to M\) 将 \(e_1\) 送到 \(u\)，其核为
+\[
+\langle q,r\rangle\oplus\bigoplus_t\mathbb C c_t\simeq M\oplus D.
+\]
+所有这些覆盖的核均包含在相应投射模的 radical 中，因而是最小覆盖。
+
+因此对于 \(X=S,V\)，
+\[
+\Omega X\simeq M,\qquad
+\Omega^nX\simeq K:=M\oplus D\quad(n\ge2),
+\tag{9}
+\]
+并且
+\[
+\dim\operatorname{Ext}_{A_N}^n(X,T)=1\qquad(n\ge1).
+\tag{10}
+\]
+(10) 使用目标 \(T\) 半单这一事实：从前一项投射模到 \(T\) 的映射消灭其 radical，故没有非零的投射限制边界。
+
+### 2.2 这些类不能通过 G 的任何中间项分解
+
+记 \(E=\operatorname{Ext}_{A_N}^*(G,G)\)，\(I=\bigoplus_{n>0}E^n\)。
+
+**命题 1。** 对 \(X=S,V\)、\(n\ge2\)，有
+\[
+\sum_{p=1}^{n-1}\sum_{Z\mid G}
+\operatorname{Ext}_{A_N}^{n-p}(Z,T)
+\operatorname{Ext}_{A_N}^{p}(X,Z)=0.
+\tag{11}
+\]
+于是
+\[
+\dim e_T(I/I^2)^n e_S=\dim e_T(I/I^2)^n e_V=1
+\quad(n\ge2).
+\tag{12}
+\]
+这里的 idempotents 属于 \(\operatorname{End}_A(G)\)，表示投影到相应直和项。
+
+**证明。** 固定一个中间项 \(Z\)。
+
+若 \(Z\) 投射，则左因子为零。若 \(Z=T\)，由 \(\Omega T=P_0\oplus D\) 及这些投射模的头部可知 \(\operatorname{Ext}^{r}(T,T)=0\) 对一切 \(r>0\) 成立。若 \(Z=S\)，则
+\(\operatorname{Hom}_A(M,S)=\operatorname{Hom}_A(K,S)=0\)，所以右因子为零。
+
+只剩 \(Z=U,V,W\)。每个正次数右因子都由一个实际映射
+\[
+f: M\text{ 或 }K\longrightarrow Z
+\]
+表示。以下逐项检查这些映射都可以选择一次 syzygy 提升为零。
+
+- 到 \(U\) 的映射将 \(u\) 送到 \(\lambda a\)，将 \(v,D\) 送到零。其覆盖提升在 \(P_1\) 的头部取 \(e_1\mapsto\lambda a\in P_0\)。它消灭源覆盖的核 \(\langle q,r,c_t\rangle\)，因为 \(aba=0\)、\(ac_t=0\)。
+- 到 \(V\) 的映射必须消灭 \(M\)。原因是 \(c_tu=0\)，而 \(V\) 的头部向量被每个 \(c_t\) 非平凡作用；至少存在一个这样的箭头。\(D\) 的第 \(t\) 项只能送到 \(\lambda_t c_t\)。取 \(P_1\) 部分提升为零、\(P_t\) 部分的头部送到 \(\lambda_t c_t\in P_1\)。源覆盖的核全部位于 \(P_1\) 部分，所以提升限制为零。
+- 到 \(W\) 的映射将 \(u\) 送到 \(\lambda q\)，将 \(v\) 送到零，并可将 \(D\) 的头部送到各 \(\lambda_t c_t\)。头部的 \(e_1\) 分量仍被 \(c_tu=0\) 排除。在目标覆盖 \(P_1\to W\) 中，分别选择 \(e_1\mapsto\lambda q\)、\(e_t\mapsto\lambda_t c_t\)。它在源核上为零，因为 \(q\) 再受路径 \(q,r,c_t\) 作用均为零。
+
+当源为 \(M\) 时覆盖是 \(P_1\to M\)；当源为 \(K\) 时覆盖是 \(P_1\oplus D\to K\)，其中 \(D\to D\) 是恒等映射。因此上面对源核位置的使用在两种情形都成立。
+
+这样，每个右因子的代表都允许 \(\Omega f=0\)，继而允许所有更高提升为零。Yoneda 乘积由提升后的映射再复合左因子计算，故全部正次数左因子与它的乘积为零。这证明 (11)，再结合 (10) 得到 (12)。\(\square\)
+
+**推论。** 对每个 \(N\ge3\)，
+\[
+\operatorname{gldim}\operatorname{End}_{A_N}(G)^{\mathrm{op}}\le4,
+\qquad
+\operatorname{Ext}_{A_N}^*(G,G)\text{ 不有限生成}.
+\tag{13}
+\]
+事实上 \(\dim(I/I^2)^n\ge2\) 对每个 \(n\ge2\) 成立。若一个非负分次代数具有有限齐次生成集，取其最高正次数 \(d\)，则每个次数 \(>d\) 的元素都是至少两个正次数因子的乘积之和；夹在中间的零次因子可以吸收进正次数因子。因此其 \((I/I^2)^n\) 在 \(n>d\) 必为零，与 (12) 矛盾。有限非齐次生成集也可拆成有限齐次生成集。
+
+**这不是 Universal Gap A 的反例。** 相反，(10) 给出
+\[
+\dim\operatorname{Tor}^{A_N}_n(R_1,L_0)=1\quad(n\ge1),
+\qquad e_0A_Ne_1\ni b\ne0.
+\tag{14}
+\]
+它明确具有 infinite \(+\)-pair。被排除的是无条件的 ADR 有限生成推断，**不是**在完整 Peirce 消失假设 \((Z_b)\) 下的有限生成桥梁。
+
+## 3. 非半单模的分裂返回也产生自由自扩张
+
+此前 [Higher-Syzygy-Return-Theorem.md](Higher-Syzygy-Return-Theorem.md) 使用半单目标，使投射限制边界自动为零。下面去掉半单性，但必须处理这些边界。
+
+**定理 2。** 设 \(M\) 是有限维非投射 \(A\)-模。若存在 \(d,g\ge1\) 和实际直和分解
+\[
+\Omega^dM\simeq M^{\oplus g}\oplus T',
+\tag{15}
+\]
+则存在次数 \(d\) 的类 \(\xi_1,\ldots,\xi_g\)，使
+\[
+\mathbb C\langle x_1,\ldots,x_g\rangle
+\lhook\joinrel\longrightarrow\operatorname{Ext}_A^*(M,M),
+\qquad x_a\longmapsto\xi_a,
+\tag{16}
+\]
+为分次代数单射。因此 \(\dim\operatorname{Ext}_A^{dq}(M,M)\ge g^q\)。
+
+**证明。** 记 \(\underline{\operatorname{Hom}}\) 为模去所有经由有限生成投射模分解的映射。对 \(n\ge1\)，有自然满射
+\[
+\operatorname{Ext}_A^n(M,M)
+=\frac{\operatorname{Hom}_A(\Omega^nM,M)}
+ {\operatorname{im}(\operatorname{Hom}_A(P_{n-1},M))}
+\longrightarrow
+\underline{\operatorname{Hom}}_A(\Omega^nM,M).
+\tag{17}
+\]
+这里只使用“投射限制映射经由投射模分解”，**没有**把 (17) 当成同构。
+
+在稳定模范畴中，投射覆盖给出函子 \(F=\Omega^d\)。覆盖提升的两种选择之差，经由源投射覆盖分解，所以它们诱导同一个稳定映射；复合也与这一构造兼容。
+
+从 (15) 选择包含 \(\iota_a:M\to FM\) 和投影 \(\pi_a:FM\to M\)，满足
+\(\pi_a\iota_b=\delta_{ab}\operatorname{id}_M\)。令 \(\xi_a\) 为 \(\pi_a\) 表示的 Ext 类。长度 \(q\) 的词 \(w=(a_1,\ldots,a_q)\) 在稳定范畴中的乘积代表为
+\[
+\rho_w=\pi_{a_1}\,F(\pi_{a_2})\cdots F^{q-1}(\pi_{a_q}).
+\]
+相应包含为
+\[
+\sigma_v=F^{q-1}(\iota_{b_q})\cdots F(\iota_{b_2})\iota_{b_1}.
+\]
+逐次消去中间的投影与包含，得到
+\[
+\rho_w\sigma_v=\delta_{wv}\operatorname{id}_M
+\quad\text{在稳定范畴中}.
+\tag{18}
+\]
+若某个词的线性组合在 Ext 中为零，经 (17) 后仍为零，再复合各 \(\sigma_v\)，得到相应系数乘以 \(\operatorname{id}_M\) 在稳定范畴中为零。非投射模的恒等映射不能经由投射模分解，否则 \(M\) 将是投射模的直和项。因此所有系数为零。不同词长处于不同次数，故 (16) 为单射。\(\square\)
+
+## 4. 头部集中于一个顶点时，返回检测 supported Tor
+
+**定理 3。** 在定理 2 的条件下，进一步假设
+\[
+\operatorname{top}M\simeq L_i^{\oplus t},\qquad t\ge1.
+\]
+令 \(m_j=[M:L_j]\)，\(\beta_{ij}(n)=\dim\operatorname{Ext}_A^n(L_j,L_i)\)。则对每个 \(q\ge1\)，
+\[
+\sum_j m_j\beta_{ij}(dq)\ge t g^q.
+\tag{19}
+\]
+所有出现的 \(j\) 都满足 \(e_jAe_i\ne0\)。特别地，存在一个固定 \(j\)，使 \((i,j)\) 为 infinite \(+\)-pair。
+
+**证明。** 最小覆盖为 \(P_i^{\oplus t}\twoheadrightarrow M\)，故每个 composition factor \(L_j\) 都满足 \(e_jAe_i\ne0\)。迭代 (15)，并使用最小 syzygy 保持有限直和，得到 \(\Omega^{dq}M\) 包含 \(M^{\oplus g^q}\) 的直接和。目标 \(L_i\) 半单，所以
+\[
+\dim\operatorname{Ext}_A^{dq}(M,L_i)
+=\dim\operatorname{Hom}_A(\Omega^{dq}M,L_i)\ge t g^q.
+\]
+另一方面，对 \(M\) 的 composition series 使用长正合列，给出同次数上界
+\[
+\dim\operatorname{Ext}_A^{dq}(M,L_i)
+\le\sum_jm_j\beta_{ij}(dq).
+\]
+这证明 (19)。只有有限多个 \(j\)，故其中至少一个在无限多个 \(q\) 上非零，再使用简单模的 Ext–Tor 对偶即可。\(\square\)
+
+还得到每个 \(q\) 上的定量下界
+\[
+\max_{j:m_j>0}\dim\operatorname{Tor}_{dq}^A(R_i,L_j)
+\ge\frac{t g^q}{\dim M}.
+\tag{20}
+\]
+不能将这里逐次选出的最大项说成同一个 \(j\) 在每个次数都满足下界；固定 \(j\) 的结论是无限次非零。
+
+对于第 2 节的 \(M=JP_0\)，有 \(t=g=d=1\)，且 \(\Omega M=M\oplus D\)。定理 3 因而适用。由于 \(T=L_1\) 的投射维数为一，具体的永久检测发生在 \(\operatorname{Ext}^n(S,T)\)，与 (14) 一致。
+
+该例中，若把实际返回模块 \(M\) 加入 \(G\)，原来每个高次都无法分解的两个类可以通过 \(M\) 分解。令 \(u_X\in\operatorname{Ext}^1(X,M)\)（\(X=S,V\)）由 \(\Omega X=M\) 的恒等映射表示，令 \(\delta\in\operatorname{Ext}^1(M,M)\) 由返回投影表示，\(v\in\operatorname{Ext}^1(M,T)\) 由返回投影再取头部表示。则
+\[
+v\delta^{n-2}u_X\ne0\in\operatorname{Ext}^n(X,T)\qquad(n\ge2).
+\tag{21}
+\]
+这准确指出了本例中有限截断族遗漏的中间模块。这里没有宣称加入 \(M\) 后整个 Ext algebra 一定有限生成。
+
+## 5. 计算核查与一般结论的边界
+
+[module_ext_certificate.py](module_ext_certificate.py) 计算任意目标模块的
+\(\operatorname{Hom}(\Omega^nX,Y)\) **模去实际投射限制映射**，再构造 Yoneda 比较映射与全部正次数乘积。不能沿用简单目标情形的 Hom 维数直接代替 Ext。
+
+有限核算如下：
+
+| 例子 | 截断模块数 | 计算次数 | 各次新生成元总维数 |
+|---|---:|---:|---|
+| 七维 Saorín 例 | 7 | 1–4 | 14, 0, 0, 0 |
+| 四维量子外代数 | 3 | 1–4 | 8, 0, 0, 0 |
+| \(\mathbb C[x]/(x^4)\) | 4 | 1–5 | 10, 0, 0, 0, 0 |
+| 原归档五维有限全局维数例 | 5 | 1–4 | 5, 0, 0, 0 |
+| 四维分支局部例 \(y^2=z\)，其余 radical 基乘积零 | 3 | 1–4 | 12, 4, 0, 0 |
+| 五顶点中心例，只取 proper 截断商 | 10 | 1–3 | 44, 0, 8 |
+| 本稿 \(A_3\)，九维 | 8 | 1–5 | 16, 2, 2, 2, 2 |
+| 本稿 \(A_4\)，十一维 | 9 | 1–5 | 20, 2, 2, 2, 2 |
+| 本稿 \(A_5\)，十三维 | 10 | 1–5 | 24, 2, 2, 2, 2 |
+
+表格中的有限消失**不**证明全次数有限生成；本稿 (12) 的无限结论来自第 2 节的显式证明。五顶点中心例未把投射项作为目标纳入表格；投射项作为正次数乘积的中间项贡献为零，所以这里的非投射端点乘积计算不受影响。
+
+[audit_module_ext.py](../work/audit_module_ext.py) 与此前的简单目标算法比较了 60 个 Ext/乘积块；用另一套完整 Hom 方程求解器比较了 552 个 Hom/投射限制商；检查了 506 个含边界代表的乘积确实成为零。结果见 [module_ext_audit.json](../work/module_ext_audit.json)。这是程序交叉检查，非独立数学 verifier。
+
+[audit_adr_obstruction.py](../work/audit_adr_obstruction.py) 对 \(N=3,4,5\) 检查了 24 个一次提升为零的实际映射、36 个永久 Ext 分量和 24 个新生成元块，核对第 2 节全次数证明所使用的机制。结果见 [adr_obstruction_audit.json](../work/adr_obstruction_audit.json)。
+
+[audit_cyclic_return.py](../work/audit_cyclic_return.py) 检查四个非半单返回及 29 个非零词。一个六维局部代数中的二维模块满足 \(\Omega M=M^{\oplus2}\)，程序检查长度一、二、三的全部 \(2,4,8\) 个词在 Ext 商中线性无关。对于 \(\mathbb C[x]/(x^4)\) 的 \(M=\mathbb C[x]/(x^3)\)，二次返回的 Hom 空间有二维投射限制边界，程序在取商之后仍检测到返回类及其幂非零。结果见 [cyclic_return_audit.json](../work/cyclic_return_audit.json)。
+
+九维例可复现为：
+```powershell
+python outputs/module_ext_certificate.py --demo forked_saorin --vertices 3 --degrees 5 --output outputs/adr-obstruction-certificates.json
+```
+完整输入与有限结果见 [adr-obstruction-certificates.json](adr-obstruction-certificates.json)；\(N=4,5\) 的核算保存在 [N4](../work/adr_forked_saorin_N4_probe.json)、[N5](../work/adr_forked_saorin_N5_probe.json)。
+
+对任意 \(N\) 的主线，现在有一个明确结论：**不能只靠有限 ADR 截断族及其 endomorphism algebra 的有限全局维数，消除原代数的高次新生成元。** 本稿的实际返回条件能推出 supported Tor 非消失，但尚未证明无限全局维数总能提供这种返回。此前的量子参数例也提醒我们，单个无限消解可以永不重复。
+
+仍然需要使用完整 \((Z_b)\) 假设处理实际 syzygy 比较核中的高次新类。该桥梁依旧未证明。原归档的 verified fact graph 未修改。

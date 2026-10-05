@@ -1,0 +1,25 @@
+# Exact calibration of the tensor-nilpotence ordinary Tor bridge
+
+Use only exact rational arithmetic in local Python. No external provider.
+
+Construct the actual 24-dimensional eight-vertex algebra A24 described by
+its basis and multiplication table in verify_tensor_nilpotence.py.
+Delete x. The retained quotient is dual numbers at y plus a radical-square-zero
+six-vertex chain. Its negative coupler M=L4 tensor R1 is nonprojective on
+both sides, has C^e-projective dimension two, and has zero derived tensor square.
+The nonzero m3(t3,t2,t1)=v kills quotient Tor through degree five.
+Check the claimed strict cutoff n>5 and the ordinary A6 retract giving an
+infinite-pd deleted source. This is infinite +, not a Gap-A counterexample.
+
+Also construct a distinct nine-dimensional four-vertex algebra A9_four.
+Its quotient is the hereditary three-vertex line, and its coupler L0 tensor R2
+has zero derived tensor square even though the correspondence graph of its
+minimal bimodule-projective resolution has a self-loop. Certify global
+dimension four with explicit finite simple resolutions.
+
+Exhaustively check multiplication associativity; the multiplication kernel;
+the actual left/right and bimodule resolutions; ordinary ambient simple-pair
+Tor through degree five (incoming degree six); retained-model Tor and quotient
+comparison maps through degree seven (incoming degree eight).
+Keep computation as bounded self-audit, separate from all-degree proofs.
+Deliver code, full exact result and a validated computation record.

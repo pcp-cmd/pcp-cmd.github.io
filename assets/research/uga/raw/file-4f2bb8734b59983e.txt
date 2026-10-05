@@ -1,0 +1,24 @@
+# Exact audit: ordinary tensor-factor descent and high-pd finite complements
+
+Continue T23. Test the actual tensor-square of its seven-dimensional
+Nakayama calibration, and a sparse tensor with the frozen radical-square-zero
+three-cycle. The general conclusion is a separate proof with actual tensor
+minimal resolutions and ordinary Kunneth, not inference from finite samples.
+
+Deliverables: verify_tensor_factor.py, tensor-factor-result.json,
+computation-record.json, and a written arbitrary-factor ordinary proof.
+
+Use exact rational/integer arithmetic and integral basis inverses. Check full
+basis associativity, Peirce factorisation, actual minimal covers terminating
+at pd two on each side, and selected actual tensor Betti terms against the
+literal factor resolutions. No record may say independently verified.
+
+No Mathematica/native Sage backend is available in the reused same-session
+inventory; local Python 3.14.3 is available. No remote or paid backend, no
+HTML, no Vault modification. Record schema/hash validation checks integrity.
+
+The arbitrary r tensor-power family has exactly one finite-pd simple on
+each side, of pd r; every other simple is infinite-pd. It is already visibly
+infinite +. It tests automatic shallow-vertex availability, not the existence
+of a bad algebra. Tensor-factor descent preserves ordinary supported return
+and can be used only when an ACTUAL tensor decomposition is given.

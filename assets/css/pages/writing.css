@@ -1,0 +1,43 @@
+/* Scoped to the Writing index; article and Room reading keep their styles. */
+.writing-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 16rem);
+  gap: 1.5rem;
+  align-items: center;
+}
+.writing-intro-copy { min-width: 0; }
+.writing-overview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0;
+  overflow: hidden;
+  color: #fff;
+  background: var(--site-ink, #111);
+}
+.writing-overview-art { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+.writing-overview-art svg { display: block; width: 100%; height: 100%; }
+.writing-overview[data-state="ready"] .writing-overview-art { opacity: 1; }
+.writing-overview-fallback { position: absolute; inset: 0; display: grid; place-items: center; font: 24px/1.4 var(--site-display); }
+.writing-overview[data-state="ready"] .writing-overview-fallback { display: none; }
+.writing-overview[data-state="failed"] .writing-overview-fallback { font-size: 14px; }
+.writing-overview-toggle {
+  position: absolute;
+  right: .5rem;
+  bottom: .5rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: .35rem .55rem;
+  border: 1px solid #fff;
+  background: #111;
+  color: #fff;
+  font: 14px/1.4 var(--site-display);
+  cursor: pointer;
+}
+.writing-overview-toggle:hover { color: #111; background: #fff; }
+.site-page .writing-overview-toggle:focus-visible { outline-color: #fff; outline-offset: 2px; }
+@media (max-width: 760px) {
+  .writing-intro { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .writing-overview { grid-row: 1; width: min(100%, 10rem); justify-self: center; }
+  .writing-overview-toggle { right: .25rem; bottom: .25rem; }
+}

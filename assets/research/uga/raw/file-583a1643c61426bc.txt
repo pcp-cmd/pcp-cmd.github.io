@@ -1,0 +1,2265 @@
+{
+  "archive_five_dimensional_finite_gldim": {
+    "algebra_dimension": 5,
+    "max_degree": 5,
+    "comparison_maps_checked": 26,
+    "degrees": [
+      {
+        "degree": 1,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              1
+            ],
+            "deep_kernel_dimensions_by_target": null
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": null
+          }
+        ]
+      },
+      {
+        "degree": 2,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 3,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 4,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ],
+              "3": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ],
+              "3": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 5,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ],
+              "3": [
+                0,
+                0
+              ],
+              "4": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ],
+              "3": [
+                0,
+                0
+              ],
+              "4": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "scope": "exact finite-degree products; no inference of eventual generator vanishing"
+  },
+  "truncated_two_cycle_radical_cube": {
+    "algebra_dimension": 6,
+    "max_degree": 5,
+    "comparison_maps_checked": 40,
+    "degrees": [
+      {
+        "degree": 1,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              1
+            ],
+            "deep_kernel_dimensions_by_target": null
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": null
+          }
+        ]
+      },
+      {
+        "degree": 2,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              1
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              1,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 3,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0
+              ],
+              "2": [
+                1,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                1
+              ],
+              "2": [
+                0,
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 4,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                1,
+                0
+              ],
+              "3": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              1,
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                1
+              ],
+              "3": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 5,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                1
+              ],
+              "2": [
+                0,
+                1
+              ],
+              "3": [
+                0,
+                1
+              ],
+              "4": [
+                0,
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0
+              ],
+              "2": [
+                1,
+                0
+              ],
+              "3": [
+                1,
+                0
+              ],
+              "4": [
+                1,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "scope": "exact finite-degree products; no inference of eventual generator vanishing"
+  },
+  "truncated_polynomial_x4": {
+    "algebra_dimension": 4,
+    "max_degree": 5,
+    "comparison_maps_checked": 20,
+    "degrees": [
+      {
+        "degree": 1,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              1
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1
+            ],
+            "deep_kernel_dimensions_by_target": null
+          }
+        ]
+      },
+      {
+        "degree": 2,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1
+            ],
+            "deep_kernel_dimensions_by_target": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 3,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1
+              ],
+              "2": [
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 4,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0
+              ],
+              "2": [
+                1
+              ],
+              "3": [
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 5,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1
+              ],
+              "2": [
+                1
+              ],
+              "3": [
+                1
+              ],
+              "4": [
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "scope": "exact finite-degree products; no inference of eventual generator vanishing"
+  },
+  "saorin_seven_infinite_generators": {
+    "algebra_dimension": 7,
+    "max_degree": 5,
+    "comparison_maps_checked": 30,
+    "degrees": [
+      {
+        "degree": 1,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              1
+            ],
+            "deep_kernel_dimensions_by_target": null
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": null
+          }
+        ]
+      },
+      {
+        "degree": 2,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              1
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 3,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              1
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 4,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ],
+              "3": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              1
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ],
+              "3": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 5,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ],
+              "3": [
+                0,
+                0
+              ],
+              "4": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              1
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0
+              ],
+              "3": [
+                0,
+                0
+              ],
+              "4": [
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "scope": "exact finite-degree products; no inference of eventual generator vanishing"
+  },
+  "five_vertex_hub": {
+    "algebra_dimension": 22,
+    "max_degree": 5,
+    "comparison_maps_checked": 195,
+    "degrees": [
+      {
+        "degree": 1,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "deep_kernel_dimensions_by_target": null
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": null
+          },
+          {
+            "source": 2,
+            "Ext_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": null
+          },
+          {
+            "source": 3,
+            "Ext_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": null
+          },
+          {
+            "source": 4,
+            "Ext_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {},
+            "all_positive_product_rank_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": null
+          }
+        ]
+      },
+      {
+        "degree": 2,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              3,
+              0,
+              0,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                3,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              3,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0,
+                0,
+                1,
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "Ext_dimensions_by_target": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                1,
+                0,
+                0,
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "Ext_dimensions_by_target": [
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                1,
+                1,
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "Ext_dimensions_by_target": [
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 3,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                1,
+                1,
+                1,
+                1
+              ],
+              "2": [
+                0,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "2": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "source": 2,
+            "Ext_dimensions_by_target": [
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "2": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "Ext_dimensions_by_target": [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "2": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "Ext_dimensions_by_target": [
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "2": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 4,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "2": [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "3": [
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0,
+                1,
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "3": [
+                0,
+                0,
+                1,
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "Ext_dimensions_by_target": [
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0,
+                0,
+                1,
+                0
+              ],
+              "2": [
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "3": [
+                0,
+                0,
+                0,
+                1,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 3,
+            "Ext_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "2": [
+                0,
+                0,
+                0,
+                0,
+                1
+              ],
+              "3": [
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 4,
+            "Ext_dimensions_by_target": [
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "2": [
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "3": [
+                0,
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "degree": 5,
+        "by_source": [
+          {
+            "source": 0,
+            "Ext_dimensions_by_target": [
+              5,
+              0,
+              0,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                4,
+                0,
+                0,
+                0,
+                0
+              ],
+              "2": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "3": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "4": [
+                4,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              4,
+              0,
+              0,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "source": 1,
+            "Ext_dimensions_by_target": [
+              0,
+              0,
+              2,
+              2,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ],
+              "2": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ],
+              "3": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ],
+              "4": [
+                0,
+                0,
+                1,
+                1,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0,
+              2,
+              2,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          },
+          {
+            "source": 2,
+            "Ext_dimensions_by_target": [
+              0,
+              0,
+              0,
+              2,
+              2
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                0,
+                0,
+                1,
+                1
+              ],
+              "2": [
+                0,
+                0,
+                0,
+                1,
+                1
+              ],
+              "3": [
+                0,
+                0,
+                0,
+                1,
+                1
+              ],
+              "4": [
+                0,
+                0,
+                0,
+                1,
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              0,
+              0,
+              2,
+              2
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "source": 3,
+            "Ext_dimensions_by_target": [
+              0,
+              2,
+              0,
+              0,
+              2
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                1,
+                0,
+                0,
+                1
+              ],
+              "2": [
+                0,
+                1,
+                0,
+                0,
+                1
+              ],
+              "3": [
+                0,
+                1,
+                0,
+                0,
+                1
+              ],
+              "4": [
+                0,
+                1,
+                0,
+                0,
+                1
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              2,
+              0,
+              0,
+              2
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "source": 4,
+            "Ext_dimensions_by_target": [
+              0,
+              2,
+              2,
+              0,
+              0
+            ],
+            "product_rank_by_left_degree": {
+              "1": [
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              "2": [
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              "3": [
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              "4": [
+                0,
+                1,
+                1,
+                0,
+                0
+              ]
+            },
+            "all_positive_product_rank_by_target": [
+              0,
+              2,
+              2,
+              0,
+              0
+            ],
+            "indecomposable_generator_dimensions_by_target": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "deep_kernel_dimensions_by_target": [
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "scope": "exact finite-degree products; no inference of eventual generator vanishing"
+  }
+}

@@ -1,0 +1,39 @@
+# Build Status
+
+## Current status: source-level v0.2, kernel check still pending
+
+The repository contains Lean 4 source with no intentional `sorry` or `admit`.
+
+However, the current execution container does **not** contain `lean`, `lake`, or
+`elan`, so this environment cannot honestly certify a successful Lean kernel
+check. The project must therefore not yet be described as "machine verified".
+
+The correct status is:
+
+> Lean formalization source produced; first independent kernel-check build
+> still required.
+
+## Static checks performed in this environment
+
+- source files are present and imported by `HanGapBLean.lean`;
+- no intentional `sorry`, `admit`, or `axiom` placeholders are used;
+- the project is pinned to Lean/mathlib `v4.32.1`;
+- quotient-group API names used in v0.2 were cross-checked against current
+  mathlib documentation (`QuotientAddGroup.eq_zero_iff`,
+  `QuotientAddGroup.subsingleton_iff`, and
+  `AddSubgroup.addSubgroupOf_eq_top`).
+
+These checks are **not a substitute** for `lake build`.
+
+## Required verification command
+
+On a machine with Lean/Lake available:
+
+```bash
+lake update
+lake exe cache get
+lake build
+```
+
+A clean exit from `lake build`, without `sorry` warnings, is the threshold for
+calling the included theorems Lean kernel-checked.

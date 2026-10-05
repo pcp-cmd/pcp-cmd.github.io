@@ -1,0 +1,132 @@
+"""Actual ordered F-Ext inheritance and literal corner calibration.
+
+General finite-cohomology termination and all-degree eligibility are
+separately proved. Frozen helper definitions run without old main loops.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+tensor_source=project_root/'runs/2026-10-04/Tensor-Factor-Evidence/verify_tensor_factor.py'
+__file__=str(tensor_source)
+exec(compile(tensor_source.read_text(encoding='utf-8').split('\nC=nakayama_seven()',1)[0],str(tensor_source),'exec'),globals())
+perfect_source=project_root/'runs/2026-10-04/Perfect-Corner-Evidence/verify_perfect_corner.py'
+__file__=str(perfect_source)
+exec(compile(perfect_source.read_text(encoding='utf-8').split('\nfamilies=[]',1)[0],str(perfect_source),'exec'),globals())
+counts['ordered_F_Ext_entries_verified']=0
+counts['actual_corner_projectivity_isomorphisms']=0
+
+def actual_corner(original,retained):
+    labelmap={v:i for i,v in enumerate(retained)}
+    selected=[v for v in retained]
+    selected += [b for b in original.radical if original.basis[b][1] in labelmap and original.basis[b][2] in labelmap]
+    ix={b:i for i,b in enumerate(selected)}
+    basis=[(original.basis[b][0],labelmap[original.basis[b][1]],labelmap[original.basis[b][2]]) for b in selected]
+    products={}
+    for i in range(len(retained),len(selected)):
+        for j in range(len(retained),len(selected)):
+            value=original.mult(selected[i],selected[j])
+            if value is not None:
+                assert value in ix
+                products[i,j]=ix[value]
+    C=Table(len(retained),basis,products)
+    return C,labelmap,selected
+
+def finite_resolution(A,source,pd_expected):
+    M=sr.Module.simple(A.alg,source);out=[]
+    for n in range(pd_expected+1):
+        K,info,cert=cover(M)
+        assert any(info['cover_multiplicities'])
+        out.append({'degree':n,'actual_cover':cert})
+        M=K
+    assert not any(M.dimensions),(source,pd_expected,M.dimensions)
+    return out
+
+E=perfect_family(2)
+C=Table(3,[('e0',0,0),('e1',1,1),('e2',2,2),('b0',0,1),('b1',1,2)],{})
+original,tensor_certificate=tensor_table(E,C)
+assert len(original.basis)==65
+tower=[]
+for k in [2,1,0]:
+    retained=list(range(k+1))+list(range(3,9))
+    A,labelmap,selected=actual_corner(original,retained) if k<2 else (original,{i:i for i in range(9)},list(range(65)))
+    op=A.opposite();left=[];right=[]
+    for i in range(k+1):
+        cases=finite_resolution(A,labelmap[i],i+1)
+        for item in cases:
+            n=item['degree'];multiplicities=item['actual_cover']['cover_multiplicities']
+            for j in range(k+1):
+                expected=int(j==i-n and n<=i)
+                assert multiplicities[labelmap[j]]==expected,(k,i,j,n,multiplicities)
+                counts['ordered_F_Ext_entries_verified']+=1
+        left.append({'original_F_label':i,'pd':i+1,'actual_minimal_terms':cases})
+        cases=finite_resolution(op,labelmap[i],k-i+1)
+        right.append({'original_F_label':i,'pd':k-i+1,'actual_minimal_terms':cases})
+    assert all(any(l==3+i and r==i for _,l,r in original.basis) for i in range(k+1))
+    assert all(any(l==i and r==3+i for _,l,r in original.basis) for i in range(k+1))
+    tower.append({'remaining_original_F_labels':list(range(k+1)),'deleted_original_F_labels':list(range(k+1,3)),
+      'retained_original_labels':retained,'dimension':len(A.basis),'algebra':A.payload,'original_to_corner_label':labelmap,
+      'selected_original_basis':selected,'left_F_resolutions':left,'right_F_resolutions':right,
+      'positive_F_Ext_from_exact_finite_resolutions':[
+        {'source':i,'target':j,'degree':i-j,'dimension':1} for i in range(k+1) for j in range(i)],
+      'all_other_positive_F_Ext':0,'all_degrees_remaining_F_Ext_preserved':True,
+      'both_infinite_sets_from_written_proof':list(range(3,9))})
+assert [x['dimension'] for x in tower]==[65,51,33]
+
+B,labelmap,selected=actual_corner(original,list(range(3,9)))
+assert len(B.basis)==20
+# Explicit RIGHT B free basis of Ae: identity e and (a+m2) tensor 1_C.
+# Its images of the two regular B bases are disjoint natural basis columns.
+pair_to_original={tuple(pair):i for i,pair in enumerate(tensor_certificate['tensor_basis_pairs'])}
+images1=list(selected);images2=[]
+for b in selected:
+    eb,cb=tensor_certificate['tensor_basis_pairs'][b]
+    row=E.basis[eb][1]
+    generator=E.index['a'] if row==1 else E.index['m2']
+    value=E.mult(generator,eb)
+    assert value is not None
+    images2.append(pair_to_original[value,cb])
+Ae_basis=[b for b in range(len(original.basis)) if original.basis[b][2]>=3]
+assert len(Ae_basis)==40 and set(images1+images2)==set(Ae_basis)
+assert len(set(images1+images2))==40
+# Check right-linearity in the literal multiplication table for every
+# corner basis input and every corner multiplier, including identities.
+for bidx,b in enumerate(selected):
+    for cidx,c in enumerate(selected):
+        bc=B.mult(bidx,cidx)
+        for images in [images1,images2]:
+            actual=original.mult(images[bidx],c)
+            expected=None if bc is None else images[bc]
+            assert actual==expected
+counts['actual_corner_projectivity_isomorphisms']+=1
+counts['integer_basis_inverses']+=1 # the exported permutation and inverse
+iso={'source':'two regular RIGHT B modules','target':'actual RIGHT B module Ae',
+ 'first_regular_basis_images_original':images1,'second_regular_basis_images_original':images2,
+ 'target_basis_original':Ae_basis,'permutation':[Ae_basis.index(i) for i in images1+images2],
+ 'inverse_permutation':[(images1+images2).index(i) for i in Ae_basis],
+ 'all_basis_right_linearity_checks':2*len(selected)**2,'pd_right_corner_Ae':0}
+
+dependencies={f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest() for n in
+ ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']}
+for directory,names in [
+ ('Carrier-Lemma-Evidence',['verify_carrier_lemma.py','verify_finite_factor_carrier.py']),
+ ('Shallow-Corner-Evidence',['verify_shallow_corner.py']),
+ ('Tensor-Factor-Evidence',['verify_tensor_factor.py']),
+ ('Perfect-Corner-Evidence',['verify_perfect_corner.py'])]:
+    for n in names:
+        rel=f'runs/2026-10-04/{directory}/{n}';dependencies[rel]=sha256((project_root/rel).read_bytes()).hexdigest()
+result={'status':'passed','python':sys.version,'independent_verification':False,'counts':counts,
+ 'tensor_basis_and_physical_certificate':tensor_certificate,'ordered_corner_tower':tower,
+ 'terminal_corner':{'dimension':20,'algebra':B.payload,'selected_original_basis':selected,'actual_Ae_projectivity':iso},
+ 'all_degree_conclusions_from_written_proof':{
+  'original_F_order':[2,1,0],'LEFT_F_pds':[1,2,3],'RIGHT_F_pds':[3,2,1],
+  'nonzero_ordinary_Ext_two_from_original_F_2_to_F_0':1,
+  'F_cohomology_need_not_be_semisimple':True,
+  'no_C088_finite_closed_block_either_side':True,
+  'automatic_ordinary_comparison_general_uniform_bound':10,
+  'refined_weighted_F_head_bound':3,'refined_general_comparison_bound':6,
+  'actual_perfect_corner_comparison_bound_from_C093':4,
+  'whole_A_is_already_infinite_plus':True,'not_a_Gap_A_counterexample':True},
+ 'dependencies':dependencies,
+ 'scope':'Finite integral actual covers and literal corner inheritance with nonzero higher F Ext. General amplitude/peeling proof is separate. Infinity uses frozen ordinary factor kernels, not a finite Betti sample; not independently verified.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','dimensions':[65,51,33,20],'counts':counts,'independent_verification':False}))

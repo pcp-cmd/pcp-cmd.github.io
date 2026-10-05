@@ -1,0 +1,2588 @@
+# Run-A-U7-BiSingularIncidence.md
+
+## Universal Gap A — Universal Layer U7
+### Run A — Bi-Singular Incidence Core / Two-Color Derangement
+
+**Role:** Main Researcher / Source-Incidence Route  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Completion label:** `RAW_P_DEGENERACY / FOUR_SOURCE_INCIDENCE_BARRIER / SHARED_DETECTOR_NOT_TRANSPORT / COUPLING_FRONTIER`  
+**Global status:** Universal Gap A remains OPEN.  
+**U7 status:** The raw two-color incidence formulation is too coarse because the visible matrix contains the identity diagonal. After replacing it by provenance-decorated purified carrier data, one obtains a genuine finite alternating-cell normal form and a sharp four-source internal-incidence lower bound. Shared detector nonvanishing still does not supply transport. The exact surviving obstruction is detector-specific coupling across a closed purified switch-failure core.
+
+---
+
+# 0. Frozen U6 input used in this run
+
+Let
+
+\[
+I_\infty
+=
+\{x:\operatorname{pd}_D L_x=\infty\}.
+\]
+
+For each simple source \(L_x\), define
+
+\[
+\Sigma_x
+=
+\left\{
+y:
+\operatorname{Tor}^D_n(R_y,L_x)\neq0
+\text{ for arbitrarily high }n
+\right\}.
+\]
+
+Under hypothetical Gap-A failure:
+
+\[
+\boxed{
+y\in\Sigma_x
+\Longrightarrow
+e_xDe_y=0.
+}
+\tag{0.1}
+\]
+
+The following U6 facts are frozen for U7.
+
+## U6-F1 — bi-singular root
+
+For every infinite-pd module \(M\),
+
+\[
+H(M)=Q(S(M))
+\]
+
+has infinite projective dimension, has top and socle supported only on infinite-pd simples, and preserves the sufficiently high syzygy tail.
+
+## U6-F2 — finite-pd head peeling
+
+A finite-pd simple quotient can be peeled while preserving every fixed detector tail in sufficiently high degree.
+
+## U6-F3 — shared-detector eligible source lift
+
+For every
+
+\[
+x\in I_\infty
+\]
+
+there is an eligible source
+
+\[
+x'\in I_\infty,
+\qquad
+x'\neq x,
+\]
+
+and a detector \(y\) such that
+
+\[
+\boxed{
+y\in\Sigma_x\cap\Sigma_{x'}.
+}
+\tag{0.2}
+\]
+
+## U6 warning
+
+The detector \(y\) in (0.2) is not assumed to belong to \(I_\infty\).
+
+No source-cycle, detector-cycle, or finite-state recurrence is promoted to a homological operator.
+
+---
+
+# 1. Vault retrieval and method mapping
+
+The run explicitly retrieved U6, HLM/bi-singular, recurrent-top, SCC, quotient/corner, detector-tail, comparison-map, quantum-drift, and adversarial calibration assets.
+
+The required Vault methods were applied as follows.
+
+---
+
+## 1.1 Finite-pd / infinite-pd layer separation
+
+**Objects:**
+
+\[
+I_\infty,\quad
+H(M),\quad
+\Sigma_x.
+\]
+
+Finite-pd top quotients are removed before a source-incidence witness is frozen.
+
+The purpose is not support descent.
+
+The purpose is to ensure that source-side top carriers produced by purification are eligible infinite-pd simples.
+
+---
+
+## 1.2 Bi-singular root
+
+**Object:**
+
+\[
+H(M)=Q(S(M)).
+\]
+
+For an \(M\) occurring in a high syzygy context, \(H(M)\) preserves:
+
+- sufficiently high syzygy;
+- detector-tail nonvanishing;
+- eventual Betti support.
+
+It does **not** automatically preserve:
+
+- the original augmentation;
+- a distinguished comparison map;
+- a chosen source provenance;
+- a corner embedding;
+- a transport morphism.
+
+This distinction becomes decisive in Sections 12–15.
+
+---
+
+## 1.3 Set problem \(\to\) matrix / action problem
+
+Define the recurrent incidence matrix
+
+\[
+\boxed{
+R_{xy}
+=
+\mathbf1_{\{y\in\Sigma_x\}},
+\qquad
+x\in I_\infty,\ y\in Q_0.
+}
+\tag{1.1}
+\]
+
+Define the raw visible matrix
+
+\[
+\boxed{
+P_{xt}
+=
+\mathbf1_{\{e_xDe_t\neq0\}},
+\qquad
+x,t\in I_\infty.
+}
+\tag{1.2}
+\]
+
+Define the direct shared-detector matrix
+
+\[
+\boxed{
+B_{xx'}
+=
+\mathbf1_{
+\{x\neq x',\ \exists y:\ R_{xy}R_{x'y}=1\}
+}.
+}
+\tag{1.3}
+\]
+
+Equivalently, over the Boolean semiring,
+
+\[
+B
+=
+\operatorname{supp}(RR^T)-I.
+\]
+
+The transitive-equivalence closure of \(B\) is denoted
+
+\[
+\boxed{
+\sim_{\rm bi}.
+}
+\]
+
+The raw alternating source operator is
+
+\[
+\boxed{
+A=BP
+}
+\tag{1.4}
+\]
+
+over the Boolean semiring.
+
+A major point of the run is that raw \(A\) is too coarse.
+
+---
+
+## 1.4 Minimal invariant subset
+
+The raw operator \(A\), the strict purified operator introduced later, and finally the purified-cell transition graph are all finite.
+
+Terminal SCCs therefore exist.
+
+The strongest minimal object retained by U7 is not merely a source SCC but a terminal SCC of **purified mismatch cells**.
+
+---
+
+## 1.5 Infinite descent / minimal counterexample
+
+The well-founded quantities tested were:
+
+- number of eligible sources;
+- number of bi-classes;
+- number of shared detectors;
+- recurrent-incidence support size;
+- number of purified cells.
+
+They do give finite descent to a minimal incidence core.
+
+They do **not** make the minimal core impossible.
+
+Support descent is explicitly separated from algebra-level corner descent.
+
+---
+
+## 1.6 Standard form
+
+The final standard form is a finite closed family of cells
+
+\[
+\boxed{
+c=(x,y,x',t;\omega)
+}
+\tag{1.5}
+\]
+
+where \(\omega\) stores the purification provenance.
+
+The shadow of this object is
+
+\[
+(X,Y,R,P),
+\]
+
+but the full cell set retains more information than the matrices.
+
+---
+
+## 1.7 Double counting
+
+The quantities
+
+\[
+r_x=\sum_yR_{xy},
+\]
+
+\[
+s_y=\sum_xR_{xy},
+\]
+
+\[
+p_x=\sum_tP_{xt}
+\]
+
+and the shared-pair count
+
+\[
+\sum_y\binom{s_y}{2}
+\]
+
+were audited.
+
+They yield incidence lower bounds and a sharp four-source internal barrier.
+
+They do not force a collision universally.
+
+---
+
+## 1.8 Local-to-global
+
+Local object:
+
+one purified mismatch cell.
+
+Global object:
+
+a terminal SCC in the cell transition graph.
+
+The local-to-global question becomes:
+
+> can a finite cycle of locally inactive switch-failure cells stay globally inactive forever?
+
+No general theorem answering this is obtained.
+
+---
+
+## 1.9 Bootstrap
+
+Bootstrap is only used to iterate legal cells:
+
+\[
+c_0\to c_1\to c_2\to\cdots.
+\]
+
+Finite repetition yields a closed alternating-cell machine.
+
+The run never infers periodic modules or Yoneda products from the cycle.
+
+---
+
+## 1.10 Extreme example / counterexample
+
+The run tests:
+
+- the \([3,4]\) Nakayama peeling algebra;
+- \(kC_6/J^3\);
+- the U4/U5 actual detector-blind anchor algebra;
+- the U5 radical-square-zero invisible-return algebra;
+- quantum-exterior period and moduli-drift families;
+- abstract minimal incidence matrices.
+
+---
+
+## 1.11 Representation change
+
+The trajectory is:
+
+\[
+\boxed{
+(R,P)
+\to
+(B,P)
+\to
+\text{purification-provenance carrier relation}
+\to
+\text{cell graph}
+\to
+\text{detector-local coupling datum}.
+}
+\]
+
+This is the main MRS representation change of U7.
+
+---
+
+## 1.12 Quotient / localization
+
+For each detector \(y\), the detector-tail functor
+
+\[
+\mathfrak T_y:
+D_{\rm sg}(D)
+\to
+\mathsf{Tail}(k)
+\]
+
+is used.
+
+The associated detector-local quotient is
+
+\[
+\mathcal Q_y
+=
+D_{\rm sg}(D)/\ker\mathfrak T_y.
+\]
+
+For a detector set \(Y\), define the aggregate functor
+
+\[
+\mathfrak T_Y
+=
+\bigoplus_{y\in Y}\mathfrak T_y
+\]
+
+and kernel
+
+\[
+\mathcal K_Y
+=
+\bigcap_{y\in Y}\ker\mathfrak T_y.
+\]
+
+This gives a categorical interpretation of the incidence matrix.
+
+It does not produce an ordinary smaller algebra automatically.
+
+---
+
+# 2. Bipartite recurrent incidence
+
+Define
+
+\[
+\boxed{
+\mathcal B
+=
+\{(x,y):
+x\in I_\infty,\ y\in\Sigma_x\}.
+}
+\]
+
+The left side is the eligible source set
+
+\[
+I_\infty.
+\]
+
+The right side is the detector vertex set
+
+\[
+Q_0.
+\]
+
+The incidence matrix is \(R\).
+
+Under hypothetical failure,
+
+\[
+\boxed{
+R_{xy}=1
+\Longrightarrow
+e_xDe_y=0.
+}
+\tag{2.1}
+\]
+
+In particular, since
+
+\[
+e_xDe_x\neq0,
+\]
+
+one has
+
+\[
+\boxed{
+R_{xx}=0
+\qquad
+(x\in I_\infty).
+}
+\tag{2.2}
+\]
+
+Thus no infinite-pd source can be its own recurrent detector in a Gap-A failure.
+
+---
+
+# 3. Shared-detector relation
+
+Define the direct relation
+
+\[
+x\mathrel{B}x'
+\]
+
+iff
+
+\[
+x\neq x'
+\]
+
+and
+
+\[
+\Sigma_x\cap\Sigma_{x'}\neq\varnothing.
+\]
+
+It is symmetric.
+
+The frozen U6 lift gives
+
+\[
+\boxed{
+\deg_B(x)\ge1
+\qquad
+\forall x\in I_\infty.
+}
+\tag{3.1}
+\]
+
+Let
+
+\[
+\sim_{\rm bi}
+\]
+
+be the equivalence relation generated by \(B\).
+
+Every \(\sim_{\rm bi}\)-class has at least two sources.
+
+The classes are source-side connected components of shared detector overlap.
+
+---
+
+# 4. Raw visible matrix
+
+Define
+
+\[
+V_\infty(x)
+=
+\{t\in I_\infty:e_xDe_t\neq0\}.
+\]
+
+Then
+
+\[
+P_{xt}
+=
+\mathbf1_{\{t\in V_\infty(x)\}}.
+\]
+
+Under failure,
+
+\[
+\boxed{
+R_{xt}P_{xt}=0
+}
+\qquad
+(x,t\in I_\infty).
+\tag{4.1}
+\]
+
+A collision
+
+\[
+R_{xt}=P_{xt}=1
+\]
+
+would immediately give the desired visible persistent pair.
+
+---
+
+# 5. VERIFIED negative result — raw \(P\) is degenerate
+
+For every source \(x\),
+
+\[
+e_x\in e_xDe_x.
+\]
+
+Therefore
+
+\[
+\boxed{
+P_{xx}=1
+\qquad
+\forall x\in I_\infty.
+}
+\tag{5.1}
+\]
+
+Hence
+
+\[
+P\ge I
+\]
+
+entrywise over the Boolean semiring.
+
+Consequently,
+
+\[
+\boxed{
+A=BP\ge B.
+}
+\tag{5.2}
+\]
+
+Thus every shared-detector edge is automatically also an alternating edge if one chooses the diagonal visible carrier.
+
+This means the proposed two-color dynamics can degenerate to:
+
+\[
+x
+\mathrel{B}
+x'
+\overset{\rm vis}{\longrightarrow}
+x'.
+\]
+
+No nontrivial Peirce information is used.
+
+Therefore:
+
+\[
+\boxed{
+\textbf{the raw matrix }P\textbf{ does not retain the U6 purification carrier mechanism.}
+}
+\tag{5.3}
+\]
+
+This is the first major finding of U7.
+
+---
+
+# 6. Consequence for the proposed purified mismatch cell
+
+The stated cell condition was
+
+\[
+x
+\to_{\rm rec}
+y
+\leftarrow_{\rm rec}
+x'
+\to_{\rm vis}
+t
+\]
+
+with
+
+\[
+e_{x'}De_t\neq0,
+\qquad
+t\notin\Sigma_{x'}.
+\]
+
+If \(t=x'\), then
+
+\[
+e_{x'}De_{x'}\neq0
+\]
+
+automatically, while under failure
+
+\[
+x'\notin\Sigma_{x'}.
+\]
+
+So the raw condition is automatically satisfied by the diagonal choice
+
+\[
+t=x'.
+\]
+
+Thus the raw cell does not, by itself, certify a nontrivial second color.
+
+This is not merely a notational issue.
+
+It is a loss of provenance.
+
+---
+
+# 7. Purification-provenance carrier relation
+
+To retain U6 information, define a **purification witness**
+
+\[
+\omega
+\]
+
+to consist of the actual bi-singular module / subquotient data used to produce the persistent source \(x'\) and the visible top carrier \(t\).
+
+Define
+
+\[
+\boxed{
+P^{\rm pur}_{x't}=1
+}
+\]
+
+iff there exists an actual U6 purification witness \(\omega\) in which:
+
+1. \(L_{x'}\) is the persistent eligible source factor extracted from the purified module;
+2. \(L_t\) occurs in the relevant purified top carrier set;
+3. the generation argument produces
+   \[
+   e_{x'}De_t\neq0.
+   \]
+
+Then
+
+\[
+P^{\rm pur}\le P.
+\]
+
+The actual witness \(\omega\) must be retained.
+
+The matrix \(P^{\rm pur}\) is only its shadow.
+
+---
+
+# 8. Strict purified carrier relation
+
+Define
+
+\[
+\boxed{
+P^\circ_{xt}
+=
+P^{\rm pur}_{xt}\mathbf1_{\{t\neq x\}}.
+}
+\tag{8.1}
+\]
+
+Since \(x\neq t\), every nonzero Peirce element lies in the radical:
+
+\[
+e_xDe_t=e_xJ(D)e_t.
+\]
+
+Therefore \(P^\circ\) records genuine nonidentity Peirce visibility.
+
+Two branches appear.
+
+## Branch D — diagonal-provenance branch
+
+For some purified source \(x\),
+
+\[
+P^\circ_{x*}=0.
+\]
+
+Then every available purified carrier witness may collapse to the diagonal carrier \(t=x\).
+
+## Branch S — strict-carrier branch
+
+Every source in the selected core has
+
+\[
+P^\circ_{x*}\neq0.
+\]
+
+Only in Branch S is a genuinely two-color alternating dynamics available.
+
+---
+
+# 9. Mandatory V1 — the diagonal branch is actual
+
+Use the cyclic Nakayama algebra with Kupisch series
+
+\[
+[3,4].
+\]
+
+Let
+
+\[
+M=M(1,2)=\Omega L_0.
+\]
+
+There is an exact sequence
+
+\[
+0
+\to
+L_0
+\to
+M
+\to
+L_1
+\to0
+\]
+
+where
+
+\[
+\operatorname{pd}L_1=1
+\]
+
+and
+
+\[
+\operatorname{pd}L_0=\infty.
+\]
+
+Peeling the finite-pd top gives
+
+\[
+H(M)\cong L_0.
+\]
+
+But
+
+\[
+\Omega L_0\cong M.
+\]
+
+Thus the finite-pd top returns immediately after one syzygy.
+
+The purified source is now the top of the purified module itself.
+
+Its obvious purified carrier is diagonal.
+
+Therefore:
+
+\[
+\boxed{
+\text{finite-pd peeling}
+\not\Rightarrow
+\text{strict support/carrier descent}.
+}
+\]
+
+The diagonal-provenance branch cannot be discarded.
+
+---
+
+# 10. Purified mismatch cells
+
+A genuine U7 cell is therefore stored as
+
+\[
+\boxed{
+c=(x,y,x',t;\omega)
+}
+\tag{10.1}
+\]
+
+such that:
+
+\[
+x,x',t\in I_\infty,
+\qquad
+x\neq x',
+\]
+
+\[
+y\in\Sigma_x\cap\Sigma_{x'},
+\]
+
+\[
+P^{\rm pur}_{x't}=1,
+\]
+
+and \(\omega\) is the actual purification provenance.
+
+Under Gap-A failure:
+
+\[
+e_xDe_y=0,
+\]
+
+\[
+e_{x'}De_y=0,
+\]
+
+and
+
+\[
+t\notin\Sigma_{x'}
+\]
+
+whenever
+
+\[
+e_{x'}De_t\neq0.
+\]
+
+The strict cell condition is
+
+\[
+t\neq x'.
+\]
+
+---
+
+# 11. Cell transition graph
+
+Let
+
+\[
+\mathcal M
+\]
+
+be the finite set of all admissible purified mismatch cells.
+
+Define
+
+\[
+c=(x,y,x',t;\omega)
+\longrightarrow
+c'=(t,y',x'',t';\omega')
+\]
+
+whenever the endpoint eligible source \(t\) of \(c\) is the starting source of \(c'\).
+
+In every branch in which the U6 cell construction can be iterated, each cell has at least one successor.
+
+Hence \(\mathcal M\) contains a terminal SCC
+
+\[
+\boxed{
+\mathfrak C_{\rm cell}.
+}
+\tag{11.1}
+\]
+
+This is the exact **Minimal Alternating Cell Core**.
+
+It retains more information than a terminal SCC of \(A=BP\).
+
+---
+
+# 12. Matrix shadow of the minimal cell core
+
+Let
+
+\[
+X
+\subseteq
+I_\infty
+\]
+
+be the eligible sources appearing in cells of \(\mathfrak C_{\rm cell}\).
+
+Let
+
+\[
+Y
+\subseteq
+Q_0
+\]
+
+be the shared detectors appearing in those cells.
+
+Restrict \(R\) and \(P\) to these labels.
+
+The matrix shadow is
+
+\[
+\boxed{
+\mathfrak C=(X,Y,R,P).
+}
+\]
+
+However the true core is
+
+\[
+\mathfrak C_{\rm cell}
+\]
+
+together with the witness provenance.
+
+This distinction is essential.
+
+---
+
+# 13. Double-counting audit
+
+Define
+
+\[
+r_x=\sum_{y\in Y}R_{xy},
+\]
+
+\[
+s_y=\sum_{x\in X}R_{xy}.
+\]
+
+Every shared detector used in the core satisfies
+
+\[
+s_y\ge2.
+\]
+
+Define the number of detector-mediated source pairs, counted with detector multiplicity,
+
+\[
+C_R
+=
+\sum_{y\in Y}\binom{s_y}{2}.
+\]
+
+Let \(G_B\) be the simple graph on \(X\) with edge \(xx'\) whenever \(B_{xx'}=1\).
+
+Since every source has a shared partner,
+
+\[
+\deg_{G_B}(x)\ge1.
+\]
+
+Therefore
+
+\[
+|E(G_B)|
+\ge
+\frac{|X|}{2}.
+\]
+
+Since every shared pair must be witnessed by at least one detector,
+
+\[
+\boxed{
+C_R
+\ge
+|E(G_B)|
+\ge
+\frac{|X|}{2}.
+}
+\tag{13.1}
+\]
+
+This is the strongest unconditional shared-detector counting lower bound obtained.
+
+It has no visibility consequence by itself.
+
+---
+
+# 14. Raw visible counting is vacuous
+
+Since
+
+\[
+P_{xx}=1,
+\]
+
+one always has
+
+\[
+p_x=\sum_tP_{xt}\ge1.
+\]
+
+Thus the inequality
+
+\[
+\sum_xp_x\ge|X|
+\]
+
+contains no new structural information.
+
+This is why Hall-style counting with raw \(P\) cannot close U7.
+
+---
+
+# 15. Pure incidence countermodel — raw \(P\)
+
+Even with all detector labels eligible, pure incidence permits permanent no-collision.
+
+Take
+
+\[
+X=Y=\{1,2,3\},
+\]
+
+and
+
+\[
+R=
+\begin{pmatrix}
+0&0&1\\
+1&0&1\\
+1&0&0
+\end{pmatrix},
+\]
+
+\[
+P=I_3.
+\]
+
+Then:
+
+- row \(1\) and row \(2\) share detector \(3\);
+- row \(2\) and row \(3\) share detector \(1\);
+- every source has a shared partner;
+- \(R_{xx}=0\);
+- \(P_{xx}=1\);
+- row-wise
+  \[
+  R_{xt}P_{xt}=0.
+  \]
+
+Thus all raw incidence axioms can hold with no collision.
+
+This is an **abstract incidence countermodel**.
+
+It is not claimed to be realized by a Universal Gap-A counterexample algebra.
+
+It proves only:
+
+\[
+\boxed{
+\text{A1 is not a consequence of the raw matrix axioms}.
+}
+\tag{15.1}
+\]
+
+---
+
+# 16. Strict purified incidence
+
+Assume now that all chosen cells use nonidentity purified carriers.
+
+Replace \(P\) by \(P^\circ\).
+
+The row-disjointness condition becomes
+
+\[
+\boxed{
+R_{xt}P^\circ_{xt}=0.
+}
+\tag{16.1}
+\]
+
+This removes the diagonal identity degeneration.
+
+Pure counting is still insufficient in large enough cores.
+
+---
+
+# 17. VERIFIED — Four-Source Internal Incidence Barrier
+
+Assume a collision-free strict core satisfies:
+
+1. all eligible sources are in a finite set \(X\);
+2. every source has a shared detector with another source;
+3. the shared detector used for that source lies in \(X\);
+4. every source has a strict purified visible carrier in
+   \[
+   X\setminus\{x\};
+   \]
+5. row-wise
+   \[
+   R_{xt}P^\circ_{xt}=0.
+   \]
+
+Then
+
+\[
+\boxed{
+|X|\ge4.
+}
+\tag{17.1}
+\]
+
+### Proof for \(|X|=2\)
+
+Let
+
+\[
+X=\{1,2\}.
+\]
+
+A shared detector internal to \(X\) must be either \(1\) or \(2\).
+
+If it is \(1\), then the source \(1\) row contains detector \(1\), contradicting
+
+\[
+R_{11}=0.
+\]
+
+Similarly for detector \(2\).
+
+So no two-source fully internal shared-detector core exists.
+
+### Proof for \(|X|=3\)
+
+Let
+
+\[
+X=\{1,2,3\}.
+\]
+
+For a fixed row \(x\), the only possible internal detectors distinct from \(x\) are the other two vertices.
+
+Because the row must have a strict visible carrier in \(X\setminus\{x\}\) and recurrent/visible supports are disjoint, the recurrent row can contain at most one of these two vertices.
+
+But it must contain an internal shared detector.
+
+Hence every row has exactly one internal recurrent detector.
+
+Thus there is a function
+
+\[
+f:X\to X,
+\qquad
+f(x)\neq x,
+\]
+
+such that row \(x\) uses detector \(f(x)\).
+
+Every source must have a shared partner.
+
+Therefore every value \(f(x)\) that occurs must occur in a fiber of size at least \(2\).
+
+With only three sources, this forces all three rows to have the same detector value.
+
+But then that detector vertex \(v\) satisfies
+
+\[
+f(v)=v,
+\]
+
+contradicting
+
+\[
+R_{vv}=0.
+\]
+
+Therefore \(|X|=3\) is impossible.
+
+So
+
+\[
+|X|\ge4.
+\]
+
+---
+
+# 18. Sharpness of the four-source barrier at the incidence level
+
+The lower bound \(4\) is sharp as a pure combinatorial statement.
+
+Take
+
+\[
+X=Y=\{1,2,3,4\}.
+\]
+
+Define recurrent incidence:
+
+\[
+\Sigma_1\cap X=\{4\},
+\qquad
+\Sigma_2\cap X=\{4\},
+\]
+
+\[
+\Sigma_3\cap X=\{2\},
+\qquad
+\Sigma_4\cap X=\{2\}.
+\]
+
+Thus
+
+\[
+R=
+\begin{pmatrix}
+0&0&0&1\\
+0&0&0&1\\
+0&1&0&0\\
+0&1&0&0
+\end{pmatrix}.
+\]
+
+Shared pairs are:
+
+\[
+1\sim_{\rm bi}2
+\]
+
+via detector \(4\), and
+
+\[
+3\sim_{\rm bi}4
+\]
+
+via detector \(2\).
+
+Now choose strict visible carrier edges
+
+\[
+1\to2,
+\qquad
+2\to3,
+\qquad
+3\to4,
+\qquad
+4\to1.
+\]
+
+Thus
+
+\[
+P^\circ=
+\begin{pmatrix}
+0&1&0&0\\
+0&0&1&0\\
+0&0&0&1\\
+1&0&0&0
+\end{pmatrix}.
+\]
+
+One checks row-wise:
+
+\[
+R_{xt}P^\circ_{xt}=0.
+\]
+
+The alternating source shadow contains:
+
+\[
+1
+\sim_{\rm bi}
+2
+\to_{\rm vis}
+3,
+\]
+
+\[
+3
+\sim_{\rm bi}
+4
+\to_{\rm vis}
+1,
+\]
+
+hence a closed alternating cycle
+
+\[
+1\rightsquigarrow3\rightsquigarrow1
+\]
+
+without any \(R\)-\(P^\circ\) collision.
+
+This is again an abstract incidence model, not an algebra counterexample.
+
+It proves that:
+
+\[
+\boxed{
+\text{double counting / Hall / strict finite incidence alone cannot close U7.}
+}
+\tag{18.1}
+\]
+
+---
+
+# 19. Structural consequence of the four-source barrier
+
+A collision-free minimal U7 core with fewer than four eligible sources must pay at least one structural cost.
+
+At least one of the following occurs:
+
+### E — external detector leakage
+
+A required shared detector lies outside the eligible source core.
+
+### D — diagonal-provenance degeneration
+
+A purified carrier witness is only diagonal and produces no strict second-color edge.
+
+### X — external carrier leakage
+
+A strict purified visible carrier lies outside the chosen core.
+
+Thus:
+
+\[
+\boxed{
+|X|\le3
++
+\text{no collision}
+\Longrightarrow
+\text{external/diagonal leakage}.
+}
+\tag{19.1}
+\]
+
+This is a genuine frontier compression.
+
+---
+
+# 20. Shared detector as an algebraic object
+
+Fix a detector \(y\).
+
+Define the tail functor
+
+\[
+\boxed{
+\mathfrak T_y(X)
+=
+Q_{\rm tail}
+\left(
+R_y\otimes_D^{\mathbf L}X
+\right).
+}
+\tag{20.1}
+\]
+
+Then
+
+\[
+y\in\Sigma_x
+\iff
+\mathfrak T_y(L_x)\neq0.
+\]
+
+Therefore:
+
+\[
+\boxed{
+y\in\Sigma_x\cap\Sigma_{x'}
+\iff
+\mathfrak T_y(L_x)\neq0
+\text{ and }
+\mathfrak T_y(L_{x'})\neq0.
+}
+\tag{20.2}
+\]
+
+This is the exact categorical meaning of a shared detector.
+
+---
+
+# 21. Shared detector does not provide a comparison map
+
+Equation (20.2) says only that two simple objects survive the same detector-local quotient.
+
+It does not provide a morphism
+
+\[
+L_x\to L_{x'}[m].
+\]
+
+It does not provide a map
+
+\[
+\mathfrak T_y(L_x)
+\to
+\mathfrak T_y(L_{x'})[m].
+\]
+
+It does not synchronize the degrees in which \(R_y\) occurs.
+
+Two infinite degree sets can be disjoint after any prescribed shift pattern.
+
+Even degree synchronization would still not identify the corresponding differential contexts.
+
+Thus:
+
+\[
+\boxed{
+\text{shared detector}
+\not\Rightarrow
+\text{shared transport}.
+}
+\tag{21.1}
+\]
+
+This is an exact failure of the naive local-to-global bridge.
+
+---
+
+# 22. Detector-tail coupling datum
+
+The missing information can be represented by the detector-specific coupling image
+
+\[
+\boxed{
+\mathcal C_y(x,x')
+=
+\operatorname{im}
+\left[
+\bigoplus_m
+\operatorname{Hom}_{D_{\rm sg}(D)}
+(L_x,L_{x'}[m])
+\to
+\bigoplus_m
+\operatorname{Hom}_{\mathsf{Tail}(k)}
+\left(
+\mathfrak T_y(L_x),
+\mathfrak T_y(L_{x'})[m]
+\right)
+\right].
+}
+\tag{22.1}
+\]
+
+The Boolean relation
+
+\[
+B_{xx'}=1
+\]
+
+only records that both tail objects are nonzero.
+
+It says nothing about
+
+\[
+\mathcal C_y(x,x').
+\]
+
+A shared detector is called **transport-silent** for the pair \((x,x')\) if
+
+\[
+\mathcal C_y(x,x')=0
+=
+\mathcal C_y(x',x).
+\]
+
+This is a new U7 representation.
+
+---
+
+# 23. Why singular nonzero maps are still too weak
+
+Earlier actual calibration established a finite-dimensional algebra with a map
+
+\[
+p:N\twoheadrightarrow L_z
+\]
+
+such that:
+
+\[
+[p]\neq0
+\quad\text{in }D_{\rm sg}(D),
+\]
+
+but for a fixed detector \(R_i\),
+
+\[
+\operatorname{Tor}^D_n(R_i,p)=0
+\qquad(n\gg0).
+\]
+
+Therefore even if a shared-detector construction somehow produces a singular morphism, that is not enough.
+
+The morphism must survive under the **same detector-tail functor**.
+
+This validates the use of \(\mathcal C_y(x,x')\) rather than ordinary singular Hom.
+
+---
+
+# 24. Purification preserves support, not coupling
+
+For a module \(M\),
+
+\[
+H(M)=Q(S(M))
+\]
+
+preserves the high syzygy tail and recurrent detector support.
+
+But the construction does not canonically preserve:
+
+- a chosen augmentation;
+- a distinguished subquotient map;
+- a comparison-chain map;
+- a chosen carrier morphism.
+
+Therefore it can preserve the Boolean row
+
+\[
+\Sigma_x
+\]
+
+while destroying or changing the actual coupling data needed for a cell-level transport proof.
+
+Thus:
+
+\[
+\boxed{
+\text{bi-singular purification is safe for incidence,}
+}
+\]
+
+but
+
+\[
+\boxed{
+\text{not automatically safe for transport provenance.}
+}
+\tag{24.1}
+\]
+
+This is the exact information-loss point in the U7 representation.
+
+---
+
+# 25. Actual U5/U1 radical-square-zero cell
+
+Consider the radical-square-zero algebra
+
+\[
+D=kQ/J_Q^2
+\]
+
+with arrows
+
+\[
+i\rightleftarrows a,
+\qquad
+a\to z,
+\qquad
+z\to j.
+\]
+
+The minimal resolution of \(L_z\) enters the recurrent core:
+
+\[
+P_z,\ P_a,\ P_i,\ P_a,\ P_i,\ldots
+\]
+
+so
+
+\[
+\Sigma_z=\{a,i\}.
+\]
+
+The simple \(L_a\) has recurrent tail
+
+\[
+P_a,\ P_i,\ P_a,\ P_i,\ldots
+\]
+
+so
+
+\[
+\Sigma_a=\{a,i\}.
+\]
+
+Hence, for example,
+
+\[
+\boxed{
+i\in\Sigma_a\cap\Sigma_z.
+}
+\]
+
+At the same time,
+
+\[
+e_zDe_j\neq0
+\]
+
+through the arrow \(z\to j\), while
+
+\[
+j\notin\Sigma_z.
+\]
+
+Thus this actual algebra realizes the local U7 pattern
+
+\[
+a
+\to_{\rm rec}
+i
+\leftarrow_{\rm rec}
+z
+\to_{\rm vis}
+j
+\]
+
+with no collision in the source \(z\) row.
+
+Therefore:
+
+\[
+\boxed{
+\text{shared detector}
++
+\text{eligible visible carrier}
+\not\Rightarrow
+\text{local collision}.
+}
+\tag{25.1}
+\]
+
+This directly blocks a one-cell proof of Target A1.
+
+---
+
+# 26. Why the radical-square-zero cell does not refute Universal Gap A
+
+The same algebra contains the recurrent cycle
+
+\[
+i\rightleftarrows a.
+\]
+
+For source \(i\),
+
+\[
+a\in\Sigma_i
+\]
+
+and
+
+\[
+e_iDe_a\neq0.
+\]
+
+Thus a visible persistent pair exists in the recurrent core.
+
+The source relocation succeeds globally even though the first U7 cell is mismatched.
+
+This is the correct behavior required by the V5 calibration.
+
+---
+
+# 27. VERIFIED restricted theorem — radical-square-zero relocation closes
+
+Let
+
+\[
+D=kQ/J_Q^2
+\]
+
+be finite dimensional.
+
+For a left simple \(L_v\),
+
+\[
+\Omega L_v
+\cong
+\bigoplus_{u\to v}L_u.
+\]
+
+Inductively, \(P_u\) occurs in degree \(n\) of the minimal resolution of \(L_v\) precisely when there is a directed path of length \(n\)
+
+\[
+u\to\cdots\to v.
+\]
+
+If
+
+\[
+\operatorname{gldim}D=\infty,
+\]
+
+the finite quiver \(Q\) contains a directed cycle.
+
+Choose an arrow on the cycle:
+
+\[
+c\to c'.
+\]
+
+Then
+
+\[
+e_cDe_{c'}\neq0.
+\]
+
+Because one can traverse the cycle arbitrarily many times and end at \(c\),
+
+\[
+c'\in\Sigma_c.
+\]
+
+Therefore
+
+\[
+\boxed{
+R_{cc'}=P_{cc'}=1.
+}
+\]
+
+Hence:
+
+\[
+\boxed{
+\text{every finite-dimensional radical-square-zero algebra of infinite gldim is infinite }+.
+}
+\tag{27.1}
+\]
+
+This is a restricted collision theorem.
+
+Its proof uses actual path/syzygy transport, not finite counting.
+
+---
+
+# 28. Lesson from the radical-square-zero theorem
+
+The successful algebraic input is:
+
+\[
+\boxed{
+\text{directed path concatenation}
+=
+\text{actual syzygy transport}.
+}
+\]
+
+For general finite-dimensional algebras with relations, this identity fails.
+
+Minimal differential cancellation and relation data can destroy naive path concatenation.
+
+Therefore the radical-square-zero proof cannot be migrated merely by retaining \(R\) and \(P\).
+
+The missing universal replacement is exactly a detector-specific transport/coupling law.
+
+---
+
+# 29. Mandatory V2 — cyclic Nakayama
+
+For
+
+\[
+D=kC_6/J^3,
+\]
+
+all simples are infinite-pd.
+
+Finite source/syzygy dynamics are periodic.
+
+Nevertheless U7 does not infer a visible pair merely from the source cycle.
+
+The algebra already has visible recurrence by direct Nakayama resolution calculation.
+
+Thus it is a calibration of the distinction:
+
+\[
+\text{finite source cycle}
+\neq
+\text{proof mechanism}.
+\]
+
+The visible pair must be verified from the actual resolution.
+
+---
+
+# 30. Mandatory V3 — raw-Yoneda / detector-blind map
+
+The exact project artifact previously labelled “10-dimensional U5 raw-Yoneda model” was not available in the current indexed project search.
+
+No unsupported model-specific claim is introduced.
+
+The available actual 11-dimensional four-vertex anchor establishes the stronger calibration principle needed here:
+
+\[
+\boxed{
+\text{singularly nonzero map}
+\not\Rightarrow
+\text{nonzero map under a fixed detector tail}.
+}
+\]
+
+Therefore raw Ext/Yoneda incidence cannot replace \(\mathcal C_y(x,x')\).
+
+---
+
+# 31. Mandatory V4 — quantum moduli drift
+
+For the quantum exterior family
+
+\[
+A_q
+=
+k\langle x,y\rangle/
+(x^2,y^2,xy+qyx),
+\]
+
+there are modules
+
+\[
+M_\lambda
+\]
+
+with
+
+\[
+\Omega M_\lambda
+\cong
+M_{\lambda/q}
+\]
+
+or the equivalent convention
+
+\[
+\Omega M_\alpha
+\cong
+M_{q\alpha}.
+\]
+
+If \(q\) has infinite order, the exact syzygy orbit can drift through infinitely many pairwise nonisomorphic modules while all coarse local data stay fixed.
+
+Therefore:
+
+\[
+\boxed{
+\text{finite incidence}
+\not\Rightarrow
+\text{exact-state repetition}.
+}
+\]
+
+This remains a mandatory obstruction to any attempt to upgrade the U7 cell cycle into restartability.
+
+---
+
+# 32. Mandatory V1 revisited — peeling is not support descent
+
+The \([3,4]\) Nakayama calculation gives
+
+\[
+H(M(1,2))=L_0,
+\]
+
+but
+
+\[
+\Omega L_0=M(1,2).
+\]
+
+So the finite-pd top removed by purification returns after one syzygy.
+
+Therefore no well-founded complexity may count only the current finite-pd top support.
+
+The purification operation is tail-equivalence, not monotone support deletion.
+
+---
+
+# 33. Minimal alternating core — exact statement
+
+The strongest universally legal finite reduction is:
+
+> Starting from the finite family of purified mismatch cells, choose a terminal SCC in the cell-transition graph.
+
+The resulting
+
+\[
+\mathfrak C_{\rm cell}
+\]
+
+has:
+
+1. a finite eligible source set \(X\);
+2. a finite detector set \(Y\);
+3. recurrent incidences \(R\);
+4. purification-provenance carrier witnesses;
+5. every cell has a successor cell;
+6. no row-wise \(R/P\) collision under the hypothetical failure.
+
+This is a genuine standard form.
+
+It does not require exact-state recurrence.
+
+---
+
+# 34. Quotient by \(\sim_{\rm bi}\)
+
+The shared-detector relation generates equivalence classes
+
+\[
+[x]_{\rm bi}.
+\]
+
+The U7 source dynamics can be viewed in two stages:
+
+\[
+[x]_{\rm bi}
+\overset{P^{\rm pur}}{\longrightarrow}
+[t]_{\rm bi}.
+\]
+
+If every class has a strict outgoing purified carrier, the finite quotient graph
+
+\[
+I_\infty/\sim_{\rm bi}
+\]
+
+has a terminal SCC.
+
+This gives a further finite compression.
+
+But a visible edge remaining inside the same \(\sim_{\rm bi}\)-class does not imply collision.
+
+Shared-detector connectivity is not detector transport.
+
+---
+
+# 35. Aggregate detector localization
+
+For the detector set \(Y\) of a minimal core, define
+
+\[
+\mathfrak T_Y
+=
+\bigoplus_{y\in Y}\mathfrak T_y.
+\]
+
+Then every core source \(L_x\) survives in at least one component.
+
+The matrix \(R\) is exactly the componentwise support pattern of
+
+\[
+\mathfrak T_Y(L_x).
+\]
+
+Define
+
+\[
+\mathcal K_Y
+=
+\ker\mathfrak T_Y
+=
+\bigcap_{y\in Y}\ker\mathfrak T_y.
+\]
+
+Then all source objects of the core survive in
+
+\[
+D_{\rm sg}(D)/\mathcal K_Y.
+\]
+
+However this quotient does not identify sources sharing a detector.
+
+It only records simultaneous survival.
+
+Thus quotient/localization reproduces the incidence core but does not supply the missing coupling.
+
+---
+
+# 36. Corner descent audit
+
+Let
+
+\[
+f=\sum_{x\in X}e_x,
+\qquad
+\Delta=fDf.
+\]
+
+Even if all eligible sources in the cell core lie in \(X\), detector vertices may lie outside \(X\).
+
+The relevant cross modules include
+
+\[
+fD(1-f),
+\qquad
+(1-f)Df.
+\]
+
+As already found in U6, the high tail can escape through these modules.
+
+Therefore:
+
+\[
+\boxed{
+\text{minimal incidence core}
+\not\Rightarrow
+\text{ordinary corner reduction}.
+}
+\]
+
+If all detector and strict carrier data are internal, the four-source barrier applies.
+
+If some data are external, the external cross module is a genuine new obstruction rather than a bookkeeping error.
+
+---
+
+# 37. Incidence descent theorem
+
+Although the minimal core need not disappear, finite incidence descent itself is valid.
+
+Starting with all admissible purified cells:
+
+1. form the finite cell-transition graph;
+2. if it is not strongly connected, pass to a terminal SCC;
+3. repeat after removing unused source/detector labels.
+
+Each nontrivial reduction strictly lowers one of:
+
+- number of cells;
+- number of source labels;
+- number of detector labels.
+
+Thus the process terminates at
+
+\[
+\mathfrak C_{\rm cell}.
+\]
+
+Therefore:
+
+\[
+\boxed{
+\text{strict incidence descent to a minimal alternating core is VERIFIED}.
+}
+\tag{37.1}
+\]
+
+What is not proved is a further descent **from** the minimal core.
+
+---
+
+# 38. Why Target A1 is not proved
+
+Target A1 asks:
+
+\[
+\text{minimal alternating core}
+\Longrightarrow
+\exists x,t:
+R_{xt}=P_{xt}=1.
+\]
+
+Three independent obstructions survive.
+
+## 38.1 Raw \(P\) loses provenance
+
+The identity diagonal makes the second color partially tautological.
+
+## 38.2 Pure incidence admits collision-free cores
+
+The \(3\times3\) raw model and \(4\times4\) strict model show that counting cannot force a collision.
+
+## 38.3 Shared detector is not transport
+
+The actual algebraic meaning of shared detector is simultaneous nonvanishing under one tail functor.
+
+No comparison morphism follows.
+
+The radical-square-zero success depends on additional path/syzygy composition unavailable universally.
+
+Therefore Target A1 remains OPEN.
+
+---
+
+# 39. Why Target A2 is only partially achieved
+
+A2 asks for:
+
+\[
+\text{no collision}
+\Longrightarrow
+\text{strict well-founded descent}.
+\]
+
+This is true until one reaches the terminal cell core.
+
+It is not known how to descend further from a minimal core.
+
+The \([3,4]\) peeling algebra rules out naive support monotonicity.
+
+The U5 radical-square-zero cell rules out a one-cell collision theorem.
+
+Quantum moduli drift rules out state repetition.
+
+Therefore:
+
+\[
+\boxed{
+\text{A2 is VERIFIED only as finite incidence compression, not as contradiction}.
+}
+\]
+
+---
+
+# 40. New normal form — Closed Purified Switch-Failure Core
+
+The strongest U7 standard form is:
+
+\[
+\boxed{
+\textbf{Closed Purified Switch-Failure Core}.
+}
+\]
+
+It consists of a terminal SCC of cells
+
+\[
+c_i
+=
+(x_i,y_i,x_i',t_i;\omega_i)
+\]
+
+with:
+
+\[
+y_i\in\Sigma_{x_i}\cap\Sigma_{x_i'},
+\]
+
+\[
+x_i,x_i',t_i\in I_\infty,
+\]
+
+\[
+e_{x_i}De_{y_i}=0,
+\]
+
+\[
+e_{x_i'}De_{y_i}=0,
+\]
+
+\[
+e_{x_i'}De_{t_i}\neq0,
+\]
+
+\[
+t_i\notin\Sigma_{x_i'},
+\]
+
+and
+
+\[
+t_i=x_{i+1}
+\]
+
+along the cell cycle, after relabelling a recurrent component.
+
+Every local detector switch fails.
+
+Every visible carrier becomes the next eligible source.
+
+The machine closes only at the incidence level.
+
+No active tail transport around the full cycle is known.
+
+---
+
+# 41. Stronger branch normal form
+
+A surviving minimal core must fall into at least one of the following branches.
+
+## Branch D — diagonal provenance
+
+Some purified carrier step has only
+
+\[
+t=x'.
+\]
+
+The second color collapses to self-visibility.
+
+This branch is actual in the peeling calibration.
+
+## Branch E — external leakage
+
+A shared detector or strict purified carrier leaves the eligible source core.
+
+The obstruction is carried by cross modules / external vertices.
+
+## Branch S4 — strict internal four-source core
+
+All shared detectors and strict purified carriers are internal.
+
+Then
+
+\[
+\boxed{
+|X|\ge4.
+}
+\]
+
+The lower bound is sharp at the incidence level.
+
+## Branch C — coupling-silent core
+
+Even with a finite closed strict incidence cycle, all relevant detector-specific coupling images can vanish:
+
+\[
+\mathcal C_{y_i}(x_i,x_i')=0.
+\]
+
+This is the new transport obstruction.
+
+These branches are not mutually exclusive.
+
+---
+
+# 42. Exact strongest theorem of U7
+
+The strongest theorem package is:
+
+### T1 — Raw Peirce Degeneracy
+
+\[
+P_{xx}=1
+\]
+
+for every eligible source, so raw \(P\) cannot encode the nontrivial purified carrier step.
+
+### T2 — Minimal Cell-Core Existence
+
+The finite purified-cell transition graph has a terminal SCC.
+
+### T3 — Incidence Descent
+
+Repeated terminal-SCC restriction gives strict finite descent to a minimal alternating core.
+
+### T4 — Four-Source Internal Incidence Barrier
+
+Any collision-free fully internal strict core has at least four eligible sources.
+
+### T5 — Sharpness
+
+A \(4\times4\) collision-free strict incidence system exists abstractly.
+
+### T6 — Shared-Detector Localization
+
+\[
+y\in\Sigma_x\cap\Sigma_{x'}
+\]
+
+means exactly that \(L_x\) and \(L_{x'}\) both survive the same detector-tail localization.
+
+### T7 — Shared Detector Is Not Transport
+
+Common survival supplies no comparison map and no detector-tail transport.
+
+### T8 — Radical-Square-Zero Collision
+
+For \(D=kQ/J^2\),
+
+\[
+\operatorname{gldim}D=\infty
+\Longrightarrow
+D\text{ is infinite }+.
+\]
+
+The proof uses actual path/syzygy composition.
+
+---
+
+# 43. Failed collision arguments
+
+The following routes failed or were withdrawn.
+
+## F1 — raw \(BP\) recurrence
+
+Because
+
+\[
+P\ge I,
+\]
+
+the alternating operator already contains the shared-detector graph.
+
+Its recurrence is tautological.
+
+## F2 — Hall / double counting
+
+Shared-detector pair counts and visible row counts do not interact strongly enough.
+
+Abstract collision-free matrices exist.
+
+## F3 — shared detector \(\Rightarrow\) comparison object
+
+Two source simples can survive the same detector localization without any active morphism between them.
+
+## F4 — singular map \(\Rightarrow\) detector transport
+
+Already refuted by the actual detector-blind anchor calibration.
+
+## F5 — finite-pd peeling \(\Rightarrow\) support descent
+
+The \([3,4]\) peeling algebra returns the peeled finite-pd top after one syzygy.
+
+## F6 — finite alternating cycle \(\Rightarrow\) restartability
+
+Quantum moduli drift and U3 negative assets forbid this inference.
+
+## F7 — minimal incidence core \(\Rightarrow\) corner algebra
+
+Cross modules prevent automatic ordinary-algebra restriction.
+
+---
+
+# 44. Exact missing algebraic input
+
+For a cell
+
+\[
+x
+\to_{\rm rec}
+y
+\leftarrow_{\rm rec}
+x'
+\to_{\rm vis}
+t,
+\]
+
+the frozen data provide:
+
+\[
+\mathfrak T_y(L_x)\neq0,
+\]
+
+\[
+\mathfrak T_y(L_{x'})\neq0,
+\]
+
+\[
+e_{x'}De_t\neq0,
+\]
+
+but
+
+\[
+\mathfrak T_t(L_{x'})=0
+\]
+
+under the hypothetical no-collision condition.
+
+To activate the cell one needs additional data converting the shared \(y\)-tail into a \(t\)-tail.
+
+Neither Boolean incidence nor Peirce multiplication supplies that conversion.
+
+Thus the exact local bridge problem is:
+
+\[
+\boxed{
+\textbf{Bi-Source Detector Coupling Problem}
+}
+\]
+
+Find an actual functorial / exact / comparison structure using the **common provenance** of the two \(y\)-tails which forces
+
+\[
+\mathfrak T_t(L_{x'})\neq0
+\]
+
+or yields strict algebraic descent.
+
+The coupling image
+
+\[
+\mathcal C_y(x,x')
+\]
+
+is the first invariant that records information absent from \(R\).
+
+---
+
+# 45. Universal Gap A impact
+
+U7 does not close Universal Gap A.
+
+It does remove a false proof architecture:
+
+\[
+\text{finite two-color incidence}
++
+\text{double counting}
+\Rightarrow
+\text{collision}.
+\]
+
+That implication is not available.
+
+U7 also sharpens the surviving counterexample architecture.
+
+A hypothetical Universal Gap-A failure must support a closed finite machine in which:
+
+1. every source has a shared recurrent detector with another eligible source;
+2. every recurrent incidence is Peirce-dead;
+3. every purification carrier incidence remains nonrecurrent;
+4. finite source relocation closes into a terminal cell core;
+5. no detector-specific transport activates any cell;
+6. if the core is fully internal and strict, it has at least four eligible sources;
+7. otherwise it must use diagonal provenance or external/cross-module leakage.
+
+This is a strictly stronger normal form than the U6 bi-singular source core.
+
+---
+
+# 46. Recommended next node
+
+The next node should not continue pure incidence counting.
+
+The natural next target is:
+
+\[
+\boxed{
+\textbf{Universal Layer U8 — Detector-Coupling / Purified Cell Transport}.
+}
+\]
+
+The main object should be the detector-specific coupling image
+
+\[
+\mathcal C_y(x,x')
+\]
+
+together with the actual purification provenance \(\omega\).
+
+Priority questions:
+
+1. does the U6 shared-detector lift force
+   \[
+   \mathcal C_y(x,x')\neq0
+   \]
+   for at least one orientation?
+2. can the composition-series extraction be upgraded to a morphism in the detector quotient?
+3. if all shared-detector couplings are silent, does the purified module split into a smaller detector-local sector?
+4. can coupling silence force a corner/cross-module descent?
+5. in the strict internal \(4+\)-source branch, can a product of cell-level coupling maps be shown nonzero?
+
+The radical-square-zero theorem supplies the calibration where cell transport is literally path concatenation.
+
+Quantum moduli drift supplies the calibration where repeated finite labels do not determine the transport.
+
+---
+
+# 47. Completion status
+
+### Target A1 — Bi-Singular Incidence Collision
+
+\[
+\boxed{\texttt{NOT PROVED}.}
+\]
+
+Raw incidence is insufficient; a local actual U7 cell can remain mismatched.
+
+### Target A2 — strict incidence descent
+
+\[
+\boxed{\texttt{PARTIALLY VERIFIED}.}
+\]
+
+Finite descent to a terminal minimal cell core is rigorous.
+
+No descent from the minimal core is proved.
+
+### Target A3 — stronger actual normal form
+
+\[
+\boxed{\texttt{ACHIEVED}.}
+\]
+
+The surviving obstruction is the Closed Purified Switch-Failure Core with the branch decomposition:
+
+\[
+\text{diagonal provenance}
+/
+\text{external leakage}
+/
+\text{strict internal }|X|\ge4
+/
+\text{coupling silence}.
+\]
+
+---
+
+# 48. Completion label
+
+\[
+\boxed{
+\texttt{
+RAW\_P\_DEGENERACY
+/
+FOUR\_SOURCE\_INCIDENCE\_BARRIER
+/
+SHARED\_DETECTOR\_NOT\_TRANSPORT
+/
+COUPLING\_FRONTIER
+}
+}
+\]
+
+The strongest new positive structural statement is:
+
+\[
+\boxed{
+\text{collision-free fully internal strict incidence core}
+\Longrightarrow
+|X|\ge4.
+}
+\]
+
+The strongest new negative statement is:
+
+\[
+\boxed{
+\text{shared detector}
++
+\text{visible eligible carrier}
+\not\Rightarrow
+\text{local detector activation}.
+}
+\]
+
+The exact surviving frontier is:
+
+\[
+\boxed{
+\textbf{detector-specific coupling across a closed purified switch-failure core}.
+}
+\]

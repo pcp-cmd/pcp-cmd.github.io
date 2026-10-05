@@ -1,0 +1,20 @@
+## UGA-C065 — Actual Projective Columns Give Returns or a Uniform Screening Bound
+**Status:** COMPLETE SELF-AUDITED ALL-DEGREE PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Coupler-Projective-Columns-and-Uniform-Screening-Bound-2026-10-03.md, Theorems 2.1--2.2 / 3.2 / 4.2, Corollaries 2.3 / 4.3 and Sections 5--6.
+
+For an actual two-stage retained model H=C plus M[1], assume M is left C-projective and write M e_j as the sum of (Ce_i)^{K_ij}. The strict H-module triangle M e_j[1] -> H e_j -> Ce_j gives actual ordinary groups
+
+\[
+\dim\operatorname{Tor}^A_{2r}(R_z,Ce_j)=(K^r)_{zj},\qquad
+\operatorname{Tor}^A_{2r+1}(R_z,Ce_j)=0.
+\]
+
+A cycle in this actual multiplicity matrix makes A infinite +, by finite composition-factor detection in Ce_j. The persistent simple pair need not be diagonal. This requires no coefficient perfectness or C infinite + and excludes all invertible/twisted-regular couplers, including nonperfect ones. It is not a support-to-Tor inference: the module triangle proves the full homological recurrence first.
+
+If K is acyclic, actual derived tensor powers M^{tensor_C^L q_0} vanish, with q_0 retained vertices. The existing negative-weight spectral sequence has no first-page column p>=q_0. Every killed quotient-edge class therefore dies by page q_0-1, uniformly in total degree. If additionally D=pd_{C^e} M is finite, the natural ordinary Tor comparison is surjective for all n>(D+2)(q_0-1)+1. Thus C infinite + implies A infinite + for every one-sided-projective perfect two-stage coupler, without a regular injective bound. Such local-trivial deletions are excluded in a global vertex-minimal counterexample.
+
+The right-projective case has an explicit right-module proof in Section 5, without opposite-side transfer. For a single negative layer M[a], cycles give return period (a+1)ell, the weight-page bound is a(q_0-1), and eventual surjectivity holds above (a+1+D)(q_0-1)+1.
+
+Projectivity is required of the actual one-sided module, not its finite resolution terms. The page bound concerns negative weight, not the local-singular excursion filtration. Nonperfect acyclic bounded screening, coefficients projective on neither side, and general many-layer models remain open. The C063 ordinary C-module resolution calibrates the new recurrence without rerunning old checks.
+
+---

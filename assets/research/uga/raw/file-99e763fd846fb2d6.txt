@@ -1,0 +1,471 @@
+# Run — Even ordinary Tor survives without a section
+
+**Date:** 2026-10-03  
+**Researcher:** one main Codex researcher  
+**Evidence:** complete self-audited proofs; bounded exact rational calibration; not independently verified  
+**Global status:** Universal Gap A remains OPEN. No novelty claim is made.
+
+This continuation starts from T4. It seeks ordinary supported Tor rather
+than an additional higher-output invariant. The new bridge does not assume
+an algebra section or augmented formality. A parity obstruction in the
+existing negative-weight bar filtration preserves every even-degree
+quotient Tor class under an explicit bimodule hypothesis.
+
+It excludes the projective-bimodule part of local-trivial screening and a
+stated unbounded-cohomology class. The positive finite-bimodule-pd and
+general nonperfect cases remain open.
+
+## 1. Even visible recurrence in an ordinary algebra
+
+Use the project's orientation: beta_{zy}(n)=dim Tor_n^C(R_z,L_y), and
+reverse visibility means e_yCe_z!=0. Let
+
+\[
+b_n(C)=\sum_{y,z}\dim(e_yCe_z)\,\beta_{zy}(n),\qquad
+t_n(C)=\sum_y\dim e_y\Omega_C^n L_y.
+\]
+
+Reuse the ordinary syzygy identity from the existing return machinery:
+
+\[
+b_n(C)=t_n(C)+t_{n+1}(C).
+\tag{1.1}
+\]
+
+It follows by applying e_y to
+0 -> Omega^{n+1} L_y -> P_n^y -> Omega^n L_y -> 0 and summing over y.
+Every summand is a nonnegative integer.
+
+### Lemma 1.1 — Some supported pair returns in infinitely many even degrees
+
+If C is infinite +, then there is a fixed reverse-supported pair (z,y)
+with Tor_{2r}^C(R_z,L_y)!=0 for infinitely many r.
+
+#### Proof
+
+If b_{2r} vanished for all sufficiently large r, (1.1) would make both
+t_{2r} and t_{2r+1} vanish. Thus every high t_n and then every high b_n
+would vanish, contrary to infinite +. Hence b_{2r} is nonzero infinitely
+often. There are finitely many Peirce pairs, so one supported pair
+contributes infinitely often. QED.
+
+This does not say that every preselected persistent pair returns in even
+degrees, or that diagonal simple Tor persists. The existing Saorin example
+has only off-diagonal positive-degree simple Tor; no diagonal assertion
+has been reintroduced.
+
+## 2. The positive ordinary bridge
+
+Let q be the retained connective derived quotient at x, let
+C=H^0(q)=A/Ae_xA, and let S be the retained vertex algebra. Choose a
+strictly augmented minimal S-relative A_infinity model
+
+\[
+H=C\oplus\bigoplus_{d\ge1}M_d[d],
+\qquad M_d=H^{-d}(q).
+\]
+
+As before |m_r|=2-r, reduced C inputs lie in R=rad C, and a suspended
+negative letter from M_d has homological degree d+1.
+
+Assume
+
+\[
+\boxed{M_d=0\text{ for every positive even }d,\qquad
+M_d\text{ is projective over }C^e\text{ for every odd }d.}
+\tag{2.1}
+\]
+
+There is no bound on d, no finite-generation assumption, and no hypothesis
+that the higher operations vanish. Since two odd negative degrees sum to
+an even negative degree, (2.1) forces m_2 on two negative inputs to be zero.
+
+### Theorem 2.1 — Every even quotient Tor class lifts
+
+For every retained pair z,y and every r>=0, the natural comparison is
+surjective:
+
+\[
+\boxed{
+\epsilon_{2r}:\operatorname{Tor}^A_{2r}(R_z,L_y)
+\longrightarrow\operatorname{Tor}^C_{2r}(R_z,L_y).
+}
+\tag{2.2}
+\]
+
+In particular
+
+\[
+\dim\operatorname{Tor}^A_{2r}(R_z,L_y)
+\ge\dim\operatorname{Tor}^C_{2r}(R_z,L_y).
+\tag{2.3}
+\]
+
+If C is infinite +, A is infinite +. This conclusion permits nonzero pure
+higher operations and mixed higher operations.
+
+#### Proof
+
+The degree projection p:H -> C is a strict augmented A_infinity morphism,
+as in T4. In the reduced bar complex B(H), let N be the kernel of B(p):
+it consists of words containing at least one negative letter. It is a
+subcomplex, since no higher contraction involving a negative input can
+have degree-zero output.
+
+Use the existing negative-weight filtration wt=sum d of the letters.
+Contraction by m_r raises wt by r-2. The associated differential is b_2.
+The filtration is finite in each total homological degree, since a word
+has degree length+wt. This also holds on N.
+
+For b_2, fix the sequence of negative letters
+M_{d_1},...,M_{d_p}, p>=1. Negative-negative products are zero, so the
+b_2 complex splits by this sequence. Its interspersed radical-C blocks
+are the multibar complex computing
+
+\[
+R_z\otimes_C^{\mathbf L}M_{d_1}
+\otimes_C^{\mathbf L}\cdots
+\otimes_C^{\mathbf L}M_{d_p}
+\otimes_C^{\mathbf L}L_y,
+\tag{2.4}
+\]
+
+shifted by sum(d_i+1).
+
+Each projective C-bimodule is a sum of summands Ce_i tensor_k e_jC.
+Their tensor products over C remain projective C-bimodules, because
+
+\[
+(Ce_i\otimes_k e_jC)\otimes_C(Ce_a\otimes_k e_bC)
+\cong Ce_i\otimes_k(e_jCe_a)\otimes_k e_bC.
+\]
+
+After tensoring the first such factor with R_z, the remaining object is
+right C-projective. Continuing to tensor and finally applying L_y shows
+that (2.4) has homology only in degree zero.
+Every shift sum(d_i+1) is even. Thus the first page for N has zero in
+every odd total homological degree.
+
+Every later differential lowers total degree by one. The positive-weight
+subcomplex's first page has only even total degrees, so all its later
+differentials vanish and H_n(N)=0 for every odd n. Degreewise finite
+filtration convergence makes this a statement about actual homology,
+not only an associated-graded pattern.
+
+The exact sequence
+
+\[
+0\longrightarrow N\longrightarrow B(H)\longrightarrow B(C)
+\longrightarrow0
+\]
+
+now gives surjectivity H_{2r}(B(H)) -> H_{2r}(B(C)), because its
+connecting target H_{2r-1}(N) is zero. The established derived quotient
+comparison identifies Tor^H with ordinary Tor^A for the retained simples.
+This proves (2.2).
+
+Lemma 1.1 supplies a fixed supported even tail in C; (2.2) lifts it to A.
+The reverse Peirce component also lifts through the ordinary quotient.
+No singular or stable information is substituted for ordinary Tor. QED.
+
+Surjectivity gives a vector-space splitting if one chooses one, but no
+canonical chain section or algebra section is asserted.
+The whole weight spectral sequence need not collapse: odd zero-weight
+classes may still hit the even positive-weight homology.
+
+## 3. Branch exclusions
+
+### Corollary 3.1 — Local-trivial projective couplers cannot completely screen
+
+In the two-stage local-trivial model
+
+\[
+H=C\oplus M[1],\qquad m_2,\quad m_3=\kappa,
+\]
+
+if M is projective as a C-bimodule, every even Tor_C class lifts to A,
+regardless of kappa. Thus an infinite-+ ordinary quotient cannot be
+completely screened.
+
+This reuses the d=0 case of the existing Screening-Corridor theorem:
+the positive columns have second coordinate zero, so a death from
+degree n can only occur when n=2r+1. The new conclusion also uses
+Lemma 1.1; one cannot screen the entire supported quotient tail by
+destroying only odd degrees.
+
+### Corollary 3.2 — Minimal-counterexample exclusion at arbitrary size
+
+Let A be a globally vertex-minimal counterexample and choose x with
+pd_A L_x infinite. Its retained derived quotient cannot satisfy (2.1).
+In particular, the local-trivial branch cannot have a C^e-projective
+first coupler.
+
+#### Proof
+
+UGA-C058 gives gldim C infinite using the actual tail of L_x, with no
+opposite transfer. Minimality makes C infinite +. Theorem 2.1 would
+make A infinite +, a contradiction. QED.
+
+The general form permits unbounded odd negative cohomology, infinitely
+generated cohomology, and nonzero higher-output indecomposables.
+It is therefore an ordinary Tor survival mechanism beyond T4's
+section/formality cases. The two-stage projective-bimodule case is a
+whole excluded subbranch. Finite positive C^e-pd, arbitrary parity of
+negative cohomology, and nonprojective couplers are not covered.
+
+## 4. An actual non-formal calibration: separate projectivity is insufficient
+
+The following algebra is an actual primitive deletion, not an arbitrary
+filtered-complex or hypothetical A_infinity example.
+
+Let Gamma=k[u]/u^4, U=Gamma/(u^2) as a left Gamma-module with generator b,
+and V=Gamma/(u^2) as a right Gamma-module with generator a.
+Form the Morita-context algebra
+
+\[
+A=\begin{pmatrix}\Gamma&U\\ V&k\end{pmatrix},
+\]
+
+with pairing U tensor_k V -> Gamma given by ba=u^2, and the opposite
+pairing V tensor_Gamma U -> k zero. The image (u^2) annihilates U and V,
+so the Morita compatibility identities and associativity hold over any
+field.
+
+Let y=0 be the Gamma vertex and x=1 the k vertex.
+The basis is e_y,e_x,u,u2,u3,a,au,b,ub. The nonzero radical products are
+
+\[
+u^2=u2,\quad u\,u2=u2\,u=u3,\quad ub=u b,\quad au=a u,
+\]
+
+\[
+ba=u2,\quad (ub)a=b(au)=u3.
+\]
+
+All other radical products vanish. This is the bound presentation
+ba=u^2, ab=aub=0; these also force u^4=0.
+The projectives are
+
+\[
+P_y=\langle e_y,u,u2,u3,a,au\rangle,\qquad
+P_x=\langle e_x,b,ub\rangle.
+\]
+
+### 4.1 Actual minimal periodic resolutions
+
+The following maps are right multiplication by the displayed elements.
+For source y, repeat
+
+\[
+\begin{aligned}
+d_1:P_y\oplus P_x\to P_y,\quad &(r,s)\mapsto ru+sa,\\
+d_2:P_y\to P_y\oplus P_x,\quad &r\mapsto(ru,-rb),\\
+d_3:P_x\to P_y,\quad &s\mapsto s(au),\\
+d_4:P_y\to P_x,\quad &r\mapsto r(ub).
+\end{aligned}
+\tag{4.1}
+\]
+
+Their ranks are respectively 5,4,2,1. Adjacent compositions are zero,
+and each image is the next kernel. The image of d_1 is JP_y, while
+ker d_4=JP_y again. Every coefficient lies in J, so the resolution is
+minimal and
+
+\[
+\Omega_A^4 L_y\cong L_y.
+\tag{4.2}
+\]
+
+For example ker d_1 has basis
+(u,-b),(u2,-ub),(u3,0),(au,0). The image of d_2 is exactly this space.
+Its kernel is spanned by u3 and au, the image of d_3.
+The kernel of d_3 is k(ub), which is L_y and is the image of d_4.
+These explicit bases prove the ranks and exactness in every
+characteristic, independently of the rational check below.
+
+For source x, the first map is P_y -> P_x, r -> rb.
+Its kernel is Z=span(a,au,u2,u3). The next two maps, repeated, are
+
+\[
+P_x^{\oplus2}\longrightarrow P_y,\quad(s,t)\mapsto sa+t(au),
+\]
+
+\[
+P_y\longrightarrow P_x^{\oplus2},\quad r\mapsto(r(ub),-rb).
+\tag{4.3}
+\]
+
+They have ranks 4 and 2 and are exact in alternation. The kernel of
+the first is span((ub,-b),(0,ub)), isomorphic to Y=span(b,ub)=JP_x.
+Thus Omega^3 L_x is isomorphic to Omega L_x and pd_A L_x is infinite.
+
+For all n>=0 the source-y resolution has terms
+
+\[
+P_n^y=\begin{cases}
+P_y,&n\equiv0,2\pmod4,\\
+P_y\oplus P_x,&n\equiv1\pmod4,\\
+P_x,&n\equiv3\pmod4.
+\end{cases}
+\]
+
+For source x, P_0^x=P_x, P_n^x=P_y for positive odd n, and
+P_n^x=P_x^{\oplus2} for positive even n.
+Hence both simples have infinite pd and actual visible ordinary returns.
+In particular Tor^A_{2r}(R_y,L_y)=k for every r>=0.
+
+### 4.2 Coupler and non-formality
+
+Delete x. Then e_xAe_x=k and C=k[u]/u^2. The multiplication
+
+\[
+U\otimes_k V\longrightarrow\Gamma
+\]
+
+has image span(u2,u3) and kernel M with basis
+
+\[
+v=ub\otimes a-b\otimes au,\qquad w=ub\otimes au.
+\]
+
+The C-bimodule action is
+
+\[
+uv=-w,\qquad vu=w,\qquad uw=wu=0.
+\tag{4.4}
+\]
+
+M is free of rank one separately on each side, generated by v.
+But C^e=k[l,r]/(l^2,r^2) is a four-dimensional local algebra; M has
+dimension two, so is not projective over C^e. In fact it has infinite
+C^e-pd, since a nonfree finite module over this local Artinian algebra
+cannot have a terminating minimal free resolution.
+
+The retained quotient has exactly C in degree zero and M in degree -1.
+A homotopy for u^2 is b h a. The associativity obstruction on u,u,u is
+
+\[
+u(bha)-(bha)u=(ub)ha-bh(au),
+\]
+
+which represents v. Absorbing a common suspension sign in the basis,
+the minimal model is
+
+\[
+H=C\oplus M[1],\qquad m_3(u,u,u)=v,\quad m_{r\ge4}=0.
+\tag{4.5}
+\]
+
+All mixed m_3 vanish by degree. The normalized Hochschild equation is
+uv+vu=0. A normalized 2-cochain with value alpha v+beta w has
+coboundary on u,u,u lying in span(w), whereas (4.5) has value v.
+Thus kappa is nonzero in every characteristic, and q is non-formal.
+
+### 4.3 Every high quotient Tor class is killed, but new returns persist
+
+For C, [u|...|u] spans Tor_n^C(k,k) in every degree.
+Its first positive-weight differential in (4.5) is
+
+\[
+b_3[u|\cdots|u]
+=\sum_{j=0}^{n-3}(-1)^j
+[u^{|j}|v|u^{|n-3-j}]\quad(n\ge3),
+\tag{4.6}
+\]
+
+where u^{|j} means j consecutive bar letters, not the product u^j.
+The expression is a b_2 cycle. Every b_2 boundary in this one-M
+column has its negative letter in span(w): a binary action can produce
+w but not v. The distinct v-position words in (4.6) are therefore
+nonzero in the first page.
+
+All quotient Tor classes in degree n>=3 die on that first weight page.
+Consequently the comparison Tor_n^A(R_y,L_y) -> Tor_n^C(k,k) has
+zero image for every n>=3. Nevertheless (4.2) gives a new ordinary
+diagonal return in every even degree, and in every degree congruent
+to one modulo four. These returns lie in positive weight, not in the
+original quotient edge image.
+
+The example has a genuine infinite-pd deleted source and bounded
+two-stage screening. It is infinite +, not a Gap-A counterexample and
+not a realization of the unbounded-excursion Target-B branch.
+It prevents replacing C^e-projectivity in Theorem 2.1 by projectivity,
+even freeness, on the two separate sides.
+
+## 5. Exact local self-check
+
+Reproducible evidence is in Even-Tor-Evidence/:
+verify_even_tor.py, even-tor-result.json, task.md and
+computation-record.json. Python 3.14.3 used fractions.Fraction over Q.
+
+The check passed:
+
+- 729 basis associativity triples;
+- 378 A-linearity checks on seven resolution maps and seven adjacent
+  exact periodic pairs, including minimality and composition zero;
+- the linker kernel and its two bimodule actions;
+- all four ordinary simple-pair Tor complexes through degree 4,
+  with incoming degree 5: 20 records and 2457 differential-square checks;
+- the retained minimal-model bar through degree 8, incoming degree 9:
+  nine Tor/projection records and 682 differential-square checks;
+- six nonzero first-weight-page screenings in degrees 3..8.
+
+The ordinary and minimal-model projection ranks are one through degree
+two and zero thereafter in the checked ranges. Their Tor dimensions
+match the explicit all-degree resolutions.
+
+The computation-record validator checked schema, paths and final
+artifact hashes. This is bounded self-check evidence, not independent
+verification of the proofs. The field-independent and all-degree
+claims rely on Sections 2 and 4's explicit arguments, not finite samples.
+No unchanged old computation was rerun.
+
+## 6. Normal adversarial audit
+
+1. The proof uses the existing negative-weight filtration, not the
+   excursion filtration; their page conventions are not conflated.
+2. Even supported recurrence is an aggregate consequence of (1.1);
+   a fixed pair is selected only afterward. Diagonal simple Tor is
+   neither assumed nor inferred in Lemma 1.1.
+3. C^e-projectivity is essential to concentrate the multibar homology.
+   Separate left/right projectivity is not silently substituted.
+4. The parity argument also needs vanishing of every even negative
+   cohomology degree. Without it negative-negative multiplication
+   and odd total shifts need not vanish.
+5. Unbounded negative degrees and unbounded higher arities are allowed.
+   Degreewise finiteness suffices for the actual homology comparison.
+6. Only the positive-weight subcomplex degenerates in this proof.
+   Odd zero-weight classes may be screened on late pages.
+7. The comparison proved is surjectivity in even degrees. No canonical
+   section, formality or homological epimorphism A -> C is asserted.
+8. Reverse Peirce visibility is inherited from the ordinary quotient,
+   separately from Tor survival.
+9. Minimal-counterexample use retains quotient infinity from the actual
+   infinite-pd anchor and UGA-C058. No opposite transfer is used.
+10. The nine-dimensional example is an actual finite algebra with
+    completely checked module maps. Its model's non-formality and
+    complete high quotient-edge screening do not make it a counterexample:
+    the new ordinary returns are explicitly present.
+11. The rational bounded computation does not certify all characteristics;
+    the displayed basis proofs do.
+12. No independent verifier acceptance or novelty is claimed.
+
+## 7. Remaining closure work
+
+There is now an ordinary supported-Tor bridge permitting pure non-formal
+higher operations, not just a section criterion. It closes the
+C^e-projective local-trivial coupler case and the explicit odd-negative,
+projective-bimodule cohomology class, without bounds on negative degree
+or operation arity.
+
+The difficult remainder has nonprojective bimodule homology or both
+parities. Finite positive C^e-pd gives the older screening corridor but
+does not give the parity vanishing used here. In that case the next
+high-value task is to turn the screened quotient tail into new ordinary
+returns, as the calibration does through actual periodic kernels, or
+to prove another strict descent. Do not merely assign another label to
+the surviving obstruction.
+
+The T4 section/descent results and T2 binary-indecomposable frontier
+remain unchanged. Target A, local-trivial nonprojective screening and
+the supported-weight branches remain open in their general forms.

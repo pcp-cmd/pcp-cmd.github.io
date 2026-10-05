@@ -1,0 +1,28 @@
+# Cycle 7 master guidance — promote the fifth branch and force canonical bilateral noncancellation
+
+Transport is explicitly `off`; this guidance is authored by Main Codex from elaboration `d5a53589cdc464fc` with zero external-call cost. It is strategy, not proof authority.
+
+The comparison architecture has crossed an important threshold. `9b661439db7f6ae9` instantiates the total five-way atlas on actual corner simples and canonical ambient quotient maps. Stop rebuilding abstract comparison lemmas. The load-bearing comparison problem is now only the fifth branch: a fixed right simple recurring across infinitely many higher error degrees must be upgraded to a fixed two-sided persistent recurrence or a strictly smaller secondary corner.
+
+The bilateral route is now legally available through `932a22f86dc2b944`, but symmetry alone is not a pairing theorem. The construction must explicitly match the canonical (A) and (A^{op}) comparison diagrams. Every proposed invariant must survive both `6bd89784ef94bef3` and `78e3ab82c1e9d0e7`; cross support and one recurrent radical edge are both insufficient.
+
+## Branch A — finish the mutual-dumbbell frontier
+
+Use `ee07f374726a4e16` and `cfa612b56766b9c2` as closed bases. Isolate the surviving three-vertex mutual-dumbbell configuration exactly. Prove infinite-(+) for it or for the precise dead-zone-corner subclass needed by `073459eead09a970`. A useful proof should expose which recurrent simple and ordered Peirce block survive the relations. If the blanket closure is false, submit the explicit finite-dimensional counterexample and identify the narrower true statement.
+
+## Branch B — fifth-branch promotion on canonical modules
+
+Work directly with `9b661439db7f6ae9`. In its fifth alternative, keep the actual complexes and maps producing (E_q=\operatorname{Tor}_q^{fAf}(R_a^{fAf},fA)); composition-factor pigeonhole alone is no longer enough. Seek a spectral-sequence edge map, long exact sequence, or derived-adjunction construction that attaches a fixed left simple to the recurring right simple and yields persistent ambient Tor. If this is impossible, construct a secondary idempotent from the exact support/provenance of the (E_q) and prove its corner has infinite recurrence. The output must type-check as input to Branch C.
+
+## Branch C — canonical bilateral noncancellation or strict descent
+
+Use `932a22f86dc2b944` to construct the paired (A/A^{op}) comparison state, not merely to invoke symmetry. Combine `9b661439db7f6ae9`, `51edbf2274f700d5`, and any Branch-B fifth-branch output. Include canonical kernel provenance and a relation-sensitive coordinate: an actual matrix entry, first nonzero radical layer, or image in an associated graded multiplication map. Prove that an incompatible state either yields a correctly ordered nonzero Peirce block or strictly decreases a well-founded tuple. Explicitly state which minimal dead-zone hypothesis excludes `6bd89784ef94bef3` and which canonical/bilateral hypothesis excludes `78e3ab82c1e9d0e7`.
+
+## Closure discipline
+
+- The comparison stage is closed only as a five-way output theorem; its fifth output remains an unresolved input to recycling.
+- A repeated simple factor across (q) is not a persistent ambient Tor pair.
+- An (A^{op}) theorem is not yet a pairing of the two canonical defect families.
+- A radical edge is not the required reverse Peirce block.
+- Every strict descent claim must name the ordered invariant and prove well-foundedness.
+- The Han conclusion remains downstream of universal Gap A and an exact verified ordinary-Hochschild interface.

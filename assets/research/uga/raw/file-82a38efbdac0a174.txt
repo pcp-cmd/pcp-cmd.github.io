@@ -1,0 +1,80 @@
+"""Actual path/cover calibration of pd I=1 and pd multiplication defect=2.
+Uses frozen project full-cover helpers; no image pruning or new engine.
+"""
+from pathlib import Path
+import sys
+root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfor p in [3,5,8]:',1)[0],str(frozen),'exec'),globals())
+
+c=[2,5,4,3];N=4
+basis=[(f'e{i}',i,i) for i in range(N)];paths={(i,0):i for i in range(N)}
+for i in range(N):
+    for length in range(1,c[i]):
+        paths[i,length]=len(basis)
+        basis.append((f'p{i}_{length}',(i+length)%N,i))
+products={}
+for (i,l),b in paths.items():
+    if l:
+        for (j,m),a in paths.items():
+            if m and j==(i+l)%N and l+m<c[i]:products[a,b]=paths[i,l+m]
+A=Table(N,basis,products)
+assert len(A.basis)==14 and not A.alg.radical_powers[4]
+u,v,w=paths[1,3],paths[1,4],paths[2,3]
+I=supported_module(A,[[u],[v,w],[],[]])
+P0,p0_local=projective(A,0);L1=sr.Module.simple(A.alg,1)
+target=ss.direct_sum(A.alg,[P0,L1],[1,1])
+maps=[[[F(1)]] , [[F(1),F(0)],[F(0),F(1)]],[],[]]
+whole_I_iso=ss.check_isomorphism(target,I,ss.encode(maps))
+counts['actual_kernel_isomorphisms']+=1
+
+actual=[kernel_simple(A,0,1,'FULL Omega LEFT L0=L1')]
+for source,target_label in [(1,2),(2,3),(3,0)]:
+    P,local=projective(A,target_label)
+    lead=paths[source,1]
+    embedded=[[A.mult(b,lead) for b in part] for part in local]
+    assert all(b is not None for part in embedded for b in part)
+    actual.append(embedded_kernel_iso(A,source,P,embedded,
+                  f'FULL Omega LEFT L{source}=P{target_label}'))
+K,_,I_cover=cover(I)
+Z,_,K_cover=cover(K)
+assert any(K.dimensions) and not any(Z.dimensions)
+
+# Entire balanced tensor basis. Idempotent balancing leaves exactly four pairs.
+pairs=[(a,b) for a in [u,v,w] for b in [u,v,w] if basis[a][2]==basis[b][1]]
+assert pairs==[(u,v),(u,w),(v,v),(v,w)]
+pos={p:i for i,p in enumerate(pairs)}
+relations=[]
+for alpha in [u,v,w]:
+    for beta in [u,v,w]:
+        for i in range(N):
+            arrow=paths[i,1]
+            ax,xb=A.mult(alpha,arrow),A.mult(arrow,beta)
+            col=[F(0)]*len(pairs)
+            if ax is not None and (ax,beta) in pos:col[pos[ax,beta]]+=1
+            if xb is not None and (alpha,xb) in pos:col[pos[alpha,xb]]-=1
+            if any(col):relations.append(col)
+assert rk.rank(relations)==3
+quotient_basis=[rk.unit_vector(4,i) for i in [0,2,3]]+[rk.unit_vector(4,1)]
+unit_basis(quotient_basis,4)
+assert all(not col[1] for col in relations)
+assert all(A.mult(a,b) is None for a,b in pairs)
+# Every LEFT/right radical action on survivor u tensor w goes into relation span.
+for r in A.radical:
+    left,right=A.mult(r,u),A.mult(w,r)
+    for p in [(left,w),(u,right)]:
+        if p in pos:assert pos[p]!=1
+tensor_payload={'basis_pair':['p1_3','p2_3'],'LEFT_label':0,'RIGHT_label':2,
+                'all_balanced_pairs':[[basis[a][0],basis[b][0]] for a,b in pairs],
+                'arrow_relation_columns':relations,'rank':3,'quotient_dimension':1,
+                'radical_actions_both_sides_zero':True,'actual_multiplication_zero':True}
+result={'status':'passed','field':'Q','counts':counts,'algebra':A.payload,
+        'LEFT_Kupisch':c,'WHOLE_LEFT_I_pd':1,'I_squared_zero':True,
+        'WHOLE_I_P0_plus_L1_isomorphism':whole_I_iso,'WHOLE_I_cover':I_cover,
+        'WHOLE_I_kernel_cover':K_cover,'all_simple_FULL_kernels':actual,
+        'all_LEFT_simple_pds':[2,1,1,1],'gd':2,'actual_tensor':tensor_payload,
+        'LEFT_multiplier_defect_pd':2,'Tor1_RIGHT_A_over_I_LEFT_I_dimension':1,
+        'evidence_level':'actual finite helper calibration, separate all-field path proof',
+        'independent_verification':False,'UGA_counterexample':False}
+args.out.write_text(json.dumps(ss.encode(result),indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','counts':counts,'pd_I':1,'pd_defect':2,'gd':2}))

@@ -1,0 +1,18 @@
+## UGA-C070 — Periodic Weighted Components Force Ordinary Supported Tor with Mixed Layers
+**Status:** COMPLETE SELF-AUDITED ALL-DEGREE PROOF / EXACT BOUNDED ACTUAL CALIBRATION / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Periodic-Weighted-Components-and-Ordinary-Tor-2026-10-03.md, Sections 1--4 and 6--7.
+
+Let H be the retained minimal derived quotient with H^0=C and M_d=H^{-d}. Assume every actual M_d is projective over C on the same stated side. In the left version M_de_j is the sum of (Ce_i)^{K_d(i,j)}, and edge j -> i has weight d+1. Let V be a cyclic SCC whose gcd g_V of all nonempty weighted closed-walk totals is at least two. For both endpoints in V, actual ordinary projective-column Tor has series
+
+\[
+\left(\sum_n\dim\operatorname{Tor}^A_n(R_z,Ce_j)t^n\right)_{z,j\in V}
+=\left(I-\sum_{d\ge1}t^{d+1}K_d|_V\right)^{-1}.
+\]
+
+Actual one-sided projectivity makes each C-block tensor word degree-zero homology. Endpoint path weights have one residue modulo g_V. An auxiliary negative-letter count applied only to b_2 handles binary negative products; all its degree-minus-one maps vanish. The full negative-weight sequence has the same concentration and degreewise finite convergence, producing ordinary A-Tor despite arbitrary pure/mixed higher operations. Repeating a closed walk and ordinary finite-length detection gives a fixed simple pair with reverse Peirce support, so A is infinite +.
+
+Both negative parities, unbounded degrees, nonperfect bimodules and infinite homogeneous generation are allowed. No section, quotient infinite-+, anchor or operation-arity bound is required. The right-projective version is proved with the right-module bar, not opposite-+ transfer. Only the component's projective-column test complexes collapse; no quotient-simple screening collapse, canonical splitting or page bound is asserted.
+
+This unifies the cyclic one-layer C065 and odd-many-layer C066 classes and closes additional mixed-parity periodic components at arbitrary finite size. The actual ten-dimensional radical-square-zero five-cycle deletes a three-vertex **block**, has weights two and three but closed-walk gcd five, and gives the displayed return period five. It is infinite +, not a counterexample, unbounded-screening realization or primitive-deletion calibration. Projectivity of all actual layers on the chosen side and the gcd of **all** closed-walk weights must be retained.
+
+---

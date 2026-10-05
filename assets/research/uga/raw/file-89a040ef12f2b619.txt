@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-04T05:52:03.161576+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "847deae77e35e9545852c85533ac11e399e23e0e8e3eae0770abaec39cb6a091",
+    "object": "One-sided higher-pd actual carrier-preserving supported ordinary return and strict badness descent",
+    "deliverables": [
+      "verify_one_sided_carrier.py",
+      "one-sided-carrier-result.json",
+      "verify_full_finite_block_expansion.py",
+      "full-finite-block-expansion-result.json",
+      "computation-record.json",
+      "initial-helper-binding-failure.txt"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "F nonempty proper, finite LEFT pd d, actual ordinary E_F finite global dimension g and highest degree q.",
+      "Actual RIGHT E cover generators for H(L_z) must contain its retained physical carrier(U). Whole projective carriers of ACTUAL finite L_f resolutions contained in C_f(R) suffice; neither is automatic.",
+      "Ext FROM S is RIGHT E and bounded by LEFT pd; actual homogeneous covers realized by fiber triangles stop after g+1.",
+      "Final MINIMAL injective complex excludes F socles and restricts to an exact ordinary B injective resolution; its map is the actual UNIT.",
+      "Actual cone filtration shifts i+1-sigma yield t=max(d+g max(q-1,0)-1,0).",
+      "Carrier inclusions propagate physical visibility through EVERY E projective/kernel generator, including nonsplit cones.",
+      "Supported ordinary cutoff becomes M+t; retained LEFT labels exact; RIGHT labels and SAME Tor pair may change.",
+      "Actual finite-F quotient repairs, not image deletion, prove chosen pd inequalities and global-infinity equivalence.",
+      "147->84 example is one-sided high-pd/nonperfect and has no shallow finite simple on EITHER side; it is already infinite-plus.",
+      "The5-dimensional factor expands its cover carrier despite pd2,E=k; full E has gd1/topdegree2 from actual covers/product. ENTIRE finite-LEFT tensor blocks still fail(R), but their actual Yoneda generators satisfy(U), from written ordinary factor proofs.",
+      "Connected14-dimensional algebra has ENTIRE finite-LEFT block {f} of pd2,E=k; actual cover expands to infinite head q and invisible u. Both(R)/(U) fail, and a c=d excludes a retained quotient projection. Already ordinary infinite-plus, not a badness counterexample.",
+      "Shared helpers/this researcher, schema and hashes do not constitute independent verification."
+    ],
+    "domain": "Finite elementary ordinary projective/injective resolutions, one-sided corner units, Yoneda covers and physical composition carriers",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Exact Fraction actual minimal covers and integral basis certificates with literal finite corner multiplication"
+      ],
+      "existence_evidence": "verify_directed_ext.py builds the actual E13 tensor C5 and checks sided terminating F covers through three actual corners.",
+      "local_availability": "available",
+      "availability_evidence": "Successful local exact execution under 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "selection_reason": "Exact actual terminating finite-F covers, carrier containments and Yoneda dimensions identify one-sided higher-pd eligibility; general ordinary unit/return proof is separate.",
+    "fallback_reason": "Reused same-session inventory: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python through math-science-computation observer_run.py",
+    "command_or_input": "python -B verify_one_sided_carrier.py --project-root PROJECT_ROOT --out one-sided-carrier-result.json; python -B verify_full_finite_block_expansion.py --project-root PROJECT_ROOT --out full-finite-block-expansion-result.json",
+    "code_artifact": "verify_one_sided_carrier.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_one_sided_carrier.py",
+      "sha256": "2b3d400f760a7227d47d5e30f15c37786ec019f7dc889735a579987318a50b3a"
+    },
+    {
+      "role": "result",
+      "path": "one-sided-carrier-result.json",
+      "sha256": "42688a7eb6743f0bd81782b926a3df23d43ec4b0dc65d32dea41c334b0e492d8"
+    },
+    {
+      "role": "code",
+      "path": "verify_full_finite_block_expansion.py",
+      "sha256": "841b7c132a560225dec1190db26c14b8fd0bd3c04c11892aa5dd672b0e37d695"
+    },
+    {
+      "role": "result",
+      "path": "full-finite-block-expansion-result.json",
+      "sha256": "bab80750c1fb5d8eee537a024d0120348cc06fc1f06690bd0449bbcb203e9d34"
+    },
+    {
+      "role": "failed-execution",
+      "path": "initial-helper-binding-failure.txt",
+      "sha256": "22c33e966af7faa3f8663769ad7203a41223926675298bd0d17ce64f572962d1"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "result_artifact": "one-sided-carrier-result.json",
+    "summary": "Actual147->84 one-sided/nonperfect calibration passed7063921 associativity triples,20 covers,381 integral inverses,12 carrier inclusions,14 F Ext entries and3 homogeneous E covers. Small factor/connected14 tests add5829 triples,21 covers,235 integral inverses,7 actual kernel isomorphisms and a genuine lifted Yoneda product. General unit/support/pd and all-r factor proofs are separate."
+  },
+  "verification": {
+    "methods": [
+      "Full basis associativity of original/opposite tensor tables, ordinary Y and literal corner",
+      "Actual terminating LEFT F minimal covers and every projective-carrier inclusion",
+      "All-degree F Ext dimensions from terminating finite resolutions; unique Ext-one arrow determines the entire Y algebra",
+      "Terminating homogeneous Y simple resolutions of lengths1,0",
+      "Actual terminating RIGHT finite simple resolutions in original147-dimensional algebra",
+      "Literal5-dimensional pd2/self-Ext-zero resolution and physical cover expansion",
+      "Full ordinary C Yoneda product from an actual lifted comparison map and terminating hereditary Y resolutions of lengths1,1,0",
+      "Seven actual connected14 ordinary kernel isomorphisms, terminating pd2 f resolution, and literal nonzero retained a c=d",
+      "Written RIGHT Yoneda fiber construction, actual minimal injective/unit identification and supported ordinary Hom/Tor proof under(R) or weaker(U)",
+      "Written finite-F actual quotient repairs and exact chosen infinite labels/gd equivalence",
+      "Eleven frozen source/helper hashes and artifact/computation-record validation"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact integer/rational certificates; no numerical residual.",
+    "limitations": [
+      "Same researcher/frozen helpers, not independently verified.",
+      "General unit/minimal-injective construction was proved in writing, not numerically reconstructed by the calibration script.",
+      "Infinity and nonperfect Ae use frozen all-degree ordinary tensor/finite-source comparison proofs, not finite Betti prefixes.",
+      "RIGHT F infinite labels were not claimed verified by sampled finite covers.",
+      "No arbitrary partial-deletion inheritance or automatic carrier-condition availability theorem; actual connected14 example refutes unconditional(R)/(U).",
+      "Only chosen LEFT labels exact; no SAME-pair high ordinary Tor isomorphism or RIGHT label invariance.",
+      "The147-dimensional example, connected14 obstruction and expansion factor/tensor family are not badness counterexamples.",
+      "The full sparse larger tensor used to extend carrier expansion was NOT executed; the formula is a written ordinary tensor consequence.",
+      "General loss bound2 for147->84 is sufficient; sharper written factor proof gives loss1 and LEFT corner pd1, not a numerical reconstruction.",
+      "Initial unchanged helper expected global current table A; the new caller omitted it, causing NameError. Caller binding A=T repaired the12-dimensional precursor, then14-dimensional nonsection strengthening passed. Failure log preserved.",
+      "Backend inventory reused from the same session; no remote or paid backend.",
+      "Schema/hash checks certify integrity only, not independent mathematical semantics; full Universal Gap A remains OPEN."
+    ]
+  }
+}

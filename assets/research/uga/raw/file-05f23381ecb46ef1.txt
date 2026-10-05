@@ -1,0 +1,123 @@
+{
+  "schema": "uga-pending-source-preservation/v1",
+  "date": "2026-10-05",
+  "scope": "Existing mathematical records, not a new proof or handoff",
+  "global_status": "OPEN",
+  "baseline_project_file_count": 382,
+  "baseline_current_state_sha256": "7d4ecae57a68f54453205de83dd8649433c490539ce9f831fb9126998576d3e5",
+  "new_source_files": [
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\uga-multiplier-defect-agent-2026-10-05\\H1-Actual-Multiplier-Envelope-and-Remaining-Global-Bridge.md",
+      "project_path": "runs/2026-10-05/Pending-Contributions/h1-multiplier-envelope/H1-Actual-Multiplier-Envelope-and-Remaining-Global-Bridge.md",
+      "sha256": "66e577e650f99a4cbf4325c2dec6c8e69c54aaecea1f625e326540ea31ce4c3d",
+      "bytes": 9037,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\uga-multiplier-defect-agent-2026-10-05\\verify_h1_sharp_defect.py",
+      "project_path": "runs/2026-10-05/Pending-Contributions/h1-multiplier-envelope/verify_h1_sharp_defect.py",
+      "sha256": "d3b670f011fcdedda14c8b3c5c900b60a6d3f24cddb8622e5bbf40574360f0dc",
+      "bytes": 3940,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\uga-multiplier-defect-agent-2026-10-05\\h1-sharp-defect-result.json",
+      "project_path": "runs/2026-10-05/Pending-Contributions/h1-multiplier-envelope/h1-sharp-defect-result.json",
+      "sha256": "5f64edb15ae3cd727fb4bdad2aefc80f3fac1cbce987c8c11996b4a45e09ef06",
+      "bytes": 39859,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\uga-multiplier-defect-agent-2026-10-05\\search_actual_nakayama_defect.py",
+      "project_path": "runs/2026-10-05/Pending-Contributions/h1-multiplier-envelope/search_actual_nakayama_defect.py",
+      "sha256": "d4cdd80a1b544f3d5d3618d490572b1eecc3211cf1295732c6e7f5db6cfc7fa5",
+      "bytes": 2235,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\uga-multiplier-defect-agent-2026-10-05\\search_actual_nakayama_defect.json",
+      "project_path": "runs/2026-10-05/Pending-Contributions/h1-multiplier-envelope/search_actual_nakayama_defect.json",
+      "sha256": "41a2618232ff090d74c8a0274733b8639c64fa2008051206234dc71b7f3d73c4",
+      "bytes": 7610,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\uga-cover-descent-20261005\\h1-ordinary-envelope-review.md",
+      "project_path": "runs/2026-10-05/Pending-Contributions/h1-multiplier-envelope/h1-ordinary-envelope-review.md",
+      "sha256": "d5a1eac82b14edf05ec4c2ea3fd74aee984095ba35d270083d81c4cc42a2dc21",
+      "bytes": 4947,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261005-projective-ideal\\nakayama_pattern_search.py",
+      "project_path": "runs/2026-10-05/Pending-Contributions/radical-power-pattern-search/nakayama_pattern_search.py",
+      "sha256": "e360002b2922f2f4893780a1a3eff49172de62bd4471be2ee4d8ad113b30307c",
+      "bytes": 1268,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261005-projective-ideal\\nakayama-pattern-search.json",
+      "project_path": "runs/2026-10-05/Pending-Contributions/radical-power-pattern-search/nakayama-pattern-search.json",
+      "sha256": "6af07df54f0b2e61ea9ddf4193bad4c264247309087ad5c41b187e101d80f02d",
+      "bytes": 192,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-primitive-comparison\\test_primitive_inheritance.py",
+      "project_path": "runs/2026-10-05/Pending-Contributions/historical-primitive-exploration/test_primitive_inheritance.py",
+      "sha256": "4ae667813d9528018e661f93212912e26c52cb1e52984b537fc35e3a504a24be",
+      "bytes": 4004,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-primitive-comparison\\primitive-inheritance-exploration.json",
+      "project_path": "runs/2026-10-05/Pending-Contributions/historical-primitive-exploration/primitive-inheritance-exploration.json",
+      "sha256": "086bb6c9698564f9be2e1513d349737acec55a9f67f35b875ed7e2cc230a96a1",
+      "bytes": 87112,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-primitive-comparison\\task.md",
+      "project_path": "runs/2026-10-05/Pending-Contributions/historical-primitive-exploration/task.md",
+      "sha256": "17997270c66be417c2c0d28f5ef2ae2d8cac09d92515a24f768579ff4ead7f6f",
+      "bytes": 1136,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261005-cubic-band\\search_power_kernel.py",
+      "project_path": "runs/2026-10-05/Pending-Contributions/historical-power-kernel-search/search_power_kernel.py",
+      "sha256": "4a353086bded643430ba26e53d42f43e65754d4a0715080cf102d5e9487448d7",
+      "bytes": 1951,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261005-cubic-band\\power-kernel-search.json",
+      "project_path": "runs/2026-10-05/Pending-Contributions/historical-power-kernel-search/power-kernel-search.json",
+      "sha256": "a5e8e58b93050afb638b5b312045501f9a27012e2f15eeb4bd78bef8d9435b1f",
+      "bytes": 337,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    },
+    {
+      "source_path": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-global-route-audit\\huber-species.pdf",
+      "project_path": "runs/2026-10-05/Pending-Contributions/primary-sources/huber-species.pdf",
+      "sha256": "ad3dc055386d6bc5603018277116f600ea5630bb42deeae970511088d447563d",
+      "bytes": 765862,
+      "status": "PENDING / original provenance retained / not registered in Claims"
+    }
+  ],
+  "already_present_pending_drafts": [
+    {
+      "project_path": "TEMP/global-ordinary-switch/all-source-finite-state-factor-switch-boundary.md",
+      "sha256": "b157370a3eb96f5ac30b919eec32267e75312c792a875f1fc65f58898bff470b"
+    },
+    {
+      "project_path": "TEMP/global-ordinary-switch/all-source-finite-state-composition-carrier-boundary.md",
+      "sha256": "a5ad92d18f2037668050a8fa35a5734eade4b2a1de9edc37cb900be449695b41"
+    },
+    {
+      "project_path": "TEMP/global-ordinary-switch/pd-one-cubic-tensor-defect-loewy-three-counterexample.md",
+      "sha256": "8722501155b3223068ab94f2093f967c46b712fca3463586d04e939ff18b45c9"
+    }
+  ],
+  "mathematical_review": "No new mathematical acceptance or independent verification performed by this preservation operation"
+}

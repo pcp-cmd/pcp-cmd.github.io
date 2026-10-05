@@ -1,0 +1,17 @@
+## UGA-C120 — Ordinary Euler No-Cancellation Gives Finite Stopping or a Uniform Supported Tor Window
+
+**Status:** COMPLETE INTEGER ORDINARY EULER PROOF / NORMAL ADVERSARIAL SELF-AUDIT / WHOLE ELIGIBLE GRADED CLASS CLOSED / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Eventual-Tor-Weight-Separation-No-Cancellation-and-Ordinary-Branch-Closure-2026-10-04.md Sections1–2,4,7; C117 actual minimal-degree/Euler/window assets reused.
+
+ACTUAL positive-graded elementary G over ANY field has G0=k^N, highest degree w, integer Cartan determinant D. Suppose d0>=0 makes ALL n contributing to EACH fixed x,y,d>d0 in ordinary graded beta_xy(n,d) have ONE parity. Parity may vary with x,y,d; several same-parity degrees and mixed internal weights are allowed. Then
+
+\[
+\boxed{\operatorname{gd}G<\infty\iff D=1,\qquad
+D=1\Longrightarrow\operatorname{gd}G\le\max\{d0,(N-1)w\}.}
+\]
+
+Actual Euler Q=sum_n(-1)^n B_n=C^-1 is coefficientwise finite by n<=d. Finite gd makes Q polynomial, so D is a unit in Z[t] and hence1. Conversely D1 gives Q=adj C of degree<=(N-1)w; each higher coefficient has only one sign, so zero kills EVERY ordinary Betti summand. The real S resolution ends. No modulo-field arithmetic, graph recurrence, finite-type or Yoneda-generation premise.
+
+If gd G infinite, u=deg D>=1, C117 gives for EVERY b SOME reverse-supported ordinary pair at b<n<=(b+1)w+u-1; finite pigeonhole fixes ONE pair infinitely often. No preselected/every-source/diagonal upgrade. N7 has pure weights0,1,2n-1 but infinite-dimensional E_positive with square0 and ALL positive simple diagonals0; its persistent pair is supported OFF-DIAGONAL. B14 constant D1/infinite actual tail violates eventual no-cancellation. General hypothesis availability and UGA OPEN.
+
+---

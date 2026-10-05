@@ -1,0 +1,629 @@
+# T23 — Shallow finite complements: weighted ordinary return and automatic corner descent
+
+Date: 2026-10-04.
+
+Status: complete ordinary proofs and normal adversarial self-audit;
+actual integral minimal-kernel calibration passed; NOT independently
+verified. No novelty claim. Universal Gap A remains OPEN.
+
+This continues T22's actual corner complex. Its perfection hypothesis
+is now removed for the entire class where every deleted LEFT simple has
+ambient pd at most one. The replacement is a SAME-DEGREE weighted
+ordinary Tor inequality which preserves physical support while allowing
+the detector to move into the deleted block. It works at arbitrary
+infinite-source count, with no count-by-count cases or new invariant.
+
+The unbounded finite-pd errors are not erased and not declared bounded.
+Their pd-one ordinary Ext window, together with an actual injective
+projective kernel, aligns every possible screen with a visible ordinary
+pair. This gives automatic badness-preserving dimension/vertex descent
+for every such finite block, even with a nonperfect corner module and
+no projective-cover-closed finite block. A pd-two counterexample identifies
+the exact failure of extending the argument without further hypotheses.
+
+## 1. Conventions and actual corner complex
+
+Let A be finite-dimensional elementary over any field k. L_y and R_z
+are LEFT and RIGHT simples. Put
+
+\[
+D(u,z)=\dim_k e_uAe_z,\qquad
+\beta^A_{zy}(n)=\dim_k\operatorname{Tor}^A_n(R_z,L_y).
+\tag{1.1}
+\]
+
+Physical reverse support for this Tor pair is D(y,z)>0. Define I_L,I_R
+separately; no opposite-+ theorem is used.
+
+Let F be a nonempty proper vertex set with
+
+\[
+\operatorname{pd}_A L_f\le1\quad\text{for EVERY }f\in F.
+\tag{1.2}
+\]
+
+Write e=1-sum_F e_f, B=eAe. B is a CORNER, not a quotient. Do NOT
+assume pd_{B^op} Ae finite or any Peirce-cover closure of F.
+Retained physical spaces e_yBe_z=e_yAe_z are identical.
+
+For any finite LEFT A module M take its actual minimal A resolution P
+and the actual minimal B resolution Q of eM. As in T22, the projective
+complex T=Ae tensor_B Q has a canonical comparison to P. Let C_M be
+its counit cone. It can have nonzero cohomology in arbitrarily negative
+degrees. Exact restriction e makes the comparison a quasi-isomorphism;
+thus EVERY cohomology H_i=H^{-i}(C_M), i>=0, is supported in F.
+Each H_i is finite-dimensional. Ordinary finite-length devissage from
+(1.2) gives
+
+\[
+\operatorname{pd}_A H_i\le1\quad(i\ge0).
+\tag{1.3}
+\]
+
+The cohomology need not be semisimple and the cone need not be perfect.
+This is the same actual projective complex as T22; its real homology
+is retained throughout.
+
+## 2. An ordinary pd-one Hom window, without a bounded cone
+
+### Lemma 2.1
+
+For a bounded-above complex C whose finite cohomology modules H_i in
+degrees -i all have ambient pd<=1, and for any finite LEFT target Z,
+there is, for n>=1, a vector-space exact sequence
+
+\[
+0\longrightarrow\operatorname{Ext}^1_A(H_{n-1},Z)
+\longrightarrow\operatorname{Hom}_{D(A)}(C,Z[n])
+\longrightarrow\operatorname{Hom}_A(H_n,Z)
+\longrightarrow0.
+\tag{2.1}
+\]
+
+In particular the right Hom term is bounded by the middle ordinary
+derived Hom dimension. The cohomology may occupy infinitely many degrees.
+
+#### Proof with finite ordinary truncations
+
+For the fixed target Z[n], the portion of C in degrees <=-n-1 has
+zero maps to Z[n], as does its shift by one, by the ordinary derived
+category truncation orthogonality. Therefore only the finite truncation
+with cohomology in [-n,0] matters. Its Postnikov connecting maps between
+different cohomology degrees lie in Ext^r between cohomology modules
+with r>=2; those groups are zero because the source has pd<=1.
+Induction splits this FINITE truncation into its shifted cohomology
+modules (a choice, not a canonical splitting). Only shifts n and n-1
+can map to Z[n], giving (2.1) and its natural edge sequence.
+
+Equivalently the ordinary hyper-Ext spectral sequence has only columns
+zero and one and no possible higher differential. For each total degree
+it is a finite window. No convergence of an unrestricted infinite
+direct sum, singular/Tate comparison or bounded GLOBAL amplitude is
+assumed. QED.
+
+Apply this to C_M. For retained q, Hom_A(H_i,L_q)=0 since H_i has only
+F factors, so
+
+\[
+\operatorname{Hom}_{D(A)}(C_M,L_q[n+1])
+\cong\operatorname{Ext}^1_A(H_n,L_q).
+\tag{2.2}
+\]
+
+For f in F, the literal chain adjunction gives
+Hom_{D(A)}(Ae tensor^L_B eM,L_f[j])=0 in EVERY degree: the Hom complex
+is Hom_B(Q,eL_f)=0. The counit triangle hence gives
+
+\[
+\operatorname{Ext}^n_A(M,L_f)
+\cong\operatorname{Hom}_{D(A)}(C_M,L_f[n]).
+\tag{2.3}
+\]
+
+Lemma 2.1 consequently implies
+
+\[
+\dim\operatorname{Hom}_A(H_n,L_f)
+\le\dim\operatorname{Ext}^n_A(M,L_f).
+\tag{2.4}
+\]
+
+All these are ordinary projective/Ext calculations. No local map is
+deleted. In particular (2.1) does NOT imply C_M has bounded cohomology.
+
+## 3. Actual injective kernels provide physical alignment
+
+### Lemma 3.1 — Weighted finite-head inequality
+
+If H is a finite LEFT module supported in F, its pd is <=1. Take
+its ACTUAL minimal ordinary resolution
+
+\[
+0\longrightarrow P_1\xrightarrow{\iota}P_0
+\longrightarrow H\longrightarrow0.
+\tag{3.1}
+\]
+
+P_0=sum_{f in F}(Ae_f)^{h_f}, with h_f=dim Hom_A(H,L_f). For any
+retained q the multiplicity of Ae_q in P_1 is
+dim Ext^1_A(H,L_q). Since iota is an actual INJECTION, applying e_u
+gives an injection of finite vector spaces. Thus for EVERY vertex u,
+
+\[
+D(u,q)\dim\operatorname{Ext}^1_A(H,L_q)
+\le\sum_{f\in F}D(u,f)\dim\operatorname{Hom}_A(H,L_f).
+\tag{3.2}
+\]
+
+This is proved by actual projective-cover multiplicities and exactness.
+The cover P_0 may have infinite-pd composition factors. None of them
+is discarded and their pds are not inferred from H. The crucial
+ordinary fact is the injection P_1->P_0, which fails at the first
+kernel map of a longer resolution.
+
+## 4. Same-degree ordinary supported Tor bridge (C094)
+
+### Theorem 4.1 — Arbitrary-size weighted corner comparison
+
+For retained q, any finite LEFT A module M, EVERY vertex u and n>=1,
+write beta_q^A(M,n)=dim Tor^A_n(R_q,M). Then
+
+\[
+\boxed{
+D(u,q)\,\beta_q^B(eM,n)
+\le D(u,q)\,\beta_q^A(M,n)
+  +\sum_{f\in F}D(u,f)\,\beta_f^A(M,n).
+}
+\tag{4.1}
+\]
+
+In particular for retained simple y and u=y,
+
+\[
+\boxed{
+D(y,q)\,\beta^B_{qy}(n)
+\le D(y,q)\,\beta^A_{qy}(n)
+  +\sum_{f\in F}D(y,f)\,\beta^A_{fy}(n).
+}
+\tag{4.2}
+\]
+
+#### Proof
+
+The counit triangle and chain adjunction give a sequence
+
+\[
+\operatorname{Ext}^n_A(M,L_q)
+\longrightarrow\operatorname{Ext}^n_B(eM,L_q)
+\longrightarrow\operatorname{Hom}_{D(A)}(C_M,L_q[n+1]).
+\tag{4.3}
+\]
+
+Therefore the middle dimension is at most the first dimension plus
+dim Ext^1_A(H_n,L_q), by (2.2). Multiply by D(u,q), use the actual
+injection inequality (3.2), then use (2.4) for each f. Ordinary
+finite-dimensional Tor–Ext duality gives (4.1), then (4.2). QED.
+
+### Corollary 4.2 — An actual supported persistent B pair returns in A
+
+Suppose e_yAe_q nonzero and beta^B_qy(n)>0 in infinitely many n.
+Equation (4.2) forces infinitely many positive supported A contributions
+in the finite set of pairs
+
+\[
+(R_q,L_y),\quad (R_f,L_y)\ (f\in F,\ D(y,f)>0).
+\tag{4.4}
+\]
+
+A fixed pair among them has an ordinary persistent Tor tail. The
+SOURCE y is unchanged, while the detector may become f. All contributions
+occur in the SAME degree n and carry their own physical support.
+
+No algebra projection, ordinary section, corner perfection or finite
+Tor sampling is required. This is a full supported ordinary return
+mechanism for the entire pd<=1-complement class, not a necessary
+condition on a hypothetical counterexample.
+
+### Corollary 4.3 — A uniform supported cutoff with ZERO loss
+
+If every supported A simple pair has Tor zero for n>M, then every
+supported B simple pair is zero for n>M as well. Indeed every weighted
+A term on the right of (4.2) is then zero. The same M works; an
+initial rough M+1 bound is unnecessary. This statement applies to
+all source/detector pairs, not one selected local source.
+
+## 5. Global infinity, exact chosen-side labels and automatic descent
+
+Sum (4.1) over ALL vertices u. With c_q=dim Ae_q>0 it gives
+
+\[
+c_q\beta_q^B(eM,n)
+\le c_q\beta_q^A(M,n)+\sum_{f\in F}c_f\beta_f^A(M,n).
+\tag{5.1}
+\]
+
+For a retained simple L_y of finite A pd a, all terms on the right
+vanish above a. Hence
+
+\[
+\operatorname{pd}_B L_y\le\operatorname{pd}_A L_y.
+\tag{5.2}
+\]
+
+Conversely if its B pd b is finite, its length-b actual B resolution
+tensored with Ae has A-projective terms only in [-b,0]. Its counit
+cone has only F cohomology in [-b-1,0], each of pd<=1. The ordinary
+bounded-cone repair gives pd_A L_y<=b+2. Therefore
+
+\[
+b\le a\le b+2\quad\text{when finite},\qquad
+I_L(B)=I_L(A)\text{ on the retained labels}.
+\tag{5.3}
+\]
+
+No LEFT infinite label was deleted. LEFT finite/infinite labels are
+exactly preserved; retained finite pds cannot increase. Thus any
+ORIGINAL retained LEFT pd<=1 label remains eligible after other such
+LEFT corner deletions. No opposite-side inheritance is inferred.
+
+For global dimension, when finite,
+
+\[
+\boxed{\operatorname{gd}B\le\operatorname{gd}A
+       \le\operatorname{gd}B+2.}
+\tag{5.4}
+\]
+
+The first bound follows from (5.1) on all retained simple tests; the
+second from the retained bound and deleted pds<=1. In particular
+gd A is infinite iff gd B is infinite. Combining this with Corollary
+4.2 gives
+
+\[
+A\text{ bad}\Longrightarrow B\text{ bad},\qquad
+\dim_k B<\dim_k A.
+\tag{5.5}
+\]
+
+This automatic ordinary dimension/vertex descent requires only (1.2).
+It excludes the entire shallow finite-complement branch at arbitrary
+finite source count. A dimension-minimal bad algebra has NO finite-pd
+simple of pd zero or one on EITHER side, using the direct right theorem
+below. Finite-pd simples of pd>=2 and the all-infinite core remain open.
+
+The OTHER infinite label set can change, and the corner Tor map need
+not be an isomorphism or injective in a fixed pair. Section 7 exhibits
+both failures. Do not transfer C093's two-sided label invariance here.
+
+Each nonempty checked move removes vertices. A mixed tower of LEFT or
+RIGHT shallow moves terminates after at most v-1 steps; each step's
+chosen-side pd condition must hold. Same-side original eligibility is
+proved by (5.2), while eligibility after a move of the other side is
+not assumed. A terminal ordinary supported return lifts through every
+step, with detector/source switches if needed. A terminal finite gd b
+gives gd A<=b+2r for r moves. Supported vanishing uses the SAME cutoff
+M through the whole tower, with no accumulation. This is a proved
+termination/bound for the actual checked class, not universal tower
+existence to a known terminal algebra.
+
+## 6. Direct RIGHT shallow theorem
+
+Assume every deleted RIGHT R_f has pd_RIGHT<=1. For a finite RIGHT
+source R take its right counit complex (Re) tensor^L_B eA -> R.
+Every cone cohomology is an F RIGHT module of pd<=1. The right
+Hom window is (2.1). An actual RIGHT projective kernel Q_1->Q_0
+is injective; applying (-)e_u counts physical row entries.
+
+For retained z,y and n>=1 the resulting ordinary inequality is
+
+\[
+\boxed{
+D(y,z)\,\beta^B_{zy}(n)
+\le D(y,z)\,\beta^A_{zy}(n)
+   +\sum_{f\in F}D(f,z)\,\beta^A_{zf}(n).
+}
+\tag{6.1}
+\]
+
+Now the RIGHT detector z is unchanged and the LEFT source may become f;
+every weighted pair is physically supported. Supported return lifts
+in the same degree, supported cutoff M has zero loss, RIGHT infinite
+labels are exactly preserved and finite right pds cannot increase.
+Global bounds (5.4) and strict badness/dimension descent hold directly.
+No A infinite + iff A^op infinite + theorem is used.
+
+## 7. An actual nonperfect detector-switch family
+
+Start with the seven-dimensional cyclic Nakayama algebra A_0:
+
+\[
+a\in e_fAe_v,\quad b\in e_vAe_f,\quad aba=0,
+\]
+\[
+A_0=\operatorname{span}\{e_f,e_v,a,b,ab,ba,bab\}.
+\tag{7.1}
+\]
+
+Its LEFT projectives are P_f=span(e_f,b,ab,bab) and
+P_v=span(e_v,a,ba). Right multiplication by b embeds P_v as rad(P_f).
+For U=span(a,ba), the cover P_f->U has kernel span(ab,bab),
+isomorphic to U by right multiplication by b. Thus
+
+\[
+\Omega L_f=P_v,\quad \operatorname{pd}_{LEFT}L_f=1,
+\qquad\Omega L_v=U,\quad\Omega U=U.
+\tag{7.2}
+\]
+
+All positive terms of the actual L_v minimal resolution are P_f.
+Consequently beta^A_fv(n)=1 and beta^A_vv(n)=0 for EVERY n>=1.
+
+On the RIGHT, rad(e_vA)=bA is isomorphic to e_fA, so pd_RIGHT R_v=1.
+The module V=aA=span(a,ab) has kernel span(ba,bab) in its projective
+cover e_vA, isomorphic to V by LEFT multiplication by b. Hence R_f
+has infinite pd. Thus
+
+\[
+I_L(A_0)=\{v\},\qquad I_R(A_0)=\{f\}.
+\tag{7.3}
+\]
+
+Delete the LEFT-pd-one vertex f. Its actual corner is
+B=e_vAe_v=k[ba]/(ba)^2. Both B infinite sets are {v}, and
+beta^B_vv(n)=1 for EVERY n. The original retained RIGHT R_v had pd
+one and becomes infinite in the corner. The original diagonal Tor
+map in high positive degrees goes k->0; it is NOT injective or an
+isomorphism. The return instead is the ordinary supported pair
+(R_f,L_v), since e_vAe_f=span(b,bab) is nonzero.
+
+Here D(v,v)=D(v,f)=2, so the weighted bridge is exactly
+
+\[
+2\cdot1\le2\cdot0+2\cdot1
+\quad\text{in EVERY positive degree}.
+\tag{7.4}
+\]
+
+Ae as RIGHT corner module is the regular dual-number summand
+span(e_v,ba) plus its simple span(a), so it is NONPERFECT. Thus C093's
+perfection hypothesis fails and C094 genuinely handles a new ordinary
+nonperfect branch. It is already visibly infinite +, not a bad example.
+
+### Arbitrarily large nonsemisimple finite blocks
+
+Adjoin g_1,...,g_m by actual one-point projective-column extensions:
+rad(P_g1)=P_f and rad(P_gr)=P_g(r-1) for r>=2. Each new column is
+its predecessor's whole projective plus its new identity. The total
+dimension is
+
+\[
+7+4m+\frac{m(m+1)}2.
+\tag{7.5}
+\]
+
+All deleted LEFT simples in F={f,g_1,...,g_m} have pd one; their
+Ext-one graph includes the nontrivial chain g_r->g_(r-1)->f, so F
+modules need not be semisimple. Old LEFT columns and (7.2) remain
+unchanged. The retained corner is still the dual-number v corner.
+On the RIGHT, R_v has projective radical e_fA, the extended module
+aA returns to itself, R_f has that module plus a projective g_1
+summand in its first kernel, and all g_i have finite pd at most one.
+Thus (7.3) and the detector switch remain exact for every m.
+
+No count of infinite sources is being enumerated: the theorem has
+unrestricted source counts; this family varies the size and internal
+extensions of the finite deletion block to test that stronger scope.
+
+## 8. Exact depth-two obstruction (C095)
+
+Use the five-dimensional algebra A_5 already frozen in Primitive-Seed
+Correction, with labels renamed here:
+
+\[
+a\in e_fAe_v,\quad b\in e_vAe_f,\quad ba=0,\quad t=ab\ne0.
+\tag{8.1}
+\]
+
+P_f=span(e_f,b,t), P_v=span(e_v,a). Actual minimal kernels give
+Omega L_f=P_v, Omega L_v=L_f. Therefore pd L_f=1, pd L_v=2,
+gd A_5=2 and
+
+\[
+\operatorname{Ext}^2_{A_5}(L_v,L_v)=k.
+\tag{8.2}
+\]
+
+Delete the LEFT-pd-TWO vertex v, retaining the corner
+B=e_fAe_f=k[t]/t^2. Its supported diagonal Tor persists forever,
+while ALL A_5 ordinary Tor is zero above two. Thus (4.2), support
+transfer and gd B<=gd A all fail if (1.2) is weakened to pd<=2.
+
+The actual RIGHT B module Ae has a regular summand span(e_f,t)
+and the simple span(b). Its genuine dual-number tensor resolution
+gives Tor^B_i(Ae,L_f)=L_v for every i>=1. The counit cone C_{L_f}
+also has H^{-s}=L_v for EVERY s>=1; its degree -1 kernel is the
+same L_v. Nonetheless
+
+\[
+\operatorname{Hom}_{D(A_5)}(C_{L_f},L_v[n])
+\cong\operatorname{Ext}^n_{A_5}(L_f,L_v)
+=0\quad(n\ge2).
+\tag{8.3}
+\]
+
+The ordinary hyper-Ext E_2 page has ONLY columns p=0 and p=2,
+each one-dimensional for q>=1, from (8.2). Convergence to (8.3)
+forces the actual d_2 maps
+
+\[
+d_2:(0,q)\longrightarrow(2,q-1)
+\quad(q\ge2)
+\tag{8.4}
+\]
+
+to be isomorphisms. They repeatedly screen the cohomology Hom terms
+in arbitrarily high total degrees. This is not an uncorrected raw
+differential labelled d_2: the ordinary module calculation and the
+convergent two-column dimensions force the stated ranks. The pd-one
+Hom window fails because this genuine Ext-two column is present.
+
+The same single-pair failure persists after taking A_5 times a
+dual-number algebra, which makes the ambient gd infinite. That product
+already has another visible ordinary return, so it is NOT a counterexample
+to Universal Gap A or to a strengthened BADNESS-specific global alternative.
+
+### A connected infinite-source counterexample to the pointwise extension
+
+The obstruction cannot be repaired merely by requiring the original
+source to have infinite LEFT pd, or by deleting the ENTIRE finite-LEFT
+complement. Form the connected ten-dimensional algebra
+
+\[
+S_{10}=\begin{pmatrix}A_5&0\\G\otimes_k e_fA_5&\Gamma_w\end{pmatrix},
+\quad\Gamma_w=k[s]/s^2,\quad G=\Gamma_w/(s).
+\tag{8.5}
+\]
+
+The literal new basis is s in e_wAe_w and u_0 in e_wAe_f,
+u_a in e_wAe_v, u_t in e_wAe_f. Its only new nonzero radical
+products are u_0 a=u_a, u_0 t=u_t and u_a b=u_t. In addition
+the old product ab=t remains. No extra relation is implicit.
+
+Actual LEFT kernels are
+
+\[
+\Omega L_f=P_v\oplus L_w,\quad\Omega L_w=L_w,
+\quad\Omega L_v=H=\operatorname{span}(a,u_a),\quad\Omega H=P_v.
+\tag{8.6}
+\]
+
+Here P_v=span(e_v,a,u_a) embeds into rad(P_f) by right
+multiplication by b; its image is span(b,t,u_t), and the extra
+simple radical summand is k u_0=L_w. Thus I_L={f,w}, and the
+ENTIRE finite-LEFT complement is F={v}, of pd two. The source L_f
+has genuinely infinite ordinary pd; its minimal terms are P_v+P_w
+in degree one and P_w alone in every degree >=2.
+
+On the RIGHT, R_f has pd one, R_v pd two and
+Omega R_w=e_fA direct sum R_w. Thus I_R={w}. For source y=f,
+every supported A detector is f or v, and its ordinary Tor vanishes
+for every n>=2; the persistent detector w is invisible since e_fAe_w=0.
+
+The retained corner on {f,w} has the old f dual-number corner,
+the w dual-number corner and cross basis u_0,u_t with u_0 t=u_t.
+Its RIGHT R_f has the exact self-syzygy R_f, so its supported
+diagonal Tor(R_f,L_f)=k persists in EVERY degree. The corresponding
+ambient diagonal Tor is zero in EVERY positive degree. Thus even
+an infinite original source and an all-infinite-LEFT retained corner
+do not guarantee a pointwise pd-two supported bridge.
+
+As a RIGHT corner module, Ae is e_fB direct sum e_wB direct sum
+R_f^B, with the extra simple at LEFT coordinate v. Consequently
+Tor^B_i(Ae,L_f)=L_v for every i>=1. The counit cone again has
+H^{-s}=L_v for all s>=1, while
+Hom(C,L_v[n])=Ext^n_A(L_f,L_v)=0 for n>=2. The same genuine
+Ext-two d_2 screening in (8.4) occurs. This records the obstruction
+with the original source pd infinity explicitly checked.
+
+The ambient algebra still has supported Tor(R_w,L_w)=k forever.
+It is already infinite +, not bad. No counterexample to the global
+BADNESS-specific alternative has been constructed. Any pd-two extension
+must allow further source/detector migration or use the full no-+
+hypothesis, not just the infinite-source anchor.
+
+The A_5 screening calculation concerns the OLD actual algebra, not a
+new claim that its idempotent derived quotient is nonformal. S_10 is a
+new connected calibration built from that old algebra. Primitive-Seed
+Correction's formal A_5 quotient and low negative primitive seed remain
+valid. Here the object is a different counit complex of ordinary LEFT
+A modules. Neither example is an unbounded-excursion Target-B
+counterexample. Their role is the exact boundary at ambient finite pd two.
+
+## 9. Finite arithmetic, method retrieval and evidence status
+
+Shallow-Corner-Evidence/ contains verify_shallow_corner.py,
+shallow-corner-result.json, task.md and computation-record.json.
+Finite complements of sizes 1,2,4 were checked through full literal
+tables and actual LEFT/RIGHT minimal kernels. The audit passed 46,320
+associativity triples, 39 actual covers, 36 kernel isomorphisms and
+496 integral basis/inverse certificates. It also recalibrates A_5
+at its pd-two boundary and S_10 at its infinite original source.
+Frozen helper definitions are loaded without
+rerunning their old main computations; all dependencies are hashed.
+
+The integer basis/inverse cover certificates use T21's all-field
+base-change lemma. Infinite tails use actual kernel returns, not a
+bounded Betti prefix. All-m proofs and the GENERAL weighted inequality
+are the separate written arguments. The d_2 ranks follow ordinary
+convergence and exact Ext groups in Section 8, not a separately computed
+chain-level d_2 matrix. Shared code and authorship are NOT independent
+verification; record/schema/hash validation certifies integrity only.
+
+Bounded live Vault retrieval of `谱序列` read method sections of
+Rees-HPL-Screening and Screening-Corridor. Only the methodological
+warning to identify an actual corrected page differential was used;
+their older project-specific assertions were NOT adopted as current
+authority. Section 8 derives its d_2 ranks directly. The built-in MRS
+durable project records and ordinary tools are reused, with no new
+verifier service, Vault copy, HTML or external messages.
+
+## 10. Normal adversarial self-audit
+
+1. Complex and convergence: C can be unbounded in negative cohomology.
+   Lemma 2.1 uses a FINITE truncation for each target degree and the
+   ambient pd-one Ext window; it does not declare the cone perfect.
+2. Nonsplit F modules: only their pd<=1 is used. Ext-one inside F is
+   allowed; the projective-prefix family has actual such extensions.
+3. Actual injection: P_1->P_0 is injective because H has pd<=1.
+   Applying e_u gives physical dimension control. The P_0 factors
+   may be infinite-pd; no false factor-pd transfer.
+4. Same degree: H_n contributes Ext-one to C[n+1] and Hom to C[n].
+   The index difference exactly cancels in (4.1). Cutoff M has ZERO
+   loss, replacing the initial rough +1 candidate.
+5. Physical orientation: LEFT weights are D(y,q),D(y,f) for pair
+   (R_q,L_y)/(R_f,L_y); direct RIGHT weights are D(y,z),D(f,z).
+   Every detector/source switch retains its own nonzero Peirce entry.
+6. Ordinary objects: T has actual A-projective terms, its homology is
+   retained, and ordinary Ext/Tor duality is explicit. No graph cycle,
+   stable/Tate return or opposite-+ transfer.
+7. No fixed-pair promise: corner Tor can be killed completely in its
+   original detector pair; the seven-dimensional family proves it.
+   Weighted migration, not an all-pair isomorphism, is the theorem.
+8. Labels/counts: LEFT moves preserve LEFT infinite labels and finite
+   pds do not increase. RIGHT labels may be replaced/newly infinite.
+   The direct RIGHT theorem controls only its chosen side. Dimension
+   and vertex number are the strict measure, not a universal count drop.
+9. Inheritance: original same-side pd<=1 labels remain eligible by
+   (5.2). Mixed-side future eligibility still requires its actual pd
+   check. Strict vertex descent always terminates any checked tower.
+10. Finite global bound: gd B<=gd A uses sum weights c_q>0 on all
+    retained ordinary tests; gd A<=gd B+2 uses a finite actual B
+    resolution and bounded repair. No general corner monotonicity.
+11. Higher pd: A_5 at pd TWO refutes the stronger support/gd claim.
+    Ext-two screens the Hom edge. S_10 has an infinite original source
+    and the WHOLE finite-LEFT complement deleted, yet its corner diagonal
+    is fully screened; a different w diagonal is visible. Thus ambient
+    infinity and an infinite-source anchor alone are insufficient.
+    Badness-specific global extensions remain unrefuted and open.
+12. Older state: C088/C093 remain valid. The old A_5 formal derived
+    quotient and Primitive/Binary correction remain unchanged. This
+    is not a new unbounded-screening Target-B example.
+13. Verification: complete same-author proofs and exact dependent
+    arithmetic, not independent acceptance or a novelty assertion.
+14. Full goal: arbitrary Universal Gap A remains open. Finite-pd-two
+    or higher nonperfect complements, all-infinite ordinary cores,
+    C076 support transfer, Target A/local-trivial and higher-output
+    branches still require a genuine closure mechanism.
+
+## 11. Next global step
+
+The nonperfect shallow finite-complement branch is now removed by an
+ordinary supported Tor bridge and automatic strict dimension descent.
+This is stronger than requiring perfection or physical block closure.
+It does not proceed case-by-case in the number of infinite sources.
+
+The next extension must overcome the actual Ext-two screening boundary,
+or close an all-infinite/no-shallow-deletion core by ordinary return or
+another eligible descent. Unbounded finite-pd outputs and a new filtration
+alone do not suffice. Universal Gap A remains OPEN; the full goal stays
+active.

@@ -1,0 +1,365 @@
+# Arbitrary-Loewy radical bands: ordinary closure and a bilateral source-locality obstruction
+
+2026-10-05. Continues canonical C125–C126 and D011. The preceding interrupted turn had located the band argument but had not completed or archived its new evidence. This Run supplies the full ordinary proof, actual-cover calibrations and normal adversarial self-audit.
+
+**Status:** C127 COMPLETE WRITTEN ORDINARY CLASS-CLOSURE PROOF; C128 COMPLETE ACTUAL-KERNEL COUNTEREXAMPLE; NORMAL SELF-AUDITED; NOT INDEPENDENTLY OR FORMALLY VERIFIED. General Universal Gap A remains OPEN.
+
+The positive advance removes the radical-length restriction from the finite deep-band mechanism. The negative advance prevents localization of a global ordinary return to the labels of an infinite band, even when BOTH band sides are infinite-pd.
+
+## 1. Fixed conventions and theorem
+
+A is a finite-dimensional elementary algebra over ANY field k, with N labels, J=rad A, LEFT L_i and RIGHT R_i. Keep
+
+\[
+\beta_{xy}(n)=\dim\operatorname{Tor}^A_n(R_x,L_y)
+=\dim\operatorname{Ext}^n_A(L_y,L_x),\qquad
+C_{yx}=\dim e_yAe_x.
+\tag{1.1}
+\]
+
+The support required by UGA is C_yx>0. A diagonal is automatically supported.
+
+For s>=1 define the ACTUAL LEFT module
+
+\[
+H_s=J^s/J^{s+2},\qquad
+F_s=\{f:e_fJ^s\ne0\},\qquad m_s=|F_s|.
+\tag{1.2}
+\]
+
+This is a whole quotient by a whole two-sided ideal. No map-image pruning or associated-graded surrogate is used.
+
+### Theorem 1.1 — C127, arbitrary-Loewy ordinary closure
+
+If SOME s in {1,2,3} has finite LEFT pd of H_s, then infinite gd A forces ONE FIXED i with ordinary Tor_n(R_i,L_i) nonzero infinitely often. The direct finite RIGHT pd version also holds.
+
+There is NO upper bound assumed on the Loewy length of A. Selfinjectivity, grading, finite syzygy type, full Yoneda finite generation and opposite-infinite-plus transfer are not assumed.
+
+More precisely suppose ALL ordinary simple diagonals vanish for n>M, M>=0. If H_s is nonzero and h=pd_LEFT H_s finite, then
+
+\[
+\boxed{\operatorname{gd}A
+\le N\bigl(h+(m_s+N)(M+1)+1\bigr)-1.}
+\tag{1.3}
+\]
+
+If H_s=0, then J^s=0 and J^3=0 for s<=3; reuse C110/C125's cube-zero stopping bound separately. Do not substitute m=0 into the mixed-envelope proof.
+
+In particular the entire ANY-field/arbitrary-finite-size class with finite LEFT OR RIGHT pd of the WHOLE cubic band J^3/J^5 is closed. This strictly removes the J^5=0 premise from the C126 finite-band argument; it does not assert that finite pd J^3 alone makes that band finite-pd.
+
+## 2. The actual head of a radical-power band contains every deep factor label
+
+For EVERY s>=1, independent of any Loewy bound,
+
+\[
+\{f:e_fJ^s\ne0\}
+=\{f:e_f(J^s/J^{s+1})\ne0\}.
+\tag{2.1}
+\]
+
+To prove the nontrivial inclusion, if the right-hand row is zero, then
+
+\[
+e_fJ^s=e_fJ^{s+1}
+=(e_fJ^s)J.
+\tag{2.2}
+\]
+
+Iterating right multiplication by the nilpotent J gives e_fJ^s=0. This is the elementary RIGHT Nakayama argument on that row; it proves a LEFT composition/head-support statement. It is not a pd transfer between sides.
+
+The actual LEFT head of H_s is J^s/J^(s+1). Its radical is J^(s+1)/J^(s+2), and
+
+\[
+0\longrightarrow U_s=J^{s+1}/J^{s+2}
+\longrightarrow H_s
+\longrightarrow V_s=J^s/J^{s+1}
+\longrightarrow0.
+\tag{2.3}
+\]
+
+Both U_s,V_s are semisimple. By (2.1), EVERY F_s simple occurs in V_s and ALL U_s factors belong to F_s. Importantly this captures labels occurring arbitrarily deeply in J^s, not only labels visible in the two retained Loewy layers.
+
+## 3. Actual ordinary extension products control all those factors
+
+Use C126 Lemma9.1 on the SINGLE actual finite-pd middle H_s in (2.3). For ALL targets Z and n>=h,
+
+\[
+\operatorname{Ext}^n_A(U_s,Z)\twoheadrightarrow
+\operatorname{Ext}^{n+1}_A(V_s,Z).
+\tag{3.1}
+\]
+
+The map is genuinely surjective because Ext^(n+1)(H_s,Z)=0. Projecting to any simple V_s coordinate retains surjectivity; its matrix entries are actual degree-one Yoneda extension products. No finite pd of an individual pullback middle is inferred.
+
+Every high tail at a label in F_s can consequently be expanded as an ordinary Ext-one product of tails at labels in F_s. A nonzero degree-one word of length m_s(M+1) has a diagonal subword of degree>M, by its m_s(M+1)+1 endpoint labels. The diagonal cutoff kills all such words.
+
+The exact high range n>=h then gives, for EVERY f in F_s,
+
+\[
+\boxed{\operatorname{pd}_A L_f
+\le d_s=h+m_s(M+1)-1.}
+\tag{3.2}
+\]
+
+This is CONDITIONAL on the ordinary diagonal cutoff. Without it a finite-pd nonsemisimple H_s may have infinite-pd factors; in that event (3.1) itself forces a persistent ordinary diagonal at some F_s label.
+
+For any s>=1, (3.2) also shows that under this cutoff all radical powers J^t, t>=s, and their finite quotients have finite LEFT pd, at most d_s, since all their composition factors lie in F_s. This factor conclusion alone is not an all-s UGA theorem.
+
+## 4. Actual OTHER-side projectives become short and terminate uniformly
+
+In the ACTUAL right minimal resolution Q_n(R_y), the multiplicity of e_fA is
+
+\[
+\dim\operatorname{Tor}^A_n(R_y,L_f)
+=\dim\operatorname{Ext}^n_A(L_f,L_y)=0
+\quad(n>d_s,\ f\in F_s).
+\tag{4.1}
+\]
+
+Thus every Q_n for n>=a=d_s+1 is a sum of e_iA with e_iJ^s=0. When s<=3, J^3 subset J^s and hence
+
+\[
+Q_nJ^3=0\quad(n\ge a).
+\tag{4.2}
+\]
+
+C125's actual short-projective theorem applies with K=N(M+1), B=a+K+1. Its proof keeps full kernels, allows a NONEXACT nonsimple core, uses injective linear heads/literal ordinary bar cycles, and obtains a real simple-split graph decomposition. Cycles give ACTUAL period summands before ordinary Tor; the finite acyclic height yields gd A<=NB-1.
+
+Substitution of a<=h+m_s(M+1) is exactly (1.3). There is no deletion or comparison with the algebra A/J^s.
+
+For the direct RIGHT version set F_s^R={f:J^s e_f nonzero}. Its RIGHT head support equals whole RIGHT support: if (J^s/J^(s+1))e_f=0 then J^s e_f=J(J^s e_f), and LEFT nilpotent Nakayama forces zero. The RIGHT mixed-envelope connecting maps give finite RIGHT simple pds under diagonal cutoff; ordinary Tor(R_f,L_y) excludes high LEFT Ae_f types. The direct LEFT short-core theorem gives the same bound, with h and m measured on the chosen right side. No opposite-infinite-plus comparison is used.
+
+Contraposing the uniform stopping result proves Theorem1.1. Finitely many labels mean failure of a common finite diagonal cutoff yields ONE FIXED diagonal occurring infinitely often, not a moving label per degree.
+
+## 5. Consecutive and separated finite-pd radical powers, and exact scope
+
+For s=3, the WHOLE actual sequence
+
+\[
+0\longrightarrow J^5\longrightarrow J^3
+\longrightarrow H_3\longrightarrow0
+\tag{5.1}
+\]
+
+gives
+
+\[
+\operatorname{pd}H_3\le
+\max\{\operatorname{pd}J^3,\ 1+\operatorname{pd}J^5\}
+\tag{5.2}
+\]
+
+when BOTH left pds are finite; if J5=0 use pd H3=pd J3 directly. Thus BOTH finite pd J3 and J5 also close UGA at ANY Loewy length, with that actual middle bound inserted in (1.3). The same direct-right statement holds.
+
+If BOTH J3 and J4 have finite LEFT pd, J3/J4 is a finite-pd semisimple module containing EVERY J3 factor label by (2.1). Their simple pds are finite even without diagonal cutoff; C125 applies. These are whole-module repair mechanisms, not consequences of finite-pd cross-map images.
+
+C127 unifies C126's J5zero cubic-radical class, the chosen-side C125 finite cubic-factor class, and the s=1,2 band classes through the SAME ordinary mixed-head envelope and short-projective theorem.
+
+Do NOT infer pd H3 finite from pd J3 finite alone: the ACTUAL kernel J5 can be infinite-pd. Do NOT extend the diagonal-closure theorem to arbitrary s>=4: factor control then only gives projective Loewy length<=s. Frozen N7 has J4=0 but infinite gd and ALL positive simple diagonals zero; its off-diagonal return remains. The s<=3 restriction is load-bearing for this stopping proof.
+
+## 6. Connected unbounded-Loewy calibration and exact results
+
+For every N>=3 and ell>=6, take B=kC_N/J_B^3 and C the path algebra of the directed (ell+1)-vertex line f0->...->f_ell. Let W=L_f0^C tensor e0B and
+
+\[
+A=\begin{pmatrix}B&0\\W&C\end{pmatrix}.
+\tag{6.1}
+\]
+
+It has N+ell+1 vertices, dimension3N+(ell+1)(ell+2)/2+3 and Loewy length ell+1, unbounded. Since J_C W=0,
+
+\[
+J_A^3=J_C^3\oplus WJ_B^2,\quad
+J_A^t=J_C^t\ (t\ge4).
+\tag{6.2}
+\]
+
+The actual LEFT C radical-power columns are projective; WJ_B²=LEFT L_f0 has pd1. Thus LEFT pd J3=1 and LEFT pd J5=0. Whole H3 has pd1. Its actual kernel is
+
+\[
+\Omega_{\mathrm{LEFT}}H_3
+=P_{f1}\oplus\bigoplus_{j=5}^{\ell}P_{fj}.
+\tag{6.3}
+\]
+
+This follows from the simple f0 summand and each genuine length-two truncated line projective; all other actual cover kernels are zero. It is not inferred by discarding the infinite side of a bimodule.
+
+Every old RIGHT projective is unchanged, and the full kernels give
+
+\[
+\Omega_R^2R_i=R_{i-3},\qquad
+\Omega_R^{\,2N/\gcd(N,3)}R_i=R_i.
+\tag{6.4}
+\]
+
+These exact period relations supply ordinary diagonal Tor in every positive multiple of that period and certify infinite RIGHT pd of J3's row f0 summand R_(N-2).
+
+At N5,ell6 the literal dimension46/12-vertex algebra has J6 nonzero,J7zero, WHOLE LEFT pds(J3,J5,H3)=(1,0,1), RIGHT pd J3 infinite. The run retained the actual quotient0->J5->J3->H3->0 with A-linear inclusion/projection and full unit kernel/lift bases. It passed194672 associativity triples,15 FULL covers,576 integral inverses,8 actual module/kernel isomorphisms. This is a calibration outside C126's Loewy bound, but already-positive/monomial; no UGA search or new vertex classification.
+
+## 7. C128 — Both infinite band sides do NOT localize the ordinary witness
+
+The proposed strengthening to test is:
+
+> If H3 is infinite-pd on BOTH sides, a supported persistent pair can be chosen with its LEFT source in F3^L OR its RIGHT source in F3^R.
+
+This is FALSE, even for a nonzero semisimple cubic band with singleton factor sets on both sides.
+
+Reuse C119's literal eleven-dimensional B, with written vertices1,2,3 and radical products
+
+\[
+ab=t,\quad ds=v,\quad dc=w.
+\tag{7.1}
+\]
+
+Its real kernels have
+
+\[
+\Omega L_2=P_1\oplus V,\quad
+\Omega V=U,\quad\Omega U=U,
+\quad U=Bs=\langle s,v\rangle,\quad
+V=Bc=\langle c,w\rangle.
+\tag{7.2}
+\]
+
+For every n>=2, the only head in its L2 resolution is L3; e2Be3=0. Also Omega L3=U direct_sum L1, so L3 has a supported ordinary diagonal in every positive degree. These are retained actual kernel identities, not graph facts.
+
+Let D=B^op, naming its written labels d1,d2,d3. As a RIGHT D-module take
+
+\[
+X=e_{d2}D/\langle w_D\rangle.
+\tag{7.3}
+\]
+
+Equivalently it is the actual LEFT B module P2/L1w, with basis e2,b,c,t. Its radical-square is the RIGHT simple R_d2. Let W=L_b2^B tensor_k X and define the actual triangular algebra
+
+\[
+A=\begin{pmatrix}D&0\\W&B\end{pmatrix}.
+\tag{7.4}
+\]
+
+A has dimension26 and six vertices. In addition to the two old tables, write W basis z0,zb,zc,zt; LEFT endpoints are all b2, and RIGHT endpoints are d2,d1,d3,d2. All LEFT radical actions on W are zero; the nonzero RIGHT products are EXACTLY
+
+\[
+z0\,b_D=zb,\quad z0\,c_D=zc,\quad
+z0\,t_D=zt,\quad zb\,a_D=zt.
+\tag{7.5}
+\]
+
+Everything else is zero. This is the actual quotient action from (7.3), including the killed c_D d_D=w_D action, and defines an associative bimodule/table.
+
+As J_BW=0 and J_D³=J_B³=0, direct multiplication gives
+
+\[
+J_A^3=kzt,\qquad J_A^4=0,\qquad
+H_3=J_A^3={}_{B}L_{b2}\otimes_k R_{d2}^{D}.
+\tag{7.6}
+\]
+
+Hence F3^L={b2},F3^R={d2}. The old B LEFT projectives are exactly A's corresponding LEFT projectives, and the old D RIGHT projectives are exactly A's corresponding RIGHT projectives. Thus (7.2) gives ACTUAL nonterminating resolutions of L_b2 and R_d2 in A, respectively; both WHOLE band pds are infinite.
+
+For EVERY n>=2 the all-degree ordinary heads are precisely
+
+\[
+\beta_{x,b2}(n)=
+\begin{cases}1&x=b3,\\0&x\ne b3,\end{cases}
+\qquad
+\beta_{d2,y}(n)=
+\begin{cases}1&y=d3,\\0&y\ne d3.\end{cases}
+\tag{7.7}
+\]
+
+Their ONLY persistent detectors are invisible:
+
+\[
+C_{b2,b3}=0,\qquad C_{d3,d2}=0.
+\tag{7.8}
+\]
+
+Therefore EVERY supported ordinary pair with LEFT source b2 OR RIGHT source d2 vanishes for n>=2. The actual Peirce edge is nonzero,
+
+\[
+C_{b2,d2}=2\quad(z0,zt),
+\qquad
+\operatorname{Tor}^A_n(R_{d2},L_{b2})=0
+\quad\text{for ALL }n\ge0.
+\tag{7.9}
+\]
+
+Indeed the L_b2 resolution has only old B projectives, annihilated by the simple R_d2. Nonzero physical support and two infinite endpoint pds do not force that fixed ordinary pair.
+
+Global UGA nevertheless HOLDS here:
+
+\[
+\operatorname{Tor}^A_n(R_{b3},L_{b3})\ne0
+\quad\text{EVERY }n\ge1,
+\tag{7.10}
+\]
+
+because the TRUE U_B summand is preserved under actual minimal syzygies. Its LEFT and RIGHT labels lie outside BOTH band factor sets. This is precisely why the global proof cannot confine source switching to the band endpoints.
+
+The six-vertex algebra is connected/monomial with two old quiver components connected by W; no strong-connectivity hypothesis is asserted. It is already ordinary-positive, not a UGA or badness-specific return/descent counterexample. No claim that other global reductions fail.
+
+The NEW literal-table audit passed35152 associativity triples,7 FULL actual covers,168 integral inverses,9 actual module/kernel isomorphisms. Three source/period identities were checked directly on EACH side, and the global true simple-split kernel was checked. Infinity and (7.7)–(7.10) follow by all-degree actual kernel iteration, not a finite Betti prefix. C119's unchanged assets were used as structural input, not counted as an independent replay.
+
+## 8. Normal adversarial self-audit
+
+1. **Whole band:** pd is required for the entire actual module H_s. Individual finite-pd cyclic images, intersections, selected columns or a graded model do not supply it. The original exact kernel in (5.1) is retained.
+2. **All deep factor labels:** equality(2.1) uses the whole radical power as a RIGHT row module; it works at ANY Loewy length. Merely seeing some factors in a head would not permit the mixed-envelope iteration.
+3. **Surjective range and mixed head:** n>=h gives the all-target surjection, not necessarily an isomorphism at its boundary. Projection of its codomain is legitimate; a finite-pd pullback middle is not assumed. Semisimple U_s is essential.
+4. **Nilpotence and bound:** m_s(M+1) degree-one products vanish inside F_s by genuine diagonal subproducts. Thus d=h+m_s(M+1)-1, a=d+1, B=a+N(M+1)+1 and NB-1 is exactly(1.3). Zero-band cases use nilpotence/C110 separately.
+5. **Side conventions:** finite LEFT L_f pds exclude RIGHT e_fA types through Tor(R_y,L_f). The direct RIGHT proof does the converse by its own Nakayama/connecting-map/left-cover argument. Neither uses the quarantined opposite-infinite-plus implication.
+6. **Actual stopping:** C125's short core can be NONEXACT. Its head injections/all adjacent FULL multiplication relations, actual kernel decomposition and actual split-cycle period are the load-bearing steps. No pruned complex or graph-only return.
+7. **Arbitrary s:** factor termination is proved for any finite-pd H_s under the cutoff; ordinary DIAGONAL class closure is stated ONLY for s<=3. N7 rules out the blanket diagonal upgrade at s4, even though its global supported off-diagonal remains.
+8. **C128 support:** both band pds are genuinely infinite, via full actual periods, and ALL supported pairs involving either band label set vanish late. The visible cross pair(7.9) is not the global witness. No reverse support entry is swapped.
+9. **C128 quantifier:** this refutes UNQUALIFIED band-label localization; the global ordinary return/descent possibility is not refuted. It proves that an eventual global bridge must allow an ordinary witness outside those factor sets or justify a narrower badness-specific statement.
+10. **Provenance:** one main researcher supplied the complete proofs/normal adversarial audit; scripts share frozen project helpers. SELF-AUDITED, not independent/formal acceptance. No novelty, default checksums or new engine claim. The exact cases are small calibrations of theorem/obstruction, not exhaustive classifications.
+
+## 9. Evidence and continuation
+
+Cubic-Band-Evidence retains only the two executed scripts, their results, task specification and execution record. One primary run for EACH DISTINCT question; no full-range repeat for reassurance. Exact integral unit covers support the written all-field arguments, but computational pass is not the general theorem.
+
+A bounded Vault query for Nakayama returned zero candidates and zero body reads in the live577-note index. This is not evidence that the whole Vault lacks related methods. The required ordinary envelope/short-tail methods were already in C125–C126, and the source obstruction was in C119.
+
+**Next mathematical target:** when BOTH pd sides of the actual cubic band are infinite, an ordinary return may lie OUTSIDE its factor sets. The missing bridge must use the full all-source ordinary minimal resolutions, permit that switch, and produce either an ordinary visible witness or a genuinely strict recurrent-carrier/global reduction. Infinite pd or physical endpoint edges alone are insufficient by C128. General whole finite-pd J3 without a finite-pd band, arbitrary deep module relations, safe quotient witness lifting and general finite-type return remain OPEN.
+
+The Primitive/Binary/higher-output, bounded-screening, local-trivial and supported-weight branches remain on the global map. **UGA is OPEN. C127 is a proved arbitrary-Loewy class closure, C128 a precise failed source-localization mechanism; neither is represented as a universal solution.**
+
+
+## 10. Scope clarification: the J3-alone gate remains UNPROVED, not refuted here
+
+The phrase in Section5 that the kernel J5 "can be infinite-pd" is not backed by a specific radical-power counterexample in this Run. Its intended and ADMISSIBLE content is narrower: the whole exact sequence does not BY ITSELF prove finite pd J5 or H3 from finite pd J3. No general J3-alone implication has been proved or refuted here. C127's positive band theorem, separated-power sufficient condition and bounds are unchanged.
+
+A targeted C124 uniserial-kernel-formula search at N7, lengths2..7 inspected3348 admissible Kupisch vectors and found NO finite-J3/infinite-J5 candidate. It was a parameter/formula search, with no new literal-cover replay, and supplies NO theorem beyond that finite search. It is not a UGA search or a vertex classification. This regenerable unsuccessful probe remains temporary; no negative radical-power claim or new evidence independence is created.
+
+## 11. Continuation: test the global finite-actual-state mechanism, keeping the exact missing step
+
+No new Claim is promoted from this continuation. It tests the ordinary ALL-source mechanism rather than reintroducing a derived invariant.
+
+Let P_n(y) be the actual LEFT minimal cover of Omega^n L_y, with Omega^0 L_y=L_y. Exactness of the FULL actual sequence gives
+
+\[
+0\longrightarrow\Omega^{n+1}L_y
+\longrightarrow P_n(y)
+\longrightarrow\Omega^nL_y\longrightarrow0,
+\qquad
+\sum_x C_{yx}\beta_{xy}(n)
+=\dim e_y\Omega^nL_y+\dim e_y\Omega^{n+1}L_y.
+\tag{11.1}
+\]
+
+Thus the full reverse-visible mask vanishes eventually iff every original simple eventually disappears as a composition factor of its OWN actual syzygies. This is the retained GLOBAL syzygy-trace formulation, not a new proof of UGA or a sourcewise-return theorem.
+
+Now suppose finitely many nonzero ACTUAL module states X_alpha have full kernel identities Omega X_alpha=sum X_gamma^(M_gamma,alpha). Write D_j,alpha=[X_alpha:L_j], H_j,alpha=[top X_alpha:L_j]. Their real projective covers impose the NONNEGATIVE composition-vector identity
+
+\[
+C H=D(I+M).
+\tag{11.2}
+\]
+
+Actual simple entry decompositions additionally give beta(q_y+n)=H M^n v_y, with C still acting in the REVERSE orientation. These are valid ordinary consequences of real module identities, not a graph-only comparison.
+
+Under full badness, every recurrent state reached from L_y consequently has zero y-composition coordinate, by (11.1) and its true direct-sum occurrence. A state circle can still persist at OTHER labels, as C119 explicitly shows. An infinite state has an infinite-pd simple factor j; ordinary devissage permits a source switch. But the critical descent inference is MISSING: finite closure under SYZYGY DIRECT SUMS does not supply containment of the new simple factor L_j's recurrent carrier in the old state carrier. Its resolution can enter different states. Nor does it put the cyclic head images/full relation kernels in the original finite family. There is no actual nonzero Yoneda product attached to an arbitrary circle of such factor switches.
+
+C112's finite FULL relation kernel supplies precisely an eligible containment; C114 blocks asserting it for arbitrary legal lifts, and C128 requires outside-band source switches. C105/C106 still close their genuine ordinary rectangle/cross-Ext cases; finite state count alone does not manufacture that comparison. The small bounded literature retrieval added no eligibility theorem and is not claimed exhaustive.
+
+Therefore the finite-state global mechanism is OPEN after this test. The next success must prove actual source-carrier containment/ordinary supported return, or an alternative strict global reduction; merely cycling through labels or writing (11.2) does not suffice. C127–C128 remain the substantive checkpoint and full Universal Gap A OPEN.

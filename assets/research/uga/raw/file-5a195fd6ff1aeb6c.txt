@@ -1,0 +1,363 @@
+# Universal Gap A — Local-Singular Q1 Forcing
+
+## Finite-Head Collision × U8 Excursion Fusion
+
+**Date:** 2026-10-02  
+**Status:** PROJECT-DERIVED / SELF-AUDITED / INDEPENDENT VERIFICATION REQUIRED  
+**Global status:** Universal Gap A remains OPEN.
+
+---
+
+## 0. Purpose
+
+This checkpoint fuses two previously separate project assets:
+
+1. the new **Universal Two-Sided Finite-Head Collision** theorem;
+2. the older **U8 excursion / NP fixed-depth singular-channel** machinery.
+
+The point is not to restart U8. The point is that the new finite-head theorem eliminates one of the old U8 branches entirely in the local-singular case.
+
+---
+
+## 1. Setup
+
+Let \(A\) be an elementary finite-dimensional \(k\)-algebra which is not of infinite \(+\) global dimension.
+
+Fix a primitive vertex \(x\) and write
+
+\[
+e=e_x,\qquad f=1-e,
+\]
+
+\[
+E=eAe,\qquad \Gamma=fAf.
+\]
+
+Assume the local corner is nontrivial:
+
+\[
+E\neq k.
+\]
+
+Define the derived complement coupler
+
+\[
+\mathcal C_x
+=
+fAe\otimes_E^{\mathbf L}eAf
+\in D(\Gamma^e).
+\]
+
+For \(y,z\neq x\),
+
+\[
+e_z\mathcal C_x e_y
+\simeq
+e_zAe\otimes_E^{\mathbf L}eAe_y.
+\]
+
+---
+
+## 2. Input from the new finite-head collision theorem
+
+The finite-head collision theorem gives fixed vertices
+
+\[
+y,z\neq x
+\]
+
+such that
+
+\[
+\operatorname{Tor}^{E}_m(e_zAe,eAe_y)\neq0
+\]
+
+for infinitely many \(m\).
+
+Equivalently,
+
+\[
+H_m(e_z\mathcal C_x e_y)\neq0
+\]
+
+for infinitely many \(m\).
+
+Hence
+
+\[
+\boxed{
+H_m(\mathcal C_x)\neq0
+\quad\text{for infinitely many }m.
+}
+\]
+
+Therefore
+
+\[
+\boxed{
+\mathcal C_x\notin D^b(\Gamma^e),
+}
+\]
+
+and in particular
+
+\[
+\boxed{
+\mathcal C_x\notin \operatorname{perf}(\Gamma^e).
+}
+\]
+
+This is stronger than merely knowing that the coupler has infinite bimodule projective dimension: the coupler itself has unbounded homology.
+
+---
+
+## 3. Consequence: the old UT/perfect branch is impossible here
+
+The previous U8 forensic split treated two possibilities for a coupler:
+
+### UT
+\[
+\mathcal C\in\operatorname{perf}(\Gamma^e).
+\]
+
+### NP
+\[
+\mathcal C\notin\operatorname{perf}(\Gamma^e).
+\]
+
+For the single-vertex deletion attached to any nontrivial local corner \(E=e_xAe_x\neq k\), Section 2 forces
+
+\[
+\mathcal C_x\notin\operatorname{perf}(\Gamma^e).
+\]
+
+Therefore:
+
+\[
+\boxed{
+\text{Local-singular branch}
+\Longrightarrow
+\text{NP branch only}.
+}
+\]
+
+The perfect-coupler / UT / Rees-transgression branch does not need to be reconsidered for this local-singular route.
+
+This is a strict frontier compression.
+
+---
+
+## 4. Fixed \(q=1\) simple-ended channel
+
+Take a minimal \(\Gamma^e\)-projective resolution
+
+\[
+P_\bullet\longrightarrow\mathcal C_x.
+\]
+
+Because \(\mathcal C_x\) has unbounded homology, \(P_\bullet\) has nonzero terms in arbitrarily high homological degrees.
+
+There are only finitely many primitive \(\Gamma^e\)-projective labels:
+
+\[
+\Gamma e_i\otimes e_j\Gamma,
+\qquad i,j\neq x.
+\]
+
+Hence some fixed pair \((i,j)\) occurs in \(P_m\) for infinitely many \(m\).
+
+Let
+
+\[
+R_i^\Gamma
+\]
+
+be the corresponding right simple and
+
+\[
+S_j^\Gamma
+\]
+
+the corresponding left simple.
+
+Minimality gives
+
+\[
+\operatorname{im}d_m
+\subseteq
+\operatorname{rad}(\Gamma^e)P_{m-1}.
+\]
+
+Tensoring on both endpoints with \(R_i^\Gamma\) and \(S_j^\Gamma\) kills the radical differentials. Therefore the repeated primitive label survives after endpoint reduction:
+
+\[
+\boxed{
+H_m\!\left(
+R_i^\Gamma
+\otimes_\Gamma^{\mathbf L}
+\mathcal C_x
+\otimes_\Gamma^{\mathbf L}
+S_j^\Gamma
+\right)
+\neq0
+\quad\text{for infinitely many }m.
+}
+\]
+
+Thus every nontrivial local corner in a hypothetical Gap-A failure forces a fixed simple-ended \(q=1\) singular channel over the complementary corner.
+
+---
+
+## 5. Ordinary-bar interpretation
+
+The old U8 excursion filtration applies to the decomposition
+
+\[
+1=e+f.
+\]
+
+The \(q=1\) associated-graded excursion layer for endpoints \(i,j\in f\) is the multi-bar model for
+
+\[
+R_i^\Gamma
+\otimes_\Gamma^{\mathbf L}
+\mathcal C_x
+\otimes_\Gamma^{\mathbf L}
+S_j^\Gamma
+\]
+
+up to the fixed two-crossing homological shift.
+
+Consequently the channel in Section 4 is not an abstract singular-category artifact.
+
+It occurs as an unbounded first-excursion layer inside the ordinary normalized bar complex computing ambient simple-simple Tor over \(A\).
+
+Therefore the local-singular no-hiding problem has now been reduced to:
+
+\[
+\boxed{
+\text{unbounded fixed }q=1\text{ excursion channel}
+\Longrightarrow ?
+\text{ ordinary Peirce-visible ambient return}.
+}
+\]
+
+---
+
+## 6. What has genuinely disappeared
+
+The following questions are no longer part of the local-singular frontier:
+
+1. whether eventual bimodule periodicity is available;
+2. whether the first mixed coupler has unbounded homology;
+3. whether the coupler is perfect or non-perfect;
+4. whether one can extract a fixed endpoint pair from the non-perfect coupler;
+5. whether the relevant phenomenon can be represented inside the ordinary ambient bar complex.
+
+All five are now settled in the direction needed for the reduction.
+
+---
+
+## 7. What has NOT been proved
+
+The crucial remaining implication is still not available:
+
+\[
+H_m\!\left(
+R_i^\Gamma
+\otimes_\Gamma^{\mathbf L}
+\mathcal C_x
+\otimes_\Gamma^{\mathbf L}
+S_j^\Gamma
+\right)\neq0
+\text{ i.o.}
+\]
+
+does **not** by itself imply
+
+\[
+\operatorname{Tor}^A_m(R_i,L_j)\neq0
+\text{ i.o.}
+\]
+
+with
+
+\[
+e_jAe_i\neq0.
+\]
+
+There are two distinct possible failures:
+
+1. the \(q=1\) channel can be screened by higher excursion layers;
+2. a persistent endpoint pair can remain Peirce-invisible.
+
+The Auslander-algebra calibration from the old forensic run shows that a non-perfect, even diagonal, singular coupler can be completely screened in a finite-global-dimension ambient algebra. Therefore no direct
+\[
+\text{non-perfect coupler}\Rightarrow\text{visible ambient witness}
+\]
+claim is legal.
+
+The missing ingredient must use additional structure specific to a hypothetical Universal Gap-A counterexample, in particular the ambient infinite-global-dimension/minimal-counterexample structure, not merely the existence of a singular coupler.
+
+---
+
+## 8. Exact new frontier
+
+The local-singular branch is now normalized to one problem:
+
+### Q1 Ambient No-Hiding / Alignment
+
+Given
+
+\[
+\mathcal C_x=fAe_x\otimes_{e_xAe_x}^{\mathbf L}e_xAf
+\]
+
+and a fixed pair \(i,j\neq x\) with
+
+\[
+H_m\!\left(
+R_i^\Gamma
+\otimes_\Gamma^{\mathbf L}
+\mathcal C_x
+\otimes_\Gamma^{\mathbf L}
+S_j^\Gamma
+\right)\neq0
+\quad\text{i.o.},
+\]
+
+prove one of:
+
+\[
+\boxed{
+e_jAe_i\neq0
+\quad\text{and}\quad
+\operatorname{Tor}^A_m(R_i,L_j)\neq0\text{ i.o.}
+}
+\]
+
+or
+
+\[
+\boxed{
+\text{a strict smaller invariant carrier / support descent}.
+}
+\]
+
+Any continuation that merely re-proves non-perfectness, fixed endpoint extraction, excursion filtration, Rees torsion growth, or generic source-detector derangement is duplicate work.
+
+---
+
+## 9. Strategic consequence
+
+For the current Universal Gap A programme:
+
+- **local-singular branch:** fixed \(q=1\) NP channel / Ambient No-Hiding;
+- **local-trivial branch:** tiling/support-return.
+
+The old UT/perfect-coupler branch is removed from the local-singular route.
+
+\[
+\boxed{
+\text{Universal Gap A remains open, but the local-singular frontier is strictly narrower.}
+}

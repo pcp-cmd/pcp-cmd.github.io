@@ -1,0 +1,103 @@
+"""Exact actual tensor minimal covers; separate all-degree Kunneth proof.
+
+Frozen helper definitions are reused without their old main computations.
+No finite Betti prefix is promoted into an infinite-tail certificate.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Shallow-Corner-Evidence/verify_shallow_corner.py'
+saved_file=__file__;__file__=str(frozen)
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfamilies=[]',1)[0],str(frozen),'exec'),globals())
+__file__=saved_file
+
+def tensor_table(C,D):
+    m=D.vertices
+    pairs=[(i,j) for i in range(C.vertices) for j in range(D.vertices)]
+    pairs += [(i,j) for i in range(len(C.basis)) for j in range(len(D.basis))
+              if i>=C.vertices or j>=D.vertices]
+    ix={pair:k for k,pair in enumerate(pairs)}
+    basis=[(f'{C.basis[i][0]}:{D.basis[j][0]}',
+            C.basis[i][1]*m+D.basis[j][1],C.basis[i][2]*m+D.basis[j][2]) for i,j in pairs]
+    vertices=C.vertices*D.vertices
+    rad_products={}
+    for x in range(vertices,len(pairs)):
+        i,j=pairs[x]
+        for y in range(vertices,len(pairs)):
+            k,l=pairs[y];c,d=C.mult(i,k),D.mult(j,l)
+            if c is not None and d is not None:rad_products[x,y]=ix[c,d]
+    A=Table(vertices,basis,rad_products)
+    def peirce(T,u,v):return sum(l==u and r==v for _,l,r in T.basis)
+    for y in range(A.vertices):
+        for z in range(A.vertices):
+            assert peirce(A,y,z)==peirce(C,y//m,z//m)*peirce(D,y%m,z%m)
+    return A,{'tensor_basis_pairs':pairs,'Peirce_matrix':[[peirce(A,y,z) for z in range(A.vertices)] for y in range(A.vertices)]}
+
+def factor_terms(side,label,n):
+    if side=='left':
+        return [label] if n==0 else ([1] if label==0 and n==1 else ([] if label==0 else [0]))
+    return [label] if n==0 else ([0] if label==1 and n==1 else ([] if label==1 else [1]))
+
+def tensor_terms(side,labels,n):
+    terms=[0]*4
+    for i in range(n+1):
+        for x in factor_terms(side,labels[0],i):
+            for y in factor_terms(side,labels[1],n-i):terms[x*2+y]+=1
+    return terms
+
+def actual_terms(A,source,side,degrees,terminate=False):
+    M=sr.Module.simple(A.alg,source);out=[]
+    for n in range(degrees):
+        K,info,cert=cover(M)
+        expected=tensor_terms(side,(source//2,source%2),n)
+        assert info['cover_multiplicities']==expected,(side,source,n,info['cover_multiplicities'],expected)
+        out.append({'degree':n,'expected_tensor_multiplicities':expected,'actual_cover':cert})
+        M=K
+    if terminate:assert not any(M.dimensions)
+    return out
+
+C=nakayama_seven();D=nakayama_seven()
+A,basis_certificate=tensor_table(C,D);op=A.opposite()
+left_finite=actual_terms(A,0,'left',3,True)
+right_finite=actual_terms(op,3,'right',3,True)
+left_anchor=actual_terms(A,2,'left',4)
+right_anchor=actual_terms(op,0,'right',3)
+# Full finite blocks are singletons but their physical cover already hits
+# infinite labels, and their opposite label is infinite.
+assert basis_certificate['Peirce_matrix'][2][0]>0
+assert basis_certificate['Peirce_matrix'][3][1]>0
+assert all(basis_certificate['Peirce_matrix'][y][z]>0 for y in range(4) for z in range(4))
+assert [x['expected_tensor_multiplicities'][0] for x in left_anchor[1:]]==[1,1,1]
+
+E=cycle(3)
+sparse, sparse_certificate=tensor_table(C,E)
+assert any(x==0 for row in sparse_certificate['Peirce_matrix'] for x in row)
+assert sparse_certificate['Peirce_matrix'][0][0]==2
+# The factor f,f only contributes degree zero, so the sparse diagonal
+# is exactly the three-cycle diagonal. All-degree period is proved by
+# the old actual simple syzygy identity, not this finite assertion.
+sparse_support={'diagonal_source_detector':0,'physical_dimension':2,
+ 'all_degree_Tor_from_written_tensor_and_cycle_proof':'one at nonnegative multiples of three, zero otherwise'}
+
+dependencies={f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest() for n in
+ ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']}
+for directory,names in [('Carrier-Lemma-Evidence',['verify_carrier_lemma.py','verify_finite_factor_carrier.py']),
+                        ('Shallow-Corner-Evidence',['verify_shallow_corner.py'])]:
+    for n in names:
+        rel=f'runs/2026-10-04/{directory}/{n}';dependencies[rel]=sha256((project_root/rel).read_bytes()).hexdigest()
+result={'status':'passed','python':sys.version,'independent_verification':False,'counts':counts,
+ 'tensor_square':{'dimension':49,'vertices':4,'algebra':A.payload,'tensor_basis_and_Peirce':basis_certificate,
+  'left_finite_pd_two_actual_terms':left_finite,'right_finite_pd_two_actual_terms':right_finite,
+  'left_supported_anchor_actual_terms':left_anchor,'right_anchor_actual_terms':right_anchor,
+  'all_degree_conclusions_from_written_proof':{
+   'left_finite_label':0,'right_finite_label':3,'finite_pd_each_side':2,
+   'I_L':[1,2,3],'I_R':[0,1,2],'no_shallow_simple_either_side':True,
+   'no_C088_closed_finite_block_either_side':True,'no_C093_perfect_finite_complement_either_side':True,
+   'supported_pair_detector_0_source_2_Tor_every_positive_degree':1,
+   'physical_dimension_detector_0_source_2':4,'not_a_Gap_A_counterexample':True}},
+ 'sparse_tensor':{'dimension':42,'vertices':6,'algebra':sparse.payload,'tensor_basis_and_Peirce':sparse_certificate,
+                  'ordinary_supported_pair':sparse_support},
+ 'dependencies':dependencies,
+ 'scope':'Finite exact literal tables, physical tensor factors and actual minimal covers; arbitrary-factor ordinary proof and all-r conclusions are separate. Same author/shared helpers, not independent verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','dimensions':[49,42],'counts':counts,'independent_verification':False}))

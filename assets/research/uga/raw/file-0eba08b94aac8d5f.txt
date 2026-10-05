@@ -1,0 +1,253 @@
+# Regular-target Ext、syzygy 自扩张传递与有限检测窗口
+
+日期：2026-09-27。状态：**完整自审证明及有理数精确核算；未独立数学核验，未确认新颖性。** 本稿沿实际有限 syzygy 系统继续任意 N 路线。加入对左正则模 A 的 Ext 后，不再需要单顶点头部假设，并能把一个全次数的消失条件变成有限证书。一般代数存在这种有限系统仍未证明，Universal Gap A 仍未解决。
+
+核心结论有两个：
+
+1. 若 X 进入 m 状态的实际有限系统且 Ext^n(X,A)=0 对 n>c 成立，则无限 pd(X) 迫使某个 c<n≤c+m 的 self-Ext 非零，而且在一个等差数列上持续非零。
+2. 对任何进入该系统的 X，有限 pd 等价于同一个长度 m 的窗口中 Ext^n(X,X⊕A) 全零。这个联合检测本身不再附加全次数消失假设。
+
+这里 m 是实际模块状态数，**不是已经证明只依赖顶点数 N 的常数**。第一项用于 simple 时得到 supported diagonal Tor，因此给出任意 N 的条件性 (U) 定理；第二项的 regular-target 非零本身并不等于 supported Tor。
+
+## 1. 精确输入与 regular-target 递推
+
+设 A 为有限维 basic 复代数，所有模有限维且为左模。沿用 [有限系统定理](Finite-Syzygy-System-Theorem.md) 的输入：非零实际模块 M_1,…,M_m、非负整数矩阵 T 及明确的 A-模同构
+
+\[
+\Omega M_\alpha\simeq\bigoplus_\gamma M_\gamma^{T_{\gamma\alpha}},
+\qquad \Omega^qX\simeq\bigoplus_\alpha M_\alpha^{v_\alpha}.
+\tag{1}
+\]
+
+Ω 始终用最小投射覆盖。状态不必不可分解、不必不同构，入口也允许 v=0；X 要求非零。令
+
+\[
+G_\alpha=\dim\operatorname{Ext}^1_A(M_\alpha,A).
+\tag{2}
+\]
+
+必须使用实际商空间
+
+\[
+\operatorname{Ext}^1_A(M_\alpha,A)=
+\operatorname{Hom}_A(\Omega M_\alpha,A)/
+\operatorname{im}\bigl(\operatorname{Hom}_A(P_\alpha,A)\bigr).
+\tag{3}
+\]
+
+目标 A 不是 simple；把 (3) 当成整个 Hom 空间会得到错误标签。
+
+**引理 1。** 对每个 n≥0，有
+
+\[
+\dim\operatorname{Ext}^{q+1+n}_A(X,A)=G T^n v.
+\tag{4}
+\]
+
+**证明。** 对第一变量作 q+n 次 dimension shifting，再使用 (1) 及 Ext 对有限直和的可加性。此处不用任何 injective-dimension 假设。\(\square\)
+
+把 T_{γα}>0 看作 α→γ，G_α>0 看作输出状态。于是 (4) 持续非零，当且仅当从入口能到达一个圈，且该圈能到达输出。有限系统稿的非负路径证明直接给出
+
+\[
+\operatorname{Ext}^{n}(X,A)\ne0\text{ 无穷多次}
+\iff
+\exists n\in[q+m+1,q+2m]:\operatorname{Ext}^{n}(X,A)\ne0.
+\tag{5}
+\]
+
+若窗口全零，则 Ext^n(X,A)=0 对全部 n≥q+m+1 成立。理由是任何长度至少 m 的入口到输出路径含有圈；若该路径存在，就是持续见证。再精确检查次数 1,…,q+m，可以找出最小的非负整数 c，使
+
+\[
+\operatorname{Ext}^{n}(X,A)=0\quad(n>c).
+\tag{6}
+\]
+
+因此这里的 c 由有限实际数据证明，绝不是从“算了几次都为零”外推。
+
+## 2. 传回原模块时，次数下界不随 syzygy 深度增加
+
+**引理 2。** 假设 (6)，令 K=Ω^ℓX，ℓ≥0。对每个 n>c，有自然同构
+
+\[
+\operatorname{Ext}^{n}_A(X,X)
+\simeq\operatorname{Ext}^{n+\ell}_A(X,K)
+\simeq\operatorname{Ext}^{n}_A(K,K).
+\tag{7}
+\]
+
+**证明。** 对每个 0≤t<ℓ 使用
+
+\[
+0\longrightarrow\Omega^{t+1}X\longrightarrow P_t
+\longrightarrow\Omega^tX\longrightarrow0.
+\]
+
+因为 P_t 是有限个 A 的直和的直和项，(6) 给出
+Ext^{n+t}(X,P_t)=Ext^{n+t+1}(X,P_t)=0。因此第二变量的长正合列给出
+
+\[
+\operatorname{Ext}^{n+t}(X,\Omega^tX)
+\simeq\operatorname{Ext}^{n+t+1}(X,\Omega^{t+1}X).
+\]
+
+串接得到 (7) 的第一个同构。第二个同构是第一变量的通常 dimension shifting。全部中间次数至少为 n，所以只需 n>c，**无需 n>c+ℓ**。当 ℓ=0 时取恒等。\(\square\)
+
+在实际覆盖表示中，(7) 将 f:Ω^nX→X 提升 ℓ 次，得到 Ω^ℓf:Ω^{n+ℓ}X→Ω^ℓX，再模去投射限制边界；这是下面程序计算的比较映射。本稿使用其向量空间同构及维数下界，**不额外宣称高次数截断自动构成同一个自由 Yoneda 子代数**。
+
+## 3. 多头部无需限制的循环检测
+
+**定理 3。** 在 (1)、(6) 下，若 pd(X)=∞，则存在
+
+\[
+1\le d\le m,\qquad 0\le\ell\le q+m-1,
+\qquad g\ge1,
+\]
+
+以及某个非投射状态 M，使 M 是 Ω^ℓX 的直和项，且 Ω^dM≅M^{⊕g}⊕W。对每个 r≥1 且 rd>c，
+
+\[
+\dim\operatorname{Ext}^{rd}_A(X,X)\ge g^r\ge1.
+\tag{8}
+\]
+
+特别地，取
+
+\[
+D=d\bigl(\lfloor c/d\rfloor+1\bigr),
+\]
+
+就有 c<D≤c+d≤c+m 且 Ext^D(X,X)≠0。
+
+**证明。** 若从入口可达的图无圈，长度 m 的路径全无，因而 Ω^{q+m}X=0，与无限 pd 矛盾。选一个可达圈的基点及无重复入口路径，则入口路径长≤m−1，可选圈长 d≤m。沿 (1) 复合分解，得到所述直接和；g 可取圈上边重数的乘积。
+
+M 不可能有限 pd：若 p=pd(M)<∞，Ω^dM 含 M 为非零直和项，却有投射维数小于 p 或为零，矛盾。因此 M 非投射。
+
+[非半单分裂返回定理](ADR-Obstruction-and-Cyclic-Return.md) 第 3 节已经处理了投射限制边界，给出 dim Ext^{rd}(M,M)≥g^r。写 K=Ω^ℓX=M⊕K'，Ext^{rd}(M,M) 是 Ext^{rd}(K,K) 的一个向量空间直和项。最后用 (7) 得到 (8)。\(\square\)
+
+这是返回分解给出的下界；不声称每个满足 regular-Ext 消失的系统都能出现 g>1 的圈。
+
+**推论 4（联合有限窗口）。** 只假设 (1)，则
+
+\[
+\boxed{\quad
+\operatorname{pd}X<\infty
+\iff
+\operatorname{Ext}^n_A(X,X\oplus A)=0
+\quad(q+m+1\le n\le q+2m).
+\quad}
+\tag{9}
+\]
+
+成立时 pd(X)≤q+m−1。
+
+**证明。** 有限 pd 排除一切从入口可达的圈，所以 Ω^{q+m}X=0，给出界及窗口消失。反向，窗口中的 regular-target 部分先由 (5) 给出 (6)，可取 c=q+m；若 pd(X)=∞，定理 3 将在同一个窗口给出非零 self-Ext，矛盾。\(\square\)
+
+(9) 是有限系统条件下的自扩张与正则模联合检测，不是已经证明的一般 N 顶点定理。程序在计算图和 G 后输出此窗口；除审计中的指定样本外，**不会把尚未计算的 self-Ext 窗口标成已经消失**。
+
+## 4. 对任意 N 的 supported Tor 推论
+
+令 L_j 为左 simple、R_j 为相应右 simple。若 L_j 满足 (1)、pd(L_j)=∞ 且 Ext^n(L_j,A) 最终为零，则定理 3 给出
+
+\[
+\dim\operatorname{Tor}_{rd}^{A}(R_j,L_j)
+=\dim\operatorname{Ext}^{rd}_A(L_j,L_j)\ge1
+\quad(rd>c).
+\tag{10}
+\]
+
+e_jAe_j 含 e_j，所以这是 supported pair。
+
+因此：**若所有 simples 都进入实际有限 syzygy 系统，且每个无限 pd 的 simple 到 A 的 Ext 最终消失，则 A 满足 (U)。** 系统可以按 simple 分别选取；不限制 N、Peirce 支撑、头部顶点数或 Loewy 长度。充分条件之一是左正则模的内射维数 id_A A<∞。
+
+反之，在假想的 (U) 反例中，若一个无限 pd 的 simple 确实进入有限系统，则它到 A 的 Ext 必须持续非零。这个必要条件将剩余问题定位到 regular-target 的持续类，**却还没有把这些类变成所需的 supported simple-pair 类**。
+
+## 5. 三种边界与一个任意 N 的正面校准
+
+### 5.1 窗口长度 m 不能普遍缩短
+
+令 A 为有向 m 圈的 radical-square-zero 代数，m≥2。其投射模长度为二，socles 循环排列，所以 A 自内射。取 m 个 simple 为状态，则 ΩL_j=L_{j+1}（指标模 m），q=c=0，且
+
+\[
+\dim\operatorname{Ext}^{n}(L_j,L_j)=
+\begin{cases}1&m\mid n,\\0&m\nmid n.\end{cases}
+\]
+
+前 m−1 次 self-Ext 全零，第 m 次非零。推论 4 的窗口 m+1,…,2m 也只有最后一次非零。因此两个长度 m 的一般结论都不能简单删除最后一次。程序复用 m=3,5,8 的完整输入核算。
+
+### 5.2 不能删去 Ext(X,A) 消失：Saorín 与原有 N 顶点族
+
+项目已有七维 Saorín 例子满足 ΩL_0=M、ΩM=M，但 Ext^{n}(L_0,L_0)=0 对全部 n>0 成立。此处
+
+\[
+\dim\operatorname{Ext}^{n}(L_0,A)=
+\begin{cases}0&n=1,\\1&n\ge2.\end{cases}
+\tag{11}
+\]
+
+为核对非 simple 目标的边界，采用前稿的覆盖基 P_0=⟨e_0,a,p⟩、P_1=⟨e_1,b,q,r⟩，其中 ba=p、ab=q、bq=r。M 有基 u,v，bu=v。Hom(M,A) 由 u↦a、u↦q 两个映射张成；P_1→M 的核同构 M，包含将 u,v 送到 q,r。投射限制只给出 u↦q 这一维，所以 Ext^1(M,A)=1。P_0 到 A 的限制则覆盖上述两个 Hom 基，所以 Ext^1(L_0,A)=0。周期性证明 (11) 的全部后续次数。
+
+实际比较 Ext^n(L_0,L_0)→Ext^n(M,M) 对每个正次数都是 0→C。有限审计保存次数 1,…,5 的零矩阵，没有把两端错当成同构。
+
+原有 [2N+3 维分支族](ADR-Obstruction-and-Cyclic-Return.md) 中，ΩM=M⊕D，D 为 N−2 个 projective sink simples 的和。Hom(M⊕D,A) 的维数为 2+2(N−2)，投射限制的秩仍为一，因此
+
+\[
+\dim\operatorname{Ext}^{n}(L_0,A)=2N-3\quad(n\ge2).
+\tag{12}
+\]
+
+这里 Hom(M,A) 仍有上述两个基，每个 Hom(P_t,A) 有基 e_t,c_t；投射限制在这些分量上只能同时由 e_1 的同一个系数产生。所有 positive simple self-Ext 全零，但非对角 supported pair (1,0) 持续。故新条件不能作为通用对角路线；这些族不反驳 (U)。
+
+### 5.3 任意多头部周期族通过新条件
+
+复用 [支撑子模稿](Supported-Submodule-Localization.md) 的
+
+\[
+A_N=D\otimes B,\quad D=\mathbb C[\epsilon]/(\epsilon^2),
+\quad B=\mathbb C Q,\quad Q:\ t\to0\ (1\le t<N).
+\]
+
+该稿已经给出 dim A_N=4N−2、不可分解的 M_N（dim=3N−4、头部含全部 N 顶点）及 ΩM_N=M_N，并给出 ΩL_0=L_0、ΩX_t=X_t，其中 X_t=ΩL_t。
+
+这里 id_A A≤1：B 为遗传代数，左正则模有长度至多一的内射分解。记 V^∨=Hom_C(V,C)。D 是对称代数，将该分解张量 D 后仍正合且各项内射，因为 B 的有限生成内射模是若干 B^∨ 的直和项，而 D⊗B^∨≅D^∨⊗B^∨≅A^∨ 是 A 的内射模。因此 Ext^n(X,A)=0 对所有 X、n≥2 成立。
+
+周期状态 M_N、L_0、X_t 的 Ext^1(-,A) 再由周期性全部为零。因此整个有限系统的 G 行为零；L_0 与 M_N 可取 c=0，其他 simples 可取 c=1。定理 3 于是给出各 simple 的对角持续 Tor，包括上一稿局部化失败的汇点 0。实际头部递推进一步给出 dim Ext^n(L_j,L_j)=1 对所有 j、n≥1。
+
+在 N=3 时，Hom(ΩM_N,A) 的维数和投射限制秩都为 5，Ext^1(M_N,A)=0；N=8 时二者都为 55。这个校准直接排除以 Hom 代替 Ext 的做法。此代数族的 (U) 已在既有 J³=0 理论范围内，本稿不把它称为新解决的代数类。
+
+### 5.4 有界维数不能替代有限实际状态
+
+复用四维量子外代数 A=C⟨x,y⟩/(x²,y²,xy+2yx)，令 C(λ) 有基 u,v，xv=u、yv=λu、xu=yu=0。则
+
+\[
+\Omega C(\lambda)\simeq C(\lambda/2),\quad
+\dim\operatorname{Hom}(C(\mu),C(\lambda))=1+\delta_{\mu,\lambda},
+\]
+
+\[
+\dim\operatorname{Ext}^1(C(\mu),C(\lambda))
+=\delta_{\mu,\lambda}+\delta_{\mu,2\lambda}.
+\tag{13}
+\]
+
+覆盖核由 y−μx、yx 生成，x(y−μx)=−2yx，y(y−μx)=−μyx；投射限制的秩为 1−δ_{μ,λ}，这直接证明 (13)。取 X=C(1)，得到 self-Ext 在次数一为一维、此后全零。取 yx 的系数为 Frobenius 泛函，乘法配对非退化，所以 A 自内射，Ext^{>0}(X,A)=0。
+
+C(λ) 的端同态环为标量加一维平方零理想，因而不可分解；非零 λ 的同构类由 λ 确定。故 C(1),C(1/2),C(1/4),… 两两不同构，不能进入任何有限直和封闭状态系统，尽管各维数都是二。此例说明 (1) 不可删去。程序只核算前六次 Ext 和七个实际同构；全部次数的断言由以上公式给出。
+
+## 6. 文献边界与证据
+
+此处的 homological 思路属于已有 Auslander–Reiten 研究：
+
+- [Huneke–Leuschke, *On a conjecture of Auslander and Reiten*, 引言](https://arxiv.org/pdf/math/0305001) 明确记载 ultimately closed 模块已满足 AR，并包含有限 syzygy 类型的情况。因此本稿不把这种性质本身当成新结果。
+- [Wei, *Derived categories and syzygies*, Lemma 6.4](https://arxiv.org/pdf/1109.6226) 讨论 self-Ext 与 regular-target Ext 的最终消失在 syzygy 下的传递。本稿逐次写出 (7) 的界，并与实际有限图组合成 (9) 及可执行证书。
+- 截至本次检索，2026-09-08 的 [Zhang–Zhou 预印本](https://arxiv.org/abs/2609.08679) Theorem 1.1 声称：split J³=0、s 个 simples、Ext^{>0}(M,A)=0 时，初始 1,…,3s+1 次 self-Ext 全零迫使 M 投射。已核对其定理原文，未独立核验全篇；本稿证明不依赖该预印本。其假设与 (9) 不同，不能把初始消失换成最终消失，量子例子即显示差别。
+
+本轮继承 [Vault 方法复用记录](Vault-Method-Reuse-20260923.md) 中“先保留全部真实约束”的方法：先验证模块作用、最小覆盖同构及投射限制边界，再做有限图判定。本稿没有从 Vault 获得新的 Han 定理或一般有限状态存在性，也没有修改 Vault。
+
+可复算交付：
+
+- [regular_ext_transfer_certificate.py](regular_ext_transfer_certificate.py)：实际有限系统、G 行、入口及消失界核验；返回正面证书、有限 pd，或 regular Ext 持续导致的明确未判定。
+- [审计脚本](../work/audit_regular_ext_transfer.py)、[完整输入及结果](../work/regular_ext_transfer_audit.json)、[CLI 输入](../work/regular_ext_transfer_input.json)、[CLI 输出](../work/regular_ext_transfer_checked.json)、[计算记录](../work/regular-ext-transfer-computation-record.json)。
+
+12 个系统、52 个源查询：35 项持续 self-Ext 证书、5 项因 regular Ext 持续而正确未判定、12 个有限 pd 源；258 项 regular-Ext 递推比较、161 个实际 Ext 比较映射，其中 143 个处于定理保证的同构范围；两个错误证书被拒绝。量子例子的七个实际 syzygy 同构也已核对。算术为 Q 上精确计算，结论在标量扩张到 C 后保持。
+
+**尚未完成的步骤：** 一般 (U) 仍缺普遍机制。regular Ext 持续不自动提供方向正确的 supported simple pair；有限实际系统也未对一般代数建立。普通 HH survival、全局新颖性与独立数学核验均未由本稿解决。

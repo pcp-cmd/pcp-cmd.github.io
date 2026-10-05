@@ -1,0 +1,335 @@
+# T19 — Three infinite sources: socle separation forces an ordinary visible return
+
+Date: 2026-10-04.
+
+Status: complete self-audited ordinary proof and explicit hand-checked
+module calibration; existing singleton-detector and actual Peirce-block
+assets reused; no new computation; not independently verified.
+Universal Gap A remains OPEN for arbitrary algebras.
+
+This continues after T18. Primitive comparison does not automatically
+inherit, so this step tests an ordinary return without quotienting.
+It closes a three-infinite-source class at arbitrary total vertex
+number. The proof does not introduce a derived invariant: a socle
+condition kills actual cross-type projective maps, the real minimal
+resolution splits, and ordinary finite-length detection gives the
+same supported Tor pair. The socle condition is not automatic.
+
+## 1. Ordinary data and the exact socle condition
+
+Use I_L, I_R, H_zy, W_z, T_y and D(y,z)=dim e_yAe_z as in T16--T18.
+All algebras are finite-dimensional elementary over any field.
+F_L is the complement of I_L; its simple pds have a finite common
+bound d. A left module with ONLY F_L composition factors has pd<=d,
+by ordinary finite-length extensions. This forward implication is
+valid; its converse is not used.
+
+The LEFT socle separation condition is
+
+\[
+z\in I_R(A)\quad\Longrightarrow\quad
+\operatorname{soc}({}_AAe_z)
+\text{ has composition factors only in }I_L(A).
+\tag{1.1}
+\]
+
+Equivalently, none of these left projectives has a nonzero submodule
+whose composition factors are all in F_L. Indeed every nonzero
+finite-length F_L-only submodule has a simple F_L socle, which lies
+in the socle of Ae_z. Conversely an F_L simple in that socle is
+such a submodule. This condition is about composition-factor support,
+NOT about excluding every finite-pd submodule: a projective itself
+has finite pd and can have infinite-pd composition factors.
+
+The stronger easily stated sufficient condition that the whole LEFT
+regular socle has only I_L factors implies (1.1). Neither condition
+is inferred from finite dimension or the number three alone.
+
+## 2. Reusable ordinary bridge for one infinite-factor carrier in an actual block
+
+### Lemma 2.1 — An actual recurrent projective block with at most one infinite factor gives visible Tor
+
+Fix an infinite-pd left simple L_x. Consider a connected component
+K of the ACTUAL Peirce graph on its persistent projective labels
+T_x. Distinct components have projective Hom zero in both directions.
+Suppose
+
+\[
+Y_K=\{j\in I_L:\text{ some }q\in K\text{ has }D(j,q)>0\}
+\quad\text{has size at most one.}
+\tag{2.1}
+\]
+
+Then the empty case is impossible, and the singleton case gives a
+fixed supported ordinary Tor tail for A.
+
+#### Proof
+
+Reuse the actual-block construction in Peirce-Elimination-Theorem,
+Section 3. After the last occurrence of a nonpersistent label, the
+left resolution uses only T_x. Its differentials are literally
+block diagonal. For s sufficiently large the module
+
+\[
+X_K=\operatorname{coker}(P_{s+1}^K\longrightarrow P_s^K)
+\]
+
+has the actual exact minimal projective resolution supplied by that
+block. Every q in K appears infinitely often in this tail, so
+Tor_n(R_q,X_K) persists. Also X_K is a quotient of P_s^K; its infinite-pd
+simple composition factors are contained in Y_K.
+
+If Y_K is empty, X_K has pd<=d, contrary to that actual recurrence.
+If Y_K={j}, choose q in K with D(j,q)>0. Ordinary finite-length
+Tor detection gives, for n>d,
+
+\[
+\dim\operatorname{Tor}^A_n(R_q,X_K)
+\le [X_K:L_j]\,\dim\operatorname{Tor}^A_n(R_q,L_j).
+\tag{2.2}
+\]
+
+Every other factor is in F_L and has zero Tor there. The left side
+is nonzero infinitely often because q is recurrent in the ACTUAL
+minimal block. Thus the fixed pair (R_q,L_j) persists and D(j,q)>0.
+The label q is chosen inside the same recurrent block as its physical
+carrier; this is the required alignment. QED.
+
+There is a direct right version with actual right projective blocks,
+I_R composition factors, and the unchanged physical pair D(y,z).
+No graph cycle has been used to infer recurrence. The graph here
+only identifies literal zero Hom blocks of a resolution whose
+ordinary recurrence already exists.
+
+## 3. Three-source class closure by actual socle separation
+
+### Theorem 3.1 — Three left infinite simples under (1.1) force visible ordinary Tor
+
+Suppose |I_L(A)|=3 and (1.1) holds. Then A is infinite +.
+More generally |I_L|<=2 already satisfies Gap A by C080, with no
+socle assumption. Thus the stated class closes at every finite
+total vertex number and over every field.
+
+#### Proof
+
+Assume A is bad. C080's ordinary singleton-detector lemma shows
+every nonempty W_z has at least two labels. For z in I_R it is
+contained in the three-element I_L. No supported infinite Tor
+means W_z and the physical infinite-factor support
+
+\[
+S_z=\{j\in I_L:D(j,z)>0\}
+\tag{3.1}
+\]
+
+are disjoint. Therefore |S_z|<=1. Condition (1.1) ensures S_z is
+NONEMPTY: Ae_z is a nonzero finite-length projective, so its socle
+is nonzero and has a factor in I_L. Write S_z={c(z)}. All of its
+infinite-pd left simple factors have that one label c(z).
+
+Now take z,w in I_R with c(z)!=c(w). For an actual A-linear map
+f:Ae_z->Ae_w, all I_L components of im f vanish: at c(z) the target
+component is zero, and at every other I_L vertex the source component
+is zero. Its image has only F_L composition factors. It is a
+submodule of Ae_w, so (1.1) forces im f=0. Hence
+
+\[
+\operatorname{Hom}_A(Ae_z,Ae_w)=0
+\quad\text{whenever }c(z)\ne c(w),\qquad z,w\in I_R.
+\tag{3.2}
+\]
+
+This holds in BOTH directions because the condition holds for each
+target. These are actual zero maps, not maps merely zero in a stable
+quotient.
+
+Choose an infinite left L_x and its actual high minimal resolution.
+All sufficiently high labels lie in T_x, which is contained in I_R.
+Equation (3.2) makes every Peirce component K of T_x homogeneous
+for c(z). Therefore Y_K in Lemma 2.1 is the singleton {c(z)}.
+There is a recurrent label in at least one such component, since
+L_x has infinite pd. Lemma 2.1 supplies a supported ordinary Tor
+tail, contrary to badness. QED.
+
+Equivalently one can group projectives directly by c(z). The high
+minimal resolution is a literal direct sum of exact minimal blocks;
+the block of a recurrent q has only c(q) as an infinite-pd factor
+and ordinary detection forces Tor(R_q,L_{c(q)}) to persist. Its
+support D(c(q),q)>0 is built into (3.1). This explains concretely
+why the finite-factor image obstruction is killed rather than
+renamed.
+
+### Theorem 3.2 — Direct right version
+
+Suppose |I_R|=3, and for EVERY y in I_L the RIGHT socle of e_yA
+has factors only in I_R. Then A is infinite +.
+
+#### Proof
+
+Assume A is bad. Every nonempty T_y has at least two labels, by
+the direct left singleton-detector bridge of C080. It lies in the
+three-element I_R. Its physical right-factor support
+
+\[
+S'_y=\{z\in I_R:D(y,z)>0\}
+\]
+
+is disjoint from T_y, hence has size at most one; the right socle
+condition makes it nonempty. Write S'_y={r(y)}. Any actual right
+projective map e_yA->e_wA with different r values has image with
+only finite-pd RIGHT simple factors. The target's right socle
+condition forces that image zero. All high right resolutions
+therefore split into actual blocks with a unique infinite right
+composition factor r(y).
+
+In a block where e_yA is recurrent, the actual right tail module X
+has Tor_n(X,L_y) nonzero infinitely often. Direct ordinary devissage
+in the RIGHT argument, after the finite common bound for the other
+right simples, forces Tor_n(R_{r(y)},L_y) nonzero infinitely often.
+The physical support D(y,r(y))>0 is from S'_y. This is the same
+pair, directly proved. No opposite-infinite-+ theorem and no
+equality of I_L with I_R is used. QED.
+
+### Corollary 3.3 — Three common infinite labels close without a socle hypothesis
+
+If I_L(A)=I_R(A)=I has size three, A is infinite +, regardless of
+the total number of finite-pd vertices. The equality of the sets
+is an EXPLICIT hypothesis, not an opposite-side transfer.
+
+To prove this, assume A bad. For each z in I, the row W_z lies in I,
+has at least two labels, and misses z because D(z,z)>0. Hence
+W_z=I minus {z}. No visible return now gives D(j,z)=0 for every
+other j in I. Thus the actual persistent projectives Ae_z, z in I_R,
+have pairwise Hom zero and each has exactly its own label z as its
+infinite left-factor carrier. The high left resolution is literally
+block diagonal by single projective labels. Lemma 2.1 gives supported
+Tor, a contradiction. No socle separation is needed in this case.
+This reuses the ordinary Peirce singleton-block mechanism; it does
+not assert arbitrary algebras have equal infinite-side label sets.
+
+## 4. Boundary: the finite-factor coupling that the theorem actually removes
+
+For three left infinite simples in a bad A, every persistent left
+projective has at most one infinite left factor type by (3.1).
+Actual maps between different nonempty types, and maps involving
+a projective with empty I_L support, can have only F_L composition
+factors in their images. Such images have pd<=d. Nevertheless
+finite pd alone does NOT make them zero and does not split the
+ordinary resolution. A submodule can have finite pd without the
+composition restriction; that still weaker shortcut is also invalid.
+
+Condition (1.1) makes these particular images zero by their simple
+socles. That is the load-bearing step, not an assertion that maps
+factoring through perfect objects can be discarded in ordinary Tor.
+Without (1.1), the cross maps can join the real blocks, and the
+present proof stops at (3.2). The exact ordinary issue is now an
+actual finite-factor submodule of a persistent projective, rather
+than unspecified higher nonformality.
+
+This does not establish a badness-preserving quotient by their sum.
+Even when that sum has bounded ambient left pd, new quotient labels
+and an ordinary reverse-support comparison must be checked; T16--T18
+and C076's separate supported migration gap remain in force.
+The theorem supplies no uniform degree cutoff or finite-window test.
+
+## 5. Explicit connected calibration: socle separation is not automatic
+
+Take the radical-square-zero algebra with six vertices
+x1,x2,x3,f1,f2,f3, three loops t_i at x_i, arrows a_i:x_i->f_i,
+and b1:f1->f2, b2:f2->f3. Its basis is the six identities and
+these eight radical elements; EVERY product of two radical elements
+is zero. Dimension is fourteen. It is connected and elementary
+over every field.
+
+The literal radicals of the LEFT projective covers give
+
+\[
+\Omega L_{x_i}=L_{x_i}\oplus L_{f_i},\qquad
+\Omega L_{f1}=L_{f2},\quad
+\Omega L_{f2}=L_{f3},\quad L_{f3}\text{ projective}.
+\tag{5.1}
+\]
+
+Hence I_L={x1,x2,x3} and the f pds are 2,1,0. The actual RIGHT
+covers have Omega R_{x_i}=R_{x_i}; the f kernels contain R_{x_i}
+(and the previous R_f where present). Thus I_R is all six vertices.
+Each Ae_{x_i} has in its left socle the finite-pd factor L_{f_i},
+so (1.1) fails exactly at persistent right labels x_i.
+
+This is already infinite +: the actual right identity Omega R_x=R_x
+gives Tor_n(R_x,L_x)=k in EVERY degree, with nonzero diagonal Peirce
+support. It verifies nonautomaticity even for a connected algebra
+with exactly three left infinite sources; it is not a bad-algebra
+counterexample, a refutation of Theorem 3.1, or evidence of ordinary
+screening in a bad A. Infinity follows from literal simple radicals,
+not from the support graph. No computation is needed for these
+complete one-line cover descriptions.
+
+## 6. Normal adversarial self-audit
+
+1. **Which side is finite?** F_L consists of left finite-pd simples.
+   Its uniform bound kills Tor(R_q,L_f) for every right q. The right
+   proof uses its separately defined finite right complement.
+2. **Socle condition on which projectives?** For the left proof it
+   applies to Ae_z with z in I_R, because these are the high left
+   projective detector labels. The condition is NOT stated only for
+   z in I_L, and the two index sets are not equated.
+3. **Missing physical carrier?** It is nonempty because the socle
+   of EACH such nonzero projective contains an I_L factor; the
+   count-three/no-+ argument alone gives only an upper bound.
+4. **Cross-type maps only stably zero?** No. The entire image has
+   F_L composition factors and is an actual target submodule.
+   Its nonzero simple socle would contradict (1.1), so the map is
+   literally zero in the module category.
+5. **Exactness after blocking?** Both directions of all cross Hom
+   vanish. Therefore the actual high differential is block diagonal,
+   and exactness at every high term holds component by component.
+   A merely triangular or stable splitting is insufficient.
+6. **Graph implies homological return?** No. Recurrence is supplied
+   by q in the ACTUAL persistent minimal resolution. Peirce zero
+   only proves block decomposition; the actual block resolution
+   and ordinary devissage supply the supported return.
+7. **Could the selected detector have the wrong physical source?**
+   q is chosen from a block with c(q)=j, D(j,q)>0. The block tail
+   has only L_j as an infinite left factor, so devissage selects
+   this same j for Tor(R_q,L_j).
+8. **Finite-pd factors used backwards?** No. Only a module with all
+   finite-pd simple factors is bounded. Neither finite pd of a
+   module nor projectivity is used to infer finite pd of its factors.
+9. **Three replaced by arbitrary p?** No. |W_z|>=2 implies a unique
+   possible physical carrier only when |I_L|=3. With four or more
+   sources the present proof can have several infinite carrier
+   labels in one projective and does not give the conclusion.
+10. **Socle hypothesis automatic or inherited?** Neither. Section 5
+    is a literal connected negative calibration. No quotient is
+    taken in this proof, so no inheritance claim is needed.
+11. **New quantification or verification?** No universal cutoff,
+    diagonal witness for the positive theorem, window bound or
+    independent-verifier status is asserted. The actual Section 5
+    calibration has a diagonal witness, a separate fact.
+12. **Old branch forgotten?** General finite-factor coupling at
+    three sources, four-or-more-infinite-source cases, C076 physical
+    support transfer, Target A bounded screening, local-trivial and
+    supported-weight cases and higher-output Target B remain OPEN.
+13. **Common-label corollary silently transfers sides?** No. It assumes
+    I_L=I_R of size three and uses the actual diagonal Peirce entries.
+    Finite-pd vertices elsewhere are allowed. General equality is
+    false as the distinct actual label sets in T16--T18 demonstrate.
+
+The existing MRS project assets supplied the singleton detector,
+literal Peirce-block and ordinary finite-length facts. A bounded
+Vault retrieval on nilpotence returned matrix-topology material;
+no project-specific algebra fact or unverified bridge was adopted
+from it. No new tool or project representation was built.
+
+## 7. Next closure target and global status
+
+This checkpoint genuinely closes the stated three-source socle
+class, by an ordinary visible return. It does not merely assert
+another property of counterexamples. Outside the class, the needed
+next bridge is to control the ACTUAL finite-factor cross-map images:
+force them to vanish, remove them by a proved ordinary eligible
+reduction, or show their repeated involvement itself gives a
+supported ordinary Tor tail. Their bounded pd alone has not done
+this. The full visible-return OR eligible strict-count-descent
+alternative, and Universal Gap A, remain OPEN.

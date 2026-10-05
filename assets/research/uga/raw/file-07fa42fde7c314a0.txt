@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "date": "2026-10-04",
+  "kind": "targeted exact research execution record",
+  "actual_executed_script": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-quotient-gap\\verify_quotient_gap.py",
+  "retained_script": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Quotient-Gap-Evidence\\verify_quotient_gap.py",
+  "retained_result": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Quotient-Gap-Evidence\\result.json",
+  "proof": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Run-Finite-Quotient-Ordinary-Window-and-Two-Sided-Finite-Label-Deletion-Obstruction-2026-10-04.md",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "parameters": [
+    1,
+    2,
+    3
+  ],
+  "counts": {
+    "associativity": 202464,
+    "actual_minimal_covers": 78,
+    "integer_basis_inverses": 2544,
+    "actual_kernel_isomorphisms": 75,
+    "pruned_homology_isomorphisms": 0
+  },
+  "invocation": {
+    "wrapper": "C:/Users/pcp/.codex/skills/math-science-computation/scripts/observer_run.py",
+    "catalog": "C:/Users/pcp/.codex/skills/math-science-computation/references/observer-phases.json",
+    "phase": "math-science-computation.script.run",
+    "arguments": [
+      "-B",
+      "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-quotient-gap\\verify_quotient_gap.py",
+      "--project-root",
+      "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03",
+      "--out",
+      "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-quotient-gap\\result.json"
+    ]
+  },
+  "profile": "reproducible, project execution-record convention; routine checksum schema deliberately not used",
+  "evidence_level": "bounded-check",
+  "coefficient_domain": "Integral 0,+1,-1 module matrices; written proof over every field",
+  "shared_dependencies": [
+    "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py (definitions before p-loop)",
+    "toolbox/Imported-Outputs/return_kernel_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_return_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_system_certificate.py"
+  ],
+  "backend_selection": "Frozen-certificate replay/extension in original Python/Fraction helpers. Cached inventory recorded no local Mathematica or Sage executable; live selected Python capability checked immediately before material run. No new backend installed.",
+  "fallback_reason": "not-required: primary exact replay completed; separate written literal-cover proof establishes arbitrary parameters",
+  "retained_bytes_equal_executed_bytes": true,
+  "independent_verification": false,
+  "formal_verifier_acceptance": false,
+  "default_checksums_computed": false,
+  "execution_history": "First material invocation passed; no repeated full-range run.",
+  "mathematical_scope": "m=1,2,3 actual associativity, full minimal covers, unit integral kernel isomorphisms, left/right periodic states, both deleted pd-one simples, mixed kernel-ideal summands and actual quotient L0 termination. Universal window and arbitrary-m/all-field/all-degree statements are separate written ordinary proofs.",
+  "UGA": "OPEN"
+}

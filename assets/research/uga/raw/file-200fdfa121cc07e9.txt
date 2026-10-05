@@ -1,0 +1,444 @@
+{
+  "nonmonomial_two_branch_47": {
+    "algebra_dimension": 47,
+    "base_vertex": 0,
+    "associativity_checked": true,
+    "radical_power_dimensions": [
+      44,
+      32,
+      0
+    ],
+    "branches": [
+      {
+        "vertex": 1,
+        "N_dimension": 3,
+        "M_dimension": 3,
+        "N_J2_dimension": 0,
+        "M_J2_dimension": 0,
+        "arrow_dimensions": [
+          3,
+          3
+        ],
+        "return_image_dimension": 7,
+        "higher_factor_image_dimension": 0,
+        "primitive_return_kernel_dimension": 2,
+        "strict_relations_with_independent_top_projections": [
+          [
+            {
+              "coefficient": "2",
+              "left": "b1_1",
+              "right": "a1_1"
+            },
+            {
+              "coefficient": "1",
+              "left": "b1_2",
+              "right": "a1_2"
+            }
+          ],
+          [
+            {
+              "coefficient": "-1",
+              "left": "b1_1",
+              "right": "a1_1"
+            },
+            {
+              "coefficient": "1",
+              "left": "b1_3",
+              "right": "a1_3"
+            }
+          ]
+        ]
+      },
+      {
+        "vertex": 2,
+        "N_dimension": 3,
+        "M_dimension": 3,
+        "N_J2_dimension": 0,
+        "M_J2_dimension": 0,
+        "arrow_dimensions": [
+          3,
+          3
+        ],
+        "return_image_dimension": 7,
+        "higher_factor_image_dimension": 0,
+        "primitive_return_kernel_dimension": 2,
+        "strict_relations_with_independent_top_projections": [
+          [
+            {
+              "coefficient": "2",
+              "left": "b2_1",
+              "right": "a2_1"
+            },
+            {
+              "coefficient": "1",
+              "left": "b2_2",
+              "right": "a2_2"
+            }
+          ],
+          [
+            {
+              "coefficient": "-1",
+              "left": "b2_1",
+              "right": "a2_1"
+            },
+            {
+              "coefficient": "1",
+              "left": "b2_3",
+              "right": "a2_3"
+            }
+          ]
+        ]
+      }
+    ],
+    "zero_seam_graph_on_positive_kernels": {
+      "1": [
+        2
+      ],
+      "2": [
+        1
+      ]
+    },
+    "weighted_path_lower_bounds": [
+      {
+        "Tor_degree": 2,
+        "dimension_lower_bound": 4
+      },
+      {
+        "Tor_degree": 4,
+        "dimension_lower_bound": 8
+      },
+      {
+        "Tor_degree": 6,
+        "dimension_lower_bound": 16
+      },
+      {
+        "Tor_degree": 8,
+        "dimension_lower_bound": 32
+      },
+      {
+        "Tor_degree": 10,
+        "dimension_lower_bound": 64
+      },
+      {
+        "Tor_degree": 12,
+        "dimension_lower_bound": 128
+      }
+    ],
+    "certificate": {
+      "valid": true,
+      "branch_cycle": [
+        1,
+        2
+      ],
+      "free_associative_subalgebra_generators": 4,
+      "generator_cohomological_degree": 4,
+      "Tor_nonzero_degrees": "every positive even degree at the fixed base vertex",
+      "infinite_degrees_are_proved_in": "Return-Kernel-Tor-Theorem.md"
+    },
+    "status": "finite exact certificate; no independent mathematical verifier"
+  },
+  "archive_five_dimensional_finite_gldim": {
+    "algebra_dimension": 5,
+    "base_vertex": 0,
+    "associativity_checked": true,
+    "radical_power_dimensions": [
+      3,
+      1,
+      0
+    ],
+    "branches": [
+      {
+        "vertex": 1,
+        "N_dimension": 1,
+        "M_dimension": 1,
+        "N_J2_dimension": 0,
+        "M_J2_dimension": 0,
+        "arrow_dimensions": [
+          1,
+          1
+        ],
+        "return_image_dimension": 0,
+        "higher_factor_image_dimension": 0,
+        "primitive_return_kernel_dimension": 1,
+        "strict_relations_with_independent_top_projections": [
+          [
+            {
+              "coefficient": "1",
+              "left": "b",
+              "right": "a"
+            }
+          ]
+        ]
+      }
+    ],
+    "zero_seam_graph_on_positive_kernels": {
+      "1": []
+    },
+    "weighted_path_lower_bounds": [
+      {
+        "Tor_degree": 2,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 4,
+        "dimension_lower_bound": 0
+      },
+      {
+        "Tor_degree": 6,
+        "dimension_lower_bound": 0
+      },
+      {
+        "Tor_degree": 8,
+        "dimension_lower_bound": 0
+      },
+      {
+        "Tor_degree": 10,
+        "dimension_lower_bound": 0
+      },
+      {
+        "Tor_degree": 12,
+        "dimension_lower_bound": 0
+      }
+    ],
+    "certificate": {
+      "valid": false,
+      "reason": "No directed cycle in this sufficient graph"
+    },
+    "status": "finite exact certificate; no independent mathematical verifier"
+  },
+  "filtered_same_branch_8": {
+    "algebra_dimension": 8,
+    "base_vertex": 0,
+    "associativity_checked": true,
+    "radical_power_dimensions": [
+      6,
+      3,
+      1,
+      0
+    ],
+    "branches": [
+      {
+        "vertex": 1,
+        "N_dimension": 2,
+        "M_dimension": 2,
+        "N_J2_dimension": 1,
+        "M_J2_dimension": 1,
+        "arrow_dimensions": [
+          1,
+          1
+        ],
+        "return_image_dimension": 1,
+        "higher_factor_image_dimension": 1,
+        "primitive_return_kernel_dimension": 1,
+        "strict_relations_with_independent_top_projections": [
+          [
+            {
+              "coefficient": "-1",
+              "left": "b",
+              "right": "a"
+            },
+            {
+              "coefficient": "1",
+              "left": "b",
+              "right": "q"
+            }
+          ]
+        ]
+      }
+    ],
+    "zero_seam_graph_on_positive_kernels": {
+      "1": [
+        1
+      ]
+    },
+    "weighted_path_lower_bounds": [
+      {
+        "Tor_degree": 2,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 4,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 6,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 8,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 10,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 12,
+        "dimension_lower_bound": 1
+      }
+    ],
+    "certificate": {
+      "valid": true,
+      "branch_cycle": [
+        1
+      ],
+      "free_associative_subalgebra_generators": 1,
+      "generator_cohomological_degree": 2,
+      "Tor_nonzero_degrees": "every positive even degree at the fixed base vertex",
+      "infinite_degrees_are_proved_in": "Return-Kernel-Tor-Theorem.md"
+    },
+    "status": "finite exact certificate; no independent mathematical verifier"
+  },
+  "filtered_other_branch_11": {
+    "algebra_dimension": 11,
+    "base_vertex": 0,
+    "associativity_checked": true,
+    "radical_power_dimensions": [
+      8,
+      3,
+      1,
+      0
+    ],
+    "branches": [
+      {
+        "vertex": 1,
+        "N_dimension": 1,
+        "M_dimension": 1,
+        "N_J2_dimension": 0,
+        "M_J2_dimension": 0,
+        "arrow_dimensions": [
+          1,
+          1
+        ],
+        "return_image_dimension": 1,
+        "higher_factor_image_dimension": 0,
+        "primitive_return_kernel_dimension": 0,
+        "strict_relations_with_independent_top_projections": []
+      },
+      {
+        "vertex": 2,
+        "N_dimension": 2,
+        "M_dimension": 2,
+        "N_J2_dimension": 1,
+        "M_J2_dimension": 1,
+        "arrow_dimensions": [
+          1,
+          1
+        ],
+        "return_image_dimension": 1,
+        "higher_factor_image_dimension": 1,
+        "primitive_return_kernel_dimension": 1,
+        "strict_relations_with_independent_top_projections": [
+          [
+            {
+              "coefficient": "1",
+              "left": "b2",
+              "right": "a2"
+            }
+          ]
+        ]
+      }
+    ],
+    "zero_seam_graph_on_positive_kernels": {
+      "2": [
+        2
+      ]
+    },
+    "weighted_path_lower_bounds": [
+      {
+        "Tor_degree": 2,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 4,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 6,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 8,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 10,
+        "dimension_lower_bound": 1
+      },
+      {
+        "Tor_degree": 12,
+        "dimension_lower_bound": 1
+      }
+    ],
+    "certificate": {
+      "valid": true,
+      "branch_cycle": [
+        2
+      ],
+      "free_associative_subalgebra_generators": 1,
+      "generator_cohomological_degree": 2,
+      "Tor_nonzero_degrees": "every positive even degree at the fixed base vertex",
+      "infinite_degrees_are_proved_in": "Return-Kernel-Tor-Theorem.md"
+    },
+    "status": "finite exact certificate; no independent mathematical verifier"
+  },
+  "radical_cube_zero_two_cycle_inconclusive": {
+    "algebra_dimension": 6,
+    "base_vertex": 0,
+    "associativity_checked": true,
+    "radical_power_dimensions": [
+      4,
+      2,
+      0
+    ],
+    "branches": [
+      {
+        "vertex": 1,
+        "N_dimension": 1,
+        "M_dimension": 1,
+        "N_J2_dimension": 0,
+        "M_J2_dimension": 0,
+        "arrow_dimensions": [
+          1,
+          1
+        ],
+        "return_image_dimension": 1,
+        "higher_factor_image_dimension": 0,
+        "primitive_return_kernel_dimension": 0,
+        "strict_relations_with_independent_top_projections": []
+      }
+    ],
+    "zero_seam_graph_on_positive_kernels": {},
+    "weighted_path_lower_bounds": [
+      {
+        "Tor_degree": 2,
+        "dimension_lower_bound": 0
+      },
+      {
+        "Tor_degree": 4,
+        "dimension_lower_bound": 0
+      },
+      {
+        "Tor_degree": 6,
+        "dimension_lower_bound": 0
+      },
+      {
+        "Tor_degree": 8,
+        "dimension_lower_bound": 0
+      },
+      {
+        "Tor_degree": 10,
+        "dimension_lower_bound": 0
+      },
+      {
+        "Tor_degree": 12,
+        "dimension_lower_bound": 0
+      }
+    ],
+    "certificate": {
+      "valid": false,
+      "reason": "No directed cycle in this sufficient graph"
+    },
+    "status": "finite exact certificate; no independent mathematical verifier"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "caller API error; repaired",
+  "record_kind": "concise reconstruction from observed error, not a retained full traceback",
+  "exception": "AttributeError: type object 'Module' has no attribute 'direct_sum'",
+  "incorrect_call": "sr.Module.direct_sum(...)",
+  "repair": "ss.direct_sum(B.alg, [simple, M], [1, 1])",
+  "mathematical_negative_evidence": false
+}

@@ -1,0 +1,23 @@
+# Exact computation task — actual infinite-simple-count deletion audit
+
+Construct B=End_{k[t]/t^3}(M1+M2+M3)^op with all Hom monomials,
+A=[[B,0],[G tensor e3B,Gamma]], Gamma=k[t_v]/t_v^2, G=Gamma/(t_v),
+and the physical ordinary quotient C=A/Ae3A.
+
+Verify exact associativity, the actual ideal and quotient products,
+finite left/right simple resolutions and the A-linear identities
+Omega L3=Ae2+Lv, Omega Lv=Lv, and Omega_right Rv=e3A+Rv.
+Verify quotient simple syzygies of its radical-square-zero two-cycle
+and loop. Compare ordinary minimal-resolution Betti data through degree6.
+
+Expected dimensions B14,A22,C6,ideal16. Actual infinite-pd counts should
+be left 2->3 and right 1->3, with deleted L3 infinite only on the LEFT.
+The example already has ordinary supported Tor(Rv,Lv)=k in every degree;
+it is not a Gap-A counterexample or a refutation of the full global OR.
+
+Backend: local exact Python/Fraction; reuse same-session backend inventory
+and unchanged project module helpers. No new remote or paid backend.
+Run with --project-root PROJECT_ROOT --out infinite-simple-count-result.json.
+All-field/all-degree conclusions use the separate literal module proof;
+bounded shared-code arithmetic and schema validation are not independent
+mathematical verification.

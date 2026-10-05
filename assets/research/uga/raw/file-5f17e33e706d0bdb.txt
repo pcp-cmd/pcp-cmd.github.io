@@ -1,0 +1,9 @@
+# Run — Pending research records preservation — 2026-10-05
+
+**Status: MATERIALS SAVED / PENDING RESULTS NOT PROMOTED. Universal Gap A remains OPEN.**
+
+The user explicitly requested that all current records be written into the already connected local Universal Gap A folder, and cancelled creation of a separate handoff. This archival checkpoint preserves fourteen previously external source files and points to three already present global-switch drafts. It includes six additional historical exploration/source objects found by a bounded independent file-coverage check.
+
+Read [Pending-Contributions/INDEX.md](Pending-Contributions/INDEX.md) for exact source paths, statuses, inspected relationships to C129–C132, remaining applicability gaps and existing code dependencies. [sources.json](Pending-Contributions/sources.json) binds the saved bytes. The h1 envelope proof, its same-team bounded review, exact calibration, two bounded formula explorations and global-switch drafts remain unregistered pending material. No theorem, Claim, counterexample scope or review authority is changed.
+
+All prior research records are preserved. The formal cover-boundary contribution already registered as C132 is reused instead of copied. The existing project is an ordinary file repository; MRS returned project_uninitialized, and no new native store was initialized. This checkpoint is source preservation, not native MRS acceptance, mathematical replay, cloud upload or proof verification.

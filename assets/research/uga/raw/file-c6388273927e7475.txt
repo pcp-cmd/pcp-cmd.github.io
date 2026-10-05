@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-03T08:51:23.629475+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "3455ef1f4bd241e0136d1db959f3139a1be9a9c2deaa5bb5ec3280630d4b9de4",
+    "object": "Actual nonformal tensor-square-zero deletion and a finite-global-dimension counterexample to pumping from resolution-term cycles",
+    "deliverables": [
+      "verify_tensor_nilpotence.py",
+      "tensor-nilpotence-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "A24 has eight vertices, the exact multiplication table in the code, local corner at x equal to k, quotient dual numbers plus a radical-square-zero six-vertex chain, and M=L4 tensor R1.",
+      "The retained A24 model has only M in degree -1 and m3(t3,t2,t1)=v; M has C^e-pd two and zero derived tensor square.",
+      "A9_four_vertex is distinct from C063's two-vertex nine-dimensional calibration; quotient is the hereditary three-vertex line and M=L0 tensor R2.",
+      "Ambient Tor checked through degree five with incoming degree six; retained models through degree seven with incoming degree eight."
+    ],
+    "domain": "Finite-dimensional elementary Q-algebras and ordinary simple-pair bar homology",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Sparse rational Gaussian elimination using fractions.Fraction"
+      ],
+      "existence_evidence": "verify_tensor_nilpotence.py implements exact sparse Fraction ranks, multiplication kernels and finite module certificates.",
+      "local_availability": "available",
+      "availability_evidence": "Actual execution passed under local Python 3.14.3."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3",
+    "selection_reason": "Finite multiplication tables, finite module certificates and sparse rational bar complexes admit exact local standard-library computation.",
+    "fallback_reason": "No callable local Mathematica or native Sage was available. Remote Wolfram services were not substituted for the local backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python process through the skill observer_run.py wrapper",
+    "command_or_input": "python -B verify_tensor_nilpotence.py --out tensor-nilpotence-result.json",
+    "code_artifact": "verify_tensor_nilpotence.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_tensor_nilpotence.py",
+      "sha256": "2f7e6e82296204e55598230f9acb6adf719e005274627e4337c875ad8b63eb36"
+    },
+    {
+      "role": "result",
+      "path": "tensor-nilpotence-result.json",
+      "sha256": "6c32983804ab88435be008142bb70ca1c81e62f37989c6660c1408724d2db457"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "summary": "Passed 14553 ambient associativity triples, 2413 quotient triples, 480 ambient Tor records and 464 retained-model records; 2200 differential-square and projection-chain-map checks each; 348 ambient/model homology and comparison-map matches; exact coupler resolutions and the finite gldim-four resolutions. Four first-page deaths include the sharp degree-five example.",
+    "result_artifact": "tensor-nilpotence-result.json"
+  },
+  "verification": {
+    "methods": [
+      "Exhaustive multiplication associativity in both actual algebras and quotients",
+      "Cross-multiplication kernels and zero radical actions on actual M",
+      "Minimal one-sided and tensor-product C-bimodule resolutions with exact ranks",
+      "Literal zero middle complex Rr tensor_C projective-resolution(Lp), proving the displayed derived tensor square is zero",
+      "Exact outgoing and incoming ordinary and A_infinity bar ranks",
+      "Induced quotient homology map ranks with explicit right-simple and left-simple labels",
+      "Finite actual simple resolutions for A9_four_vertex: A-linearity, minimality, composition zero and rank exactness",
+      "Actual ordinary algebra retract A24 to A6 times six isolated vertices"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact rational arithmetic; no numerical residual.",
+    "limitations": [
+      "Same author for theorem and code; no independent verification.",
+      "The generic all-degree tensor-nilpotence theorem uses the separate filtration proof in the Run, not these bounded ranks.",
+      "A24 is infinite + and has an infinite-pd deleted source by the Cartan integer obstruction and ordinary bar retract; bounded computation alone is not evidence of infinite pd.",
+      "The all-degree and all-characteristic calibration assertions use the explicit basis proofs and finite exact module certificates in the Run.",
+      "Two initial implementation failures were corrected before this final execution: projection of the deleted vertex's empty word, and reversed Peirce/simple labels.",
+      "Schema validation and hashes do not verify mathematical semantics.",
+      "No derived tensor nilpotence hypothesis is inferred for the general Target-B residue."
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+"""Exact small calibrations for the global route audit.
+
+The all-degree conclusions have separate written proofs; these shared
+rational checks are not independent verification.
+"""
+from pathlib import Path
+import sys
+root = Path(sys.argv[sys.argv.index('--project-root') + 1])
+frozen = root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfor p in [3,5,8]:',1)[0],str(frozen),'exec'),globals())
+
+# Counterexample to fixed-pair persistence => reverse visibility.
+T = Table(2,[('e0',0,0),('e1',1,1),('a',1,0),('x',1,1)],{})
+K0,ki0,c0=cover(sr.Module.simple(T.alg,0))
+K1,ki1,c1=cover(sr.Module.simple(T.alg,1))
+L1=sr.Module.simple(T.alg,1)
+identity=[[],[[F(1)]]]
+ss.check_isomorphism(K0,L1,ss.encode(identity))
+ss.check_isomorphism(K1,L1,ss.encode(identity))
+counts['actual_kernel_isomorphisms']+=2
+assert not any(l==0 and r==1 for _,l,r in T.basis)
+
+# Literal End_D(D/t + D/t^2 + D/t^3), without identifying homology
+# with a graph or with an infinite Anick resolution.
+hom_basis=[(i,i,0) for i in range(1,4)]
+hom_basis += [(i,j,a) for i in range(1,4) for j in range(1,4)
+              for a in range(max(i-j,0),i) if (i,j,a) not in hom_basis]
+hom_index={v:i for i,v in enumerate(hom_basis)}
+hm={}
+for p,(i,j,a) in enumerate(hom_basis[3:],3):
+ for q,(h,l,b) in enumerate(hom_basis[3:],3):
+  if j==h and a+b<i: hm[p,q]=hom_index[i,l,a+b]
+A=Table(3,[(f'h{i}{j}{a}',i-1,j-1) for i,j,a in hom_basis],hm)
+assert len(A.basis)==14
+apds=[];acerts=[]
+for v in range(3):
+ M=sr.Module.simple(A.alg,v);seq=[]
+ for degree in range(4):
+  K,info,cert=cover(M);seq.append(cert)
+  if not any(K.dimensions):
+   apds.append(degree);break
+  M=K
+ else: raise AssertionError('finite A failed to terminate')
+ acerts.append(seq)
+assert apds==[2,2,1]
+
+# Complete reduced Groebner system, in mathematical product order.
+# a1:1->2, b1:2->1, a2:2->3, b2:3->2.
+letters={'a1':(1,0),'b1':(0,1),'a2':(2,1),'b2':(1,2)}
+rules=[(('b1','a1'),None),
+       (('a1','b1'),('b2','a2')),
+       (('b2','a2','a1'),None),
+       (('b1','b2','a2'),None),
+       (('b2','a2','b2','a2'),None)]
+def nf(word):
+ if word is None:return None
+ word=tuple(word)
+ for step in range(1000):
+  for lead,replacement in rules:
+   for pos in range(len(word)-len(lead)+1):
+    if word[pos:pos+len(lead)]==lead:
+     if replacement is None:return None
+     word=word[:pos]+replacement+word[pos+len(lead):]
+     break
+   else:continue
+   break
+  else:return word
+ raise AssertionError('rewrite did not terminate')
+def endpoint(word):
+ return letters[word[0]][0],letters[word[-1]][1]
+def composable(word):
+ return all(letters[word[i]][1]==letters[word[i+1]][0]
+            for i in range(len(word)-1))
+critical=[]
+for u,ur in rules:
+ for v,vr in rules:
+  for overlap in range(1,min(len(u),len(v))):
+   if u[-overlap:]!=v[:overlap]:continue
+   word=u+v[overlap:]
+   if not composable(word):continue
+   left=None if ur is None else ur+v[overlap:]
+   right=None if vr is None else u[:-overlap]+vr
+   assert nf(left)==nf(right)
+   critical.append({'word':word,'left_normal_form':nf(left),'right_normal_form':nf(right)})
+for u,_ in rules:
+ for v,_ in rules:
+  if u!=v:assert not any(u[i:i+len(v)]==v for i in range(len(u)-len(v)+1))
+normal=[]
+normal_A_images=[]
+arrow_h={'a1':(2,1,1),'b1':(1,2,0),'a2':(3,2,1),'b2':(2,3,0)}
+for degree in range(1,6):
+ for word in product(letters,repeat=degree):
+  if not composable(word):continue
+  n=nf(word)
+  if degree==5:assert n is None
+  if n==word:
+   normal.append(word)
+   image=hom_index[arrow_h[word[0]]]
+   for name in word[1:]: image=A.mult(image,hom_index[arrow_h[name]])
+   assert image is not None
+   normal_A_images.append(image)
+assert len(normal)==11 and len(set(normal_A_images))==11
+assert set(normal_A_images)==set(range(3,14))
+bbasis=[(f'e{i}',i,i) for i in range(3)]+[(' '.join(w),*endpoint(w)) for w in normal]
+bindex={w:i+3 for i,w in enumerate(normal)}
+bp={}
+for u in normal:
+ for v in normal:
+  w=u+v
+  if composable(w) and not any(w[i:i+len(lead)]==lead for lead,_ in rules
+                    for i in range(len(w)-len(lead)+1)):
+   assert w in bindex
+   bp[bindex[u],bindex[v]]=bindex[w]
+B=Table(3,bbasis,bp)
+assert len(B.basis)==14
+
+# Actual B syzygy: Omega L_1=M, Omega M=L_1+M.
+M,mi,mc=cover(sr.Module.simple(B.alg,0))
+K,kinf,kc=cover(M)
+N=ss.direct_sum(B.alg,[sr.Module.simple(B.alg,0),M],[1,1])
+assert K.dimensions==N.dimensions==[1,1,1]
+# Obtain literal kernel-coordinate isomorphism from b1, b2 a2, a2 b2 a2.
+lin=kinf['linear_data']
+iso=[]
+for vertex,word in enumerate([('b1',),('b2','a2'),('a2','b2','a2')]):
+ b=bindex[word]-3
+ pos=lin['bases'][vertex].index((0,b))
+ iso.append([lin['readers'][vertex](rk.unit_vector(len(lin['bases'][vertex]),pos))])
+ss.check_isomorphism(N,K,ss.encode(iso))
+counts['actual_kernel_isomorphisms']+=1
+prefix=[];Z=sr.Module.simple(B.alg,0)
+for degree in range(7):
+ Z,info,cert=cover(Z)
+ prefix.append(info['cover_multiplicities'])
+assert prefix[2][0]>0 and prefix[4][0]>0 and prefix[6][0]>0
+
+# Finite-pd hub transfer can be the bare commutator identity [ab]=[ba].
+basis=[('e0',0,0),('e1',1,1),('a',1,0),('b',0,1),
+       ('p',0,0),('q',1,1),('r',0,1)]
+ni={n:i for i,(n,_,_) in enumerate(basis)}
+products_n={('b','a'):'p',('a','b'):'q',('b','q'):'r',('p','b'):'r'}
+Saorin=Table(2,basis,{(ni[a],ni[b]):ni[c] for (a,b),c in products_n.items()})
+# Chain-map identities are products in Hom(Ae_i,Ae_j)=e_i A e_j.
+assert Saorin.mult(ni['a'],ni['b'])==ni['q']
+assert Saorin.mult(ni['b'],ni['a'])==ni['p']
+assert Saorin.mult(ni['q'],ni['a']) is None
+assert Saorin.mult(ni['a'],ni['p']) is None
+assert Saorin.mult(ni['q'],ni['q']) is None
+T1=sr.Module.simple(Saorin.alg,1)
+T1k,_,t1cert=cover(T1)
+T1kk,_,t1kcert=cover(T1k)
+assert not any(T1kk.dimensions)
+
+# Every D-module has add(D+k)-resolution length zero, while pd_D k=infinity.
+# Its relative endomorphism algebra has literal ordinary global dimension two.
+Gamma=Table(2,[('e_k',0,0),('e_D',1,1),('incl',1,0),
+               ('proj',0,1),('t',1,1)],{(2,3):4})
+gpds=[];gcerts=[]
+for v in range(2):
+ U=sr.Module.simple(Gamma.alg,v);seq=[]
+ for degree in range(3):
+  U,info,cert=cover(U);seq.append(cert)
+  if not any(U.dimensions):gpds.append(degree);break
+ else:raise AssertionError('relative endomorphism algebra not finite')
+ gcerts.append(seq)
+assert gpds==[2,1]
+
+output={
+ 'status':'PASS',
+ 'evidence_status':'shared exact rational self-audit; not independent verification',
+ 'counts':counts,
+ 'fixed_pair_bridge_false':{'dimension':4,'vertices':2,'cover_certificates':[c0,c1],
+   'actual_kernel_isomorphisms':2,'invisible_persistent_pair':[1,0],
+   'visible_persistent_pair':[1,1]},
+ 'groebner_deformation_bridge_false':{'A_dimension':14,'B_dimension':14,
+   'A_simple_pds':apds,'A_cover_certificates':acerts,
+   'rules':rules,'all_proper_overlap_critical_pairs':critical,
+   'normal_words':normal,'normal_word_images_in_literal_End':normal_A_images,
+   'B_first_cover':mc,'B_second_cover':kc,'actual_second_kernel_isomorphism':iso,
+   'B_minimal_Betti_prefix':prefix,
+   'all_degree_B_identity':'Omega L1=M; Omega M=L1 direct_sum M'},
+ 'finite_hub_trace':{'algebra_dimension':7,'hub_pd':1,
+   'hub_cover_certificates':[t1cert,t1kcert],
+   'HS_degree0':'q=ab','HS_degree1':'p=ba',
+   'identity':'[q]-[p]=[ab-ba]=0; no contradiction'},
+ 'relative_control_bridge_false':{'D':'k[t]/t^2','M':'D direct_sum k',
+   'End_dimension':5,'End_simple_pds':gpds,'End_cover_certificates':gcerts,
+   'relative_resolution_length_for_every_D_module':0,
+   'ordinary_D_Tor_n_k_k':'k for every n>=0',
+   'Hom_M_k_is_End_projective':True}
+}
+args.out.write_text(json.dumps(output,ensure_ascii=False,indent=2,default=str)+'\n',encoding='utf-8')
+print(json.dumps({'status':output['status'],'counts':counts,
+ 'A14_simple_pds':apds,'B14_Betti_prefix':prefix,
+ 'complete_critical_pairs':len(critical),'out':str(args.out)},ensure_ascii=False))

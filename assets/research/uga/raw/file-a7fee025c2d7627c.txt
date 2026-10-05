@@ -1,0 +1,366 @@
+# T27 — Finite global Yoneda dimension terminates ordinary screening
+
+Date: 2026-10-04.
+
+Status: complete ordinary proof and normal adversarial self-audit;
+exact actual minimal-resolution/Yoneda/corner calibration passed;
+NOT independently verified. Universal Gap A remains OPEN.
+
+Continue T26. The issue is whether a finite F Ext algebra can terminate
+the real screening defect even when positive F Ext contains cycles.
+Finiteness and positive-ideal nilpotence failed in C100. A finite
+PROJECTIVE-RESOLUTION length over that ordinary algebra does suffice.
+This gives an ordinary comparison and strict algebra-dimension descent,
+without inventing another derived invariant or pruning differential images.
+
+## 1. Exact hypotheses and statement — C101
+
+A is elementary finite-dimensional over an arbitrary field k. F is a
+nonempty proper set of primitive labels, S=sum_{f in F} L_f,
+e=1-sum_F e_f, and B=eAe. Assume
+
+\[
+d=\max_F\operatorname{pd}_A L_f<\infty,
+\qquad r=\max_F\operatorname{pd}_{A^{op}} R_f<\infty.
+\tag{1.1}
+\]
+
+Thus S has LEFT pd at most d and LEFT injective dimension at most r,
+by ordinary finite-dimensional duality. Put
+
+\[
+E=\operatorname{Ext}^*_A(S,S),\quad
+q=\max\{p:E^p\ne0\},\quad w=\max(q-1,0).
+\tag{1.2}
+\]
+
+E uses actual ordinary Yoneda postcomposition. E^0=k^F;
+E^{>0}=rad E and q<=min(d,r). Assume that this finite-dimensional
+ordinary algebra E has finite global dimension g. The ungraded bound
+g also bounds the lengths of its homogeneous minimal resolutions:
+graded projective covers exist, are ungraded projective covers, and
+a homogeneous kernel which is ungraded projective is graded projective.
+
+### Theorem 1.1
+
+For EVERY finite LEFT A-module M, the actual counit cone
+
+\[
+C_M=\operatorname{Cone}(Ae\otimes_B^{\mathbb L}eM\longrightarrow M)
+\tag{1.3}
+\]
+
+has cohomology only in [-a_L,0], where
+
+\[
+a_L=r+gw.
+\tag{1.4}
+\]
+
+All its factors lie in F. In particular
+
+\[
+\operatorname{pd}_{B^{op}} Ae\le\max(a_L-1,0).
+\tag{1.5}
+\]
+
+The direct RIGHT proof gives a_R=d+gw and
+pd_B eA<=max(a_R-1,0). ALL finite modules have natural ordinary
+comparison isomorphisms
+
+\[
+\operatorname{Ext}^n_A(M,Z)\xrightarrow{\sim}
+\operatorname{Ext}^n_B(eM,eZ),
+\qquad
+\operatorname{Tor}^B_n(Re,eM)\xrightarrow{\sim}
+\operatorname{Tor}^A_n(R,M)
+\quad(n>N),
+\tag{1.6}
+\]
+
+where
+
+\[
+N=d+r+g\max(q-1,0).
+\tag{1.7}
+\]
+
+The bound is sufficient; sharpness is not asserted. Replacing q by
+min(d,r) gives a weaker bound without measuring the top F Ext degree.
+
+Both retained infinite-pd label sets are EXACTLY the old sets. For a
+finite module M and its eM, either LEFT pd is finite iff the other is,
+and each finite pd is at most max(the other pd,N). The direct RIGHT
+version holds as well. Therefore gd(A) is finite iff gd(B) is finite,
+with the analogous max(N,other gd) bounds.
+
+If A is bad, meaning gd(A)=infinity with finite uniform reverse-supported
+ordinary simple-Tor cutoff M_A, then B is bad with cutoff at most
+max(M_A,N). Physical support is the SAME entry e_yAe_z=e_yBe_z for
+retained y,z. Deleting F strictly decreases both algebra dimension and
+vertex number. The infinite-pd counts need not decrease: F is finite on
+both sides. This is a dimension descent, not an infinite-count claim.
+
+## 2. Realize a terminating ordinary E resolution
+
+Write G(X)=sum_n Hom_{D(A)}(X,S[n]), a graded LEFT E-module. For
+M in degree zero, G(M) has degrees only 0,...,r and is finite.
+
+Take its actual minimal homogeneous E-projective resolution. Let K_0=G(M),
+P_i -> K_i be its projective covers, and K_{i+1} the kernels. Since
+gd(E)=g, K_g is projective and the last cover P_g -> K_g is an isomorphism.
+If a kernel vanishes earlier, take subsequent objects zero. We use only
+g+1 covers. This is the terminating measure, not a support-graph cycle.
+
+Every P_i is a finite sum of E-indecomposable projectives generated in
+degrees sigma. The following elementary degree bounds are crucial:
+
+\[
+i\le\sigma\le r+iq\qquad(0\le i\le g).
+\tag{2.1}
+\]
+
+At i=0 generators are degrees 0,...,r. For i>0 minimality puts
+K_i inside rad P_{i-1}=E^{>0}P_{i-1}, so its least possible degree is
+at least i. The highest degree in P_{i-1} is at most r+iq. Its kernel
+and all minimal generators have no higher degrees. This proves (2.1).
+If q=0, E is semisimple and g=0; no positive-degree induction is needed.
+
+G(L_f[sigma]) is the E-projective for f generated in degree sigma.
+For any bounded X, a homogeneous map G(L_f[sigma]) -> G(X) is specified
+by the image of that generator, equivalently a morphism
+X -> L_f[sigma] in D(A). Finite direct sums give the same assertion.
+This is ordinary Yoneda representation; no formal dg-model assumption is used.
+
+Set X_0=M. Suppose G(X_i)=K_i. Realize P_i -> K_i by
+
+\[
+X_i\xrightarrow{u_i}S_i\longrightarrow X_{i+1}
+\longrightarrow X_i[1],
+\qquad S_i=\bigoplus L_f[\sigma].
+\tag{2.2}
+\]
+
+The map on G is onto in EVERY degree. The actual triangle long exact
+sequence consequently gives G(X_{i+1})=ker(P_i -> K_i)=K_{i+1}.
+These X_i are bounded complexes because there are finitely many finite
+S_i. Finally
+
+\[
+G(X_{g+1})=0.
+\tag{2.3}
+\]
+
+The stopping assertion concerns genuine E syzygies, including their
+relations and kernels. Nilpotence of Yoneda products alone does not
+make K_g projective and would not justify (2.3).
+
+## 3. Actual minimal resolutions identify the counit
+
+Take a bounded-above actual MINIMAL A-projective complex Q representing
+X_{g+1}, with finite projectives in each degree. It may initially have
+an infinite negative tail. Minimality makes Hom_A(Q,S) have zero
+differentials, since S is semisimple. Equation (2.3) therefore says:
+NO term of Q has an A e_f summand for f in F. Every term is in add(Ae).
+This inference uses actual minimality, not singular/Tate information.
+
+Applying the exact functor e(-) to (2.2), eS_i=0 gives
+
+\[
+eX_{g+1}\simeq eM[g+1].
+\tag{3.1}
+\]
+
+Consequently eQ[-g-1] is an actual B-projective complex resolving eM.
+It is minimal: differentials between retained projectives lie in
+e(rad A)e=rad B. A bounded-above minimal complex with cohomology only
+in degree zero has no positive-degree terms, since a highest positive
+projective would have to be hit surjectively by a radical differential.
+Thus this is an ordinary minimal B-projective resolution, not a
+complex declared exact after deleting finite-pd images.
+
+Term by term Ae tensor_B eQ is Q. The resulting map Q[-g-1] -> M
+obtained by composing the rotated triangles in (2.2) has e-image the
+identity of eM. By actual derived adjunction it is the counit map.
+It follows that X_{g+1}[-g-1] is Ae tensor_B^L eM, with the correct map.
+
+Rotate and shift (2.2): setting T_i=X_i[-i], there are triangles
+
+\[
+T_{i+1}\longrightarrow T_i\longrightarrow S_i[-i]
+\longrightarrow T_{i+1}[1].
+\tag{3.2}
+\]
+
+The octahedral axiom, or literal iterated cones, makes C_M a finite
+extension of S_i[-i] for 0<=i<=g. Each such object is a sum of
+L_f[sigma-i]. By (2.1)
+
+\[
+0\le\sigma-i\le r+i(q-1)\le r+g\max(q-1,0).
+\tag{3.3}
+\]
+
+Thus the actual cone has amplitude [-a_L,0] and F cohomology. Replacing
+each L_f by its finite A-projective resolution further represents the
+cone by a projective complex in [-a_L-d,0]. This is an actual bounded
+repair. It proves (1.4) without any convergence assertion for an
+unbounded spectral sequence.
+
+For i>=1, H^{-i-1}(C_M)=Tor^B_i(Ae,eM). Every finite B-module X occurs
+as eM, using the ordinary finite A-module M=Ae tensor_B X. Therefore
+these Tor groups vanish above max(a_L-1,0), proving (1.5).
+
+## 4. Ordinary comparison and badness preservation
+
+For every finite Z, the repaired cone has Hom(C_M,Z[n])=0 for n>N.
+The actual triangle and adjunction give (1.6) for Ext; ordinary k-duality
+with Z=DR gives Tor for EVERY finite RIGHT R and finite LEFT M.
+No opposite-side infinite-plus transfer is used.
+
+To check exact pd labels, fix M and let Z range through ALL finite
+A-modules. If pd_B(eM) is finite, comparison gives
+pd_A(M)<=max(pd_B(eM),N). Conversely every finite B-module X is eZ for
+some finite Z, so comparison gives pd_B(eM)<=max(pd_A(M),N).
+The direct right argument supplies the corresponding result for Re.
+Deleted labels have finite pd by (1.1), so both infinite sets are
+restricted exactly. The same argument gives the gd bounds.
+
+For retained simples the comparisons are the SAME pair (z,y), and
+the reverse support e_yAe_z is exactly the corner entry. A persistent
+supported corner pair therefore persists in A above N. This proves
+badness preservation and strict dimension/vertex descent. A checked
+tower of these moves has ordinary cutoff max of the original cutoff
+and the finitely many N; dimension prohibits infinite descent. Eligibility
+of a subsequent different F block must be proved, not inferred.
+
+The RIGHT construction is direct. Ordinary k-duality identifies the
+restricted right Yoneda algebra with E^{op} (with the corresponding
+composition convention), which has the same finite gd g and q. Exchange
+d and r in the construction. This uses ordinary duality, not the
+quarantined infinite-plus/opposite equivalence.
+
+## 5. Relation to T26 and the exact missing hypothesis
+
+C099's strictly directed positive F Ext implies that E is directed,
+gd(E)<=|F|-1. Thus C101 contains its whole-block uniform comparison
+bound, now with q in place of min(d,r). It allows positive F Ext cycles
+when the actual E-projective resolutions nevertheless terminate.
+C099 retains its stronger PROVED ordered singleton inheritance. C101
+does NOT assert primitive peeling or all-degree remaining F Ext
+invariance after an arbitrary partial deletion.
+
+C100's old A5 singleton has E=k[xi]/(xi^2), deg xi=2. Its simple
+E-resolution repeats the radical forever: gd(E)=infinity. The late
+d2 screens therefore do not contradict C101. Both ambient simple pds
+finite does not automatically supply finite gd(E). The unresolved cyclic
+finite-block obstruction is now E with INFINITE global dimension;
+no badness-specific availability of a smooth E block has been proved.
+One-sided-only finite and all-infinite/no-factor cores remain unresolved.
+
+## 6. Actual cyclic calibration, distinct from the T26 65-dimensional example
+
+Let C=A5, basis e0,e1,a(0,1),b(1,0),t=ab(0,0), with ba=0 and all
+other radical products zero. On BOTH sides simple pds are 1,2.
+Actual LEFT resolutions give ordinary Ext^1(0,1)=k,
+Ext^1(1,0)=k, Ext^2(1,1)=k and no other positive groups. Actual lifted
+comparison maps show that the product through 0 from 1 back to 1
+is NONZERO. Its Yoneda algebra Y has basis
+
+\[
+e_0,e_1,\alpha(1,0),\beta(0,1),\xi(1,1),
+\qquad\alpha\beta=\xi,\quad\beta\alpha=0,
+\tag{6.1}
+\]
+
+with Ext degrees 0,0,1,1,2. Actual graded LEFT Y resolutions have
+projective label/generator-degree pairs
+
+\[
+L_0: (0,0),(1,1),(0,2);\qquad
+L_1: (1,0),(0,1).
+\tag{6.2}
+\]
+
+They TERMINATE, so gd(Y)=2. The positive ordinary Ext graph has a
+two-cycle and a degree-two self loop. No strict C099 order exists.
+The relations in Y, not graph acyclicity or ideal nilpotence, control
+the finite resolution length.
+
+The nonzero product also has a literal all-field check. In C,
+Omega L_1=L_0 and Omega L_0=P_1: the maps in the L_1 resolution are
+P_0 -> P_1, x maps to xa, then P_1 -> P_0, x maps to xb
+(the P subscripts here are primitive vertex labels).
+The degree-one cocycle from Omega L_1=L_0 to L_0 is the identity;
+its lifted cover map P_0 -> P_0 is the identity, so the induced map
+Omega^2 L_1=P_1 -> Omega L_0=P_1 is the identity as well. Composing
+with the head P_1 -> L_1 gives the nonzero Ext-two cocycle. Thus the
+product is a UNIT, not a rational rank which might vanish in another
+characteristic. The tensor f self-Ext degree-zero identity gives the
+same product on F in A.
+
+Let D=Ereg_2 be the frozen 13-dimensional regular-coupler algebra of
+C093. Its f simple is finite with BOTH pds one and all positive self
+Ext zero. Set A=D tensor_k C, dim65 with six vertices. This differs
+from T26's D tensor a three-vertex chain. Take
+F={(f,0),(f,1)}. Actual LEFT and RIGHT pds are 2,3; the restricted
+ordinary Yoneda algebra is Y, by ordinary tensor comparison products,
+also recalculated directly on A. Thus q=2,g=2,d=r=3:
+new uniform a_L=a_R=5, N=8 (coarser q<=3 gives N=10).
+
+Whole deletion gives B=(eD e) tensor C, dim20, four vertices. A literal
+right-linear natural-basis permutation identifies Ae with TWO regular
+RIGHT B copies, with generator e and (a+m_2) tensor 1_C. Hence actual
+corner pd is zero; C093 gives the sharper actual comparison bound4.
+Neither a cover-closed finite block nor a directed positive F Ext order
+is present. The algebra is already infinite-plus by the frozen D and
+ordinary tensor-factor proof. It is not a Gap-A counterexample or proof
+of universal eligible-block availability. The bound8 is not claimed sharp.
+
+## 7. Exact computation and normal adversarial self-audit
+
+Yoneda-Termination-Evidence contains the input task, exact script, full
+result, computation record and initial failed-execution log. An initial
+dimension assertion confused the 40-dimensional Ae module with the
+20-dimensional corner B; its correction leaves the general proof unchanged.
+The script freezes all helper hashes,
+checks literal associativity, actual terminating LEFT/RIGHT F covers,
+homogeneous Y generator degrees, actual ordinary Yoneda comparison
+products, and every basis right-linearity equation for the corner
+isomorphism. Integral bases and inverse certificates avoid characteristic
+specialization assumptions. Exact counts are retained in the result.
+Passed counts: 834572 associativity triples,29 actual minimal covers,
+343 integral basis inverses,8 actual Yoneda product checks,5 homogeneous
+Y covers and800 literal right-linearity equations.
+Infinite ordinary returns use the frozen all-degree factor proofs,
+never a finite Betti sample. Record/schema checks certify only integrity.
+
+The proof audit separately checks: correct handedness of G; realization
+of projective COVER maps in every degree; g+1 versus g steps; BOTH
+bounds in (2.1); q=0; the shift sigma-i rather than sigma; minimal
+retained A terms actually become minimal B terms; the map is the counit;
+ordinary comparison for ALL targets; strict n>N; direct right duality;
+same-pair reverse support; and the absence of a partial-peeling claim.
+Self-audited means same researcher; this is NOT independently verified.
+
+## 8. Sources and scope
+
+The projective-cover realization method is available in Ingalls and
+Paquette, [Homological behavior of idempotent subalgebras and Ext algebras](https://arxiv.org/pdf/1703.08725),
+Section3 and Proposition4.1. Their result relates finite global dimensions.
+Here the written argument applies to arbitrary finite M without assuming
+gd(A) finite, tracks homogeneous degrees, identifies the actual counit,
+and proves a uniform ALL-module ordinary comparison for strict badness
+descent. No novelty or independently verified status is claimed.
+Klapproth's [minimal-resolution paper](https://arxiv.org/pdf/2111.03311)
+was also inspected; its corner-resolution work is method context, not
+an extra theorem assumption or a surrogate for the present proof.
+The Vault search returned old project-gap metadata, no new method adopted.
+
+Universal Gap A remains OPEN. This checkpoint removes finite-gd ordinary
+F Yoneda screening, including some genuinely cyclic F blocks. The
+remaining tasks are badness-specific availability or ordinary source
+migration for singular F Yoneda blocks, one-sided finite blocks, and
+tensor-indecomposable all-infinite cores. Bounded screening, local-trivial,
+Primitive-Seed/Binary-Indecomposable and supported-weight branches all
+remain on the global map. Do not return to the withdrawn Target-B wording.

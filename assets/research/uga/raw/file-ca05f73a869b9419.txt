@@ -1,0 +1,477 @@
+# T18 — Infinite-source block closure and an actual primitive-comparison inheritance obstruction
+
+Date: 2026-10-04.
+
+Status: complete ordinary proofs and normal adversarial self-audit;
+actual finite integral cover/isomorphism certificates; same researcher
+and existing shared computation helpers; not independently verified.
+Universal Gap A remains OPEN for arbitrary algebras.
+
+This continues T17, not an older Target-B state. The objective is an
+ordinary visible return or an eligible strict infinite-simple-count
+reduction. The positive theorem reduces the original block comparisons
+needed to reach the already closed two-source class. The actual
+counterexample prevents replacing those block comparisons by an
+unproved inheritance assertion about initial primitive comparisons.
+It also supplies a genuine nonsection eligible first count move.
+
+## 1. Conventions and reused ordinary interface
+
+Let A be finite-dimensional elementary over an arbitrary field k.
+Write L_y for left simples, R_z for right simples, and
+
+\[
+\beta_{zy}(n)=\dim_k\operatorname{Tor}^A_n(R_z,L_y),\qquad
+D(y,z)=\dim_k e_yAe_z.
+\]
+
+A visible ordinary tail is one fixed pair (z,y) with D(y,z)>0
+and beta_zy(n)>0 in infinitely many n. A bad algebra has infinite
+global dimension and no such tail. I_L(A) and I_R(A) are the separate
+sets of infinite-pd left and right simple labels.
+
+For a vertex block S put C_S=A/Ae_SA. E_N(A,C_S) means that the natural
+ordinary same-pair Tor map is onto for EVERY retained simple pair
+and EVERY EVEN n>=N. This is the exact C083 interface. Reuse:
+
+- C080: |I_L|<=2 or |I_R|<=2 closes Gap A at every finite size.
+- C083: E_N prevents new infinite labels on BOTH sides, lifts an
+  ordinary supported infinite tail, and makes deletion of a current
+  infinite-pd simple a badness-preserving strict count move for a bad A.
+- C084: nested ordinary quotient maps compose. Surjectivity of the
+  composite implies surjectivity of the SECOND map; it says nothing
+  about surjectivity of the first map.
+
+No opposite-infinite-+ transfer, graph-return inference, stable/Tate
+comparison, section or coefficient inheritance is used below.
+
+## 2. Only the original infinite-source blocks needed before count two
+
+### Theorem 2.1 — Infinite-source block comparison closes an all-size class
+
+Choose the LEFT side and set I=I_L(A), p=|I|. If p<=2, use C080.
+If p>=3, suppose for every nonempty block
+
+\[
+S\subseteq I,\qquad |S|\le p-2,
+\tag{2.1}
+\]
+
+there is a finite N_S with E_{N_S}(A,C_S). Then A satisfies Gap A.
+The same theorem holds with the independently defined RIGHT set
+I_R(A) and direct right deletions.
+
+There is no comparison hypothesis on blocks containing an originally
+finite-pd chosen-side label, or on larger blocks. There is no assertion
+that arbitrary quotients inherit a class of coefficient hypotheses.
+All retained Tor TEST pairs in each required comparison are still
+needed; (2.1) narrows deleted blocks, not detector pairs.
+
+#### Proof
+
+Assume A is bad. During descent let T be the set of labels already
+deleted and use the actual quotient C_T. Initially T is empty.
+Every successful C083 move preserves badness, and its no-new-label
+inclusion ensures
+
+\[
+I_L(C_T)\subseteq I\setminus T.
+\tag{2.2}
+\]
+
+If C_T has at most two infinite left labels, C080 already contradicts
+badness. Otherwise choose x in I_L(C_T). After t=|T| moves, the current
+count is at most p-t. A current count at least three therefore implies
+t<=p-3. The block S=T union {x} lies in I and has size at most p-2.
+
+The required original comparison A->C_S is onto at every even degree
+n>=N_S. Its ordinary bar map factors through A->C_T->C_S. Consequently
+the SECOND map C_T->C_S is onto there, on all its retained tests.
+C083 applies to the actual infinite source x of the current bad C_T.
+It keeps C_S bad and strictly decreases the chosen infinite count;
+it also cannot create new right infinite labels. This establishes the
+next (2.2). At most p-2 successful moves reach count at most two,
+contradicting C080. All blocks used are proper because |S|<=p-2<=v-2.
+
+For a right-chosen chain repeat this argument using actual right
+minimal resolutions, I_R(A), and C083's direct right statement. No
+equality of left and right infinite sets is needed. QED.
+
+### Corollary 2.2 — One eligible deletion closes a three-source branch
+
+If |I_L(A)|=3 and ANY ONE actual infinite left source x has
+E_N(A,A/Ae_xA), then A satisfies Gap A: if it were bad, C083 would
+produce a bad quotient with at most two infinite left labels.
+There is a direct right version. This requires neither an inherited
+comparison nor comparisons at the other two infinite sources.
+
+Theorem 2.1 is a strictly weaker hypothesis than C084's comparisons
+for every original block. Section 5 gives an actual A with p=3 which
+has every initial primitive comparison, but fails one two-source
+block comparison arbitrarily late. It therefore distinguishes the
+two hypotheses. No new quantitative global-dimension bound is
+asserted under Theorem 2.1; C084's all-block quantitative result keeps
+its original hypotheses.
+
+## 3. A 28-dimensional finite-global-dimension calibration
+
+Let R be the oriented two-vertex cycle algebra with all paths of
+length three zero. Its uniserial modules M_{s,l}, s=0,1 and l=1,2,3,
+have a basis at positions 0,...,l-1; position j has vertex s+j mod 2,
+and successive arrows shift the basis one position. Order them as
+
+\[
+(0,1),(1,1),(0,2),(1,2),(0,3),(1,3)
+\quad\leftrightarrow\quad 0,1,2,3,4,5.
+\]
+
+Put B=End_R(direct sum M_{s,l})^op. The Hom basis h_{ij}^a sends the
+generator of M_i to position a of M_j, where
+
+\[
+\max(0,l_j-l_i)\le a<l_j,\qquad s_j+a=s_i\pmod2.
+\tag{3.1}
+\]
+
+In B, h_{ij}^a belongs to e_iBe_j and
+
+\[
+h_{ij}^a h_{jk}^b=h_{ik}^{a+b}\quad(a+b<l_k),
+\tag{3.2}
+\]
+
+and other products are zero. This literal table has dimension 28
+over every field. Nonidentity Hom basis elements span its nilpotent
+radical; the six h_{ii}^0 are primitive identities.
+
+For l=1,2 the exact sequence
+
+\[
+0\longrightarrow M_{s+1,l}
+\longrightarrow M_{s,l+1}\oplus M_{s+1,l-1}
+\longrightarrow M_{s,l}\longrightarrow0
+\tag{3.3}
+\]
+
+uses (shift-one injection, quotient) and (quotient, minus shift-one
+injection), with M_{*,0}=0. Checking generator positions proves
+exactness in every characteristic. Every nonisomorphism from an M_i
+to M_{s,l} factors through the last map: for l=1 its nonidentity
+position-zero maps lift to M_{s,2}; for l=2 a position-zero map comes
+from M_{s,3}, while a position-one map factors through M_{s+1,1}.
+Thus applying Hom_R(direct sum M,-) gives an actual minimal left
+B-projective simple resolution of length two. For l=3 all radical
+maps land in rad M_{s,3}=M_{s+1,2}, giving length one. Hence the left
+simple pds are (2,2,2,2,1,1). Since all left simple tests have pd<=2,
+the whole degree-three term of every minimal right simple resolution
+is zero. Thus gd B=2 without an opposite-infinite-+ argument.
+
+The physical primitive quotients B_h=B/Be_hB have the following
+complete left simple pds. The retained label order is displayed.
+
+| Deleted h | dim B_h | retained labels | left simple pds |
+|---|---:|---|---|
+| 0 | 19 | 1,2,3,4,5 | 1,2,2,1,1 |
+| 1 | 19 | 0,2,3,4,5 | 1,2,2,1,1 |
+| 2 | 12 | 0,1,3,4,5 | 0,2,1,1,0 |
+| 3 | 12 | 0,1,2,4,5 | 2,0,1,0,1 |
+| 4 | 14 | 0,1,2,3,5 | 4,2,3,2,1 |
+| 5 | 14 | 0,1,2,3,4 | 2,4,2,3,1 |
+
+These numbers are certified by complete actual integral projective
+cover sequences, terminating at the stated degree; see Section 6.
+They are not pd guesses from a finite Betti prefix. The same all-left
+test argument bounds every right pd by four. Consequently all initial
+primitive ordinary Tor comparisons for B are isomorphisms in EVERY
+degree n>=5 (both sides are zero).
+
+However D=B/B(e4+e5)B has dimension eight and radical square zero.
+The certificates identify its actual left simple syzygies as
+
+\[
+\Omega L_0=L_2,\quad\Omega L_2=L_1,\quad
+\Omega L_1=L_3,\quad\Omega L_3=L_0.
+\tag{3.4}
+\]
+
+These are module isomorphisms with minimal covers, so
+Tor^D_{4r}(R0,L0)=k for every r>=1. This conclusion uses actual
+syzygies, not an inference from the four-cycle support graph.
+The composite block comparison B->D therefore fails at every cutoff.
+Initial primitive comparisons do not automatically inherit even
+when the starting algebra has finite global dimension.
+
+## 4. Add actual infinite sources and test a remaining infinite deletion
+
+Let Gamma=k[t_v]/(t_v^2), G=Gamma/(t_v), and
+
+\[
+V=G\otimes_k(e_4B\oplus e_5B),\qquad
+A=\begin{pmatrix}B&0\\V&\Gamma\end{pmatrix}.
+\tag{4.1}
+\]
+
+V is an actual bimodule: t_vV=0 and its right action is the direct
+sum of two regular projective B rows. It has dimension twelve, so
+dim A=42. The new vertex is v (index 6). This algebra is connected.
+
+The complete actual left cover certificates prove
+
+\[
+\Omega_A L_4=Ae_3\oplus L_v,\qquad
+\Omega_A L_5=Ae_2\oplus L_v,\qquad
+\Omega_A L_v=L_v.
+\tag{4.2}
+\]
+
+For the first two identities, multiplication by h_{3,4}^1 and
+h_{2,5}^1 embeds the displayed projective into the radical of the
+simple's cover. The remaining V-generator is the identity of its
+own frame, a copy of L_v. The direct sums and embeddings are checked
+as A-linear maps with inverse certificates. The other four left
+simples have pd two, either by the exact induction of (3.3) using
+right-projective V or by their complete integral covers. Therefore
+
+\[
+I_L(A)=\{4,5,v\}.
+\tag{4.3}
+\]
+
+For the actual right covers,
+
+\[
+\Omega_{A^{op}}R_v=e_4A\oplus e_5A\oplus R_v.
+\tag{4.4}
+\]
+
+All old right projectives and resolutions are precisely their B
+rows, so their pds are 2,2,2,2,1,1. Hence I_R(A)={v}. Iterating (4.4)
+gives one copy of R_v in every positive syzygy and a projective
+e_vA term in every degree. In particular
+
+\[
+\operatorname{Tor}^A_n(R_v,L_v)=k\quad\text{for EVERY }n\ge0.
+\tag{4.5}
+\]
+
+A is already infinite +. It is not a bad algebra or a Gap-A
+counterexample. The left/right sets in (4.3)--(4.4) are distinct.
+
+### All initial primitive comparisons are eventual FULL isomorphisms
+
+For each old deletion h, physical ideal closure gives
+
+\[
+A/Ae_hA\cong
+\begin{pmatrix}
+B_h&0\\G\otimes(e_4B_h\oplus e_5B_h)&\Gamma
+\end{pmatrix},
+\tag{4.6}
+\]
+
+where a removed frame contributes zero. The quotient normal form is
+also checked on every actual basis vector in the evidence.
+
+All retained old right simples have finite pd<=4 because their
+right resolutions remain the rows of B_h. For R_v the right minimal
+resolution obtained from (4.4), including the actual frame embeddings
+and t_v differential, becomes EXACTLY the corresponding quotient
+right minimal resolution on tensoring with A/Ae_hA. Each retained
+e_fA term becomes e_f(A/Ae_hA), a removed frame becomes zero, and
+the v-term and t_v are unchanged. Thus the natural same-pair ordinary
+Tor maps from the R_v row are identities on every retained test in
+all degrees. This is an actual resolution base-change calculation,
+not a guessed bar-map rank or a singular-category comparison.
+
+All other retained rows are zero on both sides in every n>=5. If h=v,
+the quotient is B; the old right resolutions are unchanged in every
+degree. Therefore EVERY original primitive quotient of A has natural
+ordinary Tor comparison isomorphisms on all retained pairs in EVERY
+degree n>=5, not just high-even surjectivity.
+
+### First deletion is eligible and strictly lowers the count
+
+Delete the infinite LEFT source 4. The actual quotient
+
+\[
+C=A/Ae_4A
+=\begin{pmatrix}B_4&0\\G\otimes e_5B_4&\Gamma\end{pmatrix}
+\tag{4.7}
+\]
+
+has dimension 19. Its retained old labels 0,1,2,3 have left pds
+4,2,3,2, and its actual remaining frame identity is
+
+\[
+\Omega_C L_5=Ce_2\oplus L_v.
+\tag{4.8}
+\]
+
+Thus I_L(C)={5,v} and I_R(C)={v}. The chosen left count falls 3->2,
+with E_5 supplied by the actual comparison above. The first deletion
+has no ordinary corner algebra section: pd_A L0=2, but its complete
+C-resolution has pd_C L0=4, so some retained R_z has nonzero
+Tor^C_4(R_z,L0), whereas all Tor^A_4(R_z,L0) are zero. An augmented
+corner section would retract those simple Tor groups in every
+degree (C061), a contradiction. This is an actual nonsection
+eventually-isomorphic comparison, not only a conditional example.
+
+### Second deletion is still at an infinite LEFT source and fails forever
+
+Delete the actual remaining infinite source 5 in C. The resulting
+physical quotient is
+
+\[
+C'=A/A(e_4+e_5)A=D\times\Gamma,\qquad\dim C'=10.
+\tag{4.9}
+\]
+
+All retained labels 0,1,2,3,v now have infinite pd on both sides,
+by the actual simple syzygy identities (3.4) and Omega L_v=L_v
+and their direct right cover versions. The counts along this
+infinite-left-source chain are
+
+\[
+|I_L|:\quad3\longrightarrow2\longrightarrow5,\qquad
+|I_R|:\quad1\longrightarrow1\longrightarrow5.
+\tag{4.10}
+\]
+
+For every r>=2, pd_C L0=4 implies Tor^C_{4r}(R0,L0)=0, while
+Tor^{C'}_{4r}(R0,L0)=k. Hence C->C' fails E_N for EVERY finite N,
+at a genuinely still infinite LEFT source. Also A->C' fails it.
+This is the precise obstruction: finite-pd labels in the first
+quotient become ordinary periodic labels after the second deletion.
+The initial primitive maps did not control that joint block.
+
+The source A is already visibly infinite +, so this falsifies
+automatic primitive-comparison inheritance and automatic count
+monotonicity, not the proposed global alternative restricted to bad
+algebras. That alternative remains OPEN.
+
+## 5. Why the new positive condition is strictly weaker
+
+A in (4.1) has p=3 and every initial primitive comparison. Thus it
+satisfies Theorem 2.1: only singleton blocks of its original I_L
+are required since p-2=1. But it does NOT satisfy C084's all-block
+comparison hypothesis, because the block {4,5} in (4.9) fails
+arbitrarily late. These are strictly different classes of comparison
+hypotheses. The example's Gap-A conclusion was already supplied
+directly by (4.5) and C079's right-singleton closure; no novelty of
+that individual conclusion is claimed.
+
+Theorem 2.1 does not need to take the second deletion in (4.10): the
+first eligible move already reaches C080. An inheritance counterexample
+after that terminal point therefore does not refute the theorem.
+For p>3, larger original infinite-source blocks are retained exactly
+because initial primitive comparisons do not automatically supply
+the needed subsequent comparisons.
+
+## 6. Finite integral evidence and its all-field meaning
+
+Evidence directory: Primitive-Comparison-Evidence/ alongside this Run.
+It contains task.md, verify_primitive_comparison.py,
+primitive-comparison-result.json and computation-record.json.
+
+The run checked 326,699 full-basis associativity triples (including
+identities), 25,284 physical quotient products, 145 actual minimal
+cover steps, 2,497 unimodular basis certificates and ten actual
+syzygy isomorphisms. All four imported helper hashes are frozen
+inside the result. Old unrelated helper demonstrations were not rerun.
+
+### Integral-cover lemma
+
+For each cover, the result includes integer module action matrices,
+integer radical and top-lift bases, actual cover images, integer
+kernel inclusions, projective actions and kernel actions. It verifies:
+
+1. Radical basis plus top lifts is an integer basis with integer
+   inverse, in every vertex component.
+2. Chosen image columns form an integer basis of the entire
+   codomain, with integer inverse.
+3. Kernel columns plus the corresponding chosen domain unit vectors
+   form an integer basis of the entire domain, with integer inverse.
+4. The cover is A-linear, surjective and minimal; kernel actions
+   are the induced actions; full module multiplication is checked.
+
+An integer square matrix with integer inverse is unimodular. All
+these coordinate changes remain invertible over EVERY field.
+The split exact sequence as abelian groups in items 2--3 therefore
+base-changes to an exact vector-space sequence in every characteristic,
+with the displayed A-action and identical kernel module. Item 1
+preserves the radical quotient and hence minimality. Repeating these
+finitely many certified steps proves the stated finite projective
+dimensions over every field. The terminal cover has zero kernel;
+all earlier minimal projective terms are nonzero, giving exact pds.
+
+The actual infinite-frame isomorphisms also have integer matrices
+and integer inverse, so (3.4), (4.2), (4.4) and (4.8) survive every
+characteristic. Their infinite consequences follow from written
+iteration of these actual module identities. No finite-range Betti
+test is used as a proof of infinity. The natural all-degree comparison
+proof is Section 4's literal triangular resolution calculation; it
+was not replaced by computed finite-range comparison ranks.
+
+Execution uses exact Fraction arithmetic. The all-field conclusion
+uses the displayed integral-unimodular lemma, not a claim that one
+rational-rank check implies arbitrary characteristic. These are
+same-author certificates and proofs, not independent verification.
+The record's schema/hash validation checks provenance and integrity,
+not independent mathematical acceptance.
+
+## 7. Normal adversarial self-audit
+
+- **Wrong map in a composite?** Only the second map is inferred onto.
+  Every required original S block is assumed; no inference gives it
+  from original singleton maps.
+- **New current source outside the original I?** C083 prevents this
+  on the chosen side after every actual successful move; (2.2) is
+  an induction invariant. The theorem does not assume the converse.
+- **Lost detector pairs?** E_N still uses ALL retained pairs. Neither
+  source-block narrowing nor a supported-only test replaces them.
+- **Count might stop at zero?** Badness includes infinite global
+  dimension and is preserved by C083. In any event C080 excludes
+  every current count at most two. The chain has at most p-2 moves.
+- **Deleting finite sources in the negative example?** Both 4 in A
+  and 5 in C are infinite LEFT sources by literal (4.2), (4.8).
+  They are not claimed infinite on the right.
+- **Corner mistaken for quotient?** Full actual ideal closure is
+  checked. B_4 and D have dimensions fourteen and eight, distinct
+  from merely taking a corner.
+- **Cycle mistaken for ordinary homology?** (3.4) consists of actual
+  simple kernel isomorphisms and minimal covers. It implies the
+  ordinary diagonal Tor tail by iteration, independently of graph
+  recurrence. Direct right simple cycles give the right counts.
+- **Initial comparison inferred from pd labels alone?** The R_v row
+  is infinite and is controlled by actual right resolution base
+  change. Only the old finite rows use their terminating covers.
+- **Field-dependent rank?** Every cover basis change and inverse is
+  integral unimodular; the all-field lemma above is required.
+- **Section assumed?** The low-degree Tor obstruction proves none
+  for the first move; high comparison starts at degree five.
+- **Global dichotomy falsely declared broken or proved?** A already
+  has (4.5). This counterexample breaks automatic inheritance, not
+  the bad-algebra global alternative. Theorem 2.1 closes its exact
+  comparison class, not every finite-dimensional algebra.
+- **Terminal case mistaken for a needed next move?** The negative
+  example's first move reaches two sources. Theorem 2.1 stops there;
+  it does not require the failing second move.
+- **Earlier frontier erased?** C076's ordinary supported radical
+  migration gap, bounded-screening Target A, local-trivial nonperfect,
+  supported-weight and higher-output unbounded Target B remain open.
+
+## 8. What now needs an actual closure bridge
+
+The general target remains: for a bad A with at least three infinite
+simple labels on BOTH sides, force an ordinary visible return or an
+eligible reduction. When an even comparison is available at a
+three-source vertex, Corollary 2.2 closes that branch immediately.
+For larger counts, Theorem 2.1 shows precisely which original
+infinite-source blocks can certify the finite descent.
+
+The counterexample rules out declaring all such comparisons inherited
+from initial primitives. A genuinely global advance must now exploit
+the badness hypothesis to produce the needed ordinary comparison,
+construct a different badness-preserving smaller counterexample, or
+force supported ordinary Tor directly. No additional derived invariant
+is introduced at this checkpoint. Universal Gap A remains OPEN.

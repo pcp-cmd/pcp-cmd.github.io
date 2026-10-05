@@ -1,0 +1,13 @@
+## UGA-C062 — Even Ordinary Tor Lifts Through Odd Projective-Bimodule Homology
+**Status:** COMPLETE SELF-AUDITED ALL-DEGREE PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Even-Tor-Survival-and-Nonformal-Screening-2026-10-03.md, Lemma 1.1, Theorem 2.1 and Corollaries 3.1--3.2.
+
+Let q be the retained connective derived quotient, C=H^0(q), and M_d=H^{-d}(q). Assume M_d=0 for every positive even d and each odd-degree M_d is projective over C^e. Then the natural comparison Tor^A_{2r}(R_z,L_y) -> Tor^C_{2r}(R_z,L_y) is surjective for every retained pair and every r>=0. No section, formality, finite generation, bound on negative degrees or bound on higher-operation arity is assumed.
+
+In the kernel of the existing bar projection B(H) -> B(C), the binary multibar homology is concentrated in even total degrees. Degreewise finite negative-weight convergence gives zero odd homology of that kernel; the long exact sequence gives the stated surjectivity. Only this positive-weight subcomplex degenerates: odd zero-weight classes may still be screened. No canonical splitting or algebra section is asserted.
+
+Every ordinary infinite-+ algebra C has some fixed reverse-supported pair returning in infinitely many even degrees, by b_n=t_n+t_{n+1}. Thus C infinite + implies A infinite + under these hypotheses. A globally vertex-minimal counterexample cannot have such a deletion at an infinite-pd vertex, using UGA-C058 for quotient infinity. This closes the C^e-projective two-stage local-trivial coupler case even when kappa is nonzero, and the stated odd-negative projective-bimodule class with unbounded homology.
+
+The fixed even persistent pair need not be diagonal or any preselected persistent pair. Separate left/right projectivity and finite positive C^e-pd do not supply this parity proof. No opposite transfer is used.
+
+---

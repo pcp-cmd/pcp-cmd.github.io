@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-03T06:52:58.126479+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "318446abb8b4eaa20cc855495145b8cb6626bb6af4b38c1cbfd7feeb5914038c",
+    "object": "Actual nine-dimensional non-formal two-stage deletion: separately free coupler, completely killed high quotient Tor and new ordinary periodic returns",
+    "deliverables": [
+      "verify_even_tor.py",
+      "even-tor-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "Basis e0,e1,u,u2,u3,a,au,b,ub; ba=u2, uba=bau=u3, ab=aub=0; vertex x=1 is deleted.",
+      "The normalized retained model has C=k[u]/u2, M with u v=-w, v u=w, M2=0, and m3(u,u,u)=v.",
+      "Ordinary ambient Tor through degree 4, incoming degree 5; minimal-model Tor through degree 8, incoming degree 9."
+    ],
+    "domain": "Finite-dimensional elementary algebra over Q; ordinary simple-pair bar complexes and the retained augmented minimal A_infinity model",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Sparse rational Gaussian elimination using fractions.Fraction"
+      ],
+      "existence_evidence": "verify_even_tor.py uses exact standard-library Fraction sparse elimination and finite A-linear periodic-resolution certificates.",
+      "local_availability": "available",
+      "availability_evidence": "Actual execution completed under Python 3.14.3 with all assertions passing."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3",
+    "selection_reason": "Finite basis and sparse bar complexes admit exact rational checks in the available local Python runtime.",
+    "fallback_reason": "No callable local Mathematica or native Sage was available. Remote Wolfram services were not substituted for the local backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python process; skill observer_run.py wrapper",
+    "command_or_input": "python -B verify_even_tor.py --out even-tor-result.json",
+    "code_artifact": "verify_even_tor.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_even_tor.py",
+      "sha256": "16c22f7fb760c45d6d2f8fe6136c5ebf32b621bed17d2e802b185366437be08c"
+    },
+    {
+      "role": "result",
+      "path": "even-tor-result.json",
+      "sha256": "4ba518a72cc5076d31e2b819afb7d8173f0bf77594f202dadef9182794585bd0"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "summary": "Passed 729 associativity triples, 378 A-linearity checks and seven finite exact periodic pairs; all four ordinary simple-pair Tor complexes through degree 4 with incoming degree 5, and the retained model through degree 8 with incoming degree 9. Differential-square checks: 2457 ambient, 682 model. Projection ranks and six first-page deaths match the all-degree formulas.",
+    "result_artifact": "even-tor-result.json"
+  },
+  "verification": {
+    "methods": [
+      "Exhaustive associativity on nine basis elements",
+      "A-linearity, minimality, composition zero and rank-exactness of the actual periodic resolution maps",
+      "Linker multiplication kernel and its left/right C action",
+      "Exact outgoing and incoming bar ranks compared with both periodic Betti formulas",
+      "Ordinary and A_infinity projection ranks to the quotient Tor",
+      "Differential-square checks and first-weight-page screening of pure C classes"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact arithmetic; no numerical residual.",
+    "limitations": [
+      "Same author for proof and code; not independent verification.",
+      "Finite bar bounds do not prove the generic parity theorem.",
+      "The calibration is infinite +, not a Gap-A counterexample.",
+      "The all-degree periods use the separately explained finite exact module certificates.",
+      "Schema validation and artifact hashes do not verify mathematical semantics.",
+      "Q computation does not establish characteristic-independent claims; those follow from the explicit basis proof."
+    ]
+  }
+}

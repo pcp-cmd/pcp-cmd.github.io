@@ -1,0 +1,6 @@
+{
+  "pattern": "LEFT(c0=d-1,ci=d), exact actual-uniserial formula only",
+  "families": 798,
+  "hits": [],
+  "scope": "Not a global theorem; any hit requires actual full-cover replay."
+}

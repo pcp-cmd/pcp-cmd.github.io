@@ -3,6 +3,7 @@ node_modules/
 site.local.config.json
 qa-*.png
 qa-artifacts/
+dist/
 *.log
 *.tmp
 *.bak

@@ -1,0 +1,43 @@
+# Exact task — one-sided higher-pd supported ordinary deletion
+
+Continue T27. Prove or break a one-sided supported ordinary bridge using
+actual RIGHT ordinary Yoneda covers of Ext_A(S,Z), actual minimal injective
+resolution and the actual coinduction UNIT. Only LEFT finite pd is assumed.
+Require finite gd of actual E_F and actual unit-cover visibility(U): every
+F generator of the minimal RIGHT E cover sequence for Ext_A(S,L_z), z
+retained, physically covers the retained carrier of A e_z. The stronger
+condition(R), that every finite L_f projective-resolution term's carrier
+stays inside that of A e_f, is a sufficient finite ordinary check.
+
+Proposed bound a=d+g max(q-1,0),t=max(a-1,0): eA is LEFT B-perfect;
+supported ordinary cutoff M in A gives cutoff M+t in B, with possible
+ordinary detector change. LEFT infinite labels exact; RIGHT may change.
+Badness strictly lowers dimension. No same-pair high Tor isomorphism,
+image pruning, primitive inheritance or universal carrier condition is assumed.
+
+Actual calibration N7 tensor N7 tensor hereditary arrow algebra:147
+dimensions,8 vertices,F={(f,f,0),(f,f,1)},LEFT pds3,2,RIGHT F pds infinite,
+ordinary E_F hereditary gd1/q1. Check finite minimal F resolutions terminate,
+EVERY projective carrier inclusion, all F Ext degrees and E covers, actual
+RIGHT finite labels/pds and literal84-dimensional6-vertex corner. No shallow
+finite simple exists on either side, and actual Ae RIGHT corner is nonperfect.
+
+Check the5-dimensional radical-square-zero three-chain: LEFT f pd2,self
+Ext only k, but carrier {f,q} expands to {q,y} in its FIRST actual cover.
+Compute its FULL ordinary Yoneda algebra and nonzero lifted degree-two
+product, verifying hereditary global dimension1. Use ordinary tensor proof
+to show(R) expansion also fails for the ENTIRE finite-LEFT block at arbitrary
+pd, while its ACTUAL Yoneda generator sequence DOES satisfy(U) and yields
+loss at most r-1. Do not claim the unexecuted larger tensor table was computed.
+
+Check the stronger connected14-dimensional whole-block obstruction: the
+unique finite LEFT simple f has pd2 and self-Ext k, but its actual first
+cover has infinite head q and expands to u, with D(u,q)=2,D(u,f)=0.
+Thus both(R) and(U) fail for the ENTIRE finite-LEFT block; every RIGHT
+simple is infinite. Verify seven actual ordinary kernel isomorphisms and
+the nonzero retained product a c=d that excludes a quotient projection.
+It already has supported ordinary returns and is NOT a badness counterexample.
+Preserve the initial helper-global-binding failure and its correction.
+
+Full proofs/infinity are separate from exact bounded calibration. Same
+author/frozen helpers, NOT independent verification. Universal Gap A OPEN.

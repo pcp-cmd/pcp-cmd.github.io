@@ -1,0 +1,20 @@
+## UGA-C067 — Actual Tensor Nilpotence Gives Eventual Ordinary Tor/Ext Isomorphism
+**Status:** COMPLETE SELF-AUDITED ALL-DEGREE PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Tensor-Nilpotence-and-Eventual-Ordinary-Tor-2026-10-03.md, Lemmas 2.1--2.2, Theorems 3.1--3.2 and Corollary 3.3.
+
+Let the retained augmented minimal derived quotient have H^0=C and M_d=H^{-d}. Assume M_d=0 for d>a, every actual M_d has C^e-pd at most D, and the graded negative bimodule mathcal M=sum_{1<=d<=a} M_d[d] has actual derived tensor power mathcal M^{tensor_C^L ell}=0. Set W=a(ell-1), U=(ell-1)(a+1+D). Then every retained pair has the natural ordinary comparison
+
+\[
+\operatorname{Tor}^A_n(R_z,L_y)\xrightarrow{\cong}
+\operatorname{Tor}^C_n(R_z,L_y)\qquad(n>U+1).
+\]
+
+It is injective already for n>U. The dual ordinary Ext inflation is an isomorphism in the same high degrees. Every quotient-edge death occurs by negative-weight page W, uniformly in total degree.
+
+For the existing positive-weight bar kernel, an auxiliary negative-letter count computes its binary first page. Its multibar homology vanishes for ell or more letters by actual tensor nilpotence; perfect resolutions bound the remaining vertical degrees by pD. The binary kernel homology is therefore confined to weight <=W and total degree <=U. Degreewise finite negative-weight convergence gives actual kernel homology zero above U, and the ordinary bar exact sequence proves the isomorphism.
+
+This allows actual layers nonprojective on both sides, both negative parities, binary negative products and pure/mixed higher operations. No section, formality or regular injective bound is needed. If C is infinite +, its fixed supported tail lifts to A; hence this entire deletion class is excluded at an infinite-pd vertex of a global vertex-minimal counterexample. In C065's perfect acyclic case, actual one-sided-projective matrix nilpotence supplies ell<=q_0, strengthening its earlier surjectivity to eventual isomorphism.
+
+Bounded negative degrees, actual C^e-perfectness and actual derived tensor nilpotence must all be retained. The count filtration is used only for the binary differential; the full proof uses negative weight, not excursion. No general nilpotence or inheritance after another deletion is asserted.
+
+---

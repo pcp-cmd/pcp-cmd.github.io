@@ -1,0 +1,100 @@
+"""Actual finite-pd envelopes with a nonsplit ordinary first syzygy.
+
+The uniform all-source Yoneda-generation theorem is separately proved.
+Exact shared helpers do not independently verify that proof.
+"""
+from pathlib import Path
+import sys
+project_root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=project_root/'runs/2026-10-04/Yoneda-Termination-Evidence/verify_yoneda_termination.py'
+__file__=str(frozen)
+exec(compile(frozen.read_text(encoding='utf-8').split('\nC=nakayama_five()',1)[0],str(frozen),'exec'),globals())
+
+u,q0,q1,f0,f1,w0,w1=range(7)
+basis=[(f'e{i}',i,i) for i in range(7)]+[
+ ('tu',u,u),('tw0',w0,w0),('tw1',w1,w1),
+ ('a0',q1,q0),('a1',q0,q1),('m0',u,q0),('n0',u,q0),('m1',u,q1),('n1',u,q1),
+ ('x0',q0,f0),('y0',q1,f0),('x1',q1,f1),('y1',q0,f1),
+ ('c0',f0,w0),('d0',q0,w0),('e0x',q1,w0),('c1',f1,w1),('d1',q1,w1),('e1x',q0,w1)]
+idx={name:i for i,(name,l,r) in enumerate(basis)}
+products=[('tu','m0','n0'),('tu','m1','n1'),('m1','a0','m0'),('n1','a0','n0')]
+for i in range(2):
+ products += [(f'a{i}',f'x{i}',f'y{i}'),(f'x{i}',f'c{i}',f'd{i}'),
+              (f'y{i}',f'c{i}',f'e{i}x'),(f'a{i}',f'd{i}',f'e{i}x')]
+T=Table(7,basis,{(idx[a],idx[b]):idx[c] for a,b,c in products})
+A=T # Frozen kernel_iso requires the explicitly bound current literal table.
+assert len(T.basis)==26
+simples=[sr.Module.simple(T.alg,j) for j in range(7)]
+Pu,lu=projective(T,u)
+envelopes=[];kernel_certs=[]
+for i,(q,f,w,qnext) in enumerate([(q0,f0,w0,q1),(q1,f1,w1,q0)]):
+ local=local_names(T,[f'x{i}',f'y{i}']);H=supported_module(T,local)
+ cert=kernel_iso(simples[f],H,[[(f,b) for b in part] for part in local],f'Omega LEFT Lf{i}=actual image H{i}')
+ kernel_certs.append(cert)
+ target,embedded=combined(T,[(Pu,lu,lambda b,q=q,i=i:(q,T.mult(b,T.index[f'm{i}'])))])
+ kernel_certs.append(kernel_iso(H,target,embedded,f'Omega H{i}=P_u, pd H{i}=1'))
+ # The exact kernel computation above plus its nonzero projective cover
+ # already certifies pd1; store a separately terminating actual H cover.
+ K,info,Hcover=cover(H)
+ K2,info2,Kcover=cover(K)
+ assert not any(K2.dimensions) and info['cover_multiplicities'][q]==1
+ envelope={'top_label':q,'radical_label':qnext,'image_names':[f'x{i}',f'y{i}'],
+  'actual_module':ss.module_payload(H),'actual_pd':1,'terminating_covers':[Hcover,Kcover]}
+ envelopes.append(envelope)
+ Pf,lf=projective(T,f)
+ target,embedded=combined(T,[(Pf,lf,lambda b,f=f,w=w,i=i:(w,T.mult(b,T.index[f'c{i}']))),
+  (simples[w],local_simple(T,w),lambda b,w=w,i=i:(w,T.index[f'tw{i}']))])
+ kernel_certs.append(kernel_iso(simples[w],target,embedded,f'Omega Lw{i}=P_f{i}+Lw{i}'))
+Fres=[finite_resolution(T,f,2) for f in [f0,f1]]
+assert all([r['actual_cover']['cover_multiplicities'][f] for r in res]==[1,0,0]
+ for f,res in zip([f0,f1],Fres))
+localD=local_names(T,['a0','m0','n0']);D=supported_module(T,localD)
+kernel_certs.append(kernel_iso(simples[q0],D,[[(q0,b) for b in part] for part in localD],
+ 'Omega Lq0=D, actual nonsplit first syzygy'))
+embedded=[[(q1,T.index['a1'])] if v==q0 else [] for v in range(7)]
+kernel_certs.append(kernel_iso(D,simples[q0],embedded,'Omega D=Lq0, genuine period two'))
+KD,infoD,coverD=cover(D)
+assert infoD['cover_multiplicities']==[0,0,1,0,0,0,0]
+assert D.dimensions[u]==2 and D.dimensions[q1]==1
+assert D.actions[T.index['m1']-T.vertices]==[[F(1),F(0)]]
+# That nonzero action rules out P_u plus Lq1: its HEAD would include u.
+target,embedded=combined(T,[(Pu,lu,lambda b:(q1,T.mult(b,T.index['m1']))),
+ (simples[q0],local_simple(T,q0),lambda b:(q1,T.index['a1']))])
+kernel_certs.append(kernel_iso(simples[q1],target,embedded,'Omega Lq1=P_u+Lq0'))
+kernel_certs.append(kernel_simple(T,u,u,'Omega Lu=Lu'))
+
+# Nonzero radical square with finite LEFT pd: hereditary 3-chain.
+C=Table(3,[('e0',0,0),('e1',1,1),('e2',2,2),('a',1,0),('b',2,1),('ba',2,0)],{(4,3):5})
+Cres=[finite_resolution(C,j,[1,1,0][j]) for j in range(3)]
+J2local=local_names(C,['ba']);J2=supported_module(C,J2local)
+K,info,J2cover=cover(J2)
+assert not any(K.dimensions) and info['cover_multiplicities']==[0,0,1]
+# Boundary from frozen N7: J^2 P_v=k(ba) is the INFINITE LEFT simple Lv.
+N=nakayama_seven()
+Nv=local_names(N,['ba']);Nvmod=supported_module(N,Nv)
+assert Nvmod.dimensions==[0,1] and all(not any(col) for mat in Nvmod.actions for col in mat)
+
+dependencies={f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest()
+ for n in ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']}
+for directory,names in [('Carrier-Lemma-Evidence',['verify_carrier_lemma.py','verify_finite_factor_carrier.py']),
+ ('Shallow-Corner-Evidence',['verify_shallow_corner.py']),('Tensor-Factor-Evidence',['verify_tensor_factor.py']),
+ ('Perfect-Corner-Evidence',['verify_perfect_corner.py']),('Directed-Ext-Evidence',['verify_directed_ext.py']),
+ ('Yoneda-Termination-Evidence',['verify_yoneda_termination.py'])]:
+ for n in names:
+  rel=f'runs/2026-10-04/{directory}/{n}';dependencies[rel]=sha256((project_root/rel).read_bytes()).hexdigest()
+result={'status':'passed','independent_verification':False,'counts':counts,
+ 'nonsplit26':{'algebra':T.payload,'dimension':26,'envelopes':envelopes,
+  'LEFT_f_terminating_resolutions':Fres,'actual_kernel_isomorphisms':kernel_certs,
+  'D_minimal_cover':coverD,'D_HEAD_has_only_q1':True,'finite_kernel_Pu_in_D_does_NOT_split':True,
+  'q0_ordinary_diagonal_tail':'Omega^2 Lq0=Lq0 from actual ordinary kernels; nonzero at all even degrees',
+  'both_envelopes_actual_pd1':True,'no_sample_infinity_inference':True},
+ 'finite_radical_square_calibration':{'algebra':C.payload,'actual_gd':1,
+  'all_simple_terminating_resolutions':Cres,'actual_nonzero_J2_projective_cover':J2cover,'pd_J2':0},
+ 'boundary':{'frozen_N7_J2_Pv_as_Lv':ss.module_payload(Nvmod),
+  'LEFT_infinity':'frozen all-degree N7 kernel proof, not finite prefix',
+  'semisimple_kernel_or_finite_pd_repair_NOT_automatic':True},
+ 'dependencies':dependencies,
+ 'scope':'Actual finite envelopes, nonsplit first syzygy and terminating f/J2 covers. General all-target ordinary multiplication/termination and all-p family are separate written proofs; same author/shared helpers.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','actual_nonsplit_dimension':26,'envelope_pds':[1,1],
+ 'counts':counts,'independent_verification':False}))

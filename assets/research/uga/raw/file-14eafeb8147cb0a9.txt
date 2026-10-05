@@ -1,0 +1,46 @@
+# 统一 Rees 挠界迫使高次商类存活
+
+状态：项目推导的**条件定理**，完整自审；没有证明一般删点都满足 Noetherian 假设。
+
+## 定理
+
+沿用 [[Screening-Corridor|消去范围]] 的 two-stage 模型，设 $d=\operatorname{pd}_{C^e}M<\infty$。令
+
+$$
+\mathcal B=(B[t],b_2+t b_3),\qquad
+\mathcal H_h=H_h(\mathcal B),\qquad
+T_tV=\{v:\text{存在 }r,\ t^rv=0\}.
+$$
+
+假设存在非负整数 $h_0,N$，使 $t^N T_t\mathcal H_h=0$ 对所有 $h\ge h_0$ 成立。那么边缘映射
+
+$$
+H_n(B,b_2+b_3)\longrightarrow
+\operatorname{Tor}^C_n(R_a,L_b)
+$$
+
+在 $n-1\ge h_0$ 且 $n>(d+2)N+1$ 时满射。
+
+## 证明
+
+若零列中一个次数 $n$ 的类死亡，[[Rees-HPL-Screening|Rees 对应]] 给出 $\mathcal H_{n-1}$ 中阶数恰为死亡页 $r$ 的挠元。因此 $r\le N$。另一方面，[[Screening-Corridor|消去范围]] 给出
+
+$$
+r\ge\left\lceil\frac{n-1}{d+2}\right\rceil>N,
+$$
+
+矛盾。零列没有 incoming differential，各总次数的过滤有限，故其全部类到极限页都存活。极限零列恰为边缘映射的像，于是满射。证毕。
+
+## Noetherian 充分条件
+
+若实际的整条尾部 $\bigoplus_{h\ge h_0}\mathcal H_h$ 是某个左 Noetherian 算子环上的有限生成模，且该环包含中心元 $t$ 并诱导这里的 $t$-作用，则其 $t$-幂挠部分是子模。Noetherian 性使此子模有有限个生成元，取这些生成元的挠阶最大值即得统一的 $N$。
+
+每个单独次数的 $\mathcal H_h$ 都是有限生成 $k[t]$-模，并不足以给出这个统一界。还需真正的跨次数算子和整条尾部的生成性。
+
+## 对主目标的作用与缺口
+
+在 $eAe=k$ 的 derived deletion 中，源同调识别为原代数的 Tor。若商有固定的持续 pair，且 $e_bCe_a\ne0$，则满射给出原代数的持续 Tor，而 $e_bAe_a\ne0$。所以满足本定理假设的分支不能成为最小反例。
+
+一般的 Noetherian 算子结构仍是 [[Cycle-Shift-Obstruction-Tower|候选路线]]。本定理没有把 Universal Gap A 改成附带有限生成假设的目标。
+
+正式记录：26bca341-c414-444e-874c-19d6ad0fa214。来源原稿、字节身份及审核报告见 [[Universal-Gap-A-MRS-Map|证据地图]]。

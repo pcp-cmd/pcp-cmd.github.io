@@ -1,0 +1,181 @@
+"""Actual finite-factor cross maps without any eligible finite closed block.
+
+The all-p proof is separate. This code checks actual kernels and the
+literal recurrent differential, with integer basis/inverse certificates.
+"""
+from pathlib import Path
+import sys
+
+# Reuse the exact local helper definitions, without rerunning that file's
+# unchanged cycle/star computations. Both code files are evidence assets.
+helper_file=Path(__file__).with_name('verify_carrier_lemma.py')
+prefix=helper_file.read_text(encoding='utf-8').split('cycles=[];stars=[]',1)[0]
+exec(compile(prefix,str(helper_file),'exec'),globals())
+counts.update({'literal_recurrent_differentials':0})
+
+def finite_carrier(p):
+    q=p-1;vertices=p+1
+    old=['a','b','ab','ba','aba','bab','abab']
+    basis=[(f'e{i}',i,i) for i in range(vertices)]
+    basis += [(w,0 if w[0]=='a' else 1,1 if w[-1]=='a' else 0) for w in old]
+    basis += [(f'm{w}',0,w) for w in range(2,vertices)]
+    basis += [(f't{w}',w,w) for w in range(2,vertices)]
+    index={n:i for i,(n,_,_) in enumerate(basis)}
+    products={(index[u],index[v]):index[u+v] for u in old for v in old if u+v in old}
+    A=Table(vertices,basis,products)
+    assert len(A.basis)==3*p+6 and len(A.alg.radical_powers[4])==0
+    return A
+
+def local_names(A,names):
+    return [[A.index[n] for n in names if A.basis[A.index[n]][1]==v] for v in range(A.vertices)]
+
+def local_simple(A,v):
+    return [[v] if i==v else [] for i in range(A.vertices)]
+
+def combined(A,parts):
+    target=ss.direct_sum(A.alg,[M for M,_,_ in parts],[1]*len(parts))
+    embedded=[[] for _ in range(A.vertices)]
+    for _,local,embedding in parts:
+        for v,indices in enumerate(local):embedded[v].extend(embedding(b) for b in indices)
+    return target,embedded
+
+def kernel_iso(M,target,embedded,label):
+    K,info,certificate=cover(M);lin=info['linear_data']
+    copies={v:c for c,(v,_) in enumerate(lin['copies'])}
+    assert len(copies)==len(lin['copies'])
+    maps=[]
+    for v,part in enumerate(embedded):
+        pos={key:j for j,key in enumerate(lin['bases'][v])}
+        cols=[]
+        for label_v,b in part:
+            key=(copies[label_v],None if b<A.vertices else b-A.vertices)
+            cols.append(lin['readers'][v](rk.unit_vector(len(pos),pos[key])))
+        maps.append(cols)
+    checked=ss.check_isomorphism(target,K,ss.encode(maps))
+    for cols,d in zip(maps,target.dimensions):unit_basis(cols,d)
+    counts['actual_kernel_isomorphisms']+=1
+    return {'label':label,'cover':certificate,'target':ss.module_payload(target),'isomorphism':checked}
+
+def actual_recurrent_matrix(A,w):
+    # Q=Pv + Pf + Pw, with columns literally x |-> x b, x m_w, x t_w.
+    labels=[1,0,w];locals_by_copy=[projective(A,v)[1] for v in labels]
+    basis=[[(copy,b) for copy,local in enumerate(locals_by_copy) for b in local[v]] for v in range(A.vertices)]
+    pos=[{key:j for j,key in enumerate(part)} for part in basis]
+    entries=[(1,A.index['b']),(2,A.index[f'm{w}']),(2,A.index[f't{w}'])]
+    maps=[]
+    for v,part in enumerate(basis):
+        columns=[]
+        for copy,b in part:
+            target,entry=entries[copy];value=A.mult(b,entry)
+            col=[F(0)]*len(part)
+            if value is not None:col[pos[v][target,value]]=F(1)
+            columns.append(col)
+        maps.append(columns)
+    for v,cols in enumerate(maps):
+        assert all(not any(rk.combine(cols,col,len(cols))) for col in cols)
+        chosen,_=rk.independent(cols);image=[cols[i] for i in chosen]
+        kernel=rk.nullspace(cols,len(cols));reader=sr.coordinates_reader(kernel,len(cols))
+        image_in_kernel=[reader(col) for col in image]
+        unit_basis(image_in_kernel,len(kernel))
+        unit_basis(kernel+[rk.unit_vector(len(cols),i) for i in chosen],len(cols))
+    for r in A.radical:
+        _,target,source=A.basis[r]
+        actions=[]
+        for copy,b in basis[source]:
+            col=[F(0)]*len(basis[target]);value=A.mult(r,b)
+            if value is not None:col[pos[target][copy,value]]=F(1)
+            actions.append(col)
+        for i,col in enumerate(maps[source]):
+            lhs=rk.combine(actions,col,len(basis[target]))
+            rhs=rk.combine(maps[target],actions[i],len(basis[target]))
+            assert lhs==rhs
+    counts['literal_recurrent_differentials']+=1
+    return {'labels':labels,'basis_indices':basis,'matrices':ss.encode(maps),'d_squared_zero':True,
+            'image_equals_kernel_integrally':True,'A_linear':True,'entries_in_radical':True}
+
+families=[]
+for p in [3,5,8]:
+    A=finite_carrier(p);op=A.opposite()
+    original=A
+    left=[];right=[]
+    Pf,localf=projective(A,0);Pv,localv=projective(A,1)
+    Lf=sr.Module.simple(A.alg,0)
+    parts=[(Pv,localv,lambda b:(0,A.mult(b,A.index['b'])))]
+    T,E=combined(A,parts)
+    left.append(kernel_iso(Lf,T,E,'Omega left Lf=Pv; pd left Lf=1'))
+    U1local=local_names(A,['a','ba','aba']);U1=supported_module(A,U1local)
+    U2local=local_names(A,['ba','aba']);U2=supported_module(A,U2local)
+    E=[[(1,b) for b in part] for part in U1local]
+    left.append(kernel_iso(sr.Module.simple(A.alg,1),U1,E,'Omega left Lv=U1'))
+    E=[[(0,A.mult(b,A.index['b'])) for b in part] for part in U2local]
+    left.append(kernel_iso(U1,U2,E,'Omega left U1=U2'))
+    E=[[(1,b) for b in part] for part in U2local]
+    left.append(kernel_iso(U2,U2,E,'Omega left U2=U2 actual minimal return'))
+    matrices=[];pruned=[]
+    for w in range(2,A.vertices):
+        Lw=sr.Module.simple(A.alg,w)
+        parts=[(Lf,local_simple(A,0),lambda b,w=w:(w,A.index[f'm{w}'])),
+               (Lw,local_simple(A,w),lambda b,w=w:(w,A.index[f't{w}']))]
+        T,E=combined(A,parts)
+        left.append(kernel_iso(Lw,T,E,f'Omega left L{w}=Lf+L{w}'))
+        parts=[(Pv,localv,lambda b:(0,A.mult(b,A.index['b']))),
+               (Lf,local_simple(A,0),lambda b,w=w:(w,A.index[f'm{w}'])),
+               (Lw,local_simple(A,w),lambda b,w=w:(w,A.index[f't{w}']))]
+        fixed,E=combined(A,parts)
+        left.append(kernel_iso(T,fixed,E,f'Omega left (Lf+L{w})=Pv+Lf+L{w}'))
+        left.append(kernel_iso(fixed,fixed,E,f'Omega left (Pv+Lf+L{w})=Pv+Lf+L{w}'))
+        matrices.append(actual_recurrent_matrix(A,w))
+        # Deleting the finite-factor correction branch leaves Pw --t--> Pw.
+        Pw,localw=projective(A,w)
+        values={b:A.mult(b,A.index[f't{w}']) for part in localw for b in part}
+        assert values[w]==A.index[f't{w}']
+        assert all(v is None for b,v in values.items() if b!=w)
+        Hlocal=local_names(A,[f'm{w}']);H=supported_module(A,Hlocal)
+        iso=ss.check_isomorphism(Lf,H,ss.encode([[[F(1)]] if i==0 else [] for i in range(A.vertices)]))
+        counts['pruned_homology_isomorphisms']+=1
+        pruned.append({'label':w,'positive_degree_homology_is_Lf':iso,'differential_image_indices':values})
+
+    A=op
+    PvR,localvR=projective(A,1)
+    parts=[(PvR,localvR,lambda b:(0,original.mult(original.index['a'],b)))]
+    parts += [(sr.Module.simple(A.alg,w),local_simple(A,w),lambda b,w=w:(0,A.index[f'm{w}'])) for w in range(2,A.vertices)]
+    T,E=combined(A,parts)
+    right.append(kernel_iso(sr.Module.simple(A.alg,0),T,E,'Omega right Rf=e_v A + sum Rw'))
+    V1local=local_names(A,['b','ba','bab']);V1=supported_module(A,V1local)
+    V2local=local_names(A,['ba','bab']);V2=supported_module(A,V2local)
+    E=[[(1,b) for b in part] for part in V1local]
+    right.append(kernel_iso(sr.Module.simple(A.alg,1),V1,E,'Omega right Rv=V1'))
+    parts=[(V2,V2local,lambda b:(0,original.mult(original.index['a'],b)))]
+    parts += [(sr.Module.simple(A.alg,w),local_simple(A,w),lambda b,w=w:(0,A.index[f'm{w}'])) for w in range(2,A.vertices)]
+    T,E=combined(A,parts)
+    right.append(kernel_iso(V1,T,E,'Omega right V1=V2+sum Rw'))
+    E=[[(1,b) for b in part] for part in V2local]
+    right.append(kernel_iso(V2,V2,E,'Omega right V2=V2 actual minimal return'))
+    right.extend(kernel_simple(A,w,w,f'Omega right R{w}=R{w}') for w in range(2,A.vertices))
+    A=original
+    carriers=[sorted({l for _,l,r in A.basis if r==z and l!=0}) for z in range(A.vertices)]
+    assert carriers[:2]==[[1],[1]]
+    assert carriers[2:]==[[w] for w in range(2,A.vertices)]
+    assert A.mult(A.index['b'],0)==A.index['b']  # e_v A e_f != 0
+    families.append({'p_left_infinite':p,'dimension':len(A.basis),'algebra':A.payload,
+        'left_actual_kernels':left,'right_actual_kernels':right,
+        'literal_recurrent_differentials':matrices,'pruned_homology':pruned,
+        'left_projective_infinite_carriers':carriers,
+        'all_degree_conclusions_from_written_proof':{
+            'I_L':list(range(1,A.vertices)),'I_R':list(range(A.vertices)),
+            'finite_left_simple_pd':{'f':1},'no_finite_right_simple':True,
+            'finite_factor_cross_image_every_positive_degree':'Lf, pd=1',
+            'finite_left_image_label_has_no_eligible_cover_closed_block':True,
+            'no_eligible_finite_side_closed_block_on_either_side':True,
+            'Tor_Rf_Lw_every_n_ge_1':1,'Tor_Rv_Lw_every_n_ge_2':1,
+            'supported_Tor_Rw_Lw_every_n_ge_0':1,
+            'not_a_Gap_A_counterexample':True}})
+
+result={'status':'passed','python':sys.version,'independent_verification':False,'parameters':[3,5,8],
+    'counts':counts,'finite_factor_family':families,
+    'dependencies':{f'toolbox/Imported-Outputs/{n}':sha256((helpers/n).read_bytes()).hexdigest() for n in
+        ['return_kernel_certificate.py','syzygy_return_certificate.py','syzygy_system_certificate.py','yoneda_generation_certificate.py']},
+    'helper_code_sha256':sha256(helper_file.read_bytes()).hexdigest(),
+    'scope':'Finite exact same-author integral kernel and differential certificates; written all-p/all-field proof is separate.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','parameters':[3,5,8],'counts':counts,'independent_verification':False}))

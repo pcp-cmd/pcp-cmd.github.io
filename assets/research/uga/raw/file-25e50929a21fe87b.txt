@@ -1,0 +1,7 @@
+# Exact computation task — actual balanced projective ideal descent
+
+Reuse the frozen original minimal-cover/table helpers. Calibrate one actual connected unbounded-Loewy family with WHOLE LEFT J3 projective and WHOLE RIGHT J3 infinite. Retain every real cover, tensor basis, ideal product, inherited corner and full old-simple kernel identity. Check genuine total-label descent, not image pruning.
+
+Separately calibrate the three-cycle LEFT Kupisch(4,3,2), proving exactly where finite pd1 cannot replace flat/projective multiplication. This is a finite-gd2 mechanism counterexample, not a UGA counterexample.
+
+Both written arbitrary-field/all-size/all-degree proofs are in the linked Run. Targeted exact checks and the separate-agent mathematical review are not independent/formal certification.

@@ -1,0 +1,199 @@
+# §0 Mathematical verdict
+
+**Not solved.**
+
+**Closed components.** The verifier has closed the ordinary finite-dimensionality of the literature construction (`40cb2e3c58bf6ec6`), the formal tensor-acyclicity step (`a5863957e36dc4c3`), the degree-shift implication covering every (n\ge 1) (`168a7842aec9604b`, `bd597721f09fbbf2`), and survival of a nonzero degree-zero class under Laurent periodization (`bf2f1ee16158e0e2`). Several elementary counterexample families have also been excluded by direct computations (`341cd214da0de5ac`, `4673db954701a71d`, `f57bf3108a82a0e6`).
+
+**Viable proof architecture.** Reproduce arXiv:2608.00177v1 on its actual algebra (A=\operatorname{End}_{\Lambda}(\Lambda\oplus N)): verify the phantom input and the dg Morita quotient/periodization equivalence, then combine the verified formal bridges to obtain (HH_n(A)=0) for all (n\ge1) and (D_{\mathrm{sg}}(A)\ne0).
+
+**Main blocker.** No verifier-accepted fact yet matches the load-bearing external and enhancement hypotheses on the actual construction: Krah's nonzero Hochschild-acyclic phantom, the Chen/Stai/Drinfeld dg quotient and periodization chain, Shklyarov's Künneth theorem, and the Wang–Arunachalam–Keller comparison. Consequently the paper's final counterexample has been source-audited and conditionally reproduced, but not promoted as one integrated verified fact.
+
+**Highest-priority unresolved bridge.** Prove, for the exact (A) constructed in arXiv:2608.00177v1, a dg Morita equivalence
+
+\[
+D_{\mathrm{sg}}^{\mathrm{dg}}(A)\simeq_{\mathrm{Morita}}
+\operatorname{Perf}(\mathcal P\otimes_{\mathbb C}\mathbb C[t,t^{-1}]),
+\qquad |t|=1,
+\]
+
+with (mathcal P\ne0) and (HH_*(\mathcal P)=0), and verify the hypotheses of the singular Hochschild comparison for this same enhancement.
+
+**Method failure vs. proposition failure.** The independent elementary search records method failure for several natural algebra families, while the recent paper provides serious evidence of proposition failure. The fact graph itself does not yet certify proposition failure because the final imported categorical interfaces remain unmatched.
+
+**Calibration caveat.** Do not read SUBSTANTIAL as “almost solved”: each such row still contains at least one load-bearing hypothesis not verified on the actual algebra.
+
+| Dashboard item | Current state |
+|---|---|
+| Fixed goal | UNCHANGED: determine whether every finite-dimensional complex algebra (A) satisfying (HH_n(A)=0) for all sufficiently large (n) must have (\operatorname{gldim}(A)<\infty). |
+| Verified complete proof | NO |
+| Verified counterexample | NO |
+| Signed-closed sub-tasks | Four: ordinary finite-dimensional realization; formal tensor acyclicity; Hochschild degree bookkeeping including (n=1); nonzero-class survival under Laurent periodization. |
+| Main blocker | Match the phantom, dg quotient/Morita, Künneth, and singular Hochschild comparison hypotheses on the paper's actual algebra. |
+| Routes marked false/obsolete | YES: generic self-Tor detection is FALSE AS STATED; truncated-polynomial, radical-square-zero cycle, and split dual-number triangular families are OBSOLETE as counterexample searches. |
+| Highest-priority unresolved task | P0: verify the exact dg Morita identification and all external theorem hypotheses for arXiv:2608.00177v1. |
+
+| Sub-task | Status | Closed facts | Conditional facts | Main missing interface |
+|---|---|---|---|---|
+| Exact ordinary finite-dimensional algebra | CLOSED | `40cb2e3c58bf6ec6` | — | None for ordinary finite-dimensionality. |
+| Infinite global dimension | SUBSTANTIAL | `bf2f1ee16158e0e2` | Source audit identifies a nonzero phantom and claimed Morita chain. | Verify that a nonzero class/object is transported through the actual dg quotient to (D_{\mathrm{sg}}(A)). |
+| Hochschild vanishing in every positive degree | SUBSTANTIAL | `a5863957e36dc4c3`, `168a7842aec9604b`, `bd597721f09fbbf2` | Source audit supplies the intended phantom/Künneth/WAK inputs. | Verify those external inputs and enhancement hypotheses on the actual model. |
+| General positive proof of Han's conjecture | DANGEROUS | `0d5910abd98b476c`, `0ec0d2d1eb2de6e7` | A finite bimodule-projective-dimension bound would imply bounded simple dimensions. | Eventual (HH)-vanishing does not currently imply finite bimodule projective dimension; generic self-Tor detection fails by `04fe02e4d9a47b9f`. |
+| Literature status and provenance | PARTIAL | — | Primary v1, source tar, hashes, theorem locations, and dependencies are recorded in shared memory. | No independently checked correction history beyond the bounded audit and no integrated proof certification. |
+
+**Current best proof skeleton.**
+
+1. Use the paper's tilting algebra (Gamma), dual numbers (Delta), folded modules (N_i), and (A=\operatorname{End}_{\Lambda}(\Lambda\oplus N)); `40cb2e3c58bf6ec6` proves that this (A) is an ordinary finite-dimensional complex algebra.
+2. Verify Krah's right orthogonal (mathcal P) is nonzero and satisfies (HH_*(\mathcal P)=0).
+3. Verify the paper's dg quotient and periodization construction gives the stated dg Morita equivalence for the canonical singularity enhancement of (A).
+4. Use `bf2f1ee16158e0e2` to retain a nonzero degree-zero class after tensoring with (mathbb C[t,t^{-1}]); transport it through the verified equivalence to obtain (D_{\mathrm{sg}}(A)\ne0), hence (\operatorname{gldim}(A)=\infty).
+5. Verify the Künneth quasi-isomorphism for Hochschild chains and apply `a5863957e36dc4c3` to obtain (HH_*(D_{\mathrm{sg}}^{\mathrm{dg}}(A))=0).
+6. Verify the Wang–Arunachalam–Keller comparison for this algebra/enhancement and apply `168a7842aec9604b` or the combined bridge `bd597721f09fbbf2` to obtain (HH_n(A)=0) for every (n\ge1).
+7. Conclude that the fixed universal implication is false for the same (A).
+
+**Central missing lemma.** Let (A) be the exact finite-dimensional algebra (\operatorname{End}_{\Lambda}(\Lambda\oplus\bigoplus_{i=1}^{13}N_i)) built from the ten-point blowup, Hille–Perling tilting bundle, Krah exceptional collection, dual-number extension, and folded complexes in arXiv:2608.00177v1. Prove that its canonical dg singularity category is dg Morita equivalent to (\operatorname{Perf}(\mathcal P\otimes_{\mathbb C}\mathbb C[t,t^{-1}])), where (mathcal P) is nonzero and has zero Hochschild homology in every degree; moreover prove that the Wang–Arunachalam–Keller isomorphisms (HH_p(D_{\mathrm{sg}}^{\mathrm{dg}}(A))\cong HH_{p-1}(A)) apply for every (p\ge2). This is non-trivial because Hochschild homology depends on dg enhancement/Morita data, and a triangulated equivalence alone does not justify transport through the quotient and periodization chain.
+
+# §1 Closed components and obsolete routes
+
+## Signed-closed components
+
+- The literature construction produces an ordinary finite-dimensional unital complex algebra (A) — `40cb2e3c58bf6ec6`.
+- An acyclic complex factor makes its tensor product acyclic over (mathbb C), and acyclicity passes across a quasi-isomorphism — `a5863957e36dc4c3`.
+- Vanishing of the singularity-category Hochschild groups in degrees (p\ge2), together with the degree-shift isomorphisms, implies (HH_n(A)=0) for every (n\ge1), including (n=1) via (p=2) — `168a7842aec9604b`, `bd597721f09fbbf2`.
+- A nonzero degree-zero cohomology class remains nonzero after Laurent periodization — `bf2f1ee16158e0e2`.
+- Truncated polynomial algebras, radical-square-zero oriented cycles, and split upper triangular algebras with a dual-number corner fail eventual Hochschild vanishing — `341cd214da0de5ac`, `4673db954701a71d`, `f57bf3108a82a0e6`.
+
+## Failed or obsolete routes
+
+| Route | Status | Reason |
+|---|---|---|
+| Generic implication “eventual (\operatorname{Tor}^B_i(M,M)=0) forces finite projective dimension” | FALSE AS STATED | `04fe02e4d9a47b9f` gives a finite-dimensional bimodule with all positive self-Tor zero but infinite one-sided projective dimension. |
+| (\mathbb C[t]/(t^m)), (m\ge2), as a counterexample family | OBSOLETE | `341cd214da0de5ac` gives nonzero (HH_n) in every positive degree. |
+| Radical-square-zero oriented-cycle algebras | OBSOLETE | `4673db954701a71d` gives nonzero (HH_n) in infinitely many positive degrees. |
+| Upper triangular algebras with a split dual-number corner | OBSOLETE | `f57bf3108a82a0e6` shows the corner's Hochschild homology survives in every positive degree. |
+| The tested lopsided two-cycle algebra | OBSOLETE | `1b2bda16c85d0e04` and `6521487f41269d40` give bounded projective dimensions for all finite-dimensional modules. |
+
+# §2 Interface contract table
+
+### Geometric/tilting data to an ordinary finite-dimensional algebra — exit the dg/geometric setting correctly
+
+**Input required.** A finite-dimensional algebra (Gamma), bounded finite projective (Gamma)-complexes (P_i^\bullet), their folds (N_i) over (Lambda=Gamma\otimes\mathbb C[\epsilon]/(\epsilon^2)), and (A=\operatorname{End}_\Lambda(\Lambda\oplus\bigoplus_iN_i)).
+
+**Output claimed.** (A) is an ordinary associative unital finite-dimensional complex algebra.
+
+**Available facts.** `40cb2e3c58bf6ec6` proves the output from precisely these algebraic inputs.
+
+**Missing verification on the actual model.** None for ordinary finite-dimensionality once the source's bounded projective complexes are fixed.
+
+**Failure mode if ignored.** A dg or infinite-dimensional object would not answer the stated conjecture.
+
+**Status.** CLOSED
+
+### Phantom quotient to nonzero singularity category — establish infinite global dimension
+
+**Input required.** A nonzero phantom dg category (mathcal P), a Morita-valid dg quotient/periodization square, and an equivalence of the resulting category with the canonical dg singularity category of the same algebra (A).
+
+**Output claimed.** (D_{\mathrm{sg}}(A)\ne0), hence (\operatorname{gldim}(A)=\infty).
+
+**Available facts.** `bf2f1ee16158e0e2` proves that a nonzero degree-zero class is not killed by tensoring with (mathbb C[t,t^{-1}]).
+
+**Missing verification on the actual model.** (1) Verify (mathcal P\ne0); (2) verify the identity/nonzero class used by the source; (3) verify every dg quotient, localization, and Morita equivalence; (4) verify the final enhancement is the one entering (D_{\mathrm{sg}}(A)).
+
+**Failure mode if ignored.** Nonzeroness in an auxiliary homotopy category need not survive to the singularity category of (A), so infinite global dimension would remain unproved.
+
+**Status.** SUBSTANTIAL
+
+### Phantom Hochschild acyclicity to singularity Hochschild acyclicity — establish the categorical vanishing
+
+**Input required.** (HH_*(\mathcal P)=0), a valid Künneth quasi-isomorphism for (\mathcal P\otimes\mathbb C[t,t^{-1}]), and the dg Morita identification with (D_{\mathrm{sg}}^{\mathrm{dg}}(A)).
+
+**Output claimed.** (HH_p(D_{\mathrm{sg}}^{\mathrm{dg}}(A))=0) for all integers (p).
+
+**Available facts.** `a5863957e36dc4c3` proves the formal acyclicity consequence of the Künneth quasi-isomorphism.
+
+**Missing verification on the actual model.** (1) Verify the source's phantom is Hochschild-acyclic; (2) verify Shklyarov's hypotheses; (3) verify Morita invariance applies to the exact dg categories in the source.
+
+**Failure mode if ignored.** Vanishing of (HH_*(\mathcal P)) alone does not identify the Hochschild complex of (D_{\mathrm{sg}}^{\mathrm{dg}}(A)).
+
+**Status.** SUBSTANTIAL
+
+### Singularity Hochschild vanishing to ordinary Hochschild vanishing — cover every positive degree
+
+**Input required.** For every (p\ge2), an isomorphism (HH_p(D_{\mathrm{sg}}^{\mathrm{dg}}(A))\cong HH_{p-1}(A)), plus vanishing of the source group.
+
+**Output claimed.** (HH_n(A)=0) for every (n\ge1).
+
+**Available facts.** `168a7842aec9604b` and `bd597721f09fbbf2` prove the formal implication and include the low-degree case (n=1).
+
+**Missing verification on the actual model.** Verify the Wang–Arunachalam–Keller theorem's hypotheses, grading convention, and enhancement on this (A).
+
+**Failure mode if ignored.** A comparison for another enhancement, only basic algebras, or a different degree range would not establish the required vanishing.
+
+**Status.** SUBSTANTIAL
+
+### Two properties of one algebra to a counterexample — close the original universal statement
+
+**Input required.** The same ordinary finite-dimensional algebra (A) must satisfy both (\operatorname{gldim}(A)=\infty) and (HH_n(A)=0) for all sufficiently large (n).
+
+**Output claimed.** Han's conjectural implication is false; the paper claims the stronger vanishing (HH_n(A)=0) for all (n\ge1).
+
+**Available facts.** `40cb2e3c58bf6ec6` handles the type of (A); `bf2f1ee16158e0e2`, `a5863957e36dc4c3`, `168a7842aec9604b`, and `bd597721f09fbbf2` handle formal downstream steps conditionally.
+
+**Missing verification on the actual model.** Complete both preceding source-dependent interfaces for the identical (A).
+
+**Failure mode if ignored.** Combining properties of related but nonidentical objects would not refute the universal statement.
+
+**Status.** SUBSTANTIAL
+
+# §3 Dangerous heuristic lines and strategies not to pursue
+
+- “The abstract says (HH_n=0), so Han's conjecture is disproved.” **Status: Method shortcut, not a proof step.** The source identifies an exact candidate, but its dg Morita and external theorem interfaces remain outside the verified fact graph.
+- “A nonzero triangulated category remains nonzero under every quotient and periodization.” **Status: Not automatic.** `bf2f1ee16158e0e2` proves only a precise tensor-periodization statement; transport through the paper's quotient chain still needs verification.
+- “Vanishing (HH_*(\mathcal P)) automatically gives vanishing (HH_*(D_{\mathrm{sg}}(A))).” **Status: Conditional only.** `a5863957e36dc4c3` closes the formal chain-complex step only after a valid Künneth quasi-isomorphism and dg Morita identification are supplied.
+- “Eventually vanishing self-Tor detects finite projective dimension.” **Status: Mathematically incorrect as stated.** `04fe02e4d9a47b9f` is a direct counterexample; any positive proof must exploit the diagonal's special structure.
+- “The use of an AI model in preparing a preprint is evidence that its theorem is false.” **Status: Mathematically incorrect as stated.** Provenance raises the audit burden but does not decide correctness.
+
+**Strategies not to pursue.**
+
+- Do not continue searching truncated polynomial algebras: `341cd214da0de5ac` already rules them out.
+- Do not add bare radical-square-zero oriented cycles: `4673db954701a71d` shows persistent cyclic Hochschild classes.
+- Do not use a split dual-number diagonal corner in a triangular extension: `f57bf3108a82a0e6` preserves its positive-degree Hochschild homology.
+- Do not replace dg Morita equivalence by an unenhanced triangulated equivalence: Hochschild homology is sensitive to the dg model.
+- Do not certify arXiv:2608.00177v1 solely from its title, abstract, or internal theorem numbering.
+
+# §4 Missing bridge lemmas
+
+### Bridge 1 — actual dg quotient/periodization equivalence
+
+**Target statement.** For the exact (A=\operatorname{End}_{\Lambda}(\Lambda\oplus\bigoplus_iN_i)) of arXiv:2608.00177v1, its canonical dg singularity category is dg Morita equivalent to (\operatorname{Perf}(\mathcal P\otimes\mathbb C[t,t^{-1}])).
+
+**Prerequisites.** The Hille–Perling tilting equivalence, Krah exceptional collection, one-periodic compression, Chen partial-resolution equivalence, and the source's specified dg enhancements and quotients.
+
+**Existing facts to use.** `40cb2e3c58bf6ec6` establishes the final object's algebraic type; `bf2f1ee16158e0e2` supplies the elementary nonzero-class periodization step.
+
+**Missing checks.** (1) Audit the Stai/Wei/Chen–Wang/Buchweitz hypotheses; (2) verify the dg lift of Chen's equivalence; (3) verify the pointed Morita localization square; (4) verify the final equivalence uses the canonical singularity enhancement.
+
+**Closure criterion.** A verifier must accept one self-contained theorem, with properly identified external results and exact hypothesis matching, that produces the stated dg Morita equivalence for this (A). This bridge is dependent on the source construction and unblocks both downstream properties.
+
+### Bridge 2 — phantom input on the ten-point blowup
+
+**Target statement.** The right orthogonal (mathcal P) to Krah's length-13 exceptional collection on the blowup of (mathbb P^2) at ten general points is nonzero and satisfies (HH_k(\mathcal P)=0) for every integer (k).
+
+**Prerequisites.** Krah's precise theorem, the tilting/derived identification used by the source, HKR for the surface, and additivity of Hochschild homology for the semiorthogonal decomposition.
+
+**Existing facts to use.** None establishes this geometric assertion on the actual surface.
+
+**Missing checks.** (1) Verify nonfullness and maximal length; (2) verify the universal phantom conclusion; (3) verify the Hochschild calculation and grading; (4) identify a nonzero identity/object class suitable for Bridge 1.
+
+**Closure criterion.** A verifier accepts both nonzeroness and total Hochschild acyclicity for the exact (mathcal P) used in the construction. This bridge is independent of the later partial-resolution computations and can be checked in parallel.
+
+### Bridge 3 — Künneth and singular Hochschild comparison on the actual enhancement
+
+**Target statement.** For the dg category in Bridge 1, the source's Künneth map identifies its Hochschild chain complex with (C_*(\mathcal P)\otimes C_*(\mathbb C[t,t^{-1}])), and for the final algebra (A) there are isomorphisms (HH_p(D_{\mathrm{sg}}^{\mathrm{dg}}(A))\cong HH_{p-1}(A)) for every (p\ge2).
+
+**Prerequisites.** The exact dg Morita equivalence, smallness/perfectness conditions required by Shklyarov, and the hypotheses and Morita-reduction clauses of Wang–Arunachalam–Keller.
+
+**Existing facts to use.** `a5863957e36dc4c3` proves acyclicity after the Künneth input; `168a7842aec9604b` and `bd597721f09fbbf2` prove the full positive-degree bookkeeping after the comparison inputs.
+
+**Missing checks.** (1) Match all external theorem hypotheses; (2) check signs and homological grading; (3) check the (p=2\leftrightarrow n=1) endpoint; (4) verify invariance under every Morita replacement made by the source.
+
+**Closure criterion.** A verifier accepts the two comparison maps for the actual dg enhancement; the cited verified facts then mechanically yield (HH_n(A)=0) for every (n\ge1). This bridge depends on Bridge 1 but its external theorem audit is partly parallelizable.

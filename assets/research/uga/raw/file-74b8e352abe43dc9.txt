@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "date": "2026-10-04",
+  "kind": "targeted exact research execution record",
+  "actual_executed_script": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-graded-cartan\\verify_graded_cartan.py",
+  "retained_script": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Graded-Cartan-Evidence\\verify_graded_cartan.py",
+  "retained_result": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Graded-Cartan-Evidence\\result.json",
+  "proof": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Run-Graded-Cartan-Ordinary-Tor-Bridge-and-Pure-Filtered-Transfer-2026-10-04.md",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "counts": {
+    "associativity": 96613,
+    "actual_minimal_covers": 28,
+    "integer_basis_inverses": 294,
+    "actual_kernel_isomorphisms": 0,
+    "pruned_homology_isomorphisms": 0
+  },
+  "invocation": {
+    "wrapper": "C:/Users/pcp/.codex/skills/math-science-computation/scripts/observer_run.py",
+    "catalog": "C:/Users/pcp/.codex/skills/math-science-computation/references/observer-phases.json",
+    "phase": "math-science-computation.script.run",
+    "arguments": [
+      "-B",
+      "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-graded-cartan\\verify_graded_cartan.py",
+      "--project-root",
+      "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03",
+      "--out",
+      "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-graded-cartan\\result.json"
+    ]
+  },
+  "shared_dependencies": [
+    "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py (definitions before its p-loop)",
+    "toolbox/Imported-Outputs/return_kernel_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_return_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_system_certificate.py",
+    "runs/2026-10-04/Global-Route-Audit-Evidence/result.json (frozen C116 normal paths)"
+  ],
+  "retained_bytes_equal_executed_bytes": true,
+  "independent_verification": false,
+  "formal_verifier_acceptance": false,
+  "default_checksums_computed": false,
+  "legacy_hash_schema_validated": false,
+  "UGA": "OPEN",
+  "additional_checks": {
+    "homogeneous_module_actions": 325,
+    "homogeneous_minimal_generators": 116,
+    "homogeneous_kernel_vectors": 374,
+    "integer_Euler_cells": 328,
+    "log_trace_coefficients": 24,
+    "translation_products": 10125,
+    "filtered_A14_multiplication_pairs": 196
+  },
+  "execution_history": "Initial selected run passed. After adding the real weighted A14 filtration/product and bar-differential calibration, the final extended run passed. No failed mathematical instance.",
+  "mathematical_scope": "Literal graded multiplication, real homogeneous covers/kernel coordinate degrees, integer Euler/log trace orientation and a genuine finite filtered A14 comparison. Infinite-degree ordinary results and Koszul purity use the separate full proof; a prefix is calibration only."
+}

@@ -1,0 +1,19 @@
+## UGA-C130 — Whole One-Sided Projective Cubic Radical Closes at Arbitrary Size and Loewy Length
+
+**Status:** PROVED WHOLE-CLASS ORDINARY DIAGONAL CLOSURE / NORMAL ADVERSARIAL SELF-AUDIT / SEPARATE-AGENT SUBSTANTIVE PROOF REVIEW / NOT INDEPENDENTLY VERIFIED  
+**Source:** same Run Sections7–8,10; C129, C088, C110 and C125 reused.
+
+For ANY elementary finite-dimensional A, finite N and field, if WHOLE J^s is LEFT-projective OR RIGHT-projective for SOME s in{1,2,3}, infinite gd A forces ONE fixed ordinary DIAGONAL Tor pair in arbitrarily high degrees. No imposed Loewy-length bound, grading, finite state, finite generation or simple-source-count hypothesis.
+
+C129's strictly smaller closed corner inherits J_D^s projective, including zero. Infinite D applies induction in TOTAL labels and lifts the SAME diagonal using actual inside resolutions. Finite D permits the whole C088 deletion with infinite quotient B and J_B^s=0; the ordinary C110 cube-zero diagonal lifts in ALL degrees. These are real ordinary comparisons preserving diagonal endpoints, not graph recurrence.
+
+Under a common simple-diagonal cutoff M>=0,
+
+\[
+g_0=-1,\qquad
+g_n=n[g_{n-1}+n(M+1)+2]-1
+\]
+
+gives gd A<=g_N. The corner bounds every WHOLE J3 factor's chosen-side pd; C125 excludes the OTHER side's actual high projective types and stops the full resolutions. J^s=0 uses the a=0 terminal separately. C129 also gives J^(sN)=0 in this projective class.
+
+Actual dim63/14-label/Loewy9 calibration has WHOLE LEFT J3,J6 pds0 and RIGHT J3 infinite, actual T2=top J6/T3zero, full tensor products and inherited closed corners 14->6->3. Passed518832 triples,15 FULL covers,624 integral inverses and7 actual kernel/module isomorphisms. All-degree claims use full actual period kernels, not finite prefixes. Shared helper checks and the additional proof reviewer are not independent/formal verification. The h>0 finite-pd cubic class and general UGA remain OPEN.

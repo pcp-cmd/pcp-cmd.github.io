@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-06",
+  "tool": "built-in image_gen",
+  "purpose": "Symbolic section artwork; not user-authored Works or a real portrait",
+  "stylePrompt": "Use case: illustration-story. ONE finished illustration for a small website section preview. Pure black-and-white JAPANESE MANGA PANEL, horizontal landscape 2:1. It should look like a beautifully drawn contemporary printed manga interior panel: lively hand-drawn G-pen outlines with thick/thin line variation, simplified but expressive objects, crisp deep black areas, clear white negative space, regular gray screentone dots only for shadows. Sharp readable composition at 250 pixels wide. Cinematic manga panel framing, strong foreground silhouette, a little motion and believable environment. Use flat ink and screentones; STRICTLY black, white and neutral gray. White paper, no cream tint. NO color whatsoever. NO risograph, retro poster, engraving, woodcut, Victorian etching, photocopy collage, loose grunge speckles, photorealism, 3D rendering or shiny material simulation. NO text, letters, numbers, equations, speech bubbles, captions, watermarks or panel borders. Full bleed single scene, not a multi-panel page, not an icon or UI screenshot. Keep key action and main subject within center 70% height so it survives responsive cropping. Original manga illustration, never mimic any named artist.",
+  "deliveryEncoding": "WebP quality 88; source dimensions and composition retained; no recolor or crop",
+  "records": [
+    {
+      "key": "writing",
+      "file": "assets/images/previews/manga/writing.webp",
+      "width": 1774,
+      "height": 887,
+      "bytes": 309556,
+      "sourceGeneratedFile": "exec-1a6482a4-9eff-4a95-9898-4559fd4c631c.png",
+      "sourceSha256": "3f14e6a4daa6a615c21b23f302cfe1f64a0f85a5d048f94ef1c230dc77bfdfb5",
+      "sha256": "551273df07c29aa1f699ce01be4c9437899de1d1cf66d8426bdfe12b7eef5ab4",
+      "subjectPrompt": "WRITING SCENE: very close cinematic diagonal view of a hand in a loose long sleeve writing with a fountain pen in an open notebook. The hand and pen are the large foreground subject, pages curl to the left, small stack of paper and half-cropped mug behind. A few graceful movement strokes near the pen. Notebook lines are blank or abstract without readable words. A living slice-of-life manga moment, not a floating symbolic pen."
+    },
+    {
+      "key": "project",
+      "file": "assets/images/previews/manga/project.webp",
+      "width": 1774,
+      "height": 887,
+      "bytes": 361300,
+      "sourceGeneratedFile": "exec-2537db67-5e8c-4d08-9073-e6ed10d85cd2.png",
+      "sourceSha256": "cc03ebe5a8b7fd9492b76dd123389121733a5e3be92d32bcc45f5b9dcaa35e5f",
+      "sha256": "8a616dab6aaa5d8cabd81aae0e101b842c91050eb8b38162bdcd96d1106edfde",
+      "subjectPrompt": "PROJECT SCENE: close wide manga panel looking across a tinkerer’s desk, hands assembling a small open box-shaped robot beside a chunky laptop keyboard and a screwdriver. The charming angular robot and hands dominate the middle, keyboard recedes to the back. Clean purposeful mechanical outlines, simplified broad dark shapes, a few precise details and tiny motion strokes. No writing on laptop or objects, no floating exploded diagram."
+    },
+    {
+      "key": "research",
+      "file": "assets/images/previews/manga/research.webp",
+      "width": 1774,
+      "height": 887,
+      "bytes": 478750,
+      "sourceGeneratedFile": "exec-906b011d-9cfa-420e-a7fe-1b0ecdd7a6b5.png",
+      "sourceSha256": "9eb2455be5087e5d461f19103d4ba1d0dc7f7c4daf197a3ffa1c1ea147822b06",
+      "sha256": "b1ba2cedfba568e808e296e5f96a44c95096f6b5624d4de84eabf73f58984449",
+      "subjectPrompt": "RESEARCH SCENE: a dreamlike manga architectural scene, an endless angular stairway winds between tall shelves of books and joins back on itself; a small unidentifiable figure seen from behind pauses at its center with an open notebook. The stair silhouette dominates, shelves taper into deep perspective. Intelligent quiet mystery, crisp ink, simple screen-tone shadows, generous bright spaces, not an engraved Escher print. No formulas or letters."
+    },
+    {
+      "key": "about",
+      "file": "assets/images/previews/manga/about.webp",
+      "width": 1774,
+      "height": 886,
+      "bytes": 439574,
+      "sourceGeneratedFile": "exec-bf986aa4-3c1e-4e8e-be0c-46bd158f852f.png",
+      "sourceSha256": "8bd50d9724ab9c46fcd22675880a90c61f5000a67bd5994ce24d1513d4f7ee5e",
+      "sha256": "5461dac7cb550b95f226f766ff332ae5b470c516d2c5b7a88a021956338bd7df",
+      "subjectPrompt": "ABOUT SCENE: a quiet slice-of-life manga panel: a fictional person in an oversized dark sweater, seen only from behind at a window, elbows resting on the sill, short tousled hair outlined against a bright sky with a few simple clouds. A small plant and closed sketchbook beside the window. Close cropped shoulder-level composition, expressive calm. This is a symbolic original character, not a portrait of a real person. No cat and no face visible."
+    },
+    {
+      "key": "works",
+      "file": "assets/images/previews/manga/works.webp",
+      "width": 1774,
+      "height": 887,
+      "bytes": 376104,
+      "sourceGeneratedFile": "exec-196c9ae2-8213-41da-a186-078440e545f6.png",
+      "sourceSha256": "3a0cf30557f8159a1b686159261af8fb98ed8ce9bead78cd7672918ae9dfbef4",
+      "sha256": "c43c86bbdcc35ca307fe8431f7bf7f0b54156b8fd1834dc503df82515ec6bc80",
+      "subjectPrompt": "WORKS SCENE: dramatic manga close-up of an artist’s hand holding a broad brush above an unfinished bold abstract ink drawing on a tilted desk. Cropped sheets fan out, a ruler and ink bottle frame the action. Large sweeping black brush mark anchors the center, fluid gesture, bold contrast, tiny screentone shadow. The drawings contain only original abstract shapes, no existing artworks, no letters, no plaster sculpture or retro collage."
+    },
+    {
+      "key": "room",
+      "file": "assets/images/previews/manga/room.webp",
+      "width": 1774,
+      "height": 887,
+      "bytes": 375778,
+      "sourceGeneratedFile": "exec-539d20b4-bdec-4fbe-926c-87e8f1a9d57e.png",
+      "sourceSha256": "0c51711bcfbf7527a6ecda8bf579ea70116fe4833e171ba179eeb7edf62766cf",
+      "sha256": "2675dd6a526c6062dae30a0472b0e6ea92528a3b34e82581adcbd1886eb8577b",
+      "subjectPrompt": "ROOM SCENE: a cozy compact reading room drawn as a Japanese manga establishing panel, viewed from the open door: low armchair at center, open book on a small round table, tall bookshelves on both sides, bright rear window and a floor lamp with strong black silhouette. Wide readable architecture, carefully selected simple objects, warm atmosphere expressed using black-white line art only. No human or animal figures. No book-spine text."
+    }
+  ]
+}

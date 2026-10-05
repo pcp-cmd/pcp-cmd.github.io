@@ -1,0 +1,92 @@
+"""Actual strongly connected counterexample to sourcewise syzygy return.
+
+The period-one kernel isomorphism, not the finite Betti prefix, proves infinity.
+Reuses project exact helpers; same-author audit, not independent verification.
+"""
+from pathlib import Path
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfor p in [3,5,8]:',1)[0],str(frozen),'exec'),globals())
+
+# Labels 1,2,3 in the written proof are 0,1,2 here.
+basis=[('e1',0,0),('e2',1,1),('e3',2,2),
+       ('a',1,0),('b',0,1),('c',2,1),('s',2,2),('d',0,2),
+       ('t',1,1),('v',0,2),('w',0,1)]
+idx={name:i for i,(name,_,_) in enumerate(basis)}
+A=Table(3,basis,{(idx['a'],idx['b']):idx['t'],
+                 (idx['d'],idx['s']):idx['v'],
+                 (idx['d'],idx['c']):idx['w']})
+assert len(A.basis)==11 and len(A.alg.radical_powers[2])==0
+
+# Strong connectivity is checked on actual arrows mod J^2, not used as a
+# homological-return inference.
+reach=[[i==j for j in range(3)] for i in range(3)]
+for name in ['a','b','c','s','d']:
+ _,left,right=A.basis[idx[name]];reach[right][left]=True
+for k in range(3):
+ for i in range(3):
+  for j in range(3):reach[i][j]=reach[i][j] or (reach[i][k] and reach[k][j])
+assert all(all(row) for row in reach)
+
+loc=lambda names:[[idx[name] for name in names if basis[idx[name]][1]==i] for i in range(3)]
+U=supported_module(A,loc(['s','v']))
+V=supported_module(A,loc(['c','w']))
+P1,p1loc=projective(A,0)
+seq=[]
+for source in range(3):
+ M=sr.Module.simple(A.alg,source);part=[]
+ for n in range(7):
+  K,info,cert=cover(M);part.append(cert);M=K
+ seq.append(part)
+
+# Actual P3 -> U, e3 |-> s, d |-> v, kernel span(s,v).
+KU,infoU,certU=cover(U)
+lin=infoU['linear_data'];maps=[]
+for i in range(3):
+ ambient={2 if r is None else A.vertices+r:j for j,(copy,r) in enumerate(lin['bases'][i])}
+ maps.append([lin['readers'][i](rk.unit_vector(len(ambient),ambient[b])) for b in loc(['s','v'])[i]])
+isoU=ss.check_isomorphism(U,KU,ss.encode(maps))
+counts['actual_kernel_isomorphisms']+=1
+
+# Actual P3 -> V, e3 |-> c, d |-> w, has exactly the same U kernel.
+KV,infoV,certV=cover(V);lin=infoV['linear_data'];maps=[]
+for i in range(3):
+ ambient={2 if r is None else A.vertices+r:j for j,(copy,r) in enumerate(lin['bases'][i])}
+ maps.append([lin['readers'][i](rk.unit_vector(len(ambient),ambient[b])) for b in loc(['s','v'])[i]])
+isoV=ss.check_isomorphism(U,KV,ss.encode(maps))
+counts['actual_kernel_isomorphisms']+=1
+
+# Complete first cover of L2: rad P2 = Ab (projective P1) direct_sum V.
+K,info,certL2=cover(sr.Module.simple(A.alg,1))
+expected=[[idx['b'],idx['w']],[idx['t']],[idx['c']]]
+assert info['cover_multiplicities']==[0,1,0]
+assert K.dimensions==[2,1,1]
+assert seq[1][1]['cover_multiplicities']==[1,0,1]
+assert seq[1][2]['kernel']['dimensions']==U.dimensions
+for n in range(2,7):
+ assert seq[1][n]['cover_multiplicities']==[0,0,1]
+ assert seq[1][n]['module']['dimensions'][1]==0
+assert U.dimensions[1]==V.dimensions[1]==0
+assert [name for name,l,r in A.basis if l==r==1]==['e2','t']
+assert [name for name,l,r in A.basis if l==1 and r==0]==['a']
+assert not [name for name,l,r in A.basis if l==1 and r==2]
+assert all(seq[2][n]['cover_multiplicities'][2]>0 for n in range(1,7))
+
+result={'status':'passed','independent_verification':False,'formal_acceptance':False,
+ 'counts':counts,'algebra':A.payload,'basis':A.basis,'strongly_connected':True,
+ 'minimal_simple_cover_certificates':seq,
+ 'periodic_kernel':{'U':ss.module_payload(U),'cover':certU,'U_to_kernel':isoU},
+ 'V_kernel':{'V':ss.module_payload(V),'cover':certV,'U_to_kernel':isoV},
+ 'all_degree_conclusions_from_written_module_proof':{
+  'Omega_L2':'P1 direct_sum V','Omega2_L2':'U','Omega_U':'U',
+  'pd_L2':'infinite','e2_Omega_n_L2_zero':'all n>=2',
+  'corner_e2Ae2':'k[t]/t^2','nonprojective_relevant_corner_module_e2Ae1':'simple k',
+  'finite_exact_corner_complex':'0 -> k -> k[t]/t^2 -> k -> 0',
+  'ordinary_global_return':'Tor_n(R3,L3) nonzero for every n>=1',
+  'UGA_counterexample':False}}
+args.out.parent.mkdir(parents=True,exist_ok=True)
+args.out.write_text(json.dumps(result,default=ss.encode,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':result['status'],'counts':counts,'strongly_connected':True,
+                  'actual_period_one_kernel_isomorphisms':2},ensure_ascii=False))

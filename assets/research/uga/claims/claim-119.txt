@@ -1,0 +1,23 @@
+## UGA-C119 — Strong Connectivity, a Singular Corner and Infinite Simple Pd Do Not Force Return to That Simple
+
+**Status:** COMPLETE ANY-FIELD ACTUAL STRONGLY CONNECTED COUNTEREXAMPLE / PRIMARY QUANTIFIER CORRECTION / NORMAL ADVERSARIAL SELF-AUDIT / NOT A UGA COUNTEREXAMPLE / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Route-Judge-Corner-Syzygy-Quantifier-Correction-and-Hybrid-Decision-2026-10-04.md SectionsI–VI; Route-Judge-Evidence. Corrects the sourcewise assertion/equivalence printed in Armenta v1 Conjecture8.10, not his global existential Theorem3.1 or conditional projectivity Theorem8.4.
+
+ANY-field A11 has vertices1,2,3, arrows a:1->2,b:2->1,c:2->3,s:3->3,d:3->1, basis identities/arrows plus t=ab,v=ds,w=dc; these are its ONLY nonzero radical products, all radical triples zero. Thus actual associative dimension11,J3=0, Gabriel quiver strongly connected. LEFT projectives P1=<e1,a>,P2=<e2,b,c,t,w>,P3=<e3,s,d,v>. Real U=As=<s,v>,V=Ac=<c,w>; Ab=P1 by e1->b,a->t, and rad P2=Ab direct_sum V. BOTH genuine minimal covers P3->U,V have FULL kernel U. Hence
+
+\[
+\Omega L_2=P_1\oplus V,\quad \Omega^2L_2=U,\quad
+\Omega U=U,\qquad
+\operatorname{pd}_A L_2=\infty,\quad
+e_2\Omega^n L_2=0\ (n\ge2).
+\]
+
+The chosen corner Gamma=e2Ae2=k[t]/t2 is nontrivial; occurring e2Ae1=ka is a NONPROJECTIVE infinite-pd LEFT Gamma module. e2Ae3=0. Restricting the actual infinite L2 resolution gives the FINITE exact corner head0->k (1->t) ->Gamma->k->0. Corner infinitude can reside inside a finite actual-A head term; it is not infinitely late ordinary A-return.
+
+Global ordinary return DOES hold: rad P3=U direct_sum L1 and Omega U=U keep an ACTUAL U summand/headL3 in EVERY Omega^n L3,n>=1, giving Tor_n(R3,L3) nonzero EVERY such degree. Omega L1=L2, so all three LEFT labels are infinite. This example has finite actual simple-syzygy type and lies in the ALREADY CLOSED C107/C110 classes. It is a falsification benchmark for a proposed sourcewise criterion, not a reopened small-class UGA search or evidence against the GLOBAL all-source alternative.
+
+The valid target is EXISTENCE of one returning vertex; the sourcewise statement for every chosen infinite simple is FALSE even under all listed hypotheses. The source's claimed universal Tiling equivalence is not imported. Primary SCC/syzygy/projective-corner ordinary statements were checked with their exact orientations; no quarantined opposite-plus theorem used.
+
+For finite local Gamma, the needed finite-module pd dichotomy is separately proved by the last minimal free differential/socle kernel argument on BOTH sides; it does NOT repair this bridge. Standard eventual ordinary idempotent Ext comparison has necessary finite corner pd, which fails in this singular-term branch (PSS Cor3.12). Keller/Jasso generation is A_infinity, not associative generation; CLMS Theorem6.5 is a sufficient ordinary branch, not a necessary finite-generator existence theorem. D011 HYBRID: R1 AUXILIARY, R2 AUXILIARY, Bongartz BACKEND, global ordinary support stopping main target; C117/C118 eligible whole-class bridges retained. Exact1331 triples,24 covers,216 integral inverses,2 actual kernel isomorphisms supplement complete all-degree proof, not independence. UGA OPEN.
+
+---

@@ -1,0 +1,17 @@
+## UGA-C075 — Stable Actual Projective Types Give Terminating Nonsplit Sink Descent
+**Status:** COMPLETE SELF-AUDITED ALL-SIZE PROOF / EXPLICIT ALL-CHARACTERISTIC CALIBRATIONS / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Projective-Type-Sink-Peeling-and-Nonsplit-Descent-2026-10-03.md, Sections 1--5.
+
+Let K be an actual radical square-zero ideal, C=A/K, and suppose its canonical bimodule is an actual C-bimodule direct sum K=sum_i K_i, with each K_i a left-module sum of Ce_i copies. The individual subspaces must be stable under both actions; they are not arbitrary left-module projective summands or raw Peirce rows.
+
+Use the actual projective-column matrix T. A cycle gives A infinite + by C072's ordinary matrix formula. If acyclic, a sink i with incoming edges has K_i!=0 and Ke_i=0. The actual quotient B=A/K_i then has Be_i=Ce_i because the remaining kernel's column i is zero. Thus this physical ideal K_i is left B-projective and has K_i tensor_B K_i=0. Every hypothesis of C074 is proved over the current B, with no section or perfectness.
+
+The remaining actual C-bimodule summands keep their types, and row i is removed. At each step the number of nonzero types and algebra dimension strictly decrease. Exactly q=#{i:K_i!=0}<=v-1 eligible steps reach C. Supported infinity lifts backwards; a bad algebra passes forward at every step, and finite gldim C=g gives gldim A<=g+q. Hence the whole extension class over any justified Gap-A base satisfies Gap A for arbitrary finite size, including higher-index nonperfect and nonsplit kernels.
+
+Under common all-supported vanishing n>=M and terminal C061 ordinary sections at every primitive vertex, gldim A<=(v-1)(M+2q)+q. The threshold increases by two per step. For stable right-projective-type bimodule summands, the direct right sink proof uses e_iK=0 and e_iB=e_iC, then C074's right version. No opposite-side infinite-+ transfer is used.
+
+An actual seven-dimensional nonsplit calibration has a nonperfect left-projective kernel with nonzero tensor square and zero derived tensor cube, peeled by two actual tensor-square-zero kernels. A distinct twelve-dimensional nonsplit calibration has an acyclic left-projective nonperfect index-three kernel but no stable type decomposition: its right radical action intertwines the two indecomposable left projective columns. A different ordinary bar retract already gives that algebra a supported diagonal tail. It falsifies automatic type-splitting, not Gap A or global reducibility.
+
+The class proves repeated eligibility; no general decomposition or ideal-existence theorem is claimed. All-degree/all-characteristic calibrations use explicit multiplication and module/tensor certificates; unchanged C073 triangular computation is reused and no new bounded computation was needed.
+
+---

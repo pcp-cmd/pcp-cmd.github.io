@@ -1,0 +1,392 @@
+# Run — A finite obstruction cutoff forces ordinary Tor survival
+
+**Date:** 2026-10-03  
+**Researcher:** one main Codex researcher  
+**Evidence:** complete proofs and normal adversarial self-audit; not independently verified  
+**Global status:** Universal Gap A remains OPEN. No novelty claim is made.
+
+This continuation starts from T5, including its odd-negative,
+projective-bimodule even-Tor bridge. The present mechanism removes both
+of those restrictions under a stated coefficient-dimension hypothesis.
+It constructs the actual augmented A_infinity section required by C060
+and therefore returns to ordinary Tor in every degree.
+
+The principal application is: if the ordinary quotient has left and
+right regular injective dimension at most one, and every negative
+cohomology layer has finite C^e-projective dimension, then every
+ordinary quotient Tor class lifts as a split summand. Mixed higher
+operations, both negative parities and unbounded negative degrees are
+allowed. This excludes a whole perfect-coefficient deletion class in a
+global vertex-minimal counterexample. It does not show that an arbitrary
+quotient is one-Gorenstein or that arbitrary coefficients are perfect.
+
+## 1. Fixed notation and existing assets
+
+Let q be the retained connective derived quotient at x, C=H^0(q), and
+S the retained separable vertex algebra. Work with its strictly unital,
+augmented, S-relative minimal model
+
+\[
+H=C\oplus\bigoplus_{d\ge1}M_d[d],\qquad M_d=H^{-d}(q).
+\]
+
+All degrees are cohomological: |m_r|=2-r and a morphism component s_r
+has degree 1-r. Each M_d is finite-dimensional for an actual
+finite-dimensional deletion; no uniform dimension or pd bound is
+needed. Write R=rad C. Normalized S-relative Hochschild cochains
+
+\[
+\mathcal C^n(C,M)=\operatorname{Hom}_{S^e}(R^{\otimes_S n},M)
+\]
+
+compute HH^n(C,M)=Ext^n_{C^e}(C,M). The relative bar resolution has
+terms C tensor_S R^{tensor n} tensor_S C; these are C^e-projective
+because S is separable. The usual normalized differential is
+
+\[
+(\delta a)(c_1,\ldots,c_{n+1})=
+c_1a(c_2,\ldots,c_{n+1})
+\sum_{i=1}^n(-1)^i a(c_1,\ldots,c_ic_{i+1},\ldots,c_{n+1})
+(-1)^{n+1}a(c_1,\ldots,c_n)c_{n+1}.
+\]
+
+The internal shift of M only changes the common suspension sign, not
+whether this cohomology vanishes.
+
+We reuse the strict projection p:H -> C, the derived-localisation
+comparison for retained simples, and C060's section/bar retraction.
+We do not re-prove them. The morphism and suspended coalgebra
+conventions agree with [Keller, Sections 3.4 and 3.6](https://arxiv.org/pdf/math/9910179).
+The arity recursion needed here is proved below, including its
+coefficient and index, rather than inferred from a generic formality
+slogan.
+
+## 2. The actual section obstruction
+
+### Lemma 2.1 — The next obstruction lies in HH^n(C,M_{n-2})
+
+Suppose components s_1,...,s_{n-2}, with s_1 the inclusion of C,
+satisfy the A_infinity morphism equations through arity n-1, where
+n>=3. They can be extended through arity n if and only if a
+particular cocycle
+
+\[
+\mathfrak o_n\in\mathcal C^n(C,M_{n-2})
+\]
+
+is a coboundary. The correcting component is
+
+\[
+s_{n-1}:R^{\otimes_S(n-1)}\longrightarrow M_{n-2},
+\]
+
+of internal degree 2-n. This is the obstruction of the morphism,
+including all already chosen corrections; it need not be the raw
+pure-input m_n.
+
+#### Proof
+
+Use the suspended reduced tensor coalgebras B(C), B(H), with
+differentials b_C,b_H of degree one. The chosen components determine
+a coalgebra map F through the required lengths. Temporarily set the
+next and later components to zero and define its defect
+
+\[
+\mathcal D=b_HF-Fb_C.
+\]
+
+It is an F-coderivation, because both b's are coderivations and F is
+a coalgebra map. Its corestrictions below length n vanish by the
+assumed equations. Its first possible corestriction, at length n,
+unsuspends to a normalized n-cochain of degree 2-n. Connectivity
+therefore places its value in M_{n-2}.
+
+The elementary identity
+
+\[
+b_H\mathcal D+\mathcal D b_C=0
+\tag{2.1}
+\]
+
+follows by expansion and b_H^2=b_C^2=0. Its corestriction at length
+n+1 is the Hochschild equation delta(o_n)=0. Here minimality kills
+all unary terms. The only remaining ways to use the first defect
+are binary left/right action by s_1(c), or a binary C contraction
+inside its inputs. Higher target operations or a component s_r
+with r>=2 would need at least n+2 inputs and cannot contribute.
+This accounts for every term and yields exactly the displayed
+normalized Hochschild differential, up to the harmless common
+suspension sign.
+
+Changing F's component at length n-1 by a cochain a adds delta(a)
+to its defect at length n, with the same suspension convention.
+It does not change any smaller equation: a unary term would be
+needed at length n-1, and both minimal models have b_1=0.
+Thus solve delta(a)=-o_n and take it for s_{n-1}. Conversely that
+equation is forced by an extension through arity n. QED.
+
+This proof permits nonzero negative-negative binary products and
+all mixed higher operations. They enter o_n through the already
+chosen components. They do not alter the differential on its
+first unresolved coefficient.
+
+### Theorem 2.2 — Vanishing coefficients force a full augmented section
+
+If
+
+\[
+\boxed{HH^{d+2}(C,M_d)=0\quad\text{for every }d\ge1,}
+\tag{2.2}
+\]
+
+there is a strictly unital, augmented S-relative A_infinity section
+s:C -> H with s_1=id_C and p s=id_C.
+
+#### Proof
+
+The arity-two equation holds since m_2 on C is its ordinary
+product. Apply Lemma 2.1 for n=3,4,... . At each step (2.2) solves
+the only next equation, and future components preserve every
+earlier equation. Choose normalized S-relative correcting
+cochains, so units and primitive labels are preserved.
+
+There is no infinite-sum convergence assumption. On a bar word of
+length l, the coalgebra map uses finitely many ordered partitions
+of that word, and only components s_1,...,s_l occur. Each has the
+correct total degree. Thus the recursive components define an
+actual map of direct-sum conilpotent bar coalgebras.
+
+Every s_r with r>=2 has negative output, so p kills it. The linear
+component is the identity on C. Consequently p s=id as an
+A_infinity morphism, not merely on degree-zero cohomology. QED.
+
+### Corollary 2.3 — Ordinary supported Tor retracts in every degree
+
+Under (2.2), for every retained pair and every n>=0,
+
+\[
+\boxed{\operatorname{Tor}^C_n(R_z,L_y)
+\text{ is a split summand of }\operatorname{Tor}^A_n(R_z,L_y).}
+\tag{2.3}
+\]
+
+Proof: apply C060 to the section constructed in Theorem 2.2.
+The bar maps satisfy B(p)B(s)=id, and the retained derived quotient
+computes ordinary A-Tor. Reverse support in C lifts to A
+separately through the ordinary quotient. QED.
+
+This is a constructed section, stronger than T5's even-degree
+surjectivity. It does not make H formal: mixed operations and
+negative multiplication can remain.
+
+## 3. A dimension bound that actually terminates the obstruction tower
+
+### Lemma 3.1 — Finite pd does not enlarge a coefficient's injective bound
+
+For a finite-dimensional ring E with id_E E<=D, every finite E-module
+M of finite projective dimension satisfies id_E M<=D.
+
+#### Proof
+
+Take a finite projective resolution of M. Each projective term
+has injective dimension at most D. For
+0 -> K -> P -> X -> 0 and i>D the long exact sequence gives
+
+\[
+\operatorname{Ext}^i_E(Z,X)
+\cong\operatorname{Ext}^{i+1}_E(Z,K).
+\]
+
+Iterate along that finite resolution, ending at a projective
+module whose corresponding Ext vanishes. This holds for every
+Z, proving the claimed injective bound. QED.
+
+The finiteness of the resolution and the regular injective bound
+are both used. Finite pd alone over an arbitrary C^e does not
+supply any such uniform bound.
+
+### Theorem 3.2 — Uniform finite arity test for the section
+
+Assume id_{C^e} C^e<=D<infinity and pd_{C^e} M_d<infinity
+for each d>=1. A full section C -> H exists if and only if the
+morphism equations admit a compatible solution through arity D.
+For D<=2 this condition is automatic.
+
+#### Proof
+
+Lemma 3.1 gives id_{C^e} M_d<=D independently of its pd.
+Therefore
+
+\[
+HH^n(C,M_{n-2})=0\qquad(n>D).
+\]
+
+Once the finitely many equations 3<=n<=D are solved, Lemma 2.1
+extends that same solution at every later arity. Necessity follows
+by truncating an actual section. For D<=2 there is no equation in
+this finite range. QED.
+
+This is a uniform bound on **section obstruction arity**, under
+the stated regular and coefficient hypotheses. It is not an
+operation-arity bound, excursion-depth bound, screening-page
+bound, or finite-degree Tor certificate. Already chosen lower
+components must solve the equations together; testing individual
+raw m_n values is insufficient.
+
+If M_1,...,M_{D-2} are zero (an empty condition for D<=2), the
+low-arity equations hold with all these components zero. Thus
+the full section is automatic. This supplies a closure mechanism
+for a stated deep-negative perfect-coefficient class as well.
+
+## 4. Removing both parity and projectivity in one-Gorenstein quotients
+
+### Lemma 4.1 — The enveloping regular bound
+
+If id_C C<=g_l and id_{C^op} C<=g_r, then
+
+\[
+\operatorname{id}_{C^e}C^e\le g_l+g_r.
+\tag{4.1}
+\]
+
+#### Proof
+
+Tensor over k finite injective resolutions of the two regular
+modules. The total complex resolves C tensor_k C^op and has
+length at most g_l+g_r. The tensor of two finite injectives is
+injective over the tensor algebra: its vector-space dual is the
+tensor of two projectives and hence projective. This proves
+(4.1). QED.
+
+This elementary ordinary-dimension calculation is also
+[Bergh--Jorgensen, Lemma 2.1](https://ems.press/content/serial-article-files/30556).
+Only that lemma is used from the paper. No Tate groups or
+singularity-category comparison enters this proof.
+
+### Theorem 4.2 — One-Gorenstein perfect coefficients give full Tor survival
+
+Assume
+
+\[
+\boxed{
+\operatorname{id}_C C\le1,\quad
+\operatorname{id}_{C^{op}}C\le1,\quad
+\operatorname{pd}_{C^e}H^{-d}(q)<\infty\ \ (d\ge1).
+}
+\tag{4.2}
+\]
+
+Then the section of Theorem 2.2 exists and the all-degree ordinary
+Tor retraction (2.3) holds. In particular C infinite + implies
+A infinite +.
+
+#### Proof
+
+Lemma 4.1 gives D<=2. Lemma 3.1 gives id_{C^e} M_d<=2 for
+every d, so HH^{d+2}(C,M_d)=0 for all d>=1. Apply Theorem 2.2
+and Corollary 2.3. QED.
+
+The negative homology can have both parities and unbounded degree.
+Its individual finite projective dimensions need not be given by
+a uniform bound. The higher operations and multiplication among
+negative classes need not vanish.
+
+### Corollary 4.3 — Perfect local-trivial screening is excluded over this quotient
+
+For e_xAe_x=k, the actual retained model is C plus M[1], with the
+only possibly nonzero pure higher operation kappa in HH^3(C,M).
+If C has both regular injective dimensions at most one and
+pd_{C^e} M is finite, kappa is a coboundary. Every ordinary
+quotient Tor class retracts to A. Thus an infinite-+ ordinary
+quotient cannot be completely screened.
+
+This covers positive finite bimodule pd, not only T5's
+C^e-projective coupler. In this two-stage case the normalized
+model becomes augmented formal; in the general many-layer
+Theorem 4.2 only a section is asserted.
+
+### Corollary 4.4 — Global minimal-counterexample branch exclusion
+
+Let A be a global vertex-minimal Gap-A counterexample, and x an
+infinite-pd vertex. Its deletion cannot satisfy (4.2).
+
+Proof: C058 gives gldim C infinite. Global vertex minimality
+makes C infinite +. Theorem 4.2 supplies a supported ordinary
+tail in A, a contradiction. QED.
+
+This retains all source and support hypotheses and does not
+use the quarantined opposite-side transfer. Using right regular
+injective dimension in an explicitly stated hypothesis is not
+a transfer of an infinite-+ witness.
+
+## 5. Adversarial audit and useful boundary calibrations
+
+1. The obstruction index is n with coefficient H^{2-n}=M_{n-2};
+   the correction is s_{n-1}. In the two-stage model this is
+   exactly HH^3(C,M_1), agreeing with the existing kappa asset.
+2. The obstruction includes mixed higher operations evaluated on
+   earlier corrections. Replacing it with raw pure m_n after
+   nonzero lower corrections would be incorrect.
+3. The cocycle proof uses the actual identity (2.1), not a graph,
+   support recurrence or an unsupported formality assertion.
+4. A later component affects its first next equation and not the
+   previously solved ones. Direct-sum conilpotence handles the
+   infinite number of components without completion.
+5. Normalized S-relative cochains preserve the augmentation,
+   strict units and primitive labels. Their cohomology agrees
+   with ordinary Hochschild Ext because the base is separable.
+6. The injective estimate is for the coefficient variable of Ext.
+   Finite projective dimension of that variable is converted
+   only using the stated finite regular injective bound.
+7. C^e-perfect means finite projective dimension of each actual
+   bimodule homology layer. Separate finite pd of its two sides
+   is insufficient. The nine-dimensional C063 calibration has
+   self-injective C but a coupler of infinite C^e-pd, so it
+   does not satisfy (4.2) and creates no contradiction.
+8. Theorem 4.2 does not assume a parity pattern and is not a
+   consequence of T5's positive-weight parity degeneration.
+9. The section need not formalize the whole many-layer algebra.
+   Only its ordinary degree-zero input morphism equations have
+   been solved.
+10. The finite arity test bounds possible section obstructions;
+    it does not bound the first nonzero screening page or every
+    higher-operation arity. Individual low equations must be
+    compatible.
+11. The global exclusion uses global vertex minimality and
+    quotient infinity from the actual anchor. No unconditional
+    class theorem for all algebras satisfying one deletion's
+    hypotheses is asserted unless the quotient is already
+    infinite +.
+12. Derived sections are not claimed to inherit under further
+    ordinary vertex deletion. T4 proved that inheritance only
+    for ordinary sections.
+13. This is an all-degree symbolic proof. No new bounded
+    computation was needed or represented as independent
+    evidence; unchanged computations were not rerun.
+14. Neither external source verifies the project conclusion.
+    Both are conventional inputs checked at their exact scope.
+    No independent verification or novelty is claimed.
+
+## 6. Remaining closure work
+
+This checkpoint supplies an actual all-degree ordinary Tor bridge
+from a computable homological condition and a uniform finite
+obstruction cutoff. It excludes perfect-coefficient local-trivial
+screening over a one-Gorenstein quotient and a many-layer
+perfect-coefficient class without parity restrictions.
+
+An arbitrary vertex-minimal counterexample's quotient is not
+known to have those injective bounds, and its negative homology
+need not be C^e-perfect. Therefore this does not close general
+Target B, the nonperfect local-trivial branch, Target A, or all
+supported-weight screening.
+
+If the regular enveloping injective bound is larger, only the
+finitely many compatible low equations remain in the section
+test; solving or forcing them remains a mathematical task.
+If there is no finite regular bound or a negative layer is
+nonperfect, this argument supplies no uniform cutoff. In those
+cases the ordinary returns after complete quotient-edge
+screening, and a genuine well-founded reduction, remain the
+high-value targets. Further invariant refinement alone has
+not acquired priority.

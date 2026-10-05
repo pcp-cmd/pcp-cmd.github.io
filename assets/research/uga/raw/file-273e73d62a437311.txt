@@ -1,0 +1,142 @@
+# 任意长度的 bar 返回证书与二步路线的明确边界
+
+2026-09-24。本稿接续 [泛点返回核特化](Generic-Return-and-Specialization.md)。结论有完整自审证明及精确有限证书，尚未独立核验，未确认新颖性。**Universal Gap A 仍未证明。**
+
+本轮首先解决上一轮留下的适用性问题：每个无限全局维数分支都具有原二步返回核证书，这个断言是假的。随后给出任意长度、带对偶配对的有限证书，处理二步或箭头商投影无法检测的返回类。
+
+## 1. 二步泛点证书不能普遍存在
+
+令 \(A_N\) 为有向 N 圈的 radical 平方零代数，\(N\ge3\)。箭头为
+\(a_i:i\to i+1\pmod N\)，所有长度二路径均为零。它是连通的 2N 维代数，且
+\[
+\Omega L_j=L_{j+1},\qquad
+\beta_{ij}(n)=\begin{cases}1,&i\equiv j+n\pmod N,\\0,&\text{其他}.\end{cases}
+\tag{1}
+\]
+所以全局维数无穷，却有
+\[
+\operatorname{Tor}_2(R_h,L_h)=0\quad\text{对每个 }h.
+\tag{2}
+\]
+原返回核证书会推出固定 h 的每个正偶数 self-Tor 非零，特别是二阶非零。因此这些代数不可能有该证书。
+
+更进一步，固定此 E 双模 J 后，唯一可能的 E 双线性 radical 乘法就是零：两个可合成箭头的端点相差二，而对应 J 分量为零。因此上一稿的乘法参数空间 X 本身只有一个点，无法在同一固定 Peirce 族中换到一个有二步证书的泛点。即便只用 Tor 上半连续性，(2) 也已排除泛点二阶非零而在这个点变成零。
+
+这否定的是二步证书的普遍存在性，**没有否定 (GP) 或 (U)**。事实上，\(\beta_{hh}(qN)=1\) 对每个 q≥1；它们需要的是 N 步返回。
+
+## 2. 任意长度的有限证书
+
+设 A 是有限维 basic 复代数，\(A=E\oplus J\)，固定顶点 h。采用规范化 relative bar 链群
+\[
+C_n(h,h)=e_hJ^{\otimes_E n}e_h,
+\]
+及微分
+\[
+\partial(x_1\otimes\cdots\otimes x_n)
+=\sum_{k=1}^{n-1}(-1)^k
+x_1\otimes\cdots\otimes x_kx_{k+1}\otimes\cdots\otimes x_n.
+\tag{3}
+\]
+它计算 \(\operatorname{Tor}^A_n(R_h,L_h)\)。其有限维对偶复形计算 self-Ext，乘法采用标准 bar cup product，即按相应长度切开张量并对两段求值；非 h 的中间切口取零。
+
+固定 d≥1。对两个 d 次返回链，定义无符号接缝映射
+\[
+\sigma_d((x_1\otimes\cdots\otimes x_d)\otimes
+(y_1\otimes\cdots\otimes y_d))
+=x_1\otimes\cdots\otimes x_{d-1}\otimes(x_dy_1)
+\otimes y_2\otimes\cdots\otimes y_d,
+\tag{4}
+\]
+并双线性延拓。它检查的是完整张量的和，可以保留系数抵消，不要求逐个纯张量的接缝都为零。
+
+**定理。** 假设给出 g≥1 个链 \(z_1,\ldots,z_g\in C_d(h,h)\) 及 g 个线性泛函 \(\phi_1,\ldots,\phi_g\in C_d(h,h)^*\)，满足四项有限条件：
+
+1. \(\partial z_s=0\)；
+2. \(\phi_s\partial C_{d+1}(h,h)=0\)；
+3. \(\phi_s(z_t)=\delta_{st}\)；
+4. \(\sigma_d(z_s,z_t)=0\) 对所有 s,t 成立。
+
+则对全部 r≥1，
+\[
+\boxed{\dim\operatorname{Tor}_{rd}^A(R_h,L_h)\ge g^r,}
+\qquad
+\boxed{\mathbb C\langle X_1,\ldots,X_g\rangle
+\hookrightarrow\operatorname{Ext}_A^*(L_h,L_h),\quad |X_s|=d.}
+\tag{5}
+\]
+因此 A 满足 (U)。这里不限制 N，也不要求 d=2、J³=0 或 z 的箭头商投影非零。
+
+证明：对单词 \(w=(s_1,\ldots,s_r)\)，令
+\[
+z_w=z_{s_1}\otimes_E\cdots\otimes_Ez_{s_r}.
+\]
+微分中的块内项由条件 1 消失；每条相邻块接缝由条件 4 消失。因此 \(z_w\) 是 rd 次 cycle。
+
+条件 2 使每个 \(\phi_s\) 成为 bar cocycle。cup differential 满足 Leibniz 公式，故其任意单词
+\(\phi_v=\phi_{t_1}\smile\cdots\smile\phi_{t_r}\) 也是 cocycle。因为各块都从 h 返回 h，在长度 d,2d,… 的切口逐段求值，条件 3 给出
+\[
+\phi_v(z_w)=\prod_{l=1}^r\delta_{t_l,s_l}=\delta_{v,w}.
+\tag{6}
+\]
+所有 \(\phi_v\) 都杀死 boundaries。因此 \(g^r\) 个 \(z_w\) 的同调类独立，且 \(g^r\) 个 cup 单词的同调类也独立。这同时证明两个结论。正次数不同 r 的齐次关系不能混合，故得到自由结合代数的单射，而不仅是前几个次数的线性独立。证毕。
+
+**必要的检查。** 条件 3 本身不能替代条件 2；非零 cocycle 与 cycle 配对也不能替代条件 4。附带程序分别构造错误输入，确认会拒绝这两种遗漏。
+
+## 3. 三类严格的全次数应用
+
+### 3.1 有向 N 圈需要长度 N
+
+对第 1 节的 \(A_N\)，取 h=0、d=N，
+\[
+z=a_{N-1}\otimes\cdots\otimes a_0,
+\]
+\(\phi\) 为这个唯一返回 word 的系数泛函。所有 radical 乘积为零，故四项条件立即成立。得到每个 qN 次的非零 self-Tor。由 (1) 还可知
+\[
+\operatorname{Ext}^*(L_0,L_0)\simeq\mathbb C[X],\qquad |X|=N.
+\]
+此例同时说明，证书长度不能被固定为一个与 N 无关的小常数：任何正次数 self-Tor 都必须落在 N 的倍数上。
+
+### 3.2 截断多项式：箭头商投影为零的返回类
+
+令 \(A=\mathbb C[x]/(x^m)\)、m≥3，取 d=2，
+\[
+z=x^{m-1}\otimes x,
+\quad
+\phi(x^a\otimes x^b)=\begin{cases}1,&a+b=m,\\0,&a+b\ne m\end{cases}
+\quad(1\le a,b<m).
+\tag{7}
+\]
+\(\partial z=0\)，接缝 \(x x^{m-1}=0\)，且 \(\phi(z)=1\)。对任意三重 word，\(\phi\partial\) 的两项只有在指数总和为 m 时可能非零；此时两个中间乘积均未截断，且符号相反，恰好抵消。因此条件 2 也成立。
+
+定理给出全部偶数 self-Tor 非零及一个二次多项式子代数。由于 \(x^{m-1}\in J^2\)，z 投影到 \((J/J^2)^{\otimes2}\) 为零；因此本证书不依赖旧方法的箭头商检测。
+
+### 3.3 上一轮任意 N,g 族具有参数无关的链与对偶证书
+
+对上一稿的 \(A_{N,g,t}\)，仍用其记号和乘法
+\(b_sa=z_s^{\rm rad}\)、\(c_sd=n_s+t b_s\)、\(da=f\)、\(c_sf=t z_s^{\rm rad}\)。上标只用于避免 radical 基向量与下面的 bar 链重名。
+
+定义 d=2 的 bar 链与泛函
+\[
+Z_s=n_s\otimes a,
+\qquad \Phi_s(n_s\otimes a)=\Phi_s(c_s\otimes f)=1,
+\tag{8}
+\]
+\(\Phi_s\) 在其余基 word 上取零。它们不依赖 t。
+
+链的乘积 \(n_sa=0\)，所有接缝 \(a n_s=0\)，且 \(\Phi_s(Z_q)=\delta_{sq}\)。可能对 \(\Phi_s\partial\) 有贡献的三重 word 只有 \(c_s\otimes d\otimes a\)，其边界为
+\[
+-(n_s+t b_s)\otimes a+c_s\otimes f.
+\]
+两项的 \(\Phi_s\) 值相消，其余三重 word 的值为零。因此所有参数上都直接满足四项条件。
+
+这给出 \(\dim\operatorname{Tor}_{2r}(R_0,L_0)\ge g^r\) 和自由 Yoneda 子代数的统一有限证书，包括 t=0。上一稿的实际最小消解另行给出维数等号。这里还补足了仅靠上半连续性不能给出的乘法证据：明确的链与对偶 cocycle 在整个族上保持配对，故 cup 单词确实逐一存活。
+
+## 4. 程序证书及研究边界
+
+[bar_cycle_pairing_certificate.py](bar_cycle_pairing_certificate.py) 接收实际乘法表、基点、长度、稀疏链和稀疏泛函；使用有理数精确核对结合律、幂零性及定理的四项条件。它枚举 d+1 次返回 words 以检验泛函杀死全部 boundaries，并检查全部 g² 个接缝。通过后，全部次数结论来自定理，不来自逐次枚举。
+
+[bar_cycle_pairing_audit.json](../work/bar_cycle_pairing_audit.json) 保存 12 个完整输入与证书：N=3,…,6 的平方零圈；m=3,…,6 的截断多项式；上一轮族的四个参数成员。共核对 384 个边界 word 和 26 个有序接缝，并成功拒绝两个故意遗漏必要条件的输入。结果为自审计算，非独立核验。[可复现记录](../work/bar-cycle-computation-record.json) 保存代码、输入与证明哈希。
+
+2026-09-27 补正：**任意长度的本证书也不能普遍存在。** 项目已有 Saorín 七维例子的全部正次数 simple self-Ext 都为零，而 supported 的非对角 Tor 在每个正次数非零；其 simple Yoneda 正次数理想甚至平方为零。完整的实际 syzygy 证明见 [Finite-Syzygy-System-Theorem.md，第 1 节](Finite-Syzygy-System-Theorem.md#1-必须放弃同一个-simple-返回的普遍性)。故原先写为“未证明普遍存在”的问题应改为“普遍性已被否定”；本稿的充分定理和 12 个应用证书均不受影响。
+
+同一特化方向也排除用含该点的不可约族的泛点提供本证书。一般 (GP) 允许非对角 supported pair，因此仍未被否定，也仍未证明。后续路线应保留实际非简单模块及其同构；新的有限精确 syzygy 系统直接处理非对角持续 Tor，无需在 simple 上找非幂零 Yoneda 类。

@@ -1,0 +1,19 @@
+## UGA-C061 — Ordinary Sections Give Terminating Descent and a Quantitative Bound
+**Status:** COMPLETE SELF-AUDITED ALL-SIZE PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** ordinary-Tor retraction Run, Proposition 3.1, Lemmas 4.1 / 10.1 and Theorems 5.1--5.2 / 10.2, Corollary 10.3.
+
+If every infinite-pd vertex has a label-preserving ordinary section of its corner quotient, Universal Gap A holds for A. These sections pass to other deletion quotients without a commutation assumption. The split Tor comparison prevents new infinite-pd simples appearing in the smaller quotient, so a bad algebra would strictly decrease the positive number of infinite-pd simples. Sections at finite-pd vertices are not required for this qualitative closure.
+
+Suppose A=kQ/I is elementary finite-dimensional with I admissible, and every vertex-erasure endomorphism rho_x of kQ preserves I. Each deletion quotient then has an ordinary corner section, and the same condition persists after further deletion. Reverse-supported ordinary Tor retracts at every step. A hypothetical bad algebra therefore gives a bad quotient with exactly one fewer vertex, an impossible descent. Universal Gap A holds for this entire class, with no vertex-number bound.
+
+For the numerical bound, assume ordinary sections at every primitive vertex, or the stronger presentation condition above. If A has v vertices and all reverse-supported Tor vanishes in every degree n>=M, M>=1, then
+\[
+\operatorname{gldim}A\le(v-1)M.
+\]
+Relations whose parallel paths visit the same set of vertices provide a sufficient condition, including monomial presentations. Monomial Gap A is already known; no novelty claim is made.
+
+The all-vertex section hypothesis for the numerical bound, the all-source condition and all n>=M must be retained. The infinite-pd-only theorem does not assert that bound. Path-length grading alone does not imply erasure stability. The Run gives a six-dimensional calibration where the ordinary section fails but a derived section exists. This is not a universal screening-page bound or a finite-window test.
+
+**Depends on:** UGA-C058 and the ordinary bar retraction; no opposite-side transfer.
+
+---

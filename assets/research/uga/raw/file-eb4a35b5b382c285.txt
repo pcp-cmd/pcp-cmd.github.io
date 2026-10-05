@@ -1,0 +1,324 @@
+# 任意 N 的尾端传递：双数角与单次数 Tor 判定
+
+2026-09-11。状态：下述代数定理有完整自审证明，四个 endomorphism 模型和一个严格二周期模块完成精确计算；尚未独立数学核验，未确认新颖性。**Universal Gap A 仍未证明。** 对 KLS 构造的应用以所引用原文的构造性质为输入，没有独立复核其完整几何和 dg 证明。
+
+本稿给出一个不限制顶点数的条件定理：若删去顶点的简单模具有统一有限内射维数，留下的角是有限全局维数代数的双数扩张，则所有简单模的高次 Betti 数最终逐次恒定。因而是否存在 infinite supported Tor，可以由一个明确次数的有限矩阵决定。它不自动保证这个矩阵在 Peirce 支撑上非零。
+
+**后续闭合结果：** [KLS-Supported-Tor-Detection.md](KLS-Supported-Tor-Detection.md) 使用本稿和指定构造的几何输入，已经自审证明其支撑加权总和为正。因此该指定 KLS 构造的 Gap A 已在证明层面判定；下面的有限矩阵接口仍有用，各项精确数值仍未知。
+
+## 1. 约定与定理
+
+设 \(A\) 为有限维 basic \(\mathbb C\)-代数，\(J=\operatorname{rad}A\)，\(L_i=Ae_i/Je_i\)，\(R_i=e_iA/e_iJ\)。记
+\[
+\beta_{ij}(n)=\dim\operatorname{Ext}_A^n(L_j,L_i)
+=\dim\operatorname{Tor}_n^A(R_i,L_j),
+\qquad c_{ji}=\dim e_jAe_i.
+\tag{1}
+\]
+这里 supported 的判据是 \(c_{ji}>0\)，不能交换其两个指标。
+
+取非零幂等元 \(e=\sum_{i\in I}e_i\)，令 \(\Lambda=eAe\)。假设
+\[
+\operatorname{id}_A L_f\le a\quad(f\notin I),
+\qquad
+\Lambda\simeq\Gamma\otimes_{\mathbb C}\Delta,
+\quad \Delta=\mathbb C[\epsilon]/(\epsilon^2),
+\quad \operatorname{gldim}\Gamma\le g<\infty.
+\tag{2}
+\]
+若没有删去顶点，约定 \(a=-1\)；否则 \(a\ge0\)。\(g\) 可以取任何非负整数上界。角中的原始幂等元按此同构与 \(\Gamma\) 的原始幂等元对应。
+
+**定理 A。** 在 (2) 下，取
+\[
+R=a+g+2.
+\tag{3}
+\]
+对任意有限维左 \(A\)-模 \(X\) 和任意 \(n\ge R\)，有实际模块同构
+\[
+\Omega_A^{n+2}X\simeq\Omega_A^nX,
+\tag{4}
+\]
+并且对每个简单模 \(L_i\)，数列
+\[
+\dim\operatorname{Ext}_A^n(X,L_i)
+\quad(n\ge R)
+\tag{5}
+\]
+逐次恒定。如果进一步 \({}_\Gamma eA\) 是投射模，则可以改用较小的统一上界
+\[
+\boxed{R=\max\{a+1,g\}+1.}
+\tag{6}
+\]
+
+这里 (4) 是两步周期性；(5) 是相邻次数数值相等。没有声称 \(\Omega_A^{n+1}X\simeq\Omega_A^nX\)，也没有声称不同次数的 Ext 具有自然的同构。
+
+**推论 B。** 使用 (3) 或适用时的 (6)：
+
+1. \(A\) 存在 infinite \(+\)-pair，当且仅当存在 \(i,j\) 使 \(c_{ji}>0\) 且 \(\beta_{ij}(R)>0\)。这个固定 pair 随后在每个 \(n\ge R\) 都非零。
+2. 若一个有限维 \(A\)-模具有有限投射维数，则其投射维数至多 \(R-1\)。特别地，\(\operatorname{findim}A\le R-1\)。
+3. \(\operatorname{gldim}A<\infty\) 当且仅当整个矩阵 \((\beta_{ij}(R))\) 为零；此时 \(\operatorname{gldim}A\le R-1\)。
+
+证明第 2、3 项时，有限投射维数意味着 Betti 数最终为零，故由恒定性在第 \(R\) 次已经全零；此时最小消解的 \(P_R\) 为零。第 1 项直接使用 (5)。
+
+## 2. 有限内射维数控制哪些投射项可以留在尾端
+
+置 \(m=a+1\)。固定 \(X\) 的最小投射消解 \(P_\bullet\to X\)。\(Ae_f\) 在 \(P_n\) 中的重数等于 \(\dim\operatorname{Ext}_A^n(X,L_f)\)，所以 (2) 给出
+\[
+P_n\in\operatorname{add}(Ae)\qquad(n\ge m).
+\tag{7}
+\]
+
+\(e(-)\) 是正合函子。对 \(P\in\operatorname{add}(Ae)\)，\(eP\) 是 \(\Lambda\)-投射模，且
+\[
+e(JP)=\operatorname{rad}(\Lambda)\,eP.
+\tag{8}
+\]
+对 \(P=Ae_i\)、\(i\in I\)，这就是 \(eJe_i=(eJe)e_i\)；一般情况由直和、直和项得到。这里使用有限维代数的 \(\operatorname{rad}(eAe)=eJe\)。
+
+于是 \(eP_{m+\bullet}\) 是 \(Y=e\Omega_A^mX\) 的最小 \(\Lambda\)-投射消解，并有
+\[
+e\Omega_A^{m+r}X\simeq\Omega_\Lambda^rY\qquad(r\ge0).
+\tag{9}
+\]
+
+还需要把角中的同构传回 \(A\)，而不是只比较限制后的模块。若 \(Z\) 有一个表示
+\[
+P'\longrightarrow P\longrightarrow Z\longrightarrow0,
+\qquad P',P\in\operatorname{add}(Ae),
+\]
+则乘法给出的 counit 是同构：
+\[
+Ae\otimes_\Lambda eZ\xrightarrow{\ \sim\ }Z.
+\tag{10}
+\]
+确实，对表示先施加 \(e(-)\)，再施加右正合的 \(Ae\otimes_\Lambda-\)。前两项的 counit 都是同构，故所诱导的余核映射也是同构。这个论证只需要右正合性。
+
+对 \(Z=\Omega_A^nX\)、\(n\ge m\)，其表示用 \(P_{n+1}\to P_n\)，故 (7) 保证 (10) 适用。合并 (9)–(10)：
+\[
+\boxed{\Omega_A^{m+r}X\simeq
+Ae\otimes_\Lambda\Omega_\Lambda^rY\quad(r\ge0).}
+\tag{11}
+\]
+
+这证明实际尾端模块的传递。没有使用 \(Ae\) 对 \(\Lambda\) 的平坦性，也没有把 \(Ae\otimes_\Lambda-\) 宣称为全体模块上的正合函子。尤其不能由此宣称任意 corner simple 的 Tor 自动提升为原代数 simple 的 Tor。
+
+## 3. 双数扩张上的带符号 syzygy
+
+左 \(\Lambda\)-模可以写成 \(Z=(P,d)\)，其中 \(P\) 是左 \(\Gamma\)-模，\(d^2=0\) 是 \(\Gamma\)-线性映射。令 \(\theta\) 为固定 \(\Gamma\)、将 \(\epsilon\) 变为 \(-\epsilon\) 的自同构；扭曲 \(\theta Z\) 即 \((P,-d)\)。它保持各简单模及其重数，保持投射覆盖，并与最小 syzygy 交换到同构。
+
+如果 \({}_\Gamma P\) 投射，则有显式短正合列
+\[
+0\longrightarrow\theta Z
+\xrightarrow{\iota}Q
+\xrightarrow{\pi}Z\longrightarrow0,
+\quad Q=(P\oplus P,\epsilon(x,y)=(0,x)),
+\tag{12}
+\]
+其中
+\[
+\iota(p)=(-dp,p),\qquad \pi(x,y)=x+dy.
+\]
+直接检查两映射的 \(\epsilon\)-线性、核和满射性即可。\(Q\simeq\Lambda\otimes_\Gamma P\) 是投射 \(\Lambda\)-模；这不一定是最小投射覆盖。
+
+用 Schanuel 引理比较 (12) 与最小投射覆盖，得到
+\[
+\Omega Z\oplus Q\simeq\theta Z\oplus P(Z).
+\]
+施加最小 syzygy，投射直和项变为零，故得到实际同构
+\[
+\Omega^2Z\simeq\Omega(\theta Z)\simeq\theta(\Omega Z).
+\tag{13}
+\]
+因此，若 \(U=\Omega Z\)，则
+\[
+\Omega^rU\simeq\theta^rU\quad(r\ge0),
+\qquad \Omega^2U\simeq U.
+\tag{14}
+\]
+因为 \(\theta\) 固定各简单模，(14) 的所有模块具有相同的 top 重数。
+
+对任意 \(\Lambda\)-模 \(Y\)，其 \(g\) 次 syzygy 的底层 \(\Gamma\)-模是投射模：将 \(\Lambda\)-投射消解限制为 \(\Gamma\)-投射消解，再使用 \(\operatorname{gldim}\Gamma\le g\)。于是 (14) 可应用于 \(Z=\Omega_\Lambda^gY\)。角中的两步周期性及 top 重数恒定，从第 \(g+1\) 次开始。
+
+## 4. 合并证明与改进的起始次数
+
+由 (11)，角中第 \(g+1\) 次以后的实际两步同构，经张量函子传为 \(A\) 上第 \(m+g+1=a+g+2\) 次以后的同构。这证明 (4)。
+
+对保留的顶点 \(i\in I\)，(8) 保证 \(eP_n\) 是 \(e\Omega_A^nX\) 的最小覆盖；其 \(\Lambda e_i\) 重数与 \(P_n\) 中的 \(Ae_i\) 重数相同。因此 (14) 的 top 重数恒定给出 (5)。对删去的顶点，重数在 \(n>a\) 时已经为零。
+
+如果进一步 \({}_\Gamma eA\) 投射，则整个限制序列 \(eP_\bullet\to eX\) 都是 \(\Gamma\)-投射消解，包括 \(n<m\) 的部分。因此
+\[
+{}_\Gamma(e\Omega_A^kX)\text{ 投射，只要 }k\ge g.
+\tag{15}
+\]
+取 \(k=\max\{m,g\}\)。从此处开始既可以用 (9)–(11)，也可以立即对 \(Z=e\Omega_A^kX\) 使用 (13)–(14)，只需再取一次 syzygy。这给出 (6)，并完成定理 A 的证明。
+
+## 5. KLS 构造的有限判定接口
+
+Kong–Liu–Shen 使用右模，构造 \(A=\operatorname{End}_\Lambda(\Lambda\oplus\bigoplus N_t)\)。其 Proposition 3.2 给出 \(C=A/AeA\cong\underline{\operatorname{End}}_\Lambda(\bigoplus N_t)\)，以及每个右 \(C\)-投射模的右 \(A\)-投射维数至多二；这些是以下应用采用的外部输入。[KLS, §3](https://arxiv.org/html/2608.00177v1#S3)
+
+本文的左模约定下，\(eAe=\Lambda\)，因为 \(\operatorname{End}_{\text{right }\Lambda}(\Lambda)\) 由左乘识别为 \(\Lambda\)。右 \(C\)-简单模的 \(A\)-投射维数上界，经有限维对偶，变成所需的删去顶点左简单模内射维数上界。
+
+**层数引理。** 设一个有限维 basic 代数的顶点可以分到 \(q+1\) 层，每个层内的 corner 是半单的，且非零 radical Peirce 分量只能严格增加层数，则其全局维数至多 \(q\)。证明是：\(Je_i\) 的组成因子严格处于更高层；对投射覆盖的核反复使用这一事实，最小消解每一步的 top 都严格升层。右模的顺序相反，结论相同。
+
+Krah 给出的非满例外对象组及满 strong 对象组分别为
+\[
+\mathcal E=(\mathcal O,\{\mathcal O(D_t)\}_{t=1}^{10},\mathcal O(F),\mathcal O(2F)),
+\qquad
+\mathcal T=(\mathcal O,\{\mathcal O(E_t)\}_{t=1}^{10},\mathcal O(H),\mathcal O(2H)),
+\tag{16}
+\]
+其中 \(D_t=-6H+2\sum E_s-E_t\)、\(F=-19H+6\sum E_s\)。满 strong 性和非满例外性取自 [Krah, Theorem 1.1、第 2 页及 §5](https://j-krah.github.io/krah_a_phantom_on_a_rational_surface.pdf)。括号中的四组是四个层。
+
+先检查 \(\mathcal E\) 的同层正交性。若 \(s\ne t\)，则 \(D_t-D_s=E_s-E_t\)。有
+\[
+H^0(X,\mathcal O(E_s-E_t))=0,
+\quad H^2(X,\mathcal O(E_s-E_t))=0,
+\quad \chi(\mathcal O(E_s-E_t))=0.
+\tag{17}
+\]
+第一式因为一个 \(H\)-次数为零的有效除子只能是非负的 exceptional 曲线组合，而 \(E_s-E_t\) 不是；第二式由 Serre 对偶后的除子 \(K_X-E_s+E_t\) 的 \(H\)-次数为 \(-3\)；第三式由 Riemann–Roch 及 \((E_s-E_t)^2=-2\)、\(K_X\cdot(E_s-E_t)=0\)。所以一次上同调也为零。逆向层间 Ext 由例外性为零。KLS 的 stable Hom 与总 Ext 的识别于是使 \(C\) 满足层数引理，得到
+\[
+\operatorname{gldim}C\le3.
+\tag{18}
+\]
+这个论证不要求计算正向层间的 Ext 维数或乘法，也不要求这些 Ext 集中在次数二。
+
+一个右 \(C\)-简单模有长度至多三的 \(C\)-投射消解。每项作为右 \(A\)-模的投射维数至多二，所以逐次维数平移给出右 \(A\)-投射维数至多五。因而可在 (2) 中取
+\[
+a=5.
+\tag{19}
+\]
+
+还可以验证 (6) 的额外假设。对一个底层右 \(\Gamma\)-投射的差分模块 \(W=(P,d)\)，取任意 \(v\in\operatorname{Hom}_\Gamma(P,\Gamma)\)，映射
+\[
+p\longmapsto v(dp)+v(p)\epsilon
+\tag{20}
+\]
+给出全部 \(\Lambda\)-线性映射 \(W\to\Lambda\)，并唯一决定 \(v\)。故底层左 \(\Gamma\)-模
+\[
+\operatorname{Hom}_\Lambda(W,\Lambda)\simeq
+\operatorname{Hom}_\Gamma(P,\Gamma)
+\]
+是投射的。对 \(M=\Lambda\oplus\bigoplus N_t\) 应用它，得到 \(eA=\operatorname{Hom}_\Lambda(M,\Lambda)\) 底层左 \(\Gamma\)-投射。
+
+因此该 KLS 构造满足定理 A 的改进形式：给定其 tilting 代数的上界 \(g\)，可以取
+\[
+R=\max\{6,g\}+1.
+\tag{21}
+\]
+若具体选取 \(T=\bigoplus\mathcal T\)，则 \(\Gamma=\operatorname{End}_X(T)\) 也是四层 directed 代数：例外性排除逆向 Hom，而不同 \(E_t\) 之间的 Hom 由 (17) 同样为零。层数引理给出 \(g\le3\)。从而对这个明确 tilting 选择的 KLS 构造，可取
+\[
+\boxed{R=7.}
+\tag{22}
+\]
+具体选择中 \(\Gamma\) 是基本代数。把各有界投射复形取为最小后，折叠差分落在 \(J_\Gamma\) 中，因此折叠模没有 \(\Lambda\)-投射直和项。其 stable endomorphism algebra 为 \(\mathbb C\)，故每个折叠模不可分解；不同折叠模的逆序 stable Hom 为零，故它们互不同构。因此 \(M\) 的十三个 \(\Lambda\)-投射直和项与十三个折叠项两两不同构，这一选择给出基本代数，可直接使用本文的 simple 约定。
+
+结论是：**对这一指定选择，只需计算全部 \(\beta_{ij}(7)\) 与实际 Peirce 支撑，就能决定它有没有 infinite \(+\)-pair。** 这不是对论文任意未指定 tilting 选择直接宣称同一个数值界；一般选择使用 (21)。更没有由其 HH 消失推断这些 supported 系数为零。
+
+### 5.1 进一步缩小到三十三个未知数
+
+首先，删去 simple 的左投射维数也至多五。这需要补充一个对偶论证，不能从 (19) 直接交换 pd 与 id。折叠短正合列为 \(0\to N_t\to Q_t\to N_t\to0\)。由 (20) 可直接核查，每个 \(N_t\to\Lambda\) 的映射都可延伸到 \(Q_t\)：在短正合列的嵌入写成 \(p\mapsto(dp,p)\) 时，取延伸 \((x,y)\mapsto v(x)+v(y)\epsilon\)。所以同样可以延伸到任意投射目标的映射。
+
+因此，\(\operatorname{Hom}_\Lambda(Q_t,M)\to\operatorname{Hom}_\Lambda(N_t,M)\) 的像恰好是全部经投射模分解的映射。得到左 \(A\)-模的正合列
+\[
+0\longrightarrow Af_t\longrightarrow
+\operatorname{Hom}_\Lambda(Q_t,M)\longrightarrow Af_t
+\longrightarrow Cf_t\longrightarrow0.
+\tag{23}
+\]
+前三项投射，故 \(\operatorname{pd}_A(Cf_t)\le2\)。结合 (18) 的左 \(C\)-投射消解，得到
+\[
+\operatorname{pd}_A L_f\le5,\qquad
+\operatorname{id}_A L_f\le5
+\quad\text{对全部删去的 simple}.
+\tag{24}
+\]
+于是第七次及更高次的 Betti 矩阵在涉及删去顶点的任何行或列都为零，只剩十三个保留顶点。
+
+把保留顶点依次记为 \(0,1,\ldots,10,h,q\)，对应 \(\mathcal O,\mathcal O(E_s),\mathcal O(H),\mathcal O(2H)\)。这些顶点之间的实际 Peirce 维数就是 \(\Gamma\otimes\Delta\) 的维数。按行 \(j\)、列 \(i\) 写成分块矩阵：
+\[
+(c_{ji})_{j,i\in I}
+=2\begin{pmatrix}
+1&0&0&0\\
+\mathbf 1&I_{10}&0&0\\
+3&2\mathbf 1^{\mathsf T}&1&0\\
+6&5\mathbf 1^{\mathsf T}&3&1
+\end{pmatrix}.
+\tag{25}
+\]
+例如 \(H^0(H-E_s)\) 是通过指定一点的线性式空间，维数二；\(H^0(2H-E_s)\) 是通过一点的二次式空间，维数五。其余非对角正数分别来自 \(H^0(E_s)\)、\(H^0(H)\)、\(H^0(2H)\)，维数一、三、六；逆向及不同 \(E_s\) 之间为零。这完整确定了该块的四十六个非零位置，不依赖尚未展开的折叠微分。
+
+还有一整行 Ext 必然消失。右 \(\Gamma\)-投射模 \(e_0\Gamma=\operatorname{Hom}_X(T,\mathcal O)\) 是一维的，所以右 \(\Lambda\)-投射模 \(Q_0=e_0\Lambda\) 长度二，且其 radical 正是构造中已经加入的 \(N_0=e_0\Gamma\)。任何从 \(M\) 的其他不可分解项到 \(Q_0\) 的映射都不满，否则投射性将使满射分裂，迫使该项同构于 \(Q_0\)。故这些映射都落在唯一的非零真子模 \(N_0\) 内；\(Q_0\) 的非可逆自映射也如此。因此
+\[
+\operatorname{rad}\operatorname{Hom}_\Lambda(M,Q_0)
+=\operatorname{Hom}_\Lambda(M,N_0).
+\]
+右边是右 \(A\)-投射模，故对应的右 \(A\)-simple 有投射维数一。对偶后
+\[
+\operatorname{id}_A L_0=1,
+\qquad\beta_{0j}(n)=0\quad(n\ge2,\text{ 全部 }j).
+\tag{26}
+\]
+所以 (25) 中目标 \(i=0\) 的十三个位置不必再算。最终只需以下三十三个未知数：
+\[
+\boxed{
+\begin{gathered}
+\beta_{ss}(7),\ \beta_{s h}(7),\ \beta_{s q}(7)
+\quad(1\le s\le10),\\
+\beta_{hh}(7),\ \beta_{h q}(7),\ \beta_{qq}(7).
+\end{gathered}}
+\tag{27}
+\]
+等价地，计算单个非负整数
+\[
+\mathcal T_7=
+\sum_{s=1}^{10}\bigl(2\beta_{ss}(7)+4\beta_{s h}(7)+10\beta_{s q}(7)\bigr)
++2\beta_{hh}(7)+6\beta_{h q}(7)+2\beta_{qq}(7).
+\tag{28}
+\]
+它大于零，当且仅当存在 infinite \(+\)-pair。**这里没有给这些未知数赋值，也没有计算出 \(\mathcal T_7\) 的精确值。** 后续 [KLS-Supported-Tor-Detection.md](KLS-Supported-Tor-Detection.md) 已通过范畴论论证其 \(\mathcal T_7\ge2\)。指标约定仍是 \(\beta_{s h}=\dim\operatorname{Ext}_A^7(L_h,L_s)\)，不能误取反向 Ext。
+
+## 6. 精确有限核算
+
+[audit_corner_periodicity.py](../work/audit_corner_periodicity.py) 从 \(\Lambda=\mathbb C(0\to1)\otimes\Delta\) 出发，分别加入零个、一个或两个折叠 \(\Gamma\)-投射模，构造实际 endomorphism algebra。程序使用左 \(\Lambda\)-模，所以所保留的角是 \(\Lambda^{\mathrm{op}}\)；相应 \(\Gamma^{\mathrm{op}}\) 仍有全局维数一。
+
+| 加入的折叠投射模顶点 | 代数维数 | 顶点数 | 实测删去 simple 的最大 id | 改进界 R | 支撑上的恒定非零项 |
+|---|---:|---:|---:|---:|---|
+| 无 | 6 | 2 | 按约定 −1 | 2 | 两个对角项，各 1 |
+| 0 | 10 | 3 | 2 | 4 | 保留顶点 1 的对角项，1 |
+| 1 | 10 | 3 | 2 | 4 | 保留顶点 0 的对角项，1 |
+| 0、1 | 15 | 4 | 3 | 5 | 无，整个尾端为零 |
+
+核算包括：构造实际 Hom 和复合乘法；检查代数乘法；计算四个删去 simple 的双侧投射维数，通过对偶识别内射维数；对十二个 simple 给出二十四组两步 syzygy 同构及逆映射检查；对每个 simple 检查 \(R,R+1,R+2,R+3\) 的 top 重数相同。两个含有相应 simple radical 的模型还核实了 (26) 的内射维数一机制。结果在 [corner_periodicity_audit.json](../work/corner_periodicity_audit.json)。
+
+这些是有限程序自审。无限范围来自第 2–4 节的证明，而不是把四个连续次数的数值外推；这些小模型也不是 KLS 代数的实际乘法表。
+
+**为什么不能把两步周期改写为一步同构。** 取 \(\Gamma\) 为无环三角 quiver
+\[
+0\xrightarrow{a}1\xrightarrow{b}2,\qquad 0\xrightarrow{c}2
+\]
+的 radical-square-zero 代数。它的全局维数为二。置 \(t=a+b+c\)，\(Z=({}_\Gamma\Gamma,d)\)，其中 \(d(x)=xt\)，把它看成 \(\Lambda=\Gamma\otimes\Delta\)-模。因 \(J_\Gamma^2=0\)，有 \(d^2=0\)。且 \(d\Gamma\subseteq J_\Gamma\)，故 (12) 中的投射满射在 top 上是同构，已经是最小覆盖。因此
+\[
+\Omega_\Lambda Z\simeq\theta Z,\qquad
+\Omega_\Lambda^2Z\simeq Z.
+\tag{29}
+\]
+然而 \(Z\not\simeq\theta Z\)。否则底层左 \(\Gamma\)-正则模的自同构是右乘一个单位
+\(u=\lambda_0e_0+\lambda_1e_1+\lambda_2e_2+v\)、\(v\in J_\Gamma\)、每个 \(\lambda_i\ne0\)。与两个差分交换要求 \(tu=-ut\)。由于 \(J_\Gamma^2=0\)，三条箭头分别给出
+\[
+\lambda_0+\lambda_1=0,\qquad
+\lambda_1+\lambda_2=0,\qquad
+\lambda_0+\lambda_2=0,
+\tag{30}
+\]
+在 \(\mathbb C\) 上迫使所有 \(\lambda_i=0\)，矛盾。
+
+同一核算程序构造此十二维 \(\Lambda\) 及六维 \(Z\)，验证实际的两步同构，并计算出 \(Z\to\theta Z\) 的全部 Hom 基。每个基映射在整个非零 top 上为零，因而确实不存在一步同构；这不是随机搜索失败作出的非同构判断。尽管如此，各次 top 重数一直是 \((1,1,1)\)，与定理 (5) 一致。
+
+## 7. 任意 N 主线还差什么
+
+这个定理对顶点数没有上限，但有 (2) 的同调及 corner 假设。尚未证明所有无限全局维数代数都满足这些假设，也未证明满足假设且 \(\operatorname{gldim}A=\infty\) 时，\((\beta_{ij}(R))\) 的某个非零项必落在 \(c_{ji}>0\) 的位置。
+
+若这些 supported 位置在第 \(R\) 次全部为零，则本稿的一般定理只能给出主路线中的 \((Z_{R-1})\)。一般情形仍需要排除整个非零恒定尾矩阵完全避开 Peirce 支撑的可能。对指定 KLS 构造，后续 [KLS-Supported-Tor-Detection.md](KLS-Supported-Tor-Detection.md) 已证明 (28) 的加权总和为正，将存在性闭合；(27) 的各个精确数值仍未计算。
+
+因此本稿提供了新的尾端控制工具和有限判定接口，没有关闭 [N-Vertex-Main-Route.md](N-Vertex-Main-Route.md) 中的普遍有限生成桥梁。

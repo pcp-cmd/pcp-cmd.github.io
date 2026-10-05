@@ -1,0 +1,10 @@
+# Targeted actual cyclic-head relation audit
+
+Test ONE arbitrary-p mechanism using p=4 over Q: actual head-generated
+images in Omega L_v are projective and their six pairwise intersections
+are zero, but the FULL relation kernel is L_v^2 of infinite pd.
+Check literal associativity, all retained real minimal covers, actual
+image inclusions and kernel isomorphism. The arbitrary-p/all-degree
+ordinary proof is separate in the T37 Run. No five-vertex classification,
+independent/formal acceptance, routine digests or full UGA closure.
+Reuse frozen exact helpers; same-researcher bounded self-audit only.

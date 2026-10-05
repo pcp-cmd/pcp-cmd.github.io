@@ -1,0 +1,417 @@
+# T13 — Finite ordinary-Tor migration and the first-kernel obstruction
+
+Date: 2026-10-03.
+
+Status: complete self-audited all-size arguments and explicit all-characteristic
+calibrations; bounded exact rational self-check; not independently verified.
+Universal Gap A remains OPEN.
+
+The current acceptance target is Universal Gap A for every finite size.
+The broader return-or-descent steering is a means to that target. A descent
+that preserves global infinity but loses reverse Peirce visibility does not
+finish the problem.
+
+## 1. Reused inputs and the actual ordinary filtration
+
+Let A be a finite-dimensional elementary k-algebra, K an actual radical
+ideal with K^2=0, and C=A/K. Assume K is left C-projective. All actions
+on K are canonical. Write
+
+\[
+Ke_j\simeq\bigoplus_i(Ce_i)^{T(i,j)}.
+\tag{1.1}
+\]
+
+Use C072's actual ordinary bar filtration, not a derived-idempotent
+cohomology substitute. An S-bimodule linear radical section need not be an
+algebra section. The differential preserves kernel count or increases
+it by one; K^2=0 prevents its decrease. For ordinary right C-module X
+and ordinary left C-module Y let N(X,Y) be the kernel of the ordinary
+bar projection B_A(X,Y)->B_C(X,Y).
+
+Set F(X)=X tensor_C K. Actual left projectivity makes F exact and gives
+
+\[
+[F(R_z):R_j]=T(z,j).
+\tag{1.2}
+\]
+
+Thus actual derived tensor words reduce to ordinary F^p(X), and the
+positive-count first page of N is
+
+\[
+E^1_{p,n}= \operatorname{Tor}^C_{n-p}(F^p(X),Y),\qquad p\ge1.
+\tag{1.3}
+\]
+
+This is the existing ordinary bar construction. It includes all nonsplit
+multiplication errors. Every fixed total degree has finite filtration,
+so the convergence used below is ordinary degreewise convergence.
+
+Assume T is acyclic. Let q be its longest directed path length, with
+the graph convention j->i when T(i,j)>0. Then q<=v-1 and C072 gives
+K^{tensor_C^L(q+1)}=0 and pd_A C<=q.
+
+For each z let h(z) be the longest path ending at z. If T(z,j)>0,
+h(j)<=h(z)-1. Define
+
+\[
+P(z)=\{j:(T^p)(z,j)>0\text{ for some }p\ge0\}.
+\tag{1.4}
+\]
+
+The p=0 term includes z. This is an actual F-composition carrier,
+not a graph-to-homology assertion.
+
+## 2. A uniform ordinary migration theorem
+
+### Theorem 2.1 — Finite F-height controls all ordinary quotient Tor
+
+Fix a left C-simple L_y and M>=1. If
+
+\[
+\operatorname{Tor}^A_n(R_j,L_y)=0
+\quad(n\ge M,\ j\in P(z)),
+\tag{2.1}
+\]
+
+then
+
+\[
+\boxed{\operatorname{Tor}^C_n(R_z,L_y)=0
+\quad(n\ge M+2h(z)).}
+\tag{2.2}
+\]
+
+More generally take any finite-dimensional X, its simple-factor carrier
+and all F-reachable factors. With h(X) the maximum of their initial
+simple heights, the same hypothesis on all those ordinary A simples
+implies Tor^C_n(X,L_y)=0 for n>=M+2h(X).
+
+Consequently an infinite ordinary C tail at (R_z,L_y) forces an infinite
+ordinary A tail at some fixed (R_j,L_y), j in P(z). The right endpoint
+can change; reverse support of the final pair is not asserted.
+
+#### Proof
+
+Prove the module version by induction on h=h(X). Exactness of F shows
+that all factors of F^p(X) have height at most h-p and are reachable
+from factors of X. F^p(X)=0 for p>h.
+
+If h=0, F(X)=0, every positive-count first-page term is zero and the
+actual ordinary projection is an isomorphism in every degree. Finite
+composition-series Tor inequalities give the asserted vanishing.
+
+For h>0 the induction hypothesis gives
+
+\[
+\operatorname{Tor}^C_m(F^p(X),L_y)=0
+\quad(m\ge M+2(h-p)),\quad1\le p\le h.
+\tag{2.3}
+\]
+
+In (1.3) put m=n-p. Every positive column is therefore zero when
+n>=M+2h-1: indeed n-p>=M+2(h-p) for every p>=1. Finite convergence
+gives H_n(N(X,L_y))=0 in that range.
+
+The actual bar exact sequence gives
+
+\[
+\operatorname{Tor}^A_n(X,L_y)\longrightarrow
+\operatorname{Tor}^C_n(X,L_y)\longrightarrow H_{n-1}(N(X,L_y)).
+\tag{2.4}
+\]
+
+Both outside terms are zero for n>=M+2h. This proves (2.2).
+
+For the qualitative statement, if all reachable ordinary A simple tails
+were finite, the finite set P(z) would have a common M, contradicting
+the infinite C tail. Hence one fixed reachable pair persists. QED.
+
+### Explicit descent interpretation
+
+If the original A pair does not persist, (2.4) forces an infinite
+positive-count N tail. Its finitely many counts and (1.3) give an
+infinite C tail for some F^p(R_z), p>=1. Finite ordinary composition
+factors select R_j with h(j)<=h(z)-p. Repeat if its ordinary A pair
+does not persist. Height strictly decreases, so at most h(z) such
+migrations occur. The terminal tail is ordinary A-Tor, not stable,
+Tate or singular-category information.
+
+This describes a genuine well-founded migration of ordinary tails.
+It does not yet preserve the physical reverse Peirce support needed
+for Universal Gap A.
+
+### Corollary 2.2 — Global infinity transfers without perfectness
+
+If T is acyclic, then
+
+\[
+\operatorname{gldim}A=\infty\quad\Longleftrightarrow\quad
+\operatorname{gldim}C=\infty.
+\tag{2.5}
+\]
+
+For finite gldim A=a and finite gldim C=c, respectively,
+
+\[
+\operatorname{gldim}C\le a+2q,\qquad
+\operatorname{gldim}A\le c+q.
+\tag{2.6}
+\]
+
+#### Proof
+
+If A has finite global dimension a, all ordinary simple-pair Tor
+vanishes for n>=a+1. Theorem 2.1 applied to every z,y gives C-Tor
+vanishing for n>=a+1+2q, hence the first bound.
+
+For the other bound reuse C072's proved pd_A C<=q. Every A simple
+is an inflated C simple. Its finite C-projective resolution of length
+at most c has all terms of ambient pd<=q, so its A-pd is at most c+q.
+The two bounds prove (2.5). QED.
+
+Neither C^e-perfectness, a section, nor stable projective-type bimodule
+summands is needed. A nonzero K strictly decreases algebra dimension.
+However (2.5) alone does not make a bad A yield a bad C: C may supply
+a supported witness whose visibility is lost in the migration.
+
+### Direct right-projective version
+
+If K is right C-projective, use G(Y)=K tensor_C Y, which is exact.
+Write e_iK=sum_j(e_jC)^{B(i,j)}; then [G(L_y):L_i]=B(i,y).
+Assume B is acyclic and define the height as the longest G-factor
+path beginning at y. Its height strictly drops on positive G steps.
+
+The same actual ordinary filtration has first page
+Tor^C_{n-p}(R_z,G^p(Y)). Induction in the left argument gives the
+M+2h(Y) bound and a fixed ordinary A pair (R_z,L_i) in the G-reachable
+carrier. The actual test-row formula bounds pd_{A^{op}} C by q,
+and direct right-simple resolutions give (2.5)--(2.6).
+No opposite-+ transfer is used.
+
+## 3. The exact supported gap
+
+When the original C pair is supported, e_yCe_z!=0. Every factor R_j
+of F(R_z) has T(z,j)>0, so actual Ke_j contains Ce_z and
+
+\[
+e_yKe_j\ne0,\qquad e_yAe_j\ne0.
+\tag{3.1}
+\]
+
+This is C074's physical visibility mechanism at the first step.
+At later steps a factor of F^p(R_z) gives a projective summand of
+K^{tensor_C p}, not a product inside A. Physical K^2=0, and it is
+invalid to replace (3.1) by visibility of every T-reachable endpoint.
+
+Theorem 2.1 requires ordinary A vanishing on the entire reachable
+carrier. Non-infinite-+ only supplies vanishing on reverse-supported
+pairs. It does not supply (2.1) at every reachable endpoint.
+
+The next closure problem is therefore precise: force a supported
+ordinary A tail before visibility is lost, or replace the migration
+by an actual eligible ordinary reduction that preserves non-infinite-+.
+No general solution to that problem is proved here.
+
+## 4. An actual connected nonperfect first-module counterexample family
+
+For every r>=1 put m=4r+3. Start with the oriented line
+0->1->...->m-1, denote its arrow ideal by J_line, and impose all
+line paths of length four equal to zero. Add a vertex star, a loop
+t at star, and c:star->0. Impose t^2=0 and every radical product
+involving c equal to zero. Call the resulting connected algebra A_r.
+
+Let K_r be the actual ideal spanned by line paths of lengths two
+and three, and C_r=A_r/K_r. C_r is radical-square-zero. A literal
+basis gives
+
+\[
+\dim A_r=16r+9,\quad \dim C_r=8r+8,\quad \dim K_r=8r+1.
+\tag{4.1}
+\]
+
+Products are concatenation up to length three, idempotent actions,
+and zero otherwise. All relations are monomial, so this is an
+associative finite algebra over every field.
+
+### Projectivity, actual nilpotence, nonsplitting and nonperfectness
+
+For line source j<=m-3,
+
+\[
+K_re_j\simeq C_re_{j+2};
+\tag{4.2}
+\]
+
+send the top to the length-two path and its radical arrow, when
+present, to the length-three path. All other columns are zero.
+Thus K_r is actually left C_r-projective. Its matrix has T(j+2,j)=1,
+so its actual derived tensor nilpotence index is ell=2r+2 and q=2r+1.
+
+Nevertheless K_r^2=0 as a physical A_r ideal. These two uses of
+square zero are different: its tensor square is nonzero.
+
+There is no ordinary section A_r->C_r. After standard vertex
+alignment, every adjacent arrow has a unique lift, whose product
+with the next arrow is the nonzero length-two path in A_r; C_r
+requires it to be zero.
+
+There is no stable projective-type bimodule splitting. The length-two
+path starting at 1 is in the Ce_3 column. Right multiplication by
+the arrow 0->1 gives the length-three path starting at 0, in the
+radical of the Ce_2 column. The type-3 projector acts as identity
+on the first whole column and zero on the second whole column,
+so it does not commute with the actual right action.
+
+The actual right module e_2K_r is R_0. Over C_r the right projective
+e_0C_r has radical kc=R_star. The right projective e_star C_r has
+radical kt=R_star, with multiplication by t having equal image
+and kernel kt. Thus pd_{C_r^{op}} R_0=infinity, proving K_r
+nonperfect over C_r^e. The same right periodic certificate works
+over A_r. This is a genuine nonperfect higher-index calibration.
+
+The original source L_star also has infinite A_r-pd:
+rad(A_re_star)=L_star direct sum L_0. The t-word ordinary bar gives
+Tor^{A_r}_n(R_star,L_star)=k in every degree. Hence this connected
+family is already infinite +, not a Gap-A counterexample.
+
+### All-degree ordinary path resolution certificate
+
+The line simples are unaffected by the added incoming source.
+For an A_r line simple L_y the nonzero minimal projectives are
+
+\[
+P_{2s}=A_re_{y+4s},\qquad P_{2s+1}=A_re_{y+4s+1},
+\tag{4.3}
+\]
+
+when the index is below m. The maps alternate multiplication by
+the relevant length-one and length-three paths. The kernel of a
+length-one map is the length-three top at y+4s+4; the kernel of
+a length-three map is the whole next radical. Images equal these
+literal kernels. At the right endpoint the resolution terminates.
+
+Over C_r, the minimal projectives are C_re_{y+n}; consecutive
+length-one maps have radical image and radical kernel. Thus
+
+\[
+\dim\operatorname{Tor}^{A_r}_n(R_z,L_y)=
+\begin{cases}
+1&z-y=4s,\ n=2s,\\
+1&z-y=4s+1,\ n=2s+1,\\
+0&\text{otherwise},
+\end{cases}
+\quad
+\dim\operatorname{Tor}^{C_r}_n(R_z,L_y)=
+\begin{cases}1&n=z-y\ge0,\\0&\text{otherwise}.\end{cases}
+\tag{4.4}
+\]
+
+These assertions hold in all degrees and all characteristics by
+the literal resolutions, not by rank extrapolation.
+
+### The first ordinary kernel module does not represent N
+
+Take z=m-1=4r+2 and y=0. The original ordinary A pair is zero
+in every degree, while C Tor is k in degree 4r+2 alone. The actual
+bar exact sequence therefore gives
+
+\[
+H_n(N(R_z,L_0))=
+\begin{cases}k&n=4r+1,\\0&\text{otherwise}.\end{cases}
+\tag{4.5}
+\]
+
+Left-radical quotient of K_r kills all length-three paths. Right
+radical action on the remaining length-two tops is zero, so
+F(R_z)=R_{4r}. Its ordinary A Tor is
+
+\[
+\operatorname{Tor}^{A_r}_n(F(R_z),L_0)=
+\begin{cases}k&n=2r,\\0&\text{otherwise}.\end{cases}
+\tag{4.6}
+\]
+
+Hence the proposed higher-index identity
+H_n(N(R_z,L_y))=Tor^{A}_{n-1}(F(R_z),L_y) is false. Its predicted
+nonzero degree is 2r+1; the actual degree is 4r+1, separated by
+an arbitrarily large 2r.
+
+This refutes the attempted representation by a single first-kernel
+ordinary module, even with actual left projectivity, actual tensor
+nilpotence, a connected nonsplit quotient and genuine global infinity.
+It does not refute an eventual supported bridge or Theorem 2.1.
+The mismatched original pair is reverse-invisible. The family
+is monomial and already belongs to existing Gap-A closure assets;
+no new monomial closure is claimed.
+
+## 5. Exact evidence and normal adversarial audit
+
+Ordinary-Migration-Evidence contains task.md, verify_ordinary_migration.py,
+ordinary-migration-result.json and computation-record.json.
+
+The actual r=1 and r=2 tables have dimensions (25,16,9) and (41,24,17).
+Exact rational ordinary bars, including incoming differentials, give
+dim H_5(N)=1 versus the first-module prediction zero, and dim H_9(N)=1
+versus prediction zero, respectively.
+
+The code checked 84,546 A and 17,920 C associative triples, 370 physical
+kernel-square products, 1,844 ideal checks, 552 actual left-projective
+actions, 276 F-top actions, 36 literal finite simple resolutions,
+115 exactness steps, 7,054 resolution-linearity checks, four literal
+infinite source/right-kernel certificates, 726 differential squares,
+126 ordinary homology records and 298 actual projection-chain checks.
+
+Only unchanged Fraction matrix helpers were imported from frozen C073
+code. That script's main was not rerun. These are same-author checks;
+schema/hash validation is not independent mathematical verification.
+
+The normal audit checked:
+
+1. K is a physical square-zero radical ideal; ordinary section errors
+   increase count and cannot be dropped.
+2. Left projectivity makes F exact and (1.3) ordinary, without
+   claiming separate-sided projectivity is C^e-perfectness.
+3. h(j)<=h(z)-p uses actual T^p factors; no graph cycle creates a tail.
+4. Induction retains the entire reachable A-simple carrier.
+5. The N degree cutoff is M+2h-1; the quotient cutoff is M+2h,
+   after the one-degree shift in the actual long exact sequence.
+6. The infinity conclusion selects a fixed pair from finitely many
+   labels; the quantitative statement requires every n>=M.
+7. Right projectivity uses the direct G argument, not opposite-+.
+8. Global infinity equivalence is not non-infinite-+ preservation.
+9. Physical visibility is checked at the first K step; higher tensor
+   words are not treated as physical nonzero products in A.
+10. The family has an actual infinite-pd source and nonperfect K,
+    but already has a supported ordinary loop tail.
+11. All-degree/all-field calibration uses actual path resolutions.
+    Finite rational output alone does not prove either universal scope.
+12. No prior Run is rewritten and no independent acceptance is claimed.
+
+Vault use in this checkpoint: a new bounded method package authorized
+by the latest steering read three live notes, 3,965 emitted characters:
+the bridge note (truncated at 2,500), Bootstrap (762), and matrix-rank
+stabilization (703). They motivated checking an explicit transport
+and a finite height, and are not authority for project facts.
+The fixed-space rank argument is not applied across changing Tor degrees.
+No Vault or global configuration was written.
+
+## 6. Remaining Universal Gap A work
+
+This checkpoint removes perfectness and stable-type splitting from
+ordinary tail migration and global-infinity equivalence for the
+acyclic actual one-sided-projective ordinary kernel class.
+
+It leaves a concrete supported step: after the first migration,
+ordinary persistent detectors need not remain physically visible.
+We cannot iterate the preceding infinity equivalence as though
+it preserved badness. The failed first-module representation is
+now excluded by an actual connected nonperfect all-size family.
+
+Current priority is a support-preserving ordinary bridge or a proved
+eligible reduction that covers this migration failure. Further necessary
+conditions alone have low priority. No actual ordinary ideal is inferred
+from derived negative layers. Target A, general local-trivial,
+supported-weight and the latest higher-output Target-B frontier remain
+on the global map. Universal Gap A remains OPEN.

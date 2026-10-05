@@ -1,0 +1,173 @@
+# Cycle 10 elaboration — exact-zero products and secondary singular corners
+
+## §0 Mathematical verdict
+
+**Not solved.** The corner-comparison branches are now separated down to an exact-zero product or a finite-projective-dimension fifth error, but no verified theorem yet converts either residual state into a proper singular corner of the ambient algebra.
+
+**Closed components.** Canonical primitive-corner comparison has an exhaustive tagged five-way atlas (`6eafbbe6a6361a9c`), its first four branches are reduced to an ambient plus witness or an outside-corner infinite-projective-dimension simple (`c88d9846c49d9028`), and the fifth branch has a verified finite/infinite projective-dimension split (`74cb54be76b478c7`). Any actual nonzero transfer product for the persistent ambient Tor endpoints closes infinite-plus (`ab1afea4df0ce668`; associated-graded detector `2549cd596a814f8a`).
+
+**Viable proof architecture.** Start from the vertex-minimal dead-zone corner, apply the canonical tagged comparison, close every nonzero-product branch, and turn every exact-zero or finite-pd residual into a strictly smaller singular corner until a singleton/two-vertex closure applies.
+
+**Main blocker.** There is no verified construction taking the exact-zero canonical product family, or the finite-pd fifth recurrence, to a nonzero proper idempotent whose corner retains an infinite-pd witness. Support recurrence alone cannot do this (`31c4037065600009`, `78e3ab82c1e9d0e7`, `9110d8cc8257b511`).
+
+**Highest-priority unresolved bridge.** Prove a canonical secondary-corner theorem retaining the actual quotient/kernel/higher-Tor provenance: either a compatible transfer product is nonzero, or the complementary support contains a proper corner with a verified infinite projective resolution.
+
+**Method failure vs. proposition failure.** The verified counterexamples establish method failure for support-only, one-edge, and opposite-symmetric promotion. They do not establish proposition failure; the terminal model obstruction itself descends to a one-vertex infinite-plus corner (`b4f467013c4ed631`).
+
+**Calibration caveat.** Do not read SUBSTANTIAL as “almost solved”: each such component still has an unmatched hypothesis on the actual dead-zone construction.
+
+| Dashboard item | Current state |
+|---|---|
+| Fixed goal | UNCHANGED: determine Han's conjecture for finite-dimensional complex algebras, without presupposing truth or falsity, and distinguish independent deduction, literature input, reproduction, synthesis, and possible new contribution. |
+| Verified complete proof | NO |
+| Verified counterexample | NO |
+| Signed-closed sub-tasks | Canonical comparison atlas; tagged corner exits; alternatives 1–4 separator; fifth-branch pd split; nonzero-product plus criterion; mutual-dumbbell split-tail normal form. |
+| Main blocker | Canonical exact-zero/finite-pd residual to proper singular-corner transition. |
+| Routes marked false/obsolete | YES: recurring-support promotion, one-step-edge promotion, and support-only bilateral promotion are FALSE AS STATED. |
+| Highest-priority unresolved task | P0: construct a functorial secondary corner from the actual comparison maps and prove that it carries an infinite-pd witness. |
+
+| Sub-task | Status | Closed facts | Conditional facts | Main missing interface |
+|---|---|---|---|---|
+| Gap A: protected-corner infinite-plus lift | SUBSTANTIAL | `6eafbbe6a6361a9c`, `c88d9846c49d9028`, `74cb54be76b478c7` | `ab1afea4df0ce668`, `2549cd596a814f8a` | Exact-zero/finite-pd residual descent. |
+| Low-vertex and mutual-dumbbell closure | SUBSTANTIAL | `8783e7694e73021e`, `12f95b5af9a6fd16` | `669c1e54f01a5b89`, `0dc7d2e243818132` | Lift a factor recurrence to the matching ambient simple, or descend through the hub. |
+| Universal Gap A integration | PARTIAL | `59a12876ab799b9e`, `073459eead09a970` | Current comparison package | Central secondary-corner theorem not yet available. |
+| Ordinary Hochschild implication / Han conclusion | UNKNOWN | None establishes the final implication on the full class | Infinite-plus target package | Universal Gap A and ordinary-Hochschild bridge both remain open. |
+
+**Current best proof skeleton**
+
+1. Choose a vertex-minimal simple of infinite projective dimension and its exact dead-zone corner, using `5da47c5107901438` and `4ac1cd635b7cb0e8`.
+2. Obtain a smaller infinite-global-dimension corner by exact tail descent `59a12876ab799b9e`; reduce low-vertex cases using `073459eead09a970`.
+3. Select a persistent simple corner Tor witness and apply the canonical tagged five-way comparison `6eafbbe6a6361a9c`.
+4. If the direct branch occurs with its ordered Peirce block, conclude infinite-plus by `c88d9846c49d9028`.
+5. In alternatives 2–4, use the outside-corner infinite-pd simple from `c88d9846c49d9028`; in alternative 5 use the dichotomy `74cb54be76b478c7`.
+6. For any extracted persistent ambient Tor pair, if a compatible transfer product is nonzero, conclude infinite-plus by `ab1afea4df0ce668` (or detect it by `2549cd596a814f8a`).
+7. If all canonical compatible products are exactly zero, construct a proper singular secondary corner; this is the central missing lemma.
+8. Iterate the proper-corner transition. Terminate at singleton/two-vertex closure (`b8a38ee00b9da7b0`, `ee07f374726a4e16`) or the exact recurrent-summand criterion `0dc7d2e243818132`.
+9. Close the mutual-dumbbell terminal form by applying the same transition to the split factors from `12f95b5af9a6fd16`.
+10. Integrate the protected-corner result into universal Gap A, then verify the ordinary-Hochschild implication before claiming Han's conjecture.
+
+**Central missing lemma.** Let (A) be a finite-dimensional basic complex algebra with primitive idempotents (e_1,\ldots,e_v), let (f=\sum_{i\in F}e_i) define a nonzero proper vertex-minimal dead-zone corner (B=fAf), and let (R_a^B,L_b^B) be a corner-simple pair with (\operatorname{Tor}_n^B(R_a^B,L_b^B)\ne0) for infinitely many (n) and (e_bAe_a\ne0). Apply the canonical multiplication maps and the tagged comparison of `6eafbbe6a6361a9c`. If the resulting persistent ambient Tor endpoints admit no compatible nonzero product through (f), and if the fifth recurring outside simple has finite projective dimension whenever that branch occurs, then there exists a nonzero proper idempotent (g\le 1-f) (or a canonically specified proper idempotent built from the defect support) such that (gAg) has infinite global dimension, with an explicit infinite minimal resolution witness inherited functorially from the comparison state. The support of (g) must be strictly smaller than the current unresolved support so iteration terminates.
+
+This is non-trivial because a recurring fifth-branch simple may be projective (`31c4037065600009`), a recurrent radical edge may miss the ordered Peirce block (`78e3ab82c1e9d0e7`), and even paired (A/A^{op}) support can have both ordered products zero (`9110d8cc8257b511`).
+
+## §1 Closed components and obsolete routes
+
+**Signed-closed components**
+
+- Exact idempotent-tail descent to an infinite-global-dimension corner — `59a12876ab799b9e`.
+- Singleton and strongly connected two-vertex infinite-plus closures — `b8a38ee00b9da7b0`, `ee07f374726a4e16`.
+- Exact recurrent-projective/Peirce criterion — `0dc7d2e243818132`.
+- Canonical tagged five-way corner comparison and first-four-branch separator — `6eafbbe6a6361a9c`, `c88d9846c49d9028`.
+- Fifth recurrence finite/infinite-pd split — `74cb54be76b478c7`.
+- Actual nonzero transfer product implies infinite-plus — `ab1afea4df0ce668`; associated-graded sufficient detector — `2549cd596a814f8a`.
+- Pure-cross mutual-dumbbell split-tail normal form — `8783e7694e73021e`, `12f95b5af9a6fd16`.
+- The standard zero-product obstruction nevertheless has a proper singleton infinite-plus corner — `b4f467013c4ed631`.
+
+**Failed or obsolete routes**
+
+| Route | Status | Reason |
+|---|---|---|
+| Recurring fifth-branch simple automatically yields ambient persistent Tor | FALSE AS STATED | It may be projective over (A), `31c4037065600009`. |
+| One recurrent radical edge forces the required ordered Peirce visibility | FALSE AS STATED | The radical-square-zero 3-cycle separates them, `78e3ab82c1e9d0e7`. |
+| Pairing support data for (A) and (A^{op}) forces a return product | FALSE AS STATED | Both ordered products may vanish, `9110d8cc8257b511`. |
+| Associated-graded leading survival is necessary | OBSOLETE | Any actual nonzero product suffices, even if it lies deeper, `ab1afea4df0ce668`. |
+| Corner factor self-recurrence automatically matches the ambient simple | FALSE AS STATED | In the dumbbell it attaches to the truncated syzygy of the opposite end, `12f95b5af9a6fd16`. |
+
+## §2 Interface contract table
+
+### Dead-zone to singular corner — create the first smaller object
+**Input required.** An infinite minimal simple resolution with an eventual projective tail supported on a nonzero proper idempotent (f).
+**Output claimed.** (fAf) has infinite global dimension.
+**Available facts.** `59a12876ab799b9e` gives exact tail descent; `5da47c5107901438` and `4ac1cd635b7cb0e8` identify bounded dead-zone support.
+**Missing verification on the actual model.** None for this transition once the tail-support hypothesis is present.
+**Failure mode if ignored.** Merely knowing a support set is small does not prove the corner singular.
+**Status.** CLOSED
+
+### Singular corner to tagged ambient defect — compare persistent Tor
+**Input required.** A primitive corner pair (a,b\in F) with persistent (B=fAf) Tor and the ordered block (e_bAe_a\ne0).
+**Output claimed.** Either ambient infinite-plus, an outside-corner infinite-pd simple with persistent ambient Tor, or the fifth outside recurrence.
+**Available facts.** `6eafbbe6a6361a9c`, `c88d9846c49d9028`.
+**Missing verification on the actual model.** Select the primitive persistent pair with the required ordered block for every corner arising in the descent.
+**Failure mode if ignored.** The direct branch may not be a plus witness and exit tags alone do not imply singularity.
+**Status.** SUBSTANTIAL
+
+### Tagged defect to ambient plus — multiply the actual transfer factors
+**Input required.** A persistent simple ambient Tor pair (R_a,L_b) and elements (u\in e_bAf), (v\in fAe_a) with (uv\ne0).
+**Output claimed.** (A) has infinite-plus global dimension.
+**Available facts.** `ab1afea4df0ce668`; `2549cd596a814f8a` detects a surviving associated-graded product.
+**Missing verification on the actual model.** Extract the correctly ordered canonical factors and prove their product is nonzero.
+**Failure mode if ignored.** Nonzero endpoint spaces do not prevent all products from vanishing (`9110d8cc8257b511`).
+**Status.** SUBSTANTIAL
+
+### Exact-zero or finite-pd defect to secondary corner — preserve singularity under descent
+**Input required.** The actual canonical comparison diagram, an exact-zero compatible product family or finite-pd fifth recurrence, and vertex-minimal dead-zone provenance.
+**Output claimed.** A nonzero proper idempotent (g) with (gAg) of infinite global dimension and an inherited infinite minimal-resolution witness.
+**Available facts.** `74cb54be76b478c7` isolates the residual branches; `b4f467013c4ed631` verifies the desired behavior in the model zero-product obstruction.
+**Missing verification on the actual model.** (1) Define (g) functorially. (2) Prove exactness/minimality after truncation. (3) Prove infinite length. (4) Prove strict support decrease. (5) Exclude the projective escape.
+**Failure mode if ignored.** Complementary support may be homologically inert, and iteration may cycle without a well-founded decrease.
+**Status.** UNKNOWN
+
+### Mutual-dumbbell split factor to ambient closure — resolve the terminal three-vertex case
+**Input required.** The pure-cross normal form and its two infinite one-vertex factor resolutions.
+**Output claimed.** Ambient infinite-plus or a proper singular hub/secondary corner.
+**Available facts.** `8783e7694e73021e`, `12f95b5af9a6fd16`, with target criteria `669c1e54f01a5b89` and `0dc7d2e243818132`.
+**Missing verification on the actual model.** Match at least one factor kernel to a syzygy of the ambient simple with the corresponding diagonal Peirce row, or construct the hub-derived singular corner.
+**Failure mode if ignored.** The factor recurrence belongs to the truncated syzygy of the opposite end and cannot be relabelled.
+**Status.** SUBSTANTIAL
+
+### Infinite-plus package to Han's conjecture — return to ordinary Hochschild homology
+**Input required.** A universal protected-corner Gap A theorem plus the precise ordinary-Hochschild implication for finite-dimensional complex algebras.
+**Output claimed.** Eventual vanishing of (HH_n(A)) forces finite global dimension.
+**Available facts.** The present fact graph establishes conditional infinite-plus machinery, not this final universal implication.
+**Missing verification on the actual model.** (1) Universalize the corner descent. (2) Verify the ordinary-Hochschild bridge with exact hypotheses. (3) Integrate literature inputs without replacing independent proof obligations.
+**Failure mode if ignored.** A complete relative/corner theorem would still not by itself prove Han's conjecture.
+**Status.** UNKNOWN
+
+## §3 Dangerous heuristic lines and strategies not to pursue
+
+**Dangerous heuristic lines**
+
+- “A simple type recurring in infinitely many higher errors supplies a persistent ambient Tor partner.” **Status: Mathematically incorrect as stated.** The recurring type can be projective, so all positive ambient Tor vanishes (`31c4037065600009`). Correct form: first split by ambient projective dimension as in `74cb54be76b478c7`.
+- “A recurrent radical edge can be concatenated to the fixed Tor endpoint.” **Status: Not automatic.** Relations can kill or misorient the needed product; `78e3ab82c1e9d0e7` is an explicit obstruction. The correct target is an actual nonzero ordered product as in `ab1afea4df0ce668`.
+- “Using both (A) and (A^{op}) removes cancellation.” **Status: Mathematically incorrect as stated.** `9110d8cc8257b511` preserves paired support while both return products vanish. Opposite symmetry helps only with canonical coefficient data.
+- “If the leading associated-graded coefficient cancels, one must increase depth.” **Status: Conflated with a stronger claim.** A deeper but nonzero product already closes by `ab1afea4df0ce668`; only exact zero requires descent.
+- “Two infinite one-vertex factors in the dumbbell give ambient self-return.” **Status: Not automatic.** `12f95b5af9a6fd16` shows the target simple is mismatched after truncation.
+
+**Strategies not to pursue**
+
+- Do not prove another support-only fifth-branch lemma: `31c4037065600009` already defeats the route.
+- Do not infer a nonzero product from two nonzero Peirce spaces: `9110d8cc8257b511` kills both ordered products.
+- Do not stop at a recurrent adjacent radical edge: `78e3ab82c1e9d0e7` shows permanent displacement.
+- Do not use radical nilpotence before constructing a recurrence-preserving next defect: exact zero is not itself a contradiction.
+- Do not relabel a split-corner syzygy as the matching ambient simple: `12f95b5af9a6fd16` records the mismatch.
+- Do not draft a final Han proof from Gap A alone: the ordinary-Hochschild bridge remains unverified.
+
+## §4 Missing bridge lemmas
+
+### Bridge 1 — canonical secondary singular corner
+**Target statement.** Under the hypotheses of the Central missing lemma, exact vanishing of every correctly ordered canonical transfer product, together with a finite-pd fifth recurring exit when present, yields a canonically defined nonzero proper idempotent (g) and an infinite minimal (gAg)-projective resolution obtained from the comparison diagram; the unresolved support strictly decreases.
+**Prerequisites.** Primitive vertex-minimal dead-zone provenance, the canonical multiplication maps of `39d5bd8b2d2d4b6a`, and the persistent corner Tor witness.
+**Existing facts to use.** `6eafbbe6a6361a9c` gives tagged alternatives; `74cb54be76b478c7` isolates the residual fifth branch; `b4f467013c4ed631` validates the terminal model behavior.
+**Missing checks.** (1) Define (g) from kernels/images rather than support alone. (2) Prove truncation exact and minimal. (3) Prove the resulting resolution is infinite. (4) Establish strict decrease. (5) Check all three counterexamples fail a stated hypothesis.
+**Closure criterion.** A verifier-accepted theorem with an explicit construction of (g), an inherited infinite-resolution witness, and a well-founded decrease closes this bridge. This bridge is independent and highest leverage.
+
+### Bridge 2 — actual canonical product extraction
+**Target statement.** In alternatives 2–4 or the infinite-pd half of alternative 5, the actual canonical quotient/kernel/higher-Tor maps determine primitive endpoints and factors (u\in e_bAf), (v\in fAe_a) for the persistent ambient Tor pair such that either (uv\ne0) or the hypotheses of Bridge 1 hold.
+**Prerequisites.** The tagged comparison state and fixed ambient Tor endpoints.
+**Existing facts to use.** `c88d9846c49d9028`, `74cb54be76b478c7`, `ab1afea4df0ce668`, `2549cd596a814f8a`.
+**Missing checks.** (1) Extract factors from actual maps. (2) Preserve endpoint ordering. (3) Show exact-zero is functorial, not a basis artefact. (4) Route the zero case to Bridge 1.
+**Closure criterion.** Produce a verifier-accepted dichotomy whose nonzero branch invokes `ab1afea4df0ce668` verbatim and whose zero branch supplies every input of Bridge 1. This bridge is dependent on the formulation of Bridge 1 but can be developed in parallel.
+
+### Bridge 3 — dumbbell factor/hub transition
+**Target statement.** In the pure-cross three-vertex normal form of `12f95b5af9a6fd16`, at least one of the two factor projective-cover kernel towers either maps to a matching ambient simple syzygy and triggers `0dc7d2e243818132`, or canonically produces an infinite-global-dimension corner supported on a proper subset involving the hub.
+**Prerequisites.** The two exact split-factor minimal resolutions and all through-hub multiplication maps.
+**Existing facts to use.** `8783e7694e73021e`, `12f95b5af9a6fd16`, `669c1e54f01a5b89`, `0dc7d2e243818132`.
+**Missing checks.** (1) Compare factor cover kernels with ambient syzygies. (2) Retain target-simple identity. (3) If comparison vanishes, prove hub-derived singularity. (4) Exclude support-only reasoning.
+**Closure criterion.** A verifier-accepted exhaustive dichotomy closing ambient plus or producing a proper singular corner resolves the mutual dumbbell. This bridge is independent and parallelizable.
+
+### Bridge 4 — universal and Hochschild integration
+**Target statement.** Once Bridges 1–3 establish the protected-corner lift for every finite-dimensional basic complex algebra, prove the exact implication from that universal infinite-plus statement to nonvanishing of ordinary Hochschild homology in arbitrarily high degrees, hence the contrapositive Han conclusion.
+**Prerequisites.** Universal Gap A with no residual low-vertex cases and a precisely identified ordinary-Hochschild comparison theorem.
+**Existing facts to use.** Current facts provide the relative/corner machinery but no signed final ordinary-Hochschild implication.
+**Missing checks.** (1) State the ordinary-Hochschild bridge self-containedly. (2) Verify every finiteness/basic/Morita hypothesis. (3) Separate literature import from independent deductions. (4) Submit the integrated theorem to the verifier.
+**Closure criterion.** A signed theorem linking universal infinite-plus to infinitely many nonzero ordinary (HH_n(A)), followed by its contrapositive, closes the fixed goal. This bridge depends on Bridges 1–3.

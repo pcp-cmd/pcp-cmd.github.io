@@ -1,0 +1,16 @@
+# RESEARCH GOVERNANCE — preserved project lesson
+
+Parallel chat windows and incomplete handoffs previously caused route rediscovery and status drift. The final archive therefore treats research-state management as a first-class asset.
+
+Required future discipline:
+
+1. one canonical current state;
+2. append-only historical record;
+3. explicit provenance for every imported result;
+4. a DO-NOT-REINVENT index;
+5. explicit handoff snapshots;
+6. retrieve prior assets before opening a new route;
+7. preserve failed/refuted routes instead of deleting them;
+8. keep mathematical state separate from research-policy state;
+9. do not promote a claim because a later route “needs” it;
+10. retain UTF-8/Unicode path integrity in every repackage.

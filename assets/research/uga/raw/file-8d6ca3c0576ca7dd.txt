@@ -1,0 +1,18 @@
+# Ordinary migration computation task
+
+Use exact rational arithmetic for the connected nonsplit ordinary
+square-zero quotient family with 7 and 11 line vertices, one extra
+source with a square-zero loop, and actual ideal of line lengths 2,3.
+
+Verify full multiplication associativity, actual ideal/square-zero
+actions, the canonical left-projective columns, the ordinary F-simple
+tops, finite path resolutions, and literal infinite source/right-kernel
+certificates. Compute outgoing and incoming ordinary bar ranks for
+the original pair, the first-kernel pair, the actual projection kernel,
+and the supported loop source.
+
+Output: verify_ordinary_migration.py, ordinary-migration-result.json,
+computation-record.json. Reuse only the unchanged Fraction matrix
+helpers from C073. The generic theorem and all-size/all-characteristic
+family are separate written arguments. Same-author bounded checking
+must not be reported as independent proof verification.

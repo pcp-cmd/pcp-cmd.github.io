@@ -1,0 +1,118 @@
+"""Both infinite cubic-band sides can have no supported return at their labels.
+
+Extends the frozen C119 actual kernel witness inside a new triangular algebra.
+All-degree conclusions use retained FULL kernel isomorphisms, not a prefix.
+"""
+from pathlib import Path
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+root=Path(sys.argv[sys.argv.index('--project-root')+1])
+frozen=root/'runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py'
+exec(compile(frozen.read_text(encoding='utf-8').split('\nfor p in [3,5,8]:',1)[0],str(frozen),'exec'),globals())
+
+# D=B^op at labels0,1,2; B at labels3,4,5. Written labels1,2,3
+# in C119 correspond respectively to local0,1,2.
+old=[('a',1,0),('b',0,1),('c',2,1),('s',2,2),('d',0,2),
+     ('t',1,1),('v',0,2),('w',0,1)]
+basis=[(f'e{i}',i,i) for i in range(6)]
+basis.extend([(f'D_{name}',r,l) for name,l,r in old])
+basis.extend([(f'B_{name}',3+l,3+r) for name,l,r in old])
+# W=LEFT L_B2 tensor RIGHT (e_D2 D / <D_w>).
+basis.extend([('z0',4,1),('zb',4,0),('zc',4,2),('zt',4,1)])
+ix={name:i for i,(name,_,_) in enumerate(basis)}
+products={}
+for x,y,z in [('a','b','t'),('d','s','v'),('d','c','w')]:
+    products[ix[f'B_{x}'],ix[f'B_{y}']]=ix[f'B_{z}']
+    products[ix[f'D_{y}'],ix[f'D_{x}']]=ix[f'D_{z}']
+for x,y,z in [('z0','D_b','zb'),('z0','D_c','zc'),('z0','D_t','zt'),('zb','D_a','zt')]:
+    products[ix[x],ix[y]]=ix[z]
+A=Table(6,basis,products)
+O=A.opposite()
+assert len(A.basis)==26
+assert A.alg.radical_powers[2]==[rk.unit_vector(A.alg.d,ix['zt']-A.vertices)]
+assert not A.alg.radical_powers[3]
+
+def loc(T,names):
+    return [[T.index[n] for n in names if T.basis[T.index[n]][1]==v] for v in range(T.vertices)]
+
+def checked_kernel(T,M,target,embedded,label):
+    K,info,cert=cover(M)
+    lin=info['linear_data']
+    assert len(lin['copies'])==1
+    head=lin['copies'][0][0]
+    maps=[]
+    for v,part in enumerate(embedded):
+        pos={head if r is None else T.vertices+r:j for j,(copy,r) in enumerate(lin['bases'][v])}
+        maps.append([lin['readers'][v](rk.unit_vector(info['cover_dimensions'][v],pos[b])) for b in part])
+    iso=ss.check_isomorphism(target,K,ss.encode(maps))
+    for cols,d in zip(maps,K.dimensions):
+        unit_basis(cols,d)
+    counts['actual_kernel_isomorphisms']+=1
+    return {'label':label,'actual_cover':cert,'target':ss.module_payload(target),'isomorphism':iso}
+
+certificates={}
+states={}
+for name,T,prefix,offset in [('LEFT_B',A,'B_',3),('RIGHT_D',O,'D_',0)]:
+    U=supported_module(T,loc(T,[prefix+'s',prefix+'v']))
+    V=supported_module(T,loc(T,[prefix+'c',prefix+'w']))
+    P1,_=projective(T,offset)
+    target=ss.direct_sum(T.alg,[P1,V],[1,1])
+    embedded=[[] for _ in range(6)]
+    embedded[offset]=[T.index[prefix+'b'],T.index[prefix+'w']]
+    embedded[offset+1]=[T.index[prefix+'t']]
+    embedded[offset+2]=[T.index[prefix+'c']]
+    first=checked_kernel(T,sr.Module.simple(T.alg,offset+1),target,embedded,
+                         f'{name}: FULL Omega simple2 = P1 direct_sum V')
+    second=checked_kernel(T,V,U,loc(T,[prefix+'s',prefix+'v']),
+                          f'{name}: FULL Omega V=U')
+    third=checked_kernel(T,U,U,loc(T,[prefix+'s',prefix+'v']),
+                         f'{name}: FULL actual period-one Omega U=U')
+    assert U.dimensions[offset+1]==0
+    certificates[name]=[first,second,third]
+    states[name]={'U':ss.module_payload(U),'V':ss.module_payload(V)}
+
+# The positive ordinary pair lies OUTSIDE BOTH band endpoint sets.
+UB=supported_module(A,loc(A,['B_s','B_v']))
+target=ss.direct_sum(A.alg,[UB,sr.Module.simple(A.alg,3)],[1,1])
+embedded=[[] for _ in range(6)]
+embedded[3]=[ix['B_v'],ix['B_d']]
+embedded[5]=[ix['B_s']]
+global_return=checked_kernel(A,sr.Module.simple(A.alg,5),target,embedded,
+                             'FULL Omega LEFT L_B3=U_B direct_sum L_B1')
+
+deep_left=supported_module(A,loc(A,['zt']))
+deep_right=supported_module(O,loc(O,['zt']))
+deep_isos=[]
+for M,T,v in [(deep_left,A,4),(deep_right,O,1)]:
+    S=sr.Module.simple(T.alg,v)
+    assert M.dimensions==S.dimensions
+    iso=ss.check_isomorphism(M,S,ss.encode(
+        [[rk.unit_vector(d,j) for j in range(d)] for d in M.dimensions]))
+    counts['actual_kernel_isomorphisms']+=1
+    deep_isos.append(iso)
+physical=[[sum(l==y and r==x for _,l,r in A.basis) for x in range(6)] for y in range(6)]
+assert physical[4][5]==0 # High LEFT L_B2 detector B3 is invisible.
+assert physical[2][1]==0 # High RIGHT R_D2 detector D3 is invisible.
+assert physical[5][5]>0
+assert physical[4][1]==2 # Actual cubic arrow exists; it supplies no ordinary return.
+
+result={'status':'passed','field':'Q','python':sys.version,'independent_verification':False,
+        'counts':counts,'dimension':26,'algebra':A.payload,'physical_matrix':physical,
+        'J4_zero':True,'whole_cubic_band_basis':['zt'],
+        'whole_LEFT_band_factor_set':[4],'whole_RIGHT_band_factor_set':[1],
+        'whole_LEFT_band_pd':'infinity by actual LEFT_B period',
+        'whole_RIGHT_band_pd':'infinity by actual RIGHT_D period',
+        'deep_simple_isomorphisms':deep_isos,'actual_states':states,
+        'FULL_period_and_source_kernels':certificates,'global_return_kernel':global_return,
+        'all_degree_statements_from_actual_kernel_iteration':{
+            'LEFT_source_B2':'Tor_n(R_x,L_B2)=1 exactly at x=B3 for EVERY n>=2',
+            'RIGHT_source_D2':'Tor_n(R_D2,L_y)=1 exactly at y=D3 for EVERY n>=2',
+            'ALL_visible_pairs_with_LEFT_source_B2_or_RIGHT_source_D2':'zero for EVERY n>=2',
+            'global_ordinary_pair':'Tor_n(R_B3,L_B3)>=1 EVERY n>=1; outside both band label sets',
+            'band_locality_false':True,'UGA_counterexample':False,
+            'badness_specific_alternative_refuted':False},
+        'scope':'One new actual dimension26 triangular algebra. Unchanged C119 witness supplies the structural construction; new full kernel checks establish both selected source tails and the global return. Normal self-audit/shared code, not independent/formal verification.'}
+args.out.write_text(json.dumps(ss.encode(result),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'status':'passed','dimension':26,'counts':counts,
+                  'both_band_pds':'infinite','band_locality':'false',
+                  'global_return':'B3 diagonal EVERY positive degree'}))

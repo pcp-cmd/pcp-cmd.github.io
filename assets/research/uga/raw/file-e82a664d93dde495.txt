@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-04T07:32:15.327384+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "78ae44b4b44ac2fd2b2507d3c1312205244601b1daab74b04ca4254236c0a7a8",
+    "object": "Infinite-state actual ordinary carrier-type termination and drifting minimal-resolution cross-Ext boundary",
+    "deliverables": [
+      "verify_carrier_type_termination.py",
+      "carrier-type-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "Possibly infinite actual module family; EVERY real envelope has locally finite kernel sum and ONE UNIFORM middle-module pd bound h.",
+      "Visible independent infinite-LEFT/infinite-RIGHT composition rectangle for every state; no carrier identifies distinct modules.",
+      "Same carrier types imply high CROSS-Ext vanishing under ambient supported cutoff, by ordinary simple pd/id and double devissage.",
+      "Real ALL-target degree-one connecting products terminate after tau(B+1) factors, with pd <= h+tau(B+1)-1 and tau <= 4^N.",
+      "Actual infinite minimal tails have nonzero long spliced ordinary extensions by last nonsplit cover and first-variable projective dimension shifting.",
+      "INFINITELY MANY aligned syzygies suffice, with at most tau(B+1) such states under supported cutoff; misaligned gaps permitted.",
+      "Pointwise module self-Ext is insufficient in an infinite family: M_lambda has self-Ext zero n>=2 but cross-Ext to M_(2^n lambda) nonzero ALL n>=1.",
+      "Both simple infinite-pd labels use actual minimal resolution/Tor, no quarantined opposite-side transfer.",
+      "Finite type/subkernel repairs in an infinite family require an independent UNIFORM pd bound; no finitistic-dimension assertion.",
+      "Q drift calibration with q=2; general theorem arbitrary k, infinite-order drift not asserted for every field.",
+      "Same author/shared helpers; NOT independently verified, no novelty claim, Universal Gap A OPEN."
+    ],
+    "domain": "Ordinary module exact sequences, actual minimal resolutions, cross Ext, finite carrier types and supported simple Tor",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Exact rational multiplication, minimal covers, unimodular basis inverses and literal Hom-cochain ranks over Q"
+      ],
+      "existence_evidence": "Frozen actual-cover and module-isomorphism helpers, raw multiplication with xy=z and yx=-2z.",
+      "local_availability": "available",
+      "availability_evidence": "Successful local exact execution under 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "selection_reason": "Actual module kernels and Hom cochain matrices test the drifting-state obstruction; infinite formulas and carrier-type stopping are separate written ordinary proofs.",
+    "fallback_reason": "Reused same-session inventory: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python through math-science-computation observer_run.py",
+    "command_or_input": "python -B verify_carrier_type_termination.py --project-root PROJECT_ROOT --out carrier-type-result.json",
+    "code_artifact": "verify_carrier_type_termination.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_carrier_type_termination.py",
+      "sha256": "55f009cc48e971ac96b46af055fde8df6784e194ca11db94630d5fb82a4fe6bb"
+    },
+    {
+      "role": "result",
+      "path": "carrier-type-result.json",
+      "sha256": "b67f56a911c55534165c8585412bd1522db526ba024cbc681cb617ae6a56aea8"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "result_artifact": "carrier-type-result.json",
+    "summary": "First execution passed64 triples,5 actual covers,15 integral inverses,4 kernel isomorphisms,8 minimal differential segments and16 ordinary Ext ranks. Written infinite drift/self-versus-cross formulas and general stopping proof separate from bounded checks."
+  },
+  "verification": {
+    "methods": [
+      "Full four-dimensional multiplication associativity, including negative rational-field structure coefficient",
+      "Actual regular projective envelope and four minimal M_lambda covers/kernel M_2lambda isomorphisms",
+      "Eight literal minimal differential compositions, ranks and kernel-equals-next-image checks",
+      "Sixteen actual Hom-cochain differential/rank calculations for self and future targets",
+      "Written ALL-degree parameter kernel/cochain identities and pairwise-nonisomorphic ratio argument",
+      "Written ordinary simple infinity and diagonal Tor from actual minimal resolutions",
+      "Written ordinary cross-Ext/devissage, real positive-word nilpotence and finite-type stopping bound",
+      "Written nonzero long syzygy extensions and infinitely-many-aligned-states corollary",
+      "Four frozen helper hashes and artifact/schema integrity"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact Fraction arithmetic and integral cover certificates, no numerical residual.",
+    "limitations": [
+      "Same author/shared helpers; NOT independently verified.",
+      "Finite parameter/degree checks are not an infinity inference; all-degree formulas and theorem have separate ordinary proofs.",
+      "The drift counterexample refutes only the individual self-Ext shortcut; its algebra already has ordinary supported diagonal return.",
+      "Q benchmark q=2; infinite nonisomorphic drift needs a parameter of infinite multiplicative order.",
+      "Uniform envelope and error bounds cannot be replaced by pointwise finite pd.",
+      "Carrier visibility and infinitely many aligned syzygies are not asserted automatically for arbitrary algebras.",
+      "No differential-image deletion, singular-to-ordinary inference or opposite-infinite-plus transfer.",
+      "Schema/hashes do not certify independent mathematical semantics; full Universal Gap A OPEN."
+    ]
+  }
+}

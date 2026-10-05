@@ -1,0 +1,2059 @@
+# Universal Gap A — Universal Layer U4
+## Run B — Stable Anchor / Singularity-Category Transfer
+
+**Role:** Run B — Independent Representation-Change Route  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Completion label:** `B1_VERIFIED + B2_CONDITIONAL + B3_ANCHOR_KERNEL_DESCENT + FRONTIER_COMPRESSION`  
+**Global U4:** OPEN  
+**Field:** finite-dimensional algebra \(D\) over the project field \(k\)
+
+This file freezes the actual research trajectory of the U4 Run B window.
+
+It does **not** claim:
+
+- that every tail-recurrent simple is Peirce-visible;
+- that a nonzero morphism in \(D_{\rm sg}(D)\) is automatically seen by the tail detector;
+- that a periodic module forces a periodic simple quotient;
+- that stable module category and singularity category are the same for arbitrary \(D\);
+- that the full singular anchor locus in a moduli family is Zariski constructible without a uniform syzygy-stabilization bound.
+
+The principal representation change is successful:
+
+\[
+\boxed{
+\text{arbitrarily-high Tor}
+\quad\rightsquigarrow\quad
+\text{a genuine triangulated tail object}.
+}
+\]
+
+The module-state problem is thereby reduced to a simple-level Peirce-visibility problem.
+
+---
+
+# 1. Frozen obstruction
+
+Fix a primitive detector vertex \(i\) and the corresponding right simple \(R_i\).
+
+The frozen obstruction supplies a finite-dimensional left \(D\)-module
+
+\[
+N
+\]
+
+which is either a high syzygy
+
+\[
+N=\Omega^m(L_b)
+\]
+
+or a purified descendant, such that
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,N)\neq0
+\quad\text{for arbitrarily high }n.
+}
+\tag{1.1}
+\]
+
+The desired Universal witness is a simple
+
+\[
+L_z
+\]
+
+satisfying both
+
+\[
+\boxed{
+e_zDe_i\neq0
+}
+\tag{1.2}
+\]
+
+and
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,L_z)\neq0
+\quad\text{for arbitrarily high }n.
+}
+\tag{1.3}
+\]
+
+Ordinary exact-state recurrence is unavailable.
+
+The point of U4 is to change representation rather than force state repetition.
+
+---
+
+# 2. Vault gate — explicit method mapping
+
+The required Vault methods were retrieved through the existing U3/MRS assets and mapped to the present stable-anchor problem.
+
+No missing Vault text was invented.
+
+## 2.1 Representation change
+
+Replace the predicate
+
+\[
+\operatorname{Tor}^D_n(R_i,X)\neq0
+\quad\text{arbitrarily high}
+\]
+
+by nonvanishing of one object in a quotient derived category.
+
+The target is a tail category in which bounded homology is literally zero.
+
+---
+
+## 2.2 Finding a bridge
+
+The bridge is
+
+\[
+\boxed{
+D_{\rm sg}(D)
+\xrightarrow{\ \mathfrak T_i\ }
+\mathsf{Tail}(k).
+}
+\]
+
+This moves information from singular objects to asymptotic Tor without choosing exact module states.
+
+---
+
+## 2.3 Identity / functorial transfer
+
+Use:
+
+- triangulated functoriality;
+- short-exact-sequence triangles;
+- the singular identity
+  \[
+  \Omega X\simeq X[-1]
+  \]
+  in \(D_{\rm sg}(D)\).
+
+This gives exact tail transfer along syzygies and along augmentations whose kernels are detector-null.
+
+---
+
+## 2.4 Local to global
+
+First decide a single simple factor.
+
+Then use a composition series to pass from a finite-length recurrent carrier to a simple recurrent carrier.
+
+Conversely, if every simple in a Serre sector is detector-null, then every finite-length object built from that sector is detector-null.
+
+---
+
+## 2.5 Standard form
+
+Over a field, every complex of vector spaces splits into its homology.
+
+Hence the target tail object can be represented by the graded sequence
+
+\[
+\cdots,
+\operatorname{Tor}^D_3(R_i,X),
+\operatorname{Tor}^D_2(R_i,X),
+\operatorname{Tor}^D_1(R_i,X)
+\]
+
+modulo deletion of finitely many leading degrees.
+
+No hidden extension data remain in the target.
+
+---
+
+## 2.6 Quotient / projection
+
+Two quotients are used:
+
+1. quotient derived vector spaces by bounded complexes;
+2. quotient \(D_{\rm sg}(D)\) by the object-kernel of \(\mathfrak T_i\).
+
+The second quotient isolates exactly the singular objects visible to the fixed Tor detector.
+
+---
+
+## 2.7 Bootstrap
+
+Bootstrap is not state recurrence.
+
+It is finite-length peeling:
+
+\[
+\text{tail-recurrent module}
+\to
+\text{tail-recurrent subquotient}
+\to
+\text{tail-recurrent simple}.
+\]
+
+If a visible simple quotient is detector-null, recurrence is transferred to its kernel.
+
+Thus anchor failure produces a smaller carrier.
+
+---
+
+## 2.8 Counterexample / adversarial calibration
+
+Quantum exterior algebras supply both required warnings:
+
+- exact periodic module orbits do not force the simple quotient to be periodic;
+- for infinite-order deformation parameter, syzygy can drift through an infinite parameter orbit.
+
+Thus periodicity/moduli intuition cannot replace the detector functor.
+
+---
+
+# 3. Tail category
+
+Use cohomological indexing.
+
+Let
+
+\[
+D^-_{\mathrm{fd}}(k)
+\]
+
+be the derived category of complexes of \(k\)-vector spaces whose cohomology is:
+
+- finite-dimensional in every degree;
+- zero in all sufficiently large positive degrees.
+
+Let
+
+\[
+D^b_{\mathrm{fd}}(k)
+\subset
+D^-_{\mathrm{fd}}(k)
+\]
+
+be the full thick subcategory of bounded-cohomology objects.
+
+Define
+
+\[
+\boxed{
+\mathsf{Tail}(k)
+=
+D^-_{\mathrm{fd}}(k)/
+D^b_{\mathrm{fd}}(k).
+}
+\tag{3.1}
+\]
+
+This is a Verdier quotient and hence triangulated.
+
+An object of \(D^-_{\mathrm{fd}}(k)\) is zero in \(\mathsf{Tail}(k)\) exactly when it has bounded cohomology.
+
+---
+
+# 4. Standard form of the target
+
+Since \(k\) is a field, every complex of \(k\)-vector spaces is quasi-isomorphic to its cohomology with zero differential.
+
+Therefore every object \(X\in D^-_{\mathrm{fd}}(k)\) has the standard form
+
+\[
+X
+\simeq
+\bigoplus_j H^j(X)[-j].
+\]
+
+Passing to \(\mathsf{Tail}(k)\) discards only a bounded prefix.
+
+Thus a tail object is literally an asymptotic graded vector-space object.
+
+This makes the representation faithful to the intended predicate:
+
+\[
+\boxed{
+\text{bounded homology is forgotten and nothing else is needed at object level}.
+}
+\]
+
+---
+
+# 5. B1 — Tail Detector Functor
+
+Fix the right simple \(R_i\).
+
+For
+
+\[
+X\in D^b(D\text{-mod}),
+\]
+
+define
+
+\[
+F_i(X)
+=
+R_i\otimes_D^{\mathbf L}X.
+\]
+
+A bounded-above projective resolution of \(X\) shows
+
+\[
+F_i(X)\in D^-_{\mathrm{fd}}(k).
+\]
+
+Let
+
+\[
+Q_{\rm tail}:
+D^-_{\mathrm{fd}}(k)
+\to
+\mathsf{Tail}(k)
+\]
+
+be the quotient.
+
+Define
+
+\[
+\boxed{
+\mathfrak T_i^{\,b}
+=
+Q_{\rm tail}
+\circ
+\left(
+R_i\otimes_D^{\mathbf L}-
+\right).
+}
+\tag{5.1}
+\]
+
+This is an exact triangulated functor.
+
+For an ordinary finite-dimensional left module \(X\),
+
+\[
+H^{-n}(F_i(X))
+=
+\operatorname{Tor}^D_n(R_i,X).
+\]
+
+Therefore
+
+\[
+\boxed{
+\mathfrak T_i^{\,b}(X)\neq0
+\iff
+\operatorname{Tor}^D_n(R_i,X)\neq0
+\text{ for arbitrarily high }n.
+}
+\tag{5.2}
+\]
+
+This is exactly the required tail detector representation.
+
+---
+
+# 6. B1 — factorization through the singularity category
+
+Let
+
+\[
+P\in\operatorname{Perf}(D)
+=
+K^b(D\text{-proj}).
+\]
+
+Then
+
+\[
+R_i\otimes_D P
+\]
+
+is a bounded complex of finite-dimensional vector spaces.
+
+Hence
+
+\[
+\mathfrak T_i^{\,b}(P)=0
+\]
+
+in \(\mathsf{Tail}(k)\).
+
+By the universal property of the Verdier quotient,
+
+\[
+\mathfrak T_i^{\,b}
+\]
+
+factors uniquely through
+
+\[
+D_{\rm sg}(D)
+=
+D^b(D\text{-mod})/\operatorname{Perf}(D).
+\]
+
+Thus there is an exact triangulated functor
+
+\[
+\boxed{
+\mathfrak T_i:
+D_{\rm sg}(D)
+\longrightarrow
+\mathsf{Tail}(k)
+}
+\tag{6.1}
+\]
+
+such that
+
+\[
+\mathfrak T_i q
+=
+\mathfrak T_i^{\,b},
+\]
+
+where
+
+\[
+q:D^b(D\text{-mod})\to D_{\rm sg}(D).
+\]
+
+This proves B1.
+
+---
+
+# 7. Stable syzygy identity
+
+For a module \(X\), a projective-cover sequence gives a triangle
+
+\[
+\Omega X
+\to
+P
+\to
+X
+\to
+\Omega X[1].
+\]
+
+Since \(P=0\) in \(D_{\rm sg}(D)\),
+
+\[
+\boxed{
+q(\Omega X)\simeq q(X)[-1].
+}
+\tag{7.1}
+\]
+
+Hence
+
+\[
+q(\Omega^mX)
+\simeq
+q(X)[-m].
+\]
+
+Applying the tail detector,
+
+\[
+\boxed{
+\mathfrak T_i(\Omega^mX)
+\simeq
+\mathfrak T_i(X)[-m].
+}
+\tag{7.2}
+\]
+
+Therefore:
+
+\[
+\boxed{
+\mathfrak T_i(\Omega^mX)\neq0
+\iff
+\mathfrak T_i(X)\neq0.
+}
+\tag{7.3}
+\]
+
+---
+
+# 8. Immediate return to a simple origin
+
+Suppose the frozen carrier is genuinely
+
+\[
+N=\Omega^m(L_b).
+\]
+
+Then
+
+\[
+\boxed{
+\mathfrak T_i(N)\neq0
+\Longrightarrow
+\mathfrak T_i(L_b)\neq0.
+}
+\tag{8.1}
+\]
+
+Equivalently:
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,L_b)\neq0
+\text{ for arbitrarily high }n.
+}
+\tag{8.2}
+\]
+
+Thus high-syzygy recurrence already returns to a **simple** object.
+
+No exact-state recurrence is needed.
+
+If
+
+\[
+e_bDe_i\neq0,
+\]
+
+the Universal witness is obtained immediately.
+
+If
+
+\[
+e_bDe_i=0,
+\]
+
+the remaining problem is purely Peirce visibility.
+
+This is one of the main compressions of U4.
+
+---
+
+# 9. Object kernel category
+
+Define
+
+\[
+\boxed{
+\mathcal K_i
+=
+\{X\in D_{\rm sg}(D):
+\mathfrak T_i(X)=0\}.
+}
+\tag{9.1}
+\]
+
+Because \(\mathfrak T_i\) is exact and additive,
+
+\[
+\boxed{
+\mathcal K_i
+\text{ is a thick subcategory}.
+}
+\tag{9.2}
+\]
+
+It is closed under:
+
+- shifts;
+- cones;
+- isomorphisms;
+- direct summands.
+
+Form the Verdier quotient
+
+\[
+\boxed{
+\mathcal Q_i
+=
+D_{\rm sg}(D)/\mathcal K_i.
+}
+\tag{9.3}
+\]
+
+The tail functor factors further as
+
+\[
+D_{\rm sg}(D)
+\to
+\mathcal Q_i
+\xrightarrow{\widehat{\mathfrak T}_i}
+\mathsf{Tail}(k).
+\]
+
+The induced functor is **conservative on objects**:
+
+\[
+\boxed{
+\widehat{\mathfrak T}_i(X)=0
+\Longrightarrow
+X=0
+\text{ in }\mathcal Q_i.
+}
+\tag{9.4}
+\]
+
+No faithfulness on morphisms is claimed.
+
+---
+
+# 10. Morphism-kernel ideal
+
+For objects \(X,Y\in D_{\rm sg}(D)\), define
+
+\[
+\boxed{
+\mathcal J_i(X,Y)
+=
+\ker
+\left[
+\operatorname{Hom}_{D_{\rm sg}(D)}(X,Y)
+\to
+\operatorname{Hom}_{\mathsf{Tail}(k)}
+(\mathfrak T_iX,\mathfrak T_iY)
+\right].
+}
+\tag{10.1}
+\]
+
+Then
+
+\[
+\mathcal J_i
+\]
+
+is a two-sided ideal of morphisms.
+
+This separates two distinct phenomena:
+
+1. an object is detector-null:
+   \[
+   X\in\mathcal K_i;
+   \]
+2. a singular morphism is detector-blind:
+   \[
+   f\in\mathcal J_i
+   \]
+   even though source and target may both be nonzero in \(D_{\rm sg}(D)\).
+
+This distinction is essential for augmentation transfer.
+
+---
+
+# 11. B2 — Stable Augmentation Transfer
+
+Let
+
+\[
+0\to A
+\to N
+\xrightarrow{f}
+L_z
+\to0
+\]
+
+be a short exact sequence with simple quotient \(L_z\).
+
+It gives a triangle
+
+\[
+A
+\to
+N
+\xrightarrow{f}
+L_z
+\to
+A[1].
+\]
+
+## Theorem 11.1 — kernel criterion
+
+If
+
+\[
+\boxed{
+A\in\mathcal K_i,
+}
+\]
+
+then
+
+\[
+\boxed{
+\mathfrak T_i(f):
+\mathfrak T_i(N)
+\xrightarrow{\sim}
+\mathfrak T_i(L_z)
+}
+\tag{11.1}
+\]
+
+is an isomorphism.
+
+Hence:
+
+\[
+\boxed{
+\mathfrak T_i(N)\neq0
+\Longrightarrow
+\mathfrak T_i(L_z)\neq0.
+}
+\tag{11.2}
+\]
+
+In particular, it is enough that \(A\) have finite projective dimension.
+
+This gives a concrete sufficient Stable Augmentation Transfer theorem.
+
+---
+
+# 12. The complementary descent branch
+
+In the same short exact sequence, suppose instead
+
+\[
+\mathfrak T_i(L_z)=0.
+\]
+
+Then exactness gives
+
+\[
+\boxed{
+\mathfrak T_i(A)
+\xrightarrow{\sim}
+\mathfrak T_i(N).
+}
+\tag{12.1}
+\]
+
+Therefore:
+
+\[
+\boxed{
+\text{failed simple anchor}
+\Longrightarrow
+\text{strict finite-length descent to the kernel}.
+}
+\tag{12.2}
+\]
+
+The kernel has strictly smaller composition length.
+
+This is the fundamental anchor/descent dichotomy:
+
+\[
+\boxed{
+\begin{array}{c}
+\mathfrak T_i(N)\neq0,\ N\twoheadrightarrow L_z
+\\[2mm]
+\Downarrow
+\\[2mm]
+\mathfrak T_i(L_z)\neq0
+\quad\text{or}\quad
+\mathfrak T_i(\ker f)\cong\mathfrak T_i(N)\neq0.
+\end{array}
+}
+\tag{12.3}
+\]
+
+---
+
+# 13. Minimal Tail Carrier Lemma
+
+Among all finite-dimensional modules \(X\) with
+
+\[
+\mathfrak T_i(X)\neq0,
+\]
+
+choose one of minimal composition length.
+
+Then \(X\) is simple.
+
+### Proof
+
+If \(X\) is not simple, choose a simple quotient
+
+\[
+X\twoheadrightarrow L
+\]
+
+with kernel \(A\).
+
+By minimality,
+
+\[
+\mathfrak T_i(A)=0.
+\]
+
+The kernel criterion gives
+
+\[
+\mathfrak T_i(X)
+\simeq
+\mathfrak T_i(L).
+\]
+
+Thus \(L\) is a shorter tail-recurrent module, contradiction.
+
+\(\square\)
+
+Therefore every nonzero tail detector admits a simple witness:
+
+\[
+\boxed{
+\mathfrak T_i\neq0
+\Longrightarrow
+\exists\text{ simple }L_y:
+\mathfrak T_i(L_y)\neq0.
+}
+\tag{13.1}
+\]
+
+Equivalently:
+
+\[
+\boxed{
+\exists y:
+\operatorname{Tor}^D_n(R_i,L_y)\neq0
+\text{ arbitrarily high}.
+}
+\tag{13.2}
+\]
+
+Again, visibility of \(y\) is a separate issue.
+
+---
+
+# 14. Composition-series version
+
+Let
+
+\[
+0=N_0\subset N_1\subset\cdots\subset N_\ell=N
+\]
+
+be a composition series with factors
+
+\[
+N_j/N_{j-1}\cong L_{y_j}.
+\]
+
+If
+
+\[
+\mathfrak T_i(L_{y_j})=0
+\qquad
+\forall j,
+\]
+
+then repeated triangles imply
+
+\[
+\mathfrak T_i(N)=0.
+\]
+
+Contrapositively:
+
+\[
+\boxed{
+\mathfrak T_i(N)\neq0
+\Longrightarrow
+\exists\text{ composition factor }L_y
+\text{ with }
+\mathfrak T_i(L_y)\neq0.
+}
+\tag{14.1}
+\]
+
+This is the local-to-global / global-to-local bridge for finite-length carriers.
+
+---
+
+# 15. Visible Serre sector
+
+Define the visible vertex set
+
+\[
+\boxed{
+\mathcal V_i
+=
+\{z:
+e_zDe_i\neq0\}.
+}
+\tag{15.1}
+\]
+
+Let
+
+\[
+\mathcal S_i
+\]
+
+be the Serre subcategory of finite-dimensional left \(D\)-modules generated by
+
+\[
+\{L_z:z\in\mathcal V_i\}.
+\]
+
+Inside the singularity category define
+
+\[
+\boxed{
+\langle\mathcal S_i\rangle_{\rm sg}
+=
+\operatorname{thick}
+\{q(L_z):z\in\mathcal V_i\}.
+}
+\tag{15.2}
+\]
+
+Suppose the desired visible return fails:
+
+\[
+\boxed{
+\mathfrak T_i(L_z)=0
+\qquad
+\forall z\in\mathcal V_i.
+}
+\tag{15.3}
+\]
+
+Then
+
+\[
+\boxed{
+\langle\mathcal S_i\rangle_{\rm sg}
+\subseteq
+\mathcal K_i.
+}
+\tag{15.4}
+\]
+
+So every object built singularly from visible simples is detector-null.
+
+---
+
+# 16. B3 — Anchor-Kernel Descent Theorem
+
+Assume:
+
+\[
+\mathfrak T_i(N)\neq0
+\]
+
+and all visible simples satisfy (15.3).
+
+Then:
+
+1. \(q(N)\notin\mathcal K_i\);
+2. \(q(N)\notin\langle\mathcal S_i\rangle_{\rm sg}\);
+3. some simple composition factor \(L_y\) satisfies
+   \[
+   \mathfrak T_i(L_y)\neq0;
+   \]
+4. every such tail-visible simple witness can be chosen with
+   \[
+   \boxed{
+   e_yDe_i=0.
+   }
+   \]
+
+Hence:
+
+\[
+\boxed{
+\text{failure of visible anchoring}
+\Longrightarrow
+\text{tail recurrence descends to the Peirce-invisible simple sector}.
+}
+\tag{16.1}
+\]
+
+This is a strict categorical support descent.
+
+It is **not** yet a theorem that the recurrence factors through the singularity category of the vertex-deleted algebra.
+
+That stronger algebra-quotient identification would require additional homological hypotheses.
+
+---
+
+# 17. Quotient interpretation
+
+In
+
+\[
+\mathcal Q_i
+=
+D_{\rm sg}(D)/\mathcal K_i,
+\]
+
+every visible simple is zero under the no-visible-return hypothesis.
+
+Therefore the nonzero object represented by a recurrent carrier is thick-generated by surviving invisible simple images.
+Thus the entire detector recurrence has been compressed to:
+
+\[
+\boxed{
+\text{a nonzero object in a singular quotient generated only by invisible simples}.
+}
+\tag{17.1}
+\]
+
+This is the stable-anchor version of detector purification.
+
+---
+
+# 18. Singularly trivial augmentation — what it really means
+
+The stable module category must not be identified with \(D_{\rm sg}(D)\) in general.
+
+For an Artin algebra, the correct bridge is the Keller–Vossieck stabilization theorem:
+
+\[
+\boxed{
+D_{\rm sg}(D)
+\simeq
+\text{stabilization of }
+\underline{D\text{-mod}}
+\text{ obtained by formally inverting }\Omega.
+}
+\tag{18.1}
+\]
+
+For finite modules \(X,Y\), one has the colimit description
+
+\[
+\boxed{
+\operatorname{Hom}_{D_{\rm sg}(D)}(X,Y)
+\cong
+\varinjlim_n
+\underline{\operatorname{Hom}}_D
+(\Omega^nX,\Omega^nY).
+}
+\tag{18.2}
+\]
+
+Consequently, if a module map
+
+\[
+f:X\to Y
+\]
+
+satisfies
+
+\[
+q(f)=0
+\quad\text{in }D_{\rm sg}(D),
+\]
+
+then for some sufficiently large \(n\),
+
+\[
+\boxed{
+\underline{\Omega^nf}=0.
+}
+\tag{18.3}
+\]
+
+Equivalently, a representative of
+
+\[
+\Omega^nf
+\]
+
+factors through a projective module.
+
+This is the correct projective-factorization statement.
+
+One must **not** claim that \(f\) itself necessarily factors through a perfect object.
+
+---
+
+# 19. Protected Projective Sector
+
+Apply the preceding result to an augmentation
+
+\[
+f:N\twoheadrightarrow L_z.
+\]
+
+If
+
+\[
+q(f)=0
+\quad\text{in }D_{\rm sg}(D),
+\]
+
+then high syzygy translates of the augmentation become projectively factorized.
+
+Thus a singularly trivial visible anchor produces:
+
+\[
+\boxed{
+\text{an eventual projective shield between the recurrent carrier and the visible simple}.
+}
+\tag{19.1}
+\]
+
+This is the singularity-category form of the U3 protected-projective-sector phenomenon.
+
+If \(N\) is \(p\)-periodic, once a syzygy translate becomes stably zero, all subsequent translates remain stably zero.
+
+Periodicity therefore repeats the projective protection; it does not force the map to become visible.
+
+---
+
+# 20. Singularly nontrivial is not enough
+
+Suppose
+
+\[
+q(f)\neq0
+\quad\text{in }D_{\rm sg}(D).
+\]
+
+This alone does **not** imply
+
+\[
+\mathfrak T_i(f)\neq0.
+\]
+
+The tail detector is not known to be faithful on morphisms.
+
+The exact sufficient condition is:
+
+\[
+\boxed{
+\mathfrak T_i(f)\neq0.
+}
+\]
+
+A practical stronger condition is:
+
+\[
+\boxed{
+\operatorname{Cone}(f)\in\mathcal K_i.
+}
+\]
+
+For an augmentation, this is precisely the kernel criterion.
+
+---
+
+# 21. Categorical counterexample to “nonzero singular map transfers”
+
+Assume the kernel category contains a nonzero singular object
+
+\[
+0\neq B\in\mathcal K_i
+\]
+
+and there is some
+
+\[
+A\notin\mathcal K_i.
+\]
+
+Then the projection
+
+\[
+f:A\oplus B\to B
+\]
+
+is a nonzero split epimorphism in \(D_{\rm sg}(D)\), but
+
+\[
+\mathfrak T_i(f)=0
+\]
+
+because
+
+\[
+\mathfrak T_i(B)=0.
+\]
+
+Thus:
+
+\[
+\boxed{
+q(f)\neq0
+\not\Rightarrow
+\mathfrak T_i(f)\neq0
+}
+\tag{21.1}
+\]
+
+whenever the detector has a nontrivial singular kernel.
+
+So B2 cannot be based on singular nontriviality alone.
+
+---
+
+# 22. Periodic source objects
+
+Assume
+
+\[
+q(N)\simeq q(N)[p]
+\]
+
+in \(D_{\rm sg}(D)\).
+
+Then exactness of \(\mathfrak T_i\) gives
+
+\[
+\boxed{
+\mathfrak T_i(N)
+\simeq
+\mathfrak T_i(N)[p].
+}
+\tag{22.1}
+\]
+
+In the standard-form tail category this means the Tor tail is eventually \(p\)-periodic up to vector-space isomorphism.
+
+Now let
+
+\[
+f:N\to L_z.
+\]
+
+There are two possibilities.
+
+### Detector-seen anchor
+
+If
+
+\[
+\mathfrak T_i(f)\neq0,
+\]
+
+then
+
+\[
+\mathfrak T_i(L_z)\neq0
+\]
+
+and the anchor transfers.
+
+### Detector-blind anchor
+
+If
+
+\[
+\mathfrak T_i(f)=0,
+\]
+
+then every periodic translate remains detector-blind by functoriality and shift compatibility.
+
+Thus:
+
+\[
+\boxed{
+\text{periodicity amplifies transfer if it already exists,
+but cannot create detector visibility from a blind map}.
+}
+\tag{22.2}
+\]
+
+---
+
+# 23. Quantum-exterior period-two calibration
+
+Consider the quantum exterior algebra
+
+\[
+A_q
+=
+k\langle x,y\rangle/
+(x^2,y^2,xy+qyx).
+\]
+
+For the standard two-dimensional left ideals
+
+\[
+M_\alpha=A_q(x+\alpha y),
+\]
+
+the relation
+
+\[
+(x+q\alpha y)(x+\alpha y)=0
+\]
+
+gives
+
+\[
+\boxed{
+\Omega M_\alpha
+\simeq
+M_{q\alpha}.
+}
+\tag{23.1}
+\]
+
+If \(q\) has order \(2\), for generic nonzero \(\alpha\),
+
+\[
+\boxed{
+\Omega^2M_\alpha
+\simeq
+M_\alpha.
+}
+\tag{23.2}
+\]
+
+So \(M_\alpha\) is periodic of period dividing \(2\).
+
+The algebra is local, so \(M_\alpha\) has the unique simple module \(k\) as a quotient.
+
+However the simple \(k\) over the two-generator quantum complete intersection has complexity \(2\), whereas a nonprojective periodic module has complexity \(1\).
+
+Therefore \(k\) is not periodic.
+
+Thus:
+
+\[
+\boxed{
+\text{periodic module}
++
+\text{simple quotient}
+\not\Rightarrow
+\text{periodic simple}.
+}
+\tag{23.3}
+\]
+
+This directly refutes any orbit-accessibility argument that tries to transfer periodicity itself from \(N\) to a simple anchor.
+
+The calibration is even self-injective, so the failure cannot be blamed on confusing stable and singular categories.
+
+---
+
+# 24. Stable nontriviality of the quantum-exterior top map
+
+The canonical top map
+
+\[
+M_\alpha\twoheadrightarrow k
+\]
+
+is nonzero in the stable category.
+
+Indeed every map
+
+\[
+M_\alpha\to A_q
+\]
+
+sends the generator \(x+\alpha y\) into the radical; composing with
+
+\[
+A_q\twoheadrightarrow k
+\]
+
+therefore gives zero.
+
+So the top map does not factor through a projective.
+
+Hence the quantum-exterior example also shows:
+
+\[
+\boxed{
+\text{nonzero stable/singular augmentation}
++
+\text{periodic source}
+\not\Rightarrow
+\text{periodic simple target}.
+}
+\tag{24.1}
+\]
+
+Again, this does not contradict the tail-transfer theorem: it only kills the stronger periodicity inference.
+
+---
+
+# 25. Moduli drift calibration
+
+For the same quantum-exterior family,
+
+\[
+\Omega M_\alpha
+\simeq
+M_{q\alpha}.
+\]
+
+If \(q\) has infinite multiplicative order and \(\alpha\neq0\), the orbit
+
+\[
+\alpha,\ q\alpha,\ q^2\alpha,\ldots
+\]
+
+is infinite.
+
+Over an algebraically closed field, it is Zariski dense in \(\mathbb A^1\).
+
+Thus exact finite-dimensional syzygy dynamics can exhibit genuine moduli drift.
+
+No state-repetition argument is available.
+
+---
+
+# 26. Finite-stage algebraic anchor loci
+
+Suppose
+
+\[
+\{M_\lambda\}_{\lambda\in X}
+\]
+
+is an algebraic family of \(D\)-modules of fixed dimension vector over a finite-type parameter variety \(X\).
+
+For a fixed module \(L\):
+
+\[
+\operatorname{Hom}_D(L,M_\lambda)
+\]
+
+is the kernel of a matrix whose entries are regular functions of \(\lambda\).
+
+Hence the loci
+
+\[
+\{\lambda:
+\dim\operatorname{Hom}_D(L,M_\lambda)\ge d\}
+\]
+
+are determinantal closed subsets.
+
+For stable Hom, maps factoring through projectives are images of finite composition maps through the finitely many indecomposable projectives.
+
+After a finite rank stratification, the dimension of
+
+\[
+\underline{\operatorname{Hom}}_D(L,M_\lambda)
+\]
+
+is constructible.
+
+Therefore:
+
+\[
+\boxed{
+\{\lambda:
+\underline{\operatorname{Hom}}_D(L,M_\lambda)\neq0\}
+}
+\]
+
+is constructible for a fixed algebraic family.
+
+The same statement holds at every **fixed finite syzygy stage** after a finite stratification on which the required projective-cover ranks are constant.
+
+---
+
+# 27. Why the full singular anchor locus is not yet constructible
+
+For a general Artin algebra,
+
+\[
+\operatorname{Hom}_{D_{\rm sg}(D)}(X,Y)
+\cong
+\varinjlim_n
+\underline{\operatorname{Hom}}_D
+(\Omega^nX,\Omega^nY).
+\]
+
+The stage \(n\) at which a singular morphism is represented or dies need not admit a uniform bound in a moduli family.
+
+Therefore finite-stage constructibility does **not** imply that
+
+\[
+\boxed{
+\{\lambda:
+\operatorname{Hom}_{D_{\rm sg}(D)}
+(L_z,M_\lambda)\neq0\}
+}
+\]
+
+is constructible.
+
+A global Zariski argument would require an additional uniform stabilization theorem, for example in a class where the singularity category is already represented at a bounded syzygy stage.
+
+No such hypothesis is available universally in U4.
+
+Thus the moduli-geometry branch remains a conditional tool, not a Universal proof.
+
+---
+
+# 28. Exact-periodic orbit audit
+
+Suppose the module tail is actually periodic:
+
+\[
+\Omega^pN\simeq N.
+\]
+
+Then in \(D_{\rm sg}(D)\)
+
+\[
+N\simeq N[p]
+\]
+
+up to the chosen shift convention.
+
+For an augmentation
+
+\[
+f:N\to L_z,
+\]
+
+periodicity yields shifted morphisms
+
+\[
+N[pn]\to L_z[pn].
+\]
+
+But:
+
+- if \(f\in\mathcal J_i\), every shifted morphism remains in the detector-kernel ideal;
+- if \(q(f)=0\), all sufficiently high syzygy translates factor through projectives;
+- if \(\mathfrak T_i(f)\neq0\), transfer was already achieved before invoking periodicity.
+
+Therefore finite-dimensional Hom spaces and naturality do not provide an extra Universal transfer mechanism.
+
+The periodic orbit has only two stable outcomes:
+
+\[
+\boxed{
+\text{persistent detector-seen anchor}
+\quad\text{or}\quad
+\text{persistent detector blindness}.
+}
+\tag{28.1}
+\]
+
+---
+
+# 29. Tail-simple extraction versus Peirce visibility
+
+The B1 functor and finite-length descent completely solve the module-complexity part of the frozen obstruction:
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,N)\neq0\text{ i.o.}
+\Longrightarrow
+\exists\text{ simple }L_y:
+\operatorname{Tor}^D_n(R_i,L_y)\neq0\text{ i.o.}
+}
+\tag{29.1}
+\]
+
+What remains is precisely:
+
+\[
+\boxed{
+\text{Can }y\text{ be forced to satisfy }e_yDe_i\neq0?
+}
+\tag{29.2}
+\]
+
+Under a hypothetical Gap-A failure, the expected answer is exactly the opposite: all persistent simple targets for \(R_i\) must lie in the Peirce-invisible dead zone.
+
+Thus U4 has reduced the problem to the correct simple-level frontier rather than solved visibility by state recurrence.
+
+---
+
+# 30. B3 — refined anchor-kernel dichotomy
+
+For any tail-recurrent finite-length module \(N\):
+
+\[
+\boxed{
+\begin{array}{c}
+\mathfrak T_i(N)\neq0
+\\[2mm]
+\Downarrow
+\\[2mm]
+\text{either a visible simple }L_z
+\text{ satisfies }\mathfrak T_i(L_z)\neq0
+\\[1mm]
+\text{or}
+\\[1mm]
+\text{some invisible simple }L_y
+\text{ satisfies }\mathfrak T_i(L_y)\neq0.
+\end{array}
+}
+\tag{30.1}
+\]
+
+If the first branch occurs, the desired visible witness is obtained.
+
+If the second branch occurs, the entire recurrence survives in the quotient singular category after killing the visible Serre sector.
+
+This is the exact stable-anchor descent.
+
+---
+
+# 31. Relation to the previous U3 frontier
+
+The previous U3 run showed that bare first-defect bootstrap is false and isolated the missing structure as:
+
+\[
+\text{bilateral perfect/free}
++
+\text{actual coring coupling}
++
+\text{no ambient return}.
+\]
+
+U4 does not repair U3 by forcing renewal.
+
+Instead it provides a different representation:
+
+\[
+\boxed{
+\text{replace recurrent module states by a simple tail witness in }
+D_{\rm sg}(D)/\mathcal K_i.
+}
+\]
+
+Thus the two routes meet at a cleaner interface:
+
+- U3 controls how actual derived defects can terminate;
+- U4 controls which simple singular objects remain visible to a fixed Tor detector.
+
+---
+
+# 32. What was proved
+
+## VERIFIED — B1 Tail Detector Functor
+
+\[
+\boxed{
+\mathfrak T_i:
+D_{\rm sg}(D)
+\to
+\mathsf{Tail}(k)
+}
+\]
+
+exists and satisfies
+
+\[
+\mathfrak T_i(X)\neq0
+\iff
+\operatorname{Tor}^D_n(R_i,X)\neq0
+\text{ arbitrarily high}
+\]
+
+for finite modules.
+
+---
+
+## VERIFIED — Simple-origin transfer
+
+If
+
+\[
+N=\Omega^m(L_b),
+\]
+
+then
+
+\[
+\boxed{
+\mathfrak T_i(N)\neq0
+\iff
+\mathfrak T_i(L_b)\neq0.
+}
+\]
+
+---
+
+## VERIFIED — Stable Augmentation Transfer under a kernel condition
+
+For
+
+\[
+0\to A\to N\to L_z\to0,
+\]
+
+if
+
+\[
+A\in\mathcal K_i,
+\]
+
+then
+
+\[
+\boxed{
+\mathfrak T_i(N)
+\simeq
+\mathfrak T_i(L_z).
+}
+\]
+
+---
+
+## VERIFIED — Failure descent
+
+If
+
+\[
+\mathfrak T_i(L_z)=0,
+\]
+
+then
+
+\[
+\boxed{
+\mathfrak T_i(\ker(N\to L_z))
+\simeq
+\mathfrak T_i(N).
+}
+\]
+
+So failed anchoring strictly reduces module length.
+
+---
+
+## VERIFIED — B3 Anchor-Kernel Descent
+
+If every visible simple is detector-null but \(N\) is detector-recurrent, then some Peirce-invisible simple is detector-recurrent.
+
+---
+
+## VERIFIED — singularly trivial augmentation interpretation
+
+If an augmentation is zero in \(D_{\rm sg}(D)\), some sufficiently high syzygy translate factors through a projective module.
+
+---
+
+# 33. What was refuted
+
+## REFUTED A
+
+\[
+\text{periodic }N
++
+N\twoheadrightarrow L_z
+\Longrightarrow
+L_z\text{ periodic}.
+\]
+
+Quantum exterior period-two modules refute this.
+
+---
+
+## REFUTED B
+
+\[
+q(f)\neq0
+\text{ in }D_{\rm sg}
+\Longrightarrow
+\mathfrak T_i(f)\neq0.
+\]
+
+False whenever the detector kernel contains a nonzero singular object.
+
+---
+
+## REFUTED C
+
+\[
+\text{periodicity + finite-dimensional Hom}
+\Longrightarrow
+\text{eventual detector transfer}.
+\]
+
+Naturality preserves the detector-kernel ideal; periodicity can perpetuate blindness.
+
+---
+
+## REFUTED D
+
+An infinite syzygy orbit must repeat a module state.
+
+The quantum exterior moduli-drift family satisfies
+
+\[
+\Omega M_\alpha\simeq M_{q\alpha}
+\]
+
+and has infinite parameter orbit when \(q\) has infinite order.
+
+---
+
+# 34. Counterexample / calibration summary
+
+## Period-two calibration
+
+A periodic nonprojective quantum-exterior module can have the unique simple as a nonperiodic quotient.
+
+This kills direct periodic-anchor inference.
+
+## Infinite moduli drift
+
+The same family with \(q\) of infinite order yields an infinite, generically Zariski-dense syzygy orbit.
+
+This kills state-repetition inference.
+
+## Nonfaithful detector calibration
+
+If
+
+\[
+0\neq B\in\mathcal K_i,
+\quad
+A\notin\mathcal K_i,
+\]
+
+the projection
+
+\[
+A\oplus B\to B
+\]
+
+is singularly nonzero but detector-zero.
+
+This kills “nonzero singular map is enough”.
+
+---
+
+# 35. Strongest theorem
+
+The strongest new result is the combined:
+
+\[
+\boxed{
+\textbf{Tail-Singularity Reduction Theorem}
+}
+\]
+
+For every primitive detector \(R_i\), arbitrarily-high Tor defines an exact tail functor
+
+\[
+\mathfrak T_i:
+D_{\rm sg}(D)\to\mathsf{Tail}(k).
+\]
+
+Every finite-length tail-recurrent object has a tail-recurrent simple factor.
+
+High syzygies return automatically to their simple origin.
+
+If all Peirce-visible simples are detector-null, then every recurrent carrier survives only through the thick singular sector generated by Peirce-invisible simples.
+
+Thus:
+
+\[
+\boxed{
+\text{the stable-anchor problem is not a module-recurrence problem anymore;}
+}
+\]
+
+it is a Peirce-visibility problem for simple objects in the detector quotient.
+
+---
+
+# 36. Exact remaining interface
+
+The remaining Universal question is now:
+
+\[
+\boxed{
+\textbf{Can }
+\mathcal Q_i
+=
+D_{\rm sg}(D)/\mathcal K_i
+\textbf{ be nonzero while every surviving simple is Peirce-invisible from }i?
+}
+\tag{36.1}
+\]
+
+Equivalently:
+
+\[
+\boxed{
+\exists y:
+\mathfrak T_i(L_y)\neq0
+\quad\text{but}\quad
+e_yDe_i=0,
+}
+\]
+
+with all visible simples lying in \(\mathcal K_i\).
+
+To close U4 positively one needs an additional bridge from:
+
+\[
+\text{simple tail persistence}
+\]
+
+to
+
+\[
+\text{Peirce visibility}.
+\]
+
+Neither periodicity, singular nontriviality of augmentation, nor finite-state recurrence supplies that bridge universally.
+
+---
+
+# 37. Moduli branch — exact remaining requirement
+
+If a future route uses a family
+
+\[
+M_\lambda,
+\qquad
+\Omega M_\lambda\simeq M_{\phi(\lambda)},
+\]
+
+it must first establish a **uniform finite-stage realization** of the relevant \(D_{\rm sg}\)-Hom incidence.
+
+Only then may one promote finite-stage determinantal constructibility to a global algebraic anchor locus.
+
+Without that uniform bound, no Zariski closure/open argument is licensed.
+
+---
+
+# 38. Universal impact
+
+U4 achieves a genuine universal representation change:
+
+\[
+\boxed{
+\text{high Tor recurrence}
+\rightsquigarrow
+\text{nonzero simple object in a detector quotient of }D_{\rm sg}(D).
+}
+\]
+
+This removes:
+
+- exact-state recurrence;
+- module-length complexity;
+- high-syzygy state drift;
+
+from the core obstruction.
+
+But it does not remove the fundamental one-way/Peirce problem.
+
+The surviving obstruction is now exactly:
+
+\[
+\boxed{
+\text{simple tail recurrence can live entirely in the Peirce-invisible sector}.
+}
+\]
+
+That is the proper interface for the next layer.
+
+---
+
+# 39. Completion label
+
+This run achieves:
+
+\[
+\boxed{
+\texttt{B1 — TAIL DETECTOR FUNCTOR: VERIFIED}
+}
+\]
+
+\[
+\boxed{
+\texttt{B2 — STABLE AUGMENTATION TRANSFER: VERIFIED UNDER KERNEL/DETECTOR CONDITION}
+}
+\]
+
+\[
+\boxed{
+\texttt{B3 — ANCHOR-KERNEL DESCENT: VERIFIED}
+}
+\]
+
+with overall status
+
+\[
+\boxed{
+\texttt{MAJOR FRONTIER COMPRESSION}.
+}
+\]
+
+No Universal visible-anchor theorem was proved.
+
+---
+
+# 40. External calibration checks used in this run
+
+The following standard external facts were checked during the run:
+1. **Keller–Vossieck stabilization.**  
+   For an Artin algebra, the singularity category is the stabilization of the stable module category under syzygy; morphisms admit the direct-limit description used in §18.
+
+2. **Quantum exterior syzygy family.**  
+   For
+   \[
+   A_q=k\langle x,y\rangle/(x^2,y^2,xy+qyx),
+   \]
+   the standard length-two family satisfies
+   \[
+   \Omega M_\alpha\simeq M_{q\alpha}.
+   \]
+
+3. **Quantum complete-intersection complexity.**  
+   The simple module for the two-generator quantum complete intersection has complexity \(2\), so it is not periodic, whereas the complexity-one modules used in the calibration are periodic.
+
+These checks were used only as calibration; the B1/B2/B3 tail-functor theorems are proved internally above.
+
+---
+
+# 41. Run integrity
+
+The actual route was:
+
+1. retrieve the existing MRS/Vault method usage rather than inventing missing Vault definitions;
+2. map representation change, bridge, functorial transfer, local-to-global, standard form, quotient, bootstrap, and counterexample methods to the stable-anchor problem;
+3. construct
+   \[
+   \mathsf{Tail}(k)=D^-_{\rm fd}(k)/D^b_{\rm fd}(k);
+   \]
+4. define
+   \[
+   \mathfrak T_i=Q(R_i\otimes_D^{\mathbf L}-);
+   \]
+5. prove perfect objects vanish and hence factorization through \(D_{\rm sg}(D)\);
+6. use the syzygy identity to return a high-syzygy carrier to its simple origin;
+7. define the thick object-kernel \(\mathcal K_i\) and the morphism-kernel ideal \(\mathcal J_i\);
+8. prove the kernel criterion for augmentation transfer;
+9. prove failed visible augmentation gives strict finite-length descent;
+10. prove every finite-length tail carrier contains a simple tail carrier;
+11. isolate the visible Serre sector and derive anchor-kernel descent to an invisible simple when all visible simples are killed;
+12. use stabilization of the stable module category to interpret singularly trivial augmentation as eventual projective factorization;
+13. audit exact periodicity and show periodicity preserves detector blindness as well as detector visibility;
+14. calibrate against a quantum-exterior period-two module with a nonperiodic simple quotient;
+15. calibrate moduli drift using
+    \[
+    \Omega M_\alpha\simeq M_{q\alpha};
+    \]
+16. prove only finite-stage stable-Hom anchor loci are automatically constructible;
+17. refuse to promote that to a global \(D_{\rm sg}\) constructibility statement without a uniform stabilization bound;
+18. freeze the remaining problem as simple-level Peirce separation.
+
+No assumption of self-injectivity was made in the universal arguments.
+
+Stable category and singularity category were kept distinct.
+
+No support-variety argument was used universally.
+
+No periodic object was used to infer simple periodicity.
+
+No state-repetition argument was used.

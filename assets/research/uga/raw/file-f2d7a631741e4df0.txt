@@ -1,0 +1,382 @@
+# Run — Actual projective-type summands give terminating nonsplit sink peeling
+
+**Date:** 2026-10-03  
+**Researcher:** one main Codex researcher  
+**Evidence:** complete all-size proof, explicit all-characteristic basis
+calibration and normal adversarial self-audit; not independently verified  
+**Global status:** Universal Gap A remains OPEN. No novelty claim is made.
+
+This continuation uses the latest T11 ordinary kernel bridge. It closes
+a higher-index nonperfect extension class by constructing an eligible
+tensor-square-zero ordinary ideal at **every** step. The decreasing
+quantity is the number of remaining nonzero actual projective-type
+summands. Their required bimodule stability is stated, not inferred
+from an arbitrary projective decomposition.
+
+## 1. Actual projective-type decomposition
+
+Let K be a radical square-zero ideal of the elementary finite algebra A,
+and C=A/K. Assume its canonical actual C-bimodule has a direct sum
+
+\[
+K=\bigoplus_{i=1}^v K_i
+\quad\text{as }C\text{-bimodules},\qquad
+{}_C K_i\cong(Ce_i)^{r_i}.
+\tag{1.1}
+\]
+
+Here r_i>=0 and K_i=0 is permitted. The **same actual subspace** K_i
+is stable under both C actions. It need not be Ce_i tensor a right
+vector module with scalar action; right actions inside its left
+endomorphism algebra are allowed.
+
+This is stronger than left projectivity alone. The left-module
+Krull--Schmidt decomposition of K need not be right-action stable.
+Nor is K_i assumed to equal the raw Peirce row e_iK.
+
+Write the actual left-projective column matrix
+
+\[
+Ke_j\cong\bigoplus_i(Ce_i)^{T(i,j)}
+\tag{1.2}
+\]
+
+and use edges j -> i when T(i,j)>0. The summand K_i supplies
+exactly row i: right vertex projections make K_i e_j left-module
+direct summands of K_i, so their projective types remain Ce_i.
+Every nonzero K_i therefore has a nonzero incoming row.
+
+## 2. Construct an eligible ordinary ideal at a sink
+
+### Lemma 2.1 — Actual sink peeling
+
+Suppose the graph of T is acyclic and K!=0. There is an i with
+K_i!=0 and Ke_i=0. Set B=A/K_i. Then K_i is an actual radical
+square-zero ideal of A, is left B-projective, and
+
+\[
+K_i\otimes_B K_i=0.
+\tag{2.1}
+\]
+
+The remaining kernel B -> C is the actual square-zero bimodule
+sum of the K_h, h!=i, with the same stable projective types over C
+and the graph obtained by removing row i.
+
+#### Proof
+
+Choose a sink at the end of a nonempty maximal directed path.
+It has a nonzero incoming row, so K_i!=0. A sink has no outgoing
+edges, so column i of T is zero. Actual projectivity in (1.2)
+gives Ke_i=0.
+
+Since K^2=0, the actions of A on each K_i factor through C.
+Its actual C-bimodule stability thus makes it an actual A ideal;
+it is contained in J(A) and its square is zero.
+
+The quotient B still maps to C with kernel
+K^{rem}=sum_{h!=i}K_h. The ordinary projective column has exact
+sequence
+
+\[
+0\to K^{rem}e_i\to Be_i\to Ce_i\to0.
+\tag{2.2}
+\]
+
+Here K^{rem}e_i=0 by Ke_i=0. Therefore **as actual B modules**
+Be_i=Ce_i, with the remaining kernel acting trivially.
+The canonical B action on K_i also factors through C. Equation
+(1.1) makes K_i a sum of these actual projective Be_i.
+
+Since K_i e_i=0, tensoring its left projective decomposition gives
+K_i tensor_B K_i equal to a sum of copies of K_i e_i, hence zero.
+This proves every hypothesis of C074 at the **current** quotient
+A -> B, without a section or bimodule perfectness.
+
+The direct bimodule sum embeds its other summands into B.
+Their C actions and projective types are unchanged, their products
+are still zero, and row i alone is removed. QED.
+
+### Theorem 2.2 — Termination and supported ordinary transfer
+
+If T is acyclic, Lemma 2.1 constructs a finite tower
+
+\[
+A=A_0\longrightarrow A_1\longrightarrow\cdots
+\longrightarrow A_q=C
+\tag{2.3}
+\]
+
+where q=#{i:K_i!=0}<=v-1. Every step is an actual one-sided-projective,
+tensor-square-zero ordinary ideal quotient satisfying C074.
+It strictly decreases algebra dimension and the positive number
+of remaining types by one.
+
+Consequently C infinite + implies A infinite +. A hypothetical
+bad A gives a bad C by an eligible descent at every step.
+If gldim C=g is finite, gldim A<=g+q.
+
+#### Proof
+
+Apply Lemma 2.1 to the remaining actual kernel after each quotient.
+The graph stays acyclic. Until K^{rem}=0, a maximal nonempty
+path has a nonzero sink summand. Removing it decreases q by one;
+there is no infinite iteration. An acyclic finite graph has a
+source with zero incoming row, so at least one K_i was zero and
+q<=v-1.
+
+C074 applies to each actual step by the projectivity and zero
+tensor square just proved. Its supported infinity implication
+lifts backwards along the tower; its quotient-pd bound <=1
+and all-source supported transfer pass a bad algebra forward.
+The elementary finite-resolution bound adds at most one per
+step, giving gldim A<=g+q. QED.
+
+This is proved eligibility along a specific class of reductions,
+not a graph-only inference of ordinary homological return.
+
+## 3. All-size extension closure and a bound
+
+### Theorem 3.1 — Perfectness is unnecessary for this whole extension class
+
+Under (1.1), if C satisfies Universal Gap A, so does A.
+No C^e-perfectness of K, bound on its one-sided right pd,
+ordinary algebra section or initial tensor-square-zero assumption
+is required.
+
+#### Proof
+
+If T has a cycle, C072's actual ordinary projective-column series
+(I-tT)^(-1) and ordinary finite-length detection already make
+A infinite +.
+
+If T is acyclic, a bad A descends through the actual tower (2.3)
+to a bad C. This contradicts the Gap-A property of C. QED.
+
+The class theorem holds for every finite v. It closes higher-index
+nonperfect kernels whose projective types are actual stable
+bimodule summands. It does not force such a decomposition in every
+one-sided-projective kernel, or an eligible ideal in every bad algebra.
+
+### Quantitative supported-vanishing version
+
+Assume all reverse-supported A-Tor vanishes for every n>=M, M>=1.
+The cyclic case is impossible. If the terminal C has C061's ordinary
+sections at **every** primitive vertex, C074 raises the threshold
+by two at each of the q steps. Therefore
+
+\[
+\boxed{\operatorname{gldim}A
+\le(v-1)(M+2q)+q,\qquad q\le v-1.}
+\tag{3.1}
+\]
+
+The bound is conditional on (1.1), all-source/all-degree vanishing
+and the terminal all-vertex sections. No universal finite-window
+certificate or screening-page bound is asserted.
+
+### Direct right-projective-type version
+
+Alternatively assume a C-bimodule direct sum K=sum_i K_i with
+K_i as an actual right C module in add(e_iC). Decompose e_jK
+with multiplicities B(j,i) of e_iC and use edges j -> i.
+A sink i with incoming edges has e_iK=0 and K_i!=0.
+For B=A/K_i, the right projective e_iB maps isomorphically
+to e_iC because e_iK^{rem}=0. Thus K_i is right B-projective
+and K_i tensor_B K_i is a sum of e_iK_i, which is zero.
+
+The direct right version of C074 applies at each step. Removing
+column i gives the same finite sink tower, ordinary supported
+transfer and numerical bound. No opposite-side infinite-+ theorem
+is used.
+
+## 4. Actual higher-index nonperfect nonsplit calibration
+
+Let A_7 have vertices 0,1,2, loop t at 0, arrows a:0 -> 1
+and c:1 -> 2, relations t^2=0 and ca=0. Put b=at.
+Its exact basis is
+
+\[
+e_0,e_1,e_2,t,a,b,c,
+\tag{4.1}
+\]
+
+and its only nonzero radical product is at=b. It is finite,
+connected, seven-dimensional and associative by this quiver
+presentation over every field.
+
+Take the actual square-zero ideal K=span{b,c}. The quotient C
+is the four-dimensional triangular C_tri from C073 plus the
+isolated vertex 2. Its canonical stable decomposition is
+
+\[
+K_1=kb=Ce_1\otimes_k R_0,\qquad
+K_2=kc=Ce_2\otimes_k R_1,\qquad K_0=0.
+\tag{4.2}
+\]
+
+Both left factors Ce_1,Ce_2 are one-dimensional projectives.
+The right actions preserve each displayed actual subspace.
+The graph is the two-edge chain 0 -> 1 -> 2.
+
+R_0 has the explicit infinite right C resolution by e_0C
+with all maps t. Also rad(e_1C)=ka=R_0, so R_1 has infinite
+right pd. Hence K has infinite C^e-pd.
+
+The only nonzero two-fold tensor word is K_2 tensor_C K_1,
+because R_1 e_1=k. It equals Ce_2 tensor R_0. Every three-fold
+word is zero because R_0 e_1=R_0 e_2=0. Actual left projectivity
+therefore gives
+
+\[
+K^{\otimes_C^{\mathbf L}2}\ne0,\qquad
+K^{\otimes_C^{\mathbf L}3}=0.
+\tag{4.3}
+\]
+
+The whole ordinary quotient A_7 -> C has no algebra section:
+after vertex alignment any lift a+lambda b has product b with
+the unique lift of t, contradicting at=0 in C. Thus neither
+C072's perfect-kernel isomorphism nor C074 as **one whole-kernel
+step** applies.
+
+Sink peeling nevertheless gives
+
+\[
+A_7\longrightarrow A_7/(c)
+=A_{\rm tri}\times k e_2
+\longrightarrow C_{\rm tri}\times k e_2=C.
+\tag{4.4}
+\]
+
+The first kernel kc is projective on the left over the actual
+six-dimensional intermediate quotient: its projective column
+at vertex 2 is k e_2. Its tensor square is zero. The second
+kernel kb is the actual nonperfect left-projective tensor-square-zero
+kernel from C073. These are exactly the eligible steps of Lemma 2.1.
+
+The original algebra has supported vertex-0 diagonal ordinary
+Tor in every degree: a relative bar with both endpoints 0 can
+contain only t letters and has zero differential. It is infinite +,
+not a counterexample. All assertions above use literal basis
+and module/tensor certificates; the unchanged triangular computation
+is reused and no new bounded computation is needed.
+
+### 4.2 Actual acyclic columns do not imply the bimodule decomposition
+
+For a negative audit, take C to be the seven-dimensional
+radical-square-zero algebra with vertices 0,1,2 and arrows
+a:0 -> 1, b:1 -> 0, r:0 -> 2, s:2 -> 0.
+Let
+
+\[
+{}_C K=X\oplus Y,\quad X=Ce_0,\quad Y=Ce_1,
+\]
+
+with bases x_0,x_a,x_r and y_1,y_b respectively. Give X right
+vertex 2 and Y right vertex 0. Define the nonzero radical right
+actions
+
+\[
+x_0 r=y_b,\qquad y_1 s=x_a.
+\tag{4.5}
+\]
+
+They are C-left-linear: x_a r=x_r r=0 and y_b s=0 follow
+from C radical-square-zero. Their composites are zero, so they
+define an actual C-bimodule. The projective column graph is
+the acyclic chain 2 -> 0 -> 1. Actual K^{tensor_C^L 2}
+has column 2 equal to Ce_1 and is nonzero, while its third
+tensor power is zero.
+
+There is no stable bimodule decomposition (1.1). The right
+vertex columns are the indecomposable left projectives
+Ke_2=X=Ce_0 and Ke_0=Y=Ce_1. A bimodule projector onto the
+Ce_0 type must be identity on X and zero on Y, since these
+distinct columns each have only their stated indecomposable
+projective type. But it cannot commute with x_0 r=y_b.
+
+K is also nonperfect. As a right C module its vertex dimensions
+are (2,0,3). A right projective with zero vertex-1 component
+can only be a sum of e_2C, whose vertex-0 and vertex-2 dimensions
+are equal; K is therefore nonprojective. All right C simples
+have infinite pd, by the literal radical-square-zero two-cycle
+bar returns. A nonprojective right module has a nonzero
+semisimple first syzygy because J(C)^2=0. Hence K has infinite
+right pd and infinite C^e-pd.
+
+This is realizable by an ordinary **nonsplit** twelve-dimensional
+algebra A=C plus K. In addition to the C actions and (4.5), set
+the product of two C radical lifts to be zero except
+
+\[
+s r=y_b.
+\tag{4.6}
+\]
+
+The complete nonzero radical products are
+a x_0=x_a, r x_0=x_r, b y_1=y_b,
+x_0 r=y_b, y_1 s=x_a, and s r=y_b.
+All outputs are annihilated by every radical letter on both sides;
+thus all triple radical products are zero, and this endpoint-consistent
+table is associative over every field. K is its actual square-zero
+radical ideal with the displayed canonical quotient actions.
+
+There is no ordinary section A -> C. After vertex alignment, r
+has its unique lift, while s has lifts s+lambda x_0.
+The quotient relation rs=0 would require lambda=0 because
+r(s+lambda x_0)=lambda x_r. The relation sr=0 would require
+lambda=-1 because (s+lambda x_0)r=(1+lambda)y_b.
+These cannot both hold over any field.
+
+This example invalidates automatic projective-type splitting,
+not Universal Gap A. Indeed A has a different ordinary retract
+to the radical-square-zero a,b two-cycle plus isolated vertex 2:
+kill r,s,K and keep a,b and all vertices. Its section keeps
+that same subalgebra, whose products ab and ba are zero in A.
+The ordinary bar retract gives the supported 0 diagonal in
+every even degree. Thus A is already infinite +, and no global
+irreducibility claim is made.
+
+Both calibrations use explicit finite tables and module/tensor
+certificates, not extrapolation from computations or graph cycles.
+
+## 5. Normal adversarial audit and the remaining route
+
+1. Actual K_i must be C-bimodule summands, not just a left/right
+   projective decomposition. Arbitrary projective-type projections
+   need not preserve the other action.
+2. Each K_i is an actual A ideal because K^2=0 and both actions
+   factor through C. This ideal claim is proved before taking a quotient.
+3. Choose a sink with an incoming edge, so K_i is nonzero.
+   A merely isolated zero component does not decrease anything.
+4. The zero outgoing column is a statement about actual Ke_i=0.
+   It is not a resolution-term or Peirce-cycle surrogate.
+5. Projectivity must be checked over the actual intermediate quotient.
+   The isomorphism Be_i=Ce_i in (2.2) proves it; old quotient
+   projectivity is not assumed to inherit automatically.
+6. The small kernel's tensor square is computed over that B,
+   not the original C. Its projective decomposition over B and
+   actual K_i e_i=0 supply the calculation.
+7. Row removal preserves the **actual** remaining C-bimodule summands.
+   Both dimension and the number of remaining nonzero types decrease.
+8. Cyclic closure uses the already-proved ordinary column formula;
+   acyclic closure uses C074 and ordinary supported detection at
+   every step. No singular, stable or opposite-+ transfer is substituted.
+9. The persistent simple pair may change at each supported bridge.
+   The all-source condition and threshold M+2q are retained.
+10. The right argument uses actual right projective columns and the
+    direct right C074 bridge. It is not a silent opposite transfer.
+11. The calibration is higher-index, nonperfect and nonsplit as a whole,
+    but already infinite +. It does not realize a bad algebra, general
+    idempotent-deletion residue or arbitrarily late excursion screening.
+12. This is an all-size class closure with proved repeated eligibility.
+    General stable-type decomposition and general ideal existence
+    are not inferred. Section 4.2 actually falsifies automatic
+    stable-type splitting from an acyclic actual projective matrix.
+
+Universal Gap A remains open. This adds a terminating ordinary route
+for some higher-index nonperfect kernels; it does not erase the
+remaining general nonsplit actions without an eligible stable decomposition, nonprojective
+kernels, aperiodic/nonprojective derived many-layer residues,
+Target A, general local-trivial or supported-weight branches.

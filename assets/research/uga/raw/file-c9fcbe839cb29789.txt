@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-03T13:16:37.238124+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "44a34b7834d56095824757b48751623f6c5d2270c88db4597dd727fa3d0fba9f",
+    "object": "Actual connected nonsplit nonperfect ordinary square-zero quotient family; first-kernel-module comparison obstruction",
+    "deliverables": [
+      "verify_ordinary_migration.py",
+      "ordinary-migration-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "Line algebras have seven or eleven chain vertices, line paths of length four killed, and one extra source with a square-zero loop.",
+      "Every radical product involving the extra connecting arrow is zero.",
+      "The physical ideal K consists of line paths of lengths two and three; C=A/K is radical-square-zero.",
+      "The actual canonical K is left C-projective, nonperfect and derived-tensor-nilpotent of indices four and six respectively.",
+      "Original ordinary A pair Tor is zero in every degree; actual comparison-kernel homology is nonzero in degrees five and nine.",
+      "First-kernel ordinary A Tor has its shifted nonzero degrees three and five, so it does not represent the comparison kernel.",
+      "Finite bars include both outgoing and incoming maps, plus literal finite and infinite module certificates."
+    ],
+    "domain": "Finite-dimensional elementary Q-algebras, literal ordinary resolutions and actual quotient bar kernels",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Literal monomial path tables and exact fractions.Fraction matrix elimination"
+      ],
+      "existence_evidence": "verify_ordinary_migration.py computes actual quotient kernels, differential squares, module actions and literal projective resolutions. Only unchanged Fraction helpers are imported from frozen C073 code.",
+      "local_availability": "available",
+      "availability_evidence": "Actual local execution passed under Python 3.14.3."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3",
+    "selection_reason": "These finite path tables, module certificates and rational bar ranks are exactly computable with the local standard library.",
+    "fallback_reason": "Reused same-session local inventory: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python process through the skill observer_run.py wrapper",
+    "command_or_input": "python -B verify_ordinary_migration.py --out ordinary-migration-result.json",
+    "code_artifact": "verify_ordinary_migration.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_ordinary_migration.py",
+      "sha256": "9d593b784ab75801439aef2e99b62c1b86e0b7a04519df8cfc9371150d657ff8"
+    },
+    {
+      "role": "result",
+      "path": "ordinary-migration-result.json",
+      "sha256": "13857fe0a98d59d47d9eab528f9bdf5bbde3fd161577173947f65478268dae64"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "summary": "Passed exact multiplication, actual ideal/projective/F actions, 36 literal finite resolutions, four literal infinite certificates, 126 ordinary homology records and 298 actual quotient-chain checks. Comparison-kernel nonzero degrees five and nine disagree with the first-module prediction.",
+    "result_artifact": "ordinary-migration-result.json"
+  },
+  "verification": {
+    "methods": [
+      "Exhaustive literal multiplication associativity and physical ideal-square checks",
+      "Canonical left-projective action isomorphisms and ordinary F-module tops",
+      "Literal finite simple resolutions with exact image/kernel and module-linearity checks",
+      "Literal infinite-pd source and right-kernel loop certificates",
+      "Exact outgoing/incoming ordinary bar ranks and differential squares",
+      "Actual bar-projection kernel and chain-map checks"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact rational arithmetic; no numerical residual.",
+    "limitations": [
+      "Code and mathematical proofs have the same author; no independent verifier acceptance.",
+      "Only two family sizes were computed over Q. All-size and all-characteristic assertions rely on the separate literal path-resolution proof.",
+      "The uniform migration theorem is a separate ordinary filtration and induction proof; this calibration alone does not prove it.",
+      "The final ordinary Tor detector need not preserve reverse Peirce visibility.",
+      "This connected family already has a supported ordinary loop tail and is not a Gap-A counterexample.",
+      "Matrix helpers are reused from unchanged C073 code; its main was not rerun.",
+      "Schema validation and hashes do not independently verify mathematical semantics.",
+      "Backend availability evidence is reused from the same-session inventory."
+    ]
+  }
+}

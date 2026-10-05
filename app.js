@@ -74,7 +74,6 @@ function initHeroLottie() {
     loop: !reduceMotion,
     autoplay: false,
     path: './assets/lottie/overview-dark.json',
-    animationData: window.ALEKSI_HERO_LOTTIE_DATA || undefined,
     initialSegment: [firstVisibleFrame, 239],
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid meet',

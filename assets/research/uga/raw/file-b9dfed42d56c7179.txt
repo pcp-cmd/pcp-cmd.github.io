@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "date": "2026-10-04",
+  "kind": "targeted exact research execution record",
+  "actual_executed_script": "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-separated\\verify_separated_filtration.py",
+  "retained_script": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Separated-Filtration-Evidence\\verify_separated_filtration.py",
+  "retained_result": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Separated-Filtration-Evidence\\result.json",
+  "proof": "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03\\runs\\2026-10-04\\Run-Eventual-Tor-Weight-Separation-No-Cancellation-and-Ordinary-Branch-Closure-2026-10-04.md",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "counts": {
+    "associativity": 8535,
+    "actual_minimal_covers": 3,
+    "integer_basis_inverses": 9,
+    "actual_kernel_isomorphisms": 0,
+    "pruned_homology_isomorphisms": 0
+  },
+  "filtered_product_pairs": 256,
+  "cubic_lift_coefficient_checks": 528,
+  "invocation": {
+    "wrapper": "C:/Users/pcp/.codex/skills/math-science-computation/scripts/observer_run.py",
+    "catalog": "C:/Users/pcp/.codex/skills/math-science-computation/references/observer-phases.json",
+    "phase": "math-science-computation.script.run",
+    "arguments": [
+      "-B",
+      "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-separated\\verify_separated_filtration.py",
+      "--project-root",
+      "C:\\Users\\pcp\\Desktop\\Universal-Gap-A-Codex-Project-2026-10-03",
+      "--out",
+      "C:\\Users\\pcp\\AppData\\Local\\Temp\\UGA-20261004-separated\\result.json"
+    ]
+  },
+  "shared_dependencies": [
+    "runs/2026-10-04/Carrier-Lemma-Evidence/verify_carrier_lemma.py (definitions before its p-loop)",
+    "toolbox/Imported-Outputs/return_kernel_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_return_certificate.py",
+    "toolbox/Imported-Outputs/syzygy_system_certificate.py"
+  ],
+  "backend_selection": "Cached local inventory and live Python Fraction check; existing actual-cover replay helpers are appropriate. No local Mathematica or Sage executable recorded. No backend installed.",
+  "retained_bytes_equal_executed_bytes": true,
+  "independent_verification": false,
+  "formal_verifier_acceptance": false,
+  "default_checksums_computed": false,
+  "execution_history": "First actual invocation passed.",
+  "mathematical_scope": "Actual A16/G16 associativity, radical filtration products, three full minimal covers, Frobenius pairing and cubic coefficients. All-degree purity, ordinary tail transfer, and no positive grading in characteristic !=2 are supplied by separate written proofs. N7 old full periodic certificates reused, not replayed.",
+  "UGA": "OPEN"
+}

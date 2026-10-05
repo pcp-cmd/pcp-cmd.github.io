@@ -1,0 +1,17 @@
+## UGA-C122 — Two Actual Syzygy States Can Sustain Arbitrarily Late Opposite-Parity Cancellation While Ordinary Supported Tor Persists
+
+**Status:** COMPLETE ACTUAL GRADED KERNEL AND ALL-DEGREE COUNTEREXAMPLE / NORMAL ADVERSARIAL SELF-AUDIT / NOT A UGA COUNTEREXAMPLE / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Eventual-Tor-Weight-Separation-No-Cancellation-and-Ordinary-Branch-Closure-2026-10-04.md appended Section9; C116 FULL B14 kernels reused without replay.
+
+In actual all-arrow-degree1 B14, S=L1 degree0, M=Ba1 generated degree1, the FULL minimal kernels give Omega S=M, Omega M=S<2> direct_sum M<2>. The b1 generator is degree2, b2a2/a2b2a2 are the actual M<2> degree3/4 copy. Thus a one-step M return and a two-step return through S BOTH raise internal degree2. The actual ordinary block has exact formula
+
+\[
+\boxed{\beta^B_{21}(n,2r+1)=\binom{r}{n-r-1}
+\quad(r+1\le n\le2r+1),}
+\]
+
+zero outside. For every r>=1, consecutive homological degrees r+1,r+2 occupy the SAME pair/internal degree2r+1. Finite actual states therefore do NOT force C120's eventual one-parity condition or C121's eventual adjacent separation. Integer Euler cancellation is exactly (-1)^(r+1)(1-1)^r=0 in that block for all r>=1; Tor classes remain nonzero.
+
+Taking r=n-1 proves Tor_n^B(R2,L1) nonzero EVERY positive degree, with reverse visibility e1Be2 containing b1. Existing diagonal at every2m retained. This breaks an automatic applicability bridge, NOT the global finite-syzygy-type supported-return possibility or UGA. Another legal B grading changes the determinant; no automatic favorable grading is claimed. Shared frozen exact certificates/normal main-researcher audit, not independent verification or a reopened small-vertex study.
+
+---

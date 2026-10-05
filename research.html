@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Universal Gap A · Aleksi</title>
+  <meta name="description" content="Universal Gap A 研究概览：普通 Tor 的持续回返、已完成的条件类别、开放问题与证据边界。资料状态截至 2026 年 10 月 5 日。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/reading.css">
+  <link rel="stylesheet" href="./assets/css/site-theme.css">
+  <link rel="stylesheet" href="./assets/css/research.css">
+  <script defer src="./site-data.js"></script>
+  <script defer src="./assets/vendor/niku-home.js"></script>
+  <script defer src="./site-backdrop.js"></script>
+  <script defer src="./reading.js"></script>
+  <script defer src="./research-archive.js"></script>
+  <link rel="stylesheet" href="./assets/css/research-archive.css">
+</head>
+<body class="reading-page site-page" data-section="research">
+  <canvas class="site-backdrop" data-site-backdrop aria-hidden="true"></canvas>
+  <a class="reading-skip site-skip" href="#content">跳到正文</a>
+  <header class="reading-mobile-header site-header">
+    <div class="reading-mobile-top">
+      <a class="site-brand" href="./index.html"><span>Aleksi</span><small>← 首页</small></a>
+      <nav class="site-navigation" aria-label="栏目">
+        <a href="./writing.html">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html" aria-current="page">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
+      <button class="site-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-navigation">栏目 <span aria-hidden="true">⌄</span></button>
+    </div>
+    <div id="mobile-navigation" data-mobile-navigation hidden><nav class="reading-navigation" aria-label="栏目">
+        <a href="./writing.html">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html" aria-current="page">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav></div>
+  </header>
+  <div class="reading-layout">
+    <aside class="reading-left">
+      <a class="reading-home" href="./index.html">← 首页</a>
+      <a class="reading-brand" href="./index.html">Aleksi</a>
+      <nav class="reading-navigation" aria-label="栏目">
+        <a href="./writing.html">Writing</a>
+        <a href="./project.html">Project</a>
+        <a href="./research.html" aria-current="page">Research</a>
+        <a href="./about.html">About</a>
+        <a href="./works.html">Works</a>
+        <a href="./room.html">Room</a>
+      </nav>
+    </aside>
+    <main id="content" class="reading-main">
+      <header class="reading-page-heading">
+        <p class="reading-kicker">Research</p>
+        <h1 class="latin-title">Universal Gap A</h1>
+        <div class="research-status"><span>OPEN · 仍未解决</span><time datetime="2026-10-05">2026.10.05</time></div>
+        <p class="research-intro">无限的同调复杂性，能否总在代数本身可见的位置留下痕迹？这里记录 Universal Gap A 的问题、进展，以及仍然缺少的那一步。</p>
+      </header>
+      <div class="reading-mobile-directory" data-directory hidden>
+        <button type="button" data-directory-toggle aria-expanded="false" aria-controls="mobile-directory"><span>本页目录</span><span aria-hidden="true">⌄</span></button>
+        <nav id="mobile-directory" data-mobile-toc aria-label="本页目录" hidden></nav>
+      </div>
+      <div class="reading-prose page-sections">
+        <section class="research-archive">
+          <h2 id="archive" data-toc-heading>完整研究档案</h2>
+          <p>从一条 Claim 回到它的原文，也能按研究记录、历史修正和计算资料继续阅读。这里收录所提供研究包中的全部 399 份文件，保留原编号、原文与来源。</p>
+          <p class="archive-counts" data-archive-counts>正在读取档案索引…</p>
+          <p class="research-caption">正式台账有 89 条 Claim，编号从 C041 延伸到 C132；缺号沿用原包，不补造记录。历史文件中的旧结论须结合修正记录和当前状态阅读，档案收录不代表新增独立验证。</p>
+          <form class="archive-form" data-archive-form role="search" aria-label="检索研究档案">
+            <label>查找记录<input type="search" name="q" placeholder="编号、标题或文件名，例如 C129" autocomplete="off"></label>
+            <label>资料类型<select name="category"><option value="claims">Claim 台账</option><option value="runs">Run 研究记录</option><option value="proofs">证明</option><option value="history">历史与修正</option><option value="tools">工具箱与草稿</option><option value="evidence">计算与附件</option><option value="overview">项目总览</option><option value="all">全部源文件</option></select></label>
+            <label>排列顺序<select name="order"><option value="newest">最新 / 编号倒序</option><option value="oldest">最早 / 编号正序</option></select></label>
+          </form>
+          <p class="archive-status" data-archive-status role="status" aria-live="polite"></p>
+          <div data-archive-results></div>
+          <button class="archive-button" type="button" data-archive-more hidden>继续展开</button>
+        </section>
+
+        <section>
+          <h2 id="question" data-toc-heading>研究问题</h2>
+          <p>研究对象是域 <i>k</i> 上的初等有限维代数 <i>A</i>，即 <i>A</i>/<i>J</i> ≅ <i>k</i><sup>N</sup>，其中 <i>J</i> 是根基。全局维数无穷意味着投射分解的复杂性不会在一个统一的有限次数内结束。UGA 要问：这种复杂性是否必然在一个固定、且具有反向 Peirce 支持的简单模对上持续出现？</p>
+          <div class="research-formula" role="region" aria-label="Universal Gap A 的普通 Tor 表述" tabindex="0">
+            <p>gd <i>A</i> = ∞</p>
+            <p><span aria-label="待证推出">⟹ ?</span> ∃ <i>x</i>, <i>y</i>：<i>e</i><sub>y</sub><i>Ae</i><sub>x</sub> ≠ 0，且 Tor<sup><i>A</i></sup><sub>n</sub>(<i>R</i><sub>x</sub>, <i>L</i><sub>y</sub>) ≠ 0 对无穷多个 <i>n</i> 成立。</p>
+          </div>
+          <p class="research-caption"><i>L</i><sub>y</sub>、<i>R</i><sub>x</sub> 分别是左、右简单模。这里使用普通 Tor；局部或导出信息需要经过实际比较，才能回答这个问题。</p>
+          <p>量词很关键：目标是找到<strong>某一个</strong>持续回返的模对。指定一个无限投射维数的起点，再要求它一定回到原处，是更强的命题，已有方法反例阻止这样替换。</p>
+        </section>
+        <section>
+          <h2 id="progress" data-toc-heading>当前进展</h2>
+          <p>截至 2026 年 10 月 5 日，<strong>Universal Gap A 仍开放</strong>。项目已积累若干有完整书面证明的类别闭合与普通比较工具；下面按原始记录保留其“项目自审计”状态。其中 C129–C131 另有同团队有限范围实质审查，均尚非独立外部验证或形式化证明。</p>
+          <div class="research-result">
+            <p class="research-record">C129 · 项目自审计</p>
+            <h3>平衡射影理想带来真正的严格下降</h3>
+            <p>若非零双边理想 <i>I</i> ⊂ <i>J</i> 满足 <i>JI</i> = <i>IJ</i>，且<strong>整个 <i>I</i> 在所选一侧射影</strong>，实际张量乘法与投射覆盖给出更小的闭合支撑。普通 Tor 比较保留相关模对，并让总简单模标签数严格下降。</p>
+            <p class="research-caption">这是带条件的下降工具；任意平衡理想的下降本身尚不能充当通用终点。</p>
+          </div>
+          <div class="research-result">
+            <p class="research-record">C130 · 项目内已完成的类别</p>
+            <h3>整块低次根基幂射影时，得到持续对角回返</h3>
+            <p>如果某个 <i>s</i> ∈ {1, 2, 3} 使<strong>整个 <i>J</i><sup>s</sup> 在左侧或右侧射影</strong>，则无穷全局维数迫使一个固定的普通对角 Tor 在任意高次数非零。该结论不限制顶点总数、底域或 Loewy 长度。</p>
+            <p class="research-caption">“射影”不能直接换成“有限投射维数”；这个差别正是后续研究的入口。</p>
+          </div>
+          <div class="research-result">
+            <p class="research-record">C127 · 项目自审计</p>
+            <h3>整块两层根基带具有有限投射维数时的闭合</h3>
+            <p>对某个 <i>s</i> ∈ {1, 2, 3}，若整个 <i>H</i><sub>s</sub> = <i>J</i><sup>s</sup>/<i>J</i><sup>s+2</sup> 在某一侧具有有限投射维数，同样能推出持续的普通对角回返。这里也没有额外的 Loewy 长度上界。</p>
+            <p class="research-caption">条件施加于整个根基带。仅知道 <i>J</i><sup>3</sup> 的投射维数有限，尚不能自动获得这一假设。</p>
+          </div>
+        </section>
+        <section>
+          <h2 id="frontier" data-toc-heading>仍缺少的一步</h2>
+          <p>当前主线面向<strong>所有来源的普通支持回返</strong>：局部构造找不到见证时，需要允许见证出现在另一处，或证明一次真正保留问题的严格下降。</p>
+          <ol class="research-open-list">
+            <li><strong>从射影推进到有限投射维数。</strong> 当整个 <i>J</i><sup>3</sup> 的投射维数为正的有限值时，实际乘法缺陷 Tor<sub>1</sub><sup><i>A</i></sup>(<i>A</i>/<i>I</i><sup>r−1</sup>, <i>I</i>) 如何终止，仍缺一般定理。</li>
+            <li><strong>让见证能够切换来源。</strong> 根基带在两侧都具有无穷投射维数，也不能保证见证落在该带的因子标签中；需要全局、而非指定起点的回返机制。</li>
+            <li><strong>证明一般下降真正有效。</strong> 商代数或角代数里的见证如何提升回来，以及有限型、未分离尾部的一般停止机制，仍未闭合。</li>
+          </ol>
+          <p class="research-caption">有界屏蔽、局部平凡、带支持权重，以及 Primitive / Binary / higher-output 等既有分支仍保留在研究地图中。</p>
+        </section>
+        <section>
+          <h2 id="reuse" data-toc-heading>失败路线留下什么</h2>
+          <p>失败的中间引理也是可复用资产：它们说明下一条证明必须补上哪项条件。</p>
+          <details class="research-detail">
+            <summary>C131：物理乘积为零，不代表张量乘积为零</summary>
+            <p>一个维数 9 的实际代数满足 <i>I</i> = <i>J</i><sup>3</sup>、pd <i>I</i> = 1、<i>I</i><sup>2</sup> = 0，却有 <i>I</i> ⊗<sub><i>A</i></sub> <i>I</i> ≅ <i>k</i>。它排除了用“有限投射维数”直接代替 C129 中平坦性的捷径。</p>
+            <p>该例全局维数为 2，反驳的是中间机制；它不是 UGA 反例。</p>
+          </details>
+          <details class="research-detail">
+            <summary>C132：完整核射影，不代表它的各个部分都有限</summary>
+            <p>一个维数 10 的实际代数中，有限投射维数理想的完整覆盖核是射影模，但这个核的头、根基和所选深层子核仍可具有无穷投射维数。取支撑闭包也可能回到全部标签，无法获得更小的下降块。</p>
+            <p>这迫使后续修补控制真实的整体误差与来源对应关系。该例已有普通对角回返，也不是 UGA 反例。</p>
+          </details>
+          <p>这些边界和 C129 一起复用：保留真实完整核、核查普通比较、确认下降量严格减少，再进入下一步。</p>
+        </section>
+        <section>
+          <h2 id="evidence" data-toc-heading>证据与审查</h2>
+          <dl class="research-evidence">
+            <div><dt>书面证明</dt><dd>全次数、任意域或任意规模的结论来自各条记录的完整证明及明确假设。页面转述来件中的结论，不提升其审查等级。</dd></div>
+            <div><dt>精确校准</dt><dd>C129–C130 的维数 63、14 标签实例保留了 15 个完整极小覆盖、624 个整数基逆和 7 个核／模同构的检查。它为具体构造提供核对，有限实例并不证明一般命题。</dd></div>
+            <div><dt>待审贡献</dt><dd>h = 1 乘法误差包络、全局来源切换草稿及有限模式搜索仍标为 PENDING，尚未登记为正式 Claim。无命中的有限搜索不推出全局不存在。</dd></div>
+          </dl>
+          <p class="research-caption">本次网站整理读取了保留的证明和执行记录；没有重跑研究计算，也没有新增独立数学验收。</p>
+        </section>
+        <section>
+          <h2 id="related" data-toc-heading>资料索引</h2>
+          <p>本页依据所提供研究包中截至 2026 年 10 月 5 日的正式状态整理。<a href="https://github.com/pcp-cmd/Universal-Gap-A-public">公开研究仓库</a>保留可查阅的研究档案；目前其状态快照早于来件中的最新 C127–C132，二者的版本范围在此分别标明。</p>
+          <ul class="research-source-list">
+            <li><strong>当前状态与 Claim 台账</strong><span>来件：2026.10.05 · 最新 C129–C132</span><p>确定当前问题、正式结果的适用范围和证据等级。可对照<a href="https://github.com/pcp-cmd/Universal-Gap-A-public/blob/main/CURRENT_STATE.md">公开状态快照</a>与<a href="https://github.com/pcp-cmd/Universal-Gap-A-public/blob/main/claims/CLAIMS.md">公开 Claim 台账</a>；公开版本目前到 C124。</p></li>
+            <li><strong>平衡射影理想与有限 pd 边界</strong><span>2026.10.05 · C129–C132 · Run §§2–12</span><p>实际乘法、闭合支撑下降、射影根基幂类别，以及两项机制反例。</p></li>
+            <li><strong>任意 Loewy 长度的根基带</strong><span>2026.10.05 · C127–C128</span><p>整块有限 pd 根基带的闭合，以及见证不能只限于带内来源的边界。</p></li>
+            <li><strong>路线审查与量词修正</strong><span>2026.10.04 · D-011 / C119</span><p>保留全局存在性目标，区分普通比较、局部理论与更强的指定来源命题。</p></li>
+            <li><strong>待审材料目录</strong><span>2026.10.05 · PENDING</span><p>保存推导、校准和搜索历史；尚不改变正式状态。</p></li>
+          </ul>
+          <a class="research-download" href="./content/research/uga-overview.md" download="Universal-Gap-A-overview-2026-10-05.md">下载本页研究概览 <span aria-hidden="true">↓</span></a>
+          <div data-research-articles></div>
+        </section>
+      </div>
+    </main>
+    <aside class="reading-right" aria-label="本页目录">
+      <p class="reading-rail-label">本页目录</p>
+      <nav data-reading-toc aria-label="本页目录"></nav>
+    </aside>
+  </div>
+</body>
+</html>

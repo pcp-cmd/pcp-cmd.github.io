@@ -1,0 +1,278 @@
+# STATUS B — Peirce 零乘积闭路与无三角形支撑定理
+
+后续进展：[Quantitative-Peirce-Recurrence.md](Quantitative-Peirce-Recurrence.md) 给出有限 Tor 消失区间对应的全局维数上界，并证明剩余中心模式的五个 local corners 都必须非平凡、八个中心—外围方向都必须包含真正箭头。中心模式尚未关闭。
+
+2026-09-10。接续 [Peirce 消去定理](Peirce-Elimination-Theorem.md)。本稿完成两项推进：
+
+1. 给出可从有限 Peirce 支撑检查的充分条件，直接保证指定 simple 的 Tor 在一个完整等差数列上非零。
+2. 将森林结论推广为：**非零 Peirce 分量的无向图无三角形时，任意顶点数的 Gap A 成立。**
+
+前稿三个五顶点剩余模式中的两个由第一项排除，只剩下第 7 节的中心模式。五顶点 Universal Gap A 尚未证明。
+
+完整证明为 solo 推导和自审，未经过独立数学 verifier 或形式化认证；新颖性未确认。特别地，2-truncated cycles 的同调非消失是已有机制，本稿不将它声称为新发现。新增工作的实质是把 Peirce 支撑条件接到该机制，并与前稿的消去证明结合。
+
+## 1. 记号与主要定理
+
+设 \(A\) 为有限维 basic \(\mathbb C\)-algebra，\(J=\operatorname{rad}A\)。固定 primitive orthogonal idempotents \(e_0,\ldots,e_{r-1}\)，并记
+
+\[
+L_s=Ae_s/Je_s,\qquad R_t=e_tA/e_tJ,\qquad
+C_{ts}=1\Longleftrightarrow e_tAe_s\ne0.
+\]
+
+箭头方向约定为 \(s\to t\) 对应 \(e_tJe_s/e_tJ^2e_s\ne0\)。定义集合 \(F(C)\)：不同顶点 \(s,t\) 满足
+
+\[
+C_{ts}=1,\qquad C_{tu}C_{us}=0\quad
+\text{对每一个 }u\notin\{s,t\}.
+\tag{F}
+\]
+
+条件 (F) 排除了经第三顶点的两段 Peirce 分解。它将保证该方向在 \(J/J^2\) 中非零；不是把所有非零 Peirce 分量都当成箭头。
+
+**定理 1（有限闭路证书）。** 假设有一个闭合顶点序列
+
+\[
+v_0\to v_1\to\cdots\to v_{m-1}\to v_0,\qquad m\ge3,
+\]
+
+使每条边满足 (F)，并且按模 \(m\) 取指标，有
+
+\[
+C_{v_{a+2},v_a}=0\quad\text{对所有 }a.
+\tag{T}
+\]
+
+则对闭路上每个顶点 \(v\) 及每个整数 \(q\ge1\)，
+
+\[
+\boxed{\operatorname{Tor}_{qm}^A(R_v,L_v)\ne0.}
+\tag{1}
+\]
+
+因此 \(A\) 是 infinite \(+\)。这个结论甚至无需预先假设全局维数无限；证书本身已保证无限。
+
+**定理 2（无三角形 Peirce 支撑）。** 令无向图 \(G(C)\) 在不同顶点 \(s,t\) 之间连边，当 \(C_{ts}=1\) 或 \(C_{st}=1\)。如果 \(G(C)\) 不含三角形，则
+
+\[
+\operatorname{gldim}A=\infty
+\quad\Longrightarrow\quad A\text{ is infinite }+.
+\tag{2}
+\]
+
+允许双向或单向 Peirce 边，允许任意 local corners、任意 radical 长度及任意分量维数。无三角形条件作用在**实际代数的 Peirce 支撑**上，不只是 Gabriel quiver。
+
+## 2. 为什么 (F) 真的强制一个箭头
+
+**引理 3。** 若 \(s\ne t\) 且 (F) 成立，则
+
+\[
+e_tJe_s/e_tJ^2e_s\ne0.
+\]
+
+**证明。** 设 \(M=e_tAe_s=e_tJe_s\ne0\)，
+
+\[
+\mathfrak r_t=e_tJe_t,\qquad \mathfrak r_s=e_sJe_s.
+\]
+
+由于每个第三顶点 \(u\) 至少有一个相关 Peirce 分量为零，
+
+\[
+e_tJ^2e_s=\sum_u e_tJe_uJe_s
+=\mathfrak r_tM+M\mathfrak r_s.
+\]
+
+若所断言的商为零，则 \(M=\mathfrak r_tM+M\mathfrak r_s\)。迭代可得
+
+\[
+M=\sum_{a+b=N}\mathfrak r_t^{\,a}M\mathfrak r_s^{\,b}
+\quad(N\ge1).
+\]
+
+左右两个 radical 都幂零；取充分大的 \(N\) 后右侧为零，与 \(M\ne0\) 矛盾。故可选
+
+\[
+x\in e_tJe_s\quad\text{且}\quad x\notin e_tJ^2e_s.
+\]
+
+这正是在该方向选取一个非零箭头类。\(\square\)
+
+## 3. 用 bar complex 直接证明所有倍数次数的非消失
+
+令 \(E=\bigoplus_i\mathbb C e_i\)。有分裂增广 \(A=E\oplus J\to E\)。相对于 \(E\) 的 normalized bar resolution，在 tensor 两端的 simples 后，给出计算 \(\operatorname{Tor}_n^A(R_t,L_s)\) 的复形
+
+\[
+K_n(t,s)=e_t\underbrace{J\otimes_E\cdots\otimes_EJ}_{n\text{ 个}}e_s.
+\tag{3}
+\]
+
+微分只把相邻两个 \(J\) 因子相乘，并附以交错符号；两端的作用项为零，因为 \(J\) 杀死 simples。这里确实是 projective resolution 的计算：tensor simples 前的项为
+
+\[
+A\otimes_E J^{\otimes_E n}\otimes_E L_s,
+\]
+
+是 \(A\)-projective，因为 \(E\) 半单。增广复形的正合性由 bar contraction 得到；从未正规化的相对 bar resolution 去掉含 \(E\) 因子的退化可缩直和项，就得到上述 normalized 版本。
+
+对每个 \(n\)，投影
+
+\[
+\rho_n:K_n(t,s)\longrightarrow
+e_t(J/J^2)^{\otimes_E n}e_s
+\tag{4}
+\]
+
+杀死所有边界。原因是微分的每一项都至少有一个因子是两个 radical 元的乘积，因而落在 \(J^2\) 中。
+
+按引理 3，为定理 1 的每条边选取
+
+\[
+x_a\in e_{v_{a+1}}Je_{v_a},\qquad \bar x_a\ne0\text{ in }J/J^2.
+\]
+
+由 (T)，所有循环相邻乘积都严格等于零：
+
+\[
+x_{a+1}x_a\in e_{v_{a+2}}Ae_{v_a}=0.
+\]
+
+从 \(v_0\) 出发，将这个箭头序列重复 \(q\) 次，以路径次序的反向写成 \(qm\) 个因子的 bar tensor \(z_q\in K_{qm}(v_0,v_0)\)。所有微分项为零，故 \(z_q\) 是 cycle。而 \(\rho_{qm}(z_q)\) 是由非零箭头类组成的非零纯 tensor：在这条固定顶点路径对应的 \(E\)-分量中，tensor 实际上是非零复向量空间之间的 tensor。因此它不可能是 boundary。
+
+这证明 (1) 对 \(v_0\) 及每个 \(q\ge1\) 成立。循环重选起点即得到每个闭路顶点的结论。\(\square\)
+
+**可定量的版本。** 每条证书边可选一组线性无关箭头类及其 lifts。任何只沿这些边行走、且每次转弯都满足 (T) 的箭头路径，均给出一个 cycle。不同箭头字的 (4) 投影线性无关，故长度 \(n\)、起点 \(s\)、终点 \(t\) 的这种箭头字的数目，是 \(\dim\operatorname{Tor}_n(R_t,L_s)\) 的下界。这里的所有次数下界来自一般证明，不是把有限阶数值外推。
+
+## 4. 与 2-truncated cycles 文献的关系及反例校准
+
+上面的箭头闭路是一个 2-truncated cycle。已有文献证明这种闭路还使普通 Hochschild homology 在无穷多个次数非零，见 [Bergh–Han–Madsen, Hochschild homology and truncated cycles, Proc. AMS 140 (2012)](https://doi.org/10.1090/S0002-9939-2011-10942-0)。本稿的 Tor 非消失证明已在第 3 节直接给出，不依赖从 HH 或 \(\tau\)-HH 反推。
+
+必须坚持 \(J/J^2\) 中非零的条件。原归档 verified facts 1b2bda16c85d0e04、6521487f41269d40 中的五维代数 \(D\) 有 radical 元 \(x,y,z\)，满足 \(xy=z\ne0\)、\(yx=0\)、其余 radical 乘积为零，且 \(\operatorname{gldim}D=2\)。因此单凭 \(z^2=0\) 不可能推出无限 Tor。事实上 \(z\in J^2\)，对应 bar tensor 满足
+
+\[
+d(x\otimes y\otimes z^{\otimes(n-1)})
+=z^{\otimes n}\qquad(n\ge1),
+\]
+
+忽略统一符号约定的整体正负号。这些看似可以无限重复的 tensors 全部是 boundaries。引理 3 正是为堵住这个漏洞而设。
+
+文献机制已知；本稿没有完成对具体 Peirce 支撑表述的全面新颖性检索，不能把“未找到同名结果”当作新颖性证明。
+
+## 5. 无三角形定理的完整证明
+
+考虑 \(C\) 的有向图：对不同顶点，\(s\to t\) 当且仅当 \(C_{ts}=1\)。
+
+**第一种情况：存在长度至少三的有向简单圈。** 由于无向图无三角形，圈长至少四。圈的每条边 \(s\to t\) 都满足 (F)：如果有第三顶点 \(u\) 使 \(C_{tu}C_{us}=1\)，那么 \(s,t,u\) 在无向图中构成三角形。圈上每个两步路径 \(s\to t\to u\) 的端点互不相邻，否则同样形成三角形，故 \(C_{us}=0\)。因此定理 1 适用，直接给出 diagonal Tor 的无限非消失。
+
+**第二种情况：不存在长度至少三的有向简单圈。** 每个 strongly connected component 内的边必定双向：若 \(s\to t\) 而没有 \(t\to s\)，取从 \(t\) 回到 \(s\) 的最短有向路径，就得到一个长度至少三的简单圈。又每个 component 的无向图必须为树或单点；否则沿无向圈使用双向边，又得到被排除的有向圈。所以每个 component corner 的 Peirce 无向图都是森林。
+
+需要补足两条同调接口，不能把任意 corner 当作与 \(A\) 同调等价。
+
+**接口一：若所有 strongly connected component corners 都有有限全局维数，则 \(A\) 也有有限全局维数。** 按 components 的有向无环图排序，把 \(A\) 写成上三角分块代数，并归纳处理两块
+
+\[
+\begin{pmatrix}\Gamma&M\\0&\Delta\end{pmatrix}.
+\]
+
+若 \(\Gamma,\Delta\) 都有限全局维数，则支撑在 \(\Gamma\) 块的所有有限模块作为 \(A\)-module 有有限 pd：其 \(\Gamma\)-projectives 同时也是相应 \(A\)-projectives。对 \(\Delta\)-projective \(\Delta e_i\)，有
+
+\[
+0\to Me_i\to Ae_i\to\Delta e_i\to0,
+\]
+
+而 \(Me_i\) 支撑在 \(\Gamma\) 块，故 \(\Delta e_i\) 的 \(A\)-pd 有限。用有限的 \(\Delta\)-projective resolutions，再用组成列，即得所有 \(A\)-simples 的 pd 有限。有限个 simples 给出统一上界，因而全局维数有限。
+
+**接口二：同一 strongly connected component 内的 simple Tor 在 corner 与 \(A\) 中相同。** 设该 component 为 \(S\)，\(e=\sum_{i\in S}e_i\)，\(B=eAe\)。在 (3) 中，对 \(s,t\in S\)，任何非零 tensor 的顶点序列给出从 \(s\) 到 \(t\) 的 Peirce 有向路径。它不可能经过 \(S\) 外的顶点；否则该顶点既能从 \(S\) 到达，又能回到 \(S\)，已经属于同一个 strongly connected component。因此整个 bar complex 正好等于 \(B\) 的相应 bar complex，包括微分，故
+
+\[
+\operatorname{Tor}_n^B(R_t^B,L_s^B)
+\cong\operatorname{Tor}_n^A(R_t,L_s)
+\quad(s,t\in S,\ n\ge0).
+\tag{5}
+\]
+
+现在若 \(\operatorname{gldim}A=\infty\)，接口一保证至少一个 component corner \(B\) 的全局维数无限。它的 Peirce 图是森林，故前稿森林定理给出一对 supported persistent Tor simples。由 (5) 以及 corner 内 Peirce 分量与原代数相同，得到 \(A\) infinite \(+\)。两种情况穷尽，定理 2 得证。\(\square\)
+
+这证明的是 Gap A。第二种情况可能涉及任意非平凡 local corners，本稿没有因此解决它们的普通 HH survival。
+
+**三顶点推论。** 消去定理、定理 1 与 component 接口合起来，还给出原始 Three-Vertex Gap-A Theorem 的另一份证明。至多三个顶点时，若 \(G(C)\) 不是三角形，则为森林，消去定理适用。若为三角形且有一条双向边，则先消去不在这条边上的第三顶点，随后剩下两个顶点；这满足全部消去条件。最后，若三条边均为单向，则是三顶点 tournament：它要么为有向三圈，此时定理 1 适用；要么没有有向圈，此时所有 strongly connected components 都是单点，由上述两个接口及单点森林结论得到 Gap A。这穷尽所有情形。\(\square\)
+
+## 6. 两个五顶点模式的明确排除
+
+下表中的列掩码与前稿输出完全一致；第 \(s\) 个整数的第 \(t\) 位对应 \(C_{ts}\)。每条闭路都满足 (F)、(T)。
+
+| 前稿模式 | \(C\) 的列掩码 | 闭路证书 | 对闭路顶点成立的结论 |
+|---|---|---|---|
+| 双向五圈 | `[25,22,14,13,19]` | \(0\to3\to2\to1\to4\to0\) | \(\operatorname{Tor}_{5q}(R_v,L_v)\ne0\)，所有 \(q\ge1\) |
+| 混合五顶点支撑 | `[25,14,22,13,19]` | \(0\to3\to2\to4\to0\) | \(\operatorname{Tor}_{4q}(R_v,L_v)\ne0\)，所有 \(q\ge1\) |
+
+第二行还可使用 \(0\to4\to1\to3\to0\)，故五个顶点实际上都被某个四步证书覆盖。
+
+这些结论对**所有具有相应 \(C\) 的实际代数**成立，不需要它们真的实现前稿所枚举的 \(H\)。因此两个 \(C,H\) 候选模式确实不可能来自 Gap-A failure。
+
+## 7. 现在剩下的中心模式
+
+本节记 \(H_{ij}=1\) 当且仅当 \(\operatorname{Tor}_n^A(R_i,L_j)\ne0\) 对无穷多个 \(n\) 成立。前稿枚举中唯一尚未排除的一对矩阵是
+
+\[
+C_{\rm cols}=[31,11,21,13,19],\qquad
+H_{\rm cols}=[0,12,18,20,10].
+\tag{6}
+\]
+
+其支撑可直接描述为：中心 \(0\) 与四个外围顶点 \(1,2,3,4\) 双向相连；外围仅保留有向四圈
+
+\[
+1\to3\to2\to4\to1.
+\]
+
+中心的 \(H\) 行、列都为零，所以若 (6) 来自实际代数，其中心 left simple 具有有限 projective dimension 和有限 injective dimension。外围 simples 的上述 \(H\) 则非零。
+
+这个模式不能用定理 1 的支撑证书排除：每条外围 Peirce 边都可能经中心分解，每条中心边又可能经合适的外围顶点分解；此时 \(F(C)\) 为空。**\(F(C)\) 为空并不是说实际 quiver 没有箭头**，而是当前数据不能确定任何一个指定方向必有箭头。
+
+若四条外围边在实际 \(J/J^2\) 中都非零，它们立即组成满足零乘积条件的四圈，故已可排除。因而一个实现 (6) 的 failure 还必须满足：至少一条外围非零 Peirce 分量完全落在 \(J^2\) 中。对应分量 \(M=e_tAe_s\) 只有中心这一种第三顶点分解，故
+
+\[
+M=(e_tJe_t)M+M(e_sJe_s)+e_tAe_0Ae_s.
+\]
+
+对商去掉最后一项后，再用引理 3 的幂零迭代，得到
+
+\[
+\boxed{e_tAe_s=e_tAe_0Ae_s\ne0}
+\tag{7}
+\]
+
+对至少一条外围边成立。这里右侧按 usual convention 表示乘积张成的子空间；它对左右 local corner 作用封闭。
+
+(7) 把剩余问题推进到实际乘法：有限 pd/id 的中心必须完整承载至少一条外围方向，而所有外围 simples 的充分高次 projective resolution 项又不能含有 \(Ae_0\)。后者只是投射标签的限制，不表示 syzygy 的整个 \(e_0\)-分量为零。尚缺的是证明这些条件不能共存，或者在共存时构造 supported persistent Tor。
+
+**可直接交给后续研究的精确命题。** 不存在有限维 basic \(\mathbb C\)-algebra，其 Peirce 支撑矩阵和 persistent Tor 矩阵同时等于 (6)。为证明这个命题，可以额外使用已经推出的有限 \(\operatorname{pd}_A L_0,\operatorname{id}_A L_0\)，以及至少一条外围边满足 (7)；这些均为必要条件，尚不是矛盾。
+
+“唯一剩余模式”依赖前稿五顶点必要条件的穷尽枚举；两个排除证书和定理 1–2 不依赖该枚举的完备性。本稿不把候选模式视为反例，也不把五顶点定理标记为已完成。
+
+## 8. 可运行证书及审计边界
+
+程序 [peirce_zero_turn_certificate.py](peirce_zero_turn_certificate.py) 只依赖 Python 标准库。在本目录运行：
+
+```text
+python peirce_zero_turn_certificate.py --demo
+python peirce_zero_turn_certificate.py --input matrix.json
+```
+
+输入包含 `C_columns`，可选 `cycle`；`cycle` 不重复写末尾起点。未指定闭路时，程序在“箭头对”状态图中寻找闭路：从 \((s,t)\) 到 \((t,u)\) 的转移要求 \(C_{us}=0\)。检查器逐条复核 (F)，并检查闭路末尾接回开头的零乘积条件。
+
+[peirce-zero-turn-certificates.json](peirce-zero-turn-certificates.json) 保存两个五顶点排除证书及其他校准例。证书失败仅表示这个充分条件没有判定，不能作为有限全局维数或 failure 的证据。
+
+另外用独立的集合与可达闭包实现审计了全部 4,096 个四顶点有向 Peirce 支撑：其中 297 个有闭路证书，搜索器与闭包判定完全一致。对全部 388 个五顶点无三角形无向图的所有非空边方向选择，共检查 39,532 个矩阵，其中 11,551 个进入有向闭路分支，27,981 个进入森林 component 分支，均与第 5 节的图论划分一致。三个故意破坏假设的证书也被拒绝。这是有限程序和图论审计，不替代任意规模的证明，更不构成独立同调 verifier 的认证。
+
+证明中的重点已逐项自审：
+
+1. 每条选取的 radical 元在 \(J/J^2\) 中非零，由引理 3 保证。
+2. 零乘积在 \(A\) 内严格成立，来自对应 Peirce 分量为零。
+3. 所构造的 bar cycles 不只是非零 chains；投影 (4) 明确排除了 boundaries。
+4. 圈闭合处也满足零乘积，故可以重复任意多次。
+5. (5) 只对 strongly connected component corners 使用，没有推广到任意 corner。
+6. 对任意规模的无三角形图，证明已经处理所有有向图情况；有限枚举只审计程序与有限图论步骤。
+
+原归档的 verified fact graph 保持原样。本稿仍是可供独立审阅的完整证明稿，不是 verifier-approved fact。

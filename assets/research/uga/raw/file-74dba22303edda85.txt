@@ -1,0 +1,305 @@
+# 任意 N 的删点接口：高次 Ext 比较与必须保留的边界模块
+
+2026-09-15。服务于 [任意 N 主路线](N-Vertex-Main-Route.md)。
+
+**状态：Universal Gap A 仍未证明。** 本稿完成一个明确的删点反例、附加条件精确的比较定理和适用于任意 N 的相对范畴约化。证明为完整自审证明；计算是有限精确审计，没有独立 verifier 或形式化认证。一般的 eventually homological isomorphism 机制已有文献，本稿不主张其新颖性。
+
+## 1. 记号和需要检验的推断
+
+均使用有限维 basic 复代数及有限维左模。写
+\[
+1=\sum_i e_i,\quad L_i=Ae_i/Je_i,\quad R_i=e_iA/e_iJ,
+\quad \beta_{ij}^A(n)=\dim\operatorname{Ext}_A^n(L_j,L_i).
+\]
+所以 \(\beta_{ij}^A(n)=\dim\operatorname{Tor}_n^A(R_i,L_j)\)，supported 条件是 **反向** Peirce 条件 \(e_jAe_i\ne0\)。
+
+令 \(e\) 为部分 primitive idempotents 之和，\(B=eAe\)。保留顶点满足 \(ee_i=e_i\)，删除顶点满足 \(ee_f=0\)。
+
+需要避免的推断是：
+
+> 被删 simple 都具有有限投射维数和内射维数，所以可以直接以角代数 B 替换 A 的高次 Ext 或奇点范畴。
+
+下面的十维例子否定这一推断。即使保留的恰好是全部无限投射维数的左 simple 顶点，推断仍不成立。
+
+## 2. 十维反例：有限 pd 和 id 仍不足以保证删点比较
+
+取顶点 \(0,1,2\)，箭头
+\[
+x:0\to0,\quad a:1\to0,\quad p:1\to2,\quad i:2\to1,
+\]
+乘法从右向左读，关系为
+\[
+x^2=0,\qquad pi=0,\qquad xa=aip.
+\tag{1}
+\]
+令 \(v=ip,\ y=ai,\ z=xa=av=yp\)。一组 radical 基是
+\[
+x,a,p,i,v,y,z.
+\]
+全部非零 radical 基乘积恰为
+\[
+ip=v,\quad ai=y,\quad av=z,\quad xa=z,\quad yp=z.
+\tag{2}
+\]
+这给出十维结合代数，\(J^4=0\)。例如唯一需要比较的三因子非零乘积是 \((ai)p=a(ip)=z\)；其余结合律也直接由 (2) 核对。
+
+其三个左投射模的基和维数向量为
+\[
+\begin{array}{c|c|c}
+P_0&(e_0,x)&(2,0,0)\\
+P_1&(e_1,a,p,v,z)&(2,2,1)\\
+P_2&(e_2,i,y)&(1,1,1).
+\end{array}
+\tag{3}
+\]
+
+**命题 1。** 该代数满足
+\[
+\Omega L_0\simeq L_0,\qquad
+\Omega^2L_1\simeq L_0,\qquad
+\Omega^2L_2\simeq P_2,
+\tag{4}
+\]
+以及
+\[
+\operatorname{pd}_A L_0=\operatorname{pd}_A L_1=\infty,
+\qquad \operatorname{pd}_A L_2=\operatorname{id}_A L_2=2.
+\tag{5}
+\]
+
+**证明。** \(JP_0=\mathbb Cx\) 是 \(L_0\)。\(JP_1\) 的最小投射覆盖是
+\[
+P_0\oplus P_2\longrightarrow JP_1,
+\quad e_0\mapsto a,\quad e_2\mapsto p.
+\]
+其中 \(x\) 和 \(y\) 都映到 \(z\)，核恰为 \(\mathbb C(x,-y)\simeq L_0\)。
+
+\(JP_2\) 的覆盖 \(P_1\to JP_2\) 把 \(e_1\) 映到 \(i\)、\(a\) 映到 \(y\)，核为 \(\langle p,v,z\rangle\)。映射
+\[
+P_2\longrightarrow\langle p,v,z\rangle,
+\quad e_2\mapsto p,\ i\mapsto v,\ y\mapsto z
+\]
+是模同构。前一个 kernel 非零且 \(JP_2\) 非投射，故 \(\operatorname{pd}L_2=2\)。
+
+对右模，\(\operatorname{rad}(e_1A)=\langle i,v\rangle\simeq e_2A\)，而 \(\operatorname{rad}(e_2A)=\mathbb Cp\simeq R_1\)。因此 \(\operatorname{pd}R_1=1\)、\(\operatorname{pd}R_2=2\)。由有限维对偶得到 \(\operatorname{id}L_2=2\)。\(\square\)
+
+现在只删顶点 2，取 \(e=e_0+e_1\)。角代数的 radical 基为 \(x,a,v,z\)，非零乘积为 \(xa=z=av\)，所以
+\[
+B\simeq \mathbb C(1\to0)\otimes\Delta,
+\qquad \Delta=\mathbb C[\epsilon]/(\epsilon^2).
+\tag{6}
+\]
+但 \(eP_2\) 有基 \(i,y\)，作用是 \(ai=y\)、\(vi=xy=0\)。写 \(\Gamma=\mathbb C(1\to0)\)，则
+\[
+eP_2\simeq (\Gamma e_1)\otimes\mathbb C,
+\qquad \Omega_B(eP_2)\simeq eP_2\ne0.
+\tag{7}
+\]
+后一同构来自 \(\Delta\) 的标准一周期简单模消解，张量 \(\Gamma e_1\)。因此
+\[
+\boxed{\operatorname{pd}_B eA=\infty.}
+\tag{8}
+\]
+
+高次 Ext 的差异也可直接看见：
+\[
+\operatorname{Ext}_A^n(L_1,L_1)=0\quad(n\ge2),
+\qquad
+\operatorname{Ext}_B^n(eL_1,eL_1)\simeq\mathbb C\quad(n\ge0).
+\tag{9}
+\]
+第一式由 (4) 及 \(\operatorname{Hom}(L_0,L_1)=0\) 得到。第二式把 \(\Gamma\)-simple 的消解与 \(\Delta\)-simple 的一周期消解张量：\(\operatorname{Ext}_\Gamma^{>0}(L_1,L_1)=0\)，而 \(\operatorname{Ext}_\Delta^n(\mathbb C,\mathbb C)=\mathbb C\)。
+
+还可以排除普通奇点范畴的抽象等价。Cartan 矩阵及 Smith 不变量为
+\[
+C_A=\begin{pmatrix}2&2&1\\0&2&1\\0&1&1\end{pmatrix},
+\quad (1,1,2);
+\qquad
+C_B=\begin{pmatrix}2&2\\0&2\end{pmatrix},\quad (2,2).
+\tag{10}
+\]
+对 **未另作 idempotent completion 的普通 Verdier 奇点范畴**，Grothendieck 群是 Cartan 映射的余核。因此
+\[
+K_0D_{\rm sg}(A)\simeq\mathbb Z/2,
+\qquad K_0D_{\rm sg}(B)\simeq(\mathbb Z/2)^2.
+\tag{11}
+\]
+两者不可能三角等价。此处没有把该计算自动用于任意补全后的范畴。
+
+**边界。** 该例本身满足 Gap A：\(L_0\) 每一阶 self-Tor 非零。它否定删点捷径，没有否定主目标 (U)。
+
+## 3. 任意 N 的高次 Ext 比较定理
+
+**定理 2。** 设存在整数 \(a,c\ge0\)，使
+\[
+\operatorname{id}_A L_f\le a\quad(ee_f=0),
+\qquad \operatorname{pd}_B eA\le c.
+\tag{12}
+\]
+则对所有有限维左 \(A\)-模 \(X,Y\)，限制函子诱导的自然映射为同构：
+\[
+\boxed{
+\operatorname{Ext}_A^n(X,Y)\xrightarrow{\ \sim\ }
+\operatorname{Ext}_B^n(eX,eY)
+\quad(n\ge a+c+2).
+}
+\tag{13}
+\]
+\(e=1\) 时当然在所有次数直接同构，无需本定理的界。
+
+**证明。** \(e(-)\) 是正合函子，其导出右伴随为
+\[
+\mathcal R(Z)=R\operatorname{Hom}_B(eA,Z).
+\]
+左 \(A\)-作用由 \(eA\) 的右 \(A\)-作用给出。条件 \(\operatorname{pd}_B eA\le c\) 保证 \(\mathcal R\) 把有界有限维复形送到有界有限维复形。
+
+取单位三角
+\[
+Y\longrightarrow \mathcal R(eY)\longrightarrow K_Y\longrightarrow Y[1].
+\tag{14}
+\]
+\(\mathcal R(eY)\) 的上同调只在次数 \(0,\ldots,c\)，故 \(K_Y\) 只在 \(-1,\ldots,c\) 可能有上同调。另一方面
+\[
+e\mathcal R(eY)=R\operatorname{Hom}_B(eAe,eY)\simeq eY,
+\]
+并且限制后的单位正是此同构。因此 \(eH^q(K_Y)=0\)。这些上同调模的全部 composition factors 都是被删 simple，由有限长度归纳及 (12)，其 \(A\)-内射维数均不超过 \(a\)。
+
+用有限 Postnikov 分解，其各层为 \(H^q(K_Y)[-q]\)，且
+\[
+\operatorname{Hom}_{D^b(A)}(X,H^q(K_Y)[n-q])=0
+\quad(n>a+c).
+\]
+所以
+\[
+\operatorname{Hom}_{D^b(A)}(X,K_Y[n])=0\quad(n>a+c).
+\tag{15}
+\]
+对 (14) 取 \(\operatorname{Hom}(X,-[n])\)。当 \(n\ge a+c+2\) 时，夹在比较映射两侧的 \(K_Y[n-1]\)、\(K_Y[n]\) 的 Hom 都为零。导出伴随于是给出 (13)。由单位与伴随的自然性，这就是正合限制函子对 Yoneda extensions 的自然映射。\(\square\)
+
+条件 (12) 是已知一般机制的具体形式，见 [Psaroudakis–Skartsæterhagen–Solberg，Corollaries 3.11–3.12](https://arxiv.org/pdf/1402.1588)。本稿逐项证明所用次数界；没有把该文的 Hochschild 有限生成条件 Fg 与本项目的桥梁 (FG) 混同。
+
+## 4. 条件必要性、Gap A 传递及归纳意义
+
+**命题 3。** 存在所有有限模共用的整数 \(t\ge0\)，使限制映射在 \(n>t\) 全为同构，当且仅当
+\[
+\max_{ee_f=0}\operatorname{id}_A L_f<\infty,
+\qquad \operatorname{pd}_B eA<\infty.
+\tag{16}
+\]
+
+**证明。** 充分性是定理 2。反之，取 \(Y=L_f\)，右侧 Ext 为零，便有 \(\operatorname{id}L_f\le t\)。取 \(X=A\)，得到 \(\operatorname{Ext}_B^{n}(eA,eY)=0\)（\(n>t\)）。每个有限维 \(B\)-模 \(Z\) 都能写为 \(eY\)：可取 \(Y=Ae\otimes_BZ\)，因为 \(eY\simeq B\otimes_BZ\simeq Z\)。故 \(\operatorname{pd}_B eA\le t\)。\(\square\)
+
+因此，对于“所有模的高次 Ext 由同一个删点函子保持”的路线，\(\operatorname{pd}_B eA<\infty\) 是实际的必要条件。
+
+**推论 4。** 在 (12) 下，令 \(t=a+c+1\)。则：
+
+1. 被删 simple 的投射维数不超过 \(t\)。
+2. \(\operatorname{gldim}A<\infty\) 当且仅当 \(\operatorname{gldim}B<\infty\)。若有限，则
+   \[
+   \operatorname{gldim}A\le\max\{\operatorname{gldim}B,t\},\qquad
+   \operatorname{gldim}B\le\max\{\operatorname{gldim}A,t\}.
+   \tag{17}
+   \]
+3. A 存在 infinite supported Tor pair，当且仅当 B 存在这样的 pair。
+
+**证明。** 第一项在 (13) 中取 \(X=L_f\)。第二项使用所有模的比较及上面 \(e(-)\) 的本质满性。第三项中，被删顶点作为 source 时由第一项排除，作为 target 时由 (12) 排除；保留 simple 的限制仍为对应的 \(B\)-simple，且
+\[
+e_jBe_i=e_jAe_i
+\]
+在保留顶点间逐项成立。故 Peirce 支撑和高次 simple Ext 同时保持。\(\square\)
+
+**任意 N 的归纳接口。** 若存在主目标 (U) 的反例，并选取顶点数最少者，那么它不可能有满足 (16) 的非零真 idempotent \(e\)。否则由推论 4 得到更少顶点的反例。这一约束适用于任意 \(N\)，但尚未证明这样的可删点必定存在。
+
+## 5. 次数边界的连通校准族
+
+对任意整数 \(c\ge0\)，令 \(\Gamma_c\) 是有向链
+\[
+0\longrightarrow1\longrightarrow\cdots\longrightarrow c
+\]
+的 radical-square-zero 代数。它满足 \(\operatorname{gldim}\Gamma_c=c\)，左 simple \(S_0\) 的最小消解逐次经过 \(\Gamma_ce_0,\ldots,\Gamma_ce_c\)。
+
+取
+\[
+B_c=\Gamma_c\otimes\Delta,\qquad M_c=S_0\otimes\Delta,
+\qquad
+A_c=\begin{pmatrix}B_c&M_c\\0&\mathbb C\end{pmatrix}.
+\tag{18}
+\]
+新增顶点记为 \(f\)，保留全部 \(B_c\) 顶点。该代数连通，有 \(c+2\) 个顶点，维数为 \(4c+5\)。
+
+\(M_c\) 的最小 \(B_c\)-消解是 \(S_0\) 的 \(\Gamma_c\)-消解张量 \(\Delta\)，所以 \(\operatorname{pd}_{B_c}M_c=c\)。又有
+\[
+eA_c=B_c\oplus M_c,\qquad
+\Omega_{A_c}L_f=M_c,
+\qquad e_fA_c=\mathbb C e_f.
+\]
+旧顶点的左投射模在 \(A_c\) 中就是原来的 \(B_c\)-投射模。于是
+\[
+\operatorname{id}_{A_c}L_f=0,\qquad
+\operatorname{pd}_{B_c}eA_c=c,\qquad
+\operatorname{pd}_{A_c}L_f=c+1.
+\tag{19}
+\]
+尤其
+\[
+\operatorname{Ext}_{A_c}^{c+1}(L_f,L_c)=\mathbb C,
+\qquad
+\operatorname{Ext}_{B_c}^{c+1}(eL_f,eL_c)=0.
+\tag{20}
+\]
+因此，定理 2 在 \(a=0\) 时给出的起始次数 \(c+2\)，对一般所有模的比较不能降低到 \(c+1\)。这证明的是该条边界的 sharpness，没有断言对每组 \((a,c)\) 都达到等号。
+
+## 6. 不满足比较条件时，任意 N 应保留什么
+
+只假设被删 simple 的 **左投射维数有限**，仍有正确的相对奇点范畴公式：
+\[
+\boxed{
+D_{\rm sg}(A)\simeq
+D^b(B\text{-mod})/\operatorname{thick}(eA).
+}
+\tag{21}
+\]
+这里 \(D_{\rm sg}(A)=D^b(A\text{-mod})/\operatorname{perf}A\)。
+
+**证明及文献输入。** 正合 Schur 函子在有界导出范畴上是商函子，其核由被删 simple 生成。取投射生成元的 thick 商，得到
+\[
+D_{\rm sg}(A)/\operatorname{thick}(q(L_f):ee_f=0)
+\simeq D^b(B\text{-mod})/\operatorname{thick}(eA).
+\]
+这是 [Kalck–Yang，Proposition 3.3](https://www.pure.ed.ac.uk/ws/portalfiles/portal/27461881/Relative_singularity_categories_I_Auslander_resolutions.pdf) 取 \(f=1\) 后的左模形式。被删 simple 有限 pd，故它们在左侧奇点范畴中的像全为零，得到 (21)。\(\square\)
+
+因为 \(eA=B\oplus eA(1-e)\)，公式还可写为
+\[
+D_{\rm sg}(A)\simeq
+D_{\rm sg}(B)/\operatorname{thick}\bigl(q_B(eA(1-e))\bigr).
+\tag{22}
+\]
+因此真正需要保留的数据是 **角代数 B 加上边界模块 \(eA(1-e)\)**。只有边界模块是 perfect 时，这个特定商才直接化为 \(D_{\rm sg}(B)\)。十维反例中的 \(eP_2\) 正是一个不能丢弃的一周期边界模块。
+
+对任意 A，可以选 \(e\) 为全部无限投射维数左 simple 顶点之和。若 \(e\ne0\)，被删 simple 自动有限 pd，故 (21) 始终可用。进一步
+\[
+\operatorname{gldim}A<\infty
+\quad\Longleftrightarrow\quad
+D^b(B\text{-mod})=\operatorname{thick}(eA).
+\tag{23}
+\]
+这个等价适用于一般有限 pd 删点；采用“全部无限 pd 顶点”的选择时，它说明任何非零奇点必须在该相对商中存活。
+
+**仍未证明的步骤。** 目前没有从主路线的完整 Peirce 消失条件 \((Z_b)\) 推出 (23) 右侧，也没有证明所有最小反例都存在满足 (16) 的真 idempotent。相对商保留了删点所需的信息，但不能单凭这种范畴重写就宣布完成任意 N。
+
+## 7. 精确审计和复现
+
+运行：
+
+```powershell
+python work/audit_idempotent_deletion.py
+```
+
+结果写入 [idempotent_deletion_audit.json](../work/idempotent_deletion_audit.json)。程序使用有理数精确运算，完成了：
+
+- 十维代数的乘法核对，以及与已有 endomorphism 模型的实际代数同构；
+- (4) 的显式双向模同构、左右 simple 的有限消解、\(eP_2\) 的一周期同构；
+- 次数 2 至 7 的 (9)，及两个 Cartan 矩阵的 Smith 不变量；
+- \(c=0,1,2,3\) 四个连通校准例，共 162 项高次 simple-pair 比较，并分别确认起始次数之前的失败项。
+
+无穷性、所有次数的比较及全体 \(c\) 的断言依靠正文证明；有限程序输出不替代这些证明。原归档的 verified fact graph 没有改动。

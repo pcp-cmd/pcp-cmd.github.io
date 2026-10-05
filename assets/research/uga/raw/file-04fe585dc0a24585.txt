@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-03T05:26:12.911062+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "3ccee18af3e07147f80ac09a7ed431039b0e021c1e888d30ff522986bfed2502",
+    "object": "Eight-dimensional triangular extension: infinite-pd deleted simple, actual return-complement tail and ordinary bar comparison",
+    "deliverables": [
+      "verify_return_tail.py",
+      "return-tail-result.json",
+      "computation-record.json"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "Basis e1,e2,e3,a,b,t,c,s with ab=t; all other radical products vanish.",
+      "a:1->2, b:2->1, c:2->3, t loop at 2, s loop at 3. Delete vertex 2.",
+      "Ambient bar bound 10 with incoming degree 11; passage bound 8; local negative-magnitude fillers 2..8."
+    ],
+    "domain": "Finite-dimensional split algebra over Q; all nine simple-pair relative bar complexes and normalized idempotent-derived quotient",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Sparse rational Gaussian elimination using fractions.Fraction"
+      ],
+      "existence_evidence": "Frozen verify_return_tail.py uses the standard-library sparse Fraction elimination routine reused from the prior calibration.",
+      "local_availability": "available",
+      "availability_evidence": "Material execution through observer_run.py completed under Python 3.14.3 with all assertions passing."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3",
+    "selection_reason": "Small sparse ordinary bar complexes admit exact rational elimination using the already available Python runtime.",
+    "fallback_reason": "No callable local Mathematica or native Sage was available. Remote Wolfram services were not substituted for the local backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python process; skill observer_run.py wrapper",
+    "command_or_input": "python -B verify_return_tail.py --out return-tail-result.json",
+    "code_artifact": "verify_return_tail.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_return_tail.py",
+      "sha256": "7005c186c9a9218725e8cbb1c0652ab86e6f1b15b35c899fe9025de03b0c0ce6"
+    },
+    {
+      "role": "result",
+      "path": "return-tail-result.json",
+      "sha256": "76d074747878232b08f55fa05672803b5b0e861c47511ecf843b55a50cfc4df1"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "summary": "Passed 512 associativity triples, module/ideal checks, all nine simple-pair Tor complexes in degrees 0..10 with incoming degree 11, 1203 differential-square checks, 122 passage chain checks, and 14 excursion-one fillers.",
+    "result_artifact": "return-tail-result.json"
+  },
+  "verification": {
+    "methods": [
+      "Exhaustive associativity on eight basis elements",
+      "A-linear projective-radical decomposition and deleted-ideal zero-column checks",
+      "Exact outgoing and incoming rational bar ranks against analytic Betti formulas",
+      "Differential-square checks",
+      "Exact passage/bar differential identification",
+      "Explicit local-class fillers with excursion one"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact arithmetic; no numerical residual.",
+    "limitations": [
+      "Finite degrees do not prove the all-degree resolution or quotient formulas.",
+      "One researcher supplied the code and analytic proof; this is not independent verification.",
+      "The algebra is infinite + at vertex 3 and is not a Universal Gap A counterexample.",
+      "Schema and artifact hashes do not prove mathematical semantics."
+    ]
+  }
+}

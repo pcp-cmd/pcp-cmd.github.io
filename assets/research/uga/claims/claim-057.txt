@@ -1,0 +1,14 @@
+## UGA-C057 — Unbounded Screening Requires Unbounded Higher-Output Binary Indecomposables
+**Status:** COMPLETE SELF-AUDITED NECESSITY PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** binary-indecomposable Run, Proposition 4.1.
+
+For a fixed minimal augmented model, set \(D_2=\operatorname{im}m_2\) and \(D_\infty=\sum_{r\ge2}\operatorname{im}m_r\), using spans of reduced-input outputs. Then
+\[
+0\longrightarrow D_\infty/D_2\longrightarrow I_2(H)
+\longrightarrow P_\infty\longrightarrow0.
+\]
+Any nonzero zero-column \(E^2\) class which is eventually killed belongs to \(D_\infty/D_2\). Unbounded excursion screening therefore forces this higher-output residue to be nonzero in unbounded degrees on the actual fixed local pair. In high reverse-supported pairs the residue equals \(I_2\) by UGA-C054.
+
+Membership is necessary, not a full-boundary or late-page certificate. The higher-output residue retains its fixed-model qualification; the binary quotient is a cohomology-ring construction. No arity/page equivalence or support-to-Tor implication is asserted.
+
+---

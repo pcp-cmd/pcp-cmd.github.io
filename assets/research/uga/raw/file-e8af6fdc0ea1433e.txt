@@ -1,0 +1,188 @@
+# §0 Mathematical verdict
+
+**Not solved.** The canonical corner comparison is closed, but three verifier-accepted counterexamples now rule out generic fifth-branch promotion, one-edge visibility, and bilateral support/Tor recovery; the only viable universal route must exploit the actual vertex-minimal syzygy dead-zone comparison maps or prove strict secondary-corner descent.
+
+**Closed components.** Dead-zone descent, strict vertex reduction, the one/two-vertex bases, opposite-invariance, and the canonical five-way actual corner-simple comparison are verifier-closed (`59a12876ab799b9e`, `5da47c5107901438`, `4ac1cd635b7cb0e8`, `60cb94b92665a3ca`, `ee07f374726a4e16`, `932a22f86dc2b944`, `9b661439db7f6ae9`). The exact final plus criterion is `0dc7d2e243818132`.
+
+**Viable proof architecture.** Use vertex-minimal Gap-A failure to create an actual syzygy dead-zone corner, run `9b661439db7f6ae9`, and show from its canonical maps that every incompatible or projective-escape output generates a proper secondary corner with infinite recurrence; obtain the plus witness only after strict descent terminates.
+
+**Main blocker.** `31c4037065600009` shows that the fifth branch may repeatedly contain an ambient-projective simple with no higher Tor partner. `9110d8cc8257b511` shows that even persistent cross-Tor and nonzero transfer spaces for both (A) and (A^{op}) do not force either return product. Together with `78e3ab82c1e9d0e7`, they eliminate all support-level recycling formulations.
+
+**Highest-priority unresolved bridge.** Identify and verifier-prove the exact structural separator between these counterexamples and an actual vertex-minimal Gap-A syzygy dead-zone comparison, then use that separator to construct a proper secondary recurrent corner whenever `9b661439db7f6ae9` fails to yield the criterion `0dc7d2e243818132`.
+
+**Method failure vs. proposition failure.** Generic promotion and naive bilateral recovery are method failure; no proposition failure for universal Gap A or Han has been established.
+
+**Calibration caveat.** More counterexamples make the correct theorem sharper, not closer by themselves: the actual separator and strict-descent construction remain unverified.
+
+| Dashboard item | State |
+|---|---|
+| Fixed goal | UNCHANGED — prove or refute Han's conjecture and build a broader verified recurrence–visibility/corner-defect theory. |
+| Verified complete proof | NO |
+| Verified counterexample | NO counterexample to Gap A or Han; YES counterexamples to generic cross-product, recurrent-edge, fifth-branch promotion, and naive bilateral recovery. |
+| Signed-closed sub-tasks | Dead-zone descent; strict size reduction; one/two-vertex bases; opposite-invariance; canonical five-way comparison; final recurring-summand plus criterion. |
+| Main blocker | Canonical dead-zone separator and strict secondary-corner descent. |
+| Routes marked false/obsolete | YES — support-level unilateral/bilateral recycling and generic fifth-branch promotion are FALSE AS STATED. |
+| Highest-priority unresolved task | P0 — prove that actual minimal dead-zone comparison excludes the projective/bilateral zero-product escapes or converts them into strict descent. |
+
+| Sub-task | Status | Closed facts | Conditional facts | Main missing interface |
+|---|---|---|---|---|
+| Dead-zone descent | SUBSTANTIAL | `59a12876ab799b9e`, `5da47c5107901438`, `4ac1cd635b7cb0e8` | Exact external one-way premise must be instantiated | Match it on a vertex-minimal failure. |
+| Low-vertex frontier | SUBSTANTIAL | `60cb94b92665a3ca`, `ee07f374726a4e16` | Mutual dumbbell remains | Produce the recurrent summand and matching Peirce block. |
+| Canonical corner comparison | CLOSED | `35b1a1b5712044a4`, `9b661439db7f6ae9` | None for the five-way output | Promote or descend from its non-direct branches. |
+| Generic fifth-branch promotion | FALSE AS STATED | `31c4037065600009` | A repeated simple may be projective over (A) | Use actual dead-zone minimality or abandon promotion for descent. |
+| Generic bilateral recycling | FALSE AS STATED | `9110d8cc8257b511` | Both sides may recur while both products vanish | Use canonical maps and strict minimality, not support symmetry. |
+| Canonical secondary-corner descent | UNKNOWN | `9b661439db7f6ae9`, `0dc7d2e243818132` give input and closure target | No verified separator/invariant | Construct the next corner and prove strict decrease plus recurrence. |
+| Han closure | PARTIAL | Algebraic recurrence machinery | Universal Gap A and exact ordinary-Hochschild interface remain | Finish descent, then verify the Hochschild implication. |
+
+**Current best proof skeleton**
+
+1. Choose a vertex-minimal Gap-A failure (A) and an infinite-projective-dimension simple (L_x).
+2. Use the exact one-way theorem to form its proper dead-zone idempotent (f).
+3. Apply `5da47c5107901438`, `59a12876ab799b9e`, and `4ac1cd635b7cb0e8` to obtain a smaller infinite-global-dimension corner (B=fAf).
+4. By minimality or low-vertex closure, choose a corner-simple infinite-(+) witness.
+5. Apply the actual comparison `9b661439db7f6ae9`.
+6. If it provides a recurrent ambient summand with matching Peirce block, apply `0dc7d2e243818132`.
+7. Otherwise retain the exact canonical kernel or higher-error construction; do not replace it by support data.
+8. Prove that actual dead-zone minimality excludes the projective escape of `31c4037065600009` and the bilateral zero-product pattern of `9110d8cc8257b511`, or use either escape to define a proper secondary idempotent.
+9. Prove the secondary corner has infinite recurrence and a strictly smaller well-founded state.
+10. Iterate until the direct criterion occurs, contradicting the assumed failure.
+11. Close the mutual dumbbell and exact ordinary-Hochschild interface to obtain universal Gap A and then Han.
+
+**Central missing lemma.** Let (A=kQ/I) be vertex-minimal among finite-dimensional basic algebras of infinite global dimension which are not infinite-(+), let (f) be the syzygy dead-zone idempotent associated with an infinite-projective-dimension vertex simple, and let a corner-simple infinite-(+) witness over (B=fAf) enter the canonical five-way comparison `9b661439db7f6ae9`. If no output satisfies `0dc7d2e243818132`, then the exact canonical kernel/higher-error data determine a nonzero proper idempotent (f'<1) such that (f'Af') carries an infinite minimal-resolution recurrence and the tuple consisting of vertex support, ordered dead zone, comparison provenance, and first nonzero canonical differential/radical layer is strictly smaller in an explicitly well-founded order. The hypotheses must be verified to fail in `31c4037065600009`, `9110d8cc8257b511`, and `78e3ab82c1e9d0e7`.
+
+# §1 Closed components and obsolete routes
+
+**Signed-closed components**
+
+- Proper infinite-global-dimension dead-zone corners — `59a12876ab799b9e`, `5da47c5107901438`, `4ac1cd635b7cb0e8`.
+- One/two-vertex bases — `60cb94b92665a3ca`, `ee07f374726a4e16`.
+- Opposite-invariance — `932a22f86dc2b944`.
+- Canonical five-way actual comparison — `9b661439db7f6ae9`.
+- Exact recurring-projective plus criterion — `0dc7d2e243818132`.
+
+| Route | Status | Reason |
+|---|---|---|
+| Cross support plus persistent Tor forces return multiplication | FALSE AS STATED | `6bd89784ef94bef3`. |
+| Recurrent radical edge forces reverse Peirce visibility | FALSE AS STATED | `78e3ab82c1e9d0e7`. |
+| Fifth-branch repeated simple has a persistent ambient left partner | FALSE AS STATED | `31c4037065600009` makes it ambient-projective. |
+| Applying recurrence to both (A) and (A^{op}) forces a return product | FALSE AS STATED | `9110d8cc8257b511` has bilateral recurrence and two zero products. |
+| Keep refining generic support states | OBSOLETE | Every such refinement lacking canonical map/minimality data is covered by the counterexamples. |
+
+# §2 Interface contract table
+
+### Minimal Gap-A failure to actual syzygy dead zone — create the constrained input
+**Input required.** A vertex-minimal failure and an exact ordered one-way high-syzygy theorem.
+
+**Output claimed.** A proper infinite-global-dimension corner whose idempotent is defined by the original simple's Peirce-zero set.
+
+**Available facts.** `5da47c5107901438`, `59a12876ab799b9e`, `4ac1cd635b7cb0e8`.
+
+**Missing verification on the actual model.** 1. Import the exact one-way theorem. 2. Match sides. 3. Record which minimality properties are inherited by the corner construction.
+
+**Failure mode if ignored.** Arbitrary corners admit the projective escape `31c4037065600009`.
+
+**Status.** SUBSTANTIAL
+
+### Actual corner witness to five typed outputs — canonical comparison
+**Input required.** Corner simples and the canonical induced modules, quotient maps, and kernels.
+
+**Output claimed.** The five alternatives of `9b661439db7f6ae9`.
+
+**Available facts.** `9b661439db7f6ae9`.
+
+**Missing verification on the actual model.** None for this interface.
+
+**Failure mode if ignored.** Not applicable.
+
+**Status.** CLOSED
+
+### Non-direct output to secondary corner — retain canonical map data
+**Input required.** The exact kernel or higher-error complex from `9b661439db7f6ae9`, plus the original dead-zone/minimality provenance.
+
+**Output claimed.** A proper recurrent corner with strict state decrease.
+
+**Available facts.** `9b661439db7f6ae9`, `51edbf2274f700d5`; boundary facts `31c4037065600009`, `78e3ab82c1e9d0e7`, `9110d8cc8257b511`.
+
+**Missing verification on the actual model.** 1. Define the idempotent from canonical data. 2. Prove infinite recurrence. 3. Prove properness. 4. Define and prove strict well-founded decrease. 5. Identify the separator absent from all counterexamples.
+
+**Failure mode if ignored.** Generic recurrence can live in projective ambient simples or bilateral zero-product modules forever.
+
+**Status.** UNKNOWN
+
+### Terminated descent to infinite-(+) — match recurrence and Peirce order
+**Input required.** A simple (L_b), a projective (Ae_a) recurring infinitely in its minimal resolution, and (e_bAe_a\ne0).
+
+**Output claimed.** (A) is infinite-(+).
+
+**Available facts.** `0dc7d2e243818132`.
+
+**Missing verification on the actual model.** Produce the two inputs at a terminal descent state.
+
+**Failure mode if ignored.** A recurrence with the wrong Peirce order is not plus.
+
+**Status.** SUBSTANTIAL
+
+# §3 Dangerous heuristic lines and strategies not to pursue
+
+**Dangerous heuristic lines**
+
+- “A simple repeated in every higher comparison row has an ambient Tor partner.” **Status: Mathematically incorrect as stated.** `31c4037065600009` makes that simple projective over (A).
+- “Doing the same construction for (A^{op}) removes zero-product derangement.” **Status: Mathematically incorrect as stated.** `9110d8cc8257b511` realizes the derangement on both sides.
+- “A fixed radical edge provides the missing reverse block.” **Status: Mathematically incorrect as stated.** `78e3ab82c1e9d0e7` separates them.
+- “The canonical comparison provenance is cosmetic.” **Status: Conflated with a stronger claim.** It is now the only visible structure absent from the generic counterexamples.
+- “Vertex minimality alone will exclude the examples.” **Status: Not automatic.** A proof must state the exact inherited property and show each counterexample violates it.
+
+**Strategies not to pursue**
+
+- Do not search for further support-only bilateral invariants: `9110d8cc8257b511` defeats them.
+- Do not promote repeated fifth-branch composition factors generically: `31c4037065600009` defeats this.
+- Do not infer a reverse Peirce block from a differential edge: `78e3ab82c1e9d0e7` defeats this.
+- Do not invoke vertex minimality without constructing the smaller counterexample/corner it would contradict.
+- Do not discard canonical kernels and edge maps in favor of their composition-factor supports.
+- Do not generate the final paper before the secondary-corner descent is verifier-closed.
+
+# §4 Missing bridge lemmas
+
+### Bridge 1 — Counterexample separator
+**Target statement.** The canonical comparison attached to a vertex-minimal Gap-A syzygy dead zone satisfies a precise property (P) of its kernel/higher-error maps which fails in `31c4037065600009`, `9110d8cc8257b511`, and `78e3ab82c1e9d0e7`.
+
+**Prerequisites.** Exact one-way dead-zone origin and actual maps from `9b661439db7f6ae9`.
+
+**Existing facts to use.** `9b661439db7f6ae9`; the three boundary counterexamples above.
+
+**Missing checks.** 1. Formulate (P). 2. Prove it from minimality/dead-zone origin. 3. Verify its failure in each counterexample. 4. Show it has downstream force.
+
+**Closure criterion.** (P) must imply either the final plus criterion or construction of a proper recurrent corner; a merely descriptive separator is insufficient. This bridge is independent and highest leverage.
+
+### Bridge 2 — Canonical secondary-corner descent
+**Target statement.** Under property (P), every non-direct output of `9b661439db7f6ae9` canonically yields a proper idempotent corner with infinite recurrence and strictly smaller defect state.
+
+**Prerequisites.** Bridge 1 and canonical comparison provenance.
+
+**Existing facts to use.** `9b661439db7f6ae9`, `51edbf2274f700d5`, `0dc7d2e243818132`.
+
+**Missing checks.** 1. Define the new idempotent. 2. Prove recurrence. 3. Prove properness. 4. Define the order. 5. Prove strict decrease and termination.
+
+**Closure criterion.** Every comparison branch must either meet `0dc7d2e243818132` or decrease the same well-founded order. This bridge depends on Bridge 1.
+
+### Bridge 3 — Mutual-dumbbell terminal state
+**Target statement.** The three-vertex mutual-dumbbell configuration satisfies `0dc7d2e243818132` or cannot occur as a terminal dead-zone state.
+
+**Prerequisites.** Exact dumbbell relations and ordered conventions.
+
+**Existing facts to use.** `ee07f374726a4e16`, `cfa612b56766b9c2`, `0dc7d2e243818132`.
+
+**Missing checks.** 1. Identify the recurrent summand. 2. Identify the matching Peirce block. 3. Control relations.
+
+**Closure criterion.** The surviving three-vertex case must close without an unverified classification shortcut. This bridge is independent.
+
+### Bridge 4 — Universal Gap A to Han
+**Target statement.** Universal Gap A plus the exact verified ordinary-Hochschild visibility theorem implies that eventual Hochschild-homology vanishing forces finite global dimension.
+
+**Prerequisites.** Bridges 1–3 and precise external theorem hypotheses.
+
+**Existing facts to use.** Current recurrence facts; no universal terminal fact yet.
+
+**Missing checks.** 1. Close universal Gap A. 2. Verify ordinary versus tau Hochschild statements. 3. Derive the contrapositive.
+
+**Closure criterion.** A verifier-accepted fact DAG must end at Han's original statement. This bridge is dependent.

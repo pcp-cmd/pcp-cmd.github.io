@@ -1,0 +1,182 @@
+# §0 Mathematical verdict
+
+**Not solved.** The original Han-conjecture project has a literature-level counterexample architecture and several verifier-accepted component lemmas, but it has neither a verifier-closed integrated counterexample proof nor a verifier-accepted proof or counterexample for the operator's active universal Gap A target.
+
+**Closed components.** The fact graph verifies that the KLS endomorphism construction produces an ordinary finite-dimensional complex algebra (`40cb2e3c58bf6ec6`), and it verifies the formal Hochschild-vanishing implication once the dg-singularity hypotheses are supplied (`bd597721f09fbbf2`). It also closes several elementary candidate families as unsuitable, including truncated polynomial algebras (`341cd214da0de5ac`) and a dual-number triangular family (`f57bf3108a82a0e6`).
+
+**Viable proof architecture.** For the active Gap A target, the strongest operator-supplied architecture is vertex-minimal counterexample -> dead-zone corner descent -> an infinite-(+) witness in a smaller corner -> corner witness or cross-Tor error lifts to a Peirce-visible simple recurrence in the ambient algebra.
+
+**Main blocker.** None of the dead-zone descent, low-vertex closure, opposite-invariance, or corner-to-global lifting statements from the 2026-08-20 handoff is yet a verified fact in this project's graph. The central witness-lifting implication therefore remains UNKNOWN rather than established.
+
+**Highest-priority unresolved bridge.** Prove, with all module-side conventions fixed, that in a vertex-minimal hypothetical Gap-A failure, an infinite-(+) witness in a dead-zone corner either lifts to the ambient algebra or its persistent idempotent cross-Tor error yields an ambient infinite-(+) witness.
+
+**Method failure vs. proposition failure.** Existing negative examples show method failure for naive local, truncated-cycle, direct-product, and triangular-extension searches; they do not establish proposition failure for universal Gap A. The KLS literature construction indicates proposition failure for the original Han conjecture, conditional here on the still-unclosed integrated dependency chain.
+
+**Calibration caveat.** Do not read SUBSTANTIAL as almost solved: every such row still has a load-bearing hypothesis unmatched in this project's verified fact graph.
+
+| Dashboard item | State |
+|---|---|
+| Fixed goal | UNCHANGED — determine whether eventual vanishing of Hochschild homology for a finite-dimensional complex algebra forces finite global dimension, without presupposing truth or falsity. |
+| Verified complete proof | NO |
+| Verified counterexample | NO integrated counterexample fact in this project |
+| Signed-closed sub-tasks | Component-level only: finite-dimensionality of the KLS endomorphism algebra; formal dg-to-ordinary Hochschild vanishing bridge; several excluded elementary families. |
+| Main blocker | Ambient lifting of a dead-zone-corner infinite-(+) witness, including the persistent cross-Tor error branch. |
+| Routes marked false/obsolete | YES — truncated polynomial, radical-square-zero cycle, dual-number triangular, and direct-product routes do not close the target. |
+| Highest-priority unresolved task | P0 — verifier-close dead-zone descent and then prove the corner-witness-or-error-witness lifting dichotomy. |
+
+| Sub-task | Status | Closed facts | Conditional facts | Main missing interface |
+|---|---|---|---|---|
+| Original Han counterexample construction | SUBSTANTIAL | `40cb2e3c58bf6ec6` | `bd597721f09fbbf2`, `168a7842aec9604b`, `bf2f1ee16158e0e2` | Match every KLS dg quotient, phantom acyclicity, and nonzero-singularity hypothesis on the actual construction. |
+| Universal Gap A | UNKNOWN | None in this project's fact graph | Operator handoff only | Verify the recurrence/dead-zone inputs and close corner-to-global lifting. |
+| Gap B classification of KLS | UNKNOWN | None integrated in this project's fact graph | Operator handoff reports an internally audited terminal-detector proof | Import and freshly verify the load-bearing terminal-detector chain only if needed by the active Gap A route. |
+| Unified recurrence-visibility theory | PARTIAL | Elementary recurrence obstructions and excluded families | Operator handoff supplies a coherent vocabulary | A verifier-accepted defect-recycling theorem. |
+
+**Current best proof skeleton**
+
+1. Assume a vertex-minimal finite-dimensional bound-quiver algebra (A) has infinite global dimension but is not infinite ((+)).
+2. Choose an infinite-projective-dimension simple (S_x) and prove the high syzygy top is eventually supported in the Peirce dead zone (Z(x)=\{y:e_xAe_y=0\}).
+3. Prove that applying the idempotent (f_x=\sum_{y\in Z(x)}e_y) to the actual minimal tail gives an infinite minimal resolution over Δ_x=f_xAf_x.
+4. By vertex minimality, infer that Δ_x is infinite ((+)).
+5. Represent a corner witness by persistent simple Tor/Ext data and compare its corner resolution with the ambient resolution using the exact idempotent error complex.
+6. If the error is eventually zero, lift the witness to (A).
+7. If the error persists, extract recurrent simple composition factors from cross-Tor and use Peirce compatibility to build an ambient witness.
+8. Use the same argument for (A^{op}) to exclude permanent left-right multi-top displacement.
+9. Contradict the assumption that (A) is not infinite ((+)).
+
+**Central missing lemma.** Let (A=kQ/I) be a finite-dimensional basic algebra that is vertex-minimal among algebras of infinite global dimension which are not infinite ((+)). Let (xin Q_0) have πd_A S_x=∞, let (Z(x)=\{y\in Q_0:e_xAe_y=0\}), let (f=\sum_{y\in Z(x)}e_y), and let Δ=fAf. Suppose Δ has vertices (u,v) with (e_vΔe_u\neq0) and (\operatorname{Tor}^{Δ}_n(k_u,{}_vk)\neq0) for infinitely many (n). Then either there are vertices (a,bin Q_0) with (e_bAe_a\neq0) and (\operatorname{Tor}^{A}_n(k_a,{}_bk)\neq0) for infinitely many (n), or the idempotent comparison error contains simple composition factors that yield such a pair. This is non-trivial because corner restriction need not be an eventual homological isomorphism and persistent matrix-level cross-Tor may undergo multi-top displacement.
+
+# §1 Closed components and obsolete routes
+
+**Signed-closed components**
+
+- The KLS endomorphism construction is an ordinary finite-dimensional complex algebra — `40cb2e3c58bf6ec6`.
+- The stated dg-singularity Hochschild hypotheses formally imply (HH_n(A)=0) for every (n\ge1) — `bd597721f09fbbf2`, `168a7842aec9604b`.
+- Laurent periodization preserves a nonzero degree-zero cohomology class — `bf2f1ee16158e0e2`.
+- Truncated polynomial algebras retain positive-degree Hochschild homology — `341cd214da0de5ac`.
+- The specified dual-number triangular family retains positive-degree Hochschild homology — `f57bf3108a82a0e6`.
+
+| Route | Status | Reason |
+|---|---|---|
+| Truncated polynomial / local periodic examples | OBSOLETE | They have infinite global dimension but nonzero Hochschild homology in every positive degree (`341cd214da0de5ac`). |
+| Dual-number upper triangular gluing | FALSE AS STATED | The dual-number Hochschild classes survive in the tested family (`f57bf3108a82a0e6`). |
+| Bimodule infinite projective dimension plus self-Tor vanishing directly models the diagonal | FALSE AS STATED | Such a bimodule exists (`04fe02e4d9a47b9f`), but it is not the diagonal (A) over (A^e). |
+| Smooth diagonal as a route to infinite global dimension | FALSE AS STATED | Finite (A^e)-projective dimension of the diagonal bounds simple-module projective dimensions (`0d5910abd98b476c`). |
+
+# §2 Interface contract table
+
+### Recurrence to dead-zone descent — produce a smaller infinite-global-dimension corner
+**Input required.** A vertex-minimal hypothetical Gap-A failure, an infinite-projective-dimension simple (S_x), correct left/right conventions for simple Ext/Tor, and eventual Peirce-zero support of the high minimal syzygy top.
+
+**Output claimed.** The operator handoff claims that (f_x\Omega^n(S_x)) is an actual infinite minimal projective tail over Δ_x=f_xAf_x, hence (\operatorname{gldim}Δ_x=∞).
+
+**Available facts.** No fact in this project's graph verifies this interface.
+
+**Missing verification on the actual model.** 1. Verify the one-way ordered variables. 2. Verify exactness and projectivity after applying (f_x(-)). 3. Verify that minimality of differentials survives. 4. Verify strict vertex reduction.
+
+**Failure mode if ignored.** A merely supported ambient tail need not automatically be a projective resolution over the corner; without minimality, infinite length need not imply infinite projective dimension.
+
+**Status.** UNKNOWN
+
+### Corner witness to ambient witness — compare corner and ambient simple recurrence
+**Input required.** A verified infinite-(+) pair in Δ=fAf, explicit comparison of minimal resolutions, and control of the complement bimodules (fA(1-f)) and ((1-f)Af).
+
+**Output claimed.** Either direct lifting of the same persistent simple Tor/Ext pair or an ambient witness extracted from a persistent comparison error.
+
+**Available facts.** None specific to this interface in this project's graph.
+
+**Missing verification on the actual model.** 1. Fix the precise cross-Tor orientation. 2. Construct the comparison/error complex. 3. Separate eventual-vanishing and persistent-error branches. 4. Prove Peirce compatibility of the extracted pair.
+
+**Failure mode if ignored.** Corner infinite ((+)) does not imply ambient infinite ((+)) without a homological comparison theorem; an untracked error can destroy the witness.
+
+**Status.** UNKNOWN
+
+### Persistent error to Peirce-visible recurrence — recycle the obstruction
+**Input required.** Persistent nonzero idempotent cross-Tor, finite-dimensionality, control of simple composition factors after bounded finite-projective-dimension layers, and minimal-differential transfer.
+
+**Output claimed.** A fixed ordered simple pair recurring in infinitely many degrees with the compatible nonzero Peirce block.
+
+**Available facts.** The project verifies only a general example showing that self-Tor vanishing and projective dimension can decouple (`04fe02e4d9a47b9f`); this does not close the required forcing direction.
+
+**Missing verification on the actual model.** 1. Extract a fixed recurrent simple pair. 2. Prevent degreewise changing of the top vertex. 3. Prove the relevant Peirce product survives cancellation. 4. Coordinate the argument with (A^{op}).
+
+**Failure mode if ignored.** Infinite total cross-Tor may remain distributed among incompatible pairs or may be visible only in Peirce-zero positions.
+
+**Status.** UNKNOWN
+
+### Gap decomposition back to the original Han problem — locate what KLS refutes
+**Input required.** A verified CLMS infinite-(+) criterion, a verified KLS counterexample, and a verified classification of KLS as infinite ((+)) or not.
+
+**Output claimed.** If KLS is infinite ((+)), it is a Gap B failure; otherwise it is a Gap A failure.
+
+**Available facts.** `40cb2e3c58bf6ec6` verifies finite-dimensionality of the KLS algebra; `bd597721f09fbbf2` verifies only the formal Hochschild-vanishing bridge under explicit hypotheses.
+
+**Missing verification on the actual model.** 1. Close the full KLS dependency chain. 2. Verify the CLMS criterion in this project. 3. Verify the terminal-detector classification or an alternative infinite-(+) witness.
+
+**Failure mode if ignored.** A source audit or internally audited handoff is not a verifier-closed classification in the present fact graph.
+
+**Status.** SUBSTANTIAL
+
+# §3 Dangerous heuristic lines and strategies not to pursue
+
+**Dangerous heuristic lines**
+
+- “A corner is infinite ((+)), so its witness automatically lifts.” **Status: Mathematically incorrect as stated.** Corner restriction is not automatically an eventual homological isomorphism; the comparison requires cross-module hypotheses. Correct form: prove a witness-or-error-witness dichotomy.
+- “A periodic module gives a recurrent simple self-Ext witness.” **Status: Not automatic.** Periodicity is a module-level stable statement and does not select a Peirce-compatible simple pair. The verified decoupling example `04fe02e4d9a47b9f` warns that homological persistence and the desired Tor visibility are different obligations.
+- “The singularity-category Hochschild calculation already proves the KLS algebra theorem.” **Status: Conditional only.** `bd597721f09fbbf2` closes the formal implication only after all dg and comparison hypotheses are matched.
+- “Finite diagonal bimodule dimension might coexist with infinite global dimension.” **Status: Mathematically incorrect as stated.** `0d5910abd98b476c` shows the diagonal bound propagates to all simple left modules.
+- “Support graphs alone eliminate cancellation.” **Status: Method shortcut, not a proof step.** A minimal differential gives adjacent radical incidence, but (d^2=0) allows sums of matrix products to cancel; a rank-one, graded, or bilateral extraction theorem is still needed.
+
+**Strategies not to pursue**
+
+- Do not restart unrestricted small-quiver search: first impose the handoff's structural filters and verify them.
+- Do not reuse truncated polynomial algebras: `341cd214da0de5ac` excludes them.
+- Do not use the dual-number triangular family as a vanishing mechanism: `f57bf3108a82a0e6` excludes it.
+- Do not replace the diagonal bimodule by an arbitrary self-Tor-acyclic bimodule: `04fe02e4d9a47b9f` shows only a mismatch prototype.
+- Do not import the handoff's low-vertex or dead-zone results as facts before fresh verifier acceptance.
+- Do not spend the main Gap A effort recomputing the KLS terminal detector unless a universal bridge explicitly depends on it.
+
+# §4 Missing bridge lemmas
+
+### Bridge 1 — Corner witness or error witness
+**Target statement.** Under the hypotheses of the Central missing lemma, every infinite-(+) witness of Δ=fAf either induces an infinite-(+) witness of (A), or persistent homology in the canonical idempotent comparison error induces an infinite-(+) witness of (A).
+
+**Prerequisites.** A verified dead-zone descent theorem; a precise idempotent resolution comparison; finite-dimensional basic algebra conventions; correctly oriented simple Tor/Ext and Peirce blocks.
+
+**Existing facts to use.** None in this project's graph directly addresses the bridge.
+
+**Missing checks.** 1. Build the error triangle/complex. 2. Prove the eventual-zero branch lifts. 3. Prove the persistent branch has a fixed recurrent simple pair. 4. Prove Peirce compatibility.
+
+**Closure criterion.** The bridge closes only when both branches end in an explicit ordered pair ((a,b)) and infinitely many degrees with (e_bAe_a\neq0) and nonzero simple Tor. It is dependent on Bridge 2 for the persistent branch.
+
+### Bridge 2 — Persistent cross-Tor forcing
+**Target statement.** Let (e) be a primitive or dead-zone idempotent of a finite-dimensional basic algebra (A). If the relevant cross-Tor groups between (eA(1-e)) and ((1-e)Ae) over the complementary corner are nonzero in infinitely many degrees, then some ordered pair of ambient simple modules has nonzero Tor in infinitely many degrees and the corresponding ambient Peirce block is nonzero.
+
+**Prerequisites.** Fixed module sides; finite-length devissage; a minimal-resolution transfer statement; bounded removal of finite-projective-dimension layers.
+
+**Existing facts to use.** `04fe02e4d9a47b9f` is a cautionary countermodel to naive self-Tor reasoning, not positive support.
+
+**Missing checks.** 1. Determine whether a finite-state recurrence argument fixes the pair. 2. Control multi-top displacement. 3. Control matrix cancellation. 4. Test the opposite-algebra mirror.
+
+**Closure criterion.** A proof must exhibit the Peirce-compatible pair, not merely persistent total Tor. This bridge is independent and parallelizable.
+
+### Bridge 3 — Fresh audit of dead-zone descent and the five-vertex frontier
+**Target statement.** In a vertex-minimal Gap-A failure, every infinite-projective-dimension vertex (x) has a strict dead-zone corner Δ_x of infinite global dimension; if (A) has five vertices, Δ_x has at most three vertices and is infinite ((+)), assuming a verifier-accepted three-vertex closure theorem.
+
+**Prerequisites.** The exact syzygy-return/one-way theorem with correct ordered variables; strong connectivity reduction; preservation of minimality after applying (f_x); three-vertex closure.
+
+**Existing facts to use.** None of these are yet facts in this project's graph.
+
+**Missing checks.** 1. Audit each imported theorem statement. 2. Verify the corner projectives and differentials. 3. Verify ∣Z(x)∣≤∣Q_0∣−2. 4. Reconstruct and submit the three-vertex closure proof.
+
+**Closure criterion.** Separate verifier-accepted facts must establish the descent and low-vertex consequence with no reliance on the handoff's internal confidence labels. This bridge is independent and parallelizable.
+
+### Bridge 4 — Bilateral derangement obstruction
+**Target statement.** A finite-dimensional basic algebra and its opposite cannot both support indefinitely recurrent minimal syzygy tails whose persistent simple Ext edges always land in Peirce-zero positions while the actual projective-cover transfers perpetually use different top vertices.
+
+**Prerequisites.** Opposite-invariance of infinite ((+)), left/right one-way laws, minimal-differential covering on both sides, and a finite-state or radical-filtration invariant.
+
+**Existing facts to use.** No direct fact in this project's graph.
+
+**Missing checks.** 1. Define the bilateral state invariant. 2. Prove recurrence of a state. 3. Convert a recurrent state into a non-cancelling transfer cycle. 4. Extract a Peirce-compatible witness.
+
+**Closure criterion.** The proof must rule out the permanent multi-top escape pattern without assuming termwise non-cancellation from (d^2=0). This bridge is dependent on audited opposite-side conventions but otherwise parallelizable.

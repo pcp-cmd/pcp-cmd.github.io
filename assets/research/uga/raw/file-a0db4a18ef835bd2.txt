@@ -1,0 +1,650 @@
+# Run — Nonsplit square-zero quotients restore ordinary Tor and strict descent
+
+**Date:** 2026-10-03  
+**Researcher:** one main Codex researcher  
+**Evidence:** complete proof and normal adversarial self-audit, with
+exact bounded actual calibration; not independently verified  
+**Global status:** Universal Gap A remains OPEN. No novelty claim is made.
+
+After the T10 periodic-component bridge, the remaining general derived
+residue is still unresolved. This continuation changes representation
+to an ordinary radical square-zero ideal. Here a filtration already in
+the ordinary bar handles a nonsplit multiplication error monotonically.
+It supplies eventual ordinary Tor/Ext isomorphism and strict dimension
+descent without the ordinary section required by C069.
+
+The inputs remain substantive. The same-pair isomorphism uses a perfect
+actual quotient bimodule kernel with a vanishing derived tensor power.
+A separate supported bridge removes perfectness when actual one-sided
+projectivity and a zero tensor square hold. There is no assertion that
+an arbitrary remaining bad algebra has an eligible ordinary ideal.
+
+## 1. The ordinary kernel-count filtration
+
+Let A be elementary finite-dimensional, K an actual ideal contained in
+J(A), K^2=0, and C=A/K. The quotient has the same labelled vertex
+algebra S and all the same simples. Square-zero makes K a canonical
+C-bimodule: changing a lift of either C action changes the product
+by K^2, which is zero.
+
+Choose an S-bimodule **linear** section s:C -> A preserving the
+vertices, the unit and radical augmentation. Such a vector-space
+section exists; no multiplicative section is assumed. Write
+
+\[
+A=s(C)\oplus K,\qquad J(A)=s(J(C))\oplus K.
+\tag{1.1}
+\]
+
+Products of two C lifts have the ordinary C product plus an error in K.
+Products of a lift with K give its canonical C action, while products
+of two K letters vanish.
+
+For inflated ordinary endpoint modules X,Y, use their normalized
+two-sided ordinary A bar. Its differential has two count components:
+b_0 preserves the number p of K letters; b_1 replaces two C letters
+with one K letter and increases p by one. Endpoint actions are
+ordinary C actions and kill K. Thus the decreasing filtration F^p
+by **at least p kernel letters** is a filtration of the actual full
+ordinary bar.
+
+The projection to the ordinary C bar is a genuine chain map. Its kernel
+N is exactly F^1. At a total bar degree n there are at most n letters,
+so the filtration is finite in every degree. For a fixed sequence of
+p K letters, associated b_0 homology is the C-block multibar
+
+\[
+X\otimes_C^{\mathbf L}K
+\otimes_C^{\mathbf L}\cdots
+\otimes_C^{\mathbf L}K\otimes_C^{\mathbf L}Y,
+\tag{1.2}
+\]
+
+shifted by p. There are p copies of K. Later differentials have
+(p,n) -> (p+r,n-1), r>=1.
+
+The multiplicative error is allowed throughout. This kernel-letter
+filtration is for an ordinary square-zero extension and is different
+from the derived negative-weight and local excursion filtrations.
+
+## 2. Perfect tensor-nilpotent kernels give an ordinary isomorphism
+
+Assume the canonical **actual** C-bimodule K satisfies
+
+\[
+\operatorname{pd}_{C^e}K\le D<\infty,\qquad
+K^{\otimes_C^{\mathbf L}\ell}=0\text{ in }D(C^e).
+\tag{2.1}
+\]
+
+Set
+
+\[
+W=\ell-1,\qquad U=(\ell-1)(D+1).
+\tag{2.2}
+\]
+
+### Theorem 2.1 — Eventual ordinary Tor/Ext and a uniform page bound
+
+For every labelled simple pair,
+
+\[
+\boxed{
+\operatorname{Tor}^A_n(R_z,L_y)\xrightarrow{\cong}
+\operatorname{Tor}^C_n(R_z,L_y)\quad(n>U+1).
+}
+\tag{2.3}
+\]
+
+The comparison is already injective for n>U. Dual ordinary Ext
+inflation is an isomorphism in the same high degrees.
+Every quotient-edge death occurs by kernel-count page W.
+
+No ordinary or derived section is required, and no one-sided
+projectivity of K is assumed.
+
+#### Proof
+
+Use Section 1 for N with simple endpoints. For p>=ell, the actual
+derived tensor word K^{tensor_C^L p} is zero, so (1.2) vanishes.
+For 1<=p<ell, choose a finite C^e-projective resolution of actual K
+of length at most D. A p-fold derived tensor word is represented
+by a total C^e-projective complex in homological degrees 0,...,pD.
+
+To check projectivity here, elementary bimodule projectives have form
+Ce_i tensor_k e_jC; the tensor over C of two such terms is another
+sum of elementary bimodule projectives, with multiplicity
+dim e_jCe_h. After tensoring the two simple endpoints, these terms
+have no extra endpoint homology. Thus (1.2) has vertical homology
+only in degrees 0,...,pD, and shifted total degree at most
+
+\[
+p(D+1)\le U.
+\tag{2.4}
+\]
+
+Consequently the first page of N is confined to total degrees <=U
+and counts <=W. Every subsequent page is a subquotient at those
+positions. Degreewise finite convergence proves H_n(N)=0 for n>U.
+
+The exact sequence of actual ordinary bar complexes
+0 -> N -> B_A -> B_C -> 0 gives (2.3) when both H_n(N) and
+H_{n-1}(N) vanish, and injectivity when H_n(N)=0. A quotient-edge
+class at p=0 can die only by a differential to count r; all counts
+r>W already vanish on the first page. This proves the uniform
+kernel-count death-page bound.
+
+Ordinary finite-dimensional simple Ext is dual to the corresponding
+Tor and the quotient map induces the stated inflation. QED.
+
+The strict inequality n>U+1 is essential. Section 5 realizes failure
+at n=U+1=2. The result is an eventual comparison; it does not assert
+a low-degree retract, augmented formality or an algebra section.
+
+### Lemma 2.2 — Both ordinary quotient modules have bounded ambient pd
+
+Under (2.1),
+
+\[
+\operatorname{pd}_A C\le U,\qquad
+\operatorname{pd}_{A^{op}}C\le U.
+\tag{2.5}
+\]
+
+#### Proof
+
+Apply the same actual bar filtration to R_z tensor_A^L Ce_j.
+The count-zero first page is R_z e_j in degree zero. All p>=1
+terms obey the bound (2.4), and all p>=ell terms are zero.
+Thus Tor^A_n(R_z,Ce_j)=0 for every right simple z and n>U.
+Minimal ordinary A-projective resolutions give pd_A Ce_j<=U
+for every j, hence the first inequality.
+
+For the second inequality compute e_iC tensor_A^L L_y directly.
+The count-zero term is e_iL_y in degree zero; the C^e-projective
+tensor-word resolution gives the same bound for all positive counts.
+All left-simple tests vanish for n>U, proving the right-module pd
+bound. This is a direct right-module argument, not opposite-+ transfer.
+QED.
+
+## 3. Strict dimension descent and all-size closure
+
+### Theorem 3.1 — A nonsplit ordinary reduction retains a bad quotient
+
+Under (2.1), A and C have infinite global dimension simultaneously.
+If C has finite global dimension g, then
+
+\[
+\operatorname{gldim}A\le g+U.
+\tag{3.1}
+\]
+
+If A has finite global dimension h, then
+
+\[
+\operatorname{gldim}C\le\max(h,U+1).
+\tag{3.2}
+\]
+
+When C is infinite +, A is infinite +.
+If K!=0, a hypothetical bad A therefore gives a bad C with
+strictly smaller positive integer dim_k C.
+
+#### Proof
+
+Every A simple is an inflated C simple because K is radical.
+Resolve it by C projectives; by Lemma 2.2 each inflated term has
+ambient pd at most U. A finite length-g resolution gives (3.1).
+Conversely (2.3) makes every simple-pair C-Tor above max(h,U+1)
+zero, proving (3.2). Together these prove equivalence of infinity.
+
+A fixed supported infinite C-Tor tail has e_yCe_z!=0.
+The ordinary quotient map is surjective on that Peirce block,
+so e_yAe_z!=0. Isomorphism (2.3) lifts the same fixed pair in all
+sufficiently large degrees. This proves infinite-+ transfer.
+
+If A had infinite global dimension and were not infinite +, these
+two results make C also have infinite global dimension and not
+be infinite +. For nonzero K,
+dim_k C=dim_k A-dim_k K<dim_k A. QED.
+
+The theorem closes every checked finite tower of such ordinary
+square-zero quotients over a justified Gap-A base class, at arbitrary
+finite size. It can join C069's split radical moves and C061/C067's
+eligible vertex moves in the same strictly decreasing algebra dimension.
+Hypotheses must be checked anew at each step; inheritance or existence
+of the next move is not asserted.
+
+Unlike C069, there is no general inequality gldim C<=gldim A:
+a nonsplit quotient can increase finite global dimension. The
+isomorphism only starts above the stated cutoff.
+
+### Quantitative checked-tower version
+
+For a checked square-zero tower A=A_0 -> ... -> A_r=B, let
+U_i=(ell_i-1)(D_i+1). The vertices are unchanged. If all supported
+A-Tor vanishes for every n>=M, M>=1, its eventual comparisons propagate
+this to B for every
+
+\[
+n\ge M_*=\max\bigl(M,\max_{i<r}(U_i+2)\bigr).
+\tag{3.3}
+\]
+
+If B has the all-vertex ordinary sections of C061 and v vertices,
+then
+
+\[
+\operatorname{gldim}A\le (v-1)M_*+\sum_{i<r}U_i.
+\tag{3.4}
+\]
+
+For r=0 take M_*=M. All-source vanishing in all n>=M and the
+terminal **all-vertex** section hypothesis are retained.
+
+## 4. Actual one-sided-projective kernels: cycles close without a period condition
+
+There is a second ordinary closure in the same filtration. Assume
+every actual column Ke_j is left C-projective and write
+
+\[
+Ke_j\cong\bigoplus_i(Ce_i)^{T(i,j)}.
+\tag{4.1}
+\]
+
+No C^e-perfectness or tensor nilpotence is needed for this subsection.
+
+### Theorem 4.1 — Ordinary projective-column formula
+
+The full formal series of actual ordinary Tor is
+
+\[
+\boxed{
+\left(\sum_{n\ge0}\dim\operatorname{Tor}^A_n(R_z,Ce_j)t^n\right)_{zj}
+=(I-tT)^{-1}.
+}
+\tag{4.2}
+\]
+
+A cycle in the actual multiplicity graph makes A infinite +.
+If T is acyclic on v vertices, actual K^{tensor_C^L v}=0,
+and pd_A C<=v-1.
+
+#### Proof
+
+Each C-block tensor word with projective test Ce_j is degree-zero
+homology, of dimension (T^p)_{zj}, shifted by p. Actual left
+projectivity at each right tensor step proves this by decomposing
+actual projective columns. The first page therefore has n=p.
+
+Every possible later differential increases count p by r>=1 but
+lowers degree n by one. It cannot connect n=p to n'=p+r.
+Hence all pages collapse for these test modules, including the effect
+of nonsplit multiplication errors. Finite convergence gives (4.2).
+
+A repeated actual directed cycle produces a diagonal test-column
+Tor class in each multiple of its length. Ordinary finite-length
+detection selects a fixed y with e_yCe_j!=0, hence e_yAe_j!=0,
+and infinitely many Tor^A_n(R_j,L_y). Thus A is infinite +.
+
+If the graph is acyclic, T^v=0. Actual left-projectivity identifies
+derived tensor words with ordinary projective tensor words, so this
+is actual tensor nilpotence, not nilpotence of resolution terms.
+Formula (4.2) gives pd_A C<=v-1. QED.
+
+For actual right-projective K, decompose e_iK into e_jC and compute
+e_iC tensor_A^L L_y directly. The series is the analogous row-matrix
+inverse. Cycles give supported ordinary return and the acyclic case
+bounds pd_{A^{op}} C. No opposite-transfer assumption is used.
+
+Consequently, if actual K is also C^e-perfect, every such ordinary
+square-zero extension over a Gap-A algebra C satisfies Gap A:
+cyclic matrices give a new supported A tail; acyclic matrices give
+the tensor nilpotence needed by Theorems 2.1--3.1.
+
+No periodic-gcd restriction is needed in (4.2). The ordinary count
+is monotone because K^2=0 and the extension error increases count.
+In T10's derived many-layer model, binary negative products can
+decrease count; its aperiodic counterexample remains valid.
+
+The nonperfect acyclic case here has the stated finite ambient
+quotient pd, but no supported-tail transfer or universal ordinary
+comparison has yet been proved in full generality. The following
+tensor-square-zero subcase has a supported bridge without perfectness.
+
+### Theorem 4.2 — Nonperfect tensor-square-zero kernels still preserve supported infinity
+
+Assume actual K is left C-projective and
+
+\[
+K\otimes_C K=0.
+\tag{4.3}
+\]
+
+Then C infinite + implies A infinite +. No C^e-perfectness or
+ordinary section is required. More precisely, a persistent supported
+C pair (R_z,L_y) forces a persistent supported ordinary A pair
+with the same L_y and right simple either R_z or a composition
+factor of T_z=R_z tensor_C K.
+
+If all reverse-supported A-Tor vanishes for every n>=M, M>=1,
+then all reverse-supported C-Tor vanishes for every n>=M+2.
+A hypothetical bad A gives a bad C with strictly smaller algebra
+dimension when K!=0. Also pd_A C<=1 and finite gldim C=g gives
+gldim A<=g+1.
+
+#### Proof
+
+Actual left projectivity makes (4.3) an actual derived tensor square
+zero and makes R_z tensor_C^L K the ordinary right module T_z.
+All counts p>=2 of the kernel N in Section 1 have zero associated
+homology. Its only remaining count gives, for n>=1 (and H_0(N)=0),
+
+\[
+H_n(N(R_z,L_y))\cong
+\operatorname{Tor}^C_{n-1}(T_z,L_y).
+\tag{4.4}
+\]
+
+Associativity of actual derived tensor gives T_z tensor_C^L K=0.
+Apply the same ordinary count filtration with right endpoint
+T_z instead of R_z. Every positive-count first-page term is zero,
+so its actual ordinary projection is an isomorphism
+
+\[
+\operatorname{Tor}^A_n(T_z,L_y)\cong
+\operatorname{Tor}^C_n(T_z,L_y)\quad\text{for every }n.
+\tag{4.5}
+\]
+
+For an original C-supported pair, e_yCe_z!=0. A simple R_j
+appears in T_z precisely with multiplicity T(z,j) in (4.1).
+If that multiplicity is positive, the actual projective column
+Ke_j contains a summand Ce_z. Restricting it by e_y gives
+
+\[
+e_yKe_j\ne0,\quad\text{hence }e_yAe_j\ne0.
+\tag{4.6}
+\]
+
+This uses the actual ordinary ideal K inside A; negative cohomology
+of an idempotent derived quotient does not supply such support.
+
+The actual bar long exact sequence has the segment
+
+\[
+\operatorname{Tor}^A_n(R_z,L_y)\longrightarrow
+\operatorname{Tor}^C_n(R_z,L_y)\longrightarrow
+H_{n-1}(N(R_z,L_y)).
+\tag{4.7}
+\]
+
+If the middle term persists, either the original ordinary A pair
+persists, or (4.4)--(4.5) force persistent ordinary
+Tor^A_{n-2}(T_z,L_y). Finite composition factors select one fixed
+R_j with persistent Tor^A(R_j,L_y). Support is (4.6). This is an
+ordinary supported bridge even when the original quotient-edge
+image vanishes; it is not a same-pair survival theorem.
+
+For the numerical statement, all factors R_j in T_z are A-visible
+by (4.6), so the ordinary finite-length inequality gives
+Tor^A_m(T_z,L_y)=0 for m>=M. Equations (4.4)--(4.7) then make
+Tor^C_n(R_z,L_y)=0 for n>=M+2. This holds for every C-supported
+pair, while the original A pair also vanishes for n>=M.
+
+The matrix T has T^2=0 by (4.3); (4.2) gives pd_A C<=1.
+All simples are C simples, so the finite C-projective resolution
+argument gives gldim A<=g+1. Thus infinite global dimension of
+bad A passes to C, while the supported bridge forbids C infinite +.
+The nonzero ideal strictly decreases dimension. QED.
+
+The direct right-projective version sets U_y=K tensor_C L_y.
+Its count-one kernel homology is Tor^C_{n-1}(R_z,U_y);
+K tensor_C^L U_y=0 gives the all-degree ordinary comparison with
+U_y. A factor L_i of U_y has positive row multiplicity B(i,y).
+For e_yCe_z!=0, actual right projectivity gives e_iKe_z!=0, so
+the selected ordinary pair (R_z,L_i) is A-supported. The same
+M+2 threshold and direct right quotient-pd bound prove descent.
+No opposite-side infinite-+ transfer is used.
+
+Consequently every checked tower of these tensor-square-zero,
+one-sided-projective ordinary kernels closes over a justified Gap-A
+base without perfectness. For r such moves over a terminal C061
+all-vertex-section algebra with v vertices and initial supported
+vanishing n>=M, the bound is
+
+\[
+\operatorname{gldim}A\le (v-1)(M+2r)+r.
+\tag{4.8}
+\]
+
+The general nonperfect acyclic case with tensor index greater than
+two is not claimed. In particular, a weighted resolution graph or
+K^2=0 alone does not justify (4.3).
+
+## 5. Actual connected nonsplit calibration and sharp cutoff
+
+Let A have quiver
+
+\[
+0\xrightarrow{\alpha}1\xrightarrow{\beta}2
+\xrightarrow{\delta}3,\qquad t:3\longrightarrow3,
+\quad t^2=0,
+\tag{5.1}
+\]
+
+with no other relations. This is a finite connected elementary
+monomial algebra. A basis consists of the four vertices, the four
+arrows, and
+
+\[
+\gamma=\beta\alpha,\quad \eta=\delta\beta,\quad
+\theta=t\delta,\quad \zeta=\delta\beta\alpha,\quad
+\iota=t\delta\beta,\quad \kappa=t\delta\beta\alpha.
+\tag{5.2}
+\]
+
+Thus dim_k A=14. Put K=(gamma)=span{gamma,zeta,kappa}.
+It is an actual radical square-zero ideal. The quotient C=A/K
+has dimension 11, with the extra relation beta alpha=0.
+
+The canonical C-bimodule is
+
+\[
+K\cong Ce_2\otimes_k e_0C.
+\tag{5.3}
+\]
+
+Indeed Ce_2 has basis e_2,delta,t delta and e_0C has basis e_0.
+Map these to gamma,zeta,kappa. The displayed map preserves both
+actual quotient actions. Hence D=0. Since e_0Ce_2=0,
+K^{tensor_C^L 2}=0 and ell=2. The parameters are W=1,U=1.
+As actual ambient modules, K is Ae_2 on the left and three copies
+of e_0A on the right, so both ambient pd values are zero as well.
+
+Nevertheless A -> C has **no unital ordinary algebra section**.
+If one existed, C069's conjugation would align it with the vertices.
+The alpha and beta Peirce spaces in A each have their unique arrow
+lift, with no K component of those endpoint types. Their product
+is nonzero gamma in A, whereas beta alpha is zero in C.
+This contradicts multiplicativity.
+
+The finite ordinary module certificates give
+
+\[
+0\to Ae_1\to Ae_0\to L_0\to0,
+\qquad
+0\to Ce_2\to Ce_1\to Ce_0\to L_0\to0,
+\tag{5.4}
+\]
+
+with radical maps alpha and beta in algebraic product order.
+These maps are exact by the displayed path bases; they are minimal.
+Consequently
+
+\[
+\operatorname{Tor}^A_2(R_2,L_0)=0,\qquad
+\operatorname{Tor}^C_2(R_2,L_0)=k.
+\tag{5.5}
+\]
+
+This fails the comparison exactly at n=U+1. In the kernel-count
+sequence, the quotient word beta|alpha is sent on page one to
+the nonzero one-kernel-letter class gamma.
+
+At vertex 3, Omega L_3=L_3 over both A and C, by multiplication
+with t in the projective Ae_3=Ce_3=span{e_3,t}. Therefore the
+supported ordinary diagonal Tor is k in every degree, over every
+field. The comparison there is the identity on the words t|...|t.
+A is infinite +, not a counterexample.
+
+All other left simple resolutions are finite: at vertices 1 and 2
+the radical projective columns are Ae_2 and Ae_3 respectively,
+and the quotient columns have the same descriptions; at vertex 0
+they are (5.4). Thus the only high simple-pair tail is the displayed
+3 diagonal and (2.3) holds in every degree n>2 directly as well.
+
+The three-vertex path subexample, omitting vertex 3 and delta,t,
+has gldim A=1 and gldim C=2. It explicitly prevents importing
+C069's all-degree gldim inequality into this nonsplit theorem.
+The connected calibration is a whole ordinary ideal quotient,
+not an idempotent deletion or an infinite-pd deleted-vertex claim.
+
+### 5.2 A nonsplit nonperfect calibration: supported transfer without full comparison
+
+Let A_tri have basis e_0,e_1,t,a,b, with t:0 -> 0,
+a:0 -> 1, b=at, and sole nonzero radical product at=b.
+This triangular five-dimensional algebra is **distinct from**
+the five-dimensional Auslander algebra used in C071.
+
+Put K=kb. Then K^2=0 and C_tri=A_tri/K is the four-dimensional
+radical-square-zero algebra with loop t at 0 and arrow a:0 -> 1.
+As an actual C-bimodule,
+
+\[
+K=Ce_1\otimes_k R_0.
+\tag{5.6}
+\]
+
+It is left C-projective, and R_0 e_1=0 gives its actual derived
+tensor square zero. But the right simple R_0 has the infinite
+periodic resolution by e_0C with all maps t. Thus K has infinite
+right C-pd and infinite C^e-pd. Theorem 2.1 does not apply.
+
+The quotient again has no algebra section. After vertex alignment,
+t has its unique lift, and a has lifts a+c b. Every such lift
+satisfies (a+c b)t=b!=0, contradicting at=0 in C.
+
+For left modules, L_1 is projective over both algebras. In A_tri,
+rad(Ae_0)=At plus ka, where At=span{t,b} and ka=L_1.
+Multiplication by t maps Ae_0 onto At with kernel At.
+Hence the minimal L_0 resolution has P_1=Ae_0 plus Ae_1 and
+P_n=Ae_0 for every n>=2. In C_tri,
+rad(Ce_0)=L_0 plus L_1; its L_0 resolution has
+P_n=Ce_0 plus Ce_1 for every n>=1.
+
+Consequently the supported (R_0,L_0) diagonal has ordinary Tor
+k in every degree in both algebras. But the pair (R_1,L_0) has
+A-Tor zero for n>=2 and C-Tor k for every n>=1. Its quotient
+comparison therefore fails in arbitrarily high degrees.
+This pair is reverse-invisible because e_0Ae_1=0.
+
+All displayed certificates hold over every field. A_tri is infinite +,
+not a counterexample. It is an actual nonsplit nonperfect instance
+of Theorem 4.2, and it prevents strengthening that supported bridge
+to a full eventual same-pair Tor/Ext isomorphism. K is left ambient
+projective but its right ambient pd is infinite; C069 remains
+inapplicable because it has no ordinary section.
+
+## 6. Computation and normal adversarial audit
+
+Square-Zero-Quotient-Evidence/ records the exact finite multiplication,
+ordinary bars and actual quotient comparison checks. The separate
+basis certificates above prove all degrees and all characteristics.
+Finite ranks are bounded self-checks and are not independent verification.
+
+The exact local Python execution passed 2744 A associativity triples,
+1331 C triples, nine square-zero products and 42 two-sided ideal cases.
+It checked 112 ordinary A-Tor dimensions, 112 ordinary C-Tor dimensions
+and 112 induced comparison ranks through degree six with incoming
+degree seven, 96 differential-square degrees for each algebra, and
+112 quotient chain-map degrees. Literal actual bimodule/projective
+action checks and the finite/periodic module certificates also passed.
+The computation-record validator passed; this does not verify the
+generic theorem independently.
+
+The separate exact triangular check records all four simple pairs
+through degree eight with incoming degree nine, and the induced
+quotient maps. Its module certificates, nonsplit multiplication and
+infinite right-pd proof are separate from those bounded ranks.
+
+The normal audit retains:
+
+1. K is an actual radical ideal. Radical containment preserves every
+   simple and makes reverse quotient support lift to A.
+2. K^2=0 is what makes its C actions canonical and prevents the actual
+   ordinary count differential decreasing. This filtration is not
+   asserted for a general nilpotent ideal.
+3. The section in (1.1) is only a vector-space section. No multiplicative
+   lift, pure-input vanishing or derived section is used.
+4. Tensor nilpotence in (2.1) is actual in D(C^e). Zero binary products
+   do not imply it; projective-resolution graph cycles do not supply it.
+5. C^e-perfectness bounds the vertical degree for **simple endpoints**.
+   A finite ambient kernel pd alone does not replace it.
+6. The Tor isomorphism requires n>U+1; the example (5.5) rejects the
+   endpoint n=U+1. The injection starts already at n>U.
+7. The uniform page bound is kernel-letter count, not negative weight
+   of an idempotent quotient or local-singular excursion.
+8. Both quotient-pd bounds are proved by ordinary test bars; no
+   opposite-side infinite-+ transfer or singular/Tate substitute occurs.
+9. Strict dimension descent needs a nonzero kernel and actual
+   eligibility at each step. A conditional reduction class is not a
+   universal reduction-existence theorem.
+10. The cyclic formula (4.2) requires actual one-sided-projective
+    columns. Its test-module collapse does not collapse every ordinary
+    simple-pair bar page. Its general nonperfect acyclic remainder stays open.
+    Theorem 4.2 separately uses an actual zero tensor square and actual
+    K Peirce support; the persistent simple endpoint may move.
+11. The quantitative tower raises the vanishing threshold to M_*;
+    it does not silently propagate all degrees n>=M through a high-only
+    isomorphism. The terminal C061 condition remains all-vertex.
+12. The calibration is connected and actually nonsplit, with an
+    ordinary supported tail. It does not realize a bad algebra or
+    an unbounded-excursion branch.
+13. The nonperfect bridge requires an actual zero tensor square and
+    actual projectivity on the chosen side, not finite one-sided pd.
+    Its numerical threshold uses common all-source supported vanishing.
+    Its detector may change the simple endpoint, and its support comes
+    from the physical ordinary ideal, not C058's derived deletion defect.
+    The triangular calibration rejects full high comparison for all pairs.
+
+No independent verifier acceptance or mathematical novelty is claimed.
+
+For an actual negative audit, reuse A5 from the primitive-seed Run.
+Its ideal K=kt has square zero and finite pd on both ambient sides,
+since gldim A5=2. But A5/(t) is the radical-square-zero two-cycle,
+whose diagonal ordinary Tor returns every two degrees. The ambient
+algebra has no Tor above two. Here canonical K is a nonprojective
+simple over that self-injective quotient, with an explicit two-periodic
+projective resolution and infinite quotient-side pd. Thus neither the
+perfectness hypothesis here nor the section in C069 can be replaced
+by ambient finite kernel pd alone. The old actual multiplication and
+resolution certificates are reused; no unchanged calculation is rerun.
+
+## 7. Remaining global problem
+
+This closes genuine nonsplit ordinary quotient classes and enlarges
+the set of strict dimension reductions. It also gives actual new
+ordinary returns for cyclic one-sided-projective square-zero kernels,
+without importing T10's derived period condition.
+
+Theorem 4.2 also closes the nonperfect one-sided-projective
+tensor-square-zero ordinary kernel class: complete quotient-edge
+screening forces a different supported ordinary A tail.
+
+Still missing is a theorem that every remaining hypothetical bad
+algebra has either such an ordinary reduction, an existing eligible
+vertex move, or an ordinary supported tail. General nonperfect
+acyclic kernels of higher tensor index, nonprojective non-tensor-nilpotent kernels, the
+aperiodic/nonprojective derived many-layer residue, Target A,
+general local-trivial and supported-weight screening remain open.

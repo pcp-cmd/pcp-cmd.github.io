@@ -1,0 +1,16 @@
+# SOURCE LEDGER — Codex T0
+
+Raw 2026-10-02 Run files preserved byte-for-byte in this package:
+
+| File | Bytes | SHA256 |
+|---|---:|---|
+| `01_Two-Sided-Finite-Head-Collision.md` | 10563 | `ed4329e5c6d316e0f8f1ed7163475a11f028556f4e729fb3d09981644b642906` |
+| `02_Derived-Necklace-Screening.md` | 17807 | `f8ba156dc3f0612ca09acc88e82245d74a081ed90c4d1ab775fa0021515d5a30` |
+| `03_LocalSingular-Q1-Forcing.md` | 7161 | `4bd7993a12da51dc72fc534b39608ebd72ad0882905d57c8538033f2dc9356e6` |
+| `04_Derived-Necklace-Excursion-Pre-Nakayama.md` | 20003 | `ec9a0cbbceb6327648ec65a3c98a7f4f3b06e2f0e3044e2db041ac3d17002869` |
+| `05_Supported-Derived-Weight-Screening.md` | 15753 | `bea39aec2bdc10787c22f6ab81c8a8b2a8c60d8cc2bb9938115760511c1cdda7` |
+| `06_Visibility-Aligned-Universal-Screening-Dichotomy.md` | 16234 | `6086a384de0c2c6e348ca62f688be025239d34fd30f311117e48ed597c0cd013` |
+| `07_Derived-Necklace-Excursion-Final.md` | 26974 | `7cd6565cbac881474096ed968d78b81805b9c0aa041cfa6e03ed93084126f44e` |
+
+The general method Vault remains a separate source: `笔记共享vault(1).zip`.
+Project/Library files without authorized raw-byte materialization are listed in `PROJECT_FILE_REFERENCES.md`.

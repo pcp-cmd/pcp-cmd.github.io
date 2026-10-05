@@ -1,0 +1,520 @@
+# T16 — Two infinite simples close; automatic infinite-simple count descent fails
+
+Date: 2026-10-03.
+
+Status: complete self-audited all-size ordinary proofs, an explicit
+all-field module countercalibration, and a bounded exact rational audit;
+not independently verified. No novelty claim.
+Universal Gap A remains OPEN in general.
+
+This Run continues T15, as expressly requested. It tests the proposed
+global alternative: multiple infinite-pd simples force an ordinary
+visible return, or an eligible badness-preserving quotient strictly
+decreases their number. It proves the entire two-infinite-simple
+branch, but does not prove or refute the unrestricted alternative.
+It breaks two automatic-count-descent shortcuts with actual ordinary
+module arguments. No new derived invariant is introduced.
+
+## 1. Ordinary conventions and the scope of the test
+
+A is finite-dimensional elementary over any field k, J=rad A,
+L_y=Ae_y/Je_y and R_z=e_zA/e_zJ. Set
+
+\[
+\beta_{zy}(n)=\dim_k\operatorname{Tor}^A_n(R_z,L_y),\qquad
+D(y,z)=\dim_k e_yAe_z.
+\tag{1.1}
+\]
+
+Infinite + means one fixed pair with D(y,z)>0 and beta_zy(n)>0
+in infinitely many ordinary degrees. Define separately
+
+\[
+I_L=\{y:\operatorname{pd}_A L_y=\infty\},\qquad
+I_R=\{z:\operatorname{pd}_{A^{op}}R_z=\infty\},
+\]
+\[
+H_{zy}=1\iff\beta_{zy}(n)>0\text{ infinitely often},\qquad
+W_z=\{y:H_{zy}=1\},\quad T_y=\{z:H_{zy}=1\}.
+\tag{1.2}
+\]
+
+Actual minimal resolutions imply W_z is nonempty exactly when z in I_R,
+and T_y is nonempty exactly when y in I_L. Moreover W_z is contained
+in I_L and T_y in I_R. A finite pd on EITHER argument bounds its Tor.
+Neither the infinite-pd sets nor their labels are identified.
+
+Reuse only the valid finite-length input from T15: if every composition
+factor of a finite module has pd at most d on the stated side, the
+module has pd at most d. A projective module can have infinite-pd
+factors, so the converse remains prohibited.
+
+The existing Peirce-Elimination-Theorem proves that, under absence of
+infinite +, each nonempty persistent row and column has at least two
+labels. Section 2 supplies the precise direct ordinary specialization
+needed here; this is a reused bridge, not a new singleton-tail theorem.
+
+## 2. Direct ordinary singleton-detector bridge
+
+### Lemma 2.1
+
+If some infinite-pd right simple R_z has W_z={y}, then A is infinite +.
+
+For sufficiently large s, its minimal right projectives Q_n, n>=s,
+are all sums of e_yA: all other simple-pair Betti numbers have their
+last nonzero degree. Put X=Omega_right^s R_z. This is an actual
+nonzero module with a minimal right tail of that type. Ordinary
+dimension shifting gives Tor_n^A(X,L_y) nonzero infinitely often.
+
+X is a quotient of Q_s, so each right composition factor R_q of X
+has e_yAe_q!=0. Devissage in the RIGHT argument yields, in every n,
+
+\[
+\dim\operatorname{Tor}_n^A(X,L_y)
+\le\sum_q[X:R_q]\,\beta_{qy}(n).
+\tag{2.1}
+\]
+
+Finite factors give a fixed q with H_qy=1 and e_yAe_q!=0. This is
+the required ordinary supported pair, possibly with q different from z.
+QED.
+
+There is a direct LEFT version: if T_y={z} for an infinite-pd L_y,
+its high projectives are sums of Ae_z. A real left syzygy X is their
+quotient, and Tor(R_z,X) persists. Its composition factors L_q satisfy
+e_qAe_z!=0. Ordinary devissage selects a supported pair (R_z,L_q).
+This is not an invocation of opposite-infinite-+ invariance.
+
+## 3. A heterogeneous composition aggregate, and full two-source closure
+
+Let x in I_L. Every Omega^n L_x has infinite pd, hence has at least
+one factor with label in I_L. There is a finite common pd bound for
+the other left simples; omitting all labels in I_L would contradict
+infinite pd. Therefore the actual cover sequence gives, in EVERY n>=0,
+
+\[
+\boxed{\sum_z\left(\sum_{y\in I_L}D(y,z)\right)\beta_{zx}(n)
+=\sum_{y\in I_L}\bigl(\dim e_y\Omega^n L_x+
+                           \dim e_y\Omega^{n+1}L_x\bigr)\ge2.}
+\tag{3.1}
+\]
+
+This aggregate alone is NOT a supported Tor witness: it may pair the
+Tor source x with the physical support of another infinite-pd y.
+The next argument proves the missing alignment when |I_L|<=2.
+
+### Theorem 3.1 — Arbitrary-size closure with at most two infinite-pd left simples
+
+If |I_L|<=2, then A satisfies Universal Gap A, for every finite
+vertex number and every field.
+
+#### Proof
+
+If I_L is empty, all simples have a common finite pd bound, hence
+gldim A is finite. Otherwise suppose gldim A is infinite.
+
+If any z in I_R has a singleton W_z, Lemma 2.1 already proves A
+infinite +. In the remaining case every nonempty W_z has at least
+two labels. Each is contained in I_L. Thus |I_L|=2 and
+
+\[
+W_z=I_L\qquad(z\in I_R).
+\tag{3.2}
+\]
+
+Fix x in I_L. Equation (3.1) and finite labels give a fixed z such
+that sum_{y in I_L}D(y,z)>0 and beta_zx(n)>0 infinitely often.
+Such z is in I_R. Choose y in I_L with D(y,z)>0. By (3.2), H_zy=1.
+Consequently the SAME pair (R_z,L_y) has physical reverse support
+and persistent ordinary Tor. QED.
+
+For an alternative contradiction audit, no infinite + and (3.2)
+would imply D(y,z)=0 for all y in I_L, z in I_R. Above the finite
+maximum of the right pds outside I_R, every P_n(L_x) uses only
+Ae_z with z in I_R. Its quotient Omega^n L_x then has no infinite-pd
+left factor, so has finite pd, a contradiction. This uses the
+finite-factor pd implication only in its valid direction.
+
+Theorem 3.1 closes a whole multiple-infinite-simple branch; it is
+not merely a necessary condition. It guarantees a fixed persistent
+pair, not a diagonal pair or nonzero values at every degree. T15's
+stronger every-degree matched aggregate for one source is unchanged.
+
+### Theorem 3.2 — Direct right-side closure
+
+If |I_R|<=2, the same Gap-A conclusion holds by direct ordinary
+right resolutions.
+
+For x in I_R, every real Omega_right^n R_x contains a factor in I_R,
+and the exact right cover sequence gives
+
+\[
+\sum_y\left(\sum_{z\in I_R}D(y,z)\right)\beta_{xy}(n)
+=\sum_{z\in I_R}\bigl(\dim(\Omega_{right}^n R_x)e_z+
+                       \dim(\Omega_{right}^{n+1}R_x)e_z\bigr)\ge2.
+\tag{3.3}
+\]
+
+If a persistent column T_y is a singleton, use the direct LEFT
+version of Lemma 2.1. Otherwise every nonempty T_y, contained in I_R,
+equals I_R. Finite labels in (3.3) select y with persistent beta_xy
+and D(y,z)>0 for some z in I_R. Since T_y=I_R, beta_zy also persists.
+This gives support D(y,z)>0 for exactly Tor(R_z,L_y). QED.
+
+No opposite-+ theorem or equality of I_L,I_R occurs. No universal
+finite-window, vertex-only bound, or extra quantitative bound is claimed.
+
+## 4. Known ordinary radical moves do not decrease this count
+
+### Theorem 4.1 — Individual finite/infinite pd labels are preserved
+
+Let K be an actual radical square-zero ideal, C=A/K, with K left
+C-projective and actual projective-column matrix T acyclic. Write
+q for its longest path, as in C076. For EVERY labelled left simple,
+
+\[
+\operatorname{pd}_A L_y<\infty\quad\Longleftrightarrow\quad
+\operatorname{pd}_C L_y<\infty.
+\tag{4.1}
+\]
+
+In the finite cases a=pd_A L_y and c=pd_C L_y satisfy
+
+\[
+c\le a+2q,\qquad a\le c+q.
+\tag{4.2}
+\]
+
+#### Proof
+
+If a is finite, all ordinary A-Tor(R_z,L_y) vanish for n>=a+1
+and EVERY z. In particular C076's entire F-reachable carrier
+hypothesis holds for each z. Its comparison yields C-Tor zero
+for n>=a+1+2q, proving c<=a+2q by the minimal C resolution.
+
+Conversely C072/C076 give pd_A C<=q. Inflate a finite C-projective
+resolution of L_y of length c. Each term is in add(C), so its
+ambient A-pd is at most q. The ordinary resolution bound gives
+a<=c+q. K contained in J preserves all simple labels. QED.
+
+With right C-projective K, the direct right C076 comparison proves
+the analogous equivalence for each RIGHT simple and the same bounds.
+It does not prove preservation of the opposite chosen side.
+
+Therefore C074's left-projective square-zero/tensor-square-zero
+badness-preserving steps and every left-projective step of C075 keep
+the left infinite-simple count EXACTLY constant. They genuinely
+terminate by dim A or the remaining actual kernel-type count, not
+by decreasing |I_L|. C076's more general comparison has the same
+count invariance but still lacks general physical support transfer.
+
+The other main radical bridges have the same chosen-side limitation.
+C072's eventual SAME-PAIR ordinary Tor isomorphism preserves both
+finite/infinite simple-pd partitions. For C069, its ordinary bar
+retract gives pd_C L_y<=pd_A L_y; if the actual K has finite LEFT
+ambient A-pd, then pd_A C is finite and inflation of a finite
+C-resolution gives finite A-pd. Thus left labels again agree.
+With finite RIGHT ambient kernel pd the corresponding right labels
+agree, using direct right resolutions. These conclusions use exactly
+the stated comparison and pd hypotheses, not all radical quotients.
+
+The unchanged connected A12 -> C7 from C075, Section 4.2, is already
+a multiple-infinite-simple calibration: C7 has literal radical-square-
+zero returns at every one of its three vertices. All three left simple
+pds are infinite in C7, and (4.1) makes all three infinite in A12.
+The nonzero, nonsplit, nonperfect acyclic kernel lowers dimension
+12 -> 7 and keeps |I_L|=3. Its existing different bar retract makes
+A12 infinite +; it is not a bad-algebra example.
+
+Opposite-side counts can even INCREASE: C073's unchanged A_tri -> C_tri
+has relation at=b and kernel kb, left-projective and tensor-square-zero.
+Right rad(e1 A_tri)=span(a,b) is the actual projective e0 A_tri,
+so R1 has A-pd one. In C_tri, right rad(e1 C_tri)=ka=R0, with
+R0's infinite t-resolution. Thus right count increases 1 -> 2.
+The left count stays one, exactly as (4.1) requires.
+
+This is a direct consequence of existing C076, recorded because the
+user explicitly tested strict count descent. It is not a new generic
+necessary invariant or an assertion that no other reduction exists.
+
+## 5. Deleting an actually infinite-pd vertex can create more infinite simples
+
+This new actual calibration breaks automatic count monotonicity even
+when the deleted LEFT simple itself has infinite pd.
+
+### 5.1 A finite-gldim fourteen-dimensional base
+
+Let R=k[t]/(t^3), M_i=k[t]/(t^i), i=1,2,3, M=M1 direct sum M2
+direct sum M3, and
+
+\[
+B=\operatorname{End}_R(M)^{op}.
+\tag{5.1}
+\]
+
+Its elementary Cartan dimensions are dim Hom_R(M_i,M_j)=min(i,j),
+so dim B=14. A basis h_ij^s of Hom_R(M_i,M_j) sends 1 to t^s,
+where max(0,j-i)<=s<j. In B (opposite composition),
+
+\[
+h_{ij}^s h_{jl}^u=h_{il}^{s+u}\ (s+u<l),
+\qquad\text{and all other products are zero}.
+\tag{5.2}
+\]
+
+The vertex idempotent is h_ii^0. This supplies a literal all-field
+multiplication, including primitive vertices, not just a quiver graph.
+
+Left P_i=Hom_R(M,M_i) are B-projectives. The following real short
+exact R-module sequences give their simple resolutions:
+
+\[
+0\to M_1\xrightarrow{t}M_2\xrightarrow{mod\ t}M_1\to0,
+\]
+\[
+0\to M_2\xrightarrow{g}M_1\oplus M_3\xrightarrow{h}M_2\to0,
+\quad g(u)=(u\bmod t,tu),\quad h(v,w)=tv-w\bmod t^2.
+\tag{5.3}
+\]
+
+Apply Hom_R(M,-). It is left exact. In the first sequence, every
+noninvertible map from an indecomposable M_i into M1 factors through
+M2 -> M1. In the second, maps from M1 and M3 into M2 factor through
+h, and the radical endomorphism t of M2 factors through M3. Thus
+the images at P1 and P2 are EXACTLY their B radicals. The remaining
+cokernel is the stated left simple, and all maps are minimal:
+
+\[
+0\to P_1\to P_2\to P_1\to L_1^B\to0,
+\]
+\[
+0\to P_2\to P_1\oplus P_3\to P_2\to L_2^B\to0.
+\tag{5.4}
+\]
+
+Also every noninvertible map into M3 has image in tM3=M2, so
+
+\[
+0\to P_2\xrightarrow{t}P_3\to L_3^B\to0.
+\tag{5.5}
+\]
+
+Consequently the three left pds are 2,2,1; in particular gd B=2.
+These are literal module proofs, with no appeal to a recalled
+Auslander-algebra theorem. For the right covers, the actual basis map
+h_ij^s -> h_ji^{s+i-j} reverses multiplication in (5.2) and fixes the
+idempotents. It transports (5.4)--(5.5) to actual right projective
+complexes, giving right pds 2,2,1; these are also checked below.
+This is an explicit ordinary chain comparison for this B, not any
+universal opposite-infinite-+ assertion.
+
+For D=B/Be3B, morphisms between M1,M2 factoring through M3 form
+precisely the one-dimensional span of t in End_R(M2); the other
+three retained Hom spaces lose no dimension. Indeed an injection
+into M3 has image in tM3, or t^2 M3 from M1, and the respective
+quotients give the stated products. Thus D has dimension four,
+with two opposite arrows, both products zero. Its actual simple
+syzygies alternate L1 and L2, so both left and right pds are infinite.
+
+### 5.2 A connected twenty-two-dimensional algebra
+
+Let Gamma=k[t_v]/(t_v^2) and G=Gamma/(t_v). Set
+
+\[
+V=G\otimes_k e_3B,\qquad
+A=\begin{pmatrix}B&0\\V&\Gamma\end{pmatrix}.
+\tag{5.6}
+\]
+
+V is an actual (Gamma,B)-bimodule, with t_v V=0 and the regular
+right e3B action. Its dimension is 1+2+3=6, so dim A=22. The
+ordinary triangular multiplication is associative over every field.
+The new vertex v is joined to B by the nonzero top of V at 3;
+the base has both consecutive connections. Thus A is connected.
+
+Induction A(e1+e2+e3) tensor_B - is exact: as a right B module
+this inducing bimodule is B direct sum V, and V is projective.
+It sends P_j to Ae_j, and sends L_j^B to the actual A simple L_j
+for j=1,2, because e3 L_j^B=0. Thus pd_A L1=pd_A L2=2 by the
+induced minimal resolutions (5.4).
+
+For L3, the minimal cover has the actual splitting
+
+\[
+\boxed{\Omega_A L_3\cong Ae_2\oplus L_v,\qquad
+       \Omega_A L_v\cong L_v.}
+\tag{5.7}
+\]
+
+To check the first splitting physically, embed Ae2 into rad(Ae3)
+by right multiplication with h_23^1. On the B part this is (5.5).
+On V e2 it maps the basis exponents 0,1 to exponents 1,2 in V e3.
+The remaining exponent-zero vector of V e3 is a separate copy of G
+at vertex v; all other left vertex actions vanish on it and t_v
+kills it. Thus it is exactly L_v and the direct sum is A-linear.
+The second equality uses Ae_v=(0,Gamma) and its actual t_v radical.
+
+This proves, in ALL ordinary degrees and over every field,
+
+\[
+I_L(A)=\{3,v\},\qquad
+\beta_{v,3}(n)=1\ (n\ge1),\qquad
+\beta_{v,v}(n)=1\ (n\ge0).
+\tag{5.8}
+\]
+
+For the direct right audit, the old projectives e_jA equal e_jB,
+so R1,R2,R3 have finite right pd. The actual radical of e_vA is
+the direct sum V direct sum kt_v, with right modules
+
+\[
+\Omega_{right}R_v\cong e_3A\oplus R_v.
+\tag{5.9}
+\]
+
+t_v V=0 proves this splitting. Every further right syzygy is the
+same e3A direct sum R_v: although e3A is projective, a new copy
+reappears on taking the syzygy of R_v. Therefore I_R(A)={v}.
+The direct right resolution also gives beta_v3(n)=beta_vv(n)=1
+for every n>=1, agreeing with the left calculation. No right
+projective term is incorrectly discarded from that recurrence.
+
+### 5.3 The actual deletion and the increased counts
+
+The ideal Ae3A removes ALL of V, because e3B is right-generated
+by e3. It removes Be3B and leaves Gamma intact. Hence the actual
+ordinary quotient is
+
+\[
+\boxed{C=A/Ae_3A\cong D\times\Gamma.}
+\tag{5.10}
+\]
+
+It has dimension six and the same retained labels 1,2,v. All three
+left AND right simples have infinite pd, by the two-arrow square-zero
+cycle and the t_v simple loop resolution. Thus
+
+\[
+|I_L(A)|=2<3=|I_L(C)|,\qquad
+|I_R(A)|=1<3=|I_R(C)|,
+\tag{5.11}
+\]
+
+even though the deleted L3 itself has infinite A-pd. In particular
+the finite-pd retained L1,L2 become infinite-pd after deletion.
+
+There is no ordinary corner section of this quotient. The two
+retained cross maps between M1,M2 have unique lifts, because no
+such cross map factors through M3. Their product at M2 is the
+nonzero t endomorphism in B, whereas it is zero in D. The triangular
+extension does not alter those Peirce spaces. Thus the section
+hypothesis of C061 is actually absent; it is not silently inherited.
+
+A already has the supported (Rv,Lv) Tor k in every degree and
+e_vAe_v=Gamma!=0. This is an automatic-count-descent counterexample,
+NOT a Gap-A counterexample, a badness-preserving counterexample,
+or a refutation of the global visible-return OR eligible-descent
+alternative: here the visible-return alternative holds.
+
+## 6. Exact computation and reproducibility
+
+Infinite-Simple-Count-Evidence/ contains task.md,
+verify_infinite_simple_count.py, infinite-simple-count-result.json,
+and computation-record.json. The script constructs the full basis
+tables (5.2), (5.6), the ideal closure Ae3A and the actual quotient.
+It reuses the unchanged project Fraction matrix/module helpers;
+their dependency hashes are recorded. Their old demos are not rerun.
+
+The exact Q audit passed:
+
+- 24,472 full-basis associativity triples, including vertex units;
+- 1,276 actual ideal-closure checks and 484 quotient-product checks;
+- 79 actual minimal projective-cover steps;
+- 17 actual module isomorphisms with checked A-linearity and inverse;
+- 10 complete projective-module action certificates;
+- ordinary left/right Betti comparisons through degree six.
+
+Dimensions are B14, A22, ideal16, C6. The cycle and loop assertions
+use the actual checked module equalities (5.7), (5.9) and the quotient
+simple syzygies, together with the written induction, not finite
+observations alone. All-characteristic assertions come from the
+literal R-module/triangular basis proof, not from rational ranks.
+This shares authorship and helpers with the project and is not an
+independent verification of C080, C081 or the all-field theorem.
+
+## 7. Normal adversarial self-audit
+
+1. W_z and T_y describe ordinary Tor at the same A, not stable or Tate data.
+2. A singleton-detector tail is a real minimal right/left resolution;
+   its finite composition devissage preserves exactly the required support.
+3. Every persistent row is contained in I_L, and every persistent column
+   in I_R, because finite ordinary pd on either input kills high Tor.
+4. The aggregate (3.1) mixes physical y and Tor source x. It is not used
+   as a same-pair witness until (3.2) proves alignment.
+5. At most two sources is essential to that alignment step. With three
+   or more, W_z can omit the physically supported y.
+6. The right theorem is proved directly, with physical D(y,z) for
+   Tor(R_z,L_y); I_L and I_R are not equated.
+7. No diagonal, fixed-every-degree or vertex-only checking claim follows.
+8. Count invariance (4.1) uses C076's WHOLE carrier hypothesis supplied
+   by finite pd, and the actual ambient pd_A C bound. Supported-only
+   vanishing is not substituted there.
+9. The preserved count is on the projective-kernel side. The triangular
+   example actually increases the other-side count.
+10. The new base multiplication is opposite composition with the specified
+    Hom bases; all endpoint and truncation conventions are explicit.
+11. Hom(M,-) is used as left exact, not falsely as globally exact. Images
+    are separately proved to be the actual projective radicals in (5.4).
+12. Triangular induction is exact because its right B bimodule is actually
+    projective. It is not inferred from a graph or dimension vector.
+13. The summand Lv in (5.7) is an actual A-stable complement in V e3.
+14. In the right recurrence (5.9), the projective e3A summand reappears;
+    discarding it at all later degrees would contradict the left Tor.
+15. Ae3A kills the full actual V and Be3B, and no part of Gamma. The
+    quotient is not a corner or a hypothesized derived localization.
+16. Deleted L3 has infinite LEFT pd, but finite RIGHT pd. It is not
+    claimed infinite on both sides; the two counts are reported separately.
+17. A22 and A12 are already infinite +. Neither supplies a bad algebra
+    or refutes the full global alternative.
+18. Exact code/schema/hash checks are not independent mathematical review.
+
+## 8. Verdict on the proposed global structure and next research
+
+The global alternative is still OPEN. If it held for every hypothetical
+bad A on one fixed chosen side, induction on the finite count, with T15
+or Theorem 3.1 as base, would prove Universal Gap A. A genuine refutation
+therefore cannot be supplied by an already-infinite-+ calibration.
+
+What has been proved is the full all-size branch |I_L|<=2 OR |I_R|<=2,
+not a refinement of a hypothetical higher-output tail. What has been
+broken is the assumption that existing radical moves decrease that
+count, and that deletion of an infinite-pd source cannot create new
+infinite-pd labels. The precise obstruction is ordinary homology:
+quotient-side minimal resolutions can become nonterminating even for
+retained simples with finite ambient pd; no Tor retract preserves their
+finite pd in (5.10). Left-projective acyclic radical moves, in contrast,
+preserve the whole left finite/infinite partition exactly.
+
+Thus an eligible vertex count reduction must prove BOTH supported
+ordinary return transfer and no new infinite-pd labels (or a sufficient
+net count estimate). C061 supplies these under actual ordinary sections.
+General sections or a replacement comparison are not established.
+Known C072/C074/C075 reductions can still close cases by dimension/type
+descent; their success should not be relabelled as infinite-simple count
+descent. C076's remaining physical-support bridge is unchanged.
+
+Continue from the genuine multiple-source obstruction: in (3.1), the
+persistent detector for source x may physically support another infinite
+source y that it does not persistently detect. This is a failure of
+ordinary same-pair alignment, not proof that the universal alternative
+is false. Any next bridge must kill that misalignment or construct an
+actual badness-preserving reduction with proved eligibility. General
+Target A, local-trivial, supported-weight and higher-output Target-B
+branches remain open and retained.
+
+MRS provenance is the durable Run/Claims journal with explicit status;
+no unavailable verifier acceptance was invented. Bounded Vault retrieval
+was used for method selection, not authority for these algebra facts.
+The existing fixed-carrier/descent lesson is respected: a measure is
+not strictly decreasing merely because a quotient has lower dimension;
+(4.1) proves the requested count is invariant in a principal current class.

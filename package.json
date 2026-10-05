@@ -8,13 +8,19 @@
     "import:math": "node scripts/import-math-chapter.js",
     "build:markdown": "node scripts/build-markdown.js",
     "build:content": "node scripts/build-content-manifest.js && node scripts/build-content-bundle.js",
-    "build": "npm run build:markdown && npm run build:content",
+    "build:writing": "node scripts/build-writing.js",
+    "build": "npm run build:writing && npm run build:markdown && npm run build:content",
     "build:local": "node scripts/build-local.js",
     "qa": "node qa-check.js",
     "qa:browser": "node scripts/browser-qa.js",
+    "qa:public": "node scripts/qa-public-package.js",
     "verify:generated": "node scripts/verify-generated.js",
-    "verify": "npm run verify:generated && npm run qa",
+    "verify": "npm run verify:generated && npm run qa && npm run qa:public",
     "verify:browser": "npm run qa:browser",
-    "build:bundle": "node scripts/build-content-bundle.js"
+    "build:bundle": "node scripts/build-content-bundle.js",
+    "pack:public": "node scripts/pack-public.js"
+  },
+  "devDependencies": {
+    "playwright": "1.60.0"
   }
 }

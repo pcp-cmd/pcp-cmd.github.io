@@ -1,10 +1,10 @@
 {
   "contentEngine": "markdown",
-  "generatedAt": "2026-06-21T15:09:23.913Z",
+  "generatedAt": "2026-10-05T18:42:18.068Z",
   "renderer": "marked",
   "math": "katex",
   "layout": "warm-manuscript",
-  "count": 35,
+  "count": 77,
   "files": [
     {
       "title": "山田杏奈 / 蓝色强排版方形海报",
@@ -187,6 +187,12 @@
       "status": "under revision"
     },
     {
+      "title": "Universal Gap A — 研究概览",
+      "source": "content/research/uga-overview.md",
+      "article": "article.html?src=content%2Fresearch%2Fuga-overview.md",
+      "status": "under revision"
+    },
+    {
       "title": "视觉符号卡片生产 Skill",
       "source": "content/skills/glyph-system-v0.md",
       "article": "article.html?src=content%2Fskills%2Fglyph-system-v0.md",
@@ -214,6 +220,252 @@
       "title": "可迭代修订协议",
       "source": "content/system/revision-protocol/index.md",
       "article": "article.html?src=content%2Fsystem%2Frevision-protocol%2Findex.md",
+      "status": "under revision"
+    },
+    {
+      "title": "“好看一点”，到底是什么意思？",
+      "source": "content/writing/01.md",
+      "article": "article.html?src=content%2Fwriting%2F01.md",
+      "status": "under revision"
+    },
+    {
+      "title": "我为什么开始先看图，再让AI写前端",
+      "source": "content/writing/02.md",
+      "article": "article.html?src=content%2Fwriting%2F02.md",
+      "status": "under revision"
+    },
+    {
+      "title": "圈一下图片，能比写一段话多传递什么？",
+      "source": "content/writing/03.md",
+      "article": "article.html?src=content%2Fwriting%2F03.md",
+      "status": "under revision"
+    },
+    {
+      "title": "同一个修改要求，为什么还要导出JSON？",
+      "source": "content/writing/04.md",
+      "article": "article.html?src=content%2Fwriting%2F04.md",
+      "status": "under revision"
+    },
+    {
+      "title": "我只想换背景，AI却把我的脸换了",
+      "source": "content/writing/05.md",
+      "article": "article.html?src=content%2Fwriting%2F05.md",
+      "status": "under revision"
+    },
+    {
+      "title": "ChatGPT听懂了，交给Codex为什么又走样？",
+      "source": "content/writing/06.md",
+      "article": "article.html?src=content%2Fwriting%2F06.md",
+      "status": "under revision"
+    },
+    {
+      "title": "提示词越长，真的越好吗？",
+      "source": "content/writing/07.md",
+      "article": "article.html?src=content%2Fwriting%2F07.md",
+      "status": "under revision"
+    },
+    {
+      "title": "我为什么想借用ASD-STE100跟AI说话",
+      "source": "content/writing/08.md",
+      "article": "article.html?src=content%2Fwriting%2F08.md",
+      "status": "under revision"
+    },
+    {
+      "title": "审查了很多轮，为什么项目还是不干净？",
+      "source": "content/writing/09.md",
+      "article": "article.html?src=content%2Fwriting%2F09.md",
+      "status": "under revision"
+    },
+    {
+      "title": "给朋友用一次，才知道什么叫交付",
+      "source": "content/writing/10.md",
+      "article": "article.html?src=content%2Fwriting%2F10.md",
+      "status": "under revision"
+    },
+    {
+      "title": "安装包做好了，打开却一直让我重试",
+      "source": "content/writing/11.md",
+      "article": "article.html?src=content%2Fwriting%2F11.md",
+      "status": "under revision"
+    },
+    {
+      "title": "按钮能点，不代表一件事能做完",
+      "source": "content/writing/12.md",
+      "article": "article.html?src=content%2Fwriting%2F12.md",
+      "status": "under revision"
+    },
+    {
+      "title": "每次改好一点，为什么整个项目反而更乱？",
+      "source": "content/writing/13.md",
+      "article": "article.html?src=content%2Fwriting%2F13.md",
+      "status": "under revision"
+    },
+    {
+      "title": "个人自用的软件，需要把技术债清零吗？",
+      "source": "content/writing/14.md",
+      "article": "article.html?src=content%2Fwriting%2F14.md",
+      "status": "under revision"
+    },
+    {
+      "title": "一份大Markdown，就让我的工具撑不住了",
+      "source": "content/writing/15.md",
+      "article": "article.html?src=content%2Fwriting%2F15.md",
+      "status": "under revision"
+    },
+    {
+      "title": "只多了一层文件夹，整套课程就不能导入",
+      "source": "content/writing/16.md",
+      "article": "article.html?src=content%2Fwriting%2F16.md",
+      "status": "under revision"
+    },
+    {
+      "title": "同一个项目，换个窗口为什么像重新开始？",
+      "source": "content/writing/17.md",
+      "article": "article.html?src=content%2Fwriting%2F17.md",
+      "status": "under revision"
+    },
+    {
+      "title": "AI研究最让我疲惫的，是做了又忘",
+      "source": "content/writing/18.md",
+      "article": "article.html?src=content%2Fwriting%2F18.md",
+      "status": "under revision"
+    },
+    {
+      "title": "交接文件里，为什么必须写失败路线？",
+      "source": "content/writing/19.md",
+      "article": "article.html?src=content%2Fwriting%2F19.md",
+      "status": "under revision"
+    },
+    {
+      "title": "我把研究资料分成了工具箱和历史箱",
+      "source": "content/writing/20.md",
+      "article": "article.html?src=content%2Fwriting%2F20.md",
+      "status": "under revision"
+    },
+    {
+      "title": "我为什么停用了更复杂的多Agent系统？",
+      "source": "content/writing/21.md",
+      "article": "article.html?src=content%2Fwriting%2F21.md",
+      "status": "under revision"
+    },
+    {
+      "title": "一次失败，怎样变成以后还能用的资产？",
+      "source": "content/writing/22.md",
+      "article": "article.html?src=content%2Fwriting%2F22.md",
+      "status": "under revision"
+    },
+    {
+      "title": "我的数学飞轮，最初什么都没有",
+      "source": "content/writing/23.md",
+      "article": "article.html?src=content%2Fwriting%2F23.md",
+      "status": "under revision"
+    },
+    {
+      "title": "做研究，也要允许自己的猜想是错的",
+      "source": "content/writing/24.md",
+      "article": "article.html?src=content%2Fwriting%2F24.md",
+      "status": "under revision"
+    },
+    {
+      "title": "AI给了我一整套课程，我还是看不懂",
+      "source": "content/writing/25.md",
+      "article": "article.html?src=content%2Fwriting%2F25.md",
+      "status": "under revision"
+    },
+    {
+      "title": "材料越来越多，我却不知道从哪里开始学",
+      "source": "content/writing/26.md",
+      "article": "article.html?src=content%2Fwriting%2F26.md",
+      "status": "under revision"
+    },
+    {
+      "title": "让AI整理资料时，我最怕它把什么删掉？",
+      "source": "content/writing/27.md",
+      "article": "article.html?src=content%2Fwriting%2F27.md",
+      "status": "under revision"
+    },
+    {
+      "title": "看懂了答案，和自己做出来差在哪里？",
+      "source": "content/writing/28.md",
+      "article": "article.html?src=content%2Fwriting%2F28.md",
+      "status": "under revision"
+    },
+    {
+      "title": "让AI和我学同一门课，会发生什么？",
+      "source": "content/writing/29.md",
+      "article": "article.html?src=content%2Fwriting%2F29.md",
+      "status": "under revision"
+    },
+    {
+      "title": "测试通过了，究竟证明谁学会了？",
+      "source": "content/writing/30.md",
+      "article": "article.html?src=content%2Fwriting%2F30.md",
+      "status": "under revision"
+    },
+    {
+      "title": "为了不浪费额度，我开始反过来找事情做",
+      "source": "content/writing/31.md",
+      "article": "article.html?src=content%2Fwriting%2F31.md",
+      "status": "under revision"
+    },
+    {
+      "title": "“看起来很未来”的项目，为什么后来被我放下？",
+      "source": "content/writing/32.md",
+      "article": "article.html?src=content%2Fwriting%2F32.md",
+      "status": "under revision"
+    },
+    {
+      "title": "只看前端截图，能判断一个AI好不好吗？",
+      "source": "content/writing/33.md",
+      "article": "article.html?src=content%2Fwriting%2F33.md",
+      "status": "under revision"
+    },
+    {
+      "title": "会用很多AI工具，我就有解决问题的能力了吗？",
+      "source": "content/writing/34.md",
+      "article": "article.html?src=content%2Fwriting%2F34.md",
+      "status": "under revision"
+    },
+    {
+      "title": "一个项目值得做，应该先回答哪些问题？",
+      "source": "content/writing/35.md",
+      "article": "article.html?src=content%2Fwriting%2F35.md",
+      "status": "under revision"
+    },
+    {
+      "title": "我的个人网站，为什么越改越想做减法？",
+      "source": "content/writing/36.md",
+      "article": "article.html?src=content%2Fwriting%2F36.md",
+      "status": "under revision"
+    },
+    {
+      "title": "同一篇文章，为什么要有两种读法？",
+      "source": "content/writing/37.md",
+      "article": "article.html?src=content%2Fwriting%2F37.md",
+      "status": "under revision"
+    },
+    {
+      "title": "我为什么想做自己的Dream-RSI？",
+      "source": "content/writing/38.md",
+      "article": "article.html?src=content%2Fwriting%2F38.md",
+      "status": "under revision"
+    },
+    {
+      "title": "复现论文时，我为什么改回了熟悉的Codex对话？",
+      "source": "content/writing/39.md",
+      "article": "article.html?src=content%2Fwriting%2F39.md",
+      "status": "under revision"
+    },
+    {
+      "title": "两次实验都没触发“Dream”，这个结果有价值吗？",
+      "source": "content/writing/40.md",
+      "article": "article.html?src=content%2Fwriting%2F40.md",
+      "status": "under revision"
+    },
+    {
+      "title": "我开始用benchmark，检查AI到底有没有帮上忙",
+      "source": "content/writing/41.md",
+      "article": "article.html?src=content%2Fwriting%2F41.md",
       "status": "under revision"
     }
   ]

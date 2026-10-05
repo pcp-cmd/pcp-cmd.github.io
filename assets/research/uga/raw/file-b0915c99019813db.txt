@@ -1,0 +1,30 @@
+# Cycle 4 master guidance — universal Gap A
+
+Transport is explicitly `off`; this guidance is authored by Main Codex from elaboration `c22ed4b33b7a7d4a`, with zero external-call cost. It is strategy, not proof authority.
+
+Keep the original Han problem fixed, but make universal Gap A the active mathematical target because the operator's 2026-08-20 handoff identifies it as the unresolved structural gap. Treat every theorem in the handoff as a candidate until a fresh worker submission passes the independent Verifier in this project.
+
+The cycle has three branches which must remain distinct.
+
+## Branch A — foundation audit and five-vertex reduction
+
+Reconstruct from primary statements and prove the minimum reliable chain: exact CLMS infinite-(+) criterion with module sides; Armenta syzygy-return/one-way/SCC statements with ordered variables; dead-zone descent by applying the idempotent to an actual minimal tail; strict size reduction; then the smallest low-vertex consequence that can be verifier-closed. The main target is a verifier-accepted theorem reducing a vertex-minimal five-vertex failure to a dead-zone corner with an infinite-(+) witness. Do not submit the handoff's claimed three-/four-vertex closures as a bundle; decompose them into independently checkable lemmas.
+
+## Branch B — corner-to-global comparison
+
+Fix one dead-zone idempotent (f) and construct the exact comparison between (fAf)-resolutions and ambient (A)-resolutions. State PSS/Klapproth-type hypotheses explicitly, including the orientation of complement bimodules and cross-Tor. Prove the eventual-error-vanishing lifting branch first. Then isolate the persistent-error object with a precise long exact sequence, spectral sequence, or resolution formula. The desired output is a theorem of the form: corner witness lifts, or a specified persistent error remains. Do not claim the persistent error is already an infinite-(+) witness without a second proof.
+
+## Branch C — persistent error and bilateral derangement
+
+Assume the persistent-error alternative from Branch B abstractly and attack the forcing step. Use finite-length devissage, minimal-differential covering, bounded stripping of finite-projective-dimension layers, and the opposite algebra simultaneously. Define a finite recurrent state that records both the persistent simple Ext/Tor pair and the actual Peirce transfer vertex. Either prove that a repeated bilateral state yields a Peirce-compatible witness, or produce a fully explicit permanent-derangement blueprint precise enough for counterexample construction. A support-graph cycle alone is insufficient; cancellation and relation multiplication must be handled.
+
+## Shared discipline
+
+- Search the project fact graph before proving and cite only accepted predecessor fact IDs.
+- Record literature statements with exact hypotheses and provenance; do not claim novelty.
+- Never infer corner-to-global comparison, Tate-to-ordinary visibility, periodic-module-to-simple visibility, or termwise non-cancellation from (d^2=0).
+- Submit small facts as soon as they are complete so the Verifier can reject orientation errors early.
+- If a claimed handoff theorem fails fresh verification, publish the precise counterexample or missing hypothesis immediately; that is theorem-level progress.
+- KLS/Gap B is a test case, not this cycle's main budget. Reuse it only when it directly tests a proposed universal bridge.
+
+The best successful endpoint for this cycle is a verifier-accepted corner-witness-or-error-witness theorem. The next best endpoint is a verifier-accepted dead-zone/five-vertex reduction plus an exact characterization of the remaining persistent-error object. Do not announce universal Gap A solved unless a complete fact-DAG chain reaches the ambient infinite-(+) witness or a rigorous counterexample.

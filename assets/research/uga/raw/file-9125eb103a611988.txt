@@ -1,0 +1,187 @@
+# §0 Mathematical verdict
+
+**Not solved.** The actual comparison defects now carry corner-exit tags and a verifier-accepted associated-graded noncancellation criterion; the central missing theorem is radical-depth recycling: cancellation must either strictly increase canonical defect depth or produce a proper recurrent corner before radical nilpotence.
+
+**Closed components.** The canonical comparison on actual corner simples is verifier-closed (`9b661439db7f6ae9`). Every non-direct output is tagged outside the current corner by `39d5bd8b2d2d4b6a` and `6eafbbe6a6361a9c`. If a persistent simple pair has transfer elements whose leading radical product survives, `2549cd596a814f8a` gives infinite-(+).
+
+**Viable proof architecture.** Attach minimal radical depths to the canonical exit maps, apply the associated-graded survival criterion, and treat leading-term cancellation as a new defect of strictly greater depth; combine bounded Loewy length with secondary-corner descent for the terminal zero-product branch.
+
+**Main blocker.** Strict depth increase and the terminal branch are not verified. The counterexamples `6bd89784ef94bef3`, `78e3ab82c1e9d0e7`, `31c4037065600009`, and `9110d8cc8257b511` show that products may vanish identically, recurring simples may be projective, and bilateral support recurrence may persist without return multiplication.
+
+**Highest-priority unresolved bridge.** Prove that the exact canonical maps behind each tagged output of `6eafbbe6a6361a9c` yield minimal-depth transfer elements (u,v), and that failure of `2549cd596a814f8a` canonically produces either a tagged defect of strictly larger total depth or a proper complementary corner with infinite recurrence.
+
+**Method failure vs. proposition failure.** Support-only and unfiltered bilateral methods are method failure; the radical-filtered canonical route remains viable and no proposition failure is established.
+
+**Calibration caveat.** A bounded radical filtration supplies termination only after a verified transition; the existence of the filtration alone is not a proof.
+
+| Dashboard item | State |
+|---|---|
+| Fixed goal | UNCHANGED — prove or refute Han's conjecture and deliver a broader verified recurrence–visibility/defect-recycling theory. |
+| Verified complete proof | NO |
+| Verified counterexample | NO counterexample to Han or universal Gap A; YES counterexamples to generic recycling shortcuts. |
+| Signed-closed sub-tasks | Dead-zone descent; one/two-vertex bases; opposite-invariance; canonical five-way comparison; corner-exit tags; associated-graded survival criterion. |
+| Main blocker | Canonical cancellation-to-greater-depth or secondary-corner transition. |
+| Routes marked false/obsolete | YES — support-only unilateral/bilateral recovery and generic fifth-branch promotion are FALSE AS STATED. |
+| Highest-priority unresolved task | P0 — prove radical-depth recycling and control the terminal zero-product branch. |
+
+| Sub-task | Status | Closed facts | Conditional facts | Main missing interface |
+|---|---|---|---|---|
+| Dead-zone corner input | SUBSTANTIAL | `59a12876ab799b9e`, `5da47c5107901438`, `4ac1cd635b7cb0e8` | Exact one-way theorem still needs final instantiation | Match the vertex-minimal failure. |
+| Canonical tagged comparison | CLOSED | `9b661439db7f6ae9`, `39d5bd8b2d2d4b6a`, `6eafbbe6a6361a9c` | None for the tagged five-way output | Add minimal radical-depth transfer data. |
+| Associated-graded survival | CLOSED | `2549cd596a814f8a` | Conditional on a noncancelling leading product | Produce the elements from canonical maps. |
+| Cancellation recycling | UNKNOWN | Tagged exits and radical filtration exist | No verified strict-depth transition | Construct the next defect and prove increased depth. |
+| Terminal zero-product branch | DANGEROUS | Counterexamples show it can persist generically | Minimal dead-zone provenance may exclude it | Produce a proper singular complement or a matching Peirce witness. |
+| Mutual dumbbell | SUBSTANTIAL | `8783e7694e73021e`, `669c1e54f01a5b89` | Tail product decomposition must lift self-recurrence | Close the terminal three-vertex state. |
+| Han closure | PARTIAL | Algebraic recurrence/visibility layers | Universal Gap A and ordinary-Hochschild interface remain | Finish recycling and verify the final external implication. |
+
+**Current best proof skeleton**
+
+1. Choose a vertex-minimal Gap-A failure and form its proper syzygy dead-zone corner.
+2. Obtain a corner-simple infinite-(+) witness and apply `9b661439db7f6ae9`.
+3. Use `6eafbbe6a6361a9c` to tag every non-direct output on the complementary side.
+4. Track the canonical maps to primitive endpoints and choose transfer elements of minimal radical depths (r,s).
+5. If their leading product survives in \(\operatorname{rad}^{r+s}/\operatorname{rad}^{r+s+1}\), apply `2549cd596a814f8a`.
+6. If it cancels, construct the next canonical tagged defect and prove that its minimal total depth is larger.
+7. Iterate while the radical layer exists.
+8. At terminal zero product, use vertex minimality/dead-zone provenance to obtain a proper complementary recurrent corner.
+9. Strictly descend in vertex support and restart, or reach `669c1e54f01a5b89`/`0dc7d2e243818132`.
+10. Close the mutual dumbbell and universal Gap A; then verify the exact ordinary-Hochschild implication to Han.
+
+**Central missing lemma.** Let (A) be vertex-minimal among finite-dimensional basic algebras of infinite global dimension which are not infinite-(+), let (f) be an actual syzygy dead-zone idempotent, and let a corner-simple witness enter the tagged canonical comparison `6eafbbe6a6361a9c`. For every non-direct persistent simple-pair output, the exact canonical maps determine primitive endpoints and minimal integers (r,s\ge0) together with (u\in e_b\operatorname{rad}^r(A)f) and (v\in f\operatorname{rad}^s(A)e_a). Either (uv\notin\operatorname{rad}^{r+s+1}(A)), hence `2549cd596a814f8a` applies, or the canonical comparison/relation data determine a new tagged persistent defect of strictly larger minimal total depth. If no larger depth is possible because the radical power vanishes, the zero-product branch canonically yields a nonzero proper complementary idempotent corner of infinite recurrence. The final clause must use a property absent from all four adversarial counterexamples.
+
+# §1 Closed components and obsolete routes
+
+**Signed-closed components**
+
+- Proper dead-zone descent — `59a12876ab799b9e`, `5da47c5107901438`, `4ac1cd635b7cb0e8`.
+- Canonical actual five-way comparison — `9b661439db7f6ae9`.
+- Canonical corner-exit support tags — `39d5bd8b2d2d4b6a`, `6eafbbe6a6361a9c`.
+- Infinite-pd right simple gives a fixed left Tor partner — `ef663e7166147a48`.
+- Associated-graded surviving transfer product gives infinite-(+) — `2549cd596a814f8a`.
+- Self-return and general recurrence/Peirce closure — `669c1e54f01a5b89`, `0dc7d2e243818132`.
+
+| Route | Status | Reason |
+|---|---|---|
+| Use only exit support to recover multiplication | FALSE AS STATED | `6bd89784ef94bef3` and `9110d8cc8257b511`. |
+| Use a recurrent radical edge as reverse visibility | FALSE AS STATED | `78e3ab82c1e9d0e7`. |
+| Promote every recurring fifth-branch simple | FALSE AS STATED | `31c4037065600009`. |
+| Ignore the radical filtration | OBSOLETE | `2549cd596a814f8a` identifies the correct noncancellation interface. |
+
+# §2 Interface contract table
+
+### Canonical tagged exit to minimal radical transfers — attach relation-level data
+**Input required.** An actual non-direct output of `6eafbbe6a6361a9c` and its canonical quotient/kernel/higher-error maps.
+
+**Output claimed.** Primitive endpoints and nonzero transfer elements (u,v) at their first radical layers.
+
+**Available facts.** `39d5bd8b2d2d4b6a`, `6eafbbe6a6361a9c` provide complementary support.
+
+**Missing verification on the actual model.** 1. Extract the elements from the maps. 2. Prove nonzero. 3. Prove minimality of (r,s). 4. Preserve the persistent simple Tor pair.
+
+**Failure mode if ignored.** Support tags alone admit bilateral zero-product counterexamples.
+
+**Status.** PARTIAL
+
+### Minimal transfers to plus — associated-graded survival
+**Input required.** Persistent Tor plus (u,v) with (uv\notin\operatorname{rad}^{r+s+1}(A)).
+
+**Output claimed.** Infinite-(+).
+
+**Available facts.** `2549cd596a814f8a`.
+
+**Missing verification on the actual model.** Match a canonical tagged output to the hypotheses.
+
+**Failure mode if ignored.** A nonzero-looking path product may cancel into a deeper radical layer.
+
+**Status.** SUBSTANTIAL
+
+### Leading cancellation to deeper defect — strict radical-depth recycling
+**Input required.** Canonical minimal transfers whose product lies in a deeper radical layer.
+
+**Output claimed.** A new tagged persistent defect with larger minimal total depth.
+
+**Available facts.** No verified transition yet; `2549cd596a814f8a` defines the success complement.
+
+**Missing verification on the actual model.** 1. Construct the next defect. 2. Preserve persistence. 3. Prove strict depth increase. 4. Prove functorial iteration.
+
+**Failure mode if ignored.** Radical depth does not become a well-founded invariant merely because it is bounded.
+
+**Status.** UNKNOWN
+
+### Terminal zero product to proper singular complement — change support
+**Input required.** A tagged defect at maximal possible depth with zero return product, plus vertex-minimal dead-zone provenance.
+
+**Output claimed.** A proper complementary corner carrying infinite recurrence.
+
+**Available facts.** `39d5bd8b2d2d4b6a` and `6eafbbe6a6361a9c` locate the defect outside (f).
+
+**Missing verification on the actual model.** 1. Prove the complement is singular. 2. Produce a module/simple witness. 3. Prove properness and strict support descent. 4. Exclude `31c4037065600009` and `9110d8cc8257b511`.
+
+**Failure mode if ignored.** The depth iteration can terminate at an identically zero product without yielding plus.
+
+**Status.** DANGEROUS
+
+# §3 Dangerous heuristic lines and strategies not to pursue
+
+**Dangerous heuristic lines**
+
+- “Complementary support is already a smaller singular corner.” **Status: Conflated with a stronger claim.** `39d5bd8b2d2d4b6a` proves support, not infinite projective dimension over (gAg).
+- “A bounded radical filtration automatically makes cancellation terminate successfully.” **Status: Not automatic.** It may terminate at a zero product, as the counterexamples show.
+- “Minimal-depth transfer elements always have a surviving product.” **Status: Mathematically incorrect as stated.** `6bd89784ef94bef3` supplies zero products.
+- “The fifth branch is solved once it exits the corner.” **Status: Conditional only.** Its recurring simple may be projective by `31c4037065600009`.
+- “Mutual dumbbell cross recurrence is a plus witness.” **Status: Mathematically incorrect as stated.** `8783e7694e73021e` shows the required cross blocks vanish in the non-plus normal form.
+
+**Strategies not to pursue**
+
+- Do not infer singularity of (gAg) from (f)-annihilation alone.
+- Do not count radical depth without constructing the next persistent defect.
+- Do not replace canonical maps by arbitrary transfer elements.
+- Do not stop at a zero-product terminal state; construct the smaller corner or refute the route.
+- Do not treat mutual-dumbbell cross recurrence as visibility without the ordered Peirce block.
+- Do not draft the final paper before the depth transition and terminal branch are verified.
+
+# §4 Missing bridge lemmas
+
+### Bridge 1 — Canonical minimal-depth extraction
+**Target statement.** Every non-direct branch of `6eafbbe6a6361a9c` canonically supplies minimal-depth transfer elements through (f) whose endpoints are the persistent simple Tor pair.
+
+**Prerequisites.** Actual canonical quotient/kernel/higher-error maps.
+
+**Existing facts to use.** `9b661439db7f6ae9`, `39d5bd8b2d2d4b6a`, `6eafbbe6a6361a9c`.
+
+**Missing checks.** 1. Extract matrix elements. 2. Match primitive endpoints. 3. Prove minimal depth. 4. Preserve recurrence.
+
+**Closure criterion.** The output must type-check directly into `2549cd596a814f8a`. This bridge is independent and parallelizable.
+
+### Bridge 2 — Strict radical-depth transition
+**Target statement.** If the leading product from Bridge 1 cancels, the exact comparison differential produces a new tagged persistent defect with strictly larger total minimal radical depth.
+
+**Prerequisites.** Bridge 1 and relation-level differential control.
+
+**Existing facts to use.** `2549cd596a814f8a` defines the survival branch; the counterexamples define the boundary.
+
+**Missing checks.** 1. Construct the new pair. 2. Preserve infinite Tor. 3. Prove strict increase. 4. Bound iteration by radical nilpotence.
+
+**Closure criterion.** Every nonterminal cancellation must feed the same transition again at greater depth. This bridge depends on Bridge 1.
+
+### Bridge 3 — Terminal complementary-corner singularity
+**Target statement.** In a vertex-minimal syzygy dead-zone failure, a maximal-depth tagged zero-product defect forces the complementary corner (gAg) or a proper subcorner to have infinite global dimension/recurrence.
+
+**Prerequisites.** Tagged support, terminal depth, and minimal dead-zone provenance.
+
+**Existing facts to use.** `39d5bd8b2d2d4b6a`, `6eafbbe6a6361a9c`, `ef663e7166147a48`.
+
+**Missing checks.** 1. Exclude projective recurring factors. 2. Prove a simple has infinite pd. 3. Transfer recurrence to the corner. 4. Prove strict support decrease.
+
+**Closure criterion.** The terminal branch must yield a smaller recurrent corner, not only a complement-supported module. This bridge depends on Bridge 2 but can be explored independently.
+
+### Bridge 4 — Mutual-dumbbell and Han terminal closure
+**Target statement.** The mutual-dumbbell tail either gives self-return `669c1e54f01a5b89` after its two-factor corner decomposition or descends to a two-vertex singular corner; after universal Gap A, the exact ordinary-Hochschild theorem yields Han.
+
+**Prerequisites.** Exact dumbbell tail hypotheses and completed depth recycling.
+
+**Existing facts to use.** `8783e7694e73021e`, `669c1e54f01a5b89`, `ee07f374726a4e16`.
+
+**Missing checks.** 1. Lift factor recurrence to the original resolution. 2. Close the dumbbell. 3. Verify the ordinary-Hochschild interface.
+
+**Closure criterion.** Produce verifier-accepted universal Gap A and then a fact DAG ending at Han's eventual-vanishing statement. This bridge is dependent.

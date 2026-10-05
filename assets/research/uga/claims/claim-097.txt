@@ -1,0 +1,9 @@
+## UGA-C097 — Finite Simple Pd Need Not Supply Any Shallow Vertex on Either Side, Uniformly
+**Status:** COMPLETE SELF-AUDITED ALL-R ORDINARY OBSTRUCTION / ACTUAL TENSOR MINIMAL RESOLUTIONS / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Ordinary-Tensor-Factor-Descent-and-Unbounded-Finite-Pd-Obstruction-2026-10-04.md, Sections 3 and 5–7.
+
+Let N be T23's seven-dimensional Nakayama aba=0. Its sole finite LEFT label is f of pd one, sole finite RIGHT label v of pd one, and its supported ordinary Tor(R_f,L_v)=k in every positive degree. For EVERY r>=2, connected elementary A_r=N^(tensor r) has dimension 7^r,2^r vertices. Its sole finite LEFT label all-f and sole finite RIGHT label all-v have pd EXACTLY r by the actual minimal tensor formula. All other simples on the stated side have infinite pd. Therefore no finite pd-zero/pd-one simple exists on EITHER side; the minimum finite simple pd can be arbitrarily high simultaneously. Each sole finite cover contains an infinite factor so has no eligible C088 block; each finite chosen-side label is opposite-side infinite, excluding C093 perfection on that side. C094 is ineligible.
+
+The family already has a supported ordinary tail: detector all-f, source (v,f,...,f), Tor dimension one in EVERY positive degree and physical dimension 2^r. It breaks the UNQUALIFIED automatic shallow-vertex existence mechanism, NOT a FULL BADNESS-specific existence theorem or Universal Gap A. C096 closes the entire actual tensor family by factor descent, without source-count cases. The dimension-49 actual both-sided finite resolutions terminate at pd two and selected other minimal terms match the tensor formula; all-r/infinite conclusions are separate written ordinary proofs, not bounded samples. Complete same-author self-audit and integral shared-helper checks, NOT independently verified.
+
+---

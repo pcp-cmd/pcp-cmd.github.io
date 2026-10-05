@@ -1,0 +1,351 @@
+# Type II：导出余诱导的消去障碍与内射维数一的 supported 传递
+
+2026-09-28。续接 [删点比较](Idempotent-Deletion-and-Ext-Comparison.md)，使用该稿的十维代数作压力测试。**Universal Gap A 仍未解决。** 本稿先给完整证明，随后记录独立审读与精确计算的实际范围；不主张文献新颖性。
+
+## 1. 方向、核心和实际 leakage 对象
+
+令 A 为有限维 basic 复代数，J 为其 radical，L_i=Ae_i/Je_i 为左 simple，R_i=D L_i 为右 simple。令 f 为一组顶点之和，Γ=fAf，G 为未保留顶点集。假设 G 非空且
+
+\[
+a=\max_{z\in G}\operatorname{id}_A L_z<\infty.
+\]
+
+任意被 f 消去的有限模，其内射维数至多 a：对组成列反复使用 Ext 长正合列即可。对任意有限模 X，最小投射消解 P_n(X) 中 Ae_z 的重数为 dim Ext_A^n(X,L_z)，故 n>a 时 P_n(X) 属于 add(Af)。因此若 gldim A=∞，限制一个无限最小消解的这一尾端，得到无限最小 Γ-投射消解，故 gldim Γ=∞。确切地说，限制函子正合，且 fJf=rad Γ；尾端的非零投射项不会被消去。一个有界起点的非零最小正合投射复形不能消解零模，因而限制尾端的起点确为非零模。
+
+若 f 恰为全部无限内射维数左 simple 的顶点和，这就是交接中的 Type-II 核心。以下余诱导构造和定理适用于任何满足上述有限内射维数条件的 f。
+
+固定保留顶点 i。写 S_i=fL_i，并取有限生成 Γ-内射模组成的消解 I_i^•。置
+
+\[
+Q_i^\bullet=\operatorname{Hom}_\Gamma(fA,I_i^\bullet),\qquad
+K_i^q=H^q(Q_i^\bullet)=\operatorname{Ext}_\Gamma^q(fA,S_i).
+\tag{1}
+\]
+
+Q_i^q 是 A-内射模，因为正合限制 f(-) 的右伴随保持内射对象。左右导出伴随的正确方向分别为
+
+\[
+\mathbf R\operatorname{Hom}_A(Af\otimes_\Gamma^{\mathbf L}T,Y)
+\simeq\mathbf R\operatorname{Hom}_\Gamma(T,fY),
+\]
+\[
+\mathbf R\operatorname{Hom}_A(X,\mathbf R\operatorname{Hom}_\Gamma(fA,T))
+\simeq\mathbf R\operatorname{Hom}_\Gamma(fX,T).
+\tag{2}
+\]
+
+当 q>0 时 fK_i^q=Ext_Γ^q(Γ,S_i)=0，因而 id_A K_i^q≤a。外部顶点 z 的 leakage 正是
+
+\[
+e_zK_i^q=\operatorname{Ext}_\Gamma^q(fAe_z,S_i)
+\cong D\operatorname{Tor}_q^\Gamma(R_i^\Gamma,fAe_z).
+\tag{3}
+\]
+
+这里 e_zK_i^q 是一个顶点分量，并不等于 Hom_A(L_z,K_i^q)。更不能把它直接换成 Ext_A^q(L_z,L_i)。
+
+单位映射给出短正合列
+
+\[
+0\longrightarrow L_i\longrightarrow K_i^0\longrightarrow T_i\longrightarrow0,
+\qquad fT_i=0,\quad\operatorname{id}_A T_i\le a.
+\tag{4}
+\]
+
+理由是单位在 f 后为同构，故非零；L_i 简单，因而单位单射。特别地 n>a+1 时 Ext_A^n(X,L_i)→Ext_A^n(X,K_i^0) 为同构。
+
+## 2. 谱序列以及可以反复消去 leakage 的具体二扩张
+
+对 X 的投射消解 P_•，取第一象限双复形 Hom_A(P_p,Q_i^q)，总次数 p+q。先沿 q 取同调再沿 p 取同调，得到
+
+\[
+E_2^{p,q}=\operatorname{Ext}_A^p(X,K_i^q)
+\Longrightarrow\operatorname{Ext}_\Gamma^{p+q}(fX,S_i),
+\qquad d_r:(p,q)\longrightarrow(p+r,q-r+1).
+\tag{5}
+\]
+
+相反的取同调次序中，Q_i^q 内射使 p>0 行消失，余下 Hom_A(X,Q_i^•)=Hom_Γ(fX,I_i^•)，证明所示 abutment。每个总次数只有有限项，因此这个双复形的收敛没有无穷乘积问题。
+
+记 Z_i^q=ker d^q、B_i^q=im d^{q-1}，并令 B_i^0=0。实际复形提供二扩张
+
+\[
+0\longrightarrow K_i^{q-1}\longrightarrow Q_i^{q-1}/B_i^{q-1}
+\xrightarrow{\ d\ } Z_i^q\longrightarrow K_i^q\longrightarrow0
+\tag{6}
+\]
+
+以及其类 η_i^q∈Ext_A^2(K_i^q,K_i^{q-1})。谱序列 d_2 是与 η_i^q 的 Yoneda 合成，至多相差总复形所选的统一符号。对 p=0，可沿代表 X→K_i^q 拉回 (6) 的二扩张；等价地，先在 X 的投射消解各项上作提升，再作两次连接。不能假定 X→K_i^q 本身可提升到 Z_i^q。高 p 时使用同一二扩张的 Yoneda 合成。
+
+q>0 时只有 0≤p≤a 的列可以非零。这个有限宽度并不保证正 q 的类到达 q=0：当 a≥2 时，(6) 已可能在所有高度重复消去它们。第 6 节给出实际有限维代数中的全次数例子。
+
+## 3. 外部内射维数至多一时，普通 Ext 的精确传递
+
+本节及第 4、5 节增加假设 a≤1。
+
+**引理 1。** 对任何 fX=0 的有限模 X，以及每个 q≥2，有自然短正合列
+
+\[
+0\longrightarrow\operatorname{Ext}_A^1(X,K_i^{q-1})
+\longrightarrow\operatorname{Ext}_A^{q+1}(X,L_i)
+\longrightarrow\operatorname{Hom}_A(X,K_i^q)\longrightarrow0.
+\tag{7}
+\]
+
+另外 Ext_A^2(X,L_i)→Hom_A(X,K_i^1) 为满射。
+
+**链级证明。** 暂略去 i。由伴随有 Hom_A(X,Q^r)=0，所以 Hom_A(X,Z^r)=Hom_A(X,B^r)=0。短正合列 0→Z^r→Q^r→B^{r+1}→0 还给出
+
+\[
+\operatorname{Ext}_A^1(X,Z^r)=0,\qquad
+\operatorname{Ext}_A^m(X,B^{r+1})\cong
+\operatorname{Ext}_A^{m+1}(X,Z^r)\quad(m\ge1).
+\tag{8}
+\]
+
+对 r≥1，使用 0→B^r→Z^r→K^r→0 及 id K^r≤1，得到
+
+\[
+\operatorname{Hom}_A(X,K^r)\cong\operatorname{Ext}_A^1(X,B^r),
+\]
+\[
+0\to\operatorname{Ext}_A^1(X,K^r)\to\operatorname{Ext}_A^2(X,B^r)
+\to\operatorname{Ext}_A^2(X,Z^r)\to0,
+\tag{9}
+\]
+
+并且 Ext_A^m(X,B^r)→Ext_A^m(X,Z^r) 在 m≥3 时为同构。在 (9) 取 r=q−1，用 (8) 将中项写为 Ext_A^3(X,Z^{q-2})，再逐次向 Z^0=K^0 移位；其结果为 Ext_A^{q+1}(X,K^0)。右项由 (8) 等于 Hom_A(X,K^q)。最后用 (4) 的 n≥3 同构替换中项，得到 (7)。对 q=1，直接有 Ext_A^2(X,K^0)≅Hom_A(X,K^1)，而 (4) 给出 Ext_A^2(X,L_i)→Ext_A^2(X,K^0) 的满射。全部映射来自实际短正合列。□
+
+这一引理得到的是普通 Ext；它尚未自动提供反向 Peirce 支撑。下一步正是填补这一点。
+
+## 4. 有限内射维数一强制的支撑传播
+
+**引理 2。** 若 id_A L_z≤1，则对于任一箭头的提升 α∈e_zJe_y（即选定 e_z(J/J²)e_y 的一个基向量），右模映射
+
+\[
+e_yA\xrightarrow{\alpha\cdot}e_zJ
+\tag{10}
+\]
+
+单射。
+
+**证明。** pd_{A^op}R_z≤1，故 e_zJ 是投射右模。全部箭头提升给出的自然映射 ⊕_y(e_yA)^{m_{zy}}→e_zJ 是最小投射覆盖；投射对象的最小投射覆盖为同构，故其每个直和限制都是单射。□
+
+固定保留顶点 i，令
+
+\[
+\Sigma_i=\{u:e_uAe_i\ne0\}.
+\]
+
+若 y∈Σ_i 且存在箭头 y→z，z∈G，则由 (10) 将 e_yAe_i 中任一非零元左乘 α，得到 e_zAe_i≠0。因此 Σ_i 对所有终点在 G 的箭头封闭。
+
+若 fK=0，令 W 为 K 中由全部 e_uK（u∈G∩Σ_i）生成的子模。模 K 上经过保留顶点的路径作用为零；其余非零路径只能经过外部顶点。上一封闭性因此给出
+
+\[
+W=\bigoplus_{u\in G\cap\Sigma_i}e_uK.
+\tag{11}
+\]
+
+其 socle 中 L_u 的重数恰为 dim Hom_A(L_u,K)，u∈G∩Σ_i。
+
+若 j 是保留顶点且 j∈Σ_i，任意 JAe_j→K 的模同态都落入 W：保留顶点上的箭头生成元必映为零；其余箭头终点由封闭性属于 G∩Σ_i。又 Hom_A(Ae_j,K)=0，因此
+
+\[
+\operatorname{Ext}_A^1(L_j,K)=\operatorname{Hom}_A(JAe_j,W).
+\]
+
+将 W 嵌入其内射包络 ⊕_{u∈G∩Σ_i}D(e_uA)^{s_u}，其中 s_u=dim Hom_A(L_u,K)，并使用 Hom_A(M,D(e_uA))≅D(e_uM)，得到
+
+\[
+\dim\operatorname{Ext}_A^1(L_j,K)
+\le\sum_{u\in G\cap\Sigma_i}(\dim e_uAe_j)\,
+\dim\operatorname{Hom}_A(L_u,K).
+\tag{12}
+\]
+
+这里 u≠j，所以 e_uJe_j=e_uAe_j。这一步显式证明了支撑，未将正向边界 fAe_z 当作所需的反向支撑。
+
+## 5. 任意顶点数的定量 supported 删点定理
+
+写 β^A_{ij}(n)=dim Ext_A^n(L_j,L_i)，保留顶点的 Γ 版本同理。
+
+**定理 3。** 若所有 z∈G 满足 id_A L_z≤1，则对任意保留顶点 i,j，只要 e_jAe_i≠0，就有对全部 n≥1 的估计
+
+\[
+\boxed{\displaystyle
+\beta^\Gamma_{ij}(n)\le\beta^A_{ij}(n)
++\sum_{\substack{u\in G\\e_uAe_i\ne0}}
+(\dim e_uAe_j)\,\beta^A_{iu}(n).}
+\tag{13}
+\]
+
+右侧每一项都是同一个次数、同一个 target i 的 supported 普通 A-Ext。
+
+**证明。** 先设 n≥2。在 (5) 取 X=L_j。正 q 的同调 K_i^q 被 f 消去且 id≤1，所以 E_2^{0,q}=0，E_2^{p,q}=0（p≥2）。总次数 n 上仅剩 (n,0) 和 (1,n−1)。第一象限收敛以及 (4) 在 n≥2 的满射给出
+
+\[
+\beta^\Gamma_{ij}(n)\le\beta^A_{ij}(n)
++\dim\operatorname{Ext}_A^1(L_j,K_i^{n-1}).
+\]
+
+在 (12) 取 K=K_i^{n-1}。引理 1 的满射给出
+
+\[
+\dim\operatorname{Hom}_A(L_u,K_i^{n-1})
+\le\dim\operatorname{Ext}_A^n(L_u,L_i),
+\]
+
+代入即得 (13)；n=2 时使用引理 1 最后一句的 q=1 满射。
+
+再设 n=1。(5) 中唯一可能的总次数一项是 E_2^{1,0}，且没有入射或出射微分，所以 Ext_Γ^1(S_j,S_i)≅Ext_A^1(L_j,K_i^0)。由 (4)，后一空间的维数至多 β^A_{ij}(1)+dim Ext_A^1(L_j,T_i)。对 (12) 取 K=T_i 即可：每个外部 u 都满足
+
+\[
+\operatorname{Hom}_A(L_u,T_i)\cong\operatorname{Ext}_A^1(L_u,L_i),
+\]
+
+因为 (4) 两侧的 Hom_A(L_u,K_i^0) 与 Ext_A^1(L_u,K_i^0) 都为零，后者见 (8) 中 r=0 的证明。由此得到 n=1 的同一估计。所有顶点数和所有正次数都包含在证明中。□
+
+**推论 4。** 在定理 3 的假设下：
+
+1. 若 Γ 有一个固定 target i 的持续 supported pair，则 A 也有同一 target i 的持续 supported pair。由 (13) 及有限顶点集取一个无穷次出现的 source 即可。
+2. 若 Γ 满足 Universal Gap A，则 A 满足 Universal Gap A。若 gldim A=∞，第 1 节保证 gldim Γ=∞，再用第一项。
+3. 一个顶点数最少的 Universal Gap A 反例不含 id_A L_z≤1 的 simple。否则只删该顶点，较小角 Γ 满足目标，第二项给出矛盾。顶点数一的情况另由唯一 pair 的最小消解直接满足目标。
+4. 特别地，Type-II 最小反例中每个有限内射维数的 simple 都必须有内射维数至少 2。没有假设 pd_Γ fA 有限。
+
+对 opposite algebra 应用第三项并用有限维对偶，还可得：顶点数最少的反例也不含 pd_A L_z≤1 的 simple。这里 Ext 在对偶后交换两个 simple，反向 Peirce 支撑也相应交换，因此目标对 opposite 保持不变。
+
+这关闭的是有限内射维数至多一的删点分支；它没有关闭 Type I，也没有关闭有限内射维数至少二的 Type II。
+
+## 6. 实际 Type-II 核心上，全部 leakage 被 d₂ 消去
+
+沿用 [既有十维代数](Idempotent-Deletion-and-Ext-Comparison.md) 的完整乘法，顶点为 0,1,2，radical 基为 x,a,p,i,v,y,z，非零 radical 乘积恰为
+
+\[
+ip=v,\quad ai=y,\quad av=z,\quad xa=z,\quad yp=z.
+\tag{14}
+\]
+
+各基元的端点依次为 (0,0),(0,1),(2,1),(1,2),(1,1),(0,2),(0,1)。这里基元 i,z 与一般顶点下标无关。
+
+已有的实际最小消解给出 ΩL_0=L_0、pd L_2=2，且右模 rad(e_1A)≅e_2A、rad(e_2A)≅R_1。因此
+
+\[
+I_\infty(A)=\{0\},\quad
+\operatorname{id}L_1=1,\quad\operatorname{id}L_2=2.
+\]
+
+id L_0=∞ 也由 Ext_A^n(L_0,L_0)≅ℂ（每个 n≥0）直接得出。故真正的核心是 f=e_0，Γ=ℂ[x]/(x²)，而非旧稿另作删点测试的 e_0+e_1。
+
+边界 fAe_1=span(a,z) 是自由 Γ-模，fAe_2=ℂy 则为 Γ-simple。因此
+
+\[
+\operatorname{Tor}_n^\Gamma(\mathbb C,fAe_2)\cong\mathbb C\quad(n\ge0),
+\qquad\operatorname{Ext}_A^n(L_2,L_t)=0\quad(n>2,\ \text{任意 }t).
+\tag{15}
+\]
+
+所以无限 leakage 一般甚至不能传给同一外部 source 的普通高次 Ext，不论加入怎样的固定次数偏移。
+
+下面识别消去它的实际 d₂。对 Γ-simple 的周期右投射消解作 -⊗_Γ fA，得到右 A-投射复形
+
+\[
+\cdots\xrightarrow{x\cdot} e_0A\xrightarrow{x\cdot}e_0A,
+\qquad e_0A=\operatorname{span}(e_0,x,a,y,z).
+\tag{16}
+\]
+
+左乘 x 的像为 span(x,z)，核为 span(x,y,z)。故正次数同调均为 R_2，零次同调为 T=e_0A/span(x,z)。对偶后得到实际的余诱导复形 Q_0^•，其中
+
+\[
+K_0^q=L_2\quad(q\ge1),\qquad K_0^0=D T.
+\tag{17}
+\]
+
+L_2 的最小消解是 0→Ae_2→Ae_1→Ae_2→L_2→0，两个映射分别由右乘 p 和右乘 i 给出。因而
+
+\[
+\operatorname{Ext}_A^p(L_2,L_2)=
+\begin{cases}\mathbb C,&p=0,2,\\0,&\text{其他 }p,\end{cases}
+\quad
+\operatorname{Ext}_A^p(L_2,D T)=
+\begin{cases}\mathbb C,&p=2,\\0,&\text{其他 }p.\end{cases}
+\tag{18}
+\]
+
+后一计算可在 Hom 消解中直接读出：三个顶点空间维数均为一；i: e_2DT→e_1DT 是同构，p:e_1DT→e_2DT 为零，因为 T 上右乘 i 把 a 送到 y，而右乘 p 把 y 送到 z=0。
+
+对 (5) 取 X=L_2，abutment 为 Ext_Γ^*(0,ℂ)=0。由 (17)、(18)，每个 q≥1 的 E_2^{0,q}=ℂ 只能通过
+
+\[
+d_2^{0,q}:\mathbb C\xrightarrow{\ \sim\ }\mathbb C=E_2^{2,q-1}
+\tag{19}
+\]
+
+消去：没有入射微分，r>2 的出射目标列为零，也没有其他可能消去 p=2 的目标。因此所有这些 d₂ 均为同构。对 q≥2，其二扩张 (6) 是 Ext_A^2(L_2,L_2) 的非零生成元。这个结论来自实际无限周期复形及收敛，不是从有限计算外推。
+
+还可直接计算这个二扩张类。记 e_0*,x*,a*,y*,z* 为 (16) 的对偶基；d(x*)=e_0*、d(z*)=a*，其余为零。在 L_2 的实际投射消解上，第一次提升 Ae_2→Z^q 把 e_2 送到 y*；下一次提升 Ae_1→Q^{q-1} 把 e_1 送到 z*。复合 Ae_2→Ae_1→Q^{q-1} 把 e_2 送到 pz*=y*。模掉 B^{q-1} 后恰为 L_2 的非零恒等代表。对 q=1，它给出 Ext_A^2(L_2,K_0^0) 的非零类。这里提升的是投射消解各项，而不是直接提升 L_2→K_0^q。
+
+反复出现同一个非零二扩张并不意味着其 Yoneda 幂非零：这里 Ext_A^4(L_2,L_2)=0。故不能把这种 Postnikov 障碍塔直接改称持续普通 self-Ext。
+
+本例满足 Universal Gap A，因为 L_0 的自扩张持续。它反驳的是 leakage 的无条件传递捷径，不是主目标。
+
+## 7. 十二维 Type-II 例子：外部项不可省，估计取等号
+
+在第 6 节代数中增加基元 b∈e_2Ae_0、c∈e_1Ae_0，并在 (14) 之外仅增加一个非零 radical 乘积
+
+\[
+ib=c.
+\tag{20}
+\]
+
+所得代数记为 A⁺，维数为 12。结合律直接由表检查：新非零二乘积 ib=c 没有非零的三乘积，且 (ai)b=a(ib)=0；(14) 中原有的唯一非零三乘积仍为 (ai)p=a(ip)=z。
+
+右模 rad(e_1A⁺)=span(i,v,c)≅e_2A⁺，同构把 e_2,p,b 依次送到 i,v,c。因此 id L_1=1。左模 L_2 仍有第 6 节同样的长度二最小消解，故 pd L_2=2。
+
+令 U 为基 b,c 张成的左子模，唯一非零 radical 作用是 ib=c。存在以下实际最小 syzygy 同构：
+
+\[
+\Omega L_0=L_0\oplus U,\qquad \Omega U=L_0,\qquad
+\Omega^2L_1=L_0\oplus U.
+\tag{21}
+\]
+
+第一式来自 JA⁺e_0=span(x)⊕span(b,c)。第二式由 A⁺e_2→U，e_2↦b，的核 span(y) 得到。第三式中 JA⁺e_1 的覆盖 A⁺e_0⊕A⁺e_2 把 e_0↦a、e_2↦p；核为 span((x,−y))⊕span((b,0),(c,0))。
+
+由 (21)，L_0 和 L_2 都在 L_1 消解的顶端无穷次出现，因此 id L_0=id L_2=∞。真正的无限内射维数核心是 f=e_0+e_2，而外部只有顶点 1。角 Γ⁺=fA⁺f 的 radical 平方为零，有环 x:0→0 和相反箭头 b:0→2、y:2→0。
+
+写 Fibonacci 数 F_0=0、F_1=1、F_{r+1}=F_r+F_{r-1}。由 (21) 可归纳得 Ω_AⁿL_1≅L_0^{F_n}⊕U^{F_{n-1}}（n≥2）。角上同理有 Ω_ΓⁿS_2≅S_0^{F_n}⊕S_2^{F_{n-1}}（n≥1）。读取顶端得到
+
+\[
+\beta^{\Gamma^+}_{22}(n)=F_{n-1}
+=\beta^{A^+}_{21}(n),\qquad
+\beta^{A^+}_{22}(n)=0\quad(n\ge3).
+\tag{22}
+\]
+
+这里 e_1A⁺e_2=ℂi，所以外部 pair (target 2, source 1) 确实 supported。定理 3 的 (i,j)=(2,2) 估计在每个 n≥3 都取等号；若删掉其外部项，估计在每个 n≥3 都失败。
+
+次数一也需要外部项：角的新箭头 y=ai 给出 β^{Γ⁺}_{02}(1)=1，但 β^{A⁺}_{02}(1)=0。外部项 β^{A⁺}_{01}(1)=1 正好补足；其支撑是 e_1A⁺e_0=ℂc，而角 pair 的支撑为 e_2A⁺e_0=ℂb。
+
+此外 V=fA⁺e_1=span(a,z,p) 满足 Ω_{Γ⁺}V≅S_0⊕S_2：其覆盖 Γ⁺e_0⊕Γ⁺e_2 的核由 b 与 (x,−y) 生成，二者都被 radical 消去。因此 pd_{Γ⁺}fA⁺=∞。本例确实处于旧的高次 Ext 同构定理不能直接处理的 Type-II 情形。
+
+## 8. 有限内射消解所给出的另一侧信息
+
+对外部 L_z 的有限内射消解应用 f，会得到有界正合复形 fI_z^•，因为 fL_z=0。但
+
+\[
+fD(e_yA)=D(e_yAf).
+\tag{23}
+\]
+
+保留 y 时它是 Γ-内射模；外部 y 时一般不是。这里出现的是 e_yAf，而 (3) 的 leakage 使用 fAe_z。没有可省略的双侧交换。直接把这个有界正合复形当作 Γ-内射消解会引入错误。
+
+## 9. 当前未证部分与证据范围
+
+本轮剩余问题集中为：当外部内射维数至少二时，在完整 supported 消失假设下，能否从 (6) 的实际二扩张及后续微分构造另外的 supported 返回或严格的顶点下降。第 6 节说明，仅凭 leakage 无穷次非零、外部内射维数有限、或者同一个障碍在每层重复，均不足以完成传递。
+
+交接所提 Keller–Jasso 算子生成断言未在本稿中用作定理输入；没有用未经核实的有限生成假设填补这一缺口。
+
+独立审读的实际结论、范围与绑定的主稿 SHA256 见 [审读报告](../work/type_ii_independent_verifier.md)。审读和计算分开记录，未声称形式化证明或文献新颖性。
+
+程序 [audit_type_ii_leakage.py](../work/audit_type_ii_leakage.py) 复用项目的有理数精确运算库，结果见 [type_ii_leakage_audit.json](../work/type_ii_leakage_audit.json)。它核对 56 项 supported 不等式、8 项 (7) 的维数等式、两个投射提升产生的实际非零 d₂ 类，并验证十二维例的实际 syzygy 同构和次数至八的 Fibonacci 数值。四个负向检查分别排除同 source 的无条件高次传递、删掉外部校正项、把 (7) 的满射当作单射，以及将正向边界当作反向支撑。这些是有限自审；一般估计和全次数公式由正文证明。

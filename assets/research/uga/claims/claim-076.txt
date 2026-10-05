@@ -1,0 +1,13 @@
+## UGA-C076 — Finite Ordinary-Tor Migration and Nonperfect Global-Infinity Equivalence
+**Status:** COMPLETE SELF-AUDITED ALL-SIZE PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** Run-Ordinary-Tor-Migration-and-First-Kernel-Obstruction-2026-10-03.md, Sections 1--3 and 5.
+
+Let K be an actual radical square-zero ideal, C=A/K, K left C-projective, and its actual projective-column matrix T acyclic. Let F(X)=X tensor_C K, h(z) the longest T path ending at z with convention j->i for T(i,j)>0, and P(z) all simple factors reachable from R_z under F, including z.
+
+For a fixed left simple L_y and M>=1, vanishing Tor^A_n(R_j,L_y)=0 for EVERY n>=M and EVERY j in P(z) implies Tor^C_n(R_z,L_y)=0 for n>=M+2h(z). The finite-module version uses its initial maximum height and entire F-reachable factor carrier. An infinite ordinary C tail therefore yields a fixed ordinary A tail after at most h(z) strictly decreasing migrations. The positive-count actual bar-kernel first page is Tor^C_{n-p}(F^p(X),L_y); exact F and degreewise finite convergence retain nonsplit multiplication errors.
+
+Writing q<=v-1 for the longest T path, gldim A=infinity iff gldim C=infinity, without C^e-perfectness, a section or stable type splitting. In the finite cases gldim C<=gldim A+2q and gldim A<=gldim C+q. The direct right-projective version uses exact G(Y)=K tensor_C Y and moves the left detector; no opposite-+ transfer is used.
+
+The first F step from a C-supported pair is physically A-supported. Later K tensor powers need not imply physical support, since K^2=0 in A. The theorem does NOT assert that the final ordinary A pair is reverse-supported, does not preserve non-infinite-+, and cannot replace its entire reachable-carrier vanishing hypothesis by only supported A vanishing. General supported closure and general ordinary ideal existence remain open.
+
+---

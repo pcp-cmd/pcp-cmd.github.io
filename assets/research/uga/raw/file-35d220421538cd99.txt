@@ -1,0 +1,1242 @@
+# Run-A-U5-RelativeDetectorSwitch.md
+
+## Universal Gap A — Universal Layer U5
+### Run A — Source-Relative Detector Switch / Relative Cone Gate
+
+**Role:** Main Researcher / Detector Switch  
+**Research system:** Native MRS + Obsidian Method Vault  
+**Completion label:** `SOURCE_RELATIVE_TAIL_FUNCTOR / RELATIVE_CONE_GATE / A1_REFUTED / PEIRCE_DEAD_ZONE_NORMAL_FORM`  
+**Global status:** Universal Gap A remains OPEN.
+
+---
+
+# 0. Frozen U1–U4 input
+
+Let \(D\) be a finite-dimensional basic \(k\)-algebra. U4 supplies primitive vertices \(i,j\) and a simple left module \(L_z\) such that
+
+\[
+\operatorname{Tor}^D_n(R_i,L_z)\neq0
+\]
+
+for arbitrarily high \(n\), while
+
+\[
+e_zDe_i=0,
+\qquad
+e_zDe_j\neq0,
+\qquad
+j\neq i.
+\]
+
+The desired fixed-source switch was
+
+\[
+i\rightsquigarrow z\to j
+\Longrightarrow
+j\rightsquigarrow z.
+\]
+
+U1–U4 source-side dévissage, augmentation transfer-or-kernel descent, context/restartability failures, and bare singular-map failures are frozen and not reproved here.
+
+---
+
+# 1. Vault / MRS method mapping
+
+## Bridge
+
+The actual bridge object is
+
+\[
+\mathfrak E_z(X)
+=
+Q_{\rm tail}(X\otimes_D^{\mathbf L}L_z).
+\]
+
+Candidate switch maps are
+
+\[
+f:X_i\to X_j[m].
+\]
+
+The correct gate is
+
+\[
+\operatorname{Cone}(f)\in\mathcal K_z^R.
+\]
+
+## Representation change
+
+Replace arbitrarily-high fixed-source Tor by one object in a quotient triangulated category:
+
+\[
+\operatorname{Tor}^D_n(R_v,L_z)\neq0\text{ arbitrarily high}
+\rightsquigarrow
+\mathfrak E_z(R_v)\neq0.
+\]
+
+Then replace pair search by the recurrent Betti support
+
+\[
+\Sigma_z.
+\]
+
+## Dualization / projection
+
+For finite-dimensional modules,
+
+\[
+\mathbb D\operatorname{Tor}^D_n(X,L_z)
+\cong
+\operatorname{Ext}_{D^{op}}^n(X,\mathbb DL_z).
+\]
+
+This confirms the right-side formulation but exposes a slot mismatch: the Peirce datum controls \(z,j\), while the desired detector switch concerns \(i,j\).
+
+## Quotient / localization
+
+Define
+
+\[
+\mathcal K_z^R=\ker\mathfrak E_z,
+\qquad
+\mathcal Q_z^R=D_{\rm sg}(D^{op})/\mathcal K_z^R.
+\]
+
+## Set problem \(\to\) Peirce product
+
+Define
+
+\[
+\Sigma_z=\{v:\mathfrak E_z(R_v)\neq0\}.
+\]
+
+Let
+
+\[
+e_{\Sigma_z}=\sum_{v\in\Sigma_z}e_v.
+\]
+
+Then source-\(z\) visible recurrence exists iff
+
+\[
+e_zDe_{\Sigma_z}\neq0.
+\]
+
+Thus source-\(z\) failure is
+
+\[
+e_zDe_{\Sigma_z}=0.
+\]
+
+## Local-to-global
+
+A finite-length right module whose simple factors are all source-\(z\) visible is tail-null if all those simple factors are tail-null.
+
+## Infinite descent
+
+Cone support, length, and \(|\Sigma_z|\) were tested as descent quantities. Generic failed bridge cones do not strictly decrease them.
+
+## Standard form
+
+The surviving obstruction is standardized as
+
+\[
+\Sigma_z\neq\varnothing,
+\qquad
+e_zDe_{\Sigma_z}=0.
+\]
+
+## Bootstrap
+
+A chain of relative singular isomorphisms transports the detector tail. The hard step is producing the first one from actual algebra data.
+
+## Extreme examples
+
+Quantum-periodic, infinite-order moduli drift, two-vertex drift, and a radical-square-zero invisible-return algebra were checked.
+
+---
+
+# 2. Tail category
+
+Use cohomological indexing.
+
+Let
+
+\[
+D^-_{\rm fd}(k)
+\]
+
+be complexes with finite-dimensional cohomology in each degree and zero cohomology in sufficiently large positive degrees, and let
+
+\[
+D^b_{\rm fd}(k)
+\]
+
+be its bounded-cohomology thick subcategory.
+
+Define
+
+\[
+\boxed{
+\mathsf{Tail}(k)
+=
+D^-_{\rm fd}(k)/D^b_{\rm fd}(k).
+}
+\]
+
+An object is zero in \(\mathsf{Tail}(k)\) exactly when its cohomology is bounded.
+
+---
+
+# 3. Right-module convention
+
+Write \(\mathrm{mod}\text{-}D\) for finite-dimensional right \(D\)-modules, equivalently left \(D^{op}\)-modules.
+
+\[
+D_{\rm sg}(D^{op})
+=
+D^b(\mathrm{mod}\text{-}D)/
+K^b(\mathrm{proj}\text{-}D).
+\]
+
+For primitive \(e_v\),
+
+\[
+R_v=e_vD/e_vJ(D)
+\]
+
+is the right simple.
+
+No split-basic assumption is needed for zero/nonzero statements; division-ring multiplicities do not affect vanishing.
+
+---
+
+# 4. Source-relative tail detector
+
+Fix \(L_z\). Define on \(D^b(\mathrm{mod}\text{-}D)\)
+
+\[
+F_z(X)=X\otimes_D^{\mathbf L}L_z
+\]
+
+and
+
+\[
+\mathfrak E_z^{\,b}
+=
+Q_{\rm tail}\circ
+(-\otimes_D^{\mathbf L}L_z).
+\]
+
+For an ordinary right module \(X\),
+
+\[
+H^{-n}(F_z(X))
+=
+\operatorname{Tor}^D_n(X,L_z).
+\]
+
+Hence
+
+\[
+\boxed{
+\mathfrak E_z^{\,b}(X)\neq0
+\iff
+\operatorname{Tor}^D_n(X,L_z)\neq0
+\text{ for arbitrarily high }n.
+}
+\]
+
+If \(P\in K^b(\mathrm{proj}\text{-}D)\), then \(P\otimes_DL_z\) is bounded, so perfect objects vanish.
+
+Therefore the functor factors through
+
+\[
+\boxed{
+\mathfrak E_z:
+D_{\rm sg}(D^{op})
+\to
+\mathsf{Tail}(k).
+}
+\]
+
+For every primitive \(v\),
+
+\[
+\boxed{
+\mathfrak E_z(R_v)\neq0
+\iff
+\operatorname{Tor}^D_n(R_v,L_z)\neq0
+\text{ arbitrarily high}.
+}
+\]
+
+---
+
+# 5. Detector quotient
+
+Define
+
+\[
+\mathcal K_z^R
+=
+\{X\in D_{\rm sg}(D^{op}):\mathfrak E_z(X)=0\}.
+\]
+
+This is thick.
+
+Define
+
+\[
+\mathcal Q_z^R
+=
+D_{\rm sg}(D^{op})/\mathcal K_z^R.
+\]
+
+Then
+
+\[
+[R_v]=0\text{ in }\mathcal Q_z^R
+\iff
+\mathfrak E_z(R_v)=0.
+\]
+
+The U5 input is
+
+\[
+[R_i]\neq0.
+\]
+
+---
+
+# 6. Recurrent Betti support
+
+Let
+
+\[
+P_n(L_z)
+=
+\bigoplus_v(De_v)^{\beta_{n,v}}
+\]
+
+be the minimal left projective resolution of \(L_z\).
+
+Minimality kills differentials after tensoring with \(R_v\), so
+
+\[
+\operatorname{Tor}^D_n(R_v,L_z)
+\cong
+R_v\otimes_DP_n(L_z).
+\]
+
+Therefore
+
+\[
+\boxed{
+\Sigma_z
+=
+\{v:\mathfrak E_z(R_v)\neq0\}
+=
+\{v:\beta_{n,v}>0\text{ for arbitrarily high }n\}.
+}
+\]
+
+Thus \(\Sigma_z\) is the recurrent Betti support of \(L_z\).
+
+A source-\(z\) visible recurrent pair exists iff
+
+\[
+e_zDe_{\Sigma_z}\neq0.
+\]
+
+Hence source-\(z\) failure has the exact normal form
+
+\[
+\boxed{
+\Sigma_z\neq\varnothing,
+\qquad
+e_zDe_{\Sigma_z}=0.
+}
+\]
+
+This is the **Source-Relative Peirce Dead-Zone** condition.
+
+---
+
+# 7. Relative singular-isomorphism gate
+
+Let
+
+\[
+f:X\to Y[m]
+\]
+
+in \(D_{\rm sg}(D^{op})\).
+
+The exact triangle gives
+
+\[
+X\to Y[m]\to\operatorname{Cone}(f)\to X[1].
+\]
+
+By exactness of \(\mathfrak E_z\),
+
+\[
+\boxed{
+\operatorname{Cone}(f)\in\mathcal K_z^R
+\iff
+\mathfrak E_z(f)\text{ is an isomorphism}.
+}
+\]
+
+Equivalently, \(f\) becomes an isomorphism in \(\mathcal Q_z^R\) iff its cone is detector-null.
+
+Such an \(f\) is an \(L_z\)-relative singular isomorphism.
+
+If
+
+\[
+f:R_i\to R_j[m]
+\]
+
+satisfies the gate, then
+
+\[
+\mathfrak E_z(R_i)\simeq\mathfrak E_z(R_j)[m],
+\]
+
+so detector switch succeeds.
+
+This gate is VERIFIED.
+
+---
+
+# 8. Null-target cone rigidity
+
+Suppose
+
+\[
+X\notin\mathcal K_z^R,
+\qquad
+Y\in\mathcal K_z^R.
+\]
+
+For every
+
+\[
+f:X\to Y[m],
+\]
+
+exactness gives
+
+\[
+\boxed{
+\mathfrak E_z(\operatorname{Cone}f)
+\simeq
+\mathfrak E_z(X)[1].
+}
+\]
+
+Thus
+
+\[
+\operatorname{Cone}(f)\notin\mathcal K_z^R.
+\]
+
+A failed bridge to a detector-null target preserves the original live tail, shifted.
+
+Therefore generic bridge failure does **not** give automatic well-founded descent.
+
+---
+
+# 9. Peirce orientation audit
+
+Take
+
+\[
+0\neq x\in e_zDe_j.
+\]
+
+For right projectives,
+
+\[
+\boxed{
+\operatorname{Hom}_D(e_jD,e_zD)
+\cong
+e_zDe_j.
+}
+\]
+
+Thus \(x\) defines
+
+\[
+m_x:e_jD\to e_zD,
+\qquad
+m_x(e_j)=x.
+\]
+
+Both modules are projective, so both vanish in \(D_{\rm sg}(D^{op})\).
+
+Therefore the Peirce map itself gives only \(0\to0\) in the singularity category and does not connect \(R_i\) to \(R_j\).
+
+Hence
+
+\[
+\boxed{
+e_zDe_j\neq0
+\not\Rightarrow
+\text{relative detector-switch morphism}.
+}
+\]
+
+---
+
+# 10. Peirce kernel–cokernel bridge
+
+Let
+
+\[
+K_x=\ker m_x,
+\quad
+I_x=\operatorname{im}m_x,
+\quad
+C_x=\operatorname{coker}m_x.
+\]
+
+The exact sequences
+
+\[
+0\to K_x\to e_jD\to I_x\to0
+\]
+
+and
+
+\[
+0\to I_x\to e_zD\to C_x\to0
+\]
+
+give in \(D_{\rm sg}(D^{op})\)
+
+\[
+I_x\simeq K_x[1],
+\qquad
+C_x\simeq I_x[1].
+\]
+
+Hence
+
+\[
+\boxed{
+C_x\simeq K_x[2].
+}
+\]
+
+This is the actual singular relation produced by a Peirce element.
+
+It is a kernel–cokernel bridge, not a detector switch.
+
+---
+
+# 11. Visible right Serre sector
+
+Define
+
+\[
+V_z^R
+=
+\{v:e_zDe_v\neq0\}.
+\]
+
+Let
+
+\[
+\mathcal S_z^R
+=
+\langle R_v:v\in V_z^R\rangle_{\rm Serre}.
+\]
+
+The simple composition factors of the right projective \(e_zD\) are exactly source-\(z\) Peirce-visible vertices.
+
+Under source-\(z\) failure, every visible right simple is detector-null:
+
+\[
+e_zDe_v\neq0
+\Longrightarrow
+\mathfrak E_z(R_v)=0.
+\]
+
+By finite dévissage,
+
+\[
+\boxed{
+M\in\mathcal S_z^R
+\Longrightarrow
+\mathfrak E_z(M)=0.
+}
+\]
+
+For every \(x\in e_zDe_j\), \(C_x\) is a quotient of \(e_zD\), so \(C_x\in\mathcal K_z^R\).
+
+Since
+
+\[
+C_x\simeq K_x[2],
+\]
+
+and \(I_x\) is linked by projective triangles,
+
+\[
+\boxed{
+K_x,\ I_x,\ C_x\in\mathcal K_z^R.
+}
+\]
+
+Therefore:
+
+\[
+\boxed{
+\textbf{every Peirce-generated right bridge from }e_zD
+\textbf{ is detector-null under source failure}.
+}
+\]
+
+This is the **Relative Peirce Shield Theorem**.
+
+---
+
+# 12. Relative Syzygy Isolation Lemma
+
+A genuine switch criterion survives.
+
+Suppose for some \(m\ge0\),
+
+\[
+0\to A
+\to
+\Omega^mR_i
+\to
+R_j
+\to0
+\]
+
+with
+
+\[
+A\in\mathcal K_z^R.
+\]
+
+Since
+
+\[
+\Omega^mR_i\simeq R_i[-m]
+\]
+
+in \(D_{\rm sg}(D^{op})\), the triangle gives
+
+\[
+R_i[-m]\simeq R_j
+\]
+
+in \(\mathcal Q_z^R\).
+
+Therefore
+
+\[
+\boxed{
+\mathfrak E_z(R_i)\neq0
+\Longrightarrow
+\mathfrak E_z(R_j)\neq0.
+}
+\]
+
+The same holds for an inclusion
+
+\[
+R_j\hookrightarrow\Omega^mR_i
+\]
+
+with detector-null cokernel.
+
+Thus detector switching works when \(R_j\) is isolated inside the right syzygy orbit of \(R_i\) modulo detector-null error.
+
+No theorem derives this from \(e_zDe_j\neq0\).
+
+---
+
+# 13. Approximation / stable map audit
+
+An approximation sequence
+
+\[
+0\to A\to X\to R_j\to0
+\]
+
+switches the detector only if:
+
+1. \(X\) is relatively identified with \(R_i[m]\);
+2. \(A\in\mathcal K_z^R\).
+
+A nonzero singular map is not enough.
+
+This preserves the U4 lesson that singular nontriviality may be detector-blind.
+
+---
+
+# 14. Idempotent quotient / localization audit
+
+Under source failure,
+
+\[
+\mathcal V_z^R
+=
+\operatorname{thick}
+\langle
+R_v:e_zDe_v\neq0
+\rangle
+\subseteq
+\mathcal K_z^R.
+\]
+
+Hence \(\mathfrak E_z\) factors through
+
+\[
+D_{\rm sg}(D^{op})/\mathcal V_z^R.
+\]
+
+However this categorical quotient cannot be identified universally with the singularity category of a smaller ordinary idempotent quotient algebra.
+
+Such an identification needs additional stratifying / homological-epimorphism hypotheses.
+
+Therefore no universal ordinary-algebra descent is obtained from this localization.
+
+---
+
+# 15. Bimodule-induced functor audit
+
+The Peirce bimodule datum \(e_zDe_j\) naturally acts on projective corners \(e_jD,e_zD\).
+
+But these are perfect and disappear in the singularity category.
+
+Moreover this datum contains no canonical occurrence of detector \(i\).
+
+No universal bimodule-induced switch functor \(R_i\rightsquigarrow R_j\) was obtained.
+
+---
+
+# 16. REFUTED — Target A1
+
+Target A1 proposed
+
+\[
+\mathfrak E_z(R_i)\neq0
++
+e_zDe_j\neq0
+\Longrightarrow
+\mathfrak E_z(R_j)\neq0.
+\]
+
+This is false.
+
+Take the radical-square-zero algebra
+
+\[
+D=kQ/J_Q^2
+\]
+
+with vertices
+
+\[
+i,a,z,j
+\]
+
+and arrows
+
+\[
+i\to a,
+\qquad
+a\to i,
+\qquad
+a\to z,
+\qquad
+z\to j.
+\]
+
+All length-two paths vanish.
+
+For left projectives,
+
+\[
+\operatorname{rad}P_z\cong L_a,
+\]
+
+\[
+\operatorname{rad}P_a\cong L_i,
+\]
+
+\[
+\operatorname{rad}P_i\cong L_a.
+\]
+
+Hence the minimal projective resolution of \(L_z\) is
+
+\[
+P_z,\ P_a,\ P_i,\ P_a,\ P_i,\ldots
+\]
+
+so
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_i,L_z)\neq0
+\text{ in arbitrarily high degrees}.
+}
+\]
+
+But \(P_j\) never occurs, hence
+
+\[
+\boxed{
+\operatorname{Tor}^D_n(R_j,L_z)=0
+\quad\forall n.
+}
+\]
+
+At the same time,
+
+\[
+e_zDe_i=0,
+\qquad
+e_zDe_j\neq0
+\]
+
+through the arrow \(z\to j\).
+
+Therefore
+
+\[
+\boxed{
+\mathfrak E_z(R_i)\neq0
++
+e_zDe_j\neq0
+\not\Rightarrow
+\mathfrak E_z(R_j)\neq0.
+}
+\]
+
+Target A1 is withdrawn as formulated.
+
+---
+
+# 17. Why the A1 counterexample does not refute Universal Gap A
+
+The same algebra has a visible recurrent pair inside the recurrent core.
+
+For \(L_a\),
+
+\[
+P_a,\ P_i,\ P_a,\ P_i,\ldots
+\]
+
+is the minimal resolution tail, and
+
+\[
+e_aDe_i\neq0
+\]
+
+because of the arrow \(a\to i\).
+
+Thus
+
+\[
+\operatorname{Tor}^D_n(R_i,L_a)\neq0
+\]
+
+infinitely often with a visible Peirce pair.
+
+So the example shows:
+
+\[
+\boxed{
+\text{visibility may relocate to another source in the recurrent core}.
+}
+\]
+
+It refutes fixed-source detector switching, not Universal Gap A.
+
+---
+
+# 18. Calibration V1 — root-of-unity quantum exterior
+
+Finite periodic module orbits do not imply an \(L_z\)-relative singular isomorphism between arbitrary right simples.
+
+The present theorem requires an actual detector-null cone.
+
+No periodic-module-to-simple-switch inference is used.
+
+**Passed.**
+
+---
+
+# 19. Calibration V2 — infinite-order quantum exterior
+
+For
+
+\[
+\Omega M_\lambda\simeq M_{\lambda q^{-1}}
+\]
+
+with \(q\) of infinite order, bounded local structure supports infinite moduli drift.
+
+The source-relative quotient identifies states only through actual \(\mathcal K_z^R\)-equivalences.
+
+**Passed.**
+
+---
+
+# 20. Calibration V3 — two-vertex moduli drift
+
+Periodic carrier labels plus drifting parameters do not imply relative equivalence between right simples.
+
+No such inference is used.
+
+**Passed.**
+
+---
+
+# 21. Calibration V4 — invisible return
+
+The radical-square-zero example realizes the required phenomenon:
+
+- fixed source \(z\) has an invisible recurrent detector \(i\);
+- \(z\) has a Peirce-visible vertex \(j\);
+- \(j\) is transient in the resolution of \(L_z\);
+- actual visible recurrence lies at another source in the recurrent core.
+
+Thus the right global move is source relocation.
+
+---
+
+# 22. Target A2 — switch-or-descent audit
+
+A generic failed bridge does not force strict descent.
+
+If
+
+\[
+X\notin\mathcal K_z^R,
+\qquad
+Y\in\mathcal K_z^R,
+\]
+
+then every
+
+\[
+f:X\to Y[m]
+\]
+
+has
+
+\[
+\mathfrak E_z(\operatorname{Cone}f)
+\simeq
+\mathfrak E_z(X)[1].
+\]
+
+The live detector information survives unchanged up to shift.
+
+Therefore no universal decrease in support, tail size, or detector complexity follows.
+
+Target A2 is **not proved**.
+
+---
+
+# 23. Relative-equivalence bootstrap
+
+If there is a chain
+
+\[
+R_i=X_0
+\to
+X_1[m_1]
+\to
+\cdots
+\to
+X_r[m_r]=R_j[M]
+\]
+
+whose cones all lie in \(\mathcal K_z^R\), then all objects become isomorphic in \(\mathcal Q_z^R\).
+
+Hence
+
+\[
+\mathfrak E_z(R_i)\simeq\mathfrak E_z(R_j)[M].
+\]
+
+This bootstrap is valid.
+
+The actual obstruction is constructing the first relative equivalence.
+
+---
+
+# 24. Source-visible Serre shield in the quotient
+
+Under source failure,
+
+\[
+e_zDe_v\neq0
+\Longrightarrow
+R_v\in\mathcal K_z^R.
+\]
+
+Therefore
+
+\[
+\boxed{
+\operatorname{thick}
+\langle
+R_v:e_zDe_v\neq0
+\rangle
+\subseteq
+\mathcal K_z^R.
+}
+\]
+
+All source-visible right simples vanish in \(\mathcal Q_z^R\), while at least one source-invisible \(R_i\) survives.
+
+Thus the quotient has the normal form
+
+\[
+\boxed{
+\text{nonzero detector quotient generated only by source-invisible simple sectors}.
+}
+\]
+
+---
+
+# 25. Strongest theorem package
+
+## T1 — Source-Relative Tail Detector
+
+\[
+\mathfrak E_z:
+D_{\rm sg}(D^{op})
+\to
+\mathsf{Tail}(k)
+\]
+
+is exact and detects arbitrarily-high fixed-source Tor.
+
+## T2 — Relative Cone Gate
+
+\[
+\operatorname{Cone}(f)\in\mathcal K_z^R
+\iff
+f
+\text{ is an isomorphism in }\mathcal Q_z^R.
+\]
+
+## T3 — Recurrent Betti Support
+
+\[
+\Sigma_z
+=
+\operatorname{RecBettiSupp}(L_z).
+\]
+
+## T4 — Relative Syzygy Isolation
+
+If \(R_j\) occurs inside the right syzygy orbit of \(R_i\) modulo a detector-null kernel/cokernel, detector switching succeeds.
+
+## T5 — Relative Peirce Shield
+
+Under source-\(z\) failure, the kernel/image/cokernel package generated by any Peirce element \(e_zDe_j\) is detector-null.
+
+---
+
+# 26. Withdrawn claims
+
+The run withdraws
+
+\[
+\boxed{
+\mathfrak E_z(R_i)\neq0
++
+e_zDe_j\neq0
+\Rightarrow
+\mathfrak E_z(R_j)\neq0.
+}
+\]
+
+It also rejects:
+
+\[
+\text{Peirce map between projectives}
+\Rightarrow
+\text{simple detector switch};
+\]
+
+\[
+\text{nonzero singular map}
+\Rightarrow
+\text{relative tail transfer};
+\]
+
+\[
+\text{failed relative bridge}
+\Rightarrow
+\text{strict well-founded descent}.
+\]
+
+---
+
+# 27. Exact remaining obstruction
+
+The surviving U5 obstruction is the
+
+\[
+\boxed{
+\textbf{Source-Relative Peirce-Dead Recurrent Support}.
+}
+\]
+
+Explicitly,
+
+\[
+\boxed{
+\Sigma_z\neq\varnothing,
+\qquad
+e_zDe_{\Sigma_z}=0.
+}
+\]
+
+Equivalently:
+
+- the recurrent Betti support of \(L_z\) is nonempty;
+- source \(z\) has no Peirce return into that support;
+- every source-\(z\) visible vertex is transient for fixed-source Tor.
+
+This is strictly sharper than the phrase “Detector–Carrier Alignment”.
+
+---
+
+# 28. Universal Gap A impact
+
+U5 does not close Universal Gap A.
+
+It does establish the correct fixed-source categorical machinery and proves that the proposed fixed-source detector switch is too strong.
+
+The natural Peirce bridge is fully audited and shown to be detector-null under source failure.
+
+The calibrations show that visibility may relocate to another source in the recurrent core.
+
+Therefore:
+
+\[
+\boxed{
+\textbf{fixed-source detector switching is not the universal closure mechanism}.
+}
+\]
+
+---
+
+# 29. Recommended next node
+
+The next node should allow **source switching**:
+
+\[
+\boxed{
+\textbf{Universal Layer U6 — Source Switch / Peirce-Dead Recurrent Core}.
+}
+\]
+
+Start from
+
+\[
+\Sigma_z
+=
+\operatorname{RecBettiSupp}(L_z)
+\neq\varnothing,
+\qquad
+e_zDe_{\Sigma_z}=0.
+\]
+
+Extract a terminal recurrent SCC
+
+\[
+\mathcal C_z\subseteq\Sigma_z.
+\]
+
+Target:
+
+\[
+\boxed{
+\text{source }z\text{ dead to }\mathcal C_z
+\Longrightarrow
+\text{some source }y\in\mathcal C_z
+\text{ has a visible recurrent detector}
+}
+\]
+
+or strict descent in a well-founded source/carrier complexity.
+
+No U6 theorem is claimed here.
+
+---
+
+# 30. Completion label
+
+\[
+\boxed{
+\texttt{
+SOURCE_RELATIVE_TAIL_FUNCTOR
+/
+RELATIVE_CONE_GATE
+/
+A1_REFUTED
+/
+PEIRCE_DEAD_ZONE_NORMAL_FORM
+}
+}
+\]
+
+Main positive theorem:
+
+\[
+\boxed{
+\operatorname{Cone}(f)\in\mathcal K_z^R
+\iff
+f\text{ is a source-relative singular isomorphism}.
+}
+\]
+
+Main actual counterexample:
+
+\[
+i\rightleftarrows a,\qquad
+a\to z,\qquad
+z\to j,
+\qquad
+J^2=0,
+\]
+
+with
+
+\[
+\mathfrak E_z(R_i)\neq0,
+\qquad
+e_zDe_j\neq0,
+\qquad
+\mathfrak E_z(R_j)=0.
+\]
+
+Exact surviving obstruction:
+
+\[
+\boxed{
+\Sigma_z\neq\varnothing,
+\qquad
+e_zDe_{\Sigma_z}=0.
+}
+\]
+
+The universal strategy should now allow **source switch**, rather than force a detector switch for fixed source \(z\).

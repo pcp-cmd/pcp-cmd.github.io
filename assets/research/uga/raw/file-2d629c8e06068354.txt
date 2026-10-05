@@ -1,0 +1,217 @@
+"""Finite Yoneda products for a list of arbitrary finite-dimensional modules.
+
+Unlike the simple-target checker, this divides Hom(syzygy,target) by actual
+projective restriction maps in every positive degree.
+"""
+import argparse
+from fractions import Fraction as F
+import json
+from pathlib import Path
+import sys
+sys.dont_write_bytecode = True
+import return_kernel_certificate as rk
+import syzygy_return_certificate as sr
+import yoneda_generation_certificate as yg
+import radical_head_certificate as rh
+
+
+def flatten(morphism):
+    return [c for local in morphism for column in local for c in column]
+
+
+def compose(first, second, dimensions):
+    return [[rk.combine(second[v], column, dimensions[v]) for column in first[v]]
+            for v in range(len(dimensions))]
+
+
+def hom_basis(source, target):
+    variables = [(v, k, t) for v in range(source.algebra.vertices)
+                 for k in range(source.dimensions[v]) for t in range(target.dimensions[v])]
+    errors = []
+    for v, k, t in variables:
+        morphism = [[[F(0)] * target.dimensions[u] for _ in range(source.dimensions[u])]
+                    for u in range(source.algebra.vertices)]
+        morphism[v][k][t] = F(1)
+        error = []
+        for b, source_action, target_action in zip(source.algebra.basis,
+                                                   source.actions, target.actions):
+            s, u = b["right"], b["left"]
+            for index in range(source.dimensions[s]):
+                lhs = rk.combine(morphism[u], source_action[index], target.dimensions[u])
+                rhs = rk.combine(target_action, morphism[s][index], target.dimensions[u])
+                error.extend(x - y for x, y in zip(lhs, rhs))
+        errors.append(error)
+    height = sum(source.dimensions[b["right"]] * target.dimensions[b["left"]]
+                 for b in source.algebra.basis)
+    answer = []
+    for coefficients in rk.nullspace(errors, height):
+        morphism = [[[F(0)] * target.dimensions[v] for _ in range(source.dimensions[v])]
+                    for v in range(source.algebra.vertices)]
+        for (v, k, t), coefficient in zip(variables, coefficients):
+            morphism[v][k][t] = coefficient
+        yg.check_module_map(source, target, morphism)
+        answer.append(morphism)
+    return answer
+
+
+def projective_restrictions(cover, target):
+    result = []
+    for copy, (vertex, _) in enumerate(cover.data["copies"]):
+        for target_index in range(target.dimensions[vertex]):
+            head_image = rk.unit_vector(target.dimensions[vertex], target_index)
+            morphism = [[] for _ in target.dimensions]
+            for v, local in enumerate(cover.data["bases"]):
+                for local_copy, radical_index in local:
+                    if local_copy != copy:
+                        image = [F(0)] * target.dimensions[v]
+                    elif radical_index is None:
+                        image = head_image
+                    else:
+                        image = rk.combine(target.actions[radical_index], head_image,
+                                           target.dimensions[v])
+                    morphism[v].append(image)
+            restricted = [
+                [rk.combine(morphism[v], vector, target.dimensions[v])
+                 for vector in cover.data["kernels"][v]] for v in range(len(target.dimensions))]
+            yg.check_module_map(cover.kernel, target, restricted)
+            result.append(restricted)
+    return result
+
+
+class ExtSpace:
+    def __init__(self, source_resolution, target, degree):
+        self.source = source_resolution["modules"][degree]
+        self.target = target
+        homs = hom_basis(self.source, target)
+        restrictions = ([] if degree == 0 else
+                        projective_restrictions(source_resolution["covers"][degree - 1], target))
+        chosen, _ = rk.independent([flatten(x) for x in restrictions])
+        self.boundaries = [restrictions[i] for i in chosen]
+        vectors = [flatten(x) for x in self.boundaries + homs]
+        selected, _ = rk.independent(vectors)
+        self.representatives = [homs[i - len(self.boundaries)] for i in selected
+                                if i >= len(self.boundaries)]
+        basis = [flatten(x) for x in self.boundaries + self.representatives]
+        ambient = sum(s * t for s, t in zip(self.source.dimensions, target.dimensions))
+        self.reader = sr.coordinates_reader(basis, ambient)
+
+    def coordinates(self, morphism):
+        yg.check_module_map(self.source, self.target, morphism)
+        return self.reader(flatten(morphism))[len(self.boundaries):]
+
+    @property
+    def dimension(self):
+        return len(self.representatives)
+
+
+def adr_modules(algebra):
+    modules, labels = [], []
+    for i in range(algebra.vertices):
+        cover = yg.Cover(sr.Module.simple(algebra, i))
+        projective = sr.Module(algebra, cover.dimensions, cover.data["projective_actions"])
+        powers = rh.radical_filtration(projective)
+        for r in range(1, len(powers)):
+            module, _, _ = rh.quotient(projective, powers[r])
+            modules.append(module)
+            labels.append({"head_vertex": i, "radical_exponent": r,
+                           "is_projective": r == len(powers) - 1,
+                           "dimension": sum(module.dimensions)})
+    return modules, labels
+
+
+def forked_saorin(vertices=3):
+    """N-vertex family, N >= 3; path names are in traversal order."""
+    if vertices < 3:
+        raise ValueError("At least one additional sink is required")
+    endpoints = {"a": (0, 1), "b": (1, 0)}
+    endpoints.update({f"c{t}": (1, t) for t in range(2, vertices)})
+    words = [("a",), ("b",), ("a", "b"),
+             ("b", "a"), ("b", "a", "b")]
+    words.extend((f"c{t}",) for t in range(2, vertices))
+    names = {word: "".join(word) for word in words}
+    basis = [(names[word], endpoints[word[-1]][1], endpoints[word[0]][0])
+             for word in words]
+    products = [(names[x], names[y], {names[y+x]: 1})
+                for x in words for y in words if y + x in names]
+    return rk.payload(vertices, 0, basis, products)
+
+
+def analyze_modules(modules, labels, degrees=4):
+    resolutions = [rh.resolution(module, degrees) for module in modules]
+    count = len(modules)
+    spaces = {(n, j, i): ExtSpace(resolutions[j], modules[i], n)
+              for n in range(degrees + 1) for j in range(count) for i in range(count)}
+    degree_zero = [[spaces[0, j, i].dimension for i in range(count)] for j in range(count)]
+    reports, comparisons = [], 0
+    for n in range(1, degrees + 1):
+        sources = []
+        for j in range(count):
+            products = [[] for _ in modules]
+            for p in range(1, n):
+                r = n - p
+                for t in range(count):
+                    for representative in spaces[p, j, t].representatives:
+                        lifted = representative
+                        for k in range(r):
+                            lifted = yg.syzygy_map(resolutions[j]["covers"][p + k],
+                                                    resolutions[t]["covers"][k], lifted)
+                            comparisons += 1
+                        for i in range(count):
+                            for left in spaces[r, t, i].representatives:
+                                product = compose(lifted, left, modules[i].dimensions)
+                                products[i].append(spaces[n, j, i].coordinates(product))
+            dimensions = [spaces[n, j, i].dimension for i in range(count)]
+            ranks = list(map(rk.rank, products))
+            sources.append({"source": j, "Ext_dimensions_by_target": dimensions,
+                            "positive_product_ranks_by_target": ranks,
+                            "new_generator_dimensions_by_target":
+                                [d - rank for d, rank in zip(dimensions, ranks)]})
+        reports.append({"degree": n, "by_source": sources,
+                        "total_Ext_dimension": sum(sum(s["Ext_dimensions_by_target"]) for s in sources),
+                        "total_new_generator_dimension":
+                            sum(sum(s["new_generator_dimensions_by_target"]) for s in sources)})
+    return {
+        "modules": labels, "degree_zero_Hom_dimensions_by_source_target": degree_zero,
+        "endomorphism_algebra_dimension": sum(map(sum, degree_zero)),
+        "degrees": reports, "comparison_maps_checked": comparisons,
+        "scope": "finite Ext products only; no conclusion about eventual finite generation",
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--demo", choices=["saorin", "quantum", "polynomial", "finite_five",
+                                           "forked_saorin"])
+    parser.add_argument("--vertices", type=int, default=3,
+                        help="Vertex count for forked_saorin, at least 3")
+    parser.add_argument("--degrees", type=int, default=4)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    if args.degrees < 1:
+        parser.error("--degrees must be positive")
+    if args.demo == "forked_saorin" and args.vertices < 3:
+        parser.error("forked_saorin requires at least 3 vertices")
+    inputs = {"saorin": yg.saorin_seven(),
+              "quantum": rh.quantum_exterior(),
+              "polynomial": yg.truncated_polynomial(4),
+              "finite_five": rk.demos()["archive_five_dimensional_finite_gldim"]}
+    if args.demo is None:
+        parser.error("--demo is required")
+    payload = forked_saorin(args.vertices) if args.demo == "forked_saorin" else inputs[args.demo]
+    algebra = rk.Algebra(payload)
+    modules, labels = adr_modules(algebra)
+    result = analyze_modules(modules, labels, args.degrees)
+    result["algebra"] = payload
+    args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({
+        "output": str(args.output), "modules": len(modules),
+        "endomorphism_dimension": result["endomorphism_algebra_dimension"],
+        "degree_summaries": [{"degree": d["degree"], "Ext": d["total_Ext_dimension"],
+                             "new_generators": d["total_new_generator_dimension"]}
+                            for d in result["degrees"]],
+        "finite_audit": "passed",
+    }))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,12 @@
+# consult (None, effort=high, transport=off, disabled)
+
+- time: 0.0s; tools: none
+- tokens: in 0 / out 0 (reasoning None); cost $0.0
+
+## reasoning summary
+
+_(none)_
+
+## reply (record this as master_guidance)
+
+

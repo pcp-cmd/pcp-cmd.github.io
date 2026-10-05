@@ -1,0 +1,277 @@
+"""Exact rational bounded self-check, with literal path certificates."""
+from argparse import ArgumentParser
+from collections import Counter
+from fractions import Fraction
+from hashlib import sha256
+from itertools import product
+from pathlib import Path
+import json
+import platform
+
+ARROWS = {"a": (0, 1), "b": (1, 2), "d": (2, 3), "t": (3, 3)}
+COUNTS = Counter()
+
+
+class Algebra:
+    def __init__(self, quotient=False):
+        self.quotient = quotient
+        paths = []
+        def visit(start, target, word):
+            paths.append((start, word))
+            for name, (src, dst) in ARROWS.items():
+                if src == target and not (word and word[-1] == "t" and name == "t"):
+                    new = word + (name,)
+                    if quotient and any(new[i:i+2] == ("a", "b") for i in range(len(new)-1)):
+                        continue
+                    visit(start, dst, new)
+        for vertex in range(4):
+            visit(vertex, vertex, ())
+        self.basis = tuple(paths)
+        self.index = {p: i for i, p in enumerate(paths)}
+        self.endpoints = [(ARROWS[w[-1]][1] if w else s, s) for s, w in paths]
+        self.rad = tuple(i for i, (s, w) in enumerate(paths) if w)
+        self.table = {}
+        for i, j in product(range(len(paths)), repeat=2):
+            left, right = paths[i], paths[j]
+            if self.endpoints[i][1] != self.endpoints[j][0]:
+                self.table[i, j] = None
+            else:
+                self.table[i, j] = self.index.get((right[0], right[1]+left[1]))
+
+    def mul(self, i, j):
+        return None if i is None or j is None else self.table[i, j]
+
+    def words(self, n, z, y):
+        if n == 0:
+            return [()] if z == y else []
+        out = []
+        for b in self.rad:
+            left, right = self.endpoints[b]
+            if right == y:
+                out.extend(w+(b,) for w in self.words(n-1, z, left))
+        return out
+
+    def dword(self, w):
+        out = Counter()
+        for i in range(len(w)-1):
+            term = self.mul(w[i], w[i+1])
+            if term is not None:
+                out[w[:i]+(term,)+w[i+2:]] += (-1)**i
+        return {v: c for v, c in out.items() if c}
+
+
+def matrix(cols, row_count):
+    return [[Fraction(col.get(i, 0)) for col in cols] for i in range(row_count)]
+
+
+def rref(mat, col_count):
+    mat = [row[:] for row in mat]
+    pivots = []
+    current = 0
+    for c in range(col_count):
+        r = next((i for i in range(current, len(mat)) if mat[i][c]), None)
+        if r is None:
+            continue
+        mat[current], mat[r] = mat[r], mat[current]
+        scale = mat[current][c]
+        mat[current] = [v / scale for v in mat[current]]
+        for i in range(len(mat)):
+            if i != current and mat[i][c]:
+                scale = mat[i][c]
+                mat[i] = [a - scale*b for a, b in zip(mat[i], mat[current])]
+        pivots.append(c)
+        current += 1
+        if current == len(mat):
+            break
+    return mat, pivots
+
+
+def rank(cols, rows):
+    return len(rref(matrix(cols, rows), len(cols))[1])
+
+
+def nullspace(cols, rows):
+    reduced, pivots = rref(matrix(cols, rows), len(cols))
+    out = []
+    for free in range(len(cols)):
+        if free in pivots:
+            continue
+        vector = {free: Fraction(1)}
+        for r, pivot in enumerate(pivots):
+            if reduced[r][free]:
+                vector[pivot] = -reduced[r][free]
+        out.append(vector)
+    return out
+
+
+def differential(alg, current, lower):
+    idx = {w: i for i, w in enumerate(lower)}
+    return [{idx[v]: c for v, c in alg.dword(w).items()} for w in current]
+
+
+def expected(z, y, n, quotient):
+    if n == 0:
+        return int(z == y)
+    if n == 1:
+        return int((z, y) in ((1, 0), (2, 1), (3, 2), (3, 3)))
+    return int((z, y) == (3, 3) or (quotient and n == 2 and (z, y) == (2, 0)))
+
+
+def main(out_path):
+    aa, cc = Algebra(), Algebra(True)
+    assert (len(aa.basis), len(cc.basis)) == (14, 11)
+    for label, alg in (("A", aa), ("C", cc)):
+        for i, j, k in product(range(len(alg.basis)), repeat=3):
+            assert alg.mul(alg.mul(i, j), k) == alg.mul(i, alg.mul(j, k))
+            COUNTS[label+"_associativity_triples"] += 1
+    kernel = [i for i, p in enumerate(aa.basis) if p not in cc.index]
+    assert len(kernel) == 3
+    assert {aa.basis[i] for i in kernel} == {
+        (0, ("a", "b")), (0, ("a", "b", "d")), (0, ("a", "b", "d", "t"))}
+    for i, j in product(kernel, repeat=2):
+        assert aa.mul(i, j) is None
+        COUNTS["kernel_square_zero_products"] += 1
+    for i in kernel:
+        for j in range(14):
+            assert aa.mul(i, j) in kernel+[None]
+            assert aa.mul(j, i) in kernel+[None]
+            COUNTS["two_sided_ideal_checks"] += 1
+
+    # Ce2 tensor e0C is an elementary projective C-bimodule.
+    ce2 = [i for i, (left, right) in enumerate(cc.endpoints) if right == 2]
+    e0c = [i for i, (left, right) in enumerate(cc.endpoints) if left == 0]
+    assert len(ce2) == 3 and e0c == [cc.index[0, ()]]
+    gamma = aa.index[0, ("a", "b")]
+    tensor_map = {i: aa.index[0, ("a", "b")+cc.basis[i][1]] for i in ce2}
+    assert set(tensor_map.values()) == set(kernel)
+    for c in range(11):
+        lift = aa.index[cc.basis[c]]
+        for p in ce2:
+            action = cc.mul(c, p)
+            assert aa.mul(lift, tensor_map[p]) == (tensor_map[action] if action is not None else None)
+            right = cc.mul(e0c[0], c)
+            assert aa.mul(tensor_map[p], lift) == (tensor_map[p] if right is not None else None)
+            COUNTS["canonical_bimodule_isomorphism_action_checks"] += 1
+    assert not [i for i, (left, right) in enumerate(cc.endpoints) if left == 0 and right == 2]
+    COUNTS["literal_zero_middle_e0Ce2"] = 1
+    # Actual ambient left-projective map Ae2 -> K.
+    ae2 = [i for i, (left, right) in enumerate(aa.endpoints) if right == 2]
+    image = {p: aa.mul(p, gamma) for p in ae2}
+    assert set(image.values()) == set(kernel)
+    for c, p in product(range(14), ae2):
+        action = aa.mul(c, p)
+        assert aa.mul(c, image[p]) == (image[action] if action is not None else None)
+        COUNTS["ambient_left_projective_action_checks"] += 1
+    for p, r in product(kernel, aa.rad):
+        assert aa.mul(p, r) is None
+        COUNTS["ambient_right_radical_annihilation_checks"] += 1
+
+    # Literal finite resolutions, no extrapolation from bar ranks.
+    for alg in (aa, cc):
+        for y, next_vertex, arrow in ((0, 1, "a"), (1, 2, "b"), (2, 3, "d")):
+            arrow_index = alg.index[y, (arrow,)]
+            projective = [i for i, (left, right) in enumerate(alg.endpoints) if right == next_vertex]
+            targets = [alg.mul(p, arrow_index) for p in projective]
+            radical = {i for i in alg.rad if alg.endpoints[i][1] == y}
+            assert {i for i in targets if i is not None} == radical
+            if alg.quotient and y == 0:
+                ker = {p for p, target in zip(projective, targets) if target is None}
+                beta = alg.index[1, ("b",)]
+                ce2_here = [i for i, ep in enumerate(alg.endpoints) if ep[1] == 2]
+                second = {alg.mul(p, beta) for p in ce2_here}
+                assert None not in second and len(second) == len(ce2_here) and second == ker
+            else:
+                assert None not in targets and len(set(targets)) == len(projective)
+            COUNTS["finite_simple_resolution_image_checks"] += 1
+        t = alg.index[3, ("t",)]
+        p3 = [i for i, ep in enumerate(alg.endpoints) if ep[1] == 3]
+        assert {alg.basis[p] for p in p3} == {(3, ()), (3, ("t",))}
+        assert [alg.mul(p, t) for p in p3] == [t, None]
+        COUNTS["periodic_simple_certificate_checks"] += 1
+
+    def project_word(w):
+        if any(i in kernel for i in w):
+            return None
+        return tuple(cc.index[aa.basis[i]] for i in w)
+
+    records = []
+    for z, y in product(range(4), repeat=2):
+        wa = [aa.words(n, z, y) for n in range(8)]
+        wc = [cc.words(n, z, y) for n in range(8)]
+        da = [differential(aa, wa[n], wa[n-1] if n else []) for n in range(8)]
+        dc = [differential(cc, wc[n], wc[n-1] if n else []) for n in range(8)]
+        for label, ws, ds in (("A", wa, da), ("C", wc, dc)):
+            for n in range(2, 8):
+                for col in ds[n]:
+                    twice = Counter()
+                    for i, val in col.items():
+                        for j, val2 in ds[n-1][i].items():
+                            twice[j] += val*val2
+                    assert all(v == 0 for v in twice.values())
+                COUNTS[label+"_differential_square_degrees"] += 1
+        for n in range(1, 8):
+            for w in wa[n]:
+                pw = project_word(w)
+                lhs = cc.dword(pw) if pw is not None else {}
+                rhs = Counter()
+                for v, val in aa.dword(w).items():
+                    pv = project_word(v)
+                    if pv is not None:
+                        rhs[pv] += val
+                assert {v: val for v, val in rhs.items() if val} == lhs
+            COUNTS["projection_chain_map_degrees"] += 1
+        for n in range(7):
+            ha = len(wa[n]) - rank(da[n], len(wa[n-1]) if n else 0) - rank(da[n+1], len(wa[n]))
+            hc = len(wc[n]) - rank(dc[n], len(wc[n-1]) if n else 0) - rank(dc[n+1], len(wc[n]))
+            assert ha == expected(z, y, n, False)
+            assert hc == expected(z, y, n, True)
+            cycles = nullspace(da[n], len(wa[n-1]) if n else 0)
+            cidx = {w: i for i, w in enumerate(wc[n])}
+            projections = []
+            for cycle in cycles:
+                out = Counter()
+                for i, val in cycle.items():
+                    pw = project_word(wa[n][i])
+                    if pw is not None:
+                        out[cidx[pw]] += val
+                projections.append({i: val for i, val in out.items() if val})
+            map_rank = rank(dc[n+1]+projections, len(wc[n])) - rank(dc[n+1], len(wc[n]))
+            assert map_rank == ha
+            if n > 2:
+                assert ha == hc == map_rank
+            COUNTS["ambient_tor_records"] += 1
+            COUNTS["quotient_tor_records"] += 1
+            COUNTS["induced_ordinary_comparison_ranks"] += 1
+            records.append({"right_simple": z, "left_simple": y, "degree": n,
+                            "ambient_tor_dimension": ha, "quotient_tor_dimension": hc,
+                            "ordinary_comparison_rank": map_rank})
+    sharp = next(r for r in records if (r["right_simple"], r["left_simple"], r["degree"]) == (2, 0, 2))
+    assert (sharp["ambient_tor_dimension"], sharp["quotient_tor_dimension"], sharp["ordinary_comparison_rank"]) == (0, 1, 0)
+    result = {
+        "status": "passed", "backend": {"name": "python", "version": platform.python_version()},
+        "arithmetic": "exact fractions and literal path bases",
+        "evidence_level": "bounded-check; same-author; not independently verified",
+        "actual_dimensions": {"A": 14, "C": 11, "K": 3},
+        "bases": {"A": [[s, list(w)] for s, w in aa.basis],
+                  "C": [[s, list(w)] for s, w in cc.basis]},
+        "parameters": {"Ce_projective_dimension": 0, "actual_tensor_nilpotence_index": 2,
+                       "W": 1, "U": 1, "isomorphism_strictly_above": 2},
+        "bounds": {"recorded_ordinary_tor_degrees": [0, 6], "incoming_complex_degree_included": 7},
+        "checks": dict(sorted(COUNTS.items())), "sharp_failure": sharp, "tor_comparison_records": records,
+        "limitations": [
+            "Same author for code and proof; no independent verifier acceptance.",
+            "The generic nonsplit quotient theorem uses the separate actual ordinary filtration proof.",
+            "All-degree and all-characteristic assertions use the literal module/path certificates, not finite rank extrapolation.",
+            "The example is a connected ordinary ideal quotient, not an idempotent deletion or a bad algebra.",
+            "No general perfectness, tensor nilpotence, reduction existence or nonperfect acyclic bridge is inferred."
+        ]
+    }
+    out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+    print(json.dumps({"status": "passed", "checks": result["checks"], "sharp_failure": sharp,
+                      "result_sha256": sha256(out_path.read_bytes()).hexdigest()}))
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser()
+    parser.add_argument("--out", type=Path, required=True)
+    main(parser.parse_args().out)

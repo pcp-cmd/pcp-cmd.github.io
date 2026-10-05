@@ -1,0 +1,1113 @@
+{
+  "status": "passed",
+  "backend": {
+    "name": "python",
+    "version": "3.14.3"
+  },
+  "arithmetic": "exact fractions and literal path bases",
+  "evidence_level": "bounded-check; same-author; not independently verified",
+  "actual_dimensions": {
+    "A": 14,
+    "C": 11,
+    "K": 3
+  },
+  "bases": {
+    "A": [
+      [
+        0,
+        []
+      ],
+      [
+        0,
+        [
+          "a"
+        ]
+      ],
+      [
+        0,
+        [
+          "a",
+          "b"
+        ]
+      ],
+      [
+        0,
+        [
+          "a",
+          "b",
+          "d"
+        ]
+      ],
+      [
+        0,
+        [
+          "a",
+          "b",
+          "d",
+          "t"
+        ]
+      ],
+      [
+        1,
+        []
+      ],
+      [
+        1,
+        [
+          "b"
+        ]
+      ],
+      [
+        1,
+        [
+          "b",
+          "d"
+        ]
+      ],
+      [
+        1,
+        [
+          "b",
+          "d",
+          "t"
+        ]
+      ],
+      [
+        2,
+        []
+      ],
+      [
+        2,
+        [
+          "d"
+        ]
+      ],
+      [
+        2,
+        [
+          "d",
+          "t"
+        ]
+      ],
+      [
+        3,
+        []
+      ],
+      [
+        3,
+        [
+          "t"
+        ]
+      ]
+    ],
+    "C": [
+      [
+        0,
+        []
+      ],
+      [
+        0,
+        [
+          "a"
+        ]
+      ],
+      [
+        1,
+        []
+      ],
+      [
+        1,
+        [
+          "b"
+        ]
+      ],
+      [
+        1,
+        [
+          "b",
+          "d"
+        ]
+      ],
+      [
+        1,
+        [
+          "b",
+          "d",
+          "t"
+        ]
+      ],
+      [
+        2,
+        []
+      ],
+      [
+        2,
+        [
+          "d"
+        ]
+      ],
+      [
+        2,
+        [
+          "d",
+          "t"
+        ]
+      ],
+      [
+        3,
+        []
+      ],
+      [
+        3,
+        [
+          "t"
+        ]
+      ]
+    ]
+  },
+  "parameters": {
+    "Ce_projective_dimension": 0,
+    "actual_tensor_nilpotence_index": 2,
+    "W": 1,
+    "U": 1,
+    "isomorphism_strictly_above": 2
+  },
+  "bounds": {
+    "recorded_ordinary_tor_degrees": [
+      0,
+      6
+    ],
+    "incoming_complex_degree_included": 7
+  },
+  "checks": {
+    "A_associativity_triples": 2744,
+    "A_differential_square_degrees": 96,
+    "C_associativity_triples": 1331,
+    "C_differential_square_degrees": 96,
+    "ambient_left_projective_action_checks": 42,
+    "ambient_right_radical_annihilation_checks": 30,
+    "ambient_tor_records": 112,
+    "canonical_bimodule_isomorphism_action_checks": 33,
+    "finite_simple_resolution_image_checks": 6,
+    "induced_ordinary_comparison_ranks": 112,
+    "kernel_square_zero_products": 9,
+    "literal_zero_middle_e0Ce2": 1,
+    "periodic_simple_certificate_checks": 2,
+    "projection_chain_map_degrees": 112,
+    "quotient_tor_records": 112,
+    "two_sided_ideal_checks": 42
+  },
+  "sharp_failure": {
+    "right_simple": 2,
+    "left_simple": 0,
+    "degree": 2,
+    "ambient_tor_dimension": 0,
+    "quotient_tor_dimension": 1,
+    "ordinary_comparison_rank": 0
+  },
+  "tor_comparison_records": [
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 0,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 2,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 2,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 2,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 2,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 2,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 2,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 2,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 3,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 3,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 3,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 3,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 3,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 3,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 3,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 1,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 0,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 2,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 2,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 2,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 2,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 2,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 2,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 2,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 3,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 3,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 3,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 3,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 3,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 3,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 3,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 0,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 0,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 0,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 0,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 0,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 0,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 0,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 1,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 1,
+      "degree": 1,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 1,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 1,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 1,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 1,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 1,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 2,
+      "degree": 0,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 2,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 2,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 2,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 2,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 2,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 2,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 3,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 3,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 3,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 3,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 3,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 3,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 2,
+      "left_simple": 3,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 0,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 0,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 0,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 0,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 0,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 0,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 0,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 1,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 1,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 1,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 1,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 1,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 1,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 1,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 2,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 2,
+      "degree": 1,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 2,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 2,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 2,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 2,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 2,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 3,
+      "degree": 0,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 3,
+      "degree": 1,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 3,
+      "degree": 2,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 3,
+      "degree": 3,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 3,
+      "degree": 4,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 3,
+      "degree": 5,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    },
+    {
+      "right_simple": 3,
+      "left_simple": 3,
+      "degree": 6,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1
+    }
+  ],
+  "limitations": [
+    "Same author for code and proof; no independent verifier acceptance.",
+    "The generic nonsplit quotient theorem uses the separate actual ordinary filtration proof.",
+    "All-degree and all-characteristic assertions use the literal module/path certificates, not finite rank extrapolation.",
+    "The example is a connected ordinary ideal quotient, not an idempotent deletion or a bad algebra.",
+    "No general perfectness, tensor nilpotence, reduction existence or nonperfect acyclic bridge is inferred."
+  ]
+}

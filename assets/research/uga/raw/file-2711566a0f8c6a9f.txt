@@ -1,0 +1,201 @@
+"""Exact bounded self-check of an actual five-cycle block deletion.
+
+No CAS or numerical arithmetic.  The all-degree theorem is proved in the
+Run; this program checks the displayed finite algebra and explicit words.
+"""
+from argparse import ArgumentParser
+from collections import Counter
+from hashlib import sha256
+from itertools import product
+from pathlib import Path
+import json
+import platform
+
+
+VERTICES = ("0", "1", "x", "a", "b")
+ARROWS = (
+    ("p", "1", "x"),
+    ("c", "x", "0"),
+    ("q", "0", "a"),
+    ("g", "a", "b"),
+    ("d", "b", "1"),
+)
+ENDPOINTS = {name: (target, source) for name, source, target in ARROWS}
+ENDPOINTS.update({f"e{i}": (i, i) for i in VERTICES})
+BASIS = tuple(ENDPOINTS)
+IDEMS = {f"e{i}" for i in VERTICES}
+
+
+def multiply(x, y):
+    """Algebraic order: the path y is traversed before x."""
+    if x is None or y is None:
+        return None
+    lx, rx = ENDPOINTS[x]
+    ly, ry = ENDPOINTS[y]
+    if rx != ly:
+        return None
+    if x in IDEMS:
+        return y
+    if y in IDEMS:
+        return x
+    return None
+
+
+def words(names, target, source, total, degrees):
+    """All relative reduced-bar words with the specified total degree."""
+    if total == 0:
+        return [()] if target == source else []
+    out = []
+    for name in names:
+        left, right = ENDPOINTS[name]
+        shift = degrees[name]
+        if right != source or shift > total:
+            continue
+        for tail in words(names, target, left, total - shift, degrees):
+            out.append(tail + (name,))
+    return out
+
+
+def binary_bar(word):
+    """Endpoints are simples, so only internal products can contribute."""
+    out = Counter()
+    for i in range(len(word) - 1):
+        z = multiply(word[i], word[i + 1])
+        if z is not None:
+            out[word[:i] + (z,) + word[i + 2:]] += (-1) ** i
+    return {w: c for w, c in out.items() if c}
+
+
+def periodic_prediction(target, source, n):
+    offsets = {("0", "0"): 0, ("0", "1"): 2,
+               ("1", "0"): 3, ("1", "1"): 0}
+    return int(n >= offsets[target, source]
+               and (n - offsets[target, source]) % 5 == 0)
+
+
+def main(out_path):
+    counts = Counter()
+    for x, y, z in product(BASIS, repeat=3):
+        assert multiply(multiply(x, y), z) == multiply(x, multiply(y, z))
+        counts["ambient_associativity_triples"] += 1
+    for e in IDEMS:
+        assert multiply(e, e) == e
+    counts["primitive_idempotents"] = len(IDEMS)
+    for x, y in product((a[0] for a in ARROWS), repeat=2):
+        assert multiply(x, y) is None
+        counts["radical_square_zero_products"] += 1
+
+    ambient_arrows = tuple(a[0] for a in ARROWS)
+    ambient_degrees = {a: 1 for a in ambient_arrows}
+    records = []
+    ambient = {}
+    # Include incoming degree 13 when recording Tor through degree 12.
+    for target, source in product(VERTICES, repeat=2):
+        for n in range(14):
+            current = words(ambient_arrows, target, source, n, ambient_degrees)
+            for w in current:
+                assert binary_bar(w) == {}
+                counts["ambient_zero_differential_word_checks"] += 1
+            counts["ambient_complex_degrees"] += 1
+            ambient[target, source, n] = len(current)
+            if n <= 12:
+                records.append({"right_simple": target, "left_simple": source,
+                                "degree": n, "ordinary_tor_dimension": len(current)})
+                counts["ambient_tor_records"] += 1
+
+    # Literal retained normalized Gamma two-sided bar:
+    # U=fAE={c,d}; V=EAf={p,q}; J(Gamma)={g:a->b}.
+    deleted = {"x", "a", "b"}
+    retained = {"0", "1"}
+    u_names = tuple(a for a in ambient_arrows
+                    if ENDPOINTS[a][0] in retained and ENDPOINTS[a][1] in deleted)
+    v_names = tuple(a for a in ambient_arrows
+                    if ENDPOINTS[a][0] in deleted and ENDPOINTS[a][1] in retained)
+    gamma_names = tuple(a for a in ambient_arrows
+                        if set(ENDPOINTS[a]) <= deleted)
+    assert u_names == ("c", "d")
+    assert v_names == ("p", "q")
+    assert gamma_names == ("g",)
+    passage_records = []
+    for r in range(1, 7):
+        passages = []
+        for u in u_names:
+            for middle in product(gamma_names, repeat=r-1):
+                for v in v_names:
+                    w = (u,) + middle + (v,)
+                    if all(ENDPOINTS[w[i]][1] == ENDPOINTS[w[i+1]][0]
+                           for i in range(len(w)-1)):
+                        assert binary_bar(w) == {}
+                        passages.append(w)
+        passage_records.append({"negative_degree": -r,
+                                "normalized_passages": [list(w) for w in passages]})
+        counts["normalized_passage_degrees"] += 1
+        if r == 1:
+            assert passages == [("c", "p")]
+        elif r == 2:
+            assert passages == [("d", "g", "q")]
+        else:
+            assert passages == []
+    for v, u in product(v_names, u_names):
+        assert multiply(v, u) is None
+        counts["negative_passage_join_products"] += 1
+
+    # Actual H has u in e0 H^-1 e1 and v in e1 H^-2 e0.
+    ENDPOINTS.update({"u": ("0", "1"), "v": ("1", "0")})
+    h_degrees = {"u": 2, "v": 3}
+    model_records = []
+    for target, source in product(("0", "1"), repeat=2):
+        for n in range(14):
+            current = words(("u", "v"), target, source, n, h_degrees)
+            assert len(current) == periodic_prediction(target, source, n)
+            assert len(current) == ambient[target, source, n]
+            counts["retained_model_matches_including_incoming"] += 1
+            if n <= 12:
+                model_records.append({"right_simple": target, "left_simple": source,
+                                      "degree": n, "tor_dimension": len(current),
+                                      "weighted_words": [list(w) for w in current]})
+                counts["retained_model_records"] += 1
+    # A zero differential ensures outgoing and incoming ranks really are 0.
+    assert counts["ambient_tor_records"] == 325
+    assert counts["retained_model_records"] == 52
+    assert counts["retained_model_matches_including_incoming"] == 56
+
+    # Distinguish closed-walk period from individual edge-weight gcd.
+    from math import gcd
+    assert gcd(2, 3) == 1
+    assert all(5*r % 5 == 0 for r in range(1, 7))
+    result = {
+        "status": "passed",
+        "backend": {"name": "python", "version": platform.python_version()},
+        "arithmetic": "exact integers",
+        "evidence_level": "bounded-check; same-author; not independently verified",
+        "ambient": {"dimension": 10, "vertices": VERTICES,
+                    "arrows_source_target": ARROWS, "all_radical_products_zero": True},
+        "deletion": {"kind": "nonprimitive block", "deleted_vertices": sorted(deleted),
+                     "retained_vertices": sorted(retained),
+                     "negative_normalized_passages": passage_records},
+        "period": {"individual_edge_weight_gcd": 1, "closed_walk_gcd": 5},
+        "bounds": {"recorded_ordinary_tor_degrees": [0, 12],
+                   "incoming_complex_degree_included": 13},
+        "checks": dict(sorted(counts.items())),
+        "ambient_tor": records,
+        "retained_model_tor": model_records,
+        "limitations": [
+            "The generic mixed-periodicity proof is separate from this finite calibration.",
+            "This example deletes a block of three vertices, not one primitive vertex.",
+            "All-degree and all-characteristic claims use the finite path proof in the Run.",
+            "A5's aperiodic finite-gldim certificate is reused from the Primitive-Seed Run; it is not rerun here.",
+            "No comparison-map rank, independent verification, or general cycle return is asserted."
+        ]
+    }
+    out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n",
+                        encoding="utf-8")
+    print(json.dumps({"status": "passed", "checks": result["checks"],
+                      "result_sha256": sha256(out_path.read_bytes()).hexdigest()}))
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser()
+    parser.add_argument("--out", type=Path, required=True)
+    args = parser.parse_args()
+    main(args.out)

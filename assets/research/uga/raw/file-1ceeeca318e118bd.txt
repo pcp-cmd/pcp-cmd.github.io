@@ -1,0 +1,355 @@
+"""Exact certificates from return multiplication kernels.
+
+Input describes a split basic Q-algebra, then scalars extend to C.
+Primitive idempotents and their actions are implicit. All unlisted radical
+products are zero. Associativity and radical nilpotence are checked.
+A positive result checks hypotheses of the written infinite-degree proof.
+An absent certificate is inconclusive.
+"""
+import argparse
+from fractions import Fraction as F
+from itertools import product
+import json
+from pathlib import Path
+
+
+def reduce_vector(vector, echelon):
+    value = list(map(F, vector))
+    for pivot, row in sorted(echelon.items()):
+        c = value[pivot]
+        if c:
+            value = [x - c * y for x, y in zip(value, row)]
+    return value
+
+
+def independent(vectors):
+    echelon = {}
+    indices = []
+    for index, vector in enumerate(vectors):
+        row = reduce_vector(vector, echelon)
+        pivot = next((i for i, x in enumerate(row) if x), None)
+        if pivot is not None:
+            divisor = row[pivot]
+            echelon[pivot] = [x / divisor for x in row]
+            indices.append(index)
+    return indices, echelon
+
+
+def rank(vectors):
+    return len(independent(vectors)[0])
+
+
+def nullspace(columns, height):
+    width = len(columns)
+    rows = [[F(columns[j][i]) for j in range(width)] for i in range(height)]
+    pivot_columns = []
+    pivot_row = 0
+    for col in range(width):
+        found = next((i for i in range(pivot_row, height) if rows[i][col]), None)
+        if found is None:
+            continue
+        rows[pivot_row], rows[found] = rows[found], rows[pivot_row]
+        divisor = rows[pivot_row][col]
+        rows[pivot_row] = [x / divisor for x in rows[pivot_row]]
+        for i in range(height):
+            if i != pivot_row and rows[i][col]:
+                c = rows[i][col]
+                rows[i] = [x - c * y for x, y in zip(rows[i], rows[pivot_row])]
+        pivot_columns.append(col)
+        pivot_row += 1
+    answer = []
+    for free in range(width):
+        if free in pivot_columns:
+            continue
+        vector = [F(0)] * width
+        vector[free] = F(1)
+        for i, pivot in enumerate(pivot_columns):
+            vector[pivot] = -rows[i][free]
+        answer.append(vector)
+    return answer
+
+
+def combine(columns, coefficients, height):
+    result = [F(0)] * height
+    for column, c in zip(columns, coefficients):
+        if c:
+            result = [x + c * y for x, y in zip(result, column)]
+    return result
+
+
+def unit_vector(size, index):
+    value = [F(0)] * size
+    value[index] = F(1)
+    return value
+
+
+class Algebra:
+    def __init__(self, payload):
+        self.vertices = payload["vertices"]
+        if type(self.vertices) is not int or self.vertices < 1:
+            raise ValueError("vertices must be a positive integer")
+        self.basis = payload["radical_basis"]
+        self.names = [item["name"] for item in self.basis]
+        if len(set(self.names)) != len(self.names):
+            raise ValueError("Radical basis names must be distinct")
+        self.index = {name: i for i, name in enumerate(self.names)}
+        self.d = len(self.names)
+        for item in self.basis:
+            for side in ("left", "right"):
+                if type(item[side]) is not int or not 0 <= item[side] < self.vertices:
+                    raise ValueError("Invalid Peirce label")
+        self.table = {}
+        for item in payload["radical_products"]:
+            left, right = self.index[item["left"]], self.index[item["right"]]
+            if (left, right) in self.table:
+                raise ValueError("Duplicate multiplication entry")
+            value = [F(0)] * self.d
+            for name, coefficient in item["value"].items():
+                if type(coefficient) not in (int, str):
+                    raise ValueError("Use integers or rational strings, never floats")
+                value[self.index[name]] = F(coefficient)
+            if any(value):
+                if self.basis[left]["right"] != self.basis[right]["left"]:
+                    raise ValueError("Nonzero product has incompatible endpoints")
+                for k, c in enumerate(value):
+                    if c and (self.basis[k]["left"], self.basis[k]["right"]) != (
+                            self.basis[left]["left"], self.basis[right]["right"]):
+                        raise ValueError("Product leaves its Peirce component")
+            self.table[left, right] = value
+        self.zero = [F(0)] * self.d
+        self.units = [unit_vector(self.d, i) for i in range(self.d)]
+        self.check_associativity()
+        self.radical_powers = self.check_nilpotence()
+
+    def pair(self, left, right):
+        return self.table.get((left, right), self.zero)
+
+    def multiply(self, left, right):
+        result = [F(0)] * self.d
+        for i, a in enumerate(left):
+            if not a:
+                continue
+            for j, b in enumerate(right):
+                if b:
+                    result = [x + a * b * y
+                              for x, y in zip(result, self.pair(i, j))]
+        return result
+
+    def check_associativity(self):
+        # Idempotent triples follow from the checked Peirce labels.
+        for i, j, k in product(range(self.d), repeat=3):
+            if self.multiply(self.pair(i, j), self.units[k]) != self.multiply(
+                    self.units[i], self.pair(j, k)):
+                raise ValueError("Associativity failed at " +
+                                 str([self.names[t] for t in (i, j, k)]))
+
+    def check_nilpotence(self):
+        powers = [self.units]
+        while powers[-1]:
+            candidates = [self.multiply(x, y) for x in powers[-1] for y in self.units]
+            keep, _ = independent(candidates)
+            nxt = [candidates[i] for i in keep]
+            if len(nxt) >= len(powers[-1]):
+                raise ValueError("Declared radical is not nilpotent")
+            powers.append(nxt)
+        return powers
+
+    def component(self, left, right):
+        return [i for i, b in enumerate(self.basis)
+                if (b["left"], b["right"]) == (left, right)]
+
+    def j2_component(self, left, right):
+        candidates = [self.pair(i, j) for i, j in product(range(self.d), repeat=2)
+                      if self.basis[i]["left"] == left and
+                      self.basis[j]["right"] == right]
+        keep, _ = independent(candidates)
+        return [candidates[i] for i in keep]
+
+
+def quotient_coordinates(indices, subspace):
+    local_subspace = [[vector[i] for i in indices] for vector in subspace]
+    _, echelon = independent(local_subspace)
+    free = [i for i in range(len(indices)) if i not in echelon]
+    return [[reduce_vector(unit_vector(len(indices), j), echelon)[i] for i in free]
+            for j in range(len(indices))], len(free)
+
+
+def branch(algebra, h, v):
+    n = algebra.component(h, v)
+    m = algebra.component(v, h)
+    n2 = algebra.j2_component(h, v)
+    m2 = algebra.j2_component(v, h)
+    n_top, alpha = quotient_coordinates(n, n2)
+    m_top, beta = quotient_coordinates(m, m2)
+    pairs = list(product(n, m))
+    mu = [algebra.pair(i, j) for i, j in pairs]
+    projection = [[a * b for a in n_top[i] for b in m_top[j]]
+                  for i in range(len(n)) for j in range(len(m))]
+    kernels = nullspace(mu, algebra.d)
+    projected = [combine(projection, vector, alpha * beta) for vector in kernels]
+    selected, _ = independent(projected)
+    relations = [kernels[i] for i in selected]
+    higher = [algebra.multiply(x, algebra.units[j]) for x in n2 for j in m]
+    higher += [algebra.multiply(algebra.units[i], y) for i in n for y in m2]
+    image_dim, higher_dim = rank(mu), rank(higher)
+    kappa = len(relations)
+    if kappa != alpha * beta - image_dim + higher_dim:
+        raise AssertionError("Two exact calculations of primitive kernel disagree")
+    encoded_relations = []
+    for relation in relations:
+        if any(combine(mu, relation, algebra.d)):
+            raise AssertionError("Returned relation is not a strict cycle")
+        encoded_relations.append([
+            {"coefficient": str(c), "left": algebra.names[i], "right": algebra.names[j]}
+            for (i, j), c in zip(pairs, relation) if c])
+    return {
+        "vertex": v, "N_dimension": len(n), "M_dimension": len(m),
+        "N_J2_dimension": len(n2), "M_J2_dimension": len(m2),
+        "arrow_dimensions": [alpha, beta],
+        "return_image_dimension": image_dim,
+        "higher_factor_image_dimension": higher_dim,
+        "primitive_return_kernel_dimension": kappa,
+        "strict_relations_with_independent_top_projections": encoded_relations,
+    }
+
+
+def find_cycle(vertices, adjacency):
+    color, position = {}, {}
+    for root in vertices:
+        if color.get(root, 0):
+            continue
+        path, stack = [root], [iter(adjacency[root])]
+        color[root], position[root] = 1, 0
+        while stack:
+            nxt = next(stack[-1], None)
+            if nxt is None:
+                old = path.pop()
+                position.pop(old)
+                color[old] = 2
+                stack.pop()
+            elif color.get(nxt, 0) == 0:
+                color[nxt], position[nxt] = 1, len(path)
+                path.append(nxt)
+                stack.append(iter(adjacency[nxt]))
+            elif color[nxt] == 1:
+                return path[position[nxt]:]
+    return None
+
+
+def analyze(payload):
+    algebra = Algebra(payload)
+    h = payload["base_vertex"]
+    if type(h) is not int or not 0 <= h < algebra.vertices:
+        raise ValueError("Invalid base vertex")
+    branches = [branch(algebra, h, v) for v in range(algebra.vertices) if v != h]
+    weights = {b["vertex"]: b["primitive_return_kernel_dimension"]
+               for b in branches if b["primitive_return_kernel_dimension"]}
+    adjacency = {i: [] for i in weights}
+    for i, j in product(weights, repeat=2):
+        # The seam in (N_i tensor M_i) tensor (N_j tensor M_j) is M_i N_j.
+        if all(not any(algebra.pair(a, b))
+               for a in algebra.component(i, h) for b in algebra.component(h, j)):
+            adjacency[i].append(j)
+    cycle = find_cycle(list(weights), adjacency)
+    paths = dict(weights)
+    lower_bounds = []
+    for r in range(1, 7):
+        lower_bounds.append({"Tor_degree": 2 * r, "dimension_lower_bound": sum(paths.values())})
+        paths = {j: weights[j] * sum(paths[i] for i in weights if j in adjacency[i])
+                 for j in weights}
+    certificate = {"valid": False, "reason": "No directed cycle in this sufficient graph"}
+    if cycle is not None:
+        generators = 1
+        for v in cycle:
+            generators *= weights[v]
+        if any(cycle[(i + 1) % len(cycle)] not in adjacency[v]
+               for i, v in enumerate(cycle)):
+            raise AssertionError("Bad wraparound in returned cycle")
+        certificate = {
+            "valid": True, "branch_cycle": cycle,
+            "free_associative_subalgebra_generators": generators,
+            "generator_cohomological_degree": 2 * len(cycle),
+            "Tor_nonzero_degrees": "every positive even degree at the fixed base vertex",
+            "infinite_degrees_are_proved_in": "Return-Kernel-Tor-Theorem.md",
+        }
+    return {
+        "algebra_dimension": algebra.vertices + algebra.d,
+        "base_vertex": h, "associativity_checked": True,
+        "radical_power_dimensions": [len(p) for p in algebra.radical_powers],
+        "branches": branches, "zero_seam_graph_on_positive_kernels": adjacency,
+        "weighted_path_lower_bounds": lower_bounds, "certificate": certificate,
+        "status": "finite exact certificate; no independent mathematical verifier",
+    }
+
+
+def payload(vertices, h, basis, products):
+    return {"vertices": vertices, "base_vertex": h,
+            "radical_basis": [{"name": name, "left": left, "right": right}
+                              for name, left, right in basis],
+            "radical_products": [{"left": a, "right": b, "value": value}
+                                 for a, b, value in products]}
+
+
+def nonmonomial_47():
+    basis, products = [], []
+    for v in (1, 2):
+        for t in range(1, 4):
+            basis += [(f"a{v}_{t}", v, 0), (f"b{v}_{t}", 0, v)]
+        basis.append((f"z{v}", 0, 0))
+        for r, s in product(range(1, 4), repeat=2):
+            if r != s:
+                basis.append((f"c{v}_{r}{s}", 0, 0))
+            basis.append((f"d{v}_{r}{s}", v, v))
+            value = {f"z{v}": (1, -2, 1)[r - 1]} if r == s else {f"c{v}_{r}{s}": 1}
+            products += [(f"b{v}_{r}", f"a{v}_{s}", value),
+                         (f"a{v}_{r}", f"b{v}_{s}", {f"d{v}_{r}{s}": 1})]
+    return payload(3, 0, basis, products)
+
+
+def demos():
+    return {
+        "nonmonomial_two_branch_47": nonmonomial_47(),
+        "archive_five_dimensional_finite_gldim": payload(
+            2, 0, [("a", 1, 0), ("b", 0, 1), ("z", 1, 1)],
+            [("a", "b", {"z": 1})]),
+        "filtered_same_branch_8": payload(
+            2, 0, [("a", 1, 0), ("b", 0, 1), ("c", 1, 1),
+                   ("p", 0, 1), ("q", 1, 0), ("z", 0, 0)],
+            [("b", "a", {"z": 1}), ("b", "c", {"p": 1}),
+             ("c", "a", {"q": 1}), ("p", "a", {"z": 1}), ("b", "q", {"z": 1})]),
+        "filtered_other_branch_11": payload(
+            3, 0, [("a1", 1, 0), ("b1", 0, 1), ("a2", 2, 0),
+                   ("b2", 0, 2), ("c2", 2, 2), ("p", 0, 2), ("q", 2, 0), ("z", 0, 0)],
+            [("b1", "a1", {"z": 1}), ("b2", "c2", {"p": 1}),
+             ("c2", "a2", {"q": 1}), ("p", "a2", {"z": 1}), ("b2", "q", {"z": 1})]),
+        "radical_cube_zero_two_cycle_inconclusive": payload(
+            2, 0, [("a", 1, 0), ("b", 0, 1), ("z0", 0, 0), ("z1", 1, 1)],
+            [("b", "a", {"z0": 1}), ("a", "b", {"z1": 1})]),
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", type=Path)
+    parser.add_argument("--demo", action="store_true")
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--write-demo-inputs", type=Path)
+    args = parser.parse_args()
+    if args.demo:
+        inputs = demos()
+        if args.write_demo_inputs:
+            args.write_demo_inputs.write_text(json.dumps(inputs, indent=2) + "\n", encoding="utf-8")
+        result = {name: analyze(value) for name, value in inputs.items()}
+    elif args.input:
+        result = analyze(json.loads(args.input.read_text(encoding="utf-8")))
+    else:
+        parser.error("Supply --input or --demo")
+    encoded = json.dumps(result, indent=2)
+    if args.output:
+        args.output.write_text(encoded + "\n", encoding="utf-8")
+    print(encoded)
+
+
+if __name__ == "__main__":
+    main()
+

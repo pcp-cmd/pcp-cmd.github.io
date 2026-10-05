@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { isPublicMarkdownSource } = require('./build-markdown.js');
 
 const root = path.resolve(__dirname, '..');
 const contentDir = path.join(root, 'content');
@@ -65,6 +66,14 @@ function assertSafeRelativePath(relativePath) {
   return normalized;
 }
 
+function isPublicJsonSource(source) {
+  return !(
+    /(?:^|\/)source-map\.json$/i.test(source)
+    || /(?:^|\/)[^/]*-build-log\.json$/i.test(source)
+    || /(?:^|\/)archive(?:\/|$)/i.test(source)
+  );
+}
+
 function buildContentBundle() {
   const markdown = {};
   const json = {};
@@ -72,10 +81,10 @@ function buildContentBundle() {
   for (const file of walk(contentDir)) {
     const relative = assertSafeRelativePath(rel(file));
     if (relative === 'content/content-bundle.js') continue;
-    if (file.toLowerCase().endsWith('.md')) {
+    if (file.toLowerCase().endsWith('.md') && isPublicMarkdownSource(relative)) {
       markdown[relative] = fs.readFileSync(file, 'utf8');
     }
-    if (file.toLowerCase().endsWith('.json')) {
+    if (file.toLowerCase().endsWith('.json') && isPublicJsonSource(relative)) {
       try {
         json[relative] = JSON.parse(fs.readFileSync(file, 'utf8'));
       } catch (error) {
@@ -98,5 +107,6 @@ if (require.main === module) buildContentBundle();
 module.exports = {
   assertContainedRealPath,
   buildContentBundle,
+  isPublicJsonSource,
   walk
 };

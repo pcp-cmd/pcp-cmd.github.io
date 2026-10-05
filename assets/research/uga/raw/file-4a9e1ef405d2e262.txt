@@ -1,0 +1,96 @@
+# Pending actual counterexample: the finite-pd cubic tensor defect need not have Loewy length two
+
+2026-10-05. Subagent `global_ordinary_switch`. Complete ANY-field ordinary path/kernel proof, same-author audit. No new computation run or canonical edit. The target closure J6=0 and pd_LEFT J3<=1 remains unresolved by this example.
+
+## 1. The tested closing step is false
+
+The proposed repair was: if I=J3, J6=0 and pd_LEFT I<=1, then the already finite-pd actual multiplication defect D2=I tensor_A I satisfies J2D2=0, so C126 applies to its balanced semisimple envelope.
+
+Take the directed line with nine labels and its actual truncated path algebra
+
+\[
+A=k(0\longrightarrow1\longrightarrow\cdots\longrightarrow8)/J^6.
+\]
+
+Here the ideal J6 means all paths of length six; A has the basis of all directed paths of lengths zero through five. This is elementary, associative and valid over ANY field. J6=0, J5 nonzero, and its Loewy length is six. Multiplication is read right to left. Set I=J3.
+
+## 2. FULL actual projective covers of the whole cubic ideal
+
+The LEFT projective P_i=Ae_i has the path basis beginning at i, and lengths
+
+\[
+(\dim P_0,\ldots,\dim P_8)=(6,6,6,6,5,4,3,2,1).
+\]
+
+The actual column I e_j is zero for j>=6. For 0<=j<=5 it has the path basis starting at j of lengths three through min(5,8-j).
+
+For j=0,1,2, right multiplication by the length-three path beginning at j gives the real minimal surjection
+
+\[
+P_{j+3}\longrightarrow I e_j.
+\]
+
+Its FULL kernel is rad3 P_(j+3), with basis lengths three through 5-j. Right multiplication by the length-three path beginning at j+3 identifies this kernel with the WHOLE P_(j+6), injectively. Thus
+
+\[
+0\to P_{j+6}\to P_{j+3}\to I e_j\to0\qquad(j=0,1,2)
+\tag{2.1}
+\]
+
+are complete actual minimal projective resolutions. For j=3,4,5 the same length-three multiplication gives an isomorphism P_(j+3) -> I e_j. No other columns occur. Consequently
+
+\[
+\operatorname{pd}_{\mathrm{LEFT}} I=1.
+\tag{2.2}
+\]
+
+## 3. Exact ordinary tensor defect and its genuine Loewy-three summand
+
+Tensor (2.1), on the left, with the actual RIGHT I. The projective terms give I tensor_A P_i = I e_i. But I e_(j+6)=0 for j=0,1,2. Right exactness therefore gives actual LEFT module isomorphisms
+
+\[
+(I\otimes_A I)e_j\cong I e_{j+3}\cong P_{j+6}
+\quad(j=0,1,2).
+\tag{3.1}
+\]
+
+For j=3,4,5, tensor the actual isomorphism I e_j=P_(j+3); it gives I e_(j+3)=0. Remaining columns are zero already. Thus
+
+\[
+{}_{A}(I\otimes_A I)\cong P_6\oplus P_7\oplus P_8,
+\qquad\operatorname{pd}_{\mathrm{LEFT}}(I\otimes_A I)=0.
+\tag{3.2}
+\]
+
+Nevertheless
+
+\[
+J^2(I\otimes_A I)e_0\cong J^2P_6=L_8\ne0,
+\qquad J^3(I\otimes_A I)=0.
+\tag{3.3}
+\]
+
+An explicit nonzero tensor is the length-five path from3 to8 tensor the length-three path from0 to3. Under the real isomorphism (3.1) it is the last basis vector of P6. Its physical multiplication has total length eight and is zero, while the actual tensor is nonzero. It lies in the image J5 tensor_A J3 -> I tensor_A I.
+
+I2=J6=0 makes actual multiplication I tensor I -> I the zero map. Hence the ordinary exact sequence gives
+
+\[
+\operatorname{Tor}_1^A(A/I,I)\cong I\otimes_A I.
+\]
+
+The separately established Tor_n^A(I,I)=0 for n>=1 is fully consistent with this example. Here it can also be read directly from the actual whole resolution (2.1), since every tensor kernel term I e_(j+6) vanishes. Thus neither this Tor vanishing nor finite LEFT pd of D2 forces its second radical layer to vanish.
+
+## 4. Ordinary global dimension and scope
+
+The actual simple resolutions show
+
+\[
+(\operatorname{pd}L_0,\ldots,\operatorname{pd}L_8)
+=(3,3,2,1,1,1,1,1,0).
+\]
+
+Indeed for i=0,1,2, the FULL first cover kernel of rad P_i is L_(i+6); L6,L7 have pd1 and L8 is projective. For i=3,...,7, rad P_i=P_(i+1). Hence gd A=3.
+
+This example is finite global dimension, not a counterexample to UGA or to the requested J6/pd1 closure. It breaks the specific Loewy-two tensor-defect repair, even with D2 actually PROJECTIVE. C126 cannot be applied directly to D2 here because its full radical kernel has Loewy length two rather than being semisimple. The fact that the bottom simple L8 is projective in this calibration does not prove that every such bottom layer has finite pd in general.
+
+Audit: all path starts and endpoints agree with LEFT columns; all stated kernel bases are full; tensor uses the RIGHT I against the actual LEFT covers; column right idempotents preserve the resulting LEFT module decompositions; nonzero tensors are proved by actual quotient presentations, not by total path length; finite gd is computed separately; physical product zero, ordinary tensor nonzero, Tor vanishing, and radical layer nonzero are kept distinct.

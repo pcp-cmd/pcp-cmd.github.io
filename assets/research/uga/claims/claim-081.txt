@@ -1,0 +1,9 @@
+## UGA-C081 — Ordinary Radical Bridges Preserve the Chosen Infinite-Simple Count
+**Status:** COMPLETE SELF-AUDITED ORDINARY COROLLARIES OF C076/C072/C069 / UNCHANGED ACTUAL CALIBRATIONS REUSED / NOT INDEPENDENTLY VERIFIED  
+**Source:** two-infinite-simple Run, Section 4 and audit.
+
+For an actual radical square-zero K with C=A/K, K left C-projective and actual projective-column graph acyclic of longest path q, each labelled left simple has finite A-pd iff finite C-pd. In the finite cases a=pd_A L_y, c=pd_C L_y satisfy c<=a+2q and a<=c+q. Finite A-pd supplies C076's vanishing on every F-reachable detector carrier, and pd_A C<=q supplies finite-resolution inflation in the other direction. All simple labels are preserved by K contained in rad A. Thus the LEFT infinite-simple set and count are identical across the quotient. For right-projective K the direct right theorem preserves the RIGHT partition and gives the same inequalities.
+
+Consequently eligible left C074/C075 steps terminate by dimension/type decrease, not left-infinite-simple count decrease. C072's eventual same-pair Tor isomorphism preserves both partitions. C069 preserves the side on which its actual ambient K has finite pd, by its ordinary bar retract and finite pd of C. These precise hypotheses are retained. The unchanged connected A12->C7 nonsplit nonperfect acyclic calibration has all three left simples infinite-pd in both algebras. On the opposite chosen side counts can increase: C073's left-projective A_tri->C_tri creates infinite right pd of R1, formerly pd one. No opposite-side label equality, badness preservation for general C076, or nonexistence of other eligible reductions is asserted.
+
+---

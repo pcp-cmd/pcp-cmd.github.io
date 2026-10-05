@@ -1,0 +1,342 @@
+# Type-II 的乘法缺陷：精确序列、二扩张与 Postnikov 比较
+
+2026-09-28。按最新交接从乘法配对开始，续接 [内射维数一分支](Type-II-Leakage-and-Injective-Dimension-One.md)。本稿含完整自审证明及实际 benchmark；没有独立证明接受，也未解决 Universal Gap A。以下右模的 Hom、Ext 明写为 A^op 或 Γ^op，避免把两侧配对换向。
+
+## 1. 固定对象与两个缺陷的精确关系：PROVED
+
+设 A 为有限维 basic 复代数，f 为一组保留顶点之和，Γ=fAf，u 为外部顶点。记
+
+\[
+M=fA,\quad P_u=e_uA,\quad X_u=fAe_u,\quad Y_u=e_uAf,
+\]
+\[
+T_u=Y_u\otimes_\Gamma fA,\qquad
+\mu_u:T_u\longrightarrow P_u,\quad y\otimes a\longmapsto ya,
+\]
+\[
+N_u=\ker\mu_u,\quad I_u=\operatorname{im}\mu_u=e_uAfA,
+\quad C_u=P_u/I_u.
+\tag{1}
+\]
+
+这里 T_u 专指普通诱导模；through-u ideal 另写为 X_uY_u，不用同一记号混淆二者。乘法映射
+
+\[
+\theta_u:X_u\longrightarrow\operatorname{Hom}_{\Gamma^{\rm op}}(Y_u,\Gamma),
+\quad\theta_u(x)(y)=xy
+\tag{2}
+\]
+
+是左 Γ-模映射。右模伴随给
+
+\[
+\operatorname{Hom}_{A^{\rm op}}(P_u,M)=X_u,\qquad
+\operatorname{Hom}_{A^{\rm op}}(T_u,M)
+=\operatorname{Hom}_{\Gamma^{\rm op}}(Y_u,\Gamma).
+\tag{3}
+\]
+
+在 (3) 下，θ_u 恰是沿 μ_u 预合成。
+
+**定理 1。** 不需要任何投射维数假设，就存在自然短正合列
+
+\[
+\boxed{
+0\to\operatorname{Ext}_{A^{\rm op}}^1(C_u,M)
+\to\operatorname{coker}\theta_u
+\to E_u^{\rm ker}\to0,
+}
+\tag{4}
+\]
+
+其中
+
+\[
+E_u^{\rm ker}
+=\operatorname{im}\bigl(\operatorname{Hom}_{A^{\rm op}}(T_u,M)
+\to\operatorname{Hom}_{A^{\rm op}}(N_u,M)\bigr)
+\]
+\[
+=\ker\bigl(\operatorname{Hom}_{A^{\rm op}}(N_u,M)
+\xrightarrow{\delta_u}\operatorname{Ext}_{A^{\rm op}}^2(C_u,M)\bigr).
+\tag{5}
+\]
+
+这些是左 Γ-模的自然序列，并非仅维数分解；一般不声称分裂。
+
+**证明。** 对 0→I_u→P_u→C_u→0 应用 Hom(-,M)。由于 P_u 投射，
+
+\[
+\operatorname{coker}\bigl(\operatorname{Hom}(P_u,M)\to\operatorname{Hom}(I_u,M)\bigr)
+\cong\operatorname{Ext}^1(C_u,M),
+\quad\operatorname{Ext}^1(I_u,M)\cong\operatorname{Ext}^2(C_u,M).
+\]
+
+对 0→N_u→T_u→I_u→0 应用同一函子：
+
+\[
+0\to\operatorname{Hom}(I_u,M)\to\operatorname{Hom}(T_u,M)
+\to\operatorname{Hom}(N_u,M)\to\operatorname{Ext}^1(I_u,M).
+\]
+
+沿中间两个 Hom 空间取商，便得到 (4)、(5)。左 Γ 的作用在 M 上，故各映射 Γ-线性。□
+
+更完整的自然正合列为
+
+\[
+0\to\operatorname{Ext}^1(C_u,M)\to\operatorname{coker}\theta_u
+\to\operatorname{Hom}(N_u,M)\xrightarrow{\delta_u}\operatorname{Ext}^2(C_u,M)
+\to\operatorname{Ext}^1(T_u,M)\to\operatorname{Ext}^1(N_u,M)
+\to\operatorname{Ext}^3(C_u,M).
+\tag{6}
+\]
+
+此处以及下面省略代数下标时，Ext 均指右 A-模范畴。
+
+## 2. 确切的二阶类，以及它不是什么：PROVED / FALSE
+
+拼接 (1) 的两个短正合列得到规范二扩张
+
+\[
+\eta_u=\bigl[0\to N_u\to T_u\xrightarrow{\mu_u}P_u\to C_u\to0\bigr]
+\in\operatorname{Ext}_{A^{\rm op}}^2(C_u,N_u).
+\tag{7}
+\]
+
+对 h:N_u→M，(5) 的连接为
+
+\[
+\delta_u(h)=h_*\eta_u.
+\tag{8}
+\]
+
+所以 kernel defect 是 η_u 的这些推前中为零的泛函。extension defect 则是 (4) 的左端：它来自 I_u→M，拉回到 T_u 后在 N_u 上为零。**把 extension defect 本身当作一个非零 η_u 推前，方向不对。**
+
+此外
+
+\[
+\ker\theta_u\cong\operatorname{Hom}_{A^{\rm op}}(C_u,M).
+\tag{9}
+\]
+
+式 (7) 不依赖 pd C_u≤2；这个上界只限制更高 Ext，不能自动把非零 Ext^1(C_u,M) 升成非零 Ext^2(C_u,M)。第 5 节的十二、三十六维例都否定这种不带额外前提的升阶推断。
+
+## 3. 当前 id≤2 假设的实际作用：PROVED
+
+现假设所有外部左 simple 的内射维数至多 2。等价地，所有外部右 simple 的投射维数至多 2。
+
+**引理 2。** 不仅 C_uf=0，而且 N_uf=0。因此
+
+\[
+\operatorname{pd}_{A^{\rm op}}C_u\le2,\qquad
+\operatorname{pd}_{A^{\rm op}}N_u\le2,\qquad
+\operatorname{pd}_{A^{\rm op}}T_u\le2.
+\tag{10}
+\]
+
+**证明。** 将 μ_u 右乘 f，得到恒等同构
+
+\[
+(Y_u\otimes_\Gamma fA)f
+\cong Y_u\otimes_\Gamma\Gamma\xrightarrow{\sim}Y_u=P_uf.
+\]
+
+取 f 分量是正合函子，故核、余核都被 f 消去。它们的组成因子全是外部右 simple，沿组成列归纳便有 pd C_u,pd N_u≤2。又 0→I_u→P_u→C_u→0 给 pd I_u≤1；最后由 0→N_u→T_u→I_u→0 得 pd T_u≤2。零模的情形不影响这些上界。□
+
+因而 (6) 末项为零，且对 m≥2 有 Ext^m(T_u,M)≅Ext^m(N_u,M)。这没有证明导出诱导 Y_u⊗^L_Γ fA 有界：普通诱导模 T_u 与完整导出复形不可交换。
+
+特别地，非零 N_u 本身不是一个无限右 A-投射维数的返回模。要接回 bar-return 或 derived-necklace，必须保留乘法映射及导出高次层；仅使用 N_u≠0 不够。
+
+## 4. 与原 Postnikov 类的真实比较：PROVED，尚未闭合
+
+定义固定的左 Γ-导出对象
+
+\[
+\mathcal E_u=\mathbf R\operatorname{Hom}_{A^{\rm op}}(C_u,fA),
+\quad E_u^s=H^s(\mathcal E_u).
+\tag{11}
+\]
+
+由 (10)，它的同调仅在 s=0,1,2；其中 E_u^0=ker θ_u，E_u^1 正是 extension defect，E_u^2 是 (5) 的目标。三个同调模之间的导出拼接数据必须保留，不能只取三者的直和。
+
+对保留右 Γ-simple R_i，令
+
+\[
+\mathcal D_i=R_i\otimes_\Gamma^{\mathbf L} fA,
+\quad H_{i,q}=H^{-q}(\mathcal D_i)=\operatorname{Tor}_q^\Gamma(R_i,fA).
+\tag{12}
+\]
+
+有 H_{i,q}=D K_i^q；q>0 时 H_{i,q}f=0。
+
+**定理 3。** 有自然的复形同构（导出范畴意义下）
+
+\[
+\boxed{
+\mathbf R\operatorname{Hom}_{A^{\rm op}}(C_u,\mathcal D_i)
+\simeq R_i\otimes_\Gamma^{\mathbf L}\mathcal E_u.
+}
+\tag{13}
+\]
+
+**证明。** 取长度至多二的有限生成右 A-投射消解 P_•→C_u，以及右 Γ-投射消解 Q_•→R_i。因为每个 P_r 有限生成投射，逐项有
+
+\[
+Q_s\otimes_\Gamma\operatorname{Hom}_{A^{\rm op}}(P_r,fA)
+\cong\operatorname{Hom}_{A^{\rm op}}(P_r,Q_s\otimes_\Gamma fA).
+\]
+
+这些同构与两个微分及总复形符号相容。P 的长度有界，故逐总次数都是有限直和；左右恰计算 (13)。□
+
+于是得到一个只有三列的真实谱序列
+
+\[
+E_2^{p,-q}=\operatorname{Ext}_{A^{\rm op}}^p(C_u,H_{i,q})
+\Longrightarrow H^{p-q}(R_i\otimes_\Gamma^{\mathbf L}\mathcal E_u),
+\quad 0\le p\le2.
+\tag{14}
+\]
+
+有限列过滤保证收敛，即使 q 无上界。对 q>0，由 H_{i,q}f=0 及 C_u=e_u(A/AfA)，
+
+\[
+E_2^{0,-q}=H_{i,q}e_u
+=\operatorname{Tor}_q^\Gamma(R_i,X_u).
+\tag{15}
+\]
+
+此时唯一可能的高页微分为
+
+\[
+d_2^{0,-q}:\operatorname{Hom}_{A^{\rm op}}(C_u,H_{i,q})
+\longrightarrow\operatorname{Ext}_{A^{\rm op}}^2(C_u,H_{i,q+1}).
+\tag{16}
+\]
+
+它就是沿 C_u→H_{i,q} 拉回原类 κ_{q+1} 的对偶
+
+\[
+D\kappa_{q+1}\in
+\operatorname{Ext}_{A^{\rm op}}^2(H_{i,q},H_{i,q+1}),
+\]
+
+至多相差约定的总复形符号。这个识别来自对原 Postnikov 二扩张逐项对偶，再应用 (14) 的双复形连接。
+
+因此，原 κ 塔与 fixed defect complex 确有自然关系，但它使用整个 \(\mathcal E_u\)，并将 probes 换成 C_u。不能把 (16) 直接等同于原先以 L_u 为 source 的 socle 检测：对偶后，后者是以右 simple R_u 为 target 的检测，变量位置不同。
+
+还可从 (13) 右侧得到第二个三行谱序列
+
+\[
+{}'E_2^{-n,s}=\operatorname{Tor}_n^\Gamma(R_i,E_u^s)
+\Longrightarrow H^{s-n}(R_i\otimes_\Gamma^{\mathbf L}\mathcal E_u),
+\quad s=0,1,2.
+\tag{17}
+\]
+
+若 (13) 的右端有界，(14) 便在充分高 q 上产生完美的 d₂ 同构，并有 Ext^1(C_u,H_{i,q})=0。若右端无界，则得到整个固定 defect complex 的持续 Γ-检测。两种情形都尚未自动给出 supported 的普通 A-Ext。
+
+**OPEN BRIDGE。** Branch B 的已知有界性是 Y_v⊗^L_Γ X_u 的有界性，并不是 R_i⊗^L_Γ E_u^1 或 R_i⊗^L_Γ\mathcal E_u 的有界性。当前没有合法替换这几个对象的同构。pd_A C_u≤2 也不表示 E_u^s 具有有限 Γ-投射维数。
+
+## 5. 必须保留的 benchmark
+
+### 5.1 五维有限全局维数代数
+
+取 a:0→1、b:1→0，ab=z，ba=0，其他 radical 乘积为零；f=e_1，u=0。Γ=ℂ[z]/(z²)，X=ℂa、Y=ℂb 都为 Γ-simple。实际计算为
+
+\[
+T=e_1A/\mathbb Cz,\quad
+N=R_0,\quad I=R_1,\quad C=R_0,
+\quad\theta(a)(b)=z.
+\tag{18}
+\]
+
+因此 θ 是同构，ker θ=coker θ=0。右 R_0 的最小消解为 0→e_0A→e_1A→e_0A→R_0→0。对 M=e_1A 应用 Hom 后，三个空间的维数为 1,2,1，首个微分把 a 送到 z，后一个把 e_1 送到 a、把 z 送到零。故
+
+\[
+\operatorname{Ext}^1(C,M)=\operatorname{Ext}^2(C,M)=0,
+\qquad\mathcal E=0.
+\tag{19}
+\]
+
+但是 η∈Ext^2(R_0,R_0) 非零：在该最小消解中，第一次提升到 T 后，第二步把 e_0 送到 a 的非零类 N。原余诱导也满足 K^q=L_0（q≥1），每层 κ 非零，d₂ 永久同构。(14) 的右端恰为零，所以它完全允许这种完美消去。
+
+这里 Tor_n^Γ(Y,X)=ℂ 对所有 n 成立，属于 mixed-linker 分支，且 gldim A=2。f 不是实际无限内射维数核心，后者为空。本例因此杀掉“非零乘法核或完美 κ 塔自动给出 ambient 无限 Ext”，没有反驳带真实核心条件的候选。
+
+### 5.2 十维例的真实核心
+
+使用 [Type-II 稿第 6 节](Type-II-Leakage-and-Injective-Dimension-One.md) 的十维代数，f=e_0、u=2。这里 Y_2=e_2Ae_0=0，故 T_2=N_2=I_2=0，C_2=e_2A 投射，而
+
+\[
+E_2^0=X_2=\mathbb Cy,\qquad E_2^1=E_2^2=0,\qquad\eta_2=0.
+\tag{20}
+\]
+
+原 κ 塔依然非零。因此规范乘法类 η_u 与原 κ_q 不能无条件直接认作同一个类；(13)–(16) 才是有对象、方向和指标的自然比较。本例反向支撑 e_2Ae_0=0，不能作为正确 supported quadrant 的反例。
+
+### 5.3 十二维真实 Type-II 核心
+
+使用 [Type-II 稿第 7 节](Type-II-Leakage-and-Injective-Dimension-One.md) 的 A⁺，f=e_0+e_2、u=1。Y_1=span(i,c)≅e_2Γ 是右 Γ-投射模。μ_1 是左乘 i 给出的 e_2A⁺→e_1A⁺ 单射，故
+
+\[
+N_1=0,\quad C_1=R_1,\quad\operatorname{pd}C_1=1.
+\]
+
+将 Hom_Γop(Y_1,Γ) 识别为 Γe_2 后，θ_1 把 a 送到 y，p、z 送到零。因此
+
+\[
+\ker\theta_1=\operatorname{span}(p,z)\cong\Gamma e_2,
+\quad\operatorname{coker}\theta_1=S_2,
+\]
+\[
+E_1^1=S_2\ne0,\qquad E_1^2=0,\qquad\eta_1=0.
+\tag{21}
+\]
+
+它满足 Branch B（唯一 Y_1 投射）、固定 supported leakage 及 θ 不满，且缺陷完全是 extension defect。**非零 extension defect 不强迫非零的上述二阶类。** 此处外部 simple 的 id 为 1；持续 supported 普通 Ext 已由前一稿证明，不能把它伪装成 id=2 未闭合分支的反例。
+
+### 5.4 将这个升阶反例放到真正 id=2 的外部顶点
+
+为检验“id L_u=2 本身是否足以修复升阶推断”，令 B=ℂ(0→1)，并取 A'=A⁺⊗B，维数 36，f'=f⊗1，u'=(1,1)，i'=(2,1)。张量最小消解给 id_{A'}L_{u'}=1+1=2，全部外部 simple 的 id≤2，实际无限内射维数核心恰为 {(0,t),(2,t):t=0,1}。
+
+其规范对象为
+
+\[
+C_{u'}=R_1\otimes e_1B,\quad N_{u'}=0,
+\quad E_{u'}^1=S_2\otimes Be_1\ne0,
+\quad E_{u'}^2=0,\quad\eta_{u'}=0.
+\tag{22}
+\]
+
+因为 e_1B 是右 B-投射，pd C_{u'}=1，尽管对应右 simple 的 pd 为 2。这里全部 Y_v 都是右 Γ'-投射，故 Branch B 成立。X_{u'}=X_1⊗Be_1；用 R_{i'}=R_2⊗R_1^B 检测得到与十二维例相同的持续 Tor，因为 R_1^B⊗_B Be_1=ℂ。支撑 e_{u'}A'e_{i'} 非零。
+
+这些张量断言可直接将 A⁺ 的实际最小消解与 B 的长度一最小消解张量证明；radical 微分仍然最小，有限维向量空间 Künneth 只含所述非零项。本例没有完美消去其普通 supported Ext，也不满足假想 Gap-A failure；它只严格否定“真实核心 + 外部 id=2 + Branch B + 非零 extension defect 足以强迫非零 E^2 或 η”的额外推断。
+
+## 6. 实际尝试的有限状态接口
+
+对每个外部 u，固定 C_u 的一个长度至多二的最小右 A-投射消解。其零项为 e_uA；记后两项中 e_vA 的重数为 m^1_{uv}、m^2_{uv}。将 X_v=fAe_v 暂扩展到全部顶点，则 (11) 具有有限项表示
+
+\[
+\mathcal E_u\simeq
+\left[X_u\xrightarrow{d_u^0}
+\bigoplus_vX_v^{m^1_{uv}}
+\xrightarrow{d_u^1}\bigoplus_vX_v^{m^2_{uv}}\right].
+\tag{23}
+\]
+
+微分来自实际投射消解的 Hom 对偶，不是任选 relation label。最小消解的坐标可以不同，但其导出对象与 (13) 的比较不变。保留 v 的 X_v=Γe_v 是投射，故在对 (23) 作 Tor 的“先逐项取同调”谱序列中，正 Tor 次数只留下有限组外部 X_v 的 Tor 及实际诱导映射。
+
+这是一个可保存的有限输入接口：有限组模块 X_v、有限组微分矩阵，以及三个复形位置。它尚不是闭合的有限状态 recurrence。原因具体在于：逐项谱序列还要保留 Tor_q(R_i,d_u^r) 的实际核、像与次级连接；这些随 q 变化的数据尚未被识别为有限组固定状态。下一次取 cone 或核后，也没有证明所得对象重新等于某个已有 X_v 或 \(\mathcal E_v\)。
+
+不能把保留顶点的投射项直接从 (23) 的复形中删除：虽然它们的正 Tor 为零，穿过这些项的微分仍可能参与后续连接。五维例正说明有界宽度允许永久 d₂ 消去。因此本轮对有限状态方案的结论是：已构造实际固定输入和两套比较谱序列，缺少对导出后的状态转移的封闭性/严格下降证明。
+
+## 7. 可以继续使用的关系与不能声称的 recurrence
+
+**PROVED。** 精确缺陷序列 (4)–(6)、规范 η_u、N_u 与 C_u 的有限 pd，以及比较 (13)–(17)。这些对象均来自固定模和规范映射，没有依赖任意 seam 选择。
+
+**FALSE / KILLED。** 非零 E_u^1 自动升成非零 E_u^2 或 η_u；η_u 与每个原 κ_q 直接相等；非零 N_u 或永久完美 d₂ 自动产生 ambient 无限 Ext。各自失败范围及 benchmark 已在第 5 节限定。
+
+**CANDIDATE / OPEN BRIDGE。** 在真正的 core-supported id=2 且普通 supported Ext 全部最终消失的额外条件下，能否用 (13) 的两个谱序列把原 socle-probe 的完美消去约束到 \(\mathcal E_u\)，继而产生 mixed linker、supported ordinary Ext、顶点吸收或严格下降。这一步仍未证明。
+
+固定的有限个 C_u、N_u、\(\mathcal E_u\) 不意味着它们的任意 Γ-syzygy、cones 或 Postnikov extension 数据只有有限状态。本轮没有把这种有限状态性当作结论。需要另证实际状态集合对所构造的转移封闭，以及每一步的检测或严格下降；有限顶点数、pd≤2 及有限 Loewy 长度均不能替代该证明。
+
+五、十、十二维的精确计算见 [乘法缺陷审计](../work/multiplication_defect_audit.json) 与 [代码](../work/audit_multiplication_defects.py)。三十六维例由明确张量证明覆盖，不声称程序已枚举。一般论证为完整自审证明；前一稿的独立审读不扩展到本稿。

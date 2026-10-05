@@ -1,0 +1,35 @@
+# Exact task — arbitrary-source finite-pd envelopes and ordinary return
+
+Continue T28. Kill a class of its expanding infinite-head failures with
+ACTUAL ordinary Ext generation. For every label t in a finite set T,
+an ACTUAL finite-pd H_t must fit 0->sum_T L_s copies->H_t->L_t copies->0
+with nonzero quotient multiplicity. Prove all-target high Ext is generated
+by actual ordinary degree-one connecting Yoneda classes. Reuse the
+project's nilpotence theorem, giving pd L_t<=h+|T|(M+1)-1 if all
+T diagonals vanish above M; an infinite T pd forces a fixed supported
+ordinary diagonal. Actual finite-pd subkernel quotient repair keeps exact
+sequences and does not require splitting or differential image pruning.
+
+Global corollary: finite LEFT pd of J^2 gives finite-pd actual modules
+Ae_t/J^2e_t and closes Universal Gap A for that class, with bound
+gd<=r+N(M+1). Direct RIGHT theorem, no opposite-infinite-plus transfer.
+Do not assume finite-pd J^2 or envelope availability under general badness.
+Strengthen to finite-pd J^2e_t only at infinite-LEFT labels, using the
+ACTUAL finite-factor preimage in Je_t and its true quotient/exact sequence.
+ALL-label finite-pd J^2 also yields actual Yoneda generation in degrees
+at most max(1,r+1); no universal finite-generation claim.
+
+Check connected26-dimensional nonsplit first syzygy: a common finite
+projective kernel is coupled by m1 a0=m0, so Omega Lq0 has head ONLY q1
+and cannot split as P_u+Lq1. Actual image envelopes H0,H1 have pd1
+and simple radicals in {q0,q1}; both f simples pd2. Exact kernels prove
+Omega^2 Lq0=Lq0. General arbitrary-p14p family is a separately written
+literal-kernel proof, not executed large tables.
+
+Check actual nonzero J^2 LEFT projective in the hereditary three-chain.
+Check frozen N7 J^2P_v=L_v, whose infinity/off-diagonal return are the
+frozen all-degree proof. This excludes dropping the semisimple-kernel/
+finite-pd-repair condition; ordinary diagonal return is not universal.
+Preserve initial matrix-shape check failure/correction. Complete same-author
+proof/self-audit plus bounded calibration, NOT independently verified.
+Full Universal Gap A remains OPEN.

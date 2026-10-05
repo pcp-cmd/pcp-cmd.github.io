@@ -1,0 +1,485 @@
+# 返回乘法核产生全偶数 Tor 与自由 Yoneda 子代数
+
+状态：**STATUS B，自审证明稿**。本稿给出任意有限顶点数的充分定理，结论包括固定 simple 的全部正偶数 self-Tor、维数下界，以及自由 Yoneda 子代数。尚未经过独立数学核验，也未确认文献新颖性。Universal Gap A 和五顶点中心残余情形仍未证明。
+
+本稿接续 [Quantitative-Peirce-Recurrence.md](Quantitative-Peirce-Recurrence.md) 第 8 节。此前用逐箭头的零乘积构造 bar cycles；这里允许若干返回路径通过线性关系相消，并把所需条件写成实际乘法表上的有限秩条件。
+
+## 1. 约定与可计算的返回核
+
+设 \(A\) 是有限维 basic \(\mathbb C\)-代数，
+\[
+1=\sum_{v\in Q_0}e_v,\qquad E=\bigoplus_v\mathbb C e_v,\qquad
+J=\operatorname{rad}A,\qquad A=E\oplus J.
+\]
+沿用左右 simple
+\[
+L_v=Ae_v/Je_v,\qquad R_v=e_vA/e_vJ.
+\]
+固定一个基点 \(h\)。对每个 \(v\ne h\)，令
+\[
+N_v=e_hAe_v=e_hJe_v,\qquad M_v=e_vAe_h=e_vJe_h,
+\]
+\[
+N_v^{(2)}=e_hJ^2e_v,\qquad M_v^{(2)}=e_vJ^2e_h.
+\]
+特别注意：上标 \(^{(2)}\) 使用整个 \(A\) 的 \(J^2\)，不是局部 corner 的 radical 平方。
+
+考虑实际乘法
+\[
+\mu_v:N_v\otimes_{\mathbb C}M_v\longrightarrow e_hAe_h,
+\qquad x\otimes y\longmapsto xy.
+\]
+记
+\[
+I_v=N_vM_v,\qquad
+W_v=N_v^{(2)}M_v+N_vM_v^{(2)}\subseteq I_v.
+\tag{1}
+\]
+所有乘积均指线性张成的子空间。于是乘法诱导满射
+\[
+\bar\mu_v:
+\bar N_v\otimes\bar M_v\twoheadrightarrow I_v/W_v,
+\qquad
+\bar N_v=N_v/N_v^{(2)},\quad
+\bar M_v=M_v/M_v^{(2)}.
+\tag{2}
+\]
+定义
+\[
+K_v=\ker\bar\mu_v,\qquad
+\kappa_v=\dim K_v.
+\]
+若 \(\alpha_v=\dim\bar N_v,\ \beta_v=\dim\bar M_v\)，则
+\[
+\boxed{\kappa_v=\alpha_v\beta_v-\dim(I_v/W_v).}
+\tag{3}
+\]
+
+这个数测量的是：实际乘法关系中，有多少线性独立的部分仍能投影到“两个真正箭头的张量”。它不只计算乘积为零的单个箭头对。
+
+不能把 (2) 的目标换成 \(e_hJ^2e_h/e_hJ^3e_h\)。后一种替换可能把经其他顶点产生的高阶乘积错当成同一个返回分支内可修正的严格关系。第 7 节给出一个 11 维校准例。
+
+## 2. 从商空间关系提升到严格 bar cycle
+
+**引理 1。** 设
+\[
+p_v:N_v\otimes M_v\longrightarrow \bar N_v\otimes\bar M_v
+\]
+为自然投影，则
+\[
+p_v(\ker\mu_v)=K_v.
+\tag{4}
+\]
+因此可以选取线性截面
+\[
+\sigma_v:K_v\longrightarrow\ker\mu_v,\qquad
+p_v\sigma_v=\operatorname{id}_{K_v}.
+\tag{5}
+\]
+
+**证明。** 记
+\[
+F_v=N_v^{(2)}\otimes M_v+N_v\otimes M_v^{(2)}
+=\ker p_v.
+\]
+由定义，\(\mu_v(F_v)=W_v\)。若 \(t\in\ker\mu_v\)，其投影显然属于 \(K_v\)。
+
+反过来，给定 \(u\in K_v\)，取 \(t\) 使 \(p_v(t)=u\)。条件 \(\bar\mu_v(u)=0\) 表示 \(\mu_v(t)\in W_v\)，所以存在 \(f\in F_v\) 满足 \(\mu_v(f)=\mu_v(t)\)。于是 \(t-f\in\ker\mu_v\)，且 \(p_v(t-f)=u\)。这证明 (4)；有限维向量空间的满射可选线性截面，得到 (5)。\(\square\)
+
+这里的修正 \(f\) 可以含有 \(J^2\) 因子，但最后的乘积等式是 \(A\) 中严格的零等式。后面的拼接不会忽略这些修正项。
+
+## 3. 返回核定理：所有正偶数次数
+
+在集合
+\[
+B_h=\{v\ne h:\kappa_v>0\}
+\]
+上定义一个有限有向图 \(D_h\)。允许自环，并规定
+\[
+v\longrightarrow w
+\quad\Longleftrightarrow\quad
+M_vN_w=e_vAe_hAe_w=0.
+\tag{6}
+\]
+这是一个真实乘法条件。更强而容易检查的条件 \(e_vAe_w=0\) 也足以给出此边。
+
+对 \(r\ge1\)，定义
+\[
+b_r=
+\sum_{\substack{v_1,\ldots,v_r\in B_h\\
+v_t\to v_{t+1}\ (1\le t<r)}}
+\prod_{t=1}^r\kappa_{v_t}.
+\tag{7}
+\]
+当没有这样的序列时，和为零。长度一的序列不要求边。
+
+**定理 2。** 对每个 \(r\ge1\)，
+\[
+\boxed{\dim_{\mathbb C}\operatorname{Tor}_{2r}^A(R_h,L_h)\ge b_r.}
+\tag{8}
+\]
+特别地，如果 \(D_h\) 含有一个有向圈，包括自环，那么
+\[
+\boxed{\operatorname{Tor}_{2r}^A(R_h,L_h)\ne0\quad\text{对所有 }r\ge1.}
+\tag{9}
+\]
+故 \(L_h\) 的 projective dimension 和 injective dimension 都无限，且 \(A\) 满足 infinite \(+\)，其中固定的 \(+\)-pair 就是 \((h,h)\)。
+
+**证明。**
+
+**第一步：使用整个 \(A\) 的 bar complex。** 标准 normalized \(E\)-relative bar resolution 在左右张量 simple 后给出
+\[
+C_n(h,h)=e_hJ^{\otimes_E n}e_h,
+\]
+计算 \(\operatorname{Tor}_n^A(R_h,L_h)\)。两端的 radical action 为零，故微分只有内部合并项：
+\[
+d(x_1\otimes\cdots\otimes x_n)
+=\sum_{t=1}^{n-1}(-1)^t
+x_1\otimes\cdots\otimes x_tx_{t+1}\otimes\cdots\otimes x_n.
+\tag{10}
+\]
+由于 \(E\) 半单，relative bar 中的 projective 项在这里确实给出通常的 Tor。整个论证没有把 corner 的 Tor 当成 \(A\) 的 Tor。
+
+**第二步：逐项检查 cycles。** 给定 (7) 中的一个序列，以及 \(u_t\in K_{v_t}\)，在 \(C_{2r}(h,h)\) 中取
+\[
+z(u_1,\ldots,u_r)
+=\sigma_{v_1}(u_1)\otimes_E\cdots\otimes_E\sigma_{v_r}(u_r).
+\tag{11}
+\]
+每个 \(\sigma_{v_t}(u_t)\) 都是一个长度二张量的线性组合。
+
+微分 (10) 中，在同一长度二块内的合并由 \(\mu_{v_t}\sigma_{v_t}=0\) 消失。在相邻两块的接缝处，合并的两个因子属于
+\[
+M_{v_t}\otimes N_{v_{t+1}},
+\]
+其乘积由 (6) 消失。因此 \(dz=0\)，包含高阶修正因子的项也被这同一个乘法条件覆盖。
+
+这里不要求最后一块与第一块之间有边：Tor 的 bar differential 没有首尾合并项。每个块本身已经从基点 \(h\) 返回 \(h\)。
+
+**第三步：排除所有 boundaries。** 投影
+\[
+p_n:C_n(h,h)\longrightarrow
+e_h(J/J^2)^{\otimes_E n}e_h
+\tag{12}
+\]
+消灭每一个 bar boundary。原因是 (10) 的每一项都至少有一个属于 \(J^2\) 的合并因子。
+
+由 (5)，(11) 的投影恰为
+\[
+u_1\otimes_E\cdots\otimes_Eu_r.
+\]
+固定一个顶点序列时，取各 \(K_{v_t}\) 的基，就得到 \(\prod_t\kappa_{v_t}\) 个线性独立的投影。不同顶点序列对应不同的内部 idempotent 序列，也处于直和的不同分量中。因此把所有这些 cycles 合在一起，其投影仍线性独立。
+
+若其非零线性组合是 boundary，应用 (12) 就会得到独立投影的非零线性组合等于零，矛盾。这证明 (8)。
+
+**第四步：无穷次数。** 若 \(D_h\) 有圈，就能沿圈反复前进，取任意长度 \(r\) 的顶点序列。因此每个 \(b_r>0\)，得到 (9)。此时同一个 diagonal Tor 对在无穷多个次数非零，而 \(e_hAe_h\ne0\)，所以是 \(+\)-pair。有限维对偶给出
+\[
+\operatorname{Ext}_A^n(L_h,L_h)
+\simeq \operatorname{Tor}_n^A(R_h,L_h)^*,
+\]
+因而 \(L_h\) 的 pd 和 id 都不可能有限。\(\square\)
+
+若 \(Z_{vw}\) 是图 \(D_h\) 的邻接矩阵，令
+\[
+T_{vw}=Z_{vw}\kappa_w,\qquad
+\boldsymbol\kappa=(\kappa_v)_{v\in B_h},
+\]
+则 (7) 也可以有限矩阵方式计算：
+\[
+b_r=\boldsymbol\kappa^{\,t}T^{r-1}\mathbf1.
+\tag{13}
+\]
+公式是对所有 \(r\) 的定理；程序打印前几个数只是其有限证书展示。
+
+## 4. 更强结论：自由 Yoneda 子代数
+
+**定理 3。** 若 \(v_1\to\cdots\to v_m\to v_1\) 是 \(D_h\) 中的有向圈，设
+\[
+g=\prod_{t=1}^m\kappa_{v_t}>0.
+\]
+则存在分次代数单射
+\[
+\boxed{
+\mathbb C\langle X_1,\ldots,X_g\rangle
+\hookrightarrow\operatorname{Ext}_A^*(L_h,L_h),
+\qquad |X_a|=2m.
+}
+\tag{14}
+\]
+当 \(g=1\) 时，左侧就是一个次数为 \(2m\) 的多项式代数。对于 \(g\ge2\)，这给出指数增长的 self-Ext 子代数。
+
+**证明。** 固定各 \(K_v\) 的基 \(u_{v,a}\)。在
+\(\bar N_v\otimes\bar M_v\) 上选取线性泛函 \(\lambda_{v,a}\)，使
+\[
+\lambda_{v,a}(u_{v,b})=\delta_{ab}.
+\]
+把它们延伸为在其他中间顶点分量上为零的 top-bar 泛函，再沿 (12) 拉回，得到次数二 cochains \(f_{v,a}\)。
+
+所有这些 cochains 都是 cocycles：其 coboundary 是与 (10) 复合，而每个合并项都在至少一个位置属于 \(J^2\)，所以被泛函消灭。同时
+\[
+f_{v,a}(\sigma_w(u_{w,b}))=
+\begin{cases}
+\delta_{ab},&v=w,\\
+0,&v\ne w.
+\end{cases}
+\tag{15}
+\]
+
+bar diagonal 给出 Yoneda 乘积。在我们使用的偶数次数中，它在固定分块上的公式是
+\[
+(fg)(x_1\otimes\cdots\otimes x_{p+q})
+=f(x_1\otimes\cdots\otimes x_p)\,
+g(x_{p+1}\otimes\cdots\otimes x_{p+q}),
+\tag{16}
+\]
+其中当切分处不是 \(h\) 时，将相关 simple cochain 的值定义为零。这里所有生成 cochains 的次数均为二，没有奇次数符号影响。relative bar 乘积与 Yoneda composition 的标准识别，可核对 [The dg Leavitt algebra, singular Yoneda category and singularity category，§7.1 的式 (7.1)、命题 7.3 及注 7.4(2)](https://arxiv.org/pdf/2109.11278)。
+
+对每个多指标 \(\mathbf a=(a_1,\ldots,a_m)\)，定义
+\[
+x_{\mathbf a}
+=[f_{v_1,a_1}\cdots f_{v_m,a_m}]
+\in\operatorname{Ext}_A^{2m}(L_h,L_h).
+\]
+这样的元素有 \(g\) 个。任意 \(q\) 个这些生成元组成的 word，与相同标签的 (11) 型 cycle 配对，按 (15)–(16) 得到 1；与任何不同标签的同长度 word 配对得到 0。闭圈条件保证每两次绕圈之间的接缝乘积也为零。
+
+因此所有长度 \(q\) 的生成元 words 在 self-Ext 中线性独立，且这个论证对每个 \(q\ge1\) 都成立。不同长度属于不同 cohomological degrees，次数零单位也非零，故不存在任何非零自由代数关系。这证明 (14)。\(\square\)
+
+这一步断言的是 Yoneda algebra 的实际乘法性质，强于仅由 Tor 维数无限推出的结论。其证明额外使用了 (16) 的标准乘积识别，而不是把 Tor 上不存在的一般乘法偷偷引入。
+
+## 5. 两个互相正交的分支
+
+**推论 4。** 若有不同顶点 \(h,i,k\) 满足
+\[
+e_iAe_k=e_kAe_i=0,\qquad \kappa_i>0,\quad\kappa_k>0,
+\tag{17}
+\]
+则同一个 \((h,h)\) 在所有正偶数次数都是非零 Tor 对。令 \(P=\kappa_i\kappa_k\)，还得到
+\[
+\dim\operatorname{Tor}_{4q}^A(R_h,L_h)\ge2P^q
+\qquad(q\ge1),
+\tag{18}
+\]
+\[
+\dim\operatorname{Tor}_{4q+2}^A(R_h,L_h)
+\ge(\kappa_i+\kappa_k)P^q
+\qquad(q\ge0),
+\tag{19}
+\]
+以及一个有 \(P\) 个次数四生成元的自由 Yoneda 子代数。
+
+**证明。** (17) 给出 \(i\to k\to i\)。分别从 \(i\) 或 \(k\) 开始交替，长度 \(2q\) 的两类序列各贡献 \(P^q\)，长度 \(2q+1\) 的两类分别贡献 \(\kappa_iP^q\) 和 \(\kappa_kP^q\)。应用定理 2–3。\(\square\)
+
+这个推论严格放宽了前稿“两个中心返回乘积全部为零”的充分条件：若 \(I_i=I_k=0\) 且两边各有真正箭头，则 \(W_i=W_k=0\) 且 \(\kappa_i=\alpha_i\beta_i>0,\ \kappa_k=\alpha_k\beta_k>0\)。这里即使两个 \(I\) 都非零，乃至没有任何非零单个箭头对乘积为零，仍有可能满足 (17)。
+
+## 6. 五顶点中心模式得到的必要条件
+
+继续使用前稿的残余模式
+\[
+C_{\rm cols}=[31,11,21,13,19],\qquad
+H_{\rm cols}=[0,12,18,20,10],
+\]
+外围后继为
+\[
+s:\ 1\mapsto3\mapsto2\mapsto4\mapsto1,
+\]
+并取基点 \(h=0\)。旧稿已经证明各 \(\alpha_i,\beta_i\ge1\)，且 \(H_{00}=0\)。
+
+由 (17)，任何实现该 \(C,H\) 的代数必须满足
+\[
+\boxed{\kappa_1\kappa_2=0,\qquad
+\kappa_3\kappa_4=0.}
+\tag{20}
+\]
+因此对于两对相反外围顶点 \(\{1,2\}\)、\(\{3,4\}\)，每一对至少有一个顶点 \(i\) 满足满秩等式
+\[
+\boxed{
+\dim(I_i/W_i)=\alpha_i\beta_i,\qquad
+\bar\mu_i\text{ 是向量空间同构}.
+}
+\tag{21}
+\]
+这比旧稿的 \(I_1+I_2\ne0,\ I_3+I_4\ne0\) 更强：要求该分支的全部原始二步返回张量，在模掉含高阶因子的返回乘积后仍保持线性独立。
+
+设 \(\Gamma_0=e_0Ae_0\)。因为 \(I_i/W_i\) 的维数至多 \(\dim\Gamma_0-1\)，还得到数值约束
+\[
+\dim\Gamma_0\ge
+1+\max\!\left\{
+\min(\alpha_1\beta_1,\alpha_2\beta_2),\
+\min(\alpha_3\beta_3,\alpha_4\beta_4)
+\right\}.
+\tag{22}
+\]
+没有把不同分支的 \(I_i/W_i\) 维数相加；它们的中心像可能相交。
+
+此外，由定理 2，整个零接缝图 \(D_0\) 必须无圈。故 \(\kappa_i>0\) 的外围顶点至多两个，若有两个则必须在外围四圈上相邻。若它们是 \(i,s(i)\)，还必须有
+\[
+e_{s(i)}Ae_0Ae_i\ne0:
+\tag{23}
+\]
+否则这两个方向的接缝都为零，又会产生一个二圈。由 Peirce 支撑，反向接缝本来就为零。
+
+一般地，只要 \(\operatorname{Ext}_A^n(L_h,L_h)\) 最终为零，\(D_h\) 就必须是有向无圈图。这只是必要条件；本稿没有证明其逆命题。
+
+**仍未闭合之处。** (20)–(23) 尚未与其他必要条件形成矛盾。尤其所有 \(\kappa_i=0\) 的情形不会被本定理排除。跨不同返回分支的混合关系，以及投影到全部箭头张量后为零的高阶关系，也可能承载新的 Tor 信息；本稿没有把它们当作已经解决。
+
+## 7. 五个有限维校准例
+
+### 7.1 一个没有 2-truncated arrow cycle 的 47 维例子
+
+取三个顶点 \(0,1,2\)。对 \(v=1,2\)，各取三条箭头
+\[
+a_{v,t}:0\to v,\qquad b_{v,t}:v\to0,\qquad 1\le t\le3.
+\]
+两箭头乘积的非零值规定如下：
+\[
+b_{v,1}a_{v,1}=z_v,\quad
+b_{v,2}a_{v,2}=-2z_v,\quad
+b_{v,3}a_{v,3}=z_v,
+\]
+\[
+b_{v,r}a_{v,s}=c_{v,rs}\quad(r\ne s),\qquad
+a_{v,r}b_{v,s}=d_{v,rs}\quad(1\le r,s\le3).
+\]
+所有 \(a_{v,r}b_{w,s}\) 在 \(v\ne w\) 时为零。所有包含 \(z,c,d\) 的 radical 乘积为零，其他未列出的 radical 乘积也为零。
+
+这些 idempotents、12 个箭头、2 个 \(z\)、12 个 \(c\) 和 18 个 \(d\) 为一组基。因此
+\[
+\dim A=3+12+2+12+18=47,\qquad
+\dim J=44,\quad\dim J^2=32,\quad J^3=0.
+\]
+Peirce-compatible 的 radical 乘法三重积全部为零，故结合律成立。
+
+对每个分支 \(v\)，有
+\[
+\alpha_v=\beta_v=3,\quad W_v=0,\quad \dim I_v=7,\quad\kappa_v=2.
+\]
+具体的两个返回关系张量可以取
+\[
+u_{v,1}=2b_{v,1}\otimes a_{v,1}
++b_{v,2}\otimes a_{v,2},
+\]
+\[
+u_{v,2}=-b_{v,1}\otimes a_{v,1}
++b_{v,3}\otimes a_{v,3}.
+\tag{24}
+\]
+两分支互相正交。由 (7) 每个长度 \(r\) 有两种交替分支序列，每块有两个独立选择，所以
+\[
+\boxed{\dim\operatorname{Tor}_{2r}^A(R_0,L_0)\ge2^{r+1}
+\quad(r\ge1).}
+\tag{25}
+\]
+其 Yoneda self-Ext 包含四个次数四生成元的自由结合代数。
+
+另一方面，对每个分支的中心乘法，其核在 \(3\times3\) 矩阵中是
+\[
+\{\operatorname{diag}(t_1,t_2,t_3):t_1-2t_2+t_3=0\}.
+\]
+非零 rank-one diagonal matrix 只能有一个非零对角坐标，而上述等式的三个系数全非零，因此此核不含非零 rank-one tensor。也就是说，任意非零
+\[
+b\in e_0Je_v,\quad a\in e_vJe_0
+\]
+都有 \(ba\ne0\)。外围的同分支乘法还直接注入九维 \(d_{v,rs}\) 空间。
+
+该代数的全部真正箭头都是这些 \(a,b\)，因为 \(J^2\) 只有对角分量。任何闭合箭头走向都必须出现一个在中心返回的相邻箭头对，其乘积非零。因此即使在各平行箭头空间内任意换基，也不存在 2-truncated arrow cycle；改变箭头 lift 也没有额外自由，因为这些非对角 \(J^2\) 分量为零。
+
+经典 2-truncated 判据使用循环相邻箭头乘积逐项为零，可比较 [Han 的原始论述](https://arxiv.org/abs/1004.0748)。本例展示了 (24) 的关系张量相消机制确实超出逐箭头零乘积检测。它不是 Han 反例，也不是未曾覆盖的三顶点 Gap A 情形；这里增加的是显式增长与 Yoneda 乘法结论。
+
+### 7.2 原归档的五维有限全局维数例子
+
+以 \(0=h,\ 1=a\) 编号，取 \(a:0\to1,\ b:1\to0\)，唯一非零 radical 乘积为
+\[
+ab=z\in e_1Ae_1,\qquad ba=0.
+\]
+这正是原 verified fact [1b2bda16c85d0e04](../work/source/han-conjecture/fact_graph/facts/1b2bda16c85d0e04.md) 的重新编号，其 \(\operatorname{gldim}=2\)。
+
+在基点 0 有 \(\kappa_1=1\)，但接缝乘积
+\[
+M_1N_1=\mathbb C ab\ne0.
+\]
+因此 \(D_0\) 的唯一顶点没有自环。判据只产生一个次数二 cycle，不能无限拼接，不会误报 infinite \(+\)。
+
+### 7.3 八维例子：高阶修正可以严格消去乘积
+
+取顶点 \(0,1\)；radical 基为
+\[
+a\in e_1Ae_0,\quad b,p\in e_0Ae_1,\quad
+c\in e_1Ae_1,\quad q\in e_1Ae_0,\quad z\in e_0Ae_0.
+\]
+非零 radical 乘积为
+\[
+ba=z,\quad bc=p,\quad ca=q,\quad pa=z,\quad bq=z.
+\]
+于是 \(J^2=\langle p,q,z\rangle,\ J^3=\langle z\rangle,\ J^4=0\)。
+这里 \(\alpha_1=\beta_1=1,\ I_1=W_1=\mathbb C z\)，所以 \(\kappa_1=1\)。
+虽然 \(ba\ne0\)，却有严格关系
+\[
+-b\otimes a+b\otimes q\in\ker\mu_1
+\]
+投影为非零箭头张量。所有 \(M_1N_1\) 乘积为零，故自环条件成立。这个例子校准 (4) 的高阶修正步骤。
+
+### 7.4 十一维例子：模 \(J^3\) 为零并不够
+
+取顶点 \(0,1,2\)；radical 基为
+\[
+a_1:0\to1,\ b_1:1\to0,\ a_2:0\to2,\ b_2:2\to0,
+\]
+以及 \(c_2\in e_2Ae_2,\ p\in e_0Ae_2,\ q\in e_2Ae_0,\ z\in e_0Ae_0\)。
+非零 radical 乘积为
+\[
+b_1a_1=z,\quad b_2c_2=p,\quad c_2a_2=q,\quad pa_2=z,\quad b_2q=z.
+\]
+同样有 \(J^2=\langle p,q,z\rangle,\ J^3=\langle z\rangle,\ J^4=0\)。
+
+第 1 分支满足
+\[
+N_1=\mathbb Cb_1,\quad M_1=\mathbb Ca_1,\quad
+N_1^{(2)}=M_1^{(2)}=0,\quad I_1=\mathbb Cz,\quad W_1=0.
+\]
+所以 \(\kappa_1=0\)，这个分支没有任何可供使用的严格返回核。尽管 \(b_1a_1\) 在 \(J^2/J^3\) 中为零，也不能把它当成第 1 分支的严格零关系。第 2 分支的高阶乘积并不能在保持第 1 分支内部顶点的同时修正它。
+
+本例第 2 分支另外满足 \(\kappa_2=1\) 和自环条件；它用于校准上述分支区分，不是整体 Tor 消失的例子。
+
+### 7.5 六维例子：没有证书不表示有限全局维数
+
+取双向二圈并模掉所有长度三路径，得到六维代数。以基点 0 看，唯一分支的中心返回乘积非零，且 \(W_1=0,\ \alpha_1=\beta_1=1\)，所以 \(\kappa_1=0\)。
+
+但其长度三的 indecomposable projectives 给出
+\[
+\Omega^2(L_0)\simeq L_1,\qquad
+\Omega^2(L_1)\simeq L_0,
+\]
+因此全局维数无限。新判据在这里返回“未决定”。这也说明本稿不能替代对所有高阶关系的研究。
+
+## 8. 有限证书与核验边界
+
+[return_kernel_certificate.py](return_kernel_certificate.py) 只依赖 Python 标准库和精确有理数运算。输入给出 primitive idempotent 的数量、具有左右 Peirce 标记的 radical 基，以及稀疏 radical 乘法表；未列出的乘积为零，idempotent action 由标记确定。
+
+程序首先检查 Peirce compatibility、结合律和所声明 radical 的幂零性。因此通过检查时，确实得到一个 split basic 有理代数，延标量到 \(\mathbb C\) 后秩不变。随后用两条有限线性代数路径交叉检查 (3)–(4)：一条计算乘法核的 top 投影，另一条计算 \(I_v,W_v\) 的秩。
+
+运行五个内置例子：
+
+~~~powershell
+python outputs/return_kernel_certificate.py --demo --output outputs/return-kernel-certificates.json --write-demo-inputs outputs/return-kernel-demo-algebras.json
+~~~
+
+结果见 [返回核证书](return-kernel-certificates.json) 和 [五个实际乘法表](return-kernel-demo-algebras.json)。输入文件模式每次接收一个代数；示例集合 JSON 按例名保存了五个这样的输入对象。
+
+单独审计脚本 [audit_return_kernel.py](../work/audit_return_kernel.py) 的结果保存在 [return_kernel_audit.json](../work/return_kernel_audit.json)。本轮实际检查了：
+
+- 五个结合代数的 radical 各次幂、返回核维数及应有的证书状态。
+- 69 个显式 bar cycles 的严格微分为零，以及各次 top 投影线性独立性。
+- 47 维例子的自由 words，在 word length 为 1、2、3 时分别得到大小为 4、16、64 的恒等配对矩阵。
+- 全部 512 个含可选自环的三顶点有向图：找圈结果与独立的传递闭包检查一致。
+- 三种无效输入被拒绝：破坏结合律、违反 Peirce 标记、把非幂零理想声明为 radical。
+
+这些检查审计的是有限乘法和证书实现。定理的“每个 \(r\)”及自由代数单射来自第 3–4 节对任意长度的证明，不能由上述有限次数检查替代。
+
+本稿最需要独立审阅的环节是：(4) 的分支内严格提升、包含修正项的接缝零乘积、(12) 对全部 boundaries 的消灭，以及 (16) 与实际 Yoneda 乘积的识别。原 verified fact graph 保持原样；本稿没有登记为 verifier-approved fact。
+
+## 9. 本轮推进范围
+
+本轮得到的是：在可由有限乘法表判断的条件下，明确构造固定 diagonal Tor 对的全部正偶数次数，并控制其增长和 Yoneda 乘法。这加强了同一适用类中仅断言存在 infinite \(+\) 的结论。
+
+它不构成 Universal Gap A 的证明，也没有给出普通 Hochschild homology 的无限存活证明。五顶点中心模式被进一步约束为 (20)–(23)，但尚未排除；仍需处理本稿核空间未捕获的混合关系和高阶关系。
+

@@ -1,0 +1,417 @@
+# Eventual actual short projective tails: ordinary stopping and a one-sided cubic-radical closure
+
+2026-10-05. Continuation from canonical C123–C124, under D011's global ordinary-return objective. Reuses C110's injective linear-core argument and C109's actual split-syzygy iteration; does not restart Target B or a small-vertex classification.
+
+**Status:** COMPLETE WRITTEN ORDINARY PROOF / NORMAL ADVERSARIAL SELF-AUDIT / NEW ARBITRARY-SIZE CLASS CLOSED / NOT INDEPENDENTLY OR FORMALLY VERIFIED.
+
+The mathematical checkpoint is a termination theorem, not another necessary derived invariant. A finite-pd deep radical is used to exclude actual high projective types on the OTHER resolution side through ordinary Tor. No submodule, intersection, or differential is deleted.
+
+## 1. Conventions and the actual tail hypothesis
+
+Let A be a finite-dimensional elementary algebra over any field k, with N primitive labels, J=rad A, S=A/J=k^N, LEFT simples L_i and RIGHT simples R_i. Keep
+
+\[
+\beta_{xy}(n)=\dim\operatorname{Tor}^A_n(R_x,L_y)
+=\dim\operatorname{Ext}^n_A(L_y,L_x),
+\qquad C_{yx}=\dim e_yAe_x.
+\tag{1.1}
+\]
+
+All right syzygies and covers below are ACTUAL minimal covers. Write Q_n(R_y) for the degree-n right projective in the minimal resolution.
+
+Assume some integer a>=0 satisfies
+
+\[
+Q_n(R_y)J^3=0
+\quad\text{for EVERY }y\text{ and EVERY }n\ge a.
+\tag{ST}
+\]
+
+This is an eventual condition on actual projective terms; A itself can have J^3 nonzero and can have higher Loewy length. It is not a condition on projective-map images.
+
+### Theorem 1.1 — Uniform ordinary stopping
+
+Suppose all ordinary simple diagonals vanish above an integer M>=0. Set
+
+\[
+K=N(M+1),\qquad B=a+K+1.
+\tag{1.2}
+\]
+
+Under (ST),
+
+\[
+\boxed{\operatorname{gd}A\le NB-1
+=N\bigl(a+N(M+1)+1\bigr)-1.}
+\tag{1.3}
+\]
+
+Consequently the WHOLE (ST) class satisfies Universal Gap A: infinite global dimension forces ONE FIXED i with ordinary diagonal Tor(R_i,L_i) nonzero infinitely often. The conclusion is existential, not diagonal return for every infinite source. Diagonal reverse visibility is automatic.
+
+The proof establishes a real uniform bound, not merely the existence of repeated types. It does not use associative finite generation of the full Yoneda algebra, a finite syzygy-state system, selfinjectivity, a grading, or an opposite-side infinite-plus theorem.
+
+## 2. Literal linear bar cycles for a general algebra
+
+Choose an S-bimodule complement V to J^2 in J and define the ACTUAL multiplication
+
+\[
+\mu:V\otimes_S V\longrightarrow J^2.
+\tag{2.1}
+\]
+
+Do not replace its target by J^2/J^3 or multiply in gr_J A. For n>=2 let
+
+\[
+T_n=\bigcap_{t=0}^{n-2}
+\ker\!\left(1^{\otimes t}\otimes\mu\otimes
+1^{\otimes(n-2-t)}\right)\subseteq V^{\otimes_S n},
+\qquad T_1=V.
+\tag{2.2}
+\]
+
+In the ordinary S-relative reduced bar complex, every tensor in T_n is a literal cycle: each adjacent multiplication is zero, in the ACTUAL J^2. Conversely the outputs of the different adjacent slots lie in distinct direct summands with one J^2 slot, using J=V direct_sum J^2.
+
+Let pi:J->V be the chosen projection. Every incoming bar boundary has at least one factor in J^2; hence
+
+\[
+\pi^{\otimes n}\partial_{n+1}=0.
+\tag{2.3}
+\]
+
+A nonzero T_n tensor therefore cannot be a boundary. It injects into ordinary Tor_n(S,S). Arrow-dual Ext-one cocycles and their ordinary cup words detect all linear functionals on T_n. Thus
+
+\[
+\text{ALL length-n ordinary Ext-one words vanish}
+\quad\Longrightarrow\quad T_n=0.
+\tag{2.4}
+\]
+
+Only this implication is needed. For a GENERAL higher-radical algebra this does NOT assert that T_n dual is the entire Ext-one-generated degree-n space, or that other linear leading terms survive. Mixed bar components can compensate higher products; the special cube-zero equality from C110 remains separately valid.
+
+Under the diagonal cutoff, a nonzero word of K=N(M+1) degree-one classes would have K+1 endpoint labels. Some label occurs at least M+2 times; the subproduct between its first and last occurrences has degree at least M+1. Every contiguous subproduct of a nonzero product is nonzero, producing a forbidden diagonal. Hence all length-K words vanish, so
+
+\[
+T_K=0.
+\tag{2.5}
+\]
+
+This is an ordinary Yoneda/bar bridge, not a singular or associated-graded substitution.
+
+## 3. The real right kernel core stops even when its complex is not exact
+
+Fix R_y. Because Q_a J^3=0, the actual
+
+\[
+X=\Omega_R^{a+1}R_y\subseteq Q_aJ
+\tag{3.1}
+\]
+
+has Loewy length at most two. Split off ALL actual simple direct summands:
+
+\[
+X=Y_0\oplus S_0,\qquad
+\Omega_R Y_{j-1}=Y_j\oplus S_j\quad(j\ge1),
+\tag{3.2}
+\]
+
+where S_j is semisimple and Y_j has no simple direct summand. These are actual module decompositions, not quotient peeling. Each Y_j is a direct summand of the relevant actual syzygy of R_y. Its minimal cover P_j is a direct summand of Q_(a+1+j)(R_y), so P_j J^3=0 by (ST).
+
+The Loewy-two/no-simple-summand fact gives soc(Y_j)=Y_j J. At the real inclusion Y_j subset P_(j-1)J,
+
+\[
+Y_j\cap P_{j-1}J^2=Y_jJ.
+\tag{3.3}
+\]
+
+Indeed P_(j-1)J^2 is a semisimple SUBMODULE, while the reverse inclusion follows from Y_j subset P_(j-1)J. This is the crucial short-projective condition.
+
+The actual map P_j->Y_j->P_(j-1) has an INJECTIVE linear head coefficient
+
+\[
+\Delta_j:\operatorname{head}P_j
+\hookrightarrow\operatorname{head}P_{j-1}\otimes_S V.
+\tag{3.4}
+\]
+
+Consecutive projective maps compose to zero because their full images lie in actual kernels. All products involving a J^2 coefficient and a radical coefficient act by zero on P_(j-2), since that projective is annihilated by J^3. Therefore their linear coefficients satisfy the adjacent ACTUAL mu relations.
+
+Iterating the injections gives
+
+\[
+\operatorname{head}P_j
+\hookrightarrow \operatorname{head}P_0\otimes_S T_j.
+\tag{3.5}
+\]
+
+Previously imposed slots persist under tensoring over S; the new last adjacent slot is precisely the consecutive-map equation. At j=K, (2.5) forces P_K=0 and Y_K=0.
+
+The augmented core complex can have nonzero homology S_(j+1). It is NOT assumed exact. Neither the pd of S_j nor the pd of any deep intersection is used to obtain this stopping result. This avoids the failed finite-image/pruned-resolution mechanisms.
+
+By actual additivity of minimal syzygies, the stop gives the full module identity
+
+\[
+\boxed{\Omega_R^B R_y
+\cong\bigoplus_{j=0}^{K}
+\Omega_R^{K-j}S_j,\qquad B=a+K+1.}
+\tag{3.6}
+\]
+
+Every simple occurring in S_j is itself a TRUE direct summand of Omega_R^(a+1+j) R_y. Thus all restart depths lie in [a+1,B]. If R_y is infinite-pd, at least one S_j has an infinite-pd simple summand; otherwise (3.6) gives finite pd.
+
+## 4. An actual restart graph gives a finite bound, not graph-only return
+
+On ALL N right simple labels put an edge y->z if R_z is an actual direct summand of Omega_R^s R_y for some 1<=s<=B. A directed cycle with edge depths s_1,...,s_t gives, by successive ACTUAL minimal-syzygy additivity,
+
+\[
+R_y\mid\Omega_R^D R_y,\qquad
+R_y\mid\Omega_R^{mD}R_y\ (m\ge1),\qquad
+D=\sum_{\ell=1}^t s_\ell.
+\tag{4.1}
+\]
+
+Hence Tor_(mD)(R_y,L_y)>=1 for every m, contradicting the ordinary diagonal cutoff. The graph is acyclic ONLY because each edge carries a genuine split-kernel relation. A graph/support cycle without that relation is not used.
+
+For a sink y, (3.6) has no S_j and Omega_R^B R_y=0; pd R_y<=B-1. Inducting on the height h_y of this finite acyclic graph gives
+
+\[
+\operatorname{pd}R_y\le(h_y+1)B-1\le NB-1.
+\tag{4.2}
+\]
+
+To check the induction explicitly, if a successor z has pd p_z and occurs at depth s=a+1+j, its contribution in (3.6) is Omega_R^(B-s) R_z. Thus pd R_y<=max{B-1,max_(y->z)(s+p_z)}. Acyclic height supplies (4.2), including the cases where that syzygy contribution is already zero.
+
+The bound on all right simples implies the same ordinary global bound: Tor_(>NB-1)(R_y,L_i)=0 for all y,i, so every minimal LEFT simple resolution has zero head in those degrees and terminates. This is an explicit ordinary Tor argument, not the quarantined opposite-side infinite-plus transfer.
+
+If only degree-one words are known to vanish at length K, the same core proof gives the restart bound B=a+K+1. When gd is infinite, restricting the graph to infinite right simples supplies a genuine split cycle of length at most |I_R| and D<=|I_R|B. This also gives an ordinary diagonal return by (4.1).
+
+## 5. A finite LEFT deep-factor condition supplies (ST) automatically
+
+Define the LEFT composition support of the WHOLE cubic radical:
+
+\[
+F=\{f:e_fJ^3\ne0\}.
+\tag{5.1}
+\]
+
+Suppose every L_f with f in F has finite LEFT pd. Let d=max_(f in F) pd_A L_f, with d=-1 if F is empty, and set a=d+1.
+
+In an ACTUAL right minimal resolution of ANY R_y, the multiplicity of e_fA in degree n is
+
+\[
+\dim\operatorname{Tor}^A_n(R_y,L_f)
+=\dim\operatorname{Ext}^n_A(L_f,L_y)=0
+\quad(n>d).
+\tag{5.2}
+\]
+
+This follows from the finite LEFT resolution of L_f. Hence every actual Q_n for n>=a is a sum of e_iA with i outside F, and
+
+\[
+e_iAJ^3=e_iJ^3=0.
+\tag{5.3}
+\]
+
+Thus (ST) holds. Infinite gd forces a fixed supported ORDINARY DIAGONAL pair in this entire arbitrary-size/arbitrary-field class. Under diagonal cutoff M,
+
+\[
+\boxed{\operatorname{gd}A
+\le N\bigl(d+N(M+1)+2\bigr)-1.}
+\tag{5.4}
+\]
+
+The direct LEFT proof is obtained by carrying out Sections2–4 with left covers P_n, head coefficients V tensor head(P), and source simple finite RIGHT pd for the RIGHT composition support {f:J^3 e_f nonzero}. The identical ordinary Tor multiplicity equation excludes those LEFT projective types in high degrees. It does not appeal to transfer of infinite-plus.
+
+### Corollary 5.1 — The finite-pd cubic-radical fourth-Loewy class closes
+
+If J^4=0, the WHOLE J^3 is a semisimple LEFT module. Therefore finite LEFT pd of J^3 is equivalent to finite LEFT pd of every simple in (5.1). The whole class
+
+\[
+\boxed{J^4=0,\quad \operatorname{pd}_A J^3<\infty}
+\tag{5.5}
+\]
+
+satisfies UGA, with the stronger existential ordinary DIAGONAL conclusion and bound (5.4). The direct RIGHT finite-pd version also holds.
+
+When J^3=0, d=-1 and this reuses/extends C110. Neither finite pd J^2 nor selfinjectivity is required.
+
+For arbitrary higher Loewy length, finite pd of the WHOLE NONSEMISIMPLE J^3 alone does NOT establish finite pd of its simple factors. The factor condition, or (ST) proved by another argument, must be retained. No theorem about that weaker whole-module hypothesis is claimed here.
+
+## 6. Calibration with nonzero J^3, pd two on one side and infinity on the other
+
+For every N>=3 and r>=1, take B=kC_N/J_B^3 with arrows x_i:i->i+1 and z_i=x_(i+1)x_i, and take C the radical-square-zero directed (r+1)-vertex chain f_0->...->f_r. Let
+
+\[
+W=L_{f_0}^{C}\otimes_k e_0B,\qquad
+A=\begin{pmatrix}B&0\\W&C\end{pmatrix}.
+\tag{6.1}
+\]
+
+This is connected and has N+r+1 vertices and dimension 3N+2r+4. J_C W=0; W is right B-projective. Direct multiplication gives J_A^3=WJ_B^2 nonzero and J_A^4=0. It is exactly LEFT L_(f0), with pd r from the actual C-chain simple covers, but RIGHT R_(N-2), of infinite pd.
+
+Every old RIGHT projective e_iA is exactly e_iB. Its actual kernels satisfy
+
+\[
+\Omega_R^2R_i=R_{i-3},\qquad
+\Omega_R^{\,2N/\gcd(N,3)}R_i=R_i.
+\tag{6.2}
+\]
+
+So old supported diagonals persist in all positive multiples of this period. This also certifies infinite pd of the old LEFT simples by ordinary Tor. The source-(N-2) column of J_A^2 is the actual nonsplit two-dimensional extension
+
+\[
+0\longrightarrow L_{f_0}\longrightarrow H
+\longrightarrow L_0\longrightarrow0.
+\tag{6.3}
+\]
+
+Its kernel has finite pd, but the quotient L_0 is infinite; hence H and WHOLE LEFT J_A^2 have infinite pd. The calibration is outside both J^3=0 and C104's finite-pd J^2 condition.
+
+For new right simples Omega_R R_(f0)=W=e_0A is projective, and Omega_R R_(fj)=R_(f(j-1)) for j>=1. Thus pd_RIGHT R_(fj)=j+1. The degree-r projective in the actual resolution of R_(fr) is e_(f0)A and has nonzero third radical; degree r+1 is e_0A and is short. The threshold n>d=r in (5.2) is therefore sharp for projective-type exclusion.
+
+The executed N=5,r=2 calibration has dimension23 and eight vertices. It passed:
+
+- 24334 literal associativity triples;
+- 26 FULL actual minimal covers;
+- 624 integral change-of-basis inverses;
+- 16 A-linear actual kernel/module isomorphisms;
+- 11 ordinary Ext-one comparison lifts, with all pair ranks in degrees1–4 agreeing with literal linear bar cycles.
+
+Its Ext-one words are nonzero in degree3 and zero in degree4. Actual old right period is10. LEFT pd J^3 is2 and RIGHT pd J^3 is infinite. No bounded prefix is used to prove infinity; (6.2) is the retained actual period relation. The arbitrary-N/r/all-field proof is separate from the one Q exact run.
+
+Evidence: Eventual-Short-Tail-Evidence/verify_eventual_short_tail.py, eventual-short-tail-result.json, task.md and execution-record.json. The selected script extends the unchanged frozen actual-cover/ordinary-Yoneda helpers. No independent or formal verifier is claimed.
+
+## 7. Normal adversarial self-audit and precise rejected strengthenings
+
+1. **Side check.** Finite LEFT pd of L_f kills Tor(R_y,L_f), hence RIGHT cover type e_fA, not LEFT cover type Ae_f. Equation(5.2) fixes the direction. This is an ordinary comparison, not opposite-infinite-plus.
+2. **Whole-kernel check.** No finite-pd submodule or map image is deleted. In particular finite pd J^3 does not assert finite pd of an intersection. The linear core can be nonexact; only its proved head injections and actual d^2=0 are used.
+3. **Bar survival check.** Use full ACTUAL mu into J^2. Incoming boundaries project to zero on V tensors; literal cycles survive. No gr_J, monomial-initial or general filtered survival is asserted. For higher radicals do not strengthen the implication(2.4) to full equality with all word classes.
+4. **Uniformity check.** (ST) applies to ALL simple right resolutions, with the SAME a. Each core cover is an actual direct summand of the original high term. Pointwise unrelated short modules do not supply this condition.
+5. **Termination check.** The finite graph is an ACTUAL simple-split graph. Each directed cycle first gives the module identity(4.1), and only then ordinary diagonal Tor. Its absence plus the real decomposition(3.6) yields the explicit NB-1 bound. No carrier-support recurrence shortcut.
+6. **N7 check.** In frozen Saorin N7, J^3=k(bab)=LEFT L_0 of infinite pd. The actual period-one RIGHT deep projective type is not eventually excluded, so N7 is ineligible. It still has its already known supported OFF-DIAGONAL return and ALL positive simple diagonals zero.
+7. **Pointwise-column strengthening is FALSE.** N7 has only LEFT-infinite label0 and J^3e_0=0; thus checking only columns of the infinite LEFT sources would pass. That does not meet the whole LEFT-factor hypothesis and does not imply diagonal return. This rejects that stronger diagonal extension, not UGA itself.
+8. **Fourth radical is load-bearing for the whole-module corollary.** J^4=0 makes J^3 semisimple. Without it, whole finite pd need not control simple factors. The more general factor theorem retains its exact condition.
+9. **Return quantifier.** ONE fixed diagonal persists in this class. Individual infinite sources can have no own return outside relevant hypotheses; C119 stays valid. No finite actual-state existence or full associative Yoneda generation claim.
+10. **Evidence provenance.** One main researcher wrote/audited this proof. The exact helper checks share implementation assets. SELF-AUDITED, not independently/formally verified; no originality or hash-schema acceptance claim.
+
+## 8. Continue from this checkpoint
+
+C125 closes the eventual-short actual-projective class and, concretely, the entire one-side finite-pd cubic-radical class with J^4=0. This is an ordinary stopping mechanism with a uniform bound; it does not solve UGA for every finite A.
+
+The remaining global task is to force a genuine ordinary return or a safe terminating reduction when high ACTUAL projectives stay deep and J^3 has infinite-pd LEFT and RIGHT factors. Finite pd of a nonsemisimple deep ideal, finite image pd, or its composition carrier does not justify pruning. N7 illustrates a deep recurrent block which is already closed by its ordinary OFF-DIAGONAL pair; a global extension must allow that witness.
+
+D011's ALL-source visible-mask objective, the missing badness-preserving ordinary quotient bridge, general finite-type supported return, bounded-screening/local-trivial branches, and the Primitive/Binary/higher-output frontier all remain OPEN. No old Run is rewritten and no new derived invariant is introduced.
+
+## 9. Continued mathematics: a balanced Loewy-two ideal supplies the missing factor control
+
+This is a SECOND substantive result, C126, obtained after the C125 proof. Earlier statements/limitations in Sections1–8 are preserved as the chronology of that result. The new theorem treats a nonsemisimple cubic radical when J^5=0; it does not assert automatic control at arbitrary Loewy length.
+
+### Lemma 9.1 — Whole finite-pd envelope with mixed semisimple head
+
+Let H be an actual LEFT finite-pd module of pd h, with
+
+\[
+0\longrightarrow U\longrightarrow H\longrightarrow V
+\longrightarrow0,
+\tag{9.1}
+\]
+
+where U,V are semisimple. Let T be a finite simple-label set such that U has only T factors and EVERY L_t in T occurs in V. Suppose all T simple diagonals vanish above M. Then
+
+\[
+\operatorname{pd}_A L_t\le h+|T|(M+1)-1
+\quad(t\in T).
+\tag{9.2}
+\]
+
+This extends the C104 envelope argument to a MIXED semisimple quotient. Do not claim that a pullback H_t over one quotient summand has finite pd; it need not.
+
+For every target Z and n>=h, the ACTUAL ordinary connecting map
+
+\[
+\operatorname{Ext}^n_A(U,Z)\twoheadrightarrow
+\operatorname{Ext}^{n+1}_A(V,Z)
+\tag{9.3}
+\]
+
+is surjective because Ext^(n+1)(H,Z)=0. Projecting its codomain to ONE L_t coordinate preserves surjectivity. Each matrix entry is the connecting Yoneda product with an actual Ext-one class from L_t to a factor of U, obtained by the coordinate inclusion/projection of (9.1).
+
+Thus every high all-target Ext(L_t,Z) is a sum of actual Ext-one products of tails at labels in T. Iterating |T|(M+1) times uses the same positive-word nilpotence as C104 and gives Ext^(h+|T|(M+1))(L_t,Z)=0 for ALL Z. This proves (9.2). Nothing about the pd of U or V is assumed.
+
+### Lemma 9.2 — A balanced radical ideal has every factor label in its head
+
+Let I be an actual finite two-sided ideal with
+
+\[
+JI=IJ,\qquad J^2I=0,\qquad
+\operatorname{pd}_A I=h<\infty,\qquad I\ne0.
+\tag{9.4}
+\]
+
+Define T={t:e_t I nonzero}, m=|T|. Both U=JI and V=I/JI are semisimple LEFT modules. EVERY factor label of I occurs in V: if e_t V=0, then
+
+\[
+e_t I=e_t JI=e_t IJ=(e_t I)J,
+\tag{9.5}
+\]
+
+which implies e_t I=0 by nilpotence/right Nakayama. Therefore U is supported in T and V contains every T simple. Lemma9.1 applies to the SINGLE actual envelope H=I.
+
+Under T diagonal cutoff M,
+
+\[
+\boxed{\operatorname{pd}_A L_t
+\le h+m(M+1)-1\quad(t\in T).}
+\tag{9.6}
+\]
+
+Equivalently, if some T simple is LEFT-infinite while I is finite-pd, an ordinary simple DIAGONAL must persist at one T label. This is a closure alternative, not a claim that finite pd of any nonsemisimple module implies finite-pd factors.
+
+The balance JI=IJ is essential to the support argument. For an arbitrary finite-pd Loewy-two module, its radical can have factor labels absent from its top; no such factor theorem follows. Direct RIGHT envelope/Nakayama arguments give the right version of (9.6), with {t:I e_t nonzero}.
+
+## 10. The ENTIRE J5zero / one-sided finite cubic-radical class now closes
+
+Take I=J^3, so JI=IJ=J^4. If J^5=0, J^2I=0. Assume I is nonzero and has finite LEFT pd h. Under a global ordinary diagonal cutoff M, Lemma9.2 makes all factors in T={t:e_t J^3 nonzero} finite LEFT pd, with
+
+\[
+d\le h+m(M+1)-1.
+\tag{10.1}
+\]
+
+This is precisely the missing C125 eligibility; its ordinary type-exclusion and short-core proof applies. Therefore
+
+\[
+\boxed{\operatorname{gd}A
+\le N\bigl(h+(m+N)(M+1)+1\bigr)-1.}
+\tag{10.2}
+\]
+
+If J^3=0, use the sharper C125/C110 d=-1 bound separately.
+
+Consequently for EVERY finite elementary size/field,
+
+\[
+\boxed{J^5=0,\quad
+\operatorname{pd}_{\mathrm{LEFT}}J^3<\infty
+\quad\Longrightarrow\quad
+\bigl[\operatorname{gd}A=\infty
+\Longrightarrow \exists i,\ 
+\operatorname{Tor}^A_n(R_i,L_i)\ne0
+\text{ infinitely often}\bigr].}
+\tag{10.3}
+\]
+
+The direct RIGHT finite-pd version also holds by the right envelope/Nakayama proof and the direct left short-core proof. Thus the WHOLE one-side finite-pd cubic-radical class of Loewy length at most FIVE is closed, strengthening Corollary5.1. Nonsemisimple J^3 is permitted.
+
+The proof has two concrete routes. If a factor of finite-pd I is infinite-pd, the mixed semisimple envelope already forces an ordinary diagonal. If all its factors are finite, their terminating LEFT resolutions force eventual short RIGHT projectives and C125 supplies the ordinary return. This unifies the finite deep-error/factor alternatives without deleting any part of an actual resolution.
+
+## 11. Additional normal audit and the next exact obstruction
+
+- **Mixed-head surjection:** (9.3) targets Ext(V,Z), a direct sum. Projection to a simple coordinate preserves surjectivity; pulling the module extension back and claiming its middle finite-pd would be invalid. The proof uses the former only.
+- **Support direction:** (9.5) is a RIGHT-module Nakayama argument on e_t I, used to prove the LEFT support of I equals that of I/JI. The equality JI=IJ is actually supplied by a radical POWER. No infinite-pd side transfer is involved.
+- **Ordinary product generation:** entries of the single connecting matrix are genuine degree-one classes; ALL targets and n>=h are covered. U factors stay in T, so the iteration has no unproved new-source escape.
+- **Bounds:** m(M+1) products kill T tails; d<=h+m(M+1)-1 gives a=d+1<=h+m(M+1); adding K=N(M+1) and the extra one yields exactly (10.2). Do not subtract a boundary degree from the surjective range.
+- **Semisimplicity:** J5zero makes both J4 and J3/J4 semisimple. It does NOT require J3 itself semisimple. This is why the new theorem is stronger than the fourth-radical corollary.
+- **Calibration provenance:** Section6's unchanged exact calibration and C104's existing actual connecting-map/nonsplit-envelope assets are reused. No new material computation is needed for these elementary exact-sequence/Nakayama steps, and none is represented as independently replayed.
+- **Boundary retained:** if J6zero but J5 nonzero, J4 can be nonsemisimple, and (9.3) no longer gives Ext-one generation from SIMPLE U factors. Finite pd of whole J3 alone still does not permit pruning J4/intersections or replacing these by factor pd. The arbitrary-Loewy whole finite-pd J3 question remains OPEN.
+
+The next global problem is the ordinary OFF-DIAGONAL bridge for recurrent deep blocks that fail this balanced semisimple-envelope reduction. N7 remains eligible for neither finite-pd cubic condition and already closes through an off-diagonal. General indefinite higher outputs, safe quotient witness lifting and every global residual branch remain. **Universal Gap A is still OPEN; C125–C126 are normal self-audited arbitrary-size closure theorems, not a global solution or independent verification.**

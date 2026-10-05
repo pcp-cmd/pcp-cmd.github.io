@@ -18,18 +18,23 @@ const workSources = [
   {
     "slug": "lucia-punishing-gray-raven",
     "title": "Lucia / Punishing: Gray Raven",
-    "shortTitle": "Lucia",
+    "subtitle": "游戏二创编辑海报",
     "category": "游戏二创编辑海报",
     "status": "正式归档作品",
     "date": "2026.06",
-    "tone": "slate",
     "cover": "./content/design/works/lucia-punishing-gray-raven/hero.webp",
+    "thumb": "./content/design/works/lucia-punishing-gray-raven/thumb.webp",
     "alt": "Black-and-white editorial fan-poster based on Lucia from Punishing: Gray Raven, with large typography, vertical Asian text, stripe blocks, and restrained red accents.",
-    "format": "1920 x 1080",
+    "sourceWork": "Punishing: Gray Raven / 战双帕弥什",
+    "medium": "游戏二创编辑海报 / 1920 x 1080",
+    "tools": "AI image / editorial layout study",
     "summary": "一张基于《战双帕弥什》露西亚的黑白编辑海报。角色图像被转化成任务档案、出版物跨页和 zine 海报之间的混合体。",
-    "concept": "这件作品不是泛泛的黑白角色海报，而是以《战双帕弥什》露西亚为核心的二创再设计。它的价值在于：人物姿态保留了角色识别度，右侧标题、竖排信息、警示斜纹和空框又把画面压成一页可以归档的任务文件。角色不是被简单展示，而是被重新组织进一套冷静、克制、带有战术感的出版物系统。",
     "article": "content/design/works/lucia-punishing-gray-raven/article.md",
-    "articleTitle": "配套文章：把《战双帕弥什》露西亚压成一页黑白任务档案海报",
+    "tags": [
+      "战双帕弥什",
+      "露西亚",
+      "黑白海报"
+    ],
     "scores": {
       "concept": 8.6,
       "layout": 8.1,
@@ -38,6 +43,377 @@ const workSources = [
       "system": 7.9,
       "revision": 8.3
     },
+    "detailMode": "landscape"
+  },
+  {
+    "slug": "ayase-momo-dandadan",
+    "title": "Momo Ayase / Dandadan",
+    "subtitle": "动漫角色编辑海报",
+    "category": "动漫角色编辑海报",
+    "status": "正式归档作品",
+    "date": "2026.05",
+    "cover": "./content/design/works/ayase-momo-dandadan/hero.webp",
+    "thumb": "./content/design/works/ayase-momo-dandadan/thumb.webp",
+    "alt": "Warm red editorial fan-poster based on Momo Ayase from Dandadan, with halftone texture and a central title band.",
+    "sourceWork": "Dandadan / 胆大党",
+    "medium": "动漫角色编辑海报 / 1080 x 1350",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张基于《胆大党》绫濑桃的暖红色角色海报。中心横条、网点颗粒和贴纸式边缘把人物图像转化成可收藏的编辑附页。",
+    "article": "content/design/works/ayase-momo-dandadan/article.md",
+    "tags": [
+      "胆大党",
+      "绫濑桃",
+      "网点海报"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "poster"
+  },
+  {
+    "slug": "anna-yamada-blue-poster",
+    "title": "Anna Yamada / The Dangers in My Heart",
+    "subtitle": "动漫强排版海报",
+    "category": "动漫强排版海报",
+    "status": "正式归档作品",
+    "date": "2026.05",
+    "cover": "./content/design/works/anna-yamada-blue-poster/hero.webp",
+    "thumb": "./content/design/works/anna-yamada-blue-poster/thumb.webp",
+    "alt": "Blue square editorial fan-poster based on Anna Yamada from The Dangers in My Heart, with oversized layered typography and monochrome portrait.",
+    "sourceWork": "The Dangers in My Heart / 我心里危险的东西",
+    "medium": "动漫强排版海报 / 1080 x 1080",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张基于《我心里危险的东西》山田杏奈的蓝色方形海报。巨大白字、单色人物像和小型信息格共同构成强排版封面。",
+    "article": "content/design/works/anna-yamada-blue-poster/article.md",
+    "tags": [
+      "我心里危险的东西",
+      "山田杏奈",
+      "强排版"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "poster"
+  },
+  {
+    "slug": "small-kid-sen-music-poster",
+    "title": "Small Kid Sen / Music Poster",
+    "subtitle": "音乐现场海报",
+    "category": "音乐现场海报",
+    "status": "归档作品",
+    "date": "2026.05",
+    "cover": "./content/design/works/small-kid-sen-music-poster/hero.webp",
+    "thumb": "./content/design/works/small-kid-sen-music-poster/thumb.webp",
+    "alt": "Black and white music poster with red typography and three horizontal image frames.",
+    "sourceWork": "Small Kid Sen music study",
+    "medium": "音乐现场海报 / 1080 x 1440",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张黑白红音乐海报。三段式现场画面、粗粝颗粒和高对比红字共同建立舞台记录感。",
+    "article": null,
+    "tags": [
+      "音乐",
+      "黑白红",
+      "现场海报"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "poster"
+  },
+  {
+    "slug": "dont-shoot-me-down",
+    "title": "Dark Poster System / Dont Shoot Me Down",
+    "subtitle": "暗色视觉实验",
+    "category": "暗色视觉实验",
+    "status": "图像研究",
+    "date": "2026.05",
+    "cover": "./content/design/works/dont-shoot-me-down/hero.webp",
+    "thumb": "./content/design/works/dont-shoot-me-down/thumb.webp",
+    "alt": "Dark typographic poster with serif letters, diagonal rule, and muted anime figure.",
+    "sourceWork": "Dont Shoot Me Down / 暗色文字系统研究",
+    "medium": "暗色视觉实验 / 1440 x 1800",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张暗色竖版海报实验。人物剪影、零散字母和弱光点共同制造紧张、破碎的夜间氛围。",
+    "article": null,
+    "tags": [
+      "暗色",
+      "竖版",
+      "视觉实验"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "poster"
+  },
+  {
+    "slug": "owari-ni-shitai-spread",
+    "title": "Owari ni Shitai / Twin Cover",
+    "subtitle": "日文双页排版",
+    "category": "日文双页排版",
+    "status": "版式实验",
+    "date": "2026.05",
+    "cover": "./content/design/works/owari-ni-shitai-spread/hero.webp",
+    "thumb": "./content/design/works/owari-ni-shitai-spread/thumb.webp",
+    "alt": "Two vertical Japanese book-cover studies on a pale blue presentation field.",
+    "sourceWork": "Owari ni Shitai cover study",
+    "medium": "日文双页排版 / 1920 x 1440",
+    "tools": "AI image / editorial layout study",
+    "summary": "一组以日文标题、渐变色场和细线图形为主体的双页封面实验。它更接近情绪化文字排版，而不是明确动漫来源作品。",
+    "article": null,
+    "tags": [
+      "双页",
+      "日文排版",
+      "情绪封面"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "poster"
+  },
+  {
+    "slug": "the-hills-typographic-study",
+    "title": "The Hills / Typographic Study",
+    "subtitle": "歌词排版实验",
+    "category": "歌词排版实验",
+    "status": "版式研究",
+    "date": "2026.05",
+    "cover": "./content/design/works/the-hills-typographic-study/hero.webp",
+    "thumb": "./content/design/works/the-hills-typographic-study/thumb.webp",
+    "alt": "White poster with vertical Japanese text, gradient blocks, script marks, and thin black rules.",
+    "sourceWork": "The Hills lyric typography study",
+    "medium": "歌词排版实验 / 1920 x 1440",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张围绕歌词文本和渐变块展开的轻量排版实验。画面依靠留白、细线、小字和色块建立安静的音乐感。",
+    "article": null,
+    "tags": [
+      "歌词",
+      "留白",
+      "排版实验"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "poster"
+  },
+  {
+    "slug": "chainsaw-denji-reze-blue-embrace",
+    "title": "Denji & Reze / Blue Embrace",
+    "subtitle": "动漫场景海报",
+    "category": "动漫场景海报",
+    "status": "正式归档作品",
+    "date": "2026.05",
+    "cover": "./content/design/works/chainsaw-denji-reze-blue-embrace/hero.webp",
+    "thumb": "./content/design/works/chainsaw-denji-reze-blue-embrace/thumb.webp",
+    "alt": "Blue neon fan-poster based on Denji and Reze from Chainsaw Man, showing an intimate embrace in a heavily blurred night scene.",
+    "sourceWork": "Chainsaw Man / 电锯人",
+    "medium": "动漫场景海报 / 2160 x 2700",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张基于《电锯人》电次与雷塞的蓝色场景海报。它把拥抱瞬间压成一个模糊发光的夜景记忆。",
+    "article": "content/design/works/chainsaw-denji-reze-blue-embrace/article.md",
+    "tags": [
+      "电锯人",
+      "电次",
+      "雷塞"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "poster"
+  },
+  {
+    "slug": "blue-night-portrait",
+    "title": "Blue Night Portrait",
+    "subtitle": "夜景角色图像",
+    "category": "夜景角色图像",
+    "status": "图像研究",
+    "date": "2026.05",
+    "cover": "./content/design/works/blue-night-portrait/hero.webp",
+    "thumb": "./content/design/works/blue-night-portrait/thumb.webp",
+    "alt": "Wide blue night anime portrait with blurred city lights and small 611 mark.",
+    "sourceWork": "原创视觉练习 / 蓝夜人物排版研究",
+    "medium": "夜景角色图像 / 1920 x 1080",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张蓝色夜景人像练习。发光边缘、浅景深和冷色环境共同制造夜间情绪。",
+    "article": null,
+    "tags": [
+      "夜景",
+      "蓝色",
+      "人像研究"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "landscape"
+  },
+  {
+    "slug": "city-glass-portrait",
+    "title": "City Glass Portrait",
+    "subtitle": "城市人像图像",
+    "category": "城市人像图像",
+    "status": "图像研究",
+    "date": "2026.05",
+    "cover": "./content/design/works/city-glass-portrait/hero.webp",
+    "thumb": "./content/design/works/city-glass-portrait/thumb.webp",
+    "alt": "Vertical blue city portrait with glassy light artifacts and soft figure rendering.",
+    "sourceWork": "原创视觉练习 / 城市玻璃人物研究",
+    "medium": "城市人像图像 / 1080 x 1920",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张带有都市霓虹、玻璃反射和夜间虚化气质的人像练习。",
+    "article": null,
+    "tags": [
+      "城市",
+      "霓虹",
+      "人像研究"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "poster"
+  },
+  {
+    "slug": "summer-street-frame",
+    "title": "Summer Street Frame",
+    "subtitle": "夏日街景图像",
+    "category": "夏日街景图像",
+    "status": "图像研究",
+    "date": "2026.05",
+    "cover": "./content/design/works/summer-street-frame/hero.webp",
+    "thumb": "./content/design/works/summer-street-frame/thumb.webp",
+    "alt": "Wide summer street anime frame with soft light and handwritten SUMMER title.",
+    "sourceWork": "原创视觉练习 / 夏日街景构图研究",
+    "medium": "夏日街景图像 / 2560 x 1440",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张明亮的夏日街景图像。强光、街道、树影和手写标题共同制造被保存下来的季节记忆。",
+    "article": null,
+    "tags": [
+      "夏日",
+      "街景",
+      "明亮间隔"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "landscape"
+  },
+  {
+    "slug": "komi-purple-monochrome-spread",
+    "title": "Komi / Purple Monochrome Spread",
+    "subtitle": "动漫单色海报",
+    "category": "动漫单色海报",
+    "status": "正式归档作品",
+    "date": "2026.05",
+    "cover": "./content/design/works/komi-purple-monochrome-spread/hero.webp",
+    "thumb": "./content/design/works/komi-purple-monochrome-spread/thumb.webp",
+    "alt": "Purple monochrome fan-poster based on Komi Can’t Communicate, with a large vertical title and three manga panels.",
+    "sourceWork": "Komi Can’t Communicate / 古见同学有交流障碍症",
+    "medium": "动漫单色海报 / 1080 x 1350",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张基于《古见同学有交流障碍症》的紫色单色海报。巨大竖向标题、三段式漫画分镜和密集印刷质感共同构成出版物页面。",
+    "article": "content/design/works/komi-purple-monochrome-spread/article.md",
+    "tags": [
+      "古见",
+      "紫色",
+      "单色海报"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "poster"
+  },
+  {
+    "slug": "chainsaw-denji-reze-blue-monochrome",
+    "title": "Chainsaw Man / Denji & Reze",
+    "subtitle": "关系拼贴海报",
+    "category": "关系拼贴海报",
+    "status": "正式归档作品",
+    "date": "2026.05",
+    "cover": "./content/design/works/chainsaw-denji-reze-blue-monochrome/hero.webp",
+    "thumb": "./content/design/works/chainsaw-denji-reze-blue-monochrome/thumb.webp",
+    "alt": "Blue monochrome Chainsaw Man fan-poster featuring Denji and Reze in a collage layout.",
+    "sourceWork": "Chainsaw Man / 电锯人",
+    "medium": "关系拼贴海报 / 1470 x 2206",
+    "tools": "AI image / editorial layout study",
+    "summary": "一张基于《电锯人》的蓝色单色拼贴海报。核心人物是电次与雷塞，重点在人物关系，而不是抽象氛围。",
+    "article": "content/design/works/chainsaw-denji-reze-blue-monochrome/article.md",
+    "tags": [
+      "电锯人",
+      "电次",
+      "雷塞"
+    ],
+    "scores": {
+      "concept": 7.8,
+      "layout": 7.6,
+      "typography": 7.4,
+      "visual": 7.7,
+      "system": 7.2,
+      "revision": 7.9
+    },
+    "detailMode": "poster"
+  }
+];
+
+const workDetails = {
+  "lucia-punishing-gray-raven": {
+    "shortTitle": "Lucia",
+    "tone": "slate",
+    "format": "1920 x 1080",
+    "concept": "这件作品不是泛泛的黑白角色海报，而是以《战双帕弥什》露西亚为核心的二创再设计。它的价值在于：人物姿态保留了角色识别度，右侧标题、竖排信息、警示斜纹和空框又把画面压成一页可以归档的任务文件。角色不是被简单展示，而是被重新组织进一套冷静、克制、带有战术感的出版物系统。",
+    "articleTitle": "配套文章：把《战双帕弥什》露西亚压成一页黑白任务档案海报",
     "gptReview": [
       "黑白灰系统和小面积红色提示让画面有冷静的任务档案感。",
       "露西亚的角色识别度保留得足够清楚，同时版式结构也没有沦为普通截图装饰。",
@@ -58,37 +434,20 @@ const workSources = [
       "可以用同一套黑白任务档案系统继续扩展其他战双角色。"
     ],
     "relatedHref": "./works.html",
-    "tags": [
-      "战双帕弥什",
-      "露西亚",
-      "黑白海报"
-    ],
-    "detailMode": "landscape",
-    "sourceWork": "Punishing: Gray Raven / 战双帕弥什",
     "characters": [
       "Lucia"
     ],
     "titleDisplay": "Lucia\nPGR",
     "bg": "#23221f",
     "fg": "#f4ead9",
-    "muted": "rgba(244,234,217,.68)",
-    "medium": "游戏二创编辑海报 / 1920 x 1080",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/lucia-punishing-gray-raven/thumb.webp",
+    "muted": "rgba(244,234,217,.68)"
   },
-  {
-    "slug": "ayase-momo-dandadan",
-    "title": "Momo Ayase / Dandadan",
+  "ayase-momo-dandadan": {
     "shortTitle": "Momo Ayase",
-    "category": "动漫角色编辑海报",
-    "status": "正式归档作品",
-    "date": "2026.05",
     "tone": "clay",
-    "cover": "./content/design/works/ayase-momo-dandadan/hero.webp",
-    "alt": "Warm red editorial fan-poster based on Momo Ayase from Dandadan, with halftone texture and a central title band.",
     "format": "1080 x 1350",
-    "summary": "一张基于《胆大党》绫濑桃的暖红色角色海报。中心横条、网点颗粒和贴纸式边缘把人物图像转化成可收藏的编辑附页。",
     "concept": "这件作品的核心对象是《胆大党》的绫濑桃。它没有停留在“把角色放大”这一步，而是用中心横向色带固定结构，用微型标签和星形符号制造收藏卡语法，再用网点颗粒把画面推向印刷质感。因此它更像一张角色附录页，而不是普通二创图。",
+    "articleTitle": "配套文章：把《胆大党》绫濑桃做成一张可收藏的 halftone 角色海报",
     "gptReview": [
       "中心横条是最关键的结构动作，它把人物、标题和画面节奏固定住。",
       "暖红色与象牙白让作品既有角色活力，又保持了印刷物的克制感。",
@@ -108,48 +467,21 @@ const workSources = [
       "可以为 Okarun 做一张配对海报，让它成为《胆大党》系列。",
       "测试一个留白更多的中心横条版本。"
     ],
-    "article": "content/design/works/ayase-momo-dandadan/article.md",
-    "articleTitle": "配套文章：把《胆大党》绫濑桃做成一张可收藏的 halftone 角色海报",
     "relatedHref": "./works.html",
-    "tags": [
-      "胆大党",
-      "绫濑桃",
-      "网点海报"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "detailMode": "poster",
-    "sourceWork": "Dandadan / 胆大党",
     "characters": [
       "Momo Ayase"
     ],
     "titleDisplay": "Momo\nAyase",
     "bg": "#e9b5a4",
     "fg": "#33221c",
-    "muted": "rgba(51,34,28,.68)",
-    "medium": "动漫角色编辑海报 / 1080 x 1350",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/ayase-momo-dandadan/thumb.webp",
+    "muted": "rgba(51,34,28,.68)"
   },
-  {
-    "slug": "anna-yamada-blue-poster",
-    "title": "Anna Yamada / The Dangers in My Heart",
+  "anna-yamada-blue-poster": {
     "shortTitle": "Anna Yamada",
-    "category": "动漫强排版海报",
-    "status": "正式归档作品",
-    "date": "2026.05",
     "tone": "blue",
-    "cover": "./content/design/works/anna-yamada-blue-poster/hero.webp",
-    "alt": "Blue square editorial fan-poster based on Anna Yamada from The Dangers in My Heart, with oversized layered typography and monochrome portrait.",
     "format": "1080 x 1080",
-    "summary": "一张基于《我心里危险的东西》山田杏奈的蓝色方形海报。巨大白字、单色人物像和小型信息格共同构成强排版封面。",
     "concept": "这件作品不是简单的蓝色人物图，而是以山田杏奈为核心的强排版实验。最重要的不是角色图像本身，而是巨大白字先搭出结构，人物再嵌入文字系统。这样一来，角色和文字不是前后叠加，而是在同一个方形版面里共同构成封面秩序。",
+    "articleTitle": "配套文章：把《我心里危险的东西》山田杏奈压进一张强排版方形海报",
     "gptReview": [
       "巨大白字的结构感很强，即使缩小也能保持识别度。",
       "人物与字的叠压关系有效，角色不是装饰，而是进入了版式骨架。",
@@ -169,48 +501,21 @@ const workSources = [
       "收紧底部信息格的边距和对齐。",
       "可以为市川京太郎做一张配对版本。"
     ],
-    "article": "content/design/works/anna-yamada-blue-poster/article.md",
-    "articleTitle": "配套文章：把《我心里危险的东西》山田杏奈压进一张强排版方形海报",
     "relatedHref": "./works.html",
-    "tags": [
-      "我心里危险的东西",
-      "山田杏奈",
-      "强排版"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "detailMode": "poster",
-    "sourceWork": "The Dangers in My Heart / 我心里危险的东西",
     "characters": [
       "Anna Yamada"
     ],
     "titleDisplay": "Anna\nYamada",
     "bg": "#c9d3df",
     "fg": "#1d2730",
-    "muted": "rgba(29,39,48,.68)",
-    "medium": "动漫强排版海报 / 1080 x 1080",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/anna-yamada-blue-poster/thumb.webp",
+    "muted": "rgba(29,39,48,.68)"
   },
-  {
-    "slug": "small-kid-sen-music-poster",
-    "title": "Small Kid Sen / Music Poster",
+  "small-kid-sen-music-poster": {
     "shortTitle": "Small Kid Sen",
-    "category": "音乐现场海报",
-    "status": "归档作品",
-    "date": "2026.05",
     "tone": "clay",
-    "cover": "./content/design/works/small-kid-sen-music-poster/hero.webp",
-    "alt": "Black and white music poster with red typography and three horizontal image frames.",
     "format": "1080 x 1440",
-    "summary": "一张黑白红音乐海报。三段式现场画面、粗粝颗粒和高对比红字共同建立舞台记录感。",
     "concept": "这件作品不是动漫来源，而是音乐现场视觉练习。它的重点在于三段黑白画面之间的节奏：上方建立人物与标题，中段靠近歌手表情，下方转向设备和现场痕迹。红色字体不是装饰，而是把三段素材串成同一个音乐档案页面。",
+    "articleTitle": null,
     "gptReview": [
       "三段式画面让海报具有清楚的阅读顺序。",
       "黑白影像和红色文字之间的冲突感有效，适合音乐现场主题。",
@@ -231,43 +536,18 @@ const workSources = [
       "可以补一版演出信息更明确的正式海报版本。"
     ],
     "relatedHref": "./manuscripts.html",
-    "tags": [
-      "音乐",
-      "黑白红",
-      "现场海报"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "article": null,
-    "detailMode": "poster",
-    "sourceWork": "Small Kid Sen music study",
+    "characters": null,
     "titleDisplay": "Small Kid\nSen",
     "bg": "#eee5d7",
     "fg": "#302822",
-    "muted": "rgba(48,40,34,.68)",
-    "medium": "音乐现场海报 / 1080 x 1440",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/small-kid-sen-music-poster/thumb.webp",
+    "muted": "rgba(48,40,34,.68)"
   },
-  {
-    "slug": "dont-shoot-me-down",
-    "title": "Dark Poster System / Dont Shoot Me Down",
+  "dont-shoot-me-down": {
     "shortTitle": "Dont Shoot Me Down",
-    "category": "暗色视觉实验",
-    "status": "图像研究",
-    "date": "2026.05",
     "tone": "slate",
-    "cover": "./content/design/works/dont-shoot-me-down/hero.webp",
-    "alt": "Dark typographic poster with serif letters, diagonal rule, and muted anime figure.",
     "format": "1440 x 1800",
-    "summary": "一张暗色竖版海报实验。人物剪影、零散字母和弱光点共同制造紧张、破碎的夜间氛围。",
     "concept": "这件作品目前没有稳定可确认的具体来源，因此不强行写成某个 IP。它更适合作为暗色视觉系统练习：用低照度人物、打散的字母、微弱光点和竖向留白，测试一张海报如何在“不完全看清”的状态下保持张力。",
+    "articleTitle": null,
     "gptReview": [
       "暗部控制有氛围，人物没有被完全说明，反而保留了悬疑感。",
       "字母碎片提供了节奏，但局部可以再减少，避免变成随机装饰。",
@@ -288,43 +568,18 @@ const workSources = [
       "可以增加一行极短中文标题，让情绪有落点。"
     ],
     "relatedHref": "./works.html",
-    "tags": [
-      "暗色",
-      "竖版",
-      "视觉实验"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "article": null,
-    "detailMode": "poster",
-    "sourceWork": "Dont Shoot Me Down / 暗色文字系统研究",
+    "characters": null,
     "titleDisplay": "Dark Poster\nSystem",
     "bg": "#20201d",
     "fg": "#f0e6d7",
-    "muted": "rgba(240,230,215,.68)",
-    "medium": "暗色视觉实验 / 1440 x 1800",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/dont-shoot-me-down/thumb.webp",
+    "muted": "rgba(240,230,215,.68)"
   },
-  {
-    "slug": "owari-ni-shitai-spread",
-    "title": "Owari ni Shitai / Twin Cover",
+  "owari-ni-shitai-spread": {
     "shortTitle": "Owari ni Shitai",
-    "category": "日文双页排版",
-    "status": "版式实验",
-    "date": "2026.05",
     "tone": "cactus",
-    "cover": "./content/design/works/owari-ni-shitai-spread/hero.webp",
-    "alt": "Two vertical Japanese book-cover studies on a pale blue presentation field.",
     "format": "1920 x 1440",
-    "summary": "一组以日文标题、渐变色场和细线图形为主体的双页封面实验。它更接近情绪化文字排版，而不是明确动漫来源作品。",
     "concept": "这组作品的重点不是角色，而是“想要结束”的情绪如何被压进双页结构。左页更像封面，右页更像回声页：渐变色场、线稿、纵向小字和大面积空白一起制造安静、轻微下沉的阅读感。",
+    "articleTitle": null,
     "gptReview": [
       "双页关系清楚，左页承担标题，右页承担余韵。",
       "渐变和细线让画面有情绪，但没有过度装饰。",
@@ -345,43 +600,18 @@ const workSources = [
       "可以输出单页封面版和双页展示版两个版本。"
     ],
     "relatedHref": "./manuscripts.html",
-    "tags": [
-      "双页",
-      "日文排版",
-      "情绪封面"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "article": null,
-    "detailMode": "poster",
-    "sourceWork": "Owari ni Shitai cover study",
+    "characters": null,
     "titleDisplay": "Owari ni\nShitai",
     "bg": "#d7dfdc",
     "fg": "#202925",
-    "muted": "rgba(32,41,37,.68)",
-    "medium": "日文双页排版 / 1920 x 1440",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/owari-ni-shitai-spread/thumb.webp",
+    "muted": "rgba(32,41,37,.68)"
   },
-  {
-    "slug": "the-hills-typographic-study",
-    "title": "The Hills / Typographic Study",
+  "the-hills-typographic-study": {
     "shortTitle": "The Hills",
-    "category": "歌词排版实验",
-    "status": "版式研究",
-    "date": "2026.05",
     "tone": "clay",
-    "cover": "./content/design/works/the-hills-typographic-study/hero.webp",
-    "alt": "White poster with vertical Japanese text, gradient blocks, script marks, and thin black rules.",
     "format": "1920 x 1440",
-    "summary": "一张围绕歌词文本和渐变块展开的轻量排版实验。画面依靠留白、细线、小字和色块建立安静的音乐感。",
     "concept": "这件作品不是动漫二创，而是文字排版和音乐情绪练习。它的重点在于如何用很少的元素维持画面：一块小渐变、一组竖向文字、几条细线和大量空白，共同形成一种轻、冷、远的页面气质。",
+    "articleTitle": null,
     "gptReview": [
       "留白控制比较大胆，画面没有被填满。",
       "小色块承担了情绪中心，和周围空白形成对比。",
@@ -402,43 +632,18 @@ const workSources = [
       "如果继续发展，可以形成歌词视觉实验系列。"
     ],
     "relatedHref": "./manuscripts.html",
-    "tags": [
-      "歌词",
-      "留白",
-      "排版实验"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "article": null,
-    "detailMode": "poster",
-    "sourceWork": "The Hills lyric typography study",
+    "characters": null,
     "titleDisplay": "The Hills\nStudy",
     "bg": "#f3eddf",
     "fg": "#2d2922",
-    "muted": "rgba(45,41,34,.68)",
-    "medium": "歌词排版实验 / 1920 x 1440",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/the-hills-typographic-study/thumb.webp",
+    "muted": "rgba(45,41,34,.68)"
   },
-  {
-    "slug": "chainsaw-denji-reze-blue-embrace",
-    "title": "Denji & Reze / Blue Embrace",
+  "chainsaw-denji-reze-blue-embrace": {
     "shortTitle": "Denji & Reze",
-    "category": "动漫场景海报",
-    "status": "正式归档作品",
-    "date": "2026.05",
     "tone": "blue",
-    "cover": "./content/design/works/chainsaw-denji-reze-blue-embrace/hero.webp",
-    "alt": "Blue neon fan-poster based on Denji and Reze from Chainsaw Man, showing an intimate embrace in a heavily blurred night scene.",
     "format": "2160 x 2700",
-    "summary": "一张基于《电锯人》电次与雷塞的蓝色场景海报。它把拥抱瞬间压成一个模糊发光的夜景记忆。",
     "concept": "这件作品不应该再被写成 zine page，也不应该保留错误拼写。它更像一张场景海报：信息不多，重点是关系瞬间。蓝色霓虹、模糊人物和高亮边缘共同把电次与雷塞的危险亲密感压缩成一个短促、发光、像记忆一样的画面。",
+    "articleTitle": "配套文章：把《电锯人》电次 × 雷塞的一瞬拥抱压成蓝色场景海报",
     "gptReview": [
       "人物关系比文字信息更先被读到，情绪非常直接。",
       "蓝白发光系统把画面推向夜景和回忆感。",
@@ -458,24 +663,7 @@ const workSources = [
       "补一个极克制标题系统，和另一张电锯人作品统一。",
       "保留它作为关系场景图，不要强行做成信息密集页。"
     ],
-    "article": "content/design/works/chainsaw-denji-reze-blue-embrace/article.md",
-    "articleTitle": "配套文章：把《电锯人》电次 × 雷塞的一瞬拥抱压成蓝色场景海报",
     "relatedHref": "./works.html",
-    "tags": [
-      "电锯人",
-      "电次",
-      "雷塞"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "detailMode": "poster",
-    "sourceWork": "Chainsaw Man / 电锯人",
     "characters": [
       "Denji",
       "Reze"
@@ -483,24 +671,14 @@ const workSources = [
     "titleDisplay": "Denji\n& Reze",
     "bg": "#1f2c35",
     "fg": "#edf2ef",
-    "muted": "rgba(237,242,239,.68)",
-    "medium": "动漫场景海报 / 2160 x 2700",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/chainsaw-denji-reze-blue-embrace/thumb.webp",
+    "muted": "rgba(237,242,239,.68)"
   },
-  {
-    "slug": "blue-night-portrait",
-    "title": "Blue Night Portrait",
+  "blue-night-portrait": {
     "shortTitle": "Blue Night",
-    "category": "夜景角色图像",
-    "status": "图像研究",
-    "date": "2026.05",
     "tone": "blue",
-    "cover": "./content/design/works/blue-night-portrait/hero.webp",
-    "alt": "Wide blue night anime portrait with blurred city lights and small 611 mark.",
     "format": "1920 x 1080",
-    "summary": "一张蓝色夜景人像练习。发光边缘、浅景深和冷色环境共同制造夜间情绪。",
     "concept": "这张图目前无法稳定确认具体来源角色，因此不应该编造作品出处。它可以作为夜景角色氛围研究保存：画面重点是蓝色光线、人物面部、背景虚化和柔颗粒之间的关系。",
+    "articleTitle": null,
     "gptReview": [
       "夜景氛围清楚，蓝色光线统一了人物和背景。",
       "人物边缘发光有效，但局部过亮可能削弱面部细节。",
@@ -521,43 +699,18 @@ const workSources = [
       "可以和城市玻璃人像组成夜景图像组。"
     ],
     "relatedHref": "./works.html",
-    "tags": [
-      "夜景",
-      "蓝色",
-      "人像研究"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "article": null,
-    "detailMode": "landscape",
-    "sourceWork": "原创视觉练习 / 蓝夜人物排版研究",
+    "characters": null,
     "titleDisplay": "Blue Night\nPortrait",
     "bg": "#d5dfdf",
     "fg": "#202a2e",
-    "muted": "rgba(32,42,46,.68)",
-    "medium": "夜景角色图像 / 1920 x 1080",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/blue-night-portrait/thumb.webp",
+    "muted": "rgba(32,42,46,.68)"
   },
-  {
-    "slug": "city-glass-portrait",
-    "title": "City Glass Portrait",
+  "city-glass-portrait": {
     "shortTitle": "City Glass",
-    "category": "城市人像图像",
-    "status": "图像研究",
-    "date": "2026.05",
     "tone": "slate",
-    "cover": "./content/design/works/city-glass-portrait/hero.webp",
-    "alt": "Vertical blue city portrait with glassy light artifacts and soft figure rendering.",
     "format": "1080 x 1920",
-    "summary": "一张带有都市霓虹、玻璃反射和夜间虚化气质的人像练习。",
     "concept": "这件作品目前不强行指定具体 IP。它适合被看作城市夜景人像研究：人物在画面中不是清晰叙事对象，而是被霓虹、玻璃、反射和虚化共同包围，形成一种移动中被短暂捕捉的感觉。",
+    "articleTitle": null,
     "gptReview": [
       "城市光点和人物暗部形成了比较好的夜间关系。",
       "画面有移动感，但底部暗部稍重，可能压住人物。",
@@ -578,43 +731,18 @@ const workSources = [
       "和蓝色夜景人像组成双图系列。"
     ],
     "relatedHref": "./works.html",
-    "tags": [
-      "城市",
-      "霓虹",
-      "人像研究"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "article": null,
-    "detailMode": "poster",
-    "sourceWork": "原创视觉练习 / 城市玻璃人物研究",
+    "characters": null,
     "titleDisplay": "City Glass\nPortrait",
     "bg": "#d5ccc0",
     "fg": "#2b2520",
-    "muted": "rgba(43,37,32,.68)",
-    "medium": "城市人像图像 / 1080 x 1920",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/city-glass-portrait/thumb.webp",
+    "muted": "rgba(43,37,32,.68)"
   },
-  {
-    "slug": "summer-street-frame",
-    "title": "Summer Street Frame",
+  "summer-street-frame": {
     "shortTitle": "Summer Street",
-    "category": "夏日街景图像",
-    "status": "图像研究",
-    "date": "2026.05",
     "tone": "cactus",
-    "cover": "./content/design/works/summer-street-frame/hero.webp",
-    "alt": "Wide summer street anime frame with soft light and handwritten SUMMER title.",
     "format": "2560 x 1440",
-    "summary": "一张明亮的夏日街景图像。强光、街道、树影和手写标题共同制造被保存下来的季节记忆。",
     "concept": "这张图的价值在于它打断了作品集中偏暗、偏夜景的节奏。它不是靠复杂排版取胜，而是靠夏日光线、街道环境和手写标题建立轻柔记忆感。主体略虚，不一定是失败，也可以被理解成“被保存的画面”所带来的时间距离。",
+    "articleTitle": null,
     "gptReview": [
       "季节感非常清楚，适合作为深色作品之间的明亮间隔。",
       "手写标题和柔焦画面匹配，像一张被保存下来的夏日帧。",
@@ -635,43 +763,18 @@ const workSources = [
       "保留它作为 Works 轮播里的明亮休息点。"
     ],
     "relatedHref": "./works.html",
-    "tags": [
-      "夏日",
-      "街景",
-      "明亮间隔"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "article": null,
-    "detailMode": "landscape",
-    "sourceWork": "原创视觉练习 / 夏日街景构图研究",
+    "characters": null,
     "titleDisplay": "Summer\nStreet",
     "bg": "#edf0d7",
     "fg": "#262b1d",
-    "muted": "rgba(38,43,29,.68)",
-    "medium": "夏日街景图像 / 2560 x 1440",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/summer-street-frame/thumb.webp",
+    "muted": "rgba(38,43,29,.68)"
   },
-  {
-    "slug": "komi-purple-monochrome-spread",
-    "title": "Komi / Purple Monochrome Spread",
+  "komi-purple-monochrome-spread": {
     "shortTitle": "Komi",
-    "category": "动漫单色海报",
-    "status": "正式归档作品",
-    "date": "2026.05",
     "tone": "violet",
-    "cover": "./content/design/works/komi-purple-monochrome-spread/hero.webp",
-    "alt": "Purple monochrome fan-poster based on Komi Can’t Communicate, with a large vertical title and three manga panels.",
     "format": "1080 x 1350",
-    "summary": "一张基于《古见同学有交流障碍症》的紫色单色海报。巨大竖向标题、三段式漫画分镜和密集印刷质感共同构成出版物页面。",
     "concept": "这件作品不是抽象的紫色缩略图方向，而是明确的《古见同学有交流障碍症》二创版式海报。重点不只是古见硝子的角色图像，而是它已经形成了完整的单色出版物语言：左侧巨大标题、右侧分镜、顶部日文句子和底部密字共同构成一页可读的情绪海报。",
+    "articleTitle": "配套文章：从《古见同学有交流障碍症》到紫色单色出版物海报",
     "gptReview": [
       "紫色灰度系统控制得完整，图像、网点和文字像被同一次印刷压在一起。",
       "左侧巨大标题与右侧三段分镜关系很强，已经不是普通角色图。",
@@ -691,48 +794,21 @@ const workSources = [
       "调整底部文字密度，让信息更可读。",
       "为 Works 主展区输出一版更克制的展览型封面。"
     ],
-    "article": "content/design/works/komi-purple-monochrome-spread/article.md",
-    "articleTitle": "配套文章：从《古见同学有交流障碍症》到紫色单色出版物海报",
     "relatedHref": "./works.html",
-    "tags": [
-      "古见",
-      "紫色",
-      "单色海报"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "detailMode": "poster",
-    "sourceWork": "Komi Can’t Communicate / 古见同学有交流障碍症",
     "characters": [
       "Shouko Komi"
     ],
     "titleDisplay": "Komi\nPurple",
     "bg": "#d8d1dd",
     "fg": "#2e2632",
-    "muted": "rgba(46,38,50,.68)",
-    "medium": "动漫单色海报 / 1080 x 1350",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/komi-purple-monochrome-spread/thumb.webp",
+    "muted": "rgba(46,38,50,.68)"
   },
-  {
-    "slug": "chainsaw-denji-reze-blue-monochrome",
-    "title": "Chainsaw Man / Denji & Reze",
+  "chainsaw-denji-reze-blue-monochrome": {
     "shortTitle": "Denji & Reze",
-    "category": "关系拼贴海报",
-    "status": "正式归档作品",
-    "date": "2026.05",
     "tone": "blue",
-    "cover": "./content/design/works/chainsaw-denji-reze-blue-monochrome/hero.webp",
-    "alt": "Blue monochrome Chainsaw Man fan-poster featuring Denji and Reze in a collage layout.",
     "format": "1470 x 2206",
-    "summary": "一张基于《电锯人》的蓝色单色拼贴海报。核心人物是电次与雷塞，重点在人物关系，而不是抽象氛围。",
     "concept": "这件作品之前被误判成宇航员图像是错误的。它的来源非常具体：标题、分镜、桥上剪影和“爆弹の悪魔”等文本都指向《电锯人》电次与雷塞的关系线。因此它更像一张关系主题海报，用蓝色单色、漫画碎片和密集印刷颗粒把一段危险又暧昧的关系压成一张版面。",
+    "articleTitle": "配套文章：把《电锯人》电次 × 雷塞关系线压成一张蓝色拼贴海报",
     "gptReview": [
       "蓝色单色系统把图像、网点和标题统一成同一类印刷物。",
       "中央双人近景与周边小分镜配合得很好，情绪推进清楚。",
@@ -752,24 +828,7 @@ const workSources = [
       "减少一层高光装饰，避免局部太花。",
       "做一张配套海报，继续发展电次与雷塞系列。"
     ],
-    "article": "content/design/works/chainsaw-denji-reze-blue-monochrome/article.md",
-    "articleTitle": "配套文章：把《电锯人》电次 × 雷塞关系线压成一张蓝色拼贴海报",
     "relatedHref": "./works.html",
-    "tags": [
-      "电锯人",
-      "电次",
-      "雷塞"
-    ],
-    "scores": {
-      "concept": 7.8,
-      "layout": 7.6,
-      "typography": 7.4,
-      "visual": 7.7,
-      "system": 7.2,
-      "revision": 7.9
-    },
-    "detailMode": "poster",
-    "sourceWork": "Chainsaw Man / 电锯人",
     "characters": [
       "Denji",
       "Reze"
@@ -777,24 +836,22 @@ const workSources = [
     "titleDisplay": "Chainsaw\nMan",
     "bg": "#213144",
     "fg": "#edf1e9",
-    "muted": "rgba(237,241,233,.68)",
-    "medium": "关系拼贴海报 / 1470 x 2206",
-    "tools": "AI image / editorial layout study",
-    "thumb": "./content/design/works/chainsaw-denji-reze-blue-monochrome/thumb.webp",
+    "muted": "rgba(237,241,233,.68)"
   }
-];
+};
 
 function deriveWork(source) {
+  const detail = workDetails[source.slug] || {};
   const detailUrl = `./work-detail.html?work=${source.slug}`;
   const article = source.article || null;
 
   return {
     ...source,
+    ...detail,
     href: detailUrl,
     image: source.cover,
     article,
     articleHref: article ? `./article.html?src=${encodeURIComponent(article)}` : null,
-    subtitle: source.category,
     thumbnail: source.thumb,
     heroImage: source.cover,
     intro: source.summary,

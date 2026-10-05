@@ -1,0 +1,312 @@
+# T33 — All-size selfinjective radical-cube-zero ordinary return
+
+Date: 2026-10-04. Continue canonical T32/C107. Four-vertex closure is
+REUSED, not a research target. This result has NO vertex-count bound.
+Status: complete ordinary proof and normal adversarial self-audit;
+actual5/7-vertex minimal-resolution calibration passed. NOT independently
+verified, no novelty claim. Full Universal Gap A remains OPEN.
+
+## 1. C108 — A whole class closes despite permanent carrier misalignment
+
+Let A be elementary finite-dimensional over arbitrary k, selfinjective,
+and J^3=0. EVERY nonprojective LEFT simple L_y has its ordinary supported
+DIAGONAL pair Tor_A^n(R_y,L_y) nonzero for infinitely many n. Thus Universal
+Gap A holds for this WHOLE class, at arbitrary finite vertex count.
+No finite syzygy-state family, carrier alignment, periodicity, finite
+complement or opposite-infinite-plus transfer is required.
+
+Ordinary direct-product decomposition lets us treat one connected
+nonsemisimple component. If J^2=0, reuse the actual C104 radical-square-zero simple-cycle mechanism:
+selfinjective P_i has radical=socle=L_(pi(i)), so Omega L_i=L_(pi(i))
+and each simple is actually periodic (period<=N). The new proof concerns
+J^2!=0 and J^3=0.
+It uses ACTUAL minimal resolutions and their exact radical/socle layers.
+
+Moreover, if an actual simple resolution has a LAST simple syzygy L_i
+and never meets a simple afterwards, then EVERY positive2N-degree
+window contains nonzero ordinary Tor(R_i,L_i), N component vertex count.
+The SAME window transfers to the ORIGINAL simple before that last visit,
+with no loss in its index, by the ordinary injective/projective comparison
+below.
+The periodic-simple alternative is separately handled and is NOT assigned
+that window without proof. This distinction is load-bearing.
+
+## 2. Exact Cartan and Nakayama matrices, with orientation fixed
+
+Write P_i=Ae_i, D(j,i)=dim e_jAe_i. Let pi be the Nakayama permutation,
+so soc(P_i)=L_(pi(i)) and P_i is the injective hull of that simple.
+Let P be the INTEGER permutation matrix P_(pi(i),i)=1.
+Elementary simple dimensions are1. Ordinary Hom/projective/injective
+identities give
+
+\[
+D(j,i)=\dim\operatorname{Hom}(P_j,P_i)
+=[P_j:L_{\pi(i)}]=D(\pi(i),j),
+\quad D=D^TP.
+\tag{2.1}
+\]
+
+Transposing and multiplying(2.1) gives DP=PD. These are actual composition
+multiplicities. No symmetry of D or E is assumed when pi is nontrivial.
+
+Every P_i in this connected J^2!=0 component has Loewy length3.
+Indeed a simple P_i is also injective and isolates its vertex by(2.1),
+contradicting the connected nonsemisimple component. If P_i has length2,
+its semisimple radical equals its simple socle, so its D column is
+ e_i+e_(pi(i)). DP=PD makes all pi-orbit columns have the same form.
+Equation(2.1) excludes entries into that orbit from any outside column,
+while its own columns already exclude entries going outside. The orbit
+would be a separate algebra factor. Connectedness would make it ALL
+vertices, forcing J^2=0, contradiction. Thus J^2P_i=soc P_i for every i.
+
+Let E_(j,i)=[JP_i/J^2P_i:L_j]. Then
+
+\[
+D=I+E+P,\qquad EP=PE,\qquad E=E^TP.
+\tag{2.2}
+\]
+
+Consequently E^T=EP^(-1) and E is a REAL NORMAL nonnegative INTEGER matrix.
+E and P are simultaneously unitarily diagonalizable over C for the
+matrix argument; this does NOT change the module base field k.
+If an eigenpair is E v=mu v,Pv=omega v, then |omega|=1 and
+
+\[
+\mu=\overline\mu\,\omega.
+\tag{2.3}
+\]
+
+E is irreducible. Any actual external arrow i->j gives E_(j,i)>0;
+(2.2) gives j->pi(i). Applying pi to these edges and its finite order
+returns from j to i. Thus every arrow is in a directed cycle; connected
+Gabriel quiver makes E irreducible. This graph step is used ONLY to
+obtain Perron-Frobenius matrix data; homology is proved below by actual
+covers, not inferred from recurrence of arrows.
+
+## 3. Actual minimal-kernel lemmas, no stable substitution
+
+For indecomposable nonprojective M, let0->K->Q->M->0 be its actual minimal
+projective cover. Q is also injective. K has NO projective direct summand:
+such a summand is injective and would split inside Q while contained in
+JQ. Projecting onto it would imply U=JU, impossible by Nakayama.
+
+The cover kills soc Q. If a projective-injective indecomposable summand
+of Q mapped nontrivially on its essential simple socle, it would inject
+into M and split there, contradicting M indecomposable nonprojective.
+Thus soc Q subset K, essential in Q, so Q is the ACTUAL injective hull
+of K. If K decomposed into two nonzero modules, its injective hull and
+quotient Q/K would decompose likewise; neither quotient component can
+be zero because a whole projective summand cannot lie in JQ. Hence K is
+indecomposable and nonprojective. This is an ordinary module argument,
+not replacement of Tor by stable information.
+
+Any such M has J^2M=0: otherwise a cover summand maps nontrivially on
+J^2P_i=soc P_i and would split as above. If M is also NONSIMPLE, then
+soc M=JM. A complement C to JM in soc M injects into the semisimple
+head; taking the inverse image of the other head factors gives an actual
+module decomposition M=C direct-sum M'. Indecomposability excludes C.
+
+These exact module facts apply to EVERY actual syzygy of any simple.
+Selfinjectivity also makes every nonprojective simple infinite-pd: a
+last nonzero projective kernel in a finite minimal resolution is injective
+and would split, violating minimality. No opposite-+ step is involved.
+
+## 4. The two temporal alternatives and the ordinary head recurrence
+
+The ordinary self-Ext comparison is REUSED from
+Regular-Ext-and-Self-Extension-Transfer.md Lemma2 with c=0, since A is
+LEFT injective. For0->Omega M->Q->M->0,Q projective AND injective,
+second-variable ordinary dimension shifting and then first-variable
+projective shifting give, for EVERY n>=1,
+
+\[
+\operatorname{Ext}^n_A(M,M)
+\cong\operatorname{Ext}^{n+1}_A(M,\Omega M)
+\cong\operatorname{Ext}^n_A(\Omega M,\Omega M).
+\tag{4.0}
+\]
+
+Iterate for an actual finite syzygy depth; the positive n bound does NOT
+grow with that depth. These are ordinary VECTOR-SPACE comparisons, not
+an assertion identifying Yoneda algebras or a bare stable equivalence.
+Thus simple self-return proved at a later actual simple transfers to
+its ORIGINAL simple in the SAME positive degree. Every simple is treated.
+
+Start any actual simple minimal resolution. If it visits simple syzygies
+infinitely often, a fixed simple L_i occurs at two different times.
+The actual syzygy identifications give Omega^d L_i=L_i for some d>0.
+Its ordinary minimal resolution therefore has head L_i at every multiple
+d, yielding ordinary Tor(R_i,L_i) nonzero there. This is real periodicity,
+not graph recurrence. Equation(4.0) transfers this SAME-DEGREE return
+to the original simple. It also follows from C106's infinite aligned-state
+bridge. Finite vertex labels are used only after the ACTUAL simple visits.
+
+Otherwise take the LAST simple syzygy L_i; every X_n=Omega^n L_i,n>=1,
+is indecomposable nonprojective NONSIMPLE. Let t_n be its head vector,
+s_n its radical/socle vector. t_0=e_i and t_1=E e_i. Each actual cover Q_n
+has head t_n and socle P t_n. The exact inclusion X_(n+1) subset JQ_n,
+with socle=radical and soc Q_n subset X_(n+1), gives
+
+\[
+s_{n+1}=Pt_n,\qquad
+ t_{n+1}=Et_n-s_n=Et_n-Pt_{n-1}.
+\tag{4.1}
+\]
+
+This is proved from the REAL cover and its semisimple radical quotients;
+it is NOT inferred from Cartan entries alone. Every t_n is nonnegative
+and nonzero. Define F_0=I,F_1=E,F_(n+1)=E F_n-P F_(n-1). Then
+
+\[
+t_n=F_n e_i,\qquad
+\sum_{n\ge0}F_nt^n=(I-Et+Pt^2)^{-1}.
+\tag{4.2}
+\]
+
+The actual minimality comparison, before any spectral work, identifies
+
+\[
+\dim\operatorname{Tor}_n^A(R_i,L_i)=(F_n)_{ii}.
+\tag{4.3}
+\]
+
+(4.1) cannot be iterated across a SIMPLE syzygy. Example kC_5/J^3 has
+E=C,P=C^2 and lambda1, but Omega^2 L_i=L_(i+3); the formal F_2=0 would
+be WRONG at that simple visit. Its actual simple periodicity already
+places it in the first alternative. No universal lambda>=2 claim.
+
+## 5. An actual ordinary Betti series has an uncancellable pole
+
+Let lambda be the Perron eigenvalue of irreducible E, v>0 a Perron vector.
+EP=PE and uniqueness imply Pv=v; hence E^T v=lambda v. Equation(4.1)
+gives v^T t_n=v_i f_n(lambda), where f_0=1,f_1=lambda and
+f_(n+1)=lambda f_n-f_(n-1). All v^T t_n are strictly positive.
+If lambda<2, writing lambda=2cos theta gives
+f_n(lambda)=sin((n+1)theta)/sin theta, which eventually is zero or
+negative. Contradiction. Thus lambda>=2 ONLY in this nonsimple-tail case.
+
+Simultaneous unitary diagonalization expresses the diagonal series as
+
+\[
+\sum_{n\ge0}(F_n)_{ii}t^n
+=\sum_r\frac{|U_{ir}|^2}{1-\mu_r t+\omega_r t^2}.
+\tag{5.1}
+\]
+
+The unique Perron term has mu=lambda,omega1 and strictly positive weight
+v_i^2/||v||^2. If lambda>2, let rho=(lambda-sqrt(lambda^2-4))/2 in(0,1).
+For another denominator to vanish at rho, mu=rho^(-1)+omega rho.
+Together with mu=conjugate(mu) omega, this forces
+(1-omega)(rho^(-1)-rho)=0. Thus omega1 and mu=lambda, the unique Perron
+term. Its SIMPLE positive pole has no other pole to cancel it.
+
+If lambda2, the Perron denominator is(1-t)^2. A different denominator
+vanishing at1 has mu=1+omega; unless omega1, its derivative is omega-1,
+so it has only a SIMPLE pole. omega1/mu2 is again the unique Perron term.
+Its positive DOUBLE pole cannot be cancelled. Thus(5.1) is nonpolynomial
+in either case. By(4.3), the ORDINARY simple diagonal Tor is nonzero at
+infinitely many degrees. Reverse support e_iAe_i is automatic.
+
+This uses exact integer dimension matrices studied over R/C, NOT scalar
+extension of A or a singular/Tate class. It holds for arbitrary k.
+The rational series denominator det(I-Et+Pt^2) has degree2N and constant1,
+with numerator degree<=2N-2. Its coefficient recurrence holds after that
+finite numerator. If2N consecutive positive-degree coefficients after
+any M>=0 vanished, the recurrence would kill ALL subsequent coefficients,
+contradicting the uncancellable pole. Hence every[M+1,M+2N] contains
+ordinary diagonal Tor. This2N GAP bound belongs to this exact nonsimple
+alternative; no bound on the last-simple index or other alternative is
+claimed. Equation(4.0) transfers this SAME2N window to the ORIGINAL simple, with
+no loss from the last-simple index. C108 for EVERY nonprojective simple
+follows by the two alternatives and direct-product lift.
+
+## 6. Actual5/7-vertex adversarial calibrations: zero aligned visits after0
+
+The user has supplied <=4-vertex closure (C107); it is reused. These
+higher-size examples test the SAME arbitrary-size identities, not a
+mechanical five/seven-vertex classification.
+
+(A) Zigzag cycle with N=5, dimension4N=20. Basis e_i,a_i,b_i,c_i; arrows
+a_i:i->i+1,b_i:i->i-1, local c_i. Only radical products
+b_(i+1) a_i=c_i,a_(i-1) b_i=c_i. Explicit sum-of-c_i Frobenius pairing
+is symmetric and nondegenerate. Soc P_i=L_i, E=C+C^(-1),P=I.
+Actual induction gives t_n=sum_(r=0..n) C^(n-2r)e_0,
+radical t_(n-1), dim X_n=2n+1. The next actual cover has kernel dimension
+2n+3>1, so it is nonsimple by Section3, validating the induction for
+ALL degrees. Diagonal series is(1+t^N)/((1-t^2)(1-t^N)); in particular
+ordinary diagonal Tor is nonzero in EVERY even degree.
+
+(B) Twisted double-arrow cycles N=5 and7, dimensions20 and28. Both arrows
+a_i,b_i:i->i+1 and c_i:i->i+2; only radical products
+b_(i+1)a_i=c_i,a_(i+1)b_i=c_i. Explicit sum-of-c_i Frobenius pairing is
+nondegenerate, with soc P_i=L_(i+2),E=2C,P=C^2 NONTRIVIAL.
+Actual same kernel-dimension induction gives t_n=(n+1)C^n e_0 and
+radical n C^(n+1)e_0. Hence Tor_n(R_0,L_0)=n+1 if N divides n,
+and0 otherwise; series(1+(N-1)t^N)/(1-t^N)^2. Actual module dimensions
+2n+1 drift through infinitely many distinct states.
+
+ALL simple labels on BOTH sides are infinite by the explicit Frobenius
+pairing/selfinjectivity and last-projective-kernel split argument, direct
+on each side. Their physical matrices are respectively I+C+C^(-1)+I
+and I+2C+C^2. EVERY positive syzygy fails C106's own bi-singular rectangle:
+zigzag carriers contain three successive labels with a missing endpoint
+Peirce entry, and twisted carriers are two successive labels with a
+missing reverse edge. Only X_0 is aligned. Thus the unqualified claim
+'every infinite tail has infinitely many aligned states' is FALSE, even
+in actual strongly connected all-infinite cores with no finite deletion.
+These algebras ALREADY have ordinary supported returns, so they are NOT
+UGA counterexamples and do not refute a badness-specific alignment lemma.
+The C108 actual-head proof closes them without any alignment requirement.
+
+Exact rational checks passed37952 full associativity triples,27 literal
+minimal covers (degrees0..8 in3 examples),462 integral basis inverses,
+17 actual projective socle annihilators,3 Frobenius pairing certificates,
+and303 integer head-recurrence/rational-series coefficient checks. Real
+covers, radical ranks and full support rectangles were computed. Infinity
+and the arbitrary-size theorem are separate written proofs, not extrapolated
+from these finite checks. Initial new-caller API error (.radical attribute)
+was corrected using frozen Module.radical_bases; log preserved and full
+rerun passed. Frozen helpers unchanged. Metadata-only helper digest removal
+under new AGENTS did not change/repeat the mathematical computation.
+
+## 7. Source-method scope and normal adversarial audit
+
+The weakly symmetric P=I layer method is described in Karin Erdmann,
+[Ext-finite modules for weakly symmetric algebras with radical cube zero,
+Sections2.3–2.6](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/26516CA33D32E5B50A8C291AEE0EB145/S1446788716000331a.pdf/extfinite_modules_for_weakly_symmetric_algebras_with_radical_cube_zero.pdf).
+The project already cites that method in Radical-Head-Detection.md. The
+present proof explicitly audits the Nakayama permutation P rather than
+assuming E symmetric. No literature-first or independent-verification
+claim. Every ordinary comparison needed for this argument is written here.
+The bounded Vault read returned method-boundary notes; it was not authority
+for project facts and did not supply a universal visibility theorem.
+
+Load-bearing audit:
+- elementary field condition, connected component, J^2!=0 branch;
+- actual primitive injective/projective socle orientation and D=D^TP;
+- length2 orbit-isolation proof before assigning D=I+E+P;
+- E NORMAL, not necessarily symmetric; nontrivial P retained;
+- exact minimal kernels have no projective summands, contain essential
+  soc Q, and are actual indecomposables; no stable-to-ordinary shortcut;
+- last SIMPLE visit before iterating(4.1), lambda>=2 ONLY then;
+- actual heads = ordinary Tor dimensions before graph/spectrum use;
+- SAME-DEGREE ordinary self-Ext transfer uses BOTH projectivity and
+  injectivity, positive n>=1 and vector-space comparisons only; no stable
+  substitution, no loss with last-simple depth and no Yoneda-algebra claim;
+- Perron weight positive, lambda>2 pole unique, lambda2 DOUBLE pole not
+  cancellable by other SIMPLE poles; no uncontrolled sign positivity;
+- matrix spectral field C is separate from arbitrary module field k;
+-2N recurrence-window bound only on the exact nonsimple alternative;
+- permanent misalignment is demonstrated by actual infinite induction,
+  not finite head samples, and examples are already infinite-plus;
+- initial caller failure preserved; exact shared helpers are self-audit,
+  not independent proof acceptance; no routine checksums or schema claims.
+
+All-size C108 closes the selfinjective cube-zero class, including infinite
+state drift and permanent carrier misalignment. General nonselfinjective
+cube-zero, selfinjective higher-radical layers without an explicit head
+recurrence, C102 physical unit transfer and ALL original global branches
+remain OPEN. Do not assume selfinjectivity for a minimal UGA counterexample.
+Full Universal Gap A remains OPEN. Next research should seek an actual
+ordinary mechanism outside this class, not promote another necessary
+carrier condition.

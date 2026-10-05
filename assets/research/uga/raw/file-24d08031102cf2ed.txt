@@ -1,0 +1,346 @@
+# Derived deletion：two-stage bar 谱序列与真正的消去障碍
+
+2026-09-27。按新交接 Priority A–C 续接，不重启项目。
+
+**状态：下述带证明的结论为 project-derived theorem / lemma，已经自审；尚未经外部 Verifier 认证，未确认新颖性。** 文献输入另标 literature-confirmed。Universal Gap A 仍未解决。有限计算只审计符号、映射和明确例子，不替代全次数证明。
+
+本稿有三项主结果：给出任意顶点数的精确 two-stage 谱序列和消去秩公式；审定最小反例的非零三次障碍及二次—三次碰撞；给出一个实际删点例子，证明商 Tor 的所有高次类确实可以被一个三次运算消去，而且会出现非零第二页微分。该例原代数仍有持续 supported Tor，故它排除的是“商类必须存活”这条捷径。
+
+## 1. 先修正左右方向，再使用最小性
+
+令 (L_i) 为左 simple，(R_i=D L_i) 为右 simple，并始终记
+\[
+c_{ji}=\dim e_jAe_i,\qquad
+\beta_{ij}(n)=\dim\operatorname{Tor}^A_n(R_i,L_j)
+=\dim\operatorname{Ext}_A^n(L_j,L_i).
+\]
+项目的 infinite (+) 是存在固定 (i,j)，使 (c_{ji}>0) 且 \(\beta_{ij}(n)>0\) 无限多次。这与 [CLMS Definition 5.4](https://arxiv.org/pdf/2509.05135) 一致（**literature-confirmed：定义核对**）。
+
+**Opposite 不变性。** 取右 (A)-投射消解 (P_\bullet\to R)。它同时是左 (A^{op})-投射消解，且
+\[
+P_\bullet\otimes_A L\xrightarrow{\sim}
+L\otimes_{A^{op}}P_\bullet,\qquad p\otimes l\mapsto l\otimes p
+\tag{1}
+\]
+是链同构：平衡关系和微分逐项保持。因此
+\[
+c^{A^{op}}_{ji}=c^A_{ij},\qquad
+\beta^{A^{op}}_{ij}(n)=\beta^A_{ji}(n),\qquad
++(A^{op})\Longleftrightarrow +(A).
+\tag{2}
+\]
+见证 pair 要同时转置；固定 source 顶点未必保留。
+
+交接所列“(A^{op}) infinite (+) 只能推出 (A) infinite co(+)”在上述定义下不成立。[Armenta Proposition 4.7](https://arxiv.org/pdf/2607.20849) 写出的两个转置公式正确，但同时代入 CLMS 定义得到的是 (2)，没有证明其 co(+) 声明。这里不声称已经反驳 (+\iff co+) 本身。详细原文位置、链证明及指定 KLS 原 (A) 的直接证明审读见 [方向审计](../work/kls-orientation-audit-20260927.md)。
+
+这对任意 (N) 有直接作用：**not (+(A)) 已允许在 (A,A^{op}) 两侧应用 one-way law，不需另加 not co(+)。**
+
+为自足起见，one-way law 在本记号中直接来自有限多个 pair：not (+) 给出 (b)，使 (c_{ji}\beta_{ij}(n)=0) 对所有 (n>b)。于是左 simple 的最小消解满足
+\[
+e_jP_n(L_j)=0\quad(n>b).
+\tag{3}
+\]
+右侧版本由 (2) 得到。这只描述指定消解尾端，不声称全代数三角化。
+
+**Vertex-deletion descent。** 若 \(\operatorname{pd}_A L_x=\infty\)，令 (e=e_x, C=A/AeA)。式 (3) 说明尾端每个投射直和项 (Ae_y) 都有 (eAe_y=0)。故 (AeAe_y=0)，且 (Ae_y=Ce_y) 是 (C)-投射；尾端微分在 (C) 上仍最小。它给出一个 (C)-模的无限最小投射消解，所以 \(\operatorname{gldim}C=\infty\)。若 (A) 按顶点数最小地违反 (U)，则 (C) infinite (+)。
+
+**两侧 mixed collision 的无附加 co(+) 版本。** 若 not (+(A))，且 \(\Gamma=e_xAe_x\ne k\)，则存在 (z,y\ne x) 使
+\[
+\operatorname{Tor}^{\Gamma}_n(e_zAe_x,e_xAe_y)\ne0
+\quad\text{无限多次}.
+\tag{4}
+\]
+证明：对左右 (x)-simple 的消解分别施加 ((- )e_x)、(e_x(-))。由 (3) 得到有界复形 (V_\bullet,U_\bullet)，分别拟同构于右、左 \(\Gamma\)-simple (k_x)，每项是所列 Peirce 模块的有限直和。若所有非 (x) pair 的 Tor 最终为零，含 (x) 的 pair 因一侧为 \(\Gamma\) 也在正次数为零。有限多个项的迭代导出张量三角形便使 (V_\bullet\otimes^\mathbf L_\Gamma U_\bullet) 有界。这与非半单有限维 local algebra 的 \(\operatorname{Tor}^{\Gamma}_n(k_x,k_x)\ne0\) 对所有 (n\ge0) 矛盾。后者可直接证明：最小消解若终止，末个非零自由项向前一项的 radical 矩阵单射；一个非零的 radical-annihilated 元素给出该矩阵的非零核。证毕。
+
+(4) 没有提供固定同余类上的非零，更没有证明 mixed fragments 的合成存活。
+
+## 2. 审定 local-trivial 的 2–3 normal form
+
+以下固定 (eAe=k)。令 (I=AeA, C=A/I)，以及
+\[
+M=\ker(Ae\otimes_k eA\xrightarrow{\mu}I).
+\]
+**literature-confirmed。** derived quotient (Q=A/^{\mathbf L}AeA) 满足
+\[
+Ae\otimes^\mathbf L_{eAe}eA\longrightarrow A\longrightarrow Q,
+\qquad H^0Q=C,\quad H^{-1}Q=M,\quad H^{<-1}Q=0.
+\tag{5}
+\]
+引用 [Booth, Proposition 4.2.1 / Corollary 4.2.3](https://arxiv.org/pdf/1810.10060)；(A\to Q) 的 derived-localization 性质见 [Braun–Chuang–Lazarev §9](https://arxiv.org/abs/1505.01146)。因此对由 (C) 膨胀的右、左模，
+\[
+R\otimes_A^{\mathbf L}L\simeq R\otimes_Q^{\mathbf L}L.
+\tag{6}
+\]
+本稿没有把普通 (A\to C) 当作 homological epimorphism。
+
+**第一缺陷的识别。** 自然有 (C)-双模同构
+\[
+M\cong\operatorname{Tor}_2^A(C,C).
+\tag{7}
+\]
+证明：(mu) 在左施加 (e) 后是 (eAe\otimes eA\to eA) 的同构，所以 (eM=0)；右侧同理 (Me=0)。故 (IM=MI=0)。令 (U=Ae\otimes_k eA)，它作为左 (A)-模投射，且 (C\otimes_AU=0)。由 (0\to M\to U\to I\to0) 的 Tor 长正合列得到
+\(\operatorname{Tor}_1^A(C,I)\cong C\otimes_AM=M\)。再用 (0\to I\to A\to C\to0) 得 (7)；所有映射保留两端 (C)-作用。
+
+选择保留剩余 primitive idempotents 的严格增广最小 (A_\infty) 模型；底环 (S=\bigoplus_{i\ne x}ke_i) 可分离，故可作 (S)-相对转移。使用 cohomological convention (|m_r|=2-r)。次数 (0,-1) 强制
+\[
+H=C\oplus M[1],\quad M[1]^2=0,\quad
+m_r=0\ (r\ge4),\quad m_3:C^{\otimes_S3}\to M[1].
+\tag{8}
+\]
+任何含 (M[1]) 输入的 (m_3) 也为零。四元 (A_\infty) 恒等式恰为 Hochschild cocycle 方程。因此得到
+\[
+\kappa=[m_3]\in HH^3(C,M).
+\tag{9}
+\]
+最小模型与 bar 的一般背景采用 [Keller 的原始讲义](https://arxiv.org/abs/math/9910179)；(8)–(9) 的次数检查在此直接完成。
+
+若 \(\kappa=0\)，选归一化 (f_2:C\otimes_SC\to M) 消去这个 coboundary；以 (f_1=1,f_{r\ge3}=0) 作 (A_\infty) 换元。更高方程中凡含两个 (f_2) 输出或把 (M) 再送入 (f_2,m_3) 的项都为零，故换元确实成立，逆为符号相反的 (f_2)。从而
+\[
+Q\simeq C\ltimes M[1]
+\quad\text{且投影 }Q\to C\text{ 有 }A_\infty\text{ section}.
+\tag{10}
+\]
+反之，若存在 inducing identity on (H^0) 的 section，其三元方程给出 (m_3) 为 coboundary。这里的“形式”始终保留 (Q\to C) 及 primitive 标签。
+
+section 在两个 simple 的 bar complexes 上给出链级 retraction。因此 (C) 的 Tor 是 (Q) 的 Tor 的直和项。商中的 (e_bCe_a\ne0) 保证原代数的 (e_bAe_a\ne0)。结合第 1 节最小性与 (6)，得到：
+
+**2–3 必要条件。** 若 (A) 是顶点最小的 (U) 反例，(\operatorname{pd}_A L_x=\infty, e_xAe_x=k)，则
+\[
+\boxed{0\ne\kappa_x\in HH^3\bigl(C_x,\operatorname{Tor}_2^A(C_x,C_x)\bigr).}
+\tag{11}
+\]
+
+**二次—三次碰撞。** 在相同假设下存在 (a,b\ne x)，同时有
+\[
+\operatorname{Ext}^3_C(L_b,L_a)\ne0,\qquad
+\ker(e_aAe_x\otimes_k e_xAe_b\to e_aAe_b)\ne0.
+\tag{12}
+\]
+证明：(C) elementary 保证 (C^e) 的 simples 为
+
+\[
+T_{ab}=L_a\otimes_kDL_b=\operatorname{Hom}_k(L_b,L_a),
+\quad (cfd)(v)=cf(dv).
+\]
+对 (M) 的 composition series 使用系数长正合列：若每个 simple factor 的 (HH^3) 都为零，则归纳得到 (HH^3(C,M)=0)，与 (11) 矛盾。故某个 (T_{ab}) 有非零 (HH^3)。bar 分辨率的逐项 evaluation 识别给出
+\[
+\operatorname{Hom}_{C^e}(\operatorname{Bar}_\bullet C,
+\operatorname{Hom}_k(L_b,L_a))
+\cong\operatorname{Hom}_C(\operatorname{Bar}_\bullet C\otimes_C L_b,L_a),
+\]
+右侧确实是计算左模 (\operatorname{Ext}_C(L_b,L_a)) 的投射分辨率；底域上的张量正合保证比较有效。于是 (HH^3(C,T_{ab})\cong\operatorname{Ext}^3_C(L_b,L_a))，方向如 (12)。该 composition factor 又保证 (e_aMe_b\ne0)，即 (12) 的核。证毕。
+
+不能把 composition factor 当作 (M) 的直和项，不能据此声称抽出了原 \(\kappa\) 的规范非零投影，也不能把一次 Ext³ 碰撞当作无限返回。
+
+## 3. 固定 simple pair 的真实 bar 微分
+
+取 (R=R_a,L=L_b)，均由 (H\to C\to S) 膨胀。记 (J=\operatorname{rad}C)，把 (s) 规定为 cohomological degree (-1) 的移位。于是 (sJ) 的 homological weight 为 1，(sM[1]) 的 weight 为 2。
+
+归一化 bar complex 是
+\[
+B=R\otimes_S T^c_S(sJ\oplus sM[1])\otimes_S L,
+\qquad d=b_2+b_3.
+\tag{13}
+\]
+两端 simple 被 (J,M) 湮灭，故没有端点作用项。规定
+\[
+b_2(sa\otimes sb)=(-1)^{|a|}s(ab),\qquad
+b_3(sa\otimes sb\otimes sc)=s\kappa(a,b,c)\quad(a,b,c\in J).
+\tag{14}
+插入到一个 word 的第 (i+1) 个位置时再乘
+\((-1)^{\sum_{j\le i}|sa_j|}\)。这是明确的符号约定；(kappa) 的全局符号可随 unsuspension convention 同时调整。(14) 下 Hochschild cocycle 方程保证
+\[
+b_2^2=b_3^2=b_2b_3+b_3b_2=0.
+\tag{15}
+\]
+其中 (b_3^2=0) 包括两个不相交插入项的带符号抵消；它绝不表示同一三次运算可以直接迭代出非零返回。
+
+若 word 中有 (p) 个 (M)、(q) 个 (J)，则总 homological degree 为 (n=q+2p)，并有
+\[
+b_2:(p,q)\to(p,q-1),\qquad
+b_3:(p,q)\to(p+1,q-3).
+\tag{16}
+\]
+过滤 (F^pB=\{	ext{至少含 }p\text{ 个 }M\}) 是递减的微分过滤。在固定总次数 (n)，(F^{\lfloor n/2\rfloor+1}B_n=0)，所以谱序列按次数有限并收敛，无需未经证明的全局有界性。
+
+**Two-stage 谱序列定理。** 以 (p,q) 为上述指标，存在
+\[
+E_1^{p,q}=H_q\left(
+R\otimes_C^{\mathbf L}
+\underbrace{M\otimes_C^{\mathbf L}\cdots\otimes_C^{\mathbf L}M}_{p\text{ 个}}
+\otimes_C^{\mathbf L}L\right)
+\Longrightarrow\operatorname{Tor}^{Q}_{q+2p}(R,L),
+\tag{17}
+\]
+其中 (p=0) 时解释为 (R\otimes_C^{\mathbf L}L)。微分为
+\[
+\boxed{d_r:E_r^{p,q}\longrightarrow E_r^{p+r,q-2r-1}.}
+\tag{18}
+\]
+
+证明 (E_1) 的识别：固定 (p) 后，将 word 按 (M) 分成 (p+1) 个 (J)-块。(b_2) 正是这些块的 normalized bar differential，包括 (J) 对相邻 (M) 的左右作用。这是计算 (17) 中迭代导出张量的 multi-bar complex；所有底层 (S)-模均投射。式 (18) 来自过滤增加 (r)、总次数减少 1。收敛由上述逐次数有限性得出。
+
+本编号中 **(d_1) 首次由 (kappa) 控制**：若 (b_2z_0=0)，则 (d_1[z_0]=[b_3z_0])。不能把别的 length filtration 的页号不加换算地移到这里。
+
+Peirce 指标完全保留：一个三次替换具有形式
+\[
+e_iJe_j\otimes e_jJe_k\otimes e_kJe_l
+\xrightarrow{\kappa}e_iMe_l.
+\tag{19}
+\]
+它移除两个内部标签 (j,k)，不改变整个 word 的两端 ((a,b))。所以所有 (d_r) 都在同一个 (R_a,L_b) block 内；谱序列微分本身没有给出 smaller-support descent。
+
+## 4. 消去的精确含义与 fixed-channel 的可证边界
+
+由投影 (Q\to C) 得到的是
+\[
+\epsilon_n:\operatorname{Tor}^Q_n(R,L)\longrightarrow
+\operatorname{Tor}^C_n(R,L),
+\tag{20}
+\]
+而非无条件的反向嵌入。零 (M) 列没有 incoming differential，故
+\[
+E_\infty^{0,n}=\operatorname{im}\epsilon_n,
+\qquad
+\boxed{\dim\operatorname{Tor}^C_n(R,L)-\dim\operatorname{im}\epsilon_n
+=\sum_{r\ge1}\operatorname{rank}(d_r:E_r^{0,n}\to E_r^{r,n-2r-1}).}
+\tag{21}
+\]
+和式只需 (1\le r\le\lfloor(n-1)/2\rfloor)。每页的维数下降就是相应 outgoing rank，逐页相加即得证明。
+
+特别地，令 (W_p=R\otimes_C^{\mathbf L}M\otimes_C^{\mathbf L}\cdots
+\otimes_C^{\mathbf L}M\otimes_C^{\mathbf L}L)，有
+\[
+\dim\operatorname{Tor}^Q_n(R,L)\ge
+\dim\operatorname{Tor}^C_n(R,L)
+-\sum_{r=1}^{\lfloor(n-1)/2\rfloor}\dim H_{n-2r-1}(W_r).
+\tag{22}
+\]
+这是实际 multi-bar 的必要消去容量，不是只看非零 Peirce 边的 Boolean 条件。
+
+更高页来自真实的修正链：若一个类活到第 (r) 页，可选同总次数的 (z_s\in B^{p+s,*})，满足
+\[
+b_2z_0=0,\qquad b_2z_s=-b_3z_{s-1}\ (1\le s<r),
+\qquad d_r[z_0]=[b_3z_{r-1}].
+\tag{23}
+\]
+这保留了每一次边界修正。它不是 (m_3) 的普通复合；(m_{r\ge4}=0) 不排除任意高页的这种 obstruction。
+
+因此，若一个 quotient witness 在 (Q) 中所有高次 Tor 都为零，则由 (21) 可证：无界多个总次数有非零的真实消去微分，且每次都使用 (kappa)。进一步的严格二分只有：
+
+1. 消去页号存在一个统一上界时，某个固定 (r) 在无界多个总次数有非零 (d_r)；
+2. 否则必须保留无界长的修正链 (23)。
+
+**candidate：目前没有证明本项目的 derived quotients 必属第一支。** 有限顶点只使 (19) 的局部标签有限；它不限制过滤长度 (p) 或 (23) 的长度。把反复出现的一个矩阵系数称作“固定 channel”，还没有得到不依赖 representative 的非零同调运算。
+
+**证明障碍的明确模型。** 对每个 (r\ge1)，取总次数 (2r+1) 的 (z_0,\ldots,z_{r-1})，过滤分别为 (0,\ldots,r-1)，及总次数 (2r) 的 (w_0,\ldots,w_{r-1})，过滤分别为 (1,\ldots,r)。规定
+\[
+b_3z_s=w_s,\quad b_2z_{s+1}=-w_s\ (s<r-1),
+\quad b_2z_0=0,\quad b_2w_s=b_3w_s=0.
+\tag{24}
+\]
+其 bidegrees 和 (15)–(16) 完全相同。唯一零过滤类恰好被 (d_r) 杀死；总复形的矩阵可逆，因而无同调。对所有 (r) 取直和仍按次数有限，所有项可以标同一个顶点，却没有固定页上的无限消去。
+
+(24) 是**实际 filtered-complex 反例**，不是声称它来自某个有限维 (C,M,\kappa) 的 bar coalgebra。因此它精确排除“仅靠 bidegree、有限顶点和 (b_2,b_3) 恒等式就推出固定页”的推理；不能据此反驳附加了全部 bar 结构的 candidate。
+
+## 5. 实际删点中，单个三次障碍可消去所有高次商类
+
+以下是一个全次数证明，计算只负责审计。底域取 (mathbb Q)，可扩张到 (mathbb C)。取顶点 (y,x)，箭头
+\[
+t:y\to y,\quad a:y\to x,\quad b:x\to y,
+\]
+路径按乘法从右向左作用。给出八维代数的 radical 基
+\[
+t,t^2,t^3,a,b,h=tb,
+\]
+及唯一非零 radical 乘积
+\[
+t\,t=t^2,\quad t\,t^2=t^2t=t^3,\quad ba=t^3,\quad tb=h.
+\tag{25}
+\]
+其余均为零。直接检查可得结合性及 (J^4=0)。令 (e=e_x)，则
+\[
+eAe=k,\quad C=A/AeA=k[t]/(t^3),\quad
+M=k(h\otimes a),
+\tag{26}
+\]
+且 (tM=Mt=0)。这里 (fAe=\langle b,h\rangle,eAf=\langle a\rangle)，乘法分别把 (b\otimes a\) 送到 (t^3)、把 (h\otimes a\) 送到零。
+
+这个删点有明确两项 dg 模型：
+\[
+Q^0=k[t]/(t^4),\qquad Q^{-1}=\langle u,v\rangle,
+\quad du=t^3, dv=0, tu=v, ut=tv=vt=0,
+\tag{27}
+\]
+所有负次数乘积为零。可从 (A\langle h_x\rangle)、(dh_x=e_x) 的 Drinfeld quotient 直接得到：其 (f(-)f) 在每个负次数是 (fAe\otimes eAf)，次数 (-n\to-n+1) 的微分对 (n\ge2) 交替为零、恒等。删去这些可缩的更低项即得 (27)；负项相乘时中间 (eAfAe=0)，故投影保乘法。
+
+取 (t^3\mapsto u) 的 contracting homotopy，转移得到唯一非零归一化三次值
+\[
+\kappa(t,t,t^2)=v,\qquad\kappa(t,t^2,t)=v.
+\tag{28}
+\]
+例如转移公式为 (t_i h(t_jt_k)-h(t_it_j)t_k)，再投影到 (kv)；普通 (C) 乘法的修正项在投影下为零。式 (28) 是 HH³ 的非零类，也可由第 6 节精确 cochain 矩阵审计。
+
+**永久消去定理。** 对唯一 (C)-simple (k=L_y)，
+\[
+\operatorname{Tor}^C_n(k,k)\cong k\quad(n\ge0),\qquad
+\epsilon_n=0\quad(n\ge5).
+\tag{29}
+\]
+并且 (17) 对 (n=6) 的商类具有非零 (d_2)，所以“只有 (m_3)，只需一次 (d_1)”已经在真实删点中失败。
+
+**证明。** 对 (13) 按次数取有限维对偶，使用等价的 cochain 符号约定，得到自由 dg 代数
+\[
+\mathcal E=k\langle\alpha,\beta,\gamma\rangle,
+\quad |\alpha|=|\beta|=1,\ |\gamma|=2,
+\quad d\alpha=0,\ d\beta=\alpha^2,
+\quad d\gamma=\alpha^2\beta+\alpha\beta\alpha.
+\tag{30}
+\]
+其中不含 (gamma) 的子代数 (mathcal E_C) 是 (C) 的 bar 对偶，包含映射诱导 Ext 的 inflation；其逐次数对偶为 (20)。
+
+令 (eta=\alpha\beta+\beta\alpha)，则 (d\eta=0,d\gamma=\alpha\eta)。(C) 的交替 (t,t^2) 最小分辨率给出
+\[
+H^*(\mathcal E_C)=\Lambda(u_1)\otimes k[v_2],
+\quad u_1=[\alpha],\ v_2=[\eta],\ |u_1|=1,\ |v_2|=2;
+\tag{31}
+\]
+这里 (k[v_2]) 是普通多项式环，不取幂级数完成。每个次数的基为 ([\eta]^r) 与 ([\alpha][\eta]^r)，且 ([\alpha]^2=0)。二次类的乘法是两步分辨率移位；奇次平方可由 (d\beta=\alpha^2) 检查。
+
+在 (mathcal E) 内写出明确的五次元
+\[
+F=\gamma\alpha\gamma+\gamma\beta\eta
+-(\alpha\beta^2+\beta\alpha\beta+\beta^2\alpha)\gamma
+-\beta^3\eta.
+\tag{32}
+\]
+带符号 Leibniz 法则逐项给出
+\[
+\boxed{dF=\eta^3.}
+\tag{33}
+\]
+一个短核对是记 (T=\alpha\beta^2+\beta\alpha\beta+\beta^2\alpha)，则 (dT=\alpha\eta\alpha)；将 (32) 求微分后的剩余项收成
+\((\alpha\eta\beta+T\alpha-d\beta^3)\eta=\eta^3\)。
+
+于是所有 ([\alpha][\eta]^r, r\ge1) 被 (d(\gamma\eta^{r-1})) 消去，所有 ([\eta]^r, r\ge3) 被 (d(F\eta^{r-3})) 消去。这证明 (29) 的全部次数，而非从次数七以内的计算外推。
+
+再赋 internal weight (operatorname{wt}(\alpha)=1,\operatorname{wt}(\beta)=2,
+\operatorname{wt}(\gamma)=4)。所有微分保 weight。([\eta]^3) 的 weight 是 9。在 (E_1^{1,3}) 中，一个 (M) 贡献 4，余下两段 (C)-Tor 总次数为 3，只能贡献 internal weight 4；所以 weight 9 部分为零，该六次商类不能被 (d_1) 杀死。其 (d_2) 目标 (E_2^{2,1}) 可以具有 weight (4+4+1=9)。式 (32) 最高含两个 (gamma)，且 (33) 使该类死亡，所以恰有非零 (d_2)。
+
+**该例不是 (U) 反例。** Cartan 矩阵（行是左 composition multiplicities，列是 (Ae_y,Ae_x)）为
+\[
+\begin{pmatrix}4&2\\1&1\end{pmatrix}.
+\]
+若 (L_y) 有有限 pd，其有限投射消解的交替整数重数 ((u,v)) 必满足 (4u+2v=1,u+v=0)，无整数解。因此 pd 无限。若高次 (P_n(L_y)) 全不含 (Ae_y)，它们只含 (Ae_x)；而 (e_xJe_x=0) 使这些最小微分全零，与无限正合尾端矛盾。因此 (operatorname{Tor}^A_n(R_y,L_y)) 无限多次非零。由 (6)，这些是 (Q) 中的新存活类；(29) 说明它们在商 Tor 中的像最终全零。
+
+这回答了当前前沿问题的一个精确版本：**一个三次 Postnikov 障碍能够永久遮蔽原 quotient recurrence 的全部高次类；它是否同时消灭全部可能的新 supported 类，是另一个更强问题，本稿没有解决。**
+
+## 6. 有限审计与下一处唯一核心缺口
+
+精确输入、bar 的 (b_2,b_3)、自由 dg 恒等式及计算结果保存在 [审计程序](../work/audit_two_stage_screening.py) 和 [审计结果](../work/two_stage_screening_audit.json)。1681 个 bar words 的微分恒等式通过；次数 0–7 的 (Q)-Tor 维数为 (1,1,1,2,3,3,5,8)，与原 (A) 的实际最小投射消解逐项相等。次数 1–8 的 quotient 类死亡页为“存活、存活、1、存活、1、2、1、2”。另核对了 (27) 的结合律、Leibniz 法则、收缩和 (28) 的转移，以及实际 (\operatorname{Tor}_2^A(C,C)) 维数一；错误符号和非 cocycle 的两个反向检查均被拒绝。该计算验证指定有限对象，不被标作一般定理的独立验证。
+
+本轮未使用尚未核对的 Han–Wang tensor-perfect 判据；无需它即可得到 (11)、(12)、(17)、(21) 与 (29)。local-singular 分支保留 (4) 和更深的 (H^{-m}Q)，不强套 two-stage 公式。
+
+**candidate universal reduction。** 顶点最小反例的每个 local-trivial singular vertex 都满足 (11)–(12)。对由删点释放的 supported pair，(21) 的全部高次零过滤类必须死亡；同时，正过滤产生的所有新类也必须在最终页消失。真正需要排除的是这个“全部过滤层同时最终消失”的模式。
+
+Priority A 已完成。Priority B 目前得到带明确二分的 (21)–(24)，尚无固定有限页的一般结论。Priority C 的 closed return / strict support descent 均保持 candidate；没有把“同一标签重复”或“同一 (kappa) 反复参与”宣布为非零合成。新的工作必须利用 bar coalgebra 的完整结构及 (M=\ker\mu) 的实际删点约束，证明至少一层产生 persistent supported homology，或导出有严格下降量的归纳。

@@ -1,0 +1,11 @@
+## UGA-C063 — Complete Quotient-Edge Screening Can Produce New Ordinary Returns
+**Status:** EXPLICIT ALL-DEGREE PROOF / BOUNDED EXACT SELF-CHECK / NOT INDEPENDENTLY VERIFIED  
+**Source:** even-Tor Run, Sections 4--6; reproducible files in Even-Tor-Evidence/.
+
+The actual nine-dimensional Morita-context algebra with retained corner k[u]/u^4, deleted corner k, cross modules k[u]/u^2 and multiplication ba=u^2 has both simples of infinite pd. Its retained quotient has C=k[u]/u^2 and M=H^{-1} with basis v,w, uv=-w, vu=w, uw=wu=0. M is free of rank one separately on both sides, but is not C^e-projective and has infinite C^e-pd. Its minimal model has the nonzero class m_3(u,u,u)=v and is non-formal over every field.
+
+Every quotient Tor class in degree n>=3 dies on the first positive-weight page, so the natural retained diagonal comparison has zero image in all those degrees. Nevertheless Omega_A^4 L_y is isomorphic to L_y, and Tor^A_{2r}(R_y,L_y)=k for every r>=0. The new ordinary returns arise in positive weight. Source x also has an explicit eventually two-periodic minimal resolution.
+
+This is infinite +, not a Gap-A counterexample or an unbounded-excursion realization. It distinguishes survival in the quotient-edge image from all ambient ordinary survival, and prevents weakening the C^e-projectivity hypothesis in C062 to separate-sided freeness. The exact rational bar checks are bounded self-checks; the displayed finite periodic module certificates prove all degrees and all characteristics.
+
+---

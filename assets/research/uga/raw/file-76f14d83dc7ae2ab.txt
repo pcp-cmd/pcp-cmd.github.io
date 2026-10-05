@@ -1,0 +1,33 @@
+# RESEARCH GRAPH — append-only route DAG
+
+```text
+Han conjecture / KLS counterexample
+  ├─ KLS opposite / terminal detector
+  │    └─ convention correction: + vs co+
+  ├─ Serre–Probe / Nakayama–Serre
+  ├─ finite-vertex laboratories
+  │    ├─ 1–2 vertices
+  │    ├─ 3-vertex singleton-tail / third-vertex return
+  │    └─ 4-vertex finite-hub
+  │          └─ STAR / FORK
+  │                ├─ Node 3-Fa
+  │                ├─ Node 3-Fa-Rank
+  │                ├─ Node 3-Fb Rees / filtration
+  │                └─ Node 3-Fc radical-degeneration / torsion
+  ├─ vertex deletion
+  │    └─ derived deletion K = S ⊗^L_D S
+  │          ├─ Postnikov / multiplication-kernel
+  │          ├─ bar b2+b3
+  │          ├─ Rees torsion / primitive births
+  │          └─ Long01 primitive-transgression capacity
+  └─ Universal layer
+       ├─ U2 bounded self-intersection
+       ├─ U3 first-defect bootstrap (naive form refuted)
+       ├─ U4 detector-local / stable-anchor refinements
+       ├─ U5 detector/source switching
+       ├─ U6 source–detector–carrier mismatch
+       ├─ U7 incidence / cross-module / adversarial checkpoint
+       └─ U8 Derived Two-Sided Coupling / Alignment  [OPEN]
+```
+
+Edges mean “historically led to / refined,” not logical implication unless a source file explicitly proves one.

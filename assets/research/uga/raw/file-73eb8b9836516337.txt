@@ -1,0 +1,1065 @@
+# CANONICAL CURRENT STATE — Projective Balanced Ideals / Strict Ordinary Closed-Support Descent / 2026-10-05
+
+**Freeze date:** 2026-10-05  
+**Global status:**
+
+\[
+\boxed{\text{Universal Gap A remains OPEN.}}
+\]
+
+This file is a state consolidation. It does not independently verify any project-derived theorem and does not upgrade source status labels.
+
+## 1. Authority rule
+
+For the active mathematical frontier, use this order:
+
+1. `runs/2026-10-05/Run-Projective-Balanced-Ideal-Strict-Ordinary-Descent-and-Finite-Pd-Boundary-2026-10-05.md` for **LATEST C129–C132 ACTUAL BALANCED PROJECTIVE-IDEAL MULTIPLICATION / STRICT CLOSED-SUPPORT ORDINARY DESCENT / WHOLE PROJECTIVE CUBIC CLASS CLOSURE**, **total-label termination and uniform stopping**, **exact finite-pd1 ordinary Tor and FULL-cover repair obstruction**; normal self-audit plus separate-agent substantive proof review, NOT independent/formal, global UGA OPEN;
+2. `runs/2026-10-05/Run-Arbitrary-Loewy-Radical-Band-Ordinary-Closure-and-Global-Source-Obstruction-2026-10-05.md` for **LATEST C127–C128 ARBITRARY-LOEWY WHOLE RADICAL-BAND ORDINARY CLOSURE / BILATERAL INFINITE-BAND SOURCE-LOCALITY OBSTRUCTION**, **whole head capture and explicit ordinary stopping bound**, **actual full kernels on EACH side and an outside-band ordinary witness**; normal self-audit, not independent/formal, global UGA OPEN;
+3. `runs/2026-10-05/Run-Eventual-Short-Projective-Tails-and-One-Sided-Finite-Cubic-Radical-Closure-2026-10-05.md` for **LATEST C125–C126 ACTUAL EVENTUAL-SHORT ORDINARY STOPPING / WHOLE ONE-SIDED FINITE CUBIC-RADICAL J5zero CLASS CLOSURE**, **uniform real kernel-core and simple-split DAG bound**, **ordinary other-side projective exclusion**, and **balanced mixed-head envelope factor termination**; self-audited, not independent, no image pruning or global UGA closure;
+4. `runs/2026-10-04/Run-Finite-Quotient-Ordinary-Window-and-Two-Sided-Finite-Label-Deletion-Obstruction-2026-10-04.md` for **LATEST C123–C124 SHARP ORDINARY FINITE-QUOTIENT WINDOWS / ACTUAL TWO-SIDED FINITE-LABEL DELETION OBSTRUCTION**, **d+1 actual-cover termination and supported windows**, **simultaneous ordinary global stopping**, and **the full ideal/quotient-module pd barrier**; quantitative completion of an existing real-tail asset, not automatic safe quotient descent or finite-type/global UGA closure;
+5. `runs/2026-10-04/Run-Eventual-Tor-Weight-Separation-No-Cancellation-and-Ordinary-Branch-Closure-2026-10-04.md` for **LATEST C120–C122 WHOLE EVENTUALLY SEPARATED ORDINARY FILTRATION CLOSURE / ACTUAL FINITE-STATE APPLICABILITY BARRIER**, **integer Euler no-cancellation finite stopping**, **uniform ordinary supported windows without Yoneda finite generation**, and **actual nongradable radical-Koszul calibration**; the prefix may mix, full UGA/automatic separation/finite-type-only bridge remain OPEN;
+6. `runs/2026-10-04/Run-Route-Judge-Corner-Syzygy-Quantifier-Correction-and-Hybrid-Decision-2026-10-04.md` for **LATEST ROUTE JUDGMENT D-011 HYBRID**, **ACTUAL strongly connected sourcewise Tiling counterexample**, **exact corner/A-infinity/ordinary theorem scopes**, and **the corrected GLOBAL existential single-open-arrow skeleton**; no selected-source return or independent-review inference;
+7. `runs/2026-10-04/Run-Graded-Cartan-Ordinary-Tor-Bridge-and-Pure-Filtered-Transfer-2026-10-04.md` for **ordinary graded Cartan uniform supported-Tor windows**, **whole positive-graded selfinjective closure at arbitrary Loewy length**, **exact separated finite-filtration ordinary comparison**, **radical-Koszul diagonal closure**, and **literal filtered A14 nonzero d1 boundary**;
+8. `runs/2026-10-04/Run-Global-Route-Audit-Bongartz-Ordinary-Ideals-Trace-and-Relative-Resolution-Barriers-2026-10-04.md` for **PRIOR GLOBAL AUDIT D-010 HYBRID**, **canonical ordinary Bongartz ideal blocks**, **actual fixed-pair/monomial/relative transfer barriers**, and **precise finite/localized trace scope**; local T38 head-selection engineering is frozen as the DEFAULT, with every proved asset retained;
+9. `runs/2026-10-04/Run-Mixed-Actual-Head-Relations-Recurrent-Carrier-Expansion-and-Radical-Tor-Cancellation-2026-10-04.md` for **ACTUAL SIMPLE period-one mixed carrier expansion under legal head choices**, **persistent ordinary radical-inclusion Tor cancellation**, and **the exact ARBITRARY-choice versus EXISTENTIAL badness-specific boundary**;
+10. `runs/2026-10-04/Run-Cyclic-Head-Relation-Kernels-Ordinary-Tor-and-Strict-Carrier-Descent-2026-10-04.md` for **FULL ACTUAL cyclic-head relation ordinary bridges**, **strict finite recurrent carrier source descent without finite states**, **separate local Loewy descent**, and **failure of pairwise finite-image pruning**;
+11. `runs/2026-10-04/Run-Pointwise-Finite-Pd-Semisimple-Tail-Quotients-and-Strict-Ordinary-Type-Descent-2026-10-04.md` for **pointwise finite-pd ACTUAL semisimple tail quotients**, **ALL-detector ordinary high Tor isomorphisms**, and **strict finite source-type descent at arbitrary Loewy length without a uniform error-pd bound**;
+12. `runs/2026-10-04/Run-General-Radical-Cube-Zero-Ordinary-Return-and-Uniform-Actual-Simple-Restarts-2026-10-04.md` for **ENTIRE arbitrary-size general radical-cube-zero ordinary DIAGONAL closure**, **uniform actual infinite-SIMPLE restart bound**, and **ordinary bar/INJECTIVE NONEXACT core stopping**;
+13. `runs/2026-10-04/Run-Actual-Simple-Summand-Recurrent-Type-Strict-Descent-and-Finite-Error-Tail-Repair-2026-10-04.md` for **ACTUAL late-simple-summand strict recurrent-projective-type source descent**, **all-size closure of that branch**, and **uniform exact finite-simple-error repair preserving ALL high ordinary Tor**;
+14. `runs/2026-10-04/Run-Selfinjective-Radical-Cube-Zero-Ordinary-Return-and-Eventual-Carrier-Misalignment-2026-10-04.md` for **ALL-SIZE selfinjective radical-cube-zero ordinary closure for every nonprojective simple**, **actual Nakayama-twisted minimal-head recurrence and conditional2N window**, and **return despite permanently misaligned infinite-state tails**;
+15. `runs/2026-10-04/Run-Four-Vertex-Handoff-Audit-and-Ordinary-Protected-Corner-Repair-2026-10-04.md` for **user four-vertex closure integration**, **complete normal audit with exact ordinary protected-corner repair**, and **closure of every <=4 TOTAL-vertex case at project self-audited status**;
+16. `runs/2026-10-04/Run-Infinite-State-Ordinary-Carrier-Type-Termination-and-Drifting-Resolution-2026-10-04.md` for **infinite-state actual ordinary carrier-type termination**, **uniform cross-Ext stopping independent of module count**, and **ordinary supported return from infinitely many aligned syzygies despite arbitrary gaps**;
+17. `runs/2026-10-04/Run-Bi-Singular-Module-Envelopes-Ordinary-Supported-Return-and-Uniform-Termination-2026-10-04.md` for **nonsemisimple actual module-envelope ordinary supported return**, **bi-singular composition-factor alignment**, and **uniform all-target tail termination including off-diagonal witnesses**;
+18. `runs/2026-10-04/Run-Finite-Pd-Semisimple-Envelopes-Ordinary-Yoneda-Tail-Termination-2026-10-04.md` for **finite-pd semisimple-envelope ordinary return**, **uniform actual Yoneda-tail termination at arbitrary source count**, and **closure when the ordinary radical square has finite pd**;
+19. `runs/2026-10-04/Run-One-Sided-Higher-Pd-Carrier-Preserving-Ordinary-Return-and-Descent-2026-10-04.md` for **one-sided higher-pd supported ordinary return**, **strict badness dimension descent under actual Yoneda-generator visibility**, and **the connected full-finite-block automatic-eligibility obstruction**;
+20. `runs/2026-10-04/Run-Finite-Global-Yoneda-Ordinary-Counit-Termination-and-Cyclic-Block-Descent-2026-10-04.md` for **actual ordinary Yoneda-projective termination**, **uniform ALL-module Tor/Ext comparison and strict dimension descent**, and **cyclic F Ext with finite Yoneda global dimension**;
+21. `runs/2026-10-04/Run-Directed-Ordinary-Ext-Block-Termination-Inherited-Peeling-and-Nilpotence-Obstruction-2026-10-04.md` for **uniform actual directed-F-Ext screening termination**, **ALL-module ordinary comparison and strict dimension descent**, **proved ALL-degree ordered peeling inheritance**, and **failure of nilpotent finite-F-Yoneda screening bounds**;
+22. `runs/2026-10-04/Run-Automatic-Corner-Perfection-from-Two-Sided-Finite-Blocks-and-Ordinary-Ext-Window-2026-10-04.md` for **automatic corner perfection for two-sided finite ordinary-Ext-window blocks**, **uniform counit amplitude [-r,0]**, **ALL-module ordinary comparison above d+r**, and **sharp higher-pd corner-pd bounds**;
+23. `runs/2026-10-04/Run-Ordinary-Tensor-Factor-Descent-and-Unbounded-Finite-Pd-Obstruction-2026-10-04.md` for **actual tensor-factor badness/dimension descent**, **ordinary supported cutoff and gd addition**, and **arbitrarily high finite simple pd on BOTH sides without shallow/closed/perfect deletion**;
+24. `runs/2026-10-04/Run-Shallow-Finite-Complement-Weighted-Ordinary-Return-and-Depth-Two-Obstruction-2026-10-04.md` for **automatic nonperfect pd-at-most-one finite-complement CORNER descent**, **SAME-DEGREE Peirce-weighted ordinary supported return with ZERO cutoff loss**, **exact chosen-side labels**, and **the connected infinite-source pd-two screening obstruction**;
+25. `runs/2026-10-04/Run-Finite-Complement-Perfect-Corner-Ordinary-Bridge-and-Dimension-Descent-2026-10-04.md` for **uniform ALL-module ordinary Ext/Tor isomorphism above d+t+1**, **finite-complement perfect CORNER badness/dimension descent**, **exact infinite labels**, and **an actual sharp cutoff without any cover-closed finite block**;
+26. `runs/2026-10-04/Run-Arbitrary-Carrier-Audit-Finite-Factor-Obstruction-and-Ordinary-Return-2026-10-04.md` for **arbitrary-size carrier-dominating ordinary return**, **failure of image-carrier descent and finite-pd map pruning in actual minimal tails**, and **finite-FACTOR cross images without any eligible finite-side closed block**;
+27. `runs/2026-10-04/Run-Closed-Finite-Block-Ordinary-Comparison-and-Three-Source-Containment-2026-10-04.md` for **all-degree ordinary Tor comparison for closed finite-pd blocks**, **exact retained infinite labels and eligible count descent**, **proved block inheritance**, and **three-source one-sided containment closure**;
+28. `runs/2026-10-04/Run-Three-Infinite-Sources-Socle-and-Ordinary-Block-Return-2026-10-04.md` for **three-infinite-source ordinary closure under exact persistent-projective socle separation**, **three-common-label closure without a socle hypothesis**, and **the actual finite-factor cross-map boundary**;
+29. `runs/2026-10-04/Run-Infinite-Source-Block-Closure-and-Primitive-Comparison-Obstruction-2026-10-04.md` for **closure using only original infinite-source blocks before count two**, **an actual nonsection eligible move**, and **failure of primitive ordinary-comparison inheritance at a remaining infinite-pd source**;
+30. `runs/2026-10-04/Run-Even-Tor-Comparison-and-Strict-Infinite-Count-Descent-2026-10-04.md` for **eventual-even ordinary support transfer**, **no-new-infinite-label control**, **eligible strict count descent**, **proved all-block map inheritance**, and **all-size comparison-class closure with a conditional bound**;
+31. `runs/2026-10-03/Run-Two-Infinite-Simple-Closure-and-Count-Descent-Audit-2026-10-03.md` for **all-size closure with at most two infinite-pd simples on either chosen side**, **actual ordinary alignment**, **chosen-side count invariance of ordinary radical moves**, and **an actual infinite-vertex deletion that increases the count**;
+32. `runs/2026-10-03/Run-Unique-Infinite-Simple-Ordinary-Closure-2026-10-03.md` for **all-size closure of both singleton-infinite-simple branches**, **every-degree ordinary supported aggregate**, and **the finite-pd-complement termination bound**;
+33. `runs/2026-10-03/Run-Ordinary-Tor-Migration-and-First-Kernel-Obstruction-2026-10-03.md` for **finite-height ordinary Tor migration**, **nonperfect global-infinity equivalence**, **the exact Peirce-support gap**, and **the actual first-kernel-module obstruction family**;
+34. `runs/2026-10-03/Run-Canonical-Bimodule-Syzygy-Tensor-Audit-2026-10-03.md` for **the canonical bimodule-syzygy tensor audit**, **actual nonterminating projective summands**, and **the ordinary-minimality boundary**; the positive C076 frontier is unchanged;
+35. `runs/2026-10-03/Run-Projective-Type-Sink-Peeling-and-Nonsplit-Descent-2026-10-03.md` for **actual projective-type sink peeling**, **proved repeated ordinary eligibility**, **higher-index nonperfect extension closure**, and **the nonsplit type-splitting counterexample**;
+36. `runs/2026-10-03/Run-Nonsplit-Square-Zero-Quotients-and-Ordinary-Tor-2026-10-03.md` for **nonsplit ordinary square-zero Tor/Ext isomorphism**, **kernel-count screening bound**, **nonperfect supported ordinary bridge**, and **strict dimension descent**;
+37. `runs/2026-10-03/Run-Periodic-Weighted-Components-and-Ordinary-Tor-2026-10-03.md` for **mixed-parity periodic-component ordinary Tor**, **all-size cyclic branch unification**, and **the actual aperiodic projective-column counterexample**;
+38. `runs/2026-10-03/Run-Split-Radical-Quotient-and-Dimension-Descent-2026-10-03.md` for **ordinary split radical quotient Tor retraction**, **one-sided ambient finite-pd global infinity transfer**, **strict algebra-dimension descent**, and **all-size checked extension-tower closure**;
+39. `runs/2026-10-03/Run-Tensor-Nilpotence-and-Eventual-Ordinary-Tor-2026-10-03.md` for **eventual ordinary Tor/Ext isomorphism**, **uniform negative-weight screening bounds**, **perfect tensor-nilpotent deletion exclusion**, **an actual sharp nonformal cutoff**, and **the resolution-term-cycle counterexample**;
+40. `runs/2026-10-03/Run-Coupler-Projective-Columns-and-Uniform-Screening-Bound-2026-10-03.md` for **actual projective-column ordinary returns**, **uniform negative-weight page bounds**, **one-sided-projective perfect-coupler exclusion**, and **many-layer weighted ordinary returns** in appended Section 10;
+41. `runs/2026-10-03/Run-Hochschild-Obstruction-Cutoff-and-Ordinary-Tor-2026-10-03.md` for the **constructed all-degree ordinary Tor section**, **finite obstruction cutoff**, and **one-Gorenstein perfect-coefficient exclusion**;
+42. `runs/2026-10-03/Run-Even-Tor-Survival-and-Nonformal-Screening-2026-10-03.md` for the **even ordinary supported-Tor bridge beyond sections**, projective-coupler exclusion and actual non-formal screening calibration;
+43. `runs/2026-10-03/Run-Ordinary-Tor-Retraction-and-Vertex-Descent-2026-10-03.md` for the **split ordinary supported-Tor bridge**, **global formal exclusion**, and **terminating descent under ordinary sections**;
+44. `runs/2026-10-03/Run-Actual-Tail-Defect-Annihilation-2026-10-03.md` for the **actual-tail comparison audit**, excluded direct detector, and finite-prefix interface;
+45. `runs/2026-10-03/Run-Target-B-Binary-Indecomposable-Frontier-2026-10-03.md` for the **unchanged binary-indecomposable compression** and Target-B residue;
+46. `runs/2026-10-03/Run-Target-B-Primitive-Seed-Correction-2026-10-03.md` for the **corrected primitive seeds**, **passage comparison** and **augmented-formality exclusion**;
+47. `07_Derived-Necklace-Excursion-Final.md` for its exact all-edge criterion, Nakayama lemma and conditional generation theorem; its exhaustive arrow-only paraphrase is withdrawn;
+48. other 2026-10-02 Runs as parallel/reusable project-derived assets;
+49. older U8/U7/Long01 material as historical constraints and tools;
+50. raw history only for provenance, not current truth.
+
+Chronological recency alone does **not** mean one parallel Run invalidates another. A later explicit correction inside a Run does override the earlier version of that same claim.
+
+**Closure priority (user steering, 2026-10-03; D-009):** the objective remains Universal Gap A for arbitrary finite size. Prioritize an ordinary reverse-supported Tor/Ext bridge, a well-founded strict descent, a uniform bound contradicting known unboundedness, branch exclusion, or branch unification. Additional necessary conditions are low priority unless they directly enable closure. If the representation only yields more conditions, use MRS and the existing method Vault to select another route. Do not erase bounded-screening, local-trivial or supported-weight branches.
+
+**Global audit steering (D-010, 2026-10-04):** use the canonical ordinary ideal quotient formulation to target the FULL visible-mask stopping bridge; do not default to another T38 local selection lemma. This is a HYBRID representation decision, not a claim of UGA closure. See the Global Route Audit section below for proved/false/open boundaries and the three retained routes.
+
+**Latest route-judge steering (D-011, new desktop handoff):** corner/change-of-rings is AUXILIARY, A-infinity generation is AUXILIARY, Bongartz is the canonical ordinary BACKEND; final HYBRID. The main target is simultaneous ALL-source ordinary support stopping, equivalently existence of ONE returning syzygy vertex. C119 breaks the sourcewise Tiling statement even for strong quivers with a singular corner and an actual infinite simple. C117/C118 now provide whole-class ordinary bridges/stopping; they are not universal hypotheses. D010's default T38-selection freeze and all earlier proved assets remain effective.
+
+## 2. Foundational 2026-10-02 input — two-sided finite-head collision
+
+The project-derived theorem package states that if an elementary finite-dimensional algebra \(A\) is not infinite \(+\), and
+
+\[
+\Gamma_x=e_xAe_x\neq k,
+\]
+
+then some fixed \(y,z\neq x\) satisfy
+
+\[
+\operatorname{Tor}^{\Gamma_x}_m(e_zAe_x,e_xAe_y)\neq0
+\quad\text{for infinitely many }m.
+\]
+
+Equivalently, the local-singular branch has an unbounded two-sided derived linker. No eventual-bimodule-periodicity hypothesis is used.
+
+**Evidence status:** PROJECT-DERIVED THEOREM / READY FOR INDEPENDENT VERIFICATION.
+
+**Important verification gate:** its right-head argument uses a project-derived proof of
+
+\[
+A\text{ infinite }+\iff A^{op}\text{ infinite }+.
+\]
+
+This conflicts with the older project guard based on Armenta v1's \(+\)/co\(+\) statement. Until independently reconciled, the opposite-invariance step and every theorem depending on it must remain quarantined at their source evidence status.
+
+## 3. Local-singular excursion bridge
+
+For a fixed mixed-linker pair, the normalized ambient bar complex admits the \(x\)-excursion filtration. Its zero-excursion column satisfies
+
+\[
+E^1_{0,m+2}\cong
+\operatorname{Tor}^{e_xAe_x}_m(e_zAe_x,e_xAe_y)
+\qquad(m\ge1).
+\]
+
+Thus local classes can be hidden only by genuine higher-excursion correction chains. This yields the subsequence alternatives:
+
+- survival;
+- bounded excursion screening;
+- unbounded excursion screening.
+
+Homological survival and Peirce visibility must remain logically separate.
+
+## 4. Corrected Target-B frontier — full seeds and higher-output binary indecomposables
+
+**2026-10-03 checkpoint:** the prior exhaustive reduction to degree-zero arrow-rooted Massey excess is withdrawn. The original exact lemmas remain reusable, but the frozen paraphrase lost two hypotheses:
+
+- UGA-C049 requires **every edge** of an established necklace cycle to have nonzero primitive image; one primitive negative edge alone is insufficient.
+- The arrow-rooted generation theorem requires the **entire** negative primitive quotient to vanish in **all** negative degrees. Eventual high-degree vanishing leaves low-degree negative primitive seeds.
+
+The correction Run gives a minimal two-edge boundary necklace with a primitive negative edge, and an actual five-dimensional algebra of global dimension two whose retained derived quotient is
+
+\[
+Q\simeq k\langle u\rangle,\qquad |u|=-1.
+\]
+
+For this formal model, \(P_\infty=ku\), negative homology is unbounded, all high powers are binary products of the low negative primitive \(u\), and Massey excess is zero. Every local class has an explicit excursion-one filler. This is a calibration, **not** a Gap-A counterexample or an unbounded-screening example.
+
+### Retained exact tools
+
+For a fixed minimal augmented model \(H\), let
+
+\[
+D_\infty=\sum_{r\ge2}\operatorname{im}m_r,
+\qquad P_\infty=\bar H/D_\infty.
+\]
+
+- A minimal positive-length derived necklace is a bar cycle.
+- If **all** its edges survive in \(P_\infty\), that cycle is non-boundary.
+- If \((P_\infty)^{-d}=0\), the degreewise Nakayama argument removes same-degree radical transport and gives \(M_d=G_d\).
+- If negative primitives vanish in every degree, generation from the degree-zero arrow layer with unbounded Massey excess remains a valid **conditional** conclusion. It is not an exhaustive description of Target B.
+
+### New reusable results — UGA-C052 through UGA-C055
+
+The correction Run proves generation by rooted trees on lifts of **all** primitive degrees, with
+
+\[
+d=\sum_{\text{primitive leaves }\ell}d_\ell+\operatorname{mex}(T).
+\]
+
+If primitive degrees are bounded by \(d_0\), negative primitive leaves through \(d_0\) must be retained. If their support graph on \(q\ge2\) retained vertices is acyclic, then
+
+\[
+H^{-d}=0\quad\bigl(d>(q-1)(d_0+1)-1\bigr).
+\]
+
+Thus bounded primitive degrees plus unbounded negative homology force cyclic primitive support. This is a support constraint, not an ordinary Tor-return conclusion.
+
+One-letter primitive bar cycles also give
+
+\[
+\dim\operatorname{Tor}^{A}_{d+1}(R_z,L_y)
+\ge\dim e_z(P_\infty)^{-d}e_y
+\]
+
+for retained endpoints, through the **derived** quotient comparison. In a hypothetical non-infinite-\(+\) algebra, every reverse-supported primitive tail \(e_yAe_z\ne0\), including diagonal tails, is therefore bounded. An unbounded primitive tail must lie on Peirce-invisible pairs.
+
+Finally, expansion of normalized derived-quotient passages identifies the ambient excursion filtration with reduced-bar length minus one. If the retained quotient is **formal as an augmented algebra over the vertex algebra**, its excursion spectral sequence collapses at \(E^2\), and every killed zero-excursion class is hit by \(d_1\). Hence Target B requires augmented **non-formality**.
+
+**Evidence status of new results:** COMPLETE SELF-AUDITED ARGUMENTS / BOUNDED EXACT CALIBRATION / NOT INDEPENDENTLY VERIFIED. No primitive-model invariance is asserted. The new lemmas do not depend on the quarantined opposite-invariance step; applying the original finite-head input still retains that gate.
+
+### Binary-indecomposable checkpoint — UGA-C056 and UGA-C057
+
+For the binary-product span \(D_2=\operatorname{im}m_2\) and the ordinary graded cohomology quotient \(I_2(H)=\bar H/D_2\), the actual excursion spectral sequence satisfies
+
+\[
+\boxed{E^2_{0,n}(z,y)\cong e_z I_2(H)^{-(n-1)}e_y\qquad(n\ge1).}
+\]
+
+Binary-product classes have actual excursion-at-most-one fillers. Degreewise finiteness and finite-dimensional \(H^0\) make bounded binary-indecomposable degrees equivalent to finite homogeneous associative generation of cohomology. Therefore **finite generation of \(H^*(Q_x)\) excludes unbounded zero-excursion screening**, even without formality. This does not collapse all other columns.
+
+For a fixed higher model there is an exact sequence
+
+\[
+0\longrightarrow D_\infty/D_2\longrightarrow I_2(H)
+\longrightarrow P_\infty\longrightarrow0.
+\]
+
+Any nonzero zero-column \(E^2\) class which eventually dies belongs to \(D_\infty/D_2\). Unbounded screening therefore forces an unbounded **higher-output binary-indecomposable tail** on the actual fixed mixed-linker pair. In high reverse-supported pairs this residue equals \(I_2\) by UGA-C054, but the particular local pair need not itself be reverse-supported.
+
+Membership in this residue is necessary only; complete fillers and their first-hit pages remain unresolved. The binary quotient is determined by the graded cohomology algebra; the higher-output residue retains its fixed-model qualification.
+
+An exact five-dimensional radical-square-zero algebra has an infinite-pd deleted simple and a formal retained quotient with one square-zero generator in every negative degree. Its ordinary diagonal Tor tails survive, so it is infinite +. This proves that finite-dimensionality and the infinite-pd anchor alone do **not** imply finite generation. It is not a screening counterexample.
+
+**Evidence status:** COMPLETE SELF-AUDITED PROOFS / EXACT ALL-DEGREE CALIBRATION / NOT INDEPENDENTLY VERIFIED. No unchanged computation was rerun. The old Runs remain byte-for-byte preserved.
+
+### Actual-tail audit — UGA-C058 and UGA-C059
+
+Let u be the return-complement idempotent for source x, so \(e_xAu=0\). In the **full** strict derived quotient \(\mathcal Q\), with \(C=A/Ae_xA\) and dg fiber \(K=\ker(\mathcal Q\to C)\),
+
+\[
+\mathcal Q u=Au=Cu,\qquad u\mathcal Q u=uAu=uCu,\qquad Ku=0.
+\]
+
+For every actual tail X resolved entirely by add(Au),
+
+\[
+K\otimes_A^{\mathbf L}X=K\otimes_{\mathcal Q}^{\mathbf L}X=0.
+\]
+
+Ordinary Ext/Tor compare across A, C and the derived quotient on this specific resolved first left argument X. Its persistent detector lies in u and is reverse-Peirce-invisible to the original source x. This does not lift arbitrary supported simple witnesses of C, and does not make A -> C a homological epimorphism.
+
+The defect tensor with \(L_x\) is computed by the **actual finite prefix columns and their maps**, with no tail contribution. Internally those columns can be unbounded. Thus the hoped-for direct nonzero tensor detector is excluded; a bridge must use finite-head matrices and simultaneous conditions on all sources.
+
+An explicit eight-dimensional triangular extension has a nontrivial deleted corner, all simples of infinite pd, source-specific eventual return vanishing, actual full tail Tor orthogonality, and formal bounded local screening. Another vertex has persistent diagonal Tor. This prevents replacing the global non-+ condition by one genuine anchor's conditions. It is not a Gap-A counterexample or a Target-B realization.
+
+**Evidence:** complete self-audited arguments and bounded exact checks (nine simple-pair complexes through degree 10, incoming degree 11); not independently verified. The direct-tail audit is a route correction, not a new counterexample invariant or a global closure.
+
+### Ordinary Tor bridge and terminating descent — UGA-C060 and UGA-C061
+
+An augmented, vertex-preserving A_infinity section C -> H of the derived quotient projection gives a bar chain retraction. Thus, for every retained simple pair and degree,
+
+\[
+\operatorname{Tor}^C_n(R_z,L_y)
+\text{ is a split summand of }\operatorname{Tor}^A_n(R_z,L_y).
+\]
+
+Reverse support in C lifts to reverse support in A. A sufficient criterion is vanishing of all higher operations on pure radical-C inputs in an adapted minimal model; mixed operations and unbounded negative cohomology may remain. Consequently **augmented formal deletion models are excluded globally from vertex-minimal counterexamples at infinite-pd vertices**, extending the earlier Branch-U-only exclusion.
+
+There is now a genuine class closure. If every infinite-pd vertex has a label-preserving **ordinary corner section**, those sections pass to other deletion quotients without a commutation assumption. Tor retraction prevents new infinite-pd simples in the smaller quotient, while real-tail comparison gives infinite global dimension. A bad algebra would therefore satisfy
+
+\[
+1\le p(C_x)\le p(A)-1,
+\]
+
+where p counts left simples of infinite pd. This strict descent cannot continue. **Universal Gap A holds for this class at arbitrary finite size.** Ordinary sections at finite-pd vertices are not needed for this qualitative theorem. The inheritance theorem is not asserted for arbitrary derived sections.
+
+Presentations whose actual relation ideal is preserved by every vertex erasure supply all ordinary sections and remain in that class after deletion. Relations between parallel paths visiting the same set of vertices are a sufficient condition; monomial presentations are a known calibration, not a new-case claim.
+
+Under the stronger hypothesis of ordinary sections at **every** vertex, if all reverse-supported simple-pair Tor vanishes for **every** n>=M, M>=1, then
+
+\[
+\operatorname{gldim}A\le(v-1)M.
+\]
+
+This bound is not asserted under the infinite-pd-only section hypothesis. It is not a universal screening-page bound or a finite-window certificate. A six-dimensional path-graded calibration has no ordinary section at one deletion but does have a derived section, preventing either criterion from being silently weakened or conflated.
+
+**Evidence:** complete all-degree proofs and normal adversarial self-audit; not independently verified. No novelty claim is made. No opposite-side transfer is used. The genuine non-split general case remains open, and this theorem does not by itself close the frozen Target-B residue.
+
+### Even ordinary Tor beyond sections — UGA-C062 and UGA-C063
+
+Let C=H^0(q) and M_d=H^{-d}(q). If every positive even d has M_d=0 and every odd M_d is projective over C^e, then
+
+\[
+\boxed{\operatorname{Tor}^A_{2r}(R_z,L_y)\longrightarrow
+\operatorname{Tor}^C_{2r}(R_z,L_y)\text{ is surjective}}
+\qquad(r\ge0)
+\]
+
+for every retained pair. No section, formality, finite generation, negative-degree bound or operation-arity bound is assumed. The binary multibar homology of the existing positive-weight bar kernel is concentrated in even total degrees. That subcomplex has zero odd homology, so the exact sequence gives even-degree surjectivity. This does not assert degeneration of the whole spectral sequence or a canonical splitting.
+
+Every infinite-+ ordinary quotient has **some fixed reverse-supported pair** returning in infinitely many even degrees, by the aggregate identity b_n=t_n+t_{n+1}. The bridge lifts that tail, with support inherited separately through C. Thus a global vertex-minimal counterexample's deletion at an infinite-pd vertex cannot satisfy these hypotheses, using UGA-C058 for quotient infinity. In particular, the **C^e-projective two-stage local-trivial coupler subbranch is excluded**, including nonzero kappa. The general odd-negative theorem also permits unbounded homology and higher operations.
+
+The actual nine-dimensional non-formal calibration has C=k[u]/u^2 and a coupler free on each separate side but of infinite C^e-pd. Every high quotient-edge Tor class is killed at the first positive-weight page; nevertheless the retained simple has an explicit four-periodic resolution, giving a new ordinary supported class in every even degree. Complete quotient-edge screening need not eliminate positive-weight ambient returns. This is infinite + and bounded-screening, not a counterexample or Target-B realization.
+
+**Exact boundaries of C062:** some even persistent pair need not be diagonal or every preselected pair; separate left/right projectivity does not give its parity proof. C064 and C065 provide separate mechanisms for their specified perfect-coefficient and single-layer classes. C062 itself proves natural surjectivity in even degrees, not an algebra section. No opposite transfer is used.
+
+**Evidence:** complete all-degree proofs and normal adversarial self-audit; exact rational bounded bar checks and finite periodic module certificates in Even-Tor-Evidence/. Not independently verified. No novelty claim is made.
+
+### Constructed section and finite obstruction cutoff — UGA-C064
+
+For M_d=H^{-d}(q), the next actual section obstruction is
+
+\[
+\mathfrak o_n\in HH^n(C,M_{n-2})\qquad(n\ge3),
+\]
+
+and its correction is s_{n-1}. This includes the mixed higher terms evaluated on all earlier corrections. If HH^{d+2}(C,M_d)=0 for every d>=1, the arity recursion constructs an actual augmented, vertex-preserving section C -> H. Consequently ordinary quotient Tor is a **split summand of ordinary A-Tor in every degree** by C060.
+
+If id_{C^e} C^e<=D is finite and every M_d has finite C^e-pd, then id_{C^e} M_d<=D. All section obstructions beyond arity D vanish; a full section exists precisely when the low equations through arity D admit a compatible solution. This is a terminating obstruction test, **not** a bound on screening pages, excursions or all operation arities.
+
+In particular,
+
+\[
+\boxed{
+\operatorname{id}_C C\le1,\quad
+\operatorname{id}_{C^{op}}C\le1,\quad
+\operatorname{pd}_{C^e}H^{-d}(q)<\infty\ (d\ge1)
+\ \Longrightarrow\ \text{full ordinary Tor retraction}.}
+\]
+
+The enveloping regular injective dimension is then at most two, and every section obstruction has arity at least three. Both negative parities, unbounded degrees, negative multiplication and mixed operations are allowed. Thus a global vertex-minimal counterexample cannot have this deletion at an infinite-pd vertex. The **perfect two-stage local-trivial coupler subbranch over a one-Gorenstein quotient is excluded**, including positive finite bimodule pd.
+
+No such regular bound or coefficient perfectness is known for arbitrary quotients. The general nonperfect case and quotients outside this coefficient-vanishing mechanism remain open. In a many-layer model only a section is proved, not full formality or inheritance under another ordinary deletion. The C063 calibration fails perfectness and remains consistent with this theorem.
+
+**Evidence:** full inductive proof and normal adversarial self-audit in the new Run; not independently verified. No new bounded computation was needed. Conventional external inputs are cited at their exact scope; no singular/Tate substitution or opposite-side witness transfer is used.
+
+### Actual projective-column returns and uniform screening bounds — UGA-C065
+
+For a two-stage model H=C plus M[1], assume the actual M is left C-projective and write M e_j as the sum of (Ce_i)^{K_ij}. A strict H-module triangle, including the nonzero kappa in its regular action, proves
+
+\[
+\boxed{\dim\operatorname{Tor}^A_{2r}(R_z,Ce_j)=(K^r)_{zj},
+\qquad \operatorname{Tor}^A_{2r+1}(R_z,Ce_j)=0.}
+\]
+
+A cycle now gives **actual ordinary Tor** with the finite C-projective test module. Its composition factors select a fixed reverse-supported simple pair. Thus cyclic one-sided-projective couplers, including nonperfect invertible/twisted-regular bimodules, cannot hide every ordinary supported return. Neither C infinite + nor an infinite-pd anchor is needed for this cycle theorem.
+
+In the complementary acyclic case, actual derived tensor powers satisfy M^{tensor_C^L q_0}=0, with q_0 retained vertices. The existing negative-weight first page has no column p>=q_0. Every quotient-edge death has page at most q_0-1, uniformly in total degree. This excludes the unbounded-weight two-stage subbranch under one-sided projectivity.
+
+If additionally D=pd_{C^e} M is finite, the positive-column degree corridor gives
+
+\[
+\boxed{\operatorname{Tor}^A_n(R_z,L_y)\longrightarrow
+\operatorname{Tor}^C_n(R_z,L_y)\text{ is surjective for }
+n>(D+2)(q_0-1)+1.}
+\]
+
+Combining both cases, **every one-sided-projective perfect two-stage coupler lifts a quotient infinite-+ witness or already produces an ambient witness**. This excludes such local-trivial deletions in a global vertex-minimal counterexample, without C064's regular injective bound.
+
+The Run proves the right-projective version directly with right-module triangles, using no opposite-side transfer. It also extends the formula to a single layer M[a]: return period (a+1)ell, weight-page bound a(q_0-1), and eventual surjectivity above (a+1+D)(q_0-1)+1.
+
+**Exact boundaries:** the matrix is made from actual projective summands of M, not terms of a finite resolution. The uniform bound concerns negative weight, not local-singular excursion. Nonperfect acyclic bounded screening, couplers projective on neither side, and general many-layer models remain open. No naked support-to-Tor implication is used.
+
+**Evidence:** full all-degree proofs and normal adversarial self-audit; not independently verified. The actual C063 minimal resolution of the inflated C module calibrates the new recurrence, with unchanged exact map evidence reused and no rerun.
+
+### Unbounded odd layers give weighted ordinary returns — UGA-C066
+
+Assume all negative cohomology degrees are odd and every actual M_d is projective on the same one side over C. For the left-projective version let K_d record M_d e_j's projective multiplicities. Then the entire bar first page with the test module Ce_j is concentrated in even total degrees, including the zero-weight term. Degreewise finite convergence gives the actual ordinary matrix series
+
+\[
+\boxed{
+\left(\sum_{n\ge0}\dim\operatorname{Tor}^A_n(R_z,Ce_j)t^n\right)_{zj}
+=\left(I-\sum_{d\ {\rm odd}}t^{d+1}K_d\right)^{-1}.}
+\]
+
+A cycle in the finite graph of these actual projective columns, with an actual odd layer selected for each edge, gives ordinary test-module returns in every multiple of the fixed total shifted degree. Finite-length detection then gives a fixed reverse-supported simple pair. Thus this **many-layer weighted-cycle class is excluded**, even with unbounded negative degrees, nonperfect bimodule layers, infinite homogeneous generation and pure or mixed higher operations.
+
+The right-projective version is computed directly with e_iC tensor_H^L L_y and uses no opposite transfer. Only these C-projective test-module spectral sequences collapse; quotient-simple screening can still be nontrivial. Actual projectivity on the same side and the odd-only cohomology hypothesis must be retained.
+
+The acyclic weighted case, mixed negative parities and nonprojective layers remain open. In an acyclic graph the number of tensor letters is bounded, but their degrees can still be unbounded; **C065's single-layer negative-weight page bound does not extend** from this observation.
+
+**Evidence:** complete all-degree argument and normal continuation self-audit, appended to the newest Run without changing its earlier bytes. Not independently verified. No new numerical computation was needed.
+
+### Actual tensor nilpotence restores high ordinary Tor/Ext — UGA-C067
+
+Assume all negative degrees satisfy d<=a, every actual layer M_d has C^e-pd<=D, and the graded negative cohomology bimodule has vanishing actual derived tensor power of index ell. Set
+
+\[
+W=a(\ell-1),\qquad U=(\ell-1)(a+1+D).
+\]
+
+The existing positive-weight bar kernel has homology zero in total degrees above U. Consequently every retained pair has
+
+\[
+\boxed{\operatorname{Tor}^A_n(R_z,L_y)
+\xrightarrow{\cong}\operatorname{Tor}^C_n(R_z,L_y)
+\quad(n>U+1).}
+\]
+
+The dual ordinary Ext inflation is an isomorphism in the same range. Every quotient-edge class which dies does so by negative-weight page W, uniformly in total degree. This excludes the stated bounded perfect, actually tensor-nilpotent deletion class in a global vertex-minimal counterexample, without one-sided projectivity, odd parity, formality, a section or a regular injective bound. Binary negative products and pure/mixed higher operations are allowed.
+
+Actual derived tensor nilpotence, bounded negative degrees and C^e-perfectness must be retained. The auxiliary count filtration computes only the binary first page; the full proof uses negative weight. No local-singular excursion bound or inheritance under another deletion is asserted. C065's perfect acyclic case now has eventual **isomorphism**, strengthening its earlier surjectivity at the same conservative threshold.
+
+### Sharp nonformal calibration and failed resolution-cycle pumping — UGA-C068
+
+The actual 24-dimensional eight-vertex A24 has a local-trivial deletion, coupler M=L_4 tensor R_1 nonprojective on both sides, C^e-pd two and zero derived tensor square. Its nonzero m_3(t_3,t_2,t_1)=v obstructs formality and a section. Four quotient classes die on weight page one, including (R_5,L_0) in degree five. Here U=4, so the zero comparison image at degree U+1 proves that C067's strict n>U+1 cutoff is sharp for these parameters.
+
+An actual ordinary algebra retract and the integral Cartan obstruction prove the deleted source has infinite pd. The retained y diagonal nevertheless has ordinary Tor k in every degree. A24 is infinite + and bounded screening, not a counterexample or unbounded-excursion example.
+
+A distinct nine-dimensional **four-vertex** algebra has a perfect neither-sided-projective coupler with zero derived tensor square while its bimodule-resolution correspondence graph has a self-loop. Explicit finite simple resolutions give global dimension four. Thus resolution-term cycles cannot be pumped into actual derived tensor persistence or ordinary Tor tails. The valid Long01 implication in the other direction is retained.
+
+**Evidence:** full all-degree/all-characteristic basis proofs, normal self-audit and exact rational bounded checks in Tensor-Nilpotence-Evidence/. The computation-record validator passed. None is independently verified.
+
+### Ordinary radical quotients give strict dimension descent — UGA-C069
+
+For a nonzero actual ideal K contained in J(A), suppose A -> B=A/K has an ordinary unital section and K has finite pd d over the current ambient A on either one stated side. Any section can be conjugated by a unit in 1+K to align the vertices. Its ordinary bar retract gives split Tor survival for every labelled pair and degree, with reverse Peirce support preserved.
+
+Every A simple is a B simple. If gldim B=g is finite, a B-projective simple resolution has ambient term pd<=d+1, giving
+
+\[
+\operatorname{gldim}B\le\operatorname{gldim}A
+\le\operatorname{gldim}B+d+1.
+\]
+
+Thus global infinity passes to B, and a hypothetical bad A produces a bad B with **strictly smaller positive integer dim_k B**. No finite pd on the other side, square-zero kernel, C^e-perfectness or tensor nilpotence is needed. Checked extension towers over any justified Gap-A base class close for arbitrary finite size. Over C061's all-vertex-section terminal base, all supported vanishing n>=M gives the bound (v-1)M+sum_i(d_i+1).
+
+Existing ordinary-section and C067 infinite-pd vertex deletions can join the same dimension-decreasing chain when their hypotheses hold at that actual step. Neither automatic inheritance nor universal existence of a next eligible reduction has been proved. A ten-dimensional all-field calibration has right-projective kernel, infinite left kernel pd and nonzero kernel square.
+
+**Evidence:** complete elementary ordinary proof and normal adversarial self-audit. Not independently verified; no new finitistic-dimension theorem or unnecessary bounded computation is claimed.
+
+### Periodic mixed layers give ordinary supported returns — UGA-C070 and UGA-C071
+
+Assume every actual negative layer M_d is projective over C on the same chosen side, with no bound on d, parity, bimodule pd or higher arity. For the left version, let K_d(i,j) be the multiplicity of Ce_i in M_de_j, and give edge j -> i weight d+1. On a cyclic strongly connected component V, let g_V be the gcd of **all nonempty weighted closed-walk totals**. If g_V>=2, then for both endpoints in V the actual ordinary Tor series is
+
+\[
+\left(\sum_n\dim\operatorname{Tor}^A_n(R_z,Ce_j)t^n\right)_{z,j\in V}
+=\left(I-\sum_{d\ge1}t^{d+1}K_d|_V\right)^{-1}.
+\]
+
+Actual projectivity concentrates each C-block tensor word in degree zero. An auxiliary negative-letter count computes the binary first page even with negative binary products; all endpoint degrees lie in one residue modulo g_V. Degree-minus-one maps vanish in both this binary sequence and the full negative-weight sequence. Finite convergence gives ordinary A-Tor; repeating a closed walk and finite-length detection gives a fixed reverse-supported simple pair. The right-module proof is direct, without opposite transfer.
+
+This closes mixed-parity periodic components and unifies the cyclic parts of C065--C066. It does not collapse quotient-simple screening, supply a page bound, or force these hypotheses in every remaining bad algebra. An actual ten-dimensional five-cycle deleting a three-vertex **block** has weights two and three but closed-walk gcd five, with ordinary return period five. It is infinite +, not a counterexample or a primitive-deletion calibration.
+
+**Exact aperiodic boundary (C071):** the reused actual five-dimensional Auslander deletion has C=k, H=k<u>, |u|=-1, every actual M_d projective, and loop weights 2,3,4,... with g=1. Its retained ordinary Tor series is only 1+t^2 and ambient gldim is two. Binary products kill the naive infinite weighted-word series. Actual projectivity, perfectness and formality therefore do not turn an aperiodic many-layer cycle into ordinary return.
+
+**Evidence:** complete all-degree proof and normal adversarial self-audit; exact bounded five-cycle checks and computation-record validator passed. The all-degree/all-characteristic calibrations use separate finite basis proofs. Not independently verified; the old A5 proof/evidence was reused without rerunning unchanged computation.
+
+### Nonsplit square-zero quotients give ordinary bridges and strict descent — UGA-C072 through UGA-C074
+
+Let K be an actual nonzero ideal in J(A), K^2=0, and C=A/K. Its quotient bimodule is canonical. An S-linear radical-preserving section is used only to split vector spaces; no algebra section is needed. In the actual ordinary bar, C products/actions preserve kernel-letter count, the multiplication error increases it, and two K letters multiply to zero. The count filtration is finite in each ordinary total degree.
+
+**Perfect tensor-nilpotent kernel (C072):** if pd_{C^e} K<=D and actual K^{tensor_C^L ell}=0, set W=ell-1 and U=(ell-1)(D+1). The natural same-pair ordinary Tor comparison and dual ordinary Ext inflation are isomorphisms for n>U+1; injection starts at n>U. Every quotient-edge death occurs by kernel-count page W. Both ambient quotient-module pd values are <=U. Thus gldim A<=gldim C+U when finite, global infinity is equivalent, and a bad A gives a strictly smaller bad C. Checked nonsplit towers close over justified Gap-A bases. C069's all-degree quotient retract and inequality gldim C<=gldim A are not asserted.
+
+**Actual projective kernel columns (C072):** if K is projective on one stated side over C, ordinary projective-column Tor has series (I-tT)^(-1). Cycles give a fixed supported ordinary simple tail; acyclic matrices give actual tensor nilpotence. With C^e-perfectness this closes every such square-zero extension over a Gap-A base, including nonsplit cases.
+
+**Nonperfect tensor-square-zero kernel (C074):** if actual K is projective on one stated side and K tensor_C K=0, supported infinity transfers without perfectness. In the left version, T_z=R_z tensor_C K has Tor^A(T_z,L_y)=Tor^C(T_z,L_y) in every degree. The ordinary bar kernel has homology Tor^C_{n-1}(T_z,L_y). Complete screening of a persistent C-supported pair forces an ordinary A tail through T_z; its simple factors are A-visible by actual K Peirce support. The persistent right simple may change. All supported A-Tor vanishing for n>=M forces supported C-Tor vanishing for n>=M+2. The ambient quotient pd is <=1, so a bad algebra descends in dimension. The right proof is direct; no opposite-+ transfer is used.
+
+**Exact boundaries/calibrations (C073):** a connected fourteen-dimensional nonsplit example has a three-dimensional C^e-projective kernel with tensor square zero and W=U=1. Its degree-two comparison fails at (R_2,L_0), so the strict cutoff is sharp; the vertex-3 supported tail survives. A distinct five-dimensional triangular nonsplit example has a nonperfect left-projective tensor-square-zero kernel. Its invisible (R_1,L_0) quotient tail is screened in every n>=2 while the supported 0 diagonal survives. C074 therefore cannot be strengthened to eventual same-pair comparison for all pairs. This triangular algebra is distinct from C071's A5 Auslander calibration.
+
+The page bound is ordinary kernel-letter count, not derived negative weight or local excursion. Higher-index nonperfect acyclic kernels, general nonprojective/non-nilpotent kernels and universal reduction existence remain open. No ordinary ideal is inferred from the general derived higher-output residue.
+
+**Evidence:** full ordinary proofs and normal adversarial self-audit. Exact finite multiplication, module, bar and actual quotient-map checks for both calibrations passed, with the computation-record validator. All-degree/all-characteristic claims use the separate finite/periodic certificates. Not independently verified; no novelty claim is made.
+
+### Stable actual projective types give terminating sink peeling — UGA-C075
+
+For an actual radical square-zero ideal K, C=A/K, suppose K=sum_i K_i is an actual C-bimodule direct sum and each K_i is a sum of copies of Ce_i on the left. The same actual subspace must be stable under both actions. This is stronger than a left-module projective decomposition and need not hold automatically.
+
+Use the actual column matrix T. Cycles already give supported ordinary A-Tor by C072. In the acyclic case, choose a sink i with incoming edges. Then K_i!=0 and actual Ke_i=0. For the actual next quotient B=A/K_i, remaining K e_i is zero, so Be_i=Ce_i as B modules. Thus the physical ideal K_i is projective over this current B and has K_i tensor_B K_i=0. C074 applies without perfectness or a section.
+
+The remaining actual bimodule summands retain their projective types over terminal C; row i is removed. The number q of nonzero types strictly drops by one, as does algebra dimension. Every step is proved eligible, and at most q<=v-1 steps reach C. The right version has stable right projective types and a direct right sink calculation, without opposite transfer.
+
+Hence every such square-zero extension over a justified Gap-A base closes for arbitrary finite size, including higher-index nonperfect kernels and nonsplit whole quotients. If C has all-vertex C061 sections and all supported A-Tor vanishes in every n>=M, the bound is (v-1)(M+2q)+q. All-source/all-degree vanishing and terminal all-vertex sections are retained.
+
+An actual seven-dimensional nonsplit example has a nonperfect kernel of derived tensor index three and a two-step eligible sink tower. A distinct actual twelve-dimensional nonsplit example has left-projective acyclic index-three kernel but no stable projective-type bimodule decomposition. It is already infinite + by another ordinary bar retract. Thus acyclicity alone does not construct the type tower; the counterexample is not globally irreducible or a Gap-A failure.
+
+**Evidence:** complete proof, explicit all-characteristic multiplication/module/tensor certificates and normal adversarial self-audit. The unchanged triangular evidence from C073 is reused; no new bounded computation was needed. Not independently verified. General stable decomposition or general eligible-ideal existence in a remaining bad algebra is not inferred.
+
+### Finite ordinary migration and its exact supported gap — UGA-C076 / C077
+
+The present acceptance target is Universal Gap A for every finite size. A broader structural theorem is useful insofar as it closes that target.
+
+Let K be a physical radical square-zero ideal, C=A/K, K left C-projective, with actual projective-column matrix T acyclic. Write F(X)=X tensor_C K, P(z) for all simple factors reachable from R_z under actual F iterations, and h(z) for the longest T path ending at z (graph j->i for T(i,j)>0). The positive-count ordinary bar-kernel first page is Tor^C_{n-p}(F^p(X),L_y), p>=1. F is exact and every positive step strictly drops height.
+
+If all ordinary Tor^A_n(R_j,L_y) vanish for every n>=M and every j in P(z), then Tor^C_n(R_z,L_y) vanishes for n>=M+2h(z). Thus an infinite ordinary C tail forces a fixed ordinary A tail after at most h(z) migrations, without perfectness, sections or stable projective-type splitting. No graph recurrence is used to manufacture homology. The direct right-projective statement moves the left endpoint, without opposite-+ transfer.
+
+With q<=v-1 the longest actual T path, gldim A=infinity iff gldim C=infinity. If the dimensions are finite, gldim C<=gldim A+2q and gldim A<=gldim C+q. This fills the previously missing nonperfect acyclic global-infinity transfer. It is not preservation of non-infinite-+: the final ordinary detector can be reverse-invisible.
+
+For an originally C-supported pair, the first F factors are physically A-supported by the actual ideal K. Later tensor powers do not imply physical support because K^2=0 in A. C076 requires vanishing on the whole F-reachable carrier, while absence of infinite + supplies it only on physical reverse-supported pairs. The outstanding bridge must preserve that support, or replace migration by a proved eligible ordinary reduction. General supported closure for this class remains open.
+
+C077 gives a connected all-size nonsplit nonperfect calibration: a length-four truncated line on m=4r+3 vertices, an extra square-zero loop source and a connecting arrow annihilated by radical products; K consists of line lengths two and three. Its actual left-projective tensor index is 2r+2 and its right pd is infinite. The comparison-kernel homology for the selected pair occurs in degree 4r+1, but the shifted first-kernel ordinary A module occurs in degree 2r+1. The gap is unbounded. Hence the whole comparison kernel cannot be replaced by that single first ordinary module. This family already has a supported loop tail and is not a Gap-A counterexample.
+
+**Evidence:** full ordinary filtration/induction and literal all-field path-resolution proofs with normal adversarial self-audit. Exact rational checks at r=1,2, the computation record and its hashes passed. The computation is bounded and same-author; not independently verified. No actual ordinary ideal or support inheritance is inferred for general derived negative layers.
+
+### Global canonical-syzygy route audit — UGA-C078
+
+For the actual first minimal A-bimodule syzygy M, its projective columns have exact matrix T=D-I, where D is the physical Cartan matrix. Actual ordinary/derived tensor powers have column matrix T^p. Even nontermination of these actual tensors does not imply an ordinary Tor tail for A.
+
+The unchanged finite-gldim A5 calibration has D=((2,1),(1,1)) after naming the loop vertex first. Thus T has an actual loop and M has tensor dimensions 8,13,21,..., nonzero for every exponent. Yet all ordinary simple-pair Tor vanishes above degree two. For the loop simple L_u, M tensor L_u is the projective Ae_w; a second tensor is projective Ae_u!=0 while the actual minimal second syzygy is zero. Projective summands are the real obstruction, not a missing graph comparison.
+
+This excludes bare canonical-syzygy tensor pumping as a global closure argument. It does not refute a theorem with additional genuinely late all-source no-infinite-+ hypotheses: this calibration's canonical syzygies themselves vanish after degree two. Radical-map compatibility reduces to an existing semisimple right-syzygy / finite exact system mechanism, not a new universal theorem. C076's physical supported migration gap remains the positive frontier.
+
+**Evidence:** actual module splittings and all-exponent tensor equalities; unchanged A5 and Saorin certificates reused, with a normal self-audit. No new computation and no independent verification.
+
+### Singleton infinite-simple branches close globally — UGA-C079
+
+For an elementary finite-dimensional algebra of any finite size, suppose only L_x has infinite LEFT pd. Every actual syzygy of L_x has infinite pd and must contain L_x as a composition factor: otherwise all its factors have finite pd and a finite composition series bounds its pd. Thus dim e_x Omega^n L_x>=1 for every n>=0.
+
+The actual projective-cover exact sequence gives sum_z dim(e_xAe_z) dim Tor^A_n(R_z,L_x)=dim e_x Omega^n L_x+dim e_x Omega^{n+1}L_x>=2 in EVERY degree. Finite labels select a fixed ordinary reverse-supported pair persisting infinitely often. That pair need not be diagonal or nonzero in every degree. Hence the entire class with at most one infinite-pd LEFT simple satisfies Gap A at arbitrary finite size, without any deletion, section, derived model or screening hypothesis.
+
+A direct RIGHT proof applies to the actual minimal resolution of a unique infinite-pd R_x. Its aggregate is sum_y dim(e_yAe_x) dim Tor^A_n(R_x,L_y)>=2, with exactly the required same-pair support. Left/right infinite-pd sets are not identified and no opposite-+ transfer is used.
+
+Quantitatively, if all other left simples have pd<=d and every supported pair from L_x vanishes for EVERY n>=M, then Omega^M L_x has no x factor, pd<=d, and gldim A<=M+d. The direct right version has the same bound. This retains the actual finite d and all-degree hypothesis; it is not a vertex-only bound or finite-window test.
+
+The unchanged Saorin example realizes the aggregate via a supported off-diagonal pair despite zero positive simple self-Ext. Its existing connected extension family provides the same calibration at arbitrary finite vertex number. A unique infinite-pd left (or right) simple must have a nontrivial actual local corner. The general multiple-infinite-simple case remains open; C076's physical support gap is unchanged. No generally eligible count descent is inferred.
+
+**Evidence:** complete ordinary proofs and normal self-audit; standard finite-length pd and existing all-degree module certificates reused. No new computation, no novelty assertion, not independently verified.
+
+### Multiple-infinite-simple structure test — UGA-C080 / UGA-C081 / UGA-C082
+
+C080 proves Universal Gap A for EVERY finite-size elementary algebra with at most two infinite-pd simples on either separately chosen side, over every field. This closes a whole multiple-simple branch, beyond T15's singleton theorem. If a persistent right Tor row contains only one left source, the existing actual singleton-right-tail/devissage bridge gives a supported ordinary pair. Otherwise, with only two infinite-pd left simples, every nonempty persistent row detects BOTH. Every real infinite left syzygy contains some infinite-pd simple factor, so its projective-cover aggregate over those factors is>=2 in every degree. Finite labels give a persistent detector physically supporting one such factor; the two-source row equality aligns that same pair with ordinary Tor. The direct right proof uses actual right resolutions and persistent columns, without opposite-+ transfer or identifying left/right infinite-pd sets. No diagonal or fixed-every-degree pair, new quantitative cutoff or vertex-only window is asserted.
+
+C081 identifies a precise obstruction to the proposed count descent. For an actual left-C-projective acyclic radical square-zero kernel K, C076 applies to every right carrier when a left simple has finite ambient pd. Together with pd_A C<=q, it proves pd_A L_y finite iff pd_C L_y finite, with c<=a+2q and a<=c+q. Thus every chosen-side simple label and its infinite-pd count are unchanged, even for the eligible left C074/C075 steps. The right-projective version preserves the RIGHT partition directly. C072's same-pair high isomorphism preserves both partitions; C069 preserves the ambient finite-kernel-pd side. These moves can terminate by algebra dimension or actual kernel types, but not by strictly decreasing that preserved count. The unchanged connected nonsplit nonperfect A12->C7 calibration has three infinite-pd LEFT simples on both sides of the quotient. Opposite-side counts may increase, as the unchanged C073 triangular example shows.
+
+C082 supplies a new actual connected 22-dimensional four-vertex calibration. Its base B=End_{k[t]/t^3}(M1+M2+M3)^op has dimension14 and literal finite simple resolutions. Put Gamma=k[t_v]/t_v^2, G=Gamma/(t_v), V=G tensor e3B and A=[[B,0],[V,Gamma]]. Actual Omega L3=Ae2 direct sum Lv and Omega Lv=Lv give I_L(A)={3,v}; direct right covers give I_R(A)={v}. The physical quotient A/Ae3A is the radical-square-zero two-cycle D times Gamma, of dimension6. All three retained left/right simples are infinite-pd. Deleting an actually infinite-pd LEFT simple therefore increases the left count 2->3 and the right count 1->3; formerly finite L1,L2 acquire infinite quotient pd. The quotient lacks an ordinary corner section. A already has the supported (Rv,Lv) Tor k in every degree, so this breaks automatic count descent, NOT the global visible-return OR eligible badness-preserving count-reduction alternative.
+
+The global alternative remains OPEN: if available for every bad A, its strictly decreasing finite count would prove Universal Gap A. A remaining bad A now needs at least three infinite-pd simples on each side. The exact unclosed alignment is that a detector persistent for x may physically support another infinite-pd y which it does not detect. A count reduction must establish ordinary support transfer AND no new infinite labels (or a proved net estimate); neither follows from deletion alone. C061 has both under actual sections, while C076's general physical-support gap remains unchanged. Target A, general local-trivial, supported-weight and higher-output branches stay on the map.
+
+**Evidence:** complete ordinary proofs and normal adversarial self-audit. New exact Q computation checks actual multiplication, the physical ideal/quotient and module isomorphisms, with reproducible hashes and a validated computation record. All-field/all-degree assertions use literal module proofs and induction; bounded shared-code checking is not independent verification. No novelty assertion.
+
+### Eligible count descent through even ordinary comparison — UGA-C083 / UGA-C084
+
+C083 repairs the precise obstruction exposed by T16 without requiring a section or full Tor isomorphism. For an actual quotient A->C, suppose its natural ordinary same-pair Tor map is onto for EVERY retained pair and EVERY EVEN n>=N. If pd_A L_y=a is finite, test the first even m>=max(N,a+1): all detector tests vanish, so the ENTIRE m-th minimal C-projective term is zero and pd_C L_y<=m-1. The direct right proof is identical with right covers. No new infinite-pd labels arise on EITHER side. An infinite-+ ordinary C has some supported even tail by b_n=t_n+t_{n+1}; the same-pair surjection lifts it with physical support. Thus, for a bad A and an actually infinite-pd LEFT vertex x, C058 supplies gd(A/Ae_xA)=infinity, the even bridge preserves badness, and |I_L(C)|<=|I_L(A)|-1 while |I_R(C)|<=|I_R(A)|. A right-chosen deletion is direct. This is a proved eligible strict finite-count move, including nonsection comparisons. C062 gives N=0 under its exact odd C^e-projective-layer hypothesis; C067 gives N=U+2 under its exact bounded-perfect/actual-tensor-nilpotence hypotheses.
+
+C084 proves inheritance at the level of actual ordinary maps. Assume EVERY nonempty proper block quotient A->A/Ae_SA has high-even same-pair surjectivity, with finite cutoff N_S. Let N=max N_S. For nested blocks T subset S, the A->C_T->C_S bar maps compose. Since the composite is onto at every high even degree, the SECOND map is onto. Every block quotient therefore inherits the all-block comparison property with cutoff<=N, without assuming coefficient projectivity, perfectness, nilpotence or formality survives. Repeated eligible deletion strictly lowers the chosen infinite count and reaches C080 after at most its initial count minus two moves. Hence the entire all-block-comparison class satisfies Gap A for EVERY finite size. Primitive-only comparison is not asserted to inherit, and the all-block hypothesis is not automatic.
+
+Quantitatively, if ALL physical reverse-supported A pairs vanish for EVERY n>=M>=1, set M_*=2ceil(max(M,N)/2). All block quotients have zero supported even aggregate above M_*; the nonnegative identity makes ALL their supported degrees vanish from M_* onward. Actual annihilated tails and vertex induction give gd A<=(v-1)M_*. This retains the real N, all-block comparisons and every-pair/every-degree vanishing. It is not a universal bound or finite-window test.
+
+The unchanged A22->C6 has finite-pd retained L1 but C6-Tor_{2r}(R1,L1)=k for every r>=1, while A22-Tor is zero for r>=2. Thus the comparison fails in arbitrarily high even degrees, exactly explaining the new infinite labels. C073 shows supported-even comparison alone also cannot control all labels: its supported t-bar maps are onto, but a reverse-invisible test makes right R1 newly infinite. Both examples are already infinite +. The general existence of an eligible comparison or ordinary visible return in the remaining three-or-more-infinite-source cases stays OPEN; C076's different radical support gap and all global branches remain.
+
+**Evidence:** complete ordinary proofs and normal adversarial self-audit, with unchanged T16/C073 certificates reused. No new computation or novelty assertion; not independently verified.
+
+### Infinite-source block closure and primitive-map obstruction — UGA-C085 / UGA-C086
+
+C085 weakens the C084 all-block hypothesis. Choose one side and let I be its ORIGINAL infinite-pd simple set, p=|I|. For p>=3 it suffices that A->A/Ae_SA have eventual-even ordinary same-pair surjectivity on ALL retained pairs for every nonempty S contained in I with |S|<=p-2. No originally finite source or larger block comparison is assumed. At a current bad quotient C_T with at least three infinite labels, C083 ensures every current infinite chosen-side source x lies in I minus T. The original block S=T union {x} has size<=p-2; its onto ordinary map factors through C_T, so the SECOND map is onto. C083 then preserves badness and strictly lowers the finite chosen count. After at most p-2 moves C080 contradicts badness. The right theorem is direct with I_R. In particular for exactly three chosen-side infinite simples, ANY ONE eligible infinite-source comparison already closes the branch. This does not prove general comparison existence or a new quantitative bound under the weaker hypothesis.
+
+C086 gives a literal obstruction to assuming primitive comparison inherits. Let B28 be the opposite endomorphism algebra of the six uniserial modules of the two-vertex radical-cube-zero cycle. Its global dimension is two and ALL its primitive physical quotients have global dimension at most four, but deleting both projective-module vertices gives the dimension-eight radical-square-zero four-cycle. Extend B by Gamma=k[t_v]/t_v^2 and the actual bimodule V=G tensor (e4B direct sum e5B). The resulting connected A42 has I_L={4,5,v}, I_R={v}; actual Omega L4=Ae3+Lv, Omega L5=Ae2+Lv, Omega Lv=Lv and Omega_right Rv=e4A+e5A+Rv prove these labels. Every original primitive quotient has natural ordinary SAME-PAIR Tor isomorphism on ALL retained pairs in EVERY degree n>=5, by actual right-resolution base change and complete finite covers of the old rows.
+
+The first infinite-LEFT-source deletion 4 gives C19 with I_L={5,v}, I_R={v}, and pd_C L0=4 versus pd_A L0=2. The comparison is eventually an isomorphism but has no augmented ordinary corner section. Deleting the STILL infinite LEFT source 5 gives C10=D8 times Gamma; all five retained labels have infinite pd on BOTH sides. Thus LEFT counts are 3->2->5 and RIGHT counts 1->1->5. For every r>=2, Tor^C19_{4r}(R0,L0)=0 but Tor^C10_{4r}(R0,L0)=k, so the second comparison fails every high-even cutoff. The exact obstruction is formerly finite labels becoming ordinary periodic labels after a joint deletion not controlled by initial primitive maps. A42 already has Tor(Rv,Lv)=k in every degree; this breaks automatic inheritance/count monotonicity, not the global bad-algebra alternative. Its first move already reaches count two, so C085 need not take the failing second move. A42 satisfies C085's weaker source-block hypothesis but fails C084's all-block condition.
+
+The finite evidence includes 326,699 associativity triples, 25,284 quotient products, 145 actual minimal covers, 2,497 integral unimodular basis certificates and ten actual isomorphisms. The written integral-base-change lemma proves these covers survive every field; actual syzygy iteration proves infinity, and literal triangular resolution base change proves the all-degree maps. Same-author shared-helper certificates and schema/hash validation are not independent verification. General comparison availability, C076 physical support transfer and all global branches remain OPEN.
+
+### Three-source ordinary block return — UGA-C087
+
+C087 closes two additional three-source classes at arbitrary TOTAL finite vertex count, without a deletion or a derived invariant. For |I_L|=3 assume, for EVERY z in I_R, that the LEFT socle of Ae_z has only I_L simple factors. Equivalently these persistent left projectives have no nonzero submodule with ONLY finite-pd LEFT simple factors; this does not exclude every finite-pd submodule. Under no-infinite-+, each persistent row W_z has at least two labels, so the physical I_L support of Ae_z has size at most one. The socle hypothesis makes it nonempty. An actual map between projectives of different infinite-factor types has only finite-factor image; the target socle hypothesis forces the whole image zero. Real high minimal resolutions therefore split into exact blocks with one infinite left-factor carrier. Ordinary devissage in a block selects that SAME carrier for a recurrent detector, giving its physical reverse-supported ordinary Tor tail. The RIGHT theorem is direct: |I_R|=3, and every e_yA for y in I_L has RIGHT socle factors only in I_R. Left/right sets are not equated and no opposite-+ theorem is used.
+
+The reusable actual-block lemma also gives ordinary visible return whenever a recurrent Peirce component of an actual left tail has at most one infinite left-factor carrier; an empty carrier would give finite pd and contradict actual recurrence. This is a real exact/minimal complex plus ordinary factor detection, not a graph-to-homology inference.
+
+A separate corollary needs NO socle hypothesis: if I_L=I_R is exactly the SAME three labels, the persistent row at each z detects the other two; no-+ then forces all physical off-diagonal Peirce entries among those labels zero. Only those labels occur in high resolutions, which split by actual projective type and give ordinary supported return. Equality is an explicit assumption, not transferred or automatically inferred. Arbitrarily many finite-pd vertices are permitted.
+
+Socle separation is not automatic. A connected dimension-fourteen radical-square-zero algebra with three loop vertices xi, arrows xi->fi and an acyclic chain f1->f2->f3 has exactly three left infinite sources, finite f pds 2,1,0, and finite Lfi factors in the left socles of persistent Ae_xi. Literal Omega_right Rxi=Rxi gives visible diagonal Tor in every degree, so this is a boundary calibration, not a bad counterexample. Without the socle condition actual finite-factor cross-map images can couple the ordinary blocks; their bounded ambient pd alone has not yielded vanishing, an eligible quotient, or a supported bridge. General three-source mismatched-label/finite-factor coupling and four-or-more-source cases, C076 support transfer and all global branches remain OPEN.
+
+**Evidence:** complete same-author ordinary proofs, normal adversarial self-audit, exact hand-described calibration; existing ordinary assets reused, no new computation and no independent verification.
+
+### Closed finite-pd blocks and containment — UGA-C088 / UGA-C089
+
+C088 supplies an actual ordinary deletion at arbitrary finite source count. Let F be a nonempty proper LEFT-finite-pd vertex block, f its identity sum, g=1-f, and require gAf=0: the actual LEFT projective covers of its vertices have composition factors ONLY in F. Put B=A/AfA=gAg and d=max_{u in F}pd_A L_u. Every retained RIGHT projective e_zA is literally e_zB, so its ENTIRE exact minimal right resolution is identical. The natural retained-pair ordinary Tor map is an isomorphism in EVERY degree, and retained physical e_yAe_z spaces are unchanged. The kernel AfA=fA has only finite F left factors, giving pd_A B<=d+1; inflation plus all retained Tor tests proves exact retained LEFT finite/infinite labels too. Thus I_L(B)=I_L(A), I_R(B)=I_R(A) minus F, global infinity is equivalent, and a bad A gives a bad B. RIGHT count drops exactly |F intersect I_R|; it is strict only if this is positive. Dimension and vertex number strictly drop for every nonempty block. Finite pds need not be zero.
+
+The direct finite-RIGHT block theorem assumes fAg=0, keeps retained LEFT minimal resolutions identical, preserves RIGHT infinite labels and drops LEFT count exactly |F intersect I_L|. No opposite-+ transfer is used. Checked original closed blocks inherit after other such deletions, even with mixed sides, because physical retained entries and BOTH infinite partitions are exactly restricted. The nonradical idempotent-containing kernel is not fed to the radical-kernel theorems.
+
+C089 strengthens C087's common-three-label result: |I_L|=3 and I_L contained in I_R already force supported persistent ordinary Tor; the direct RIGHT containment version is separate. Under badness the rows at the three contained labels detect the other two, forcing actual off-diagonal Hom zero among the three. Actual high RIGHT minimal resolutions split by projective type and ordinary factor detection gives the SAME physically supported pair. The larger side may have arbitrarily many extra infinite labels. This is a terminal class theorem, not a programme of count-by-count research.
+
+Combining them closes the three-LEFT-source class if every RIGHT-only infinite label belongs to a closed finite-LEFT block: containment closes directly, otherwise their union deletes all mismatches and leaves at most two RIGHT infinite labels, contradicting C080. Direct opposite-side proof also holds. This does not assert that finite-pd cross-map images always supply those blocks.
+
+T18 A42 admits a better deletion: remove its whole RIGHT-finite old six-vertex block, rather than the problematic partial deletions. The quotient is Gamma; counts become LEFT 3->1, RIGHT 1->1, with all-degree ordinary retained comparison. T19's loop/chain example likewise has an eligible whole LEFT-finite chain block with finite pd bound two. These are already visibly infinite +, calibrating legitimate moves. In A42 every finite-LEFT old cover contains the infinite LEFT label v, so eligible same-side closed blocks are not automatic. Complete proofs and normal self-audit reuse unchanged exact certificates; no new computation or independent verification. Arbitrary-p carrier reduction remains the active question; all global branches remain OPEN.
+
+### Arbitrary-carrier ordinary audit — UGA-C090 / UGA-C091 / UGA-C092
+
+C090 proves the desired terminal ordinary bridge at ANY source count: in a REAL exact minimal recurrent LEFT block K, let S_K be the union of its infinite LEFT composition-factor carriers. If ONE recurrent projective Ae_q has carrier S_K, its genuine block module X has persistent Tor(R_q,X); finite LEFT factors die uniformly, so ordinary devissage selects a fixed j in S_K with persistent Tor(R_q,L_j). Its physical e_jAe_q is nonzero by the dominating carrier. Direct RIGHT proof is separate. Constant per-projective carriers suffice; a constant UNION alone does not. Together with checked C088 deletions this closes an arbitrary-size class by finite vertex/dimension descent, without count-by-count research.
+
+C091 breaks the unqualified carrier-reduction/finite-pd cross-map elimination lemma. In the radical-square-zero p-cycle, p>=3, actual adjacent resolution projectives have incomparable two-label carriers; their image is an infinite-pd simple of strictly smaller singleton carrier. Actual covers immediately expand it, and every infinite-pd module's minimal tail visits ALL p projective types. There is NO proper recurrent carrier. A second uniform family D_p has actual cross injections with projective images of pd ZERO in every degree; pruning gives nonzero PROJECTIVE homology in every positive degree and loses actual SUPPORTED Tor(R_v,L_i). No proper-carrier infinite minimal tail exists there either. All simples in both families have infinite pd on BOTH sides, so finite-simple purification cannot remove the obstructions. Both families already have visible ordinary return; neither refutes a BADNESS-specific alternative or Universal Gap A.
+
+C092 answers the latest finite-FACTOR block question negatively with a connected family E_p for every p>=2. Its nine-dimensional Nakayama base has pd_LEFT L_f=1 but the cover P_f contains infinite L_v. Adjoin p-1 dual-number loop vertices w with m_w in e_fAe_w annihilated by radicals. I_L={v,w_r} has p labels, I_R={f,v,w_r} has p+1. The actual minimal L_w tail repeats P_v + P_f + P_w with maps P_v --b--> P_f --m_w--> P_w and P_w --t_w--> P_w; every cross image P_f->P_w is L_f, finite pd one with ONLY finite LEFT factors. Yet no finite-LEFT closed block can contain f because e_vAe_f!=0; no finite RIGHT labels exist at all. Thus NO C088 block on EITHER side is available. Pruning leaves L_f homology in every degree. Lost f/v Tor pairs are invisible here; the w diagonal gives a supported tail separately. This proves the local existence assertion false, not the bad-only global statement.
+
+The exact C088 availability test is physical projective-cover closure: an image support U lies in an eligible finite-LEFT block iff its entire cover closure avoids I_L. E_p fails in one step f->v. The maximal such block is the union of all eligible blocks; its deletion captures every same-side move at once. This is a concrete test, not a homological return inferred from a graph.
+
+Exact finite evidence at p=3,5,8 passed 157,560 associativity triples, 140 actual covers/kernel isomorphisms, 3,447 integral basis inverse certificates, 16 pruned-homology identifications and 13 literal recurrent differential checks. All-p/all-degree/all-field conclusions have separate written literal proofs. Shared helper/same-author checks and schema/hash validation are NOT independent verification. The valid C088/C089 theorems remain; a global closure must use badness, another eligible ordinary reduction or a bounded global correction, rather than finite image pd alone. All global branches remain OPEN.
+
+### Finite-complement perfect-corner ordinary bridge — UGA-C093
+
+C093 gives a new arbitrary-size ordinary reduction after T21's failure of recurring local finite-pd pruning. Let F be a nonempty proper set of LEFT finite-pd simple labels, d=max_F pd_A L_u, e=1-sum_F e_u and B=eAe. Require the ACTUAL Ae RIGHT B module to have finite pd t; put N=d+t+1. For ALL finite LEFT A modules M,Z, the exact ordinary Ext restriction Ext^n_A(M,Z)->Ext^n_B(eM,eZ) is an isomorphism for n>N. Finite-dimensional duality gives ordinary Tor^B_n(Re,eM)->Tor^A_n(R,M) isomorphism for all finite tensor coefficients above N. This is CORNER restriction and the Tor direction is B->A; it is NOT an A->B quotient map.
+
+The proof tensors an ACTUAL minimal B resolution with Ae. Its terms are A-projective but its possible nonexactness is retained. Finite RIGHT corner pd bounds its Tor degrees by t. The counit to M has a cone with cohomology only in [-t-1,0] and only F LEFT factors; those have pd<=d. Resolving this BOUNDED GLOBAL defect gives the explicit ordinary cutoff. Infinitely repeated local finite-pd images do not satisfy this bounded amplitude merely by having bounded pd.
+
+Deleted RIGHT R_u are consequently finite-pd <=N, by all-source Ext to L_u with eL_u=0. Both retained LEFT and RIGHT infinite label sets are exactly unchanged. Finite retained pds a,b satisfy a<=max(b,N), b<=max(a,N). Global infinity is equivalent; whenever finite, gd A<=max(gd B,N) and gd B<=max(gd A,N). Physical retained e_yAe_z spaces are literally equal, so supported persistent ordinary B Tor lifts in the SAME pair. A bad A gives a bad B with strictly smaller dimension/vertex number. BOTH infinite counts stay unchanged. Thus a minimal bad algebra cannot have such a perfect finite-complement corner. Direct RIGHT proof uses finite RIGHT deleted simples and finite LEFT B pd of eA, separately; no opposite-+ transfer.
+
+Checked towers compose their ordinary maps with cutoff max_i N_i, and terminate after at most v-1 nonempty vertex deletions. A justified terminal ordinary return lifts; a finite terminal gd b gives gd A<=max(b,N_1,...,N_r). Later perfection/eligibility is not automatic. This is a whole perfect-corner branch exclusion and a uniform bound for the checked class, not a universal deletion-existence theorem.
+
+The arbitrary-p calibration replaces C092's simple right dual-number couplers by regular ones. It has dimension 4p+5, F={f}, d=1, t=0, N=2; Ae is explicitly two copies of each retained corner projective. Neither side has a finite cover-closed block, but C093 applies. Its actual LEFT L_w resolution has Q0=P_w, Q1=P_f+P_w, Q2=P_v+P_w and Qn=P_w for n>=3. Hence Tor^A_2(R_v,L_w)=k while corner Tor^B_2(R_v,L_w)=0: strict n>N is sharp. Exact both-sided kernel/corner certificates at p=3,5,8 passed 147694 associativity triples, 92 minimal covers, 89 kernel isomorphisms and 2486 integral basis inverses. These shared-helper finite checks and the separate complete proof are same-author self-audits, NOT independent verification.
+
+In the unmodified C092 family, Tor^B_i(Ae,L_w)=L_f for EVERY i>=1, with pd_LEFT L_f=1. The defect therefore has unbounded homological support and the perfection hypothesis really fails. C088 still handles nonperfect but physically closed blocks and may lower opposite infinite count; C093 handles physically nonclosed finite complements with perfect corner couplers and lowers dimension. C090 supplies terminal ordinary return. The remaining nonperfect/no-deletion core, C076 support transfer and all global branches stay OPEN.
+
+### Automatic shallow finite-complement corner descent — UGA-C094 / UGA-C095
+
+C094 removes C093's corner-perfection hypothesis for the whole class with every deleted LEFT simple of ambient pd<=1. Let F be ANY nonempty proper such set, e=1-sum_F e_f, B=eAe, D(u,z)=dim e_uAe_z. There is no finite RIGHT B pd requirement on Ae and no projective-cover-closure requirement. The actual counit Ae tensor_B^L eM->M can have an UNBOUNDED cone; its actual cohomology H_i is retained and has only F factors and ambient LEFT pd<=1. A finite ordinary truncation for each target degree gives the pd-one Hom window. The REAL minimal kernel P_1->P_0 of H_i is INJECTIVE and hence supplies physical row dimension control. No local map/error is erased.
+
+For retained q, arbitrary finite LEFT M, every row u and n>=1, ordinary beta satisfies D(u,q) beta^B_q(eM,n)<=D(u,q) beta^A_q(M,n)+sum_F D(u,f) beta^A_f(M,n). For retained simple source y use u=y: EVERY term carries physical reverse support for its own Tor pair. A supported persistent B pair forces an A supported persistent pair with the SAME source y and a detector among q or F. This is SAME-DEGREE ordinary return, not a fixed-pair isomorphism. All supported A simple Tor zero for n>M implies the SAME cutoff M in B, with ZERO loss.
+
+Summing over rows controls all retained ordinary Betti numbers: LEFT finite pds cannot increase and LEFT infinite labels are exactly retained. Finite values a over A,b over B obey b<=a<=b+2; gd B<=gd A<=gd B+2 when finite and global infinity is equivalent. A bad A gives a bad strictly smaller-dimensional/vertex corner. Original same-LEFT pd<=1 labels remain eligible after such moves. The direct RIGHT theorem has deleted RIGHT pd<=1 and weights D(y,z) beta^B_zy<=D(y,z) beta^A_zy+sum_F D(f,z) beta^A_zf: RIGHT detector stays, LEFT source may switch. It directly preserves RIGHT labels and finite-pd monotonicity; no opposite-+ transfer. A dimension-minimal bad algebra has no LEFT or RIGHT simple of pd zero or one.
+
+Opposite labels CAN change: the seven-dimensional Nakayama calibration aba=0 has I_L={v}, I_R={f}; deleting LEFT-pd-one f leaves Gamma_v with both sets {v}. The original retained RIGHT v had pd one and becomes corner-infinite; the old pair (R_v,L_v) has ZERO positive ambient Tor while its corner diagonal persists. Weighted migration detects supported (R_f,L_v) instead. Ae is NONPERFECT. Arbitrarily large finite blocks with nontrivial internal Ext-one extensions are covered; finite sizes 1,2,4 were checked through actual kernels. Checked mixed towers terminate in <=v-1 moves and keep supported cutoff M unchanged; a finite terminal gd b gives b+2r. Each current side's eligibility is required; later mixed-side pd conditions are not automatic.
+
+C095 pins down the exact pd-TWO boundary. The old A5 with ba=0 has gd two, deleted L_v pd two and retained dual-number f corner with persistent supported Tor, so the pd-one inequality/support/gd monotonicity cannot extend unqualified to pd<=2. The actual counit has L_v in EVERY negative degree, and its Hom terms are genuinely killed by ordinary Ext^2(L_v,L_v)=k through d2:(0,q)->(2,q-1) for every q>=2. This is not raw differential speculation or a new nonformal derived quotient. The NEW connected S10 has I_L={f,w}, I_R={w}, the ENTIRE finite-LEFT complement {v} of pd two, and an original infinite LEFT source f. Its corner f diagonal persists while every ambient physically supported Tor with source f vanishes for n>=2; the same Ext-two screening is actual. Its ambient w diagonal returns, so S10 is already infinite + and does NOT refute a BADNESS-specific global deletion/return alternative.
+
+Complete ordinary proofs and normal same-author audit plus 46,320 associativity triples, 39 actual minimal covers, 36 kernel isomorphisms and 496 integral basis inverses are recorded in T23. Shared helpers and schema/hash validation are NOT independent verification. The nonperfect shallow finite-complement branch is eliminated at arbitrary source count. Remaining targets are nonperfect finite pd>=2 complements, all-infinite/no-shallow-deletion ordinary cores, C076 physical support transfer and the unchanged global Target A/local-trivial/higher-output branches. Any pd-two extension must use FULL no-+ or allow further endpoint migration; infinite source alone fails. Universal Gap A remains OPEN.
+
+### Ordinary tensor-factor descent and the unbounded shallow-existence obstruction — UGA-C096 / UGA-C097
+
+C096 gives another actual global ordinary closure after C095's pd-two screen. For elementary C,D over the SAME field, an ACTUAL tensor algebra A=C tensor_k D has actual minimal resolutions formed by the signed total tensor of the two factor minimal resolutions. Field Kunneth proves exactness and the tensor radical proves minimality. Ordinary Tor_n splits as sum_{i+j=n} Tor_i^C tensor Tor_j^D; physical e_(y,v)Ae_(z,w)=(e_yCe_z) tensor (e_vDe_w). Thus supported cutoff h(A)=h(C)+h(D) and gd A=gd C+gd D, with infinity allowed. The separate LEFT/RIGHT tensor-simple pds also add. These are ordinary facts, not stable/singular or opposite-+ transfer.
+
+If A is bad, both factor supported cutoffs are finite and at least one factor has infinite gd; that factor is bad and strictly smaller-dimensional when both dimensions exceed one. Every factor supported tail lifts through a same-vertex degree-zero pair of the other factor. ANY existing proved terminal classes therefore close under arbitrary actual finite tensor products. A supported product cutoff M bounds either factor by the SAME M. Checked factor descent terminates by strict dimension; finite terminal factor gd bounds b_i add. Tensor decomposition must be ACTUAL, not inferred from Peirce data, carrier graphs or singular categories. A dimension-minimal bad algebra is tensor-indecomposable over k. Standard Cartesian components similarly have max cutoffs/gd and a bad smaller component.
+
+C097 disproves an automatic continuation of C094 based solely on existence of a finite-pd simple: T23's seven-dimensional Nakayama N has sole finite LEFT f of pd one and sole finite RIGHT v of pd one. For EVERY r>=2, connected A_r=N^(tensor r) has dimension 7^r and 2^r vertices; its sole finite LEFT label is all-f and sole finite RIGHT label all-v, each of pd EXACTLY r. Every other simple on the chosen side is infinite. There is no pd-zero/pd-one simple on EITHER side; the least finite pd can be arbitrarily large on BOTH sides. Sole finite covers have infinite factors, so no C088 block; their opposite labels are infinite, so C093 perfection is impossible. This is a uniform obstruction to an UNQUALIFIED shallow-vertex existence theorem, not count-by-count research or a badness-specific counterexample.
+
+The whole family is visibly ordinary infinite +: source (v,f,...,f), detector (f,f,...,f) has Tor dimension one in EVERY positive degree and physical dimension 2^r. C096 handles its actual factor structure at once. The sparse N tensor C3 calibration has all six labels infinite on both sides and physical zero entries; its (f,0) diagonal has Tor one in multiples of three with physical dimension two. Finite dimension-49/42 tables passed 310288 associativity triples,13 actual covers and156 integral basis inverses; no product recurrent-kernel check is claimed. All-r/all-degree infinity follows the separate actual minimal tensor proof and frozen factor kernels, not finite samples. Complete same-author proof/shared helpers, NOT independent verification.
+
+The remaining target is a FULL no-+ mechanism in a tensor-indecomposable no-shallow-deletion ordinary core. Arbitrary finite-pd>=2 corner deletion, existence of eligible reductions and all-infinite core closure remain OPEN. C088/C093/C094 and C095 are retained with their exact hypotheses; C076 support transfer, Target A/local-trivial and higher-output branches remain on the full map. Universal Gap A remains OPEN.
+
+### Automatic higher-pd corner perfection from an ordinary F Ext window — UGA-C098
+
+C098 gives a genuine higher-finite-pd closure after the exact C095 screening boundary. Let F be nonempty proper, with finite LEFT simple pd bound d AND finite RIGHT simple pd bound r. Require ordinary Ext^p_A(L_u,L_v)=0 for EVERY u,v in F and EVERY p>=2 (equivalently 2<=p<=d); Ext-one INSIDE F is allowed. No physical cover closure or corner-module perfection is assumed. Finite-length ordinary Ext devissage extends this window to all F-factor modules. A finite Postnikov truncation per degree makes the Hom edge of actual counit cohomology H_n to each F simple unkillable. RIGHT pd bounds make Hom(C_M,L_u[n])=Ext^n_A(M,L_u) vanish for ALL finite M when n>r. Hence H_n=0 for n>r: the initially unbounded actual defect is PROVED to have uniform amplitude [-r,0]. This window is for F TARGETS, unlike C094's ambient pd-one window for arbitrary targets.
+
+Every finite B=eAe module X is eM for M=Ae tensor_B X. The actual cone/Tor identities consequently prove pd_{B^op} Ae<=max(r-1,0), AUTOMATICALLY. The direct RIGHT proof with ordinary duality gives pd_B eA<=max(d-1,0). Bounded actual cohomology of LEFT pd<=d gives natural ALL-module ordinary Ext restriction A->B and dual Tor B->A isomorphisms for STRICT n>d+r, including d=0/r=0. Both retained infinite label sets are exact; physical retained pairs are identical and SAME-PAIR supported tails lift. Global infinity is equivalent and badness strictly decreases algebra dimension/vertices. Checked tower comparison cutoff is max_i(d_i+r_i), finite terminal gd b gives max(b,d_i+r_i), and <=v-1 nonempty moves occur. Later finite-pd/Ext-window eligibility is not assumed to inherit.
+
+The automatic bound is nontrivial at arbitrary high finite pd: T22's regular-coupler E at p=2 has sole BOTH-sided finite f of pd one, LEFT L_f terms P_f,P_v, LEFT L_v terms P_v,P_f,P_v,..., and RIGHT R_f projective first kernel e_vE+e_wE. For EVERY s>=2, E^(tensor s) has sole BOTH-sided finite F=all-f with d=r=s, all positive self-Ext of L_F zero, no shallow vertex and no C088 finite closed block on either side. C098 proves comparison above 2s. For retained M=all-v, its actual counit is L_F[s] and Tor_{s-1}^{eAe}(Ae,eM)=L_F, so the RIGHT corner pd is EXACTLY s-1. This is a written all-s/all-degree ordinary consequence of frozen literal resolutions and C096, with no new bounded computation or product kernel-return claim. The family is already visibly infinite + and also handled by tensor-factor descent; no badness counterexample or sharpness of cutoff 2s is asserted.
+
+Two-sided finite pd alone does NOT suffice: C095's old A5 deleted v has both pds two, Ext^2(L_v,L_v)=k and nonperfect corner Ae. Its genuine Ext-two screening is precisely outside C098. Complete same-author ordinary proof and normal adversarial audit, NOT independently verified; previous exact evidence is reused unchanged. The two-sided-finite no-higher-F-Ext branch is eliminated by a uniform ordinary bridge and strict descent. Two-sided finite blocks WITH actual higher F Ext, one-sided-only finite blocks, all-infinite tensor-indecomposable/no-deletion cores and the full existing global branch map remain OPEN. Universal Gap A remains OPEN.
+
+### Directed ordinary F Ext: uniform termination and inherited peeling — UGA-C099 / UGA-C100
+
+C099 extends T25 to genuine higher ordinary F Ext. Let F={f1,...,fm} be nonempty proper, finite on BOTH sides with maxima d LEFT and r RIGHT, and require Ext^p_A(L_fi,L_fj)=0 for EVERY p>=1 whenever i>=j. Higher Ext from earlier source to later target is allowed; F modules may be nonsplit. This is an order on ACTUAL positive ordinary Ext groups, not quiver/support acyclicity. Set s=min(d,r),w=max(s-1,0). For ANY finite LEFT M, the initially unbounded ACTUAL counit cone has uniform amplitude [-a_L,0], a_L=r+(m-1)w. The finite target-degree hyper-Ext Hom edge has no incoming differential; every possible outgoing degree-ell screen consumes ell-1 degrees and advances strictly in the finite F order. Source Ext devissage kills its actual target once earlier composition factors disappear. Ext-one edges are essential to turn the vanished HEAD into absence of the full COMPOSITION factor for nonsplit H_n. Refined bounds b_j=max(r_j,b_i+p-1 over nonzero ordinary incoming Ext degrees) have no recursion cycle and max b_j<=a_L.
+
+ALL finite B=eAe modules occur as eM via M=Ae tensor_B X, proving actual RIGHT corner pd Ae<=max(a_L-1,0). The direct right proof reverses the F order and gives a_R=d+(m-1)w and LEFT corner pd eA<=max(a_R-1,0). Bounded actual repair yields natural ALL-module ordinary Ext restriction A->B and Tor B->A isomorphism for STRICT n>N, N=d+r+(m-1)max(min(d,r)-1,0). Both infinite label sets/counts are retained exactly. SAME-PAIR physical supported return lifts and badness strictly lowers dimension/vertices; supported cutoff M becomes max(M,N), NOT a zero-loss claim. Whole-F uniform/refined bounds are sufficient, not asserted sharp.
+
+Repeated eligibility is now PROVED in this class: delete f1 then f2,...,fm. Each singleton has no positive self-Ext and finite pd on both sides, so C098 applies. For every remaining F source M, ordinary Ext^n(M,L_f1)=0 in ALL n>=0. Its singleton counit has semisimple cohomology and no positive self-Ext, so it is ACYCLIC, making ordinary Ext restriction an isomorphism in ALL degrees for that source and ANY finite target. Thus every remaining F Ext group and LEFT numeric simple pd retain their ORIGINAL values; RIGHT labels remain finite though numeric pds may change. Induct through exactly m strict vertex/dimension moves. The direct right peeling reverses the order and controls RIGHT numeric source pds. This is not automatic primitive-comparison inheritance outside the stated order; C086 and other negative results stay valid.
+
+The actual nonsplit calibration E13 tensor the radical-square-zero three-chain has F LEFT pds1,2,3,RIGHT3,2,1 and genuine Ext^2 from (f,2) to (f,0). Thus the whole-F C098 vanishing condition fails. Literal corners give65->51->33->20; remaining LEFT profiles1,2,3->1,2->1 and RIGHT3,2,1->2,1->1. All remaining F Ext is preserved in EVERY degree, verified from ACTUALLY terminating finite resolutions. No finite cover-closed block exists on either side. Ordered deletion starts with LEFT pd three. Uniform bound10, refined6, actual step cutoffs4,3,2. A literal RIGHT Ae two-regular-copy isomorphism gives whole corner t=0 and C093 bound4; an invisible mixed ordinary degree-four mismatch makes that actual ALL-pair cutoff sharp. A supported (w,0) diagonal returns separately. Checks passed896748 associativity triples,32 actual covers,811 integral basis inverses,39 F Ext entries and800 literal right-linearity checks; same-author shared helpers, NOT independent verification.
+
+C100 rejects a tempting universal shortcut: the restricted ordinary F Yoneda algebra for LEFT-finite F is AUTOMATICALLY finite-dimensional and its positive ideal nilpotent, but this does not bound repeated genuine screens. In old A5,F={v},both pds2, E_F=k+k xi with |xi|=2,xi^2=0; nevertheless the counit has L_v in EVERY negative degree and genuine d2:(0,q)->(2,q-1) is an isomorphism for EVERY q>=2. Connected S10 adds an infinite original source and whole finite-LEFT complement, with the same unbounded screen. It has another visible ambient pair, so does NOT refute a FULL badness-specific global alternative. Successive screens act on different cohomology slots, not successive nonzero Yoneda products. Ext-one acyclicity alone likewise fails in singleton v. Primitive/Binary corrections and the ordinary-versus-derived-quotient distinction remain unchanged.
+
+Complete same-author ordinary proofs and normal adversarial audits, not independent verification. The directed TWO-sided-finite branch now has uniform termination, ordinary comparison and repeated strict eligible descent. Genuine higher-F-Ext cycles, one-sided-only finite blocks and tensor-indecomposable all-infinite/no-deletion ordinary cores remain OPEN, alongside C076 physical support transfer and every global Target A/local-trivial/supported-weight/higher-output branch. Universal Gap A remains OPEN.
+
+### Finite global ordinary F Yoneda dimension: real screening terminates — UGA-C101
+
+C101 continues T26 without requiring positive F Ext to be acyclic. Let F be nonempty proper, finite-pd on BOTH sides with maxima d LEFT,r RIGHT. Its ACTUAL ordinary Yoneda algebra E=Ext^*_A(sum_F L_f,sum_F L_f) is automatically finite-dimensional. Require the stronger condition gd(E)=g<infinity; let q be its highest nonzero degree (q<=min(d,r)),w=max(q-1,0). Realize the minimal homogeneous E-projective resolution of G(M)=sum_n Ext^n_A(M,sum_F L_f) by actual triangles. Exactly g+1 covers kill G; generator bounds i<=sigma<=r+i q imply the actual counit cone has amplitude [-a_L,0],a_L=r+gw. Its final MINIMAL A projective complex has NO deleted-label terms, so exact e(-) produces a genuine ordinary minimal B=eAe resolution. Termwise induction identifies the map with the ACTUAL counit. This is not local differential-image pruning and uses no unbounded spectral-sequence convergence assumption.
+
+Consequently RIGHT corner pd Ae<=max(a_L-1,0). The direct RIGHT proof uses ordinary dual Yoneda E^{op},a_R=d+gw and LEFT corner pd eA<=max(a_R-1,0). Every finite module has natural ALL-module ordinary Ext restriction A->B and dual Tor B->A isomorphism for STRICT n>N,d+r+g max(q-1,0). Retained LEFT/RIGHT infinite labels are EXACTLY preserved; finite pds/gd satisfy both max(N,other pd/gd) bounds. SAME retained physical support lifts every persistent supported corner pair. Badness descends with cutoff max(M,N), and algebra dimension/vertices strictly decrease. Infinite-pd counts need not decrease: the deleted block is finite on both sides. A checked eligible tower terminates by dimension; C101 does NOT claim primitive/all-degree partial-deletion inheritance. C099's stronger ordered peeling stays valid.
+
+The actual calibration is Ereg_2 tensor A5,65 dimensions and SIX vertices; distinct from T26's65-dimensional NINE-vertex chain tensor. F={(f,0),(f,1)} has BOTH pds2,3 and ordinary Ext-one in both directions, plus Ext-two self at(f,1). Lifted ordinary comparison maps give the nonzero Ext-two Yoneda product. Its graded Y algebra has basis e0,e1,alpha,beta,xi,alpha beta=xi,beta alpha=0; actual homogeneous simple resolutions TERMINATE in lengths2,1, so gd(Y)=2 despite the positive F Ext cycle. New uniform amplitude5/comparison bound8; no sharpness assertion. Literal whole corner65->20 has FOUR vertices, Ae TWO regular RIGHT corner copies, dimension40, giving actual C093 bound4. No cover-closed finite block or directed positive F Ext order is present. Already infinite-plus via frozen ordinary factor/tensor proofs, not a Gap-A counterexample or proof of universal eligible-block availability.
+
+Exact checks passed834572 associativity triples,29 actual minimal covers,343 integral basis inverses,8 unit Yoneda-product checks,5 homogeneous Y covers and800 right-linearity equations. The initial dimension assertion confused the40-dimensional Ae module with the20-dimensional corner; failed-execution log and corrected successful rerun are preserved. Complete same-author ordinary proof/normal adversarial audit and validated computation record, NOT independently verified. Primary projective-cover realization method attributed to Ingalls-Paquette2017; no novelty claim or formal MRS proof acceptance.
+
+C100 remains valid: old A5 singleton E=k[xi]/xi^2 has INFINITE gd, so finite/nilpotent E is not sufficient. The remaining cyclic finite-block cases OUTSIDE existing C098/C099/C101 mechanisms may have infinite Yoneda gd; one-sided finite blocks and tensor-indecomposable all-infinite/no-deletion cores stay OPEN. No badness-specific automatic smooth-block availability has been proved. C076 Peirce transfer, Target A/bounded screening, local-trivial, Primitive-Seed/Binary-Indecomposable/higher-output and supported-weight branches all remain OPEN. Universal Gap A remains OPEN.
+
+### One-sided higher finite pd: supported ordinary UNIT return — UGA-C102/C103
+
+C102 needs only LEFT finite pd d on a nonempty proper block F. Require the ACTUAL ordinary E_F=Ext^*_A(sum_F L_f,sum_F L_f) to have finite global dimension g/top degree q<=d. Put a=d+g max(q-1,0),t=max(a-1,0). Realize the minimal graded RIGHT E_F covers of H(Z)=Ext^*_A(sum_F L_f,Z) by actual FIBER triangles. After g+1 covers the actual minimal A-INJECTIVE complex has NO deleted socles; exact e(-) is a genuine ordinary B=eAe injective resolution, and coinduction identifies the map with the ACTUAL UNIT. Its finite cone has shifts i+1-sigma. This automatically gives LEFT corner pd eA<=t, with NO finite RIGHT F pd and NO RIGHT perfection of Ae assumed.
+
+The supported bridge requires actual physical eligibility(U): for EVERY retained z, every F generator f in the minimal RIGHT E_F resolution of H(L_z) contains the RETAINED part of C_z={y:e_yAe_z nonzero} in C_f. A stronger sufficient finite check(R) is C_u subset C_f for EVERY projective Ae_u in EVERY positive term of the ACTUAL terminating minimal L_f resolution. R does not require the factors of Ae_f to stay in F. Actual ordinary E components propagate visibility; no graph cycle, image-carrier assumption or formal splitting is used. Under U, a persistent supported corner pair(z,y) returns to the SAME LEFT source y in A, at detector z or a physically visible f in F. ALL supported ordinary A Tor zero above M implies supported B cutoff M+t. Same-pair high isomorphism is NOT claimed.
+
+Retained LEFT infinite labels are EXACT. For finite LEFT modules, pd_B eM<=pd_A M+t and pd_A M<=pd_B eM+d+1 whenever the corresponding pd is finite; gd infinity is equivalent. The actual converse uses retained minimal covers and keeps EVERY finite-F quotient and its finite resolution. No local differential-image pruning. Thus badness descends with strict DIMENSION/vertex decrease and controlled cutoff loss, at arbitrary infinite-source count. LEFT infinite count stays fixed, RIGHT labels may increase. Direct RIGHT construction uses row carriers and keeps RIGHT source R_z, possibly changing LEFT source to f with e_fAe_z nonzero; ordinary dual methods only, no opposite-infinite-plus transfer. Eligibility of further deletions is not inherited automatically.
+
+Actual N7 tensor N7 tensor hereditary arrow:147 dimensions/EIGHT vertices ->84 dimensions/SIX vertices. ENTIRE LEFT finite block has pds3,2, ordinary E gd1/q1, EVERY actual carrier inclusion holds. All RIGHT F labels are infinite; no pd-zero/pd-one finite simple exists on EITHER side; F is not cover-closed, Ae is RIGHT-nonperfect. General t=2; written factor proof sharpens loss/eA LEFT pd to1. For N7^r tensor the radical-square-zero three-chain, r>=2, R fails even for ENTIRE finite-LEFT F with smooth E gd1/q2. Nevertheless H(L_z) is an actual shifted RIGHT E-projective with SINGLE generator(all-f,c), so U holds and loss is at most r-1. This absorbs a finite expanding intermediate head without invoking a new derived invariant. Full larger tensor tables were not executed; these are written all-r factor proofs.
+
+C103 gives a connected FOUR-vertex14-dimensional obstruction to unconditional R/U, including for the ENTIRE finite-LEFT block. Its sole finite LEFT simple f has pd2,E_F=k. Actual kernels Omega Lu=Lu, Omega Lq=P_u+Lq, Omega Lf=H(a,b), Omega H=P_u and Omega Lw=P_f+Lw show all other LEFT labels infinite. H has pd1 despite INFINITE head/factors Lq. C_f={q,f} expands to C_q={u,q}; the actual E cover of H(Lq) has generator f, but D(u,q)=2,D(u,f)=0. No enlargement by another finite LEFT label exists. All RIGHT labels are infinite, with Omega Rf=Rw,Omega Rw=Rw. Nonzero a c=d retained excludes an ordinary retained quotient projection. This algebra already has supported ordinary diagonals u,q,w, so it does NOT refute a BADNESS-specific global alternative or Universal Gap A. Exact obstruction: finite-pd cross image with infinite simple head and actual cover expansion; smooth E alone does not align the ordinary unit-error carrier.
+
+Passed7063921 associativity triples,20 covers,381 integral inverses,12 carrier inclusions,14 finite F Ext entries and3 homogeneous E covers for147->84; small factor/connected14 checks add5829 triples,21 covers,235 integral inverses,7 actual kernel isomorphisms and a genuine lifted ordinary Yoneda product. Initial helper-global binding failure corrected in new caller and preserved. Complete same-author proof/normal adversarial audit and validated computation record, NOT independent verification. Automatic BADNESS-specific eligibility remains OPEN, as do singular F Yoneda, all-infinite/no-factor, C076 Peirce alignment, bounded-screening/local-trivial, Primitive/Binary/higher-output and supported-weight branches. Universal Gap A remains OPEN.
+
+### Finite-pd semisimple envelopes kill an expanding-head class — UGA-C104
+
+C104 continues C102/C103 with a genuine ordinary RETURN alternative, not an automatic deletion hypothesis. Let T be ANY nonempty finite LEFT simple set of size m. EVERY t must have an ACTUAL finite-pd module H_t with actual sequence0->sum_(s in T)L_s^{a_ts}->H_t->L_t^{b_t}->0,b_t>=1. Put h=max pd H_t. For EVERY finite target Z and EVERY n>=h, the ordinary Ext first-variable sequence is SURJECTIVE from the kernel's Ext^n to the quotient's Ext^{n+1}; its matrix entries are ACTUAL ordinary degree-one Yoneda classes. Thus ALL high classes from T are generated by real composable degree-one products, even with rectangular multiplicities. No split syzygy is needed.
+
+If ALL T diagonals vanish above M, the EXISTING positive ordinary Yoneda nilpotence bound m(M+1) kills these generated tails, giving pd L_t<=h+m(M+1)-1 for EVERY t. If ANY T label has infinite pd, SOME FIXED T simple has a persistent ordinary diagonal Tor(R_t,L_t), physically supported by e_t. This works at arbitrary source count. Finite-pd subkernel repairs are allowed ONLY through actual sequences0->U_t->Q_t->Lt copies->0,0->K_t->U_t->T semisimple->0: the ACTUAL quotient H_t=Q_t/K_t has finite pd<=max(pd Q_t,1+pd K_t). Nonsplit K is permitted; no differential images are erased or assumed to preserve exactness. Direct RIGHT theorem uses right ordinary Ext and gives the same supported diagonal, without quarantined transfer.
+
+GLOBAL CLASS CLOSURE: if LEFT pd(J^2)=r finite, J=rad A, the actual quotients H_t=Ae_t/J^2e_t have pd<=r+1 and semisimple radicals. With T ALL N labels, diagonal cutoff M gives gd(A)<=r+N(M+1). Hence gd infinity forces a supported persistent ordinary diagonal. If J^2=0, the sharper h=0 bound is N(M+1)-1. RIGHT finite pd of J^2 gives the direct analogous closure. No Tor invariance or homological-epimorphism assertion about A/J^2 is used. Finite-pd J^2 under arbitrary badness is NOT proved.
+
+C103's actual H(a,b),pd1,top/rad Lq is a SINGLE-source envelope; its q ordinary return follows without its split first-syzygy proof. The displayed connected14p family supplies ACTUAL pd1 images with simple radicals cycling through arbitrary T, all finite-left f_i pd2/E_F=k^p but U fails. A connected26 calibration has common P_u coupled by m1 a0=m0,n1 a0=n0: Omega Lq0 has HEAD ONLY q1 and does NOT split P_u, yet the actual finite envelopes remain pd1 and ordinary period-two kernels pass. Exact checks18135 associativity triples,27 covers,558 integral inverses,10 kernel isomorphisms. Nonzero LEFT-projective J^2 in a hereditary3-chain checked; frozen radical-square-zero3-chain attains h=0,M=0 bound2. Initial action-array TypeError corrected and preserved. All-p family/general Ext proof are written, not sampled infinity. Same-author complete proof/normal adversarial audit and validated computation record, NOT independently verified/no novelty claim.
+
+Stronger chosen-side class: only J^2e_t for t in I_L must have finite LEFT pd. The ACTUAL preimage K_t of the finite-simple summand in Je_t/J^2e_t is finite-pd by its real short exact sequence. Ae_t/K_t then supplies the T=I_L envelope with semisimple infinite-label kernel. If those deep pds are bounded by r and finite simple pds by d, sufficient infinite-label pd bound is max(r,d)+|I_L|(M+1). Finite-label J^2e_f need not be finite. Direct RIGHT proof analogous. No purification/image-deletion exactness is assumed; all module preimages/quotients are literal. Under ALL-label finite-pd J^2, the full ordinary Yoneda algebra is generated in degrees<=max(1,r+1), a real finite-generation bridge for this class.
+
+Loewy-two or actual finite-pd repair is LOAD-BEARING. Frozen N7 has J^2P_v=infinite LEFT Lv and ALL positive simple diagonals zero while an ordinary supported off-diagonal persists. Higher Loewy projective envelopes cannot be used to claim degree-one generation; new ordinary generators can survive. General badness-specific envelope/deletion availability and higher nonsimple radical errors remain OPEN. C102, singular F Yoneda, all-infinite/no-factor cores, C076 physical alignment and ALL original Target-A/bounded-screening/local-trivial/Primitive/Binary/higher-output/supported-weight branches remain on the map. Universal Gap A remains OPEN.
+
+### Nonsemisimple actual envelopes bridge to ordinary supported Tor — UGA-C105
+
+C105 removes C104's restriction to simple state objects. Let X1,...,Xr be a FINITE nonempty actual module family with, for EVERY i, a REAL exact sequence0->sum_j Xj^{aij}->Hi->Xi^{bi}->0,bi>=1,pd LEFT Hi finite. Hi need not be projective, Xi/its kernel may have arbitrarily high Loewy length. Ext(-,Z) for ALL finite targets is SURJECTIVE at n>=h=max pd Hi, with actual degree-one ordinary MODULE Yoneda entries. Existing positive-word nilpotence applies to module projection idempotents even when End(X) degree-zero is nonsemisimple. If all MODULE self-Ext vanish above B, actual minimal resolutions terminate with pd Xi<=h+r(B+1)-1. r counts actual module TYPES, not a claimed vertex bound. No split syzygy/stable equality is assumed.
+
+The return is ordinary SUPPORTED and may be OFF-DIAGONAL. For Xi, let CL be its actual composition labels j with infinite LEFT simple pd, and CR its labels k with infinite RIGHT simple pd. Require physical e_jAe_k nonzero for EVERY j in CL,k in CR, for every infinite-pd family member. These two sets are INDEPENDENT. With ambient supported cutoff M, finite-side simple pd bounds dL,dR and B=max(M,dL,dR), ordinary pd/id and double composition devissage kill module self-Ext above B. An infinite Xi contradicts the uniform bound, giving a fixed ordinary Tor(R_k,L_j) persistent with correct physical D(j,k)>0. Finite MODULE TYPES can first be removed by ACTUAL quotient of Hi by their real kernel subsum, pd repaired by max(h,d0+1); finite subkernel errors use C104's actual Q/K sequences. No differential-image pruning or opposite-infinite-plus transfer. Direct RIGHT factors Rz,Ry require e_yAe_z when z RIGHT-infinite/y LEFT-infinite; witness Tor(Rz,Ly).
+
+Frozen N7 nonsimple X=span(a,ba) has actual envelope0->X->P_f->X->0 and Omega X=X. CL={v},CR={f},D(v,f)=2 selects the ONLY possible persistent pair(Rf,Lv); positive SIMPLE diagonals all vanish. Module degree-one ordinary products are not identified with the simple Yoneda algebra. Actual130-dimensional T26 tensor old A5 calibration has Xi dimension5/Loewy3,Hi dimension10/Loewy4/pd1. Both exact nonsemisimple envelope maps are A-linear and exact at every vertex. The finite P_u tensor C kernel does NOT split in the actual first syzygy; period-two ordinary kernel maps and all bi-singular rectangles pass. Checks2215637 associativity triples,22 covers,408 integral inverses,6 kernel isomorphisms, plus literal envelope maps/radical layers. Passed first execution and validated record. Complete same-author proof/normal adversarial self-audit, NOT independently verified/no novelty claim.
+
+C105 includes C104 and BI-SINGULAR-ALIGNED actual finite module/syzygy envelope systems, including high-Loewy nonprojective finite-pd corrections. The older single-head finite-system theorem retains a different visibility criterion and is NOT claimed contained without this rectangle. Rectangle visibility is NOT automatic: in the frozen square-zero p-cycle,p>=3, coarse SINGLE state X=sum_all simples has Omega X=X,Hi=A projective, but both factor sets are all p labels and the physical rectangle has zero cells. Its simple refinement satisfies C104 and already has ordinary return; not a badness counterexample. No arbitrary nonsplit refinement/finite-state availability theorem follows.
+
+Full-Peirce SCC badness/dimension reduction was rediscovered and found already proved in Peirce-Cycle-Theorem.md Section5/Beyond-Han-Persistent-Tor-Theorems.md Section7; REUSED, not new progress. The genuine new global task is an actual aligned finite-family/envelope or safe reduction in a minimal strongly connected bad core. Module type drift, misaligned rectangles and all T29 deep-radical/C102 unit-visibility/singular finite-block/all-infinite/no-factor/C076 Peirce-transfer and ORIGINAL Target-A/bounded-screening/local-trivial/Primitive/Binary/higher-output/supported-weight branches remain OPEN. Universal Gap A remains OPEN.
+
+### Infinite actual states terminate by ordinary carrier-type comparison — UGA-C106
+
+C106 removes C105's FINITE actual module-family requirement. A possibly INFINITE family of actual finite LEFT modules Xi has, for EVERY i, a REAL envelope0->finite sum Xj copies->Hi->Xi copies->0 with ONE UNIFORM pd Hi<=h. No finite isomorphism types, fixed dimensions or periodicity. Require each state's own bi-singular composition rectangle D(j,k)>0 for j LEFT-infinite factors/k RIGHT-infinite factors. tau distinct ordered carrier pairs is finite, tau<=2^(|IL|+|IR|)<=4^N; identical carrier does NOT identify actual modules. Ambient supported cutoff M and finite-side simple bounds dL,dR yield CROSS-Ext_A^n(Xi,Xj)=0 for n>B=max(M,dL,dR) whenever the two states have the SAME carrier type, by ordinary pd/id and double composition devissage. Real all-target ordinary connecting products, not graph recurrence, then terminate after tau(B+1) factors: pd Xi<=h+tau(B+1)-1, independent of actual state count. Any infinite Xi forces a fixed supported ordinary simple Tor. RIGHT is direct with e_yAe_z,Tor(Rz,Ly).
+
+For actual infinite minimal syzygies X_n=Omega^n L_y, EVERY real long spliced cover extension Ext^(b-a)(X_a,X_b) is NONZERO, by ordinary first-variable projective dimension shifting and the last nonsplit cover's retraction test. Under supported cutoff, two ALIGNED states of the same carrier type have b-a<=B. Thus at most tau(B+1) aligned states can occur. INFINITELY MANY aligned syzygies, even with arbitrary misaligned gaps, force a fixed supported ordinary Tor pair. If all states after s are aligned, pd Ly<=s+tau(B+1)-1. No carrier descent, constant block, finite-state availability or singular equality needed; actual tail exactness untouched.
+
+Q quantum exterior Gamma dimension4,xy=z,yx=-2z has actual covers Omega M_lambda=M_(2lambda). Nonzero lambda produces an INFINITE family of pairwise nonisomorphic modules by invariant y/x top-socle ratio. EVERY self-Ext vanishes above degree1, but Ext^n(M_lambda,M_(2^n lambda)) has dimension1 for ALL n>=1. This breaks the individual-self-cutoff shortcut in an infinite family; it does not break the uniform CROSS-Ext theorem. One simple S has infinite LEFT pd because the actual drifting module does; its genuine minimal resolution gives ordinary diagonal Tor in EVERY degree and directly forces RIGHT infinity. Both carriers{S},tau1,V true. Passed first execution:64 triples,5 actual covers,15 integral inverses,4 kernel isomorphisms,8 literal differential segments,16 Hom-cochain Ext ranks;4 frozen helper hashes and record validated. Written infinite formulas/general theorem are separate from finite calibration. Complete normal same-author adversarial audit, NOT independent verification/no novelty claim. Infinite parameter drift requires q infinite-order (Q,q2 calibration), while C106 itself is arbitrary k.
+
+Actual finite-pd subkernel/finite-module-type quotient repairs in an INFINITE family need their OWN UNIFORM error bound; pointwise finite pd alone does not justify a finitistic-dimension claim. Rectangle alignment or infinitely many aligned syzygies is NOT automatic. C090 retained separately. General eventually-misaligned strongly connected cores, deep-radical errors,C102 unit visibility,singular F Yoneda,all-infinite/no-factor,C076 support transfer and EVERY original Target-A/bounded-screening/local-trivial/Primitive/Binary/higher-output/supported-weight branch remain OPEN. Universal Gap A remains OPEN.
+
+### User four-vertex closure audited and registered — UGA-C107
+
+The supplied UGA-Four-Vertex-Closure-Handoff-2026-10-04.md has verdict VERIFIED AFTER REPAIR under the main researcher's NORMAL adversarial audit; original PROJECT-DERIVED/SELF-AUDITED candidate provenance and warnings are preserved, and this is NOT external independent certification. C107 proves for elementary finite-dimensional A over arbitrary k: <=4 TOTAL vertices and gd infinite imply fixed supported persistent ordinary Tor. Exact sources: C080/C090, same-SCC ordinary bar comparison and Beyond-Han5.3/5.4 protected algebra/Yoneda retract. The external protected-version ambiguity is removed; e_iA(1-e_i)Ae_i=0 and nontrivial corner give diagonal Tor nonzero EVERY degree. Zero dead-zone/nonempty carrier, LEFT Hom direction, genuine block exactness and BOTH full cross-Hom vanishings are explicit. All12 audit points passed after repairs. No four-vertex computation or graph/singular/opposite/pruning shortcut.
+
+Thus ALL <=4 TOTAL-vertex cases are CLOSED at complete project self-audited status. A genuine counterexample requires >=5 TOTAL vertices; this is not an arbitrary-size theorem with four infinite labels. Reuse this contribution and stop reopening four-vertex research. User source is preserved in Four-Vertex-Handoff-Evidence; no default checksums generated under latest AGENTS. SHA256SUMS is a historical T31 snapshot, not a current-state certificate.
+
+Continue the UNIVERSAL program, without mechanical five-vertex cases. The ongoing actual-head route concerns ALL-SIZE selfinjective J^3=0 algebras, including nontrivial Nakayama permutations and permanently misaligned actual syzygies. Five/seven-vertex calculations calibrate an arbitrary-size recurrence, not a claim that those vertex sizes are the next case split. This class is now closed by C108 below. C106's aligned-envelope closure remains reusable. All original bounded-screening/local-trivial/Target-A/Primitive/Binary/higher-output/supported-weight and ordinary-reduction residuals remain OPEN. Universal Gap A remains OPEN.
+
+### All-size selfinjective cube-zero class closes without alignment — UGA-C108
+
+C108 proves EVERY nonprojective LEFT simple of an elementary finite-dimensional SELF-INJECTIVE A over ANY field with J^3=0 has persistent ordinary DIAGONAL Tor(Ry,Ly). Whole class closes at ARBITRARY size. C107 <=4 TOTAL-vertex theorem is reused;5/7 tables calibrate one all-size mechanism and are not next vertex cases. No finite actual module-state family, alignment, corner deletion or opposite-infinite-plus theorem is assumed.
+
+Actual socle permutation P gives D=D^T P,DP=PD,D=I+E+P,E=E^T P, so E NORMAL rather than necessarily symmetric. Ordinary exact cover kernels contain essential soc Q and have no projective summands; actual indecomposability proof uses injective hulls, no stable substitute. After LAST SIMPLE visit actual nonsimple radical=socle layers give t_next=Et-Pt_prev,t0=e_i,t1=Ee_i. Heads are ordinary Tor dimensions before spectral work. A positive Perron simple(lambda>2) or double(lambda2) pole of[(I-Et+Pt^2)^-1]_ii cannot cancel under joint eigenrelation mu=conjugate(mu)omega. This yields persistent ordinary diagonal Tor and a nonzero Tor in EVERY positive2N-degree window in this exact alternative. Existing ordinary projective/injective first/second-variable self-Ext comparison transfers SAME positive degree/window to ORIGINAL simple, with NO loss from last-simple depth. Infinite SIMPLE visits instead give actual periodicity;2N is not assigned to that alternative. Do not iterate across simple visits (kC5/J^3 formalF2=0 vs actual Omega2 simpleL_i+3). Matrix spectral R/C is separate from arbitrary module base field.
+
+Actual5-vertex zigzag(dim20) and5/7 twisted(dim20/28) have literal Frobenius pairings/socle permutations and ALL positive simple syzygies MISALIGNED; only degree0 aligned. Actual infinite induction gives dimension2n+1 and ordinary diagonal Tor (every even degree zigzag, n+1 at N-multiples twisted). Thus unqualified automatic infinite aligned visits is FALSE even in strongly connected all-infinite cores without finite deletions; these already have ordinary return and do NOT refute a badness-specific alignment theorem. C108 handles this entire class by a different actual ordinary mechanism.
+
+Calibration passed37952 triples,27 actual minimal covers,462 integral inverses,17 socles,3 Frobenius pairings,303 recurrence/rational-series checks. Initial caller API error preserved/repaired, full rerun passed; frozen helpers unchanged. Mathematical verification/complete written infinite proofs are separate from finite computations. Execution record uses no routine checksums or hash-schema certification under new user AGENTS. Complete normal adversarial SELF-AUDIT, NOT independent verification/no novelty claim.
+
+General nonselfinjective cube-zero, selfinjective higher-radical tails without proved head recurrence, C102 unit visibility, singular finite-block Yoneda, C076 physical transfer and EVERY original bounded-screening/local-trivial/Target-A/Primitive/Binary/higher-output/supported-weight branch remain OPEN. A minimal bad algebra is NOT assumed selfinjective. Four-vertex closure remains reused; general UGA counterexamples need >=5 TOTAL vertices and lie outside this newly closed selfinjective cube-zero class. Universal Gap A remains OPEN. Next priority is an actual ordinary bridge or strict descent outside the closed class, not further necessary carrier properties.
+
+### Actual simple summands give strict type descent and exact high-Tor repair — UGA-C109
+
+T_y is the familiar ACTUAL recurrent projective-type set of minimal LEFT simple L_y. If infinite L_j is a TRUE direct summand in infinitely late syzygies of infinite L_y and self-Tor(Rj,Lj) eventually zero, then nonempty T_j STRICTLY contained in T_y. One split occurrence gives ALL q,r Betti inequality and containment; infinitely late heads put j in original T_y while supported diagonal cutoff excludes j from T_j. Under badness this preserves SAME ambient A/infinite source/actual ordinary tail and strictly decreases |T|, at most |T_y|-1 moves. This is source/tail descent, NOT a smaller algebra or smaller algebra infinite-simple count. If every infinite simple permits such arbitrarily late infinite-simple summands, finite descent/C090 closes the WHOLE arbitrary-size branch. No finite-state or graph-return assumption.
+
+A minimum-|T| infinite source in a hypothetical bad A has only FINITE-LEFT-pd SIMPLE summands in all late syzygies. Their uniform d exists from finitely many finite simple labels, not a general finitistic bound. Choose actual X_n=Y_n plus S_n, ALL simple summands in S_n. Then EVERY right module has SAME-degree ordinary Tor_r(R,Y_n)=Tor_r(R,X_n) for r>d; Y_n stay infinite-pd. Quotient actual projective Q_n by its real kernel S_next, then take the ACTUAL inverse image of Y_n. These exact module sequences give0->Y_next->H'_n->Y_n with ONE pd H'_n<=d+1, and ordinary shift comparison for r>d+2. Nothing is erased from the original infinite differential complex. This proves finite SIMPLE-DIRECT-SUM error elimination, not the refuted arbitrary finite-pd image pruning.
+
+For J^3=0, terminal Y_n have Loewy<=2,socle=radical,no simple direct summands and true uniformly finite-pd envelopes. J^2Q is then a semisimple SUBMODULE in the kernel; its complement to kernel radical really splits. Generic deep semisimple QUOTIENT does not split (frozen x^4 obstruction). Carrier visibility or C108 normal-matrix recurrence remains unproved for nonselfinjective A; the exact family supplies an ordinary input, not a claimed full cube-zero solution. C108's permanently nonsimple actual tails show restarts are not automatic and are handled by its separate all-size theorem. p-cycle shows self-Tor cutoff is essential to strictness.
+
+Complete ordinary proof/normal adversarial SELF-AUDIT; no new computation/checksums or independent/novelty claim. C107 <=4 TOTAL-vertex closure and C108 selfinjective cube-zero closure REUSED. Remaining non-simple/nonaligned general cores, arbitrary finite-pd cross-map images, general cube-zero/higher-radical, unit/corner physical transfer and ALL original bounded-screening/local-trivial/Target-A/Primitive/Binary/higher-output/supported-weight branches remain OPEN. Universal Gap A remains OPEN. Next genuine problem is to close this terminal exact no-simple-summand family or produce another safe strict source/algebra reduction.
+
+### Entire general radical-cube-zero class closes — UGA-C110
+
+**T35 supersedes earlier general nonselfinjective cube-zero OPEN remarks in this consolidation.** Old Runs remain intact. For EVERY elementary finite-dimensional A over ANY k with J^3=0, gd infinity implies ONE FIXED ordinary simple diagonal Tor(Ri,Li) tail. No selfinjectivity, finite-pd J2, normal matrix, aligned rectangle, finite states or eligible deletion. C108 still has its stronger EVERY-nonprojective-simple and conditional2N-window conclusions under selfinjectivity; C107 four-TOTAL-vertex closure is reused. This is an all-size class closure, not a next vertex case.
+
+The actual grading S+V+W,W=J2 gives ordinary bar degree/internal n cycles C_n=intersection of ALL adjacent ker(mu:VV->W) slots with no incoming boundary. Length-n actual E1 cup words span C_n dual. Unbounded E1 words already force a fixed ordinary diagonal by NONZERO subproducts; if length-K words vanish then C_K=0. Full E may have higher indecomposable generators and A need not be Koszul.
+
+Real recursive min-cover kernels split Yn_next plus ALL simple summands. The genuine projective maps compose to zero, while their AUGMENTED core complex has H_n=S_next and is explicitly NOT declared exact. Nonsimple Loewy2 Yn has soc=rad; semisimple SUBMODULE J2Q yields Yn intersect J2Q=JYn, hence INJECTIVE linear head coefficient. Mixed V/W products vanish by J3; iterated injections land in C_n tensor headQ0, so QK=0. This uniformly ends every nonsimple core even with infinitely repeated finite-pd homology errors. No arbitrary finite-pd image-pruning claim.
+
+Every infinite LEFT simple must therefore have a TRUE infinite LEFT SIMPLE syzygy summand within1..K+1 steps. Otherwise all removed simple errors are finite-pd and every remaining core stays infinite/nonzero, contradicting QK=0. Actual min-cover additivity retains these as original syzygy summands. Finitely many such TRUE split transitions compose to Li summand Omega^D Li,D<=|I_L|(K+1); real minimal Betti heads give Tor_(mD)(Ri,Li)>=1 EVERY m>=1. Physical diagonal support automatic; no bare graph/singular/opposite transfer. Under ordinary diagonal cutoff n>M, K=N(M+1) and positive tails restart within K, making C109 finite strict source-carrier descent AUTOMATICALLY eligible for this whole class.
+
+Exact final calibration:25452 literal associativity triples,17 retained min-cover certificates,291 integral inverses,99 ordinary Ext-one comparison lifts,312 endpoint bar/Yoneda matches,6 intentionally NONEXACT finite-pd-simple core stages,1 ordinary N7 period-one kernel isomorphism. Nonselfinjective28 has socle multiplicity2/pd1 simple errors/nonzero augmented core homology; kC5/J3 is nonKoszul with E1 squared zero but true simple restarts. Complete written arbitrary-field/all-degree proof and normal adversarial SELF-AUDIT separate from finite computation; NOT independent/formal verification/no novelty claim.
+
+Frozen N7 has J3 nonzero/J4 zero,E1 squared zero and permanently nonsimple deep period-one kernel with ZERO linear head coefficient. Its simple diagonals all vanish and C105 return is OFF-DIAGONAL. Thus higher-radical restart/diagonal extension is FALSE; J2Q semisimplicity cannot be discarded. Next actual task is to control the nonsimple deep intersection by ordinary supported visibility or a safe strict reduction, without imposing C110's failed higher-radical hypotheses. General higher-radical cores, C102/C076 physical transfer and EVERY original bounded-screening/local-trivial/Target-A/Primitive/Binary/higher-output/supported-weight residual remain OPEN. Universal Gap A remains OPEN.
+
+### Pointwise finite-pd actual tail quotients give strict source descent — UGA-C111
+
+Continue beyond C110's now CLOSED entire general cube-zero class. At arbitrarily late actual syzygies Xn=Omega^n Ly, a REAL LEFT-finite-pd submodule Fn containing JXn gives semisimple Vn=Xn/Fn. Projection induces SAME-degree ordinary Tor_r(R,Xn)=sum_j Tor_r(R,Lj)^b for EVERY right module R and STRICT r>dn+1,dn=pd Fn; original exact projective shifting identifies Tor_(n+r)(R,Ly). Fn need NOT split/be semisimple/have finite-pd factors. No infinite differential is pruned.
+
+At ONE event Vn infinite-pd and T_y=union T_j over quotient simples, using actual ordinary comparison at every detector. Error dn may be individually finite but UNBOUNDED: eventwise recurrence containment needs no uniform all-index cutoff. A fixed infinite quotient HEAD j selected infinitely late lies in original T_y. Either its ordinary diagonal returns or j absent from T_j, so nonempty T_j STRICTLY contained in T_y. Under badness this is genuine source/tail |T| descent on SAME algebra, not algebra dimension/infinite-label count. If EVERY infinite simple permits such late semisimplification, finite descent closes the WHOLE arbitrary-size/higher-Loewy branch with a fixed ordinary DIAGONAL. No uniform numerical pd bound is claimed; C106 uniform-envelope/error guard retained.
+
+Canonical sufficient test Fn=Xn intersect J2Qprev contains JXn; finite pd of WHOLE intersection must be proved. One finite-pd cross-map image or finite-pd ambient J2Q is insufficient. Direct RIGHT argument uses actual right kernels containing XnJ/all-left-module Tor, no opposite-infinite-plus transfer. Reused nonsplit26 X=Omega Lq0 has real radical Fn=P_u(pd0) containing INFINITE simple Lu factors, semisimple quotient Lq1 and ALL-right Tor comparison r>1. It recurs in odd syzygies; its ordinary-return branch already holds, no unqualified strictness. Frozen N7 permanent nonsimple two-dimensional state has only radical or whole state containing JX, both infinite-pd, so no eligible Fn; T35 actual deep kernel certificate and C105 OFF-DIAGONAL return reused. No new arithmetic/independent/formal/novelty claim.
+
+This is a proved ordinary finite-error bridge and strict finite descent, not another necessary-condition invariant. General automatic semisimplifying subkernel availability is false without badness; N7's persistent infinite-pd nonsimple radical pinpoints the obstruction. Next genuine task remains an ordinary SUPPORTED bridge or safe strict reduction for those deep cores. C110 ENTIRE cube-zero and C107 <=4 TOTAL-vertex cases remain closed/reused; all higher-radical general cores, C102/C076 physical-transfer interfaces and EVERY original bounded-screening/local-trivial/Target-A/Primitive/Binary/higher-output/supported-weight residual remain OPEN. Universal Gap A remains OPEN.
+
+### Full actual cyclic-head relations give ordinary bridges and strict carrier descent — UGA-C112/C113
+
+C112 uses the REAL sum of actual cyclic modules generated by minimal primitive head lifts:0->F(Y)->H(Y)=sum C_alpha->Y->0, with ENTIRE relation kernel F subset JH. Finite LEFT pd F=d gives ALL-right-module ordinary SAME-degree Tor iso r>d+1 and T(Y)=union T(C_alpha). A primitive-cyclic module is a quotient of ONE Ae_r; recurrence of its own head detector r gives a fixed ordinary SUPPORTED simple pair by composition devissage in the PHYSICAL column Ae_r, possibly OFF-DIAGONAL.
+
+For an infinite primitive-cyclic X choose a sufficiently late ACTUAL Y=Omega^n X whose head labels all lie in T(X). If its full F is finite-pd, an infinite cyclic image has nonempty T(C) subset T(X); supported return OR own-head exclusion makes this inclusion STRICT. The new source remains primitive-cyclic on SAME A. If EVERY infinite cyclic source has arbitrarily late eligible events, minimum |T| closes this whole arbitrary-size/Loewy class, without finite isomorphism states or uniform error pds. Eligibility of a checked closed source family also suffices. This is a genuine ordinary bridge and terminating source reduction, NOT finite-pd differential-image pruning or algebra-infinite-count descent.
+
+Separately if ALL head images have finite pd,h=max, but Y infinite, KEEP full infinite F: ALL-right Tor_(r+1)(Y)=Tor_r(F) for r>h, T(F)=T(Y) and Loewy F<=Loewy Y-1. Consecutive such module moves terminate, but taking NEW syzygies can raise Loewy and F need not stay primitive-cyclic/head-recurrent. Do NOT combine the two measures without an actual eligibility proof. Sequential intersections C_m intersect(sum previous C) have a true filtration SES and finite pd of all suffices for finite full F; pairwise intersections do NOT.
+
+C113 over Q, any p>=3, has actual Y=Omega L_v with ALL p head images PROJECTIVE and ALL pairs intersecting ZERO, yet full relation kernel L_v^(p-2) infinite-pd. Real Omega2 L_v=L_v^(p-2) gives ordinary diagonal Tor_(2m) dimension(p-2)^m for EVERY m; the obstruction repeats in a recurrent actual tail. It breaks the pairwise/individual-image criterion, NOT UGA or a badness-specific alternative; keeping F instead correctly reduces Loewy2->1. Exact p4 calibration passed3375 associativity triples,12 retained minimal covers,180 basis inverses,1 kernel iso,4 image inclusions,6 zero pairs. Complete separate written arbitrary-p proof/normal self-audit, NOT independent/formal certification or a five-vertex classification.
+
+General automatic finite full relations is false even in C108/C110's already-closed cube-zero multihead cores. The remaining mixed infinite-pd images AND infinite-pd full relations have no proved ordinary recurrent carrier comparison. An actual supported return or safe reduction there is the next closing task. C107 four-vertex/C110 general cube-zero closures are reused; C105/C106/C111 tools and EVERY original bounded-screening/local-trivial/Target-A/Primitive/Binary/higher-output/supported-weight branch remain. Universal Gap A remains OPEN.
+
+### Mixed actual relations can expand carriers despite shorter kernels — UGA-C114
+
+Tested the proposed gluing immediately after C112/C113. C114's explicit ANY-field arbitrary a,b family (a,b>=1) has algebra Loewy4 and an infinite SIMPLE with genuine period-one ordinary tail Z. Every sufficiently late projective head is recurrent; S={r,s,u}, each Betti1 forever. LEGAL radical modifications of the minimal primitive head lifts yield two infinite cyclic images C_r,C_s with T(C_r)={u,v_j},T(C_s)={u,t_i}. Their OWN head positive Tor is zero; neither recurrent carrier is contained in S. Expansion arbitrary while original |S|=3/Loewy4 fixed. The whole real head-sum relation F has Loewy2<Z's3, yet T(F)={r,s,u,t_i,v_j} strictly EXPANDS S.
+
+The ordinary explanation is precise: for ANY real0->F->H->Y->0, at a detector q outside T(Y) the actual radical inclusion F subset JH induces an eventual SAME-degree ordinary Tor isomorphism F->H; T(F) outside S=T(H) outside S. Degree-zero head vanishing/J nilpotence do NOT make this a high-Tor ghost. Smaller Loewy plus recurrent original heads cannot supply carrier control or a lexicographic global descent in the mixed case.
+
+Quantifier boundary: counterexample is to AUTOMATIC preservation for ARBITRARY legal lifts, NOT to EXISTENCE of an eligible choice under ambient badness. Its unmodified canonical images already have ordinary own-head return; outside simples have diagonal Tor dimension n+1 in every degree, and C090 recurrent P_u dominates the projective union. No bad algebra/UGA counterexample or all-choice failure was produced. C112's finite FULL F bridge/strict finite carrier-source descent remains proved; its separate ALL-images-finite local Loewy move remains valid. An actual badness-specific supported ordinary bridge or a proved eligible selection/reduction through mixed persistent cancellation is the next task, not further invariant refinement.
+
+Proof Run-Mixed-Actual-Head-Relations-Recurrent-Carrier-Expansion-and-Radical-Tor-Cancellation-2026-10-04.md; Mixed-Carrier-Expansion-Evidence. Exact a=b1 calibration passed85184 literal triples,21 retained minimal covers,378 integral inverses,3 actual kernel isomorphisms and Loewy3->2. Initial helper-attribute API error preserved/repaired; separate written any-field/arbitrary-size/all-degree proof and normal same-author audit, NOT independently/formally verified. One family mechanism, not six-vertex classification. C107 four-vertex/C110 entire cube-zero closures, C105/C106/C111/C112 tools and EVERY original bounded-screening/local-trivial/Target-A/Primitive/Binary/higher-output/supported-weight branch retained. Universal Gap A remains OPEN.
+
+### Global Route Audit after T38 — D-010 HYBRID, UGA-C115–C116
+
+**PRIOR GLOBAL AUDIT DECISION (refined by D-011 below):** the global audit replaces DEFAULT continuation of T38 head-selection engineering with a canonical ordinary Bongartz ideal representation. This supersedes earlier "next task" language selecting another local mixed-carrier lemma; it does NOT invalidate any proved C111–C114 bridge or assert that existential good choices under badness are impossible. Retain existing ordinary tools when eligible. Full five-part audit, proofs and literature scopes: Run-Global-Route-Audit-Bongartz-Ordinary-Ideals-Trace-and-Relative-Resolution-Barriers-2026-10-04.md.
+
+For elementary A=H/I over ANY k, H=kQ, F the arrow ideal and F^ell subset I subset F2, put
+
+\[
+K_{2r}=(I^r\cap F I^{r-1}F)/(F I^r+I^rF)\quad(r\ge1),\qquad
+K_{2r+1}=(F I^r\cap I^rF)/(I^{r+1}+F I^rF)\quad(r\ge0).
+\]
+
+C115 verified the exact full primary Tor proof (Huber–Kalck2.2/2.3(2), earlier Bongartz/Butler–King attribution) and an ordinary hereditary-ideal derivation. e_x K_n e_y=Tor_n^A(R_x,L_y); physical reverse visibility is e_y(H/I)e_x. F need NOT be rad H; nonzero relation powers/nonminimal resolution terms are NOT Tor. gd infinity already gives total Tor EVERY degree and one fixed ordered pair infinitely often. SAME-pair visibility is FALSE in the actual dimension4 two-vertex square-zero example; it has another supported diagonal and is not a UGA counterexample.
+
+The single global unknown is
+
+\[
+\sum_{x,y}\dim(e_yAe_x)\dim(e_xK_ne_y)=0
+\text{ for all sufficiently large }n
+\quad\Longrightarrow\quad
+K_n=0\text{ for all sufficiently large }n.
+\]
+
+This is EXACTLY EQUIVALENT TO UGA, not newly proved closure. In path language it asks whether simultaneous eventual numerator=denominator identities for EVERY reverse-visible block in BOTH parity formulas force eventual identities in ALL blocks. Degreewise group isomorphisms do not identify Yoneda multiplication automatically. Any next major investment must supply actual ordinary support transfer, well-founded descent, a uniform stopping theorem or a counterexample to this full-mask statement, not just repackage it.
+
+C116 breaks automatic monomial/Anick persistence transfer: literal A14 has gd2 and simple pds2,2,1, but its complete8-overlap monomial initial B14 has SAME dimension/Peirce support and actual Omega L1=M, Omega M=L1+M. TRUE split-kernel induction gives diagonal ordinary Tor at EVERY2m. The original binomial joins the same vector-space kernel into projective P1. Neither algebra is bad. Relative control is also not an ordinary bridge: D=k[t]/t2, M=D+k give addM resolution length0 for ALL finite modules and End gd2 while ordinary Tor_D(k,k)=k EVERY degree. Existing ADR obstruction reused.
+
+Trace scope corrected: ILP applies to e-bounded resolutions even when infinite, but exact-sequence additivity needs ONE common e for all modules. Z_b gives each Ly its OWN e_y-bounded resolution, not common-e control of all sources. A finite-pd hub supplies a true finite alternating HS identity; actual N7 lifts make it only [ab]=[ba], so additional badness-specific nonzero-class extraction and anchor availability are required. No universal trace contradiction or all-infinite-core finite anchor is proved. H=k<x,y> with finite quotient H/F2 is non-Noetherian by an explicit left-ideal chain; automatic Artin–Rees/Rees finite generation is unavailable.
+
+**Ranked routes (only three):** R1 canonical Bongartz ALL-visible-block ordinary stopping problem; R2 reuse the existing ordinary Yoneda FG interface and bound Nb+(N-1)d if a generator-degree d is proved (FG itself equivalent UGA/OPEN); R3 localized trace/finite hubs only under checked eligibility. Do not use finite auxiliary gd or monomial persistence as an automatic transfer. Search was bounded to verified primary theorems, not a claim of exhaustive literature nonexistence.
+
+**Evidence:** complete written ordinary any-field proofs and normal same-author adversarial audit; shared exact6020 associativity triples,26 minimal covers,207 integral inverses,3 actual kernel isomorphisms and8 complete Groebner overlap pairs in Global-Route-Audit-Evidence. Initial caller API error repaired/retained; a finite Betti prefix is calibration only. NOT independently/formally verified; no MRS verifier acceptance, novelty or routine-checksum claim. C107 <=4 TOTAL vertices/C110 ALL-SIZE J3=0 remain closed at their source statuses. EVERY Primitive/Binary/higher-output, Target-A/bounded-screening, local-trivial, supported-weight and other global branch remains. Han and UGA stay distinct. **Universal Gap A OPEN.**
+
+### Ordinary graded Cartan and exact filtered comparison — UGA-C117–C118
+
+**Complete written ordinary proofs / normal adversarial self-audit / NOT independently verified.** For an ACTUAL positive grading \(A_0=k^N\), highest internal degree w, set \(C_{yx}(t)=\sum_d\dim(e_yA_de_x)t^d\) and INTEGER \(D(t)=\det C(t)\). Actual minimal shifts \(n\le d\le nw\), coefficientwise finite Euler and Jacobi give \(D'/D=\sum_{n,x,y}(-1)^n C'_{yx}B_{n,xy}\). Every nonzero unsummed term certifies an actual REVERSE-supported ordinary simple Tor. The derivative is over integer dimensions/Q, never reduced into k.
+
+C117 proves: if \(D\ne1\), \(u=\deg D\), then after EVERY b some supported ordinary pair occurs at \(b<n\le(b+1)w+u-1\). Its integer recurrence has no u consecutive zeros. A fixed pair persists by finite pigeonhole; it need not occur in every window or be diagonal. This closes ALL actual-positive-graded nonconstant-determinant algebras at arbitrary finite size/field. Unique simple-socle highest columns close ALL ACTUAL positive-graded nonsemisimple selfinjective A at arbitrary Loewy length. C108's stronger every-simple cube-zero result retained; nongraded selfinjective is not covered automatically.
+
+C118 proves ALL-pair/all-degree ordinary Betti equality, physical support and both infinite-label preservation for a REAL finite multiplicative ideal filtration F0=A,F1=J,F^(h+1)=0 whose ACTUAL gr Tor weights obey max W_(n-1)<min W_n. Ordinary bar \(d_r:(n,d)\to(n-1,d+r)\) has BOTH directions excluded, with finite degreewise convergence. This is an associated-graded identification, not a G->A algebra map/canonical splitting. Ordinary filtered cup leading-symbol descent transfers generation in degrees<=d and reuses gd<=Nb+(N-1)d under diagonal cutoff above b.
+
+In particular ACTUAL \(\operatorname{gr}_J A\) Koszul has pure weights n and degree-one ordinary generation, hence infinite gd forces ONE fixed ORDINARY simple DIAGONAL tail; gd<=Nb+N-1 under diagonal cutoff. The ENTIRE radical-associated-graded Koszul class is closed at arbitrary finite size/Loewy/field even without an actual grading of A. No general quadratic/Koszulity/finite-prefix or every-simple inference.
+
+The boundaries are actual: B14 has length-grading D1 with true infinite diagonal; another legal B grading gives D=1-t2+t3. Original A14 has a REAL finite weighted filtration gr=B14, yet gd2 and nonzero ordinary \(d_1:(3,3)\to(2,4)\), \(b(a_1|b_1|a_1)=(b_2a_2)|a_1\). This filtration is NOT radical powers. Blanket associated-graded transfer remains false. Literal nonmonomial Frobenius dimension45/Loewy5 calibration lies beyond old <=4 and cube-zero classes; persistence is from the written theorem, not its prefix. Graded-Cartan-Evidence retained final exact96613 triples,28 covers,294 integral inverses plus homogeneous/Euler/log/filtered-product checks, with byte-identical executable/result and self-audit scope.
+
+### Latest Route Judge — D-011 HYBRID and UGA-C119
+
+The requested SIX-section report is Run-Route-Judge-Corner-Syzygy-Quantifier-Correction-and-Hybrid-Decision-2026-10-04.md. **Sourcewise Tiling is FALSE:** ANY-field A11 has arrows1->2,2->1,2->3,3->3,3->1, ONLY radical products ab=t,ds=v,dc=w, and J3=0. Its REAL kernels give \(\Omega L_2=P_1\oplus V,\ \Omega V=U,\ \Omega U=U\), so pd L2 infinite but \(e_2\Omega^nL_2=0\) EVERY n>=2. Gamma2=dual numbers, occurring e2Ae1=k is nonprojective/infinite-pd; exact corner restriction is FINITE0->k->Gamma2->k. ALL three LEFT labels are infinite and the quiver strongly connected. Another simple L3 has ordinary DIAGONAL Tor EVERY positive degree. No UGA counterexample was produced; C107/C110 already close the benchmark class.
+
+Armenta v1 Conj8.10's EVERY-infinite-source assertion/claimed equivalence is inadmissible. The checked GLOBAL existential Thm3.1, SCC Thm4.5 and conditional LEFT all-occurring-terms projectivity Thm8.4 remain usable. Local finite-pd modules are indeed projective on both finite-module sides, but infinite corner pd does NOT give ordinary A-return; PSS Cor3.12 eventual ordinary corner comparison requires actual finite corner pd/complement conditions. Its necessary hypotheses fail in the singular-term branch. The paper's old three-vertex conditional dumbbell must not replace the project's already closed <=4 frontier.
+
+Jasso/Keller low-degree generation is A-infinity, not associative generation/ordinary closed-subproduct or tree-depth stopping. CLMS Thm6.5's ordinary finitely generated infinite subcategory is a sufficient branch, not necessary (its Ex6.10). Mature finite-syzygy/repetition/quiver tools remain eligible class tools; no inspected theorem forces a general bad core into finite types. Correct ONE open arrow: gd infinity/actual nonzero total syzygies at every degree => ONE fixed source has its own Peirce syzygy component nonzero infinitely often. Exact actual-cover identity \(\omega_n=s_n+s_{n+1}\) then supplies ordinary supported persistence, with SCC lifting. This is equivalent to full UGA, not a shorter solved lemma; requiring every chosen source would be false.
+
+D011 preserves global ordinary support stopping as the main target, Bongartz as exact backend, and C117/C118/existing ordinary comparison/descent/FG as stopping when eligible. Corner and A-infinity routes remain AUXILIARY. The two actual kernel isomorphisms/1331 triples/24 covers/216 integral inverses are normal shared calibration, NOT independent/formal verification. The role label does not upgrade provenance. Every old Run, opposite-plus quarantine, Target-A/Target-B/bounded-screening/local-trivial/supported-weight branch remains retained. Constant-determinant nonpure graded, nongradable, mixed-weight screened filtered and all other universal residuals remain OPEN.
+
+### Latest whole-branch closure — UGA-C120–C121, eventual separation without Yoneda finite generation
+
+**Complete written ordinary proofs / normal adversarial self-audit / NOT independently verified.** C120 uses an ACTUAL positive-graded G0=k^N, highest degree w and eventual entrywise ONE-parity ordinary Tor coefficients above d0. Real n<=internal degree, coefficientwise finite INTEGER Euler Q=C^-1, and the adjugate degree bound force
+
+\[
+D_G=1\iff\operatorname{gd}G<\infty,\qquad
+D_G=1\Longrightarrow\operatorname{gd}G\le\max\{d0,(N-1)w\}.
+\]
+
+Same parity may depend on the ordered pair/internal degree; mixed weights and several same-parity homological degrees are allowed. No Yoneda generation or finite actual states. At infinite gd, C117 gives its genuine reverse-supported ordinary window; no diagonal/every-source upgrade.
+
+C121 assumes a REAL finite multiplicative IDEAL filtration F0=A,F1=J,F^(h+1)=0, G=gr_F A, but adjacent actual Tor weights need separate only EVENTUALLY:
+
+\[
+\max W_n<\min W_{n+1}\quad(n\ge q).
+\]
+
+The prefix may mix. BOTH bar differential directions vanish for degrees n>=q+1, giving ALL-pair high ordinary Betti equality and finite Peirce support equality; not an all-degree prefix comparison or G->A map. Actual S Tor has no degree gaps, so all W_n for n>=q are disjoint; earlier generator weights<=(q-1)w give C120 eligibility. Consequently the ENTIRE eventually separated finite-filtration class is CLOSED at arbitrary finite size/Loewy/ANY field:
+
+\[
+\boxed{\operatorname{gd}A=\infty\iff D_G\ne1.}
+\]
+
+For D_G1,w>=1, gd A<=max{q,(q-1)w,(N-1)w}; w0 gives semisimple. For infinite gd, u=deg D_G, B=max{b,q}, EVERY b>=0 has SOME ordinary supported pair in
+
+\[
+b<n\le(B+1)w+u-1.
+\]
+
+One fixed ordered pair persists by finite pigeonhole. This removes an associative-generation premise and an ALL-degree separation premise from this branch. Includes all C118 separated cores and every ACTUAL d-Koszul gr_J A,d>=2, via pure delta(2r)=rd,delta(2r+1)=rd+1; not only ordinary Koszul inputs. No general purity/separation theorem is asserted.
+
+N7 is the load-bearing scope gate: genuine pure W_n={2n-1} for n>=2 and W1={1}, D=1+t2, yet whole infinite-dimensional ordinary E_positive has square0 and ALL positive simple diagonals0. Its supported return is OFF-DIAGONAL. C120–C121 therefore bypass finite generation; they do not establish it. C118's stronger Koszul diagonal conclusion remains separately valid.
+
+Actual filtered Frobenius A16 has squarefree basis/disjoint-union products and xi^2=complementary cubic as its ONLY extra overlapping products. J5zero, actual radical graded algebra is a tensor of four quadratic dual-number algebras. Their tensor minimal resolutions give W_n={n}/Betti binomial(n+3,3), and genuine ordinary comparison gives the same A dimensions. In characteristic!=2 it admits NO positive grading with degree-zero k, by homogeneous-lift cubic coefficients forcing2wi=sum_(j!=i)wj. This nongradability is not asserted in characteristic2. Directed-line tensors give arbitrary-size nongradable radical-Koszul calibrations, N5 dimension240/Loewy9; C096 already handles that family.
+
+**Evidence:** first exact shared run8535 associativity triples,3 FULL actual minimal covers,9 integral inverses,256 filtered product comparisons,528 cubic coefficient checks; byte-identical executed code/results retained in Separated-Filtration-Evidence. All-degree/any-field claims use separate written proofs, not prefix1,4,10. Normal main-researcher audit, NOT independent/formal MRS acceptance/no novelty. Old Runs/negative gates retained.
+
+**Continue globally:** finite actual simple-syzygy type WITHOUT extra alignment/regular-Ext assumptions is still an OPEN bridge, not refuted by sourcewise C119 and not promoted into a theorem. D011 main ALL-source existential ordinary visible-mask problem remains active. Persistent mixed/opposite-parity cancellation with actual filtered screening, nongradable nonseparated cores, arbitrary finite-type-only cores, and EVERY Target-A/Target-B/bounded-screening/local-trivial/supported-weight residual remain. No theorem forces eventual separation in the general hard core. **Universal Gap A OPEN.**
+
+### Continued checkpoint — C122 finite states do not automatically give separation
+
+Read the unchanged FULL B14 covers in the actual all-arrow-degree1 grading:
+\(\Omega S=M,\ \Omega M=S\langle2\rangle\oplus M\langle2\rangle\).
+A one-syzygy M return and a two-syzygy return through S BOTH increase internal degree2. Thus the actual ordinary pair/source S=L1, detector L2 satisfies
+
+\[
+\beta^B_{21}(n,2r+1)=\binom{r}{n-r-1}
+\quad(r+1\le n\le2r+1).
+\]
+
+Consecutive opposite-parity degrees share arbitrarily late internal weights, with integer Euler sum0 for every r>=1. Finite ACTUAL states therefore do NOT automatically furnish C120 no-cancellation or C121 eventual adjacent separation. This is an exact closing-mechanism applicability obstruction, not a new counterexample invariant.
+
+The SAME pair is physically reverse-supported by b1 in e1Be2 and nonzero EVERY positive ordinary degree (take r=n-1). Existing diagonal/alternate legal grading/monomial closure retained. GLOBAL finite-type supported-return remains OPEN, rather than being refuted by this already-positive family. The proof is append-only Run Section9 and C122; unchanged actual full-kernel certificates reused, no new replay or independent-verification assertion. D011 global target and every unresolved branch remain; UGA OPEN.
+
+### Current explicitly frozen Target-B question
+
+\[
+\boxed{
+\begin{gathered}
+\text{Can an infinite-pd-anchored, augmented non-formal derived quotient}\\
+\text{with infinitely generated cohomology and an unbounded higher-output}\\
+\text{binary-indecomposable tail admit actual arbitrarily late excursion}\\
+\text{fillers while all high reverse-supported ordinary Tor vanishes?}
+\end{gathered}
+}
+\]
+
+The unresolved mechanism must retain low-degree negative seeds, possible invisible primitive tails, unbounded binary indecomposables coming from higher outputs, the actual excursion-fill condition and \(\operatorname{pd}_A L_x=\infty\). A support cycle alone, finite-dimensionality, or a finite operation-arity list does not close it. Direct tensor of the deletion defect with the real tail vanishes identically. Any closure through this interface must instead use actual finite-prefix maps and all-source conditions; further necessary-condition refinement by itself has low priority. No general closure theorem for the compressed residue has been obtained. The ordinary section bridge supplies split survival and a terminating class theorem. C062 gives even survival without a section under its parity hypothesis; C064 constructs a full section for perfect coefficients over a one-Gorenstein quotient, with both parities allowed. General nonperfect coefficients and arbitrary quotient injective bounds remain open. C065 now proves new ordinary returns after complete quotient-edge screening for cyclic one-sided-projective single-layer couplers; the complementary case has actual tensor nilpotence and a uniform weight-page bound. Its perfect case restores the high quotient tail. C066 extends actual ordinary return to the many-layer weighted-cycle class with odd one-sided-projective homology. It does not force those hypotheses or a cycle in the general infinitely generated Target-B residue. C067 supplies high ordinary Tor/Ext isomorphism for bounded perfect negative homology with actual derived tensor nilpotence, removing side-projectivity and parity in that class. The general higher-output Target-B frontier has unbounded negative degrees and is not covered by this finite corridor. C070 extends the cyclic ordinary bridge to mixed-parity periodic components of actual one-sided-projective layers, without a negative ceiling. C071 prevents dropping the all-closed-walk gcd>=2 condition. Actual tensor nilpotence for the remaining couplers, nonperfect bounded screening, genuinely aperiodic or nonprojective unbounded-degree many-layer cases and a general local-singular excursion bound remain open.
+
+### 2026-10-04 sharp finite ordinary quotient windows and full deletion-kernel obstruction — C123–C124
+
+**C123 / PROVED at normal SELF-AUDITED status:** for ORDINARY B=A/Ae_FA of gd<=d, d+1 consecutive ACTUAL minimal A-projective terms with e_FP_a=...=e_FP_(a+d)=0 force pd_A M<=a+d. IP_n=0 gives B-projectivity, actual ALL kernels/exactness stay unchanged, and radical equality keeps minimality. C091's real p-cycle has a length-d zero interval, so d+1 is sharp. This quantitatively completes REUSED C058/older qualitative real-tail quotient infinitude; no new qualitative reduction or arbitrary B-simple comparison.
+
+For SINGLETON j with ACTUAL LEFT pd L_j infinite and finite gd B_j=d, EVERY b>=0 has an ordinary reverse-supported pair at b<n<=b+d+1. One fixed detector recurs infinitely often, need not be j. Direct RIGHT covers give the corresponding fixed RIGHT source. General block aggregate does NOT imply selected-source alignment. The ENTIRE specified finite-gd-quotient/infinite-source class closes at arbitrary size. If ALL singleton quotients have finite gd and full supported Tor vanishes for n>b, gd A<=b+1+max_j gd B_j. If pd_A B_j=t finite, retained simple pds<=t+d; finite deleted pd h then gives gd A<=max{h,t+d}, while infinite gd forces the deleted source infinite and the ordinary window applies.
+
+**C124 / FALSE unrestricted deletion shortcut:** even BOTH deleted simple pds1 do not preserve high ordinary Tor/infinity in the actual quotient. ANY-field arbitrary-m monomial 5m-cycle/dimension13m/LEFT lengths(2,2,3,3,3) has genuine Omega^(4m)L0=L0 and supported diagonal at positive multiples4m. Deleted L4,R4 have exact pds1, but B=A/Ae4A finite gd<=5m-2 has pd_B L0=3. Exact full I has LEFT M(4,2) and RIGHT M_R(4,2) direct summands with infinite-pd actual kernels L6,R2; both I and ambient B pds infinite. Mixed retained factors identify why simple labels fail to control the real kernel. CORNER eAe retains path3->4->5 and C094 remains valid; C088 cover-closed comparison also unchanged.
+
+**Evidence:** complete ordinary all-parameter proofs and normal same-author adversarial audit, NOT independently/formally verified. Quotient-Gap-Evidence first exact m=1,2,3 run passed202464 associativity triples,78 FULL actual covers,2544 integral inverses,75 unit kernel isomorphisms. Selected script/result bytes retained; project execution record validated without default checksums/hash-schema certification. Offline syntax check25 display formulas passed; no live Obsidian or mathematical-verifier acceptance implied. The counterfamily is already ordinary-positive/monomial/J3=0, not a badness-specific or UGA counterexample or new small-vertex classification.
+
+**Continuation:** a vertex-minimal infinite ordinary quotient has a supported witness by C123 or the already closed one-vertex case. The missing global theorem remains actual BADNESS/WITNESS preservation from A to such a quotient; finite deleted simple labels cannot replace it. D011 remains main ALL-source existential visible-mask stopping, with no new derived invariant. General finite-type global return is OPEN, not refuted by C122/C124. Every bounded-screening/local-trivial/Primitive/Binary/higher-output/supported-weight branch remains. **Universal Gap A OPEN.**
+
+
+### 2026-10-05 actual eventual-short stopping and balanced cubic-radical closure — C125–C126
+
+**C125 / PROVED at normal SELF-AUDITED status:** if EVERY actual minimal RIGHT simple resolution has Q_n J3=0 from the SAME a>=0, an ordinary simple diagonal cutoff n>M gives K=N(M+1),B=a+K+1 and gd A<=NB-1. Literal bar V-tensor cycles use FULL actual VV->J2 and inject into ORDINARY Tor because incoming boundaries project to zero; only word-vanishing implies T_K0 is asserted for general A. Actual short projectives make deep J2 a semisimple SUBMODULE, supplying injective linear head maps and all adjacent actual multiplication relations. The core can be NONEXACT. Its real stop yields Omega_RIGHT^B R_y=sum shifted TRUE simple errors. Actual split-syzygy cycles first give module-period summands and then diagonal Tor; the finite DAG height gives the explicit global bound. No graph-only return, image pruning, grading, full Yoneda generation or finite-state hypothesis.
+
+Finite LEFT pd d of every simple in WHOLE F={f:e_f J3 nonzero} excludes RIGHT e_fA types for n>d through ordinary Tor(R_y,L_f)=Ext(L_f,L_y); a=d+1. Under diagonal cutoff, gd<=N(d+N(M+1)+2)-1, d=-1 for empty F. The direct LEFT proof uses finite RIGHT factors, not opposite-infinite-plus transfer. WHOLE J4zero/one-side finite pd J3 class closes, reusing C110 J3zero.
+
+**C126 / continued closure:** a SINGLE actual finite-pd envelope H with semisimple kernel U/mixed semisimple quotient V gives surjective ordinary Ext^n(U,Z)->Ext^(n+1)(V,Z) for ALL Z,n>=h=pd H. Projecting to each V simple coordinate preserves surjectivity; no finite-pd claim about coordinate pullback modules. When U factors stay within the V head set T, |T|(M+1) ordinary Ext-one products terminate ALL T tails under T diagonal cutoff, giving pd L_t<=h+|T|(M+1)-1.
+
+For WHOLE actual ideal I with JI=IJ,J2I0, finite LEFT pd h, RIGHT Nakayama of e_t I proves its LEFT composition support equals the LEFT head support of I/JI. Thus the mixed-envelope theorem controls ALL its factors under diagonal cutoff, or forces an ordinary diagonal if a factor is infinite. For I=J3,J5zero these hypotheses hold even when J3 is NONSEMISIMPLE. With m=|LEFT support J3| and I nonzero,
+
+\[
+\boxed{\operatorname{gd}A\le N\bigl(h+(m+N)(M+1)+1\bigr)-1}
+\]
+
+under global diagonal cutoff. Therefore the ENTIRE arbitrary-size/ANY-field **J5zero with finite LEFT OR RIGHT pd of WHOLE J3** class satisfies UGA with ONE FIXED persistent ORDINARY DIAGONAL pair. Direct other-side envelope/Nakayama and actual short-cover proofs supplied. This strengthens the J4 corollary, not the full universal theorem.
+
+**Evidence:** complete ordinary proofs and normal same-author adversarial audit, NOT independently/formally verified. Connected all-N/r triangular fixture has LEFT pd J3=r, RIGHT pd J3 infinite, LEFT pd J2 infinite; actual old RIGHT Omega2 R_i=R_(i-3) gives diagonal period2N/gcd(N,3), and exclusion n>d is sharp. First N5,r2 dimension23 run passed24334 triples,26 FULL covers,624 integral inverses,16 actual module/kernel isomorphisms,11 ordinary Ext-one lifts. One material run, unchanged frozen helpers, byte-identical retained script/result, no default checksum-schema claim. Offline syntax check34 displays passed, not live Obsidian or mathematical-verifier acceptance. C126 exact connecting/Nakayama steps reuse assets without a new calculation claim. This is already-positive monomial calibration, not a new vertex classification.
+
+**Rejected strengthening:** checking only J3e_t at LEFT-infinite sources is insufficient for diagonal closure: N7 has sole infinite0,J3e0=0 but WHOLE J3=LEFT L0 infinite, all positive simple diagonals zero and an already known supported OFF-DIAGONAL pair. Whole factors/eventual actual term conditions are retained. J6zero/J5nonzero may have NONSEMISIMPLE kernel J4, so C126's Ext-one generation no longer follows. Arbitrary-Loewy whole finite-pd J3 remains OPEN.
+
+**Continuation:** pursue an ordinary OFF-DIAGONAL bridge or an actual safe termination mechanism for recurrent deep blocks outside these classes. Finite pd of the WHOLE cubic radical does prove eventual exactness of the deep tensor subcomplex, but it need not make its terms zero without a further theorem; no pruned-resolution exactness is inferred. D011 global all-source visible-mask target, badness-preserving quotient witness lifting, general finite-type return, Primitive/Binary/higher-output, bounded-screening and local-trivial branches all remain. **Universal Gap A OPEN.**
+
+
+### 2026-10-05 arbitrary-Loewy band closure and the necessary global source switch — C127–C128
+
+**C127 / PROVED at normal SELF-AUDITED status:** for ANY elementary finite-dimensional A/field/finite N and SOME s in{1,2,3}, finite LEFT OR RIGHT pd of the WHOLE actual band H_s=J^s/J^(s+2) forces an existential ordinary supported DIAGONAL tail whenever gd A is infinite. There is NO Loewy-length bound.
+
+For EVERY s>=1, nilpotent RIGHT Nakayama gives LEFT support J^s=LEFT support J^s/J^(s+1); EVERY deep factor label is in the actual band's head. Its genuine semisimple kernel/head envelope satisfies C126's ordinary connecting-map surjections. Under diagonal cutoff n>M, EVERY factor has pd<=h+m_s(M+1)-1. Ordinary Tor excludes OTHER-side high projective types; s<=3 makes their whole tails J3-annihilated and C125 terminates:
+
+\[
+\operatorname{gd}A\le N\bigl[h+(m_s+N)(M+1)+1\bigr]-1.
+\]
+
+Here H_s is NONZERO, h its chosen-side pd, m_s the corresponding whole radical-power factor support. H_s0 forces J^s0 and uses C110 separately. Direct RIGHT Nakayama/ordinary envelope plus direct LEFT-cover proof gives the other version; no opposite-infinite-plus transfer.
+
+Both same-side finite pds J3,J5 supply finite pd H3 through the ACTUAL whole exact sequence, with h<=max{pd J3,1+pd J5}; J5zero gives h=pd J3. The inference from finite pd J3 ALONE to finite pd J5 or band H3 is UNPROVED here; no radical-power counterexample to it is asserted. Both J3,J4 finite give finite semisimple head factors directly. For s>=4 factor termination under cutoff remains true, but N7 excludes this proof's blanket DIAGONAL closure. C127 unifies C126/C125 and closes an arbitrary-Loewy class rather than creating another invariant.
+
+**C128 / FALSE unqualified bilateral band-source locality:** actual A26 has semisimple H3=LEFT L_b2 tensor RIGHT R_d2 with BOTH pds infinite. Its full actual kernels make the ONLY late detectors b3,d3 physically invisible from the band sources; ALL supported pairs with LEFT b2 OR RIGHT d2 vanish for n>=2. Even physical C_b2,d2=2 coexists with Tor(R_d2,L_b2)=0 ALL degrees. A real outside-band Tor(R_b3,L_b3) diagonal persists EVERY positive degree by a TRUE split and actual period.
+
+This demands source switching OUTSIDE the band sets in a global ordinary bridge. It refutes UNQUALIFIED localization, not UGA, the badness-specific global return/descent alternative, safe global reduction or finite-type GLOBAL return. No strong-connectivity assumption or small-vertex classification.
+
+**Evidence:** separate full ordinary proofs/normal adversarial self-audit, NOT independently/formally verified. Arbitrary-Loewy connected all-N/ell family calibrated at N5,ell6 dimension46/12vertices,J6nonzero,J7zero: whole LEFT pds(J3,J5,H3)1,0,1 and RIGHT J3 infinite;194672 triples,15 FULL covers,576 integral inverses,8 isomorphisms. Distinct A26 locality question:35152 triples,7 FULL covers,168 inverses,9 isomorphisms. All-degree conclusions use actual complete kernels on EACH side, not finite prefixes. One primary run per distinct question; retained executed bytes equal. Both calibrations already-positive/monomial. No new engine, default checksum-schema or independence claim.
+
+**Continued global finite-state test (Run10–11):** the FULL actual cover identity gives reverse-visible mask=sum of original-source composition coordinates in adjacent syzygies. Finite genuine state decompositions give C H=D(I+M). These do not justify factor-source carrier containment or close the global finite-type branch: closure under actual syzygy direct sums is not closure under resolutions of composition factors/cyclic images/full relation kernels. C112's eligible finite-full-kernel descent and C105/C106's actual rectangle bridges remain valid; no new claim or graph-only source-switch cycle is promoted.
+
+**Next active mathematical target:** BOTH-infinite actual cubic bands require the global ALL-source ordinary bridge, allowing an outside-band witness or a genuinely strict recurrent-carrier/badness-preserving reduction. Infinite endpoint pds/physical support alone fail by C128. Whole finite-pd J3 alone, general mixed deep relations, safe quotient witness lifting and general finite-type return remain OPEN. D011 main global route, Primitive/Binary/higher-output, bounded-screening, local-trivial and supported-weight branches retained. Universal Gap A OPEN.
+
+### 2026-10-05 projective balanced ideals give strict ordinary support descent — C129–C131
+
+**C129 / PROVED at normal SELF-AUDITED status, with additional separate-agent substantive proof review:** for ANY elementary finite-dimensional A/field/finite N, a NONZERO WHOLE LEFT-projective radical ideal I with JI=IJ has ACTUAL bimodule multiplication I^(r-1) tensor_A I=I^r, using the SECOND I's LEFT flatness. Its FULL projective-column matrix T satisfies multiplicities T^r, hence physical nilpotence gives T nilpotent and I^N0.
+
+Balance/right Nakayama identifies WHOLE LEFT factor support F with nonzero rows of T. Thus 0<|F|<N; real Ae_i summands of I force gAe_F0. This is an automatically eligible closed-support structure, not another bare necessary condition. The strict quantity is TOTAL labels and algebra dimension, not an assumed infinite-pd-source-count decrease.
+
+Inside F, the LEFT simple covers and FULL kernels are literally identical over A and D=e_FAe_F. Ordinary Tor/Ext and physical support compare in ALL degrees. The actual Ie_F inherits projectivity/balance, ALLOWED TO BE ZERO. Infinite D is a smaller bad algebra. Finite D makes all F LEFT simple pds finite and permits C088 WHOLE deletion B=A/Ae_FA: retained ordinary Tor is ALL-degree identical, BOTH retained infinite sets exact, B infinite and bad when A is. This quotient kills I. Direct RIGHT proof uses FIRST flatness, columns, RIGHT covers and direct RIGHT C088; no unresolved opposite transfer.
+
+**C130 / WHOLE-CLASS CLOSED:** if WHOLE J^s is PROJECTIVE on EITHER chosen side for SOME s in{1,2,3}, infinite gd forces ONE fixed persistent ordinary DIAGONAL for arbitrary finite N, field and Loewy length. Infinite closed corner inherits J_D^s projective and induction in total labels; finite closed corner allows deletion with J_B^s0. Both routes terminate at C110 and lift the SAME diagonal by actual ordinary comparisons. C129 also gives the uniform radical bound J^(sN)0. Under common simple-diagonal cutoff M>=0,
+
+\[
+g_0=-1,\qquad g_n=n[g_{n-1}+n(M+1)+2]-1,\qquad
+\operatorname{gd}A\le g_N.
+\]
+
+This recursive stopping uses finite pd of ALL J3 factors from the smaller corner, then C125 OTHER-side actual projective exclusion. It is not a bound on merely derived screening.
+
+**C131 / FALSE finite-pd automatic mechanism:** the actual directed three-cycle with LEFT Kupisch(4,3,2), dimension9 and gd2, has WHOLE I=J3 of LEFT pd1 with JI=IJ=I2=0. Yet I tensor_A I=k, Tor1(A/I,I)=k, T00=1 nonnilpotent, and F0 is not cover closed. Head/support equality and proper F survive. This rejects replacing projective/flat by finite pd in C129; it does NOT refute general finite-pd J3 ordinary closure, C126–C127 or UGA.
+
+**Evidence:** complete arbitrary-field/all-size/all-degree proofs, normal adversarial self-audit and a separate-agent bounded substantive proof review. NOT independent/formal verification. Actual dim63/14label/Loewy9 projective-cubic calibration checked full tensor products, T2=J6 top/T3zero, inherited corners14->6->3 and WHOLE LEFT J3 pd0/RIGHT J3 infinite:518832 triples,15 full covers,624 integral inverses,7 isomorphisms. Distinct finite-pd boundary checked729 triples,5 covers,51 inverses,4 isomorphisms. Actual complete kernel identities supply infinity, never finite prefixes; retained execution bytes match.
+
+**C132 / continued FULL-cover repair obstruction:** actual Nakayama10/LEFTc(4,3,3) has I=J3 pd1 and FULL kernel K=P1 projective, but radK/headK/chosen deep S infinite-pd. F0's cover saturation is ALL labels. The physical support corner does not inherit finite pd or J3 degree, and a WHOLE quotient of ambient pd2 does not preserve its same-simple ordinary tail. A already has the actual L1 period-two diagonal; this is not a global badness or UGA counterexample. Appended Run12 complete all-field path proof and same-team root audit; final2737 triples,10 covers,87 inverses,9 kernel isomorphisms. Three successful additive calibrations honestly retained; not independently/formally verified.
+
+**Next active mathematics:** the PROJECTIVE part of whole one-sided finite-pd J3 is closed. For h>0, control the actual ordinary multiplication defect Tor1(A/I^(r-1),I), or repair the FULL projective cover through legitimate finite ordinary envelopes/preimages. Seek an outside-band supported ordinary witness or a strict badness-preserving reduction; C128 forbids unqualified localization and C131 forbids erasing the defect by physical ideal nilpotence. The global ordinary finite-type/source-switch mechanism remains open.
+
+**Human authorization update:** on2026-10-05 the user explicitly authorized multiple parallel mathematical agents and stated that quota is not the limiting constraint. One root integrates canonical records; bounded parallel proof/construction branches are authorized. This supersedes the earlier one-researcher topology preference for this continuation, without weakening proof/audit rules.
+
+D-011 ALL-source existential route and ALL Primitive/Binary/higher-output, bounded-screening, local-trivial, supported-weight, nonseparated and safe-global-reduction residuals remain present. Universal Gap A OPEN.
+
+## 5. Other still-open branches
+
+Do not lose the rest of the global problem:
+
+1. **Local-singular bounded-screening branch (Target A):** fixed excursion depth repeatedly screens arbitrarily high local classes. It remains open.
+2. **Local-trivial branch:** C062 excludes C^e-projective couplers; C064 excludes perfect couplers over one-Gorenstein quotients; C065 excludes cyclic one-sided-projective couplers, including nonperfect ones, and every one-sided-projective perfect coupler. Its acyclic case has a uniform weight-page bound. C067 further excludes every perfect actually tensor-nilpotent coupler, including those projective on neither side. Nonperfect acyclic bounded screening and general nonprojective non-nilpotent couplers remain open.
+3. **Supported complete-screening formulation:** in a vertex-minimal counterexample, the smaller quotient supplies a fixed Peirce-supported infinite Tor tail which is completely screened in the derived quotient; general bounded-weight and unbounded-weight subbranches remain open; C065 excludes the unbounded-weight two-stage subbranch with a one-sided-projective coupler. C067 excludes complete high quotient-edge screening for bounded perfect actually tensor-nilpotent negative homology.
+
+C069 supplies a global ordinary reduction alongside these branches: a split radical quotient with actual ambient finite-pd kernel on one side strictly decreases algebra dimension while retaining a bad quotient. The checked reduction class closes, but no theorem guarantees such a reduction or an ordinary supported tail in every remaining irreducible case.
+
+C070 additionally excludes a periodic actual projective-column component in any global branch, by new supported ordinary returns rather than quotient-edge survival. Aperiodic components and nonprojective layers remain open; C071 gives an actual finite-gldim obstruction to the unrestricted graph formula.
+
+C072 and C074 enlarge the global dimension-reduction route to actual nonsplit ordinary square-zero quotients. Perfect tensor-nilpotent kernels give high same-pair Tor/Ext isomorphism and a uniform count-page bound; nonperfect one-sided-projective kernels with zero tensor square give supported infinity and strict descent even when some high quotient pairs are screened. These ordinary ideal hypotheses do not automatically hold for idempotent deletion cohomology or at the next reduction step. General reduction existence is still unproved.
+
+C075 closes a higher-index nonperfect ordinary extension class by actual stable projective-type sink peeling: repeated eligibility is proved, the nonzero type count strictly decreases and finitely many C074 steps reach the terminal quotient. The stable bimodule decomposition is an explicit hypothesis, actually not implied by an acyclic projective column graph. No such ordinary decomposition or ideal is inferred for the general higher-output derived residue.
+
+C076 gives well-founded ordinary tail migration and global-infinity equivalence for every acyclic one-sided-projective ordinary square-zero kernel, removing perfectness and stable type splitting from those conclusions. The missing reverse-support transfer still prevents general badness descent. C077 excludes the proposed first-module replacement of higher-index comparison kernels by an actual nonsplit nonperfect family. Support-preserving return or eligible ordinary reduction is the next closure priority; general Target A, local-trivial and higher-output branches stay open.
+
+C079 deletes the whole at-most-one-infinite-pd-simple branch on either chosen side, at arbitrary finite size, by ordinary composition return and a fixed supported simple Tor witness. A remaining bad algebra needs at least two infinite-pd simples on each side. The next count descent must be proved eligible; left/right sets and general ideal existence are not inferred. This does not delete the general Target A, local-trivial or higher-output branches.
+
+C080 further closes the entire at-most-two-infinite-pd-simple branch on either chosen side. C081 shows that principal eligible ordinary radical moves preserve the chosen-side infinite count; their existing dimension/type descents remain valid. C082 disproves automatic count decrease when an infinite-pd left vertex is erased: new quotient-infinite labels can appear. Its example is already infinite +. The full ordinary-return OR eligible strict count-descent alternative remains open, and no bad counterexample was constructed.
+
+C083 now supplies a strict badness-preserving infinite-simple-count move from high-even ordinary same-pair surjectivity on ALL retained pairs. C084 proves repeated ordinary-map inheritance under the all-block comparison hypothesis, closing that class at arbitrary size and giving gd A<=(v-1)M_* with its explicit cutoff and all-degree assumptions. This merges checked section, parity and finite-corridor bridges without assuming their coefficients inherit. Universal availability of such a move remains unproved.
+
+C085 now needs only original infinite-source blocks of size<=p-2 to certify a finite count descent, and a three-source branch needs just one eligible move. C086 proves primitive-map inheritance can fail even when all initial primitive maps are high full isomorphisms and the next deleted source is actually infinite. The obstruction is joint-deletion creation of ordinary periodic finite-pd labels; badness must provide any further general bridge. This does not refute the full global alternative or settle arbitrary Universal Gap A.
+
+C087 further closes three-source socle-separated classes directly by ordinary block return, and closes the class with exactly three COMMON left/right infinite labels without a socle hypothesis. It permits arbitrary finite-pd vertices and does not infer equality of side labels. General actual finite-factor coupling and higher counts remain unresolved; no supported ordinary quotient bridge is inferred from bounded ambient pd alone.
+
+C088 proves eligible arbitrary-size ordinary closed finite-block deletion with exact retained side labels and inherited conditions. C089 closes one-sided three-label containment and the closed mismatch-carrier class. Universal block availability and general arbitrary-p supported return remain unproved; finite pd of a map image alone is insufficient to invoke C088.
+
+C090 supplies an arbitrary-size actual terminal-block ordinary bridge. C091–C092 refute unqualified image-carrier descent, projective/finite-factor pruning and automatic finite-image closed-block availability. They do NOT refute a badness-specific global alternative. The next global step must control actual projective-cover expansion and infinitely repeated finite-pd corrections, or produce another ordinary eligible reduction.
+
+C093 now excludes the finite-complement perfect-CORNER branch by full ordinary high comparison and strict dimension descent, with a sharp uniform d+t+1 cutoff. Both infinite counts are preserved. It complements C088 and the C090 terminal bridge; the general nonperfect finite-complement/no-deletion core and all other global branches remain OPEN.
+
+C094 now closes the entire NONPERFECT shallow finite-complement corner branch through same-degree weighted ordinary supported return and automatic strict dimension descent. Only chosen-side labels are invariant; supported cutoff M has zero loss. C095 exposes the true pd-two screening boundary, including an infinite original source and whole finite complement. Badness-specific higher-pd descent and all-infinite ordinary cores remain OPEN, together with the full existing branch map.
+
+C096 adds badness-preserving strict descent to an ACTUAL tensor factor, unifying all proved terminal classes under tensor products with ordinary support intact. C097 shows no universal low finite-pd vertex exists from finite-pd-simple existence alone, even on both sides; tensor powers already have visible returns. Tensor-indecomposable higher-pd/no-deletion cores and all global residual branches remain OPEN.
+
+C098 now automatically proves actual corner perfection and uniform ALL-module ordinary comparison above d+r for two-sided finite blocks with no ordinary F Ext of degree >=2. It forces the real screening defect to terminate, gives strict dimension descent and has sharp corner-pd bound at arbitrarily high finite pd. Higher-F-Ext screening, one-sided finite blocks and all-infinite/no-factor cores remain OPEN; all global branches are retained.
+
+C099 now closes directed TWO-sided-finite ordinary Ext blocks even with genuine higher Ext, by a uniform finite amplitude bound and PROVED repeated singleton eligibility. C100 shows nilpotent finite-block Yoneda products cannot replace this strict order. Genuine higher-Ext cycles require full badness/source migration or another actual closure; one-sided and all-infinite/no-factor cores and all global branches remain OPEN.
+
+C101 now terminates actual ordinary screening for TWO-sided-finite blocks with finite global restricted Yoneda dimension, even with genuine positive F Ext cycles. It provides ALL-module ordinary comparison and strict dimension descent. Product nilpotence remains insufficient; no primitive inheritance or automatic eligible-block existence is asserted. Remaining singular-Yoneda/one-sided/no-factor cores and all global branches remain OPEN.
+
+C102 now permits one-sided higher finite-pd nonperfect deletion when ACTUAL ordinary Yoneda cover generators preserve the retained physical carrier, with supported Tor return and strict badness DIMENSION descent. C103 refutes automatic carrier eligibility even for the whole finite block; it already has ordinary return. Badness-specific global eligibility or return in the expanding-carrier residual stays OPEN.
+
+C104 now forces an ordinary SUPPORTED DIAGONAL from an infinite label in an actual finite-pd semisimple-envelope system, with uniform pd bound h+m(M+1)-1. It closes the finite-one-side-pd radical-square class and an arbitrary-size expanding-head family. Automatic envelopes/finite-pd deep radical errors in arbitrary bad algebras remain OPEN, with no deletion-exactness assumption.
+
+C105 now bridges NONSEMISIMPLE actual finite module envelopes to ordinary supported Tor via separate infinite-LEFT/RIGHT composition rectangles, with pd bound h+r(B+1)-1 and possible OFF-DIAGONAL witness. It permits high Loewy/nonprojective corrections without pruning. Automatic finite-family/rectangle availability remains OPEN; existing full-Peirce SCC reduction is reused to keep the global minimal core in view.
+
+C106 now removes finite-state availability from the aligned-envelope route. Actual same-carrier CROSS-Ext comparison gives pd bound h+tau(B+1)-1, tau<=4^N; INFINITELY MANY aligned actual syzygies suffice for ordinary supported return. The remaining global issue is eventual misalignment or a safe strict reduction, not parameter drift alone. All original branches remain OPEN.
+
+## 6. Parallel 2026-10-02 reusable structural packages
+
+These are retained but do not override the Target-B freeze above.
+
+### Supported Derived-Weight Screening
+
+A project-derived theorem package aligns the visible pair first via the smaller ordinary quotient \(C=A/Ae_xA\), then studies its complete screening in the idempotent derived quotient. It introduces a negative-weight spectral sequence and the bounded-weight / unbounded-weight split.
+
+### Visibility-Aligned Screening / Double Deletion
+
+A project-derived reduction obtains direct diagonal complete screening in the local-singular branch and states:
+
+\[
+\operatorname{gldim}(A/Ae_xA)=\infty,
+\qquad
+\operatorname{gldim}((1-e_x)A(1-e_x))=\infty
+\]
+
+for an infinite-pd vertex in a hypothetical non-\(+\) algebra, leading in the vertex-minimal setting to a Morita-context squeeze. This package requires independent verification and is a parallel high-leverage structural route.
+
+### LocalSingular Q1 Forcing
+
+The local-singular coupler is forced into the non-perfect branch in that formulation; the old perfect-coupler/UT branch is not the active local-singular mechanism there. The remaining Q1 ambient no-hiding/alignment implication was not closed.
+
+## 7. Historical finite-vertex / formalization work
+
+Three-vertex closure and Lean/formalization work are prior-stage assets. They are useful calibration/formalization material but are not the current universal frontier. Preserve their source status and do not use them as evidence that Universal Gap A is solved.
+
+## 8. Research governance
+
+- Reuse existing assets before opening a new route.
+- Preserve failed routes and corrections.
+- Do not infer homological return from a graph/support cycle.
+- Do not mix singular/Tate recurrence with ordinary Tor/Ext without comparison.
+- Do not promote project-derived/self-audited claims to independently verified theorems.
+- New Run files are the append-only research trace; Toolbox is the curated reusable layer; History records how the state changed.
+
+
+## 9. Pending record availability — local preservation 2026-10-05
+
+At the user's request, current external research records have been saved in the connected local project. See [Pending-Contributions/INDEX.md](runs/2026-10-05/Pending-Contributions/INDEX.md) and the [preservation checkpoint](runs/2026-10-05/Run-Pending-Research-Records-Preservation-2026-10-05.md). This includes the h1 actual multiplier-envelope draft, same-team bounded review, exact calibration, bounded formula searches, earlier primitive/power-kernel explorations and the already cited Huber–Kalck primary-source PDF; the three existing TEMP/global-ordinary-switch drafts are linked without duplication.
+
+**These materials remain PENDING / unregistered; they do not change the C129–C132 authority order, prove the pd1/J6zero class, or close Universal Gap A.** No new mathematical acceptance or independent verification was performed. This is a record-availability update, not a handoff or a cloud upload.
+
+Preservation readback checked all 14 newly saved source assets and the 3 existing pending drafts. All prior files except this appended state pointer remain byte-unchanged, including Claims and old Runs. The project now contains 399 files. This verifies material availability, not mathematical truth.

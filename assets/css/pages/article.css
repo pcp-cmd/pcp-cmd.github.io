@@ -178,9 +178,7 @@
   letter-spacing: 0;
 }
 
-/* v1.6.6 Article + Math Reader Refinement
-   Fixes the reading pages: smaller type, calmer rails, better error states,
-   and Chinese-first math article rhythm. */
+/* Article and math reader typography, rails, and error states */
 
 .article-page {
   --article-left: 250px;
@@ -374,8 +372,7 @@
     min-height: 96px;
   }}
 
-/* v1.6.7 Article meta + Chinese content polish
-   Keeps navigation English, but makes article metadata and body Chinese-first. */
+/* Article metadata and Chinese-first body typography */
 
 .article-meta {
   position: sticky;

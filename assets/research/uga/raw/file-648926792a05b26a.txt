@@ -1,0 +1,280 @@
+"""Exact bounded checks for the low-degree primitive-seed correction.
+
+No third-party packages. Coefficient field: Q. This program does not prove
+Universal Gap A. The all-degree proof is in the associated research Run.
+Algebra: a:1->2, b:2->1, ba=0, t=ab. Product notation is algebraic.
+"""
+
+from __future__ import annotations
+
+import argparse
+from collections import defaultdict
+from fractions import Fraction
+from itertools import product
+import json
+from pathlib import Path
+import platform
+import sys
+
+
+def clean(vector):
+    return {key: Fraction(value) for key, value in vector.items() if value}
+
+
+def reduce_vector(vector, pivots):
+    vector = clean(vector)
+    while vector:
+        leading = min(vector)
+        if leading not in pivots:
+            return vector
+        coefficient = vector[leading]
+        for key, value in pivots[leading].items():
+            vector[key] = vector.get(key, Fraction(0)) - coefficient * value
+            if not vector[key]:
+                del vector[key]
+    return vector
+
+
+def echelon(columns):
+    pivots = {}
+    for column in columns:
+        vector = reduce_vector(column, pivots)
+        if vector:
+            leading = min(vector)
+            coefficient = vector[leading]
+            pivots[leading] = {key: value / coefficient for key, value in vector.items()}
+    return pivots
+
+
+def apply_linear(vector, differential):
+    result = defaultdict(Fraction)
+    for word, coefficient in vector.items():
+        for target, value in differential(word).items():
+            result[target] += coefficient * value
+    return clean(result)
+
+
+def quotient_basis(n):
+    # b h g_1 h ... h g_(n-1) h a, each g in {e_2,t}.
+    return list(product((0, 1), repeat=n - 1)) if n else [()]
+
+
+def quotient_differential(word):
+    n = len(word) + 1
+    if n == 1:
+        return {}  # b a = 0
+    result = defaultdict(Fraction)
+    for j in range(n):
+        if j == 0:
+            if word[0]:
+                continue  # b t = 0
+            target = word[1:]
+        elif j == n - 1:
+            if word[-1]:
+                continue  # t a = 0
+            target = word[:-1]
+        else:
+            left, right = word[j - 1:j + 1]
+            if left and right:
+                continue  # t^2 = 0
+            target = word[:j - 1] + (max(left, right),) + word[j + 1:]
+        result[target] += (-1) ** j
+    return clean(result)
+
+
+ARROWS = {"a": (1, 2), "b": (2, 1), "t": (2, 2)}
+
+
+def ambient_basis(n, source, target):
+    # Store in walking order; multiply (b,a) as a*b = t.
+    words = [((), source)]
+    for _ in range(n):
+        words = [(word + (arrow,), end)
+                 for word, vertex in words
+                 for arrow, (start, end) in ARROWS.items() if start == vertex]
+    return [word for word, vertex in words if vertex == target]
+
+
+def ambient_differential(word):
+    result = defaultdict(Fraction)
+    for j in range(len(word) - 1):
+        if word[j:j + 2] == ("b", "a"):
+            target = word[:j] + ("t",) + word[j + 2:]
+            result[target] += (-1) ** j
+    return clean(result)
+
+
+def passage_powers(word):
+    """Regroup a retained-vertex bar word into normalized Q passages."""
+    powers = []
+    j = 0
+    while j < len(word):
+        assert word[j] == "a"
+        j += 1
+        power = 1
+        while j < len(word) and word[j] == "t":
+            power += 1
+            j += 1
+        assert j < len(word) and word[j] == "b"
+        powers.append(power)
+        j += 1
+    return tuple(powers)
+
+
+def expand_passages(powers):
+    return tuple(arrow for power in powers
+                 for arrow in ("a",) + ("t",) * (power - 1) + ("b",))
+
+
+def formal_bar_differential(powers):
+    # Walking-order signs matching ambient_differential. This is the
+    # length-reducing binary product differential; Q's internal d is zero.
+    result = defaultdict(Fraction)
+    prefix_radical_length = 0
+    for j in range(len(powers) - 1):
+        merged = powers[:j] + (powers[j] + powers[j + 1],) + powers[j + 2:]
+        result[merged] += (-1) ** (prefix_radical_length + powers[j])
+        prefix_radical_length += powers[j] + 1
+    return clean(result)
+
+
+def check_algebra():
+    # Entire five-dimensional multiplication table, including idempotents.
+    names = ("e1", "e2", "a", "b", "t")
+    endpoints = {"e1": (1, 1), "e2": (2, 2), **ARROWS}
+
+    def multiply(left, right):
+        if left is None or right is None:
+            return None
+        source_l, target_l = endpoints[left]
+        source_r, target_r = endpoints[right]
+        if source_l != target_r:
+            return None
+        if left.startswith("e"):
+            return right
+        if right.startswith("e"):
+            return left
+        return "t" if (left, right) == ("a", "b") else None
+
+    count = 0
+    for left, middle, right in product(names, repeat=3):
+        assert multiply(multiply(left, middle), right) == multiply(left, multiply(middle, right))
+        count += 1
+    return count
+
+
+def run(quotient_bound, ambient_bound):
+    quotient = []
+    differential_square_checks = 0
+    for n in range(1, quotient_bound + 1):
+        basis = quotient_basis(n)
+        outgoing = [quotient_differential(word) for word in basis]
+        incoming = [quotient_differential(word) for word in quotient_basis(n + 1)]
+        rank_out = len(echelon(outgoing))
+        incoming_space = echelon(incoming)
+        dimension = len(basis) - rank_out - len(incoming_space)
+        assert dimension == 1, (n, dimension)
+        representative = (1,) * (n - 1)  # u^n = b h (t h)^(n-1) a
+        assert not quotient_differential(representative)
+        assert reduce_vector({representative: Fraction(1)}, incoming_space)
+        for word in quotient_basis(n + 1):
+            assert not apply_linear(quotient_differential(word), quotient_differential)
+            # Normalized coefficient functional kills all incoming boundaries.
+            assert not quotient_differential(word).get(representative, 0)
+            differential_square_checks += 1
+        quotient.append({"negative_degree": n, "chain_dimension": len(basis),
+                         "rank_outgoing": rank_out, "rank_incoming": len(incoming_space),
+                         "homology_dimension": dimension,
+                         "u_power_cycle_and_nonboundary": True})
+
+    ambient = []
+    filtered_passage_chain_checks = 0
+    for n in range(ambient_bound + 1):
+        tor = {}
+        for source, target in product((1, 2), repeat=2):
+            basis = ambient_basis(n, source, target)
+            outgoing = [ambient_differential(word) for word in basis]
+            incoming = [ambient_differential(word)
+                        for word in ambient_basis(n + 1, source, target)]
+            dimension = len(basis) - len(echelon(outgoing)) - len(echelon(incoming))
+            expected = int(n == 0 and source == target)
+            if n == 1:
+                expected = int(source != target)
+            elif n == 2:
+                expected = int(source == target == 1)
+            assert dimension == expected, (n, source, target, dimension, expected)
+            for word in ambient_basis(n + 1, source, target):
+                assert not apply_linear(ambient_differential(word), ambient_differential)
+                differential_square_checks += 1
+            tor[f"R{target},L{source}"] = dimension
+            if source == target == 1:
+                for word in basis:
+                    powers = passage_powers(word)
+                    assert expand_passages(powers) == word
+                    expanded_d = {expand_passages(key): value
+                                  for key, value in formal_bar_differential(powers).items()}
+                    assert expanded_d == ambient_differential(word)
+                    filtered_passage_chain_checks += 1
+        ambient.append({"degree": n, "tor_dimensions": tor})
+
+    # In k<u>, |u|=-1, higher products vanish. The bar differential on
+    # [u^p|u^q] is +/-[u^(p+q)]; every one-edge power with exponent >=2
+    # is explicitly a boundary. This finite list is only a bounded check.
+    powers = [{"exponent": n, "primitive_dimension": int(n == 1),
+               "one_edge_boundary": n >= 2,
+               "binary_tree_massey_excess": 0}
+              for n in range(1, quotient_bound + 1)]
+    explicit_fillers = []
+    for m in range(1, quotient_bound + 1):
+        alpha = ("a",) + ("t",) * m + ("b",)
+        beta = ("a",) + ("t",) * (m - 1) + ("b", "a", "b")
+        assert not ambient_differential(alpha)
+        boundary = ambient_differential(beta)
+        assert set(boundary) == {alpha} and abs(boundary[alpha]) == 1
+        # Endpoints are 1; walking beta has exactly one internal visit to 1.
+        vertex = 1
+        excursion = 0
+        for j, arrow in enumerate(beta):
+            start, vertex = ARROWS[arrow]
+            if j < len(beta) - 1 and vertex != 2:
+                excursion += 1
+        assert excursion == 1
+        explicit_fillers.append({"local_tor_degree": m, "excursion_filtration": excursion,
+                                 "boundary_is_local_class": True})
+    return {"status": "passed", "evidence_level": "bounded-check",
+            "coefficient_field": "Q", "python_version": platform.python_version(),
+            "precision": "exact rational arithmetic using fractions.Fraction",
+            "quotient_negative_degree_bound": quotient_bound,
+            "ambient_tor_degree_bound": ambient_bound,
+            "associativity_triples": check_algebra(),
+            "differential_square_checks": differential_square_checks,
+            "filtered_passage_chain_checks": filtered_passage_chain_checks,
+            "explicit_one_excursion_fillers": explicit_fillers,
+            "derived_quotient": quotient, "ambient_bar": ambient,
+            "primitive_and_boundary_powers": powers,
+            "limits": ["Finite ranges do not prove an infinite-degree statement.",
+                       "One author; no independent mathematical verification.",
+                       "Finite-global-dimension calibration, not a Gap-A counterexample.",
+                       "All-degree proof is supplied separately in the research Run."]}
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--quotient-bound", type=int, default=8)
+    parser.add_argument("--ambient-bound", type=int, default=12)
+    parser.add_argument("--out", type=Path)
+    args = parser.parse_args()
+    if args.quotient_bound < 1 or args.ambient_bound < 2:
+        parser.error("bounds must be >=1 and >=2 respectively")
+    result = run(args.quotient_bound, args.ambient_bound)
+    if args.out:
+        args.out.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({key: result[key] for key in (
+        "status", "evidence_level", "coefficient_field", "python_version",
+        "quotient_negative_degree_bound", "ambient_tor_degree_bound",
+        "associativity_triples", "differential_square_checks",
+        "filtered_passage_chain_checks")}, indent=2))
+
+
+if __name__ == "__main__":
+    main()

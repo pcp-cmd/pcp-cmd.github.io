@@ -1,0 +1,10 @@
+# Two distinct actual-module calibration questions
+
+2026-10-05. Proof: Run-Arbitrary-Loewy-Radical-Band-Ordinary-Closure-and-Global-Source-Obstruction-2026-10-05.md.
+
+1. Calibrate C127 OUTSIDE J5=0: build the connected N5/ell6 triangular algebra, retain its whole LEFT J3 and J5 modules and the ACTUAL quotient J3/J5, verify A-linearity/full kernel identities and finite pds1,0,1. Retain all old RIGHT two-step simple kernel identities, which supply an ordinary diagonal period and infinite RIGHT pd J3. It has J6 nonzero and J7 zero.
+2. Break an UNQUALIFIED bilateral infinite-band source-locality lemma: build the actual dimension26 triangular table from C119, verify both band-factor simple resolution periods and the outside-band ordinary diagonal. Check reverse physical support explicitly. Infinity/all-degree vanishing follows from actual full kernel iteration, not a finite prefix.
+
+Selection: retain these TWO executed scripts and result certificates, this specification and one execution record. Each asks a distinct load-bearing question. Unchanged dependency files remain at their established project locators. Temporary development copies and validation adapters are not a second archive.
+
+Use the original project Python/Fraction helper implementations; exact integer unit inverses accompany the written all-field proofs. No image pruning, quotient exactness assumption, new engine, general UGA search or vertex classification. One primary run per question, no reassurance rerun. SELF-AUDITED, not independent/formal mathematical verification. General Universal Gap A OPEN.

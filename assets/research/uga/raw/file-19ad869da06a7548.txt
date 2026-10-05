@@ -1,0 +1,295 @@
+{
+  "status": "passed",
+  "evidence_level": "bounded-check",
+  "coefficient_field": "Q",
+  "python_version": "3.14.3",
+  "precision": "exact rational arithmetic using fractions.Fraction",
+  "quotient_negative_degree_bound": 8,
+  "ambient_tor_degree_bound": 12,
+  "associativity_triples": 125,
+  "differential_square_checks": 3089,
+  "filtered_passage_chain_checks": 233,
+  "explicit_one_excursion_fillers": [
+    {
+      "local_tor_degree": 1,
+      "excursion_filtration": 1,
+      "boundary_is_local_class": true
+    },
+    {
+      "local_tor_degree": 2,
+      "excursion_filtration": 1,
+      "boundary_is_local_class": true
+    },
+    {
+      "local_tor_degree": 3,
+      "excursion_filtration": 1,
+      "boundary_is_local_class": true
+    },
+    {
+      "local_tor_degree": 4,
+      "excursion_filtration": 1,
+      "boundary_is_local_class": true
+    },
+    {
+      "local_tor_degree": 5,
+      "excursion_filtration": 1,
+      "boundary_is_local_class": true
+    },
+    {
+      "local_tor_degree": 6,
+      "excursion_filtration": 1,
+      "boundary_is_local_class": true
+    },
+    {
+      "local_tor_degree": 7,
+      "excursion_filtration": 1,
+      "boundary_is_local_class": true
+    },
+    {
+      "local_tor_degree": 8,
+      "excursion_filtration": 1,
+      "boundary_is_local_class": true
+    }
+  ],
+  "derived_quotient": [
+    {
+      "negative_degree": 1,
+      "chain_dimension": 1,
+      "rank_outgoing": 0,
+      "rank_incoming": 0,
+      "homology_dimension": 1,
+      "u_power_cycle_and_nonboundary": true
+    },
+    {
+      "negative_degree": 2,
+      "chain_dimension": 2,
+      "rank_outgoing": 0,
+      "rank_incoming": 1,
+      "homology_dimension": 1,
+      "u_power_cycle_and_nonboundary": true
+    },
+    {
+      "negative_degree": 3,
+      "chain_dimension": 4,
+      "rank_outgoing": 1,
+      "rank_incoming": 2,
+      "homology_dimension": 1,
+      "u_power_cycle_and_nonboundary": true
+    },
+    {
+      "negative_degree": 4,
+      "chain_dimension": 8,
+      "rank_outgoing": 2,
+      "rank_incoming": 5,
+      "homology_dimension": 1,
+      "u_power_cycle_and_nonboundary": true
+    },
+    {
+      "negative_degree": 5,
+      "chain_dimension": 16,
+      "rank_outgoing": 5,
+      "rank_incoming": 10,
+      "homology_dimension": 1,
+      "u_power_cycle_and_nonboundary": true
+    },
+    {
+      "negative_degree": 6,
+      "chain_dimension": 32,
+      "rank_outgoing": 10,
+      "rank_incoming": 21,
+      "homology_dimension": 1,
+      "u_power_cycle_and_nonboundary": true
+    },
+    {
+      "negative_degree": 7,
+      "chain_dimension": 64,
+      "rank_outgoing": 21,
+      "rank_incoming": 42,
+      "homology_dimension": 1,
+      "u_power_cycle_and_nonboundary": true
+    },
+    {
+      "negative_degree": 8,
+      "chain_dimension": 128,
+      "rank_outgoing": 42,
+      "rank_incoming": 85,
+      "homology_dimension": 1,
+      "u_power_cycle_and_nonboundary": true
+    }
+  ],
+  "ambient_bar": [
+    {
+      "degree": 0,
+      "tor_dimensions": {
+        "R1,L1": 1,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 1
+      }
+    },
+    {
+      "degree": 1,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 1,
+        "R1,L2": 1,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 2,
+      "tor_dimensions": {
+        "R1,L1": 1,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 3,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 4,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 5,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 6,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 7,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 8,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 9,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 10,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 11,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    },
+    {
+      "degree": 12,
+      "tor_dimensions": {
+        "R1,L1": 0,
+        "R2,L1": 0,
+        "R1,L2": 0,
+        "R2,L2": 0
+      }
+    }
+  ],
+  "primitive_and_boundary_powers": [
+    {
+      "exponent": 1,
+      "primitive_dimension": 1,
+      "one_edge_boundary": false,
+      "binary_tree_massey_excess": 0
+    },
+    {
+      "exponent": 2,
+      "primitive_dimension": 0,
+      "one_edge_boundary": true,
+      "binary_tree_massey_excess": 0
+    },
+    {
+      "exponent": 3,
+      "primitive_dimension": 0,
+      "one_edge_boundary": true,
+      "binary_tree_massey_excess": 0
+    },
+    {
+      "exponent": 4,
+      "primitive_dimension": 0,
+      "one_edge_boundary": true,
+      "binary_tree_massey_excess": 0
+    },
+    {
+      "exponent": 5,
+      "primitive_dimension": 0,
+      "one_edge_boundary": true,
+      "binary_tree_massey_excess": 0
+    },
+    {
+      "exponent": 6,
+      "primitive_dimension": 0,
+      "one_edge_boundary": true,
+      "binary_tree_massey_excess": 0
+    },
+    {
+      "exponent": 7,
+      "primitive_dimension": 0,
+      "one_edge_boundary": true,
+      "binary_tree_massey_excess": 0
+    },
+    {
+      "exponent": 8,
+      "primitive_dimension": 0,
+      "one_edge_boundary": true,
+      "binary_tree_massey_excess": 0
+    }
+  ],
+  "limits": [
+    "Finite ranges do not prove an infinite-degree statement.",
+    "One author; no independent mathematical verification.",
+    "Finite-global-dimension calibration, not a Gap-A counterexample.",
+    "All-degree proof is supplied separately in the research Run."
+  ]
+}

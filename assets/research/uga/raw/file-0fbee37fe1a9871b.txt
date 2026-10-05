@@ -1,0 +1,187 @@
+# H1 actual multiplier envelope and the remaining global bridge
+
+2026-10-05. Pending contribution, outside canonical project records.
+
+Status: complete ordinary proofs below, normal self-audit and a bounded substantive separate-agent proof review; one exact frozen-helper calibration. Not independent or formal verification. No closure theorem for arbitrary finite-pd J3 or for the whole h1/J6zero class is claimed.
+
+## 1. Fixed conventions
+
+A is elementary finite dimensional over a field, J is its radical, LEFT simples L_y and RIGHT simples R_x. Keep
+
+$$
+\beta_{xy}(n)=\dim\operatorname{Tor}^A_n(R_x,L_y),\qquad C_{yx}=\dim e_yAe_x.
+$$
+
+The source project is C129-C131 in Run-Projective-Balanced-Ideal-Strict-Ordinary-Descent-and-Finite-Pd-Boundary-2026-10-05.md. C088, C105, C111, C125-C128 retain their exact hypotheses. All ideals/tensors/kernels below are actual ambient A objects.
+
+## 2. Vanishing for actual right subideals
+
+Let I be an actual TWO-SIDED ideal with LEFT pd I at most 1. For every RIGHT ideal U contained in A, the actual RIGHT sequence
+
+$$
+0\longrightarrow U\longrightarrow A\longrightarrow A/U\longrightarrow0
+$$
+
+and the SECOND LEFT factor I give, for every n at least 1,
+
+$$
+\operatorname{Tor}^A_n(U,I)
+\cong\operatorname{Tor}^A_{n+1}(A/U,I)=0.
+\tag{2.1}
+$$
+
+This statement requires no LEFT module structure on a mere right ideal U. To discuss LEFT pd of the resulting tensor, now assume U is TWO-SIDED and LEFT pd U=d is finite.
+
+Choose an actual finite LEFT projective resolution
+
+$$
+0\longrightarrow P_1\longrightarrow P_0\longrightarrow I\longrightarrow0.
+$$
+
+Tensor the FIRST RIGHT U with this resolution. Equation (2.1) gives the genuine LEFT exact sequence
+
+$$
+0\longrightarrow U\otimes_A P_1\longrightarrow U\otimes_A P_0
+\longrightarrow U\otimes_A I\longrightarrow0.
+\tag{2.2}
+$$
+
+Each term U tensor P_i is a direct sum of actual LEFT summands Ue_f of U. Their LEFT pds are at most d. Consequently
+
+$$
+\operatorname{pd}_{\mathrm{LEFT}}(U\otimes_A I)\le d+1.
+\tag{2.3}
+$$
+
+In particular the ordinary module
+
+$$
+T=I\otimes_A I
+$$
+
+has LEFT pd at most 2. This uses actual Tor1 vanishing; it is stronger than merely saying a derived tensor complex is perfect. Neither flat multiplication nor ordinary tensor nilpotence follows.
+
+## 3. The full first multiplier envelope
+
+Let multiplication be the actual bimodule map T to I, with image I2. Put
+
+$$
+D=\ker(T\longrightarrow I^2)
+ =\operatorname{Tor}^A_1(A/I,I),\qquad E=I/I^2.
+$$
+
+There is one actual four-term exact sequence
+
+$$
+0\longrightarrow D\longrightarrow T\longrightarrow I\longrightarrow E\longrightarrow0.
+\tag{3.1}
+$$
+
+The two middle objects have LEFT pd at most 2 and 1 respectively. Splitting this into its two genuine short exact sequences gives, for EVERY RIGHT module R and every n greater than 4,
+
+$$
+\operatorname{Tor}^A_n(R,E)
+\cong\operatorname{Tor}^A_{n-2}(R,D).
+\tag{3.2}
+$$
+
+For every LEFT target Z in the same range,
+
+$$
+\operatorname{Ext}^n_A(E,Z)
+\cong\operatorname{Ext}^{n-2}_A(D,Z).
+\tag{3.3}
+$$
+
+The range is strict: the first I2-to-D shift requires n-1 greater than 3, whereas the E-to-I2 shift requires n greater than 2. Thus n at least 5 is sufficient without claiming boundary isomorphisms.
+
+Exact finite-pd equivalences, without a badness hypothesis, are
+
+$$
+\operatorname{pd}_{\mathrm{LEFT}}D<\infty
+\Longleftrightarrow \operatorname{pd}_{\mathrm{LEFT}}I^2<\infty
+\Longleftrightarrow \operatorname{pd}_{\mathrm{LEFT}}E<\infty.
+\tag{3.4}
+$$
+
+If I2 has pd p finite, then pd D is at most max(2,p-1). This does not establish finite pd of the physical next power from finite pd I alone.
+
+For I=J3, E=J3/J6 is the WHOLE actual Loewy-at-most-three quotient. It is not the C127 two-layer band J3/J5. If J6=0, then I2=0 and D=T is a genuine finite ordinary error of LEFT pd at most 2. However (3.1) then splits into identity maps D=T and I=E with the multiplication map zero. Its degree-two Yoneda class is zero; also Ext2(I,T)=0 since LEFT pd I is at most 1. Equations (3.2)-(3.3) compare already-vanishing high tails and do not prove factor pd, J4/J5 pd, or a global ordinary return. This particular envelope supplies none of C105's required infinite endpoint/nonzero module-word input; it does not prove that some other eligible envelope cannot exist.
+
+## 4. What global supported-tail vanishing actually supplies
+
+Suppose all supported ordinary simple pairs vanish for n greater than M. Every LEFT factor L_f of E e_j is also an actual factor of I e_j, so e_f A e_j is nonzero. Finite-length ordinary devissage gives
+
+$$
+\operatorname{Tor}^A_n(R_j,Ee_j)=0\quad(n>M).
+$$
+
+The columnwise form of (3.2), using all-target isomorphisms, consequently gives
+
+$$
+\operatorname{Tor}^A_q(R_j,De_j)=0
+\quad\bigl(q>2,\ q+2>M\bigr).
+\tag{4.1}
+$$
+
+This is a selected actual source coordinate, not an ALL-right-test finite-pd conclusion for D e_j. The missing closure step must turn such physical-mask cutoffs into genuine factor termination or an outside-source ordinary supported return. C128 prohibits asserting an unqualified localized-source witness. No kernel, image or intersection is discarded here.
+
+## 5. Sharp actual finite error at h=1
+
+Take the cyclic four-vertex LEFT Kupisch algebra with c=(2,5,4,3), direction i to i+1. P_i=Ae_i consists of actual paths starting i, of length less than c_i. Its dimension is 14 and J5=0.
+
+Write
+
+$$
+u=p_{1,3},\quad v=p_{1,4},\quad w=p_{2,3}.
+$$
+
+The WHOLE I=J3 has these three basis paths. LEFT action has x0u=v, and all other radical actions on u,v,w are zero. Thus
+
+$$
+{}_A I\cong P_0\oplus L_1.
+$$
+
+Complete actual simple kernels are
+
+$$
+\Omega L_0=L_1,\quad\Omega L_1=P_2,\quad
+\Omega L_2=P_3,\quad\Omega L_3=P_0.
+$$
+
+The projective isomorphisms are right multiplication by the respective starting arrows and include every path basis element. Hence simple pds are (2,1,1,1), gd A=2, and LEFT pd I=1.
+
+Idempotent balancing leaves exactly the tensor pairs
+
+$$
+u\otimes v,\ u\otimes w,\ v\otimes v,\ v\otimes w.
+$$
+
+Arrow balancing kills the first, third and fourth; the second survives. Both radical actions on its quotient class vanish. Therefore
+
+$$
+I\otimes_A I=L_0\otimes_kR_2,\quad I^2=0,
+\quad\operatorname{pd}_{\mathrm{LEFT}}D=2.
+$$
+
+This makes the ordinary pd-at-most-two error bound sharp. It is finite-global-dimension calibration, not a UGA or badness-specific counterexample.
+
+The single retained exact frozen-helper run verify_h1_sharp_defect.py passed 2744 full associativity triples, 6 FULL minimal covers, 85 integer basis inverses and 5 actual kernel/module isomorphisms; zero image-pruning comparisons. It checked the complete tensor quotient on its four balanced basis pairs. Integral unit relation bases support the separate all-field path proof; shared helper success is not independent proof verification.
+
+## 6. Exact applicability boundary
+
+The h1 proof and strict shift indices were separately reviewed by the finite_pd_cover_descent worker. The reviewer confirmed the ordinary statements and identified no load-bearing defect. It did not independently certify the helper run.
+
+C131's c=(4,3,2) already shows perfect first error cannot imply a high ordinary A-to-A/I simple comparison: A has pd L0=1, but A/I has Kupisch (3,3,2) and an actual period-two L0 tail. Its first multiplier error is nevertheless finite-pd.
+
+The actual c=(4,3,3) cover-boundary fixture retained by the other worker gives I=L0 of LEFT pd1 with projective FULL kernel P1, while rad P1 and head P1=L1 have infinite pd. It refutes obtaining finite errors by taking arbitrary subobjects or head factors of that projective kernel. It already has ordinary visible returns outside the ideal source and is not a badness-specific counterexample.
+
+C125 Section6 at r=1 supplies a separate LEFT-pd1 J3 with infinite RIGHT pd. Accordingly a RIGHT deep term Q_n I cannot be called a RIGHT finite-pd error from this LEFT datum. C111 requires the chosen side and a real finite-pd submodule containing the relevant radical, not merely an exact tensor tail.
+
+No h1/J6zero closure has been completed. The present result narrows the first ordinary defect to a genuinely controlled finite module in that subclass, but the necessary ALL-source ordinary factor/return/descent bridge remains open.
+
+## 7. Retrieval and computation boundaries
+
+Built-in MRS status on this repository returned project_uninitialized; the repository's ordinary CURRENT_STATE/Claims/Run authority was retained and no substitute project was initialized. A bounded Vault method query returned no content after an index refresh failure; stale metadata showed unresolved note locations. No absence-of-method inference is made, and no Vault copy or repair was attempted.
+
+Two bounded literature queries did not supply the missing ordinary bridge; no external theorem is used in these proofs. The main exact computation uses the existing Windows Python frozen-helper route, with a current live interpreter check. The earlier small Kupisch formula discovery is provisional search state and not retained as universal or independent evidence.

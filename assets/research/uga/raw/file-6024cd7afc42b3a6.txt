@@ -1,0 +1,256 @@
+# Finite ordinary quotient windows and the two-sided finite-label deletion obstruction
+
+**Date:** 2026-10-04  
+**Researcher:** one main Codex researcher  
+**Status:** COMPLETE ORDINARY PROOFS / NORMAL ADVERSARIAL SELF-AUDIT / NOT INDEPENDENTLY VERIFIED  
+**Global objective:** Universal Gap A at arbitrary finite elementary size remains OPEN.
+
+## 1. Continuation, reuse, and the exact question
+
+Continue from C120–C122 and D011, without reopening Target-B or classifying vertices by their number. Finite actual states do not automatically supply the no-cancellation/separation hypotheses. The general finite-type GLOBAL ordinary-return implication remains OPEN.
+
+This Run tests a uniform ordinary stopping mechanism and a proposed deletion shortcut. C058 already supplies exact comparison on a real tail avoiding a deleted vertex. The older visibility-aligned Run records qualitative infinitude of that ordinary quotient under badness. The new positive content is a SHARP FINITE WINDOW, with only a finite interval of actual covers and no assumption on its continuation. The qualitative consequence is reused, not presented as a new reduction.
+
+The negative test is stronger than merely deleting one finite-pd simple on one side: even BOTH deleted simple pds equal to one do not preserve high ordinary Tor under the actual ordinary quotient. It does not contradict the different CORNER theorem C094, C088's cover-closed deletion, or any badness-specific alternative.
+
+Conventions: LEFT simple L_y, RIGHT simple R_x,
+\[
+\beta_{xy}(n)=\dim_k\operatorname{Tor}^A_n(R_x,L_y),\qquad
+C_{yx}=\dim_k e_yAe_x.
+\]
+The visibility condition is C_yx>0 in this REVERSE orientation.
+
+## 2. Finite-quotient zero-row window theorem
+
+Let A be elementary finite-dimensional over ANY field, F a nonempty proper set of vertices, e_F their sum, I=Ae_FA, and B=A/I the ORDINARY quotient. Assume LEFT global dimension of B is finite and at most d. Let
+\[
+\cdots\longrightarrow P_1\longrightarrow P_0\longrightarrow M
+\]
+be the ACTUAL minimal LEFT A-projective resolution of a finite module M.
+
+**Theorem.** If for some a>=0,
+\[
+e_FP_a=e_FP_{a+1}=\cdots=e_FP_{a+d}=0,
+\]
+then
+\[
+\operatorname{pd}_A M\le a+d.
+\tag{2.1}
+\]
+
+**Proof.** Put X_n=Omega_A^n M and use the actual exact covers
+\[
+0\longrightarrow X_{n+1}\longrightarrow P_n
+\longrightarrow X_n\longrightarrow0.
+\tag{2.2}
+\]
+For n in the displayed interval, e_FP_n=0 implies IP_n=Ae_FP_n=0. Thus P_n is a B module. It is projective over B: A-projectivity lifts maps onto every epimorphism of B modules, since A-linear and B-linear maps between B modules coincide. Equivalently, every actual Ae_x summand with e_FAe_x=0 equals Be_x.
+
+Each X_n in the interval is a quotient of its P_n and hence a B module; X_(a+d+1) is a submodule of P_(a+d) and is also a B module. All maps and ALL kernels in (2.2) are unchanged. The equality J_B=(J_A+I)/I gives J_BP_n=J_AP_n. Every cover in this interval is therefore a minimal B-projective cover, because its actual kernel lies in J_AP_n.
+
+Consequently these are d+1 consecutive covers starting the minimal B-projective resolution of X_a. Since pd_B X_a<=d, its d-th syzygy X_(a+d) is B-projective (or zero). Its minimal cover P_(a+d)->X_(a+d) is an isomorphism, so X_(a+d+1)=0. The actual A resolution terminates there. This proves (2.1). QED.
+
+This proof deletes NO image or differential. It restricts actual covers that are already quotient modules. Neither a homological epimorphism nor a comparison for arbitrary B simples is asserted.
+
+## 3. Ordinary supported return and uniform global stopping
+
+### 3.1 Singleton ordinary window
+
+Take F={j}, B_j=A/Ae_jA with gd B_j=d<infinity, and assume the ACTUAL LEFT L_j has infinite A-pd. Every interval [a,a+d] contains n with
+\[
+0<\dim_k e_jP_n(L_j)
+ =\sum_x C_{jx}\,\beta_{xj}(n).
+\tag{3.1}
+\]
+Otherwise Theorem 2 terminates that resolution. In particular for EVERY integer b>=0,
+\[
+\boxed{\quad b<n\le b+d+1,\qquad
+C_{jx}>0,\quad
+\operatorname{Tor}^A_n(R_x,L_j)\ne0
+\quad\text{for some }x.\quad}
+\tag{3.2}
+\]
+The set of x is finite, so ONE fixed x gives an ordinary supported pair infinitely often. Its LEFT source is j; the detector need not be j. No diagonal or every-degree assertion is made.
+
+The actual cover dimension identity
+\[
+\dim e_jP_n=\dim e_jX_n+\dim e_jX_{n+1}
+\]
+also implies infinitely many actual returning syzygies, but (3.2) is already the ordinary witness and the sharp window.
+
+For a general BLOCK F, (2.1) is still true for every M. A positive aggregate e_FP_n(L_j) does NOT by itself align its visible row with j. Do not upgrade the block theorem into an arbitrary selected-source simple-pair theorem.
+
+### 3.2 The class that this closes
+
+Any infinite-gd A with an infinite-pd LEFT simple L_j whose specified singleton quotient B_j has finite gd satisfies Universal Gap A. This includes all infinite-gd algebras for which EVERY singleton quotient has finite gd, at arbitrary finite size. The already closed one-vertex case is reused.
+
+More quantitatively, let N>=2 and suppose every d_j=gd B_j is finite. If ALL reverse-supported ordinary pairs vanish for n>b, (3.1) vanishes for every j and every n>b. Apply Theorem 2 with a=b+1:
+\[
+\operatorname{pd}_A L_j\le b+d_j+1,\qquad
+\boxed{\operatorname{gldim}A\le b+1+\max_jd_j.}
+\tag{3.3}
+\]
+This is simultaneous ALL-source stopping, not only another necessary condition.
+
+A useful exact qualifier can be proved without changing rings improperly. If pd_A B_j=t<infinity and gd B_j=d<infinity, every retained simple has A-pd<=t+d: its finite B resolution has terms of A-pd<=t, and ordinary finite resolution devissage gives the bound. Thus if also pd_A L_j=h<infinity, then gd A<=max{h,t+d}. If A instead has infinite gd, this finite-pd B_j hypothesis forces L_j to be infinite and (3.2) applies. Finite pd of the DELETED SIMPLE alone does not imply finite pd of B_j or of I.
+
+### 3.3 Direct RIGHT proof
+
+Use actual minimal RIGHT covers 0->Y_(n+1)->Q_n->Y_n->0. If Q_ne_F=0, then Q_nI=0; Q_n is B-projective and J_B on the right agrees with the actual J_A action. The same d+1 covers terminate when RIGHT gd B<=d.
+
+For an infinite RIGHT source R_j and singleton finite-gd quotient,
+\[
+\dim Q_n(R_j)e_j=\sum_y\beta_{jy}(n)C_{yj}.
+\]
+Every length-(d+1) window gives an ordinary supported pair (R_j,L_y), fixed infinitely often by pigeonhole. This is a direct right argument. No opposite-infinite-plus transfer or equality of LEFT and RIGHT infinite-label sets is invoked.
+
+### 3.4 The window length is sharp
+
+Reuse C091's ACTUAL radical-square-zero oriented p-cycle, p>=3. In the frozen orientation,
+\[
+P_n(L_j)=Ae_{j-n},\qquad
+\dim e_jP_n(L_j)>0
+\Longleftrightarrow n\equiv0\text{ or }p-1\pmod p.
+\]
+Deleting j gives a directed radical-square-zero line on p-1 vertices, of gd d=p-2, by its actual simple kernels. Terms 1,...,p-2 form a zero-row interval of length d in an infinite resolution. Hence d terms do not suffice; the proved d+1 is optimal. No new prefix computation or cycle-only return inference is used.
+
+## 4. Actual arbitrary-size counterfamily to finite-label quotient deletion
+
+For every m>=1 let N=5m. Use the directed cycle with arrows i->i+1 modulo N and the monomial algebra with LEFT projective lengths
+\[
+c_i=\begin{cases}2&i\equiv0,1\pmod5,\\3&i\equiv2,3,4\pmod5.\end{cases}
+\tag{4.1}
+\]
+The relations kill the paths of length c_i starting at i. The inequalities c_(i+1)>=c_i-1 ensure the basis consists exactly of paths p_(i,l), 0<=l<c_i. Its dimension is 13m and J^3=0. Actual multiplication is
+\[
+p_{(i+l,t)}p_{(i,l)}
+=p_{(i,l+t)}\quad(l+t<c_i),
+\]
+and zero otherwise. All coefficients are 0 or 1 over ANY field.
+
+Let M(i,l), 1<=l<=c_i, be the literal uniserial quotient of Ae_i retaining path lengths 0,...,l-1. Its ACTUAL minimal cover has FULL kernel
+\[
+\Omega M(i,l)=M(i+l,c_i-l)
+\tag{4.2}
+\]
+when l<c_i, and zero when l=c_i. This follows by taking the entire basis of paths of lengths l,...,c_i-1 and using their first path as a cyclic generator. It is an exact module isomorphism, not just a dimension identity.
+
+### 4.1 Ambient ordinary periodicity
+
+For every vertex 5t modulo N,
+\[
+L_{5t}\longmapsto L_{5t+1}
+\longmapsto L_{5t+2}
+\longmapsto M(5t+3,2)
+\longmapsto L_{5t+5}.
+\]
+Thus Omega^(4m)L_0=L_0 through genuine full minimal covers. In particular
+\[
+\operatorname{Tor}^A_{4mr}(R_0,L_0)\ne0
+\qquad(r>=1),
+\tag{4.3}
+\]
+a physically supported diagonal tail. LEFT residue classes 0,1,2,3 are infinite; residue 4 has pd one.
+
+The RIGHT projective lengths, obtained from actual ending paths, are
+\[
+(d_0,d_1,d_2,d_3,d_4)=(3,3,2,2,3)
+\]
+periodically. The direct RIGHT full-kernel formula is
+\[
+\Omega_{\rm RIGHT} M_R(i,l)=M_R(i-l,d_i-l).
+\]
+It gives
+\[
+R_2\longmapsto R_1\longmapsto M_R(0,2)
+\longmapsto R_{-2}\longmapsto R_{-3}.
+\]
+Every four steps subtract five, so Omega_RIGHT^(4m)R_2=R_2. RIGHT residue 0 and 1 reach this infinite cycle, residue 3 maps to residue 2, and residue 4 has pd one. The identical infinite LABEL sets here are established by these two DIRECT computations, not a general transfer theorem.
+
+### 4.2 Both deleted simple pds are one
+
+Delete the SINGLE vertex f=4. The actual kernels are
+\[
+\Omega_A L_4=Ae_5,\qquad
+\Omega_{\rm RIGHT}R_4=e_3A.
+\tag{4.4}
+\]
+The first is the full length-two radical with factors 5,6; the second is the full right length-two radical with factors 3,2. They are projective. Hence BOTH deleted simple pds are EXACTLY one.
+
+### 4.3 The actual ordinary quotient kills the old tail
+
+Put I=Ae_4A and B=A/I. Its quiver is the directed line obtained by breaking the cycle at 4. Actual syzygy heads move strictly forward in this finite line, so every B simple has pd<=N-2. In particular gd B<infinity.
+
+For the retained original label 0, the actual quotient covers give
+\[
+\Omega_B L_0=L_1,\quad
+\Omega_B^2L_0=L_2,\quad
+\Omega_B^3L_0=L_3,\quad
+L_3\text{ projective}.
+\]
+Thus pd_B L_0=3, and ALL ordinary Tor from L_0 vanishes above 3. This contradicts (4.3) for every positive multiple of 4m. Both infinity preservation and eventual SAME-pair ordinary Tor comparison fail despite (4.4).
+
+### 4.4 Exact obstruction: the whole ordinary kernel has infinite pd
+
+The actual LEFT column decomposition of I has precisely
+\[
+Ie_4=Ae_4,\quad Ie_3=M(4,2),\quad Ie_2=L_4,
+\]
+with all other columns zero. These are A-linear direct summands of I. But
+\[
+\Omega_A M(4,2)=L_6,
+\]
+and L_6 is infinite-pd by the actual periodic cycle and the rotation by five. Hence pd_LEFT I=infinity.
+
+Directly on the RIGHT,
+\[
+e_4I=e_4A,\quad e_5I=M_R(4,2),\quad e_6I=R_4,
+\]
+with all other rows zero, and
+\[
+\Omega_{\rm RIGHT}M_R(4,2)=R_2.
+\]
+Hence pd_RIGHT I=infinity as well. Indices are modulo N; they remain three distinct rows and columns for every m>=1. I has dimension six. The exact sequence 0->I->A->B->0 then gives infinite ambient pd of B on BOTH sides.
+
+This is why finite deleted SIMPLE pds cannot license an ordinary quotient comparison: the real kernel is not built only from finite-pd deleted simples. Its mixed length-two summands have infinite-pd retained factors and syzygies.
+
+The CORNER eAe, e=1-e_4, retains the nonzero path 3->4->5. The ordinary quotient kills it. C094's shallow CORNER descent applies and gives an infinite corner. Neither that theorem nor C088's cover-closed block theorem is contradicted.
+
+Every member is already ordinary-positive by (4.3), monomial, and J^3=0. This is NOT a hypothetical bad algebra, NOT a UGA counterexample, and NOT a new five-vertex classification.
+
+## 5. Exact computation and normal adversarial audit
+
+Quotient-Gap-Evidence retains the targeted script, parameters, full actual cover/kernel certificates, result and execution record. The frozen actual-cover definitions and three Imported-Outputs helpers are reused, with no new computation engine.
+
+The single material Python 3.14.3/Fraction run at m=1,2,3 passed:
+
+- 202464 full multiplication associativity triples;
+- 78 actual FULL minimal covers, with exact surjectivity and complete kernel bases;
+- 2544 integral basis inverses;
+- 75 full A-linear kernel isomorphisms, with determinant units +1 or -1;
+- both actual periodic cycles, both deleted pd-one resolutions, both mixed ideal-summand kernels, and the terminating actual quotient L_0 resolutions.
+
+No numerical ranks, finite-prefix infinity inference, default checksums, independent verifier, or formal acceptance are used. All-m/all-field/all-degree statements are justified by the written basis/kernel formulas. Changing parameter m with shared helpers does not make the audit independent.
+
+Normal adversarial checks:
+
+1. The last cover index in Theorem 2 is a+d; d+1 covers, not d. The sharp actual cycle detects the off-by-one risk.
+2. The initial tail module is a B module because it is a quotient of an already annihilated P_a. Every later kernel is the ACTUAL kernel, so no deletion-exactness assumption is hidden.
+3. Projectivity over B follows only for the annihilated ACTUAL A-projective terms. No arbitrary projective restriction or all-simple quotient comparison is asserted.
+4. Radical equality on those terms preserves MINIMALITY. A projective final syzygy therefore has an isomorphic minimal cover.
+5. Singleton source infinity is essential for (3.2). Finite gd of B alone does not force the deleted source infinite: Section 4 explicitly breaks that shortcut.
+6. Positive block row aggregate is not singleton alignment; no C119 sourcewise strengthening is inferred.
+7. Every RIGHT step is proved directly. Physical orientation is C_jx on LEFT and C_yj on RIGHT.
+8. The negative family compares an actual ORDINARY quotient with A, not eAe. Its two-sided simple label condition does not control I or pd_A B.
+9. The negative family already returns. Badness-specific safe deletion is not disproved.
+10. Finite-state cancellation/global return, C120–C122, all older positive results and all original branches retain their precise statuses.
+
+## 6. Closure value and continuation
+
+The positive result is a real ordinary UNIFORM STOPPING/WINDOW theorem and a quantitative completion of the existing exact-tail asset. It closes the entire specified finite-gd singleton-quotient/infinite-source branch and supplies (3.3), without grading, Yoneda finite generation, finite states, or higher operations.
+
+The unrestricted two-sided finite-label QUOTIENT shortcut is FALSE with its complete actual kernel obstruction identified. Safe whole-kernel/block comparison remains required. This does not justify abandoning corner or badness-specific reduction results.
+
+A minimal infinite ordinary vertex quotient has all proper singleton quotients finite-gd and therefore has an ordinary supported witness by Section 3 (or the already closed one-vertex case). The missing GLOBAL step is still to preserve enough ordinary badness/witness information along the actual reductions from A to that quotient. The counterfamily prevents substituting finite-pd simple labels for that step. No new filtration, residue or derived invariant has been introduced to evade it.
+
+Continue from the simultaneous ALL-source ordinary visible-mask target. General finite-type global return and the badness-preserving quotient/reduction bridge remain OPEN; every bounded-screening, local-trivial, Primitive/Binary/higher-output and supported-weight branch remains on the map. Universal Gap A is NOT solved by this checkpoint.

@@ -1,0 +1,19 @@
+# Task — ALL-size selfinjective radical-cube-zero ordinary closure
+
+Continue T32/C107; <=4 total-vertex closure reused. Prove ordinary supported
+return for ANY elementary finite-dimensional selfinjective A with J^3=0,
+without carrier alignment, finite syzygy types or opposite-infinite-plus.
+Derive actual socle permutation P, Cartan D=D^T P, actual layer recurrence
+head_(n+1)=E head_n-P head_(n-1) ONLY after the last simple syzygy.
+Audit normality E=E^T P and noncancellable rational diagonal Betti pole.
+Prove2N nonzero Tor window on the exact nonsimple alternative.
+
+Calibrate literal5-vertex zigzag and5/7-vertex twisted double-arrow algebras,
+with Frobenius pairing, actual socle permutation, covers/radical layers,
+full carrier visibility and rational-series coefficients. Their positive
+syzygies are ALL misaligned but ordinary diagonals persist; actual infinite
+formulas proved by nonsimple-kernel dimension induction, not samples.
+Preserve initial caller API failure and complete rerun. No unchanged old
+checks repeated, no HTML or routine checksums under updated AGENTS.
+Evidence remains exact bounded-check/self-audit, NOT independent proof
+certification. General UGA remains OPEN; no selfinjectivity assumed globally.

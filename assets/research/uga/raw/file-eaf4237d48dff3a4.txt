@@ -1,0 +1,20 @@
+# Exact task: directed ordinary Ext blocks and inherited corner peeling
+
+Continue canonical T25. Test the proposed automatic corner-perfection
+mechanism when ALL positive ordinary Ext between deleted simples respects
+one strict order, including nonzero higher Ext. Work with actual resolutions.
+
+Calibration: the literal tensor of T22's regular-coupler E at p=2 with
+the five-dimensional radical-square-zero three-vertex chain. Its finite
+block has three labels, nonzero Ext-one and Ext-two, and nonsemisimple
+modules. Verify the actual corner tower 65->51->33->20, both finite pd
+profiles and exact preservation of remaining finite-block Ext in all degrees.
+
+Deliver verify_directed_ext.py, directed-ext-result.json and a computation
+record. Full basis associativity and integral minimal-cover certificates
+are finite arithmetic; general cone termination/peeling proofs are separate.
+
+Reuse the same-session Mathematica/Sage unavailability inventory and local
+Python 3.14.3. Exact Fraction arithmetic, no remote/paid backend, no HTML,
+no Vault edits, no independent-verifier claim. Frozen helpers must be hashed.
+No finite Betti prefix certifies an infinite-pd simple.

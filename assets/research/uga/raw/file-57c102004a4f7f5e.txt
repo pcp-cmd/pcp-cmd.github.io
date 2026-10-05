@@ -1,0 +1,269 @@
+# T24 — Ordinary tensor-factor descent and arbitrarily high finite-pd complements
+
+Date: 2026-10-04.
+
+Status: complete ordinary proofs and normal adversarial self-audit;
+finite exact minimal-cover calibration passed; NOT independently verified.
+No novelty claim. Universal Gap A remains OPEN.
+
+This continues T23, without enumerating the number of infinite sources.
+The possible automatic continuation “a finite-pd simple always gives a
+pd-zero/pd-one simple on one side” is FALSE. The obstruction can be
+amplified to arbitrarily large finite pd on BOTH sides. However, its
+actual tensor structure gives another genuine global closure mechanism:
+a bad tensor product has a bad strictly smaller factor. The proof uses
+actual minimal resolutions and ordinary Tor, with physical support.
+
+## 1. Conventions and a numerical quantity already defined by ordinary Tor
+
+For an elementary finite-dimensional algebra C set
+
+\[
+h(C)=\sup\{n\ge0: e_yCe_z\ne0,
+                    \operatorname{Tor}^C_n(R_z,L_y)\ne0\}.
+\tag{1.1}
+\]
+
+Every diagonal degree-zero pair is present, so h(C)>=0. There are finitely
+many simple pairs. Thus h(C)=infinity is EXACTLY infinite +, with a fixed
+supported pair persistent in infinitely many degrees. Finite h(C) is the
+existing uniform supported cutoff; this is notation, not a new derived
+invariant. Bad means gd(C)=infinity and h(C)<infinity.
+
+LEFT and RIGHT labels are independent. No opposite-infinite-+ result is used.
+
+## 2. The actual ordinary tensor resolution (C096)
+
+Let C,D be elementary finite-dimensional over the SAME field k and
+A=C tensor_k D. Its primitive vertices are pairs. Its radical is
+J_C tensor D + C tensor J_D: the ideal is nilpotent and its quotient
+is k^(v_C v_D). Thus A is elementary, with LEFT simples L_y tensor L_v
+and RIGHT simples R_z tensor R_w.
+
+Take ACTUAL minimal LEFT resolutions P of L_y over C and Q of L_v
+over D. In nonnegative homological degree n put
+
+\[
+T_n=\bigoplus_{i+j=n}P_i\otimes_k Q_j,
+\quad d(p\otimes q)=d_Pp\otimes q+(-1)^i p\otimes d_Qq.
+\tag{2.1}
+\]
+
+Each sum is finite and every term is A-projective. Over a field, ordinary
+chain Kunneth shows its homology is the tensor simple in degree zero and
+zero above zero. Equivalently split each factor complex as its homology
+plus contractible vector-space summands; their tensor products give the
+same conclusion. This is an ACTUAL exact ordinary resolution. Its
+differentials lie in J_C tensor D + C tensor J_D, so it is minimal.
+No finite-pd image is deleted and no stable resolution is substituted.
+
+Tensoring with a RIGHT tensor simple kills all differentials. Hence
+
+\[
+\operatorname{Tor}^{A}_n(R_z\otimes R_w,L_y\otimes L_v)
+\cong\bigoplus_{i+j=n}
+ \operatorname{Tor}^{C}_i(R_z,L_y)
+ \otimes_k\operatorname{Tor}^{D}_j(R_w,L_v).
+\tag{2.2}
+\]
+
+Physical reverse support is literally
+
+\[
+e_{(y,v)}Ae_{(z,w)}
+ =(e_yCe_z)\otimes_k(e_vDe_w).
+\tag{2.3}
+\]
+
+It is nonzero iff BOTH factor spaces are nonzero. This is actual Peirce
+multiplication, not a support-graph argument.
+
+### Theorem 2.1 — Exact global support and pd formulae
+
+With extended nonnegative integer addition,
+
+\[
+\boxed{h(C\otimes D)=h(C)+h(D)},\qquad
+\boxed{\operatorname{gd}(C\otimes D)=\operatorname{gd}C+\operatorname{gd}D}.
+\tag{2.4}
+\]
+
+For LEFT tensor simples, their pd is the sum of the factor LEFT pds;
+the separate RIGHT formula is proved using actual minimal RIGHT
+resolutions. If either factor pd is infinite the sum is infinite.
+
+Proof: (2.2),(2.3) bound supported degrees above by the sum of the factor
+cutoffs. If both cutoffs are finite, they are attained by supported
+pairs; tensor those pairs to attain their sum. If one is infinite, use
+any SAME-VERTEX degree-zero pair in the other factor, whose Tor_0 is k
+and whose physical diagonal is nonzero. This constructs a supported
+ordinary tail in the product. The same reasoning on all ordinary
+Betti numbers, or (2.1)'s actual minimal nonzero terms, proves the sided
+simple-pd formulae and gd sum. QED.
+
+The infinite + equivalence is a direct statement about these ordinary
+A Tor groups, not an application of opposite-side transfer.
+
+### Corollary 2.2 — A bad product has a strictly smaller bad factor
+
+If A=C tensor D is bad, (2.4) forces both h(C),h(D) finite and at least
+one factor to have infinite gd. Such a factor is bad. If BOTH factor
+dimensions exceed one, its dimension is strictly smaller than dim A.
+
+Conversely, a supported ordinary tail in EITHER factor lifts using a
+degree-zero diagonal of the other factor. Therefore if Universal Gap A
+is known for both factors, it holds for their tensor product. This
+unifies ALL existing proved terminal classes under arbitrary actual
+finite tensor products. It is a full branch theorem, not a condition
+on a putative counterexample.
+
+Any supported cutoff M of the product bounds each factor by the SAME
+M, with zero loss. A checked tensor-factor descent terminates by strict
+algebra dimension. If all terminal factors have finite gd b_i, their
+product has gd=sum_i b_i. Tensor decomposition must be ACTUAL; no
+decomposition is inferred from a Peirce matrix, carrier graph or
+singular category. A dimension-minimal bad elementary algebra is
+therefore tensor-indecomposable over k.
+
+For ordinary Cartesian products, the same elementary argument gives
+h(product C_i)=max h(C_i), gd=max gd(C_i). A bad Cartesian product has
+a bad strictly smaller component. This is the standard disconnected
+reduction; it needs no opposite-side statement.
+
+## 3. No automatically available shallow vertex, even at arbitrarily high pd (C097)
+
+Reuse T23's seven-dimensional Nakayama algebra N with aba=0, labels f,v,
+and basis e_f,e_v,a,b,ab,ba,bab. Its ACTUAL resolutions give
+
+\[
+\operatorname{pd}_{LEFT}L_f=1,\quad
+\operatorname{pd}_{LEFT}L_v=\infty,
+\quad\operatorname{pd}_{RIGHT}R_v=1,\quad
+\operatorname{pd}_{RIGHT}R_f=\infty.
+\tag{3.1}
+\]
+
+The positive minimal LEFT terms for L_v are P_f in EVERY degree;
+Tor^N_n(R_f,L_v)=k, physically dim e_vNe_f=2.
+
+For EVERY r>=2 let A_r=N^(tensor r). It is connected, elementary,
+dimension 7^r, with 2^r vertices. Connectedness follows, for example,
+from the tensor quiver arrows changing one coordinate and the connected
+two-vertex factor; it is also visible from the nonzero Peirce spaces.
+By the actual tensor-simple pd formula,
+
+\[
+F_L(A_r)=\{(f,...,f)\},\quad
+\operatorname{pd}_{LEFT}L_{(f,...,f)}=r,
+\]
+\[
+F_R(A_r)=\{(v,...,v)\},\quad
+\operatorname{pd}_{RIGHT}R_{(v,...,v)}=r.
+\tag{3.2}
+\]
+
+Every other simple on the stated side has infinite pd. Thus there is
+NO finite pd-zero/pd-one simple on EITHER side, and the least finite
+simple pd can be arbitrarily large on BOTH sides. This is not a case
+enumeration in their infinite-source count: the parameter tests the
+alleged uniform shallow-vertex existence mechanism.
+
+No C088 block exists on either side. Its sole finite label's actual
+projective has an infinite simple composition factor, obtained by
+changing one coordinate to that factor's infinite simple. Any block
+with only finite labels would have to be that singleton, so is not
+physically cover-closed. No C093 perfect finite-complement move exists
+either: its sole LEFT finite label is RIGHT infinite, contradicting
+C093's necessary two-sided finite conclusion; the direct RIGHT case
+is separate and symmetric at the level of (3.2). C094 is ineligible
+because r>=2. Finite factors of an image alone still do not provide
+these block/perfection hypotheses.
+
+Nevertheless A_r has the explicit ordinary supported pair
+
+\[
+y=(v,f,...,f),\quad z=(f,f,...,f),\qquad
+\dim\operatorname{Tor}^{A_r}_n(R_z,L_y)=1\quad(n\ge1),
+\]
+\[
+\dim e_yA_re_z=2^r>0.
+\tag{3.3}
+\]
+
+Indeed the first factor supplies k in every positive degree; every
+other pair (R_f,L_f) has only its degree-zero Tor k. Equation (2.2)
+gives (3.3). These are already infinite +, not bad algebras. They do
+NOT disprove a shallow-vertex theorem SPECIFIC to full badness. They
+disprove the unqualified finite-pd existence argument, uniformly.
+Tensor-factor descent closes the entire amplified family at once.
+
+## 4. A sparse all-infinite calibration
+
+The tensor N tensor C_3 with C_3 the frozen radical-square-zero
+three-cycle has dimension 42 and six vertices. Since ALL C_3 simples
+have infinite pd on both sides, all tensor simples have infinite pd;
+there is no finite complement to delete. Its physical Peirce matrix
+has zeros, so support is not vacuous.
+
+Choose source/detector (f,0). The N f,f pair contributes only degree
+zero, while the ACTUAL C_3 simple syzygy cycle gives diagonal Tor k
+in degrees divisible by three. Thus the tensor diagonal has ordinary
+Tor k in every nonnegative multiple of three, with physical dimension
+2. This illustrates the same factor theorem in an all-infinite sparse
+ordinary core, without an image-carrier shortcut.
+
+## 5. Exact arithmetic and provenance
+
+Tensor-Factor-Evidence/ contains code, result, task and computation
+record. The actual dimension-49 tensor square and sparse dimension-42
+table passed 310,288 associativity triples, 13 actual minimal covers
+and 156 integral basis/inverse certificates. LEFT f,f and RIGHT v,v
+resolutions terminate at pd two; selected other actual minimal terms
+agree with the tensor formula. No kernel-return check is claimed for
+these product modules: infinity comes from the separately proved
+actual minimal tensor resolution, the frozen factor kernel returns
+and (2.2), not a finite Betti sample.
+
+Frozen code dependencies are hashed. A staging prefix-selection syntax
+error was corrected before the successful execution; it had no
+mathematical verdict and changed no canonical asset. Record schema/hash
+validation certifies integrity only. Shared helpers and authorship are
+NOT independent verification. General proofs are not claimed as
+literature-novel results. MRS durable records and current Vault methods
+are reused; no new invariant, external messages, HTML or Vault copy.
+
+## 6. Normal adversarial self-audit
+
+1. Factors are elementary over the SAME field; the semisimple tensor
+   quotient is split and the asserted vertex/simple list is exact.
+2. Tensor sums in each resolution degree are finite. Ordinary field
+   Kunneth proves exactness; radical entries prove MINIMALITY.
+3. Signs in (2.1) are required; no deleted images or stabilisation.
+4. Physical support factorises as a literal tensor space; a factor
+   tail lifts with an actual degree-zero diagonal in the other factor.
+5. The gd and supported cutoffs are different quantities. Badness
+   gives a bad factor from BOTH formulae, not gd infinity alone.
+6. Strict descent requires two nontrivial factor dimensions. Tensoring
+   with k is not a strict move; actual tensor availability is not
+   assumed for every algebra.
+7. LEFT and RIGHT pd labels come from separate minimal resolutions;
+   no opposite-infinite-+ theorem clears its quarantine.
+8. C097's finite-pd cover contains infinite factors. Its two-sided
+   absence of shallow labels is actual and arbitrarily amplified.
+9. The examples are already infinite +; the full badness-specific
+   finite-pd deletion/low-pd availability alternative remains open.
+10. C088/C093/C094 still hold with their exact hypotheses. C095's
+    pd-two single-source screening remains unchanged.
+11. Integral finite covers supplement separate all-r/all-degree
+    ordinary proofs. No bounded evidence is called independent.
+
+## 7. Continued global priority
+
+C096 closes actual tensor-decomposable badness candidates by strict
+factor dimension descent and merges the known terminal classes under
+ordinary tensor products. C097 prevents relying on a universal shallow
+simple in the finite-pd branch. A remaining minimal candidate requires
+a FULL no-+ mechanism in a tensor-indecomposable no-shallow-deletion
+ordinary core. This does not assume an automatic decomposition or
+erase higher-pd, all-infinite, C076 support-transfer, Target A,
+local-trivial or higher-output branches. Universal Gap A remains OPEN.

@@ -1,0 +1,710 @@
+{
+  "nonmonomial_two_branch_47": {
+    "vertices": 3,
+    "base_vertex": 0,
+    "radical_basis": [
+      {
+        "name": "a1_1",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "b1_1",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "a1_2",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "b1_2",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "a1_3",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "b1_3",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "z1",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d1_11",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "c1_12",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d1_12",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "c1_13",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d1_13",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "c1_21",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d1_21",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "d1_22",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "c1_23",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d1_23",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "c1_31",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d1_31",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "c1_32",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d1_32",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "d1_33",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "a2_1",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "name": "b2_1",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "name": "a2_2",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "name": "b2_2",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "name": "a2_3",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "name": "b2_3",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "name": "z2",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d2_11",
+        "left": 2,
+        "right": 2
+      },
+      {
+        "name": "c2_12",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d2_12",
+        "left": 2,
+        "right": 2
+      },
+      {
+        "name": "c2_13",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d2_13",
+        "left": 2,
+        "right": 2
+      },
+      {
+        "name": "c2_21",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d2_21",
+        "left": 2,
+        "right": 2
+      },
+      {
+        "name": "d2_22",
+        "left": 2,
+        "right": 2
+      },
+      {
+        "name": "c2_23",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d2_23",
+        "left": 2,
+        "right": 2
+      },
+      {
+        "name": "c2_31",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d2_31",
+        "left": 2,
+        "right": 2
+      },
+      {
+        "name": "c2_32",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "d2_32",
+        "left": 2,
+        "right": 2
+      },
+      {
+        "name": "d2_33",
+        "left": 2,
+        "right": 2
+      }
+    ],
+    "radical_products": [
+      {
+        "left": "b1_1",
+        "right": "a1_1",
+        "value": {
+          "z1": 1
+        }
+      },
+      {
+        "left": "a1_1",
+        "right": "b1_1",
+        "value": {
+          "d1_11": 1
+        }
+      },
+      {
+        "left": "b1_1",
+        "right": "a1_2",
+        "value": {
+          "c1_12": 1
+        }
+      },
+      {
+        "left": "a1_1",
+        "right": "b1_2",
+        "value": {
+          "d1_12": 1
+        }
+      },
+      {
+        "left": "b1_1",
+        "right": "a1_3",
+        "value": {
+          "c1_13": 1
+        }
+      },
+      {
+        "left": "a1_1",
+        "right": "b1_3",
+        "value": {
+          "d1_13": 1
+        }
+      },
+      {
+        "left": "b1_2",
+        "right": "a1_1",
+        "value": {
+          "c1_21": 1
+        }
+      },
+      {
+        "left": "a1_2",
+        "right": "b1_1",
+        "value": {
+          "d1_21": 1
+        }
+      },
+      {
+        "left": "b1_2",
+        "right": "a1_2",
+        "value": {
+          "z1": -2
+        }
+      },
+      {
+        "left": "a1_2",
+        "right": "b1_2",
+        "value": {
+          "d1_22": 1
+        }
+      },
+      {
+        "left": "b1_2",
+        "right": "a1_3",
+        "value": {
+          "c1_23": 1
+        }
+      },
+      {
+        "left": "a1_2",
+        "right": "b1_3",
+        "value": {
+          "d1_23": 1
+        }
+      },
+      {
+        "left": "b1_3",
+        "right": "a1_1",
+        "value": {
+          "c1_31": 1
+        }
+      },
+      {
+        "left": "a1_3",
+        "right": "b1_1",
+        "value": {
+          "d1_31": 1
+        }
+      },
+      {
+        "left": "b1_3",
+        "right": "a1_2",
+        "value": {
+          "c1_32": 1
+        }
+      },
+      {
+        "left": "a1_3",
+        "right": "b1_2",
+        "value": {
+          "d1_32": 1
+        }
+      },
+      {
+        "left": "b1_3",
+        "right": "a1_3",
+        "value": {
+          "z1": 1
+        }
+      },
+      {
+        "left": "a1_3",
+        "right": "b1_3",
+        "value": {
+          "d1_33": 1
+        }
+      },
+      {
+        "left": "b2_1",
+        "right": "a2_1",
+        "value": {
+          "z2": 1
+        }
+      },
+      {
+        "left": "a2_1",
+        "right": "b2_1",
+        "value": {
+          "d2_11": 1
+        }
+      },
+      {
+        "left": "b2_1",
+        "right": "a2_2",
+        "value": {
+          "c2_12": 1
+        }
+      },
+      {
+        "left": "a2_1",
+        "right": "b2_2",
+        "value": {
+          "d2_12": 1
+        }
+      },
+      {
+        "left": "b2_1",
+        "right": "a2_3",
+        "value": {
+          "c2_13": 1
+        }
+      },
+      {
+        "left": "a2_1",
+        "right": "b2_3",
+        "value": {
+          "d2_13": 1
+        }
+      },
+      {
+        "left": "b2_2",
+        "right": "a2_1",
+        "value": {
+          "c2_21": 1
+        }
+      },
+      {
+        "left": "a2_2",
+        "right": "b2_1",
+        "value": {
+          "d2_21": 1
+        }
+      },
+      {
+        "left": "b2_2",
+        "right": "a2_2",
+        "value": {
+          "z2": -2
+        }
+      },
+      {
+        "left": "a2_2",
+        "right": "b2_2",
+        "value": {
+          "d2_22": 1
+        }
+      },
+      {
+        "left": "b2_2",
+        "right": "a2_3",
+        "value": {
+          "c2_23": 1
+        }
+      },
+      {
+        "left": "a2_2",
+        "right": "b2_3",
+        "value": {
+          "d2_23": 1
+        }
+      },
+      {
+        "left": "b2_3",
+        "right": "a2_1",
+        "value": {
+          "c2_31": 1
+        }
+      },
+      {
+        "left": "a2_3",
+        "right": "b2_1",
+        "value": {
+          "d2_31": 1
+        }
+      },
+      {
+        "left": "b2_3",
+        "right": "a2_2",
+        "value": {
+          "c2_32": 1
+        }
+      },
+      {
+        "left": "a2_3",
+        "right": "b2_2",
+        "value": {
+          "d2_32": 1
+        }
+      },
+      {
+        "left": "b2_3",
+        "right": "a2_3",
+        "value": {
+          "z2": 1
+        }
+      },
+      {
+        "left": "a2_3",
+        "right": "b2_3",
+        "value": {
+          "d2_33": 1
+        }
+      }
+    ]
+  },
+  "archive_five_dimensional_finite_gldim": {
+    "vertices": 2,
+    "base_vertex": 0,
+    "radical_basis": [
+      {
+        "name": "a",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "b",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "z",
+        "left": 1,
+        "right": 1
+      }
+    ],
+    "radical_products": [
+      {
+        "left": "a",
+        "right": "b",
+        "value": {
+          "z": 1
+        }
+      }
+    ]
+  },
+  "filtered_same_branch_8": {
+    "vertices": 2,
+    "base_vertex": 0,
+    "radical_basis": [
+      {
+        "name": "a",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "b",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "c",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "name": "p",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "q",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "z",
+        "left": 0,
+        "right": 0
+      }
+    ],
+    "radical_products": [
+      {
+        "left": "b",
+        "right": "a",
+        "value": {
+          "z": 1
+        }
+      },
+      {
+        "left": "b",
+        "right": "c",
+        "value": {
+          "p": 1
+        }
+      },
+      {
+        "left": "c",
+        "right": "a",
+        "value": {
+          "q": 1
+        }
+      },
+      {
+        "left": "p",
+        "right": "a",
+        "value": {
+          "z": 1
+        }
+      },
+      {
+        "left": "b",
+        "right": "q",
+        "value": {
+          "z": 1
+        }
+      }
+    ]
+  },
+  "filtered_other_branch_11": {
+    "vertices": 3,
+    "base_vertex": 0,
+    "radical_basis": [
+      {
+        "name": "a1",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "b1",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "a2",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "name": "b2",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "name": "c2",
+        "left": 2,
+        "right": 2
+      },
+      {
+        "name": "p",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "name": "q",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "name": "z",
+        "left": 0,
+        "right": 0
+      }
+    ],
+    "radical_products": [
+      {
+        "left": "b1",
+        "right": "a1",
+        "value": {
+          "z": 1
+        }
+      },
+      {
+        "left": "b2",
+        "right": "c2",
+        "value": {
+          "p": 1
+        }
+      },
+      {
+        "left": "c2",
+        "right": "a2",
+        "value": {
+          "q": 1
+        }
+      },
+      {
+        "left": "p",
+        "right": "a2",
+        "value": {
+          "z": 1
+        }
+      },
+      {
+        "left": "b2",
+        "right": "q",
+        "value": {
+          "z": 1
+        }
+      }
+    ]
+  },
+  "radical_cube_zero_two_cycle_inconclusive": {
+    "vertices": 2,
+    "base_vertex": 0,
+    "radical_basis": [
+      {
+        "name": "a",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "name": "b",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "name": "z0",
+        "left": 0,
+        "right": 0
+      },
+      {
+        "name": "z1",
+        "left": 1,
+        "right": 1
+      }
+    ],
+    "radical_products": [
+      {
+        "left": "b",
+        "right": "a",
+        "value": {
+          "z0": 1
+        }
+      },
+      {
+        "left": "a",
+        "right": "b",
+        "value": {
+          "z1": 1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+## UGA-C073 — Actual Nonsplit Sharp-Cutoff and Nonperfect Comparison Calibrations
+**Status:** EXPLICIT ALL-DEGREE/ALL-CHARACTERISTIC PROOFS / BOUNDED EXACT SELF-CHECKS / NOT INDEPENDENTLY VERIFIED  
+**Source:** nonsplit square-zero Run, Sections 5--6; reproducible files in Square-Zero-Quotient-Evidence/.
+
+The connected fourteen-dimensional algebra has quiver 0->1->2->3 with loop t at 3 and sole relation t^2=0. Its three-dimensional ideal K=(beta alpha) is radical square-zero, equals Ce_2 tensor e_0C over the eleven-dimensional quotient, has C^e-pd zero and actual tensor square zero. The ordinary quotient has no algebra section by its unique alpha/beta lifts. Parameters ell=2,D=0 give W=U=1; Tor^A_2(R_2,L_0)=0 but Tor^C_2(R_2,L_0)=k, so isomorphism cannot start at U+1. Vertex 3 has supported ordinary diagonal Tor k in every degree. The three-vertex path subexample has gldim A=1 and gldim C=2, rejecting a general nonsplit gldim C<=gldim A inequality.
+
+A distinct five-dimensional triangular algebra has basis e0,e1,t,a,b, sole radical product at=b, and quotient C=A/(b) of dimension four. Its actual kernel Ce_1 tensor R_0 is left C-projective and tensor-square-zero, but infinite right C-pd and C^e-pd. The quotient has no ordinary section: every lift a+c b has product b with t. The supported (R_0,L_0) diagonal returns in every degree; the reverse-invisible (R_1,L_0) has A-Tor zero for n>=2 and C-Tor k for every n>=1. Hence nonperfect C074 supported transfer does not imply full eventual same-pair comparison. This algebra is distinct from C071's five-dimensional Auslander calibration.
+
+Both are infinite +, not counterexamples or idempotent deletion claims. Exact outgoing/incoming ordinary ranks and actual quotient-map ranks passed at the recorded bounds; all-degree and all-characteristic assertions use explicit finite/periodic module and path certificates. The computation record passed schema/hash validation, not independent mathematical verification.
+
+---

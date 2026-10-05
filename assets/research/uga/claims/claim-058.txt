@@ -1,0 +1,17 @@
+## UGA-C058 — Actual-Tail Defect Annihilation and Ordinary-Quotient Comparison
+**Status:** COMPLETE SELF-AUDITED PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** `runs/2026-10-03/Run-Actual-Tail-Defect-Annihilation-2026-10-03.md`, Lemma 2.1, Theorem 3.1, Corollary 3.2 and Proposition 4.1.
+
+For the return-complement idempotent u with \(e_xAu=0\), use the full strict derived quotient \(\mathcal Q\), ordinary quotient \(C=A/Ae_xA\), and dg fiber \(K=\ker(\mathcal Q\to C)\). Then
+\[
+\mathcal Q u=Au=Cu,\qquad u\mathcal Q u=uAu=uCu,\qquad Ku=0.
+\]
+For a real-tail module X whose entire minimal resolution lies in add(Au),
+\[
+K\otimes_A^{\mathbf L}X=K\otimes_{\mathcal Q}^{\mathbf L}X=0.
+\]
+Ordinary Ext/Tor with first left argument X compare exactly across A, C and Q; projective dimensions agree over A, C and uAu. This is a restricted comparison, not a homological-epimorphism assertion for A -> C. Persistent detectors of \(X=\Omega^m L_x\) lie in u and are invisible to source x. The defect tensor with L_x is computed by its actual finite-prefix columns, with no contribution from the tail; their internal complexes may still be unbounded.
+
+**Consequence:** directly tensoring the deletion defect with the real tail cannot constrain the higher-output residue by nonvanishing. A simultaneous finite-head/all-source mechanism is still needed.
+
+---

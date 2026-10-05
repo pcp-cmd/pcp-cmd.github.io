@@ -1,0 +1,392 @@
+# T26 — Directed ordinary Ext blocks: termination, inherited peeling and the nilpotence obstruction
+
+Date: 2026-10-04.
+
+Status: complete ordinary proofs and normal adversarial self-audit;
+actual integral corner/minimal-cover calibration passed; NOT independently
+verified. No novelty claim. Universal Gap A remains OPEN.
+
+Continue the latest T25 actual counit, not an old Target-B version.
+The main result allows genuine higher F Ext, proves a uniform global
+amplitude bound and supplies REPEATED eligible deletion. It closes the
+whole directed finite-block class without count-by-count infinite-source
+research. A separate exact obstruction prevents replacing the strict
+Ext order by Yoneda nilpotence or finite-dimensionality.
+
+## 1. Hypotheses: an order on ACTUAL positive ordinary Ext
+
+Let A be elementary finite-dimensional over k, F={f_1,...,f_m} a nonempty
+proper block, e=1-sum_F e_f and B=eAe. Require finite LEFT pds d_i of
+L_fi and finite RIGHT pds r_i of R_fi; put
+
+\[
+d=\max_i d_i,\quad r=\max_i r_i,\quad s=\min(d,r),
+\quad w=\max(s-1,0).
+\tag{1.1}
+\]
+
+Require the order to satisfy
+
+\[
+\operatorname{Ext}^p_A(L_{f_i},L_{f_j})=0
+\quad(p\ge1,\ i\ge j).
+\tag{1.2}
+\]
+
+Actual positive Ext may be nonzero from an EARLIER source to a LATER
+target, including p>=2. Ext-one inside F is allowed; F modules need
+not be semisimple. This is an order on ordinary Ext GROUPS, not a
+quiver/support order or nilpotence of their Yoneda products. Only
+degrees 1 through s need checking: left source and right dual-target
+ordinary pd give the bound on all remaining degrees.
+
+No physical cover closure or corner-module perfection is assumed.
+
+## 2. Cohomology carriers terminate in a bounded ordinary window (C099)
+
+### Theorem 2.1
+
+For ALL finite LEFT A modules M the actual counit
+Ae tensor_B^L eM -> M has cone C_M with cohomology only in
+
+\[
+[-a_L,0],\qquad a_L=r+(m-1)w.
+\tag{2.1}
+\]
+
+Its cohomology is retained throughout. The bound is proved through
+strict removal of F factors, not by deleting finite-pd differential
+images or declaring an initially unbounded complex perfect.
+
+#### Refined ordinary head bounds
+
+For each target f_j define a finite recursive bound
+
+\[
+b_j=\max\bigl(\{r_j\}\cup
+ \{b_i+p-1:i<j,\ p\ge1,
+                  \operatorname{Ext}^p_A(L_{f_i},L_{f_j})\ne0\}\bigr).
+\tag{2.2}
+\]
+
+There is no recursion cycle by (1.2), and p<=s. Each chain makes at
+most m-1 strict vertex transitions, each consuming at most w degrees;
+therefore max b_j<=a_L. We will prove the stronger assertion
+
+\[
+[H_n(C_M):L_{f_j}]=0\quad(n>b_j).
+\tag{2.3}
+\]
+
+This is a bound used in the termination proof, not a newly proposed
+derived invariant. The strict measure is the number of eligible
+vertex positions remaining in the finite order.
+
+#### Proof of (2.3) with actual finite ordinary windows
+
+Let H_n=H^{-n}C_M. As in T25, each H_n is finite with F factors;
+pd_LEFT H_n<=d. For target L_fj, finite-dimensional ordinary duality
+and RIGHT pd R_fj<=r_j imply Ext^p_A(H_n,L_fj)=0 for p>r_j. Thus
+the ordinary hyper-Ext page for this target has only 0<=p<=s.
+
+Fix degree n and use the FINITE cohomology truncation [-n,0]: lower
+degrees and their shift by one have zero maps to L_fj[n] by ordinary
+t-structure orthogonality. The convergent finite spectral sequence has
+
+\[
+E_2^{p,q}=\operatorname{Ext}^p_A(H_q,L_{f_j}),
+\quad d_\ell:(p,q)\longrightarrow(p+\ell,q-\ell+1).
+\tag{2.4}
+\]
+
+Its (0,n) Hom edge has NO incoming differential. An outgoing screen
+must have 2<=ell<=s and target a subquotient of
+
+\[
+\operatorname{Ext}^{\ell}_A(H_{n-\ell+1},L_{f_j}).
+\tag{2.5}
+\]
+
+Induct in j. If n>b_j, every earlier f_i with a possible degree-ell
+Ext into f_j satisfies n-ell+1>b_i. Its composition factor is absent
+from H_(n-ell+1) by the induction hypothesis. All remaining factors
+have zero degree-ell Ext into L_fj by (1.2) or the definition of b_j.
+VALID source composition-series Ext devissage makes (2.5) zero.
+Consequently the entire Hom edge survives to the abutment.
+
+Chain adjunction to the deleted target gives
+
+\[
+\operatorname{Hom}_{D(A)}(C_M,L_{f_j}[n])
+ =\operatorname{Ext}^n_A(M,L_{f_j})=0\quad(n>r_j).
+\tag{2.6}
+\]
+
+Since n>b_j>=r_j, the surviving edge must be zero:
+Hom_A(H_n,L_fj)=0.
+
+A HEAD statement alone would not remove a radical composition factor.
+This is exactly why degree-one edges were included in (2.2). Every
+f_i with Ext^1(L_fi,L_fj) nonzero has b_j>=b_i, so its factor is also
+absent from H_n. Every other factor has zero Ext-one into L_fj. On
+the resulting finite composition series, Hom(-,L_fj) is exact and its
+dimension is precisely [H_n:L_fj]. Thus the vanished Hom edge implies
+the full COMPOSITION component in (2.3) vanishes, even for nonsplit H_n.
+This finishes the induction. For n>max b_j every F component is zero,
+so H_n=0 and (2.1) follows. QED.
+
+No ordinary homological return is inferred from a graph cycle. The
+order is used to eliminate actual spectral targets and prove a finite
+amplitude bound by valid ordinary Ext devissage.
+
+## 3. Automatic corner perfection and ALL-module ordinary return
+
+As in T25, H^{-i-1}C_M=Tor_i^B(Ae,eM) for i>=1, and ALL finite
+B modules X occur as eM via M=Ae tensor_B X. Hence
+
+\[
+\operatorname{pd}_{B^{op}}Ae\le\max(a_L-1,0).
+\tag{3.1}
+\]
+
+The direct RIGHT counit uses reversed ordinary Ext under vector-space
+duality and the REVERSED F order. It gives
+
+\[
+a_R=d+(m-1)w,\qquad
+\operatorname{pd}_{B}eA\le\max(a_R-1,0).
+\tag{3.2}
+\]
+
+No opposite-infinite-+ statement is used. The finite cohomology in
+[-a_L,0] has LEFT pd<=d, so actual bounded ordinary repair gives
+natural ALL-module Ext restriction and its dual Tor isomorphisms for
+
+\[
+\boxed{n>N,\qquad N=d+r+(m-1)\max(\min(d,r)-1,0).}
+\tag{3.3}
+\]
+
+The Ext direction is A->B; Tor is Tor^B_n(Re,eM)->Tor^A_n(R,M),
+B->A. B is a CORNER, not a quotient. The refined left bound is
+d+max b_j, and its direct right counterpart can also be used; the
+uniform displayed bound is sufficient. No sharpness is asserted for
+this general estimate.
+
+Both retained infinite label sets are exactly preserved; global
+infinity is equivalent and finite gd obeys max(gd of the other algebra,N)
+bounds. Physical retained e_yBe_z=e_yAe_z spaces and SAME-PAIR high
+ordinary Tor ensure supported return lifts and
+
+\[
+A\text{ bad}\Longrightarrow B\text{ bad},\qquad\dim B<\dim A.
+\tag{3.4}
+\]
+
+Both infinite counts stay unchanged. This closes the whole directed
+two-sided-finite Ext block branch at arbitrary source count.
+If A has supported ordinary cutoff M, the corner cutoff is
+max(M,N). ZERO cutoff loss is not asserted for this high-comparison
+theorem; C094 and C096 have their separate zero-loss statements.
+
+## 4. Ordered singleton peeling really inherits eligibility
+
+### Theorem 4.1
+
+Delete f_1, then f_2,...,f_m by successive actual corners. EVERY step
+is an eligible C098 singleton move. The remaining F positive Ext
+matrix is exactly the original one in ALL degrees, and remaining
+LEFT simple pds are exactly the original values. RIGHT finite labels
+remain finite but their numeric pds need not be unchanged.
+
+Proof: f_1 has no positive self-Ext and is finite on BOTH sides, so
+C098 applies. Every finite module supported at the singleton f_1
+is semisimple because its ordinary self-Ext-one is zero. Its actual
+counit cohomology is therefore a sum of copies of L_f1. All positive
+self-Ext is zero, so the finite ordinary target window to L_f1 has
+ONLY its cohomology Hom term, including degree zero.
+
+For any remaining F simple M=L_fj, (1.2) gives
+Ext^n_A(M,L_f1)=0 in EVERY n>=0, since j>1 and the simples differ
+in degree zero. Chain adjunction consequently makes every cohomology
+of its singleton counit cone zero. Thus Ae tensor_B Q is NOW an
+actual exact ordinary A resolution for this source, giving
+
+\[
+\operatorname{Ext}^n_A(L_{f_j},Z)
+\cong\operatorname{Ext}^n_B(L_{f_j},eZ)
+\quad\text{ALL }n\ge0,\quad\text{ALL finite }Z.
+\tag{4.1}
+\]
+
+In particular all remaining F Ext groups retain their order exactly,
+and their LEFT pds are equal: all retained targets compare and the
+deleted target has zero Ext. Their RIGHT labels remain finite by
+C098's ALL-source comparison, which does not promise low pd equality.
+The same reasoning now applies to the next vertex. Induct through F.
+
+Every move removes one vertex and strictly lowers dimension; exactly
+m moves delete the entire block. The repeated eligibility is PROVED,
+not assumed from original primitive comparisons. The final ordinary
+comparison also has the uniform original bound (3.3), independently
+of any larger cutoffs obtained by estimating intermediate right pds.
+QED.
+
+These ordered-step hypotheses are special. C086's automatic primitive
+comparison inheritance counterexample and C098's general noninheritance
+warning remain valid outside them. The opposite RIGHT peeling takes
+the reversed order and proves exact RIGHT source pds/Ext, separately.
+
+## 5. Actual nonsplit calibration with nonzero higher F Ext
+
+Let E be T22's regular-coupler algebra at p=2, dimension 13, and C
+the five-dimensional three-vertex chain with b_0 in e_0Ce_1,
+b_1 in e_1Ce_2 and b_0b_1=0. Its actual LEFT simple resolutions
+have terms P_i,P_(i-1),...,P_0. RIGHT terms are P_i,...,P_2.
+Put A=E tensor C, dimension 65 and nine vertices.
+
+The finite F labels are (f,0),(f,1),(f,2), LEFT pds 1,2,3 and
+RIGHT pds 3,2,1. Positive ordinary F Ext is exactly
+
+\[
+\operatorname{Ext}^1(L_{(f,2)},L_{(f,1)})=k,
+\quad\operatorname{Ext}^1(L_{(f,1)},L_{(f,0)})=k,
+\quad\operatorname{Ext}^2(L_{(f,2)},L_{(f,0)})=k,
+\tag{5.1}
+\]
+
+with every other positive F group zero. This is proved by the actual
+finite minimal tensor resolutions, not a quiver inference. F admits
+nonsplit extensions. The order is (f,2),(f,1),(f,0); T25's whole-block
+no-higher-F-Ext hypothesis fails because of the last group in (5.1).
+
+Actual LEFT/RIGHT minimal kernels in its literal corners give
+
+\[
+65\longrightarrow51\longrightarrow33\longrightarrow20.
+\tag{5.2}
+\]
+
+Remaining LEFT finite pds are 1,2,3 -> 1,2 -> 1; RIGHT finite pds
+are 3,2,1 -> 2,1 -> 1. The remaining F Ext entries agree EXACTLY
+in all degrees at each step. Every finite-side cover has an infinite
+factor, so no C088 finite closed block exists on either side. The
+ordered route begins by deleting LEFT-pd-three f,2, not by count cases.
+
+Here the uniform (3.3) gives N=10; the refined b values are 1,2,3,
+giving N=6. The actual three singleton C098 cutoffs are 4,3,2, so
+their max gives comparison above 4. The whole final corner has
+Ae RIGHT B isomorphic to TWO regular copies, via generators
+e and (a+m_w) tensor 1_C, so C093 also gives bound 4. This literal
+projectivity is exported as a natural-basis permutation and checked
+against all corner basis multiplications.
+
+The actual ALL-pair degree-four cutoff is sharp in this calibration:
+Tor^A_4(R_(v,0),L_(w,2))=k, while final corner Tor is zero in every
+degree for this pair. The E factor has that Tor only in degree two,
+as frozen in T22; C has Tor(R_0,L_2)=k only in degree two. Ordinary
+tensor Kunneth gives the claim. This mixed pair is NOT physically
+supported, so it is not reported as a supported witness.
+
+The ambient algebra is already infinite +: the (w,0) diagonal has
+Tor k in every positive degree and physical dimension two. Its
+infinite tails follow frozen actual E kernels and the LEFT-projective
+C simple, not finite samples. No badness counterexample is constructed.
+
+## 6. Nilpotent ordinary Yoneda products cannot replace strict order (C100)
+
+For any LEFT-finite F with maximum pd d, its ordinary restricted
+Yoneda algebra E_F has only degrees 0 through d and is finite-dimensional.
+Its positive ideal is automatically nilpotent, with (E_F^+)^(d+1)=0.
+This follows actual ordinary pd, not finite algebra size alone.
+
+Nevertheless finite-dimensionality or this nilpotence gives NO uniform
+counit-screening bound. Reuse C095's actual A5 and F={v}. Both
+deleted simple pds are two, and
+
+\[
+E_F=k\oplus k\xi,\quad |\xi|=2,\quad \xi^2=0.
+\tag{6.1}
+\]
+
+The actual counit of L_f still has L_v cohomology in EVERY negative
+degree, and its genuine ordinary hyper-Ext
+d2:(0,q)->(2,q-1) is an isomorphism for every q>=2. Thus a fixed
+nilpotent Ext-two class can screen an unbounded sequence of DIFFERENT
+cohomology slots. Repeated screens are not iterated nonzero Yoneda
+products; xi^2=0 does not force the next screen to vanish.
+
+C095's connected S10 has the same nilpotent E_F, an infinite original
+LEFT source and the ENTIRE finite-LEFT complement deleted, and still
+screens that source's supported corner diagonal completely. A different
+ambient w diagonal returns, so neither example is bad. This refutes
+the UNQUALIFIED nilpotence/finite-Ext bound and its fixed-source repair,
+not a FULL no-+ global alternative. The old A5 formal derived quotient
+is unchanged; the screened object is this ordinary module counit.
+
+Similarly an acyclic Ext-ONE graph or an internally semisimple F is
+insufficient: the singleton v has Ext-one zero but a genuine Ext-two
+self-edge. Condition (1.2) concerns ALL positive ordinary Ext groups.
+
+## 7. Exact finite arithmetic, methods and provenance
+
+Directed-Ext-Evidence/ exports code, result, task and computation record.
+The calibration passed 896,748 full-basis associativity triples,
+32 actual minimal covers, 811 integral basis/inverse certificates,
+39 finite-block Ext entries and one explicit corner-projectivity
+isomorphism with 800 literal right-linearity checks. Finite F resolutions
+actually terminate, so their Ext comparison is ALL-DEGREE, not a finite
+prefix called all-degree. Other infinite labels use the frozen factor
+proof, not these cover samples. No product recurrent-kernel check.
+
+Nine frozen code dependencies are hashed and reused without their old
+main computations. Schema/hash validation certifies integrity only;
+same-author shared arithmetic is NOT independent verification.
+
+Bounded Vault retrieval of semiorthogonal/Postnikov terms yielded no
+relevant method asset (the fuzzy Chinese results were about positive
+semidefinite kernels and were not adopted). Existing T25 finite
+truncation and current MRS durable records supply the method. No Vault
+copy/edit, external message, HTML or new verifier service.
+
+## 8. Normal adversarial self-audit
+
+1. BOTH finite sides are required: LEFT bounds cohomology pd; RIGHT
+   bounds all-source Ext to F targets. Do not identify the side labels.
+2. The order is on ACTUAL ordinary Ext of EVERY positive degree, not
+   physical arrows, Ext-one alone or Yoneda product nilpotence.
+3. F cohomology can be nonsplit. The argument removes COMPOSITION
+   factors, not just heads; Ext-one edges in (2.2) are essential.
+4. A fixed finite truncation is used for each ordinary target degree;
+   the strip has p<=min(d,r). No unrestricted infinite convergence.
+5. An outgoing screen consumes ell-1 degrees and strictly advances
+   in the F order. No screen comes from a backwards or self Ext edge.
+6. Actual corner-module pd tests ALL B modules through finite induction.
+7. The original uniform bound is sufficient, not asserted sharp. The
+   calibration's actual bound four is sharp ONLY for ALL-pair comparison.
+8. ALL remaining-F Ext/pd preservation after singleton peeling is
+   proved by an ACYCLIC actual source counit, not primitive-map guessing.
+9. Only LEFT numeric source pds are equal in that ordered LEFT proof;
+   RIGHT labels remain finite and can change numeric pd. Reverse proof
+   is direct and controls RIGHT numeric source pds.
+10. Infinity counts stay unchanged; the strict move is dimension/vertex
+    and the finite order gives exactly m inherited eligible moves.
+11. A5/S10 nilpotent-Ext screens are real but already nonbad. Do not
+    present their failure as a global badness counterexample.
+12. Do not transport ordinary counit screening into a nonformal
+    idempotent quotient claim or rewind Primitive/Binary corrections.
+13. Complete same-author proof and exact dependent arithmetic are
+    NOT independently verified; no novelty claim.
+
+## 9. Continue the full global problem
+
+C099 proves strict finite-carrier termination and a uniform ordinary
+comparison bound for directed TWO-sided-finite Ext blocks, including
+nonzero higher Ext and nonsplit cohomology; ordered eligibility really
+inherits. C100 breaks the tempting replacement by nilpotent ordinary
+Yoneda products, even at an infinite original source. The next global
+mechanism must use FULL badness/source migration when genuine higher
+Ext cycles occur, or close one-sided-finite and all-infinite ordinary
+cores by another actual reduction/return. C076 physical transfer and
+Target A/local-trivial/supported-weight/Primitive/Binary/higher-output
+branches remain on the full map. Universal Gap A remains OPEN.

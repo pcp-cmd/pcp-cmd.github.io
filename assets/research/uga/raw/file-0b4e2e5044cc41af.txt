@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "created_at_utc": "2026-10-04T06:26:57.071390+00:00",
+  "task": {
+    "file": "task.md",
+    "sha256": "271ae33d21cfeb12ea6038f08316d7d34deeaebc660e30e0a208ca52739aa84f",
+    "object": "Finite-pd actual semisimple envelopes force ordinary Yoneda tail termination and a supported diagonal",
+    "deliverables": [
+      "verify_finite_envelope.py",
+      "finite-envelope-result.json",
+      "computation-record.json",
+      "initial-action-shape-failure.txt"
+    ]
+  },
+  "mathematical_context": {
+    "assumptions": [
+      "Every t in finite T has ACTUAL finite-pd H_t with a semisimple T kernel and nonzero copies of Lt quotient; head/factor data alone are insufficient.",
+      "First-variable ordinary Ext sequence gives all-target surjective degree-one Yoneda products for n>=h, not an asserted injective map.",
+      "Existing positive ordinary Yoneda nilpotence m(M+1) uses actual nonzero subproducts, not graph cycles.",
+      "Ordinary pd bound h+m(M+1)-1, including h=0,M=0; an infinite T pd forces a supported ordinary diagonal.",
+      "Finite-pd subkernel repair uses actual quotient and all exact sequences; no splitting or differential image pruning.",
+      "Finite LEFT pd J^2 gives ACTUAL Ae_t/J^2e_t and whole-algebra bound r+N(M+1); RIGHT direct, no opposite transfer.",
+      "Only infinite-label J2e_t finite pd suffices after ACTUAL finite-factor preimage repair; all-label version gives ordinary Yoneda generation in degrees<=max(1,r+1).",
+      "Connected26 has nonprojective pd1 image envelopes, pd2 f simples, NONSPLIT q0 syzygy and actual period two.",
+      "Frozen N7 J^2P_v is infinite LEFT Lv with no diagonal tail; finite-pd radical repair is not automatic.",
+      "All-p14p family is written from literal kernels, not executed large tables.",
+      "Same author/shared frozen helpers, NOT independently verified; Universal Gap A remains OPEN."
+    ],
+    "domain": "Actual ordinary short exact sequences, minimal resolutions, finite-pd repair, Yoneda products and supported Tor",
+    "precision": {
+      "mode": "exact",
+      "working_digits": null,
+      "target_tolerance": ""
+    }
+  },
+  "implementation_discovery": {
+    "mathematica": {
+      "candidate_implementations": [
+        "Exact sparse matrix-rank computation in a local Windows Wolfram kernel"
+      ],
+      "existence_evidence": "General CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session 2026-10-03 backend inventory: no local Mathematica executable or local Windows Wolfram MCP. No new availability claim based on the remote connector."
+    },
+    "sagemath": {
+      "candidate_implementations": [
+        "Exact rational matrix rank in SageMath"
+      ],
+      "existence_evidence": "Exact-algebra CAS route considered; no specialised implementation selected.",
+      "local_availability": "unavailable",
+      "availability_evidence": "Reused same-session backend inventory: native Sage unavailable. No remote or additional paid backend was used."
+    },
+    "python": {
+      "candidate_implementations": [
+        "Exact Fraction actual minimal covers and integral basis certificates with literal finite corner multiplication"
+      ],
+      "existence_evidence": "verify_directed_ext.py builds the actual E13 tensor C5 and checks sided terminating F covers through three actual corners.",
+      "local_availability": "available",
+      "availability_evidence": "Successful local exact execution under 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]."
+    }
+  },
+  "decision": {
+    "selected_backend": "python",
+    "backend_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "selection_reason": "Exact ordinary maps test finite-pd envelopes and a nonsplit syzygy; general all-target generation/nilpotence proof is separate.",
+    "fallback_reason": "Reused same-session inventory: Mathematica and native Sage unavailable; no remote or paid backend."
+  },
+  "execution": {
+    "status": "complete",
+    "interface": "Local Python through math-science-computation observer_run.py",
+    "command_or_input": "python -B verify_finite_envelope.py --project-root PROJECT_ROOT --out finite-envelope-result.json",
+    "code_artifact": "verify_finite_envelope.py"
+  },
+  "artifacts": [
+    {
+      "role": "code",
+      "path": "verify_finite_envelope.py",
+      "sha256": "1d16624497491eb617424919452bf8712d6038e8998c9cade07961cc422ca2be"
+    },
+    {
+      "role": "result",
+      "path": "finite-envelope-result.json",
+      "sha256": "52c788160985dd82eef557df663ee804b276757edb0cd8f7f7cf9aa23c89caf0"
+    },
+    {
+      "role": "failed-execution",
+      "path": "initial-action-shape-failure.txt",
+      "sha256": "76ada19912a517536c15aa712aa37160477d292526be6a2d1195c4d8fbb48fa2"
+    }
+  ],
+  "result": {
+    "status": "complete",
+    "result_artifact": "finite-envelope-result.json",
+    "summary": "Passed18135 associativity triples,27 actual covers,558 integral inverses,10 kernel isomorphisms. Connected26 nonsplit first syzygy/pd1 envelopes and actual finite nonzero J2 calibration. General bound/class closure and all-p family are separate complete written proofs."
+  },
+  "verification": {
+    "methods": [
+      "Full literal associativity for connected26, hereditary3-chain and frozen N7",
+      "Actual H0,H1 covers and terminating pd1 kernels; actual f pd2 resolutions",
+      "Nonsplit q0 first syzygy with head only q1 and nonzero finite-kernel radical action",
+      "Actual Omega D=Lq0 and other kernels prove ordinary all-degree period two",
+      "Actual nonzero J2 projective cover in hereditary3-chain",
+      "Literal J2P_v equals frozen infinite LEFT Lv; no finite-prefix infinity inference",
+      "Complete ordinary Ext connecting-product generation and existing Yoneda nilpotence argument",
+      "Actual quotient finite-pd inequality and direct right-module proof",
+      "Eleven frozen helper/source hashes and computation-record/artifact validation"
+    ],
+    "evidence_level": "bounded-check",
+    "residual_or_error": "Exact integral certificates, no numerical residual.",
+    "limitations": [
+      "Same author/frozen helpers, NOT independently verified.",
+      "All-target high Yoneda surjectivity is a separate written proof, not numerical all-degree calculation.",
+      "Infinity comes from actual recursive kernels and frozen N7 proof, not sampled Betti prefixes.",
+      "All-p14p family is a literal written proof; no large tables executed.",
+      "Semisimple T kernel/actual finite-pd subkernel repair and EVERY T label envelope are load-bearing.",
+      "No automatic envelope/finite-pd J2 theorem under badness; full Universal Gap A OPEN.",
+      "No singular/Tate, graph support or opposite-infinite-plus shortcut.",
+      "Initial action check iterated one dimension too deeply: TypeError. Flattening corrected, full rerun passed, failure preserved.",
+      "Backend inventory reused; no remote/paid backend or novelty claim.",
+      "Schema/hash validation is software integrity, not independent mathematical semantics."
+    ]
+  }
+}

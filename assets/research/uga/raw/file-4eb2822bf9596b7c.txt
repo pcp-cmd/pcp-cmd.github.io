@@ -1,0 +1,626 @@
+# Universal Gap A — Universal Two-Sided Finite-Head Collision
+## Removal of the eventual-periodicity hypothesis
+
+**Date:** 2026-10-02  
+**Status:** PROJECT-DERIVED THEOREM / READY FOR INDEPENDENT VERIFICATION  
+**Scope:** elementary finite-dimensional algebras; no eventual periodicity assumed.
+
+---
+
+# 0. Main result
+
+Let \(A=kQ/I\) be an elementary finite-dimensional algebra which is **not** of infinite \(+\) global dimension.
+
+Fix a vertex \(x\) whose local corner
+
+\[
+\Gamma_x:=e_xAe_x
+\]
+
+is nontrivial:
+
+\[
+\Gamma_x\neq k.
+\]
+
+Then there exist vertices \(y,z\neq x\) such that
+
+\[
+e_zAe_x\neq0,\qquad e_xAe_y\neq0
+\]
+
+and
+
+\[
+\boxed{
+\operatorname{Tor}^{\Gamma_x}_m
+\bigl(e_zAe_x,\ e_xAe_y\bigr)\neq0
+\quad\text{for infinitely many }m.
+}
+\]
+
+Consequently
+
+\[
+\boxed{
+\operatorname{Tor}^{\Gamma_x}_m(Ae_x,e_xA)\neq0
+\quad\text{for infinitely many }m.
+}
+\]
+
+Thus every nontrivial local corner of a hypothetical Gap-A failure is
+**infinitely non-stratifying**.
+
+No eventual bimodule periodicity is used.
+
+---
+
+# 1. Literature inputs
+
+We use only the following external facts.
+
+## 1.1 CLMS definition of infinite \(+\)
+
+Cibils–Lanzilotta–Marcos–Solotar define \(A\) to have infinite \(+\) global dimension when there exist vertices \((x,y)\) such that
+
+\[
+yAx\neq0
+\]
+
+and
+
+\[
+\operatorname{Tor}^{A}_*(k_x,{}_yk)
+\]
+
+is nonzero in infinitely many degrees.
+
+They prove that this is equivalent to infinite \(\tau\)-Hochschild homology.
+
+## 1.2 Chain-space / syzygy criterion
+
+For an elementary algebra, write \(C\) for the Cartan matrix and \(C^{(n)}\) for the Ext matrix. The \(n\)-th minimal Hochschild chain-space dimension is
+
+\[
+b_n(A)=\operatorname{tr}\!\bigl(C^{(n)}C\bigr).
+\]
+
+Armenta's Theorem 3.1 gives
+
+\[
+A\text{ infinite }+
+\iff
+b_n(A)\neq0\text{ for infinitely many }n.
+\]
+
+## 1.3 One-way law
+
+If \(A\) is not infinite \(+\), there is \(N\) such that for every vertex \(x\) and every \(n\ge N\),
+
+\[
+T_n(x)\subseteq Z(x),
+\]
+
+where
+
+\[
+T_n(x)=\operatorname{supp}\operatorname{top}\Omega_A^n(S_x),
+\qquad
+Z(x)=\{y:e_xAe_y=0\}.
+\]
+
+Equivalently, for every \(n\ge N\),
+
+\[
+e_xP_n(S_x)=0.
+\]
+
+---
+
+# 2. Opposite-invariance of infinite \(+\)
+
+This is proved directly from the chain-space formula, without using Armenta Proposition 4.7.
+
+For the opposite algebra:
+
+\[
+C(A^{op})=C(A)^{\mathsf T}.
+\]
+
+Duality between finite-dimensional left and right modules gives
+
+\[
+C^{(n)}(A^{op})
+=
+C^{(n)}(A)^{\mathsf T}.
+\]
+
+Therefore
+
+\[
+\begin{aligned}
+b_n(A^{op})
+&=
+\operatorname{tr}
+\left(
+C^{(n)}(A)^{\mathsf T}
+C(A)^{\mathsf T}
+\right)\\
+&=
+\operatorname{tr}
+\left(
+(C(A)C^{(n)}(A))^{\mathsf T}
+\right)\\
+&=
+\operatorname{tr}
+\left(
+C(A)C^{(n)}(A)
+\right)\\
+&=
+\operatorname{tr}
+\left(
+C^{(n)}(A)C(A)
+\right)\\
+&=
+b_n(A).
+\end{aligned}
+\]
+
+Hence
+
+\[
+\boxed{
+A\text{ infinite }+
+\iff
+A^{op}\text{ infinite }+.
+}
+\]
+
+In particular,
+
+\[
+A\text{ not infinite }+
+\Longrightarrow
+A^{op}\text{ not infinite }+.
+\]
+
+This permits the one-way law to be applied independently to the left and right simple resolutions at the same vertex.
+
+### Source discrepancy
+
+Armenta v1 Proposition 4.7 instead states
+
+\[
+A\text{ infinite co}+
+\iff
+A^{op}\text{ infinite }+.
+\]
+
+Its displayed Tor-flip formula should be rechecked against the existential vertex indexing in CLMS Definition 5.4.
+
+The present theorem does **not** use Proposition 4.7; it uses the independent chain-space calculation above.
+
+---
+
+# 3. Left finite head at a nontrivial local corner
+
+Fix \(x\), and put
+
+\[
+\Gamma=e_xAe_x\neq k.
+\]
+
+Take the minimal left \(A\)-projective resolution
+
+\[
+\cdots\to P_2\to P_1\to P_0\to S_x\to0.
+\]
+
+Since \(A\) is not infinite \(+\), the one-way law gives some \(N_L\) such that
+
+\[
+e_xP_n=0
+\qquad(n\ge N_L).
+\]
+
+The functor
+
+\[
+e_x(-):A\text{-mod}\to\Gamma\text{-mod}
+\]
+
+is exact. Applying it to the resolution gives a finite exact sequence
+
+\[
+0\to L_{N_L-1}\to\cdots\to L_1\to L_0\to k_x\to0,
+\]
+
+where
+
+\[
+L_i:=e_xP_i.
+\]
+
+If
+
+\[
+P_i\simeq\bigoplus_y(Ae_y)^{\beta_{iy}},
+\]
+
+then
+
+\[
+L_i\simeq
+\bigoplus_y(e_xAe_y)^{\beta_{iy}}
+\]
+
+as left \(\Gamma\)-modules.
+
+Thus
+
+\[
+k_x\in
+\operatorname{thick}_{D(\Gamma)}
+\{L_0,\ldots,L_{N_L-1}\}.
+\]
+
+---
+
+# 4. Right finite head
+
+By Section 2,
+
+\[
+A^{op}\text{ is not infinite }+.
+\]
+
+Apply the one-way law to the simple at \(x\) over \(A^{op}\), equivalently to the simple right \(A\)-module \(k_x\).
+
+Let
+
+\[
+\cdots\to Q_2\to Q_1\to Q_0\to k_x\to0
+\]
+
+be its minimal right \(A\)-projective resolution.
+
+There is \(N_R\) such that
+
+\[
+Q_n e_x=0
+\qquad(n\ge N_R).
+\]
+
+Applying the exact functor
+
+\[
+(-)e_x:\text{mod-}A\to\text{mod-}\Gamma
+\]
+
+gives
+
+\[
+0\to R_{N_R-1}\to\cdots\to R_1\to R_0\to k_x\to0,
+\]
+
+where
+
+\[
+R_j:=Q_je_x.
+\]
+
+If
+
+\[
+Q_j\simeq\bigoplus_z(e_zA)^{\gamma_{jz}},
+\]
+
+then
+
+\[
+R_j\simeq
+\bigoplus_z(e_zAe_x)^{\gamma_{jz}}
+\]
+
+as right \(\Gamma\)-modules.
+
+Hence
+
+\[
+k_x\in
+\operatorname{thick}_{D(\Gamma^{op})}
+\{R_0,\ldots,R_{N_R-1}\}.
+\]
+
+---
+
+# 5. Local simple has unbounded self-Tor
+
+Because \(e_x\) is primitive, \(\Gamma\) is a finite-dimensional local algebra.
+
+Since
+
+\[
+\Gamma\neq k,
+\]
+
+its unique simple \(k_x\) has infinite projective dimension.
+
+Indeed, if the minimal free resolution of \(k_x\) terminated,
+
+\[
+0\to\Gamma^{b_d}\to\cdots\to\Gamma^{b_0}\to k_x\to0,
+\]
+
+the Euler dimension identity would give
+
+\[
+1
+=
+\left(\sum_i(-1)^ib_i\right)\dim_k\Gamma,
+\]
+
+forcing
+
+\[
+\dim_k\Gamma=1,
+\]
+
+contrary to \(\Gamma\neq k\).
+
+Minimality therefore gives a nonzero free term in every degree, and tensoring with the right simple kills all minimal differentials. Consequently
+
+\[
+\boxed{
+\operatorname{Tor}^{\Gamma}_m(k_x,k_x)\neq0
+\qquad\forall m\ge0.
+}
+\]
+
+Thus
+
+\[
+k_x\otimes_\Gamma^{\mathbf L}k_x
+\]
+
+is unbounded.
+
+---
+
+# 6. Finite-head collision
+
+Assume for contradiction that every pair of head terms has bounded derived tensor:
+
+\[
+R_j\otimes_\Gamma^{\mathbf L}L_i
+\in D^b(k)
+\]
+
+for every
+
+\[
+0\le i<N_L,\qquad0\le j<N_R.
+\]
+
+Since \(k_x\) is obtained from the finite family \(\{L_i\}\) by finitely many cones, for each fixed \(R_j\),
+
+\[
+R_j\otimes_\Gamma^{\mathbf L}k_x
+\]
+
+is bounded.
+
+Since \(k_x\) is also obtained from the finite family \(\{R_j\}\) by finitely many cones, it follows that
+
+\[
+k_x\otimes_\Gamma^{\mathbf L}k_x
+\]
+
+is bounded.
+
+This contradicts Section 5.
+
+Therefore there are \(i,j\) for which
+
+\[
+R_j\otimes_\Gamma^{\mathbf L}L_i
+\]
+
+has unbounded homology.
+
+Using the finite direct-sum decompositions in Sections 3–4, some fixed primitive summands satisfy
+
+\[
+\boxed{
+\operatorname{Tor}^{\Gamma}_m
+(e_zAe_x,e_xAe_y)
+\neq0
+}
+\]
+
+for infinitely many \(m\).
+
+The cases \(y=x\) or \(z=x\) cannot give unbounded Tor because
+
+\[
+e_xAe_x=\Gamma
+\]
+
+is projective over itself. Hence
+
+\[
+y,z\neq x.
+\]
+
+This proves the theorem.
+
+---
+
+# 7. Consequences
+
+## 7.1 Infinite local projective dimensions
+
+The fixed pair satisfies
+
+\[
+\operatorname{pd}_{\Gamma}(e_xAe_y)=\infty
+\]
+
+and
+
+\[
+\operatorname{pd}_{\Gamma^{op}}(e_zAe_x)=\infty.
+\]
+
+Otherwise Tor would vanish above the finite projective dimension.
+
+## 7.2 Infinite non-stratification
+
+Since
+
+\[
+Ae_x=\bigoplus_z e_zAe_x,
+\qquad
+e_xA=\bigoplus_y e_xAe_y,
+\]
+
+we obtain
+
+\[
+\boxed{
+\operatorname{Tor}^{e_xAe_x}_m
+(Ae_x,e_xA)\neq0
+\quad\text{i.o.}
+}
+\]
+
+for every vertex \(x\) of a non-\(+\) algebra with
+
+\[
+e_xAe_x\neq k.
+\]
+
+Thus the vertex ideal \(Ae_xA\) is not merely non-stratifying: its derived multiplication defect has unbounded homology.
+
+---
+
+# 8. What this does and does not solve
+
+This theorem is genuinely universal-scope:
+
+- no bound on the number of vertices;
+- no eventual periodicity;
+- no Gorenstein hypothesis;
+- no finite-generation hypothesis;
+- no graph-cycle-to-homology inference.
+
+It says that a hypothetical Gap-A failure has only two structural possibilities at each relevant vertex:
+
+### Local-trivial branch
+
+\[
+e_xAe_x=k.
+\]
+
+### Local-singular branch
+
+\[
+e_xAe_x\neq k
+\]
+
+and then a fixed two-sided mixed linker
+
+\[
+e_zAe_x
+\otimes_{e_xAe_x}^{\mathbf L}
+e_xAe_y
+\]
+
+has nonzero homology in infinitely many degrees.
+
+This does **not** yet prove Gap A.
+
+The remaining local-singular problem is a genuine derived-necklace/no-hiding problem:
+
+\[
+\text{unbounded mixed linker}
+\Longrightarrow ?
+\text{ordinary Peirce-visible simple return}.
+\]
+
+The remaining local-trivial problem is essentially a tiling/support-return problem.
+
+---
+
+# 9. Route fingerprint
+
+**PROOF_OBJECT:** finite left/right heads obtained by applying \(e_x(-)\) and \((- )e_x\) to minimal simple resolutions.
+
+**MECHANISM_FAMILY:** two-sided local-corner collision via derived tensor.
+
+**QUANTIFIER_STRATEGY:** fixed vertex \(x\), finite head on both sides, then finite direct-sum extraction of fixed \(y,z\).
+
+**ROOT_OBSTRUCTION:** ordinary high syzygies avoid \(x\), while the nontrivial local simple \(k_x\) has infinite self-Tor.
+
+**OLD_ROUTE_DELTA:** removes the old eventual-bimodule-periodicity assumption completely.
+
+**NEW_MONOTONE_OR_RIGIDITY:** finite cone generation of \(k_x\) from both heads plus unbounded local self-Tor.
+
+**CANNOT_IMPLY:** unbounded mixed-link Tor does not by itself imply an ambient simple-simple persistent Tor/Ext pair; Auslander-type screening is a calibration against that inference.
+
+**DUPLICATE_CHECK:** this is the old finite-head collision mechanism with a materially stronger hypothesis set: arbitrary finite-dimensional non-\(+\) algebra rather than the eventual-periodic hard branch.
+
+---
+
+# 10. Independent verification checklist
+
+1. Verify directly that
+   \[
+   b_n(A^{op})=b_n(A)
+   \]
+   with the matrix conventions of CLMS/Armenta.
+
+2. Reconcile this with Armenta v1 Proposition 4.7 before citing the opposite result publicly.
+
+3. Verify that the one-way law gives
+   \[
+   e_xP_n(S_x)=0
+   \]
+   eventually, not merely diagonal syzygy vanishing.
+
+4. Check exactness and orientations of both finite-head sequences.
+
+5. Check the finite-cone argument in the unbounded derived category.
+
+6. Check that an unbounded finite direct sum forces an unbounded primitive summand pair.
+
+7. Do not infer an ambient ordinary witness from the mixed linker without a new comparison theorem.
+
+---
+
+# 11. Current frontier
+
+\[
+\boxed{
+\text{Universal Gap A remains open.}
+}
+\]
+
+But any hypothetical failure now satisfies the following universal normal form:
+
+\[
+\boxed{
+e_xAe_x=k
+\quad\text{or}\quad
+\exists y,z\neq x:
+\operatorname{Tor}^{e_xAe_x}_m
+(e_zAe_x,e_xAe_y)\neq0\text{ i.o.}
+}
+\]
+
+at every vertex \(x\).
+
+The next target is to close one of:
+
+1. **Derived Necklace Closure** for the local-singular branch;
+2. **Local-Trivial Tiling Closure** for the branch \(e_xAe_x=k\).

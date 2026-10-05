@@ -1,0 +1,467 @@
+# Run — Periodic weighted components force ordinary supported Tor
+
+**Date:** 2026-10-03  
+**Researcher:** one main Codex researcher  
+**Evidence:** complete proof and normal adversarial self-audit, with an
+exact bounded actual calibration; not independently verified  
+**Global status:** Universal Gap A remains OPEN. No novelty claim is made.
+
+This continuation starts at T9. It does not replace the primitive-seed
+correction, binary-indecomposable frontier or ordinary dimension descent.
+
+C066 already computes actual ordinary Tor when every negative degree is
+odd and every actual negative layer is projective on the same side.
+The useful extension is residue concentration on a weighted strongly
+connected component. This allows both negative parities, binary negative
+products, unbounded degrees and arbitrary higher operations. It gives
+actual ordinary supported returns, rather than another necessary invariant.
+
+The extension has a sharp logical boundary: the old actual five-dimensional
+Auslander calibration has projective layers and a cyclic aperiodic graph,
+but finite global dimension. It prevents treating weighted recurrence
+alone as homological recurrence even for actual projective columns.
+
+## 1. Setting and ordinary comparison
+
+Let A be elementary finite-dimensional over k. Delete an idempotent E
+which is a sum of labelled primitive vertices; a single primitive vertex
+is included. Set f=1-E, C=A/AEA, and use a strictly unital augmented
+minimal retained model
+
+\[
+H=C\oplus\bigoplus_{d\ge1}M_d[d],\qquad M_d=H^{-d}(q).
+\tag{1.1}
+\]
+
+Each cohomological degree is finite-dimensional. No bound on d is imposed.
+The projection p:H -> C is strict: binary pure-C products are those of C,
+while a higher product or any product with a negative input has negative
+output degree. Test modules Ce_j are pulled back through p with their
+ordinary C action and no higher module actions.
+
+The ordinary derived-localisation comparison used in C065--C066 gives
+
+\[
+R_z\otimes_A^{\mathbf L}Ce_j
+\simeq R_z\otimes_H^{\mathbf L}Ce_j.
+\tag{1.2}
+\]
+
+These are retained ordinary A modules. The comparison is with the derived
+quotient, not an assertion that A -> C is a homological epimorphism.
+For the block version, the same localisation inverts 1-E; it does not
+require E to be primitive. The full strict model is
+A<h>/(hE=Eh=h), dh=E, followed by its retained corner. The conventional
+inputs are Proposition 9.2, Proposition 9.6 and Corollary 4.29 of
+[Braun--Chuang--Lazarev, Derived localisation of algebras and modules](https://arxiv.org/pdf/1505.01146).
+Over a field the left-properness hypothesis for that strict model holds.
+
+Assume every actual M_d is left C-projective. Its actual columns have
+well-defined multiplicities
+
+\[
+M_de_j\cong\bigoplus_i(Ce_i)^{K_d(i,j)}.
+\tag{1.3}
+\]
+
+There is a finite vertex set but possibly infinitely many weighted edges.
+Put an edge j -> i of weight d+1 whenever K_d(i,j)>0. Multiplicity affects
+word counts but not the period defined below.
+
+## 2. A weighted component has a single endpoint residue
+
+Let V be a cyclic strongly connected component of the actual graph.
+Define its period
+
+\[
+g_V=\gcd\{\,w(\gamma):\gamma\text{ is a nonempty directed
+closed walk in }V\,\}.
+\tag{2.1}
+\]
+
+Every edge weight is a positive integer at least two; the displayed gcd
+is a positive integer even if the set of edge weights is infinite.
+It is the gcd of **closed-walk totals**, not the gcd of individual edges,
+and not the weight of one selected cycle.
+
+### Lemma 2.1 — Endpoint residue
+
+For j,z in V, all directed paths j -> z have the same weight modulo g_V.
+There are potentials phi_i in Z/g_V with
+
+\[
+w(j\longrightarrow z)\equiv\phi_z-\phi_j\pmod {g_V}.
+\tag{2.2}
+\]
+
+The empty path has weight zero. A path between vertices of V cannot leave
+V and return.
+
+#### Proof
+
+Choose a base vertex v and a path v -> i for every i. Any two paths
+v -> i become closed walks after appending the same path i -> v.
+The difference of their weights is therefore divisible by g_V, which
+makes phi_i well-defined. Comparing a path v -> j followed by any path
+j -> z with the chosen path v -> z gives (2.2).
+
+If a path j -> z passes through h, then j reaches h and h reaches z.
+Because z reaches j inside V, h and j are mutually reachable, so h lies
+in V. This proves the last assertion. QED.
+
+## 3. The actual ordinary Tor formula
+
+### Theorem 3.1 — Periodic component bridge
+
+Under the actual left-projectivity hypothesis (1.3), suppose g_V>=2.
+For all z,j in V,
+
+\[
+\boxed{
+\left(\sum_{n\ge0}\dim\operatorname{Tor}^A_n(R_z,Ce_j)t^n\right)_{z,j\in V}
+=
+\left(I-\sum_{d\ge1}t^{d+1}K_d|_V\right)^{-1}.
+}
+\tag{3.1}
+\]
+
+The inverse means the coefficientwise sum of matrix powers. No rationality,
+finite homogeneous generation, finite bimodule pd, formality, negative-degree
+ceiling or higher-operation arity bound is asserted or required.
+
+#### Proof
+
+Use the existing negative-weight filtration on the reduced two-sided
+H-bar with endpoints R_z and Ce_j. A C radical letter has weight zero
+and contributes one to total homological degree. A letter of M_d has
+weight d and contributes d+1. Binary bar operations preserve negative
+weight, while an operation m_r, r>=3, increases it by r-2.
+
+For a fixed weight, first compute the binary differential b_2. Here
+negative-negative products need not vanish. Introduce the auxiliary
+increasing filtration by the number p of negative letters **only on
+this binary complex**. Products/actions with C preserve p;
+negative-negative products decrease p by one. The associated C-block
+multibar for a sequence d_1,...,d_p computes
+
+\[
+R_z\otimes_C^{\mathbf L}M_{d_1}
+\otimes_C^{\mathbf L}\cdots
+\otimes_C^{\mathbf L}M_{d_p}
+\otimes_C^{\mathbf L}Ce_j,
+\tag{3.2}
+\]
+
+shifted by sum(d_i+1). For p=0 it is R_z e_j in degree zero.
+
+Every tensor step on the right has an actual left-projective factor.
+More explicitly, the final Ce_j is projective; if X is a finite sum
+of Ce_i, then M_d tensor_C X is a sum of actual projective columns
+M_de_i. Induction shows the derived tensor word to the right of R_z
+is its ordinary tensor, is left-projective, and has no higher homology
+after applying R_z tensor_C -. Its dimension is
+
+\[
+(K_{d_1}\cdots K_{d_p})_{zj}.
+\tag{3.3}
+\]
+
+Thus every nonzero associated homology term with endpoints z,j in V
+comes from an actual weighted path j -> z. Lemma 2.1 shows that its
+total degree n satisfies
+
+\[
+n\equiv\phi_z-\phi_j\pmod {g_V}.
+\tag{3.4}
+\]
+
+All differentials in the auxiliary spectral sequence lower total degree
+by one and preserve endpoints. Since g_V>=2, both source and target
+cannot lie in the sole residue (3.4). Every such differential is zero.
+The binary homology therefore has precisely the weighted-word dimensions
+(3.3), despite possibly nonzero binary negative products.
+
+Now return to the negative-weight spectral sequence for the **full**
+A_infinity bar. Its binary first page remains concentrated in (3.4).
+Every later differential again lowers total degree by one and preserves
+endpoints, so it is zero. This includes the effect of pure-C higher
+operations and mixed higher operations.
+
+There is no convergence extrapolation: at total degree n, each bar
+letter contributes at least one, each negative letter at least two,
+and every d is at most n-1. Length, weight and the auxiliary count
+are bounded in that degree, and all participating spaces are finite.
+Both filtrations converge degreewise to actual homology. Higher-page
+vanishing preserves dimensions, without claiming a canonical splitting
+of the filtered vector space.
+
+Finally, all paths between vertices of V remain in V. Sum (3.3) over
+all finite negative-letter sequences and use (1.2). This gives (3.1).
+QED.
+
+Only the projective-column test complexes in the theorem collapse.
+No collapse of the quotient-simple screening sequence, ordinary algebra
+section, general screening-page bound or local-singular excursion bound
+has been proved.
+
+### Corollary 3.2 — Ordinary supported return and branch exclusion
+
+If such a periodic cyclic component exists, A is infinite +.
+This conclusion does not require C to be infinite + or the deleted
+simple to have infinite pd.
+
+#### Proof
+
+Choose a nonempty closed walk at j in V, selecting an actual degree
+for each of its edges, and let L be its total weight. Repeating it gives
+a positive diagonal coefficient of (3.1) in each degree rL, r>=1.
+Therefore
+
+\[
+\operatorname{Tor}^A_{rL}(R_j,Ce_j)\ne0.
+\tag{3.5}
+\]
+
+Apply the ordinary finite-length inequality
+
+\[
+\dim\operatorname{Tor}^A_n(R_j,Ce_j)
+\le\sum_y [Ce_j:L_y]\,
+\dim\operatorname{Tor}^A_n(R_j,L_y).
+\tag{3.6}
+\]
+
+If every simple factor on the right had eventually zero Tor, the left
+side would too. Finitely many factors therefore give one fixed y
+returning infinitely often. Since C is elementary,
+[Ce_j:L_y]=dim e_yCe_j. Its positive multiplicity gives
+e_yCe_j!=0, hence e_yAe_j!=0. The resulting ordinary pair (R_j,L_y)
+has exactly the required reverse Peirce support. QED.
+
+The selected simple pair need not be diagonal. The passage from a graph
+cycle to (3.5) uses the proved actual spectral-sequence formula, not
+support recurrence alone.
+
+### Direct right-projective version
+
+If every actual M_d is instead right C-projective, decompose
+
+\[
+e_iM_d\cong\bigoplus_j(e_jC)^{B_d(i,j)}.
+\]
+
+Use edges i -> j of weight d+1, and a cyclic component with the same
+closed-walk gcd condition. Compute e_iC tensor_H^L L_y directly:
+every actual tensor word on the left is right-projective, its
+degree-zero homology has dimension (B_{d_1}...B_{d_p})_{iy}, and the
+same two filtrations concentrate it in one endpoint residue.
+The component series is (I-sum_d t^{d+1}B_d|_V)^(-1).
+
+A repeated closed walk at i gives Tor^A_{rL}(e_iC,L_i)!=0. Its right
+composition factors select one fixed R_z with e_iCe_z!=0 and persistent
+Tor^A_n(R_z,L_i). This is reverse-supported in A. This proof uses the
+right-module bar itself and no opposite-side infinite-+ transfer.
+
+### Relation to the previous closure classes
+
+If every negative degree is odd, every edge weight is even, so each
+cyclic component has g_V>=2. C066 is recovered on such components.
+For one negative layer M[a], all weights equal a+1; its cyclic
+components likewise have period at least a+1. The cyclic part of C065
+is included. The present theorem additionally closes actual mixed-parity
+periodic components, including cases where the individual edge weights
+have gcd one.
+
+## 4. An actual mixed-parity calibration
+
+This calibration is a **nonprimitive block deletion** of an ordinary
+finite algebra. It does not claim a primitive deletion realizes this
+particular two-layer example.
+
+Let A be the radical-square-zero algebra of the oriented cycle
+
+\[
+1\xrightarrow{p}x\xrightarrow{c}0\xrightarrow{q}a
+\xrightarrow{\gamma}b\xrightarrow{\delta}1.
+\tag{4.1}
+\]
+
+There are five primitive idempotents and these five arrows; every
+radical product is zero, so dim_k A=10. Delete
+E=e_x+e_a+e_b. Then C=k e_0 times k e_1.
+The deleted corner Gamma=EAE is the disjoint union of x and the
+hereditary line a -> b.
+
+In algebraic product order, U=fAE has boundary arrows c,delta and
+V=EAf has boundary arrows p,q. The normalized retained Gamma bar
+has exactly the passages
+
+\[
+u=c h_x p\in e_0M_1e_1,\qquad
+v=\delta h_b\gamma h_a q\in e_1M_2e_0.
+\tag{4.2}
+\]
+
+There are no others: no internal arrow is possible at x; at a,b only
+the single gamma exists and cannot be repeated. Every normalized
+passage differential is zero, since it multiplies radical arrows.
+Every join VU is zero as well. Thus the retained homology has only
+M_1=ku and M_2=kv, with all negative binary products zero.
+
+There are no nonunit C letters, since C equals its vertex algebra.
+Degree and composability forbid all higher negative outputs: u,u is
+not composable; every other binary negative product is too negative;
+an r>=3 product has degree at most 2-2r<-2. Hence this actual minimal
+model is formal square-zero and every layer is projective on both sides.
+
+Its two actual edges have weights two and three. The gcd of the
+individual weights is one, but every nonempty closed walk has weight
+5r, so g_V=5. The theorem gives
+
+\[
+T(t)=\frac{1}{1-t^5}
+\begin{pmatrix}1&t^2\\t^3&1\end{pmatrix},
+\tag{4.3}
+\]
+
+with rows R_0,R_1 and columns Ce_0=L_0,Ce_1=L_1.
+
+There is also a separate all-degree ambient proof. The ordinary
+simple-pair normalized bar has zero differential because J(A)^2=0;
+its basis is the directed paths of length n in the five-cycle.
+Exactly one such path starts at each vertex. Among retained endpoints,
+the diagonal paths have lengths 0 mod 5, paths 1 -> 0 have lengths
+2 mod 5, and paths 0 -> 1 have lengths 3 mod 5. These are precisely
+(4.3), over every field. Each simple has a periodic minimal resolution
+following that cycle, with period five. A is infinite +, not a Gap-A
+counterexample or an unbounded-screening realization.
+
+## 5. Aperiodic actual cycles do not force ordinary return
+
+Reuse the actual A5 proof in
+Run-Target-B-Primitive-Seed-Correction-2026-10-03.md, Section 2.
+No unchanged computation is rerun.
+
+It has basis e_1,e_2,a,b,t, sole nonzero radical product ab=t,
+and gldim A5=2. Deleting e_2 has retained C=k and actual formal model
+
+\[
+H=k\langle u\rangle,\qquad |u|=-1.
+\tag{5.1}
+\]
+
+Every M_d=k u^d is an actual projective C-bimodule. The single vertex
+has actual loop edges of **all** weights d+1>=2. Its closed-walk gcd
+is one. Nonetheless
+
+\[
+\sum_n\dim\operatorname{Tor}^{A5}_n(R_1,L_1)t^n=1+t^2.
+\tag{5.2}
+\]
+
+The old actual simple resolution P_1 <- P_2 <- P_1 proves (5.2).
+Independently, the dg H-module F=H plus H eta, |eta|=-2,
+d eta=u, is a semifree resolution of k: multiplication by u is
+injective with cokernel k. Tensor with k leaves generators only in
+degrees zero and two.
+
+Without the period hypothesis, the naive weighted-word expression would
+instead be
+
+\[
+\left(1-\sum_{d\ge1}t^{d+1}\right)^{-1}
+=\frac{1-t}{1-t-t^2},
+\tag{5.3}
+\]
+
+an infinite series. Binary multiplication u^a u^b=u^{a+b} supplies the
+missing cancellations. This falsifies the unrestricted many-layer
+formula even when the layers are projective on both sides, perfect as
+bimodules, and the actual quotient is formal. It does not falsify C065
+or C066, and it is neither an infinite-pd anchor nor a counterexample.
+
+## 6. Exact computation and evidence boundary
+
+Periodic-Columns-Evidence/ contains the task, literal calibration code,
+result and computation record. The local exact Python execution passed:
+
+- 1000 ambient associativity triples and 25 radical-square products;
+- 350 ambient complex degrees, recording 325 ordinary simple-pair Tor
+  dimensions through degree 12 with incoming degree 13;
+- the six displayed normalized passage degrees and all four boundary
+  joins;
+- 52 retained model records and 56 ambient/model matches including
+  incoming degree 13.
+
+The differentials in this particular ambient and retained calibration
+are literally zero; this is not a floating-point rank extrapolation.
+The all-degree theorem is the filtration proof in Section 3, and the
+all-degree/all-characteristic calibration is the finite path argument
+in Section 4. The computation-record validator passed. The code and proof have the same author. Hashes and
+computation-record schema validation do not independently verify either.
+
+## 7. Normal adversarial audit
+
+1. **Actual module:** (1.3) uses actual projective negative homology,
+   not a projective term in its resolution. C068's counterexample
+   remains valid and the Long01 reverse implication is unchanged.
+2. **One stated side:** every negative layer must be projective on the
+   same chosen side. Alternating projective sides is not the hypothesis.
+3. **All weighted closed walks:** a single closed walk of length L>=2
+   is insufficient. Additional weighted walks can make the gcd one.
+   Nor may one use gcd of individual edge weights: (4.1) has weights
+   two and three but closed-walk period five.
+4. **Component scope:** the formula is asserted for both endpoints
+   inside the qualifying SCC, not for all retained pairs. The proof
+   that a weighted path cannot leave and re-enter is necessary.
+5. **Binary products:** they are allowed. The negative-letter count
+   is applied only to b_2; it is not asserted to filter the full
+   A_infinity differential. The full argument returns to negative weight.
+6. **Residue mechanism:** degree-minus-one differentials vanish only
+   after the actual C-block homology is proved to have one residue.
+   A naked support graph or arbitrary degree labels do not supply it.
+7. **Convergence:** both filtrations are finite in each actual total
+   degree. No uniform negative ceiling is silently introduced.
+8. **Ordinary survival:** the test modules are ordinary inflated C
+   projectives; (1.2) and actual bar convergence produce ordinary
+   A-Tor. No singular, stable or Tate comparison is substituted.
+9. **Visibility:** (3.6) gives a fixed simple pair with e_yAe_j!=0.
+   It need not be diagonal or any preselected persistent pair.
+10. **Calibration scope:** Section 4 deletes a three-vertex block;
+    it is not relabelled as a primitive deletion or a general realization
+    theorem. It is already infinite +.
+11. **Aperiodic obstruction:** actual projectivity, perfectness and
+    formality do not repair the formula at g=1, by the reused A5 certificate.
+12. **Global scope:** this excludes a stated periodic class in any
+    global branch. It does not prove projectivity or such a component
+    for the remaining Target-B residue, or bound acyclic unbounded weights.
+
+The proof passes these normal self-audit gates. No independent verifier
+or external acceptance is claimed.
+
+## 8. Route choice and the remaining global question
+
+The existing N-Vertex-Main-Route.md already shows that associative finite
+generation of the actual Yoneda algebra would close the global problem,
+but its required generation statement remains open. The reused Saorin
+seven-dimensional example has zero positive simple self-Ext, persistent
+supported off-diagonal Ext and an infinitely generated square-zero
+positive Yoneda ideal. Requiring a diagonal witness would lose it.
+
+The conventional A_infinity generation result reviewed here supplies
+generation from degrees zero and one by higher operations, rather than
+associative finite generation. Its constructive proof uses a finite
+composition series in the first middle module; it does not prohibit
+unbounded iterated operation trees. This review yields no new closure
+claim. See [Jasso, On a theorem of Keller on Yoneda algebras of simple modules](https://arxiv.org/pdf/2402.14004)
+and [Saorin, On the vanishing of self extensions over Artin algebras](https://arxiv.org/pdf/math/0306043).
+
+The present checkpoint instead proves an ordinary closure mechanism.
+C065's one-layer and C066's odd-many-layer cyclic cases join the more
+general periodic-component theorem. Genuinely aperiodic actual components,
+nonprojective layers, nonperfect acyclic bounded screening and general
+unbounded-degree higher-output screening still require a new bridge,
+strict descent or terminating bound. T9's ordinary radical dimension
+descent remains a separate valid global route, whose universal
+reduction-existence step is unresolved. Target A, general local-trivial
+and supported-weight branches remain on the map.

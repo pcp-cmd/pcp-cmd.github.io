@@ -1,0 +1,3 @@
+# Targeted actual quotient-deletion calibration
+
+Extend frozen project exact-cover helpers, with m=1,2,3 and no new engine. Build the actual monomial cyclic Nakayama algebra of 5m vertices/13m dimensions and left lengths (2,2,3,3,3), repeated. Certify both periodic module cycles, both deleted-vertex simple pds equal to one, the infinite-pd mixed direct summands of Ae4A, and pd_B L0=3 for the actual ordinary quotient. Retain full exact kernels and integral unit isomorphisms. Infinity and all-field/all-m statements come from the written literal-cover proof. Normal same-author bounded self-audit only; no independent verification, formal acceptance, default checksums, or implication that this already-positive family is a UGA counterexample.

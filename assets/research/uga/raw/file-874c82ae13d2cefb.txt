@@ -1,0 +1,279 @@
+# T38 — Mixed actual head relations can expand recurrent carriers
+
+2026-10-04. Continue canonical T37. C107 four-vertex and C110 general
+cube-zero closures remain closed. This is ONE arbitrary-size mechanism,
+not vertex-count casework. Complete ordinary counterexample proof and
+normal main-researcher adversarial SELF-AUDIT; targeted exact checks
+are not independent verification. Universal Gap A remains OPEN.
+
+## 1. The ordinary obstruction is cancellation, not just an image-support error
+
+Reuse the REAL head-image sequence from C112:
+0->F->H=sum C_alpha->Y->0. Write S=T(Y), with T the ACTUAL recurrent
+ordinary minimal-projective detector labels. For q outside S, ordinary
+Tor(R_q,Y) is eventually zero. The REAL ordinary LES therefore gives
+
+\[
+\operatorname{Tor}_n(R_q,F)\overset{\sim}{\longrightarrow}
+\operatorname{Tor}_n(R_q,H)\quad(n\gg0),
+\qquad T(F)\setminus S=T(H)\setminus S.                 \tag{1.1}
+\]
+
+This is the map induced by the actual inclusion F subset JH. A radical
+inclusion killing ALL degree-zero head maps can still induce persistent
+ISOMORPHISMS on high ordinary Tor. Nilpotence of J alone does not make
+this a high-Tor ghost. No derived/singular replacement is involved.
+
+The following actual SIMPLE tail realizes arbitrary detector expansion
+in(1.1), although every original late head is recurrent and the relation
+kernel is shorter. For the specified legal lifts, NONE of the infinite
+cyclic pieces has its recurrent carrier contained in the original one.
+This is stronger than the older composition-image/cover-expansion error.
+
+## 2. A literal family of base algebras and a pd-one module
+
+Over ANY field k choose a,b>=1. Vertices are r,s,u,t_1,...,t_a,
+v_1,...,v_b. Put arrows
+
+\[
+\alpha_r:u\to r,\quad\alpha_s:u\to s,\quad
+\eta_i:u\to t_i,\quad\theta_j:u\to v_j,\quad
+c_r:r\to u,\quad c_s:s\to u
+\]
+
+and square-zero loops z_i at t_i and w_j at v_j. Add independent
+radical-square elements d_r,d_{sr},d_{rs},d_s,d_i,e_j, with ONLY
+nonzero radical products
+
+\[
+\alpha_r c_r=d_r,\quad\alpha_s c_r=d_{sr},\quad
+\eta_i c_r=d_i,\qquad
+\alpha_r c_s=d_{rs},\quad\alpha_s c_s=d_s,\quad
+\theta_j c_s=e_j.                                    \tag{2.1}
+\]
+
+All other products vanish, including all products with radical-square
+elements and every product involving a loop except its idempotent
+actions. Products land in annihilated J2, so this defines associative
+elementary B with J_B^3=0, dimension11+4(a+b). Multiplication is right
+to left. Projectives are ACTUAL left modules:
+
+\[
+\begin{aligned}
+P_u&=\langle e_u,\alpha_r,\alpha_s,\eta_i,\theta_j\rangle,\quad J^2P_u=0,\\
+P_r&=\langle e_r,c_r,d_r,d_{sr},d_i\rangle,\\
+P_s&=\langle e_s,c_s,d_{rs},d_s,e_j\rangle,\\
+P_{t_i}&=\langle e_{t_i},z_i\rangle,\quad
+P_{v_j}=\langle e_{v_j},w_j\rangle.
+\end{aligned}                                       \tag{2.2}
+\]
+
+The REAL map i:P_u->Q_0=P_r+P_s sends e_u to(c_r,c_s).
+Its images of radical basis vectors are(d_r,d_rs),(d_sr,d_s),
+(d_i,0),(0,e_j), respectively. Distinct physical coordinates show
+injectivity over EVERY k. Its image lies in JQ_0. Hence
+
+\[
+0\to P_u\overset{i}{\longrightarrow}Q_0\to Y\to0      \tag{2.3}
+\]
+
+is a genuine minimal projective resolution of the dimension-five
+module Y, with head L_r+L_s and pd_B Y=1. Y has bases e_r,d_r at r,
+e_s,d_sr at s and c_r at u, with c_s=-c_r,d_rs=-d_r,d_s=-d_sr;
+d_i=e_j=0. These relations also prove all Y actions explicitly.
+
+## 3. A REAL periodic SIMPLE tail using only three recurrent projectives
+
+Let D=k[x]/x2 and Lambda=B tensor_k D. Let X=Y tensor k_D.
+Tensor the ACTUAL two-term projective resolution(2.3) with the ACTUAL
+D-resolution ...--x-->D--x-->D->k. Over the field this ordinary total
+complex is exact and minimal. No pruned-complex exactness is assumed.
+Its degree-zero term is Q_0 tensor D; in EVERY positive degree it is
+(Q_0 tensor D)+(P_u tensor D). The repeated differential is
+
+\[
+\begin{pmatrix}x&i\\0&-x\end{pmatrix},\qquad
+\begin{pmatrix}x&i\\0&-x\end{pmatrix}^2=0,            \tag{3.1}
+\]
+
+and the first map to Q_0 tensor D is(x,i). Signs work also in
+characteristic2. All entries are radical. Let Z=Omega_Lambda X,
+inside Q_0 tensor D. Projection of the kernel of(x,i) onto its first
+Q_0 coordinate is a REAL isomorphism to Z: if xq+i(p)=0, then p lies
+in x(P_u tensor D), since i mod x is injective. Writing p=-xp'
+identifies q=xq'+i(p') and the inverse's second coordinate is -xp'.
+It is independent of the chosen expression. Thus
+
+\[
+\Omega_\Lambda Z\cong Z,\quad
+\operatorname{head}Z=L_r+L_s+L_u,\quad T(Z)=\{r,s,u\}.
+                                                               \tag{3.2}
+\]
+
+For an ACTUAL infinite SIMPLE source, take the ordinary one-point
+extension mathcal A with old corner Lambda and new vertex q whose
+left projective is ke_q+X, radical X. Concretely adjoin X as the
+(old,q) Peirce column, with its already specified Lambda actions;
+all other new radical products are zero. Associativity is exactly
+the module law. Old projectives are unchanged, so their resolutions
+remain real ordinary mathcal A resolutions. Therefore
+
+\[
+\Omega L_q=X,\quad\Omega^n L_q\cong Z\ (n\ge2),\quad
+T(L_q)=S=\{r,s,u\}.                                  \tag{3.3}
+\]
+
+Every sufficiently late head is recurrent. For every n>=2, the
+ordinary simple Betti numbers are1 at r,s,u and0 elsewhere.
+mathcal A has a+b+4 vertices, dimension28+8(a+b), J4=0 and J3!=0.
+This is a higher-radical family beyond C110, not a new size closure.
+
+## 4. Legal minimal lifts whose infinite cyclic images ALL expand
+
+Inside Z take the canonical generators E_r=xe_r,E_s=xe_s,G=i(e_u).
+Replace them by the LEGAL minimal primitive lifts
+
+\[
+h_r=E_r+\alpha_rG,\qquad h_s=E_s+\alpha_sG,\qquad G.   \tag{4.1}
+\]
+
+The additions lie in JZ, so their head classes are unchanged and
+independent. Put C_r=mathcal A h_r,C_s=mathcal A h_s,C_u=mathcal A G.
+C_u is projective P_u tensor D, because i tensor D is injective.
+
+C_r has basis h_r,xc_r,xd_r,xd_sr,xd_i,xd_rs. The last element
+is obtained from xh_r=xd_r+xd_rs; these are distinct coordinates.
+Its genuine primitive-projective cover P_r tensor D has kernel
+
+\[
+\langle xc_r,xd_r,xd_{sr},xd_i\rangle
+\cong J_B P_r\otimes k_D.                            \tag{4.2}
+\]
+
+C_s has the analogous real kernel J_B P_s tensor k_D. The actual
+B-covers in(2.2) give
+
+\[
+\Omega_B(J_BP_r)=\bigoplus_j L_{v_j},\qquad
+\Omega_B(J_BP_s)=\bigoplus_i L_{t_i},\qquad
+\Omega_B L_{v_j}=L_{v_j},\quad\Omega_B L_{t_i}=L_{t_i}.
+                                                               \tag{4.3}
+\]
+
+Tensor their actual minimal resolutions with the ordinary D-resolution.
+The resulting all-degree ordinary formulas are
+
+\[
+\begin{array}{c|cc}
+ &C_r&C_s\\\hline
+\beta_u(n),\ n\ge1&1&1\\
+\beta_{v_j}(n),\ n\ge2&n-1&0\\
+\beta_{t_i}(n),\ n\ge2&0&n-1
+\end{array}                                                     \tag{4.4}
+\]
+
+All other positive-degree detector Betti numbers of these modules
+are zero. Consequently
+
+\[
+T(C_r)=\{u,v_1,...,v_b\},\quad
+T(C_s)=\{u,t_1,...,t_a\},\quad T(C_u)=\varnothing.       \tag{4.5}
+\]
+
+BOTH infinite-pd images fail containment in S, despite all their
+heads belonging to S; neither own head r,s recurs in its own tail.
+The number of new labels is arbitrarily large while the original
+carrier stays of size3 and the algebra Loewy length stays4.
+These are ACTUAL resolution labels, not composition-support counts.
+
+## 5. The shorter actual relation kernel expands too
+
+Let F be the ENTIRE kernel of the actual sum C_r+C_s+C_u->Z, with
+H the DIRECT sum. It is contained in JH by the head isomorphism.
+Every image has Loewy<=3, so Loewy F<=2. It is nonsemisimple:
+the relation (c_rh_r,c_sh_s,-xG) lies at u and its alpha_r action
+has nonzero components. Thus Loewy F=2<3=Loewy Z. Its dimension
+is5+a+b, from the literal image/direct-sum dimensions.
+
+Nonetheless(1.1),(4.4) give ordinary Tor_n(R_ti,F) and
+Tor_n(R_vj,F) of dimension n-1 for EVERY n>=2. Detectors r and s
+are absent from positive Tor(H), whereas Tor_n(R_r,Z),Tor_n(R_s,Z)
+are1. The LES gives Tor_n(R_r,F)=Tor_n(R_s,F)=k for EVERY n>=1.
+At u, Tor_n(R_u,H) has dimension2 and Tor_n(R_u,Z) dimension1;
+exactness forces dim Tor_n(R_u,F)>=1 for EVERY n>=1. There are no
+other possible old labels and no new-q projectives in an old module's
+resolution. Hence
+
+\[
+T(F)=\{r,s,u,t_i,v_j\}\supsetneq S.                    \tag{5.1}
+\]
+
+For outside detectors the radical inclusion F->H induces high
+ordinary Tor ISOMORPHISMS, precisely cancelling their tails in Z.
+Thus in the mixed case even a genuinely shorter relation module
+may EXPAND the ordinary carrier. Neither Loewy decrease nor original
+late-head recurrence justifies the proposed carrier comparison.
+
+## 6. Exact quantifiers and what this does NOT refute
+
+C114 refutes AUTOMATIC carrier containment for ARBITRARY legal
+minimal head lifts, including in an actual simple period-one tail.
+It refutes gluing carrier/Loewy reductions merely from these local
+facts. It does NOT refute C112's full finite-pd relation theorem,
+or an EXISTENCE-of-good-choice theorem under ambient badness.
+
+In fact the canonical unmodified lifts E_r,E_s,G give cyclic images
+P_r tensor k_D,P_s tensor k_D,P_u tensor D. The first two have their
+own heads recurrent and already yield ordinary supported return.
+Therefore no statement that EVERY choice fails is made. A future
+selection theorem must prove its actual choice and comparison;
+this counterexample is not a reason to discard that possibility.
+
+mathcal A is already infinite-plus: each outside simple's local
+left projective resolution is that of k[z,x]/(z2,x2), giving ordinary
+diagonal Tor dimension n+1 in EVERY degree n. Also the original
+recurrent P_u has a physical carrier dominating the whole recurrent
+projective union, so existing C090 supplies an ordinary return.
+Right-finite closed deletion can remove the new source vertex.
+No UNIVERSAL GAP A counterexample or badness-specific impossibility
+was produced; full opposite-side labels/symmetry are not inferred.
+
+The important remaining task is to force an ordinary supported
+return from mixed persistent cancellation UNDER full ambient badness,
+or prove a genuinely eligible choice/reduction. Merely adding outside
+detectors to a union is not a return proof or a terminating source
+descent. No new derived invariant is introduced.
+
+## 7. Targeted evidence and normal adversarial audit
+
+Mixed-Carrier-Expansion-Evidence tests a=b=1, dimension44/six vertices,
+as ONE mechanism. Passed85184 complete literal associativity triples,
+21 retained real minimal covers,378 integral basis inverses,3 actual
+kernel isomorphisms (period-one and both cyclic-image kernels), actual
+modified lift inclusions/sum/full relation kernel, and real Loewy3->2.
+Six simple-cover degrees and four positive degrees for each infinite
+cyclic image agree with(3.3),(4.4). Written ordinary total complexes
+and kernel identities, not finite samples, prove infinity/all a,b/k.
+
+Initial caller used a nonexistent helper attribute name_to_index;
+this API error was repaired using the explicit radical index. No
+mathematical check failed. Later extended kernel-isomorphism/Loewy
+checks passed. Failure/provenance is retained in the execution record.
+Shared helpers/main researcher are not independent/formal acceptance.
+
+Normal audit: (i) B multiplication/projectives and the REAL injection
+i are explicit, not a rank-only incidence model; (ii) pd-one Y and
+field tensor total exactness are proved; (iii) one-point SIMPLE source
+and old projectives are actual; (iv) period-one map has explicit
+inverse/projection; (v) head modifications are radical and valid;
+(vi) both image kernels are identified as real modules, leading to
+all-degree ordinary formulas; (vii) own-head cutoffs hold for the
+chosen infinite images; (viii) F->H high Tor cancellation uses the
+ordinary LES, exact cutoff/indices checked; (ix) shorter F still
+expands and is infinite-pd; (x) arbitrary-choice counterexample is
+NOT promoted to failure of an existential badness-specific theorem;
+(xi) existing C090/other ordinary returns are explicitly retained;
+(xii) no support-cycle/singular/opposite/pruned-complex inference,
+novelty claim, routine checksums, independent verification or UGA
+completion. All bounded-screening, local-trivial, Target-A/Primitive/
+Binary/higher-output/supported-weight global branches remain OPEN.

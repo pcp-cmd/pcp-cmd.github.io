@@ -1,0 +1,25 @@
+# Exact task — cyclic ordinary F Yoneda termination
+
+Continue T26. Test and prove a uniform actual counit-amplitude and ALL-module
+ordinary Ext/Tor comparison bound using a finite global dimension g of the
+restricted ordinary Yoneda algebra E_F. F must be finite-pd on BOTH sides,
+with maxima d,r; q is the top actual F Ext degree. Proposed sufficient
+cutoff: strict n>d+r+g max(q-1,0). Do not replace g by product nilpotence,
+do not prune differential images, and do not assume primitive inheritance.
+
+Finite calibration: Ereg_2 tensor A5, dimension65, six vertices, whole finite
+F={(f,0),(f,1)}, BOTH F pds2,3. F Ext has a two-cycle and an Ext-two self
+loop, with actual Yoneda product nonzero and E_F global dimension2. Verify
+all finite F resolutions actually terminate, and compute E_F products using
+genuine lifted minimal-resolution maps. Verify homogeneous minimal E_F
+resolution degrees. The literal corner has dimension20, four vertices;
+Ae is two regular RIGHT B copies, dimension40. Check every multiplication
+basis right-linearity equation, not only matching dimensions.
+
+The first dimension assertion mistakenly expected corner40/Ae80. Preserve
+its captured failure and correction; require the corrected exact run to pass.
+This example already has ordinary supported Tor by the frozen tensor/factor
+proof; it is not a Gap-A counterexample or proof of universal availability.
+Finite arithmetic is a same-author bounded self-audit. The all-size proof,
+ordinary pd-label comparison and badness/dimension descent are written
+separately. Universal Gap A remains OPEN. No independent verification claim.

@@ -1,0 +1,376 @@
+{
+  "status": "passed",
+  "backend": {
+    "name": "python",
+    "version": "3.14.3"
+  },
+  "arithmetic": "exact rational ranks and literal finite module certificates",
+  "evidence_level": "bounded-check; same-author; not independently verified",
+  "actual_dimensions": {
+    "A_triangular": 5,
+    "C_triangular": 4,
+    "K": 1
+  },
+  "kernel_properties": {
+    "square_zero": true,
+    "left_C_projective": true,
+    "actual_derived_tensor_square_zero": true,
+    "infinite_right_C_pd": "separate explicit periodic proof",
+    "no_ordinary_section": "separate unique-lift proof",
+    "not_A5_Auslander": true
+  },
+  "bounds": {
+    "recorded_ordinary_tor_degrees": [
+      0,
+      8
+    ],
+    "incoming_complex_degree_included": 9
+  },
+  "checks": {
+    "A_tri_associativity_triples": 125,
+    "A_tri_differential_square_degrees": 32,
+    "C_tri_associativity_triples": 64,
+    "C_tri_differential_square_degrees": 32,
+    "actual_left_periodic_submodule_certificate": 1,
+    "actual_tensor_square_zero_middle": 1,
+    "ambient_tor_records": 36,
+    "induced_ordinary_comparison_ranks": 36,
+    "infinite_right_pd_periodic_certificate": 1,
+    "projection_chain_map_degrees": 36,
+    "quotient_left_simple_split_certificate": 1,
+    "quotient_tor_records": 36
+  },
+  "tor_comparison_records": [
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 0,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 1,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 2,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 3,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 4,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 5,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 6,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 7,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 0,
+      "degree": 8,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 7,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 0,
+      "left_simple": 1,
+      "degree": 8,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 0,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": false
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 1,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": false
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": false
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": false
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": false
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": false
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": false
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 7,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": false
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 0,
+      "degree": 8,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": false
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 0,
+      "ambient_tor_dimension": 1,
+      "quotient_tor_dimension": 1,
+      "ordinary_comparison_rank": 1,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 1,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 2,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 3,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 4,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 5,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 6,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 7,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    },
+    {
+      "right_simple": 1,
+      "left_simple": 1,
+      "degree": 8,
+      "ambient_tor_dimension": 0,
+      "quotient_tor_dimension": 0,
+      "ordinary_comparison_rank": 0,
+      "reverse_A_Peirce_visible": true
+    }
+  ],
+  "limitations": [
+    "Matrix helpers are reused from the same author's other script; no independent check is claimed.",
+    "This algebra is distinct from the five-dimensional Auslander primitive-seed calibration.",
+    "All-degree nonperfectness, nonsplitting and infinite-pd assertions use the written finite/periodic certificates.",
+    "The general supported bridge uses actual ideal Peirce support and tensor square zero; no full high comparison or higher-index theorem is inferred.",
+    "This is infinite + and not a Gap-A counterexample."
+  ]
+}

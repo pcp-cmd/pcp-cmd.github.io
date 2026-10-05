@@ -1,0 +1,264 @@
+# 多头部返回模块的支撑子模检测
+
+2026-09-27。接续 [有限精确 syzygy 系统](Finite-Syzygy-System-Theorem.md)。本稿有完整自审证明和精确模块映射审计；尚未独立数学核验，未确认新颖性。**一般 Universal Gap A (U) 仍未证明。**
+
+上一稿要求某个返回模块的全部组成因子都位于某一头部顶点的 Peirce 支撑中。本稿把它放宽：允许有支撑以外的组成因子，只要把支撑子模取出后，商对指定目标 simple 的高次 Ext 消失。商本身可以有无限投射维数。另给出任意多个头部顶点、不可分解且一步周期的实际模块族，验证新条件，并展示同维 Ext 之间的限制映射仍可能为零。
+
+设 A 为有限维 basic 复代数，J 为 radical，P_i=Ae_i，L_i 为左 simple，R_i 为右 simple，
+\[
+\beta_{ij}(n)=\dim\operatorname{Ext}_A^n(L_j,L_i)
+=\dim\operatorname{Tor}_n^A(R_i,L_j),\qquad
+B_i=\{j:e_jAe_i\ne0\}.
+\]
+故 j∈B_i 正是 pair (i,j) supported。所有 Ω 来自最小投射覆盖。
+
+## 1. 精确的亏损不等式
+
+给定任意短正合列
+\[
+0\longrightarrow K\overset{\iota}{\longrightarrow}M
+\longrightarrow Q\longrightarrow0,
+\qquad \operatorname{supp}K\subseteq B_i.
+\tag{1}
+\]
+记 E_i(X,n)=dim Ext_A^n(X,L_i)。
+
+**定理 1。** 对每个 n≥0，
+\[
+\boxed{\sum_{j\in B_i}[K:L_j]\,\beta_{ij}(n)
+\ \ge E_i(K,n)\ \ge E_i(M,n)-E_i(Q,n).}
+\tag{2}
+\]
+如果 E_i(M,n)>E_i(Q,n) 在无穷多个 n 成立，就存在一个固定 supported pair (i,j)，其 Tor 在无穷多个次数非零。
+
+**证明。** Ext 长正合列的片段
+\[
+\operatorname{Ext}^n(Q,L_i)\longrightarrow
+\operatorname{Ext}^n(M,L_i)\overset{\iota^*}{\longrightarrow}
+\operatorname{Ext}^n(K,L_i)
+\]
+给出第二个不等式。对 K 的组成列逐项使用同样的维数不等式，给出第一个。求和只有有限个 j，因此无穷多次的正值必由至少一个固定 j 无穷多次贡献。证毕。
+
+**消失形式。** 若 E_i(Q,n)=0 对所有 n≥b 成立，则对所有 n≥b，实际限制映射
+\[
+\iota^*:\operatorname{Ext}^n(M,L_i)
+\xrightarrow{\ \sim\ }\operatorname{Ext}^n(K,L_i)
+\tag{3}
+\]
+是同构：左右相邻项 Ext^n(Q,L_i)、Ext^{n+1}(Q,L_i) 同时为零。
+
+特别地，假设有实际分裂返回
+\[
+\Omega^d M\simeq M^{\oplus g}\oplus W,
+\qquad d,g\ge1,
+\qquad h=[\operatorname{top}M:L_i]>0.
+\tag{4}
+\]
+最小 syzygy 保持直和，故 E_i(M,rd)≥h g^r。由 (2)、(3)，
+\[
+\boxed{\sum_{j\in B_i}[K:L_j]\,\beta_{ij}(rd)\ge h g^r
+\quad\left(r\ge\max\{1,\lceil b/d\rceil\}\right).}
+\tag{5}
+\]
+因此得到持续 supported Tor，**不要求 M 单顶点头部，也不要求 pd Q 有限**。取 K=M、Q=0 就恢复上一稿的整模块支撑判据。
+
+(2) 还允许商的目标 Ext 持续存在：若 E_i(Q,rd)≤c a^r，其中 0≤a<g，则右端 h g^r−c a^r 最终为正。这个增长差版本由同一不等式直接得出；本稿程序实现的是更直接的“目标 Ext 最终为零”证书，没有实现一般有理序列差的符号判定。
+
+## 2. 规范支撑子模及它真正删掉的内容
+
+令 K_i(M) 为 M 中所有只含 B_i 内组成因子的子模之和；这是唯一最大的此类子模。它可以由全部实际 radical 作用直接计算。对 v∉B_i，令 e_vK_i(M)=0；对 v∈B_i，
+\[
+e_vK_i(M)=
+\bigcap_{\substack{x\text{ 属于固定 radical 基}\\
+x\in e_uJe_v,\ u\notin B_i}}
+\ker(x:e_vM\longrightarrow e_uM).
+\tag{6}
+\]
+空交取 e_vM。这里必须使用完整 radical 基；只检查 quiver 箭头不够。
+
+**证明。** 一个向量 m 所生成的子模位于 B_i，等价于所有 B_i 外的 e_uAm 都为零；(6) 正好逐个检查这些映射。若 m 满足条件、a∈A，则任何终点位于 B_i 外的 x 都有 x(am)=(xa)m=0，所以所得空间确为子模。任何支撑位于 B_i 的子模都被包含，得到最大性。
+
+记 Q_i(M)=M/K_i(M)。它有两个可核对的性质：
+\[
+e_iQ_i(M)=0,\qquad
+\operatorname{supp}\operatorname{soc}Q_i(M)\subseteq B_i^c.
+\tag{7}
+\]
+第一个因为所有 e_uAe_i（u∉B_i）本来就是零，故 (6) 在 v=i 处保留整个 e_iM。第二个因为 Q_i(M) 中若有 B_i 支撑的非零子模，其在 M 中的原像仍只含 B_i 的组成因子，违背 K_i(M) 的最大性。
+
+因此 Q_i(M) 确实去掉了顶点 i，且没有允许支撑内的 socle。**它仍可在 B_i 内的其他顶点有组成因子，不能把它自动当作只支撑在 B_i^c 的模块。** 最大支撑子模也不等于对任何检测目标都最优；一般取商不会保持有限 pd 或高次 Ext 消失。定理 1 允许使用其他已验证的 K。
+
+在主路线的完整 Peirce 消失假设 (Z_b) 下，组成列不等式给出 E_i(K_i(M),n)=0 对所有 n>b 成立。长正合列遂给出
+\[
+\operatorname{Ext}^n(Q_i(M),L_i)\xrightarrow{\sim}
+\operatorname{Ext}^n(M,L_i)\qquad(n>b+1).
+\tag{8}
+\]
+故潜在反例中的返回模块必须把高次 Ext 传到这个去掉顶点 i、socle 也受限制的实际商。这里尚未证明商的 Ext 消失，**不能只凭顶点数减少完成归纳**：这些仍是 over A 的 Ext，而非把问题直接换到商代数后所得的 Ext。
+
+**与较小角的准确联系。** 令 e=∑_{u∉B_i}e_u、B=eAe，定义自然 A-线性映射
+\[
+\eta_M:M\longrightarrow F_i(M):=
+\operatorname{Hom}_B(eA,eM),\qquad
+\eta_M(m)(x)=xm,
+\]
+其中 (a·f)(x)=f(xa)。直接由 (6) 可知
+\[
+\ker\eta_M=K_i(M),\qquad
+Q_i(M)=\operatorname{im}\eta_M.
+\tag{8a}
+\]
+因为 eF_i(M)≅Hom_B(B,eM)≅eM，且 eη_M 是这个同构，所以余核 D_i(M) 被 e 消灭，即其组成因子仍位于 B_i。由两个短正合列，在 (Z_b) 下有
+\[
+\operatorname{Ext}^n_A(F_i(M),L_i)
+\simeq\operatorname{Ext}^n_A(Q_i(M),L_i)
+\simeq\operatorname{Ext}^n_A(M,L_i)\quad(n>b+1).
+\tag{8b}
+\]
+这保留了真实较小角 B 和 coinduction 对象。直接伴随公式是 Hom_A(Y,Hom_B(eA,X))≅Hom_B(eY,X)，coinduction 位于第二变量；它不能把本式的第一变量 Ext 自动改写成 Ext_B。即使在第二变量中，普通 coinduction 的 Ext 比较也需要相应的导出函子条件。这个方向限制正是目前仍需处理的边界。
+
+一个九维校准例说明 (7) 不能加强成“商仅支撑在 B_i^c”：取 0→1→2→3，箭头为 a,b,c，关系 cba=0，保持 ba、cb 非零。i=0 时 B_i={0,1,2}；取 M=P_1，则 K_i(M)=0，而 Q_i(M)=P_1 的支撑为 {1,2,3}，socle 只在 3。它还恰等于 Hom_{e_3Ae_3}(e_3A,e_3M)。若只检查箭头而忽略 cb 的作用，会错误保留顶点 1 的向量，得到一个不被 b 保持的“子空间”。程序同时验证了这个失败和正确的 coinduction 自然同构。
+
+## 3. 怎样给“商的目标 Ext 消失”有限证据
+
+使用上一稿的实际有限系统 ΩM_α≅⊕_γ M_γ^{T_{γα}}，设 H 是其头部重数矩阵。除 M 的返回之外，还提供商的实际入口同构
+\[
+\Omega^q Q\simeq\bigoplus_\alpha M_\alpha^{v_\alpha}.
+\tag{9}
+\]
+于是对所有 n≥0，E_i(Q,q+n)=(HT^n v)_i。从 v 出发如果没有“可到达又可通向目标 i 头部”的有向圈，就有
+\[
+E_i(Q,n)=0\quad(n\ge q+m),
+\tag{10}
+\]
+其中 m 是模块状态数。还可检查前面有限项，取得更早的精确消失起点 b。这里验证的是实际 (9)，不是从若干数值零外推。
+
+商仍可通向针对其他 simple 的有向圈，因此 pd Q 可以无限。这是采用指定目标 Ext 条件的实质区别。
+
+由定理 1 得到任意 N 的改进条件：若全部 simples 进入一个有限精确系统，且无限全局维数时能在某条模块圈上找到头部 L_i，其规范商满足上述目标消失条件，则 (U) 成立。无需循环模块只有一个头部顶点。一般系统的存在及规范商的目标消失，均不是本稿已证明的普遍事实。
+
+## 4. 每个 N≥3 的不可分解、全顶点头部、一步周期模块
+
+令 r=N−1≥2。取叉形 quiver t→0（1≤t≤r），并令
+\[
+A_N=\mathbb C[\epsilon]/(\epsilon^2)\otimes_{\mathbb C}\mathbb C Q.
+\tag{11}
+\]
+直接乘法表也可描述它：各顶点有 x_v，各源点有 a_t:t→0 及 y_t:t→0；非零 radical 乘积仅为
+\[
+x_0a_t=a_tx_t=y_t.
+\]
+所有其他 radical 乘积为零。因而 dim A_N=4N−2、J³=0，且 A_N 连通。P_0 的基为 e_0,x_0；P_t 的基为 e_t,x_t,a_t,y_t。
+
+定义模块 M_N：在每个源点 t 的空间为一维 ⟨v_t⟩，在顶点 0 的空间具有基
+\[
+u_1,\ldots,u_r,\quad g_1,\ldots,g_{r-1}.
+\]
+非零作用为
+\[
+a_t v_t=u_t,\qquad x_0g_s=u_s-u_r\quad(1\le s<r).
+\tag{12}
+\]
+其余 radical 作用均为零，故全部乘法关系成立。由实际 radical 图像可知
+\[
+\dim M_N=3N-4,\qquad
+\operatorname{top}M_N=L_0^{\oplus(r-1)}\oplus\bigoplus_{t=1}^r L_t.
+\tag{13}
+\]
+它的头部包含全部 N 个顶点。
+
+### 4.1 实际一步周期同构
+
+最小覆盖为 P=⊕_{t=1}^r P_t ⊕ P_0^{r-1}，把 P_t 的 e_t 送到 v_t，把第 s 个 P_0 的头部 f_s 送到 g_s。用 \(\mathsf a_t,\mathsf y_t\) 标记 P_t 副本中位于顶点 0 的基。
+
+覆盖核在源点 t 由该副本的 x_t 生成；在顶点 0 具有基
+\[
+U_t=\mathsf y_t\ (1\le t\le r),\qquad
+G_s=\mathsf a_s-\mathsf a_r-x_0f_s\ (1\le s<r).
+\]
+它们都在覆盖的 radical 中，而且
+\[
+a_t(x_t)=U_t,\qquad x_0G_s=U_s-U_r.
+\]
+与 (12) 完全相同，维数也恰好等于覆盖核的维数。因此有明确 A-模同构
+\[
+\boxed{\Omega M_N\simeq M_N.}
+\tag{14}
+\]
+
+### 4.2 它不是多个单头部模块的人工直和
+
+任意 endomorphism 在各源点分别为标量 λ_t，因此把 u_t 送到 λ_tu_t。由 (12)，λ_su_s−λ_ru_r 必须属于 im(x_0)=span{u_s−u_r}，即 u 系数总和为零，故所有 λ_t 相同，记为 λ。随后必有
+\[
+f(g_s)=\lambda g_s+\sum_t c_{ts}u_t.
+\]
+因此
+\[
+\operatorname{End}(M_N)=\mathbb C\operatorname{id}\oplus\mathcal R,
+\qquad \mathcal R^2=0,\qquad
+\dim\mathcal R=r(r-1).
+\tag{15}
+\]
+这个 endomorphism ring 是 local，故 M_N 不可分解。该论证对任意复数系数成立，不是仅在有理数域上的不可分解性测试。
+
+### 4.3 旧判据全部失败，新判据在 N−1 个头部成功
+
+该代数的 Peirce 支撑为 B_0={0}、B_t={0,t}。M_N 在全部 N 个顶点都非零，所以没有一个 B_i 覆盖其全部组成因子。
+
+对于每个源点 t，规范子模 K_t 保留顶点 0 的全部空间及源点 t 的空间，删除其余源点；商为
+\[
+Q_t\simeq\bigoplus_{s\ne t,\ s>0}L_s.
+\tag{16}
+\]
+直接计算 P_s→L_s 的核 X_s，得到
+\[
+\Omega L_0=L_0,\qquad \Omega L_s=X_s,\quad \Omega X_s=X_s\ (s>0),
+\qquad\operatorname{top}X_s=L_s\oplus L_0.
+\tag{17}
+\]
+例如 X_s 在源点为 ⟨x_s⟩、在 0 为 ⟨a_s,y_s⟩，作用 a_s(x_s)=y_s、x_0a_s=y_s；覆盖 P_s⊕P_0 的核再次具有同样作用。
+
+所以每个 Q_t 都有无限 pd，但
+\[
+\operatorname{Ext}^n(Q_t,L_t)=0\quad(n\ge0).
+\]
+与此同时 (14) 给出 E_t(M_N,n)=1 对所有 n≥0。实际限制映射因而在每个次数都是同构，且
+\[
+(2r-1)\beta_{t0}(n)+\beta_{tt}(n)\ge1\quad(n\ge1).
+\tag{18}
+\]
+(17) 还给出 β_{t0}(n)=0、β_{tt}(n)=1，明确确定 supported pair 为 (t,t)。这证明新判据可处理任意多个头部，而且在所选返回模块上严格超出旧整模块支撑测试；不声称该代数不存在其他能被旧方法检测的模块。
+
+该族 J³=0，它的 (U) 结论已有 [Saorín，Theorem 2](https://arxiv.org/pdf/math/0306043) 覆盖。本例的用途是核验多头部模块、目标 Ext 条件和实际限制映射，**没有声称首次证明这个代数类满足 (U)**。
+
+### 4.4 同维 Ext 不保证限制映射非零
+
+选目标 i=0 时，K_0 只保留 0 点空间，Q_0=⊕_{s>0}L_s。对每个 n≥1，
+\[
+E_0(M_N,n)=r-1,\quad E_0(Q_0,n)=r,\quad
+E_0(K_0,n)=1,
+\qquad \operatorname{rank}\iota^*=0.
+\tag{19}
+\]
+前三个等式来自 (14)、(17) 和 K_0≅P_0^{r-1}⊕L_0。最后一个还必须检查映射：为 K_0 的自由头部 g_s 取覆盖提升 f_s，为额外头部 u_r 取提升 \(\mathsf a_r\)。其 syzygy 映射 L_0→ΩM_N≅M_N 将 1 送到 u_r。后续 syzygy 映射在这些固定周期同构下仍为 1↦u_r。因为 u_r∈JM_N，它在目标头部上的映射为零；对偶得到全部正次数限制映射为零。
+
+特别地 N=3 时 r−1=1，两端 Ext 都是一维，限制映射却恒为零。程序在此头部必须返回“商的目标 Ext 持续，当前证书不能判定”；它不是 (U) 反例，也不否定该目标另有 supported Tor。
+
+## 5. 精确审计与仍然开放的步骤
+
+[supported_localization_certificate.py](supported_localization_certificate.py) 从完整作用矩阵构造 (6)，验证实际嵌入、商映射和短正合性，并核对 (7)。随后检验返回系统及商入口的可逆 A-线性矩阵，由有限图证明商的目标 Ext 最终为零或持续非零。只有前者才签出 (5)。
+
+[supported_localization_audit.json](../work/supported_localization_audit.json) 保存 N=3、5、8 的完整输入和证据：13 个头部检测成功，3 个反向目标正确保持未判定；19 个系统过渡同构、16 个 simple 入口及 16 个商入口均通过。另核对 112 个次数的短正合列维数和实际 Ext 限制映射、686 项 simple Betti 数、27 项独立 bar 维数比较；两个错误商入口被拒绝。每个 M_N 的整个 End 空间及 (15) 的平方零性质也被精确核对。
+
+另附九维非传递支撑校准：验证规范商仍含允许顶点、拒绝箭头检查产生的假子模，并验证实际 coinduction 作用与自然同构。
+
+运行方式：
+
+```text
+python -B work/audit_supported_localization.py
+python -B outputs/supported_localization_certificate.py --input work/supported_localization_input.json --output work/supported_localization_checked.json
+```
+
+[计算记录](../work/supported-localization-computation-record.json) 保存代码、输入、结果与证明哈希。全 N 与全次数结论来自上面的统一证明；有限计算只核对所列成员，且仍为共享代码上的自审。
+
+**剩余问题。** 对一般返回模块，Q_i(M) 的目标 Ext 可以持续，如 (19) 已明确展示。本稿没有证明总能选到商消失的头部，或总能取得正的增长差；也没有证明所有无限全局维数代数都有有限返回系统。下一步应研究这些已实际去掉一个顶点的商与 (PC) 前缀的联系，或对 (2) 的商项给出可证明的增长上界。一般 (FG)、(PC)、(GP) 未闭合，没有推出普通 HH survival。

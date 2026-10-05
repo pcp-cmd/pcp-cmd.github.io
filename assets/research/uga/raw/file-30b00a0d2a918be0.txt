@@ -1,0 +1,11 @@
+# Actual mixed-carrier expansion
+
+Test ONE arbitrary-size family at a=b=1, six vertices/dimension44.
+Real infinite SIMPLE source has an actual period-one tail Z and only
+three recurrent projective labels. Verify two legal modified primitive
+head lifts, their real cyclic kernels, full relations and Loewy3->2.
+Written total complexes prove arbitrary a,b,any k/all degrees separately.
+Arbitrary-choice containment is false; existential good-choice under
+ambient badness remains OPEN. Already supported-positive family.
+Shared exact main-researcher self-audit, no independent/formal acceptance,
+mechanical size classification, default checksums or full UGA closure.

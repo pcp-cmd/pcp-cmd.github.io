@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/NikuKikai/NikuKikai.github.io",
+  "commit": "18cad16b438792bf0d8d0842efac70819415db17",
+  "files": [
+    "src/pages/index/MangaRadialBackdrop.tsx",
+    "src/pages/index/canvasForceSolver.ts"
+  ],
+  "shaderSha256": {
+    "VERTEX_SHADER": "16f5193a13aa2f76924a857d39b4800c7ae07fbb527c154c9f29a8da26a23bd2",
+    "FRAGMENT_SHADER": "dd7068aaabfa64caf77e37facc6eb33655107e887a5499b375273759e8fc1d3e"
+  },
+  "forceSolverAdaptation": "TypeScript import/type declarations, annotations, export syntax and generic Map type erased; executable solver logic unchanged.",
+  "license": "No reuse grant found in this pinned source. Do not label as MIT."
+}

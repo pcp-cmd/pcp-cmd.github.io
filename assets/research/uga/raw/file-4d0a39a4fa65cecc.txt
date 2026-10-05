@@ -1,0 +1,372 @@
+# Run — Actual tails annihilate the deletion defect
+
+**Date:** 2026-10-03  
+**Researcher:** one main Codex researcher  
+**Evidence:** complete self-audited arguments and an exact bounded calibration; not independently verified  
+**Global status:** Universal Gap A remains OPEN.
+
+The binary-indecomposable compression in the preceding Run remains valid.
+This continuation audits the proposed bridge from real-tail Tor
+orthogonality to the unbounded higher-output residue. The direct derived
+tensor bridge vanishes identically. There is a precise ordinary-quotient
+comparison on actual tails, but its persistent detectors are invisible to
+the original source. The deletion defect must instead be studied through
+the actual finite prefix and the conditions on all sources.
+
+## 1. Notation and an important model distinction
+
+Let e=e_x and put
+
+\[
+F_x=\{i:e_xAe_i\ne0\},\qquad
+u=\sum_{i\notin F_x}e_i,\qquad B=uAu,\qquad W=Au.
+\]
+
+In particular eAu=0. Let C=A/AeA. For calculations involving the A map
+use the **full** strict BCL model
+
+\[
+\mathcal Q=A\langle h\rangle/(he=eh=h),\qquad |h|=-1,\quad dh=e.
+\]
+
+It has a strict algebra map from A and a strict projection pi to C sending
+h to zero. Write K=ker(pi), a dg Q-bimodule representing the fiber of
+Q -> C. Its degree-zero part is AeA, its H^0 is zero, and its negative
+cohomology is the negative cohomology of the derived quotient.
+
+The retained normalized corner q=f Q f, f=1-e, is the model used for
+the previous excursion results. Projection A -> fAf is not generally
+multiplicative, so this retained corner is not silently used as a strict
+A-algebra. The full model keeps all tensor comparisons well-defined.
+
+## 2. The return-complement columns do not change
+
+### Lemma 2.1 — Strict zero-column identities
+
+There are compatible identities
+
+\[
+\boxed{\mathcal Q u=Au=Cu,\qquad
+u\mathcal Q u=B=uCu,\qquad Ku=0.}
+\]
+
+#### Proof
+
+Every degree-negative word in Q u ends with a factor in eAu, hence is
+zero. Thus Q u=Au in degree zero. Also AeA u=Ae(eAu)=0, so the quotient
+map restricts to an isomorphism Au -> Cu. Restrict once more on the left
+to obtain the corner identities. Both negative and degree-zero parts of
+the kernel have zero u column. These are strict chain identities, not
+merely vanishing of cohomology. QED.
+
+## 3. Exact comparison on real tails
+
+Reuse the actual-tail theorem from Tor-Orthogonality-and-Corner-Tests.md:
+if T is a left B-module with Tor^B_{>0}(W,T)=0, then
+
+\[
+X=Au\otimes_B T
+\]
+
+has a minimal A-projective resolution entirely in add(Au), obtained by
+inducing a minimal B-resolution. Conversely every such X comes this way.
+
+### Theorem 3.1 — Tail comparison and defect annihilation
+
+For every such X, regarded as a C-module and hence a Q-module,
+
+\[
+\mathcal Q\otimes_A^{\mathbf L}X\simeq X,\qquad
+C\otimes_A^{\mathbf L}X\simeq X,\qquad
+C\otimes_{\mathcal Q}^{\mathbf L}X\simeq X,
+\]
+
+\[
+\boxed{K\otimes_A^{\mathbf L}X=0,\qquad
+K\otimes_{\mathcal Q}^{\mathbf L}X=0.}
+\]
+
+For every left C-module Y, right C-module V, and n>=0,
+
+\[
+\boxed{
+\begin{aligned}
+\operatorname{Ext}^n_A(X,Y)&\cong\operatorname{Ext}^n_C(X,Y)
+\cong\operatorname{Ext}^n_{\mathcal Q}(X,Y),\\
+\operatorname{Tor}^A_n(V,X)&\cong\operatorname{Tor}^C_n(V,X)
+\cong\operatorname{Tor}^{\mathcal Q}_n(V,X).
+\end{aligned}}
+\]
+
+Moreover pd_A X=pd_C X=pd_B T, including infinity.
+
+#### Proof
+
+Let P_B resolve T. By Tor orthogonality, Au tensor_B P_B is exact in
+positive homological degrees with degree-zero homology X. Its terms are
+minimal A-projectives. Lemma 2.1 identifies this same complex with
+Cu tensor_B P_B and Q u tensor_B P_B. It is respectively a minimal
+C-projective resolution and a homotopically projective dg Q-resolution
+of X. Minimality follows from the radical coefficients in uJu; the
+indecomposable columns and their radical maps are unchanged.
+
+The three base-change statements are computed on these identical
+resolutions. Tensor with K gives the zero complex, since Ku=0. For Hom
+or tensor with Y or V, the degreewise adjunctions are the same: Hom from
+Au, Cu or Q u is uY, and tensor to these columns is Vu. Thus their
+computing complexes agree. The terms terminate in exactly the same
+degree over A, C and B, proving the projective-dimension statement. QED.
+
+This is a comparison on the specified real-tail class. It does not make
+A -> C a homological epimorphism, or compare arbitrary C simples.
+The full negative deletion defect is orthogonal to these tails; therefore
+directly tensoring it with a real tail supplies no obstruction to the
+higher-output residue K_H from the previous Run. The symbols K and K_H
+denote different objects: a dg fiber and a fixed-model graded subquotient.
+
+### Corollary 3.2 — Surviving tail detectors remain invisible
+
+Suppose the source-x minimal resolution has P_j in add(Au) for j>=m,
+and X=Omega_A^m L_x. Then for retained i and n>=1,
+
+\[
+\operatorname{Tor}^C_n(R_i,X)
+\cong\operatorname{Tor}^A_{n+m}(R_i,L_x).
+\]
+
+A persistent detector i must belong to u, since all resolution columns
+of X lie there. Hence e_xAe_i=0. This comparison yields actual ordinary
+survival, but not the reverse-supported witness needed for source x.
+The n>=1 bound is the dimension-shift bound; n=0 is not substituted.
+
+## 4. The defect sees the actual finite prefix
+
+### Proposition 4.1 — Finite-prefix concentration of the tensor comparison
+
+Under the same tail condition, K tensor_A^L L_x is computed by the
+finite-prefix total complex
+
+\[
+\operatorname{Tot}\bigl(K\otimes_A P_{m-1}\to\cdots
+\to K\otimes_A P_1\to K\otimes_A P_0\bigr),
+\]
+
+with the original prefix differentials and each internal dg K differential.
+There are no terms from j>=m.
+
+#### Proof
+
+Compute derived tensor with the full bounded-above projective resolution
+P of L_x. Each term K tensor_A P_j is a sum of K e_i columns. For
+j>=m, these are Ku columns and are strictly zero by Lemma 2.1. The
+displayed finite number of columns, with their actual matrices, is exactly
+the remaining total complex. QED.
+
+Each K column can be unbounded in negative degree. Thus finite-prefix
+concentration is not bounded cohomology, finite screening budget, or
+vanishing of the defect. It changes the next mathematical interface:
+the load-bearing information lies in the actual finite head maps and
+their joint constraints across sources, not in a nonzero tensor of the
+defect with X.
+
+## 5. An actual infinite-pd anchored calibration
+
+Start with A_0 from the prior Run: basis e1,e2,a,b,t, arrows a:1->2,
+b:2->1, and ab=t, ba=0. Let Delta=k[s]/(s^2). Let M be the
+one-dimensional (Delta,A_0)-bimodule whose left action factors through
+Delta/(s), and whose right action is the simple at vertex 2. Form
+
+\[
+A=\begin{pmatrix}A_0&0\\ M&\Delta\end{pmatrix}.
+\]
+
+This defines an associative eight-dimensional algebra with basis
+e1,e2,e3,a,b,t,c,s, where c:2->3 represents M. Its only nonzero
+radical product is ab=t. The triangular-module description proves
+associativity over every field; the rational finite check is separate.
+
+The indecomposable projectives and radicals are
+
+\[
+P_1=\langle e_1,a\rangle,\quad JP_1=L_2,
+\]
+\[
+P_2=\langle e_2,b,t,c\rangle,\quad
+JP_2=Ab\oplus Ac\cong P_1\oplus L_3,
+\]
+\[
+P_3=\langle e_3,s\rangle,\quad JP_3=L_3.
+\]
+
+The map P_1 -> Ab sends e1 to b and a to t and is A-linear; c and s
+both span the corresponding simple at 3. Therefore
+
+\[
+\Omega L_1=L_2,\qquad
+\Omega L_2=P_1\oplus L_3,\qquad
+\Omega L_3=L_3.
+\]
+
+All three simple projective dimensions are infinite. In the L_2
+resolution, degree zero is P_2, degree one is P_1+P_3, and every
+degree at least two is P_3. For x=2,
+
+\[
+\Gamma=e_2Ae_2=k[t]/(t^2)\ne k,quad F_2=\{1,2\},\quad
+u=e_3,quad B=\Delta,quad W=Au=\Delta.
+\]
+
+Thus e_2P_n(L_2)=0 for n>=2 and the actual tail
+X=Omega^2 L_2=L_3 has T=uX=k and
+
+\[
+\operatorname{pd}_B T=\infty,\qquad
+\operatorname{Tor}^B_{>0}(W,T)=0.
+\]
+
+The entire source-2 reverse-supported tail vanishes. Nevertheless A is
+infinite +: Tor^A_n(R_3,L_3)=k for every n>=0. This also is the smaller
+ordinary quotient's visible witness and it survives ambiently. The
+calibration meets neither the all-source non-+ hypothesis nor supported
+complete screening.
+
+### 5.1 Exact retained derived quotient
+
+Delete vertex 2. The ordinary retained quotient is
+C=k e1 + Delta e3. In the normalized model, for every n>=1, let
+
+\[
+u_n=b h(t h)^{n-1}a,\qquad v_n=c h(t h)^{n-1}a.
+\]
+
+All normalized differentials are zero: t^2=bt=ct=ta=ba=ca=0.
+The negative products are
+
+\[
+u_pu_q=u_{p+q},\qquad v_pu_q=v_{p+q},\qquad
+u_pv_q=v_pv_q=0,
+\]
+
+and s kills every negative letter on either side where composable.
+The normalized quotient is therefore formal, has unbounded negative
+homology, and is generated by s,u1,v1 over its vertex algebra. In
+particular it does not realize the non-formal infinitely generated
+Target-B residue.
+
+Both local families have explicit excursion-one fillers for n>=2.
+In walking-order ambient notation,
+
+\[
+\alpha_n^d=[a|t|\cdots|t|d],\qquad
+\beta_n^d=[a|b|a|t|\cdots|t|d],\quad d\in\{b,c\},
+\]
+
+with respectively n-1 and n-2 copies of t. Only the b,a joint in beta
+has a nonzero product, so the differential is +/- alpha. There is one
+retained internal vertex in beta. Thus a nontrivial local corner and a
+genuine infinite-pd anchor can coexist with complete bounded screening
+of these local families and an orthogonal infinite tail. The missing
+hypothesis is the all-source absence of an ambient visible witness.
+
+## 6. Bounded exact computation
+
+Return-Tail-Evidence/verify_return_tail.py ran under the existing local
+Python 3.14.3 standard-library Fraction backend. No newly callable local
+Mathematica or Sage backend was claimed; the earlier same-session backend
+inventory was reused. The remote Wolfram connector was not used.
+
+Passed checks cover:
+
+- all 512 associativity triples;
+- the projective-radical module map and the deleted ideal's zero column;
+- all nine simple-pair bar complexes in degrees 0..10, with incoming
+  differentials through degree 11;
+- 1,203 differential-square checks;
+- 122 retained passage/bar differential identifications;
+- 14 explicit excursion-one fillers, negative magnitudes 2..8 in each
+  of the u and v local families.
+
+The observed Betti formulas agree with the exact projective decompositions.
+All-degree assertions rely on the analytic argument above; finite ranges
+and schema/hash validation do not prove them. The computation record is
+bounded-check and was validated with the skill's official validator.
+
+## 7. Normal adversarial self-audit
+
+1. **Strict model:** tensor with A is made in the full Q model. A -> fAf
+   is not substituted for a multiplicative map.
+2. **Zero column:** eAu=0 kills every negative word ending in u and also
+   AeAu. Ku=0 is strict, so the argument does not require convergence of
+   an unbounded negative spectral sequence.
+3. **Real tail:** orthogonality induces an exact minimal resolution. An
+   arbitrary infinite-pd B-module or finite prefix is not used as X.
+4. **Ordinary quotient scope:** identical projective columns compare only
+   the first argument X in the real-tail class. No unrestricted comparison
+   for C simples or homological-epimorphism property of A -> C is claimed.
+5. **Higher operations:** dg fiber K is distinguished from higher-output
+   residue K_H. Tensor vanishing is a failure of the direct detector, not
+   proof that K_H is zero or allowed under all counterexample hypotheses.
+6. **Visibility:** a persistent detector of X belongs to u and is invisible
+   to source x. Survival is not promoted to a supported witness.
+7. **Prefix:** only the number of prefix columns is finite. Their internal
+   complexes, matrices and linear combinations remain load-bearing.
+8. **Deleted projective versus simple:** Qe is contractible, but derived
+   localisation of L_x need not vanish. A projective's annihilation does
+   not annihilate its simple top's full resolution; the above calibration
+   has Q tensor_A^L L_2 ~= (Qe_1 + L_3)[1], which is nonzero.
+9. **Calibration scope:** all simples in the eight-dimensional example
+   have infinite pd. Only the source-2 eventual return condition is used;
+   vertex 3 explicitly violates the all-source non-+ hypothesis. The
+   quotient is formal and finitely generated, so it is not Branch U.
+10. **Evidence:** associativity and the infinite syzygy recursion have full
+    proofs. Bounded rational checks corroborate these objects but are
+    neither independent verification nor a general Gap-A proof.
+11. **Source gates:** no opposite-side transfer is used. The earlier
+    finite-head collision's opposite-source discrepancy is unchanged.
+
+## 8. Current mathematical action
+
+Retain UGA-C056--C057's non-formal, infinitely generated Target-B residue.
+The hoped-for direct tensor constraint from actual tail orthogonality is
+vacuous: the complete deletion defect tensor X already vanishes.
+
+The next comparison must use the **actual finite prefix maps** together
+with the disappearance conditions for **all** sources. A closure must
+show that their simultaneous high-degree screening either breaks one of
+these conditions or forces a reverse-supported ordinary survivor. The
+eight-dimensional example specifies why a single source, its local
+singularity and its real infinite tail are insufficient.
+
+No such simultaneous finite-head no-hiding theorem has been proved.
+Target A, Target B, local-trivial deletion and supported-weight screening
+remain open. This Run changes the next interface, not the global objective.
+
+The user's subsequent closure-priority steering is adopted: this audit
+removes a vacuous direct detector and does not justify a programme of
+further necessary conditions. The next major investment must seek a
+visible ordinary survivor, a strict well-founded descent, a contradictory
+uniform bound, or a branch exclusion/unification. The existing MRS state
+and general-method Vault are used for route selection; no new invariant
+is introduced merely to continue the present representation.
+
+Presentation note: several displayed lines of the previous binary Run
+lost the backslash before the spacing command qquad during transport.
+Read those tokens as spacing, not algebraic symbols. Its mathematical
+definitions and proofs are unchanged; the old Run bytes are preserved.
+
+## Reused sources
+
+- CURRENT_STATE.md at Codex T2; UGA-C052--C057 and regression gates.
+- Imported-Outputs/Tor-Orthogonality-and-Corner-Tests.md, Theorem 1:
+  actual-tail exact induction and ordinary Ext/Tor adjunction.
+- Imported-Outputs/N-Vertex-Return-Complement.md: one-way tail support.
+- 2026-10-02 Visibility-Aligned Run, Sections 12--14: tail corner descent
+  and the ordinary-quotient/double-deletion package, preserved in scope.
+- The two 2026-10-03 preceding Runs: normalized passage model, original
+  Auslander multiplication and the binary-indecomposable frontier.
+- Braun, Chuang, Lazarev,
+  [Derived localisation of algebras and modules](https://arxiv.org/pdf/1505.01146),
+  Proposition 9.6 for the strict quotient model, as already checked in
+  the preceding Run.
+
+No old Run or prior exact computation was rewritten or rerun.

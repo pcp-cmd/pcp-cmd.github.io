@@ -1,0 +1,116 @@
+"""Finite chain/cocycle certificates for free Yoneda words of arbitrary degree.
+
+The all-degree conclusion is proved in Bar-Cycle-Pairing-Theorem.md.
+Only standard-library exact rational arithmetic is used.
+"""
+from fractions import Fraction as F
+from pathlib import Path
+import argparse
+import json
+import return_kernel_certificate as rk
+
+
+def add(vector, word, coefficient):
+    vector[word] = vector.get(word, F(0)) + coefficient
+    if not vector[word]:
+        del vector[word]
+
+
+def boundary(algebra, chain):
+    result = {}
+    for word, coefficient in chain.items():
+        for k in range(len(word) - 1):
+            for r, value in enumerate(algebra.pair(word[k], word[k + 1])):
+                if value:
+                    add(result, word[:k] + (r,) + word[k + 2:], coefficient * value * (-1) ** (k + 1))
+    return result
+
+
+def seam(algebra, left, right):
+    result = {}
+    for u, cu in left.items():
+        for v, cv in right.items():
+            for r, value in enumerate(algebra.pair(u[-1], v[0])):
+                if value:
+                    add(result, u[:-1] + (r,) + v[1:], cu * cv * value)
+    return result
+
+
+def pairing(cocycle, chain):
+    return sum((coefficient * cocycle.get(word, F(0)) for word, coefficient in chain.items()), F(0))
+
+
+def words(algebra, start, end, degree):
+    if degree == 0:
+        if start == end:
+            yield ()
+        return
+    for r, basis in enumerate(algebra.basis):
+        if basis['left'] == start:
+            for tail in words(algebra, basis['right'], end, degree - 1):
+                yield (r,) + tail
+
+
+def decode(algebra, encoded, base, degree):
+    vector = {}
+    for term in encoded:
+        word = tuple(algebra.index[name] for name in term['word'])
+        if len(word) != degree:
+            raise ValueError('Wrong tensor degree')
+        cursor = base
+        for r in word:
+            basis = algebra.basis[r]
+            if basis['left'] != cursor:
+                raise ValueError('Noncomposable tensor word')
+            cursor = basis['right']
+        if cursor != base:
+            raise ValueError('Tensor word does not return to the base vertex')
+        add(vector, word, F(term.get('coefficient', 1)))
+    return vector
+
+
+def check(data):
+    algebra = rk.Algebra(data['algebra'])
+    h, degree = data['base_vertex'], data['block_degree']
+    if type(h) is not int or not 0 <= h < algebra.vertices or type(degree) is not int or degree < 1:
+        raise ValueError('Invalid base vertex or block degree')
+    cycles = [decode(algebra, value, h, degree) for value in data['cycles']]
+    cocycles = [decode(algebra, value, h, degree) for value in data['cocycles']]
+    count = len(cycles)
+    if not count or len(cocycles) != count:
+        raise ValueError('Need the same positive number of cycles and dual cocycles')
+    if any(boundary(algebra, z) for z in cycles):
+        raise ValueError('A proposed chain is not a cycle')
+    pairing_matrix = [[pairing(phi, z) for z in cycles] for phi in cocycles]
+    if pairing_matrix != [[F(i == j) for j in range(count)] for i in range(count)]:
+        raise ValueError('Cycle/cocycle pairing is not the identity')
+    checked = 0
+    for word in words(algebra, h, h, degree + 1):
+        image = boundary(algebra, {word: F(1)})
+        if any(pairing(phi, image) for phi in cocycles):
+            raise ValueError('A proposed dual functional does not annihilate boundaries')
+        checked += 1
+    if any(seam(algebra, z, w) for z in cycles for w in cycles):
+        raise ValueError('A cross-block seam is nonzero')
+    return {'valid': True, 'vertices': algebra.vertices,
+            'algebra_dimension': algebra.vertices + algebra.d,
+            'base_vertex': h, 'block_degree': degree, 'generators': count,
+            'boundary_words_checked': checked, 'ordered_seams_checked': count * count,
+            'pairing_matrix': [[str(v) for v in row] for row in pairing_matrix],
+            'conclusion': f'For every r>=1, Tor_(r*{degree})(R_{h},L_{h}) has dimension at least {count}^r; self-Ext contains a free associative algebra on {count} generators of degree {degree}.',
+            'proof': 'Bar-Cycle-Pairing-Theorem.md',
+            'verification_boundary': 'Finite exact certificate for the written theorem; not independent mathematical verification.'}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--input', type=Path, required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    result = check(json.loads(args.input.read_text(encoding='utf-8')))
+    args.output.write_text(json.dumps(result, indent=2) + '\n', encoding='utf-8')
+    print(json.dumps(result))
+
+
+if __name__ == '__main__':
+    main()

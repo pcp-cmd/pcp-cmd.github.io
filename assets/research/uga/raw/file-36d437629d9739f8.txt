@@ -1,0 +1,718 @@
+# Universal Gap A — Derived Necklace Screening / Infinite-Tail Alignment
+
+**Date:** 2026-10-02  
+**Status:** PROJECT-DERIVED REDUCTION / NOT A PROOF OF UNIVERSAL GAP A  
+**Scope:** elementary finite-dimensional \(k\)-algebras.  
+**Input:** `Universal-Gap-A-Two-Sided-Finite-Head-Collision-2026-10-02.md`.
+
+---
+
+# 0. Executive freeze
+
+The current finite-head collision theorem says that if \(A\) is not infinite \(+\) and
+\[
+\Gamma_x=e_xAe_x\neq k,
+\]
+then for some fixed \(y,z\neq x\),
+\[
+\operatorname{Tor}^{\Gamma_x}_m(e_zAe_x,e_xAe_y)\neq 0
+\]
+for infinitely many \(m\).
+
+This note does **not** promote that local Tor directly to an ambient simple-simple witness. That implication is false without extra input.
+
+The new reduction has three parts.
+
+1. The local mixed-linker Tor is identified as the \(p=0\) edge of an explicit filtered ambient bar complex. Thus “no-hiding” becomes an exact spectral-sequence screening problem.
+2. If the screening page is bounded on infinitely many local classes, then a fixed derived necklace length recycles another unbounded mixed linker through the same vertex \(x\). If the pages are unbounded, one obtains genuinely arbitrarily long derived necklaces. This is an exact dichotomy.
+3. The missing global hypothesis \(\operatorname{gldim}A=\infty\) is reinserted by anchoring at a vertex \(x\) with \(\operatorname{pd}_A S_x=\infty\). Then the local-singular defect and a genuine infinite syzygy tail coexist at the same vertex. In the local-trivial case \(e_xAe_x=k\), a finite-\(B\)-projective-dimension subbranch forces an infinite-projective-dimension multiplication kernel.
+
+The remaining target is therefore no longer “local Tor implies ambient Tor”. It is:
+
+\[
+\boxed{\textbf{Infinite-Tail / Screening Alignment}}
+\]
+
+namely, force the genuine infinite tail to intersect the derived screening carrier in a Peirce-visible recurrent simple pair.
+
+---
+
+# 1. MRS / Vault method mapping
+
+The method Vault is used concretely as follows.
+
+### Representation change / standard form
+
+Replace the vague phrase “the local Tor is hidden in \(A\)” by a normalized relative bar complex filtered by the number of excursions away from \(x\).
+
+### Bridge
+
+The resulting spectral sequence is the bridge from the known local region
+\[
+\operatorname{Tor}^{e_xAe_x}
+\]
+to the unknown ambient region
+\[
+\operatorname{Tor}^{A}.
+\]
+
+### Infinite descent / minimal counterobject
+
+A screening class has a discrete complexity: the first page \(r\) on which it is killed. One may minimize this only after proving a monotone step. This note does **not** assume such monotonicity.
+
+### Compactness / finiteness
+
+For a fixed screening length \(r\), only finitely many outside-vertex sequences occur. Hence unbounded total homological degree forces one fixed block of one fixed necklace type to carry unbounded homology.
+
+Crucially, finite vertex labels do **not** imply a uniform bound on the screening page.
+
+---
+
+# 2. The \(x\)-excursion filtration
+
+Let \(A\) be elementary finite-dimensional, let
+\[
+J=\operatorname{rad}A,\qquad
+E=A/J\simeq \bigoplus_{v\in Q_0}ke_v.
+\]
+
+Fix distinct vertices
+\[
+z,x,y
+\]
+and put
+\[
+\Gamma=e_xAe_x,\qquad
+\mathfrak r=e_xJe_x,
+\]
+\[
+M=e_zAe_x,\qquad N=e_xAe_y.
+\]
+
+Since \(z,y\neq x\),
+\[
+M=e_zJe_x,\qquad N=e_xJe_y.
+\]
+
+For the right simple \(R_z\) and left simple \(L_y\), the normalized relative bar complex computing
+\[
+\operatorname{Tor}^A_*(R_z,L_y)
+\]
+has, in degree \(n\ge1\),
+\[
+K_n(z,y)
+=
+e_z\underbrace{J\otimes_E\cdots\otimes_EJ}_{n\text{ factors}}e_y.
+\]
+
+A pure Peirce summand is indexed by a vertex word
+\[
+z=v_0,v_1,\ldots,v_{n-1},v_n=y,
+\]
+and has the form
+\[
+e_{v_0}Je_{v_1}\otimes_k
+e_{v_1}Je_{v_2}\otimes_k\cdots\otimes_k
+e_{v_{n-1}}Je_{v_n}.
+\]
+
+Define its \(x\)-excursion number by
+\[
+\epsilon_x(v_0,\ldots,v_n)
+=
+\#\{1\le i\le n-1:v_i\neq x\}.
+\]
+
+Let \(F_pK_n\) be the span of summands with excursion number at most \(p\).
+
+The bar differential multiplies two adjacent radical factors and therefore removes exactly one intermediate vertex. Hence it either preserves \(\epsilon_x\) (when the removed vertex is \(x\)) or lowers it by one (when the removed vertex is outside \(x\)). Thus
+\[
+d(F_pK)\subseteq F_pK.
+\]
+
+Therefore \(F_\bullet\) is an increasing filtration and yields a homological spectral sequence
+\[
+E^1_{p,q}
+=
+H_{p+q}(\operatorname{gr}_p^F K)
+\Longrightarrow
+\operatorname{Tor}^A_{p+q}(R_z,L_y).
+\]
+
+---
+
+# 3. The local mixed linker is exactly the \(p=0\) edge
+
+The \(p=0\) associated-graded complex consists of bar words whose every internal vertex is \(x\).
+
+Thus
+\[
+(\operatorname{gr}_0 K)_1=e_zJe_y,
+\]
+and for \(n\ge2\),
+\[
+(\operatorname{gr}_0 K)_n
+=
+M\otimes_k
+\mathfrak r^{\otimes_k(n-2)}
+\otimes_k N.
+\]
+
+For \(n\ge3\), its differential is exactly the normalized two-sided bar differential for the local algebra \(\Gamma\). The only extra low-degree map is
+\[
+M\otimes_kN\longrightarrow e_zJe_y,
+\qquad
+m\otimes n\longmapsto mn.
+\]
+
+Consequently, for every \(m\ge1\),
+\[
+\boxed{
+H_{m+2}(\operatorname{gr}_0K)
+\cong
+\operatorname{Tor}^{\Gamma}_m(M,N).
+}
+\]
+
+Hence the finite-head collision theorem supplies \(p=0\), \(E^1\)-classes in arbitrarily high total degrees.
+
+This is the precise chain-level meaning of the mixed linker inside ambient \(A\).
+
+---
+
+# 4. Screen-or-survive dichotomy
+
+Let
+\[
+0\neq \alpha\in
+E^1_{0,*}
+\]
+be a class coming from
+\[
+\operatorname{Tor}^{\Gamma}_m(M,N).
+\]
+
+Because \(p=0\) is the bottom filtration column, \(\alpha\) cannot support an outgoing higher differential to negative filtration.
+
+Therefore exactly one of the following happens.
+
+### Survival
+
+\(\alpha\) survives to \(E^\infty\), giving a nonzero ambient class in
+\[
+\operatorname{Tor}^A_{m+2}(R_z,L_y).
+\]
+
+### Screening
+
+There is a first page \(r\ge1\) and an incoming differential
+\[
+d_r:
+E^r_{r,*}\longrightarrow E^r_{0,*}
+\]
+which kills \(\alpha\).
+
+Define the screening length
+\[
+\sigma(\alpha)
+=
+\begin{cases}
+\infty,&\alpha\text{ survives},\\
+r,&r\text{ is the first page killing }\alpha.
+\end{cases}
+\]
+
+This replaces the informal phrase “the local class gets hidden”.
+
+If
+\[
+e_zAe_y\neq0
+\]
+and \(A\) is not infinite \(+\), only finitely many high-degree local classes may survive; otherwise the fixed visible pair \((z,y)\) would already be an infinite-\(+\) witness.
+
+If
+\[
+e_zAe_y=0,
+\]
+survival is allowed, but it produces a persistent **Peirce-invisible** ambient pair. Thus even survival does not by itself close Gap A.
+
+---
+
+# 5. Derived-necklace decomposition of a fixed screening column
+
+Fix \(p=r\).
+
+A vertex word with exactly \(r\) outside-\(x\) intermediate vertices has a unique sequence
+\[
+u_1,\ldots,u_r\neq x
+\]
+and decomposes into \(r+1\) consecutive \(x\)-blocks:
+\[
+z\rightsquigarrow_x u_1
+\rightsquigarrow_x u_2
+\rightsquigarrow_x\cdots
+\rightsquigarrow_x u_r
+\rightsquigarrow_x y.
+\]
+
+Here \(a\rightsquigarrow_x b\) means that all intermediate vertices of that block are \(x\).
+
+Let \(C_x(a,b)\) denote the corresponding \(p=0\) block complex from \(a\) to \(b\). In the associated graded, multiplication at an outside vertex lowers the filtration and disappears. Thus the \(d_0\)-differential acts independently inside each block.
+
+Hence there is a chain-complex decomposition
+\[
+\boxed{
+\operatorname{gr}_rK(z,y)
+\cong
+\bigoplus_{u_1,\ldots,u_r\neq x}
+\operatorname{Tot}\!\left(
+C_x(z,u_1)\otimes_k
+C_x(u_1,u_2)\otimes_k\cdots\otimes_k
+C_x(u_r,y)
+\right).
+}
+\]
+
+Over a field, Künneth gives the corresponding tensor-product description of the \(E^1\)-page.
+
+This is the literal “derived necklace”: each bead is one \(x\)-block, while the outside vertices are the joints between beads.
+
+---
+
+# 6. Fixed-page recycling theorem
+
+## Proposition
+
+Assume there are \(p=0\) local classes in arbitrarily high degrees which are killed on one fixed page
+\[
+r<\infty.
+\]
+
+Then there exist fixed outside vertices
+\[
+a,b\neq x
+\]
+such that
+\[
+\boxed{
+\operatorname{Tor}^{\Gamma}_m
+(e_aAe_x,e_xAe_b)\neq0
+\quad\text{for infinitely many }m.
+}
+\]
+
+## Proof
+
+If infinitely many arbitrarily high \(p=0\) classes are hit by \(d_r\), then the source column \(E^r_{r,*}\) is nonzero in arbitrarily high total degrees. Since \(E^r_{r,*}\) is a subquotient of \(E^1_{r,*}\), the latter is also nonzero in arbitrarily high degrees.
+
+For fixed \(r\), only finitely many outside sequences
+\[
+(u_1,\ldots,u_r)
+\]
+occur. Hence one fixed sequence contributes homology in arbitrarily high total degrees.
+
+That summand is a tensor product of exactly \(r+1\) block homologies. Since the number of factors is fixed, at least one fixed block
+\[
+C_x(a,b)
+\]
+has nonzero homology in arbitrarily high degrees.
+
+The endpoints of an internal high-degree block are outside \(x\). In high degrees,
+\[
+H_{m+2}(C_x(a,b))
+\cong
+\operatorname{Tor}^{\Gamma}_m(e_aAe_x,e_xAe_b).
+\]
+
+Therefore one fixed mixed linker is unbounded. \(\square\)
+
+---
+
+# 7. Exact screening dichotomy
+
+For any infinite family of high local classes, after passing to a subsequence exactly one of the following holds.
+
+### Bounded-screen branch
+
+The screening lengths are bounded.
+
+Then some fixed page \(r\) occurs infinitely often, and the fixed-page recycling theorem produces another fixed unbounded mixed linker through the same \(x\).
+
+### Unbounded-screen branch
+
+\[
+\sigma(\alpha_j)\to\infty.
+\]
+
+Then the cancellation genuinely requires necklaces with arbitrarily many outside-\(x\) joints.
+
+This is the exact residue left by the bar filtration. A finite vertex alphabet does **not** rule out the second branch.
+
+---
+
+# 8. Derived quotient dictionary
+
+Let
+\[
+Q_x=A/^{\mathbf L}Ae_xA
+\]
+be the derived quotient.
+
+Standard derived-quotient calculations give
+\[
+H^0(Q_x)\cong A/Ae_xA,
+\]
+\[
+H^{-1}(Q_x)
+\cong
+\ker\!\left(
+Ae_x\otimes_{\Gamma_x}e_xA\to A
+\right),
+\]
+and for \(j<-1\),
+\[
+H^j(Q_x)
+\cong
+\operatorname{Tor}^{\Gamma_x}_{-j-1}(Ae_x,e_xA).
+\]
+
+Therefore the finite-head collision theorem says that for every nontrivial corner in a non-\(+\) algebra, \(Q_x\) has unbounded negative homology, indeed in a fixed primitive Peirce component.
+
+This is a deletion defect, not yet an ordinary simple-return witness.
+
+---
+
+# 9. Reinsert the missing hypothesis \(\operatorname{gldim}A=\infty\)
+
+The finite-head collision theorem used only “\(A\) is not infinite \(+\)”. That is why finite-global-dimension calibration examples can also exhibit unbounded local mixed-linker Tor.
+
+For Universal Gap A we have the extra hypothesis
+\[
+\operatorname{gldim}A=\infty.
+\]
+
+Because there are finitely many simples, choose a vertex \(x\) with
+\[
+\operatorname{pd}_A S_x=\infty.
+\]
+
+Under the non-\(+\) hypothesis, the one-way law gives \(N\) such that in the minimal projective resolution
+\[
+\cdots\to P_2\to P_1\to P_0\to S_x\to0
+\]
+we have
+\[
+e_xP_n=0
+\qquad(n\ge N).
+\]
+
+Put
+\[
+T=\Omega_A^N(S_x).
+\]
+
+Then
+\[
+\operatorname{pd}_A T=\infty
+\]
+and, because \(T=\operatorname{im}(P_N\to P_{N-1})\),
+\[
+e_xT=0.
+\]
+
+Since \(T\) is an \(A\)-submodule and \(e_x\) kills every element of \(T\),
+\[
+Ae_xA\cdot T=0.
+\]
+
+Thus
+\[
+\boxed{
+T\text{ is naturally an }B_x:=A/Ae_xA\text{-module}
+}
+\]
+while retaining
+\[
+\boxed{
+\operatorname{pd}_A T=\infty.
+}
+\]
+
+This is the genuine infinite tail missing from the finite-global-dimension calibration examples.
+
+---
+
+# 10. Anchored universal fork
+
+At an actual infinite-pd vertex \(x\), exactly one of the following holds.
+
+## Singular anchored branch
+
+\[
+\Gamma_x=e_xAe_x\neq k.
+\]
+
+Then, at the **same vertex \(x\)**, we simultaneously have:
+
+1. an infinite tail
+   \[
+   T=\Omega^N S_x,\qquad e_xT=0,\qquad\operatorname{pd}_A T=\infty;
+   \]
+2. a fixed two-sided local defect
+   \[
+   \operatorname{Tor}^{\Gamma_x}_m
+   (e_zAe_x,e_xAe_y)\neq0
+   \quad\text{i.o.}
+   \]
+
+This is the correct setting for the Derived Necklace / no-hiding problem.
+
+## Local-trivial anchored branch
+
+\[
+\Gamma_x=e_xAe_x=k.
+\]
+
+The local self-Tor mechanism disappears, and the obstruction is concentrated in the multiplication kernel and repeated outside-\(x\) tilings.
+
+Thus a proof of Universal Gap A may be reduced to closing these two **anchored** branches, rather than analyzing arbitrary vertices.
+
+---
+
+# 11. Minimal-counterexample quotient fork
+
+Let
+\[
+B=A/Ae_xA
+\]
+for the anchored infinite-pd vertex \(x\), with \(T\) as above.
+
+There are two cases.
+
+### Case A: \(\operatorname{pd}_B T=\infty\)
+
+Then
+\[
+\operatorname{gldim}B=\infty.
+\]
+
+If \(A\) is chosen with the minimum possible number of vertices among Gap-A failures, \(B\) has fewer vertices and therefore cannot itself be a Gap-A failure. Hence \(B\) must have an infinite-\(+\) witness.
+
+The remaining issue is precisely whether that witness lifts through the non-stratifying deletion.
+
+### Case B: \(\operatorname{pd}_B T<\infty\)
+
+Then necessarily
+\[
+\boxed{\operatorname{pd}_A B=\infty.}
+\]
+
+Indeed, if \(\operatorname{pd}_A B=d<\infty\), every finitely generated \(B\)-projective is, as an \(A\)-module, a summand of a finite sum of copies of \(B\) and therefore has \(A\)-projective dimension at most \(d\). A finite \(B\)-projective resolution of \(T\) would then give
+\[
+\operatorname{pd}_A T<\infty,
+\]
+contrary to construction.
+
+Hence in the finite-\(B\)-pd subbranch, the infinite homological complexity is forced into the deletion morphism itself.
+
+---
+
+# 12. New local-trivial kernel-transfer lemma
+
+Assume now
+\[
+e=e_x,\qquad eAe=k,
+\]
+and remain in Case B:
+\[
+\operatorname{pd}_B T<\infty.
+\]
+
+Define
+\[
+K_x
+=
+\ker\!\left(
+Ae\otimes_k eA
+\xrightarrow{\mu}
+AeA
+\right).
+\]
+
+## Lemma
+
+\[
+\boxed{\operatorname{pd}_A K_x=\infty.}
+\]
+
+Consequently there is a vertex
+\[
+s\neq x
+\]
+such that
+\[
+\operatorname{pd}_A S_s=\infty
+\qquad\text{and}\qquad
+e_sAe_x\neq0.
+\]
+
+## Proof
+
+From Section 11,
+\[
+\operatorname{pd}_A B=\infty.
+\]
+
+The exact sequence
+\[
+0\to AeA\to A\to B\to0
+\]
+then forces
+\[
+\operatorname{pd}_A(AeA)=\infty.
+\]
+
+Because \(eAe=k\),
+\[
+Ae\otimes_k eA
+\]
+is a finite direct sum of copies of the projective left module \(Ae\), hence is projective as a left \(A\)-module.
+
+From
+\[
+0\to K_x\to Ae\otimes_k eA\to AeA\to0
+\]
+we obtain
+\[
+\operatorname{pd}_A K_x=\infty.
+\]
+
+Since \(K_x\) has finite length, not all its composition factors can have finite projective dimension. Hence some simple \(S_s\) occurring in \(K_x\) has
+\[
+\operatorname{pd}_A S_s=\infty.
+\]
+
+Applying \(e\) to the multiplication map gives
+\[
+eAe\otimes_k eA
+\longrightarrow
+eAeA,
+\]
+which, under \(eAe=k\), is the canonical isomorphism
+\[
+k\otimes_k eA\cong eA.
+\]
+Thus
+\[
+eK_x=0,
+\]
+so \(s\neq x\).
+
+Finally, \(e_s(-)\) is exact and \(S_s\) occurs as a composition factor of \(K_x\), so
+\[
+e_sK_x\neq0.
+\]
+But
+\[
+e_sK_x
+\subseteq
+e_s(Ae\otimes_k eA)
+=
+e_sAe\otimes_k eA.
+\]
+Therefore
+\[
+e_sAe\neq0.
+\]
+\(\square\)
+
+### Interpretation
+
+In the local-trivial, finite-\(B\)-pd subbranch, infinity cannot simply disappear under deleting \(x\). It moves to another infinite-pd simple \(S_s\), and that new vertex is Peirce-linked to \(x\).
+
+This is stronger than a naked graph observation because the transfer is produced by the multiplication-kernel defect \(K_x\).
+
+It is **not yet** a recurrent-simple theorem.
+
+---
+
+# 13. What remains open after this reduction
+
+The local-singular branch is now:
+
+\[
+\boxed{
+\begin{gathered}
+\operatorname{pd}_A S_x=\infty,\\
+T=\Omega^N S_x,\quad e_xT=0,\quad \operatorname{pd}_A T=\infty,\\
+\operatorname{Tor}^{e_xAe_x}_m(e_zAe_x,e_xAe_y)\neq0\quad\text{i.o.}
+\end{gathered}
+}
+\]
+
+The local mixed classes either survive as Peirce-invisible ambient classes or are killed by derived necklaces. The missing theorem must force the actual infinite tail \(T\) to align with this screening system so that a persistent pair lands in a nonzero Peirce component.
+
+A suitable target is:
+
+## Infinite-Tail / Screening Alignment Conjecture
+
+Under the boxed hypotheses above and the assumption that \(A\) is not infinite \(+\), the infinite tail \(T\) cannot remain disjoint from every Peirce-visible recurrent carrier generated by the \(x\)-excursion screening system.
+
+A proof should yield a fixed pair \((a,b)\) with
+\[
+e_aAe_b\neq0
+\]
+and
+\[
+\operatorname{Tor}^A_n(R_a,L_b)\neq0
+\quad\text{for infinitely many }n,
+\]
+contradicting the non-\(+\) assumption.
+
+The local-trivial branch is now sharpened to:
+
+1. if \(\operatorname{pd}_{B_x}T=\infty\), descend to the smaller algebra \(B_x\) and analyze witness lifting;
+2. if \(\operatorname{pd}_{B_x}T<\infty\), use the infinite-pd kernel \(K_x\) and the transfer
+   \[
+   s\rightsquigarrow x,\qquad
+   \operatorname{pd}_A S_s=\infty,\quad e_sAe_x\neq0.
+   \]
+
+The next legitimate question is whether repeated kernel transfers force a **marked-relation / Peirce zero-turn cycle** rather than merely a naked support cycle.
+
+---
+
+# 14. Do-not-reinvent audit
+
+This note does **not** use any of the following invalid shortcuts:
+
+- graph cycle \(\Rightarrow\) homological return;
+- periodic module \(\Rightarrow\) periodic simple;
+- singular/Tate return \(\Rightarrow\) ordinary return;
+- quotient deletion \(\Rightarrow\) homological epimorphism;
+- associated-graded survival \(\Rightarrow\) survival in the original complex;
+- finite vertex labels \(\Rightarrow\) bounded screening page.
+
+In particular, the excursion filtration is used to identify the exact cancellation mechanism, not to assume degeneration.
+
+---
+
+# 15. Current status
+
+\[
+\boxed{\text{Universal Gap A remains open.}}
+\]
+
+But the local-singular no-hiding problem has been converted into an explicit filtered bar-complex problem with an exact bounded-screen / unbounded-necklace dichotomy, and the global infinite-dimension hypothesis has been anchored at the same vertex.
+
+The local-trivial branch also gains a concrete kernel-transfer lemma.
+
+The next frontier is:
+
+\[
+\boxed{
+\textbf{Infinite-Tail / Screening Alignment}
+}
+\]
+
+together with the marked-relation closure of repeated local-trivial kernel transfers.

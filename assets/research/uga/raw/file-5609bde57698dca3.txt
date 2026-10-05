@@ -1,0 +1,982 @@
+{
+  "status": "passed",
+  "evidence_level": "bounded-check",
+  "python_version": "3.14.3",
+  "associativity_triples": 512,
+  "bar_bound": 10,
+  "incoming_degree": 11,
+  "bar_pairs": 9,
+  "differential_square_checks": 1203,
+  "passage_chain_checks": 122,
+  "fillers": [
+    {
+      "kind": "u",
+      "negative_magnitude": 2,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "u",
+      "negative_magnitude": 3,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "u",
+      "negative_magnitude": 4,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "u",
+      "negative_magnitude": 5,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "u",
+      "negative_magnitude": 6,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "u",
+      "negative_magnitude": 7,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "u",
+      "negative_magnitude": 8,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "v",
+      "negative_magnitude": 2,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "v",
+      "negative_magnitude": 3,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "v",
+      "negative_magnitude": 4,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "v",
+      "negative_magnitude": 5,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "v",
+      "negative_magnitude": 6,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "v",
+      "negative_magnitude": 7,
+      "filler_excursion": 1
+    },
+    {
+      "kind": "v",
+      "negative_magnitude": 8,
+      "filler_excursion": 1
+    }
+  ],
+  "tor_results": [
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 0,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 1,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 2,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 3,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 1,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 4,
+      "chain_dimension": 2,
+      "outgoing_rank": 1,
+      "incoming_rank": 1,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 5,
+      "chain_dimension": 3,
+      "outgoing_rank": 1,
+      "incoming_rank": 2,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 6,
+      "chain_dimension": 5,
+      "outgoing_rank": 2,
+      "incoming_rank": 3,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 7,
+      "chain_dimension": 8,
+      "outgoing_rank": 3,
+      "incoming_rank": 5,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 8,
+      "chain_dimension": 13,
+      "outgoing_rank": 5,
+      "incoming_rank": 8,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 9,
+      "chain_dimension": 21,
+      "outgoing_rank": 8,
+      "incoming_rank": 13,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "degree": 10,
+      "chain_dimension": 34,
+      "outgoing_rank": 13,
+      "incoming_rank": 21,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 0,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 1,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 2,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 1,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 3,
+      "chain_dimension": 2,
+      "outgoing_rank": 1,
+      "incoming_rank": 1,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 4,
+      "chain_dimension": 3,
+      "outgoing_rank": 1,
+      "incoming_rank": 2,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 5,
+      "chain_dimension": 5,
+      "outgoing_rank": 2,
+      "incoming_rank": 3,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 6,
+      "chain_dimension": 8,
+      "outgoing_rank": 3,
+      "incoming_rank": 5,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 7,
+      "chain_dimension": 13,
+      "outgoing_rank": 5,
+      "incoming_rank": 8,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 8,
+      "chain_dimension": 21,
+      "outgoing_rank": 8,
+      "incoming_rank": 13,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 9,
+      "chain_dimension": 34,
+      "outgoing_rank": 13,
+      "incoming_rank": 21,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "degree": 10,
+      "chain_dimension": 55,
+      "outgoing_rank": 21,
+      "incoming_rank": 34,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 0,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 1,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 2,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 3,
+      "chain_dimension": 2,
+      "outgoing_rank": 0,
+      "incoming_rank": 1,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 4,
+      "chain_dimension": 4,
+      "outgoing_rank": 1,
+      "incoming_rank": 2,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 5,
+      "chain_dimension": 7,
+      "outgoing_rank": 2,
+      "incoming_rank": 4,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 6,
+      "chain_dimension": 12,
+      "outgoing_rank": 4,
+      "incoming_rank": 7,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 7,
+      "chain_dimension": 20,
+      "outgoing_rank": 7,
+      "incoming_rank": 12,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 8,
+      "chain_dimension": 33,
+      "outgoing_rank": 12,
+      "incoming_rank": 20,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 9,
+      "chain_dimension": 54,
+      "outgoing_rank": 20,
+      "incoming_rank": 33,
+      "tor_dimension": 1
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "degree": 10,
+      "chain_dimension": 88,
+      "outgoing_rank": 33,
+      "incoming_rank": 54,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 0,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 1,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 2,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 1,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 3,
+      "chain_dimension": 2,
+      "outgoing_rank": 1,
+      "incoming_rank": 1,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 4,
+      "chain_dimension": 3,
+      "outgoing_rank": 1,
+      "incoming_rank": 2,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 5,
+      "chain_dimension": 5,
+      "outgoing_rank": 2,
+      "incoming_rank": 3,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 6,
+      "chain_dimension": 8,
+      "outgoing_rank": 3,
+      "incoming_rank": 5,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 7,
+      "chain_dimension": 13,
+      "outgoing_rank": 5,
+      "incoming_rank": 8,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 8,
+      "chain_dimension": 21,
+      "outgoing_rank": 8,
+      "incoming_rank": 13,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 9,
+      "chain_dimension": 34,
+      "outgoing_rank": 13,
+      "incoming_rank": 21,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "degree": 10,
+      "chain_dimension": 55,
+      "outgoing_rank": 21,
+      "incoming_rank": 34,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 0,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 1,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 1,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 2,
+      "chain_dimension": 2,
+      "outgoing_rank": 1,
+      "incoming_rank": 1,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 3,
+      "chain_dimension": 3,
+      "outgoing_rank": 1,
+      "incoming_rank": 2,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 4,
+      "chain_dimension": 5,
+      "outgoing_rank": 2,
+      "incoming_rank": 3,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 5,
+      "chain_dimension": 8,
+      "outgoing_rank": 3,
+      "incoming_rank": 5,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 6,
+      "chain_dimension": 13,
+      "outgoing_rank": 5,
+      "incoming_rank": 8,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 7,
+      "chain_dimension": 21,
+      "outgoing_rank": 8,
+      "incoming_rank": 13,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 8,
+      "chain_dimension": 34,
+      "outgoing_rank": 13,
+      "incoming_rank": 21,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 9,
+      "chain_dimension": 55,
+      "outgoing_rank": 21,
+      "incoming_rank": 34,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "degree": 10,
+      "chain_dimension": 89,
+      "outgoing_rank": 34,
+      "incoming_rank": 55,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 0,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 1,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 2,
+      "chain_dimension": 2,
+      "outgoing_rank": 0,
+      "incoming_rank": 1,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 3,
+      "chain_dimension": 4,
+      "outgoing_rank": 1,
+      "incoming_rank": 2,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 4,
+      "chain_dimension": 7,
+      "outgoing_rank": 2,
+      "incoming_rank": 4,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 5,
+      "chain_dimension": 12,
+      "outgoing_rank": 4,
+      "incoming_rank": 7,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 6,
+      "chain_dimension": 20,
+      "outgoing_rank": 7,
+      "incoming_rank": 12,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 7,
+      "chain_dimension": 33,
+      "outgoing_rank": 12,
+      "incoming_rank": 20,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 8,
+      "chain_dimension": 54,
+      "outgoing_rank": 20,
+      "incoming_rank": 33,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 9,
+      "chain_dimension": 88,
+      "outgoing_rank": 33,
+      "incoming_rank": 54,
+      "tor_dimension": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "degree": 10,
+      "chain_dimension": 143,
+      "outgoing_rank": 54,
+      "incoming_rank": 88,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 0,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 1,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 2,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 3,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 4,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 5,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 6,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 7,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 8,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 9,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "degree": 10,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 0,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 1,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 2,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 3,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 4,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 5,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 6,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 7,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 8,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 9,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "degree": 10,
+      "chain_dimension": 0,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 0
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 0,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 1,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 2,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 3,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 4,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 5,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 6,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 7,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 8,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 9,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "degree": 10,
+      "chain_dimension": 1,
+      "outgoing_rank": 0,
+      "incoming_rank": 0,
+      "tor_dimension": 1
+    }
+  ],
+  "limitations": [
+    "Finite degrees do not prove infinite tails.",
+    "Analytic resolution and quotient proofs are in the Run.",
+    "Self-audited computation is not independent verification.",
+    "Global infinite + holds at vertex 3; this is not a counterexample."
+  ]
+}

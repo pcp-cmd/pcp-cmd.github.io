@@ -1,0 +1,15 @@
+## UGA-C052 — Mixed-Primitive Generation and Acyclic Support Bound
+**Status:** COMPLETE SELF-AUDITED PROOF / NOT INDEPENDENTLY VERIFIED  
+**Source:** `runs/2026-10-03/Run-Target-B-Primitive-Seed-Correction-2026-10-03.md`, Theorem 3.1 and Corollaries 3.2–3.3.
+
+For a fixed connective minimal augmented model with finite-dimensional \(H^0\), every reduced homology class is a finite sum of rooted-tree evaluations on lifts of **all** homogeneous primitive classes. Its negative magnitude is
+\[
+d=\sum_{\text{leaves }\ell}d_\ell+\operatorname{mex}(T).
+\]
+If primitive degrees are bounded by \(d_0\) and primitive support on \(q\ge2\) vertices is acyclic, then
+\[
+H^{-d}=0\qquad\bigl(d>(q-1)(d_0+1)-1\bigr).
+\]
+The support conclusion does not assert ordinary Tor recurrence. Primitive-model invariance is not assumed.
+
+---

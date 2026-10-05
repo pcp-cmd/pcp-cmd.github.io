@@ -1,0 +1,9 @@
+## UGA-C059 — Infinite-Pd Anchor with Bounded Local Screening and Another Visible Source
+**Status:** EXPLICIT ALL-DEGREE PROOF / BOUNDED EXACT SELF-CHECK / NOT INDEPENDENTLY VERIFIED  
+**Source:** actual-tail Run, Section 5; reproducible files in `Return-Tail-Evidence/`.
+
+The eight-dimensional triangular extension with basis e1,e2,e3,a,b,t,c,s, sole nonzero radical product ab=t, and arrows a:1->2, b:2->1, c:2->3 has all simple projective dimensions infinite. At source x=2, the local corner is dual numbers and every high reverse-supported Tor vanishes. Its true return-complement tail is \(L_3\), Tor-orthogonal to the right regular dual-number boundary. Deletion of vertex 2 is formal, with finitely generated but unbounded negative cohomology, and both mixed local families have excursion-one fillers.
+
+Nevertheless vertex 3 has diagonal Tor in every degree. This is infinite +, not a counterexample or Branch-U realization. It excludes replacing the all-source non-+ condition by one source's actual infinite tail, local singularity and eventual return vanishing.
+
+---

@@ -1,0 +1,8 @@
+{
+  "stage": "initial caller after literal associativity/initial cover checks",
+  "error": "AttributeError: Algebra object has no attribute name_to_index",
+  "location": "ambient helper for concrete first-kernel coordinates",
+  "repair": "Use the explicitly constructed radical name-to-index dictionary radidx.",
+  "mathematical_check_failed": false,
+  "subsequent_extended_execution": "passed"
+}
