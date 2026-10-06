@@ -4713,7 +4713,7 @@
             }
 
             /* ========================================================== */
-            /* 18.8 小魔女计划板 */
+            /* 18.8 Universal Gap A 研究黑板 */
             /* ========================================================== */
             const boardG = new THREE.Group();
             boardG.position.set(-2.9, FY, 2.8);
@@ -4723,92 +4723,75 @@
             boardTilt.rotation.x = -0.09;
             boardG.add(boardTilt);
             const boardCanvas = document.createElement('canvas');
-            boardCanvas.width = 512;
-            boardCanvas.height = 392;
+            // Keep the board's original proportions, with a sharper mathematical texture.
+            const BOARD_SCALE = 3;
+            boardCanvas.width = 512 * BOARD_SCALE;
+            boardCanvas.height = 392 * BOARD_SCALE;
             const bctx = boardCanvas.getContext('2d');
 
+            // Source: content/research/uga-overview.md, "研究问题".
+            // x,y are one fixed pair; infinitely many degrees does not mean every degree.
+            function boardMath(runs, y, size = 21) {
+                const font = (s, italic = false) => `${italic ? 'italic ' : ''}${s}px "Cambria Math", "Times New Roman", serif`;
+                const scriptSize = size * 0.64;
+                const parts = runs.map(run => {
+                    const part = typeof run === 'string' ? { text: run } : run;
+                    bctx.font = font(size, part.italic);
+                    const baseWidth = bctx.measureText(part.text).width;
+                    bctx.font = font(scriptSize);
+                    const scriptWidth = Math.max(bctx.measureText(part.sub || '').width, bctx.measureText(part.sup || '').width);
+                    return { ...part, baseWidth, width: baseWidth + scriptWidth + (scriptWidth ? 1 : 0) };
+                });
+                let x = (512 - parts.reduce((sum, part) => sum + part.width, 0)) / 2;
+                bctx.textAlign = 'left';
+                for (const part of parts) {
+                    bctx.font = font(size, part.italic);
+                    bctx.fillText(part.text, x, y);
+                    bctx.font = font(scriptSize);
+                    if (part.sup) bctx.fillText(part.sup, x + part.baseWidth, y - size * 0.48);
+                    if (part.sub) bctx.fillText(part.sub, x + part.baseWidth, y + size * 0.24);
+                    x += part.width;
+                }
+            }
+
             function drawBoardFace() {
-                bctx.fillStyle = '#2f4136';
+                bctx.setTransform(BOARD_SCALE, 0, 0, BOARD_SCALE, 0, 0);
+                bctx.fillStyle = '#303330';
                 bctx.fillRect(0, 0, 512, 392);
-                for (let i = 0; i < 340; i++) {
+                for (let i = 0; i < 900; i++) {
                     bctx.fillStyle = 'rgba(255,255,255,' + (Math.random() * 0.045).toFixed(3) + ')';
-                    bctx.fillRect(Math.random() * 512, Math.random() * 392, 2, 2);
+                    bctx.fillRect(Math.random() * 512, Math.random() * 392, 1, 1);
                 }
                 const chalk = 'rgba(238,244,238,0.88)';
                 bctx.fillStyle = chalk;
                 bctx.strokeStyle = chalk;
-                bctx.font = '34px serif';
+                bctx.font = 'bold 29px "Cambria Math", "Times New Roman", serif';
                 bctx.textAlign = 'center';
                 bctx.textBaseline = 'alphabetic';
-                bctx.fillText('✦ ✧ ❖ ✧ ✦', 256, 52);
-                bctx.lineWidth = 2;
+                bctx.fillText('Universal Gap A', 256, 39);
+                bctx.font = '13px "Microsoft YaHei", sans-serif';
+                bctx.fillText('Han 猜想研究 · OPEN', 256, 60);
+                bctx.lineWidth = 1;
                 bctx.beginPath();
-                bctx.moveTo(120, 68);
-                bctx.lineTo(392, 68);
+                bctx.moveTo(38, 72);
+                bctx.lineTo(474, 72);
                 bctx.stroke();
-                bctx.beginPath();
-                bctx.moveTo(150, 76);
-                bctx.lineTo(362, 76);
-                bctx.stroke();
-                bctx.lineWidth = 2.2;
-                bctx.beginPath();
-                bctx.arc(120, 215, 62, 0, 7);
-                bctx.stroke();
-                bctx.beginPath();
-                bctx.arc(120, 215, 40, 0, 7);
-                bctx.stroke();
-                bctx.beginPath();
-                bctx.moveTo(120, 162);
-                bctx.lineTo(167, 246);
-                bctx.lineTo(73, 246);
-                bctx.closePath();
-                bctx.stroke();
-                bctx.beginPath();
-                bctx.moveTo(120, 268);
-                bctx.lineTo(73, 184);
-                bctx.lineTo(167, 184);
-                bctx.closePath();
-                bctx.stroke();
-                for (let k = 0; k < 8; k++) {
-                    const a = k * Math.PI / 4;
-                    bctx.beginPath();
-                    bctx.moveTo(120 + Math.cos(a) * 62, 215 + Math.sin(a) * 62);
-                    bctx.lineTo(120 + Math.cos(a) * 70, 215 + Math.sin(a) * 70);
-                    bctx.stroke();
-                }
-                bctx.font = '22px serif';
-                bctx.fillText('✦', 120, 223);
-                bctx.textAlign = 'left';
-                bctx.font = '26px serif';
-                bctx.fillText('△ + ◯ ⇒ ✦', 245, 130);
-                bctx.fillText('∴ ✦ ∝ ☽', 262, 172);
-                bctx.fillText('☾ ∝ ✱ ∝ ❍', 248, 214);
-                bctx.fillText('⟡ ☽ → ● ⟡', 250, 258);
-                bctx.fillText('☽ ◐ ● ◑ ☾', 250, 308);
-                bctx.font = '16px serif';
-                bctx.fillText('✧', 60, 110);
-                bctx.fillText('✦', 440, 100);
-                bctx.fillText('✧', 470, 225);
-                bctx.fillText('✦', 62, 335);
-                bctx.fillText('✧', 310, 350);
-                bctx.fillText('❖', 455, 175);
 
-                function sticker(x, y, w, h, col, rot) {
-                    bctx.save();
-                    bctx.translate(x, y);
-                    bctx.rotate(rot);
-                    bctx.fillStyle = col;
-                    bctx.fillRect(-w / 2, -h / 2, w, h);
-                    bctx.strokeStyle = 'rgba(0,0,0,0.35)';
-                    bctx.lineWidth = 2;
-                    bctx.strokeRect(-w / 2, -h / 2, w, h);
-                    bctx.fillStyle = 'rgba(255,255,255,0.45)';
-                    bctx.fillRect(-w / 2 - 8, -h / 2 - 6, 16, 10);
-                    bctx.restore();
-                }
-                sticker(455, 335, 46, 34, '#ffd166', 0.3);
-                sticker(52, 185, 38, 30, '#ff8fab', -0.35);
-                sticker(462, 58, 36, 28, '#8fd6ff', 0.15);
+                bctx.font = '14px "Microsoft YaHei", sans-serif';
+                bctx.fillText('k 为域，A 为有限维 k-代数', 256, 94);
+                boardMath(['J = rad A,   A/J ≅ ', { text: 'k', sup: 'N', italic: true }], 119, 19);
+                boardMath([{ text: 'e', sub: '1', italic: true }, ', …, ', { text: 'e', sub: 'N', italic: true }, ' 为完备本原正交幂等元'], 142, 14);
+                boardMath([
+                    { text: 'R', sub: 'x', italic: true }, ' = ', { text: 'e', sub: 'x', italic: true }, 'A / ', { text: 'e', sub: 'x', italic: true }, 'J,    ',
+                    { text: 'L', sub: 'y', italic: true }, ' = A', { text: 'e', sub: 'y', italic: true }, ' / J', { text: 'e', sub: 'y', italic: true }
+                ], 169, 19);
+                boardMath(['gldim ', { text: 'A', italic: true }, ' = ∞'], 208, 27);
+                boardMath([
+                    '⇒  ∃ x,y ∈ {1,…,N}:  ', { text: 'e', sub: 'y', italic: true }, 'A', { text: 'e', sub: 'x', italic: true }, ' ≠ 0'
+                ], 242, 23);
+                boardMath([
+                    '∧  #{n ≥ 1 : ', { text: 'Tor', sup: 'A', sub: 'n' }, '(', { text: 'R', sub: 'x', italic: true }, ', ', { text: 'L', sub: 'y', italic: true }, ') ≠ 0} = ∞'
+                ], 280, 23);
                 boardTex.needsUpdate = true;
             }
             const boardTex = new THREE.CanvasTexture(boardCanvas);
@@ -4831,9 +4814,9 @@
             }
             put(box(1.20, 0.04, 0.14), 0, 0.54, 0.09, 0, 0, 0, boardTilt);
             const notes = [
-                { col: '#ffe66d', txt: '采月光草', rz: 0.12, px: -0.40, py: 1.26 },
-                { col: '#ffb3c6', txt: '归还魔法书', rz: -0.08, px: -0.05, py: 1.14 },
-                { col: '#aecdff', txt: '作者：YIBI2333', rz: 0.18, px: 0.36, py: 0.84 }
+                { col: '#e6e2d8', txt: 'UGA', rz: 0.10, px: -0.39, py: 0.66 },
+                { col: '#deded8', txt: 'Han 猜想', rz: -0.06, px: 0, py: 0.66 },
+                { col: '#e2e4dc', txt: 'OPEN', rz: 0.12, px: 0.39, py: 0.66 }
             ];
             let noteEditing = 0;
             for (let i = 0; i < notes.length; i++) {
